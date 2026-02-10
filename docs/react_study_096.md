@@ -78,6 +78,9 @@ const inputRef = useRef<HTMLInputElement | null>(null);
 
 ### つまりこういうイメージ 📦
 
+![react_study_096_null_box](./picture/react_study_096_null_box.png)
+
+
 * **型としては**：`RefObject<HTMLInputElement | null>`
 * **中身の変化**：
 
@@ -256,6 +259,9 @@ if (inputRef.current) {
 ---
 
 ### ❌ パターン3：型をつけずに `any` に逃げる
+
+![react_study_096_any_danger](./picture/react_study_096_any_danger.png)
+
 
 ```tsx
 // ❌ これは型チェックの良さを殺してる…

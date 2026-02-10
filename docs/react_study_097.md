@@ -70,6 +70,9 @@ export default App;
 
 ## 3. JSX で `ref={inputRef}` を書いてみよう ✍️
 
+![react_study_097_connection_cable](./picture/react_study_097_connection_cable.png)
+
+
 いよいよ本題、「`ref` プロパティ」を JSX に書いてみます。
 
 `<input>` に `ref={inputRef}` を付けるだけです👇
@@ -184,6 +187,9 @@ const inputRef = useRef<HTMLInputElement | null>(null);
 ---
 
 ### ② `current` が `null` かもしれない問題
+
+![react_study_097_null_safety](./picture/react_study_097_null_safety.png)
+
 
 このエラーもよく出ます👇
 

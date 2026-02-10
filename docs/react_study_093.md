@@ -43,6 +43,9 @@ flowchart TB
 
 ## まずは形を覚えよう 🧩
 
+![react_study_093_current_box](./picture/react_study_093_current_box.png)
+
+
 ```tsx
 import { useRef } from "react";
 
@@ -60,6 +63,9 @@ countRef.current += 1; // 値は増える
 ---
 
 ## 例①：レンダリング回数を「こっそり」数える 🕵️‍♀️✨
+
+![react_study_093_secret_memo](./picture/react_study_093_secret_memo.png)
+
 
 「今何回レンダリングされた？」って、画面に出す必要はないけど知りたい時あるよね😆
 
