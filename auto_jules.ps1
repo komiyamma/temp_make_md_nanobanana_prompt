@@ -138,7 +138,16 @@ function Run-JulesForRange {
     # --- End Verification Step ---
 
     gh pr review $prUrl --approve --body "Approved by komiyamma automation script. Range: $targetRange"
+    
+    Write-Host "🛠️ PRをマージします: $prUrl" -ForegroundColor Cyan
     gh pr merge $prUrl --merge --delete-branch
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "❌ PRのマージに失敗しました。処理を中断します。"
+        return
+    }
+
+    Write-Host "⏳ GitHubへの反映と同期を待機中 (20秒)..." -ForegroundColor Gray
+    Start-Sleep -Seconds 20
 
     # 5. ローカルへの同期
     Write-Host "📥 ローカルの main ブランチを更新します..." -ForegroundColor Green
@@ -154,6 +163,7 @@ if ($Loop) {
     for ($i = 1; $i -le 1000; $i += 6) {
         $r = "$i-$($i + 5)"
         Run-JulesForRange -targetRange $r
+        Start-Sleep -Seconds 5
     }
 }
 elseif ($Range -and $Increment -gt 0) {
@@ -165,6 +175,9 @@ elseif ($Range -and $Increment -gt 0) {
             $subEnd = [Math]::Min($i + $Increment - 1, $endTotal)
             $r = "$i-$subEnd"
             Run-JulesForRange -targetRange $r
+            
+            # 少し待機して次のリクエストへ
+            Start-Sleep -Seconds 5
         }
     }
     else {
@@ -194,6 +207,7 @@ else {
             for ($i = $startTotal; $i -le $endTotal; $i += $inc) {
                 $subEnd = [Math]::Min($i + $inc - 1, $endTotal)
                 Run-JulesForRange -targetRange "$i-$subEnd"
+                Start-Sleep -Seconds 5
             }
         }
     }
