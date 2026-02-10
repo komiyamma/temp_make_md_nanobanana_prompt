@@ -124,6 +124,8 @@ function Hello() {
 
 （stateの詳しい使い方は後の章でたっぷりやるよ💪）
 
+![State Switch](./picture/react_study_001_state_switch.png)
+
 ---
 
 ## よくある誤解をサクッと解消❗️
