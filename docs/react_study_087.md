@@ -114,6 +114,8 @@ OKなら、`src/App.tsx` を編集していきましょう🧑‍💻
 
 `src/App.tsx` を、いったんまるっと書き換えてOKです👇
 
+![Unnecessary Calculation](./picture/react_study_087_unnecessary_calc.png)
+
 ```tsx
 import { useState, ChangeEvent } from "react";
 
@@ -226,6 +228,8 @@ export default App;
 2. `heavyCalculation(count)` を `useMemo` で包む
 
 ### 🔧 修正版コード（`useMemo` あり）
+
+![Smart Calculation](./picture/react_study_087_smart_calc.png)
 
 ```tsx
 import { useState, useMemo, ChangeEvent } from "react";

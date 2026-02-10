@@ -113,6 +113,8 @@ export const ChildButton = memo(ChildButtonComponent);
 
 ### 3-2. 親コンポーネント：`ParentCounter`
 
+![Reference Check](./picture/react_study_083_new_function_creation.png)
+
 次に、親コンポーネントを作ります。
 
 ```tsx
@@ -246,6 +248,8 @@ flowchart LR
 関数 Props が絡むと、`React.memo` が効きにくいパターンはいくつかあります。
 
 ### 6-1. JSX の中で匿名関数（アロー関数）を毎回作る
+
+![Inline Function Pitfall](./picture/react_study_083_inline_function.png)
 
 ```tsx
 <ChildButton onClick={() => alert("クリック")} />
