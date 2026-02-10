@@ -81,6 +81,9 @@ flowchart LR
 
 ## 5) ちょい応用：variantsで“読みやすく”する📦✨
 
+![react study 203 variants concept](./picture/react_study_203_variants_concept.png)
+
+
 同じアニメを他の場所でも使いたい時、`variants` が便利〜！🎀
 
 ```tsx
@@ -201,6 +204,9 @@ export default function App() {
 * `transition={{ duration: 0.25, ease: "easeOut" }}`
 
 ### ミッションB：気持ちいいバネにする🪀✨
+
+![react study 203 spring vs ease](./picture/react_study_203_spring_vs_ease.png)
+
 
 * `transition={{ type: "spring", stiffness: 420, damping: 28 }}`
   （バネは数字で感覚を掴むのがコツだよ〜！🥰）

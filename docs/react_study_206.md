@@ -86,6 +86,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 ## Step 2：Routes を AnimatePresence で包む 🎬
 
+![react study 206 routes key](./picture/react_study_206_routes_key.png)
+
+
 ポイントはここ！👇
 
 * `useLocation()` で現在の場所を取る
@@ -203,6 +206,9 @@ export default function About() {
 * ページ側に `exit` がない
 
 ### 2) ページがガタッとズレる 😵‍💫
+
+![react study 206 absolute position](./picture/react_study_206_absolute_position.png)
+
 
 ページは **重ねて** 動かすのがコツ！
 だからページ（`motion.main`）に
