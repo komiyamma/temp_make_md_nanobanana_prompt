@@ -103,7 +103,11 @@ render(<MyComponent />); // まず画面に映す
 
 // そのあと、screen から要素を探す
 const button = screen.getByRole('button', { name: '送信' });
+
+
 ```
+
+![getByRole Filter](./picture/react_study_153_get_by_role_filter.png)
 
 ポイント 💡
 
@@ -287,7 +291,11 @@ flowchart LR
 ```ts
 render(<Hello />);
 screen.debug(); // コンソールに今のDOMがドーンと出る
+
+
 ```
+
+![Debug Console](./picture/react_study_153_debug_console.png)
 
 ---
 

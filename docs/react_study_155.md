@@ -11,6 +11,9 @@
 * ✅ ボタンをクリックして **数が変わる**ことをテストできる
 * ✅ テストの基本形 **AAA（Arrange / Act / Assert）** が分かる🙆‍♀️
 
+![AAA Pattern](./picture/react_study_155_aaa_pattern.png)
+
+
 ---
 
 ## テストの流れを図でイメージしよ🧠✨
@@ -104,9 +107,13 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: "./src/setupTests.ts",
+
+
   },
 });
 ```
+
+![Setup Files](./picture/react_study_155_setup_files.png)
 
 ---
 
@@ -148,6 +155,8 @@ describe("Counter", () => {
     const plusButton = screen.getByRole("button", { name: "＋1" });
     fireEvent.click(plusButton);
 
+
+
     // Assert
     expect(screen.getByLabelText("count")).toHaveTextContent("1");
   });
@@ -185,6 +194,8 @@ describe("Counter", () => {
   });
 });
 ```
+
+![fireEvent Click](./picture/react_study_155_fire_event_click.png)
 
 ---
 

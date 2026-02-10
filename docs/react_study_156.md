@@ -40,11 +40,15 @@ import userEvent from "@testing-library/user-event";
 
 test("基本形", async () => {
   const user = userEvent.setup(); // ← まず作る✨
+
+
   render(<div />);
 
   // await user.click(...)
 });
 ```
+
+![User Setup](./picture/react_study_156_setup_user.png)
 
 ---
 
@@ -94,7 +98,10 @@ test("ボタンをクリックするとCountが増える🖱️", async () => {
 });
 ```
 
-> 💡ポイント：`await user.click(...)` を忘れると、操作が終わる前に `expect` しちゃって失敗しやすいよ⚠️ ([GitHub][2])
+> 💡ポイント：`await user.click(...)` を忘れると、操作が終わる前に `expect` しちゃって失敗しやすいよ⚠️
+
+![Await Interaction](./picture/react_study_156_await_interaction.png)
+ ([GitHub][2])
 
 ---
 
@@ -109,6 +116,8 @@ test("ボタンをクリックするとCountが増える🖱️", async () => {
 ### 入力系⌨️
 
 * `await user.type(input, "hello")`
+
+![Keyboard Type](./picture/react_study_156_keyboard_type.png)
 * `await user.clear(input)`
 * `await user.keyboard("{Enter}")`（キーボード操作）
 
