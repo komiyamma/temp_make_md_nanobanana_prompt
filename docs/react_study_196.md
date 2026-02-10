@@ -77,6 +77,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 ## 4) 送信中に変化するボタン（useFormStatus）を作る🔘✨
 
+![react study 196 use form status](./picture/react_study_196_use_form_status.png)
+
+
 `useFormStatus()` は **フォーム送信中かどうか**を子コンポーネント側で取れるよ！ ([React][4])
 
 `src/features/auth/SubmitButton.tsx`
@@ -103,6 +106,9 @@ export function SubmitButton({ idleText, pendingText }: Props) {
 ---
 
 ## 5) 新規登録ページ（/signup）を作る🆕💗
+
+![react study 196 use action state flow](./picture/react_study_196_use_action_state_flow.png)
+
 
 `src/features/auth/SignupPage.tsx`
 

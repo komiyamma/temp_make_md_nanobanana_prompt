@@ -34,6 +34,9 @@ flowchart TD
 
 ## 1) Supabase側：profilesテーブルを用意する 🐘🛠️
 
+![react study 195 rls security](./picture/react_study_195_rls_security.png)
+
+
 Supabaseでは、`auth.users` は直接APIで触れないので、**publicスキーマに profiles を作る**のが定番です。([Supabase][1])
 さらに **RLS（行レベルセキュリティ）** をONにして「本人だけ見れる」ようにします🔐([Supabase][2])
 
@@ -160,11 +163,17 @@ export async function getProfile(userId: string): Promise<Profile> {
 
 ## 5) React v19らしく：`use` + `Suspense` で表示する 🌈😺
 
+![react study 195 suspense loading](./picture/react_study_195_suspense_loading.png)
+
+
 Reactの `use(Promise)` は、Promiseの結果を **レンダー中に読めて**、`Suspense` の `fallback` が効きます。([React][5])
 
 ただし、毎回new Promiseだとつらいので、**Promiseをキャッシュ**します（ここ大事！）💡
 
 ### Promiseキャッシュ（超シンプル版）🧊
+
+![react study 195 promise cache map](./picture/react_study_195_promise_cache_map.png)
+
 
 `src/features/profile/profileResource.ts`
 

@@ -94,6 +94,9 @@ export function useAuth() {
 
 ## 2) ログアウトボタンを置く 🧸🖱️
 
+![react study 197 header switch](./picture/react_study_197_header_switch.png)
+
+
 よくあるのはヘッダー右上だね💡
 ログアウト中はボタンを無効にして「送信中…」っぽくすると親切だよ〜☺️
 
@@ -149,6 +152,9 @@ export function Header() {
 ---
 
 ## 3) 「ログイン必須ページ」は自動で追い出す 🛡️✨
+
+![react study 197 redirect force](./picture/react_study_197_redirect_force.png)
+
 
 ログアウト後に「戻るボタン」で戻っても、ログインしてないなら入れないようにするのが大事！💡
 `PrivateRoute`（またはそれ相当）がある前提で、こんな感じならOKだよ😊
