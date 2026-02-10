@@ -85,6 +85,8 @@ type UserContextValue = {
 
 ## 79-5. `UserProvider` の中で `useState` を使う 💾
 
+![react study 079 state in provider](./picture/react_study_079_state_in_provider.png)
+
 次は、**実際に状態を持つ `UserProvider` コンポーネント** を作ります。
 
 ポイントはこの3つ 💡
@@ -140,6 +142,8 @@ export function UserProvider({ children }: UserProviderProps) {
 ---
 
 ## 79-6. `useUserContext` カスタムフックで楽に使う 🧪
+
+![react study 079 hook guard](./picture/react_study_079_hook_guard.png)
 
 毎回 `useContext(UserContext)` を直接書くと、
 `undefined` チェックを書き忘れてバグりやすいので、
@@ -230,6 +234,8 @@ export function Header() {
 ---
 
 ## 79-9. フォームからユーザー名を「書き換える」コンポーネント ✏️
+
+![react study 079 update cycle](./picture/react_study_079_update_cycle.png)
 
 最後に、**フォームから名前を変更するコンポーネント**を作ります。
 

@@ -35,6 +35,8 @@ React v19 では `<UserNameContext>` 自体を Provider として使えるので
 
 ## 1️⃣ UserNameContext を作ろう
 
+![react study 078 context box](./picture/react_study_078_context_box.png)
+
 まずは「ユーザー名の置き場所（Context）」を作ります。
 `src/contexts/UserNameContext.tsx` を新規作成して、こんなコードを書きます 💻
 
@@ -91,6 +93,8 @@ export const useUserName = (): UserNameContextValue => {
 ---
 
 ## 2️⃣ App 全体を UserNameProvider で包む
+
+![react study 078 provider wrap](./picture/react_study_078_provider_wrap.png)
 
 次に、アプリ全体を `UserNameProvider` で包みます。
 `src/App.tsx` をこんな形にしてみましょう ✍️
@@ -154,6 +158,8 @@ export const Header = () => {
 ---
 
 ## 4️⃣ 入力欄でユーザー名を更新する
+
+![react study 078 input sync](./picture/react_study_078_input_sync.png)
 
 次は「変更する側」のコンポーネントです。
 `UserNameInput` という名前で作りましょう。
