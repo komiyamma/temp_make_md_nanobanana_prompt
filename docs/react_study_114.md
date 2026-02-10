@@ -114,6 +114,8 @@ export default function App() {
 
 ## 4. 「一番近い `Suspense` だけが反応する」ってどういうこと？🧱
 
+![react_study_114_nested_suspense](./picture/react_study_114_nested_suspense.png)
+
 `Suspense` は「**一番近い親だけ** が反応する」というルールがあります。([react.dev][1])
 
 もう少し複雑な例でイメージしてみましょう 👇
@@ -177,6 +179,8 @@ export default function App() {
 ---
 
 ## 5. 「`Suspense` は何もしてないように見える」の正体 🪄
+
+![react_study_114_suspense_mechanism](./picture/react_study_114_suspense_mechanism.png)
 
 React の公式ドキュメントでも書かれていますが、`<Suspense>` だけを置いても **勝手には何も起きません**。([react.dev][1])
 

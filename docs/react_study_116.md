@@ -100,6 +100,8 @@ export const usersPromise: Promise<User[]> = fetch(USERS_API_URL).then(
 
 ### ここが大事ポイント ✨
 
+![react_study_116_promise_location](./picture/react_study_116_promise_location.png)
+
 * **Promise をコンポーネントの外で作る**
   React 19 の `use` は、
   「同じ Promise を何度も使う（安定している）」ことが前提です。([tolu.se][2])
@@ -164,6 +166,8 @@ export function UserList() {
 ---
 
 ## 5. `Suspense` でローディング画面を包む 🎁
+
+![react_study_116_app_structure](./picture/react_study_116_app_structure.png)
 
 `UserList` だけ書いても、まだローディング表示は出ません。
 `Suspense` で包んであげる必要があります。

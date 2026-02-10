@@ -274,6 +274,8 @@ export default function App() {
 
 #### パターンB：`Suspense` を3つ置いてみる（本番）
 
+![react_study_117_suspense_structure](./picture/react_study_117_suspense_structure.png)
+
 次に、**それぞれのパネルを個別の `Suspense` で包んで** みましょう。
 
 ```
@@ -364,6 +366,8 @@ h1 {
 ---
 
 ## 4️⃣ 兄弟 `Suspense` vs ネストした `Suspense` 🧩
+
+![react_study_117_nested_vs_sibling](./picture/react_study_117_nested_vs_sibling.png)
 
 `Suspense` を複数置くときは、
 

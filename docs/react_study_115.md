@@ -132,6 +132,8 @@ export function App() {
 
 ### 5️⃣ `fallback` には何を置くと気持ちいい？ UX のコツ 💅
 
+![react_study_115_fallback_types](./picture/react_study_115_fallback_types.png)
+
 `fallback` は「待ち時間の顔」なので、**ユーザーの気持ちに優しい UI** にしてあげるのがポイントです💖
 
 #### 🌱 まずは文字だけでもOK
@@ -206,6 +208,8 @@ CSS でくるくるアニメーションをつけてあげるとかわいいで�
 ---
 
 ### 6️⃣ `fallback` の「範囲」を意識してみよう 📦
+
+![react_study_115_scope_visual](./picture/react_study_115_scope_visual.png)
 
 `fallback` は、**`<Suspense>` で囲んだ部分ぜんぶ** を一気に置き換えます。([デバッグベア][4])
 
