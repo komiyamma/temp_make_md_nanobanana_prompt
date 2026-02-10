@@ -33,6 +33,10 @@ flowchart TD
 
 ## 2) Playwrightの`expect`は2種類あるよ✨（ここ超大事！）
 
+![react study 235 waiter vs inspector](./picture/react_study_235_waiter_vs_inspector.png)
+
+
+
 ### ✅ A. Web-first（自動リトライ）アサーション（おすすめ）🌈
 
 たとえばこれ👇（**これが王道**）
@@ -153,6 +157,10 @@ await expect(
 
 ### ② `expect.soft`（まとめて失敗を見たい）🧸
 
+![react study 235 soft assertion](./picture/react_study_235_soft_assertion.png)
+
+
+
 「1個失敗したら即終了」だと、直す→次でまた失敗→…でつらい時あるよね🥲
 そんなときはソフトアサーション！
 
@@ -185,6 +193,10 @@ await expect.poll(async () => {
 ---
 
 ## 6) ハンズオン🎮：TODOアプリに“最低限の検証”を入れてみよう！
+
+![react study 235 todo verification](./picture/react_study_235_todo_verification.png)
+
+
 
 例として、`tests/todo.spec.ts` にこんなのを書いてみてね😊
 （URLや文言は自分のアプリに合わせてOK👌）

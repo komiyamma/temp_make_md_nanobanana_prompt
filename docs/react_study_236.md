@@ -7,6 +7,10 @@ Playwright の **Trace Viewer** を使えるようになると、デバッグ力
 
 ## 1) Trace Viewerってなに？🧳🕰️
 
+![react study 236 time travel](./picture/react_study_236_time_travel.png)
+
+
+
 Trace Viewerは、テスト実行中の記録（トレース）を見て、
 
 * どの操作で失敗した？😵
@@ -20,6 +24,10 @@ Trace Viewerは、テスト実行中の記録（トレース）を見て、
 ---
 
 ## 2) まずは「トレースを残す」設定をしよう📝🧪
+
+![react study 236 security camera](./picture/react_study_236_security_camera.png)
+
+
 
 Trace Viewerは「trace.zip」がないと見れないので、まずはトレースを出す設定をONにするよ！
 
@@ -116,6 +124,10 @@ flowchart TD
 ---
 
 ## 6) 失敗原因を見つける「黄金レシピ」🏆🍳
+
+![react study 236 detective footsteps](./picture/react_study_236_detective_footsteps.png)
+
+
 
 テスト落ちたら、この順で見ると早いよ💨
 
