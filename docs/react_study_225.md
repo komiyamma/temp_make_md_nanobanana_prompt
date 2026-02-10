@@ -79,6 +79,9 @@ AI_GATEWAY_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx
 
 ### 5) サーバー側：`/api/chat` を作る 🛣️
 
+![225 stream text process](./picture/react_study_225_stream_text_process.png)
+
+
 `app/api/chat/route.ts` を作って、これを貼ってね👇
 （もし `src/` を使う設定にしてたら `src/app/api/chat/route.ts` だよ！）
 
@@ -111,6 +114,9 @@ export async function POST(req: Request) {
 ---
 
 ### 6) フロント側：チャット画面を作る 💬🎀
+
+![225 auto scroll](./picture/react_study_225_auto_scroll.png)
+
 
 `app/chat/page.tsx` を作って貼ってね👇
 
