@@ -58,6 +58,8 @@ npm i jotai
 
 ## 2) `atom` を作ってみよう（最小の例）🍬
 
+![react_study_242_folder_structure.png](./picture/react_study_242_folder_structure.png)
+
 ### 📁おすすめの置き場所
 
 `src/atoms/` フォルダを作って、atomをまとめるのがスッキリします🧹✨
@@ -70,6 +72,9 @@ npm i jotai
 ---
 
 ## 3) 数字のatom（カウンター用）を作る 🔢
+
+![react_study_242_atom_number.png](./picture/react_study_242_atom_number.png)
+
 
 `src/atoms/counterAtom.ts`
 
@@ -88,6 +93,9 @@ export const countAtom = atom<number>(0);
 ---
 
 ## 4) オブジェクトのatom（ユーザー情報）を作る 🧑‍🎓✨
+
+![react_study_242_atom_object.png](./picture/react_study_242_atom_object.png)
+
 
 `src/atoms/userAtom.ts`
 
@@ -113,6 +121,9 @@ export const userAtom = atom<User>({
 ---
 
 ## 5) atomの「読み書き」は次章でやるけど…ちょい見せ👀✨
+
+![react_study_242_useatom_preview.png](./picture/react_study_242_useatom_preview.png)
+
 
 「atom作っただけだと動いてるか不安😵‍💫」ってなるので、超ミニで雰囲気だけ！
 

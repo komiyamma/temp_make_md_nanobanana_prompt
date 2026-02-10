@@ -34,6 +34,9 @@ flowchart TD
 
 ## 1) 認証状態を保存するフォルダを作る 📁✨
 
+![react_study_238_folder_structure.png](./picture/react_study_238_folder_structure.png)
+
+
 プロジェクト直下に `playwright/.auth` を作って、`.gitignore` に入れます。
 
 ### PowerShell（Windows）例
@@ -48,6 +51,9 @@ Playwright公式もこの `.auth` ディレクトリ運用を勧めています�
 ---
 
 ## 2) 1回だけログインして保存する「setupテスト」を作る 🔑🧡
+
+![react_study_238_setup_flow.png](./picture/react_study_238_setup_flow.png)
+
 
 `tests/auth.setup.ts` を作ります（ファイル名は `*.setup.ts` ならOK）✨
 
@@ -85,6 +91,8 @@ setup("authenticate", async ({ page }) => {
 ---
 
 ## 3) `playwright.config.ts` で「setup → 本番テスト」の順にする ⚙️🧩
+
+![react_study_238_project_dependency.png](./picture/react_study_238_project_dependency.png)
 
 ポイントはこれ👇
 
@@ -127,6 +135,9 @@ export default defineConfig({
 ## 4) テストを書く ✍️🧪
 
 ### A. 未ログインだと追い返されるテスト（超大事）🚪🙅‍♀️
+
+![react_study_238_bypass_state.png](./picture/react_study_238_bypass_state.png)
+
 
 これは「storageStateなし」でやりたいので、テスト内で一時的に無効化します👇
 

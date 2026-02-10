@@ -80,6 +80,9 @@ flowchart LR
 
 ## 4) 「アトミック」って結局なに？🌟（超ざっくり定義）
 
+![react_study_241_fridge_vs_tupperware.png](./picture/react_study_241_fridge_vs_tupperware.png)
+
+
 **アトミック状態管理 = 状態を “最小単位のパーツ” に分けて管理する考え方**です⚛️
 
 イメージで言うと…
@@ -97,10 +100,16 @@ flowchart LR
 
 ### ✅ ① 設計の方向が逆っぽい
 
+![react_study_241_bottom_up_design.png](./picture/react_study_241_bottom_up_design.png)
+
+
 * Zustand：トップダウン（まずストアを作って、そこに入れていく）📦
 * Jotai：ボトムアップ（必要なatomを作って、組み合わせていく）⚛️
 
 ### ✅ ② “依存関係”が自然に作れる
+
+![react_study_241_dependency_graph.png](./picture/react_study_241_dependency_graph.png)
+
 
 Jotaiは「atom → atom」みたいに、状態同士を組み合わせやすいです✨
 （例：`doubleCountAtom` は `countAtom` から計算）
@@ -113,6 +122,9 @@ Jotaiは「読むatom」「書くatom（アクション用）」を分けやす�
 ---
 
 ## 6) どっちを使うの？迷ったらこれ💡
+
+![react_study_241_selection_guide.png](./picture/react_study_241_selection_guide.png)
+
 
 ざっくり目安です😊
 
