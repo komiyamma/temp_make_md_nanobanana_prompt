@@ -134,6 +134,8 @@ src/
 ---
 
 ## 5️⃣ `useLocalStorage` を実装してみよう ✍️
+![react_study_137_json_conversion.png](./picture/react_study_137_json_conversion.png)
+
 
 `useLocalStorage.ts` に、まずはシンプルな完成形を書きます。
 
@@ -205,6 +207,8 @@ const readValue = () => {
   → 「壊れててもアプリが落ちない」ようにしてあげるのが優しさ 🥹
 
 #### ✅ ② `useState<T>(readValue)`
+![react_study_137_lazy_initialization.png](./picture/react_study_137_lazy_initialization.png)
+
 
 ```ts
 const [value, setValue] = useState<T>(readValue);

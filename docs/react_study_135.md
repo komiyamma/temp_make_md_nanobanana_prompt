@@ -241,6 +241,8 @@ export function ToggleObjectExample() {
 ```
 
 #### 📝 「タプル」vs「オブジェクト」どっちがいいの？
+![react_study_135_tuple_vs_object.png](./picture/react_study_135_tuple_vs_object.png)
+
 
 ざっくりした目安はこんな感じです👇
 

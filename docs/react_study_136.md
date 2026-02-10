@@ -145,6 +145,8 @@ React＋TS ではこれを
 ---
 
 ## 7️⃣ `useEffect` を組み合わせて完成させる 🧩
+![react_study_136_event_lifecycle.png](./picture/react_study_136_event_lifecycle.png)
+
 
 では、全部まとめて `useWindowSize` を完成させましょう！
 
@@ -231,6 +233,8 @@ sequenceDiagram
 ---
 
 ## 9️⃣ 実際にコンポーネントから使ってみよう 🧪
+![react_study_136_breakpoints.png](./picture/react_study_136_breakpoints.png)
+
 
 次は、このフックを **画面から使ってみるデモ** を作ります。
 
