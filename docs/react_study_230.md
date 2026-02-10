@@ -80,6 +80,8 @@ OPENAI_API_KEY=あなたのOpenAIのAPIキー
 
 ## 4) サーバ（Express）を書く🛰️
 
+![react study 230 server mode switch](./picture/react_study_230_server_mode_switch.png)
+
 ### 4-1. `server/index.ts` を作成📄
 
 プロジェクト直下に `server` フォルダを作って、その中に `index.ts` を作るよ！
@@ -160,6 +162,8 @@ app.listen(8787, () => {
 
 ## 5) Vite の proxy 設定（フロント→サーバに中継）🛣️
 
+![react study 230 vite proxy bridge](./picture/react_study_230_vite_proxy_bridge.png)
+
 ### `vite.config.ts` を編集🧩
 
 ```ts
@@ -185,6 +189,8 @@ CORSで悩みがちポイントをショートカットできるよ〜😺
 ## 6) フロント（React）を書く🎨✨
 
 ### 6-1. `src/App.tsx` を置き換え✍️
+
+![react study 230 selection logic](./picture/react_study_230_selection_logic.png)
 
 ```tsx
 // src/App.tsx
