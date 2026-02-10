@@ -55,6 +55,9 @@ useEffect(() => {
 
 ## 2️⃣ いつ `useEffect` が動くの？図でイメージしよう 🎨
 
+![react_study_058_execution_flow.png](./picture/react_study_058_execution_flow.png)
+
+
 Mermaid でざっくり図にしてみます👇
 
 ```mermaid
@@ -193,6 +196,9 @@ export function SearchBox() {
 
 ## 5️⃣ 「変わったかどうか」はどう判定しているの？🧐
 
+![react_study_058_primitive_vs_object.png](./picture/react_study_058_primitive_vs_object.png)
+
+
 React は、依存配列の中を **1つずつ前回と今回で比較** しています。([react.dev][1])
 
 * `number`, `string`, `boolean` みたいな**プリミティブ型**は、値が違えば「変わった」と判定。
@@ -218,6 +224,9 @@ React も同じように、依存配列の比較で
 ---
 
 ## 6️⃣ オブジェクト・配列を依存配列に入れるときの例 😵‍💫
+
+![react_study_058_object_dependency_fix.png](./picture/react_study_058_object_dependency_fix.png)
+
 
 ### ❌ あまりよくない例
 
@@ -271,6 +280,9 @@ export function GoodExample() {
 ---
 
 ## 7️⃣ よくあるミス＆「こう考えると楽」Tips 💡
+
+![react_study_058_missing_dependency.png](./picture/react_study_058_missing_dependency.png)
+
 
 ### ❌ ミス1：依存配列を適当に空にしちゃう
 
