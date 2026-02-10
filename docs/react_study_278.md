@@ -47,6 +47,9 @@ npm i -D tsx
 
 ## 2) Resend の API Key を用意して .env に入れる🔑🙈
 
+![API Key Setup in .env](./picture/react_study_278_api_key_env.png)
+
+
 ### やること
 
 1. Resend のダッシュボードで **API Key** を発行
@@ -173,6 +176,9 @@ npm run send
 ```
 
 成功したら `送信OK🎉 id: ...` みたいに出るはず！
+
+![Sending Success Log](./picture/react_study_278_success_log.png)
+
 
 ---
 

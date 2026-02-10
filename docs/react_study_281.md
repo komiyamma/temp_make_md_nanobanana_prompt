@@ -58,6 +58,9 @@ end
 
 ## 3) エッジが嬉しい理由トップ5 🥇😆
 
+![Edge Computing Benefits](./picture/react_study_281_edge_benefits.png)
+
+
 ### ① 体感が速い（距離が短い）🚀
 
 ユーザーの近くで返すから、**待ち時間が減りやすい**！
@@ -116,6 +119,9 @@ React（フロント）って「ブラウザで動く」けど、現代のアプ
 ---
 
 ## 6) ミニ体験：エッジの「最寄り拠点」を見てみよう🔍⚡（Windows）
+
+![Cloudflare Trace Output](./picture/react_study_281_cdn_trace.png)
+
 
 Cloudflareの「どの拠点につながったか」を見る、超かんたん体験🎮✨
 

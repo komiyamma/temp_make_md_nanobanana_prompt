@@ -40,6 +40,9 @@ flowchart LR
 ## 2) `emails/ReceiptEmail.tsx` を作る🧾✨（完成コード）
 
 > ここでは Tailwind を使って “それっぽい領収書” にするよ🎀
+
+![Tailwind Styling for Email](./picture/react_study_280_tailwind_style.png)
+
 > React Email の Tailwind ラッパー（`Tailwind` + `pixelBasedPreset`）を使うのがおすすめ！ ([React Email][3])
 
 ```tsx
@@ -246,6 +249,9 @@ ReceiptEmail.PreviewProps = {
 ---
 
 ## 3) プレビューで確認しよう👀✨
+
+![Receipt Email Preview UI](./picture/react_study_280_preview_ui.png)
+
 
 React Email の CLI で開発サーバを起動するよ〜！
 
