@@ -92,6 +92,9 @@ React の公式ドキュメントには、
 
 ### なぜ `try-catch` じゃダメなの？
 
+![react_study_118_try_catch_fail](./picture/react_study_118_try_catch_fail.png)
+
+
 * コンポーネントの関数自体を **呼んでいるのは React 本体** だから
 * レンダリング中に起きたエラーは、**React が「上方向」に伝播させてエラーバウンダリに届ける** 仕組みになっているから([Epic React][4])
 
@@ -128,6 +131,9 @@ flowchart TD
 ---
 
 ## 4️⃣ エラー処理の選択肢はざっくり 2 パターン 🌈
+
+![react_study_118_error_patterns](./picture/react_study_118_error_patterns.png)
+
 
 React 19 の `use` ベースの世界では、だいたい次の 2 パターンで考えます。
 
