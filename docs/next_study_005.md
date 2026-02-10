@@ -18,6 +18,8 @@
 
 ### 結論：**ブラウザでしかできないこと**をやる時！🌐✨
 
+![Interaction Examples](./picture/next_study_005_interaction_examples.png)
+
 Client Component が必要になる代表例はこれ👇
 
 * クリックなどのイベント（`onClick` / `onChange`）🖱️
