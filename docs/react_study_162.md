@@ -82,6 +82,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 ---
 
 ## 3) `useQuery` の最小セットを覚える（これが第162章の核心🔥）
+![Query Key as Address](./picture/react_study_162_query_key_address.png)
+
 
 `useQuery` は基本 **この2つが必須**👇
 
@@ -94,6 +96,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 ---
 
 ## 4) 実際に1本作ろう🍰（ユーザー一覧を取って表示）
+![Fetch Error Handling Check](./picture/react_study_162_fetch_ok_check.png)
+
 
 ### (A) まず「取得する関数」を作る📡
 

@@ -198,6 +198,8 @@ export default function App() {
 ---
 
 ## 4) ここで確認！👀📡（超たいせつ）
+![Double Fetch Problem](./picture/react_study_161_double_fetch.png)
+
 
 ブラウザの DevTools を開いて（F12）👉 Network タブを見ると…
 
@@ -210,6 +212,8 @@ export default function App() {
 ---
 
 ## さらに地獄が深くなるポイント 🔥（あるある）
+![Manual State Management Chaos](./picture/react_study_161_state_chaos.png)
+
 
 今のコード、まだ序盤の“かわいい地獄”で…ここから増える😇
 
