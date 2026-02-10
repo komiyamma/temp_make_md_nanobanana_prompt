@@ -70,6 +70,9 @@ export function App() {
 
 ## 3️⃣ `useId` の正体：コンポーネント専用の「かぶらないIDメーカー」🆔✨
 
+![react_study_110_id_generator](./picture/react_study_110_id_generator.png)
+
+
 `useId` は React が用意してくれているフックで、
 
 > 「このコンポーネント用の、他と被らないID文字列」を返してくれる
@@ -167,6 +170,9 @@ graph LR
 ---
 
 ## 6️⃣ ちょっとレベルアップ：補足テキストやエラー文にもIDを使う 📝
+
+![react_study_110_aria_connection](./picture/react_study_110_aria_connection.png)
+
 
 フォームって、入力欄だけじゃなくて：
 
