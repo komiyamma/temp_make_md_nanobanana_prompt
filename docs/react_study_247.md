@@ -31,6 +31,8 @@ flowchart LR
 ---
 
 ## 1) いちばん基本：ダークモードを保存する 🌙☀️
+![react_study_247_persistence.png](./picture/react_study_247_persistence.png)
+
 
 ### `src/atoms/themeAtom.ts` を作る✍️
 
@@ -103,6 +105,8 @@ export const darkModeAtom = atomWithStorage("myapp:darkMode", false, undefined, 
 ---
 
 ## 3) `RESET`：保存も状態も「初期化！」🧼🗑️
+![react_study_247_reset_action.png](./picture/react_study_247_reset_action.png)
+
 
 「設定をリセット」ボタン、よくあるよね〜！それ簡単に作れるよ🥳
 

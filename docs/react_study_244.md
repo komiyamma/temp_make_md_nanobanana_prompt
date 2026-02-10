@@ -11,6 +11,8 @@
 ---
 
 ## 1) まずは超シンプル例：合計金額を“派生アトム”にする💰➕💰
+![react_study_244_calculation_machine.png](./picture/react_study_244_calculation_machine.png)
+
 
 ### ✅ 作りたいもの
 
@@ -78,6 +80,8 @@ export default function App() {
   const [tax, setTax] = useAtom(taxAtom);
 
   // ✅ 派生アトムは「読むだけ」なので、取り出しは1個でOK（setterは使わない）
+![react_study_244_readonly_rule.png](./picture/react_study_244_readonly_rule.png)
+
   const [total] = useAtom(totalAtom);
   const [label] = useAtom(labelAtom);
 

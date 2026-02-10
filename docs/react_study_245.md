@@ -29,7 +29,9 @@ flowchart LR
 
 ## Write-only Atomの基本形✍️
 
-Write-only Atomはだいたいこの形👇（最初の値を **null** にするのが定番！） ([tutorial.jotai.org][1])
+Write-only Atomはだいたいこの形👇（最初の値を **null** にするのが定番！）
+![react_study_245_null_convention.png](./picture/react_study_245_null_convention.png)
+ ([tutorial.jotai.org][1])
 
 ```ts
 import { atom } from 'jotai'
@@ -216,6 +218,8 @@ export default function App() {
 ---
 
 ## なんで「Write-only」で分けるのが嬉しいの？🥰🌟
+![react_study_245_read_write_separation.png](./picture/react_study_245_read_write_separation.png)
+
 
 1. **UIがスッキリ**：クリックしたら Action を呼ぶだけ🖐️
 2. **ロジックが再利用しやすい**：別コンポーネントでも同じActionを呼べる✨
