@@ -133,6 +133,9 @@ export function App() {
 
 1. **配列のインデックス**（`index`）
 
+![react study 044 index key problem](./picture/react_study_044_index_key_problem.png)
+
+
 ```tsx
 {fruits.map((fruit, index) => (
   <li key={index}>{fruit.name}</li> // ← なるべくNG
@@ -161,6 +164,9 @@ React の `useId` は「アクセシビリティ用のユニークID」を作る
 ---
 
 ## 44-6. `key` はどこに書くの？（コンポーネント版）🧩
+
+![react study 044 key placement rule](./picture/react_study_044_key_placement_rule.png)
+
 
 配列を `.map()` しているのが `<li>` じゃなくて、
 自作コンポーネント `<TodoItem />` の場合もよくあります。

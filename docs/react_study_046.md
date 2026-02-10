@@ -125,6 +125,9 @@ flowchart TD
 
 #### ❌ 他のプロパティを消してしまうパターン
 
+![react study 046 spread syntax layer](./picture/react_study_046_spread_syntax_layer.png)
+
+
 ```tsx
 function badChangeName() {
   // name だけ変えたいつもり…
@@ -197,6 +200,9 @@ setProfile((prev) => ({
 ---
 
 ### 6. 注意④：ネストしたオブジェクトは“二段階コピー”になる 🏯
+
+![react study 046 nested update flow](./picture/react_study_046_nested_update_flow.png)
+
 
 Profile に「住所」まで入れたくなったとします。
 
