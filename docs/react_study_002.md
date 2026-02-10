@@ -101,6 +101,8 @@ function Counter() {
 
 ## コンポーネントだから“増えても怖くない”🧱🧱🧱
 
+![react_study_002_component_reusability.png](./picture/react_study_002_component_reusability.png)
+
 画面を **部品（コンポーネント）** に分けて、**組み合わせ**で作れるのがReactの強み。
 1つのページに機能が増えても、**部品ごと**に責任範囲を区切れるよ👍
 
@@ -119,6 +121,8 @@ flowchart TD
 ---
 
 ## Reactがうれしい場面 💡
+
+![react_study_002_dynamic_ui_usecase.png](./picture/react_study_002_dynamic_ui_usecase.png)
 
 ```mermaid
 flowchart TD
@@ -156,6 +160,8 @@ flowchart LR
 ---
 
 ## チーム開発で光る✨ “読みやすさ＆変更の強さ”
+
+![react_study_002_team_development.png](./picture/react_study_002_team_development.png)
 
 * **読みやすさ**：UIの完成形が**JSXにまとまる**から迷子になりにくい
 * **変更の強さ**：部品単位で変更できるので、**影響範囲が小さい**

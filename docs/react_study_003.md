@@ -41,6 +41,8 @@ graph TD
 
 ### 1) `ProfileCard.tsx` を新規作成 ✍️
 
+![react_study_003_props_injection.png](./picture/react_study_003_props_injection.png)
+
 ```tsx
 // src/components/ProfileCard.tsx
 type ProfileCardProps = {
@@ -180,6 +182,8 @@ mindmap
 
 ## “状態を持つ部品”と“見た目だけの部品” 🧠👀
 
+![react_study_003_smart_vs_dumb.png](./picture/react_study_003_smart_vs_dumb.png)
+
 * **Presentational（見た目）**：表示専用（`ProfileCard`, `Card`）
 * **Stateful（状態あり）**：動き・インタラクションを持つ（`Counter`, `Modal` など）
 
@@ -230,6 +234,8 @@ flowchart LR
 ---
 
 ## よくあるNG & その直し方 🙅‍♀️➡️🙆‍♀️
+
+![react_study_003_monolith_vs_modular.png](./picture/react_study_003_monolith_vs_modular.png)
 
 * **NG:** なんでもかんでも `App.tsx` に書いちゃう（**巨大コンポーネント**）
   **OK:** ファイルを分ける。**1ファイル=1責務** を目指す🗂️
