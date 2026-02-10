@@ -159,6 +159,9 @@ flowchart TD
 
 ### 💥 つらみ 1：毎回ほぼ同じコードを書くハメに
 
+![react_study_111_boilerplate_fatigue](./picture/react_study_111_boilerplate_fatigue.png)
+
+
 画面が増えるたびに、こんな感じのコードを何度も書くことになります。
 
 * `const [isLoading, setIsLoading] = useState(true);`
@@ -196,6 +199,9 @@ useEffect(() => {
 ---
 
 ### 💥 つらみ 3：リクエストのキャンセル問題 🚫
+
+![react_study_111_race_condition](./picture/react_study_111_race_condition.png)
+
 
 ユーザーが画面を切り替えたり、検索条件を素早く変えたりすると、
 

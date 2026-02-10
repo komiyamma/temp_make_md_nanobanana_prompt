@@ -31,6 +31,9 @@ flowchart TD
 
 ## useImperativeHandleってなに？🤔
 
+![react_study_108_restrict_access](./picture/react_study_108_restrict_access.png)
+
+
 「refを使って親から操作できるようにする」だけなら、子の中のDOM（inputとか）をそのまま渡しがち💦
 でもそれだと親が **なんでもできちゃう**（＝壊しやすい）😇
 
@@ -226,6 +229,9 @@ classDiagram
 ---
 
 ## 練習問題（やってみよ〜！）📝✨
+
+![react_study_108_clear_function](./picture/react_study_108_clear_function.png)
+
 
 ### 練習1：clear も公開してみよう🧹
 

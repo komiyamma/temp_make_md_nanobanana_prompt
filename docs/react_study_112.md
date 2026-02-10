@@ -12,6 +12,9 @@
 
 ## 1. `use(Promise)` ってなに？🌊
 
+![react_study_112_unwrap_promise](./picture/react_study_112_unwrap_promise.png)
+
+
 React v19 で入った新しい API `use` は、
 
 > 「Promise や Context から値を“そのまま”取り出すためのフック」
@@ -203,6 +206,9 @@ export default App;
 ---
 
 ## 5. `use(Promise)` を使うときのルールまとめ 📏
+
+![react_study_112_caching_rule](./picture/react_study_112_caching_rule.png)
+
 
 ちょっとだけ真面目な話もしましょう。
 

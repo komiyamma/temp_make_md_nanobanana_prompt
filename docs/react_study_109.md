@@ -48,6 +48,9 @@ sequenceDiagram
 
 ## 3️⃣ まずは「公開するハンドルの型」を決める 🧩
 
+![react_study_109_handle_type](./picture/react_study_109_handle_type.png)
+
+
 「親が触っていいのは `focus` だけ」にしたいので、
 **`focus()` メソッドだけを持つ型** を作ります。
 
@@ -261,6 +264,9 @@ type MyInputProps = {
 ---
 
 ## 9️⃣ よくあるハマりポイント 🐛
+
+![react_study_109_dependency_mistake](./picture/react_study_109_dependency_mistake.png)
+
 
 ### ❌ 1. `ref.current.focus()` と書いて `.focus` を忘れる
 
