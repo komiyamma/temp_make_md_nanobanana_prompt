@@ -17,6 +17,9 @@
 
 ## 1️⃣ おさらい：`useEffect` と「見張りリスト」って？
 
+![react_study_059_frequency_comparison.png](./picture/react_study_059_frequency_comparison.png)
+
+
 `useEffect` は「画面の表示以外の仕事（副作用）」をやらせるためのフックでしたね。
 第58章でやったとおり、第二引数の「見張りリスト（依存配列・dependency array）」が
 
@@ -39,6 +42,9 @@
 ---
 
 ## 2️⃣ `[]` の意味：「初回マウント時だけやってね」
+
+![react_study_059_empty_array_visual.png](./picture/react_study_059_empty_array_visual.png)
+
 
 コードの形はこれ👇
 
@@ -147,6 +153,9 @@ sequenceDiagram
 
 ## 5️⃣ どんな時に `[]` を使う？💡
 
+![react_study_059_eslint_warning.png](./picture/react_study_059_eslint_warning.png)
+
+
 `[]` は「**初期設定だけしたいとき**」に向いています。
 
 例としては…
@@ -187,6 +196,9 @@ sequenceDiagram
 ---
 
 ## 6️⃣ 「え？2回動いてない？」Strict Mode の小ネタ 🤔
+
+![react_study_059_strict_mode_double.png](./picture/react_study_059_strict_mode_double.png)
+
 
 React 18 以降、開発モードで `StrictMode` がオンになっていると
 

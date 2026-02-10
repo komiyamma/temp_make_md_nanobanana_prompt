@@ -12,6 +12,9 @@
 
 ## 1️⃣ 「お片付け」ってなに？ざっくりイメージ
 
+![react_study_062_memory_leak.png](./picture/react_study_062_memory_leak.png)
+
+
 `useEffect` は、
 
 * ✅ 画面に表示されたあとに
@@ -38,6 +41,9 @@
 ---
 
 ## 2️⃣ React とクリーンアップの流れを図で見てみよう 🧠
+
+![react_study_062_cleanup_cycle.png](./picture/react_study_062_cleanup_cycle.png)
+
 
 `useEffect` とクリーンアップがいつ動くのか、
 ざっくりの流れを Mermaid で図解してみます ✏️
@@ -217,6 +223,9 @@ useEffect(() => {
 
 ## 6️⃣ 実例①：`window` のイベントリスナーを片付ける 🧏‍♀️
 
+![react_study_062_event_listener_cleanup.png](./picture/react_study_062_event_listener_cleanup.png)
+
+
 よくあるのが「画面サイズが変わったらなにかする」やつです。
 
 ### ✨ やりたいこと
@@ -311,6 +320,9 @@ TypeScript 的ポイント ✨
 ---
 
 ## 8️⃣ 「開発モードだと2回動いてるっぽい？」問題 🤯
+
+![react_study_062_strict_mode_cleanup.png](./picture/react_study_062_strict_mode_cleanup.png)
+
 
 React 18 以降（そして 19 でも継続予定）では、
 `<StrictMode>` が有効だと **開発モードだけ**、

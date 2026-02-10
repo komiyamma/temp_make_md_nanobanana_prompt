@@ -18,6 +18,9 @@
 
 ## 61-1. まずはおさらい：`useEffect` の3パターン 🧠
 
+![react_study_061_three_patterns.png](./picture/react_study_061_three_patterns.png)
+
+
 ざっくり復習すると、`useEffect` はこんな感じで使ってきました：
 
 1. **見張りリストなし**（この章の主役）
@@ -50,6 +53,9 @@ useEffect(() => {
 ---
 
 ## 61-2. 見張りリストなし：何が起きているの？🔍
+
+![react_study_061_every_render.png](./picture/react_study_061_every_render.png)
+
 
 試しに、こんなカウンターを考えてみます。
 
@@ -165,6 +171,9 @@ useEffect(() => {
 でも、知識として「こういう場面ならありかも」という例も置いておきます。
 
 ### 例1：デバッグ用のログ 👀
+
+![react_study_061_debug_log.png](./picture/react_study_061_debug_log.png)
+
 
 「レンダリングのたびに何が起きているか見たい」ときだけ、一時的に使うやつ。
 
