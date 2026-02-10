@@ -50,6 +50,8 @@ npx shadcn@latest add calendar popover button
 （Popover と Calendar は公式でもこの構成で Date Picker を作る想定だよ）([Shadcn][1])
 
 ### ✅ 日付表示をきれいにするため（date-fns）
+![react_study_217_date_fns_formatting](./picture/react_study_217_date_fns_formatting.png)
+
 
 公式サンプルは `date-fns` の `format()` を使ってるよ💅([Shadcn][1])
 
@@ -136,6 +138,8 @@ export default function App() {
 ---
 
 ## 6) 「選んだら閉じる」版にしたい人へ✅（ワンランクUP✨）
+![react_study_217_popover_interaction](./picture/react_study_217_popover_interaction.png)
+
 
 公式の例みたいに、`open` をStateで持つと「選んだら閉じる」ができるよ！([Shadcn][1])
 
