@@ -14,6 +14,8 @@
 
 ## まずは全体イメージをつかもう 🧭
 
+![App.tsx Linking to Components](./picture/react_study_017_import_link.png)
+
 ```mermaid
 flowchart TD
   A[src/App.tsx] --> B[src/components/HelloName.tsx]
@@ -71,6 +73,8 @@ export default function App() {
 ---
 
 ## ステップ2：default export と named export の使い分け 🧠
+
+![Default vs Named Export](./picture/react_study_017_default_vs_named.png)
 
 ### どっちを使う？
 
@@ -155,6 +159,8 @@ import Button, { Danger } from "./components/Button";
 ---
 
 ## ありがちエラーと秒速リカバリ 🧯
+
+![Import Path Troubleshooting](./picture/react_study_017_path_error.png)
 
 ```mermaid
 flowchart TD

@@ -18,6 +18,7 @@
 
 ![Style Palette](./picture/react_study_015_style_palette.png)
 
+![Anatomy of Double Curly Braces](./picture/react_study_015_double_curly.png)
 
 ```mermaid
 flowchart TD
@@ -34,6 +35,8 @@ flowchart TD
 ---
 
 ## まずは最小コード ✨
+
+![CSS to camelCase Transformation](./picture/react_study_015_camelcase_prop.png)
 
 ```tsx
 export default function App() {
@@ -72,6 +75,8 @@ export default function App() {
 ---
 
 ## 文字列？数値？単位のルール早見表 📋
+
+![CSS Unit Rules in React](./picture/react_study_015_units_rule.png)
 
 | 例          | 書き方（JSX）                                                        | 実際のCSS                   |
 | ---------- | --------------------------------------------------------------- | ------------------------ |
@@ -140,6 +145,8 @@ const style: React.CSSProperties = {
 ---
 
 ## `className` と `style` の使い分け 🎯
+
+![Style vs className Decision](./picture/react_study_015_style_vs_class.png)
 
 ```mermaid
 flowchart TD

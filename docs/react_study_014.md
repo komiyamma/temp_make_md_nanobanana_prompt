@@ -15,6 +15,8 @@
 
 ## JSXで `{}` が使える場所マップ 🗺️
 
+![JSX Curly Braces Usage Map](./picture/react_study_014_curly_map.png)
+
 ```mermaid
 flowchart TD
     A[JSの値/式]
@@ -103,6 +105,8 @@ const size = 24;
 
 ## `{}` の中は “式” だけ：条件分岐パターン3️⃣
 
+![Conditional Rendering Patterns](./picture/react_study_014_conditional_patterns.png)
+
 ### 1) 三項演算子 `? :`（王道）
 
 ```tsx
@@ -126,6 +130,8 @@ const size = 24;
 ---
 
 ## 配列を `{}` で並べる（超よく使う！）🧵
+
+![Array.map to UI List](./picture/react_study_014_array_map.png)
 
 ```tsx
 const items = ["抹茶ラテ", "いちごみるく", "チャイ"];
@@ -238,6 +244,8 @@ export default function Inbox() {
 ---
 
 ## つまずきレスキュー 🧯
+
+![Object Rendering Error](./picture/react_study_014_object_error.png)
 
 * **「Objects are not valid as a React child」**
   → オブジェクトを直接出してるかも。**`JSON.stringify(obj)`** で確認 or 欲しいフィールドだけ出す
