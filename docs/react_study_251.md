@@ -17,6 +17,10 @@
 
 ## 2) そもそも「Valibot」って何が嬉しいの？🧸✨
 
+![251 bundle size comparison](./picture/react_study_251_bundle_size_comparison.png)
+
+
+
 Valibotは公式でも「**バンドルサイズ・型安全・開発体験**」を重視してるよ〜って言ってるタイプのライブラリだよ📦✨ ([Valibot][2])
 
 特にフロント（ブラウザ）だと…
@@ -129,6 +133,10 @@ Valibotも `parse()` は失敗時 throw、`safeParse()` は成功/失敗を分�
 ---
 
 ## 6) 「で、結局どっちを採用する？」の決め方🎯✨
+
+![251 decision flow](./picture/react_study_251_decision_flow.png)
+
+
 
 迷ったらこのルールが超ラク！🫶
 

@@ -80,12 +80,20 @@ const UserSchema = v.object({
 Valibotの `object()` は **知らないキー（余計な項目）を出力から落とします**。
 「指定したentriesだけが出力に残る」って公式に書かれてます🧹✨ ([valibot.dev][5])
 
+![252 object stripping](./picture/react_study_252_object_stripping.png)
+
+
+
 ---
 
 ## 6) “チェック結果”を見る（safeParseを軽く使うよ）🧪
 
 今回は結果が見やすい `safeParse` を使ってみます（詳しくは後の章でガッツリ！）😊
 `success: true` なら `output`、ダメなら `issues` が取れます([valibot.dev][6])
+
+![252 safeparse result](./picture/react_study_252_safeparse_result.png)
+
+
 
 ### まずは `src/valibotDemo.ts` を作ってみてね📝
 
