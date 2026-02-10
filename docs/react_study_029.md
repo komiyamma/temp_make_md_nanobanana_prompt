@@ -52,6 +52,8 @@ sequenceDiagram
 
 ## 2️⃣ フォルダとファイルを用意しよう
 
+![File Structure Creation](./picture/react_study_029_file_creation.png)
+
 プロジェクトはすでに Vite + React + TS で作ってある前提で進めます（`npm create vite@latest` → `react-ts` を選んだやつ）✨
 
 1. `src` フォルダの中に **`components` フォルダ**を作る
@@ -180,6 +182,8 @@ export default function App() {
 
 ### ❌ `onClick={handleIncrement()}` と書いちゃう問題
 
+![onClick Syntax Mistake](./picture/react_study_029_onclick_mistake.png)
+
 ついこう書きたくなるかもしれません 👇
 
 ```tsx
@@ -244,6 +248,8 @@ function handleReset() {
 ---
 
 ### 🔸 練習2：ボタンに「強調」スタイルを付けてみる
+
+![Button Styling Transformation](./picture/react_study_029_button_styling.png)
 
 `Button.tsx` の `<button>` に、ちょっとだけ見た目を可愛くするためにインラインスタイルを追加してみてください 🎀
 

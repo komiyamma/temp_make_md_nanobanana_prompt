@@ -88,6 +88,8 @@ const [count, setCount] = useState(0);
 
 ### 🧩 `[count, setCount]` の意味（配列の分割代入）
 
+![useState Destructuring](./picture/react_study_032_destructuring_visual.png)
+
 `useState` は、**「2つ入った配列」みたいなもの**を返してきます。
 
 * 1つ目 → **今の値**（Stateそのもの）
@@ -180,6 +182,8 @@ flowchart TD
 `useState` はちょっとお行儀にうるさい子なので、**ルール**もセットで覚えましょう🐈‍⬛
 
 ### ✅ ルール1：コンポーネントの「トップレベル」で呼ぶ
+
+![Rules of Hooks: Top Level](./picture/react_study_032_rules_top_level.png)
 
 **ダメな例**（if の中で使ってる）：
 

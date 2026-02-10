@@ -52,6 +52,8 @@ export function App() {
 
 ## 3️⃣ `name?: string` ってどういう意味？🤔
 
+![Optional Props Visualization](./picture/react_study_030_optional_concept.png)
+
 オプショナルPropsの例はこちら👇
 
 ```tsx
@@ -183,6 +185,8 @@ export function App() {
 
 ### パターン①：`??`（null合体演算子）でデフォルト文字列を出す
 
+![Nullish Coalescing Operator](./picture/react_study_030_null_coalescing.png)
+
 ```tsx
 type GreetingProps = {
   name?: string;
@@ -201,6 +205,8 @@ function Greeting({ name }: GreetingProps) {
 * `name` が `undefined` → `"ゲスト"`
 
 ### パターン②：分割代入のところでデフォルト値をつける
+
+![Default Value in Destructuring](./picture/react_study_030_default_destructuring.png)
 
 もっと短く書くならこちらもおすすめです👇
 
