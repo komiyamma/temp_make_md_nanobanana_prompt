@@ -7,6 +7,9 @@
 
 ## 1. `<a>` と `<Link>` のちがいをざっくり 🎓
 
+![react study 145 spa transition](./picture/react_study_145_spa_transition.png)
+
+
 HTML でページ移動といえば、ふつうはこれですよね：
 
 ```html
