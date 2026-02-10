@@ -13,6 +13,8 @@ Next.js は **App Router が基本**になっていて、**React 19 系の流れ
 
 ---
 
+![next_index_app_router_folders.png](./picture/next_index_app_router_folders.png)
+
 ## 図解①：App Router の「フォルダ＝画面」感 🗂️🧭
 
 ```mermaid
@@ -31,6 +33,9 @@ flowchart TD
 ---
 
 ## 🌱 Module 1：Next.jsってなに？全体像をつかむ（1〜10章）✨
+
+![next_index_roadmap_path.png](./picture/next_index_roadmap_path.png)
+
 
 * **第1章：Next.js は「Reactに翼をつける」感じ🪽**
 * **第2章：できること一覧：ルーティング/SSR/SEO/APIまで！🧰**
@@ -80,6 +85,8 @@ flowchart TD
 * **第36章：練習：3ページ＋ナビ付きの“学科紹介”ミニサイト🌸**
 
 ---
+
+![next_index_request_flow.png](./picture/next_index_request_flow.png)
 
 ## 図解②：リクエストが来た時の流れ（ざっくり）📨➡️🧠
 
@@ -173,6 +180,8 @@ flowchart LR
 
 ---
 
+![next_index_cache_flow.png](./picture/next_index_cache_flow.png)
+
 ## 図解③：キャッシュと再取得のイメージ 🧊🔁
 
 ```mermaid
@@ -246,6 +255,9 @@ flowchart TD
 ---
 
 ## 🧾 Module 11：Server Actions & フォーム革命（133〜150章）🚀📨
+
+![next_index_server_actions.png](./picture/next_index_server_actions.png)
+
 
 Next.jsの Server Actions は、フォーム送信をかなり自然にしてくれるよ〜！ ([Next.js][4])
 

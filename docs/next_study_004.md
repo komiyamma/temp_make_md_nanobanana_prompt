@@ -30,11 +30,17 @@ flowchart LR
 
 ### 1) ブラウザに“余計なJS”を送らなくていい📦⬇️
 
+![next_study_004_payload_scale.png](./picture/next_study_004_payload_scale.png)
+
+
 Server Componentは **サーバーで描画して結果を送る**ので、
 **その部品のJSは基本ブラウザに配られない** → 初回表示が軽くなりやすいよ〜⚡✨
 Next.jsのApp Routerでは、**page/layoutはデフォルトがServer Components**だよ。([Next.js][1])
 
 ### 2) サーバーだけのものに触れる🔐🗄️
+
+![next_study_004_server_lockbox.png](./picture/next_study_004_server_lockbox.png)
+
 
 たとえば👇
 
@@ -44,6 +50,9 @@ Next.jsのApp Routerでは、**page/layoutはデフォルトがServer Components
   こういうのを、**UIを作りながら自然に扱える**のが強い！💪✨（もちろん秘密は画面に出しちゃダメだよ🙅‍♀️）
 
 ### 3) でも「操作」はできない（ここが分かれ目）🚦
+
+![next_study_004_interactive_elements.png](./picture/next_study_004_interactive_elements.png)
+
 
 クリックしたら増える、とか
 入力しながら表示が変わる、とか
@@ -208,6 +217,8 @@ npm run dev
 * いいねボタン押すと増える👍✨
 
 ---
+
+![next_study_004_composition_tree.png](./picture/next_study_004_composition_tree.png)
 
 ## ここで整理：どこがServer？どこがClient？🧠✨
 
