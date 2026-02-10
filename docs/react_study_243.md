@@ -10,6 +10,8 @@
 ---
 
 ## まずイメージ：`useState` とほぼ同じ！😳✨
+![react_study_243_local_vs_shared.png](./picture/react_study_243_local_vs_shared.png)
+
 
 * `useState`：コンポーネントの中だけの状態
 * `useAtom`：**atom（状態の粒）**をみんなで共有できる状態
@@ -51,6 +53,8 @@ npm i jotai
 ---
 
 ## 2) atom を作ろう（`src/atoms/counterAtom.ts`）🧩
+![react_study_243_atom_file.png](./picture/react_study_243_atom_file.png)
+
 
 フォルダを作って、atom を置くのがおすすめです📁✨
 

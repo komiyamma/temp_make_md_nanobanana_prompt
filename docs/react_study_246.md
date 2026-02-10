@@ -167,12 +167,16 @@ export default function App() {
 これで完成！🎉
 
 * 読み込み中 → `Suspense fallback`
+![react_study_246_suspense_wait.png](./picture/react_study_246_suspense_wait.png)
+
 * 失敗 → `ErrorBoundary`
 * 成功 → 一覧表示✨
 
 ---
 
 ## 5) Suspenseを使いたくない場合（loadable版）🧩✨
+![react_study_246_loadable_state.png](./picture/react_study_246_loadable_state.png)
+
 
 「ページ全体が止まるのイヤ〜😖」って時は、`loadable` が便利！
 `loadable` は **loading / hasData / hasError** を返してくれるよ([Jotai][3])
