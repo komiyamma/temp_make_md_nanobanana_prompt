@@ -54,6 +54,8 @@ flowchart TD
 
 ## 3) LoginForm.tsx（エラー出し分け + サーバーエラーも）🧩
 
+![react study 187 server seterror](./picture/react_study_187_server_seterror.png)
+
 ポイントはここ👇
 
 * `mode: "onBlur"`：フォーカス外れたらエラー出す
@@ -345,6 +347,8 @@ export default function App() {
 ## 6) ここが“出し分け”の核心だよ💡✨
 
 ### ✅「触ってからエラー出す」
+
+![react study 187 onblur timing](./picture/react_study_187_onblur_timing.png)
 
 今回のこれが優しいポイント👇
 

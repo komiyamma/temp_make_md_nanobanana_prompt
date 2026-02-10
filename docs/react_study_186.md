@@ -47,6 +47,8 @@ npm i react-hook-form zod @hookform/resolvers
 
 ### `src/components/LoginForm.tsx`
 
+![react study 186 regex visual](./picture/react_study_186_regex_visual.png)
+
 ```tsx
 import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -54,6 +56,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const loginSchema = z.object({
+
   email: z
     .string()
     .min(1, "メールアドレスは必須だよ✉️")
@@ -298,6 +301,8 @@ export default function App() {
 ---
 
 ## 4) 動かす ▶️🪟
+
+![react study 186 checklist ui](./picture/react_study_186_checklist_ui.png)
 
 ```bash
 npm run dev
