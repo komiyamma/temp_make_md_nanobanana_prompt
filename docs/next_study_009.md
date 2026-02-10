@@ -75,6 +75,8 @@ flowchart TD
 
 ### 誤解④「Next.jsは新しい書き方が多すぎて覚えられない😫」
 
+![Tool Box](./picture/next_study_009_tool_box.png)
+
 ➡️ 覚えるんじゃなくて、**使う場面が来たら取り出す**方式でOK📚🎒
 “暗記”じゃなくて“道具箱”🧰✨
 

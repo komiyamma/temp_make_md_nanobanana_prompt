@@ -154,6 +154,8 @@ SSRは「毎リクエストでHTML生成（Dynamic Rendering）」って説明�
 
 ### 3) ISR🧊🔁：60秒ごとに更新してみる
 
+![Isr Mechanism](./picture/next_study_006_isr_mechanism.png)
+
 `app/isr/page.tsx`
 
 ```tsx

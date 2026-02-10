@@ -121,6 +121,8 @@ flowchart TD
 
 ## 6) 詰まった時の“救急フロー”🧯🚑
 
+![Rescue Flow](./picture/next_study_008_rescue_flow.png)
+
 沼る前に、これで切り上げ判断しよう〜！🥺💦
 
 ```mermaid
