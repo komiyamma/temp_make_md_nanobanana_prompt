@@ -53,6 +53,9 @@ Firebase JS SDK では、複数の失敗理由が `auth/invalid-credential` に�
 
 ## 実装①：エラーを「UI用」に変換する関数を作ろう🧑‍🍳✨
 
+![198_error_conversion](./picture/react_study_198_error_conversion.png)
+
+
 📁 `src/features/auth/authError.ts` を作るイメージ！
 
 ```tsx
@@ -128,6 +131,9 @@ export function toAuthUiError(err: unknown): AuthUiError {
 ## 実装②：React 19 の Form Actions + useActionState で「送信中・失敗」を管理する🧡⚡
 
 ### 1) 送信ボタン（送信中は無効化）🔘⏳
+
+![198_submit_button_state](./picture/react_study_198_submit_button_state.png)
+
 
 ```tsx
 // src/features/auth/SubmitButton.tsx
@@ -252,6 +258,9 @@ export function LoginForm() {
 ---
 
 ## 図解：フォーム送信のやりとり（シーケンス）📨✨
+
+![198_login_sequence](./picture/react_study_198_login_sequence.png)
+
 
 ```mermaid
 sequenceDiagram

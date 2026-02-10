@@ -56,6 +56,9 @@ sequenceDiagram
 
 ## ReactはXSSに強い？✅ でも「例外」で死ぬ⚠️
 
+![199_escaping_shield](./picture/react_study_199_escaping_shield.png)
+
+
 Reactは基本的にえらくて、JSXに文字列を入れると **自動でエスケープ**してくれるよ😊
 だから、普通にこう表示する限りはかなり安全👇
 
@@ -90,6 +93,9 @@ export function UnsafeHtml({ html }: { html: string }) {
 ---
 
 ## ✅ 安全にやる：サニタイズ（無害化）してから入れる🧼✨
+
+![199_sanitization_process](./picture/react_study_199_sanitization_process.png)
+
 
 「どうしてもHTML表示したい！」って時は、**サニタイズ**しよう😊
 定番は DOMPurify だよ（フロント側の"掃除機"みたいなやつ🧹）
@@ -176,6 +182,9 @@ export function SafeLink({ urlText }: { urlText: string }) {
 ---
 
 ## さらに一段強くする：CSP（コンテンツセキュリティポリシー）🧱✨
+
+![199_csp_wall](./picture/react_study_199_csp_wall.png)
+
 
 フロントだけで100%は無理でも、**CSPを入れると"爆発を小さく"できる**よ💥➡️🧯
 ざっくり言うと「このサイトでは、ここ以外のスクリプト動かないでね！」ってブラウザに命令するやつ🧠
