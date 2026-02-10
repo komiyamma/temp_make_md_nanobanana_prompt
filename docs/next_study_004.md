@@ -58,6 +58,10 @@ Client側で動かしたいコンポーネントのファイル先頭に **`'use
 しかも「全部のファイルに書く必要はない」って公式がはっきり言ってる👌
 **境界になる入口のファイルだけ**でOK！([Next.js][2])
 
+![next_study_004_use_client_boundary.png](./picture/next_study_004_use_client_boundary.png)
+
+
+
 ---
 
 ## 10分ハンズオン🧪：「サーバーで読んだプロフィール」＋「いいねボタン」💖

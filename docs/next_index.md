@@ -7,6 +7,10 @@ sidebar_position: 0
 Next.js は **App Router が基本**になっていて、**React 19 系の流れ（Server Components / Server Actions / Suspense）**とめちゃ相性いいよ〜！😊💡（Next.js 16 は React 19.2 系の機能も取り込みつつ進化中だよ） ([Next.js][1])
 新規は `create-next-app@latest` で始めるのが最短ルート！🚀 ([Next.js][2])
 
+![next_index_react_wings.png](./picture/next_index_react_wings.png)
+
+
+
 ---
 
 ## 図解①：App Router の「フォルダ＝画面」感 🗂️🧭
