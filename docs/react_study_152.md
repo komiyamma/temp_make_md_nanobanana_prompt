@@ -79,6 +79,8 @@ flowchart LR
 
 ### 3-1. 開発用パッケージをインストール 🎒
 
+![tools_collection](./picture/react_study_152_tools_collection.png)
+
 プロジェクトフォルダ（`package.json` がある場所）で、ターミナルを開いて 👇
 
 ```bash
@@ -210,6 +212,8 @@ export function Greeting({ name }: GreetingProps) {
 ---
 
 ### 4-2. テストファイルを作成 🧪
+
+![test_anatomy](./picture/react_study_152_test_anatomy.png)
 
 次に、同じフォルダにテストファイルを作ります。
 

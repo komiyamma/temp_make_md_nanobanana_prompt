@@ -135,6 +135,8 @@ graph TD
 
 ### 4-2. `baseUrl` と `paths` を追加する
 
+![tsconfig_paths](./picture/react_study_149_tsconfig_paths.png)
+
 `tsconfig.app.json` を開いて、
 `"compilerOptions"` の中に、**次の2行を追加**します。
 
@@ -173,6 +175,8 @@ graph TD
 ---
 
 ## 5. Vite 側の設定（`vite.config.ts`）に alias を書く ⚙️
+
+![vite_alias](./picture/react_study_149_vite_alias.png)
 
 つぎは **Vite 本体** にも「`@` は `src` ね」と教えます。
 

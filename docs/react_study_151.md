@@ -86,6 +86,8 @@ React アプリって、作っているうちに…
 
 ## 3️⃣ TypeScriptがあってもテストは必要？🧠➡️🧪
 
+![ts_vs_test](./picture/react_study_151_ts_vs_test.png)
+
 TypeScript も、もちろんめちゃくちゃ頼もしい相棒✨
 
 * 型のおかげで「ありえない使い方」は防いでくれる
@@ -135,6 +137,8 @@ flowchart LR
 ---
 
 ## 5️⃣ どんなテストがあるの？ざっくりマップ🗺️
+
+![testing_pyramid](./picture/react_study_151_testing_pyramid.png)
 
 ここでは、ざっくりイメージだけつかめばOK！
 React の世界では、テストにもいくつか「レベル」があるよ。
