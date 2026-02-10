@@ -26,6 +26,10 @@ Next.jsはページごとに「作り方」を選べる感じ！
 * **SSG**：先に作っておいて配る（高速つよめ）⚡
 * **ISR**：基本はSSG、たまに更新（バランス型）🧊🔁
 
+![next_study_002_rendering_types.png](./picture/next_study_002_rendering_types.png)
+
+
+
 ISRの考え方は公式ガイドにまとまってるよ📝 ([Next.js][2])
 SSRの説明も公式にあるよ🧾 ([Next.js][3])
 

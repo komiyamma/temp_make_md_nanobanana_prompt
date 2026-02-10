@@ -84,6 +84,10 @@ flowchart LR
 * `/courses`：授業一覧📚
 * `/access`：アクセス🚃
 
+![next_study_001_mini_site_map.png](./picture/next_study_001_mini_site_map.png)
+
+
+
 ここで質問！🙋‍♀️
 
 1. URLが増えたとき、ページ管理どうする？🗂️
