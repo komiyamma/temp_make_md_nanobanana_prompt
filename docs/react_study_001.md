@@ -17,6 +17,8 @@
 
 ## まずは直感でOK：宣言的 vs 命令的 🤔➡️😊
 
+![react_study_001_declarative_vs_imperative.png](./picture/react_study_001_declarative_vs_imperative.png)
+
 **命令的（従来の発想）** は、ブラウザに対して
 「ここにボタン作って、クラスつけて、クリックのイベントつけて…」と **手順をぜんぶ指示** します。
 
@@ -84,6 +86,8 @@ graph TD
 
 ## Reactのざっくり仕組み 🧠⚙️
 
+![react_study_001_virtual_dom_diff.png](./picture/react_study_001_virtual_dom_diff.png)
+
 あなたは **「こういう画面にして！」** と宣言します。
 Reactは **いまの画面** と **理想の画面** の違い（差分）を見つけて、**必要なとこだけ** サッと更新してくれます。
 
@@ -102,6 +106,8 @@ flowchart LR
 
 ## JSXってなに？🧩（さわりだけ）
 
+![react_study_001_jsx_concept.png](./picture/react_study_001_jsx_concept.png)
+
 Reactでは **JSX** という書き方で、**JavaScriptの中にHTMLっぽくUIを記述** します。
 見た目はHTML、実体はJavaScript。だから **ロジックとUIを気持ちよく連携** できるよ。
 
@@ -117,6 +123,8 @@ function Hello() {
 ---
 
 ## “状態（State）” が変わると、画面も変わる 🌗
+
+![react_study_001_state_ui_sync.png](./picture/react_study_001_state_ui_sync.png)
 
 アプリには「今なにを表示すべきか？」という **状態（state）** がいます。
 **状態が変わる → Reactが自動で画面を更新**。
