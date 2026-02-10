@@ -122,6 +122,8 @@ function Hello() {
 **状態が変わる → Reactが自動で画面を更新**。
 「ボタン押された！カウント+1」のような **動的なUI** を、宣言だけで扱えます。
 
+![State and UI](./picture/react_study_001_state_concept.png)
+
 （stateの詳しい使い方は後の章でたっぷりやるよ💪）
 
 ---

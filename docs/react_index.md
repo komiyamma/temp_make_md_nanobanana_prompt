@@ -4,6 +4,8 @@ sidebar_position: 0
 
 # 挫折しないReact v19入門：TS完全対応【290章】ロードマップ
 
+![React Learning Roadmap](./picture/react_index_roadmap.png)
+
 ## 🌍 **Module 1: 準備とTypeScriptの「考え方」 (1〜10章)**
 * **第1章：Reactってなに？** (「こんな感じにして！」と指示するだけでOKな考え方)
 * **第2章：なんでReactなの？** (今までのやり方との違い)
