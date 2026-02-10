@@ -104,6 +104,9 @@ export function GithubIcon() {
 
 ## 5) 実戦：アイコン付きボタンを作ろう！🔘💖
 
+![react study 218 icon button component](./picture/react_study_218_icon_button_component.png)
+
+
 「毎回 `<Search />` を直書き」って地味に面倒なので、**部品化**しちゃう😆✨
 
 ### ✅ Lucide版：`IconButton.tsx`
@@ -179,6 +182,9 @@ export function Demo() {
 ---
 
 ### この章のまとめ 🥳
+
+![react study 218 lucide vs reacticons](./picture/react_study_218_lucide_vs_reacticons.png)
+
 
 * **統一感＆軽さ**なら Lucide React 🦊✨([Lucide][3])
 * **種類の多さ**なら React Icons 🎁🌈([react-icons.github.io][2])

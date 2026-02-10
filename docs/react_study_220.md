@@ -130,6 +130,8 @@ export default function App() {
 
 ## 4-2) `src/components/dashboard/DateRangePicker.tsx`（期間選択🗓️）
 
+![DateRangePicker UI](./picture/react_study_220_daterange_picker_ui.png)
+
 Date Picker は **Popover + Calendar** の合体で作るのが公式スタイルだよ✨ ([Shadcn][6])
 
 ```tsx
@@ -185,6 +187,8 @@ export function DateRangePicker({ value, onChange }: Props) {
 ---
 
 ## 4-3) `src/components/dashboard/SalesChart.tsx`（グラフ📊）
+
+![Sales Bar Chart](./picture/react_study_220_sales_chart_visual.png)
 
 shadcn/ui の Chart は **Recharts をそのまま使いつつ、見た目用の薄い部品（ChartContainer等）** を足す感じだよ〜 ([Shadcn][3])
 
@@ -478,6 +482,9 @@ export function Dashboard() {
 ---
 
 ## 5) 動作確認🎉🖥️
+
+![react study 220 final dashboard preview](./picture/react_study_220_final_dashboard_preview.png)
+
 
 ```bash
 npm run dev

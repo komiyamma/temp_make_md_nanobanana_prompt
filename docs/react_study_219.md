@@ -29,6 +29,9 @@ shadcn/ui は **CSS変数（--primary など）でテーマ管理するのが基
 
 ## 1) テーマを変える（いちばん効く！）🎨✨
 
+![react study 219 theme color change](./picture/react_study_219_theme_color_change.png)
+
+
 ### 触る場所：`src/styles/globals.css`（または `src/index.css`）
 
 shadcn/ui は `:root` に **色の変数** を置いて、`.dark` 側にも別の色を置く感じが多いよ〜！ ([Shadcn][2])
@@ -110,6 +113,9 @@ shadcn/ui でよく出てくる `cn()` は、`clsx` と `tailwind-merge` を組�
 ---
 
 ## 4) “本気カスタム”：variant（種類）を増やす 🎛️🔥
+
+![react study 219 button variants](./picture/react_study_219_button_variants.png)
+
 
 「成功ボタン（success）」みたいな **新しい見た目の種類** を増やしたいときは、
 `button.tsx` の variant を増やすのが定番だよ✨
