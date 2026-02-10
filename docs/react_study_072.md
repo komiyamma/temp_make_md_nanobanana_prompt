@@ -43,6 +43,8 @@
 
 ## 2. `createContext` の正体をチラ見 👀
 
+![react study 072 context object](./picture/react_study_072_context_object.png)
+
 `createContext` は React 本体から import する関数です。
 
 ```ts
@@ -71,6 +73,10 @@ import { createContext } from 'react';
    （パス的には `src\contexts` な感じ）
 
 ### 3-2. `ThemeContext.tsx` を作成 ✏️
+
+![react study 072 theme context code](./picture/react_study_072_theme_context_code.png)
+
+
 
 `src\contexts\ThemeContext.tsx` というファイルを新規作成して、こんなコードを書きます👇
 
@@ -109,6 +115,10 @@ export const ThemeContext = createContext<Theme>('light');
 
 ## 4. 図でイメージしてみる 🧠✨
 
+![react study 072 context flow](./picture/react_study_072_context_flow.png)
+
+
+
 `ThemeContext` を使うと、最終的にはこんな感じのイメージになります👇
 
 （まだ「使う」部分は先の章でやるけど、雰囲気だけつかんでおこう！）
@@ -131,6 +141,10 @@ graph TD
 ---
 
 ## 5. React 19 らしい書き方をちょっとだけ ✨
+
+![react study 072 provider syntax](./picture/react_study_072_provider_syntax.png)
+
+
 
 React 19 から、**Context オブジェクトをそのまま Provider として使える** ようになりました。([Angular Minds][2])
 
@@ -186,6 +200,10 @@ export function App() {
 
 ## 6. Context に入れるデータって、どんなのがいいの？🤔
 
+![react study 072 context content](./picture/react_study_072_context_content.png)
+
+
+
 よくある質問に、こんなものがあります。
 
 > なんでもかんでも Context に入れていいの？
@@ -217,6 +235,10 @@ Context はとても便利ですが、入れすぎると逆にコードが分か
 実際に TypeScript で Context を定義する練習をしてみましょう。
 
 ### 演習1：`UserNameContext` を作る 🙋‍♀️
+
+![react study 072 username challenge](./picture/react_study_072_username_challenge.png)
+
+
 
 1. `src\contexts\UserNameContext.tsx` を作る
 2. 中身を自分で考えて書いてみる（ヒントだけ出すね）

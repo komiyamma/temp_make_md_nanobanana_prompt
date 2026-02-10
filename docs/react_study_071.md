@@ -39,6 +39,10 @@
 
 ### 3️⃣ 図で見る：どんな感じで流れてるの？📊
 
+![react study 071 hierarchy diagram](./picture/react_study_071_hierarchy_diagram.png)
+
+
+
 小さなアプリ構成を、図で見てみましょう 👇
 
 * `App`：アプリ全体。`userName` を持ってる
@@ -161,6 +165,10 @@ export default UserNameDisplay;
 
 #### 😵‍💫 問題1：中間コンポーネントのPropsがパンパンになる
 
+![react study 071 props burden](./picture/react_study_071_props_burden.png)
+
+
+
 `Layout` や `Header` のように、**自分では使わないデータなのに** Propsに書かないといけません。
 
 * 「これ何に使うんだっけ？」ってなりやすい
@@ -178,6 +186,10 @@ type LayoutProps = {
 こんな感じで、**ただの“通り道”なのに、Propsがどんどん増えていきます** 🧳🧳🧳
 
 #### 🧵 問題2：コンポーネントの階層を変えるだけで修正が大量発生
+
+![react study 071 refactoring nightmare](./picture/react_study_071_refactoring_nightmare.png)
+
+
 
 例えば、「デザイン的に `Header` と `Layout` の間に `Shell` ってコンポーネントを挟みたいな」と思ったとします。
 
@@ -216,6 +228,10 @@ graph TD
 
 #### 🧪 問題3：テストや再利用性も下がる
 
+![react study 071 testing difficulty](./picture/react_study_071_testing_difficulty.png)
+
+
+
 例えば、「`UserNameDisplay` を別の場所でも使いたいな〜」と思ったとき、
 
 * 「あれ、このコンポーネントに `userName` をどうやって届けてたっけ？」
@@ -232,6 +248,10 @@ graph TD
 ---
 
 ### 6️⃣ 「バケツリレーっぽい？」と気づくチェックリスト ✅
+
+![react study 071 checklist](./picture/react_study_071_checklist.png)
+
+
 
 自分のコードを見ながら、次の項目に当てはまるか考えてみてください 👀
 
@@ -266,6 +286,10 @@ graph TD
 ---
 
 ### 8️⃣ この先の予告：Contextという“給水タンク” 🏞️
+
+![react study 071 context preview](./picture/react_study_071_context_preview.png)
+
+
 
 この章ではあえて「バケツリレー問題」をちゃんと眺めて、
 

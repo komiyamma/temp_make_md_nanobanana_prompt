@@ -19,6 +19,10 @@
 
 ## 2. まずは共通点をサクッと整理 🧩
 
+![react study 069 analogy comparison](./picture/react_study_069_analogy_comparison.png)
+
+
+
 `useState` も `useReducer` も、どちらも
 
 > 「コンポーネントの“状態（state）”を覚えておくためのフック」
@@ -49,6 +53,10 @@
 まずは `useState` のおいしい使いどころから 🌸
 
 ### 👍 向いているケース
+
+![react study 069 usestate sweet spot](./picture/react_study_069_usestate_sweet_spot.png)
+
+
 
 1. **状態がシンプル**
 
@@ -109,6 +117,10 @@ React公式やいろんな解説記事でも、共通してだいたいこう説
 > **「状態が複雑になってきたら `useReducer` を検討しよう」**([legacy.reactjs.org][3])
 
 ### 💪 向いているケース
+
+![react study 069 usereducer sweet spot](./picture/react_study_069_usereducer_sweet_spot.png)
+
+
 
 1. **値の種類が多くて、ひとまとまりで意味がある**
 
@@ -293,6 +305,10 @@ flowchart TD
 
 ### Q1. 「状態の数」と「関連性」はどう？
 
+![react study 069 state dependence](./picture/react_study_069_state_dependence.png)
+
+
+
 * ✅ 状態が少ない / 互いにあまり関係ない
   → **`useState` でOK**
 * ⚠️ プロパティがたくさんあって、
@@ -303,6 +319,10 @@ flowchart TD
 
 ### Q2. 更新ロジックの説明、口でスラスラ言える？
 
+![react study 069 logic complexity](./picture/react_study_069_logic_complexity.png)
+
+
+
 * ✅ 「ボタン押したら +1 」「押したら開く・閉じる」レベル
   → `useState`
 * ⚠️ 「このボタンだと… A の値がこうで、B も変わって、条件によっては C も…」と
@@ -312,6 +332,10 @@ flowchart TD
 ---
 
 ### Q3. この状態、あとで**別のコンポーネントにも共有**したくなりそう？
+
+![react study 069 context sharing](./picture/react_study_069_context_sharing.png)
+
+
 
 * ✅ 1つのコンポーネントの中だけで完結しそう
   → `useState`

@@ -20,6 +20,10 @@
 
 ## 2️⃣ ファイルを用意しよう ✍️
 
+![react study 070 file setup](./picture/react_study_070_file_setup.png)
+
+
+
 プロジェクトはすでに Vite＋React＋TS でできている前提で進めます。
 
 1. `src` フォルダの中に
@@ -62,6 +66,10 @@ export function App() {
 ---
 
 ## 3️⃣ State と Action の「型」を決める 🧩
+
+![react study 070 type definition](./picture/react_study_070_type_definition.png)
+
+
 
 この章の主役は `State` と `Action` の型づけです！
 まずは「カウンターがどんな状態を持っているか？」を言葉で整理してみましょう。
@@ -128,6 +136,10 @@ export function CounterWithReducer() {
 ---
 
 ## 4️⃣ reducer 関数を書く 🔁
+
+![react study 070 reducer logic](./picture/react_study_070_reducer_logic.png)
+
+
 
 次は、`State` と `Action` を受け取って
 **「次の State を返す」だけの関数** を作ります。
@@ -253,6 +265,8 @@ const initialState: CounterState = {
 
 #### ✅ `useReducer` のところ
 
+![react study 070 hook wiring](./picture/react_study_070_hook_wiring.png)
+
 ```tsx
 const [state, dispatch] = useReducer(counterReducer, initialState);
 ```
@@ -261,6 +275,10 @@ const [state, dispatch] = useReducer(counterReducer, initialState);
 * `dispatch` 👉 「この Action を実行して〜」とお願いする関数
 
 #### ✅ ボタンから Action を飛ばす
+
+![react study 070 button dispatch](./picture/react_study_070_button_dispatch.png)
+
+
 
 ```tsx
 <button onClick={() => dispatch({ type: "increment" })}>+1</button>
@@ -310,6 +328,10 @@ graph LR
 ここからは**自分の手でコードを変えてみる**ミッションです！
 
 ### 🔁 練習1：2ずつ増えるボタンを追加
+
+![react study 070 add2 challenge](./picture/react_study_070_add2_challenge.png)
+
+
 
 やってみてほしいこと：
 
