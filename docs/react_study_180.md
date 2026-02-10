@@ -69,6 +69,8 @@ export const products: Product[] = [
 
 ## 3) Zustandストアを作る（カートの本体）🛒🧩
 
+![react study 180 record structure](./picture/react_study_180_record_structure.png)
+
 `src/stores/cartStore.ts` を作ってね👇
 ポイントはこの3つ💡
 
@@ -326,6 +328,8 @@ npm run dev
 ---
 
 ## 図解：カート操作の状態変化（超だいじ）🧠🔁
+
+![react study 180 state machine](./picture/react_study_180_state_machine.png)
 
 ```mermaid
 stateDiagram-v2

@@ -96,6 +96,8 @@ export default function App() {
 
 ### 4) `register`って結局なに？🤔🪄
 
+![react study 182 register cable](./picture/react_study_182_register_cable.png)
+
 `register("name")` は、ざっくり言うと👇を input に渡してる感じ！
 
 * 「この入力欄は `name` だよ〜」という登録名🏷️
@@ -108,6 +110,8 @@ export default function App() {
 ```
 
 **`...`（スプレッド）**なのは、RHFが必要なものをまとめて渡してるからだよ〜😊✨
+
+![react study 182 spread syntax](./picture/react_study_182_spread_syntax.png)
 
 ---
 

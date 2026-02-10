@@ -78,6 +78,8 @@ flowchart TD
 
 ## しんどくなるポイント集 😭📌（あるあるフルコース）
 
+![react study 181 state explosion](./picture/react_study_181_state_explosion.png)
+
 フォームでよく欲しくなる機能、挙げるね👇（全部「手作業」だと重い…）
 
 * 入力欄が増えるたびに `useState` が増える ➕➕➕
