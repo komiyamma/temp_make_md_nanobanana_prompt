@@ -48,6 +48,9 @@ React 19 では、**Context 自体を Provider として書ける**ようにな�
 
 今（React 19 の書き方）：
 
+![react_study_074_syntax_evolution.png](./picture/react_study_074_syntax_evolution.png)
+
+
 ```tsx
 <UserContext value={value}>
   {children}
@@ -122,6 +125,9 @@ export function UserProvider({ children }: UserProviderProps) {
 }
 ```
 
+
+
+![react_study_074_lunchbox.png](./picture/react_study_074_lunchbox.png)
 ポイント ✨
 
 * `useState('ゲスト')`
@@ -158,6 +164,9 @@ export default function App() {
 }
 ```
 
+
+
+![react_study_074_dome.png](./picture/react_study_074_dome.png)
 こうすると：
 
 * `HomePage` の中にいるすべてのコンポーネントは、

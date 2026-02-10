@@ -17,6 +17,9 @@
 
 という状況を、**カスタムフックで一発解決**します 😎
 
+![react_study_076_vending_machine.png](./picture/react_study_076_vending_machine.png)
+
+
 ---
 
 ### 2️⃣ いまの前提コードを整理しよう 📚
@@ -149,6 +152,9 @@ export function useUserContext(): UserContextValue {
 }
 ```
 
+
+
+![react_study_076_security_gate.png](./picture/react_study_076_security_gate.png)
 **ここがポイント！**
 
 * `function useUserContext(): UserContextValue { ... }`
@@ -178,6 +184,9 @@ export function UserNameLabel() {
 }
 ```
 
+
+
+![react_study_076_vip_pass.png](./picture/react_study_076_vip_pass.png)
 スッキリしたの、分かりますか？😊
 
 * `if (!userContext)` が **消える**
