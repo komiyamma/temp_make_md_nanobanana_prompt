@@ -35,6 +35,8 @@ flowchart TD
 ---
 
 ## 3) Valibotで再帰するコツ：`v.lazy()` 🧠✨
+![react study 258 lazy concept](./picture/react_study_258_lazy_concept.png)
+
 
 ### なぜ `lazy` が必要？🤔
 
@@ -46,6 +48,8 @@ flowchart TD
 ---
 
 ## 4) 実戦：JSONを丸ごと検証できる「再帰スキーマ」📦✅
+![react study 258 json validation flow](./picture/react_study_258_json_validation_flow.png)
+
 
 ここからが本題！
 「JSONっぽい値全部OK」のスキーマを作ります（超強い）💪🔥

@@ -52,11 +52,15 @@ flowchart LR
 Rust製（= ネイティブバイナリ系）の開発ツールが人気な理由は、ざっくりこんな感じ👇
 
 ### ✅ 速い（ことが多い）⚡
+![react study 261 speed comparison](./picture/react_study_261_speed_comparison.png)
+
 
 大きいプロジェクトほど、lint/format が重いとつらいよね…😇
 Biomeは「高速」を強く推してるツールだよ🏎️ ([Biome][1])
 
 ### ✅ ひとつの“道具”としてまとまる 🧰
+![react study 261 all in one](./picture/react_study_261_all_in_one.png)
+
 
 Biomeは **formatter + linter を統合**して、共通の基盤で動かす方針。
 だから診断表示・自動修正・設定などを揃えやすいよ✨ ([GitHub][2])

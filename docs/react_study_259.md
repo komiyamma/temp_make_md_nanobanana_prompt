@@ -62,6 +62,8 @@ export type Profile = v.InferOutput<typeof ProfileSchema>;
 ---
 
 ### 2) `parse`：成功は気持ちいいけど、失敗は throw 💥
+![react study 259 exception vs result](./picture/react_study_259_exception_vs_result.png)
+
 
 ```ts
 import * as v from "valibot";
@@ -110,6 +112,8 @@ export function validateWithSafeParse(input: unknown) {
 ---
 
 ## React実戦：`safeParse` でエラー表示までやっちゃう😆🧡
+![react study 259 flatten issues](./picture/react_study_259_flatten_issues.png)
+
 
 ポイントはここ👇
 
