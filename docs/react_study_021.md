@@ -33,6 +33,8 @@ Reactの関数コンポーネントは、**最初の引数に「propsオブジ�
 
 ### 1) 子コンポーネントを作る：`src/components/Greeting.tsx`
 
+![Destructuring Syntax](./picture/react_study_021_destructuring_syntax.png)
+
 ```tsx
 // src/components/Greeting.tsx
 type GreetingProps = {
@@ -74,6 +76,8 @@ export default function App() {
 ---
 
 ## 🎯 Propsの3つの大事ポイント
+
+![Read Only Rule](./picture/react_study_021_read_only_rule.png)
 
 1. **読み取り専用（immutable）**
    子の中で `name = "変更"` のように**書き換えない**でね（というか書き換えられない）。
@@ -140,6 +144,8 @@ export function Greeting(props: GreetingProps) {
 ---
 
 ## 📦 ちょっと応用：配列やオブジェクトも渡せるよ
+
+![Prop Types Variety](./picture/react_study_021_prop_types_variety.png)
 
 ```tsx
 type User = { id: number; name: string };
