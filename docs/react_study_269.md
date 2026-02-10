@@ -45,6 +45,9 @@ flowchart LR
   A --> C["!! (解析も含め完全に除外)"]
 ```
 
+
+![react study 269 double bang](./picture/react_study_269_double_bang.png)
+
 ### ✅ 例：React + Vite のプロジェクトでよくある除外テンプレ 📦✨
 
 ```jsonc
@@ -101,6 +104,9 @@ flowchart LR
    → 今開いてるフォルダに `biome.json` があるか見てね👀✨
 
 ---
+
+
+![react study 269 vscode settings](./picture/react_study_269_vscode_settings.png)
 
 ### 3-2) VS Codeが「違う設定」を読んでる気がする 🤔📄
 
