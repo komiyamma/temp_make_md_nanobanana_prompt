@@ -52,7 +52,7 @@ function Run-JulesForRange {
     Write-Host "✅ セッション作成完了: $sessionName"
 
     # 2. 3分おきに完了チェック（最大10回）
-    $maxChecks = 15
+    $maxChecks = 20
     $checkCount = 0
     $isCompleted = $false
     $maxChecksReached = $false
