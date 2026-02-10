@@ -103,6 +103,9 @@ Wrangler は **v3.91.0 以降、`wrangler.jsonc` / `wrangler.json` と `wrangler
 
 ### B. デプロイ（基本）🚀
 
+![286 wrangler deploy](./picture/react_study_286_wrangler_deploy.png)
+
+
 Hono側プロジェクトのルートで👇
 
 ```bash

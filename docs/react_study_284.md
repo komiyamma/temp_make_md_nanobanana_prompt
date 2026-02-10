@@ -33,6 +33,9 @@ flowchart TD
 
 ## 1) テンプレでプロジェクト作成 🧁
 
+![284 project structure](./picture/react_study_284_project_structure.png)
+
+
 PowerShell でOK🙆‍♀️
 
 ```powershell

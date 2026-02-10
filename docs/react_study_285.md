@@ -266,6 +266,9 @@ sequenceDiagram
 
 ## ここが最高ポイント😍💡（型安全のご褒美）
 
+![285 autocomplete demo](./picture/react_study_285_autocomplete_demo.png)
+
+
 * フロントで `client.api.stamps.$post({ json: { ... } })` と書くと
   **送るべき形がVS Codeに出る**（間違えるとその場で怒られる）✨ ([Hono][1])
 * サーバー側で `c.json(..., 201)` みたいに **ステータスコードを明示**すると
