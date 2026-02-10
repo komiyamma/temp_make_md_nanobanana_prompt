@@ -49,6 +49,9 @@ flowchart LR
 
 ## 実装：`MyInput`（refをPropsとして受け取る）🧁💕
 
+![Destructuring props and ref](./picture/react_study_106_props_breakdown.png)
+
+
 ### `src/components/MyInput.tsx`
 
 ```tsx
@@ -138,6 +141,9 @@ export function MiniInput({ label, ref }: MiniInputProps) {
 ---
 
 ## よくあるつまずきポイント 😵‍💫➡️😺
+
+![Fixing the ref does not exist error](./picture/react_study_106_error_fix.png)
+
 
 ### 1) 「`ref` がPropsに存在しない」って怒られる💥
 

@@ -12,6 +12,9 @@
 
 ## 1️⃣ まずはタイミングのイメージをつかもう
 
+![Timeline of useEffect vs useLayoutEffect](./picture/react_study_103_timeline.png)
+
+
 公式ドキュメントでは、`useLayoutEffect` は
 
 > 「ブラウザが画面を描き直す前に実行される `useEffect` のバージョン」
@@ -99,6 +102,9 @@ sequenceDiagram
 ---
 
 ## 4️⃣ ダメな例：`useEffect` だとチカッとしてしまう版 ⚡
+
+![Flicker effect visualization](./picture/react_study_103_bad_example.png)
+
 
 ツールチップっぽいコンポーネントをイメージしてみます。
 ※ここでは「雰囲気をつかむ」ことが目的なので、CSS はざっくりです 🐣
