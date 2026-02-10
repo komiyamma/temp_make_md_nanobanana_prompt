@@ -8,31 +8,23 @@ description: Generate an image generation plan for a range of Markdown files bas
 
 2.  **Iterate and Analyze**:
     - For each `current_id` from `start_id` to `end_id`:
-        a.  **Extract Context**:
-            - **Option A (Preferred): Use Script with File Output**:
-                - Run the following command. **CRITICAL**: Use the `--output` argument to avoid terminal encoding issues.
-                  ```powershell
-                  python .\prepare_analysis_context.py --id <current_id> --report-path ".\Markdown File Categorization Report.md" --root-dir ".\docs" --output temp_context_<current_id>.json
-                  ```
-                - Read the generated `temp_context_<current_id>.json` file.
-            - **Option B (Fallback): Direct Read**:
-                - If the script fails or JSON is invalid, read `Markdown File Categorization Report.md` to find the filename for the `<current_id>`.
-                - Then, directly read the Markdown file content using `view_file` or `cat`.
+        a.  **Identify and Read File**:
+            - Construct the target filename based on `<current_id>`. 
+              - Format: `react_study_<current_id_3_digit_padding>.md` (e.g., ID 1 -> `react_study_001.md`).
+            - Read the file content directly from the `docs/` folder using `view_file`.
 
         b.  **Analyze Content**:
             - Review the content (from JSON `text_preview` or direct Markdown read).
-            - **Goal**: Identify sections in the text where an explanatory image (diagram, flowchart, screenshot) would be beneficial.
-            - **Constraint**: Do NOT propose an image if there is already an image nearby (check `existing_images` and the text context).
+            - **CRITICAL**: Propose an image ONLY if there is NO existing image nearby (check for both `![]()` and `<img` tags). The goal is to fill gaps.
             - **Constraint**: If content is empty or very short, you may skip.
 
         c.  **Formulate Plan**:
             - If a need for an image is found:
                 - **Group**: Extract from JSON `group` or the Report.
                 - **Filename Construction**:
-                    - Get the last part of the directory name from `group` (e.g., `other_soft/hm_activeperl` -> `hm_activeperl`).
-                    - Construct the base: `cnt_<last_part>`.
+                    - Use the target Markdown filename (without extension) as the base (e.g., `react_study_001.md` -> `react_study_001`).
                     - Append a detailed description with at least 2 English words: e.g., `_split_number`.
-                    - Final: `cnt_<last_part>_<description>.png`.
+                    - Final: `<md_filename>_<description>.png`.
                 - **Global Uniqueness Check (ABSOLUTE RULE)**:
                     - **Step 1: Check Existing Images in Current Markdown**:
                         - Parse the Markdown content to find ALL `![](...)` or `<img src="...">` tags.
@@ -40,13 +32,13 @@ description: Generate an image generation plan for a range of Markdown files bas
                         - **CRITICAL CONSTRAINT**: The proposed filename must NOT match ANY filename already present in the Markdown file. 
                         - **Action on Match**: If the exact filename (e.g., `cnt_foo.png`) is ALREADY present in the Markdown file's image tags, **SKIP ONLY this specific image proposal**. Do NOT append a suffix. Assume the image is already implemented. Do NOT stop analyzing the rest of the file.
                     - **Step 2: Check Existing Plans**:
-                        - Read `./picture/image_generation_plan.md` to gather ALL existing `Proposed Image Filename` entries (from the entire file, not just this session).
+                        - Read `./docs/picture/image_generation_plan.md` to gather ALL existing `Proposed Image Filename` entries (from the entire file, not just this session).
                         - **Constraint**: Ensure your new `<proposed_image_filename>` matches NONE of the existing filenames in the plan.
                     - **Resolution**:
                         - If a match is found in **Step 1 (Markdown Check)**: **DISCARD** this specific image proposal entirely (do not add to plan).
                         - If a match is found ONLY in **Step 2 (Plan Check)**: Append a numeric suffix or change the description to make it unique.
                 - **Prompt**: Write a "thoroughly detailed image generation prompt" describing the visual elements, style, and content of the image.
-                - **Relative Link**: Construct the relative path: `./<group>/<proposed_image_filename>`.
+                - **Relative Link**: Construct the relative path (relative to the Markdown file in `docs/`): `./picture/<proposed_image_filename>`.
 
         d.  **Append to Plan**:
             - **Duplicate Check (Concept)**:
@@ -57,6 +49,7 @@ description: Generate an image generation plan for a range of Markdown files bas
                 - Use `write_to_file` to *overwrite* the file with the **Full Previous Content + New Row**.
                 - (Note: `write_to_file` does not support append mode, so reading first then writing back is required).
                 - Format: `| <current_id> | <filename> | <group> | <proposed_image_filename> | <relative_link> | <prompt> | <insertion_point> |`
+                - **Note**: Ensure the column count matches the existing table in `docs/picture/image_generation_plan.md`.
 
         e.  **Modify Markdown File**:
             - **Action**: Insert the image tag into the source Markdown file.
