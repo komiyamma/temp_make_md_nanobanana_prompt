@@ -9,9 +9,12 @@ description: Generate an image generation plan for a range of Markdown files bas
 2.  **Iterate and Analyze**:
     - For each `current_id` from `start_id` to `end_id`:
         a.  **Identify and Read File**:
-            - Construct the target filename based on `<current_id>`. 
-              - Format: `react_study_<current_id_3_digit_padding>.md` (e.g., ID 1 -> `react_study_001.md`).
-            - Read the file content directly from the `docs/` folder using `view_file`.
+            - **Lookup Filename**:
+                - Read `LIST.md` from the root directory.
+                - Find the row where the "番号" (Number) column matches `<current_id>`.
+                - Extract the "ファイルパス" (File Path) from that row (e.g., `docs/react_study_001.md`).
+            - **Read Content**:
+                - Read the file content using the extracted path.
 
         b.  **Analyze Content**:
             - Review the content (from direct Markdown read).

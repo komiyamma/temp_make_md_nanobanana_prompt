@@ -15,7 +15,7 @@ $HEADERS = @{
 $BASE_URL = "https://jules.googleapis.com/v1alpha"
 
 # --- LIST.md の生成 ---
-Write-Host "📄 LIST.md を生成しています..." -ForegroundColor Cyan
+Write-Host "📄 LIST.md を生成しています（docs/ 直下のみ）..." -ForegroundColor Cyan
 $mdFiles = Get-ChildItem -Path "docs" -Filter "*.md" -File | Sort-Object Name
 $listContent = @("| 番号 | ファイルパス |", "|---|---|")
 $count = 1
