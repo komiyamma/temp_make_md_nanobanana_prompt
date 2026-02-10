@@ -22,6 +22,8 @@
 
 React 公式では「再レンダリングの間で計算結果をキャッシュするフック」と説明されています。([React][2])
 
+![react_study_088_memo_concept.png](./picture/react_study_088_memo_concept.png)
+
 ```
 ts
 import { useMemo } from "react";
@@ -40,6 +42,8 @@ const result = useMemo(() => {
 * 「この関数、毎回新しく作らないで、同じやつを再利用してほしい」というときに使う
 
 公式では「再レンダリングの間で関数定義をキャッシュするフック」と説明されています。([React][3])
+
+![react_study_088_callback_identity.png](./picture/react_study_088_callback_identity.png)
 
 ```
 ts
@@ -194,6 +198,8 @@ flowchart TD
 * データ件数が多い想定（何千件〜）
 * **フィルタ & ソートが重たい**ので、キーワードが変わったときだけ再計算したい
 
+![react_study_088_filter_sort_visual.png](./picture/react_study_088_filter_sort_visual.png)
+
 ```
 tsx
 import { useMemo, useState } from "react";
@@ -336,6 +342,8 @@ export function TodoList() {
 * `handleToggle` を `useCallback` でメモ化しているので、
   **依存が変わらない限り同じ関数参照のまま** 👌
 * その結果、チェックを変えた行だけ再レンダリングされて、他の行は静かなまま ✨
+
+![react_study_088_stable_child.png](./picture/react_study_088_stable_child.png)
 
 ---
 

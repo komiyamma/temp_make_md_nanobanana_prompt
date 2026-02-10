@@ -18,6 +18,8 @@
 
 > 💡「コンポーネントの中で **ずっと覚えておきたい値** をしまっておくための、ちっちゃい“箱（メモ帳）”」
 
+![react_study_091_box_metaphor.png](./picture/react_study_091_box_metaphor.png)
+
 みたいな存在です。
 
 * `useState`
@@ -166,6 +168,8 @@ npm run dev
 
 👉 ここが `useRef` のポイントです。
 
+![react_study_091_counter_comparison.png](./picture/react_study_091_counter_comparison.png)
+
 ---
 
 ## 6️⃣ ブラウザのコンソールを見てみよう 🖥️
@@ -210,6 +214,8 @@ hiddenCountRef.current = hiddenCountRef.current + 1;
 ポイントは 2つ 🌟
 
 1. `useRef` が返してくれるのは「オブジェクト」で、その中に `current` というプロパティがある
+
+![react_study_091_ref_structure.png](./picture/react_study_091_ref_structure.png)
 2. この `current` の中身を変えても、React は「再レンダーしなくていいや」と判断する
 
 だから、

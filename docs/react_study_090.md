@@ -64,9 +64,13 @@ React を勉強し始めると、ついこう思いがちです。
      「比較する」「キャッシュを管理する」コストがかかります
    * 処理が軽いのにメモ化すると、逆に遅くなるケースもあります 🐢
 
+![react_study_090_overhead_cost.png](./picture/react_study_090_overhead_cost.png)
+
 だから、
 
 > **「とりあえず全部メモ化」は、
+
+![react_study_090_tool_not_rule.png](./picture/react_study_090_tool_not_rule.png)
 > いい習慣というより“やりすぎダイエット”みたいなもの**
 
 と思っておくと安心です ✨
@@ -135,6 +139,8 @@ React 19 では、**React Compiler** という仕組みが入っていて、
 大事なのは、**数字ではなく体験**です。
 
 * ユーザーが「サクサク動くな〜✨」と感じれば勝ち
+
+![react_study_090_ux_goal.png](./picture/react_study_090_ux_goal.png)
 * ユーザーが「なんか重い…」と感じれば改善ポイント
 
 そして、**その改善のためのツールのひとつがメモ化**です。
