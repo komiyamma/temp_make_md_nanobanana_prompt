@@ -228,6 +228,9 @@ const inputRef = useRef<HTMLInputElement | null>(null);
 
 ### ❌ `inputRef.current.focus()` と書いてエラー
 
+![react_study_098_null_check](./picture/react_study_098_null_check.png)
+
+
 ```tsx
 // エラー: Object is possibly 'null'.
 inputRef.current.focus();
@@ -303,6 +306,9 @@ const handleMoveFocus = () => {
 ---
 
 ## 8. この章のまとめ 🎀
+
+![react_study_098_useref_window](./picture/react_study_098_useref_window.png)
+
 
 * `useRef` は **DOM 要素を直接触りたいときの「窓口」** みたいなもの 🪟
 * React 19 + TypeScript では `useRef` に **必ず初期値を渡す** スタイルになるので、

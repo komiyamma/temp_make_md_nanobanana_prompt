@@ -105,6 +105,9 @@ useLayoutEffect(() => {
 
 ## 5️⃣ かんたんな例：ボックスの幅を測って表示してみる 📏
 
+![react_study_101_tailor_measure](./picture/react_study_101_tailor_measure.png)
+
+
 「ボックスの幅を測って、すぐ下に表示する」小さなコンポーネントを書いてみます。
 
 ポイントは：
@@ -203,6 +206,9 @@ export function MeasureBox() {
 ---
 
 ## 8️⃣ ちょっとだけ上級ネタ：サーバーレンダリングの場合 🖥️
+
+![react_study_101_ssr_warning](./picture/react_study_101_ssr_warning.png)
+
 
 今はまだ気にしなくて大丈夫ですが、
 将来 Next.js などで **サーバーサイドレンダリング (SSR)** を使うようになると、

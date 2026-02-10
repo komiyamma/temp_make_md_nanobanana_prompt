@@ -70,6 +70,9 @@ function ScoreView({ score }: Props) {
 
 ## 3. `useRef` は「レンダーをまたいで使える箱」 📦
 
+![react_study_099_variable_wipe](./picture/react_study_099_variable_wipe.png)
+
+
 React の `useRef` は、
 
 > 「画面の描画には直接いらないけど、コンポーネントが生きている間ずっと覚えておきたい値」
@@ -169,6 +172,9 @@ export function ScoreDiff({ score }: ScoreDiffProps) {
 
 ### 動きのイメージ ✨
 
+![react_study_099_scoreboard](./picture/react_study_099_scoreboard.png)
+
+
 1. 最初の表示
 
    * `prevScoreRef.current` は `null`
@@ -188,6 +194,9 @@ export function ScoreDiff({ score }: ScoreDiffProps) {
 ---
 
 ## 6. なんども使えるように：`usePrevious` カスタムフックを作る 🧰
+
+![react_study_099_custom_hook_box](./picture/react_study_099_custom_hook_box.png)
+
 
 いまのパターン、
 「前の値を取りたいたびに同じコードを書く」のは面倒ですよね 🌀
