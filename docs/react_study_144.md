@@ -244,6 +244,9 @@ URL に `/about` と打っても、
 
 ## 7. ちょっとイメトレ：URL → 画面の流れ 🧠
 
+![react study 144 route matching](./picture/react_study_144_route_matching.png)
+
+
 `Routes` & `Route` でのルーティングの流れを、
 もう一度 Marmaid でイメージしてみましょう 🧭
 

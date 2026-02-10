@@ -128,6 +128,9 @@ import './index.css'
 
 ### ③ `App` を `<BrowserRouter>` で包む
 
+![react study 143 structure wrap](./picture/react_study_143_structure_wrap.png)
+
+
 次に、`render` している部分を書き換えます。
 
 #### 🔁 変更前（イメージ）
@@ -221,6 +224,9 @@ React Router v7 は、React 18/19 どちらでも
 つまずきがちなポイントも先にチェックしておきましょう 👇
 
 ### ❌ 1. `import` を書き忘れる
+
+![react study 143 error no import](./picture/react_study_143_error_no_import.png)
+
 
 ```tsx
 // BrowserRouter を使っているのに…

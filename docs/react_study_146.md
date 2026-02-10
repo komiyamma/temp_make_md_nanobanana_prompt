@@ -16,6 +16,9 @@
 
 ## 2️⃣ まずはイメージをつかもう 🧭
 
+![react study 146 params extraction](./picture/react_study_146_params_extraction.png)
+
+
 URL がこんな感じだとします：
 
 * `/users/1`
@@ -145,6 +148,9 @@ URL が `/users/1` になったら、`UserDetail` が表示されて
 ---
 
 ## 7️⃣ TypeScript で `useParams` に型をつける 💪
+
+![react study 146 type safety](./picture/react_study_146_type_safety.png)
+
 
 さっきの `UserDetail` は、型的にはちょっと甘めです。
 
