@@ -209,6 +209,9 @@ const { count, inc } = useCounterStore((s) => ({ count: s.count, inc: s.inc }))
 
 ## 解決：`useShallow` を使う（めっちゃ便利）🧡
 
+![react_study_175_use_shallow.png](./picture/react_study_175_use_shallow.png)
+
+
 Zustand の公式ドキュメントにもある定番テクだよ〜！
 `useShallow` は「浅い比較（shallow）」で同じなら同じ扱いにしてくれるやつ✨ ([zustand.docs.pmnd.rs][1])
 

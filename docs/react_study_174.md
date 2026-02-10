@@ -35,11 +35,17 @@ flowchart LR
 
 ## `set` の更新方法は2種類あるよ ✌️✨
 
+![react_study_174_set_function.png](./picture/react_study_174_set_function.png)
+
+
 ### ① そのまま上書き（単純な更新）🧼
 
 `set({ count: 0 })` みたいに、部分的に上書きできます。
 
 ### ② 関数で更新（前の state を使う）🧠⚡
+
+![react_study_174_function_update.png](./picture/react_study_174_function_update.png)
+
 
 `set((state) => ({ count: state.count + 1 }))`
 **前の値に依存する更新**（+1 とか）はこっちが基本です🙆‍♀️

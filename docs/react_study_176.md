@@ -133,6 +133,9 @@ export default function App() {
 
 ## 6) 「爆速」っぽさ：コンポーネント分割しても共有できる 💨✨
 
+![react_study_176_component_split.png](./picture/react_study_176_component_split.png)
+
+
 Zustandの良さは、コンポーネントを分けても **同じ状態を共有できる**ところ！
 ついでに、セレクターで「必要なものだけ購読」すると無駄に再描画しにくいよ👀
 
