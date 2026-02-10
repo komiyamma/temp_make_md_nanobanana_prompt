@@ -37,11 +37,17 @@ flowchart TD
 * 🧹 だから **コンポーネントの都合で「もういらないよ」ってなったら、自分で片付け（`clearInterval`）してあげる必要がある**
 * その「片付け係」が `useEffect` の **クリーンアップ関数** です([react.dev][2])
 
+![react_study_064_timer_flow_illustration](./picture/react_study_064_timer_flow_illustration.png)
+
+
 ---
 
 ## 3. ゴールの UI を決める 🎨
 
 今回作るコンポーネントのイメージはこんな感じ：
+
+![react_study_064_ui_mockup](./picture/react_study_064_ui_mockup.png)
+
 
 * 秒数を表示：`経過時間：10 秒`
 * ボタン3つ：
@@ -234,6 +240,9 @@ const id = window.setInterval(() => {
 ここで大事なのが `setSeconds((prev) => prev + 1)` という **関数形式の更新** です。
 
 * `prev` には「直前の `seconds` の値」が入る
+
+![react_study_064_functional_update](./picture/react_study_064_functional_update.png)
+
 * それを使って `prev + 1` を計算するので
 
   * 多少タイミングがずれても安全
@@ -256,6 +265,9 @@ return () => {
 
 * **常に「最後に作ったタイマー」だけをきちんと止める**
 * タイマーが二重・三重に動き出す 🥵 という事故を防げます
+
+![react_study_064_cleanup_chaos](./picture/react_study_064_cleanup_chaos.png)
+
 
 ---
 

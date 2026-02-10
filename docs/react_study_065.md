@@ -47,6 +47,9 @@ flowchart TD
 ```
 
 「コンポーネントは **表示のことだけ考える**」
+
+![react_study_065_fetch_flow](./picture/react_study_065_fetch_flow.png)
+
 それ以外の“裏の仕事”（通信、エラー処理など）を、`useEffect` にやってもらうイメージです 💼
 
 ---
@@ -91,6 +94,9 @@ type Post = {
 ### 5. State を用意しよう：`data / isLoading / error` trio 🎲
 
 データ取得系では、だいたいこの 3 つの State を使います。
+
+![react_study_065_state_trio](./picture/react_study_065_state_trio.png)
+
 
 * `posts`：取得した記事の配列
 * `isLoading`：今読み込み中かどうか
@@ -187,6 +193,9 @@ export function Posts() {
 
 #### ここまでの流れをおさらい 👇
 
+![react_study_065_ui_states](./picture/react_study_065_ui_states.png)
+
+
 * 初回レンダー → `useEffect` が発動
 * `fetchPosts()` が呼ばれて API にリクエスト
 * 成功 → `setPosts(data)` → 再レンダー → リスト表示 🎉
@@ -236,6 +245,9 @@ npm run dev
 データ取得でも、**コンポーネントが消えたときに通信を中止する** というお片づけができます。
 
 これは、`AbortController` というブラウザの機能を使います。
+
+![react_study_065_abort_controller](./picture/react_study_065_abort_controller.png)
+
 
 ```
 ts
@@ -314,6 +326,9 @@ useEffect(() => {
 
 この場合、**レンダーのたびに毎回 `fetchPosts` が呼ばれます**。
 State を更新 → 再レンダー → また `fetch` → 無限ループ… という地獄に陥ることも 😇
+
+![react_study_065_infinite_loop](./picture/react_study_065_infinite_loop.png)
+
 
 「初回だけでよい処理」は、必ず `[]` を付けてあげましょう。
 

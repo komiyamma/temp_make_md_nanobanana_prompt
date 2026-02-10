@@ -50,6 +50,9 @@ graph TD
 3. state が変わると **コンポーネントが再レンダー**
 4. そのあとで `useEffect` が走って、`document.title` を更新する
 
+![react_study_063_title_update_flow](./picture/react_study_063_title_update_flow.png)
+
+
 ---
 
 ## 3️⃣ 新しいコンポーネントを作ろう 🧩
@@ -194,6 +197,9 @@ useEffect(() => {
 
 > 第62章でやった「クリーンアップ関数」の復習になってます ✅
 
+![react_study_063_cleanup_restore](./picture/react_study_063_cleanup_restore.png)
+
+
 ---
 
 ### ✍️ 入力イベントの型付きハンドラ
@@ -242,6 +248,9 @@ TypeScript でちゃんと型を付けておくと：
 ここでは
 「**名前が変わったときだけタイトルも変えたい**」ので `[name]` がピッタリです ✅
 
+![react_study_063_dependency_watch](./picture/react_study_063_dependency_watch.png)
+
+
 ---
 
 ## 7️⃣ 動作チェックリスト ✅
@@ -271,6 +280,9 @@ TypeScript でちゃんと型を付けておくと：
 ## 8️⃣ さらにレベルアップしてみるチャレンジ課題 💪✨
 
 余裕があったら、次のようなアレンジにも挑戦してみてください 🔥
+
+![react_study_063_challenges_ideas](./picture/react_study_063_challenges_ideas.png)
+
 
 ### 🎯 チャレンジ1：文字数をタイトルに入れる
 
