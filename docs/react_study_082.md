@@ -15,6 +15,8 @@
 
 ## 82-2 💡 `React.memo` ってなに？
 
+![react study 082 memo shield](./picture/react_study_082_memo_shield.png)
+
 **一言で言うと：**
 
 > 「同じ Props なら、そのコンポーネントもう一回描かなくていいよ〜」って React に教えるオプション
@@ -114,6 +116,8 @@ export function App() {
 ---
 
 ## 82-4 🧊 `React.memo` で子コンポーネントを「おとなしく」させる
+
+![react study 082 props compare](./picture/react_study_082_props_compare.png)
 
 ### ✅ 基本の書き方（TypeScript 版）
 
@@ -217,6 +221,8 @@ export function App() {
 ---
 
 ## 82-6 ⚠️ `React.memo` の注意ポイント
+
+![react study 082 object identity](./picture/react_study_082_object_identity.png)
 
 ### ① 状態・Context には効かないよ
 

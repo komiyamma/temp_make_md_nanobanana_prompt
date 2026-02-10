@@ -44,6 +44,8 @@ src/
 
 ## Step 1️⃣ 型から考える：テーマ用 Context の設計
 
+![react study 080 theme types](./picture/react_study_080_theme_types.png)
+
 まずは「どんな情報を共有したいのか」を型で決めちゃいます。
 
 * テーマそのもの → `"light"` か `"dark"` のどちらか
@@ -242,6 +244,8 @@ export default function App() {
 ---
 
 ## Step 7️⃣ CSS でライト / ダークの見た目を切り替える
+
+![react study 080 css variables](./picture/react_study_080_css_variables.png)
 
 最後に、テーマに応じて色を変える CSS を書きます。
 ここでは **CSS カスタムプロパティ（変数）** を使って、
