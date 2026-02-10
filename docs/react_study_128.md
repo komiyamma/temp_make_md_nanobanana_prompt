@@ -20,6 +20,8 @@
 
 ## 2. 全体イメージを図で見る 🧠✨
 
+![128 architecture diagram](./picture/react_study_128_architecture_diagram.png)
+
 `useActionState` でフォーム送信をしつつ、
 `useFormStatus` で「送信中かどうか」をボタン側が受け取る、という流れです。
 
@@ -311,6 +313,8 @@ body {
 ## 8. よくあるハマりポイント 🔍
 
 ### ❌ 1. `<form>` の外で `useFormStatus` を使っている
+
+![128 scope rule](./picture/react_study_128_scope_rule.png)
 
 ```tsx
 // ダメな例（外側）

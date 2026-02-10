@@ -30,6 +30,8 @@ flowchart TD
 
 ### ❌ 事故例：条件分岐の中でフックを呼ぶ（順番がズレる）
 
+![132 shifting indices](./picture/react_study_132_shifting_indices.png)
+
 ```tsx
 import { useState } from "react";
 
@@ -53,6 +55,8 @@ export function App() {
 ---
 
 ## 3) じゃあ「カスタムフック」って何が偉いの？🌟
+
+![132 custom hook safety](./picture/react_study_132_custom_hook_safety.png)
 
 カスタムフックは一言でいうと👇
 **“フックを安全に再利用するための、ルールに乗った関数”** だよ🙌✨

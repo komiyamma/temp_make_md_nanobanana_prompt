@@ -16,6 +16,8 @@ React 19 では `useOptimistic` が公式のフックとして追加されてい
 
 ## 1️⃣ 全体の流れイメージ（図でざっくり）
 
+![130 implementation flow](./picture/react_study_130_implementation_flow.png)
+
 ![楽観的TODOのイメージ](./picture/react_study_130_optimistic_todo.png)
 
 `useOptimistic` を使った TODO 追加の流れを、ざっくり図解してみます ✨
@@ -118,6 +120,8 @@ export default OptimisticTodoList;
 ---
 
 ## 4️⃣ `useOptimistic` を追加しよう ✨
+
+![130 optimistic state visual](./picture/react_study_130_optimistic_state_visual.png)
 
 次に、いよいよ `useOptimistic` を使います。
 
@@ -378,6 +382,8 @@ export default App;
 ---
 
 ### お題②：エラーのときに「元に戻る」UI にしてみる
+
+![130 rollback scenario](./picture/react_study_130_rollback_scenario.png)
 
 * `fakePostTodo` の中で、たまに `throw new Error("エラー")` してみて、
   エラーが出たときに「楽観的 TODO を消す」挙動を試してみる

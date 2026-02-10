@@ -83,6 +83,8 @@ export function useSomethingCool() {
 
 ## 4. なんでカスタムフックが必要なの？コピペ地獄からの脱出 😇
 
+![131 logic sharing](./picture/react_study_131_logic_sharing.png)
+
 よくあるパターン：
 
 * 画面 A に「いいねボタン」がある
@@ -255,6 +257,8 @@ flowchart LR
 ---
 
 ## 8. フォルダ構成のイメージ 🗂️
+
+![131 folder structure](./picture/react_study_131_folder_structure.png)
 
 カスタムフックは、よく `hooks` フォルダを作ってまとめます。
 

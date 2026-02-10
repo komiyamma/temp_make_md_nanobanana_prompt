@@ -26,6 +26,8 @@ React 19 の `useOptimistic` は、
 
 ### 2. 普通のフォーム送信 vs 楽観的UI を図で見てみる 🧠
 
+![129 optimistic timeline](./picture/react_study_129_optimistic_timeline.png)
+
 #### 🔁 今までのパターン（ちょっともっさり）
 
 1. ユーザーが送信ボタンを押す
@@ -61,6 +63,8 @@ sequenceDiagram
 ---
 
 ### 3. `useOptimistic` の正体をチェック 👀
+
+![129 hook anatomy](./picture/react_study_129_hook_anatomy.png)
 
 React公式では、`useOptimistic` はこう説明されています：
 
