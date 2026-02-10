@@ -2,7 +2,7 @@ Write-Host "📄 LIST.md を生成しています（docs/ 直下のみ）..." -F
 
 $mdFiles = Get-ChildItem -Path "docs" -Filter "*.md" -File | Sort-Object Name
 $listContent = @("| 番号 | ファイルパス |", "|---|---|")
-$count = 1
+$count = 0
 
 foreach ($file in $mdFiles) {
     $relativePath = "docs/$($file.Name)"
