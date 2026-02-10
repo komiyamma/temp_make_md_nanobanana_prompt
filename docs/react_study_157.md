@@ -33,6 +33,9 @@ flowchart TD
 
 ## 1) コンポーネントを作ろう（クリックで表示が切り替わる）🧩
 
+![Toggle Visual](./picture/react_study_157_toggle_visual.png)
+
+
 `src/components/ToggleMessage.tsx` を作成👇
 
 ```tsx
@@ -97,6 +100,8 @@ test("クリックすると：メッセージが表示されて、ボタン文�
 
   // 画面変化を待ってから確認（Reactの更新は“すぐ”とは限らないので安全✨）
   const message = await screen.findByRole("status");
+
+
   expect(message).toHaveTextContent("やった！表示できたよ✨");
 
   expect(screen.getByRole("button", { name: "閉じる" })).toBeInTheDocument();
@@ -113,6 +118,8 @@ test("もう一回クリックすると：メッセージが消える✅", async
   await user.click(screen.getByRole("button", { name: "閉じる" }));
 
   // 消えるのを待つテク（見た目の変化をちゃんと待てる🧠✨）
+
+
   await waitForElementToBeRemoved(message);
 
   expect(screen.queryByRole("status")).not.toBeInTheDocument();
@@ -120,6 +127,10 @@ test("もう一回クリックすると：メッセージが消える✅", async
   expect(screen.getByText("クリック回数: 2")).toBeInTheDocument();
 });
 ```
+
+![Async Find](./picture/react_study_157_async_find.png)
+
+![Wait Removal](./picture/react_study_157_wait_removal.png)
 
 ---
 

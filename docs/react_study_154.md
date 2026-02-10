@@ -1,5 +1,11 @@
 # 第154章：`getBy...` `findBy...` `queryBy...` の違い
 
+![queryBy Null](./picture/react_study_154_query_null.png)
+
+
+![findBy Waiting](./picture/react_study_154_find_wait.png)
+
+
 ## 今日のゴール 🎯
 
 テストで要素を探すときに、
@@ -8,6 +14,9 @@
 ---
 
 ## まず結論：3つの性格を一言で 🧠💡
+
+![Query Types Personality](./picture/react_study_154_get_query_find.png)
+
 
 * **`getBy...`**：*「あるはず！」* → **無いと即エラー**😤
 * **`queryBy...`**：*「無いかも」* → **無いと`null`**（平和）🕊️
