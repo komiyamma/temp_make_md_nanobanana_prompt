@@ -28,6 +28,9 @@
 const value = useContext(SomeContext);
 ```
 
+
+
+![react_study_075_magnet.png](./picture/react_study_075_magnet.png)
 * `SomeContext` … 前の章で `createContext` したやつ（たとえば `UserContext`）
 * `value` … Provider で渡した `value={...}` がそのまま入ってくる
 
@@ -197,6 +200,9 @@ export function Header() {
 }
 ```
 
+
+
+![react_study_075_guard.png](./picture/react_study_075_guard.png)
 ここでやっていること：
 
 * `const user = useContext(UserContext);`
@@ -287,6 +293,9 @@ if (someCondition) {
 }
 ```
 
+
+
+![react_study_075_queue.png](./picture/react_study_075_queue.png)
 **Hooks は「トップレベルで同じ順番で呼ぶ」必要がある**ので、
 `if` や `for` の中で呼ぶとルール違反になります。
 

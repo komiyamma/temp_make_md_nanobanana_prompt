@@ -60,6 +60,9 @@ export function App() {
 }
 ```
 
+
+
+![react_study_077_backpack.png](./picture/react_study_077_backpack.png)
 これでも**動く**し、最初はこれで全然OKなんだけど…
 
 * Context が増えるたびに
@@ -166,6 +169,9 @@ export function useTheme() {
 }
 ```
 
+
+
+![react_study_077_organizing.png](./picture/react_study_077_organizing.png)
 これで、
 
 * **Context 関連のものは `ThemeContext.tsx` に集結**
@@ -313,6 +319,9 @@ export function AppProviders({ children }: AppProvidersProps) {
 }
 ```
 
+
+
+![react_study_077_power_strip.png](./picture/react_study_077_power_strip.png)
 そして `main.tsx` はこうなります 👇
 
 ```tsx

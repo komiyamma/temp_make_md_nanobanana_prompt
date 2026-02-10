@@ -61,6 +61,9 @@ import { createContext } from "react";
 export const UserContext = createContext<UserContextValue | null>(null);
 ```
 
+
+
+![react_study_073_blueprint.png](./picture/react_study_073_blueprint.png)
 ポイントはココ 👇
 
 * `<UserContextValue | null>`
@@ -92,6 +95,9 @@ const UserContext = createContext<UserContextValue>(null);
 // Type 'null' is not assignable to type 'UserContextValue' みたいなエラー
 ```
 
+
+
+![react_study_073_shape_sorter_error.png](./picture/react_study_073_shape_sorter_error.png)
 * 型の宣言では「**必ず `UserContextValue` が入るよ！**」と言っておきながら
 * 実際の値は `null` を渡しているので、TypeScript からすると
 
@@ -193,6 +199,9 @@ return (
 }
 ```
 
+
+
+![react_study_073_oasis.png](./picture/react_study_073_oasis.png)
 大事なポイントはここ 👇
 
 * **Context自体** の型：`UserContextValue | null`（`null` を許容）
