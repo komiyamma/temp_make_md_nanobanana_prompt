@@ -16,6 +16,8 @@
 
 ## まず結論：Next.jsが“難しく見える”3つの理由😵‍💫➡️😌
 
+![Three Monsters](./picture/next_study_009_three_monsters.png)
+
 1. **用語が多い**（Route / Layout / Server / Client / Cache…）📚
 2. **選択肢が多い**（書き方が1つじゃない）🤹‍♀️
 3. **全部入り感**がある（Webアプリの機能がまとまってる）🧰✨
@@ -58,6 +60,8 @@ flowchart TD
 
 ## よくある誤解あるある5連発💥（ぜんぶ安心してOK🙆‍♀️）
 
+![Myth Busting](./picture/next_study_009_myth_busting.png)
+
 ### 誤解①「Next.jsってSSRとかサーバーの知識が必須でしょ？😨」
 
 ➡️ **必須じゃないよ！**
@@ -81,6 +85,8 @@ flowchart TD
 “暗記”じゃなくて“道具箱”🧰✨
 
 ### 誤解⑤「Next.jsって結局、何から手をつければいいの？🥺」
+
+![Step by Step](./picture/next_study_009_step_by_step.png)
 
 ➡️ いちばん最初はこれだけ👇
 **「ページを作る」→「移動する」→「レイアウトを整える」**
@@ -118,6 +124,8 @@ flowchart LR
 ---
 
 ## ミニワーク💡「これは今やる？あとでいい？」仕分けゲーム📦🎮
+
+![Sorting Game](./picture/next_study_009_sorting_game.png)
 
 次の項目を、直感でOKだから3つに分けてみてね👇✨
 

@@ -15,6 +15,8 @@
 
 ## まず結論：ゴールは2段階にするのが最強💪💖
 
+![MVP Growth](./picture/next_study_007_mvp_egg.png)
+
 * 🥚 **ミニアプリ（MVP）**：小さく完成させる（短時間で達成感）
 * 🐣 **本命アプリ**：ミニアプリをベースに、章が進むたびに増築していく
 
@@ -41,6 +43,8 @@
 ---
 
 ## 本命アプリは「ミニアプリに足す」だけ🧩✨
+
+![Building Blocks](./picture/next_study_007_building_blocks.png)
 
 ミニアプリを土台にして、ロードマップの章が進むたびに…
 
@@ -88,6 +92,8 @@ flowchart TD
 
 ### ③ カフェメモ☕✨
 
+![Cafe App Theme](./picture/next_study_007_theme_cafe.png)
+
 * 一覧：行きたいカフェ
 * 詳細：地図リンク（あとで）
 * 操作：エリアで絞り込み
@@ -95,6 +101,8 @@ flowchart TD
 ---
 
 ## 10分ワーク✍️✨「あなたのミニアプリ、決めよう！」
+
+![Goal Checklist](./picture/next_study_007_checklist_visual.png)
 
 VSCodeでメモ用に `goal.md` を作って、これを埋めてみてね😊🩷（コピペOK）
 

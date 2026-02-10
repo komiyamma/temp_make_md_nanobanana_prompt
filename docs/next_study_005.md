@@ -60,6 +60,8 @@ flowchart TD
 
 ### ❶ 「とりあえず `app/page.tsx` を全部Clientにしちゃえ」→ もったいない！🥺
 
+![Don't Make Everything Client](./picture/next_study_005_dont_make_everything_client.png)
+
 ページ全体をClientにすると、静的な部分までJSが増えやすいよ〜💦
 Next.js公式も「インタラクティブ部品だけClientにして、JSを減らそう」って言ってる🫶([Next.js][1])
 
@@ -70,11 +72,15 @@ Client側に秘密（APIキーとかDB処理とか）が混ざると危険＆壊
 
 ### ❸ Server→Clientに渡すpropsで「関数」や「Date」などを渡して怒られる😇
 
+![Props Serialization](./picture/next_study_005_serialize_props.png)
+
 Clientに渡すpropsは **シリアライズ可能**（JSONにできる感じ）じゃないとダメだよ〜📦([Next.js][1])
 
 ---
 
 ## 10分実装：Serverのページに、Clientの「カウンター」だけ埋め込む 🧁➕🎮
+
+![Server Wrapping Client](./picture/next_study_005_server_client_composition.png)
 
 ### ✅ やること
 
@@ -155,6 +161,8 @@ npm run dev
 ---
 
 ## 追加ミニ実装：`localStorage` を使う＝Client確定🌙☀️
+
+![localStorage Access](./picture/next_study_005_local_storage_lock.png)
 
 ブラウザ保存（`localStorage`）はClientでしか触れないよ〜！([Next.js][1])
 
