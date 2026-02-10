@@ -18,11 +18,12 @@ description: Generate an image generation plan for a range of Markdown files bas
 
         b.  **Analyze Content**:
             - Review the content (from direct Markdown read).
-            - **CRITICAL**: Propose an image ONLY if there is NO existing image nearby (check for both `![]()` and `<img` tags). The goal is to fill gaps.
-            - **Constraint**: If content is empty or very short, you may skip.
+            - **CRITICAL**: Identify ALL locations where an image would enhance understanding or visual appeal, or any place where you think an image would be good.
+            - **Quantity Rule**: Do not limit to just one. Propose as many as needed to enrich the content.
+            - **Limit**: However, strictly limit the total number of *new* images to a MAXIMUM of 7 per Markdown file.
 
-        c.  **Formulate Plan**:
-            - If a need for an image is found:
+        c.  **Formulate Plan (Iterate for each proposed image)**:
+            - **Loop**: Perform the following steps (c to f) for EACH identified image location (up to 7):
                 - **Filename Construction**:
                     - Use the target Markdown filename (without extension) as the base (e.g., `react_study_001.md` -> `react_study_001`).
                     - Append a detailed description with at least 2 English words: e.g., `_split_number`.
