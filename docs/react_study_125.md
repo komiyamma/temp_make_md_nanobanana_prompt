@@ -67,6 +67,8 @@ flowchart LR
 
 ## 4️⃣ まずは超シンプル版：カウンターで雰囲気をつかむ 🧮✨
 
+![useActionState Anatomy](./picture/react_study_125_hook_anatomy.png)
+
 フォームというと入力欄付きのものをイメージしがちですが、
 まずは**ボタンだけのカンタンな例**で、`useActionState` の形に慣れましょ〜 💁‍♀️
 
@@ -147,6 +149,8 @@ export function CounterWithActionState() {
 ---
 
 ### 5-1. `FormState` 型を決める 🧱
+
+![Form State Object Structure](./picture/react_study_125_form_state_object.png)
 
 まず「フォームの状態」を1つのオブジェクトにまとめます。
 

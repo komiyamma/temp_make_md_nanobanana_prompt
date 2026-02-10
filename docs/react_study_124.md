@@ -193,6 +193,8 @@ sequenceDiagram
 
 #### 7-1. `action={handleGreet}` が新しいキモ 🎯
 
+![Uncontrolled Input Auto-Reset](./picture/react_study_124_uncontrolled_reset.png)
+
 ```tsx
 <form action={handleGreet}>
 ```
@@ -224,6 +226,8 @@ const nickname =
 というふうに、**`typeof rawValue === "string"` で絞り込んでから `trim()`** しています 🧼
 
 #### 7-2. `name` 属性が超重要 ✨
+
+![Name Attribute Link](./picture/react_study_124_name_attribute_link.png)
 
 ```tsx
 <input
