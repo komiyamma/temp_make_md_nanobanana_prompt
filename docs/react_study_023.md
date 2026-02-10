@@ -21,6 +21,8 @@ flowchart TD
 
 ## 🥊 `React.FC` と “いまどき”の直接注釈、なにが違うの？
 
+![React.FC vs Explicit Props Comparison](./picture/react_study_023_fc_vs_explicit.png)
+
 ### 旧来（`React.FC` を使う）
 
 ```tsx
@@ -56,6 +58,8 @@ function Card({ title }: CardProps) {
 
 ### ① 子要素を**受け取らない**部品
 
+![Component Rejecting Children](./picture/react_study_023_header_no_children.png)
+
 ```tsx
 // src/components/Header.tsx
 type HeaderProps = { title: string; count: number };
@@ -75,6 +79,8 @@ export function Header({ title, count }: HeaderProps) {
 ---
 
 ### ② 子要素（`children`）を**受け取る**部品
+
+![Component Explicitly Accepting Children](./picture/react_study_023_section_with_children.png)
 
 ```tsx
 // src/components/Section.tsx
@@ -98,6 +104,8 @@ export function Section({ label, children }: SectionProps) {
 ---
 
 ### ③ **ジェネリクス**を使うリスト部品（超使える！）
+
+![Generics Type Inference](./picture/react_study_023_generics_inference.png)
 
 ```tsx
 // src/components/List.tsx
@@ -181,6 +189,8 @@ export default function App() {
 ---
 
 ## 🆚 早見表：`React.FC` と 直接注釈
+
+![Balance Scale: React.FC vs Explicit](./picture/react_study_023_cheatsheet_balance.png)
 
 | 観点         | `React.FC`    | 直接注釈（推奨）           |
 | ---------- | ------------- | ------------------ |
