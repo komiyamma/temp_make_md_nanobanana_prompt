@@ -6,6 +6,8 @@
 ---
 
 ## 1) まず結論：ログインは「合言葉チェック」＋「合格証を渡す」🎫✅
+![Authentication vs Authorization Analogy](./picture/react_study_191_auth_analogy.png)
+
 
 ログインって、実はこの2段階！
 
@@ -99,6 +101,8 @@ sequenceDiagram
 ---
 
 ## 5) 「アクセストークン」と「リフレッシュトークン」ってなに？🔁🔐
+![Token Lifecycle Cycle](./picture/react_study_191_token_lifecycle.png)
+
 
 よくある設計はこれ！
 
@@ -142,6 +146,8 @@ Chrome想定でいくね！（Edgeでもほぼ同じだよ）
 ---
 
 ## 7) React的には「ログイン状態」ってどこに置くの？🧩✨
+![Token Storage Comparison](./picture/react_study_191_storage_comparison.png)
+
 
 超ざっくり、よくある置き場👇
 

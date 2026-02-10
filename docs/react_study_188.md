@@ -42,6 +42,8 @@ npm i react-hook-form
 ---
 
 ## 実装：`useFieldArray` の基本セット（TS対応）🧁
+![useFieldArray Operations](./picture/react_study_188_fieldarray_operations.png)
+
 
 ### `src/FieldArrayDemo.tsx` を作る✨
 
@@ -228,10 +230,14 @@ export default function App() {
 
 ## 超大事ポイント3つ🔥（ここでハマりやすい！）
 
-1. **`key` は `field.id` を使う** 🙅‍♀️ `index` はなるべく避けてね
+1. **`key` は `field.id` を使う**
+![Key Pitfall: Index vs ID](./picture/react_study_188_key_pitfall.png)
+ 🙅‍♀️ `index` はなるべく避けてね
    → 入力中に順番がズレたりして、フォームが壊れがち😵‍💫
 
-2. **`fields` は「表示用の設計図」** 🧩
+2. **`fields` は「表示用の設計図」**
+![fields vs watch() Distinction](./picture/react_study_188_fields_blueprint.png)
+ 🧩
    `fields` 自体は入力値そのものじゃないよ！
    「今の入力値」を見たい時は `watch()` や `getValues()` を使う感じ👀✨
 
@@ -241,6 +247,8 @@ export default function App() {
 ---
 
 ## ちょい応用（できたら強い）💪✨
+![Advanced Field Array Actions](./picture/react_study_188_advanced_actions.png)
+
 
 `useFieldArray` には便利ワザがいっぱい！🎮
 
