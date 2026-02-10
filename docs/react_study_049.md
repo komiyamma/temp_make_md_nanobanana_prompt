@@ -55,6 +55,8 @@ Viteで作ったReact+TSプロジェクトを使います。
 
 ### ✅ 完成形のコード（まずは全体）
 
+![WANTリストアプリの完成イメージ](./picture/react_study_049_want_list_ui.png)
+
 先に完成形をドーンと貼ります。
 このあとで、少しずつ分解して見ていきます 👀
 
@@ -199,6 +201,8 @@ const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
 ---
 
 ### 📮 フォームが送信されたとき
+
+![フォーム送信の停止](./picture/react_study_049_form_event.png)
 
 ```ts
 const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
