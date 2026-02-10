@@ -125,6 +125,9 @@ const handleClick = () => {
 
 ## 4️⃣ ミニ実験①：ボタンで「ここまでスクロール」するアプリ 🧪
 
+![react_study_095_scroll_action](./picture/react_study_095_scroll_action.png)
+
+
 「ボタンを押したら、ずっと下の方にある箱までスーッとスクロールする」
 という小さなコンポーネントを作ってみましょう ✨
 
@@ -213,6 +216,9 @@ export default App;
 ---
 
 ## 5️⃣ ミニ実験②：ボタンで入力欄にカーソルを合わせる ✏️
+
+![react_study_095_focus_action](./picture/react_study_095_focus_action.png)
+
 
 次は、**ボタンを押したら `<input>` にフォーカス** する例です。
 
