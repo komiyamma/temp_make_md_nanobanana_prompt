@@ -117,6 +117,8 @@ React は「箱が変わったか？」をチェックしているイメージ�
 
 ### 例1：アイテムを追加する（OK版）
 
+![スプレッド構文のイメージ](./picture/react_study_048_spread_syntax.png)
+
 ```tsx
 const handleAdd = () => {
   setFruits((prevFruits) => {
@@ -134,6 +136,8 @@ const handleAdd = () => {
 ---
 
 ## 5️⃣ `prev` を使う理由って？⏰
+
+![prev関数の安全性](./picture/react_study_048_prev_pattern.png)
 
 `setFruits` は、**すぐに反映されない** ことがあります。
 （裏でまとめて処理されたりするからです）

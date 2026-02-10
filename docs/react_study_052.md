@@ -63,6 +63,8 @@ VS Code でこんな感じに開いてみてください：
 
 ### ✅ やること
 
+![CSS変数のイメージ](./picture/react_study_052_css_variables.png)
+
 1. `src/index.css` を開く
 2. いったん中身を全部消して、次をコピペしてみましょう ✂️
 
@@ -224,6 +226,8 @@ button:disabled {
 ---
 
 ## 6️⃣ 「ユーティリティクラス」をすこしだけ作ってみよう 🧰
+
+![ユーティリティクラスのイメージ](./picture/react_study_052_utility_classes.png)
 
 Tailwind ほどガチじゃなくてOKなので、
 「よく使いそうなクラス」を `index.css` に少しだけ用意しておくと便利です。

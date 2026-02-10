@@ -109,6 +109,8 @@ export default App;
 
 #### 🔸 削除用の関数を作る
 
+![削除ロジックの図解](./picture/react_study_050_delete_logic.png)
+
 `App` コンポーネントの中に、こんな関数を追加します。
 
 ```tsx
@@ -160,6 +162,8 @@ function App() {
 * 他の要素はそのまま返す
 
 #### 🔸 更新用の関数を作る
+
+![更新ロジックの図解](./picture/react_study_050_update_logic.png)
 
 ```tsx
 const handleToggleDone = (id: number) => {

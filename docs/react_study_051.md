@@ -219,6 +219,8 @@ export default App;
 
 ### 7-1. インラインスタイルの基本形
 
+![インラインスタイルのオブジェクト](./picture/react_study_051_inline_style_obj.png)
+
 `style` は **オブジェクト** を渡します：
 
 ```tsx
@@ -277,6 +279,8 @@ function App() {
 ---
 
 ## 8️⃣ ちら見せ：CSS Modulesってどんなもの？🧩
+
+![CSS Modulesのスコープの仕組み](./picture/react_study_051_css_modules_scope.png)
 
 このあと詳しくやる **CSS Modules** を、ここで少しだけイメージだけつかんでおきましょう。
 
