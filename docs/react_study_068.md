@@ -58,6 +58,10 @@ type CounterState = {
 
 ## 3️⃣ Action の型を決める ✉️
 
+![react study 068 state action types](./picture/react_study_068_state_action_types.png)
+
+
+
 次に、「どんな指示で state を変えるのか？」をぜんぶ列挙します。
 
 今回のカウンターだと：
@@ -104,6 +108,10 @@ type CounterAction =
 
 ## 4️⃣ reducer 関数に State と Action の型をつける 🧠
 
+![react study 068 reducer logic flow](./picture/react_study_068_reducer_logic_flow.png)
+
+
+
 `useReducer` の中心人物が **reducer 関数** でしたね。
 
 > 「古い state」と「action（指示）」を渡したら、
@@ -136,6 +144,10 @@ function counterReducer(
 ```
 
 ここが **第68章のいちばん大事なポイント** です ✨
+
+![react study 068 ts guard](./picture/react_study_068_ts_guard.png)
+
+
 
 * `state` の型 → `CounterState`
 * `action` の型 → `CounterAction`
@@ -172,6 +184,10 @@ TypeScript が「`action` は `never` じゃないよ！」と怒って教えて
 
 ## 5️⃣ React v19 での `useReducer` の型推論 🧬
 
+![react study 068 v19 inference](./picture/react_study_068_v19_inference.png)
+
+
+
 React v19 / `@types/react@19` では、`useReducer` の型推論が強化されています。
 
 * React 18 までは「reducer 関数だけ」から state の型を推論
@@ -203,6 +219,10 @@ reducer 関数に型を付けて、`useReducer(reducer, initialState)` と書く
 ---
 
 ## 6️⃣ いよいよ `useReducer` を呼び出す ✨
+
+![react study 068 component structure](./picture/react_study_068_component_structure.png)
+
+
 
 では、実際にコンポーネントの中で `useReducer` を使ってみましょう。
 
@@ -309,7 +329,11 @@ TypeScript がしっかりガードしてくれます 🛡️✨
 
 ---
 
-## 8️⃣ ミニ練習問題 💪（ノートに書いてみて！）
+## 8️⃣ ミニ練習問題 💪
+
+![react study 068 todo challenge](./picture/react_study_068_todo_challenge.png)
+
+（ノートに書いてみて！）
 
 時間があれば、VSCode かノートに次の型だけ考えてみてください ✍️
 
