@@ -14,6 +14,8 @@ Viteの初期画面は見えたよね？ここから **最小のReactアプリ**
 
 ## いま何が起きてる？（図解）🧠
 
+![Hot Module Replacement Cycle](./picture/react_study_009_hmr_cycle.png)
+
 ```mermaid
 flowchart TB
   A[App.tsx を編集 ✍️] --> B[Ctrl + S で保存 💾]
@@ -25,6 +27,8 @@ flowchart TB
 ---
 
 ## まずは初期ファイルを確認 👀
+
+![React File Relationships](./picture/react_study_009_file_relationships.png)
 
 ViteのReact+TSテンプレには、だいたいこんな主要ファイルがあるよ📁
 
@@ -155,6 +159,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 ---
 
 ## 3分ミニ練習 ⏱️
+
+![Greeting Component Result](./picture/react_study_009_greeting_emoji.png)
 
 1. `Greeting` に `emoji` という**オプション**を足して、指定したら後ろに絵文字を付けよう 🥳
 2. `App` から `<Greeting name="はるか" emoji="🌸" />` と呼び出してみる
