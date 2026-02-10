@@ -46,33 +46,23 @@ description: Generate an image generation plan for a range of Markdown files bas
                         - Use **Japanese** for explanatory labels (e.g., "値", "不変") to make it intuitive.
                         - Use **English** for code terms (e.g., "String", "Entity").
                         - Font should be clean and rounded sans-serif.
-                    - **Format**:
+                    - **Format (IMPORTANT)**:
+                        - The output `prompt` string must **ONLY** contain the specific visual instructions for this image.
+                        - **DO NOT** include general style rules (e.g., "Modern Flat Vector", "Blue/Teal/White") in the output string, as these are already defined in the template.
+                        - Structure the output as follows:
                         ```text
-                        A modern flat vector illustration of [Subject/Action based on context].
-                        Style: Clean line art, geometric, tech editorial style.
-                        Uniform bold outlines, flat colors, no gradients, white background.
+                        **Theme**: [Subject/Action based on context]
                         
-                        Labels to Render:
+                        **Labels to Render**:
                         - [English Label]: "[Japanese Text]"
                         - [English Label]: "[Japanese Text]"
                         
-                        Visual Details:
-                        [CRITICAL: Describe WHAT to draw, not just how.
-                         1. Identify the Core Concept: (e.g., State updates, API data flow, Component hierarchy).
-                         2. Translate to Concrete Metaphor: Use physical objects to represent abstract code concepts.
-                            - Data/Value -> Box, Card, Gem, Document.
-                            - Function/Process -> Gear, Factory, Robot arm, Pipe.
-                            - User -> Stick figure, Persona icon.
-                            - Database -> Cylinder, Shelf.
-                         3. Describe Action/Interaction:
-                            - Arrows show direction of data flow.
-                            - Sparkles/Glow show active state or change.
-                            - Broken lines show separation or abstraction.
-                         4. Define Layout:
-                            - "A split composition with..."
-                            - "A flow diagram from left to right..."
-                            - "A central object surrounded by..."
-                         5. Example: "A split composition. Left side shows a 'User' icon clicking a 'Button'. An arrow points to the Right side, where a 'Gear' icon is turning, representing the 'Event Handler' executing."
+                        **Visual Details**:
+                        [CRITICAL: Describe WHAT to draw.
+                         1. Identify the Core Concept (e.g., State updates, API data flow).
+                         2. Translate to Concrete Metaphor (e.g., Data -> Box, Process -> Gear).
+                         3. Describe Action/Interaction (e.g., Arrows showing flow, Sparkles for change).
+                         4. Define Layout (e.g., Split composition, Flow from left to right).
                         ]
                         ```
                 - **Relative Link**: Construct the relative path (relative to the Markdown file in `docs/`): `./picture/<proposed_image_filename>`.
