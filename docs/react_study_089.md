@@ -67,6 +67,8 @@ graph LR
 
 * ✅ **自動メモ化（Automatic Memoization）**
 
+![react_study_089_auto_memoization.png](./picture/react_study_089_auto_memoization.png)
+
   * 入力（Props や State）が変わらないときは
     そのコンポーネントを **再レンダリングしない** ようにする
 
@@ -106,6 +108,8 @@ graph LR
 ## 6️⃣ Before / After：手メモ化 → Compiler 任せの世界 ✂️✨
 
 「実際のコードがどう変わるの？」というイメージを
+
+![react_study_089_code_comparison.png](./picture/react_study_089_code_comparison.png)
 シンプルな例で見てみましょう 👀
 
 ### 🐢 Before：がんばって `useMemo` / `useCallback` / `React.memo`
@@ -292,6 +296,8 @@ React Compiler はかなりすごいんですが、
 ### 🔎 コンパイラが前提にしているルール
 
 公式ブログなどでも、React Compiler が安全に動くためには、
+
+![react_study_089_compiler_rules.png](./picture/react_study_089_compiler_rules.png)
 **React のルールを守って書かれていることが前提** だと説明されています。([React][6])
 
 たとえば：

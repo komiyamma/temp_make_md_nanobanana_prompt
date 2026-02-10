@@ -135,6 +135,8 @@ export function RenderCounter() {
 ここでのポイントは：
 
 * `renderCountRef.current++` しても、それ **だけ** では再レンダーは起きない
+
+![react_study_092_render_trigger.png](./picture/react_study_092_render_trigger.png)
 * 画面が変わっているのは **`useState` の更新がトリガー** になっているから
 
 ---
@@ -149,6 +151,8 @@ export function RenderCounter() {
 * でも、スタート/ストップの間で **ずっと覚えておきたい**
 
 → まさに **`useRef` 向きの値** です ([React][1])
+
+![react_study_092_timer_id_storage.png](./picture/react_study_092_timer_id_storage.png)
 
 ここでは「考え方」だけ見たいので、ざっくりコードでイメージを掴みましょう。
 
@@ -219,6 +223,8 @@ export function SimpleTimer() {
 コードを書いていて迷ったら、これを自分に聞いてみてください👇
 
 ### Q1. 「この値は画面に直接 or 間接的に影響する？」
+
+![react_study_092_decision_flow.png](./picture/react_study_092_decision_flow.png)
 
 * Yes → **`useState`**
 * No → 次の質問へ
