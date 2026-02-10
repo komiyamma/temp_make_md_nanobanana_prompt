@@ -80,6 +80,8 @@ flowchart LR
 ---
 
 ## 5️⃣ 注意！「`use` を付けちゃダメな関数」もある⚠️😵
+![react_study_133_hook_vs_function.png](./picture/react_study_133_hook_vs_function.png)
+
 
 **Hookを使ってないただの関数**に `use` を付けるのは基本NG🙅‍♀️
 （読んだ人が「Hookだ！」って誤解するし、ツールがHookとして扱うこともあるよ〜）

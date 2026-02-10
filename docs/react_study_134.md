@@ -38,6 +38,8 @@ flowchart TD
 ---
 
 ## 3) `useToggle.ts` を作ろう 📁✨
+![react_study_134_tuple_structure.png](./picture/react_study_134_tuple_structure.png)
+
 
 ### ✅ 作る場所
 
@@ -108,6 +110,8 @@ export default function App() {
 ---
 
 ## 5) よくある使い道アイデア集 💡💞
+![react_study_134_use_cases.png](./picture/react_study_134_use_cases.png)
+
 
 * ✅ モーダルの開閉 🪟
 * ✅ パスワード表示/非表示 🙈👀
