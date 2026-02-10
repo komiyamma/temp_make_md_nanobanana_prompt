@@ -37,6 +37,9 @@ flowchart TB
 
 ## 3) 最初のストアを書いてみよう 🧠✨
 
+![Creating a Store with create()](./picture/react_study_172_create_store.png)
+
+
 「状態（count）」と「更新する関数（inc/dec/reset）」を、1つのオブジェクトにまとめます🙆‍♀️
 
 📄 **src/stores/useCounterStore.ts**
@@ -66,6 +69,9 @@ export const useCounterStore = create<CounterStore>()((set) => ({
 ---
 
 ## 4) App.tsx で “ちょい使い” して動作確認 ✅🎮
+
+![Component Using Store](./picture/react_study_172_component_usage.png)
+
 
 📄 **src/App.tsx**（中身をいったんこれにしてOK）
 
