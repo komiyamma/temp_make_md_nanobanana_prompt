@@ -76,11 +76,14 @@ const el = _jsx("h1", { children: "こんにちは" });
 // ↑ JSXは「特別な関数を呼ぶコード」に変わるだけ！
 ```
 
+![JSX Syntactic Sugar](./picture/react_study_011_jsx_sugar_reality.png)
+
 ---
 
 ## JSXでよくある“最初のつまずき”🐣（先に予防！）
 
 * **隣り合う要素をそのまま返す** → `Adjacent JSX elements must be wrapped...` エラー
+  ![JSX One Parent Rule](./picture/react_study_011_one_parent_rule.png)
   対策：**ひとつの親タグ**（または `<>...</>` フラグメント）で包む
 * **属性名がちょっと違う** → `class` じゃなくて **`className`**、イベントは **`onClick`**（キャメルケース）
   ※このあたりは**第12章/第13章**でガッツリやるよ🧑‍🏫
@@ -140,6 +143,8 @@ export default App;
 ```
 
 > 表示できたら「**JSXでUIを“書けた”**」ってこと！ナイス〜👏
+
+![Profile Card Component UI](./picture/react_study_011_profile_card_preview.png)
 
 ---
 

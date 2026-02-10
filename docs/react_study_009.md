@@ -34,6 +34,8 @@ ViteのReact+TSテンプレには、だいたいこんな主要ファイルが�
 
 > この章では **`src/App.tsx`** を中心に触るよ。慣れたら `main.tsx` も覗いてみよう😉
 
+![React File Relationship Flow](./picture/react_study_009_file_relationship.png)
+
 ---
 
 ## 最小の「Hello World」を描こう ✨
@@ -118,6 +120,8 @@ export default function App() {
 > * 受け取る値（Props）は **型（`GreetingProps`）** で形を決めると安心安全🫡
 > * `({ name })` みたいに **分割代入** で取り出すのが定番。
 
+![TypeScript Prop Safety](./picture/react_study_009_typescript_safety.png)
+
 ---
 
 ## `src/main.tsx` はチラ見でOK 👀
@@ -144,6 +148,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 ---
 
 ## よくあるプチつまずき 🫠➡️🛟
+
+![HTML vs JSX Syntax Differences](./picture/react_study_009_jsx_vs_html_syntax.png)
 
 | 症状                 | 直し方                                             |
 | ------------------ | ----------------------------------------------- |

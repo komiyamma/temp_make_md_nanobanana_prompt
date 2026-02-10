@@ -72,6 +72,8 @@ flowchart TD
 
    > 例：`name` を `"みお"` に変えて、表示がすぐ変わるのを見よう 👀
 
+![Editing Props in React DevTools](./picture/react_study_010_devtools_prop_edit.png)
+
 **超プチテク**
 
 * 画面の要素を右クリック → **Inspect in Components** で、対応するコンポーネントに一発ジャンプ 🚀
@@ -93,6 +95,8 @@ flowchart TD
 3. **Stop** ⏹ を押す → “どれが何回描画されたか” が色付きで分かる
 4. 不要に再描画されてる子コンポーネントがいないかチェック
 
+![React Profiler Flamegraph](./picture/react_study_010_profiler_flamegraph.png)
+
    > 将来の章でやる `React.memo` / `useCallback` / `useMemo` と相性◎
 
 ---
@@ -109,6 +113,8 @@ flowchart TD
   このロードマップではReduxを深掘りしないけど、採用するなら必須級。Action履歴やStateのタイムトラベルができるよ。
 
 > 入れすぎるとブラウザが重くなることもあるので、**まずは React DevTools + axe + JSON** あたりからでOK！
+
+![Web Development Extension Toolkit](./picture/react_study_010_extension_toolkit.png)
 
 ---
 

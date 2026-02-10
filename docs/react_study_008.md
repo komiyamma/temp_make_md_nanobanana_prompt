@@ -57,6 +57,8 @@ npm run dev
 * 例）**Local:  [http://localhost:5173/](http://localhost:5173/)**
 * VS Code なら **Ctrl + クリック** で開けるよ🖱️
 
+![Vite Startup Terminal Output](./picture/react_study_008_vite_startup_terminal.png)
+
 > 🔔 初回は Windows のファイアウォール確認が出ることあり。**プライベートネットワーク**は許可にしてOK。
 
 ---
@@ -107,6 +109,8 @@ npm run dev
 
   ターミナルに `Network: http://192.168.x.x:5173/` のような行が出たら、同じWi-Fiの端末で開ける📱
 
+  ![Accessing Local Server from Smartphone](./picture/react_study_008_network_access.png)
+
 * **サーバー停止**
 
   * ターミナルで **Ctrl + C** → （聞かれたら）`y`
@@ -119,6 +123,8 @@ npm run dev
 ---
 
 ## よくあるトラブルと対処 🧯
+
+![Port Conflict and Resolution](./picture/react_study_008_port_conflict.png)
 
 | 症状                                   | チェックポイント                                                                |
 | ------------------------------------ | ----------------------------------------------------------------------- |

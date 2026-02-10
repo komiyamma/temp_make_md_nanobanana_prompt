@@ -53,6 +53,8 @@ function helloBadge() {
 // Reactは「未知の小文字タグ」と思い込む → うまく動かない/警告⚠️
 ```
 
+![React Component Naming Rule](./picture/react_study_012_capital_vs_lowercase.png)
+
 ### 📝 実践ミニ課題
 
 1. `src/components/WelcomeBox.tsx` を作って、**先頭大文字**で書こう
@@ -111,6 +113,8 @@ function App() {
 
 > フラグメントは **`<>...</>`**（短縮形）か、**`<React.Fragment>...</React.Fragment>`**（正式名）
 > 短縮形は**属性が付けられない**けど、軽く包むだけなら超便利🎀
+
+![React Fragment vs Div Wrapper](./picture/react_study_012_fragment_vs_div.png)
 
 ---
 
@@ -179,6 +183,8 @@ function App() {
 }
 export default App;
 ```
+
+![Fixing Adjacent JSX Elements Error](./picture/react_study_012_adjacent_error_fix.png)
 
 ---
 
