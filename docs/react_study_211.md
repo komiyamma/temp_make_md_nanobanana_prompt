@@ -17,6 +17,9 @@
 
 ## まず結論：見た目だけ作っても、UIは完成じゃない 🥺🎨
 
+![react study 211 ui iceberg](./picture/react_study_211_ui_iceberg.png)
+
+
 ボタンやモーダルって、見た目はそれっぽく作れるんだけど…
 **“操作できること”** が本体なの！💡
 
@@ -89,6 +92,9 @@ flowchart TD
 
 ## 自作UIの“事故ポイント”を体験しよう：モーダル編 😈🚪
 
+![react study 211 focus trap](./picture/react_study_211_focus_trap.png)
+
+
 モーダルを自作するとき、やりがちな「見た目だけOK」状態👇
 
 * 背景のボタンが `Tab` で選べちゃう（モーダルの意味がない）🏃‍♀️💨
@@ -113,6 +119,9 @@ flowchart LR
 ---
 
 ## “最低限”これだけは覚えておくチェックリスト ✅📝
+
+![react study 211 semantic vs div](./picture/react_study_211_semantic_vs_div.png)
+
 
 ### 1) まずはセマンティックHTMLを使う 🧱
 
