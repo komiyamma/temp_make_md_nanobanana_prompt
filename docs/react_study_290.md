@@ -56,6 +56,8 @@ npm run dev
 * `npm run dev` だけで **ReactもWorkerも一緒に起動**できる構成です（Cloudflare Vite plugin）([Cloudflare Docs][2])
 * フォルダ構成も、だいたいこうなってるはず👇([Cloudflare Docs][2])
 
+![Project Folder Structure](./picture/react_study_290_folder_structure.png)
+
 ```text
 my-hono-app/
   src/
@@ -75,6 +77,8 @@ my-hono-app/
 
 `wrangler.jsonc` を開いて、トップレベルにこれを足してね👇
 
+![Wrangler AI Binding Configuration](./picture/react_study_290_wrangler_config.png)
+
 ```jsonc
 {
   // ...既存の設定...
@@ -93,6 +97,8 @@ my-hono-app/
 **SSE（text/event-stream）でAIの出力をストリーム返却**します🌊([Cloudflare Docs][1])
 
 ### ✅ `src/worker/index.ts`（例）
+
+![Hono Streaming API Flow](./picture/react_study_290_api_flow.png)
 
 ```ts
 import { Hono } from "hono";
@@ -137,6 +143,8 @@ export default app;
 次は `src/react-app/src/App.tsx` を、チャットアプリに作り替えます🫶
 
 ここでは React v19 の `useActionState` を使って、フォーム送信と「送信中」を気持ちよく扱います✨([React][5])
+
+![useActionState Flow](./picture/react_study_290_useactionstate_flow.png)
 
 ### ✅ `src/react-app/src/App.tsx`
 
@@ -341,6 +349,8 @@ export default function App() {
 * `useActionState` は `[state, formAction, isPending]` を返してくれるので、「送信中」のUIが作りやすいです✨([React][5])
 * Workers AI のストリームは **SSEで `data: { JSON }` が流れてくることが多い**ので、その想定で柔らかくパースしてます🌊([Qiita][4])
 
+![SSE Parsing Logic](./picture/react_study_290_sse_parsing_logic.png)
+
 ---
 
 ## 7) ちょいCSSで“それっぽく”する🎨✨
@@ -441,6 +451,8 @@ export default function App() {
 ---
 
 ## 8) 動作チェック✅（ここが通れば勝ち！🎉）
+
+![Final Chat UI Mockup](./picture/react_study_290_chat_ui_mockup.png)
 
 ブラウザで開いて、これ確認してね👇😊
 
