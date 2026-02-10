@@ -90,6 +90,9 @@ export function useAuth() {
 
 ## 手順2：Private Route（門番）を作る🚪👮‍♀️
 
+![react study 193 require auth logic](./picture/react_study_193_require_auth_logic.png)
+
+
 ここが本題！✨
 ログイン済みなら中へ通して、未ログインなら `/login` に送るよ〜🚀
 
@@ -116,6 +119,9 @@ export function RequireAuth() {
 ---
 
 ## 手順3：Loginページで「元のページへ戻る」を実装↩️🔑
+
+![react study 193 location state flow](./picture/react_study_193_location_state_flow.png)
+
 
 📁 `src/pages/LoginPage.tsx`
 
@@ -252,6 +258,9 @@ export default function App() {
 ---
 
 ## 手順5：`main.tsx` で Provider を上に置く👑✨
+
+![react study 193 auth provider wrap](./picture/react_study_193_auth_provider_wrap.png)
+
 
 📁 `src/main.tsx`
 
