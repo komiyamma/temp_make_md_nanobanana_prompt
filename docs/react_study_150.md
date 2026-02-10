@@ -144,6 +144,8 @@ export function Home() {
 
 ### 5️⃣ `export * from ...` との書き方の違い 🧾
 
+![export_styles](./picture/react_study_150_export_styles.png)
+
 `index.ts` の書き方は、だいたいこの2パターンがあります。
 
 #### パターンA：名前をハッキリ書く ✏️
@@ -260,6 +262,8 @@ export function Home() {
 便利なバレルファイルですが、**ちょっとした注意点** もあります。
 
 #### ⚠️ お約束1：同じフォルダの中では `index.ts` を使わない
+
+![circular_dependency](./picture/react_study_150_circular_dependency.png)
 
 **NG 例：**
 
