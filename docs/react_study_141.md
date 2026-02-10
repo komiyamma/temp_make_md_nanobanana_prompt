@@ -79,6 +79,8 @@ graph TD
 ---
 
 ## 4. MPA vs SPA をざっくり比較してみる 🔍
+![MPA vs SPA](./picture/react_study_141_mpa_vs_spa.png)
+
 
 文章だけだとイメージしづらいので、簡単に比べてみよう ✨
 

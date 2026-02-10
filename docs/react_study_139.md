@@ -83,6 +83,8 @@ Immer は、
 React の公式ドキュメントでも、イミュータブルな更新を楽にするための方法の1つとして Immer が紹介されています。([React][1])
 
 ### 🪄 `useImmer` とは？
+![Immer Draft Concept](./picture/react_study_139_draft_proxy.png)
+
 
 `useImmer` は、Immer チームが作っている **React 用のカスタムフック** です。
 React 本体の機能ではなく、**`use-immer` という外部ライブラリ** から提供されます。([GitHub][3])

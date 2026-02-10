@@ -24,6 +24,8 @@ React公式ドキュメントでは「主にライブラリ作者向けのフッ
 ---
 
 ## 2️⃣ どこで何が見えるの？👀
+![DevTools Preview](./picture/react_study_138_devtools_view.png)
+
 
 `useDebugValue` の効果は **React DevTools** で確認します。
 

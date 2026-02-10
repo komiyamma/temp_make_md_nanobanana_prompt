@@ -261,6 +261,8 @@ const handleAdd = () => {
 ---
 
 #### 3-2. 完了フラグの ON/OFF：`map` → `find` でスッキリ ✨
+![Map vs Direct Assignment](./picture/react_study_140_map_vs_direct.png)
+
 
 もともと：
 

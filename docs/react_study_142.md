@@ -120,6 +120,8 @@ PS C:\Users\あなたの名前\projects\my-react-app>
 ---
 
 ## 5. 実際に React Router をインストールしよう 🛠️
+![Installing React Router](./picture/react_study_142_router_package.png)
+
 
 ではいよいよ本番！
 **ターミナルにコマンドを1行打つだけ**です。落ち着いていきましょう〜。
