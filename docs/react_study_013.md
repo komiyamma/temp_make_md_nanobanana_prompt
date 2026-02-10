@@ -15,6 +15,8 @@
 
 ## HTML ↔ JSX ざっくり地図 🗺️
 
+![HTML to JSX Conversion Map](./picture/react_study_013_html_jsx_map.png)
+
 ```mermaid
 flowchart TD
   A["あなたのHTML感覚"] --> B["JSXの基本ルール"]
@@ -75,6 +77,8 @@ HTMLのハイフン表記が、JSXでは**大文字小文字**になるよ（JS�
 
 ## 値の書き方：**"文字列"** と **\{式\}** 🎀
 
+![String Literals vs Expressions](./picture/react_study_013_string_vs_expression.png)
+
 * **文字列**はダブルクォートで `"…"`
 * **JSの値や変数**は `{ ... }`（数値・真偽値・計算結果など）
 
@@ -93,6 +97,8 @@ const isDisabled = true;
 ---
 
 ## タグは**ぜんぶ閉じる**／**自己終了**が必要 ✂️
+
+![Self-Closing Tag Rule](./picture/react_study_013_self_closing_rule.png)
 
 HTMLだと省略しがちな `<img>` や `<input>` なども、**JSXでは必ず**自己終了スラッシュ `/` をつけよう。
 

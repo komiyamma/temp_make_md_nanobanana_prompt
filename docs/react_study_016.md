@@ -15,6 +15,8 @@
 
 ## コンポーネントって、ただの「関数」だよ🫶
 
+![Function Component Input/Output](./picture/react_study_016_function_io.png)
+
 ```mermaid
 flowchart TD
   A["Props(入力)"] --> B[関数コンポーネント]
@@ -32,6 +34,8 @@ flowchart TD
 ## 最小のコンポーネント ✨
 
 ![Component Stamp](./picture/react_study_016_component_stamp.png)
+
+![PascalCase vs lowercase](./picture/react_study_016_pascalcase.png)
 
 
 ```tsx
@@ -64,6 +68,8 @@ export default function App() {
 ---
 
 ## Propsあり版（型つきで安全に）🛡️
+
+![Props Data Flow](./picture/react_study_016_props_flow.png)
 
 ```tsx
 // src/components/HelloName.tsx
@@ -247,6 +253,8 @@ export default function App() {
 ---
 
 ## コンポーネント分解の考え方 🧠🔪
+
+![UI Decomposition](./picture/react_study_016_decomposition.png)
 
 ```mermaid
 flowchart TD
