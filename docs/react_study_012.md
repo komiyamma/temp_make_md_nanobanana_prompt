@@ -16,6 +16,8 @@
 
 ## なぜ大文字？🧠💡
 
+![PascalCase vs lowercase](./picture/react_study_012_capital_vs_small.png)
+
 Reactは**タグ名の先頭で意味を分ける**よ。
 
 ```mermaid
@@ -115,6 +117,8 @@ function App() {
 ---
 
 ## “ひとつに包む”を図で！🧭
+
+![Fragment vs Div Wrapper](./picture/react_study_012_fragment_vs_div.png)
 
 ```mermaid
 flowchart TD

@@ -30,6 +30,8 @@ flowchart TD
 
 ## ① React Developer Tools を入れよう 🧩
 
+![React Developer Tools Icon](./picture/react_study_010_devtools_install.png)
+
 **対応ブラウザ**：Chrome / Microsoft Edge（Windows標準だとEdgeが楽）
 
 1. ブラウザを開く（Chrome か Edge）
@@ -81,6 +83,8 @@ flowchart TD
 
 ## ④ Profiler タブの使い方（動きが重い？を見抜く）⏱️
 
+![React Profiler in Action](./picture/react_study_010_profiler_action.png)
+
 **何ができる？**
 
 * どのコンポーネントが **再レンダリング** されたかを記録
@@ -113,6 +117,8 @@ flowchart TD
 ---
 
 ## ⑥ よくあるトラブル 🛠️🆘
+
+![React Tab Missing Troubleshooting](./picture/react_study_010_trouble_no_tab.png)
 
 | 症状           | 対処                                                               |
 | ------------ | ---------------------------------------------------------------- |
