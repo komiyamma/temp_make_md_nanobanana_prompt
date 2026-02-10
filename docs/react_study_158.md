@@ -59,6 +59,8 @@ npm run build
 ## 3) `build` が失敗したときに見るポイント 🔥🧯
 
 ### ✅ よくある原因①：TypeScriptのエラー（型ミス）🧩
+![TypeScript Error Halting Build](./picture/react_study_158_ts_error_halt.png)
+
 
 Viteのテンプレによっては、`build` の中で **`tsc`（TypeScriptのチェック）** が走ることがあるよ！
 その場合、型エラーがあると **ビルドが止まる** 🙅‍♀️💥
@@ -68,6 +70,8 @@ Viteのテンプレによっては、`build` の中で **`tsc`（TypeScriptの�
 ---
 
 ### ✅ よくある原因②：importパス間違い / ファイル名違い 🧭
+![Case Sensitivity Issue](./picture/react_study_158_case_sensitivity.png)
+
 
 Windowsだとファイル名の大小文字が通ってしまって、公開先（Linux）で死ぬパターンもあるよ😵
 `UserCard.tsx` を `userCard.tsx` で import してた…みたいなやつ！

@@ -74,6 +74,8 @@ sequenceDiagram
 ---
 
 ## 4) `assets` の “ハッシュ付きファイル名”って何？🔐✨
+![Cache Busting with Hashed Filenames](./picture/react_study_159_cache_busting.png)
+
 
 `index-**xxxxx**.js` の **xxxxx** みたいなのは、だいたい **内容に応じて変わる目印（ハッシュ）**だよ！
 
@@ -97,6 +99,8 @@ npm run preview
 ---
 
 ## 6) ここ超大事！`dist` は編集しない✋😺
+![Do Not Edit Dist Folder](./picture/react_study_159_dont_edit_dist.png)
+
 
 `dist` は「焼き上がったケーキ」🍰みたいなもの！
 
