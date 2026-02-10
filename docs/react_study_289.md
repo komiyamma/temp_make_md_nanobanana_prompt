@@ -35,8 +35,14 @@ flowchart TD
 
 ## 今回の認証方針🍪🪪：JWT + HttpOnly Cookie
 
+![JWT Structure Analysis](./picture/react_study_289_jwt_structure.png)
+
+
 * JWT = 「改ざんできない身分証」みたいな文字列🪪
 * Cookie（HttpOnly）に入れると、JSから盗みにくくなる（読み取れない）🍪✨
+
+![HttpOnly Cookie Protection](./picture/react_study_289_httponly_cookie_shield.png)
+
 * Edge（Workers）では「サーバーのメモリにセッション保存」みたいなのがやりにくいので、**トークン方式**が相性いいよ🙆‍♀️
 
 ---
@@ -68,6 +74,8 @@ JWTの作成（署名）は `sign()` を使えるよ✍️ ([hono.dev][4])
 Cookie操作は `setCookie` / `deleteCookie` が便利〜！ ([hono.dev][5])
 
 > ファイル名は例だよ！あなたのWorkerエントリ（例: `src/index.ts`）に合わせてね😊
+
+![Login Flow Sequence](./picture/react_study_289_login_flow_sequence.png)
 
 ```ts
 import { Hono } from 'hono'
@@ -152,6 +160,9 @@ export default app
 ---
 
 ## ③ React側：ログインして /me を叩く💻💕
+
+![Fetch with Credentials](./picture/react_study_289_fetch_credentials_include.png)
+
 
 Cookie方式のときは、`fetch` に **`credentials: 'include'`** を付けるのが安心だよ🍪
 （特にフロントとAPIが別オリジンのときに重要！）
@@ -252,6 +263,9 @@ export default function App() {
 
 ## ④ フロントとAPIが別オリジンなら：CORSもセットしよ🌍🔥
 
+![CORS Handshake with Credentials](./picture/react_study_289_cors_handshake.png)
+
+
 HonoにはCORSミドルウェアがあるよ〜！`credentials: true` と `origin` 指定がポイント🧁 ([hono.dev][6])
 
 ```ts
@@ -277,6 +291,9 @@ app.use(
 * `SameSite=None` にしたい場合、**Secure必須 & HTTPS必須**が基本だよ！ ([hono.dev][5])
 
 ### 2) ミドルウェアで取った値を他のリクエストでも使いたい…🥺
+
+![Middleware Context Passing](./picture/react_study_289_middleware_context.png)
+
 
 `c.set()` / `c.get()` は **同じリクエストの間だけ有効**だよ（別リクエストに持ち越せない）🧠 ([hono.dev][7])
 「永続化したい」なら D1 / KV / Durable Objects の出番だね🌩️🗃️
