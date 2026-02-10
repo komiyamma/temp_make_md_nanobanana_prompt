@@ -65,6 +65,9 @@ def generate_prompts():
             filename_raw = parts[filename_idx]
             rel_path_raw = parts[rel_path_idx]
             prompt = parts[prompt_idx]
+            
+            # Convert <br> tags to newlines for the template insertion
+            prompt = prompt.replace('<br>', '\n')
 
             if not filename_raw or not prompt:
                 continue
