@@ -11,6 +11,8 @@
 ---
 
 ## 53-1. まずはイメージから：なんで「部品ごと」にCSS？🤔
+![react_study_053_global_vs_local](./picture/react_study_053_global_vs_local.png)
+
 
 これまでのCSSって、こんな感じでしたよね：
 
@@ -35,6 +37,8 @@ graph LR;
 ---
 
 ## 53-2. CSS Modulesってなに？ざっくり定義 💡
+![react_study_053_hashing_process](./picture/react_study_053_hashing_process.png)
+
 
 **CSS Modules = 「CSSファイルを import して、オブジェクトみたいに使える仕組み」** です。
 
@@ -220,6 +224,8 @@ CSS Modules でも、もちろんクラスを2つ以上つけられます。
 ---
 
 ## 53-7. TypeScript的にはどう扱われてるの？🧐
+![react_study_053_autocomplete](./picture/react_study_053_autocomplete.png)
+
 
 Vite の React + TS テンプレートでは、だいたいこんな感じの型が用意されています（イメージ）：
 

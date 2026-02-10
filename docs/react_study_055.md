@@ -147,6 +147,8 @@ export default function App() {
 ---
 
 ## 4. CSS Modules ファイルを作る 👗
+![react_study_055_todo_anatomy](./picture/react_study_055_todo_anatomy.png)
+
 
 同じ `components` フォルダの中に、
 **`TodoList.module.css`** というファイルを作ります。
@@ -411,6 +413,8 @@ export function TodoList() {
 ---
 
 ## 6. 画面イメージをイメージしてみよう 👀
+![react_study_055_conditional_state](./picture/react_study_055_conditional_state.png)
+
 
 完成イメージをざっくり Mermaid で表すとこんな感じです。
 

@@ -41,6 +41,8 @@ CSS Modulesだと：
 ---
 
 ## 2️⃣ ファイル名ルール：`.module.css` をつける ✏️
+![react_study_054_filename_rule](./picture/react_study_054_filename_rule.png)
+
 
 CSS Modules は、**ファイル名** で「これはモジュールだよ〜」と判断します。
 
@@ -190,6 +192,8 @@ CSS Modulesなら、ビルド後のクラス名は例えば：
 ---
 
 ## 6️⃣ 図でイメージしてみよう 🧠✨
+![react_study_054_scope_layers](./picture/react_study_054_scope_layers.png)
+
 
 1つの画面で、グローバルCSSとCSS Modulesがどう分かれているか、
 ざっくり図にしてみます。
@@ -332,6 +336,8 @@ export const TodoItem: FC<TodoItemProps> = ({ title, done }) => {
 ---
 
 ### 💥 2. `className={styles}` と書いてしまう
+![react_study_054_styles_object_mistake](./picture/react_study_054_styles_object_mistake.png)
+
 
 「とりあえず `styles` を渡せばいいのかな？」と勘違いしがちですが、
 `styles` は「クラス名の**辞書**」なので、**必ずキーを指定** します。
