@@ -80,6 +80,12 @@ export default MyTemplate;
 
 ## 3) `render()` で HTML文字列を作って、ファイルに保存する🖨️📄
 
+![277_pretty_html](./picture/react_study_277_pretty_html.png)
+
+
+![277_render_function](./picture/react_study_277_render_function.png)
+
+
 `scripts/render-email.ts` を作ります。
 
 ```ts
@@ -124,6 +130,9 @@ main().catch((err) => {
 ---
 
 ## 4) 実行してプレビューしよう👀✨
+
+![277_output_files](./picture/react_study_277_output_files.png)
+
 
 ```bash
 npx tsx scripts/render-email.ts
