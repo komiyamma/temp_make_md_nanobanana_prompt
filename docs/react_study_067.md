@@ -26,6 +26,9 @@
 
 ## 2) 登場人物はこの4人！🧑‍🤝‍🧑
 
+![react_study_067_four_characters](./picture/react_study_067_four_characters.png)
+
+
 * **state**：今の状態（例：カウントの数字）🔢
 * **action**：やりたいことの指示（例：増やす・減らす）📩
 * **reducer**：更新ルール（「この指示ならこう変える」）📜
@@ -103,6 +106,9 @@ export default function App() {
 ### ✅ ポイント解説（ここ超大事）💖
 
 * `useReducer(reducer, initialState)` の戻り値は **`[state, dispatch]`** 🎁
+
+![react_study_067_code_anatomy](./picture/react_study_067_code_anatomy.png)
+
 * ボタンは `dispatch({ type: "inc" })` みたいに **指示を投げるだけ**📮
 * `reducer` が「じゃあこう更新ね！」って **新しい state を返す**🪄
 * **state を直接書き換えない**（`state.count++` みたいなのはNG）🙅‍♀️
@@ -122,6 +128,9 @@ sequenceDiagram
   D->>R: reducer(state, action) 呼ぶ
   R->>S: 新しい state を作って返す
   S-->>U: 画面の count が更新✨
+
+![react_study_067_sequence_comic](./picture/react_study_067_sequence_comic.png)
+
 ```
 
 ---
@@ -151,6 +160,9 @@ sequenceDiagram
 ## 8) よくあるミス集（先に潰す🧨→✅）
 
 * ❌ reducer の中で `state.count++` しちゃう
+
+![react_study_067_mutation_mistake](./picture/react_study_067_mutation_mistake.png)
+
 
   * ✅ **必ず新しいオブジェクトを返す**（`return { count: ... }`）
 * ❌ reducer の中で `alert()` とか通信とか「別の仕事」をする
