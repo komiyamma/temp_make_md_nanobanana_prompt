@@ -104,6 +104,8 @@ const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 
 ---
 
+![Input Value String](./picture/react_study_037_input_value_string.png)
+
 ## ⚠️ 注意1：`type="number"`でも `value` は文字列だよ😳
 
 これ、めっちゃひっかかりポイント！
@@ -122,6 +124,8 @@ const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 ✅ 数字にしたいなら `Number()`（または `parseInt`）が必要だよ〜🔢✨
 
 ---
+
+![Checkbox Checked](./picture/react_study_037_checkbox_checked.png)
 
 ## ⚠️ 注意2：チェックボックスは `value` じゃなくて `checked` ✅
 

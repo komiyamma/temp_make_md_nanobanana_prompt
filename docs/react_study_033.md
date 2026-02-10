@@ -83,6 +83,8 @@ let age: number = 20;
 
 ---
 
+![Type Inference Scanner](./picture/react_study_033_type_inference_scanner.png)
+
 ## 4️⃣ `useState` × 型推論：初期値から全部決まる 💫
 
 `useState` も同じノリで、**渡した「最初の値」をヒントに型を推論**します。([Medium][3])
@@ -160,6 +162,8 @@ c
 というイメージで OK です 🌟
 
 ---
+
+![Safe vs Danger](./picture/react_study_033_safe_vs_danger.png)
 
 ## 5️⃣ 型推論に任せていいケース / 危ないケース ⚠️
 

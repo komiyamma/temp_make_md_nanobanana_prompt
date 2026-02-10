@@ -14,6 +14,8 @@ Reactで「動くUI」を作るときの入り口が、この `onClick` です �
 
 ---
 
+![HTML vs React](./picture/react_study_035_html_vs_react_onclick.png)
+
 ## 1. HTMLの `onclick` と React の `onClick` の違い 🌐
 
 まずは、ふだんの HTML を思い出してみましょう。
@@ -84,6 +86,8 @@ export default App;
    → アラートが表示されれば成功です 🎊
 
 ---
+
+![Reference vs Call](./picture/react_study_035_reference_vs_call.png)
 
 ## 3. `onClick={handleClick}` と `onClick={handleClick()}` の違い⚠️
 
@@ -186,6 +190,8 @@ export default App;
    React がコンポーネントを再実行して、`{count}` の表示も更新される ✨
 
 ---
+
+![Arrow Wrapper](./picture/react_study_035_arrow_wrapper.png)
 
 ## 6. 引数つきで関数を呼びたいときの `onClick` 🎯
 

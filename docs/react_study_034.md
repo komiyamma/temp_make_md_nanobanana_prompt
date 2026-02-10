@@ -37,6 +37,8 @@
 
 ---
 
+![Generics Label](./picture/react_study_034_generics_label.png)
+
 ## 2️⃣ `useState` の型ってどこに書くの？（ジェネリクス）
 
 `useState` は、こんなイメージの関数だと思ってください👇
@@ -74,6 +76,8 @@ export default Counter;
   → `setCount("あ")` とか書くと、VS Code が怒ってくれます 😡（でもそれが優しさ）
 
 ---
+
+![Union Box](./picture/react_study_034_union_box.png)
 
 ## 3️⃣ `null` を使いたいときは「ユニオン型」が必須！
 
@@ -188,6 +192,8 @@ export default SaveButton;
 ---
 
 ## 5️⃣ 配列やオブジェクトにも型を付けてみよう
+
+![Array Crate](./picture/react_study_034_array_crate.png)
 
 ### ① 配列の State に型を付ける
 
