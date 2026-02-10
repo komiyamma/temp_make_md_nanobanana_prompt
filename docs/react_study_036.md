@@ -95,6 +95,8 @@ flowchart TD
 
 ---
 
+![Mouse Event Type](./picture/react_study_036_mouse_event_type.png)
+
 #### 5️⃣ `React.MouseEvent` ってなに？🖱️
 
 `React.MouseEvent` は、TypeScript 的には **「React のマウスイベント用の型」** です。
@@ -166,6 +168,8 @@ export const MouseEventButton = ({ label }: Props) => {
 候補がいっぱい出てきてめちゃ便利です 🧙‍♀️✨
 
 ---
+
+![Target vs Current](./picture/react_study_036_target_vs_current.png)
 
 #### 7️⃣ `e.target` と `e.currentTarget` の違いをちょこっとだけ 👀
 
