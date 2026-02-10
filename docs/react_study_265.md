@@ -59,6 +59,8 @@ flowchart TD
 
 ## 4) 実践①：console を禁止したい（でも error/warn は許したい）🧯🪵
 
+![react study 265 rule config](./picture/react_study_265_rule_config.png)
+
 フロントって、つい `console.log()` 置きがちだよね😂
 Biome には **`noConsole`** があって、これは **おすすめではないので自分で有効化が必要**だよ〜([Biome][2])
 
@@ -156,6 +158,8 @@ Biome のルールページには「どう設定するか」の例が載って�
 
 ## 7) overrides：テストファイルだけ “ゆるく” したい（あるある）🧪🍡
 
+![react study 265 overrides](./picture/react_study_265_overrides.png)
+
 テストって `console.log` でデバッグしたくなったり、`any` 的な妥協が出たり…あるよね😂
 そんなときは **`overrides`** が最強！
 **上に書いた基本設定を、特定パスだけ上書き**できるよ。さらに **順番が超大事で、最初にマッチしたものだけが使われる**よ🧷([Biome][1])
@@ -207,6 +211,8 @@ useEffect(() => {
 ---
 
 ## 9) ルールの探し方：困ったら `biome explain` 🧠🔍
+
+![react study 265 explain](./picture/react_study_265_explain.png)
 
 「このルール何？」「デフォルト強さは？」ってなったら、CLI の `biome explain` が便利！
 Biome の設定ドキュメントでも `explain` コマンドが案内されてるよ🧾✨([Biome][1])

@@ -40,6 +40,8 @@ flowchart TD
 
 ## 1) Biome を入れる（Windows / npm）📦✨
 
+![react study 264 init command](./picture/react_study_264_init_command.png)
+
 PowerShell でプロジェクト直下に移動して👇
 
 ```bash
@@ -53,6 +55,8 @@ npx @biomejs/biome init
 ---
 
 ## 2) ESLint 設定を Biome に移す（自動変換）🔁
+
+![react study 264 migration command](./picture/react_study_264_migration_command.png)
 
 ```bash
 npx @biomejs/biome migrate eslint --write
@@ -120,6 +124,8 @@ Biome の VCS 連携は **opt-in（自分でON）**だよ👇 ([Biome][4])
 ---
 
 ## 5) まずは Biome を回してみる（整形＋安全修正）🧪✨
+
+![react study 264 check command](./picture/react_study_264_check_command.png)
 
 「全部まとめてやって〜！」はこれ👇
 
