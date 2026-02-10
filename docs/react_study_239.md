@@ -50,6 +50,9 @@ Playwrightの基本コマンドはこの形だよ〜🧸 ([Playwright][2])
 
 ## 2) CI向けに Playwright をちょい調整🧷✨
 
+![react_study_239_workers_config.png](./picture/react_study_239_workers_config.png)
+
+
 CIはマシンが毎回違うから、**安定性重視**が大事〜！
 Playwright公式も CIでは `workers: 1` をおすすめしてるよ🫶 ([Playwright][1])
 
@@ -78,6 +81,9 @@ export default defineConfig({
 ---
 
 ## 3) GitHub Actions のワークフローを作る🧁⚙️
+
+![react_study_239_workflow_steps.png](./picture/react_study_239_workflow_steps.png)
+
 
 ### ✅ 作るファイル
 
@@ -132,6 +138,8 @@ jobs:
           retention-days: 30
 ```
 
+![react_study_239_artifact_upload.png](./picture/react_study_239_artifact_upload.png)
+
 ポイント🌟
 
 * `npm ci` と `npx playwright install --with-deps` はPlaywright公式の鉄板手順だよ〜 ([Playwright][1])
@@ -152,6 +160,9 @@ Playwright公式も「Actionsタブで確認できるよ」って流れを案内
 ---
 
 ## 5) HTMLレポートを見る📦🖥️✨
+
+![react_study_239_report_view.png](./picture/react_study_239_report_view.png)
+
 
 Actionsの実行画面の下の方に **Artifacts** が出るので、`playwright-report` をDLして展開！
 

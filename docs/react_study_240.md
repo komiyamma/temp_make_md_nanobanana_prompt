@@ -57,6 +57,9 @@ npm init playwright@latest
 
 ## 2) Vite を起動してからテスト…を自動化する（webServer）🚀
 
+![react_study_240_webserver_logic.png](./picture/react_study_240_webserver_logic.png)
+
+
 ローカルで毎回「npm run dev」してからテスト…は忘れがち😇
 Playwrightに **起動も任せちゃう** のが楽！
 
@@ -93,6 +96,9 @@ export default defineConfig({
 
 ## 3) テストが安定する「UIの前提」を作る（超重要）🧷
 
+![react_study_240_getbyrole_map.png](./picture/react_study_240_getbyrole_map.png)
+
+
 E2Eは **要素をどう見つけるか** が命！
 おすすめは **getByRole**（ユーザー視点で探す）✨ ([Playwright][3])
 
@@ -115,6 +121,10 @@ E2Eは **要素をどう見つけるか** が命！
 ## 4) “全機能まとめて守る” E2Eテストを書く 🧪✨
 
 ### 📄 e2e/todo.e2e.spec.ts（例）
+
+![react_study_240_crud_test_cycle.png](./picture/react_study_240_crud_test_cycle.png)
+
+![react_study_240_filter_logic.png](./picture/react_study_240_filter_logic.png)
 
 ※ボタン名やラベル名は、あなたのTODOアプリの文言に合わせて調整してね😊
 
