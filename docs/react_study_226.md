@@ -62,6 +62,9 @@ OPENAI_API_KEY=あなたのキー
 
 ## 5) サーバー側：`/api/completion` を作る（ストリーミング対応🌊）
 
+![226 style param](./picture/react_study_226_style_param.png)
+
+
 `app/api/completion/route.ts` を作成👇
 （30秒までストリームOKの設定も入れてるよ） ([AI SDK][1])
 
@@ -319,6 +322,9 @@ export default function CompletionPage() {
 ```
 
 ### ここが「自動保管」の正体だよ💾
+
+![226 auto save cycle](./picture/react_study_226_auto_save_cycle.png)
+
 
 * `onFinish(prompt, completion)` で **生成が終わった瞬間** に履歴へ保存してるよ📌 ([AI SDK][2])
 * `localStorage` に入れてるから、ページ更新しても残る🫶

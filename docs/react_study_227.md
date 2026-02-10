@@ -187,6 +187,9 @@ export function WeatherCard({ location, weather, temperature }: Props) {
 
 ### 3-2) App.tsx：parts を分岐して描画✨
 
+![227 parts mapping](./picture/react_study_227_parts_mapping.png)
+
+
 `src/App.tsx`
 
 ```tsx
@@ -322,6 +325,9 @@ stateDiagram-v2
 ---
 
 ## 5) 起動して試す🚀
+
+![227 result preview](./picture/react_study_227_result_preview.png)
+
 
 ターミナルで👇
 

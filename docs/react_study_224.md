@@ -7,6 +7,9 @@
 
 ## 1) そもそもストリーミングって何？🚰
 
+![224 blocking vs streaming](./picture/react_study_224_blocking_vs_streaming.png)
+
+
 普通の通信は「全部できてからドン！」📦
 ストリーミングは「できた分からちょっとずつ送る！」📮✨
 
@@ -55,6 +58,9 @@ sequenceDiagram
 ---
 
 ## 4) “パラパラ” の正体：`text-delta` が連打されてるだけ 🪄
+
+![224 packet structure](./picture/react_study_224_packet_structure.png)
+
 
 AI SDK の Data Stream Protocol では、ストリーミング中にこんなイベントが届きます👇([AI SDK][2])
 
@@ -135,6 +141,9 @@ export async function readSSE(
 ---
 
 ## 7) DevToolsで「本当に流れてる！」を確認しよう👀🔍
+
+![224 network tab](./picture/react_study_224_network_tab.png)
+
 
 1. ブラウザで開発者ツール（F12）🛠️
 2. **Network** タブへ🌐
