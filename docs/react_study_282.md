@@ -120,11 +120,17 @@ npm run dev
 
 “Hello Hono!” が出たら勝ち〜！🎉🎉🎉
 
+![Hello Hono Browser Output](./picture/react_study_282_hello_hono.png)
+
+
 ---
 
 ## 「Web標準っぽい」ってこういうこと😺🌐
 
 Hono は `c.text()` とか `c.json()` が便利なんだけど、**生の Response を返す**こともできるよ！
+
+![Web Standards Interface](./picture/react_study_282_web_standards.png)
+
 この “素のResponse” 感が Web標準っぽさの一つ✨ ([Hono][3])
 
 ```ts

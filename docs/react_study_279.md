@@ -106,6 +106,9 @@ export function WelcomeEmail({ userName, actionUrl }: Props) {
 
 ルートに `.env.local` を作る（Git管理しないでね⚠️）
 
+![Environment Variable Configuration](./picture/react_study_279_env_config.png)
+
+
 ```env
 SMTP_HOST=smtp.example.com
 SMTP_PORT=587
@@ -194,6 +197,9 @@ AWS SES は最初「サンドボックス」っていう制限モードになり
 
 ここでは「Nodemailer の SES transport（SES API）」で送るのが一番ラク＆強いルートをやります✨
 Nodemailer の SES transport は **AWS SDK v3 の @aws-sdk/client-sesv2 を使う**のが公式です。([Nodemailer][7])
+
+![SES Transport Mechanism](./picture/react_study_279_ses_transport.png)
+
 
 ---
 
