@@ -24,6 +24,9 @@ Valibot ではこういう「自作ルール」を **パイプライン**に差�
 
 ### ✅ `partialCheck`：フォーム向きの相関チェック🥰
 
+![react_study_255_partial_check.png](./picture/react_study_255_partial_check.png)
+
+
 `partialCheck` は「必要な部分だけ型がOKなら」先に相関チェックを走らせられるのが強い！
 `check` は **全体が型として成立したときだけ**実行されるので、フォームだと不便な場面があるよ。 ([valibot.dev][3])
 
@@ -204,6 +207,9 @@ export function RegisterForm() {
 ---
 
 ## 6) もう1つの武器：`custom`（型そのものが特殊なとき）🧪✨
+
+![react_study_255_custom_schema.png](./picture/react_study_255_custom_schema.png)
+
 
 「この文字列は `${number}px` の形じゃないとダメ！」みたいに、**既存の schema で表しにくい型**なら `custom` で “型ごと” 作れるよ。 ([valibot.dev][6])
 

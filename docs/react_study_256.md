@@ -108,6 +108,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 ## 方法C：いちばん実戦的💎「自然な日本語 + 項目名つき」にする
 
+![react_study_256_translation_hierarchy.png](./picture/react_study_256_translation_hierarchy.png)
+
+
 “Invalid input” みたいな直訳より、
 「メールアドレスを入力してください」みたいな UI 用の言い方にしたいよね🥹✨
 
