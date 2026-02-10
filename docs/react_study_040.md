@@ -128,6 +128,8 @@ flowchart LR
 
 ### ① イベントの型は `React.ChangeEvent<HTMLInputElement>`
 
+![Event Type Structure](./picture/react_study_040_event_type_structure.png)
+
 イベントハンドラの引数に、ちゃんと型を付けます。
 
 ```tsx
@@ -148,6 +150,8 @@ export function SimpleForm() {
 ```
 
 ### ② `e.target` より `e.currentTarget` が安心 ✨
+
+![currentTarget Safety](./picture/react_study_040_current_target_safe.png)
 
 実は、さらに安全に書くなら **`e.currentTarget`** を使うのがオススメです。
 
@@ -192,6 +196,8 @@ function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
 
 ## 40-5 🔢 数値を入力するときの「安全な」書き方
 
+![String to Number Conversion](./picture/react_study_040_number_conversion_flow.png)
+
 フォームでは、年齢や金額など **数字** を扱うことも多いですよね。
 でも `e.currentTarget.value` の型は **文字列 (`string`)** です。
 
@@ -203,6 +209,8 @@ function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
 という練習をしてみましょう 💪
 
 ### 🧾 年齢フォームの例
+
+![Union Type State](./picture/react_study_040_union_type_state.png)
 
 `src/AgeForm.tsx` を作ります。
 

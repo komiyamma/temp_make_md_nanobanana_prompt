@@ -36,6 +36,8 @@ React では、
 
 ## 2️⃣ JSX × `&&`：条件付きレンダリングの基本形 🎨
 
+![Logical AND Flow](./picture/react_study_042_and_operator_flow.png)
+
 ![条件付きレンダリングのイメージ](./picture/react_study_042_logical_and.png)
 
 React（JSX）での基本パターンはこれです：
@@ -135,6 +137,8 @@ export function App() {
 
 ## 4️⃣ ローディング中だけ「読み込み中...」を出したいとき ⏳
 
+![Loading State Visual](./picture/react_study_042_loading_state_visual.png)
+
 次によくあるのが、**データ読み込み中の表示**です。
 
 * 読み込み中 → 「読み込み中...」を表示
@@ -198,6 +202,8 @@ export function App() {
 ---
 
 ## 6️⃣ `&&` の落とし穴😵‍💫：`0` や `""` に注意！
+
+![Zero Pitfall Warning](./picture/react_study_042_zero_pitfall_warning.png)
 
 `&&` は**「左側が false っぽい値なら、その左側を返す」**というルールでした。
 

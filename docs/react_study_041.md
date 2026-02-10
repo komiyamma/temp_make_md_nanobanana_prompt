@@ -15,6 +15,8 @@
 
 ## 2) 三項演算子ってなに？🤔
 
+![Ternary Operator Map](./picture/react_study_041_ternary_syntax_map.png)
+
 「もし条件が `true` ならA、そうじゃなければB」を **1行で** 書けるルールだよ✨
 
 * 形はこれ👇
@@ -77,6 +79,8 @@ export default function App() {
 
 ## 6) よくあるパターン：ログイン状態で切り替える 🔐✨
 
+![Login Toggle UI](./picture/react_study_041_login_toggle_ui.png)
+
 「ログインしてるなら “ようこそ”、してないなら “ログインしてね”」みたいなやつ！
 
 ```tsx
@@ -106,6 +110,8 @@ export default function App() {
 ---
 
 ## 7) 「三項演算子はJSXの外に逃がしてOK」🏃‍♀️💨（読みやすさ爆上がり）
+
+![Conditional JSX Block](./picture/react_study_041_conditional_jsx_block.png)
 
 JSXがごちゃごちゃしてきたら、**先に変数に入れちゃう** のがラク😆
 

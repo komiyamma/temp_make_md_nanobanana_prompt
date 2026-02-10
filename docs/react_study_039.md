@@ -66,6 +66,8 @@ graph LR
 
 #### 🔹 例1：オブジェクトのStateを直接いじるパターン
 
+![Direct Mutation is Bad](./picture/react_study_039_direct_mutation_ng.png)
+
 ```tsx
 const [user, setUser] = useState({
   name: "Yui",
@@ -89,6 +91,8 @@ const handleBirthday = () => {
 ---
 
 #### 🔹 例2：配列のStateを `.push` でいじるパターン
+
+![Array Push is Bad](./picture/react_study_039_array_push_ng.png)
 
 ```tsx
 type Todo = {
@@ -127,6 +131,8 @@ const handleAddTodo = () => {
 ---
 
 #### 🔹 オブジェクトStateの正しい更新例
+
+![Spread Syntax Copy](./picture/react_study_039_spread_syntax_copy.png)
 
 ```tsx
 const [user, setUser] = useState({
@@ -200,6 +206,8 @@ const handleDeleteTodo = (id: number) => {
 理由はいくつかありますが、よく使うものを3つだけ 🎓
 
 #### ① Reactが変化に気づけなくなるから
+
+![React Reference Check](./picture/react_study_039_reference_check.png)
 
 Reactはざっくりいうと、
 

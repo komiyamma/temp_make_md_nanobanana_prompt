@@ -21,6 +21,8 @@ React 19 でも、こういう基本的な `useState` はそのまま大事な�
 
 ## 38-2 👀 完成イメージ
 
+![Counter App UI Preview](./picture/react_study_038_completed_app_preview.png)
+
 画面イメージはだいたいこんな感じです：
 
 * 上にタイトル「カウンターアプリ」
@@ -119,6 +121,8 @@ export function Counter({ initialCount = 0 }: CounterProps) {
 
 ### ここでの型ポイント 🧠
 
+![useState Type Safety](./picture/react_study_038_state_type_safety.png)
+
 * `type CounterProps = { initialCount?: number }`
 
   * `initialCount` は **オプショナル（あってもなくてもOK）** な `number`
@@ -132,6 +136,8 @@ export function Counter({ initialCount = 0 }: CounterProps) {
     `setCount("あいうえお")` みたいな変な代入はコンパイルエラーになります 💥([react.dev][3])
 
 * `setCount((prev) => prev + 1)`
+
+  ![Previous State Update](./picture/react_study_038_prev_state_update.png)
 
   * 新しい値が「前の count から計算される」ときは、
     **関数形式のアップデート** を使うのが React のおすすめスタイルです。([codefinity.com][1])
