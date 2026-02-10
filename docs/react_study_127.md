@@ -41,6 +41,8 @@ React 19 では、`<form action={...}>` とセットで、`useActionState` や `
 
 ### 3. 「昔のやり方」と「今のやり方」を比べてみる 🧪
 
+![Props Drilling vs useFormStatus](./picture/react_study_127_props_vs_hook.png)
+
 #### 🐢 昔のやり方（`props` 地獄）
 
 送信中フラグを子コンポーネントに伝えるために、こんな感じでやっていました：
@@ -119,6 +121,8 @@ export function Form() {
 ---
 
 ### 4. 大事なルール：「フォームの中」にいないとダメ 🚫
+
+![Form Scope Rule](./picture/react_study_127_scope_rule.png)
 
 `useFormStatus` には超大事なルールがひとつあります👇
 

@@ -88,6 +88,8 @@ export default App;
 
 ### 4-1. エラーの「型」を決める
 
+![Validation Logic Gate](./picture/react_study_126_validation_gate.png)
+
 今回は「エラーの文」（日本語の文章）か「エラーなし」のどちらかなので、
 
 * エラーあり → `string`
@@ -170,6 +172,8 @@ export function NicknameForm() {
 ---
 
 ## 5. JSX側でエラーを表示する仕組み ✨
+
+![Conditional Error Rendering](./picture/react_study_126_conditional_rendering.png)
 
 この1行がエラーメッセージ表示のキモです 👇
 

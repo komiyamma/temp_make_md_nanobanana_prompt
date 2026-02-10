@@ -108,6 +108,8 @@ sequenceDiagram
 
 ## 3️⃣ いちばんシンプルな「非同期 action」✉️
 
+![Async Action Code Structure](./picture/react_study_123_async_flow_code.png)
+
 まずは、**「1秒待ってからアラートを出すだけ」**の超シンプルな例からスタートします。
 
 ```tsx
@@ -224,6 +226,8 @@ export function ContactForm() {
 ---
 
 ## 5️⃣ TypeScript 的な「型」もしっかり押さえよう 📘
+
+![FormAction Type Definition](./picture/react_study_123_type_definition.png)
 
 `action` に渡す関数の型は、React 公式の `<form>` ドキュメント的にはざっくりこんなイメージです：([React][1])
 
