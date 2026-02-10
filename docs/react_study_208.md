@@ -144,6 +144,9 @@ export function DragPlayground() {
 > `onDrag` の `info` には `point / delta / offset / velocity` が入ってて超便利です👀 ([Motion][1])
 > `dragControls.start()` と `dragListener={false}` の組み合わせで「ハンドルからだけ開始」ができます✋ ([Motion][1])
 
+![react study 208 handle mechanism](./picture/react_study_208_handle_mechanism.png)
+
+
 ---
 
 ### `src/DragPlayground.module.css` 🎨
@@ -236,6 +239,9 @@ export default function App() {
 
 ## 4) ここが大事！ドラッグ系プロパティまとめ 🧠✨
 
+![react study 208 drag props](./picture/react_study_208_drag_props.png)
+
+
 ### ✅ ① ドラッグ開始：`drag`
 
 * `drag` → 自由に（xもyも）
@@ -305,6 +311,9 @@ sequenceDiagram
 
   * `dragListener={false}` にしてるなら、**必ず** `dragControls.start()` を呼ぶ導線（今回だとハンドル）を作る！
 * **枠からはみ出す！🫠**
+
+![react study 208 constraints ref](./picture/react_study_208_constraints_ref.png)
+
 
   * `dragConstraints={constraintsRef}` は **ref を付けた要素がちゃんとサイズを持ってる**必要あり（`height` とか） ([Motion][3])
 

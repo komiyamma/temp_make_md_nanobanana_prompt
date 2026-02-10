@@ -169,10 +169,16 @@ export default function App() {
 
 ポイントはここ👇
 
+![react study 210 animate presence](./picture/react_study_210_animate_presence.png)
+
+
 * `AnimatePresence`：**消えるアニメ**（exit）を可能にする✨
 * `Reorder.Group / Reorder.Item`：**ドラッグ並び替え**が一気にできる🧲
 * `layout`：並び替え時の **追従アニメ** がきれい😍
 * `useReducedMotion()`：動き苦手な人向けに配慮（やさしさ）🫶
+
+![react study 210 reorder logic](./picture/react_study_210_reorder_logic.png)
+
 
 ```tsx
 import { useMemo, useState } from "react";
@@ -372,6 +378,9 @@ sequenceDiagram
 * **ドラッグできない**
   → `Reorder.Group` の `values` と `onReorder` がセットになってるか確認🧲
 * **キーが変で挙動が変**
+
+![react study 210 key reorder](./picture/react_study_210_key_reorder.png)
+
   → `key` は `todo.id` みたいに **絶対ユニーク** にする🪪✨
 
 ---

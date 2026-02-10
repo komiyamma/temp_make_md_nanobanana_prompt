@@ -50,6 +50,9 @@ import { motion, useScroll, useSpring, useTransform } from "motion/react";
 
 ## 1. 上に “進捗バー” を出す 📈✨（超かんたん）
 
+![react study 209 spring smoothing](./picture/react_study_209_spring_smoothing.png)
+
+
 ### `src/App.tsx`
 
 ```tsx
@@ -234,6 +237,9 @@ export default function App() {
 
 今回使った👇
 
+![react study 209 offset visual](./picture/react_study_209_offset_visual.png)
+
+
 * `offset: ["start end", "end start"]`
 
 これは「**ターゲット要素が、画面に入ってきてから出ていくまで**」を 0→1 にしてくれる感じです。([Motion][1])
@@ -250,6 +256,9 @@ sequenceDiagram
 ---
 
 ## 4. コツ（スクロール連動は “State” にしない）⚠️
+
+![react study 209 performance bypass](./picture/react_study_209_performance_bypass.png)
+
 
 スクロール量を `useState` で受けて毎回 setState すると、**スクロール中ずっと再レンダリング**で重くなりがち😵‍💫
 でも Motion の `MotionValue` は `style` に直結できて、**再レンダリング少なめ**で気持ちよく動きます✨（`useScroll` は MotionValue を返すよ）([Motion][1])

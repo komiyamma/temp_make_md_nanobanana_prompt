@@ -8,6 +8,9 @@
 
 ## 1) Headless UIってどういう意味？🤔🧠
 
+![react study 212 headless concept](./picture/react_study_212_headless_concept.png)
+
+
 Headless = “頭（見た目）がない” ってイメージ！
 つまり **UIの見た目（CSS）は付けずに**、代わりに👇だけを提供してくれる感じ✨
 
@@ -39,6 +42,9 @@ E --> H["自由にデザインできる😍"]
 ---
 
 ## 3) Radix UI と Headless UI の違い（ざっくり）🧭✨
+
+![react study 212 radix vs headless](./picture/react_study_212_radix_vs_headless.png)
+
 
 両方とも「ヘッドレス系」だけど、ノリが少し違うよ〜！
 
@@ -233,6 +239,9 @@ export function SimpleMenuRadix() {
 ---
 
 ## 6) Radixの「asChild」って何？（ちょい予告）🔮✨
+
+![react study 212 as child slot](./picture/react_study_212_as_child_slot.png)
+
 
 Radixでは「この部品、ボタンじゃなくて自分の `<a>` で使いたい！」みたいなのがあるよね？
 そういうときに役立つのが `asChild` / `Slot` 的な考え方💡
