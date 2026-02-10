@@ -6,6 +6,8 @@
 
 ## 1) Analyzer ってなに？🕵️‍♀️
 
+![react study 267 analyzer flow](./picture/react_study_267_analyzer_flow.png)
+
 ![Analyzerの仕組み](./picture/react_study_267_analyzer.png)
 
 Biomeの **Analyzer は “コードを解析して、診断（diagnostics）や修正（code actions）を出す脳みそ”** みたいな存在だよ🧠✨
@@ -74,6 +76,8 @@ Biomeの診断は「何がダメで、どう直せるか」をかなり丁寧に
 
 ## 5) Analyzerの「修正」＝ Code Actions（Quick Fix）🪄
 
+![react study 267 quick fix](./picture/react_study_267_quick_fix.png)
+
 Biomeは “見つけるだけ” じゃなくて **直し方も提案**してくれるのが強いよ〜！😍
 
 たとえば **import の整理**（並び替え）も “コードアクション” として用意されてる：
@@ -117,6 +121,8 @@ Windowsは実行中のバイナリをロックしがちで、Biome拡張には�
 ---
 
 ## 7) どうしても直したくない時：抑制（Suppressions）🙅‍♀️📝
+
+![react study 267 suppression](./picture/react_study_267_suppression.png)
 
 「ここはわざとこう書いてるんだよね〜」って時、Biomeは **抑制コメント**が使えるよ✨
 しかも **lint だけじゃなく assist（アクション）も同じ仕組みで抑制できる**って明言されてる！ ([Biome][1])

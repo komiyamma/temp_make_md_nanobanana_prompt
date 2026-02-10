@@ -54,6 +54,8 @@ Biome は `--reporter` を指定できて、**GitHub 用の `--reporter=github`*
 
 ## 4) GitHub Actions を作る（これが本題）🎬✨
 
+![react study 266 workflow steps](./picture/react_study_266_workflow_steps.png)
+
 リポジトリに次のファイルを作ります👇
 
 📁 `.github/workflows/biome.yml`
@@ -151,6 +153,8 @@ jobs:
 ---
 
 ## 6) よくあるハマりどころ（先回り🫶🧯）
+
+![react study 266 pr failure](./picture/react_study_266_pr_failure.png)
 
 ### 😵「CIだと Biome の設定が読めてない気がする」
 

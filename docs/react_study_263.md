@@ -25,6 +25,8 @@ Biome の VS Code 拡張は、VS Code に「フォーマッタ」として登録
 
 ## 1) VS Code に Biome 拡張を入れる 🧩
 
+![react study 263 extension search](./picture/react_study_263_extension_search.png)
+
 ### ✅ 入れ方（いちばん普通の手順）
 
 1. VS Code を開く
@@ -35,6 +37,8 @@ Biome の VS Code 拡張は、VS Code に「フォーマッタ」として登録
 ---
 
 ## 2) Biome を「デフォルトのフォーマッタ」にする 🎯
+
+![react study 263 default formatter](./picture/react_study_263_default_formatter.png)
 
 保存時フォーマットは、VS Code 側が「どのフォーマッタで整形するか」を決めます。
 ここで Biome を選んであげるのがコツ💡
@@ -50,6 +54,8 @@ Biome の VS Code 拡張は、VS Code に「フォーマッタ」として登録
 ---
 
 ## 3) 「保存時フォーマット」をONにする ✨💾
+
+![react study 263 format on save](./picture/react_study_263_format_on_save.png)
 
 ### ✅ settings.json に書く（プロジェクトだけに効かせるのが気楽👍）
 
