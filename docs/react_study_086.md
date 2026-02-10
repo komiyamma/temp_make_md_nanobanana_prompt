@@ -86,6 +86,8 @@ const result = useMemo(
 
 ### 💥 まずは「ダメな例」（毎回計算しちゃう）
 
+![Heavy Calculation](./picture/react_study_086_heavy_calc.png)
+
 例えば「商品リストの合計金額」を計算するコンポーネントを考えます。
 
 ```tsx
@@ -349,6 +351,8 @@ const totalPrice = useMemo(() => {
 というわけではありません。
 
 ### ❌ よくあるやりがちパターン
+
+![useMemo Overhead](./picture/react_study_086_usememo_overhead.png)
 
 * 全然重くない計算にまで `useMemo` を付ける
 * 見た目の「なんとなくキレイさ」のためだけに使う

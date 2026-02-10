@@ -341,6 +341,8 @@ export default App;
 
 ### 4-3. なぜ `React.memo` が効かなくなったの？
 
+![Broken Memoization](./picture/react_study_085_broken_memo.png)
+
 `React.memo` は、「前回のProps」と「今回のProps」を
 **浅い比較（shallow equal）** でチェックしています。
 
@@ -369,6 +371,8 @@ export default App;
 とReactにお願いするフックです。
 
 ### 5-1. `useCallback` で `handleChildClick` を安定させる
+
+![Fixed Memoization](./picture/react_study_085_fixed_memo.png)
 
 `App.tsx` を修正します👇
 

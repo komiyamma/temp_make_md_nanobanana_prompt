@@ -89,6 +89,8 @@ export default function Parent() {
 
 ### ここでのポイント ✍️
 
+![Storing Function Reference](./picture/react_study_084_reference_storage.png)
+
 * 最初のレンダー時：
 
   * `useCallback` に渡した関数がそのまま返ってくる
@@ -225,6 +227,8 @@ React 19 では、**コンパイラによる自動最適化** がどんどん進
 `useCallback` でよくあるパターンを、先に知っておきましょう。
 
 ### ❌ よくあるミス
+
+![Missing Dependency Pitfall](./picture/react_study_084_missing_dependency.png)
 
 1. **依存配列をわざと空にする**
 
