@@ -137,6 +137,8 @@ export default function App() {
 
 ### 1) 必須と任意の見極め
 
+![Optional vs Required](./picture/react_study_019_optional_prop.png)
+
 * **必須**：無いとUIが成立しない → そのまま
 * **任意**：無くても成立 → `?` を付ける + できれば**デフォルト値**を用意
 
@@ -155,6 +157,8 @@ type ItemProps = { onSelect?: OnSelect; };
 ```
 
 ### 3) `children` は `React.ReactNode`
+
+![Children Slot](./picture/react_study_019_children_slot.png)
 
 ```tsx
 type CardProps = { children?: React.ReactNode };
@@ -193,6 +197,8 @@ VS Codeが赤線で**即気づける**。直すのも一瞬！⏱️✨
 ---
 
 ## ハンズオン②：既存データからProps型を“流用”する（応用ミニ）🧠
+
+![Pick Utility](./picture/react_study_019_pick_utility.png)
 
 アプリには「データ型」と「表示用のProps型」が出てくることが多いよ。
 **全部そのまま渡す必要はなくて、表示に必要な一部だけ型で抜き出す**のがコツ！

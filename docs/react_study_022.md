@@ -93,6 +93,8 @@ export function ProfileCard({ user }: ProfileCardProps) {
 
 👉 **ポイント**：`ProfileCard` は **`user` という1つのProps**だけを受け取り、その中身を孫の `Avatar` に**必要な形**で渡しているよ。**親→子→孫**と、Propsはバトンのように受け渡し🏃‍♀️🏃‍♀️🏃‍♀️
 
+![Component Tree](./picture/react_study_022_component_tree_structure.png)
+
 ---
 
 ### 3) `Header.tsx`（ページ上部の部品）
@@ -205,10 +207,14 @@ export function Header({ title, notificationCount }: HeaderProps) {
 
 ### リテラル型で入力ミスをブロック✋
 
+![Literal Type Autocomplete](./picture/react_study_022_literal_type_autocomplete.png)
+
 `"sm" | "md" | "lg"` のように**選択肢を限定**できる。
 VS Code が「この3つから選んでね〜」とガイドしてくれて安心💖
 
 ### 型を**再利用**して一貫性アップ
+
+![Type Reuse](./picture/react_study_022_type_reuse.png)
 
 `export type User = { ... }` を他の部品へどんどん使い回そう。
 「どこでも同じ `User`」は**強い**💪

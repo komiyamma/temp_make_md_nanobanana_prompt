@@ -19,6 +19,8 @@ flowchart TD
 
 ## ステップ1：要件をサクッと決める 📝💡
 
+![Requirements Checklist](./picture/react_study_020_requirements_checklist.png)
+
 自己紹介カードに入れたい情報：
 
 * 名前（必須）
@@ -139,6 +141,8 @@ export default function IntroCard({
 
 > ちょいテク：`hobbies = []` や `iconUrl = ...` の**デフォルト値**で「任意でも快適」な体験に🌈
 
+![Default Value Fallback](./picture/react_study_020_default_value_fallback.png)
+
 ---
 
 ## ステップ4：App から実データを渡す 🚚💨
@@ -195,6 +199,8 @@ export default function App() {
 ---
 
 ## さらに一歩：ユニオン型で見た目バリエを追加🎛️
+
+![Variant Switch](./picture/react_study_020_variant_switch.png)
 
 「カードの雰囲気」を選べるようにしてみる（型の威力を体験！）
 
