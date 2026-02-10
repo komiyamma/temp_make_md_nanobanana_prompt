@@ -52,6 +52,9 @@ Tailwind コンポーネントは **@react-email/components** から使えるよ
 
 ### 1) `emails/WelcomeEmail.tsx` を作る✍️✨
 
+![274_tailwind_config](./picture/react_study_274_tailwind_config.png)
+
+
 ```tsx
 import {
   Html,
@@ -146,6 +149,9 @@ WelcomeEmail.PreviewProps = {
 
 ### 2) プレビューで確認👀✨
 
+![274_styled_email](./picture/react_study_274_styled_email.png)
+
+
 React Email のプレビューサーバーは `email dev` で起動できるよ（デフォルトは `emails` フォルダを見るよ）🚀
 ポートも既定で `3000`！ ([React Email][3])
 
@@ -166,6 +172,9 @@ email dev
 * `border` / `border-slate-200`（枠線）🧊
 
 ### 🛡️ `pixelBasedPreset` は基本ON推奨
+
+![274_pixel_preset](./picture/react_study_274_pixel_preset.png)
+
 
 Tailwind が `rem` を使う関係で、メールクライアントによっては表示が崩れることがあるよ〜💦
 それを避けるための仕組みが `pixelBasedPreset`！ ([React Email][1])

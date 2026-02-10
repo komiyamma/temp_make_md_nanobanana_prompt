@@ -27,6 +27,9 @@ flowchart TD
 
 ## 1) 開発中：プレビューでローカル画像を表示する 👀🧪
 
+![275_static_vs_prod](./picture/react_study_275_static_vs_prod.png)
+
+
 React Emailのプレビューサーバーは、**`emails/static`** を「静的ファイル置き場」として扱えるよ！ ([React Email][2])
 （`--dir` を変えてる場合は、そのディレクトリの中に `static` だよ）
 
@@ -79,6 +82,9 @@ export default function Welcome() {
 
 ## 2) 本番：受信者の環境でも画像が見えるようにする 🌍📩
 
+![275_baseurl_switch](./picture/react_study_275_baseurl_switch.png)
+
+
 ここ超重要！⚠️
 **メール本文のHTMLに `src="/static/logo.png"` みたいな“相対パス”が入ってると、本番ではまず表示されない**です😵
 なので本番は基本…
@@ -112,6 +118,9 @@ export default function Welcome() {
 ---
 
 ## 3) どうしても外部アクセスさせたくない：インライン画像（CID）📎🖼️
+
+![275_cid_concept](./picture/react_study_275_cid_concept.png)
+
 
 「受信者が画像読み込みOFFでも表示してほしい！」みたいな時は、**画像を添付として埋め込む（CID）**って手があるよ！
 
