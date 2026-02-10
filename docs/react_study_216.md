@@ -65,6 +65,8 @@ Vite なら、まずは **`App.tsx` の一番下**に置くのが分かりやす
 ---
 
 ## Step 3：まずは「出るだけ」やってみよ！🎉
+![react_study_216_sonner_positioning](./picture/react_study_216_sonner_positioning.png)
+
 
 `src/App.tsx` を、こんな感じにしてみてね👇（デモ用✨）
 
@@ -120,6 +122,8 @@ export default function App() {
 ---
 
 ## Step 5：非同期処理に合わせて「保存中…」→「完了！」にする ⏳➡️🎉
+![react_study_216_async_promise_flow](./picture/react_study_216_async_promise_flow.png)
+
 
 通信みたいに時間がかかる処理は `toast.promise` が便利！✨ ([Shadcn][2])
 

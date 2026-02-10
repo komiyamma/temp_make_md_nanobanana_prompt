@@ -18,6 +18,8 @@ shadcn/ui は、よくある「`npm install` して使うUIライブラリ」じ
 ---
 
 ## 2) 何が“新しい”の？😳✨（最大の特徴）
+![react_study_213_copy_paste_concept](./picture/react_study_213_copy_paste_concept.png)
+
 
 ### ✅ ふつうのUIライブラリ
 
@@ -67,6 +69,8 @@ flowchart LR
 ---
 
 ## 5) 導入の流れ（Vite想定）🚀🪟
+![react_study_213_install_flow](./picture/react_study_213_install_flow.png)
+
 
 公式の Vite 手順はこんな流れだよ👇（ここ大事！） ([Shadcn UI][4])
 

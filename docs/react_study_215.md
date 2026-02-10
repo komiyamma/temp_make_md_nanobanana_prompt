@@ -55,6 +55,8 @@ npx shadcn@latest add button
 
 ### `src/components/ProfileDropdown.tsx`
 
+![react_study_215_trigger_as_child](./picture/react_study_215_trigger_as_child.png)
+
 * `asChild` を使うと、Trigger を **Buttonそのもの**にできてキレイ✨
 * `onSelect` はクリックだけじゃなく、**キーボード選択でも発火**するから便利🎮⌨️
 * `CheckboxItem` は `boolean | "indeterminate"` なので `checked === true` で安全に✨
@@ -172,6 +174,8 @@ export default function App() {
 ---
 
 ## 5) 操作感（ここ大事）🎮⌨️💞
+![react_study_215_keyboard_navigation](./picture/react_study_215_keyboard_navigation.png)
+
 
 * ボタン：クリック / Enter / Space で開く✨
 * メニュー内：↑↓ で移動、Enter で決定、Esc で閉じる🫶

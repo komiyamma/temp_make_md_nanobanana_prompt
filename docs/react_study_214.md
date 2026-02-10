@@ -163,6 +163,8 @@ export default function App() {
 ```
 
 ### ここが “アクセシブル” のポイントだよ 😊✨
+![react_study_214_screen_reader_structure](./picture/react_study_214_screen_reader_structure.png)
+
 
 * Dialog は **スクリーンリーダー向けの Title/Description** を持てる（Radix が想定してる）([Radix UI][1])
 * **モーダル内にフォーカスが閉じ込められる**（フォーカストラップ）([Radix UI][1])
@@ -171,6 +173,8 @@ export default function App() {
 ---
 
 ## 動作チェック（キーボードで確認）⌨️✅
+![react_study_214_focus_trap_diagram](./picture/react_study_214_focus_trap_diagram.png)
+
 
 開いたら、これを順番に試してね〜！😆🎉
 
