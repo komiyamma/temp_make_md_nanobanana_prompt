@@ -109,6 +109,9 @@ npm install
 ```
 
 * これで必要パッケージが `node_modules` に入るよ🧰
+
+![Installing Dependencies](./picture/react_study_006_npm_install_process.png)
+
 * 終わったら **プロジェクト作成は成功**！次章で中身（`.tsx` や `tsconfig.json`）を見に行くよ👀
 
 ---
@@ -126,6 +129,8 @@ npm install -D @types/react@^19 @types/react-dom@^19
 
 * これで React 19 + TypeScript の準備が完了！
 * 後半の章（`ref` を props として渡すなど）で必要になるよ ✨
+
+![Upgrading to React 19](./picture/react_study_006_react19_upgrade.png)
 
 ---
 

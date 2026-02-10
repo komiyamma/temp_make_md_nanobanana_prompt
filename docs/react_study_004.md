@@ -34,6 +34,8 @@ flowchart
 1. VS Code 上部メニュー **[表示] → [ターミナル]** を開く
 2. ターミナル右上のドロップダウンから **PowerShell** を選択（既定化しておくと楽！）
 
+![VS Code Terminal Profile Selection](./picture/react_study_004_terminal_setup.png)
+
 > 迷ったら：**[ターミナル] → [既定のプロファイル] → PowerShell** を選択してね🫶
 
 ---
@@ -50,6 +52,8 @@ npx -v
 
 例）`v20.x.x / 10.x.x / 10.x.x` みたいに出れば準備完了🎉
 
+![Successful Version Check](./picture/react_study_004_version_check.png)
+
 ---
 
 ## 3) 1分スモークテスト（“ほんとに動く？”）⏱️
@@ -65,6 +69,8 @@ node -e "console.log('環境OK！🚀')"
 ```bash
 npx --yes cowsay "準備万端！"   # 実行後、かわいいアスキーアートが出ればOK🐮
 ```
+
+![NPM Execution Success (Cowsay)](./picture/react_study_004_cowsay_success.png)
 
 > どれかでエラーが出たら、下の「トラブル時の対処フロー」を見てね🧯
 
