@@ -45,6 +45,8 @@ npm i -D tsx concurrently
 
 ## 2) APIキーを `.env.local` に入れる🔐✨（超大事！）
 
+![AI Project Folder Structure](./picture/react_study_222_project_structure_setup.png)
+
 ルートに **`.env.local`** を作って、どっちか選んでね👇
 
 ### A. Vercel AI Gateway を使う（おすすめ・簡単）🌈
@@ -165,6 +167,9 @@ npm run dev
 ---
 
 ## ✅ 動作チェック（まずは /api/hello でOK）🧪✨
+
+![react study 222 streaming response curl](./picture/react_study_222_streaming_response_curl.png)
+
 
 PowerShell でもOKだよ！まずはストリームが返るかだけ確認しよ〜💕
 
