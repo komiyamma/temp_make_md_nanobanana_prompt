@@ -9,6 +9,8 @@
 
 ## 1) DevToolsってなに？🧰🌿
 
+![DevTools Panel Overview](./picture/react_study_163_devtools_panel.png)
+
 TanStack QueryのDevToolsは、アプリの中で動いてる **クエリ（取得）** や **ミューテーション（更新）** の状態を、パネルで確認できる便利ツールだよ✨（v5からミューテーションも観測できるよ）([tanstack.com][1])
 
 「いま通信してる？」「キャッシュある？」「古い？新しい？」が一発で分かるのが最高〜！😆
@@ -35,6 +37,8 @@ flowchart LR
 ## 3) DevToolsを入れる（Windows / Vite）💻⚡
 
 ### 3-1. インストール
+
+![Installation Command](./picture/react_study_163_install_command.png)
 
 PowerShellでプロジェクトフォルダに移動して👇
 
@@ -165,6 +169,8 @@ export default function App() {
 だいたいここが楽しいポイント😍
 
 * **Fresh / Stale**：データが新鮮かどうか🍞
+
+![Fresh vs Stale Concept](./picture/react_study_163_fresh_vs_stale.png)
 * **Observers**：いまそのクエリを見てるコンポーネントがいるか👀
 * **Actions（Refetch / Invalidate / Reset / Remove など）**：ボタンで挙動を試せる🎮
 

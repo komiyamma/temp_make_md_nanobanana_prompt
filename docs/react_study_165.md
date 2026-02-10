@@ -7,6 +7,8 @@
 
 ## 1) どういう機能？🤔💡
 
+![Window Focus Trigger](./picture/react_study_165_window_focus.png)
+
 ブラウザで別タブを見て、またアプリのタブに戻った瞬間に…
 
 * もし **キャッシュが古い（stale）** なら 👉 **自動で refetch（再取得）**
@@ -130,6 +132,8 @@ export default function App() {
 
 ## 4) 「戻っても更新されない…」の理由ランキング🧐💦
 
+![Stale Check Flow](./picture/react_study_165_stale_check.png)
+
 ### 🥇 データが stale じゃない（まだ新鮮）
 
 `refetchOnWindowFocus: true` は「**stale のときだけ**」更新します([TanStack][2])
@@ -199,6 +203,8 @@ useQuery({
 ---
 
 ## 6) アプリ全体で一括設定（QueryClient）🧰✨
+
+![Configuration Scope](./picture/react_study_165_config_scope.png)
 
 「基本はオフにしたい」みたいなときはこれが便利！
 `main.tsx`（または `QueryClient` 作ってる場所）で👇([TanStack][1])
