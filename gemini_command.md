@@ -18,9 +18,10 @@ description: Generate an image generation plan for a range of Markdown files bas
 
         b.  **Analyze Content**:
             - Review the content (from direct Markdown read).
-            - **CRITICAL**: Identify ALL locations where an image would enhance understanding or visual appeal, or any place where you think an image would be good.
-            - **Quantity Rule**: Do not limit to just one. Propose as many as needed to enrich the content.
-            - **Limit**: However, strictly limit the total number of *new* images to a MAXIMUM of 7 per Markdown file.
+            - **CRITICAL**: Identify EVERY single location where an image could potentially be added. 
+            - **Quantity Policy (EXTREMELY IMPORTANT)**: The user has a **STRONG PREFERENCE** for maximum visual coverage. Do NOT stop at 1 or 2 images. You MUST aggressively find opportunities to add images. If there is a paragraph that could be visualized, PLAN AN IMAGE.
+            - **Target**: Aim to find 5-7 distinct meaningful image opportunities per file. Finding only 1 image is considered a failure of imagination unless the file is extremely short.
+            - **Limit**: Strictly limit the total number of *new* images to a MAXIMUM of 7 per Markdown file to avoid overcrowding, but aim to reach this limit.
 
         c.  **Formulate Plan (Iterate for each proposed image)**:
             - **Loop**: Perform the following steps (c to f) for EACH identified image location (up to 7):
