@@ -14,6 +14,8 @@
 
 ## 2) `queryKey` は「住所」🏠（たとえで理解しよ😊）
 
+![Query Key Address Metaphor](./picture/react_study_164_query_key_address.png)
+
 たとえば「記事一覧」を取るとして…
 
 * 記事一覧（全部）📚
@@ -51,6 +53,8 @@
 
 ### ルール⑤：後で “まとめて無効化” できる形にしておく🧹
 
+![Invalidation Scope Tree](./picture/react_study_164_invalidation_scope.png)
+
 たとえば `['articles']` を親にしておくと…
 
 * `invalidateQueries({ queryKey: ['articles'] })` で **記事系ぜんぶ** を更新対象にできる✨ ([tanstack.com][3])
@@ -74,6 +78,8 @@ flowchart LR
 ---
 
 ## 5) 実戦：`queryKey` を “工場” で作る（Key Factory）🏭✨
+
+![Key Factory Concept](./picture/react_study_164_key_factory.png)
 
 手で `['articles', 'list', ...]` を毎回書くと、タイプミスが起きがち🥺
 だから **関数で統一** しよっ💡

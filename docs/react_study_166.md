@@ -7,6 +7,8 @@
 
 ## この章でできるようになること ✅🎯
 
+![Cache Hit Scenario](./picture/react_study_166_cache_hit.png)
+
 * 記事詳細ページで `useQuery` を使ってデータ取得 🛠️
 * `queryKey` を「記事IDごと」に分けてキャッシュする 🗝️
 * いったん見た記事を、もう一回開いた時の **爆速表示** を体験する ⚡💖
@@ -236,6 +238,8 @@ export default function PostDetailPage() {
     enabled: Number.isFinite(postId) && postId > 0,
     placeholderData: keepPreviousData, // ★切り替え時に前データを一瞬使う✨
   });
+
+![Placeholder Data Transition](./picture/react_study_166_placeholder_data.png)
 
   if (!Number.isFinite(postId) || postId <= 0) {
     return (

@@ -7,6 +7,8 @@
 
 ## 1) `useMutation` ってなに？🤔💡
 
+![useMutation Robot Metaphor](./picture/react_study_167_usemutation_robot.png)
+
 `useQuery` が「取得（GET）」担当なら、
 `useMutation` は「更新（POST/PUT/PATCH/DELETE）」担当！✍️✨
 
@@ -14,7 +16,9 @@
 * 成功・失敗の状態も持ってる（`isSuccess`, `isError`）✅❌
 * 成功したら入力欄を空にする、失敗したらメッセージ出す、などがラクになる🎉
 
-v5（現行）では **`isLoading` じゃなくて `isPending`** が基本だよ〜📝 ([TanStack][1])
+v5（現行）では **`isLoading` じゃなくて `isPending`** が基本だよ〜📝
+
+![Mutation Status Cycle](./picture/react_study_167_mutation_states.png) ([TanStack][1])
 （`status` も `pending/success/error/idle` って感じ！）([TanStack][2])
 
 ---
@@ -255,6 +259,8 @@ flowchart LR
 ---
 
 ## 8) `mutate` と `mutateAsync` の違い🍣✨
+
+![mutate vs mutateAsync](./picture/react_study_167_async_boomerang.png)
 
 * `mutate(variables)`：普通に呼ぶ（結果は `mutation.data` を見る）
 * `mutateAsync(variables)`：**Promiseが返る**から `await` できる 😳✨
