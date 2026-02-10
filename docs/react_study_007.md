@@ -35,6 +35,8 @@ flowchart LR
 
 ## フォルダ構成（Vite + React v19 テンプレの例）🗂️
 
+![React Project Folder Structure](./picture/react_study_007_folder_structure.png)
+
 ```
 my-react-app/
 ├─ index.html
@@ -92,6 +94,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 )
 ```
+
+![React Mounting Process](./picture/react_study_007_mounting_process.png)
 
 * `!` は「ここは絶対に null じゃないよ」の合図（Non-Null Assertion）
 * `React.StrictMode` は開発時のヒントや警告を強化してくれる🛡️
