@@ -136,6 +136,9 @@ export function deleteTodo(id: number): Promise<{}> {
 
 ## 3) QueryClientProvider を設定する（超重要）👑
 
+![QueryClientProvider Setup](./picture/react_study_170_provider_setup.png)
+
+
 `src/main.tsx`
 
 ```tsx
@@ -348,6 +351,9 @@ export default function App() {
 ---
 
 ## 5) オプティミスティック更新の流れ（図解）😼⚡
+
+![Optimistic Update Visualized](./picture/react_study_170_optimistic_update.png)
+
 
 ```mermaid
 sequenceDiagram

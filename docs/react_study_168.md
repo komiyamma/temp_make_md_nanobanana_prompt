@@ -43,6 +43,9 @@ flowchart LR
 
 ## 「どのキャッシュを無効化するの？」＝ queryKey で決まる🏷️✨
 
+![Query Key Matching Rules](./picture/react_study_168_query_key_matching.png)
+
+
 `invalidateQueries({ queryKey: ['todos'] })` って書くと、
 **queryKey が `['todos']` で始まるもの全部**が対象になるよ！😺🧺 ([TanStack][1])
 
@@ -187,6 +190,9 @@ onSuccess: async (_updated, variables) => {
 
 ## ちょい設定：refetchType で「再取得する範囲」を変えられる🎚️✨
 
+![Refetch Type Options](./picture/react_study_168_refetch_type.png)
+
+
 * `refetchType: 'active'`（デフォ）👉 **今画面で使われてるやつだけ**裏で再取得
 * `refetchType: 'none'` 👉 **stale にするだけ**（通信はしない）
 * `refetchType: 'all'` 👉 **使われてないやつも含めて**再取得 ([TanStack][3])
@@ -203,6 +209,9 @@ await queryClient.invalidateQueries({
 ---
 
 ## さらに気持ちよく：setQueryData で「即反映」⚡（通信はあとでもOK）
+
+![setQueryData Instant Update](./picture/react_study_168_set_query_data.png)
+
 
 「保存したらすぐ画面変わってほしい〜🥺」って時は、
 invalidate だけじゃなくて **キャッシュ自体を先に書き換える**のもアリ！

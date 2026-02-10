@@ -70,6 +70,9 @@ export async function fetchArticles(): Promise<Article[]> {
 
 ## 4) ロード中スケルトン部品を作る 🦴✨
 
+![Skeleton UI Concept](./picture/react_study_169_skeleton_ui.png)
+
+
 ### `src/components/ArticleListSkeleton.tsx`
 
 ```tsx
@@ -138,6 +141,9 @@ export function ArticleListSkeleton() {
 ---
 
 ## 5) エラー画面（優しさMAX）を作る 🧯💗
+
+![Friendly Error Panel](./picture/react_study_169_error_panel.png)
+
 
 エラーの型は `unknown` になりがちなので、**安全にメッセージ化**する関数を用意します👍
 
