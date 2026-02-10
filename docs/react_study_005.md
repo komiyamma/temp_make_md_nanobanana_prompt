@@ -40,6 +40,8 @@ cd C:\dev
 
 > まだ無ければ `mkdir C:\dev` → `cd C:\dev` でOK！
 
+![Workspace Preparation](./picture/react_study_005_folder_preparation.png)
+
 ---
 
 ## ステップ2：Vite の作成コマンドを実行 🎬
@@ -74,6 +76,8 @@ npm create vite@latest
 * **Project name**：フォルダ名にもなる。例：`my-react-app` 🏷️
 * **Select a framework**：ここで **React** を選ぶのが王道だけど、**選択は第6章で解説**するので今回は **ここで一旦ストップ** ✋
   （Enter を押す手前で止めておこうね！）
+
+![Vite CLI Interactive Prompt](./picture/react_study_005_vite_cli_prompt.png)
 
 > ちなみに、**プロジェクト名まで入れたけどやっぱりやり直したい**場合は、生成されたフォルダを消してもう一度コマンドを実行すればOK🧽
 
