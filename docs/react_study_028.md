@@ -11,6 +11,8 @@
 
 ### 28-1 🧠 なんで「関数」をPropsで渡すの？
 
+![Logic vs View Responsibility](./picture/react_study_028_logic_vs_view.png)
+
 Reactでは、
 
 * 見た目 👉 子コンポーネント（`Button` など）
@@ -35,6 +37,8 @@ Reactでは、
 ---
 
 ### 28-2 ✍️ 関数の型の基本記法
+
+![Void Function Type Visualized](./picture/react_study_028_void_func_type.png)
 
 TypeScriptで「関数の型」はこう書きます。
 
@@ -141,6 +145,8 @@ sequenceDiagram
 ---
 
 ### 28-5 🎯 引数付きの関数を渡すパターン
+
+![Callback with ID Parameter](./picture/react_study_028_callback_with_id.png)
 
 次は少しレベルアップして、
 **「どのアイテムが押されたか」** みたいな情報も渡してみます。

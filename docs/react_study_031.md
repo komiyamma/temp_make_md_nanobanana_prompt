@@ -69,6 +69,8 @@ React では、State はこんな性質をもっています👇
 
 ## 3️⃣ Props と State のちがいをざっくり🍰
 
+![Props vs State Comparison](./picture/react_study_031_props_vs_state.png)
+
 似た言葉として **Props**（プロップス）も出てきましたよね。
 ここでいったん、Props と State のイメージを並べてみましょう。
 
@@ -155,6 +157,8 @@ return (
 ---
 
 ## 6️⃣ どんなものを State にすべき？チェックリスト ✅
+
+![State Decision Checklist](./picture/react_study_031_state_checklist.png)
 
 React では、なんでもかんでも State にすると逆にややこしくなります。
 「これは State にしたほうがいいかな？」と迷ったとき用に、
