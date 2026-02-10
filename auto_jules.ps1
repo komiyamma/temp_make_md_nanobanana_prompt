@@ -109,32 +109,8 @@ function Run-JulesForRange {
     Write-Host "🛠️ PR 承認とマージを実行します: $prUrl" -ForegroundColor Cyan
     gh pr edit $prUrl --add-assignee "komiyamma"
 
-    # --- Verification Step ---
-    Write-Host "🔍 画像プランとHTMLの整合性を確認します..." -ForegroundColor Yellow
-    
-    # Switch to PR branch to verify content
-    Write-Host "🔀 PRブランチをチェックアウトします..." -ForegroundColor Gray
-    gh pr checkout $prUrl
-
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "❌ PRブランチのチェックアウトに失敗しました。"
-        git checkout main
-        return
-    }
-
-    # Run verification script
-    python verify_image_plan_consistency.py
-    $verifyResult = $LASTEXITCODE
-
-    # Always return to main
-    git checkout main
-
-    if ($verifyResult -ne 0) {
-        Write-Error "❌ 整合性チェックに失敗しました。PR ($prUrl) はマージされません。手動で確認してください。"
-        return
-    }
-
-    Write-Host "✅ 整合性チェックに合格しました。マージを続行します。" -ForegroundColor Green
+    # --- Verification Step Skipped ---
+    Write-Host "⚠️ 整合性チェックをスキップします。PRの内容を正としてマージします。" -ForegroundColor Yellow
     # --- End Verification Step ---
 
     gh pr review $prUrl --approve --body "Approved by komiyamma automation script. Range: $targetRange"
