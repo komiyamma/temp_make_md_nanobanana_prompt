@@ -63,6 +63,9 @@ mindmap
 
 ## ダメな動き（逆にUXが落ちるやつ）🚫🌀
 
+![201_good_vs_bad_motion](./picture/react_study_201_good_vs_bad_motion.png)
+
+
 動きは強すぎると **“説明” じゃなくて “邪魔”** になるよ💦
 
 * ずっと動き続ける（常時ぴょこぴょこ）🐸💥
@@ -95,6 +98,9 @@ mindmap
 ---
 
 ## ちょい実験：CSSだけで「押せた感」出してみる 👍💖
+
+![201_button_feedback](./picture/react_study_201_button_feedback.png)
+
 
 Framer Motionは次章でやるから、ここでは **“動きの価値”** を軽く体験しよ〜😊
 

@@ -41,6 +41,9 @@ import { motion } from "motion/react";
 
 ## 2) まずは「登場するときにフワッと出る」💖✨
 
+![202_initial_animate](./picture/react_study_202_initial_animate.png)
+
+
 `src/App.tsx` をこれにしてみてね👇
 
 ```tsx
@@ -105,6 +108,9 @@ export default function App() {
 ---
 
 ## 3) “押したら気持ちいい” を足す（Hover / Tap）🫶✨
+
+![202_hover_tap](./picture/react_study_202_hover_tap.png)
+
 
 ボタンを Motion にして、触った感をつけよう😆
 （`whileHover` / `whileTap` は公式でも定番！） ([Motion][1])

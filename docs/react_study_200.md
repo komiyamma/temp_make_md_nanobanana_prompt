@@ -115,6 +115,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 ## 3) 認証状態をアプリ全体で持つ（AuthProvider）🧠🔁
 
+![200_auth_provider_context](./picture/react_study_200_auth_provider_context.png)
+
+
 `src/contexts/AuthContext.tsx` を作るよ！
 
 ```tsx
@@ -184,6 +187,9 @@ export function useAuth() {
 
 ## 4) 保護されたルート（ログインしてない人を追い返す）🚧🔐
 
+![200_require_auth_guard](./picture/react_study_200_require_auth_guard.png)
+
+
 `src/components/RequireAuth.tsx` を作る！
 
 ```tsx
@@ -213,6 +219,9 @@ flowchart LR
 ---
 
 ## 5) メモページ（CRUD）を作る📝✨
+
+![200_crud_ui_mockup](./picture/react_study_200_crud_ui_mockup.png)
+
 
 `src/pages/MemosPage.tsx` を作るよ！
 
