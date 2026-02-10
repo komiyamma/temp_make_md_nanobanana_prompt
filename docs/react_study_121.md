@@ -169,6 +169,9 @@ export function Chap121Form() {
 
 ### ✅ 4-1. `useState` でフォームの値を全部まとめて持つ
 
+![react_study_121_form_state_object](./picture/react_study_121_form_state_object.png)
+
+
 ```tsx
 type FormValues = {
   name: string;
@@ -191,6 +194,9 @@ const [formValues, setFormValues] = useState<FormValues>({
 ---
 
 ### ✅ 4-2. 「コントロールされたコンポーネント」にする
+
+![react_study_121_controlled_cycle](./picture/react_study_121_controlled_cycle.png)
+
 
 ```tsx
 <input
@@ -242,6 +248,9 @@ function handleChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 ---
 
 ### ✅ 4-4. `onSubmit` で送信処理をまとめる
+
+![react_study_121_prevent_default](./picture/react_study_121_prevent_default.png)
+
 
 ```tsx
 <form onSubmit={handleSubmit}>

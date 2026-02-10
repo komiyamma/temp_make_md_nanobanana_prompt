@@ -114,6 +114,9 @@ React 19 の `use` は、**Promise が解決するまで待ち、解決したら
 
 ## 5️⃣ ステップ2：ErrorBoundary コンポーネントを作る 🧯
 
+![react_study_120_reset_key](./picture/react_study_120_reset_key.png)
+
+
 ![Error Bubbling](./picture/react_study_120_error_bubbling.png)
 
 ErrorBoundary は「この中でエラーが起きたら、アプリ全体を落とさずにエラーメッセージを出す役」みたいな子です。
@@ -314,6 +317,9 @@ export default function App() {
 ---
 
 ## 8️⃣ 実行して動きをチェックしよう ▶️
+
+![react_study_120_test_mode_toggle](./picture/react_study_120_test_mode_toggle.png)
+
 
 ターミナルで
 

@@ -118,6 +118,9 @@ React の公式ドキュメントにも、このような形が載っていま�
 
 #### 🌟 新スタイル：`<form action={saveMessage}>`
 
+![react_study_122_formdata_delivery](./picture/react_study_122_formdata_delivery.png)
+
+
 「フォーム送信のときに実行したい関数」を用意して、それを `action` に渡します。
 
 ```tsx
@@ -185,6 +188,9 @@ Form Action（ここでは `saveMessage` みたいなやつ）は、ざっくり
 ---
 
 ### 7️⃣ クライアントだけ？サーバー側？ざっくりイメージ 🌐
+
+![react_study_122_action_environment](./picture/react_study_122_action_environment.png)
+
 
 Form Actions は、
 
