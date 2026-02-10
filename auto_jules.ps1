@@ -1,5 +1,8 @@
 ﻿Param(
+    [Parameter(Position = 0)]
     [string]$Range,
+    [Parameter(Position = 1)]
+    [int]$Increment,
     [switch]$Loop
 )
 
@@ -147,10 +150,25 @@ function Run-JulesForRange {
 
 # --- メインロジック ---
 if ($Loop) {
-    # 自動ループモード: 841-850 から 971-980 まで
-    for ($i = 945; $i -le 971; $i += 6) {
+    # 自動ループモード (デフォルト設定)
+    for ($i = 1; $i -le 1000; $i += 6) {
         $r = "$i-$($i + 5)"
         Run-JulesForRange -targetRange $r
+    }
+}
+elseif ($Range -and $Increment -gt 0) {
+    # 範囲指定 + インクリメント指定モード: 例 "10-280 5"
+    if ($Range -match '^(\d+)-(\d+)$') {
+        $startTotal = [int]$Matches[1]
+        $endTotal = [int]$Matches[2]
+        for ($i = $startTotal; $i -le $endTotal; $i += $Increment) {
+            $subEnd = [Math]::Min($i + $Increment - 1, $endTotal)
+            $r = "$i-$subEnd"
+            Run-JulesForRange -targetRange $r
+        }
+    }
+    else {
+        Write-Error "範囲の形式が正しくありません (Increment併用時): $Range"
     }
 }
 elseif ($Range) {
@@ -159,10 +177,27 @@ elseif ($Range) {
 }
 else {
     # 従来モード (引数なし)
-    $inputRange = Read-Host "範囲を入力（例: 221-230）"
-    if ([string]::IsNullOrWhiteSpace($inputRange)) {
-        Write-Warning "範囲が入力されませんでした。"
+    $input = Read-Host "範囲を入力（例: 221-230 または 10-280 5）"
+    if ([string]::IsNullOrWhiteSpace($input)) {
+        Write-Warning "入力されませんでした。"
         exit
     }
-    Run-JulesForRange -targetRange $inputRange
+
+    $parts = $input -split '\s+'
+    if ($parts.Count -eq 2 -and $parts[0] -match '^\d+-\d+$') {
+        # 入力から Range と Increment を抽出
+        $r = $parts[0]
+        $inc = [int]$parts[1]
+        if ($r -match '^(\d+)-(\d+)$') {
+            $startTotal = [int]$Matches[1]
+            $endTotal = [int]$Matches[2]
+            for ($i = $startTotal; $i -le $endTotal; $i += $inc) {
+                $subEnd = [Math]::Min($i + $inc - 1, $endTotal)
+                Run-JulesForRange -targetRange "$i-$subEnd"
+            }
+        }
+    }
+    else {
+        Run-JulesForRange -targetRange $parts[0]
+    }
 }
