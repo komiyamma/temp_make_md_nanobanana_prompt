@@ -111,6 +111,8 @@ export default function App() {
 
 ## 5) “保存するもの”を選ぶ：`partialize`（超よく使う）🎯
 
+![react study 178 partialize filter](./picture/react_study_178_partialize_filter.png)
+
 例えば「一時的なフラグは保存したくない」って時あるよね？😌
 `partialize`で **保存対象だけ** 選べます✅
 
@@ -147,6 +149,8 @@ export const useAppStore = create<State>()(
 ---
 
 ## 6) バージョン管理：`version` と `migrate` 🧬
+
+![react study 178 version migrate](./picture/react_study_178_version_migrate.png)
 
 アプリが成長すると、保存するStateの形が変わることあるよね？
 そのときに「古い保存データを新しい形に変換」できます✨

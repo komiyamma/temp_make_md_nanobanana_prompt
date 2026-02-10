@@ -43,6 +43,8 @@ set((state) => ({
 
 ### ✅ immer有り（最高…）
 
+![react study 179 deep update](./picture/react_study_179_deep_update.png)
+
 「触りたいところだけ」書けばOK！✨（見た目はミューテートっぽいけど、中身はちゃんとイミュータブル🧪）
 
 ```tsx
@@ -68,6 +70,8 @@ npm i zustand immer
 ---
 
 ## 3) `persist + immer` 合体ストアを作る 💾🧪
+
+![react study 179 middleware stack](./picture/react_study_179_middleware_stack.png)
 
 `src/stores/useProfileStore.ts` を作って、ここに書くよ👇
 
