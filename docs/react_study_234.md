@@ -24,6 +24,10 @@ Playwrightで
 
 ## 2) まずは結論：`getByRole` がいちばんおすすめ🥇🎀
 
+![react study 234 accessibility tree](./picture/react_study_234_accessibility_tree.png)
+
+
+
 ### なぜ強いの？💡
 
 `getByRole` は **「アクセシビリティ的に正しい要素」**を掴むから、次のメリットがあるよ✨
@@ -109,6 +113,10 @@ page.getByRole("heading", { name: "マイページ" })
 ---
 
 ## 6) “name” はどこから来るの？（超ざっくり理解）🎓✨
+
+![react study 234 name calculation](./picture/react_study_234_name_calculation.png)
+
+
 
 `name` はだいたい次のどれかから決まるよ👇
 
@@ -223,6 +231,10 @@ page.getByTestId("save-button").click();
 ---
 
 ## 10) ミニ練習（Codegenの出力を“人間の言葉”に直す）🪄📎
+
+![react study 234 refactoring magic](./picture/react_study_234_refactoring_magic.png)
+
+
 
 ### Codegenがこう吐いたとする（ありがち）
 

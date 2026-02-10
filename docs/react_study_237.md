@@ -37,6 +37,10 @@ Playwright には **projects**（同じテストを違う設定で走らせる�
 
 ## ステップ1：Playwright の projects で「画面サイズ別」を作る 🧩🛠️
 
+![react study 237 projects config](./picture/react_study_237_projects_config.png)
+
+
+
 `playwright.config.ts` に **Desktop / Tablet / Mobile** を定義します💪✨
 （すでに config があるなら、`projects:` だけ足してOK！）
 
@@ -98,6 +102,10 @@ export default defineConfig({
 
 ## ステップ3：実践テスト例（ハンバーガーメニュー）🍔📱✅
 
+![react study 237 burger states](./picture/react_study_237_burger_states.png)
+
+
+
 ここでは例として、
 
 * Desktop：ナビ（リンク一覧）が見える、ハンバーガーは見えない
@@ -157,6 +165,10 @@ test.describe('レスポンシブ：ヘッダー/ナビの崩れチェック �
 ---
 
 ## ステップ4：ビジュアル（スクショ）で「崩れ」を丸ごと検出 🖼️🧪✨
+
+![react study 237 visual diff](./picture/react_study_237_visual_diff.png)
+
+
 
 「表示はあるけど、崩れてる」みたいな事故は、DOMテストだけだと見逃すことがあります😇💦
 そこで **スクショ比較**（Visual Regression）を混ぜると一気に安心度UP✨

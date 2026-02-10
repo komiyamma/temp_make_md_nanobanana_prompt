@@ -44,6 +44,10 @@ npm run dev
 
 ## 2) Codegenを起動する🪄（これが本題！）
 
+![react study 233 codegen gui](./picture/react_study_233_codegen_gui.png)
+
+
+
 別ターミナルを開いて、これ👇
 
 ```bash
@@ -79,6 +83,10 @@ npx playwright codegen ^
 ---
 
 ## 4) 録画のコツ🎥✨（ここが成功の分かれ道）
+
+![react study 233 user vs robot](./picture/react_study_233_user_vs_robot.png)
+
+
 
 ### ✅ なるべく「ユーザーっぽい操作」をする
 
@@ -134,6 +142,10 @@ npx playwright show-report
 ---
 
 ## 7) Codegenは「完成品」じゃなくて「下書き」✍️💡
+
+![react study 233 draft vs final](./picture/react_study_233_draft_vs_final.png)
+
+
 
 Codegenは最強だけど、**そのまま出荷**はちょい危険なこともあるよ〜！😺
 だから“整える”のが大事✨
