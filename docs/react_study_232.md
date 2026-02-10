@@ -43,6 +43,8 @@ your-project/
 
 ## 3) まずはサンプルを実行してみる！▶️🧪
 
+![react study 232 headed vs ui](./picture/react_study_232_headed_vs_ui.png)
+
 ```bash
 npx playwright test
 ```
@@ -67,6 +69,8 @@ npx playwright test --ui
 
 ## 4) テスト結果レポートを見る（HTML）🧾🌈
 
+![react study 232 html report preview](./picture/react_study_232_html_report_preview.png)
+
 テスト後に、HTMLレポートを開けます👇（公式） ([Playwright][1])
 
 ```bash
@@ -78,6 +82,8 @@ npx playwright show-report
 ---
 
 ## 5) React（Vite）とちゃんと繋ぐ：テスト実行前に開発サーバーを自動起動する 🌐🚀
+
+![react study 232 webserver wait](./picture/react_study_232_webserver_wait.png)
 
 E2Eテストって「アプリが動いてるURL」に対して操作するので、
 Playwright側で **サーバー起動→テスト開始** をやってくれる設定が便利です💡（公式の `webServer`） ([Playwright][3])
@@ -172,6 +178,8 @@ sequenceDiagram
 ---
 
 ## 8) VS Code で楽したい人へ（超相性いい）💻💞
+
+![react study 232 vscode extension](./picture/react_study_232_vscode_extension.png)
 
 Playwrightは **公式VS Code拡張** があって、VS Codeのテスト欄から実行・デバッグ・生成までできちゃいます✨
 拡張を入れて、コマンドパレットから「Install Playwright」みたいな流れでセットアップできます（公式） ([Playwright][4])

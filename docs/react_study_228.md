@@ -43,6 +43,8 @@ flowchart LR
 
 ## 3) まずは“最小の正解”を作る ✅😊
 
+![react study 228 minimal flow](./picture/react_study_228_minimal_flow.png)
+
 AI SDKのドキュメントで推奨されてる基本形はこんな感じ！
 ポイントは **`UIMessage[]` → `convertToModelMessages` → `streamText` → `toUIMessageStreamResponse()`** だよ🧩 ([AI SDK][2])
 
@@ -77,6 +79,8 @@ export async function POST(req: Request) {
 
 ### 4-1) Systemメッセージで “人格” を固定する 🎀📝
 
+![react study 228 system persona](./picture/react_study_228_system_persona.png)
+
 ```ts
 const result = streamText({
   model: "anthropic/claude-sonnet-4.5",
@@ -88,6 +92,8 @@ const result = streamText({
 ---
 
 ## 5) Tool Calling：AIに“道具”を渡す🧰✨（ここがCoreの花形！）
+
+![react study 228 tool calling concept](./picture/react_study_228_tool_calling_concept.png)
 
 Tool Callingは **「AIが必要に応じて、サーバーの関数を呼べる」** 仕組みだよ😳
 ツールはだいたいこの3点セット！👇
@@ -144,6 +150,8 @@ export async function POST(req: Request) {
 ---
 
 ## 6) エラーが出たとき：ちゃんと“中身”を見える化する😇🔍
+
+![react study 228 error visibility](./picture/react_study_228_error_visibility.png)
 
 `useChat` で「An error occurred」だけ出るの、つらいよね😭
 そんなときは `getErrorMessage` を渡してあげるのが公式のおすすめ！ ([AI SDK][4])
