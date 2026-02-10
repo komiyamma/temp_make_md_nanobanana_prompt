@@ -42,6 +42,9 @@
 
 ## 3️⃣ `Todo` 型を定義してみよう ✍️
 
+![react study 045 todo type card](./picture/react_study_045_todo_type_card.png)
+
+
 では `src/App.tsx` を開いて、
 コンポーネントの上あたりに **`Todo` 型** を定義してみましょう。
 
@@ -92,6 +95,9 @@ const sampleTodos: Todo[] = [
 ---
 
 ## 5️⃣ `TodoItem` コンポーネントを作る 🧩
+
+![react study 045 isdone logic ui](./picture/react_study_045_isdone_logic_ui.png)
+
 
 1つぶんの TODO を表示する「部品」を作ります。
 名前は **`TodoItem`** にしましょう。

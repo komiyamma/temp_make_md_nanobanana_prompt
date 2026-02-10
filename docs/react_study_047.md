@@ -158,6 +158,9 @@ React 公式の例でも、同じように
 
 ### パターンB：前の値から計算して変える（関数版）🧮
 
+![react study 047 functional update queue](./picture/react_study_047_functional_update_queue.png)
+
+
 「年齢 +1」みたいに、**前の値に依存して計算** するときは、
 `setUser(prev => ...)` の形がオススメです 💡
 
@@ -179,6 +182,9 @@ function handleBirthday() {
 ---
 
 ### パターンC：フォーム入力からオブジェクトを更新 ✍️
+
+![react study 047 input to state flow](./picture/react_study_047_input_to_state_flow.png)
+
 
 `<input>` の値から、`user.name` や `user.favoriteColor` を更新してみましょう。
 
