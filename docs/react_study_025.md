@@ -46,6 +46,8 @@ VS Code で、プロジェクトの `src` フォルダの中に
 
 ## 3️⃣ Props の型を考える時間 💭
 
+![Card Props Structure](./picture/react_study_025_props_structure.png)
+
 `Card` コンポーネントが欲しい情報はこの2つだけです。
 
 * `title`: カードのタイトル（文字列）
@@ -213,6 +215,8 @@ export default App;
 
 今回の `Card` コンポーネントは、中身をぜんぶ `props.children` に任せています。
 
+![Flexible Children Slot](./picture/react_study_025_flexible_slot.png)
+
 ```tsx
 <div className="cardBody">{props.children}</div>
 ```
@@ -233,6 +237,8 @@ React が表示できるほとんど全部を受け取れる、
 ---
 
 ## 8️⃣ ミニ応用：`children` を入れ忘れたらどうなる？🧐
+
+![Missing Children Error](./picture/react_study_025_missing_children_error.png)
 
 今回の型定義では
 

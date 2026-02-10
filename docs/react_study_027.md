@@ -12,6 +12,8 @@
 
 ### 1️⃣ `children` ってそもそもなに？ 👶➡️🎁
 
+![Component Structure with Children](./picture/react_study_027_card_structure.png)
+
 まずはイメージからいきましょう。
 
 例えば、こんなコンポーネントを使うとします：
@@ -92,6 +94,8 @@ VS Code だと「`children` プロパティは存在しません」と怒られ�
 ---
 
 ### 4️⃣ `children` の型は何を書く？ → `ReactNode` 🧩
+
+![ReactNode Flexibility](./picture/react_study_027_reactnode_flexibility.png)
 
 `children` に入ってくるものは、けっこう自由です 🎨
 
@@ -211,6 +215,8 @@ export function Card({ title, children }: CardProps) {
 ---
 
 ### 7️⃣ ミニ演習 🧪：`Layout` コンポーネントを作ってみよう
+
+![Layout Component Structure](./picture/react_study_027_layout_component.png)
 
 **お題：**
 

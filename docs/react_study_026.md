@@ -51,6 +51,8 @@ export function App() {
 
 ### 26-2. 「分割代入」ってなに？🍰（JavaScriptのおさらい）
 
+![JS Object Destructuring](./picture/react_study_026_destructuring_anatomy.png)
+
 JavaScript では、**オブジェクトから中身を取り出して、変数にバラバラにする**書き方を「分割代入」と呼びます。
 
 ```ts
@@ -109,6 +111,8 @@ Reactのコンポーネントもただの関数なので、
 ---
 
 ### 26-4. Reactコンポーネントで分割代入してみよう 🌸
+
+![Props Access Comparison](./picture/react_study_026_props_vs_destructuring.png)
 
 さっきの `UserCard` を「分割代入スタイル」に書き直してみます。
 
@@ -241,6 +245,8 @@ export function Card({ title, children }: CardProps) {
 
 #### ① プロパティ名は**型と同じ名前**じゃないとダメ
 
+![Props Renaming](./picture/react_study_026_renaming_props.png)
+
 例えば、型で `name` と書いたのに、引数で `{ username }` とするとエラーになります。
 
 ```tsx
@@ -358,6 +364,8 @@ export function Greeting({ name, emoji }: GreetingProps) {
 ---
 
 #### 📝 練習2：デフォルト値もいれてみよう（ちょっと応用）🌟
+
+![Default Value Fallback](./picture/react_study_026_default_value.png)
 
 `emoji` を「省略したら自動で 🌟 になる」ようにしてみましょう。
 

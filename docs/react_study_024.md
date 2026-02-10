@@ -117,6 +117,8 @@ export function OnlyAvatar({ children }: OnlyAvatarProps) {
 
 ### 4) **レンダープロップ**（子が関数を受け取るパターン）
 
+![Render Props Data Flow](./picture/react_study_024_render_props_flow.png)
+
 * 子を **「関数」** として受け取って、**親のデータを渡す**テク。
 * 柔軟で最強💪（でも初学ではこれだけ覚えれば十分）
 
@@ -143,6 +145,8 @@ const books: Book[] = [{ title: "React入門", author: "Hana" }];
 
 ## 🧠 “これ何が違うの？” にサクッと答えるQ&A
 
+![ReactNode vs ReactElement](./picture/react_study_024_node_vs_element.png)
+
 * **`ReactNode` と `ReactElement` の違いは？**
   → `ReactNode` は「画面に出せるもの**全部**」（テキスト・数値・要素・配列・`null`…）。
   　　`ReactElement` は「**1つの要素だけ**」。
@@ -156,6 +160,8 @@ const books: Book[] = [{ title: "React入門", author: "Hana" }];
 ---
 
 ## 💡 実用スロット設計：`header` / `footer` も `ReactNode` でOK
+
+![Component with Named Slots](./picture/react_study_024_named_slots.png)
 
 複数スロットにしたい時は、**名前付き `ReactNode`** が読みやすいよ。
 
@@ -194,6 +200,8 @@ export function Panel({ title, header, footer, children }: PanelProps) {
 ---
 
 ## 🆘 よくあるエラー＆対処
+
+![String vs ReactNode Error](./picture/react_study_024_string_error.png)
 
 * **文字列しか来ないと思って `string` にしちゃった**
   → 後から `<strong>…</strong>` を入れたくなるから、最初から **`ReactNode`** にしておくのが吉🌸
