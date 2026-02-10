@@ -14,13 +14,12 @@ description: Generate an image generation plan for a range of Markdown files bas
             - Read the file content directly from the `docs/` folder using `view_file`.
 
         b.  **Analyze Content**:
-            - Review the content (from JSON `text_preview` or direct Markdown read).
+            - Review the content (from direct Markdown read).
             - **CRITICAL**: Propose an image ONLY if there is NO existing image nearby (check for both `![]()` and `<img` tags). The goal is to fill gaps.
             - **Constraint**: If content is empty or very short, you may skip.
 
         c.  **Formulate Plan**:
             - If a need for an image is found:
-                - **Group**: Extract from JSON `group` or the Report.
                 - **Filename Construction**:
                     - Use the target Markdown filename (without extension) as the base (e.g., `react_study_001.md` -> `react_study_001`).
                     - Append a detailed description with at least 2 English words: e.g., `_split_number`.
@@ -48,8 +47,8 @@ description: Generate an image generation plan for a range of Markdown files bas
                 - If no duplicate concept is found:
                 - Use `write_to_file` to *overwrite* the file with the **Full Previous Content + New Row**.
                 - (Note: `write_to_file` does not support append mode, so reading first then writing back is required).
-                - Format: `| <current_id> | <filename> | <group> | <proposed_image_filename> | <relative_link> | <prompt> | <insertion_point> |`
-                - **Note**: Ensure the column count matches the existing table in `docs/picture/image_generation_plan.md`.
+                - Format: `| <current_id> | <filename> | <proposed_image_filename> | <relative_link> | <prompt> | <insertion_point> |`
+                - **Note**: Ensure the column count matches the existing table in `docs/picture/image_generation_plan.md` (6 columns: ID, File Name, Proposed Image Filename, Relative Link Path, Prompt, Insertion Point).
 
         e.  **Modify Markdown File**:
             - **Action**: Insert the image tag into the source Markdown file.
