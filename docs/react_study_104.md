@@ -181,6 +181,9 @@ export default App;
 
 ## 4️⃣ ひとつずつ分解して理解しよう 🔍
 
+![Component structure with Ref and State](./picture/react_study_104_structure.png)
+
+
 ### 4-1. `ref` で実際の DOM をつかまえる ✋
 
 ```tsx
@@ -244,6 +247,9 @@ UI的にも、こういう「まだ分からない状態」をちゃんと表現
 ---
 
 ### 4-3. 主役：`useLayoutEffect` の中身 🧪
+
+![Window resize event triggering update](./picture/react_study_104_resize_event.png)
+
 
 ```tsx
 useLayoutEffect(() => {

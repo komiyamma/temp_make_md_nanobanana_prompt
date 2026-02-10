@@ -51,6 +51,9 @@ return (
 
 ## 3️⃣ React 18 までの世界：`forwardRef` が必要だった時代 🧓
 
+![Comparison of Old forwardRef vs New ref prop](./picture/react_study_105_old_vs_new.png)
+
+
 **昔（React 18まで）** は、`ref` を「親 → 子コンポーネント → その中の `<input>`」みたいに渡したいとき、`forwardRef` というちょっとややこしい関数が必要でした。([React][3])
 
 イメージとしてはこんな感じ：
@@ -137,6 +140,9 @@ graph TD
 ---
 
 ## 6️⃣ TypeScript での基本パターン 🧪（まずはコピペでOK）
+
+![Structure of ComponentPropsWithRef](./picture/react_study_105_props_structure.png)
+
 
 React 19 + TypeScript では、`ref` を扱うとき **「全部ひっくるめて props として受け取る」** パターンがラクです。([Stack Overflow][4])
 

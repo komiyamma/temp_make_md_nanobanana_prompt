@@ -5,6 +5,9 @@
 
 ## 107-1 今日のゴール ✅
 
+![Relay race baton passing Ref](./picture/react_study_107_relay_race.png)
+
+
 今日は、
 
 > 親コンポーネント → `MyInput` → `<input>` に `ref` をバトンリレーして、
@@ -54,6 +57,9 @@ sequenceDiagram
 ---
 
 ## 107-3 `MyInput.tsx` を作ろう 🛠
+
+![MyInput component internal structure](./picture/react_study_107_component_structure.png)
+
 
 ### 1️⃣ ファイルを作成
 
