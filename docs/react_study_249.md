@@ -104,6 +104,10 @@ export default function App() {
 
 ## 4) 見えるAtomを用意しよう（小さな練習アプリ）🎮✨
 
+![249 todo mini ui](./picture/react_study_249_todo_mini_ui.png)
+
+
+
 ### Atom定義（debugLabel付きが超おすすめ🏷️）
 
 `src/atoms.ts`
@@ -217,6 +221,10 @@ export function TodoMini() {
 ---
 
 ## 5) DevToolsの使い方（ここが本題！）👀✨
+
+![249 devtools panel action](./picture/react_study_249_devtools_panel_action.png)
+
+
 
 1. `npm run dev` で起動 ▶️
 2. 画面のどこかに **DevToolsのトリガーボタン** が出ます（位置は `position` で指定） ([Jotai][1])

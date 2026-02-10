@@ -170,6 +170,10 @@ export default function App() {
 
 ### ① パラメータに「毎回新しいオブジェクト」を渡すと地獄になりがち💥
 
+![248 infinite render](./picture/react_study_248_infinite_render.png)
+
+
+
 `atomFamily({ id: 1 })` みたいに **オブジェクトリテラルを render のたびに作る**と、毎回別物扱いになって無限再レンダリング…みたいな事故が起きることがあるよ🥲
 （実例として、オブジェクトリテラルを引数にして無限レンダリングになった話があるよ） ([PR TIMES 開発者ブログ][3])
 
@@ -181,6 +185,10 @@ export default function App() {
 ---
 
 ### ② Atom Familyは放置するとメモリが増えることがある🧠📈
+
+![248 memory leak map](./picture/react_study_248_memory_leak_map.png)
+
+
 
 Atom Familyは内部が `Map` キャッシュなので、**作った分が残り続ける**ことがあるよ（特にIDが無限に増えるUIで危険！） ([Jotai][1])
 

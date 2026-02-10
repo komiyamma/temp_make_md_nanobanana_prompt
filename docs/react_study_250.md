@@ -118,6 +118,10 @@ export function JotaiDevTools() {
 
 ## 4) Atomたち（この章の心臓🫀）⚛️
 
+![250 history logic](./picture/react_study_250_history_logic.png)
+
+
+
 `src/atoms/counters.ts`
 
 ```tsx
@@ -371,6 +375,10 @@ export function NewCounterForm() {
 ---
 
 ## 6) UI：カウンターカード（高機能の本体🔥）🎛️
+
+![250 counter card ui](./picture/react_study_250_counter_card_ui.png)
+
+
 
 `src/components/CounterCard.tsx`
 
