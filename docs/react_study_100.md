@@ -63,6 +63,9 @@ sequenceDiagram
 
 ## 4. `VideoPlayer` コンポーネントを作る 🧩
 
+![react_study_100_remote_control](./picture/react_study_100_remote_control.png)
+
+
 `src/VideoPlayer.tsx` を作って、次のコードを書きます。
 
 ```tsx
@@ -218,6 +221,9 @@ export default App;
 ---
 
 ## 7. もう一度、`useRef` の役割を整理しよう 🤔
+
+![react_study_100_no_rerender](./picture/react_study_100_no_rerender.png)
+
 
 この章での `useRef` はこんな役割でした：
 
