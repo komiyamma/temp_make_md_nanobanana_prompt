@@ -20,6 +20,8 @@ Zodは、**「このデータはこういう形！」っていう“ルール（
 
 ## なんで TypeScript だけじゃ足りないの？🤔
 
+![react study 184 ts vs zod](./picture/react_study_184_ts_vs_zod.png)
+
 TypeScriptの型チェックって、基本は **開発中（コンパイル時）** に効くものなのね🧠
 でも現実には…
 
@@ -69,6 +71,8 @@ export const UserSchema = z.object({
 ```
 
 ### 3) `parse` と `safeParse` を知る👀
+
+![react study 184 safeparse result](./picture/react_study_184_safeparse_result.png)
 
 * `parse()`：**OKなら返す / ダメなら例外で落ちる**💥
 * `safeParse()`：**落ちない**で `{ success: boolean, ... }` が返る🧯

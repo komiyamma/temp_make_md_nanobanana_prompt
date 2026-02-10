@@ -176,6 +176,8 @@ export default function App() {
 
 ## 5) 送信中を作る（`isSubmitting`）⏳✨
 
+![react study 183 issubmitting state](./picture/react_study_183_issubmitting_state.png)
+
 「送信中…」って出せると、それっぽさ爆上がり！💎
 二重送信防止にもなるよ🙆‍♀️
 
@@ -232,6 +234,8 @@ export default function App() {
 ---
 
 ## 6) ありがちなミス集（先に潰す！）💥🐣
+
+![react study 183 direct call mistake](./picture/react_study_183_direct_call_mistake.png)
 
 * **ミス①：`handleSubmit` を呼ばずに渡してる**
 
