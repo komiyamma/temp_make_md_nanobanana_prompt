@@ -48,6 +48,8 @@ npm i react-hook-form valibot @hookform/resolvers
 ---
 
 ## 2) スキーマを作る（ガチガチ設定の心臓部❤️）🧠
+![react study 260 pipeline concept](./picture/react_study_260_pipeline_concept.png)
+
 
 `src/schemas/settingsSchema.ts` を作成👇
 
@@ -55,6 +57,8 @@ npm i react-hook-form valibot @hookform/resolvers
 * `toNumber` は「文字列→number変換」をやってくれる！変換できない時はエラーにできるよ✨ ([valibot.dev][2])
 * `check` で「通知ONならメール必須」みたいな **条件付きバリデーション** が書けるよ👍 ([valibot.dev][3])
 * さらに `strictObject` で **想定外のキーを拒否**（地味に安全🔥） ([valibot.dev][4])
+![react study 260 strict object](./picture/react_study_260_strict_object.png)
+
 
 ```ts
 // src/schemas/settingsSchema.ts

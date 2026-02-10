@@ -37,6 +37,8 @@ npm i -D -E @biomejs/biome
 
 * `-D`：開発用（devDependencies）に入る
 * `-E`：**バージョン固定**（チーム開発でも環境ズレが起きにくい！） ([Biome][2])
+![react study 262 version pinning](./picture/react_study_262_version_pinning.png)
+
 
 ---
 
@@ -53,6 +55,8 @@ npx @biomejs/biome init
 ---
 
 ## 3) `biome.json` を“気持ちよく”整える（おすすめ最小セット）🌸
+![react study 262 schema autocomplete](./picture/react_study_262_schema_autocomplete.png)
+
 
 `biome.json` を開いて、まずは **`$schema`** を入れるのがおすすめ！
 VS Code で入力補完が効いて、設定がめちゃラクになります😊
