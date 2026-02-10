@@ -58,8 +58,12 @@ src/
 ---
 
 ## 3) Zodスキーマ（ここが本体👑）
+![Schema as Single Source of Truth](./picture/react_study_190_schema_truth.png)
+
 
 ### ✅ “問い合わせ種別”で必須項目が変わる例
+![Conditional Validation Logic](./picture/react_study_190_conditional_logic.png)
+
 
 * `type = business` のとき → `company` 必須🏢
 * `type = bug` のとき → `url` 必須🔗
@@ -142,6 +146,8 @@ export type ContactFormValues = z.infer<typeof ContactSchema>;
 ---
 
 ## 4) ContactForm 本体を作る🧩
+![RHF and Zod Integration Flow](./picture/react_study_190_resolver_flow.png)
+
 
 `src/features/contact/ContactForm.tsx`
 
@@ -319,6 +325,8 @@ export function ContactForm() {
 ---
 
 ## 5) CSS Modulesで“プロっぽく”整える🎨
+![Root Error Handling](./picture/react_study_190_root_error.png)
+
 
 `src/features/contact/ContactForm.module.css`
 

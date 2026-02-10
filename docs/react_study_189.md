@@ -35,6 +35,8 @@ RHFは「基本は uncontrolled（DOMに値を持たせる）」寄りで、`reg
 ---
 
 ## 地雷その1：`watch()` をフォームの親で使う💣😵
+![Re-render Scope: watch vs useWatch](./picture/react_study_189_watch_scope.png)
+
 
 `watch()` は便利なんだけど、使い方によっては **ルート（親）を再レンダリング**させちゃうことがあるよ〜⚠️
 公式ドキュメントでも「これはルートで再レンダリングを起こすので、問題があるなら `useWatch` を検討してね」って注意があるよ ([React Hook Form][1])
@@ -42,6 +44,8 @@ RHFは「基本は uncontrolled（DOMに値を持たせる）」寄りで、`reg
 ---
 
 ## 地雷その2：`formState` を雑に読む💣📉
+![formState Proxy Subscription](./picture/react_study_189_formstate_proxy.png)
+
 
 `formState` は **Proxy** で「読んだプロパティだけ購読する」仕組みになってるよ🪄
 だから、**必要なものだけ**読むのがコツ！ ([React Hook Form][5])
@@ -49,6 +53,8 @@ RHFは「基本は uncontrolled（DOMに値を持たせる）」寄りで、`reg
 ---
 
 ## 地雷その3：`Controller` を何でもかんでも使う💣🎛️
+![Controlled vs Uncontrolled Performance](./picture/react_study_189_controlled_vs_uncontrolled.png)
+
 
 UIライブラリ（MUI / Antdなど）みたいに controlled 前提の部品は `Controller` が便利！
 でも「普通の `<input>` でいけるなら `register` が軽い」って覚えておくと勝ちやすい✌️
@@ -275,6 +281,8 @@ const values = watch(); // ← これで親が反応しやすい
 ---
 
 ## 5) OK例：`useWatch` を “別コンポーネント” に隔離する🧠✨
+![Isolation Strategy](./picture/react_study_189_isolation_strategy.png)
+
 
 さっき作った `DebugPanel` がそれだよ〜！🥰
 「値の監視で再レンダリングするなら、監視してるパネルだけでやってね」って分離できる👌 ([React Hook Form][2])
