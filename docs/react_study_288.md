@@ -51,6 +51,9 @@ flowchart TB
 
 ## 3) “use client” が境界線 🚧🧡
 
+![Use Client Boundary](./picture/react_study_288_use_client_boundary.png)
+
+
 RSCの世界では、基本は **Server Component（サーバー側）** で、
 「ここだけブラウザで動かしたい！」ってファイルにだけ **`"use client"`** を付けます✍️✨
 
@@ -64,9 +67,14 @@ flowchart LR
 * ✅ Server → Client は呼べる（ページの中にボタン置く、みたいに）
 * ❌ Client → Server は呼べない（ブラウザはDB直アクセスできないよね…😇）
 
+![Import Rules (Server vs Client)](./picture/react_study_288_server_client_import_rule.png)
+
 ---
 
 ## 4) なんでHonoと相性いいの？🌩️🚀
+
+![Hono on Edge with RSC](./picture/react_study_288_hono_edge_rsc.png)
+
 
 Honoは **Web標準ベース**で、**Cloudflare WorkersみたいなEdge**で動かすのが得意✨ ([hono.dev][3])
 RSCは **ストリーミング**や“サーバー側で先にやる”のが強みなので、Edgeの軽さと噛み合いやすい、って感じ💡
@@ -95,6 +103,9 @@ npm run dev
 
 ### フォルダ構成（どこ見ればいい？）👀
 
+![Project Folder Structure Separation](./picture/react_study_288_folder_structure_visual.png)
+
+
 この雛形だと、ざっくり👇がヒント🍯
 
 * `src/routes/` … 画面（ルーティング）
@@ -107,6 +118,9 @@ npm run dev
 「押したら数字増えるボタン」みたいな、**ブラウザで動く**やつを作ろう！
 
 ### (1) Client Component を作る
+
+![Client Component Interactivity](./picture/react_study_288_counter_client_component.png)
+
 
 例：`src/routes/home/components/Counter.client.tsx` を作って👇
 
@@ -172,6 +186,9 @@ export default function Page() {
 ---
 
 ## 8) 超大事：RSCのセキュリティ注意（2025年12月の話）🚨🧯
+
+![RSC Security Vulnerability Alert](./picture/react_study_288_rsc_security_alert.png)
+
 
 2025年12月に、RSCの仕組み（Flight payloadのデコード周り）に関連した **未認証RCEの脆弱性**が告知されています。Reactチームは「すぐ更新してね」と強く推奨しています ([React][8])
 JPCERT/CC からも注意喚起が出ています ([jpcert.or.jp][9])
