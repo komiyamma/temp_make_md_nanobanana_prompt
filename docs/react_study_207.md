@@ -174,12 +174,18 @@ npm run dev
 
 ### 練習B：押したら一瞬だけ“ぷるん”感を出す 🍮
 
+![react study 207 spring physics](./picture/react_study_207_spring_physics.png)
+
+
 * `transition` の `stiffness` を上げる（反発UP）
 * `damping` を下げすぎるとビヨンビヨンするので注意😆
 
 ---
 
 ## 8) まとめ 🎀
+
+![react study 207 reduced motion](./picture/react_study_207_reduced_motion.png)
+
 
 * `whileHover`：触れた時の「反応したよ」🖱️✨
 * `whileTap`：押した瞬間の「押せたよ」📱👉

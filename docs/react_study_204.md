@@ -48,6 +48,9 @@ flowchart TD
 
 ### ✅ ポイント3：リストの時は `key` が超重要🔑
 
+![react study 204 key importance](./picture/react_study_204_key_importance.png)
+
+
 `map()` で出す要素は **一意なkey** がないと、退出アニメがうまく動かないことがあるよ⚠️
 
 ---
@@ -183,6 +186,9 @@ sequenceDiagram
 * **同時に入れ替えるUIでゴチャつく** → `mode="wait"` が助けになること多いよ✨
 
 例：
+
+![react study 204 mode wait](./picture/react_study_204_mode_wait.png)
+
 
 ```tsx
 <AnimatePresence mode="wait">

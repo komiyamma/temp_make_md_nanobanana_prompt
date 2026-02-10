@@ -254,6 +254,9 @@ button:hover {
 
 ## 4) 何が「魔法」なの？🪄🧠（超やさしく）
 
+![react study 205 layout magic](./picture/react_study_205_layout_magic.png)
+
+
 `layout` を付けると、**再レンダリング前の位置**と**後の位置**を Motion が測って、差分をいい感じに埋めるアニメにしてくれます✨
 「幅/高さ」「グリッド列数」「リスト並び替え」「追加/削除」みたいなレイアウト変化が対象だよ。([Motion][1])
 しかも内部的には `transform` を使うのでパフォーマンス面でも有利、という説明になってます。([Motion][1])
@@ -285,6 +288,9 @@ E --> F[ぬるっと並び替わる 😍]
 Motion側も **index key はダメ**、**IDなど固定のユニーク値が推奨**と説明しています。([Motion][3])
 
 ### ✅ 削除も気持ちよくやりたいなら `AnimatePresence`
+
+![react study 205 pop layout](./picture/react_study_205_pop_layout.png)
+
 
 削除（DOMから消える）瞬間をアニメしたいなら `AnimatePresence` を使うよ〜🫧
 `mode="popLayout"` を使う例も docs に載っています。([Motion][3])
