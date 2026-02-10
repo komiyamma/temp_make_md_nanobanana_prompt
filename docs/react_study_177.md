@@ -101,6 +101,11 @@ export const useUserStore = create<UserStore>()((set, get) => ({
       const data = (await res.json()) as User[];
 
       // ✅ もし途中で次の通信が始まってたら、古い結果は捨てる！
+```
+
+![react_study_177_request_id.png](./picture/react_study_177_request_id.png)
+
+```tsx
       if (get().requestId !== currentRequestId) return;
 
       set({ users: data });
@@ -182,6 +187,9 @@ export default function App() {
 ---
 
 ## 4) 状態遷移（図解）🔄✨
+
+![react_study_177_loading_state.png](./picture/react_study_177_loading_state.png)
+
 
 ```mermaid
 stateDiagram-v2

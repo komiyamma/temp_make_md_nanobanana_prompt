@@ -184,10 +184,16 @@ export default function App() {
 
 ### ✅ 1) ストアは「フック」だから、そのまま呼ぶ
 
+![react_study_173_store_is_hook.png](./picture/react_study_173_store_is_hook.png)
+
+
 * `useCounterStore(...)` をコンポーネントで呼べばOK🐻
 * Providerは基本いらないよ〜（必要なケースは後々でOK）([GitHub][1])
 
 ### ✅ 2) “必要な値だけ” 取るのが基本（セレクタ）
+
+![react_study_173_selector_concept.png](./picture/react_study_173_selector_concept.png)
+
 
 * `useCounterStore((s) => s.count)` みたいに、**必要なものだけ**選ぶと気持ちいい✨
 * 逆に `useCounterStore()` で全部取ると、何かが変わるたび毎回更新されがち（注意）([GitHub][1])
