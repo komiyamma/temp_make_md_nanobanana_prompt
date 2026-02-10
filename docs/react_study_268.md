@@ -64,7 +64,13 @@ npx @biomejs/biome init
 
 ---
 
+
+![react study 268 warm vs cold](./picture/react_study_268_warm_vs_cold.png)
+
 ## 2) Windows（PowerShell）で“公平なベンチ”を取る📏🪟
+
+
+![react study 268 biome ci readonly](./picture/react_study_268_biome_ci_readonly.png)
 
 ### Biome（CI想定：読み取り専用）
 
@@ -115,6 +121,9 @@ Measure-Command { npx prettier --check . }
 * エラー表示の読みやすさ
 
 ---
+
+
+![react study 268 incremental](./picture/react_study_268_incremental.png)
 
 ## 4) 大規模ならコレ：変更ファイルだけ回す（CI最適化）⚡🧩
 

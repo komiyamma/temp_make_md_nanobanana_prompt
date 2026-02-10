@@ -65,6 +65,9 @@ npx @biomejs/biome init
 
 ---
 
+
+![react study 270 migrate command](./picture/react_study_270_migrate_command.png)
+
 ## 4) ESLint → Biome に移植（migrate eslint）🧳
 
 Biomeには移行コマンドがある！強い！💪✨
@@ -183,6 +186,9 @@ BiomeはGit連携を **明示的にON** にできて、`.gitignore`（＋ `.igno
 ```
 
 ---
+
+
+![react study 270 one tool architecture](./picture/react_study_270_one_tool_architecture.png)
 
 ## 10) ESLint/Prettier を削除する 🗑️✨
 
