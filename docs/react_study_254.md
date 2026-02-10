@@ -165,6 +165,9 @@ export default function App() {
 
 ### ✅ `noValidate` を付ける理由
 
+![react_study_254_novalidate_browser.png](./picture/react_study_254_novalidate_browser.png)
+
+
 ブラウザ標準の「この項目を入力してください」みたいな表示が出ると、Valibotのエラー文が見えづらいことがあるのね😵‍💫
 だから `<form noValidate>` が便利〜✨
 
@@ -175,6 +178,9 @@ export default function App() {
 ---
 
 ## 5) おまけ：非同期バリデーションしたいとき（メール重複チェックとか）⚡
+
+![react_study_254_async_mode.png](./picture/react_study_254_async_mode.png)
+
 
 Valibotは「非同期の検証」を入れるなら、`pipeAsync` / `objectAsync` みたいに **Async系で統一**する必要があるよ（ネストのルール）🧩 ([valibot.dev][5])
 

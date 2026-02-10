@@ -87,6 +87,9 @@ if (result.success) {
 
 ## 5) 例2：フォームの「数字っぽい文字列」を number に変換して検証する 🔢🧠
 
+![react_study_253_transform_logic.png](./picture/react_study_253_transform_logic.png)
+
+
 フォーム入力ってだいたい文字列で来がち😵‍💫
 そこで `transform(parseInt)` で number にして、`minValue/maxValue` で範囲チェック！🎯
 
@@ -108,6 +111,9 @@ export const WeightSchema = v.pipe(
 ---
 
 ## 6) 変換すると「型」ってどうなるの？（`InferInput / InferOutput`）🧠📌
+
+![react_study_253_infer_types.png](./picture/react_study_253_infer_types.png)
+
 
 Valibotはスキーマから型を作れるんだけど、**変換が入ると input と output が変わる**ことがあるよ✨ ([valibot.dev][7])
 

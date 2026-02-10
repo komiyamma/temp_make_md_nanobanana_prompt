@@ -46,6 +46,9 @@ export const PasswordSchema = v.object({
 
 ## 2) merge（＝entriesを合体）で拡張する🧩➕
 
+![react_study_257_merge_concept.png](./picture/react_study_257_merge_concept.png)
+
+
 Valibotの object スキーマには `entries` があって、それをスプレッドで合体できるよ🙌
 （公式ドキュメントでもこの形で「Merge several objects」って紹介されてる） ([Valibot][1])
 
@@ -66,6 +69,9 @@ export const RegisterSchema = v.object({
 ---
 
 ## 3) pick：必要なキーだけ取り出す✂️✨
+
+![react_study_257_pick_omit.png](./picture/react_study_257_pick_omit.png)
+
 
 「でっかいスキーマ」から、ログイン用に **メールとパスワードだけ**欲しい！みたいな時に使うよ😊
 `pick(schema, ["key1", "key2"])` の形ね ([Valibot][3])
