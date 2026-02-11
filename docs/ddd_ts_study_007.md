@@ -16,6 +16,8 @@ Node.jsは v24 が **Active LTS** に入ってるよ〜（開発の“安定軸�
 
 ## 1) まず結論：4層の役割はこう分けるよ📚✨
 
+![ddd_ts_study_007_four_layers.png](./picture/ddd_ts_study_007_four_layers.png)
+
 ### ✅ domain（ドメイン層）💎
 
 **ルールの本体**が住む場所🏠
@@ -67,6 +69,8 @@ Node.jsは v24 が **Active LTS** に入ってるよ〜（開発の“安定軸�
 
 ## 2) いちばん大事：importの向き（依存の流れ）🔁➡️
 
+![ddd_ts_study_007_dependency_flow.png](./picture/ddd_ts_study_007_dependency_flow.png)
+
 DDDの“崩壊”って、だいたいこれが原因😂⚠️
 **ルール**はこう👇
 
@@ -85,6 +89,8 @@ domain  ←  app  ←  infra
 ---
 
 ## 3) フォルダ構成の“おすすめ完成形”📁✨（カフェ注文例）
+
+![ddd_ts_study_007_folder_structure.png](./picture/ddd_ts_study_007_folder_structure.png)
 
 最小で強い形にするよ〜☺️☕
 
@@ -160,6 +166,8 @@ export interface OrderRepository {
 
 ### 5.2 infra：Repository 実装（InMemory）🧰
 
+![ddd_ts_study_007_infra_adapter.png](./picture/ddd_ts_study_007_infra_adapter.png)
+
 ```ts
 // src/infra/repositories/InMemoryOrderRepository.ts
 import { OrderRepository } from "../../domain/repositories/OrderRepository";
@@ -229,6 +237,8 @@ export class PlaceOrder {
 ---
 
 ## 6) “崩れない仕組み”を入れる：ESLintで境界を守る🚧🚫
+
+![ddd_ts_study_007_eslint_police.png](./picture/ddd_ts_study_007_eslint_police.png)
 
 2026のESLintは **flat config** が標準路線だよ〜（v9で大きく前進）([ESLint][4])
 TypeScript向けは `typescript-eslint` のQuickstartが分かりやすい✨([TypeScript ESLint][5])

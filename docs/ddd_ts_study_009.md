@@ -14,6 +14,8 @@
 
 ## 1) ユースケースを“短く”書くと何が嬉しいの？😊🎯
 
+![ddd_ts_study_009_short_usecase.png](./picture/ddd_ts_study_009_short_usecase.png)
+
 DDDって、「コード」より前に **“言葉”を揃える** のが超だいじ🗣️✨
 ユースケースを短く書けると、こういう良さがあるよ👇
 
@@ -34,6 +36,8 @@ DDDって、「コード」より前に **“言葉”を揃える** のが超�
 
 ## 3) 書き方の型：これだけ覚えればOK✍️🌸
 
+![ddd_ts_study_009_actor_action_result.png](./picture/ddd_ts_study_009_actor_action_result.png)
+
 ### ✅ 基本テンプレ（1〜3行）
 
 **「誰が / 何をする / どうなる」** を入れる！
@@ -51,6 +55,8 @@ DDDって、「コード」より前に **“言葉”を揃える** のが超�
 ---
 
 ## 4) 例題（カフェ注文）で “短文ユースケース” を作ってみる☕🧾✨
+
+![ddd_ts_study_009_no_ui_db.png](./picture/ddd_ts_study_009_no_ui_db.png)
 
 ここでは「ドメイン言葉」に寄せて、**画面/DB/API を出さない** のがコツだよ😺👍
 
@@ -84,6 +90,8 @@ flowchart LR
 ---
 
 ## 5) 良い例 / 悪い例（超あるある）😂⚠️
+
+![ddd_ts_study_009_good_bad_example.png](./picture/ddd_ts_study_009_good_bad_example.png)
 
 ### ❌ 悪い例（長い・実装混じり）
 
@@ -130,6 +138,8 @@ flowchart LR
 ---
 
 ## 7) AIを“編集者”として使うコツ🤖✂️✨
+
+![ddd_ts_study_009_ai_editor.png](./picture/ddd_ts_study_009_ai_editor.png)
 
 AIは、**ゼロからの仕様作り**よりも、
 あなたが書いたものを **短く整える** のが超得意💡

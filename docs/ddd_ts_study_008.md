@@ -25,6 +25,8 @@ DDDは“ルールを守る設計”だから、まずは **混ざらない構�
 
 ## 8-2. 悪い例（あるある）😂⚠️：1つの関数が全部やってる
 
+![ddd_ts_study_008_mixed_chef.png](./picture/ddd_ts_study_008_mixed_chef.png)
+
 「注文する」って処理、ついこうなりがち👇
 
 ```ts
@@ -74,6 +76,8 @@ export async function placeOrder(reqBody: any) {
 
 ## 8-3. 責務：1つのものに「担当の仕事」を持たせよう🎒✨
 
+![ddd_ts_study_008_separated_roles.png](./picture/ddd_ts_study_008_separated_roles.png)
+
 ### ✅ 責務の見つけ方（超実用）🔍
 
 次の質問を自分にするだけでOK！
@@ -91,6 +95,8 @@ export async function placeOrder(reqBody: any) {
 ---
 
 ## 8-4. 境界：domain / app / infra を「国境」だと思う🌍🚧
+
+![ddd_ts_study_008_boundary_wall.png](./picture/ddd_ts_study_008_boundary_wall.png)
 
 イメージはこれ👇
 
@@ -111,6 +117,8 @@ export async function placeOrder(reqBody: any) {
 ---
 
 ## 8-5. 依存：内側が外側に“引っ張られない”ようにする🏰➡️🧱
+
+![ddd_ts_study_008_dependency_inversion_plug.png](./picture/ddd_ts_study_008_dependency_inversion_plug.png)
 
 ここ、めっちゃ大事！✨
 
@@ -239,6 +247,8 @@ sequenceDiagram
 ---
 
 ## 8-7. テスト：境界が分かれると“秒速でテスト”できる🧪⚡
+
+![ddd_ts_study_008_test_isolation.png](./picture/ddd_ts_study_008_test_isolation.png)
 
 Vitestは「Viteネイティブで軽いテストランナー」って位置づけで、最近のJS/TSではよく使われるよ〜！🧡（Vitest 4.0のアナウンスも出てる）([vitest.dev][1])
 
