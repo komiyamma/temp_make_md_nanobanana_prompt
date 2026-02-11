@@ -8,6 +8,8 @@
 
 ### 1) まず結論：AIは“手”、あなたは“設計者”🦾👩‍💻✨
 
+![ddd cs study 015 robot hands](./picture/ddd_cs_study_015_robot_hands.png)
+
 AIって、コードを書くスピードが本当に速いですよね🚀
 でもDDDでいちばん大事なのは「キレイなコード」よりも **“境界線（ここからここまで）”** をちゃんと引くことです✂️📦
 
@@ -21,6 +23,8 @@ AIって、コードを書くスピードが本当に速いですよね🚀
 
 ### 2) “境界線”ってなに？どれを引けばいいの？🧱🧩
 
+![ddd cs study 015 three fences](./picture/ddd_cs_study_015_three_fences.png)
+
 ```mermaid
 mindmap
   root((DDDの<br/>3つの境界線))
@@ -32,6 +36,8 @@ mindmap
 DDDでいう境界線は、ざっくり言うとこの3つが超重要です📌✨
 
 #### A. 言葉の境界線（ユビキタス言語）📚🗣️
+
+![ddd cs study 015 language wall](./picture/ddd_cs_study_015_language_wall.png)
 
 同じ単語でも意味が違うと事故ります💥
 例：
@@ -52,6 +58,8 @@ DDDでいう境界線は、ざっくり言うとこの3つが超重要です📌
 ---
 
 ### 3) AIに任せてOKな“定型”ってどれ？🤖🧰
+
+![ddd cs study 015 robot laundry](./picture/ddd_cs_study_015_robot_laundry.png)
 
 任せていいのは「判断が少ない」「形が決まってる」ものです✅
 
@@ -76,6 +84,8 @@ DDDでいう境界線は、ざっくり言うとこの3つが超重要です📌
 例として「カフェ予約アプリ」を想像してみます🍰
 
 #### まず人間が決める（ここが一番大事）🧠✍️
+
+![ddd cs study 015 drawing map](./picture/ddd_cs_study_015_drawing_map.png)
 
 **コンテキスト案**（例）
 
@@ -162,6 +172,8 @@ Domainが外（DBやWeb）を知らない形にすると、AIが生成しても�
 ---
 
 ### 7) “AIに迷わせない”チェックリスト✅🤖🧭
+
+![ddd cs study 015 gatekeeper](./picture/ddd_cs_study_015_gatekeeper.png)
 
 AIが作ったコードを受け取ったら、ここだけ見ればOKです✨
 

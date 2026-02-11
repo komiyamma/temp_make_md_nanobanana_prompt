@@ -18,6 +18,8 @@
 
 ## 2. まず「素材」を選ぼう🍳（コードの選び方）
 
+![ddd cs study 010 ingredients](./picture/ddd_cs_study_010_ingredients.png)
+
 おすすめはこんなコード👇（選びやすい順）
 
 * 1つのメソッドが長い（50行以上）📜💦
@@ -33,6 +35,8 @@
 
 ## 3. AIに貼る前の“安全チェック”🔐
 
+![ddd cs study 010 safety check](./picture/ddd_cs_study_010_safety_check.png)
+
 これだけはやろう〜！🧯
 
 * APIキー・接続文字列・パスワードは消す（`"*****"` に置換）🔒
@@ -44,6 +48,8 @@
 ## 4. AIへの頼み方テンプレ（コピペOK）📨✨
 
 ### テンプレA：まずは「何が起きてるコードか」説明させる🧩
+
+![ddd cs study 010 template puzzle](./picture/ddd_cs_study_010_template_puzzle.png)
 
 AIに **現状把握** させると、レビューが当たりやすいよ🎯
 
@@ -59,6 +65,8 @@ AIに **現状把握** させると、レビューが当たりやすいよ🎯
 ---
 
 ### テンプレB：「読みづらさ」をカテゴリ別に殴ってもらう🥊✨
+
+![ddd cs study 010 boxing categories](./picture/ddd_cs_study_010_boxing_categories.png)
 
 ```text
 次のコードをレビューして。
@@ -105,6 +113,8 @@ AIに **現状把握** させると、レビューが当たりやすいよ🎯
 
 ### Step2：指摘を「自分の言葉」で3つに絞る✍️
 
+![ddd cs study 010 filter feedback](./picture/ddd_cs_study_010_filter_feedback.png)
+
 AIの指摘が正しくても、全部は直さない！🙅‍♀️
 まずはこれだけ選ぶ👇
 
@@ -117,6 +127,8 @@ AIの指摘が正しくても、全部は直さない！🙅‍♀️
 「関数分割」「命名」「ガード節」だけでも十分勝ち✨
 
 ### Step4：もう一回AIに見せて点数つけてもらう📈
+
+![ddd cs study 010 score card](./picture/ddd_cs_study_010_score_card.png)
 
 ```text
 改善後のコードです。

@@ -29,15 +29,21 @@ DDD（ドメイン駆動設計）って、ハマるとめちゃ強いんだけ�
 
 ## 2. こういう症状があるとDDDは重くなりがち 🏋️‍♀️💦
 
+![ddd cs study 013 heavy lifting](./picture/ddd_cs_study_013_heavy_lifting.png)
+
 DDDが“合わない”記録帳系で、よく起きる事故あるある👇😇
 
 ### ✅ 事故あるある①：クラスが増えすぎる 🌲🌲🌲
+
+![ddd cs study 013 forest dense](./picture/ddd_cs_study_013_forest_dense.png)
 
 「投稿」だけなのに…
 `Post` / `PostId` / `PostTitle` / `PostBody` / `PostFactory` / `PostRepository` …
 みたいに増えて、**やってることがCRUDなのに構造が巨大化**しがち😵‍💫
 
 ### ✅ 事故あるある②：ビジネスルールが薄いのに“ドメイン層”を作ってしまう 🫠
+
+![ddd cs study 013 empty box](./picture/ddd_cs_study_013_empty_box.png)
 
 「タイトルは200文字まで」くらいしかルールがないのに、
 立派な集約とか作ると、**得られるメリットが少ない**んだよね…😢
@@ -51,6 +57,8 @@ DDDの強み（複雑な変更に耐える）が活きにくいの🥺
 ---
 
 ## 3. 「DDDいらないかも？」判定チェックリスト ✅🧠
+
+![ddd cs study 013 exit sign](./picture/ddd_cs_study_013_exit_sign.png)
 
 ```mermaid
 flowchart TD
@@ -76,6 +84,8 @@ YESが多いほど、DDDは“重装備”になりやすいよ🚲→🚜みた
 ---
 
 ## 4. じゃあ何を使うの？おすすめの“軽い設計”🍃🛠️
+
+![ddd cs study 013 vehicle choice](./picture/ddd_cs_study_013_vehicle_choice.png)
 
 DDDの代わりに、記録帳系はこれが強いよ👇✨
 
@@ -131,6 +141,8 @@ DDDを完全導入しなくても、これだけは便利なことあるよ👇�
 ---
 
 ## 6. 例外：記録帳っぽいのにDDDが効く瞬間 ⚡🧠
+
+![ddd cs study 013 spark](./picture/ddd_cs_study_013_spark.png)
 
 「一見CRUD」でも、こうなるとDDDが急に活きるよ👇👀
 

@@ -28,6 +28,8 @@ DDDでは、こういう**現実の言葉**をコードの中でも同じよう�
 
 ### ✅ 理由①：コードを読んだだけで意味がわかる📖✨
 
+![ddd cs study 011 reading meaning](./picture/ddd_cs_study_011_reading_meaning.png)
+
 DDDっぽくすると、コードが「業務の説明書」みたいになります📚💕
 
 * 「これ、何の処理だっけ…😵‍💫」が減る
@@ -48,6 +50,8 @@ AIにお願いするときも、
 ---
 
 ## 3. “DDDじゃないコード”の典型 😇💥（ありがち）
+
+![ddd cs study 011 random robot](./picture/ddd_cs_study_011_random_robot.png)
 
 たとえば「学食の注文」アプリを考えます🍛💕
 
@@ -80,6 +84,8 @@ public class OrderService
 ---
 
 ## 4. “DDDっぽいコード”の空気感 🌿✨（現実の言葉に寄せる）
+
+![ddd cs study 011 natural robot](./picture/ddd_cs_study_011_natural_robot.png)
 
 DDDの雰囲気はこんな感じです👇
 （ここでは“完成形”じゃなくて、「方向性」をつかむのが目的です😊）
@@ -135,6 +141,8 @@ DDDはこの「**コードを現実の文章に近づける**」感覚が核で�
 
 ## 5. DDDのキーワード3つだけ覚えよう 🧩✨
 
+![ddd cs study 011 three keywords](./picture/ddd_cs_study_011_three_keywords.png)
+
 ### ① ドメイン（Domain）🌍
 
 **アプリが扱う“現実の世界”**のことです😊
@@ -153,6 +161,8 @@ DDDでは、この言葉がブレると設計がブレます⚠️
 ---
 
 ## 6. “現実に似せる”って、具体的にどうやるの？🧠➡️💻
+
+![ddd cs study 011 picking words](./picture/ddd_cs_study_011_picking_words.png)
 
 コツはこれだけです👇✨
 
@@ -179,6 +189,8 @@ flowchart TD
 `Pay()` `Cancel()` みたいに、自然な名前にします😊✨
 
 ### ✅ (4) 「ルール」を“その場所”に閉じ込める🔒
+
+![ddd cs study 011 encapsulation](./picture/ddd_cs_study_011_encapsulation.png)
 
 「注文のルール」なら `Order` の中へ📦
 ルールが散らばると迷子になります🐣💦
