@@ -19,6 +19,8 @@ DDDの文脈だと「ドメインとDBが密着しすぎる」ので嫌われが
 
 ## 1. Active Recordが“気持ちいい”理由😆💗
 
+![ddd_cs_study_077_speed_vs_debt](./picture/ddd_cs_study_077_speed_vs_debt.png)
+
 ### ✅ 良いところ（強い！）
  
  ```mermaid
@@ -184,7 +186,11 @@ public class Memo
 
 ## 5. この方式の「地雷ポイント」も知っておこう🧨😇
 
+![ddd_cs_study_077_fat_model](./picture/ddd_cs_study_077_fat_model.png)
+
 ### 地雷①：DBの事情がクラスに染み込む🍛
+
+![ddd_cs_study_077_spaghetti_risk](./picture/ddd_cs_study_077_spaghetti_risk.png)
 
 `AppDbContext` や `EnsureCreated` がクラス内に出てきて、
 だんだん「ドメイン」じゃなく「DB操作クラス」っぽくなります😵‍💫
@@ -196,12 +202,16 @@ public class Memo
 
 ### 地雷③：成長すると分割したくなる🌱
 
+![ddd_cs_study_077_migration_path](./picture/ddd_cs_study_077_migration_path.png)
+
 「保存は別の層に逃がしたい…」って気持ちが来ます。
 その時に Repository 方式へ引っ越し🏠✨（第46章〜の世界）
 
 ---
 
 ## 6. Active Record を使うときの“割り切りルール”📏✨
+
+![ddd_cs_study_077_crud_focus](./picture/ddd_cs_study_077_crud_focus.png)
 
 おすすめの割り切りはこれ👇（超効く）
 

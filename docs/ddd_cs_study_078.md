@@ -7,6 +7,8 @@ DDDって、ぜんぶをDDDで固めると「重い…😵‍💫」ってなり
 
 ## 1. まず結論：アプリは「全部同じ難しさ」じゃない😳🧩
 
+![ddd_cs_study_078_complexity_balance](./picture/ddd_cs_study_078_complexity_balance.png)
+
 たとえば、同じアプリでも…
 
 * **支払い💳**：ルールが多い・ミスが許されない（複雑！）
@@ -21,6 +23,8 @@ DDDって、ぜんぶをDDDで固めると「重い…😵‍💫」ってなり
 ---
 
 ## 2. 使い分けの「3つの武器」🧰✨
+
+![ddd_cs_study_078_three_weapons](./picture/ddd_cs_study_078_three_weapons.png)
 
 このロードマップで出てきた3つを、ざっくり役割で整理するね😊
 
@@ -53,6 +57,8 @@ DDDって、ぜんぶをDDDで固めると「重い…😵‍💫」ってなり
 
 ## 3. 迷わないための「5つの質問」✅🤔
 
+![ddd_cs_study_078_hybrid_arch](./picture/ddd_cs_study_078_hybrid_arch.png)
+
 機能（＝コンテキスト）ごとに、これを自分に聞くとブレなくなるよ😊🌸
 
 ```mermaid
@@ -78,6 +84,8 @@ flowchart TD
 
 ## 4. 超実用！スコアで決める🎯✨（1人開発向け）
 
+![ddd_cs_study_078_scoring_system](./picture/ddd_cs_study_078_scoring_system.png)
+
 各質問に「はい🙂」なら +1 で数えてみて👇
 
 * **0〜1点**：Active Record 🗃️（爆速でOK！）
@@ -89,6 +97,8 @@ flowchart TD
 ---
 
 ## 5. 具体例：予約アプリの“場所ごとの設計”🏨📅
+
+![ddd_cs_study_078_context_map](./picture/ddd_cs_study_078_context_map.png)
 
 同じアプリでもこう分けられるよ👇
 

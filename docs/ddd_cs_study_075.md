@@ -39,6 +39,8 @@ flowchart LR
 
 ## 1) ソリューション＆プロジェクトを作る 🧱✨
 
+![ddd_cs_study_075_project_setup](./picture/ddd_cs_study_075_project_setup.png)
+
 ### A. クリック派（Visual Studio）🖱️💕
 
 1. **空のソリューション**を作る（例：`MyApp`）
@@ -95,6 +97,8 @@ dotnet add src/MyApp.Web reference src/MyApp.Infrastructure
 ---
 
 ## 3) Domain（ルール）を作る 🫀✨
+
+![ddd_cs_study_075_domain_core](./picture/ddd_cs_study_075_domain_core.png)
 
 ここは「**string や Guid をそのまま信用しない**」がキモ😎
 （＝“意味のある型”にする）
@@ -290,6 +294,8 @@ public sealed class TodoApplicationService
 
 ## 5) Infrastructure（保存役）を作る 🧰✨
 
+![ddd_cs_study_075_swappable_infra](./picture/ddd_cs_study_075_swappable_infra.png)
+
 今回は最小構成なので **DBなし（インメモリ）**でいくよ🙆‍♀️
 あとでEF Coreに差し替えるのがめっちゃ簡単になる✨
 
@@ -401,6 +407,8 @@ public sealed record CreateTodoRequest(string Title);
 ---
 
 ## 7) 実行して動作確認しよ〜！🚀✨
+
+![ddd_cs_study_075_api_flow_sequence](./picture/ddd_cs_study_075_api_flow_sequence.png)
  
  実際にAPIを叩いたときの動き（シーケンス）はこんな感じになります👇
  
@@ -457,6 +465,8 @@ AIは超便利なんだけど、**レイヤー違反を平気でやる**こと�
 ---
 
 ## よくある事故（ここで迷いがち）⚠️🥺
+
+![ddd_cs_study_075_layer_violation_warning](./picture/ddd_cs_study_075_layer_violation_warning.png)
 
 * **WebがDomainを直接いじる**（最初はやりがち！）
   → “ユースケース” を Application に寄せるとスッキリ😊
