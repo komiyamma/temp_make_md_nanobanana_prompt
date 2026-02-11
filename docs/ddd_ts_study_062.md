@@ -10,6 +10,9 @@ Node.js だと **v24 が Active LTS**、v25 が Current（最新系）って感�
 
 ## 1) まず超ざっくり：Command と Query ってなに？🧁
 
+![ddd_ts_study_062_command_vs_query](./picture/ddd_ts_study_062_command_vs_query.png)
+
+
 カフェで例えるね☕✨
 
 * **Command（更新）**＝「注文を確定して！」みたいな **お願い** 🙋‍♀️🧾
@@ -18,6 +21,9 @@ Node.js だと **v24 が Active LTS**、v25 が Current（最新系）って感�
   → 状態は変えない（見るだけ）
 
 ここで大事なのは👇
+
+![ddd_ts_study_062_side_effect_illustration](./picture/ddd_ts_study_062_side_effect_illustration.png)
+
 
 > **Query で状態を変えない**（副作用ゼロを目標）
 > **Command は “変更” に集中させる**
@@ -28,6 +34,9 @@ Node.js だと **v24 が Active LTS**、v25 が Current（最新系）って感�
 ---
 
 ## 2) 迷ったときの判定ルール 3つ 🧠💡
+
+![ddd_ts_study_062_cq_separation_benefits](./picture/ddd_ts_study_062_cq_separation_benefits.png)
+
 
 「これ Command？ Query？」って迷ったら、この3つで判定してね👇✨
 
@@ -58,6 +67,9 @@ Node.js だと **v24 が Active LTS**、v25 が Current（最新系）って感�
 ---
 
 ## 4) 設計の「型」：Command側 / Query側 🧩
+
+![ddd_ts_study_062_return_value_minimal](./picture/ddd_ts_study_062_return_value_minimal.png)
+
 
 ```mermaid
 flowchart TB
@@ -338,6 +350,9 @@ Command が巨大化するパターン😇
 * 画面は Query で取り直す（またはイベント経由で更新）🔎✨
 
 ### ❌ 事故3：Application Service が「神クラス化」👑
+
+![ddd_ts_study_062_god_service_split](./picture/ddd_ts_study_062_god_service_split.png)
+
 
 Place/Pay/Fulfill/Get…全部 1クラスに入れる
 

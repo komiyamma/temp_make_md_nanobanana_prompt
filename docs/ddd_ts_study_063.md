@@ -58,6 +58,9 @@ flowchart LR
 
 ## 2. DTOってなに？（ふわっと → くっきり）📦🧠
 
+![ddd_ts_study_063_dto_box_concept](./picture/ddd_ts_study_063_dto_box_concept.png)
+
+
 DTOはね、超ざっくり言うと：
 
 * **外から来たデータを受け取る形**（入力DTO）
@@ -69,6 +72,9 @@ DTOはね、超ざっくり言うと：
 ---
 
 ## 3. なんで「入力DTO」と「出力DTO」を分けるの？🔁🧼
+
+![ddd_ts_study_063_input_output_separation](./picture/ddd_ts_study_063_input_output_separation.png)
+
 
 同じ型を使うと、気づいたらこうなる😇
 
@@ -102,6 +108,9 @@ DTOはね、超ざっくり言うと：
 ---
 
 ### ② DTOは基本「プリミティブ中心」🧱
+
+![ddd_ts_study_063_primitive_only](./picture/ddd_ts_study_063_primitive_only.png)
+
 
 DTOに `Money` とか `OrderId` とかのドメイン型をそのまま入れたくなるけど…
 それは **内側の都合** を外へ漏らす原因になりがち😵‍💫
@@ -201,6 +210,9 @@ export type PlaceOrderOutputDto = {
 
 ## 6. 変換（mapping）はどこでやるの？🔁🧑‍🍳
 
+![ddd_ts_study_063_mapping_translator](./picture/ddd_ts_study_063_mapping_translator.png)
+
+
 ここ超重要だよ！💖
 
 ### ✅ 基本方針
@@ -261,6 +273,9 @@ export class PlaceOrderUseCase {
 
 ## 8. 「型があるのに、なぜ入力検証が要るの？」😵‍💫➡️😊
 
+![ddd_ts_study_063_zod_validation](./picture/ddd_ts_study_063_zod_validation.png)
+
+
 TypeScriptの型は **コンパイル時だけ** なんだよね🧠
 実行時に飛んでくるJSONは、型なんて守ってくれないの🥲
 
@@ -298,6 +313,9 @@ export type PlaceOrderInputDto = z.infer<typeof PlaceOrderInputSchema>;
 ---
 
 ## 9. DTO “入れすぎ” チェックリスト✅😂
+
+![ddd_ts_study_063_leak_check](./picture/ddd_ts_study_063_leak_check.png)
+
 
 DTOを作ったら、これでセルフレビューしよ〜💖
 

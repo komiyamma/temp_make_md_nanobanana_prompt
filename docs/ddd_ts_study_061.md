@@ -2,6 +2,9 @@
 
 # 第61章 Application Service入門：ユースケース担当🎬
 
+![ddd_ts_study_061_app_service_role](./picture/ddd_ts_study_061_app_service_role.png)
+
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -56,6 +59,9 @@ sequenceDiagram
 
 ## 2) Application Serviceってなに？（超いっこだけ）🧠💡
 
+![ddd_ts_study_061_usecase_flow](./picture/ddd_ts_study_061_usecase_flow.png)
+
+
 **Application Service = ユースケースの“進行役”** だよ🎬✨
 映画でいうと、ドメインが「ルール（脚本）」で、Application Serviceが「段取り（進行）」！
 
@@ -66,6 +72,9 @@ sequenceDiagram
 ---
 
 ## 3) 3つの層の役割分担（ここが命！）💖🧭
+
+![ddd_ts_study_061_dependency_direction](./picture/ddd_ts_study_061_dependency_direction.png)
+
 
 ### ✅ ドメイン層（domain）
 
@@ -94,6 +103,9 @@ sequenceDiagram
 ---
 
 ## 4) “型”として覚える黄金フロー🥇🔁
+
+![ddd_ts_study_061_input_validation_gate](./picture/ddd_ts_study_061_input_validation_gate.png)
+
 
 Application Serviceの最頻出テンプレはこれ👇✨
 
@@ -176,6 +188,9 @@ export type PlaceOrderResult =
 ---
 
 ### 6-3) app：Application Service本体（手順の係）🎬🧑‍🍳
+
+![ddd_ts_study_061_thin_service](./picture/ddd_ts_study_061_thin_service.png)
+
 
 ```ts
 // src/app/order/place/PlaceOrderService.ts
