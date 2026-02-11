@@ -33,6 +33,8 @@
 
 ## 2) まず「DDDに効くTS要素」5点セットを1枚にすると📌
 
+![ddd_ts_study_030_5_pillars](./picture/ddd_ts_study_030_5_pillars.png)
+
 戦術DDDの序盤は、だいたいこの5つで勝てるよ💪🧡
 
 1. **不変性🧊**：勝手に状態が変わらない → バグが減る
@@ -73,6 +75,8 @@ mindmap
 「配列を外から渡して、そのまま持ってたら、外でpushされて壊れた…😇」みたいなやつ！
 
 ### コツはこれだけ🧊✨
+
+![ddd_ts_study_030_immutable_copy](./picture/ddd_ts_study_030_immutable_copy.png)
 
 * **外から受け取った配列はコピーする**
 * **外へ返す配列もコピーする**
@@ -120,6 +124,8 @@ TypeScriptだと、まずは **“専用型”**で効果が出るよ💡
 
 ### 4-1) branded type（ブランド型）で“IDの取り違え”を殺す🪪💥
 
+![ddd_ts_study_030_branded_types](./picture/ddd_ts_study_030_branded_types.png)
+
 ```ts
 type Brand<T, B extends string> = T & { readonly __brand: B };
 
@@ -140,6 +146,8 @@ const mid = MenuItemId("m_999");
 これだけで、地味に多い事故（「IDの種類違い」）が消えるよ🥹✨
 
 ### 4-2) union + discriminated union で“状態と分岐”を安全に🚦✨
+
+![ddd_ts_study_030_discriminated_union](./picture/ddd_ts_study_030_discriminated_union.png)
 
 ```ts
 type OrderStatus =
@@ -214,6 +222,8 @@ function fail(code: AppError["code"], userMessage: string): Err<AppError> {
 
 ### 5-3) “混ぜる地獄”あるある😵‍💫
 
+![ddd_ts_study_030_error_layers](./picture/ddd_ts_study_030_error_layers.png)
+
 * ドメインで例外投げる
 * アプリ層で一部だけResultにして
 * さらにどこかで握りつぶす
@@ -226,6 +236,8 @@ function fail(code: AppError["code"], userMessage: string): Err<AppError> {
 ---
 
 ## 6) バリデーションの置き場📍：1回で効く整理🧠✨
+
+![ddd_ts_study_030_validation_map](./picture/ddd_ts_study_030_validation_map.png)
 
 同じルールを3回書くの、つらいよね…🥲
 だから置き場はこう考えるとスッキリするよ！
@@ -244,6 +256,8 @@ function fail(code: AppError["code"], userMessage: string): Err<AppError> {
 ここが崩れると、DDDは一気に「雰囲気」になるよ😂⚠️
 
 ### 合言葉🗝️✨
+
+![ddd_ts_study_030_boundary_rule](./picture/ddd_ts_study_030_boundary_rule.png)
 
 * **domain は infra を知らない**
 * **app は domain を使う**

@@ -9,6 +9,8 @@
 
 ### ありがちな事故①：小数（浮動小数点）の誤差💥
 
+![ddd_ts_study_033_floating_point](./picture/ddd_ts_study_033_floating_point.png)
+
 JavaScriptのNumberは **2進数の浮動小数点** だから、0.1みたいな値を正確に持てなくて、計算すると端数がズレることがあるの🥲
 （「見た目は合ってるのに、内部がちょっと違う」系のやつ）([GitHub][1])
 
@@ -36,6 +38,8 @@ JavaScriptのNumberは **2進数の浮動小数点** だから、0.1みたいな
 
 ## 3) 設計方針（Money VOの責務）🧠💎
 
+![ddd_ts_study_033_money_structure](./picture/ddd_ts_study_033_money_structure.png)
+
 Money VOが守ることは、ざっくりこの4つ！
 
 1. ✅ **通貨（currency）を必ず持つ**（JPYとUSDを混ぜない）
@@ -46,6 +50,8 @@ Money VOが守ることは、ざっくりこの4つ！
 ---
 
 ## 4) 実装してみよう！Money VO（BigInt版）🛠️💴
+
+![ddd_ts_study_033_rounding_modes](./picture/ddd_ts_study_033_rounding_modes.png)
 
 > BigIntは「任意の大きさの整数」を安全に扱える型だよ（Numberの安全範囲を超えても壊れにくい）([developer.mozilla.org][4])
 > ※ BigIntは小数を持てないので、**“最小通貨単位の整数”** と相性がいいの🙆‍♀️
@@ -305,6 +311,8 @@ console.log(total.toDecimalString()); // "750"
 
 ### 税率を「比率」で安全に掛ける（10%なら110/100）🧾✨
 
+![ddd_ts_study_033_tax_calculation](./picture/ddd_ts_study_033_tax_calculation.png)
+
 ```ts
 import { Money } from "./money";
 
@@ -317,6 +325,8 @@ console.log(taxed.toDecimalString()); // "1100"
 ---
 
 ## 6) ここが超大事：ゼロ禁止？負数禁止？どうするの？🚫0️⃣➖
+
+![ddd_ts_study_033_zero_negative](./picture/ddd_ts_study_033_zero_negative.png)
 
 結論：**Money自体は負数もゼロも持てるほうが便利** なことが多いよ🙂
 だってさ…
@@ -400,6 +410,8 @@ describe("Money", () => {
 ---
 
 ## 9) ちょい現実の話：将来は Decimal が来るかも？🌈🔮
+
+![ddd_ts_study_033_decimal_future](./picture/ddd_ts_study_033_decimal_future.png)
 
 いまのJavaScriptは “お金のための標準Decimal型” がまだ無いので、現場では「最小通貨単位の整数」で持つ設計がめっちゃ多いよ。
 一方で、TC39では Decimal を扱う提案も進んでる（ただし現時点ではStage 1）。([GitHub][1])
