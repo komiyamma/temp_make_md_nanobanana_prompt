@@ -10,6 +10,9 @@ DDDの戦略パートでいちばん気持ちよく効くのが、この **コ�
 
 ### 1. コンテキストマップってなに？🤔
 
+![028 Context Kingdoms](./picture/ddd_cs_study_028_context_kingdoms.png)
+
+
 一言でいうと…
 
 **「境界づけられたコンテキスト（小さな独立国🏰）」同士が、どうつながっているかの地図** です🗺️✨
@@ -23,6 +26,9 @@ DDDの戦略パートでいちばん気持ちよく効くのが、この **コ�
 ---
 
 ### 2. なぜ必要？（1人開発ほど効く💥）🧑‍💻
+
+![028 Solo Hiker](./picture/ddd_cs_study_028_solo_hiker.png)
+
 
 #### ✅ 未来の自分が迷子にならない🧭
 
@@ -58,6 +64,9 @@ AIは便利だけど、全体の境界を無視して混ぜがちです😵
 
 #### (3) つなぎ方のパターン（どう接続する？）🔌
 
+![028 Upstream Downstream](./picture/ddd_cs_study_028_upstream_downstream.png)
+
+
 ここがコンテキストマップの“おいしいところ”です😋✨
 代表パターンだけ、超やさしく紹介します👇
 
@@ -72,6 +81,9 @@ flowchart LR
 ---
 
 ### 4. 代表的な関係パターン（まずはこれだけでOK）🌸
+
+![028 Integration Patterns](./picture/ddd_cs_study_028_integration_patterns.png)
+
 
 #### A. 腐敗防止層（ACL）🧼🛡️
 
@@ -93,12 +105,18 @@ flowchart LR
 
 #### D. Separate Ways（別々の道）🚶‍♀️🚶
 
+![028 Separate Ways](./picture/ddd_cs_study_028_separate_ways.png)
+
+
 **無理に連携しない** という強い選択💪
 「CSVで渡すだけ」「手動でOK」も立派な設計です✨（特に1人開発は正義👑）
 
 ---
 
 ### 5. ミニ例：ネットショップのコンテキストマップ🛍️🗺️
+
+![028 Shop Map](./picture/ddd_cs_study_028_shop_map.png)
+
 
 「注文」と「決済」と「在庫」があるとして…
 

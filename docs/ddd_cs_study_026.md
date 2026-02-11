@@ -8,6 +8,9 @@
 
 ## 0. はじめに：なんで「分類」なんてするの？🤔💭
 
+![026 Limited Resources](./picture/ddd_cs_study_026_limited_resources.png)
+
+
 1人開発って、時間も体力も有限だよね…！🥹⏳
 だからこそ **「どこに全力を出すか」** を先に決めないと、全部が中途半端になって詰みます💥
 
@@ -35,6 +38,9 @@ AIはコードを量産できるけど、**「何に力を入れるべきか」*
 
 ## 2. サブドメインって何？🌍
 
+![026 Three Domains](./picture/ddd_cs_study_026_three_domains.png)
+
+
 アプリの中の「仕事のまとまり」だと思ってOKです🙆‍♀️
 
 たとえば「予約システム」なら、仕事はいろいろあるよね👇
@@ -52,6 +58,9 @@ AIはコードを量産できるけど、**「何に力を入れるべきか」*
 ## 3. 3分類の見分け方👀✨（一番大事！）
 
 ### 3.1 コア（勝負所）💎🔥
+
+![026 Core Spotlight](./picture/ddd_cs_study_026_core_spotlight.png)
+
 
 **「ここが他と違う！」** が詰まってる場所。
 
@@ -130,6 +139,9 @@ flowchart TD
 
 ### ルールB：汎用は“勝たない”📦
 
+![026 Reinventing Wheel](./picture/ddd_cs_study_026_reinventing_wheel.png)
+
+
 決済や認証を自作して勝つのはほぼ無理ゲーです🎮💥
 勝負しないで、**皮をかぶせて使う**（次章のACLにもつながるよ！）🐟✨
 
@@ -141,6 +153,9 @@ flowchart TD
 ---
 
 ## 5. 具体例でやってみよう📚✨（予約アプリ編）
+
+![026 Beauty Salon Map](./picture/ddd_cs_study_026_beauty_salon_map.png)
+
 
 「美容室の予約アプリ」を想像してね💇‍♀️📅
 
@@ -227,6 +242,9 @@ Copilot Chat や ChatGPT に、そのまま投げてOKな形にするね！
 ## 8. ありがちなミス集⚠️😵‍💫（先に回避！）
 
 ### ミス1：全部コアにする💎💎💎💎
+
+![026 Too Many Cores](./picture/ddd_cs_study_026_too_many_cores.png)
+
 
 → コアは重い！テストも設計も必要！1人だと崩壊しがち🥲
 

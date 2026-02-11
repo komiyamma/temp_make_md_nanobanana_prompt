@@ -43,6 +43,9 @@ flowchart TD
 
 ## 3. まずは「わざと短い仕様」をAIに投げる 🧨
 
+![025 Ai Detective](./picture/ddd_cs_study_025_ai_detective.png)
+
+
 例として、チケット予約アプリを想像してみます🎫✨
 あなたが書いた仕様（ラフ）👇
 
@@ -59,6 +62,9 @@ flowchart TD
 ---
 
 ## 4. AIに演じさせるコツは「役」と「禁止事項」🎭⚠️
+
+![025 Role Playing](./picture/ddd_cs_study_025_role_playing.png)
+
 
 AIは放っておくと、いい感じの嘘を作ります😇（怖い）
 なので、最初にこう縛ります👇
@@ -100,6 +106,9 @@ AIはだいたいこう返してきます👇
 
 ### 💥矛盾候補
 
+![025 Contradiction Highlight](./picture/ddd_cs_study_025_contradiction_highlight.png)
+
+
 * 「3日前まで全額返金」なのに「支払い後はキャンセル不可」
   → どっちが優先？支払い後でも3日前ならOK？🤔
 
@@ -126,6 +135,9 @@ AIはだいたいこう返してきます👇
 
 ## 7. さらに強くする：AIに「ケースで責めさせる」🧪🔥
 
+![025 Test Case Generation](./picture/ddd_cs_study_025_test_case_generation.png)
+
+
 矛盾は、文章だけだと見逃しがち。
 だから **ケース（具体例）で殴る** のが最強です👊😂
 
@@ -146,6 +158,9 @@ AIはだいたいこう返してきます👇
 ---
 
 ## 8. IDE内での使い方（めちゃ実用）🧑‍💻🤖
+
+![025 Ide Folder](./picture/ddd_cs_study_025_ide_folder.png)
+
 
 実装を始める前に、プロジェクトの `docs/` とかに👇を置くのがおすすめです📁✨
 

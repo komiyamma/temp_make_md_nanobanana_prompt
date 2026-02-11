@@ -11,6 +11,9 @@ DDDって「むずかしい設計ルール」って思われがちなんだけ�
 
 ## 1. ユビキタス言語ってなに？🤔
 
+![024 Shared Language](./picture/ddd_cs_study_024_shared_language.png)
+
+
 超ざっくり言うと、
 
 **アプリの中で使う“言葉”を、全員（未来の自分＋AI）で同じ意味に揃えること** 📌
@@ -47,6 +50,9 @@ AIは、あなたが使う「言葉」を頼りにコードを作るよね？
 
 ### ✅ コツ1：1単語＝1意味に固定する🔒
 
+![024 Ambiguity Vs Clarity](./picture/ddd_cs_study_024_ambiguity_vs_clarity.png)
+
+
 同じ言葉を、場面で意味変えない！
 もし意味が変わるなら **別の単語に分ける** 👍
 
@@ -62,6 +68,9 @@ AIは、あなたが使う「言葉」を頼りにコードを作るよね？
 ---
 
 ### ✅ コツ2：同じ意味の別名（同義語）を禁止する🚫
+
+![024 Synonym Ban](./picture/ddd_cs_study_024_synonym_ban.png)
+
 
 これ、めちゃ効くやつです🔥
 
@@ -81,6 +90,9 @@ AIは、あなたが使う「言葉」を頼りにコードを作るよね？
 ---
 
 ## 4. まず作るのはこのフォーマットでOK📋✨
+
+![024 Dictionary Template](./picture/ddd_cs_study_024_dictionary_template.png)
+
 
 リポジトリに `docs/ubiquitous-language.md` みたいな感じで置くのがおすすめ📁
 （AIに読ませやすいし、あなたも探しやすい😊）
@@ -117,6 +129,9 @@ AIは、あなたが使う「言葉」を頼りにコードを作るよね？
 
 ### だからこうする💡
 
+![024 Shop Context](./picture/ddd_cs_study_024_shop_context.png)
+
+
 * **カート**：注文前（編集できる）
 * **注文**：決済完了（編集できない）
 * **取消**：決済前にやめる
@@ -139,6 +154,9 @@ stateDiagram-v2
 ---
 
 ## 6. 「コードの名前」へ落とすとこうなる🧩✨
+
+![024 Code Naming](./picture/ddd_cs_study_024_code_naming.png)
+
 
 ユビキタス言語は、命名の親です👶➡️📛
 

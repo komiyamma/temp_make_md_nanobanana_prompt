@@ -18,6 +18,9 @@
 
 ## 1. 「境界線が強い」と何が嬉しいの？🥰
 
+![031 Strong Vs Weak](./picture/ddd_cs_study_031_strong_vs_weak.png)
+
+
 境界線が強い = **変更の影響が広がらない** ということ。
 
 * ✅ 直す場所がすぐ見つかる 🔍
@@ -36,6 +39,9 @@
 ---
 
 ## 2. たとえ話：アプリの中の「小さな国」🌍🏰
+
+![031 Independent Flags](./picture/ddd_cs_study_031_independent_flags.png)
+
 
 DDDの **境界づけられたコンテキスト** は、アプリの中にある **小さな独立国** みたいなもの🏰
 
@@ -56,6 +62,9 @@ DDDの **境界づけられたコンテキスト** は、アプリの中にあ�
 ---
 
 ## 3. 「1つの変更が1つの国で閉じる」ための3つの壁 🧱🧱🧱
+
+![031 Three Walls](./picture/ddd_cs_study_031_three_walls.png)
+
 
 境界線を強くするコツは、ざっくりこの **3つの壁** を意識することだよ😊
 
@@ -86,6 +95,9 @@ mindmap
 
 ## 4. いちばん効くチェック：変更が来たら「どこが変わる？」📝🔍
 
+![031 Meteor Test](./picture/ddd_cs_study_031_meteor_test.png)
+
+
 境界線が強いかどうかは、これでだいたい分かるよ👇
 
 ### ✅ 変更テスト（超大事）✨
@@ -103,6 +115,9 @@ mindmap
 ---
 
 ## 5. ありがちな「境界線が崩れる原因」あるある😭🌀
+
+![031 Common Junk](./picture/ddd_cs_study_031_common_junk.png)
+
 
 ### あるある①：共有 `Common` プロジェクトにドメインモデルを入れる📦😇
 
@@ -134,6 +149,9 @@ SQLが強すぎて、境界線が意味なくなるパターン🥲
 ---
 
 ## 6. “契約（Contract）”でつなぐと境界線が強くなる📜🤝
+
+![031 Contract Scroll](./picture/ddd_cs_study_031_contract_scroll.png)
+
 
 コンテキスト同士が会話するときは、
 **「共通モデル」じゃなくて「共通の伝言（契約）」** にするのが強いよ💪✨
