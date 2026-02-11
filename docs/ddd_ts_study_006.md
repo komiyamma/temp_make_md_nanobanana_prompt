@@ -50,6 +50,8 @@ order.items.push({ menuId: "coffee", qty: 0, price: 500 }); // qty 0…？😇
 
 ## 2. まずは union で“状態”を固定する🚦✨（超効果あり）
 
+![ddd_ts_study_006_string_vs_union.png](./picture/ddd_ts_study_006_string_vs_union.png)
+
 `status: string` を卒業して、**許可した状態だけ**にする！
 
 ```ts
@@ -70,6 +72,8 @@ const ng: Order = { id: "o-2", status: "PAIDDD" };   // ❌ コンパイルで�
 ---
 
 ## 3. “分岐し忘れ”を `never` で潰す🧨（DDDと相性よすぎ）
+
+![ddd_ts_study_006_switch_exhaustiveness.png](./picture/ddd_ts_study_006_switch_exhaustiveness.png)
 
 状態で処理が変わるとき、`switch` の書き忘れって地味に事故るよね…😵‍💫
 そこで **網羅チェック（exhaustive check）** ✨
@@ -101,6 +105,8 @@ function canEditItems(status: OrderStatus): boolean {
 ---
 
 ## 4. `readonly` は「勝手に書き換え禁止の空気」を作る🧊🫧
+
+![ddd_ts_study_006_readonly_shield.png](./picture/ddd_ts_study_006_readonly_shield.png)
 
 DDDで大事なのは **不変条件（絶対守るルール）** 🔒
 その敵は「外から配列が弄れること」だったりする…！
@@ -150,6 +156,8 @@ class OrderEntity {
 
 ## 5. union + 型ガードで「今この状態ならOK」をコードにする🔎✨
 
+![ddd_ts_study_006_type_guard_check.png](./picture/ddd_ts_study_006_type_guard_check.png)
+
 「支払い済みなら編集禁止」みたいな条件、コードで安全に書きたいよね？🥹
 
 ## 5-1. 型ガード（type guard）を作る
@@ -178,6 +186,8 @@ function showReceipt(order: AnyOrder) {
 ---
 
 ## 6. `satisfies` は「マップ/設定のタイポ検知」に最強💥🗺️
+
+![ddd_ts_study_006_satisfies_map.png](./picture/ddd_ts_study_006_satisfies_map.png)
 
 DDDでよくあるのが「状態→許可される操作」みたいな表を作るやつ。
 ここでタイポると悲惨…😇

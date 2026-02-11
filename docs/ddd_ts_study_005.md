@@ -22,6 +22,8 @@
 
 ## 1) Node.js（LTS）だけ入れる🟢
 
+![ddd_ts_study_005_lts_vs_odd.png](./picture/ddd_ts_study_005_lts_vs_odd.png)
+
 まずは Node がないと何も始まらない😂
 ポイントは **LTS** にすること！（奇数メジャーは短命になりがち） ([Node.js][1])
 
@@ -51,6 +53,8 @@ code .
 
 ## 3) パッケージ初期化＆必要ツールを入れる📦🧰
 
+![ddd_ts_study_005_toolchain_puzzle.png](./picture/ddd_ts_study_005_toolchain_puzzle.png)
+
 まずは npm で最小構成にするね（あとでpnpm派に移ってもOK👌）
 
 ```powershell
@@ -69,6 +73,8 @@ npm install --save-dev eslint @eslint/js typescript typescript-eslint prettier v
 ---
 
 ## 4) TypeScript設定（tsconfig）を置く🧡
+
+![ddd_ts_study_005_strict_gate.png](./picture/ddd_ts_study_005_strict_gate.png)
 
 ルートに `tsconfig.json` を作ってね📄✨
 
@@ -97,6 +103,8 @@ npm install --save-dev eslint @eslint/js typescript typescript-eslint prettier v
 ---
 
 ## 5) ESLint（赤線先生）を“公式の形”で入れる🚨✨
+
+![ddd_ts_study_005_eslint_redline.png](./picture/ddd_ts_study_005_eslint_redline.png)
 
 ルートに `eslint.config.mjs` を作るよ〜📄
 この形は typescript-eslint 公式のQuickstartそのまま✨ ([TypeScript ESLint][3])
@@ -142,6 +150,8 @@ module.exports = {
 ---
 
 ## 7) VS Codeを“保存したら整う”状態にする🧰✨
+
+![ddd_ts_study_005_format_on_save.png](./picture/ddd_ts_study_005_format_on_save.png)
 
 ここがこの章の核心だよ〜！！💥
 
@@ -236,6 +246,8 @@ Vitestは公式ガイドで導入手順がまとまってるよ📘 ([Vitest][4]
 ---
 
 ## 10) 動作チェック（これが通れば勝ち🎉）
+
+![ddd_ts_study_005_green_test.png](./picture/ddd_ts_study_005_green_test.png)
 
 ```powershell
 npm run format:write
