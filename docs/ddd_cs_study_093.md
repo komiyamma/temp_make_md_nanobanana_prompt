@@ -30,6 +30,8 @@
 ---
 
 ## 壁の正体はだいたいこの3種類🧩
+![Three Wall Types](./picture/ddd_cs_study_093_wall_types.png)
+
 
 「知識不足 vs 業務が複雑すぎる」の2択に見えがちだけど、実際は3つに分けるとラクです👇
 
@@ -54,6 +56,8 @@
 ---
 
 ## 30秒でできる！壁の診断フロー🔎✨
+![Diagnosis Flow](./picture/ddd_cs_study_093_diagnosis_flow.png)
+
  
 止まったらこれを上から順にチェック✅（超大事！）
  
@@ -96,6 +100,8 @@ flowchart TD
 ---
 
 ## A：知識不足だった時の対処法📚✨（最短で伸びる）
+![Knowledge Fix](./picture/ddd_cs_study_093_knowledge_fix.png)
+
 
 ### ゴールはこれ👇
 
@@ -136,6 +142,8 @@ Copilot Chat は「説明・テスト生成・修正提案」などをIDE内で�
 ---
 
 ## B：業務が複雑すぎた時の対処法🏢💥（DDDの出番）
+![Complexity Fix](./picture/ddd_cs_study_093_complexity_fix.png)
+
 
 ### ここでの大事な真実🧠
 
@@ -171,6 +179,8 @@ Copilot にはIDE内で質問できるし([GitHub Docs][1])、
 ---
 
 ## C：情報不足だった時の対処法❓（設計じゃなく要件が未確定）
+![Info Fix](./picture/ddd_cs_study_093_info_fix.png)
+
 
 ここが一番ハマりやすいです😂
 やることはシンプル👇
@@ -197,6 +207,8 @@ AIに“ドメイン担当役”をやらせて質問を増やすのもアリで
 ---
 
 ## 実践：壁を越える「5ステップ」テンプレ🧱➡️🌈
+![Five Steps Over Wall](./picture/ddd_cs_study_093_five_steps.png)
+
 
 止まったらこれで復帰できます✨
 

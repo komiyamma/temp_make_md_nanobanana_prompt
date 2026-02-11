@@ -15,6 +15,8 @@ DDDって、いちばん苦しいのがここなんだよね👇
 ---
 
 ## 1) まず結論：DDDでの “おすすめ配置” 🌸🧭
+![Recommended Placement](./picture/ddd_cs_study_091_placement_map.png)
+
 
 DDDは「どこにルールを置くか」が命！なので、C#新機能も置き場所で使い分けます😊
 
@@ -67,6 +69,8 @@ block-beta
 ---
 
 ## 2) Primary constructor（C# 12）をDDDっぽく理解する 🧩✨
+![Primary Constructor](./picture/ddd_cs_study_091_primary_constructor.png)
+
 
 ### 2-1. Primary constructor って何？（超ざっくり）
 
@@ -121,6 +125,8 @@ DDD的には、ここが地味に大事で👇
 ---
 
 ## 3) required（C# 11）で「初期化漏れ」をコンパイルで止める 🧯✅
+![Required Check](./picture/ddd_cs_study_091_required_check.png)
+
 
 ### 3-1. required の本質
 
@@ -180,6 +186,8 @@ required がある型で「コンストラクタで全部セットしてるの�
 ---
 
 ## 4) field（C# 14）で “プロパティの軽い不変条件” を守る 🛡️✨
+![Field Keyword](./picture/ddd_cs_study_091_field_keyword.png)
+
 
 C# 14 の `field` は、auto-property の裏にある backing field を、アクセサ内で参照できる仕組みです ([Microsoft Learn][3])
 
@@ -205,6 +213,8 @@ public sealed class Profile
 ---
 
 ## 5) 3つを組み合わせた「DDDの流れ」ミニ例 🌟
+![DDD Flow](./picture/ddd_cs_study_091_ddd_flow.png)
+
 
 題材：ユーザー登録（超ミニ）👩‍💻💕
 
@@ -311,6 +321,8 @@ public sealed class User(UserId id, Email email)
 ---
 
 ## 8) この章のまとめ 🎁✨（ここだけ覚えればOK！）
+![Summary Checklist](./picture/ddd_cs_study_091_summary_checklist.png)
+
 
 * Primary constructor：**宣言を「必要なもの一覧」にして、儀式を減らす** ([Microsoft Learn][1])
 * required：**入力DTOなどで “初期化漏れ” をコンパイルで潰す** ([Microsoft Learn][2])

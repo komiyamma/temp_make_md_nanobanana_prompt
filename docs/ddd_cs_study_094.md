@@ -21,6 +21,8 @@ AI（CopilotやCodex系）を使うほど、**「出てきたコードを正し�
 ---
 
 ## 1) 「設計の目」ってなに？👁️✨（コードの“意味”じゃなく“意図”を見る）
+![Design Eye](./picture/ddd_cs_study_094_design_eye.png)
+
 
 初心者がコードを読むときって、ついこうなりがち👇🥺
 
@@ -40,6 +42,8 @@ DDDっぽく言うと、
 ---
 
 ## 2) 最初にやる「3分の全体把握」⏱️🗺️（ここが勝負！）
+![Map Check](./picture/ddd_cs_study_094_map_check.png)
+
 
 他人のコードを読むとき、いきなりクラスを開かない！🙅‍♀️💦
 まずは **“地図”** を見るのが最強だよ📍✨
@@ -55,6 +59,8 @@ DDDっぽく言うと、
 ---
 
 ## 3) 10分でできる「設計スキャン」🩻✨（読む順番のテンプレ）
+![Scan Flow](./picture/ddd_cs_study_094_scan_flow.png)
+
  
  これ、超おすすめの順番！慣れると爆速になるよ🚀💨
  
@@ -106,6 +112,8 @@ DDDっぽく言うと、
 ---
 
 ## 4) DDD初心者向け：「ここだけ見ればOK」ポイント7つ 🥰✅
+![DDD Checkpoints](./picture/ddd_cs_study_094_ddd_points.png)
+
 
 DDD初めてでも、まずはここだけで十分強いよ💪✨
 
@@ -165,6 +173,8 @@ DDD寄りだと、**型で意味を持たせる**ことが多いよ✨
 ---
 
 ## 5) AI生成コードを「設計の目」で読むコツ 🤖🔍（あるある7連発）
+![AI Code Traits](./picture/ddd_cs_study_094_ai_code_traits.png)
+
 
 AIコードは便利だけど、**設計目線だと“クセ”が出やすい**よ👇😇
 
@@ -185,6 +195,8 @@ AIコードは便利だけど、**設計目線だと“クセ”が出やすい*
 ---
 
 ## 6) AIと一緒に“読む”ためのプロンプト集 🗣️🤖✨
+![Reading Prompts](./picture/ddd_cs_study_094_reading_prompts.png)
+
 
 Copilot Chatみたいなチャット系は、「読む」の相棒として強いよ💬
 （Copilot ChatはIDEやGitHub上などで使えるよ） ([GitHub Docs][1])

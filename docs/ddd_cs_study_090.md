@@ -34,6 +34,8 @@ GitHub Copilot Chat も Visual Studio 側で “統合体験” として入り�
 ---
 
 ## Step 1：AIに渡す「仕様シート」を作る 📝✨（超重要！）
+![Specification Sheet](./picture/ddd_cs_study_090_spec_sheet.png)
+
 
 AIにいきなり「DDDで作って」って言うと、だいたい事故ります😂
 先に **仕様を1枚に圧縮**して渡すのがコツ！
@@ -75,6 +77,8 @@ AIにいきなり「DDDで作って」って言うと、だいたい事故りま
 * AIにも「ここがドメインだよ！」って教えやすい
 
 ### 2-2：AIへの指示（DDD版）
+![DDD Request Prompt](./picture/ddd_cs_study_090_ddd_prompt.png)
+
 
 ```text
 次の条件で「DDD版」を実装してください。
@@ -98,6 +102,8 @@ AIにいきなり「DDDで作って」って言うと、だいたい事故りま
 ---
 
 ## Step 3：DDD版の“最低限の形”サンプル 🧱✨
+![DDD Code Structure](./picture/ddd_cs_study_090_ddd_structure.png)
+
 
 ここからは「AIが出してきたもの」を人間が整えるイメージで見てね😊
 （全部書くと長くなるので、要点だけ出します！）
@@ -247,6 +253,8 @@ public class OrderTests
 ```
 
 ### 4-3：簡易版のイメージ（要点）
+![Simple Version Concept](./picture/ddd_cs_study_090_simple_concept.png)
+
 
 * `OrderDto { Lines, CouponDiscount, UsedPoints, IsConfirmed }`
 * `OrderService` が `if` 祭りで全部やる感じ😂
@@ -276,6 +284,8 @@ DDD版と簡易版、それぞれに **同じ変更要求**をAIに投げます�
 ```
 
 ### 見るべき観察ポイント👀✨
+![Change Impact Comparison](./picture/ddd_cs_study_090_change_impact.png)
+
 
 * DDD版：**Order（集約）に変更が集まる？**
 * 簡易版：**Serviceのifが肥大化して読みにくくなる？**
@@ -315,6 +325,8 @@ flowchart TD
 ---
 
 ## Step 7：Copilot Chatで“安全に”AIを使うコツ 🛡️💬
+![Copilot Chat Usage](./picture/ddd_cs_study_090_copilot_chat.png)
+
 
 Visual Studio だと Copilot Chat で、
 **チャット**と**インラインチャット**を使い分けられて、提案は**差分プレビュー**で入れられます😊([Microsoft Learn][2])
