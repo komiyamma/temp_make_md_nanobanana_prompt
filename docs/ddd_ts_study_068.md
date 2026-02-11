@@ -45,6 +45,8 @@ flowchart TB
 
 ## 1. GetOrderって何する子？🤔🔎
 
+![Read vs Write Models](./picture/ddd_ts_study_068_read_vs_write.png)
+
 GetOrderはざっくり言うと👇
 
 * 注文詳細画面に出すために
@@ -54,6 +56,8 @@ GetOrderはざっくり言うと👇
 ここで超大事なのは👇
 
 * **GetOrderはデータを変更しない**（ログ以外の副作用なし）
+
+![Side Effect Free Ghost](./picture/ddd_ts_study_068_side_effect_free.png)
 * **ドメインルール（不変条件）を増やさない**
 * **読み取りは読み取りとして最適化してOK**
 
@@ -62,6 +66,8 @@ GetOrderはざっくり言うと👇
 ---
 
 ## 2. “読み取り”の実装にはレベルがあるよ🎮✨
+
+![CQRS Lanes](./picture/ddd_ts_study_068_cqrs_separation.png)
 
 ### レベル0：まず動かす（学習向け）🍼
 
@@ -113,6 +119,8 @@ GetOrderはざっくり言うと👇
 
 ## 4. まずはDTOを決めよう📦✨（画面ファーストでOK）
 
+![DTO Nesting](./picture/ddd_ts_study_068_dto_structure.png)
+
 注文詳細画面で欲しい項目って、だいたいこんな感じだよね☕🧾
 
 * 注文ID / ステータス / 合計金額
@@ -152,6 +160,8 @@ export type GetOrderResultDto = Readonly<{
 ---
 
 ## 5. Readモデル（Projection）を返す ReadRepo を作る📚🔎
+
+![Read Repository Vending](./picture/ddd_ts_study_068_read_repository.png)
 
 ### 5.1 インターフェース（アプリ層）🧩
 
@@ -253,6 +263,8 @@ export class InMemoryOrderReadRepository implements OrderReadRepository {
 
 ## 8. じゃあ投影（View）はいつ作るの？⏱️✨
 
+![Projection Light](./picture/ddd_ts_study_068_projection_view.png)
+
 いちばん簡単なのは👇
 
 * **書き込み側（save）で投影を更新**しちゃう
@@ -352,6 +364,8 @@ describe("GetOrderQueryService", () => {
 ## 10. アンチパターン集（やりがち😂⚠️）
 
 ### ❌ GetOrderでドメイン操作しちゃう
+
+![Forbidden Logic](./picture/ddd_ts_study_068_forbidden_logic.png)
 
 * `order.confirm()` とか呼び出す
   → それ更新系ユースケースの役目だよ〜💦
