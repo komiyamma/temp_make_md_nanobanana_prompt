@@ -12,6 +12,8 @@ AIって、放っておくと「とりあえず動くコード」を秒速で出
 
 ## 1. 「作業員AI」だと起きる事故あるある 🚑💥
 
+![ddd cs study 009 worker ai](./picture/ddd_cs_study_009_worker_ai.png)
+
 * 仕様があいまいなままコードが増える 📈
 * 途中から「これ誰が責任持つの？」状態になる 🤷‍♀️
 * ちょっと直したら別の場所が壊れる 🧨
@@ -28,6 +30,8 @@ AIって、放っておくと「とりあえず動くコード」を秒速で出
 ---
 
 ## 2. 壁打ちAIの役割はこの4つが最強 🎭✨
+
+![ddd cs study 009 four roles](./picture/ddd_cs_study_009_four_roles.png)
 
 ### ① 仕様の穴を見つける質問係 🕵️‍♀️❓
 
@@ -48,6 +52,8 @@ AIって、放っておくと「とりあえず動くコード」を秒速で出
 ---
 
 ## 3. “迷わない” 壁打ちの基本手順（たった3ステップ）🧭✨
+
+![ddd cs study 009 three steps](./picture/ddd_cs_study_009_three_steps.png)
 
 ```mermaid
 flowchart TD
@@ -87,6 +93,8 @@ flowchart TD
 
 ### 4-1. まずは質問だけしてもらう（超おすすめ）❓
 
+![ddd cs study 009 ask first](./picture/ddd_cs_study_009_ask_first.png)
+
 ```text
 あなたは設計レビュー役です。
 次の仕様について、まずは「確認質問」だけを15個出してください。
@@ -106,6 +114,8 @@ flowchart TD
 
 ### 4-2. 用語の辞書（ユビキタス言語）を作る 📚✨
 
+![ddd cs study 009 dictionary](./picture/ddd_cs_study_009_dictionary.png)
+
 ```text
 次の仕様に登場する用語を一覧化して、
 「定義」「別名」「混同しやすい言葉」を整理してください。
@@ -118,6 +128,8 @@ flowchart TD
 ---
 
 ### 4-3. 設計案を2〜3個に分けて比較する ⚖️
+
+![ddd cs study 009 compare options](./picture/ddd_cs_study_009_compare_options.png)
 
 ```text
 この機能の設計案を3つ提案してください。
