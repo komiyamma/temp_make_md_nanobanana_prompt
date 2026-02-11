@@ -45,6 +45,10 @@
 
 境界ってセンスに見えるけど、実はチェック観点があるよ😊
 
+
+
+![ddd_ts_study_017_three_lenses.png](./picture/ddd_ts_study_017_three_lenses.png)
+
 ### レンズ①：ルール（不変条件）はどこで守る？🔒
 
 * 「支払い後は明細変更不可」←これは**注文側のルール**っぽい
@@ -90,6 +94,10 @@
 
 ### Step 2：「その情報の正本（オーナー）は誰？」を決める👑
 
+![ddd_ts_study_017_data_owner.png](./picture/ddd_ts_study_017_data_owner.png)
+
+
+
 これが超大事！！✨
 
 * 商品名・価格の正本 → 📋メニュー
@@ -115,6 +123,10 @@
 ここ、AIと相性めちゃ良いよ🤖💕
 
 ### パターンA：サブドメインっぽく分ける（おすすめ）📦
+
+![ddd_ts_study_017_module_pattern_a.png](./picture/ddd_ts_study_017_module_pattern_a.png)
+
+
 
 * `ordering`（注文）
 * `payment`（支払い）
@@ -193,6 +205,10 @@ graph TD
 
 #### フォルダ例 📁
 
+![ddd_ts_study_017_folder_structure_index.png](./picture/ddd_ts_study_017_folder_structure_index.png)
+
+
+
 ```text
 src/
   domain/
@@ -233,6 +249,10 @@ import { Order, OrderId } from "../domain/ordering";
 ---
 
 ## “境界が壊れてるサイン”早見表 👀⚠️
+
+![ddd_ts_study_017_broken_boundary.png](./picture/ddd_ts_study_017_broken_boundary.png)
+
+
 
 * 😵‍💫 `payment` が `ordering/Order.ts` の奥ファイルを直importしてる
 * 😵‍💫 「メニュー価格変更」のロジックが `ordering` に混ざってる
