@@ -9,6 +9,8 @@
 
 ## 1) 受け入れ条件ってなに？📝✨
 
+![ddd_ts_study_010_acceptance_criteria_bridge.png](./picture/ddd_ts_study_010_acceptance_criteria_bridge.png)
+
 受け入れ条件（Acceptance Criteria）は、ざっくり言うと…
 
 * 「**こうなったらOK！**」の合格ライン✅
@@ -20,6 +22,8 @@
 ---
 
 ## 2) Given / When / Then の基本ルール📏💡
+
+![ddd_ts_study_010_gwt_structure.png](./picture/ddd_ts_study_010_gwt_structure.png)
 
 GWTは、**行動と結果**がブレないように、文章を3つの役に分ける書き方だよ😊
 
@@ -62,6 +66,8 @@ Gherkin（GWTを書く代表的な書式）でも、Given/When/Then などのキ
 
 ## 5) よくある失敗あるある😂⚠️（先に潰そ）
 
+![ddd_ts_study_010_bad_gwt.png](./picture/ddd_ts_study_010_bad_gwt.png)
+
 ### ❌ When が2個3個に増える
 
 * “いつやった？”が曖昧になる
@@ -81,6 +87,8 @@ Gherkin（GWTを書く代表的な書式）でも、Given/When/Then などのキ
 
 ## 6) パターンが増えるなら Scenario Outline でまとめる📚✨
 
+![ddd_ts_study_010_scenario_outline.png](./picture/ddd_ts_study_010_scenario_outline.png)
+
 たとえば「数量が1〜5ならOK、0はNG」みたいに **例がいっぱい**あるときは
 Gherkinの **Scenario Outline + Examples** が便利だよ〜！([cucumber.io][2])
 
@@ -89,6 +97,8 @@ Gherkinの **Scenario Outline + Examples** が便利だよ〜！([cucumber.io][2
 ---
 
 ## 7) GWT → テストに落とす変換ルール🔁🧪
+
+![ddd_ts_study_010_test_pyramid_gwt.png](./picture/ddd_ts_study_010_test_pyramid_gwt.png)
 
 GWTは、そのままテストに変換しやすい✨
 ざっくり対応はこう👇

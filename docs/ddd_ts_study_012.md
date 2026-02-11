@@ -24,6 +24,8 @@ DDDって「むずかしい設計」をする前に、まず **“言葉のズ�
 
 ## 2) まず“言葉のズレ”が起きる典型パターン集🌀😵‍💫
 
+![ddd_ts_study_012_tower_of_babel.png](./picture/ddd_ts_study_012_tower_of_babel.png)
+
 カフェ注文でありがちなやつ👇
 
 * 「注文」「オーダー」「伝票」「チケット」…全部同じ？違う？🤔
@@ -55,6 +57,8 @@ DDDって「むずかしい設計」をする前に、まず **“言葉のズ�
 ## 4) 実践：用語辞書を作ろう📘🧾✨
 
 ### 4-1. 用語辞書のフォーマット（これで統一！）🧩
+
+![ddd_ts_study_012_term_card.png](./picture/ddd_ts_study_012_term_card.png)
 
 1語につき、最低これだけ書くのがオススメ👇
 
@@ -155,6 +159,8 @@ classDiagram
 
 ## 5) “使う言葉 / 使わない言葉” を決める✂️🚫✨
 
+![ddd_ts_study_012_forbidden_words.png](./picture/ddd_ts_study_012_forbidden_words.png)
+
 ここ、めちゃ重要！🔥
 辞書を作るだけだと、みんな（自分も）普通にブレる😂
 
@@ -173,11 +179,15 @@ classDiagram
 
 ## 6) 辞書を「コード」に落とすコツ🧑‍💻🗣️✨
 
+![ddd_ts_study_012_code_mirror.png](./picture/ddd_ts_study_012_code_mirror.png)
+
 ユビキタス言語の最高のゴールはこれ👇
 
 > **会話で使う言葉が、そのままコードに存在する状態**✨
 
 ### 6-1. “状態” は特にブレやすいから型で固定しよう🔒🚦
+
+![ddd_ts_study_012_status_enum.png](./picture/ddd_ts_study_012_status_enum.png)
 
 たとえば OrderStatus を **文字列リテラル union** で固定する：
 
@@ -234,6 +244,8 @@ export class Order {
 ---
 
 ## 7) AIの使いどころ（ユビキタス言語編）🤖🗣️✨
+
+![ddd_ts_study_012_ai_dictionary.png](./picture/ddd_ts_study_012_ai_dictionary.png)
 
 AIはこの章だと **めちゃ頼れる壁打ち相手**だよ〜！🎾
 しかも最近は、GitHub の支援ツール側で「エージェント」的な動きが増えてて、複数ファイルの整理やレビューも任せやすくなってきたよ🧠🧹
