@@ -17,6 +17,8 @@ DDDって、ひとことで言うと **「現実の仕事のルールを、迷�
 ## 1. まずはたとえ話で理解しよっ 🍱🏙️
 
 ### 戦略＝「街づくり」🏙️🗺️
+![ddd_cs_study_016_town_vs_house](./picture/ddd_cs_study_016_town_vs_house.png)
+
 
 どこに何の建物を置く？
 ショッピング街、住宅街、工業地帯…みたいに **役割でエリアを分ける** 感じ！
@@ -45,6 +47,8 @@ DDDって、ひとことで言うと **「現実の仕事のルールを、迷�
 代表的にはこんなこと👇
 
 ### ① 境界づけられたコンテキスト（Bounded Context）を作る 🧱🧭
+![ddd_cs_study_016_user_context](./picture/ddd_cs_study_016_user_context.png)
+
 
 同じ“言葉”でも、場所が違うと意味が変わることってあるよね😳
 
@@ -76,6 +80,8 @@ DDDって、ひとことで言うと **「現実の仕事のルールを、迷�
 ---
 
 ## 3. 戦術（どう書くか）って何するの？🛠️✨
+![ddd_cs_study_016_tactical_tools](./picture/ddd_cs_study_016_tactical_tools.png)
+
 
 戦術は「各エリアの中身を、壊れにくい部品で作る」話だよ😊
 よく出る主役たち👇
@@ -127,6 +133,8 @@ flowchart TD
 ---
 
 ## 5. ミニ題材でイメージしよう：カフェ注文アプリ ☕🍰
+![ddd_cs_study_016_cafe_contexts](./picture/ddd_cs_study_016_cafe_contexts.png)
+
 
 ### 戦略（どう分ける？）🗺️
 
@@ -152,6 +160,8 @@ flowchart TD
 ---
 
 ## 6. 超ミニ実装：戦術の手触りだけ体験しよ 💅✨
+![ddd_cs_study_016_code_guard](./picture/ddd_cs_study_016_code_guard.png)
+
 
 「注文コンテキスト」の中だけの例だよ〜☕🛒
 
@@ -235,6 +245,8 @@ public sealed record OrderLine(string ProductName, Money UnitPrice, int Quantity
 境界線はきれいなのに、中のコードが `string` と `if` だらけでルールが漏れる😢
 
 ✅ なのでおすすめは：
+![ddd_cs_study_016_strategy_tactics_cycle](./picture/ddd_cs_study_016_strategy_tactics_cycle.png)
+
 **まずざっくり戦略 → すぐ小さく戦術 → また戦略見直し** 🔁✨
 この往復がいちばん自然だよ〜🌸
 

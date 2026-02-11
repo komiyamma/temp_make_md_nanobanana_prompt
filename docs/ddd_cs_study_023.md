@@ -22,6 +22,8 @@ DDDでいう **境界づけられたコンテキスト** は、アプリ内の�
 ---
 
 ## 2) まず結論💡：1人開発は「フォルダ境界」からでOK🙆‍♀️📁
+![ddd_cs_study_023_cardboard_concrete](./picture/ddd_cs_study_023_cardboard_concrete.png)
+
 
 最初からプロジェクトを分けすぎると…
 
@@ -47,11 +49,15 @@ DDDでいう **境界づけられたコンテキスト** は、アプリ内の�
 * “境界線の練習”段階で、まず形を覚えたい📚
 
 **ポイント**：フォルダ境界は「見た目の交通整理🚦」
+![ddd_cs_study_023_traffic_cones](./picture/ddd_cs_study_023_traffic_cones.png)
+
 守れるかどうかは、あなたのルール運用 + AIレビューでカバーしやすいです🤖✨
 
 ---
 
 ## 4) プロジェクト分けが効くケース🏗️✨（ここが判断ポイント！）
+![ddd_cs_study_023_brick_wall](./picture/ddd_cs_study_023_brick_wall.png)
+
 
 プロジェクト分けの強みは **コンパイルで“越境”を止められる**ことです🧱
 「間違って参照しちゃった」が物理的に起きにくい🙅‍♀️
@@ -69,6 +75,8 @@ C# 14 と .NET 10 の世界だと、最新SDK/IDEでこのへんの分割もや�
 ---
 
 ## 5) 迷ったらコレ✅：「昇格チェックリスト」📝
+![ddd_cs_study_023_decision_scale](./picture/ddd_cs_study_023_decision_scale.png)
+
 
 フォルダ境界で始めて、次の質問で **YESが3つ以上**ならプロジェクト分割を考える、くらいがちょうどいいです🙌✨
 
@@ -119,6 +127,8 @@ flowchart TD
 ---
 
 ## 7) 実践テンプレ①：まずはフォルダで境界線📁🧸
+![ddd_cs_study_023_folder_tree](./picture/ddd_cs_study_023_folder_tree.png)
+
 
 こんな置き方が分かりやすいです👇（“小さな独立国”を並べる感じ🏝️）
 
@@ -174,6 +184,8 @@ FestivalApp.sln
 ---
 
 ## 9) AIにやらせると爆速🤖⚡（おすすめプロンプト付き）
+![ddd_cs_study_023_ai_partner](./picture/ddd_cs_study_023_ai_partner.png)
+
 
 ### ① 境界線案を出してもらう🗺️
 

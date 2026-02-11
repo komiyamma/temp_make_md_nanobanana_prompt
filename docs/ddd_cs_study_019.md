@@ -10,6 +10,8 @@ DDDってね、最初だけ「え、なんでこんな回り道してるの…�
 ---
 
 ## 1) まず結論：DDDの学習曲線は「Jカーブ」📉➡️📈
+![ddd_cs_study_019_j_curve](./picture/ddd_cs_study_019_j_curve.png)
+
 
 最初は **ちょっと沈む**（遅くなる）けど、途中から **グワッと伸びる**やつです🌀✨
 
@@ -39,6 +41,8 @@ DDDが遅く感じるのは、あなたの能力が低いからじゃないで�
 ### 遅くなる主な原因はこのへん👇😵
 
 #### ✅ (A) “言葉”に時間を使うから 🗣️📖
+![ddd_cs_study_019_sculptor_naming](./picture/ddd_cs_study_019_sculptor_naming.png)
+
 
 DDDは **名前が命**です✨
 「これって“ユーザー”じゃなくて“会員”だよね？」みたいな、地味だけど大事な悩みが増えます😇
@@ -60,6 +64,8 @@ Value ObjectとかRepositoryとか、部品が増えるので
 ---
 
 ## 3) でも途中から爆速になる理由（ここが本番💥🚀）
+![ddd_cs_study_019_rocket_launch](./picture/ddd_cs_study_019_rocket_launch.png)
+
 
 DDDの真価は、「変更」が入った瞬間に発動します⚡
 
@@ -75,6 +81,8 @@ DDDの真価は、「変更」が入った瞬間に発動します⚡
 一回DDDっぽい流れ（作り方）を覚えると、次から似た機能は同じ手順で作れます🔁💨
 
 #### ✅ (3) 仕様がコードに“住む”から、忘れない 🧠🏠
+![ddd_cs_study_019_code_memory](./picture/ddd_cs_study_019_code_memory.png)
+
 
 未来の自分が見ても
 「なるほど、こういうルールね！」って読み取れるようになります📖✨
@@ -88,6 +96,8 @@ DDDの構造があると、AIに
 ---
 
 ## 4) 「爆速ゾーン」に入る“合図”🚦✨
+![ddd_cs_study_019_speed_limit_unlimited](./picture/ddd_cs_study_019_speed_limit_unlimited.png)
+
 
 次のどれかを感じたら、あなたはもう入口にいます🚪💡
 
@@ -151,6 +161,8 @@ DDDは宗教じゃないです🙏😂
 最初は荒くてOK。後で整えられます✨
 
 ### ❌ 罠2：フォルダ構成で燃え尽きる
+![ddd_cs_study_019_folder_burnout](./picture/ddd_cs_study_019_folder_burnout.png)
+
 
 フォルダは手段！目的じゃない！📁🔥
 「置き場所がわからない」なら、まずはシンプルでOKです😊

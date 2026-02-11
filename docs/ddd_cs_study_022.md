@@ -17,6 +17,8 @@
 ---
 
 ## まずは超たとえ話🍙🏫
+![ddd_cs_study_022_cafeteria_library](./picture/ddd_cs_study_022_cafeteria_library.png)
+
 
 あなたの大学にこんな2つの場所があるとするね👇
 
@@ -31,6 +33,8 @@ DDDの「境界づけられたコンテキスト（Bounded Context）」は、�
 ---
 
 ## 「コンテキスト」ってなに？🤔
+![ddd_cs_study_022_context_bubble](./picture/ddd_cs_study_022_context_bubble.png)
+
 
 ざっくり言うと…
 
@@ -47,6 +51,8 @@ DDDの「境界づけられたコンテキスト（Bounded Context）」は、�
 ---
 
 ## 境界づけられたコンテキスト（Bounded Context）とは？🏰
+![ddd_cs_study_022_passport_control](./picture/ddd_cs_study_022_passport_control.png)
+
 
 ひとことで言うと…
 
@@ -71,6 +77,8 @@ DDDの「境界づけられたコンテキスト（Bounded Context）」は、�
 ---
 
 ## 境界を見つける“4つのサイン”🔍🚦
+![ddd_cs_study_022_four_signs](./picture/ddd_cs_study_022_four_signs.png)
+
 
 次のどれかが出たら、コンテキスト分割の候補だよ👇
 
@@ -109,6 +117,8 @@ flowchart TD
 * **Messaging（連絡の国）**：通知・送信履歴
 
 ### ざっくり図にするとこんな感じ🗺️
+![ddd_cs_study_022_circle_map](./picture/ddd_cs_study_022_circle_map.png)
+
 
 ```mermaid
 flowchart LR
@@ -159,6 +169,8 @@ namespace Accounting.Users
 ---
 
 ## 国境を越えるときは「翻訳」する🛂✨
+![ddd_cs_study_022_translator_robot](./picture/ddd_cs_study_022_translator_robot.png)
+
 
 コンテキスト間でデータを渡すときは、**そのまま相手のモデルを使わない**のが基本だよ🙅‍♀️
 
