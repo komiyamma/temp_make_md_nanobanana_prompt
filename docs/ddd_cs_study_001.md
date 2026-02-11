@@ -22,6 +22,9 @@ C#で「動くもの」は作れるのに、次の場面で急に手が止まり
 
 ## 2. たとえ話：作文は書けるのに、小説の構成で詰む📚✨
 
+![Novel Structure Metaphor](./picture/ddd_cs_study_001_novel_structure.png)
+
+
 * **コードを書く**＝文章をスラスラ書くこと ✍️
 * **設計する**＝「章立て」「登場人物」「伏線」「視点」を決めること 🧠
 
@@ -31,6 +34,9 @@ C#で「動くもの」は作れるのに、次の場面で急に手が止まり
 ---
 
 ## 3. 設計で迷う正体：決めることが多すぎる問題 🧠⚖️
+
+![Juggling Decisions](./picture/ddd_cs_study_001_juggling_decisions.png)
+
 
 設計って、実は「正解のない決断」の連続です👇
 
@@ -49,6 +55,9 @@ C#で「動くもの」は作れるのに、次の場面で急に手が止まり
 
 ## 4. “動く” と “扱いやすい” は違う 🛠️😇
 
+![Fragile vs Robust](./picture/ddd_cs_study_001_fragile_vs_robust.png)
+
+
 動くコードは作れても、こんなコードは苦しくなりがち👇
 
 * 変更したら別の場所が壊れる 😱
@@ -62,6 +71,9 @@ C#で「動くもの」は作れるのに、次の場面で急に手が止まり
 ---
 
 ## 5. ミニ例：「とりあえず動く」が生む“迷子コード” 🧶😵
+
+![Spaghetti Code](./picture/ddd_cs_study_001_spaghetti_code.png)
+
 
 たとえば「合計金額を計算する」みたいな処理。
 最初はこうなりがち👇
@@ -120,6 +132,9 @@ public int CalcTotal(int price, int count, string coupon, bool isMember)
 ---
 
 ## 7. AIを味方にするコツ：AIは“設計の相談相手”にする 🤝🤖
+
+![AI as Design Partner](./picture/ddd_cs_study_001_ai_partner.png)
+
 
 AIにコードを丸投げすると、部分は綺麗でも全体がバラバラになりがち😵‍💫
 だから最初は「設計の会話」をしてね✨

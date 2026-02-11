@@ -41,6 +41,9 @@ AIに「全部いい感じにして！」って頼むと、**局所的には賢�
 
 ### あるある①：ルールがあちこちに増殖する 🦠🌀
 
+![Rule Proliferation](./picture/ddd_cs_study_004_rule_proliferation.png)
+
+
 「割引の計算」をAIにお願いしたら、
 別の画面用にもう1個、API用にもう1個…って増えていって、
 **同じルールが3箇所に散らばる**やつです😇
@@ -52,6 +55,9 @@ AIに「全部いい感じにして！」って頼むと、**局所的には賢�
 ---
 
 ### あるある②：見た目は綺麗、でも “意味” がズレる 🎀➡️🤯
+
+![Meaning Shift](./picture/ddd_cs_study_004_meaning_shift.png)
+
 
 AIはコードを綺麗にできます✨
 でも「このアプリにおける正しさ」までは保証しません。
@@ -68,6 +74,9 @@ AIはコードを綺麗にできます✨
 
 ### あるある③：勝手に依存関係を増やしてくる 🧵😵
 
+![Tangled Dependencies](./picture/ddd_cs_study_004_tangled_dependencies.png)
+
+
 AIは親切なので、ついこうしがち👇
 
 * 便利そうなライブラリ追加
@@ -79,6 +88,9 @@ AIは親切なので、ついこうしがち👇
 ---
 
 ## ミニ例：AIがやりがちな「壊し方」🎯
+
+![Rounding Error](./picture/ddd_cs_study_004_rounding_error.png)
+
 
 「お金」を `decimal` で扱って、あちこちで計算しているとします。
 
@@ -118,6 +130,9 @@ mindmap
 ```
 
 ### ① まず「守りたいルール」を文章で1行書く ✍️📌
+
+![AI Leash](./picture/ddd_cs_study_004_ai_leash.png)
+
 
 コードより先にこれ！
 例：

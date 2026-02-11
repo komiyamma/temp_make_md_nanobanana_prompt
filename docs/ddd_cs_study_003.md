@@ -24,6 +24,9 @@
 
 ## 記憶が消える“よくある原因”3つ🧊🫠
 
+![Fading Assumptions](./picture/ddd_cs_study_003_fading_assumptions.png)
+
+
 ### ①「前提」が頭の中にしかない🧠🔒
 
 たとえば
@@ -64,6 +67,9 @@ mindmap
 
 ### 1) 名前を“説明書”にする📛🧾
 
+![Name as Manual](./picture/ddd_cs_study_003_name_manual.png)
+
+
 * `data` ❌ → `customerList` ✅
 * `flag` ❌ → `isEmailVerified` ✅
 * `Do()` ❌ → `CalculateShippingFee()` ✅
@@ -89,6 +95,9 @@ mindmap
 
 ### 3) 例外メッセージを未来向けにする🚨💬
 
+![Message to Future Self](./picture/ddd_cs_study_003_future_message.png)
+
+
 例外は「今の自分」より「未来の自分」が見る率高めです👀
 
 * “Invalid operation.” ❌
@@ -104,6 +113,9 @@ mindmap
 ---
 
 ### 5) テストは“動く仕様書”になる🧪📘
+
+![Test as Specification](./picture/ddd_cs_study_003_test_spec.png)
+
 
 テストって、未来の自分にとってはこうです👇
 **「この機能って何が正解なの？」に答えてくれる紙**✨
@@ -130,6 +142,9 @@ mindmap
 ---
 
 ### 7) AIを“未来の自分役”にする🤖🎭
+
+![AI Reviewer](./picture/ddd_cs_study_003_ai_reviewer.png)
+
 
 AIにこう頼むと強いです👇
 
