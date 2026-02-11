@@ -48,6 +48,8 @@ EventStorming自体が「複雑な業務の理解を揃える」ための協働�
 
 ### 4-1) まず “ハッピーパス” だけ（成功ルート）🌈
 
+![ddd_ts_study_013_timeline_happy.png](./picture/ddd_ts_study_013_timeline_happy.png)
+
 最初は成功する流れだけでOK！✨
 「注文作成 → 確定 → 支払い → 提供」みたいなやつね。
 
@@ -83,6 +85,8 @@ sequenceDiagram
 ---
 
 ### 4-2) 次に “例外ルート”（失敗ルート）🧯😵‍💫
+
+![ddd_ts_study_013_fork_road.png](./picture/ddd_ts_study_013_fork_road.png)
 
 ハッピーパスができたら、次はここが本番！
 
@@ -127,6 +131,8 @@ sequenceDiagram
 ---
 
 ## 6) “イベントカード” の書き方テンプレ🗂️✨
+
+![ddd_ts_study_013_event_card_detail.png](./picture/ddd_ts_study_013_event_card_detail.png)
 
 イベントは、名前だけだと後でブレやすいから、最低これを書いておくと強いよ💪
 
@@ -173,12 +179,16 @@ export type EventDraft = {
 
 ### ❌ ミス1：Command（命令）とEvent（事実）が混ざる
 
+![ddd_ts_study_013_command_vs_event.png](./picture/ddd_ts_study_013_command_vs_event.png)
+
 * 「ConfirmOrder（注文を確定せよ）」← 命令（Command）
 * 「OrderConfirmed（注文が確定された）」← 事実（Event）✅
 
 👉 この章は **Eventだけ** でOK！
 
 ### ❌ ミス2：現在形になる
+
+![ddd_ts_study_013_event_naming.png](./picture/ddd_ts_study_013_event_naming.png)
 
 * 「OrderConfirm」みたいな現在形は避けよ〜
   👉 **“された/した” の過去形**に寄せる✨
@@ -236,6 +246,8 @@ export type EventDraft = {
 ---
 
 ## 11) 理解チェック（サクッと）✅💡
+
+![ddd_ts_study_013_state_change_trigger.png](./picture/ddd_ts_study_013_state_change_trigger.png)
 
 * Q1. 「PayOrder」と「PaymentCompleted」どっちがイベント？
 * Q2. 「DBに保存された」はイベントとして適切？（なぜ？）

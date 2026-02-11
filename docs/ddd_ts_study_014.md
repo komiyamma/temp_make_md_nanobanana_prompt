@@ -30,6 +30,8 @@
 
 ## 2) 例題（カフェ注文☕）の状態を決めよう 🧩
 
+![ddd_ts_study_014_state_containers.png](./picture/ddd_ts_study_014_state_containers.png)
+
 まずはこの5つでいこう（学習用にシンプル！）🌸
 
 * **Draft**：注文作成中（カゴの中）🛒
@@ -57,6 +59,8 @@
 
 ### 状態別の直感（まずは文章で）💭
 
+![ddd_ts_study_014_transition_logic.png](./picture/ddd_ts_study_014_transition_logic.png)
+
 * Draft：追加・変更OK、確定OK、支払いNG、提供NG、キャンセルOK
 * Confirmed：追加・変更NG、支払いOK、提供NG、キャンセルOK
 * Paid：追加・変更NG、支払いNG（二重払い防止）、提供OK、キャンセルNG
@@ -80,6 +84,8 @@ flowchart TD
 ---
 
 ## 4) 遷移表（これが最強📋🔥）
+
+![ddd_ts_study_014_matrix_concept.png](./picture/ddd_ts_study_014_matrix_concept.png)
 
 ![Transition Table](./picture/ddd_ts_study_014_transition_table.png)
 
@@ -107,6 +113,8 @@ flowchart TD
 ---
 
 ## 5) ステート図（下書き）を描く🖼️🚦
+
+![ddd_ts_study_014_visual_transition_diagram.png](./picture/ddd_ts_study_014_visual_transition_diagram.png)
 
 図は「会話の武器」になるよ〜！説明が一瞬で通る✨
 
@@ -191,6 +199,8 @@ const allowedItemOps: Record<OrderStatus, { addItem: boolean; changeQty: boolean
 
 ### 6-3) Orderエンティティ（状態遷移を閉じ込める）🧾🚦
 
+![ddd_ts_study_014_guard_clause_code.png](./picture/ddd_ts_study_014_guard_clause_code.png)
+
 ```ts
 type LineItem = Readonly<{
   menuItemId: string;
@@ -267,6 +277,8 @@ export class Order {
 ---
 
 ## 7) テストで“遷移表どおり”を保証する🧪✨
+
+![ddd_ts_study_014_test_coverage_grid.png](./picture/ddd_ts_study_014_test_coverage_grid.png)
 
 最近のTypeScriptはビルドやエディタ体験の改善も進んでるので、テストを回して設計を守るのがますますやりやすいよ〜💪✨（TypeScript 5.8の最適化など）([TypeScript][1])
 テストランナーは、Vitestが今どきの選択肢としてかなり使われてるよ（Vitest 4.0は2025-10-22に告知）([Vitest][2])
