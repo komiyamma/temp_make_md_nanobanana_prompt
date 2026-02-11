@@ -13,6 +13,8 @@
 
 ## 2) Repositoryってなに？（一言で）🧠📚
 
+![Repository Window](./picture/ddd_ts_study_071_repo_window.png)
+
 Repositoryはね…
 
 **「集約（例：Order）を、保存・取得する“窓口”を1つにまとめたもの」**だよ💡✨
@@ -21,6 +23,8 @@ Repositoryはね…
 ---
 
 ## 3) Repositoryがない世界、だいたい地獄😵‍💫🪦
+
+![No Repo Hell](./picture/ddd_ts_study_071_no_repo_hell.png)
 
 Repositoryがないと、よくこうなる👇
 
@@ -37,6 +41,8 @@ DDD（戦術DDD）の理想はこれ👇
 ---
 
 ## 4) どこに置く？（超大事！）📦🧭
+
+![Interface vs Implementation](./picture/ddd_ts_study_071_interface_impl.png)
 
 Repositoryはこう分けます👇
 
@@ -93,6 +99,8 @@ domain は app/infra を知らない
 
 ## 5) メソッド粒度の決め方🧩🔎（ここが腕の見せどころ！）
 
+![Method Granularity](./picture/ddd_ts_study_071_method_granularity.png)
+
 Repositoryのメソッドは、**ユースケースから逆算**して決めるのがコツ💡
 
 いま私たちの例題ユースケースは（第70章までで）だいたい👇
@@ -145,6 +153,8 @@ Result型にすると表現力は上がるけど、最初は型が増えて混�
 ---
 
 ## 7) appが使う：Application ServiceはRepositoryだけ知る🎬🛡️
+
+![App View](./picture/ddd_ts_study_071_app_view.png)
 
 「PayOrder」を超ざっくりで書くとこんな感じ👇
 
