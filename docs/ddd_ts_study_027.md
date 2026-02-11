@@ -11,6 +11,8 @@
 
 ## 0. 今日の合言葉（超たいせつ）🧡
 
+![ddd_ts_study_027_inner_outer](./picture/ddd_ts_study_027_inner_outer.png)
+
 **「内側は外側を知らない」**
 つまり…
 
@@ -24,6 +26,8 @@
 ---
 
 ## 1. なんで“importの向き”がそんなに大事なの？😵‍💫➡️😇
+
+![ddd_ts_study_027_import_direction](./picture/ddd_ts_study_027_import_direction.png)
 
 DDDでいちばん守りたいのは **ドメイン**（業務ルールの中心）だよね🧠💎
 でも、もし domain が infra を知っちゃうと…
@@ -60,6 +64,8 @@ graph TD
 
 ## 2. 境界ってなに？（この章ではこう定義するよ）📦✨
 
+![ddd_ts_study_027_boundary_definition](./picture/ddd_ts_study_027_boundary_definition.png)
+
 ここでいう境界はざっくりこれ👇
 
 * **domain**：ルールの王国👑（純粋・不変条件・モデル）
@@ -72,6 +78,8 @@ graph TD
 ---
 
 ## 3. “見た目で守る”第一段階：フォルダの境界を作る📁🧡
+
+![ddd_ts_study_027_folder_structure](./picture/ddd_ts_study_027_folder_structure.png)
 
 まずは骨組み（例）👇
 
@@ -101,6 +109,8 @@ src/
 ---
 
 ## 4. “コードで守る”第二段階：importの向きを実装で固定する🔒
+
+![ddd_ts_study_027_dip_implementation](./picture/ddd_ts_study_027_dip_implementation.png)
 
 ### 4-1. domain側：Repositoryは interface だけにする📘
 
@@ -160,6 +170,8 @@ export class PlaceOrder {
 ---
 
 ## 5. “仕組みで守る”第三段階：違反importを自動で検知する🚨🧠
+
+![ddd_ts_study_027_automated_detection](./picture/ddd_ts_study_027_automated_detection.png)
 
 「気をつける」だけだと、絶対いつか破れる😇
 だから **仕組み**で止めよう〜🛑✨
@@ -241,6 +253,8 @@ TypeScriptの `moduleResolution` には `bundler` や `nodenext` などの選択
 ---
 
 ## 7. よくある“境界崩壊”パターン集😂⚠️
+
+![ddd_ts_study_027_boundary_collapse](./picture/ddd_ts_study_027_boundary_collapse.png)
 
 ### ❌ 1) domainがinfraのクラスをnewしちゃう
 
