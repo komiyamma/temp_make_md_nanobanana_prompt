@@ -17,6 +17,8 @@
 
 ## 1. まず結論：ユーザーは“DDD”にお金を払わない💸😇
 
+![Vehicle Metaphor](./picture/ddd_cs_study_099_vehicle_metaphor.png)
+
 ユーザーが欲しいのはこれ👇
 
 * すぐ終わる（速い）⚡
@@ -34,6 +36,8 @@ DDDは **「変わっても壊れない」を作りやすくする道具**。
 
 ### あるある①：クラスが増えすぎて、変更が遅くなる🐢
 
+![Class Explosion](./picture/ddd_cs_study_099_class_explosion.png)
+
 「Entity」「Aggregate」「Factory」「Repository」…を全部盛りした結果、
 **ちょっとした仕様変更にファイル10個修正**みたいなやつ💥
 
@@ -50,6 +54,8 @@ DDDは **「変わっても壊れない」を作りやすくする道具**。
 ---
 
 ## 3. DDDを“ユーザー価値”に直結させる合言葉🧠✨
+
+![Value Flow](./picture/ddd_cs_study_099_value_flow.png)
 
 ### ✅ 合言葉：**「誰が、何で困ってて、何ができたら嬉しい？」**
 
@@ -91,6 +97,8 @@ DDDの各パーツは、ぜんぶこの質問に紐づけられるよ👇
 
 ## 5. 判断チェックリスト✅「今この機能、DDDガチる？」🤔
 
+![Checklist Decision](./picture/ddd_cs_study_099_checklist_decision.png)
+
 次のうち **3つ以上** 当てはまったら、DDDを厚めにする価値あり💎
 
 * ルールがややこしい（例：割引、在庫、予約、課金、権限）🧮
@@ -104,6 +112,8 @@ DDDの各パーツは、ぜんぶこの質問に紐づけられるよ👇
 ---
 
 ## 6. AI時代こそ「DDDは地図」🗺️✨（AIが強いほど大事）
+
+![AI Map](./picture/ddd_cs_study_099_ai_map.png)
 
 最近の開発環境は、AIがかなり“作業”をやってくれる方向に進んでるよね🤖✨
 たとえば .NET 10 / C# 14 が最新で、Visual Studio 2026 も公開されてる。([Microsoft for Developers][1])
@@ -126,6 +136,8 @@ DDDは、AIに渡す“地図”としてめちゃくちゃ相性いいんだよ
 ---
 
 ### Step 1：ユーザーの「嬉しい」を1行で書く📝✨
+
+![Happy User](./picture/ddd_cs_study_099_happy_user.png)
 
 例（予約アプリなら）
 
@@ -162,6 +174,8 @@ DDDは、AIに渡す“地図”としてめちゃくちゃ相性いいんだよ
 ---
 
 ## 8. ミニケーススタディ：予約の“最小DDD”サンプル📦✨
+
+![Minimal Model](./picture/ddd_cs_study_099_minimal_model.png)
 
 ### 🎯 ユーザーが喜ぶゴール
 
