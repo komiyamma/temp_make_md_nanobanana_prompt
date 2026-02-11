@@ -33,7 +33,11 @@ mindmap
 
 ## まず結論：VOの鉄則はこの3つ🧊💎
 
+![ddd_ts_study_032_three_rules](./picture/ddd_ts_study_032_three_rules.png)
+
 ### 鉄則① 不変（Immutable）🧊
+
+![ddd_ts_study_032_immutable_action](./picture/ddd_ts_study_032_immutable_action.png)
 
 **一度作ったら中身を変えない**。変えたいなら **新しいVOを作る**。
 
@@ -54,6 +58,8 @@ DDDの説明でも、VOは **不変**が重要な特徴として繰り返し言�
 
 ### 鉄則② 等価性（Equality）🤝
 
+![ddd_ts_study_032_equality_check](./picture/ddd_ts_study_032_equality_check.png)
+
 VOは「同一性（ID）」じゃなくて、**中身の値で同じかどうか**を決めるよ✨
 同じ値なら「同じもの」として扱える、っていう感じ。
 
@@ -70,6 +76,8 @@ VOは「値が重要で入れ替え可能」なので、**等価性は“値ベ�
 ---
 
 ### 鉄則③ 自己完結（Self-contained）🏡✨
+
+![ddd_ts_study_032_self_contained](./picture/ddd_ts_study_032_self_contained.png)
 
 VOは **自分のルールを自分で守る**。
 つまり…
@@ -151,6 +159,8 @@ export class InvalidOrderNoteError extends DomainError {
 ---
 
 ## 3) OrderNote VO本体🧊💎
+
+![ddd_ts_study_032_ordernote_example](./picture/ddd_ts_study_032_ordernote_example.png)
 
 ポイントはここ👇
 
@@ -268,6 +278,8 @@ describe("OrderNote", () => {
 ---
 
 ## この章の“判断基準”チェックリスト✅✨
+
+![ddd_ts_study_032_checklist](./picture/ddd_ts_study_032_checklist.png)
 
 VOを書いたら、これを自分に聞いてみてね👇
 

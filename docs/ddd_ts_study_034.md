@@ -1,6 +1,8 @@
 ﻿# 第34章：Quantity VO：数量と単位📏
 
 この章はね、「**2**」って数字だけじゃ足りないよね？って話だよ〜😊
+
+![ddd_ts_study_034_unit_mixup](./picture/ddd_ts_study_034_unit_mixup.png)
 たとえば同じ「2」でも…
 
 * ☕ 2杯（ドリンク）
@@ -35,6 +37,8 @@
 
 ## Quantity VO の設計方針（超だいじ）🧠✨
 
+![ddd_ts_study_034_quantity_vo](./picture/ddd_ts_study_034_quantity_vo.png)
+
 ### 1) Quantity は「値＋単位」のセット🧩
 
 * value: 数量（例：2）
@@ -51,12 +55,16 @@
 
 ### 3) 生成時にルールを全部チェック✅
 
+![ddd_ts_study_034_validation_gate](./picture/ddd_ts_study_034_validation_gate.png)
+
 VOの鉄則どおり、**作れた時点で正しい**状態にする💎
 （あとから setter で直す、とかはやらない🙅‍♀️）
 
 ---
 
 ## 実装してみよ〜💻🌸（Quantity VO）
+
+![ddd_ts_study_034_unit_expansion](./picture/ddd_ts_study_034_unit_expansion.png)
 
 ファイル例：`src/domain/valueObjects/Quantity.ts`
 
@@ -139,6 +147,8 @@ export class Quantity<U extends Unit = Unit> {
 ---
 
 ## “単位が違うのに足す”を止めたい！🛑💥（型の勝利🏆）
+
+![ddd_ts_study_034_type_safety](./picture/ddd_ts_study_034_type_safety.png)
 
 ```ts
 import { Quantity } from "./Quantity";
@@ -259,6 +269,8 @@ npx tsc -p tsconfig.json --noEmit
 ## よくある落とし穴（ここで回避😇⚠️）
 
 ### 🥲 1) quantity を number に戻しちゃう
+
+![ddd_ts_study_034_primitive_risk](./picture/ddd_ts_study_034_primitive_risk.png)
 
 DTOやDBに出すとき、うっかり value だけ出して unit を落とす…あるある💥
 → DTOは `{ value, unit }` の形で持つクセをつけよ🧾✨
