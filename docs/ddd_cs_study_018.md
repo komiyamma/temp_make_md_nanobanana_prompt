@@ -16,6 +16,8 @@ DDDって聞くと、なんだか **大人数チームの大げさな儀式**み
 ---
 
 ## 1. まず結論：1人なら“戦略”より“戦術”が先でOK ✅✨
+![ddd_cs_study_018_buffet_pick](./picture/ddd_cs_study_018_buffet_pick.png)
+
 
 DDDには大きく2つがあります👇
 
@@ -43,6 +45,8 @@ DDDには大きく2つがあります👇
 だから大人数は、まず **言葉と境界を揃える（戦略）** が必要になります🗂️✨
 
 でも1人開発だと…👤
+![ddd_cs_study_018_solo_meeting](./picture/ddd_cs_study_018_solo_meeting.png)
+
 
 * 会話相手は「未来の自分」🕰️
 * そして「AI」🤖✨
@@ -52,6 +56,8 @@ DDDには大きく2つがあります👇
 ---
 
 ## 3. 1人開発で効く「戦術つまみ食いメニュー」🍱✨
+![ddd_cs_study_018_tactics_ladder](./picture/ddd_cs_study_018_tactics_ladder.png)
+
 
 まずはこの順番が超おすすめです👇（迷わない！🧭✨）
 
@@ -90,6 +96,8 @@ flowchart TD
 ---
 
 ## 4. 「やりすぎDDD」になってない？チェックリスト 🧯😇
+![ddd_cs_study_018_buried_files](./picture/ddd_cs_study_018_buried_files.png)
+
 
 1人開発でありがちな罠👇💦
 
@@ -110,6 +118,8 @@ flowchart TD
 「分ける」のは大事だけど、最初から完璧に分けなくてOKです🙆‍♀️💕
 
 ### ✅ まずは “フォルダ分け” からで十分
+![ddd_cs_study_018_clean_boxes](./picture/ddd_cs_study_018_clean_boxes.png)
+
 
 * Domain（ルールの中心）💎
 * Application（ユースケース）🎮
@@ -121,6 +131,8 @@ flowchart TD
 ---
 
 ## 6. ミニ例：値オブジェクトから始めるDDD 🍰💖
+![ddd_cs_study_018_money_guard](./picture/ddd_cs_study_018_money_guard.png)
+
 
 「ただのdecimal」だと、マイナス金額とか平気で入っちゃう…😱
 だから **“金額”は金額として生まれる**ようにします💰✨
