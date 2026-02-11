@@ -26,6 +26,8 @@ DDDを始めたばかりの人がいちばん困るのが、これ👇
 
 ## 1) ユニットテストってなに？🧪
 
+![small_part_test](./picture/ddd_cs_study_071_small_part_test.png)
+
 ユニットテストは超シンプルに言うと、
 
 **「小さい部品が、約束どおり動くかを確認するテスト」**です😊
@@ -42,6 +44,8 @@ DDDだと「小さい部品」って、だいたいこれ👇
 ---
 
 ## 2) 1人開発×DDDの「テスト優先順位」🏆
+
+![test_priority](./picture/ddd_cs_study_071_test_priority.png)
  
  ここが今日の本題です😊✨
  DDDの構造（Domain / Application / Infrastructure / Web）で、優先順位をこうします👇
@@ -62,6 +66,8 @@ DDDだと「小さい部品」って、だいたいこれ👇
  
  ### 🥇最優先：Domain（ドメイン層）🛡️✨
 
+![domain_shield](./picture/ddd_cs_study_071_domain_shield.png)
+
 **ここはガチで固める価値が最大**です💪🔥
 理由はカンタンで、ここが壊れると「仕様そのもの」が壊れるから😇
 
@@ -76,6 +82,8 @@ DDDだと「小さい部品」って、だいたいこれ👇
 ---
 
 ### 🥈次点：Application（ユースケース層）🎬
+
+![app_clapperboard](./picture/ddd_cs_study_071_app_clapperboard.png)
 
 Applicationは「手続きの流れ」なので、
 **“重要な分岐だけ” テスト**がちょうどいいです🙂
@@ -111,6 +119,8 @@ UIはE2EテストをちょびっとでOK👌✨
 
 ## 3) AIに任せていいところ／ダメなところ 🤖✅❌
 
+![ai_factory_worker](./picture/ddd_cs_study_071_ai_factory_worker.png)
+
 ### ✅ AIに任せていい（むしろ任せてラク！）✨
 
 * テストの雛形（xUnitの形、AAAの枠）🧱
@@ -131,6 +141,8 @@ UIはE2EテストをちょびっとでOK👌✨
 ---
 
 ## 4) まずは超定番：Value Object をテストしよう 💰🧪
+
+![value_object_coin](./picture/ddd_cs_study_071_value_object_coin.png)
 
 例として Money を使います😊
 「不正な金額は生まれない」「計算が正しい」を守りたい！

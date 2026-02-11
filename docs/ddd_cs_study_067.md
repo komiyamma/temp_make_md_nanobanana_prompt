@@ -11,6 +11,8 @@
 
 ## 1. MediatRってなに？超ざっくり🍩✨
 
+![receptionist](./picture/ddd_cs_study_067_receptionist.png)
+
 MediatRは、処理の呼び出しを「受付」に集めるライブラリです📨
 
 * 画面（Controller / Minimal API）から
@@ -52,6 +54,8 @@ sequenceDiagram
 
 ### ⚠️ ただし…1人開発だとココが刺さる
 
+![debug_maze](./picture/ddd_cs_study_067_debug_maze.png)
+
 * **呼び出しが間接的になる** → デバッグで「いまどこ？」になりやすい🌀
 * Handler が増えると、**ファイルが散らかる**（命名と配置が弱いと地獄😇）
 * 「Send した先が分からない」状態だと、未来の自分が泣く😭
@@ -59,6 +63,8 @@ sequenceDiagram
 ---
 
 ## 3. 結論：1人開発の判断基準（迷わないチェックリスト✅🧭）
+
+![decision_scale](./picture/ddd_cs_study_067_decision_scale.png)
 
 ### ✅ MediatR を使うのが向いてるとき
 
@@ -137,6 +143,8 @@ public sealed record CreateTodoRequest(string Title);
 
 ### セットA：Logging Behavior（ここ超大事🔥）
 
+![pipeline_behavior](./picture/ddd_cs_study_067_pipeline_behavior.png)
+
 MediatRにはリクエスト前後に割り込めるパイプライン（Behavior）があります。([GitHub][2])
 これを入れるだけで「どのHandlerが動いたか」が一発で追えます👀✨
 
@@ -208,6 +216,8 @@ AI拡張にはこう指示すると安定します👇
 
 ### セットC：置き場所（フォルダが地図🗺️）
 
+![folder_map](./picture/ddd_cs_study_067_folder_map.png)
+
 DDD/CQRSに寄せるなら、1人開発は **地図になる配置**が正義です😊
 
 例：
@@ -226,6 +236,8 @@ DDD/CQRSに寄せるなら、1人開発は **地図になる配置**が正義で
 ---
 
 ## 6. MediatRなし版（直呼び）も、実はめっちゃ強い💪🌱
+
+![direct_call](./picture/ddd_cs_study_067_direct_call.png)
 
 「迷わない」だけなら、最初はこれで十分なこと多いです😊
 
