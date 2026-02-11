@@ -27,6 +27,9 @@ DDDだと状態って「ただの文字」じゃなくて、**ルールの塊**�
 
 ## 1) まず結論：setStatus がダメな理由🙅‍♀️💥
 
+![Status Chaos](./picture/ddd_ts_study_046_status_chaos.png)
+
+
 `setStatus("Paid")` みたいなのがあると…
 
 * ✅ **禁止の状態遷移**ができちゃう（例：Draft → Paid）😇
@@ -54,6 +57,9 @@ DDDの気持ちとしてはこう👇
 ---
 
 ## 3) まずは「許可/禁止の遷移表」を作る🧾🚦
+
+![Transition Table](./picture/ddd_ts_study_046_transition_table.png)
+
 
 例題（注文）なら、こんな感じが気持ちいい👇
 
@@ -97,6 +103,9 @@ export type OrderStatus =
 ---
 
 ### 4-2) 「遷移表」を `as const` + `satisfies` で固定する📌✨
+
+![Satisfies Puzzle](./picture/ddd_ts_study_046_satisfies_puzzle.png)
+
 
 ```ts
 import type { OrderStatus } from "./OrderStatus";
@@ -150,6 +159,9 @@ export function assertCanTransition(
 ---
 
 ## 5) Entity（Order）側は「意図メソッド」だけを公開する🪪🧍✨
+
+![Intent Method](./picture/ddd_ts_study_046_intent_method.png)
+
 
 ```ts
 import type { OrderStatus } from "./OrderStatus";
@@ -205,6 +217,9 @@ export class Order {
 ---
 
 ## 6) テストで「遷移の成功/失敗」を固める🧪💖
+
+![Testing Routes](./picture/ddd_ts_study_046_test_routes.png)
+
 
 テストは「状態遷移の表」を守れてるか確認するのが主目的！
 ここでは **Vitest** を例にするよ（最近もメジャーアップデートが継続してる流れがある）([Vitest][4])

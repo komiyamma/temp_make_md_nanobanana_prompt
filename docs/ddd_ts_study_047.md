@@ -37,6 +37,9 @@ flowchart TD
 
 ## 1) まず大前提：EntityとVOの違い🪪💎
 
+![Entity vs VO Identity](./picture/ddd_ts_study_047_entity_vs_vo_identity.png)
+
+
 ### Entity（エンティティ）🪪
 
 * **同一性（ID）が主役**
@@ -52,6 +55,9 @@ flowchart TD
 ---
 
 ## 2) 境界で迷う代表：「LineItem（明細）」問題☕🧾
+
+![LineItem Balance](./picture/ddd_ts_study_047_lineitem_balance.png)
+
 
 注文（Order）の中にある「明細（OrderLine / LineItem）」って、めっちゃ迷うの！😵‍💫
 
@@ -89,6 +95,9 @@ flowchart TD
 
 ### ❌ 配列indexをID代わりにする
 
+![Array Index Trap](./picture/ddd_ts_study_047_array_index_trap.png)
+
+
 * 並び替え・削除・挿入でズレる → **同一性が壊れる**😇
 
 ### ❌ 「VOなのに setter で変更」
@@ -110,6 +119,9 @@ flowchart TD
 ---
 
 ### A) OrderLine を VO として扱う版 💎（まずはこれがラク）
+
+![VO Replacement](./picture/ddd_ts_study_047_vo_replacement.png)
+
 
 #### ねらい🎯
 
@@ -203,6 +215,9 @@ export class Order {
 ---
 
 ### B) OrderLine を “子Entity” として扱う版 🪪（個別追跡が必要なら）
+
+![Entity Tracking](./picture/ddd_ts_study_047_entity_tracking.png)
+
 
 #### ねらい🎯
 
