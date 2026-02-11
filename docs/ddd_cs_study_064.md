@@ -25,6 +25,8 @@ EF Coreは最新の安定版が **EF Core 10.0**（.NET 10向け）で、サポ�
 
 ### ✅ ルールはたった2つ！
 
+![domain_blindfold](./picture/ddd_cs_study_064_domain_blindfold.png)
+
 1. **ドメインモデルは “DBの都合” を知らない**（なるべく）🙈
 2. **DB都合は Infrastructure 側で吸収**する（Fluent APIで）🧹✨
  
@@ -53,6 +55,8 @@ EF Coreは最新の安定版が **EF Core 10.0**（.NET 10向け）で、サポ�
 
 ### ① `public set;` をやめたい（不変にしたい）😤
 
+![private_setter](./picture/ddd_cs_study_064_private_setter.png)
+
 DDDでは「勝手に書き換え禁止！」が基本です🔒✨
 でもEF Coreは「読み込み時に値入れたい」ので、雑にやると `public set;` になりがち。
 
@@ -62,6 +66,8 @@ DDDでは「勝手に書き換え禁止！」が基本です🔒✨
 ---
 
 ### ② 引数なしコンストラクタ問題 🤔
+
+![backdoor_constructor](./picture/ddd_cs_study_064_backdoor_constructor.png)
 
 DDDでは「必須情報ないと生成させない！」ってしたいですよね😌
 でもEF Coreは読み込みに **引数なしコンストラクタ** を要求する場面があります。
@@ -73,6 +79,8 @@ DDDでは「必須情報ないと生成させない！」ってしたいです�
 
 ### ③ Value Object をどう保存するの？（一番つらい）😇
 
+![vo_storage](./picture/ddd_cs_study_064_vo_storage.png)
+
 例：`Money` / `Email` / `OrderId` みたいなやつ。
 
 ✅ **解決は2択**（だいたいこれでOK）👇
@@ -83,6 +91,8 @@ DDDでは「必須情報ないと生成させない！」ってしたいです�
 ---
 
 ### ④ 集約の中のコレクション（`List<T>`）がしんどい 😵‍💫
+
+![collection_access](./picture/ddd_cs_study_064_collection_access.png)
 
 DDD的にはこうしたい👇
 
@@ -316,6 +326,8 @@ EF Coreマッピングは「書く量が多い」ので、AIがめっちゃ得�
 ---
 
 ## よくあるエラーTOP3（先に潰す）💣🧯
+
+![error_bombs](./picture/ddd_cs_study_064_error_bombs.png)
 
 ### 🧨「The entity type requires a primary key」
 

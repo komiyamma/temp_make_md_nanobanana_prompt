@@ -8,6 +8,8 @@
 
 ## この章でできるようになること🎯
 
+![external_brain](./picture/ddd_cs_study_070_external_brain.png)
+
 * PlantUML / Mermaid を使って **図をテキストで管理**できるようになる🧾
 * AIに **「アーキテクチャ図」「依存関係図」「シーケンス図」**を作らせるコツがわかる🤖✨
 * 図を **README に貼って、未来の自分を助ける**運用ができる🫶
@@ -17,6 +19,8 @@
 ---
 
 ## なんで今、図が大事なの？（AI時代あるある）🤖🧠
+
+![no_map_confusion](./picture/ddd_cs_study_070_no_map_confusion.png)
 
 AIにコードを書かせるほど、こうなりがち👇
 
@@ -30,6 +34,8 @@ AIに渡す指示も短くなります✍️💡（図＝仕様の要約！）
 ---
 
 ## PlantUML と Mermaid のざっくり使い分け🧰
+
+![plantuml_vs_mermaid](./picture/ddd_cs_study_070_plantuml_vs_mermaid.png)
 
 ### PlantUML 🌿
 
@@ -69,6 +75,8 @@ AIに渡す指示も短くなります✍️💡（図＝仕様の要約！）
 ---
 
 ## AIで図を作る「基本手順」🪄
+
+![ai_diagram_steps](./picture/ddd_cs_study_070_ai_diagram_steps.png)
 
 AIにいきなり「図作って」って言うと、だいたい盛られます🤣（架空の層や謎のDBが生える🌱）
 
@@ -201,10 +209,14 @@ sequenceDiagram
 
 ### ✅ コツ1：図は「正解」じゃなく「約束」🫶
 
+![diagram_contract](./picture/ddd_cs_study_070_diagram_contract.png)
+
 図は芸術じゃなくて、**設計ルールのメモ**です✍️✨
 ちょっと雑でも、矢印が正しければ勝ちです🏆
 
 ### ✅ コツ2：粒度を欲張らない🍰
+
+![focused_view](./picture/ddd_cs_study_070_focused_view.png)
 
 * 1枚に全部入れる → 地獄😇
   おすすめは **1枚1テーマ**：

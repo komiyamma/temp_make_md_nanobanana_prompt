@@ -8,6 +8,8 @@
 
 ## まず結論：トランザクションって何？🤔
 
+![all_or_nothing](./picture/ddd_cs_study_065_all_or_nothing.png)
+
 一言でいうと **「全部成功したら確定✅／途中でコケたら全部なかったことにする🧯」** 仕組みです。
 
 たとえば注文確定で…
@@ -21,9 +23,13 @@
 * 注文は確定したのに在庫が減ってない → 売りすぎ事故💥
 * 在庫は減ったのに注文が確定してない → 在庫だけ消える💥
 
+![inconsistency_hell](./picture/ddd_cs_study_065_inconsistency_hell.png)
+
 ---
 
 ## DDDの超大事ルール：集約は「一貫性の境界」🧱✨
+
+![aggregate_boundary](./picture/ddd_cs_study_065_aggregate_boundary.png)
 
 DDDでは基本こう考えます👇
 
@@ -43,6 +49,8 @@ DDDでは基本こう考えます👇
 （EF Core の `BeginTransactionAsync()` を使うやつ） ([Microsoft Learn][1])
 
 ### ルールB：外部API・メール送信・別DBなど「DBの外」が混ざる
+
+![rule_a_vs_b](./picture/ddd_cs_study_065_rule_a_vs_b.png)
 
 ➡️ **トランザクションで一気に確定しようとしない** 🙅‍♀️
 代わりに👇
@@ -148,6 +156,8 @@ public sealed class PlaceOrderService
 
 ### ❶ トランザクション中に外部APIを呼ぶ 🌐😱
 
+![long_transaction](./picture/ddd_cs_study_065_long_transaction.png)
+
 * 決済API、メール送信、WebHook…
   これをトランザクションの中でやると👇
 * トランザクションが長くなる
@@ -185,6 +195,8 @@ scope.Complete();
 ---
 
 ## DBの外と「安全に仲良くする」：Outboxパターン 📮✨
+
+![outbox_pattern](./picture/ddd_cs_study_065_outbox_pattern.png)
 
 「DB更新」と「イベント送信（メール・メッセージ・通知）」を同時に確実にやりたいとき、
 **“DBトランザクションだけ”では保証できません**。
