@@ -24,6 +24,9 @@
 
 ### ✅ 集約ルート（Order）は「城の門番👑」
 
+![ddd ts study 056 gatekeeper](./picture/ddd_ts_study_056_gatekeeper.png)
+
+
 外から触っていいのは **Orderだけ**。
 
 * 外部：`order.addItem(...)` はOK🙆‍♀️
@@ -39,6 +42,9 @@
 ---
 
 ## 2) この章で作る“構造”の設計図🗺️✨
+
+![ddd ts study 056 class diagram](./picture/ddd_ts_study_056_class_diagram.png)
+
 
 イメージはこんな感じ👇
 
@@ -134,6 +140,9 @@ export class Quantity {
 ```
 
 ### `Money.ts`（お金：float禁止〜！💴🧯）
+
+![ddd ts study 056 money vo](./picture/ddd_ts_study_056_money_vo.png)
+
 
 ```ts
 import { DomainError } from "./DomainError";
@@ -231,6 +240,9 @@ export type OrderStatus = "Draft" | "Confirmed" | "Paid" | "Canceled" | "Fulfill
 
 ## 7) 実装④：OrderLine（明細）🧾💎
 
+![ddd ts study 056 immutable line](./picture/ddd_ts_study_056_immutable_line.png)
+
+
 明細は **不変**にしておくと、集約がめっちゃ守りやすいよ🧊✨
 （数量変更＝“新しいOrderLineを作る”って感じ）
 
@@ -275,6 +287,9 @@ export class OrderLine {
 ## 8) 実装⑤：Order（集約ルート）👑🏯
 
 ### ✅ この章の超大事ポイント3つ🧱✨
+
+![ddd ts study 056 total calculation](./picture/ddd_ts_study_056_total_calculation.png)
+
 
 1. **配列は外に渡さない（渡すならコピー＆freeze）**🧊
 2. **合計は保持しない（派生値として計算）**🧮
@@ -388,6 +403,9 @@ export class Order {
 
 ## 9) 最小テスト：構造が壊れてないか確認🧪✅
 
+![ddd ts study 056 test integrity](./picture/ddd_ts_study_056_test_integrity.png)
+
+
 本日時点で Vitest は npm 上で **v4.0.18** が最新として表示されてるよ🧪✨ ([npm][3])
 （Vitest 4.0 のアナウンスも公式ブログにあるよ📣 ([Vitest][4])）
 
@@ -470,6 +488,9 @@ describe("Order aggregate structure 🏯", () => {
 * 「Order集約のクラス設計を TypeScript で、`lines` を外部からいじれないようにして。`total()` は派生で計算して。publicフィールドは禁止。」
 
 ### ② “穴あきレビュー”依頼（超おすすめ🔍）
+
+![ddd ts study 056 ai hole check](./picture/ddd_ts_study_056_ai_hole_check.png)
+
 
 * 「このコード、外から配列や内部状態をいじれる抜け道ない？ `lines` の露出・ミュータブル参照・合計の二重管理があれば指摘して。」
 

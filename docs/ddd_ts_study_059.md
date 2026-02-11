@@ -55,6 +55,9 @@ graph TD
 
 ### ❶ 巨大集約（なんでも Order に詰める）🐘📦
 
+![ddd ts study 059 huge aggregate](./picture/ddd_ts_study_059_huge_aggregate.png)
+
+
 **あるある症状**
 
 * Order の中に、支払い、顧客、メニュー、在庫、クーポン…全部いる😇
@@ -75,6 +78,9 @@ graph TD
 ---
 
 ### ❷ “配列をそのまま返す”問題（外から中身が壊される）🧨🧺
+
+![ddd ts study 059 exposed array](./picture/ddd_ts_study_059_exposed_array.png)
+
 
 **あるある症状**
 
@@ -121,6 +127,9 @@ export class Order {
 
 ### ❸ setter祭り（いつでも何でも変更できる）🎉🚫
 
+![ddd ts study 059 setter festival](./picture/ddd_ts_study_059_setter_festival.png)
+
+
 **あるある症状**
 
 * `setStatus(Paid)` とか、`setTotal(999)` とかできちゃう
@@ -161,6 +170,9 @@ export class Order {
 
 ### ❹ 集約ルートをスキップ（子Entityを直で更新）🏃‍♀️💨
 
+![ddd ts study 059 root skip](./picture/ddd_ts_study_059_root_skip.png)
+
+
 **あるある症状**
 
 * `OrderLineRepository` を作って、明細だけ直接更新してる
@@ -179,6 +191,9 @@ export class Order {
 ---
 
 ### ❺ 他集約を“オブジェクト参照でベタ持ち”🔗🕸️
+
+![ddd ts study 059 object reference web](./picture/ddd_ts_study_059_object_reference_web.png)
+
 
 **あるある症状**
 
@@ -199,6 +214,9 @@ export class Order {
 ---
 
 ### ❻ 集約内で外部I/O（API叩く・DB触る・今の時刻を直で取る）🌩️🔌
+
+![ddd ts study 059 io pollution](./picture/ddd_ts_study_059_io_pollution.png)
+
 
 **あるある症状**
 
@@ -238,6 +256,9 @@ export class Order {
 ---
 
 ### ❽ “貧血ドメインモデル”（集約がただのDTO）🧟‍♂️📄
+
+![ddd ts study 059 anemic model](./picture/ddd_ts_study_059_anemic_model.png)
+
 
 **あるある症状**
 

@@ -33,6 +33,9 @@ sequenceDiagram
 
 ## 2) トランザクションってなに？☕🧾（超やさしく）
 
+![ddd ts study 055 atomicity concept](./picture/ddd_ts_study_055_atomicity_concept.png)
+
+
 トランザクションは一言でいうと👇
 
 > **「まとめてやって、全部うまくいったら確定！途中でコケたら全部なかったことにする！」**
@@ -50,6 +53,9 @@ DBの世界ではこれを **ACID**（Atomicity / Consistency / Isolation / Dura
 集約は「この範囲の整合性（不変条件）は絶対守る！」っていう城🏯🛡️だったよね。
 
 ### ✅ トランザクションは「成功/失敗のまとまり」
+
+![ddd ts study 055 aggregate transaction](./picture/ddd_ts_study_055_aggregate_transaction.png)
+
 
 だから基本はこう考えると超ラク👇
 
@@ -72,6 +78,9 @@ DBの世界ではこれを **ACID**（Atomicity / Consistency / Isolation / Dura
 
 ### ✅ 同じ集約（Order集約）の中で完結するもの（＝一気にやりやすい）🏯✨
 
+![ddd ts study 055 confirm scope](./picture/ddd_ts_study_055_confirm_scope.png)
+
+
 * 注文の状態を `Draft → Confirmed` にする🚦✅
 * 明細が空なら確定できない、などの不変条件チェック🔒
 * 合計金額の整合性を保つ（明細合計と一致）💴🧾
@@ -90,6 +99,9 @@ DBの世界ではこれを **ACID**（Atomicity / Consistency / Isolation / Dura
 ---
 
 ## 5) トランザクション境界の決め方（ミニ指針）🧭✨
+
+![ddd ts study 055 boundary guidelines](./picture/ddd_ts_study_055_boundary_guidelines.png)
+
 
 迷ったらこの3つだけ見よっ👇🥰
 
@@ -186,6 +198,9 @@ export class ConfirmOrderUseCase {
 ---
 
 ## 7) 疑似TxのInMemory実装（失敗したらロールバックっぽく）🔁🧯
+
+![ddd ts study 055 inmemory rollback](./picture/ddd_ts_study_055_inmemory_rollback.png)
+
 
 ポイントはこれ👇
 **run()の中で失敗したら、Mapを元に戻す**（超ミニRollback）✨
@@ -303,6 +318,9 @@ await prisma.$transaction(async (tx) => {
 ## 11) AIの使いどころ（この章向け）🤖💬✨
 
 ### 🧠 ① トランザクション境界の壁打ち
+
+![ddd ts study 055 ai wall bounce](./picture/ddd_ts_study_055_ai_wall_bounce.png)
+
 
 「このユースケースはどこまでを1回でやるべき？」を整理したいとき👇
 
