@@ -37,6 +37,8 @@ classDiagram
 
 ## 2) まず結論！VOとEntityの違いはコレ🌸
 
+![ddd_ts_study_041_vo_vs_entity.png](./picture/ddd_ts_study_041_vo_vs_entity.png)
+
 ### Value Object（VO）💎
 
 * ✅ **“値が同じなら同じ”**
@@ -53,6 +55,8 @@ classDiagram
 
 ## 3) 例で一発理解☕🧾（カフェ注文）
 
+![ddd_ts_study_041_order_identity.png](./picture/ddd_ts_study_041_order_identity.png)
+
 たとえば「注文」ってさ…👇
 
 * 注文に商品を追加した📌
@@ -66,6 +70,8 @@ classDiagram
 ---
 
 ## 4) 迷わない！Entity判定の3チェック✅🧠
+
+![ddd_ts_study_041_entity_checklist.png](./picture/ddd_ts_study_041_entity_checklist.png)
 
 「これEntity？VO？」って迷ったら、まずこの3つを見てね👇✨
 
@@ -91,6 +97,8 @@ classDiagram
 ---
 
 ### 5-1) IDはVOとして作る（OrderId）🪪💎
+
+![ddd_ts_study_041_id_as_vo.png](./picture/ddd_ts_study_041_id_as_vo.png)
 
 ポイントはこれ👇
 
@@ -155,6 +163,8 @@ export abstract class Entity<TId extends { equals(other: TId): boolean }> {
 
 ### 5-3) Order Entity（状態は変わってもOK）☕🧾🪪
 
+![ddd_ts_study_041_rehydrate.png](./picture/ddd_ts_study_041_rehydrate.png)
+
 「注文」は変化するけど、**同じ注文かどうかはIDで決まる**よね😊
 
 ```ts
@@ -196,6 +206,8 @@ export class Order extends Entity<OrderId> {
 ---
 
 ## 6) テストで「IDが同じなら同じ」を証明🧪✨
+
+![ddd_ts_study_041_identity_test.png](./picture/ddd_ts_study_041_identity_test.png)
 
 ここは超だいじ！
 **テストで体感すると、Entityが一気に腹落ちする**よ😊🧡

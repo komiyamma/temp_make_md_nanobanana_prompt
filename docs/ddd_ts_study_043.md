@@ -39,6 +39,8 @@ Entityの不変条件（絶対守るルール）は、基本こう守るよ👇
 
 ## 「不変条件」ってなに？🧠✨
 
+![ddd_ts_study_043_entity_self_defense.png](./picture/ddd_ts_study_043_entity_self_defense.png)
+
 **絶対に破っちゃダメなルール**だよ〜！💡
 例：カフェ注文なら☕🧾
 
@@ -65,6 +67,8 @@ Entityの不変条件（絶対守るルール）は、基本こう守るよ👇
 ## ありがちな事故パターン😵‍💫💥
 
 ### ❌ ダメ例：setterで自由に書き換え
+
+![ddd_ts_study_043_setter_violation.png](./picture/ddd_ts_study_043_setter_violation.png)
 
 * どこからでも `order.status = "Paid"` とかできちゃう
 * その瞬間、ルールが崩壊する💣
@@ -117,6 +121,8 @@ export class OrderId {
 ```
 
 ### ✅ Entity本体：不変条件は「中」で守る🛡️
+
+![ddd_ts_study_043_status_guard.png](./picture/ddd_ts_study_043_status_guard.png)
 
 ```ts
 // domain/order/Order.ts
@@ -235,6 +241,8 @@ export class Order {
 
 ## ここが「Entityが自衛できる」ポイント🛡️✨
 
+![ddd_ts_study_043_defensive_copy.png](./picture/ddd_ts_study_043_defensive_copy.png)
+
 * `#status` を直接触れない → **状態を勝手に変えられない**🔒
 * `confirm()` / `pay()` の中でチェック → **状態遷移の不正をブロック**🚫
 * `getLines()` がコピー → **外から配列を書き換えられない**🧊
@@ -242,7 +250,9 @@ export class Order {
 
 ---
 
-## テストで「破れない」を確認しよ🧪✨（Node組み込みテスト）
+## テストで「破れない」を確認しよ🧪✨
+
+![ddd_ts_study_043_assert_modifiable.png](./picture/ddd_ts_study_043_assert_modifiable.png)（Node組み込みテスト）
 
 Nodeの組み込みテストランナーは Node 20 で stable 扱いになってるよ〜🧪✨ ([Node.js][2])
 
@@ -284,6 +294,8 @@ test("pay() は Confirmed のときだけ", () => {
 ---
 
 ## 「どのルールをEntityに入れる？」判断ミニチャート🗺️✨
+
+![ddd_ts_study_043_rule_placement.png](./picture/ddd_ts_study_043_rule_placement.png)
 
 ![Rule Placement Chart](./picture/ddd_ts_study_043_rule_chart.png)
 

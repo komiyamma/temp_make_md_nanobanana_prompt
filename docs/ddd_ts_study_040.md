@@ -20,6 +20,8 @@
 
 ## 2) まずは“プリミティブ地獄”を味わおう😇🧨
 
+![ddd_ts_study_040_primitive_hell_vs_vo.png](./picture/ddd_ts_study_040_primitive_hell_vs_vo.png)
+
 例：カフェ注文の合計計算。最初はこうなりがち👇
 
 ```ts
@@ -76,6 +78,8 @@ flowchart TD
 
 ## 3) 演習①：VO候補を“バグ視点”で洗い出す🔍💎
 
+![ddd_ts_study_040_vo_candidates.png](./picture/ddd_ts_study_040_vo_candidates.png)
+
 次のルール（仕様）を、**「VOで守れそう？」** って観点で仕分けしてみてね🎯
 
 * 数量は 1〜20 の整数🍰
@@ -98,6 +102,8 @@ flowchart TD
 * DiscountRate（0〜0.5）🏷️
 
 #### Money（円）💴
+
+![ddd_ts_study_040_money_vo_structure.png](./picture/ddd_ts_study_040_money_vo_structure.png)
 
 ```ts
 export class Money {
@@ -185,6 +191,8 @@ export class DiscountRate {
 
 ### 4-2) さっきの calcTotal を“VO版”に置き換える🔁✨
 
+![ddd_ts_study_040_calc_total_flow.png](./picture/ddd_ts_study_040_calc_total_flow.png)
+
 ```ts
 type LineItem = {
   price: Money;
@@ -211,6 +219,8 @@ export function calcTotalVO(items: LineItem[], discount: DiscountRate): Money {
 ---
 
 ## 5) 演習③：VOのテストで“仕様の見張り番”を置く🧪👀💎
+
+![ddd_ts_study_040_test_watchdog.png](./picture/ddd_ts_study_040_test_watchdog.png)
 
 VOは小さいから、テストも小さくて強いよ💪✨
 （Vitest 4 系が現行の流れだよ〜🧪⚡ ([Vitest][3])）
@@ -281,6 +291,8 @@ describe("Quantity", () => {
   …があちこちに散っていく💥
 
 ### After（VO生成時に“弾ける”✨）
+
+![ddd_ts_study_040_vo_gate.png](./picture/ddd_ts_study_040_vo_gate.png)
 
 * アプリ層では「作れたなら正しい」状態に近づく✅
 * 合計計算が読みやすくなる📖💛
