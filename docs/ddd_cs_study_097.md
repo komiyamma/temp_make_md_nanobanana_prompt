@@ -18,6 +18,9 @@ DDDって、**一回理解して終わり**じゃなくて、むしろここか�
 
 ## 1) 迷わない学び方は「3レイヤー構造」🧱✨
 
+![ddd_cs_study_097_learning_layers](./picture/ddd_cs_study_097_learning_layers.png)
+
+
 学び続けるには、リソースをこう分けると超ラク！😆
 
 ```mermaid
@@ -49,6 +52,9 @@ flowchart TD
 
 ## 2) まずはこの「読書ルート」だけでOK📚💞
 
+![ddd_cs_study_097_book_roadmap](./picture/ddd_cs_study_097_book_roadmap.png)
+
+
 ここ、欲張ると沼るから「ルート化」が正解！😇
 
 ### ① 最初の1冊（DDD初見の人向け）🌸
@@ -77,6 +83,9 @@ flowchart TD
 ---
 
 ## 3) ブログ・ニュースは「公式＋定番」だけ拾おう📰✨
+
+![ddd_cs_study_097_news_filter](./picture/ddd_cs_study_097_news_filter.png)
+
 
 ここは“読む場所”を固定すると勝ち！🥳
 
@@ -119,6 +128,9 @@ flowchart TD
 
 ## 5) コードで学ぶなら「テンプレ」を教材にする🧪✨
 
+![ddd_cs_study_097_template_observation](./picture/ddd_cs_study_097_template_observation.png)
+
+
 DDDは“読んで分かった気”が一番危険😂
 なので、良い土台のコードを**観察→真似→改造**が最短だよ！
 
@@ -138,6 +150,9 @@ DDDは“読んで分かった気”が一番危険😂
 ---
 
 ## 6) AIを「学習コーチ」にするテンプレ🤖💬✨
+
+![ddd_cs_study_097_ai_coach](./picture/ddd_cs_study_097_ai_coach.png)
+
 
 AI導入済み前提なら、ここが一番おいしい🍰
 ポイントは、AIに **“答え”** を求めるより、**“理解の補助”** をさせることだよ😊
@@ -207,6 +222,9 @@ DDDの「ユビキタス言語」用に、用語集を作ってください。
 ---
 
 ## 7) 1人開発者向け：学習が続く「週の回し方」🔁🗓️✨
+
+![ddd_cs_study_097_weekly_cycle](./picture/ddd_cs_study_097_weekly_cycle.png)
+
 
 おすすめはこれ！やりすぎないのがコツ🥺💞
 
