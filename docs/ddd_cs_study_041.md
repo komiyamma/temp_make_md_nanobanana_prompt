@@ -19,11 +19,15 @@ DDDでエンティティ（Entity）を扱うとき、**「IDをどうするか�
 
 DDD的には、**IDは“その人そのもの”を指すピン留め📌**みたいなものです。
 
+![ddd_cs_study_041_id_pin.png](./picture/ddd_cs_study_041_id_pin.png)
+
 ---
 
 ## 2. ID設計でよくある事故😇💣
 
 ### 事故①：全部 `Guid` で、型が同じだから混ざる😇
+
+![ddd_cs_study_041_mixed_keys.png](./picture/ddd_cs_study_041_mixed_keys.png)
 
 「User の ID」も「Order の ID」も、両方 `Guid` だと…？
 
@@ -31,6 +35,8 @@ DDD的には、**IDは“その人そのもの”を指すピン留め📌**み�
 * しかもバグって気づきにくい😇
 
 ### 事故②：連番IDをURLに出して “総当たり閲覧” される🔓
+
+![ddd_cs_study_041_sequential_attack.png](./picture/ddd_cs_study_041_sequential_attack.png)
 
 `/users/123` → `/users/124` → `/users/125` …みたいに見られちゃうやつです😱
 
@@ -66,9 +72,13 @@ DDD的には、**IDは“その人そのもの”を指すピン留め📌**み�
 
 > ここで登場するのが **UUID v7（時系列っぽいGUID）** です✨
 
+![ddd_cs_study_041_guid_sorting.png](./picture/ddd_cs_study_041_guid_sorting.png)
+
 ---
 
 ### C) 専用の型（UserId 型 / OrderId 型）🧠✨
+
+![ddd_cs_study_041_puzzle_types.png](./picture/ddd_cs_study_041_puzzle_types.png)
 
 これがDDD的にめちゃ強いです💪
 
@@ -147,6 +157,8 @@ public sealed class User
 ---
 
 ## 7. EF Core に保存するには？（Value Converter）🧊➡️🧠
+
+![ddd_cs_study_041_ef_converter.png](./picture/ddd_cs_study_041_ef_converter.png)
 
 EF Core はそのままだと `UserId` をDBに保存できないので、
 **「DBでは Guid として保存して、読み書きで変換する」**を設定します✨

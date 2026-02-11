@@ -17,11 +17,15 @@
 だから集約はこう考えるのがコツだよ👇
 
 ✅ **「同時に（1回の更新で）絶対に守りたいルール（不変条件）がある範囲」＝集約**
+
+![ddd_cs_study_045_safe_box.png](./picture/ddd_cs_study_045_safe_box.png)
 ✅ **そのルールを守る責任を持つのが集約ルート（キャプテン）** 🧑‍✈️✨
 
 ---
 
 ## 「適切な集約サイズ」を決める3つの質問 🥰🔍
+
+![ddd_cs_study_045_triage_flow.png](./picture/ddd_cs_study_045_triage_flow.png)
 
 ### Q1：そのルール、**“同時”に守らないと事故る？** 🚨
 
@@ -43,6 +47,8 @@
 
 ### Q3：それ、AIに説明できる？（3〜5行で）🤖📝
 
+![ddd_cs_study_045_tweet_vs_novel.png](./picture/ddd_cs_study_045_tweet_vs_novel.png)
+
 集約の役割をAIに投げるとき、
 
 > 「この集約は〇〇だけを守る。ルールはこれ。公開メソッドはこれだけ。」
@@ -57,6 +63,8 @@ DDDの正統派ルールだけじゃなく、**AIと一緒に作る現実**も�
 
 ### ✅ 集約ルートは “小さめ” が勝ち 🏆
 
+![ddd_cs_study_045_handy_tool.png](./picture/ddd_cs_study_045_handy_tool.png)
+
 * だいたい **公開メソッド 3〜10個くらい**
 * 「この集約で守る約束（不変条件）」が **最大3つくらい**
 * 触る子要素（内部のEntity/ValueObject）は **2〜5種類くらい**（増えたら要注意⚠️）
@@ -65,6 +73,8 @@ DDDの正統派ルールだけじゃなく、**AIと一緒に作る現実**も�
 
 * `〇〇Service` みたいな名前のメソッドが集約に増えだす（責務混ざり）🥲
 * 集約が **他集約の中身**を直接参照しだす（オブジェクト参照が蜘蛛の巣🕸️）
+
+![ddd_cs_study_045_spider_web.png](./picture/ddd_cs_study_045_spider_web.png)
 * 1ファイルが長い → AIが “途中の約束” を忘れて別物を生成し始める 🤖💨
 
 ```mermaid
@@ -107,6 +117,8 @@ mindmap
 ---
 
 ## 分割案：在庫を守る集約と、予約を表す集約に分ける 🧩✨
+
+![ddd_cs_study_045_two_captains.png](./picture/ddd_cs_study_045_two_captains.png)
 
 ### 集約A：Event（在庫を守るキャプテン）🧑‍✈️
 

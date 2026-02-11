@@ -23,6 +23,8 @@
 
 **「集約（Aggregate）を、出し入れできる“保管庫”」** だよ🏦📦
 
+![ddd_cs_study_046_magic_warehouse.png](./picture/ddd_cs_study_046_magic_warehouse.png)
+
 ドメインから見ると、リポジトリはこんなイメージ👇
 
 * 取り出す：`Order をIDで取ってくる`
@@ -36,6 +38,8 @@
 ---
 
 ## 2. なんで必要なの？（直でDB触っちゃダメ？）😵‍💫
+
+![ddd_cs_study_046_clean_office.png](./picture/ddd_cs_study_046_clean_office.png)
 
 もしドメインのコードがSQLやEF Coreにベッタリだと…
 
@@ -61,6 +65,8 @@
 ### ❌ やらないこと（やりがち注意⚠️）
 
 * `IQueryable` を外に返して「好きにSQL作ってね」しない❌（境界が溶ける🫠）
+
+![ddd_cs_study_046_librarian.png](./picture/ddd_cs_study_046_librarian.png)
 * なんでも `GetAll()` しない❌（大規模化した瞬間に爆死💣）
 * 集約の“中の部品”を単独で保存しない❌（基本は **集約ルート経由**）🧩➡️👑
 
@@ -117,6 +123,8 @@ public sealed record OrderItem(string ProductName, int Quantity);
 ---
 
 ## 5. リポジトリの「理想の置き方」🏗️
+
+![ddd_cs_study_046_plug_socket.png](./picture/ddd_cs_study_046_plug_socket.png)
 
 ポイントはこれ👇✨
 
@@ -226,6 +234,8 @@ services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
 ---
 
 ## 8. テスト最強：InMemoryリポジトリ🧪⚡（DBいらない！）
+
+![ddd_cs_study_046_mock_box.png](./picture/ddd_cs_study_046_mock_box.png)
 
 DDD初心者にめちゃくちゃ効くやつです🙏✨
 「ドメインの正しさ」を高速で確認できるよ💨
