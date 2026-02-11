@@ -9,6 +9,8 @@
 
 ## 1. イベントストーミングって何するの？👀
 
+![030 Timeline Sticky](./picture/ddd_cs_study_030_timeline_sticky.png)
+
 一言でいうと…
 
 ✅ **“起きた出来事（イベント）”を、時系列に並べるだけ** 📌
@@ -39,6 +41,9 @@
 ---
 
 ## 3. まずは“イベント”だけ並べよう🟧（超重要）
+
+![030 Ai Whiteboard](./picture/ddd_cs_study_030_ai_whiteboard.png)
+
 
 ここは最初、**イベントだけ**でOK！
 AIにこう頼むとラクだよ😺✨
@@ -71,6 +76,9 @@ AIにこう頼むとラクだよ😺✨
 
 ## 4. 次に“コマンド（やった操作）”を足そう🟦
 
+![030 Command Sticky](./picture/ddd_cs_study_030_command_sticky.png)
+
+
 イベントは「起きたこと」
 コマンドは「起こす操作」だよ🖱️✨
 
@@ -101,6 +109,9 @@ AIにこう追加で頼む👇
 
 ## 5. 例外ルート（失敗・キャンセル）を足す😵‍💫
 
+![030 Exception Route](./picture/ddd_cs_study_030_exception_route.png)
+
+
 現実のシステムは「うまくいく時だけ」じゃないよね💦
 ここから一気に仕様が強くなる🔥
 
@@ -125,6 +136,9 @@ AIにはこう頼む👇
 ---
 
 ## 6. “ルール（制約）”をメモする📏✨（ここがDDDの入り口！）
+
+![030 Rule Sticky](./picture/ddd_cs_study_030_rule_sticky.png)
+
 
 イベントを見てると、「これ守らないとダメ」ってルールが出てくるよね。
 
@@ -158,6 +172,9 @@ flowchart LR
 ---
 
 ## 7. 1人イベントストーミングの完成形（テキストでOK）🗺️✨
+
+![030 Full Map](./picture/ddd_cs_study_030_full_map.png)
+
 
 付箋ツールがなくても、最初はこれで十分だよ🙆‍♀️
 （あとで図にしてもOK！）

@@ -14,6 +14,9 @@
 
 ## あるある： “ユーザー” が3人いる世界 🌍😇😇😇
 
+![029 Three Users Paradox](./picture/ddd_cs_study_029_three_users_paradox.png)
+
+
 たとえば、あなたが「サブスク動画アプリ」を作ってるとするね📺✨
 すると仕様書に「ユーザー」って単語がいっぱい出てくるんだけど……
 
@@ -32,6 +35,9 @@
 
 ## まず結論：言葉の衝突は “悪” じゃない 🙆‍♀️✨
 
+![029 Context Shapeshifter](./picture/ddd_cs_study_029_context_shapeshifter.png)
+
+
 言葉が衝突するのは、あなたが悪いんじゃなくて、**現実の業務が複雑**だからだよ〜😊
 DDDの発想はこう👇
 
@@ -49,6 +55,9 @@ DDDの発想はこう👇
 ---
 
 ## 例：4つの国（コンテキスト）に分けてみよう🏰🏰🏰🏰
+
+![029 Four Kingdoms](./picture/ddd_cs_study_029_four_kingdoms.png)
+
 
 サブスク動画アプリを、ざっくり4国に分けるとするね😊
 
@@ -97,6 +106,9 @@ mindmap
 
 ### 技②：ID型を分ける（これめっちゃ効く）🧩✨
 
+![029 Id Separation](./picture/ddd_cs_study_029_id_separation.png)
+
+
 同じ「ユーザーID」でも国が違えば別物、って割り切っちゃう作戦👍
 
 ```csharp
@@ -129,6 +141,9 @@ public sealed class Customer(CustomerId id)
 
 ### 技③：国をまたぐところに “翻訳所” を置く 🔁🏢
 
+![029 Translation Office](./picture/ddd_cs_study_029_translation_office.png)
+
+
 国をまたぐときは、直接つなげずに「翻訳」するのが安全👍
 これがDDDでいう **腐敗防止層（ACL）** 的な発想にもつながるよ✨
 
@@ -147,6 +162,9 @@ public interface IAccountToCustomerMap
 ---
 
 ## AIに強い：単語帳（ユビキタス言語）を “国ごと” に作る📒🤖✨
+
+![029 Ai Dictionary Robot](./picture/ddd_cs_study_029_ai_dictionary_robot.png)
+
 
 AIに設計相談するとき、**単語が混ざると一瞬で事故る**💥
 なので、AIにはこうやって渡すのがおすすめ👇
