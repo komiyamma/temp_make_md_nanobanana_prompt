@@ -19,6 +19,8 @@
 
 ## 依存関係ルール（超だいじ）🧭
 
+![059_dependency_rule](./picture/ddd_cs_study_059_dependency_rule.png)
+
 イメージは「中心ほど純粋」🥰
 
 * **Domain** は誰にも依存しない（いちばん偉い）👑
@@ -67,6 +69,8 @@ Domain  ←  Application  ←  Web
 
 ## Solutionのおすすめ構造 📁✨
 
+![059_solution_tree](./picture/ddd_cs_study_059_solution_tree.png)
+
 最初からこれにしちゃうのが楽です😊
 
 ```text
@@ -85,6 +89,8 @@ MyApp.sln
 
 ## 各プロジェクトの「置き場」早見表 🗂️🌸
 
+![059_layer_shelves](./picture/ddd_cs_study_059_layer_shelves.png)
+
 | 置くもの                                  | どこ？                | ひとこと              |
 | ------------------------------------- | ------------------ | ----------------- |
 | Entity / ValueObject / Domain Service | **Domain**         | ルールの本体👑          |
@@ -102,6 +108,8 @@ MyApp.sln
 ## 作り方（手順）🛠️✨
 
 ### 1) プロジェクトを作る（Visual Studioの流れ）😊
+
+![059_vs_creation](./picture/ddd_cs_study_059_vs_creation.png)
 
 * 空のソリューション作成 → ソリューションフォルダ `src`, `tests` 作成
 * `src` に4プロジェクト追加
@@ -147,6 +155,8 @@ dotnet add src/MyApp.Web reference src/MyApp.Infrastructure
 ---
 
 ## 最小サンプルで理解しよう（ユーザー登録）👤✨
+
+![059_user_registration](./picture/ddd_cs_study_059_user_registration.png)
 
 ### Domain（ルールの核）👑
 
@@ -310,6 +320,8 @@ public sealed class UsersController : ControllerBase
 ---
 
 ## AI（Copilot等）を使うコツ：ここは“指示の勝ち”🤖✨
+
+![059_ai_guard](./picture/ddd_cs_study_059_ai_guard.png)
 
 プロジェクト構成は、AIが暴走しやすい場所でもあるので「境界線」を先に渡すのがコツ😊
 

@@ -13,6 +13,8 @@
 
 ## 1 クリーンアーキテクチャの芯はこれだけ🧠✨
 
+![058_dependency_flow](./picture/ddd_cs_study_058_dependency_flow.png)
+
 クリーンアーキテクチャの本質は、超ざっくり言うと👇
 
 * **大事なルール（ドメイン）を中心に置く** 🏰
@@ -136,6 +138,8 @@
 
 ### Domain タスクという概念だけを置く🏰
 
+![058_domain_king](./picture/ddd_cs_study_058_domain_king.png)
+
 ```csharp
 namespace TaskApp.Domain.Tasks;
 
@@ -179,6 +183,8 @@ public interface ITaskRepository
 
 ### Application ユースケースを置く🎯
 
+![058_app_conductor](./picture/ddd_cs_study_058_app_conductor.png)
+
 ```csharp
 using TaskApp.Domain.Tasks;
 
@@ -205,6 +211,8 @@ public sealed class AddTaskUseCase(ITaskRepository repo)
 ---
 
 ### Web 側でDIしてインフラ実装を書く🔧
+
+![058_infra_toolbox](./picture/ddd_cs_study_058_infra_toolbox.png)
 
 `TaskApp.Web/Infrastructure/` に実装を隔離しよう🏝️
 
@@ -255,6 +263,8 @@ public sealed class EfTaskRepository(AppDbContext db) : ITaskRepository
 ---
 
 ### Web エンドポイントでUseCaseを呼ぶ📮
+
+![058_web_receptionist](./picture/ddd_cs_study_058_web_receptionist.png)
 
 ```csharp
 using TaskApp.Application.Tasks;
