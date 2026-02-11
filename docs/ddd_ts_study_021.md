@@ -45,6 +45,9 @@ items[0].qty = 2;
 
 ## 3) 不変（immutable）の基本ルール🧊
 
+![ddd_ts_study_021_mutation_vs_immutable](./picture/ddd_ts_study_021_mutation_vs_immutable.png)
+
+
 不変の基本はめっちゃシンプル👇
 
 > ✅ **変更しない**
@@ -76,6 +79,9 @@ flowchart LR
 ## 4) TypeScriptで不変に寄せる“道具箱”🧰✨
 
 ### 4.1 `readonly`（まずはこれ）🔒
+
+![ddd_ts_study_021_readonly_lock](./picture/ddd_ts_study_021_readonly_lock.png)
+
 
 プロパティを「再代入禁止」にできます。
 
@@ -117,6 +123,9 @@ type ReadonlyOrderDraft = Readonly<OrderDraft>;
 
 ### 4.3 `ReadonlyArray<T>`（配列を“変更不可”として扱う）📦🚫
 
+![ddd_ts_study_021_readonly_array](./picture/ddd_ts_study_021_readonly_array.png)
+
+
 「push/spliceできない配列」として扱えます。
 
 ```ts
@@ -127,6 +136,9 @@ const xs: ReadonlyArray<number> = [1, 2, 3];
 ---
 
 ### 4.4 `as const`（“定数っぽさ”を一気に上げる）🧊✨
+
+![ddd_ts_study_021_as_const](./picture/ddd_ts_study_021_as_const.png)
+
 
 `as const` はリテラル型を保ちつつ、オブジェクトや配列のプロパティを readonly に寄せます。([Zenn][4])
 
@@ -141,6 +153,9 @@ DDD的には「状態」「種類」「コード表」みたいなところに�
 ---
 
 ### 4.5 `satisfies`（型チェックだけして、推論は潰さない）✅✨
+
+![ddd_ts_study_021_satisfies](./picture/ddd_ts_study_021_satisfies.png)
+
 
 `satisfies` は TypeScript 4.9 で入った機能です。([TypeScript][5])
 「型に合ってるかは見たい、でも推論の“具体性”は残したい」時に最高です😍
@@ -165,6 +180,9 @@ const MENU = {
 
 ### 5.1 Value Object（VO）は“不変がデフォ”💎
 
+![ddd_ts_study_021_vo_create](./picture/ddd_ts_study_021_vo_create.png)
+
+
 VOは「値そのもの」なので、変更じゃなくて“新しい値”を作るのが自然です。
 
 例：`Money.add()` はこう👇
@@ -188,6 +206,9 @@ class Money {
 ---
 
 ### 5.2 「配列の参照漏れ」が集約を壊す😵‍💫
+
+![ddd_ts_study_021_aggregate_return](./picture/ddd_ts_study_021_aggregate_return.png)
+
 
 集約の中に `items: LineItem[]` があって、それを **外にそのまま返す**と…
 

@@ -2,6 +2,9 @@
 
 ## 🎯 この章のゴール
 
+![ddd_ts_study_020_training_wheels](./picture/ddd_ts_study_020_training_wheels.png)
+
+
 この章が終わったら、こんな状態になってるのが理想だよ〜！🌸
 
 * AIに投げる“質問の型”を持ってる 📝✨
@@ -29,6 +32,9 @@
 
 ## 1️⃣ AIを「補助輪」にする3原則 🛟✨
 
+![ddd_ts_study_020_material_vs_answer](./picture/ddd_ts_study_020_material_vs_answer.png)
+
+
 AIをうまく使うコツ、まずこれだけ覚えとけばOK🙆‍♀️💕
 
 ## 原則A：AIに渡すのは「答え」じゃなくて「材料」🥕🧅
@@ -49,6 +55,9 @@ AIの出力は、だいたいこの3種類に分けると安全！
 
 ## 原則B：「制約」を先に渡すと、AIが暴れない🧷😌
 
+![ddd_ts_study_020_constraint_first](./picture/ddd_ts_study_020_constraint_first.png)
+
+
 設計で一番大事なのって、実は「何をしないか」なんだよね✂️
 AIは放っておくと、勝手に盛り始めるから…😂🍰
 
@@ -63,6 +72,9 @@ AIは放っておくと、勝手に盛り始めるから…😂🍰
 
 ## 原則C：「レビュー項目」を固定すると、理解が浅くならない🧠🔒
 
+![ddd_ts_study_020_review_criteria](./picture/ddd_ts_study_020_review_criteria.png)
+
+
 AIに何度も同じ観点でレビューさせると、学習が速いよ〜📈✨
 （“その場しのぎ質問”より強い💪）
 
@@ -71,6 +83,9 @@ AIに何度も同じ観点でレビューさせると、学習が速いよ〜�
 ---
 
 ## 2️⃣ 使いどころマップ：DDD学習でAIが効く瞬間 ⚡🤖
+
+![ddd_ts_study_020_usage_map](./picture/ddd_ts_study_020_usage_map.png)
+
 
 DDDの流れに沿って、AIが効くところを「いつもの手順」にしちゃおう！
 
@@ -169,6 +184,9 @@ AIを使うほど伸びる人って「手順」があるよ〜！
 
 ## ✅ ルール1：AIに書かせたら、必ず「質問に戻す」🔁
 
+![ddd_ts_study_020_question_loop](./picture/ddd_ts_study_020_question_loop.png)
+
+
 AIの答えを読んだら、最後に自分でこう聞く：
 
 * 「この提案が壊れる反例は？」😈
@@ -197,6 +215,9 @@ sequenceDiagram
 ---
 
 ## ✅ ルール2：AIが触れる範囲が広いほど、レビューは強くする 👀
+
+![ddd_ts_study_020_diff_review](./picture/ddd_ts_study_020_diff_review.png)
+
 
 最近は「エージェントがPRを作る」みたいな流れもあるから、
 **差分レビュー（diff）を見るクセ**が超重要だよ〜！🔍✨ ([GitHub Docs][2])

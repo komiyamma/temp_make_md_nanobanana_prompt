@@ -31,6 +31,9 @@ TypeScriptは「投げられる例外の型」をコンパイルで縛れない�
 
 ## 例外とResult型のざっくり比較⚖️📝
 
+![ddd_ts_study_023_exception_vs_result](./picture/ddd_ts_study_023_exception_vs_result.png)
+
+
 | 観点     | 例外（throw）🧨         | Result型（戻り値）📦           |
 | ------ | ------------------- | ------------------------ |
 | 目的     | “その場で強制停止”          | “失敗も値として運ぶ”              |
@@ -42,6 +45,9 @@ TypeScriptは「投げられる例外の型」をコンパイルで縛れない�
 ---
 
 ## “失敗”を2種類に分けるのがコツ✂️🧠
+
+![ddd_ts_study_023_error_categories](./picture/ddd_ts_study_023_error_categories.png)
+
 
 ### ① 想定内の失敗（Expected）😌
 
@@ -72,6 +78,9 @@ TypeScriptは「投げられる例外の型」をコンパイルで縛れない�
 ---
 
 ## 実装①：ドメイン例外（DomainError）を作ろう🏯🔥
+
+![ddd_ts_study_023_domain_guard](./picture/ddd_ts_study_023_domain_guard.png)
+
 
 「ドメインはルールを守る場所」だから、破ろうとしたら止める！🚫✨
 
@@ -133,6 +142,9 @@ export class Order {
 ---
 
 ## 実装②：アプリ層でResult型を返す📦✅
+
+![ddd_ts_study_023_result_box](./picture/ddd_ts_study_023_result_box.png)
+
 
 ### 1) まずは「最小Result型」自前でOK🙆‍♀️✨
 
@@ -202,6 +214,9 @@ export class PlaceOrderUseCase {
 
 ## catchの変数をunknownにする設定は、事故防止の神🧯✨
 
+![ddd_ts_study_023_unknown_catch](./picture/ddd_ts_study_023_unknown_catch.png)
+
+
 `catch (e)` の `e` を `unknown` 扱いにすると、**雑に `e.message` しなくなる**ので強い！💪
 TSConfigには `useUnknownInCatchVariables` があるよ。([TypeScript][3])
 
@@ -226,6 +241,9 @@ Effectの “Expected Errors” の考え方は参考になるよ。([effect.web
 ---
 
 ## 「例外 vs Result」迷ったときの判断フロー🧭✨
+
+![ddd_ts_study_023_decision_tree](./picture/ddd_ts_study_023_decision_tree.png)
+
 
 1. **その失敗は、仕様として起きていい？**
 
@@ -261,6 +279,9 @@ flowchart TD
 ---
 
 ## テストの書き方（Resultはテストしやすいよ）🧪✨
+
+![ddd_ts_study_023_testing_result](./picture/ddd_ts_study_023_testing_result.png)
+
 
 ```ts
 import { PlaceOrderUseCase } from "./PlaceOrderUseCase";
