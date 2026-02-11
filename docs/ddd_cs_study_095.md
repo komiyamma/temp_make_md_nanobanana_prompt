@@ -36,6 +36,9 @@
 ---
 
 ## 2. 「AIを部下にする」ってどういうこと？👩‍🏫🤖
+
+![ddd_cs_study_095_ai_newbie](./picture/ddd_cs_study_095_ai_newbie.png)
+
  
  ここ、超大事だからイメージでいくね🍀
  
@@ -100,6 +103,9 @@ C#側も普通に進化してて、.NET 10 では **C# 14** が前提になっ�
 
 ### 設計スキル = “迷いを減らす決め方” 🧭✨
 
+![ddd_cs_study_095_design_compass](./picture/ddd_cs_study_095_design_compass.png)
+
+
 * 変更が起きた時に、**どこを直すべきか迷わない**
 * AIが暴走しそうな時に、**止める線（境界）を引ける**
 * コードが増えても、**言葉と構造が崩れない**
@@ -116,6 +122,9 @@ DDDで言うなら、特に効くのはこの3つだよ👇
 ---
 
 ## 5. AIチームリーダーの「基本オペレーション」6点セット📦🤖✨
+
+![ddd_cs_study_095_six_steps](./picture/ddd_cs_study_095_six_steps.png)
+
 
 1人開発でも、これやるだけで急に“チーム感”が出るよ！
 
@@ -150,6 +159,9 @@ DDDで言うなら、特に効くのはこの3つだよ👇
 ---
 
 ## 6. そのまま使える！AIへの指示テンプレ（DDD初心者向け）💌🤖
+
+![ddd_cs_study_095_prompt_structure](./picture/ddd_cs_study_095_prompt_structure.png)
+
 
 下の文章を、Copilot Chat や Codex などに投げるだけでOKだよ〜😊✨
 （中身はあなたのアプリに合わせて変えてね！）
@@ -193,6 +205,9 @@ DDDで言うなら、特に効くのはこの3つだよ👇
 
 ## 7. キャリアに効く「見せ方」：設計できる人のポートフォリオはここが違う📁🌟
 
+![ddd_cs_study_095_portfolio_kit](./picture/ddd_cs_study_095_portfolio_kit.png)
+
+
 企業でもフリーでも、評価されやすいのはここだよ〜！
 
 ### ✅ “動くアプリ”より刺さる3点セット💘
@@ -216,6 +231,9 @@ AI時代って「コード量」自体は増やせちゃうから、
 だからリーダーとしては、これだけは守ろう🥺✨
 
 ### 🔒 AI部下の安全運用：7つの約束💍🛡️
+
+![ddd_cs_study_095_safety_shield](./picture/ddd_cs_study_095_safety_shield.png)
+
 
 * ✅ **.env / secrets / 個人情報はAIに渡さない**
 * ✅ **AIに“自動でコマンド実行”させない設定を基本に**（必要時だけ手動承認）
