@@ -19,6 +19,9 @@ Order集約（Orderが集約ルート🏯👑）に、**confirm/pay/cancel/fulfi
 
 ## 2) まずは状態遷移を「仕様」として固定する🚦📌
 
+![ddd ts study 057 state machine](./picture/ddd_ts_study_057_state_machine.png)
+
+
 カフェ注文ドメインの例だと、こんな感じが分かりやすいよ〜☕🧾
 
 ```mermaid
@@ -55,6 +58,9 @@ stateDiagram-v2
 ---
 
 ## 3) ガード節ってなに？🛡️（超ざっくり）
+
+![ddd ts study 057 guard clause](./picture/ddd_ts_study_057_guard_clause.png)
+
 
 ガード節はこれ👇
 
@@ -118,6 +124,9 @@ export class InvalidOrderOperationError extends DomainError {
 ---
 
 ### 5-2) OrderStatus と 遷移表（ルール）を作る🚦📋
+
+![ddd ts study 057 transition table](./picture/ddd_ts_study_057_transition_table.png)
+
 
 ```ts
 // domain/order/Order.ts
@@ -192,6 +201,9 @@ export class Order {
 
 ### 5-4) confirm / pay / cancel / fulfill を実装する☕💳🚫📦
 
+![ddd ts study 057 confirm logic](./picture/ddd_ts_study_057_confirm_logic.png)
+
+
 ここで「状態だけ」じゃなく、**その操作に必要なルール**も一緒にガードするよ🛡️
 
 ```ts
@@ -247,6 +259,9 @@ order.pay(); // ここで例外🧯
 
 ### ❌ setStatus を public にする
 
+![ddd ts study 057 anti pattern public setter](./picture/ddd_ts_study_057_anti_pattern_public_setter.png)
+
+
 * 一発で城が崩壊🏯💥
 * ルールを回避できちゃう
 
@@ -263,6 +278,9 @@ order.pay(); // ここで例外🧯
 ---
 
 ## 8) AI活用（例外メッセージを “ユーザー向け” に整える🤖💬✨）
+
+![ddd ts study 057 ai error msg](./picture/ddd_ts_study_057_ai_error_msg.png)
+
 
 この章のAIパートはここが最高に相性いいよ〜！😍
 
