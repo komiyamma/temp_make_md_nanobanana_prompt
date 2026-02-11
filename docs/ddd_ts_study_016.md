@@ -33,6 +33,10 @@ DDDでは、こういう“事故”を **ドメインが自衛**して防ぐの
 次に「失敗ルート」を“わざと”増やします😈
 ここでは、よくあるのをカテゴリ別にまとめるね👇
 
+
+
+![ddd_ts_study_016_failure_categories.png](./picture/ddd_ts_study_016_failure_categories.png)
+
 ### A. 入力ミス系（UIでも止めるけど、最後はドメインで止める）🧱🧯
 
 * 数量が0 / マイナス
@@ -66,6 +70,10 @@ DDDでは、こういう“事故”を **ドメインが自衛**して防ぐの
 
 ## 3) 失敗を「仕様（Given/When/Then）」に変換✅🧪
 
+![ddd_ts_study_016_gwt_failure.png](./picture/ddd_ts_study_016_gwt_failure.png)
+
+
+
 例：**「支払い後は変更不可」** をテストできる形にする👇
 
 * **Given**: 注文が支払い済み
@@ -82,6 +90,10 @@ DDDでは、こういう“事故”を **ドメインが自衛**して防ぐの
 ---
 
 ## 4) 「どこで止める？」配置ルール📍🧠
+
+![ddd_ts_study_016_stopping_point.png](./picture/ddd_ts_study_016_stopping_point.png)
+
+
 
 ざっくり最強の整理👇
 
@@ -102,6 +114,10 @@ DDDでは、こういう“事故”を **ドメインが自衛**して防ぐの
 近い将来の 6.0 / 7.0 の大きな移行計画も公式が進捗を出しています（性能改善の流れ）([Microsoft for Developers][2])
 
 この章では、TSで実務に強い **2択**を紹介するね👇
+
+
+
+![ddd_ts_study_016_exception_vs_result.png](./picture/ddd_ts_study_016_exception_vs_result.png)
 
 ### 方式①：ドメインは「例外を投げる」→ アプリ層で捕まえて整形🧯🎁
 
@@ -227,6 +243,10 @@ export class Order {
 ---
 
 ## 7) アプリ層で「ユーザー向け」に整形する👤🧾
+
+![ddd_ts_study_016_error_mapping.png](./picture/ddd_ts_study_016_error_mapping.png)
+
+
 
 ドメイン例外をそのまま画面に出すと怖いので、ここで翻訳します🪄✨
 
