@@ -27,8 +27,12 @@
 ---
 
 ## 2) 最終チェック：5大観点の卒業テスト 🎓🧩
+![Five Pillars of Graduation](./picture/ddd_ts_study_100_five_pillars.png)
+
 
 ### A. 不変条件チェック🔒📏
+![Invariant Encapsulation](./picture/ddd_ts_study_100_invariant_lock.png)
+
 
 次の質問に即答できたら強いよ〜！
 
@@ -42,6 +46,8 @@
 ---
 
 ### B. 境界チェック📦🚧
+![Dependency Direction](./picture/ddd_ts_study_100_boundary_arrows.png)
+
 
 * domain → infra を import してない？（**ドメインがDBやHTTPを知らない**）
 * domain → app を import してない？（**ドメインがユースケースを知らない**）
@@ -64,6 +70,8 @@
 ---
 
 ### D. イベントチェック📣📮
+![Event as a Fact](./picture/ddd_ts_study_100_event_fact.png)
+
 
 * イベント名は「過去形の事実」になってる？（PaymentCompleted みたいに）🕰️
 * イベントの中身が **盛りすぎ**になってない？（画面表示に必要な情報全部入れてる…とか）📦⚠️
@@ -110,6 +118,8 @@ Yesが多いほど「DDDっぽいだけ」から卒業できてるよ🎓✨
 ---
 
 ## 4) “卒業課題” 🎒🌟（自分の題材に移す練習）
+![Choosing the Next Project](./picture/ddd_ts_study_100_next_project.png)
+
 
 カフェ注文題材のままでもOKだし、別題材でもOKだよ😊
 おすすめは「**自分が本当に作りたい小さい題材**」✨
@@ -204,6 +214,8 @@ Yesが多いほど「DDDっぽいだけ」から卒業できてるよ🎓✨
 ---
 
 ## 7) 次の一歩ロードマップ（おすすめ順）🚀🧭
+![Future Learning Roadmap](./picture/ddd_ts_study_100_future_roadmap.png)
+
 
 卒業したら、次はこれが気持ちよく伸びるよ〜😊💕
 

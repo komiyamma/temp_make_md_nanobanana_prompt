@@ -11,6 +11,8 @@
 ---
 
 ## ACLってなに？（超ざっくり）🧠🛡️
+![Anti-Corruption Layer (ACL) Concept](./picture/ddd_ts_study_098_acl_concept.png)
+
 
 ACL（Anti-Corruption Layer / 腐敗防止層）は、
 
@@ -50,6 +52,8 @@ ACLはそれを防ぐ“防波堤”🌊🧱
 ---
 
 ## ACLの“基本セット”🧰✨
+![ACL Components Structure](./picture/ddd_ts_study_098_acl_components.png)
+
 
 ACLはだいたいこの4点セットで作ると安定するよ💞
 
@@ -131,6 +135,8 @@ export type ExternalPaymentResponse = {
 ---
 
 ### 4) 翻訳（Translator / Mapper）🈂️🔁
+![Data Translation Mapping](./picture/ddd_ts_study_098_translation_map.png)
+
 
 外のクセはここで吸収するよ〜！🥰
 
@@ -212,6 +218,8 @@ export class PaymentGatewayAcl implements PaymentGateway {
 ---
 
 ## “外部レスポンスが壊れてた” をどうする？🧯😵‍💫
+![Validation Guard in ACL](./picture/ddd_ts_study_098_validation_guard.png)
+
 
 外部って、たまに平気で壊れたJSON返してくる…（あるある）😂
 そこで **スキーマバリデーション** をACLに入れると強いよ💪
@@ -284,6 +292,8 @@ describe("translatePaymentResponse", () => {
 ---
 
 ## ここが“設計のキモ”だよ🧡（超重要）💡
+![Boundary Protection Rule](./picture/ddd_ts_study_098_boundary_protection.png)
+
 
 ### ✅ 1) ドメインに「外部の言葉」を入れない
 

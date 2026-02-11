@@ -31,6 +31,8 @@
 ---
 
 ## 2) Outboxパターンの結論（やることはシンプル）📦✨
+![Transactional Outbox Boundary](./picture/ddd_ts_study_097_transaction_boundary.png)
+
 
 **「ビジネス更新」と「イベント送信予定」を、同じDBトランザクションで一緒に保存する**💾🔒
 そして、**別プロセス（または別スレッド）**があとから確実に送る📤
@@ -44,6 +46,8 @@
 ---
 
 ## 3) イメージ図（超ざっくり）🖼️✨
+![Outbox Pattern Workflow](./picture/ddd_ts_study_097_outbox_flow.png)
+
 
 ```text
 (ユースケース) PayOrder
@@ -141,6 +145,8 @@ export type DomainEvent =
 ---
 
 ### 5-3) “支払い完了”ユースケース（重要：同一トランザクション！）💳✅
+![Atomic Commit Sequence](./picture/ddd_ts_study_097_atomic_commit.png)
+
 
 ポイントはここ👇
 **orders更新と outbox insert を、同じ `transaction` に入れること**🔒✨
@@ -193,6 +199,8 @@ export function payOrder(orderId: string, paidAmountYen: number) {
 ---
 
 ### 5-4) Outbox Dispatcher（未送信を拾って送る）📤🔁
+![Outbox Dispatcher Logic](./picture/ddd_ts_study_097_dispatcher_process.png)
+
 
 ここでは「メッセージブローカー」の代わりに `publish()` を用意して、送れたら `published_at` を埋めるよ✅
 
@@ -277,6 +285,8 @@ setTimeout(() => stop(), 5000);
 ---
 
 ## 6) この設計の“強さ”と“注意点”💪⚠️
+![Dual Write vs Outbox Reliability](./picture/ddd_ts_study_097_reliability_comparison.png)
+
 
 ### 強さ 💪✨
 
