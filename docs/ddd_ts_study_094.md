@@ -49,6 +49,8 @@
 
 ## 今日のミニ題材☕🧾
 
+![Sync Chain](./picture/ddd_ts_study_094_sync_chain.png)
+
 **「支払い完了 → レシート発行」**をイベントでつなぐよ🔗✨
 
 * 集約（Order）が `PaymentCompleted` を発行
@@ -182,6 +184,8 @@ export class Order extends AggregateRoot {
 
 ### Step 5) EventBus（同期の配達係）を作る📮🏃‍♀️
 
+![Event Bus](./picture/ddd_ts_study_094_event_bus.png)
+
 * **subscribe**：購読登録
 * **publishAll**：イベントを順に配る（同期＝“この処理が終わるまで待つ”）
 
@@ -222,6 +226,8 @@ export class InMemoryEventBus {
 
 ### Step 6) 購読者：レシート作成ハンドラを作る🧾🎀
 
+![Receipt Flow](./picture/ddd_ts_study_094_receipt_flow.png)
+
 ```ts
 // domain/receipt/Receipt.ts
 export class Receipt {
@@ -237,6 +243,8 @@ export class Receipt {
   }
 }
 ```
+
+![Idempotency Check](./picture/ddd_ts_study_094_idempotency_check.png)
 
 ```ts
 // app/handlers/CreateReceiptOnPaymentCompleted.ts
@@ -272,6 +280,8 @@ export class CreateReceiptOnPaymentCompleted {
 ---
 
 ### Step 7) ユースケースで「保存→イベント配布」をつなぐ🎬🔗
+
+![App Flow](./picture/ddd_ts_study_094_app_flow.png)
 
 ここがこの章のメイン！✨
 「ドメインがイベントを溜める」→「アプリ層が回収して配る」
@@ -315,6 +325,8 @@ export class PayOrderService {
 ---
 
 ## InMemory Repo（テスト用の最小）🧪📦
+
+![InMemory Bus](./picture/ddd_ts_study_094_inmemory_bus.png)
 
 ```ts
 // infra/InMemoryRepos.ts
@@ -404,6 +416,8 @@ describe("PayOrderService + sync domain events", () => {
 * まずは **ID + 最小の重要値** が目安（第93章の復習だね）📦⚖️
 
 ### ❌ 事故3：同期購読で外部API叩いて遅くなる🐢🌩️
+
+![Sync Risk](./picture/ddd_ts_study_094_sync_risk.png)
 
 * 体感が一気に悪くなる
 * 重い/不安定な連携は “非同期” へ（次章でやるよ）⏳🌍

@@ -31,6 +31,8 @@
 
 ## 3) そもそも：ドメインイベントは「内側の合図」📣🏠
 
+![Domain vs Integration](./picture/ddd_ts_study_093_domain_vs_integration.png)
+
 ここ、超大事ポイント！💡
 **ドメインイベント**は「同じ境界の中（同じドメインの内側）で、何かが起きたよ〜」って伝える合図。
 **外のシステムに公開する“契約”にするのは別物**で、そっちはよく「統合イベント（Integration Event）」として分けて扱うよ〜🌍📨 ([Microsoft for Developers][2])
@@ -45,6 +47,8 @@
 ---
 
 ## 4) “イベントの情報”を2種類に分けよう：メタ情報とデータ 🧾🧩
+
+![Envelope Structure](./picture/ddd_ts_study_093_envelope_structure.png)
 
 イベントって、実務ではよく「封筒（エンベロープ）」＋「中身（データ）」の2階建てで考えるよ〜📩✨
 
@@ -72,6 +76,8 @@ DDD的におすすめのメタ情報セット（例）👇
 ---
 
 ## 5) ルール：イベントに「入れてOK / 基本NG」早見 🧁📌
+
+![Allowed vs NG](./picture/ddd_ts_study_093_allowed_ng.png)
 
 ### ✅ 入れてOK（入れる価値が高い）✨
 
@@ -156,6 +162,8 @@ type PaymentCompleted = {
 
 ## 7) 「購読側が欲しい情報」はどうするの？🔎📚
 
+![Subscription Fetch](./picture/ddd_ts_study_093_subscription_fetch.png)
+
 答え：**購読側で取りに行く**ことが多いよ〜🏃‍♀️💨
 （だから“薄いイベント”が成立する✨）
 
@@ -196,6 +204,8 @@ async function onPaymentCompleted(ev: PaymentCompleted) {
 
 ## 9) “重複配信”が起きる世界なので、IDは超だいじ 🔁🛡️
 
+![ID Importance](./picture/ddd_ts_study_093_id_importance.png)
+
 メッセージングは「少なくとも1回配信（at-least-once）」が多くて、**同じイベントが2回届く**ことがあるよ〜😇
 だから購読側は「同じイベントを2回処理しても壊れない（冪等）」が基本ルール！([microservices.io][5])
 
@@ -209,6 +219,8 @@ async function onPaymentCompleted(ev: PaymentCompleted) {
 ## 10) 実装テンプレ：TypeScriptで「太らない」イベント型を作る 🧩✨
 
 ### ベース型（おすすめ）
+
+![Immutability Seal](./picture/ddd_ts_study_093_immutability_seal.png)
 
 ```ts
 type ISODateTime = string;
@@ -246,6 +258,8 @@ type PaymentCompleted = DomainEvent<
 ---
 
 ## 11) テスト：イベントが太らないように“見張る”👀🧪
+
+![Test Size](./picture/ddd_ts_study_093_test_size.png)
 
 型だけでもかなり守れるけど、最低限これもやると強いよ〜💪
 
