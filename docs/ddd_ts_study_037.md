@@ -21,6 +21,10 @@ VO（Value Object）って「小さくてキレイな値の箱」だけじゃな
 
 ## まず結論：複合VOの「責務ルール」3つだけ覚えてね📌💡
 
+![37](./picture/ddd_ts_study_037_composite_vo.png)
+
+
+
 ### ① 部品VOは「自分のローカルルール」を守る🧩
 
 例：PostalCode は「形式」「正規化」など、郵便番号だけの責任。
@@ -45,6 +49,10 @@ VO（Value Object）って「小さくてキレイな値の箱」だけじゃな
 * 住所の各パーツがバラバラに検証されて抜け漏れ
 
 そこで、こうする👇
+
+![37](./picture/ddd_ts_study_037_address_bricks.png)
+
+
 
 * PostalCode（郵便番号VO）
 * NonEmptyText（空文字禁止VO）
@@ -173,6 +181,10 @@ export class CountryCode {
 
 ## 実装：複合VO Address（ここが本番！）🏠✨
 
+![37](./picture/ddd_ts_study_037_cross_validation.png)
+
+
+
 ポイントはここ👇
 
 * **部品VOを組み合わせる**
@@ -263,12 +275,20 @@ export class Address {
 
 ## 例題②：Receipt（レシート）VO：配列を持つ複合VO🧾✨
 
+![37](./picture/ddd_ts_study_037_receipt_snapshot.png)
+
+
+
 レシートは「発行した瞬間のスナップショット」扱いにすると VO と相性良いよ📸💕
 
 ただし！！
 **配列をそのまま外に返すと壊される**から注意ね🚨🧨
 
 ### ReceiptLine（明細）VO
+
+![37](./picture/ddd_ts_study_037_receipt_line.png)
+
+
 
 ```ts
 // domain/valueObjects/ReceiptLine.ts
@@ -312,6 +332,10 @@ export class ReceiptLine {
 ```
 
 ### Receipt（複合VO）
+
+![37](./picture/ddd_ts_study_037_frozen_array.png)
+
+
 
 ```ts
 // domain/valueObjects/Receipt.ts
@@ -485,6 +509,10 @@ describe("Receipt", () => {
 ---
 
 ## よくある落とし穴トップ5 😵‍💫⚠️（めっちゃ大事）
+
+![37](./picture/ddd_ts_study_037_mutable_trap.png)
+
+
 
 1. **複合VOが巨大化**（ルール・変換・I/O全部入り）
    → この章の次（第38章）でガッツリやるけど、今は「VOは“値のルール”まで」で止めよ🛑

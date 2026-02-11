@@ -20,6 +20,10 @@
 
 ## 1. なぜ「時間」が地雷なの？💣😇（よくある爆発パターン）
 
+![36](./picture/ddd_ts_study_036_time_landmines.png)
+
+
+
 ### 💥 地雷①：`Date` の文字列パースがややこしい
 
 たとえば **`YYYY-MM-DD`** みたいな “日付だけ” は、タイムゾーン情報が無いと **UTCとして解釈される**ケースがあるよ（歴史的な仕様の事情…）😵‍💫 ([MDN Web Docs][5])
@@ -93,6 +97,10 @@ classDiagram
 
 ## 3. Temporal を“確実に使える”ようにする（polyfill）🧩🛠️
 
+![36](./picture/ddd_ts_study_036_polyfill_puzzle.png)
+
+
+
 MDN的にまだ “どこでも当たり前” ではないので、学習プロジェクトは polyfill が安心！([MDN Web Docs][3])
 
 ### 📦 polyfill（例：`@js-temporal/polyfill`）
@@ -159,6 +167,10 @@ export class TimeZoneId {
 
 ## 5. 主役VO①：絶対時刻 `UtcInstant`（期限・ログ用）⏱️🧊
 
+![36](./picture/ddd_ts_study_036_utc_instant.png)
+
+
+
 「いつ発生したか」系は、**Instant一本**でほぼ勝てる🥇
 （タイムゾーンに引きずられないのが最高✨）
 
@@ -203,6 +215,10 @@ export class UtcInstant {
 ---
 
 ## 6. 主役VO②：現地の日時 `ZonedDateTimeVo`（予約・営業時間）🗓️🌏
+
+![36](./picture/ddd_ts_study_036_zoned_datetime.png)
+
+
 
 Temporalの `ZonedDateTime` は「Instant + TimeZone」って位置づけが明確なのが良い💎 ([MDN Web Docs][8])
 
@@ -257,6 +273,10 @@ export class ZonedDateTimeVo {
 ---
 
 ## 7. ドメイン例題：カフェの「受け取り予約」と「支払い期限」☕⏰
+
+![36](./picture/ddd_ts_study_036_cafe_schedule.png)
+
+
 
 ### 🎀 要件（かわいく言うと）
 
@@ -325,6 +345,10 @@ export class PaymentDeadline {
 ---
 
 ## 8. テスト：時間VOはテストしやすい！🧪💖（境界値で守る）
+
+![36](./picture/ddd_ts_study_036_test_boundaries.png)
+
+
 
 時間系は「1分前」「ちょうど」「1分後」みたいな境界で事故るから、そこを刺すよ🔪✨
 
