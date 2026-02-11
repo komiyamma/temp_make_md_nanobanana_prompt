@@ -2,6 +2,8 @@
 
 ### 0. 今日の気持ち☕️
 
+![ddd_cs_study_073_broken_window](./picture/ddd_cs_study_073_broken_window.png)
+
 「DDDっぽく分けたのに、いつの間にか *Domain が汚れてた…* 😱」
 これ、1人開発あるあるです。
 
@@ -45,6 +47,8 @@
 最初から10個作るとしんどいので、**3つだけ**でOKです🙆‍♀️💕
 
 ### ルールA：Domain は外側に依存しない🧼
+
+![ddd_cs_study_073_dependency_rules](./picture/ddd_cs_study_073_dependency_rules.png)
  
  ```mermaid
  flowchart TB
@@ -82,6 +86,8 @@
 ---
 
 ## 4. いちばん簡単：NetArchTest.Rules でやる✅（サクッと派）
+
+![ddd_cs_study_073_netarchtest_scanner](./picture/ddd_cs_study_073_netarchtest_scanner.png)
 
 `NetArchTest.Rules` は fluent API で書けて初心者に優しいです🧸
 （NuGetにパッケージがあります）([NuGet][2])
@@ -160,6 +166,8 @@ internal static class NetArchTestExtensions
 
 ### コツ💡
 
+![ddd_cs_study_073_rule_evolution](./picture/ddd_cs_study_073_rule_evolution.png)
+
 * 「依存してはいけない」を中心にルール化するとラク😌
 * ルールは “増やす” より “育てる” 🌱（必要になったら1個足す）
 
@@ -179,6 +187,8 @@ NuGetに本体と xUnit 用拡張があり、ガイドもあります([NuGet][3]
 ---
 
 ## 6. 「わざと違反」してみよう😈➡️✅（超大事）
+
+![ddd_cs_study_073_breaking_build](./picture/ddd_cs_study_073_breaking_build.png)
 
 これを一回やると理解が爆速です🚀
 

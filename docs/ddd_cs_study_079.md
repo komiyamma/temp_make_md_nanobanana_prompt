@@ -50,6 +50,8 @@ YAGNIは、
 
 ## DDD初心者がハマりがちな「YAGNI違反」あるある 😂🧨
 
+![ddd_cs_study_079_over_engineering](./picture/ddd_cs_study_079_over_engineering.png)
+
 DDDを学び始めると、用語がかっこよくてテンション上がるんですよね😆✨
 でも、**最初から全部盛り**すると爆発します💥
 
@@ -69,6 +71,8 @@ DDDを学び始めると、用語がかっこよくてテンション上がる�
 ---
 
 ## YAGNIの“勝ち筋”は「2回目まで待つ」🕰️🎯
+
+![ddd_cs_study_079_wait_for_second](./picture/ddd_cs_study_079_wait_for_second.png)
 
 YAGNIの超実用ルール：
 
@@ -121,6 +125,8 @@ public interface IUserRepository
 
 ## AI時代のYAGNI：AIが「未来の妄想実装」してくる問題 🤖⚡
 
+![ddd_cs_study_079_ai_hallucination](./picture/ddd_cs_study_079_ai_hallucination.png)
+
 AIに「将来も考えて設計して」って言うと、だいたいこうなります👇
 
 * 過剰な抽象化 🧩
@@ -151,6 +157,8 @@ YAGNIの観点で「今は作らないものリスト」を作って。
 ---
 
 ## YAGNIチェックリスト（5秒で判定）✅⏱️
+
+![ddd_cs_study_079_pruning_tree](./picture/ddd_cs_study_079_pruning_tree.png)
  
 実装しようとしてるものに、これ当ててみてください😊
  
@@ -210,6 +218,8 @@ DDDって「全部やる」ものじゃなくて、
 * 「いつか決済対応」
 
 ### Step2：「YAGNIボックス」に入れる📦✨
+
+![ddd_cs_study_079_yagni_box](./picture/ddd_cs_study_079_yagni_box.png)
 
 実装しない。だけど忘れないために、こう書く👇
 

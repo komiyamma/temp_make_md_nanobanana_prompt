@@ -32,6 +32,8 @@
 
 ## 2. どこをモックするの？（迷わないルール）🧭✨
 
+![ddd_cs_study_072_boundary_mock](./picture/ddd_cs_study_072_boundary_mock.png)
+
 モックは基本ここだけ👇
 
 ✅ **アプリの“外側”にあるもの**
@@ -82,6 +84,8 @@
 ---
 
 ## 3. Moq と NSubstitute、どっち使う？🤔🎀
+
+![ddd_cs_study_072_moq_vs_nsubstitute](./picture/ddd_cs_study_072_moq_vs_nsubstitute.png)
 
 どっちも人気です！
 
@@ -290,6 +294,8 @@ public sealed class RegisterUserService_MoqTests
 
 ### Moqのコツ🎯
 
+![ddd_cs_study_072_mock_role](./picture/ddd_cs_study_072_mock_role.png)
+
 * `Setup(...)`：こう呼ばれたらこう返してね
 * `Verify(...)`：本当に呼ばれた？回数は？
 * `SetupGet(...)`：プロパティの返り値固定（時刻モックに便利⏰）
@@ -374,6 +380,8 @@ public sealed class RegisterUserService_NSubstituteTests
 
 ## 8. 1人開発で“爆速”になる使い方🛼💨
 
+![ddd_cs_study_072_test_stability](./picture/ddd_cs_study_072_test_stability.png)
+
 ### ✅ まずテストで「安心ライン」を作る
 
 * 新規登録は成功する🎉
@@ -383,6 +391,8 @@ public sealed class RegisterUserService_NSubstituteTests
 これがあるだけで、あとから改修しても怖くないです😌🫶
 
 ### ✅ “時刻”は絶対モックする⏰
+
+![ddd_cs_study_072_time_mock](./picture/ddd_cs_study_072_time_mock.png)
 
 `DateTime.UtcNow` を直で使うとテストが不安定になりがち…
 `IClock` は地味だけど超効きます💊✨

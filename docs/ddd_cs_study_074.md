@@ -12,6 +12,8 @@
 
 ## なんでディレクトリ名がそんなに大事なの？🧭
 
+![ddd_cs_study_074_map_metaphor](./picture/ddd_cs_study_074_map_metaphor.png)
+
 コードって、書くより **探す時間** の方が長くなりがちです😅
 特に1人開発だと、未来の自分がこう言います👇
 
@@ -44,6 +46,8 @@
 ---
 
 ## “見ただけでわかる” ディレクトリ構成（最小の正解例）📁✨
+
+![ddd_cs_study_074_folder_signposts](./picture/ddd_cs_study_074_folder_signposts.png)
  
  ```mermaid
  mindmap
@@ -66,6 +70,8 @@
  ```
  
  C#プロジェクトを4つに分けるイメージです（Solutionの中に4プロジェクト）💡
+
+![ddd_cs_study_074_four_layers_tree](./picture/ddd_cs_study_074_four_layers_tree.png)
 
 ```text
 MyApp.sln
@@ -173,6 +179,8 @@ MyApp.Application/
 
 ## 絶対に避けたい「迷子フォルダ」たち 😇
 
+![ddd_cs_study_074_lost_in_utils](./picture/ddd_cs_study_074_lost_in_utils.png)
+
 以下が増えたら、将来の自分が泣きます😭
 
 * `Common/`（何でも屋）
@@ -239,6 +247,8 @@ MyApp.Application/
 ---
 
 ## 迷わないための「置き場所クイズ」🧪✨
+
+![ddd_cs_study_074_sorting_quiz](./picture/ddd_cs_study_074_sorting_quiz.png)
 
 次のクラス、どこに置く？（答えも下にあるよ✅）
 
