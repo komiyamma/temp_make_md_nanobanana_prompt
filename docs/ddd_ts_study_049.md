@@ -1,6 +1,9 @@
 ﻿# 第49章：小演習：OrderLineの扱い（VO寄りで設計）🧾
 
 ポイントはこれ👇
+
+![VO Encapsulation](./picture/ddd_ts_study_049_vo_encapsulation.png)
+
 **“明細配列を公開しない”** ＆ **“変更はOrderのメソッドだけ”** 🛡️✨
 
 ```mermaid
@@ -41,6 +44,9 @@ classDiagram
 
 ### ✅ VO寄りの気持ち
 
+![Immutable Swap](./picture/ddd_ts_study_049_immutable_swap.png)
+
+
 * `OrderLine` は「同一性（ID）」より **中身（値）** が大事
 * 更新は「中身を書き換える」じゃなくて **新しいOrderLineを作って差し替え**（生成）🧊✨
 * `Order` の外に **配列の参照を渡さない**（外からpushとかさせない）🙅‍♀️
@@ -65,6 +71,9 @@ classDiagram
 （あとで拡張できる形にするのがポイント✨）
 
 ### ルールA：明細のキー（重複の判定）🔑
+
+![Merge Logic](./picture/ddd_ts_study_049_merge_logic.png)
+
 
 * 明細は `menuItemId` で一意（同じ商品は1行にまとめる）🍩
 * 同じ商品を追加したら **数量を足す**（行は増えない）➕🧾
@@ -106,6 +115,9 @@ classDiagram
   * `removeLine(menuItemId)`
 
 ポイントはこれ👇
+
+![VO Encapsulation](./picture/ddd_ts_study_049_vo_encapsulation.png)
+
 **“明細配列を公開しない”** ＆ **“変更はOrderのメソッドだけ”** 🛡️✨
 
 ---
@@ -237,6 +249,9 @@ export class OrderLine {
 
 ### 5-4. Order（Entity）に“明細操作のルール”を閉じ込める🏠🔒
 
+![Private List Guard](./picture/ddd_ts_study_049_private_list_guard.png)
+
+
 ```ts
 // domain/entities/Order.ts
 import { DomainError } from "../errors/DomainError";
@@ -328,6 +343,9 @@ export class Order {
 ---
 
 ## 6) テストを書こう（VO寄りのうれしさ体験）🧪💕
+
+![Test as Specification](./picture/ddd_ts_study_049_test_specification.png)
+
 
 テストは「仕様そのもの」になってくれるよ〜！📜✨
 （ここでは雰囲気が伝わればOK！）
