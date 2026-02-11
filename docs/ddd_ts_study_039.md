@@ -1,5 +1,9 @@
 ﻿# 第39章：VOのテスト：最小で強く🧪💎
 
+![39](./picture/ddd_ts_study_039_vo_test_shield.png)
+
+
+
 VO（Value Object）って、DDDの中でも **いちばんテストで得する子** なんだよね〜！🥰
 なぜなら… **入出力が少ない・副作用がない・ルールがまとまってる** ＝テストが超書きやすいから💪✨
 
@@ -21,6 +25,10 @@ VOに対して、次の4種類のテストを **迷わず** 書けるように�
 ---
 
 ## まず結論：VOテストの“最小セット”はこれだけでいい🧠✨
+
+![39](./picture/ddd_ts_study_039_four_pillars.png)
+
+
 
 VOのテストは、基本このテンプレでOK👇🥳
 
@@ -53,6 +61,10 @@ mindmap
 ---
 
 ## 2026/02/07 時点の“おすすめテストランナー”は Vitest 寄り🧡⚡
+
+![39](./picture/ddd_ts_study_039_vitest_speed.png)
+
+
 
 ここでは **Vitest** 前提で進めるね（理由：速い、Jest互換が多い、TSとの相性が良い）✨
 Vitestは「Jest APIとだいたい互換で、置き換えやすい」って公式ガイドでも言ってるよ〜！ ([Vitest][2])
@@ -99,6 +111,10 @@ npm i -D vitest
 ---
 
 ## 例題VO：Money（日本円）を作ってテストする💴🧊
+
+![39](./picture/ddd_ts_study_039_money_test_rig.png)
+
+
 
 ### ✅ 方針（この章の仕様）
 
@@ -158,6 +174,10 @@ export class Money {
 ---
 
 ## テスト：Moneyの“最小で強い”セット🧪💘
+
+![39](./picture/ddd_ts_study_039_equality_balance.png)
+
+
 
 ```ts
 // src/domain/valueObjects/Money.test.ts
@@ -242,6 +262,10 @@ describe("Money VO", () => {
 ```
 
 これで、VOのテストとしては **かなり強い** よ〜！🥳💎
+
+![39](./picture/ddd_ts_study_039_immutable_calc.png)
+
+
 「失敗ルート」「境界」「等価性」「不変」が揃ってるので、仕様が崩れにくい✨
 
 ---
@@ -271,6 +295,10 @@ V8カバレッジを使うパッケージも、2026年1月時点で継続的に�
 ---
 
 ## AI（Copilot / OpenAI Codex）で“テストだけ増やす”のが最強🤖🧪
+
+![39](./picture/ddd_ts_study_039_ai_generator.png)
+
+
 
 AIに **実装を丸投げ** じゃなくて、VOは特に「テストケース生成」に使うと気持ちいいよ〜💘
 
