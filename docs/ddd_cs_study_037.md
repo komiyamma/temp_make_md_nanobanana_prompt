@@ -9,6 +9,8 @@
 
 ## 1. `record`ってなに？（超ざっくり）📌
 
+![record_equality](./picture/ddd_cs_study_037_record_equality.png)
+
 `record` は一言でいうと、
 
 > **「中身（値）が同じなら、同じもの扱い」になりやすい型** 🎁
@@ -32,6 +34,8 @@
 ---
 
 ## 3. まず結論：おすすめの「最強テンプレ」🧩🔥
+
+![factory_gate](./picture/ddd_cs_study_037_factory_gate.png)
 
 値オブジェクトは **“作れた時点で正しい”** が理想だから、
 
@@ -126,6 +130,8 @@ Console.WriteLine(a == b); // True ✅
 
 ## 6. 例：Money（お金）を `record` で作る 💰🪙
 
+![money_record](./picture/ddd_cs_study_037_money_record.png)
+
 お金も `decimal` をそのまま使うと、
 「通貨がない」「マイナス許していいの？」「小数の桁どうするの？」が混乱しがち😵‍💫
 
@@ -186,6 +192,8 @@ Console.WriteLine(sum.IsSuccess ? sum.Value : sum.Error); // 1500 JPY ✅
 
 ## 7. `with` は便利だけど、値オブジェクトでは注意⚠️😺
 
+![with_expression](./picture/ddd_cs_study_037_with_expression.png)
+
 `record` の `with` は「コピーして一部だけ変更」ができて便利！
 
 でも値オブジェクトは、**勝手に中身を差し替えると不正を作りやすい**んだよね💦
@@ -217,6 +225,8 @@ Console.WriteLine(sum.IsSuccess ? sum.Value : sum.Error); // 1500 JPY ✅
 ---
 
 ## 9. ちょいテスト（xUnit）で安心を増やす 🧪✨
+
+![test_confidence](./picture/ddd_cs_study_037_test_confidence.png)
 
 値オブジェクトはテストが楽しいタイプ！🎉
 
