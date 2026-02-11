@@ -16,6 +16,8 @@
 集約ルート（Aggregate Root）＝その集約の**代表（入口）** 👑🚪
 
 外から見たら、集約は「1つの箱」みたいなもの📦
+
+![ddd_cs_study_044_sealed_box.png](./picture/ddd_cs_study_044_sealed_box.png)
 箱の中にはメンバー（子エンティティ、値オブジェクト）がいるけど、**外部は箱の中を直接いじらない**のがルールです🔒
 
 ---
@@ -46,6 +48,8 @@
 * 別の画面で `order.Lines[0].Quantity = -10` 😱
 * 「確定済みなのに明細が変わった」😱😱😱
 
+![ddd_cs_study_044_sneaky_change.png](./picture/ddd_cs_study_044_sneaky_change.png)
+
 こういう事故を防ぐのが、集約ルートの仕事です👑🛡️
 
 ```mermaid
@@ -66,9 +70,13 @@ sequenceDiagram
     Note right of Root: 整合性ヨシ！👈
 ```
 
+![ddd_cs_study_044_waiter_check.png](./picture/ddd_cs_study_044_waiter_check.png)
+
 ---
 
 ## 4) 集約ルートの3つの基本ルール 📏✨
+
+![ddd_cs_study_044_three_pillars.png](./picture/ddd_cs_study_044_three_pillars.png)
 
 ### ルール①：集約の外から、子を直接変更しない 🚫
 
@@ -196,6 +204,8 @@ public sealed class OrderLine
 ### ここがポイントだよ〜！🎯✨
 
 * `Lines` を `IReadOnlyList` にして、外から `Add/Remove` できないようにした🔒
+
+![ddd_cs_study_044_glass_window.png](./picture/ddd_cs_study_044_glass_window.png)
 * `OrderLine` の変更メソッドを `internal` にして、基本は **Order 経由**にした👑
 * 「確定後は変更不可」みたいなルールを、**Order が守ってる**🛡️
 
