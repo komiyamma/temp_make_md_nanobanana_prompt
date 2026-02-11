@@ -15,6 +15,18 @@
 
 ## なんで「最初から完璧な集約」は危ないの？⚠️😵
 
+![Heavy Lifting
+
+**Labels to Render**:
+- Perfect: "完璧な集約"
+- Heavy: "重い"
+
+**Visual Details**:
+1. Core Concept: Over-engineering.
+2. Metaphor: A developer trying to lift a massive, ornate golden statue (Perfect Aggregate) and struggling.
+3. Action: Lifting.
+4. Layout: Character.](./picture/ddd_cs_study_084_heavy_lifting.png)
+
 DDDを始めた人がハマりがちな罠がこれ👇
 
 * 仕様がまだ固まってないのに、将来を全部想像して作る 🧙‍♂️💭
@@ -27,6 +39,19 @@ DDDを始めた人がハマりがちな罠がこれ👇
 ---
 
 ## スモールスタートの3原則 🌟
+
+![Stepping Stones
+
+**Labels to Render**:
+- 1: "通す"
+- 2: "守る"
+- 3: "育てる"
+
+**Visual Details**:
+1. Core Concept: Incremental progress.
+2. Metaphor: Three stepping stones across a river. 1. Pass, 2. Protect, 3. Grow.
+3. Action: Crossing.
+4. Layout: Path.](./picture/ddd_cs_study_084_stepping_stones.png)
 
 ### ① まず「1ユースケース」だけ通す 🛣️
 
@@ -51,6 +76,19 @@ DDDを始めた人がハマりがちな罠がこれ👇
 ---
 
 ## 集約の「成長ステップ」イメージ 🪜
+
+![Plant Growth
+
+**Labels to Render**:
+- Seed: "v1"
+- Sprout: "v2"
+- Tree: "v3"
+
+**Visual Details**:
+1. Core Concept: Evolution.
+2. Metaphor: A plant growing stages. Seed -> Sprout -> Small Tree.
+3. Action: Growing.
+4. Layout: Growth stages.](./picture/ddd_cs_study_084_plant_growth.png)
  
  集約を最初から100点にしないために、こう育てるのがおすすめ👇
  
@@ -98,6 +136,19 @@ DDDを始めた人がハマりがちな罠がこれ👇
 * 確定後は追加できない（最小の不変条件）
 
 ### v1：最小の集約（まずこれでOK）🧩
+
+![Simple Order
+
+**Labels to Render**:
+- Draft: "下書き"
+- Confirmed: "確定"
+- Order: "Order"
+
+**Visual Details**:
+1. Core Concept: Minimal state.
+2. Metaphor: A simple paper order form with a 'Draft' stamp and a 'Confirmed' stamp. Nothing else.
+3. Action: Stamping.
+4. Layout: Document.](./picture/ddd_cs_study_084_simple_order.png)
 
 ```csharp
 namespace Shop.Domain.Orders;
@@ -168,6 +219,18 @@ public sealed record OrderItem(ProductId ProductId, int Quantity);
 
 ## 「完璧をやめる」ためのチェックリスト ✅📝
 
+![Perfect Checklist
+
+**Labels to Render**:
+- Needed: "今必要?"
+- Decided: "決まってる?"
+
+**Visual Details**:
+1. Core Concept: Stopping perfectionism.
+2. Metaphor: A checklist stopping a hand from adding 'Future Features'.
+3. Action: Checking.
+4. Layout: Checklist.](./picture/ddd_cs_study_084_checklist.png)
+
 集約を作ってるときに、これを自分に聞いてみてね👇
 
 * それ、**今日のユースケース**で必要？🤔
@@ -190,6 +253,18 @@ public sealed record OrderItem(ProductId ProductId, int Quantity);
 ---
 
 ## ミニテスト（最小の安心）🧪✨
+
+![Test Shield
+
+**Labels to Render**:
+- Test: "テスト"
+- Rule: "不変条件"
+
+**Visual Details**:
+1. Core Concept: Minimum protection.
+2. Metaphor: A small but strong shield labeled 'Test' protecting a single rule.
+3. Action: Shielding.
+4. Layout: Shield.](./picture/ddd_cs_study_084_test_shield.png)
 
 「確定後に追加できない」を守りたいなら、テスト1本でOK👍
 
@@ -218,6 +293,19 @@ public class OrderTests
 ---
 
 ## AIに頼むときの“ちょうどいい”頼み方 🤖🗣️✨
+
+![AI Constraints
+
+**Labels to Render**:
+- AI: "AI"
+- Constraint: "制限"
+- Safe: "安全"
+
+**Visual Details**:
+1. Core Concept: Limiting AI.
+2. Metaphor: Putting a fence or leash (Constraint) on an AI robot so it stays in the 'Safe Zone'.
+3. Action: Constraining.
+4. Layout: Interaction.](./picture/ddd_cs_study_084_ai_constraints.png)
 
 AIには「全部やって」じゃなくて、こう頼むのがコツ👇
 
