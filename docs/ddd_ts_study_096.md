@@ -24,6 +24,8 @@
 ---
 
 ## 2) なぜ必要？（非同期・リトライ前提の世界）⏳🌍
+![Retry Risk & Double Processing](./picture/ddd_ts_study_096_retry_risk.png)
+
 
 第95章で出てきた「非同期」「リトライ」って、成功率を上げるために超大事なんだけど…
 **リトライ = 同じ処理が2回走る可能性**を常に持つの🥲🔁
@@ -44,6 +46,8 @@
 冪等性って、ふわっと「同じでも安全！」じゃなくて、だいたい次の3つに分けて考えると整理しやすいよ📦✨
 
 ### A. ドメインの不変条件で防ぐ（最低限の城壁）🏯🔒
+![Domain Invariant Protection](./picture/ddd_ts_study_096_domain_invariant.png)
+
 
 例：**「支払い済みの注文は、もう支払えない」**
 これは集約（Order）が守るべきルールだよね💡
@@ -54,6 +58,8 @@
 ---
 
 ### B. “要求”を冪等化する（冪等キー）🔑🔁
+![Idempotency Key Mechanism](./picture/ddd_ts_study_096_idempotency_key_concept.png)
+
 
 **同じ操作には同じキーを付ける**
 → サーバー側で「このキーはもう処理済み」なら **前回の結果を返す**（または何もしない）✨
@@ -63,6 +69,8 @@
 ---
 
 ### C. “イベント処理”を冪等化する（重複排除）📮🚫
+![Event Deduplication](./picture/ddd_ts_study_096_deduplication.png)
+
 
 イベントは「同じイベントが再配信される」前提で設計するのが基本。
 そのために、**イベントIDを記録して二重処理をスキップ**するよ✍️🛡️
@@ -74,6 +82,8 @@
 ---
 
 ## 4) 例題（カフェ注文）で起きる“二重処理”を具体化しよ☕🧾🔁
+![Double Payment Prevention Scenario](./picture/ddd_ts_study_096_double_payment_prevention.png)
+
 
 今回は **PayOrder（支払い）** を冪等化するよ💳✨
 
@@ -159,6 +169,8 @@ export class InMemoryIdempotencyStore<T> implements IdempotencyStore<T> {
 ---
 
 ### 6-3. “冪等ラッパー”を作る（超便利）🎁🔁
+![Idempotency Wrapper Pattern](./picture/ddd_ts_study_096_wrapper_pattern.png)
+
 
 ```ts
 export async function withIdempotency<T>(

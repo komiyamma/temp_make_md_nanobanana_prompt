@@ -21,6 +21,8 @@
 ## 1) 今日つくる完成形（ゴール）🎯✨
 
 ### ✅ ユースケースの流れ
+![Integration Process Flow](./picture/ddd_ts_study_099_process_flow.png)
+
 
 1. **PayOrder（支払い）**が成功する 💳✅
 2. **Order 集約が PaymentCompleted イベントを発行**する 📣
@@ -59,6 +61,8 @@
 ---
 
 ## 4) 実装ステップ①：DomainEvent と AggregateRoot 📣🏯
+![Aggregate Root & Domain Events](./picture/ddd_ts_study_099_aggregate_events.png)
+
 
 ### ✅ DomainEvent（最小の共通形）
 
@@ -96,6 +100,8 @@ export abstract class AggregateRoot {
 ---
 
 ## 5) 実装ステップ②：Order が PaymentCompleted を出す 💳➡️📣
+![Order State Transition & Event](./picture/ddd_ts_study_099_order_state_transition.png)
+
 
 今回は“最小の注文”でいくね（合計金額と状態だけ）☕🧾
 
@@ -251,6 +257,8 @@ export class InMemoryEventBus implements EventBus {
 ---
 
 ## 9) 実装ステップ⑥：PayOrder（支払いユースケース）💳🎬
+![Transaction & Event Publication Order](./picture/ddd_ts_study_099_transaction_order.png)
+
 
 「外部決済→成功→Order更新→保存→イベント配信」って順番にするよ✨
 （保存前にイベント飛ばすと、失敗した時に事故るからね…😇）
@@ -318,6 +326,8 @@ export class PayOrder {
 ---
 
 ## 10) 実装ステップ⑦：購読ハンドラ「支払い完了→レシート発行」🧾🔔
+![Event Handler Logic](./picture/ddd_ts_study_099_handler_logic.png)
+
 
 ここで **ReceiptRepository** を使って保存するよ✨
 さらに **簡易冪等**：すでに同じ注文のレシートがあったら何もしない🔁🛡️
@@ -420,6 +430,8 @@ export class InMemoryReceiptRepository implements ReceiptRepository {
 ---
 
 ## 12) 統合テスト（この章のメイン！）🧪🎉
+![Integration Test Setup](./picture/ddd_ts_study_099_test_environment.png)
+
 
 「PayOrderしたら Receipt ができる」を確認するよ✨
 Vitestのメジャー4系が出てるよ〜ってのも押さえつつね🧡([Vitest][4])
