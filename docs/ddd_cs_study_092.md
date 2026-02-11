@@ -19,6 +19,8 @@ AIって便利だけど、そのまま使うと**“それっぽいけど、ド�
 ---
 
 ## AIに「覚えさせる」ってどういうこと？🧠📌
+![AI Memory](./picture/ddd_cs_study_092_ai_memory.png)
+
 
 AIは、あなたの頭の中の仕様を勝手に読めません🥺
 なので、**AIが参照できる場所に “ルール” を置く**のがコツです💡✨
@@ -44,6 +46,8 @@ flowchart LR
 ---
 
 ## まずはこれ！Copilotに効く「3点セット」🧰✨
+![Three Instruction Types](./picture/ddd_cs_study_092_three_instruction_types.png)
+
 
 GitHub Copilotには、ざっくりこの3種類の“覚えさせ方”があります👇
 （公式に整理されてます） ([GitHub Docs][1])
@@ -78,6 +82,8 @@ VS Codeでもプロンプトファイルが使えます。 ([Visual Studio Code]
 ---
 
 ## ① `.github/copilot-instructions.md`（プロジェクト憲法）📜✨
+![Global Rules](./picture/ddd_cs_study_092_global_rules.png)
+
 
 ここは**長文にしすぎない**のがコツです😌
 “AIが迷うポイント”だけ書くのが正解💯
@@ -116,6 +122,8 @@ VS Codeでもプロンプトファイルが使えます。 ([Visual Studio Code]
 ---
 
 ## ② Domain専用ルール：`.github/instructions/domain.instructions.md` 🧱✨
+![Domain Rules](./picture/ddd_cs_study_092_domain_rules.png)
+
 
 「Domainだけは絶対に汚したくない！」ってとき、ここが効きます🔥
 `applyTo` で対象を絞れます。 ([Microsoft Learn][2])
@@ -137,6 +145,8 @@ applyTo: "**/Domain/**/*.cs"
 ---
 
 ## ③ “お願いテンプレ”を作る：`.github/prompts/*.prompt.md` 🪄✨
+![Prompt Template](./picture/ddd_cs_study_092_prompt_template.png)
+
 
 たとえば「値オブジェクトを作るお願い」を固定化すると超ラクです💕
 
@@ -176,6 +186,8 @@ VS Code はワークスペースを解析して `.github/copilot-instructions.md
 ---
 
 ## “AIにドメインを覚えさせる”ためのコツ5つ 🌟😺
+![Five Tips](./picture/ddd_cs_study_092_five_tips.png)
+
 
 1. **単語帳（Glossary）を置く**📘
    「User」「会員」「顧客」みたいな揺れを潰すだけで精度が跳ねます✨
