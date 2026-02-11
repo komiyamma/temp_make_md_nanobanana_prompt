@@ -8,6 +8,9 @@ DDDって「ルールを守る設計」だよね？✨
 
 ## 0. 今日のゴール🎯✨
 
+![0. 今日のゴール🎯✨](./picture/ddd_ts_study_087_visual_1.png)
+
+
 * 「これはドメイン例外で投げるべき？」が判断できる👀
 * 例外に **型・メッセージ・原因（cause）・文脈（meta）** を持たせられる🧠
 * アプリ層で **安全にcatchして扱える**（unknown対策も）🧤
@@ -28,6 +31,9 @@ DDDって「ルールを守る設計」だよね？✨
 こういうのは **“システムが壊れた” じゃなくて “操作が仕様に合ってない”** だよね。
 
 ### ❌ ドメイン例外じゃないもの（混ぜない！）
+
+![❌ ドメイン例外じゃないもの（混ぜない！）](./picture/ddd_ts_study_087_visual_2.png)
+
 
 * DB接続失敗、ネットワーク失敗、ファイル読めない…みたいな「技術的な失敗」🌩️
   → それは **インフラ側** の責任（後半でやるやつ）
@@ -61,6 +67,9 @@ TypeScriptは「投げられるものは何でも投げられる」世界なの�
 （例題：注文 `Order` が「状態に応じて操作できる/できない」を守る）
 
 ### 4-1. tsconfigのポイント（causeとunknown）⚙️🪄
+
+![4-1. tsconfigのポイント（causeとunknown）⚙️🪄](./picture/ddd_ts_study_087_visual_3.png)
+
 
 `Error(message, { cause })` を型的に扱うには ES2022 以上がラクです（`Error()` が options を受け取る仕様）([MDN ウェブドキュメント][1])
 あと `useUnknownInCatchVariables` もON推しです([typescriptlang.org][2])
@@ -120,6 +129,9 @@ export class DomainError extends Error {
 ## 5. 例題：Orderで「仕様違反」を投げる☕🧾🚫
 
 ### 5-1. 状態とルールの例🚦
+
+![5-1. 状態とルールの例🚦](./picture/ddd_ts_study_087_visual_4.png)
+
 
 * `Draft`：明細追加OK、支払いNG
 * `Confirmed`：支払いOK、明細追加NG
@@ -241,6 +253,9 @@ export function payOrderUseCase(order: Order): PayOrderResult {
 
 ## 7. causeの使いどころ（エラーの“原因を保持”）🔗🧠
 
+![7. causeの使いどころ（エラーの“原因を保持”）🔗🧠](./picture/ddd_ts_study_087_visual_5.png)
+
+
 `cause` は「元のエラーを繋ぐ」ための標準機能です([MDN ウェブドキュメント][6])
 Nodeでも `new Error(message, { cause })` で `error.cause` が使えるって明記されています([nodejs.org][7])
 
@@ -324,6 +339,9 @@ describe("Order domain errors", () => {
 
 ### ✅ 例外設計の候補を出してもらう
 
+![✅ 例外設計の候補を出してもらう](./picture/ddd_ts_study_087_visual_6.png)
+
+
 * 「Orderの操作（addItem/confirm/pay）ごとに、起こりうる仕様違反を列挙して。DomainErrorCode案も作って」
 
 ### ✅ 例外メッセージを“読める文章”に整える
@@ -347,6 +365,9 @@ describe("Order domain errors", () => {
 ---
 
 ## 11. ミニ演習（やると身につく！）🎮✨
+
+![11. ミニ演習（やると身につく！）🎮✨](./picture/ddd_ts_study_087_visual_7.png)
+
 
 ### 演習A：キャンセルを追加🧾🚫
 

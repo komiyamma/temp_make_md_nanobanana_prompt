@@ -10,6 +10,9 @@
 
 ## 0) まずは“今日の最新メモ”だけ押さえよ〜🧠🆕
 
+![0) まずは“今日の最新メモ”だけ押さえよ〜🧠🆕](./picture/ddd_ts_study_090_visual_1.png)
+
+
 * **TypeScript の最新は 5.9 系**（`import defer` などが入ってます）📦✨ ([typescriptlang.org][1])
 * **Node は TypeScript を「型を剥がして」そのまま実行できる案内が公式にあります**（いわゆる type stripping）🏃‍♀️💨 ([nodejs.org][2])
 * **Vitest は 4.x が安定運用ラインで、4.1 以降は “tags” でテストにタグ付けできる**のが便利です🏷️🧪 ([main.vitest.dev][3])
@@ -32,6 +35,9 @@
 ## 2) 受け入れ条件（Given/When/Then）✅🧪
 
 ### ✅ 成功パターン
+
+![✅ 成功パターン](./picture/ddd_ts_study_090_visual_2.png)
+
 
 * **Given** 学生で、平日で、キャンペーン期間内
 * **When** 割引適用を実行
@@ -79,6 +85,9 @@
 ---
 
 ## 5) 実装：まずは Result とエラー土台📦🧯
+
+![5) 実装：まずは Result とエラー土台📦🧯](./picture/ddd_ts_study_090_visual_3.png)
+
 
 ### 5-1) Result 型（アプリ層で使う）
 
@@ -168,6 +177,9 @@ export class FakeClock implements Clock {
 
 ## 7) 実装：Specification（条件を部品化）🔎📄🧷
 
+![7) 実装：Specification（条件を部品化）🔎📄🧷](./picture/ddd_ts_study_090_visual_4.png)
+
+
 ### 7-1) まずインターフェイス＋合成
 
 ```ts
@@ -243,6 +255,9 @@ export class IsStudentSpec extends BaseSpec<DiscountContext> {
 ```
 
 ### 7-4) 「平日か？」Spec 📅
+
+![7-4) 「平日か？」Spec 📅](./picture/ddd_ts_study_090_visual_5.png)
+
 
 ```ts
 // domain/discount/specs/isWeekdaySpec.ts
@@ -478,6 +493,9 @@ export class ApplyDiscountToOrder {
 
 ## 11) 組み立て：キャンペーン条件を“文章みたいに”読む🧷📖✨
 
+![11) 組み立て：キャンペーン条件を“文章みたいに”読む🧷📖✨](./picture/ddd_ts_study_090_visual_6.png)
+
+
 「学生 AND 平日」って読みたいよね🥰
 
 ```ts
@@ -557,6 +575,9 @@ describe("UseCase", () => {
 ---
 
 ## 13) よくある事故ポイント（ここで潰す！）😂🧯
+
+![13) よくある事故ポイント（ここで潰す！）😂🧯](./picture/ddd_ts_study_090_visual_7.png)
+
 
 ![設計のアンチパターン](./picture/ddd_ts_study_090_anti_patterns.png)
 
