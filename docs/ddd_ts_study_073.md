@@ -9,6 +9,8 @@
 
 ## 1) Repositoryの「粒度」ってなに？🍪
 
+![Repository per Root](./picture/ddd_ts_study_073_repo_per_root.png)
+
 Repositoryは一言でいうと…
 
 > **集約を“丸ごと”出し入れするための入口（保管庫）** 📦🔑
@@ -24,6 +26,8 @@ Repositoryは一言でいうと…
 ## 2) なんで「集約単位」が大事なの？💥🛡️
 
 ### ❌ Repositoryを細かくしすぎると起きること
+
+![Backdoor Thief](./picture/ddd_ts_study_073_backdoor_thief.png)
 
 たとえば「Orderの中のOrderLine」みたいな“子”にRepositoryを作っちゃうと…
 
@@ -83,6 +87,8 @@ await orderLineRepo.save(line);
 
 ## 4) 良い例：OrderRepositoryだけにして、Order経由で操作する😊✨
 
+![Order Gate](./picture/ddd_ts_study_073_order_gate.png)
+
 ```ts
 // ✅ 良い例：集約ルート（Order）を取得して、Orderのメソッドで変更する
 const order = await orderRepo.findById(orderId);
@@ -140,6 +146,8 @@ export interface OrderRepository {
 ---
 
 ## 7) “読み取り”は別口に逃がしてOK（Query側）🔎✨
+
+![Query Separation](./picture/ddd_ts_study_073_query_separation.png)
 
 DDDでよくある整理だよ👇
 
@@ -253,6 +261,8 @@ export class InMemoryOrderRepository implements OrderRepository {
 ---
 
 ## 11) 章末ミニ演習🎓🍓
+
+![Granularity Scale](./picture/ddd_ts_study_073_granularity_scale.png)
 
 ### 演習A：これはRepositoryいる？いらない？（理由も）💬
 

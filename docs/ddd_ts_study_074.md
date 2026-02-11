@@ -9,6 +9,8 @@ npmの `typescript` パッケージ上での最新は **5.9.3** です（この�
 
 ## この章でやること🎯🏭
 
+![Factory Assembly Line](./picture/ddd_ts_study_074_factory_assembly.png)
+
 Factoryを一言でいうと、
 
 > 「**ドメインの“生成（はじまり）”を担当する専門家**」🏭✨
@@ -41,6 +43,8 @@ Factoryを一言でいうと、
 ---
 
 ## 悪い例：UseCaseが“生成の手順書”になってる😵‍💫🧾
+
+![Creation Chaos](./picture/ddd_ts_study_074_creation_chaos.png)
 
 「PlaceOrder」の中で、生成に必要なことを全部やってるパターン👇
 （※雰囲気の例。こうなりがちって話！）
@@ -77,6 +81,8 @@ await orderRepo.save(order);
 ---
 
 ## 正しい方向：Factoryに「生成の責務」を集める🏭✨
+
+![Factory Role](./picture/ddd_ts_study_074_factory_role.png)
 
 Factoryがやることはシンプル👇
 
@@ -377,6 +383,8 @@ UseCaseが「手順書」じゃなくて「物語」になった〜！🎉📖�
 
 ## テスト：Factoryはめっちゃテストしやすい🧪💖
 
+![Mocking Tools](./picture/ddd_ts_study_074_mock_tools.png)
+
 「ID」と「現在時刻」を差し替えできるから、テストが安定します✨
 
 ```ts
@@ -439,6 +447,8 @@ describe("OrderFactory", () => {
 ---
 
 ## まとめ🎁✨
+
+![Factory vs Repo](./picture/ddd_ts_study_074_factory_vs_repo.png)
 
 * Factoryは「**生成が複雑になった時の避難先**」じゃなくて、
   「**生成こそ仕様**」だから最初から置く価値がある🏭✨

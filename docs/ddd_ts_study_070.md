@@ -50,6 +50,8 @@ sequenceDiagram
 
 ## 0) まず「統合」って何するの？🧠🧩
 
+![Integration Flow](./picture/ddd_ts_study_070_integration_flow.png)
+
 統合って、超ざっくり言うと👇
 
 * domain：Order集約（ルールと状態遷移）🏯🔒
@@ -72,6 +74,8 @@ sequenceDiagram
 ---
 
 ## 1) “配線” を1か所に集めよう🔌📌（bootstrap）
+
+![Bootstrap Wiring](./picture/ddd_ts_study_070_bootstrap_wiring.png)
 
 統合の第一歩は **「new 祭り」を1か所に閉じ込める**ことだよ〜😊✨
 （あちこちで new し始めると、あとで地獄になる💀）
@@ -108,6 +112,8 @@ export function bootstrap() {
 ---
 
 ## 2) デモ台本を作ろう🎬📝（“回る”の確認）
+
+![Scenario Script](./picture/ddd_ts_study_070_scenario_script.png)
 
 「回る」って言っても、いきなりWeb画面いらないよ〜🙆‍♀️
 まずは **シナリオスクリプト**でOK！
@@ -175,6 +181,8 @@ main().catch((e) => {
 
 ## 4) 統合テストを書こう🧪🛡️（“回る”を自動化）
 
+![Test Assertion](./picture/ddd_ts_study_070_test_assertion.png)
+
 デモで回ったら、次は **テストで固定**しよ〜！😊✨
 ここができると「壊してもすぐ気づける」最強状態になる💪💕
 
@@ -239,6 +247,8 @@ describe("Order flow integration 🌸", () => {
 ここ、初心者が **めっちゃ踏みがち**なので先に潰しとこ🧯✨
 
 ## 事故1：アプリ層がドメインの中身を直接いじる🫠
+
+![Direct Modification Danger](./picture/ddd_ts_study_070_direct_modification.png)
 
 * ❌ `order.status = "PAID"` みたいなやつ
 * ✅ `order.pay(...)` みたいな “意図メソッド” だけで変更する

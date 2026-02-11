@@ -10,6 +10,8 @@
 
 ## 2) InMemory Repositoryってなに？なんで便利？🤔💡
 
+![InMemory Speed](./picture/ddd_ts_study_072_inmemory_speed.png)
+
 **Map（メモリ上の辞書）に保存するRepository**です🗂️✨
 ポイントはこれ👇
 
@@ -47,12 +49,16 @@
 
 ### 事故③：後でDB版に差し替えるとasyncの差で死ぬ😇
 
+![Async Mask](./picture/ddd_ts_study_072_async_mask.png)
+
 * 原因：InMemoryだけ同期で作ってしまった
 * 対策：**最初からPromiseに合わせる**（save/findはasync）⏳✅
 
 ---
 
 ## 5) 実装方針：スナップショット方式が最強📸🛡️
+
+![Snapshot Pattern](./picture/ddd_ts_study_072_snapshot_camera.png)
 
 Mapの中には **Orderそのもの** じゃなくて、こういう「JSONにできる形」を入れます👇
 
@@ -181,6 +187,8 @@ export class Order {
 ---
 
 ## 7) コード：infra側（InMemory実装）🏭🗺️
+
+![Reference Cut](./picture/ddd_ts_study_072_reference_cut.png)
 
 Mapの中には **OrderSnapshot** を保存します📸✨
 
@@ -356,6 +364,8 @@ return this.store.get(id.value) ?? null;
 * lineCountだけじゃなく、statusや合計金額（あれば）もDTOに入れてみよう💪
 
 ### 演習B：clearForTestを使わずに安定させる🧼
+
+![Test Reset](./picture/ddd_ts_study_072_test_reset.png)
 
 * beforeEachでrepoをnewする方式に統一して、「共有状態ゼロ」にしよう🙌
 
