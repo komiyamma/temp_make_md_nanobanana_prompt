@@ -28,6 +28,8 @@
 
 ## そもそも「構造」ってなに？🏗️（超入門）
 
+![Structure Floorplan](./picture/ddd_cs_study_098_structure_floorplan.png)
+
 **構造 = “部屋の間取り” みたいなもの**だよ🏠✨
 家具（コード）をどれだけ高級にしても、間取りがダメだと住みにくい…😭
 
@@ -45,6 +47,8 @@ DDDって結局、この「構造づくり」を助ける道具なんだよね�
 ## 「コード書き」より「構造作り」が強い理由 🔥
 
 ### 1) 技術は変わる。でも“分け方”は残る🧠
+
+![Tech vs Structure](./picture/ddd_cs_study_098_tech_vs_structure.png)
 
 フレームワークは流行り廃りがあるけど、
 **責務分離・境界・依存・命名**はずっと使える武器💪
@@ -85,6 +89,8 @@ AIは「この関数書いて」みたいな局所作業は超得意。
 
 ### スキル①：問題を「言い換える」力 🗣️✨
 
+![Skill Rephrase](./picture/ddd_cs_study_098_skill_rephrase.png)
+
 仕様がふわっとしてると、設計は100%迷うよ〜😭
 まずはAIにこう聞くのが強い👇
 
@@ -112,6 +118,8 @@ AIは「この関数書いて」みたいな局所作業は超得意。
 
 ### スキル③：境界線を引く ✂️🧱
 
+![Skill Boundary](./picture/ddd_cs_study_098_skill_boundary.png)
+
 境界線は「責任の壁」だよ🧱
 **変更が起きる場所が違うなら、分ける**が基本✨
 
@@ -135,12 +143,16 @@ AIは「この関数書いて」みたいな局所作業は超得意。
 
 ### スキル⑤：依存の向きを決める ➡️🧅
 
+![Dependency Direction](./picture/ddd_cs_study_098_dependency_direction.png)
+
 **「大事なもの（ドメイン）」が「どうでもいいもの（DBやUI）」を知らない**
 これだけで、変更耐性が爆上がりする✨
 
 ---
 
 ### スキル⑥：AIに“構造の制約”を渡す 🤝🤖
+
+![AI Constraints](./picture/ddd_cs_study_098_ai_constraints.png)
 
 AIは賢いけど、**制約がないと盛り盛りで壊す**🤣💥
 だから先に「守る壁」を渡してから書かせるのがコツ！
@@ -168,6 +180,8 @@ ADRっていうとかっこいいけど、要は**「なぜそうしたか」メ
 ---
 
 ## ミニ題材でやってみよ🎀：学食の「席予約」アプリ
+
+![Cafeteria Boundaries](./picture/ddd_cs_study_098_cafeteria_boundaries.png)
 
 ### まず“境界線”を決める🧱
 
