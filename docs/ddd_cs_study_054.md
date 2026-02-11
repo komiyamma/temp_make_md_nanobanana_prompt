@@ -16,6 +16,8 @@
 
 ## 1. なんでテンプレが必要なの？🥺💦
 
+![ai_confusion](./picture/ddd_cs_study_054_ai_confusion.png)
+
 AIって便利だけど、放っておくとこうなりがち👇
 
 * ルールが曖昧 → AIが**それっぽく補完**して別物を作る😇
@@ -29,6 +31,8 @@ AIって便利だけど、放っておくとこうなりがち👇
 ---
 
 ## 2. AIに渡すべき“最低セット”📦✨
+
+![four_keys](./picture/ddd_cs_study_054_four_keys.png)
 
 DDDパーツ生成で、AIに渡す情報はいつもこの4つが核です💡
 
@@ -59,6 +63,8 @@ DDDパーツ生成で、AIに渡す情報はいつもこの4つが核です💡
  ---
 
 ## 3. 万能「ベーステンプレ」🧠📌（まずこれをコピペ）
+
+![template_structure](./picture/ddd_cs_study_054_template_structure.png)
 
 下のテンプレを、AIチャット（Copilot ChatでもOK）に貼って、`{ }`を埋めて使ってね😊
 
@@ -112,6 +118,8 @@ DDDパーツ生成で、AIに渡す情報はいつもこの4つが核です💡
 ## 4. パーツ別テンプレ（コピペ用）🧩✨
 
 ### 4-1) 値オブジェクト（Value Object）テンプレ 💎
+
+![value_object_template](./picture/ddd_cs_study_054_value_object_template.png)
 
 「string を信じない」ための最強パーツだよ😊
 
@@ -265,6 +273,8 @@ C#でResultパターンを実装してください。
 ---
 
 ## 5. “AIに崩されない”ためのコツ7つ 🧷✨
+
+![self_review](./picture/ddd_cs_study_054_self_review.png)
 
 1. **「単語帳」を先に渡す**📚（名前が揺れると全部崩れる）
 2. **不変条件を箇条書きで**🔒（ここが設計の心臓）

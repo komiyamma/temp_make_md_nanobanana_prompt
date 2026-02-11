@@ -23,6 +23,8 @@
 
 ## 1. まずは「if地獄」例😇➡️😱
 
+![if_hell](./picture/ddd_cs_study_053_if_hell.png)
+
 例：会員ランクで割引が変わる、よくあるやつ🎫✨
 
 ```csharp
@@ -62,6 +64,8 @@ public decimal CalcPrice(decimal basePrice, string memberRank, bool hasCoupon)
 ## 2. 発想転換💡「分岐」をやめて「型」にルールを持たせる✨
 
 ### 2-1. 文字列（rank）をやめて「会員ランク型」にする👑
+
+![rank_types](./picture/ddd_cs_study_053_rank_types.png)
 
 「Gold」って文字列、ミスり放題です😇（"GOLD" とか "gold" とか…）
 
@@ -138,6 +142,8 @@ public decimal CalcPrice(decimal basePrice, MemberRank rank, bool hasCoupon)
 
 ## 3. 「クーポン有り/無し」を bool で持つのをやめる🎫➡️🧱
 
+![bool_trap](./picture/ddd_cs_study_053_bool_trap.png)
+
 bool も地味に危険です😵‍💫
 
 * true が何を意味するのか読み手が迷う
@@ -180,6 +186,8 @@ public decimal CalcPrice(decimal basePrice, MemberRank rank, Coupon coupon)
 ---
 
 ## 4. 「ありえない状態」を型で作れないようにする🛡️✨
+
+![money_guard](./picture/ddd_cs_study_053_money_guard.png)
 
 ここがDDDっぽい気持ちよさです💎
 たとえば「価格はマイナスになってはいけない」なら…
@@ -225,6 +233,8 @@ public readonly record struct Money
 ---
 
 ## 5. 「状態」を型で表すと、禁止ルールが自然に守れる📦➡️🚦
+
+![state_transition](./picture/ddd_cs_study_053_state_transition.png)
 
 たとえば注文📦
 

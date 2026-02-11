@@ -11,6 +11,8 @@
 
 ## 1. まずイメージ：コンストラクタ地獄が始まる😇💥
 
+![constructor_hell](./picture/ddd_cs_study_049_constructor_hell.png)
+
 たとえば「ユーザー登録」のドメインを考えます。
 
 * ユーザーIDは専用の型で持ちたい
@@ -31,6 +33,8 @@
 
 ## 2. Factoryの役割：**「正しい完成品だけ」作る🏭✅**
 
+![factory_role](./picture/ddd_cs_study_049_factory_role.png)
+
 ファクトリがあると何が嬉しいの？
 
 * ✅ **生成ルール（ビジネスルール）を1箇所に集められる**
@@ -49,6 +53,8 @@ flowchart LR
 ---
 
 ## 3. まずは一番カンタン：`static Create()` という“小さな工場”🏭🧸
+
+![static_create](./picture/ddd_cs_study_049_static_create.png)
 
 「ファクトリ＝別クラス」じゃなくてもOKです！
 最初は **エンティティの中に `Create` を用意**するだけでも十分DDDっぽいです😊
@@ -140,6 +146,8 @@ public sealed class User
 
 ## 5. “Factoryクラス”版：UserFactoryで全部組み立てる🧩✨
 
+![factory_class](./picture/ddd_cs_study_049_factory_class.png)
+
 ### ① 依存のインターフェースを用意
 
 ```csharp
@@ -196,6 +204,8 @@ public sealed class UserFactory
 
 ## 6. どんな時にFactoryを使うべき？判断基準🎯
 
+![decision_criteria](./picture/ddd_cs_study_049_decision_criteria.png)
+
 次のどれかに当てはまったら、Factoryを考えると勝ちやすいです😊
 
 * ✅ **作る時にルールがある**（初期状態、必須条件、整合性）
@@ -227,6 +237,8 @@ Factoryは **完成品を返す** が基本です🏁✨
 ---
 
 ## 8. AI（Copilot/Codex）に頼むときの“勝ちプロンプト”🤖✨
+
+![ai_prompt](./picture/ddd_cs_study_049_ai_prompt.png)
 
 FactoryはAIに作らせやすい部品です😊
 こう頼むとブレにくいよ〜というテンプレ👇

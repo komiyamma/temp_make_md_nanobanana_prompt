@@ -19,6 +19,8 @@
 
 ## 1. 「副作用」ってなに？💥
 
+![side_effects](./picture/ddd_cs_study_051_side_effects.png)
+
 ざっくり言うと…
 
 > **関数を呼んだら、戻り値以外にも世界が変わっちゃうこと** 🌍💫
@@ -56,6 +58,8 @@
  ---
 
 ## 2. 副作用のない関数（＝“純粋な関数”）ってなに？🫧
+
+![pure_vs_impure](./picture/ddd_cs_study_051_pure_vs_impure.png)
 
 副作用のない関数は、こういう性質を持ちます👇
 
@@ -95,6 +99,8 @@ DDDでは、いちばん守りたいのは **ドメインのルール**（利益
 
 ### 4-1. ダメな例：割引計算が “今の時刻” に依存してる 😵
 
+![time_dependency](./picture/ddd_cs_study_051_time_dependency.png)
+
 ```csharp
 public static decimal CalcTotalWithCampaign(decimal subtotal)
 {
@@ -112,6 +118,8 @@ public static decimal CalcTotalWithCampaign(decimal subtotal)
 ---
 
 ### 4-2. 良い例：必要な情報を引数でもらう（純粋）✨
+
+![pass_time](./picture/ddd_cs_study_051_pass_time.png)
 
 ```csharp
 public static decimal CalcTotalWithCampaign(decimal subtotal, DateTime now)
@@ -164,6 +172,8 @@ public static class Calc
 ---
 
 ## 5. DDDっぽくする：ドメインは「計算」、外側が「保存」🧅✨
+
+![onion_structure](./picture/ddd_cs_study_051_onion_structure.png)
 
 ### 5-1. ドメイン側（副作用なし）🫧
 
@@ -261,6 +271,8 @@ ID生成が必要なら「外側で作って渡す」か、方針を決めて一
 ---
 
 ## 7. “副作用を追い出す” 3ステップ 🧹✨
+
+![cleaning_steps](./picture/ddd_cs_study_051_cleaning_steps.png)
 
 DDD初心者でも、この手順だけ覚えればOKです😊
 

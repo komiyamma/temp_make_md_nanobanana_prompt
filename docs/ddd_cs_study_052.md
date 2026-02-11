@@ -8,6 +8,8 @@
 
 ## 1. 例外（throw）って、実は「爆弾」になりやすい💣😵
 
+![exception_bomb](./picture/ddd_cs_study_052_exception_bomb.png)
+
 例外は便利なんだけど、こんな使い方をするとつらい…👇
 
 * メールアドレスが不正 → `throw`
@@ -26,6 +28,8 @@
 ---
 
 ## 2. Resultパターンってなに？✅❌
+
+![success_failure](./picture/ddd_cs_study_052_success_failure.png)
 
 関数の返り値をこうする感じ👇
 
@@ -111,6 +115,8 @@ public readonly record struct Result<T>(bool IsSuccess, T? Value, Error? Error)
 
 ## 5. 値オブジェクトでResultを使う（超DDDっぽい）💎📦
 
+![value_object_check](./picture/ddd_cs_study_052_value_object_check.png)
+
 例：Email（不正なら“そもそも生まれない”）👶❌
 
 ```csharp
@@ -151,6 +157,8 @@ public sealed class Email
 ---
 
 ## 6. ユースケース（Application層）での扱い方🎮🧠
+
+![chaining](./picture/ddd_cs_study_052_chaining.png)
 
 「登録したい！」みたいな処理で、Resultをつないでいくよ😊
 
@@ -193,6 +201,8 @@ public sealed class RegisterUserService
 ---
 
 ## 8. AI（Copilot/Codex）に頼むときの“良い指示”🤖📝
+
+![ai_instruction](./picture/ddd_cs_study_052_ai_instruction.png)
 
 こう言うと暴走しにくいよ👇
 

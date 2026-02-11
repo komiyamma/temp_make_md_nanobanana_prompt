@@ -70,6 +70,8 @@ public interface IRepository<TEntity, TId>
 
 ## ❌ 罠ポイント①：「業務の言葉」が消える🫥
 
+![crud_vs_domain](./picture/ddd_cs_study_048_crud_vs_domain.png)
+
 `FindAsync(predicate)` って、業務的には何？🤔
 例えば注文(Order)なら、本当はこう言いたいはず👇
 
@@ -95,6 +97,8 @@ public interface IRepository<TEntity, TId>
 
 ## ❌ 罠ポイント③：Application層が「クエリ職人」になる👩‍🍳
 
+![query_hell](./picture/ddd_cs_study_048_query_hell.png)
+
 共通リポジトリがあると、ユースケース側がだんだんこうなる👇
 
 ```csharp
@@ -111,6 +115,8 @@ var orders = await _repo.FindAsync(
 ---
 
 # 3. DDDっぽい「正解寄り」✅：集約ごとのリポジトリにする📦
+
+![specific_repo](./picture/ddd_cs_study_048_specific_repo.png)
 
 DDDではふつう、**集約ルートごとに専用リポジトリ**を作ります✨
 （“注文の棚📚” “顧客の棚📚” みたいなイメージ）
@@ -141,6 +147,8 @@ public interface IOrderRepository
 # 4. 「でも共通化したい…🥺」→ やっていい共通化／ダメな共通化
 
 ## ✅ やっていい共通化（裏側だけ）🧊
+
+![hidden_implementation](./picture/ddd_cs_study_048_hidden_implementation.png)
 
 インターフェースは専用のまま、**実装の中で共通化**するのはアリ🙆‍♀️✨
 例えば Infrastructure にだけ、こっそり置く👇
@@ -182,6 +190,8 @@ public interface IOrderRepository
 ---
 
 # 6. AIに頼むときの「良い指示」テンプレ🤖📝
+
+![ai_instruction](./picture/ddd_cs_study_048_ai_instruction.png)
 
 Copilot/Codexにこう投げると事故りにくいです👇
 
