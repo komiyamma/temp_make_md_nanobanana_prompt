@@ -49,6 +49,8 @@ Domain Eventは一言でいうと…
 
 ## 2) Domain Eventの「3点セット」📦✨
 
+![Domain Event Components](./picture/ddd_ts_study_091_event_components.png)
+
 Domain Event はだいたいこの3つを持つと強い！
 
 1. **type**：何が起きた？（例：`order.placed`）🏷️
@@ -92,6 +94,8 @@ export interface DomainEvent<TType extends string = string, TPayload = unknown> 
 
 ### 4-2) `Clock`（時間の注入）⏰🧪
 
+![Clock Injection](./picture/ddd_ts_study_091_clock_injection.png)
+
 イベントの `occurredAt` をテストで固定したいから、Clockを使うよ〜！
 
 ```ts
@@ -108,6 +112,8 @@ export const SystemClock: Clock = {
 ---
 
 ### 4-3) AggregateRoot：イベントを溜めて、あとで取り出す🧺✨
+
+![Aggregate Storage](./picture/ddd_ts_study_091_aggregate_storage.png)
 
 ```ts
 // src/domain/shared/AggregateRoot.ts
@@ -130,11 +136,15 @@ export abstract class AggregateRoot {
 ```
 
 ✅ `pullDomainEvents()` が超大事！
+
+![Pull Events](./picture/ddd_ts_study_091_pull_events.png)
 これがないと「前に出したイベント」がずっと残って二重処理の原因になりがち😭💦
 
 ---
 
 ## 5) 例題：Order がイベントを出す☕🧾→📣
+
+![Order Flow Events](./picture/ddd_ts_study_091_order_flow.png)
 
 ### 5-1) Order のイベント型を決める🏷️
 
@@ -226,6 +236,8 @@ export class Order extends AggregateRoot {
 
 ## 6) テスト：イベントが出た？出てない？🧪💖（Vitest）
 
+![Test Verification](./picture/ddd_ts_study_091_test_verification.png)
+
 ```ts
 // src/domain/order/Order.test.ts
 import { describe, it, expect } from "vitest";
@@ -283,6 +295,8 @@ describe("Order Domain Events", () => {
 ---
 
 ## 7) よくある落とし穴（先に回避〜！）⚠️😂
+
+![Anti Patterns](./picture/ddd_ts_study_091_anti_patterns.png)
 
 * **イベント名が未来形**：`OrderWillBePaid` みたいなのは迷子になりがち💦（過去形推奨）
 * **payloadがでかすぎ**：Order全体を突っ込むのはやりすぎ😭

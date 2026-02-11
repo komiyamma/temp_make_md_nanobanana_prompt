@@ -41,6 +41,8 @@ DDDのイベント連携で非同期が欲しくなるのは、だいたいこ�
 
 ### ① 重い処理を混ぜたくない🏋️‍♀️💦
 
+![Heavy Task Separation](./picture/ddd_ts_study_095_heavy_task_separation.png)
+
 * PDFレシート生成📄
 * 画像変換🖼️
 * 集計・分析📊
@@ -55,6 +57,8 @@ DDDのイベント連携で非同期が欲しくなるのは、だいたいこ�
 
 ### ③ “混雑”を吸収したい🚶‍♀️🚶‍♀️🚶‍♀️➡️🧺
 
+![Queue Overflow](./picture/ddd_ts_study_095_queue_overflow.png)
+
 注文が一気に増える日（セール、TVで紹介、昼休み）🍔🔥
 同期だとサーバが「一気に全部やって」パンクしがち💥
 非同期だと「いったんキューに積んで、順番にさばく」ができる🧺✅
@@ -62,6 +66,8 @@ DDDのイベント連携で非同期が欲しくなるのは、だいたいこ�
 ---
 
 ## 3) 非同期にすると“世界がどう変わるか”🌈
+
+![Sync vs Async Compare](./picture/ddd_ts_study_095_sync_vs_async_compare.png)
 
 非同期にすると、こういう感じになります👇
 
@@ -75,6 +81,8 @@ DDDのイベント連携で非同期が欲しくなるのは、だいたいこ�
 * レシート作成や通知は **あとで勝手に進む** 🚶‍♀️💨
 * だから一瞬だけ「反映待ち」みたいなズレが起きることがある🌫️
   これが **最終的整合性（eventual consistency）** の入口です🌍✨
+
+![Eventual Consistency](./picture/ddd_ts_study_095_eventual_consistency.png)
   （“いつか揃うけど、今この瞬間は揃ってないことがある”）([ウィキペディア][1])
 
 ---
@@ -243,6 +251,8 @@ console.log("✅ payment finished (fast!)");
 
 ## 6) 非同期で増える“困りごと”トップ3🥲⚠️
 
+![Async Risks](./picture/ddd_ts_study_095_async_risks.png)
+
 非同期は万能じゃなくて、代わりにこの3つが増えます👇
 
 ### ① 重複（同じイベントが2回来る）🔁😇
@@ -262,6 +272,8 @@ console.log("✅ payment finished (fast!)");
 
 ### ③ 失敗の扱い（リトライ・隔離・見える化）🧯👀
 
+![Retry and DLQ](./picture/ddd_ts_study_095_retry_dlq.png)
+
 非同期は「失敗しても後で取り返せる」が強み✨
 でも設計しないと「失敗が闇に消える」😱
 だから
@@ -274,6 +286,8 @@ console.log("✅ payment finished (fast!)");
 ---
 
 ## 7) どこまで非同期にする？判断のコツ🧠✨
+
+![Decision Balance](./picture/ddd_ts_study_095_decision_balance.png)
 
 迷ったらこの基準でOKです👇🌼
 
