@@ -39,6 +39,9 @@ sequenceDiagram
 
 ## この章のゴール🎉
 
+![ddd_ts_study_064_happy_path_road](./picture/ddd_ts_study_064_happy_path_road.png)
+
+
 **PlaceOrder（注文する）ユースケース**を、まずは成功ルートだけで通します✅
 
 やることはこれだけ👇
@@ -51,6 +54,9 @@ sequenceDiagram
 ---
 
 ## 完成イメージ（超ざっくり図）🗺️✨
+
+![ddd_ts_study_064_simple_architecture_map](./picture/ddd_ts_study_064_simple_architecture_map.png)
+
 
 ```text
 [PlaceOrderCommand DTO]
@@ -85,6 +91,9 @@ sequenceDiagram
 ---
 
 ## Step 1: DTO（入力・出力）を作る📦🧾
+
+![ddd_ts_study_064_dto_primitive](./picture/ddd_ts_study_064_dto_primitive.png)
+
 
 `src/app/placeOrder/PlaceOrderDto.ts`
 
@@ -129,6 +138,9 @@ export interface OrderRepository {
 ---
 
 ## Step 3: PlaceOrderService（手順係）を書く🎬🧑‍🍳
+
+![ddd_ts_study_064_service_conductor](./picture/ddd_ts_study_064_service_conductor.png)
+
 
 `src/app/placeOrder/PlaceOrderService.ts`
 
@@ -180,6 +192,9 @@ export class PlaceOrderService {
 
 ## Step 4: InMemoryRepositoryで保存を成立させる🧪💾
 
+![ddd_ts_study_064_repo_save_action](./picture/ddd_ts_study_064_repo_save_action.png)
+
+
 `src/infra/InMemoryOrderRepository.ts`
 
 ```ts
@@ -203,6 +218,9 @@ export class InMemoryOrderRepository implements OrderRepository {
 ---
 
 ## Step 5: 成功ルートのテストを書く🧪🎉
+
+![ddd_ts_study_064_vitest_green](./picture/ddd_ts_study_064_vitest_green.png)
+
 
 テストは **“動く足場”**だから最優先でOK！🧡
 最近も Vitest 4 系が中心で、4.0が出ていて 4.1 beta も進んでます🧪⚡ ([Vitest][3])

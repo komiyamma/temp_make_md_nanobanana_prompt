@@ -17,6 +17,9 @@
 
 ## 1️⃣ 戦術DDDの核3点って、結局なに？🌸
 
+![ddd_ts_study_060_tactical_ddd_core](./picture/ddd_ts_study_060_tactical_ddd_core.png)
+
+
 ### 💎 Value Object（VO）
 
 * **「値そのもの」**が主役（同一性IDなし）
@@ -55,6 +58,9 @@ DDDで一番迷うのがここ👇
 ---
 
 ## 3️⃣ ルール分類4つ📦（ここが超重要！）
+
+![ddd_ts_study_060_rule_classification_quadrant](./picture/ddd_ts_study_060_rule_classification_quadrant.png)
+
 
 ![Rule Directory Map](./picture/ddd_ts_study_060_rule_map.png)
 
@@ -99,6 +105,9 @@ quadrantChart
 
 ## 4️⃣ いちばん大事な1枚絵（ミニ図）🗺️✨
 
+![ddd_ts_study_060_architecture_map_mini](./picture/ddd_ts_study_060_architecture_map_mini.png)
+
+
 （※文字図でごめんね！でも効果バツグン✊）
 
 ```text
@@ -137,6 +146,9 @@ quadrantChart
 
 ## 6️⃣ 例題（カフェ注文）で “ルール住所録” を作ろう☕🧾📒
 
+![ddd_ts_study_060_rule_address_book](./picture/ddd_ts_study_060_rule_address_book.png)
+
+
 ここからが本番〜！🥳
 いったん、よくあるルールを並べて、住所を決めるよ🧠✨
 
@@ -156,6 +168,9 @@ quadrantChart
 ---
 
 ## 7️⃣ “集約が城🏯”になってるかチェック✅🛡️
+
+![ddd_ts_study_060_castle_check](./picture/ddd_ts_study_060_castle_check.png)
+
 
 集約はよく「城」って言われるんだけど、ほんとに城になってる？😂🏯
 次のチェックを全部YESにできたら強いよ💪✨
