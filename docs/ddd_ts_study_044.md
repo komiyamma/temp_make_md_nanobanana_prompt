@@ -55,6 +55,8 @@ VO（Value Object）みたいに「値が同じなら同じ」じゃなくて、
 
 ## 3) まず決める：Orderが持つべき“芯”🧠🧾
 
+![ddd_ts_study_044_order_anatomy.png](./picture/ddd_ts_study_044_order_anatomy.png)
+
 カフェ注文だと、たたき台はこのへんが鉄板だよ〜☕✨
 
 ### ✅ Orderが持つ（まずはこれ）
@@ -74,6 +76,8 @@ VO（Value Object）みたいに「値が同じなら同じ」じゃなくて、
 ---
 
 ## 4) 逆に、Orderに入れない（超大事）🚫⚠️
+
+![ddd_ts_study_044_not_domain.png](./picture/ddd_ts_study_044_not_domain.png)
 
 DDDが“効く”かどうか、ここが分かれ目！🥺
 
@@ -100,6 +104,8 @@ DDDが“効く”かどうか、ここが分かれ目！🥺
 
 ## 6) たたき台コード（TypeScript）💻✨
 
+![ddd_ts_study_044_private_getter.png](./picture/ddd_ts_study_044_private_getter.png)
+
 ここからは「外から壊せない」Orderを作るよ〜🛡️
 ポイントはこれ👇
 
@@ -110,6 +116,8 @@ DDDが“効く”かどうか、ここが分かれ目！🥺
 ---
 
 ### 6-1) OrderStatus（状態）🚦
+
+![ddd_ts_study_044_status_union.png](./picture/ddd_ts_study_044_status_union.png)
 
 ```ts
 // domain/order/OrderStatus.ts
@@ -127,6 +135,8 @@ export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus];
 ---
 
 ### 6-2) OrderLine（明細）🧾✨
+
+![ddd_ts_study_044_orderline_composition.png](./picture/ddd_ts_study_044_orderline_composition.png)
 
 ここでは「明細はVO寄り」で軽くいくよ〜（第49章で深掘り予定🫶）
 
@@ -166,6 +176,8 @@ export class OrderLine {
 ---
 
 ### 6-3) Order Entity（本体）☕🧾👑
+
+![ddd_ts_study_044_calculated_total.png](./picture/ddd_ts_study_044_calculated_total.png)
 
 ```ts
 // domain/order/Order.ts

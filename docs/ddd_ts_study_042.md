@@ -27,6 +27,8 @@ sequenceDiagram
 
 ## 1) まず結論：Entityの比較は「IDだけ」🪪✅
 
+![ddd_ts_study_042_entity_identity_match.png](./picture/ddd_ts_study_042_entity_identity_match.png)
+
 Entityは「値が同じ」じゃなくて「同じ個体かどうか」が本質だよ〜🧍‍♀️
 
 たとえば注文（Order）で…
@@ -43,6 +45,8 @@ Entityは「値が同じ」じゃなくて「同じ個体かどうか」が本�
 ---
 
 ## 2) IDは「ただのstring」にしないで、VOにしよう💎🧱
+
+![ddd_ts_study_042_string_id_danger.png](./picture/ddd_ts_study_042_string_id_danger.png)
 
 stringで持つと、こういう事故が起きるよ〜😇
 
@@ -69,6 +73,8 @@ stringで持つと、こういう事故が起きるよ〜😇
 ---
 
 ## 4) UUIDとULID、どっち使う？🤔🆔
+
+![ddd_ts_study_042_uuid_vs_ulid.png](./picture/ddd_ts_study_042_uuid_vs_ulid.png)
 
 迷ったら、こう決めるとラクだよ〜🍀
 
@@ -158,6 +164,8 @@ export class OrderId {
 
 ## 6) IDは「いつ生成する？」⏰✨（超大事）
 
+![ddd_ts_study_042_id_generation_timing.png](./picture/ddd_ts_study_042_id_generation_timing.png)
+
 おすすめはこのどっちかに寄せると事故らないよ〜🙆‍♀️
 
 ## ✅ パターンA：Entity生成時にIDも作る（初心者に最強）🥇
@@ -177,6 +185,8 @@ export class OrderId {
 ---
 
 ## 7) Entity側の「比較ルール」をコードに固定しよ🧍‍♀️🪪
+
+![ddd_ts_study_042_same_identity_as.png](./picture/ddd_ts_study_042_same_identity_as.png)
 
 OrderがOrder同士を比べる時は、こういう感じ👇
 
@@ -222,6 +232,8 @@ AIにもレビューさせたい系のやつだよ〜🤖💥
 ---
 
 ## 9) テストのために「ID生成」を差し替え可能にする🧪✨
+
+![ddd_ts_study_042_id_generator_plug.png](./picture/ddd_ts_study_042_id_generator_plug.png)
 
 テストで `randomUUID()` だと、比較が面倒になりがちだよね🥺
 だから、生成を注入できる形にすると最高🙆‍♀️
