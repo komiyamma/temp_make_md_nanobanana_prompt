@@ -13,6 +13,9 @@
 
 ## 1. プリミティブ地獄ってなに？🫠
 
+![ddd_ts_study_022_primitive_hell](./picture/ddd_ts_study_022_primitive_hell.png)
+
+
 DDDっぽい現場あるあるなんだけど……
 
 * IDも `string`
@@ -71,6 +74,9 @@ type MenuItemId = string;
 
 ## レベル2：Branded Type（おすすめ！）💎✨
 
+![ddd_ts_study_022_branded_type](./picture/ddd_ts_study_022_branded_type.png)
+
+
 TypeScriptは基本「構造的型付け」だから、**同じ形（string）なら同じ型**に見えちゃうのね。
 そこで「ブランド（タグ）」を付けて、擬似的に「名前的型付け」っぽくするよ🪪✨ ([Zenn][2])
 
@@ -104,6 +110,9 @@ TypeScriptの型は **コンパイル後に消える**から、
 ---
 
 ## 5. “as OrderId” をばらまかないで！🙅‍♀️
+
+![ddd_ts_study_022_factory_gate](./picture/ddd_ts_study_022_factory_gate.png)
+
 
 ブランド型って、雑にこうすると一瞬で終わるんだけど……
 
@@ -166,6 +175,9 @@ const MenuItemId = {
 
 ## 6.2 事故がコンパイルで止まるのを体験しよ🛑✨
 
+![ddd_ts_study_022_compile_error](./picture/ddd_ts_study_022_compile_error.png)
+
+
 ```ts
 function addItem(orderId: OrderId, menuItemId: MenuItemId, quantity: number) {
   // ...
@@ -183,6 +195,9 @@ addItem(menuItemId, orderId, 1); // ❌ コンパイルエラーになる🎉
 ---
 
 ## 7. 金額・数量も“意味のあるnumber”にしよ💴📏✨
+
+![ddd_ts_study_022_yen_vo](./picture/ddd_ts_study_022_yen_vo.png)
+
 
 ## 7.1 Yen（円）VOの入口（ブランド版）
 
@@ -220,6 +235,9 @@ const Quantity = {
 
 ## 8. “境界”ではプリミティブで受けて、ドメインで変換🧱🚪✨
 
+![ddd_ts_study_022_boundary_convert](./picture/ddd_ts_study_022_boundary_convert.png)
+
+
 ここがDDDっぽいキレイな流れだよ〜🥰
 
 * 外から来る入力（UI/API/DB）＝プリミティブ
@@ -248,6 +266,9 @@ function addItemUseCase(input: AddItemInputDto) {
 ---
 
 ## 9. satisfies で「設定ミス」を早めに炙り出す🧯✨
+
+![ddd_ts_study_022_satisfies_typo](./picture/ddd_ts_study_022_satisfies_typo.png)
+
 
 この章のテーマ（型で守る）と相性いい小技！
 `satisfies` は「型に合ってるかだけチェックして、推論はそのまま残す」やつだよ🧠✨ ([TypeScript][3])
