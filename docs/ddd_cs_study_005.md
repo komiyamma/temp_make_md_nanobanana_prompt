@@ -55,6 +55,9 @@
 
 ## 「どこを直すとどこが壊れるか分からない」の正体 🧠💡
 
+![Confusion Maze](./picture/ddd_cs_study_005_confusion_maze.png)
+
+
 ほぼこれです👇
 
 ### ① 依存関係がベタベタ 🤝🫠
@@ -63,10 +66,16 @@ AがBを呼び、BがCを呼び、CがAを呼び…みたいな循環も起き�
 
 ### ② 1つの場所が、いろんな役をやってる 🎭
 
+![One Man Band](./picture/ddd_cs_study_005_oneman_band.png)
+
+
 計算も、保存も、通知も、ログも、全部1メソッドでやってると
 「どれを変えたらどれが影響受けるの？」が読めなくなる😵‍💫
 
 ### ③ 副作用が隠れてる 💣
+
+![Hidden Side Effects](./picture/ddd_cs_study_005_hidden_bomb.png)
+
 
 「計算してるだけに見えて、実は保存してる」みたいなやつ。
 これが一番ヤバいです😇
@@ -133,6 +142,9 @@ Visual Studioなら
 
 ### 6) 影響範囲を予想する（壊れ方を先読み）🔮
 
+![Predicting Impact](./picture/ddd_cs_study_005_crystal_ball.png)
+
+
 「送料を変える」なら
 
 * 合計金額
@@ -155,6 +167,9 @@ Visual Studioなら
 ---
 
 ## ミニ解剖：スパゲッティ例 🍝（C#）
+
+![World Moving Method](./picture/ddd_cs_study_005_world_moving.png)
+
 
 「送料を直したいだけ」なのに、いろいろ混ざってる例です😇
 

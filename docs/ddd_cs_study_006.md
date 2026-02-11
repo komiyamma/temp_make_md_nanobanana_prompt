@@ -19,6 +19,9 @@
 
 ## 1. まず結論：AIは“設計の穴”を埋めようとして暴走しがち 😇➡️😈
 
+![AI Filling Gaps](./picture/ddd_cs_study_006_ai_filling_gaps.png)
+
+
 ```mermaid
 flowchart TD
     A["曖昧な指示<br/>(Instruction)"] --> B["AIが設計の穴を<br/>想像で埋める🤔"]
@@ -42,6 +45,9 @@ AIって、こちらが曖昧だと…
 
 ## 2. “プロンプト長文化”あるある症状 😭🧾
 
+![Infinite Loop](./picture/ddd_cs_study_006_infinite_loop.png)
+
+
 次のどれかが起きたら、だいたい設計不足です👇
 
 * 「やっぱこうして」「いや例外は…」「UIは…」が止まらない 🌀
@@ -54,6 +60,9 @@ AIって、こちらが曖昧だと…
 
 ## 3. AIがブレる“本当の理由”🧠🔍
 
+![Boundary Fence](./picture/ddd_cs_study_006_boundary_fence.png)
+
+
 AIはとても賢いけど、次が苦手です👇
 
 * **あなたのアプリ全体の一貫性を、あなたの代わりに守ること**
@@ -65,6 +74,9 @@ AIはとても賢いけど、次が苦手です👇
 ---
 
 ## 4. 迷わないための“最小設計セット”🧰✨（これだけでOK！）
+
+![Minimal Design Kit](./picture/ddd_cs_study_006_minimal_kit.png)
+
 
 DDDをまだ知らなくても大丈夫👌
 AIに渡す前に、最低限これだけ決めるとブレが激減します👇
@@ -145,6 +157,9 @@ AIに頼むとき、毎回これを埋めて貼るだけでOKです！
 ---
 
 ## 6. “設計なし” vs “設計あり” で頼み方を比べる 🆚😳
+
+![Bad vs Good Request](./picture/ddd_cs_study_006_bad_vs_good.png)
+
 
 題材：カートに商品を追加する
 
