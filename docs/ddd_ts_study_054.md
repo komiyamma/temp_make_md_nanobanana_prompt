@@ -34,6 +34,10 @@ classDiagram
 
 ## まず結論：他集約は「IDだけ」持つのが基本🔗🪪
 
+![ddd_ts_study_054_id_vs_object](./picture/ddd_ts_study_054_id_vs_object.png)
+
+
+
 DDDでは、集約の境界を守るために
 
 * ✅ **他集約は “ID（同一性）” で参照する**
@@ -52,6 +56,10 @@ DDDでは、集約の境界を守るために
 でもそれって **「同一トランザクションで複数集約を更新してる」** ってことが多くて、DDD的には境界崩壊のサインになりがち。 ([archi-lab.io][3])
 
 ### 2) 巨大オブジェクト地獄を避けられる🕸️😇
+
+![ddd_ts_study_054_huge_object_hell](./picture/ddd_ts_study_054_huge_object_hell.png)
+
+
 
 「Order が MenuItem を持って、MenuItem が Category を持って…」みたいに参照が伸びて、読み込みもテストも地獄になりやすい😂
 ID参照にすると、**モデルが軽く保てる**のが強いよ。 ([InformIT][2])
@@ -86,6 +94,10 @@ DDDのルールとしては
 ---
 
 ## 正解パターン：OrderLine は MenuItemId を持つ🪪✅
+
+![ddd_ts_study_054_snapshot](./picture/ddd_ts_study_054_snapshot.png)
+
+
 
 ここが今日のメイン！
 Order（注文）側が持つのは、基本こう👇
@@ -242,6 +254,10 @@ export class Order {
 
 ## じゃあ「MenuItemの情報」はどこで取ってくるの？🤔🔎
 
+![ddd_ts_study_054_app_service](./picture/ddd_ts_study_054_app_service.png)
+
+
+
 答え：**アプリ層（ユースケース）**で取ってくるよ！🎬✨
 Order の `addLine()` に入れる材料を、アプリ層で揃えるの。
 
@@ -316,6 +332,10 @@ export class PlaceOrderAddLine {
 ---
 
 ## よくある設計の分岐：IDだけ？スナップショットも？📸🪪
+
+![ddd_ts_study_054_dto_display](./picture/ddd_ts_study_054_dto_display.png)
+
+
 
 ### A) IDだけ持つ（最小）🪪
 
