@@ -25,6 +25,8 @@ DTO（画面やAPIのためのデータ）と、ドメイン（本当に守り�
 
 ## そもそも、なんでマッピングが必要？🧩
 
+![063_mapping_necessity](./picture/ddd_cs_study_063_mapping_necessity.png)
+
 DTOとドメインは目的が違うからです🙂
 
 * DTO：画面やAPIの都合（表示したい・受け取りたい形）
@@ -57,6 +59,8 @@ DTOとドメインは目的が違うからです🙂
 
 ## 選択肢① AutoMapper（自動変換）🪄
 
+![063_automapper_magic](./picture/ddd_cs_study_063_automapper_magic.png)
+
 ### いいところ😊
 
 * 同じようなDTOが大量にあると **書く量が減る** ✍️➡️🧠
@@ -73,6 +77,8 @@ DTOとドメインは目的が違うからです🙂
 
 ## 選択肢② 手動マッピング（自分で書く）✍️
 
+![063_manual_craft](./picture/ddd_cs_study_063_manual_craft.png)
+
 ### いいところ😌
 
 * 変換の意図が **コードにそのまま残る**（未来の自分に優しい）💖
@@ -87,6 +93,8 @@ DTOとドメインは目的が違うからです🙂
 ---
 
 ## AI時代の結論💡：1人開発なら「手動＋AI」が最強になりがち👑🤖
+
+![063_ai_manual](./picture/ddd_cs_study_063_ai_manual.png)
 
 昔：手動マッピングは「作業が多い」
 今：手動マッピングは「AIに書かせて、人間は意図だけ見る」✅
@@ -166,6 +174,8 @@ public sealed class UserDto
 ---
 
 ## 手動マッピング（おすすめ）✨
+
+![063_try_pattern](./picture/ddd_cs_study_063_try_pattern.png)
 
 DTO→ドメインは「検証しながら」作れるのが強いです💪
 
@@ -252,6 +262,8 @@ AutoMapperが悪いというより、**DDDのドメイン側がちゃんとし�
 ---
 
 ## 迷わないための判断基準チェックリスト✅
+
+![063_decision_checklist](./picture/ddd_cs_study_063_decision_checklist.png)
 
 ### 手動（AI生成）を選ぶべきとき👑
 

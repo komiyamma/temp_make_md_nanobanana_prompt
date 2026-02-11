@@ -18,6 +18,8 @@
 
 ## 1. レイヤードアーキテクチャってなに？🍰
 
+![056_clean_room](./picture/ddd_cs_study_056_clean_room.png)
+
 一言でいうと…
 
 > **役割が違うものを、層（レイヤー）で分ける設計**だよ😊
@@ -29,6 +31,8 @@
 ---
 
 ## 2. 1人開発でレイヤードが効く理由 🏃‍♀️💨
+
+![056_spaghetti_code](./picture/ddd_cs_study_056_spaghetti_code.png)
 
 1人開発って「スピード」が命だけど、**未来の自分が敵**になりがち…👻💦
 レイヤードにすると、未来の自分がこう思えるようになるよ👇😊
@@ -42,6 +46,8 @@
 ---
 
 ## 3. レイヤードの定番4層 🧩
+
+![056_constraint_rails](./picture/ddd_cs_study_056_constraint_rails.png)
 
 DDD寄りに“今どきの分け方”でいくと、だいたいこの4つが安定です👇😊
 
@@ -89,6 +95,8 @@ DDD寄りに“今どきの分け方”でいくと、だいたいこの4つが�
 ---
 
 ## 4. 「どこに置く？」迷わないルール 🧭✨
+
+![056_impact_domino](./picture/ddd_cs_study_056_impact_domino.png)
 
 迷ったら、この質問を自分に投げてね😊
 
@@ -287,6 +295,8 @@ UseCaseが何百行→「結局どこ直すの？」状態に😱
 ---
 
 ## 7. AIに頼むときの“崩れない”指示テンプレ 🤖🧡
+
+![056_solo_runner](./picture/ddd_cs_study_056_solo_runner.png)
 
 コピペして使ってOKだよ😊✨
 

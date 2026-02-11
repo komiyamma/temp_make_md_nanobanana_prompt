@@ -11,6 +11,8 @@ DDDって聞くと「なんか難しそう…😵‍💫」ってなりがちだ
 
 ## 1) オニオンアーキテクチャって何？🧅
 
+![057_dependency_arrows](./picture/ddd_cs_study_057_dependency_arrows.png)
+
 玉ねぎみたいに **内側ほど大事**、外側ほど **交換しやすい** って考え方だよ〜😊
 
 * 🧠 **中心（いちばん内側）**：ドメイン（ビジネスルール）
@@ -25,6 +27,8 @@ DDDって聞くと「なんか難しそう…😵‍💫」ってなりがちだ
 ---
 
 ## 2) これ、1人開発×AI時代にめちゃ効く理由🤖✨
+
+![057_core_castle](./picture/ddd_cs_study_057_core_castle.png)
 
 ### ✅ (1) 変更が来ても、中心が壊れにくい🛡️
 
@@ -44,6 +48,8 @@ AIって「ここはドメイン」「ここはインフラ」って境界があ
 ---
 
 ## 3) たった1つの最重要ルール：依存は内側へ！➡️🧅
+
+![057_plugin_socket](./picture/ddd_cs_study_057_plugin_socket.png)
 
 **依存の向きは必ず“内側へ”** です🙆‍♀️
 
@@ -81,6 +87,8 @@ AIって「ここはドメイン」「ここはインフラ」って境界があ
  ---
 
 ## 4) C#（.NET 10 / C# 14）で作る、最小の玉ねぎ構成🍳
+
+![057_testing_engine](./picture/ddd_cs_study_057_testing_engine.png)
 
 2025の最新ど真ん中は **.NET 10（LTS）** ＆ **C# 14** の組み合わせだよ〜！🌟 ([Microsoft][1])
 EF Core も **EF Core 10** が .NET 10 前提で揃ってるよ🧩 ([Microsoft Learn][2])

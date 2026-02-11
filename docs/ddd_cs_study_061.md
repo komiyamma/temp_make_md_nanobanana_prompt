@@ -11,6 +11,8 @@ DDDって聞くと「値オブジェクト！集約！リポジトリ！」っ�
 
 ## 1. アプリケーションサービスって何する人？👩‍💼🧠
 
+![061_commander](./picture/ddd_cs_study_061_commander.png)
+
 一言でいうと、
 
 **「ユーザーがやりたいこと（ユースケース）」を、ドメインの部品を使って実現する係** ✅
@@ -28,6 +30,8 @@ DDDって聞くと「値オブジェクト！集約！リポジトリ！」っ�
 ---
 
 ## 2. どこまでが担当？（超重要）🧭
+
+![061_responsibility](./picture/ddd_cs_study_061_responsibility.png)
 
 アプリケーションサービスの担当はだいたいこれ👇
 
@@ -47,6 +51,8 @@ DDDって聞くと「値オブジェクト！集約！リポジトリ！」っ�
 ---
 
 ## 3. ありがちな混乱ポイント（ここで整理）🧹✨
+
+![061_confusion_points](./picture/ddd_cs_study_061_confusion_points.png)
 
 ### ✅ Controller（画面・APIの入り口）
 
@@ -71,6 +77,8 @@ DDDって聞くと「値オブジェクト！集約！リポジトリ！」っ�
 ---
 
 ## 4. ミニ例で体感しよう：タスクを追加する ✅📝
+
+![061_task_add_flow](./picture/ddd_cs_study_061_task_add_flow.png)
 
 「タスク管理アプリ」で、ユーザーがやりたいことは
 
@@ -107,6 +115,8 @@ DDDって聞くと「値オブジェクト！集約！リポジトリ！」っ�
  ---
 
 ## 5. コード例：薄いアプリケーションサービスの正解形🌸
+
+![061_thin_service](./picture/ddd_cs_study_061_thin_service.png)
 
 ### Domain（集約）側：ルールはこっちに寄せる🧠
 
@@ -211,6 +221,8 @@ public sealed class Result
 ---
 
 ## 6. 「薄さ」を守るためのチェックリスト✅✨
+
+![061_checklist](./picture/ddd_cs_study_061_checklist.png)
 
 アプリケーションサービスを書いたら、これ見てね🙂
 

@@ -81,6 +81,8 @@ DTOは必要な形だけに固定できるので安心です👌✨
 
 ## 3) DTOはどこに置く？🏠📁
 
+![062_request_response](./picture/ddd_cs_study_062_request_response.png)
+
 ざっくりおすすめはこの2種類です😊
 
 * **Request DTO（入力）**：Web層（API）側に置くことが多い
@@ -94,6 +96,8 @@ DTOは必要な形だけに固定できるので安心です👌✨
 ---
 
 ## 4) 例で理解しよ！「ユーザー登録」🧑‍💻✨
+
+![062_user_registration](./picture/ddd_cs_study_062_user_registration.png)
 
 ### ドメイン側（ルールの世界）🧠
 
@@ -167,6 +171,8 @@ public sealed record UserDto(
 
 ## 5) DTOへのマッピング（変換）🔁✨
 
+![062_mapping_process](./picture/ddd_cs_study_062_mapping_process.png)
+
 DTOは箱なので、中身（ドメイン）との変換が必要です📦➡️🧠
 
 ### まずは手動が最強（読みやすい＆事故りにくい）💪😊
@@ -185,6 +191,8 @@ public static class UserMapping
 ---
 
 ## 6) “DTOを使う流れ”のイメージ図 🌊✨
+
+![062_dto_flow_diagram](./picture/ddd_cs_study_062_dto_flow_diagram.png)
 
 * 画面 → API → Application → Domain
 * Domain → Application → API → 画面
@@ -216,7 +224,11 @@ public static class UserMapping
 
 ## 7) よくある事故パターン 😭⚠️（ここ超大事）
 
+![062_accident_pattern](./picture/ddd_cs_study_062_accident_pattern.png)
+
 ### ❌事故1：ドメインのエンティティをそのまま返す
+
+![062_over_fetching](./picture/ddd_cs_study_062_over_fetching.png)
 
 * 内部情報漏れる🙈
 * 画面都合でドメインが歪む😵‍💫
