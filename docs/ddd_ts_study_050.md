@@ -51,6 +51,10 @@ mindmap
 
 ## 2. まず前提：ルールには種類があるよ🧩
 
+![ddd_ts_study_050_rules_classification](./picture/ddd_ts_study_050_rules_classification.png)
+
+
+
 DDDで言う「ルール（不変条件）」って、ぜんぶ同じじゃないの🥺
 混ざると事故るから、まず分類しよっ✨
 
@@ -71,6 +75,10 @@ DDDで言う「ルール（不変条件）」って、ぜんぶ同じじゃな�
 ---
 
 ## 3. VOで守る範囲💎🧊（ここが“強い”）
+
+![ddd_ts_study_050_vo_vs_entity_map](./picture/ddd_ts_study_050_vo_vs_entity_map.png)
+
+
 
 VOは一言でいうと、**「値の安全装置」** だよ✨
 “値に意味を持たせて”、生成時にガードして、ずっと不変にする💪
@@ -111,6 +119,10 @@ Entityは **「同じ人（同じ注文）として追跡できる存在」** �
 
 ## 5. 「このルール、VO？Entity？」秒速判定チャート⚡🧠
 
+![ddd_ts_study_050_decision_chart](./picture/ddd_ts_study_050_decision_chart.png)
+
+
+
 迷ったら、この順で考えるとほぼ勝てるよ😊✨
 
 1. **同一性が必要？**（追跡したい“同じモノ”がある？）
@@ -137,6 +149,10 @@ Entityは **「同じ人（同じ注文）として追跡できる存在」** �
 
 ### 6.1 例題（カフェ注文☕🧾）のルール棚卸し
 
+![ddd_ts_study_050_cafe_rules](./picture/ddd_ts_study_050_cafe_rules.png)
+
+
+
 #### VOで守る（値の安全）💎
 
 * Money：0以上、通貨固定、丸め方（必要なら）💴
@@ -155,6 +171,10 @@ Entityは **「同じ人（同じ注文）として追跡できる存在」** �
 ---
 
 ## 7. 第50章の“設計レビュー観点テンプレ”👀📝（超大事！）
+
+![ddd_ts_study_050_review_checklist](./picture/ddd_ts_study_050_review_checklist.png)
+
+
 
 このテンプレは次章以降もずっと使えるよ〜！🎉
 AIレビューにもそのまま貼れる形にしてあるよ🤖✨
@@ -190,6 +210,10 @@ AIレビューにもそのまま貼れる形にしてあるよ🤖✨
 ---
 
 ## 8. ミニ実装例：VOとEntityで“守る範囲”を固定する🧊🪪
+
+![ddd_ts_study_050_code_structure](./picture/ddd_ts_study_050_code_structure.png)
+
+
 
 ### 8.1 VO（例：Quantity）💎
 

@@ -24,6 +24,10 @@ flowchart LR
 
 ## 1) 今日のゴール🎯✨
 
+![ddd_ts_study_052_single_entrance](./picture/ddd_ts_study_052_single_entrance.png)
+
+
+
 この章のゴールはこれ！
 
 * 🧠 「なんで入口を1つにするの？」が腹落ちする
@@ -52,6 +56,10 @@ flowchart LR
 
 ## 3) “やっちゃダメ設計”の例🚫😂
 
+![ddd_ts_study_052_bad_pattern](./picture/ddd_ts_study_052_bad_pattern.png)
+
+
+
 「Orderの中身を外に丸見えで渡しちゃう」パターンね。
 
 ```ts
@@ -72,6 +80,10 @@ order.lines[0].quantity = 999; // 勝手に変更できる😱
 
 ## 4) Aggregate Rootのコツ🧠🔑（ここが本題！）
 
+![ddd_ts_study_052_order_structure](./picture/ddd_ts_study_052_order_structure.png)
+
+
+
 ### ✅ ルール1：外部に公開する“窓口”はRootだけ🚪👑
 
 * 外から触れるのは `Order` のメソッドだけ
@@ -90,6 +102,10 @@ order.lines[0].quantity = 999; // 勝手に変更できる😱
 ---
 
 ## 5) 実装してみよう：Order集約（Rootが門番する）🏯🛡️
+
+![ddd_ts_study_052_readonly_defense](./picture/ddd_ts_study_052_readonly_defense.png)
+
+
 
 ここでは **Order = Aggregate Root**、**OrderLine = 集約内部の値（VO寄り）** で作るよ🧡
 （OrderLineをEntityにする場合でも「外部から直接触らせない」は同じ！）
@@ -309,6 +325,10 @@ export class Order {
 ---
 
 ## 7) テスト（Vitestで確認する想定）🧪✨
+
+![ddd_ts_study_052_test_protection](./picture/ddd_ts_study_052_test_protection.png)
+
+
 
 最近のVitestは v4.0 が出ていて、v4.1 はベータが動いてるよ〜！([vitest.dev][1])
 （この教材の方針でも、ドメインはサクッと速いテストが相性いい😊）

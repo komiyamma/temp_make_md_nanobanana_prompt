@@ -43,6 +43,10 @@ graph TD
 
 ## 1. Aggregateってなに？📦（やさしい定義）
 
+![ddd_ts_study_051_aggregate_concept](./picture/ddd_ts_study_051_aggregate_concept.png)
+
+
+
 Aggregateは、
 
 * **Entity と Value Object のかたまり**で
@@ -57,6 +61,10 @@ Aggregateは、
 ---
 
 ## 2. なんでAggregateが必要なの？🥺（ないと起きる事故）
+
+![ddd_ts_study_051_broken_consistency](./picture/ddd_ts_study_051_broken_consistency.png)
+
+
 
 ### 2-1. ルールが散らばって壊れる💔
 
@@ -82,6 +90,10 @@ Aggregateは、
 ---
 
 ## 3. 集約境界（Aggregate Boundary）の決め方🧭✨
+
+![ddd_ts_study_051_boundary_steps](./picture/ddd_ts_study_051_boundary_steps.png)
+
+
 
 ここが第51章のメインだよ💖
 
@@ -136,6 +148,10 @@ Aggregateは、
 
 ## 5. 境界案を3つ出して比べる🧠⚖️（超大事！）
 
+![ddd_ts_study_051_boundary_candidates](./picture/ddd_ts_study_051_boundary_candidates.png)
+
+
+
 ### 案A：Order集約＝注文＋明細（まずはこれが王道🍰）
 
 * 集約Root：Order
@@ -185,6 +201,10 @@ Aggregateは、
 ---
 
 ## 7. 手を動かす：最小のOrder集約を作る🛠️💖
+
+![ddd_ts_study_051_minimal_order](./picture/ddd_ts_study_051_minimal_order.png)
+
+
 
 ここでは「集約っぽさ」を体に入れるために、**最小の骨格** を作るよ✨
 （後の章でどんどん強化していく前提だよ〜🫶）
