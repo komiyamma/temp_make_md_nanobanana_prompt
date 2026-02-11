@@ -22,12 +22,13 @@ def generate_prompts():
 
     # Parse Plan
     # Table headers: | ID | File Name | Group | Proposed Image Filename | Relative Link Path | Prompt | Insertion Point |
-    # We need "Proposed Image Filename" (index 3) and "Prompt" (index 5)
-    # Indices might vary if valid split, let's be robust.
+    # We need "Proposed Image Filename" (index 3), "Relative Link Path" (index 4) and "Prompt" (index 5)
     
     header_found = False
     headers = []
     
+    production_base_path = os.path.dirname(os.path.abspath(__file__))
+
     for line in plan_lines:
         line = line.strip()
         if not line.startswith('|'):
@@ -49,6 +50,7 @@ def generate_prompts():
                 header_found = True
                 try:
                     filename_idx = headers.index('Proposed Image Filename')
+                    rel_path_idx = headers.index('Relative Link Path')
                     prompt_idx = headers.index('Prompt')
                 except ValueError:
                     print("Error: Could not find required columns in header.")
@@ -59,31 +61,34 @@ def generate_prompts():
             continue
 
         # Data row
-        if len(parts) != len(headers):
-            # Handle potential pipe inside content? 
-            # Simple split might fail if content has pipes. 
-            # But based on the file content seen, pipes seem to be delimiters.
-            # If length mismatch, simple print warning and skip or try best effort.
-            # The User's file seems clean.
-             pass
-
-        if len(parts) > max(filename_idx, prompt_idx):
+        if len(parts) > max(filename_idx, rel_path_idx, prompt_idx):
             filename_raw = parts[filename_idx]
+            rel_path_raw = parts[rel_path_idx]
             prompt = parts[prompt_idx]
+            
+            # Convert <br> tags to newlines for the template insertion
+            prompt = prompt.replace('<br>', '\n')
 
             if not filename_raw or not prompt:
                 continue
 
+            # Check if image already exists in production
+            # Example rel_path: ./other_soft/hm_activeperl/cnt_hm_activeperl_source_example_output.png
+            if rel_path_raw.startswith('./'):
+                clean_rel_path = rel_path_raw[2:]
+            else:
+                clean_rel_path = rel_path_raw
+
+            prod_path = os.path.join(production_base_path, clean_rel_path.replace('/', os.sep))
+            
+            if os.path.exists(prod_path):
+                print(f"Skipping: Already exists in production: {prod_path}")
+                continue
+
             # Process Filename
             # "cnt_hm_activeperl_architecture_diagram.png" -> "cnt_hm_activeperl_architecture_diagram.txt"
-            if filename_raw.lower().endswith('.png'):
-                txt_filename = filename_raw[:-4] + '.txt'
-            else:
-                 # If it doesn't end in png, just append .txt or replace extension?
-                 # User said: "Proposed Image Filename ... の「.png」を「.txt」というファイル名です"
-                 # "cnt_hm_activeperl_architecture_diagram.png.txt" みたいにはならないように
-                 root, ext = os.path.splitext(filename_raw)
-                 txt_filename = root + '.txt'
+            root, ext = os.path.splitext(filename_raw)
+            txt_filename = root + '.txt'
 
             # Define output path (current directory)
             output_path = txt_filename
