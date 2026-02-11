@@ -22,6 +22,8 @@ DDDを学び始めると、「正しい設計で作らなきゃ…！」って�
 
 ## 1. 「崩す」ってどういう意味？😮
 
+![ddd_cs_study_082_intentional_break.png](./picture/ddd_cs_study_082_intentional_break.png)
+
 DDD的に“きれい”な実装って、だいたいこう👇
 
 * ドメイン層にルールを書く 🧠
@@ -42,6 +44,8 @@ DDD的に“きれい”な実装って、だいたいこう👇
 ---
 
 ## 2. まず決めるのは「守るもの」と「捨てるもの」🧺🛡️
+
+![ddd_cs_study_082_keep_vs_discard.png](./picture/ddd_cs_study_082_keep_vs_discard.png)
 
 AIにお願いする前に、これを先に決めると迷いません😊
 
@@ -66,6 +70,8 @@ AIにお願いする前に、これを先に決めると迷いません😊
 ---
 
 ## 3. AIに“崩し実装”させるための黄金フレーム 🏆🤖
+
+![ddd_cs_study_082_ai_prompt_frame.png](./picture/ddd_cs_study_082_ai_prompt_frame.png)
  
 AIに投げる指示は、だいたいこの順番にすると強いです💪
  
@@ -161,6 +167,8 @@ block-beta
 
 ### 4-3. “汚い箱”に隔離して崩す（後で置き換える）📦🧼
 
+![ddd_cs_study_082_temporary_isolation.png](./picture/ddd_cs_study_082_temporary_isolation.png)
+
 これ超おすすめです！
 **「汚いのはここだけ！」** ができると精神が平和🕊️💕
 
@@ -205,6 +213,8 @@ block-beta
 * DbContext直叩き（ただし、後で直せるようTODO）
 
 #### Resultだけは使って事故を減らす ✅
+
+![ddd_cs_study_082_result_object.png](./picture/ddd_cs_study_082_result_object.png)
 
 ```csharp
 public sealed record Result(bool IsSuccess, string? Error)
@@ -272,6 +282,8 @@ public sealed class ApplyCouponService(AppDbContext db)
 例：`Temporary/`、`Spikes/`、`LegacyBridge/` など
 
 ### 事故②：どこを直せばDDDに戻るか分からない 😵‍💫
+
+![ddd_cs_study_082_todo_tags.png](./picture/ddd_cs_study_082_todo_tags.png)
 
 **対策**：TODOを“固定タグ”で統一する
 例：`// TODO(DDD-MOVE): ...` みたいにして検索できる🔎✨

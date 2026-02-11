@@ -28,6 +28,8 @@ DDDを始めた人がハマりがちな罠がこれ👇
 
 ## スモールスタートの3原則 🌟
 
+![ddd_cs_study_084_three_principles.png](./picture/ddd_cs_study_084_three_principles.png)
+
 ### ① まず「1ユースケース」だけ通す 🛣️
 
 最初はこれだけでOK👇
@@ -51,6 +53,8 @@ DDDを始めた人がハマりがちな罠がこれ👇
 ---
 
 ## 集約の「成長ステップ」イメージ 🪜
+
+![ddd_cs_study_084_small_start_tree.png](./picture/ddd_cs_study_084_small_start_tree.png)
  
  集約を最初から100点にしないために、こう育てるのがおすすめ👇
  
@@ -160,6 +164,8 @@ public sealed record OrderItem(ProductId ProductId, int Quantity);
 
 ### ここがポイントだよ 💡😊
 
+![ddd_cs_study_084_status_switch.png](./picture/ddd_cs_study_084_status_switch.png)
+
 * **“Draft（下書き）”か“Confirmed（確定）”か**だけ持つ（最小！）✍️✅
 * ルールは今必要なものだけ（確定後は追加できない、数量は1以上、空注文は確定不可）🔒
 * まだ「金額」「割引」「在庫」「配送先」…何も入れてない！でもOK！🎉
@@ -167,6 +173,8 @@ public sealed record OrderItem(ProductId ProductId, int Quantity);
 ---
 
 ## 「完璧をやめる」ためのチェックリスト ✅📝
+
+![ddd_cs_study_084_checklist.png](./picture/ddd_cs_study_084_checklist.png)
 
 集約を作ってるときに、これを自分に聞いてみてね👇
 
@@ -178,6 +186,8 @@ public sealed record OrderItem(ProductId ProductId, int Quantity);
 ---
 
 ## 仕様が増えたらどうする？「育て方」🌱✨
+
+![ddd_cs_study_084_evolution.png](./picture/ddd_cs_study_084_evolution.png)
 
 例えば「同じ商品は1行にまとめたい」が来たら…
 
@@ -218,6 +228,8 @@ public class OrderTests
 ---
 
 ## AIに頼むときの“ちょうどいい”頼み方 🤖🗣️✨
+
+![ddd_cs_study_084_ai_leash.png](./picture/ddd_cs_study_084_ai_leash.png)
 
 AIには「全部やって」じゃなくて、こう頼むのがコツ👇
 
