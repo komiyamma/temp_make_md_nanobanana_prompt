@@ -63,6 +63,8 @@ flowchart TB
 
 ## 「ルール漏れ」って何がマズいの？😵‍💫
 
+![Rule Leakage](./picture/ddd_ts_study_069_rule_leakage.png)
+
 アプリ層にルールが漏れると…
 
 * ✅ **ユースケースAでは守ってるのに、Bでは忘れて破綻**（抜け漏れ）🕳️
@@ -115,6 +117,8 @@ flowchart TB
 
 ## ❷ 同じルールが Pay/Fulfill/Place にコピペされる📎😇
 
+![Copy Paste Hell](./picture/ddd_ts_study_069_copy_paste_hell.png)
+
 **症状**：どのユースケースも「未払いなら〜」を持ってる
 **事故**：文言や条件が微妙にズレて分岐が増える
 **治し方**：**1箇所（ドメイン）に集約**して、アプリ層は呼ぶだけ🎯
@@ -123,7 +127,11 @@ flowchart TB
 
 ## ❸ Entity が“データ入れ物”になってる（貧血モデル）🩸
 
+![Anemic Skeleton](./picture/ddd_ts_study_069_anemic_model.png)
+
 **症状**：Entity に setter が生えてて、ロジックは全部サービス側
+
+![Public Setter Door](./picture/ddd_ts_study_069_public_setter.png)
 **事故**：どこからでも状態を壊せる
 **治し方**：**状態変更はメソッド経由だけ**にする（setStatus 禁止の延長）🚫🚦
 
@@ -195,6 +203,8 @@ export class PayOrderService {
 
 ## ✅ 良い例：ルールをドメインへ戻す
 
+![Encapsulation Shield](./picture/ddd_ts_study_069_encapsulation_shield.png)
+
 ### 🏯 Order（集約ルート）側に “意図メソッド” を用意
 
 ```ts
@@ -231,6 +241,8 @@ export class PayOrderService {
     if (!order) throw new Error("Order not found");
 
     // ✅ ルール判断はドメインに任せる
+
+![Guard Clause Bouncer](./picture/ddd_ts_study_069_guard_clause.png)
     order.pay(new Date());
 
     await this.orderRepo.save(order);
@@ -274,6 +286,8 @@ describe("Order.pay", () => {
 ---
 
 ## 直し方レシピ🍳（迷ったらこの順！）
+
+![Refactoring Steps](./picture/ddd_ts_study_069_refactoring_step.png)
 
 1. **アプリ層の if を眺めて「ルールっぽい文」を抜き出す**📝
 2. それを **ドメインの言葉**にする（`pay`, `fulfill`, `confirm`…）🗣️

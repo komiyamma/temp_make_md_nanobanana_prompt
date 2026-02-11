@@ -52,6 +52,8 @@ PlaceOrder は「注文を作る」だけに見えて、**落とし穴が多い*
 
 ### 失敗パターンを4分類しよ🗂️✨
 
+![Failure Categories](./picture/ddd_ts_study_065_failure_types.png)
+
 1. **入力不正（Validation）** 📝❌
 
 * items が空
@@ -77,6 +79,8 @@ PlaceOrder は「注文を作る」だけに見えて、**落とし穴が多い*
 
 ## 今日の方針：アプリ層は「失敗を翻訳する係」🌈🧑‍🍳
 
+![Error Translation Layer](./picture/ddd_ts_study_065_translation.png)
+
 DDDっぽく言うとこう👇
 
 * **ドメイン層**：仕様違反なら（ドメイン例外などで）拒否する🔒
@@ -94,6 +98,8 @@ DDDっぽく言うとこう👇
 ## 実装していくよ〜！🧑‍💻✨（Result型＋エラー型）
 
 ## 1) Result型を用意（アプリ共通）📦✅
+
+![Result Type Fork](./picture/ddd_ts_study_065_result_type.png)
 
 ```ts
 // src/app/shared/Result.ts
@@ -164,6 +170,8 @@ export type PlaceOrderError =
 ---
 
 ## 4) 入力バリデーション（まずは手書きでOK）📝✨
+
+![Input Validation Gate](./picture/ddd_ts_study_065_input_validation.png)
 
 「フォームで赤文字を出す」みたいなことを想定して、`fieldErrors` を返します💡
 
@@ -352,6 +360,8 @@ export class PlaceOrderService {
       return ok({ orderId: order.id.value });
     } catch (e) {
       // 4) 想定内なら翻訳、想定外なら correlationId 🧷
+
+![Unexpected Error Catch](./picture/ddd_ts_study_065_unexpected_catch.png)
       //    ここでは “雑に全部 unexpected” にせず、
       //    ドメイン例外なら conflict/validation に寄せるのがコツ✨
 
@@ -398,6 +408,8 @@ export class PlaceOrderService {
 
 ## メッセージ設計のコツ💬✨（ユーザー向け vs 開発者向け）
 
+![Log vs User Message](./picture/ddd_ts_study_065_log_vs_message.png)
+
 ## ユーザー向けメッセージ💁‍♀️
 
 * 原因を断定しすぎない（“サーバーが壊れた”とか言わない🙅‍♀️）
@@ -407,6 +419,8 @@ export class PlaceOrderService {
 ## 開発者向けログ🛠️
 
 * `correlationId`（追跡キー）🔑
+
+![Correlation ID Tag](./picture/ddd_ts_study_065_correlation_id.png)
 * 入力の要約（個人情報は必要最小限）
 * 例外情報（name/message/stack）
 * `orderId` や `customerId` などのキー情報

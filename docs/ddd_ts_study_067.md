@@ -55,6 +55,8 @@ flowchart TD
 
 ### ✅ 正常系
 
+![Paid Gate](./picture/ddd_ts_study_067_paid_gate.png)
+
 * **Given** 支払い済み（Paid）の注文がある 💳
 * **When** FulfillOrder を実行する ☕
 * **Then** 注文が提供済み（Fulfilled）になる 📦✨
@@ -68,6 +70,8 @@ flowchart TD
 ---
 
 ## 状態遷移を 1枚で掴む 🚦🧠
+
+![Fulfill State Transition](./picture/ddd_ts_study_067_state_machine.png)
 
 「Fulfill はどこからどこへ？」がブレると、実装が事故るよ〜💥
 最小の遷移はこう👇
@@ -86,6 +90,8 @@ Fulfilled ──（もう変更不可）──▶
 ---
 
 ## 設計の方針 🧱✨
+
+![App vs Domain Roles](./picture/ddd_ts_study_067_app_vs_domain.png)
 
 ### ✅ 役割分担（DDDの美味しいところ🍰）
 
@@ -112,6 +118,8 @@ Fulfilled ──（もう変更不可）──▶
 ## 実装していこう〜！☕💨
 
 ## 1 提供の入力と出力 DTO を作る 📦💖
+
+![Fulfill Action](./picture/ddd_ts_study_067_fulfill_action.png)
 
 「ユースケースの入り口」は、まず DTO を置くのが安定だよ〜！
 
@@ -241,7 +249,11 @@ export class Order {
 
   fulfill(by: string): void {
     if (this.status === 'CANCELLED') throw new OrderCancelledError();
+
+![Cancellation Block](./picture/ddd_ts_study_067_cancellation_block.png)
     if (this.status === 'FULFILLED') throw new OrderAlreadyFulfilledError();
+
+![Double Fulfill Prevention](./picture/ddd_ts_study_067_double_fulfill_prevention.png)
     if (this.status !== 'PAID') throw new OrderNotPayedError();
 
     this.status = 'FULFILLED';
@@ -331,6 +343,8 @@ export class FulfillOrderService {
 ## テストで “提供の硬さ” を作る 🧪🔒✨
 
 ## 5 ドメインテストが主役 🏯🧪
+
+![Test Coverage Tubes](./picture/ddd_ts_study_067_test_coverage.png)
 
 Vitest の環境設定などは公式にまとまってるよ（node/jsdom切替とか）🧰([Vitest][5])
 ここではシンプルに unit テスト！

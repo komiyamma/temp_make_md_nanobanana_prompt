@@ -88,6 +88,8 @@ PayOrderで達成したいのはこれ👇
 
 ## ルール（不変条件）を言葉で固定しよう🔒📝
 
+![PayOrder State Flow](./picture/ddd_ts_study_066_state_flow.png)
+
 PayOrderの最低限ルールはこんな感じ👇
 
 * ✅ `CONFIRMED` の注文だけ支払い可能
@@ -223,6 +225,8 @@ export class Order {
   }
 
   pay(params: { paymentId: PaymentId; paidAt: Date }): void {
+
+![Pay Method Encapsulation](./picture/ddd_ts_study_066_pay_method.png)
     // ✅ 不変条件：CONFIRMEDのみ支払い可能
     if (this.status !== "CONFIRMED") {
       throw new Error(`Order cannot be paid when status is ${this.status}`);
@@ -238,9 +242,13 @@ export class Order {
 > ここで超大事💡
 > **「支払い可能か？」はOrderが判断する**（＝ルールがドメインにいる）🏰✨
 
+![Domain Responsibility](./picture/ddd_ts_study_066_domain_responsibility.png)
+
 ---
 
 ### 3) アプリ層：ポート（外部の窓口）🔌
+
+![Gateway Interface Plug](./picture/ddd_ts_study_066_gateway_interface.png)
 
 ```ts
 // src/app/ports/OrderRepository.ts
@@ -353,6 +361,8 @@ export class PayOrderService {
 
     if (!charge.ok) {
       // 外部失敗：状態は変えない✅
+
+![External Failure Shield](./picture/ddd_ts_study_066_external_failure.png)
       if (charge.kind === "DECLINED") {
         return err({ code: "PAYMENT_DECLINED", userMessage: "支払いが承認されませんでした💦 別の方法を試してね🙏" });
       }
@@ -484,6 +494,8 @@ describe("PayOrderService 💳", () => {
   });
 
   it("決済が一時失敗なら retryable エラー🔁", async () => {
+
+![Retryable Error](./picture/ddd_ts_study_066_retryable_error.png)
     const repo = new InMemoryOrderRepository();
     repo.seed(Order.createConfirmed(OrderId.fromString("order-2")));
 
@@ -528,6 +540,8 @@ describe("PayOrderService 💳", () => {
   → 外部は **アプリ層が呼ぶ**🎬
 
 ### ③ 冪等性を忘れる（二重払い地獄）🔁💥
+
+![Idempotency Key Guard](./picture/ddd_ts_study_066_idempotency_key.png)
 
 * 通信失敗→ユーザー再実行→二重請求…は現場あるある😭
   → いまは `requestId` を **idempotencyKey** にして“入口だけ”作ったよ✨
