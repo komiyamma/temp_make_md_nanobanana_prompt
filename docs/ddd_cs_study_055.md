@@ -17,6 +17,8 @@
 
 ## まずイメージしてみよっ🧠💡
 
+![primitive_obsession](./picture/ddd_cs_study_055_primitive_obsession.png)
+
 たとえば、こんなコード…よくあります👇
 
 * `decimal price`
@@ -119,6 +121,8 @@ public sealed class Result<T>
 
 ### 2) Money（値オブジェクト）💰
 
+![money_currency](./picture/ddd_cs_study_055_money_currency.png)
+
 ポイントはこれ👇
 
 * **不変**（`readonly record struct`）
@@ -175,6 +179,8 @@ public readonly record struct Money
 ---
 
 ### 3) Email（値オブジェクト）📧
+
+![email_normalization](./picture/ddd_cs_study_055_email_normalization.png)
 
 ここは「正規化」が大事✨
 
@@ -286,6 +292,8 @@ if (emailResult.IsSuccess && moneyResult.IsSuccess)
 * `@univ.ac.jp` しか許可しない🎓✨
 
 ### ⭐ ミッションC：AIにテストを書かせる🧠🤝
+
+![test_automation](./picture/ddd_cs_study_055_test_automation.png)
 
 CopilotやAIにこう頼むと超速いよ👇
 
