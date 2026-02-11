@@ -2,6 +2,9 @@
 
 ## 🎯 ねらい
 
+![🎯 ねらい](./picture/ddd_ts_study_088_visual_1.png)
+
+
 * 「失敗」も型で表して、**返す側も使う側も迷わない**ようにする💪🙂
 * **例外（throw）とResult（戻り値）を混ぜて地獄にならない**ルールを作る🧯🔥
 * UI / API に返すための **errorCode・userMessage・details** を整える🧩✨
@@ -22,6 +25,9 @@ Resultの基本形はこれ👇
 
 ## ✅ Result型が向いてる失敗・向いてない失敗
 
+![✅ Result型が向いてる失敗・向いてない失敗](./picture/ddd_ts_study_088_visual_2.png)
+
+
 ### Result型が向いてる🥰
 
 * 入力が不正（バリデーション）🧾❌
@@ -30,6 +36,9 @@ Resultの基本形はこれ👇
 * つまり **想定内の失敗**！
 
 ### 例外で良い（= Resultにするより上でまとめて扱う）😵‍💫
+
+![例外で良い（= Resultにするより上でまとめて扱う）😵‍💫](./picture/ddd_ts_study_088_visual_3.png)
+
 
 * バグ、想定外、落ちるべきもの（null前提崩壊、未対応分岐など）💥
 * ただし最終的にはUI/APIに返すなら、アプリ層で `INTERNAL_ERROR` としてResult化しちゃうのが実務的🙆‍♀️
@@ -80,6 +89,9 @@ export const match = <T, E, A>(
 * `details`：開発者・ログ向け（解析できる）🛠️🔍
 
 ### エラーコードの作り方🧩
+
+![エラーコードの作り方🧩](./picture/ddd_ts_study_088_visual_4.png)
+
 
 `as const` + `satisfies` がめちゃ便利！
 `satisfies` は「型チェックだけして、推論を壊しにくい」ための演算子だよ🧠✨ ([typescriptlang.org][3])
@@ -133,6 +145,9 @@ export type AppError =
 ---
 
 ## 3️⃣ 例題 カフェ注文のユースケースで使ってみる☕🧾
+
+![3️⃣ 例題 カフェ注文のユースケースで使ってみる☕🧾](./picture/ddd_ts_study_088_visual_5.png)
+
 
 今回は「PayOrder」を想像して書くね！
 
@@ -313,6 +328,9 @@ function toProblem(e: AppError): ProblemDetails {
 
 ## 6️⃣ ライブラリを使う選択肢🥐
 
+![6️⃣ ライブラリを使う選択肢🥐](./picture/ddd_ts_study_088_visual_6.png)
+
+
 Resultを自作してもOKだけど、実務だと **neverthrow** を使う人も多いよ✨
 `match` や `andThen` で「成功のときだけ次へ」をきれいに繋げられる系📦➡️📦 ([GitHub][5])
 
@@ -338,6 +356,9 @@ Resultを自作してもOKだけど、実務だと **neverthrow** を使う人�
 ---
 
 ## 🤖 AIの使いどころテンプレ
+
+![🤖 AIの使いどころテンプレ](./picture/ddd_ts_study_088_visual_7.png)
+
 
 そのままコピペで使えるよ✨
 

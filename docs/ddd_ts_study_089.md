@@ -2,6 +2,9 @@
 
 ## この章のゴール🎯💖
 
+![この章のゴール🎯💖](./picture/ddd_ts_study_089_visual_1.png)
+
+
 * ユーザーには「優しく・安全な」エラー表示を出せるようになる🙂🌷
 * 開発者は「原因が一発で追える」ログを残せるようになる🔍🧰
 * そして… **“表示は優しいのに、運用は強い”** アプリに近づく💪✨
@@ -19,6 +22,9 @@
 * 不安にさせない言い方（スタックトレースとか絶対NG🙅‍♀️）
 
 ### ✅ 開発者向け（解析担当）🛠️🧠
+
+![✅ 開発者向け（解析担当）🛠️🧠](./picture/ddd_ts_study_089_visual_2.png)
+
 
 * エラーコード（分類）
 * どこで起きた？（ユースケース名、集約ID、状態）
@@ -66,6 +72,9 @@ DDDの感覚でいうとこう👇
 ## 4) 最小で強い“エラーの型”を作ろう📦💎
 
 ### 4-1. エラーコード（分類）を固定する🏷️
+
+![4-1. エラーコード（分類）を固定する🏷️](./picture/ddd_ts_study_089_visual_3.png)
+
 
 「何が起きたか」を文字列で固定すると、ログも分析も楽になるよ✨
 
@@ -141,6 +150,9 @@ export const publicMessageMap: Record<ErrorCode, string> = {
 
 ### 6-1. 追跡ID（supportId）って？🆔
 
+![6-1. 追跡ID（supportId）って？🆔](./picture/ddd_ts_study_089_visual_4.png)
+
+
 ユーザーに「この番号を教えてね」って出せるやつ！
 運用でめちゃ助かる🎯✨
 
@@ -208,6 +220,9 @@ export function toPublicAndLog(
 ```
 
 ### 7-2. ユースケース側：返すのは PublicError、ログは別で残す🧾✨
+
+![7-2. ユースケース側：返すのは PublicError、ログは別で残す🧾✨](./picture/ddd_ts_study_089_visual_5.png)
+
 
 ```ts
 // app/usecases/PlaceOrder.ts
@@ -289,6 +304,9 @@ export class PlaceOrder {
 
 ### ❌ ログにも出しちゃダメ
 
+![❌ ログにも出しちゃダメ](./picture/ddd_ts_study_089_visual_6.png)
+
+
 * パスワード、APIキー、アクセストークン
 * カード番号、決済情報
 * 住所やメールなどの個人情報（必要ならマスク）
@@ -311,6 +329,9 @@ OpenTelemetryのログ仕様にも TraceId/SpanId があるよ📌 ([OpenTelemet
 実装では “ロガーが自動で trace context を埋める” 方式が推奨されがちだよ🧩 ([docs.datadoghq.com][6])
 
 ### ③ エラーは「分類」して集計できるようにする📈
+
+![③ エラーは「分類」して集計できるようにする📈](./picture/ddd_ts_study_089_visual_7.png)
+
 
 * `code`（エラーコード）
 * `usecase`
