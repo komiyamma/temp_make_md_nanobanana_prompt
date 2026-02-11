@@ -36,6 +36,8 @@ DDDの境界（境界づけられたコンテキスト）は、最初はほぼ�
 
 ## 2. 「境界線を固める」とは何をすること？🧱✨
 
+![strengthening_boundaries](./picture/ddd_cs_study_034_strengthening_boundaries.png)
+
 ざっくり言うと、こういうのを増やしていくことだよ😊
 
 * 📁 **フォルダ / 名前空間で分ける**（ゆるい境界）
@@ -49,6 +51,8 @@ DDDの境界（境界づけられたコンテキスト）は、最初はほぼ�
 ---
 
 ## 3. 進め方：境界線を育てる“4フェーズ”🌱➡️🌳
+
+![four_phases](./picture/ddd_cs_study_034_four_phases.png)
 
 ここからが本編だよ〜！😊🎉
 おすすめの進行を **4段階** で紹介するね✨
@@ -94,6 +98,8 @@ AIにはここをやらせると強いよ👇
 
 ### フェーズ1：薄い境界線（フォルダで分ける）📁🧃
 
+![folder_structure](./picture/ddd_cs_study_034_folder_structure.png)
+
 次にやるのは、**“分ける練習”**😊
 まだプロジェクト分割はしなくてOK。まずはこんな感じ👇
 
@@ -112,6 +118,8 @@ AIにはここをやらせると強いよ👇
 ---
 
 ### フェーズ2：境界線を強くする（プロジェクト分割）🧱🔗
+
+![project_dependencies](./picture/ddd_cs_study_034_project_dependencies.png)
 
 「このままだとごちゃるな…」が見えたら、ここで本気出す💪✨
 
@@ -147,6 +155,8 @@ Domainが誰にも依存しないのが大事🥰✨
 ---
 
 ## 4. ミニ例：プロトタイプ→本番への“差し替え”🧩✨
+
+![repository_swap](./picture/ddd_cs_study_034_repository_swap.png)
 
 例として「予約」を考えてみよ😊☕📅
 プロトタイプではまず **インメモリ** でOK！
@@ -209,6 +219,8 @@ public sealed class InMemoryReservationRepository : IReservationRepository
 ---
 
 ## 6. AIに頼むときの「境界線を守る」プロンプト例🤖🧱
+
+![ai_guard](./picture/ddd_cs_study_034_ai_guard.png)
 
 そのままコピペで使える形にするね😊
 

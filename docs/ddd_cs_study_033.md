@@ -21,6 +21,8 @@
 
 ## ビッグボールオブマッドって何？ 🥔🧱
 
+![mud_ball](./picture/ddd_cs_study_033_mud_ball.png)
+
 ざっくり言うと、
 
 * 1つのプロジェクト（または1つの層）に全部が混ざる
@@ -33,6 +35,8 @@
 ---
 
 ## どうしてこうなるの？（1人開発ほど危ない）🧠⚡
+
+![vicious_cycle](./picture/ddd_cs_study_033_vicious_cycle.png)
 
 1人開発って、最初は超スピード出ますよね🚀
 でも戦略的設計を飛ばすと、スピードの代償があとで来ます…💸💥
@@ -61,6 +65,8 @@ flowchart TD
 
 ## もう手遅れ？のサイン10個 🚨😇
 
+![bad_signs](./picture/ddd_cs_study_033_bad_signs.png)
+
 当てはまるほど泥団子が育ってます🌱🪨
 
 * 「User」って言葉が3種類の意味で使われてる👤👥👮
@@ -77,6 +83,8 @@ flowchart TD
 ---
 
 ## ミニ地獄サンプル：全部混ざるとこうなる 😭🧱
+
+![mixed_responsibilities](./picture/ddd_cs_study_033_mixed_responsibilities.png)
 
 たとえば「予約」を作ってるつもりなのに、気付いたら **請求**や**クーポン**や**通知**が全部ここに…みたいなやつです。
 
@@ -134,6 +142,8 @@ public async Task<IActionResult> Create(CreateReservationRequest req)
 
 ## 戦略的設計をサボると「AIが弱くなる」🤖📉
 
+![confused_ai](./picture/ddd_cs_study_033_confused_ai.png)
+
 AIって、局所的にコード書くのは得意です✍️✨
 でも、泥団子状態だと…
 
@@ -148,6 +158,8 @@ AIって、局所的にコード書くのは得意です✍️✨
 ---
 
 ## 回避のキモ：境界線を引くだけで勝てる ✂️🏆
+
+![drawing_boundaries](./picture/ddd_cs_study_033_drawing_boundaries.png)
 
 ここでの勝ち筋はシンプルです😊
 **「どこまでが予約で、どこからが請求？」**みたいな **線引き** を先にします。

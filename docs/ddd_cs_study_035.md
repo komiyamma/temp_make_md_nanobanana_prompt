@@ -9,6 +9,8 @@ DDDでめちゃ大事な **ユビキタス言語（共通言語）** を、AIと
 
 # 今日のゴール 🎯
 
+![workshop_flow](./picture/ddd_cs_study_035_workshop_flow.png)
+
 * 作りたい機能について **用語（単語）を定義**できる
 * 同じ単語の意味がブレる問題を **AIで発見**できる
 * その単語を **画面・仕様・コードの命名に反映**できる（迷いが減る！）🧭✨
@@ -77,6 +79,8 @@ Copilot Chat（またはAI拡張）のチャットで、次を投げます👇
 
 # 3. 危険な“あいまい単語”をAIに炙り出させる 🔥🧠
 
+![ambiguous_word](./picture/ddd_cs_study_035_ambiguous_word.png)
+
 次がこの章の本題です！
 **同じ単語が場面によって意味が変わる**と、設計がグラつきます😵‍💫
 
@@ -111,6 +115,8 @@ mindmap
 
 # 4. 単語帳テンプレを作る（ここからが整える時間✨）🧹
 
+![glossary_table](./picture/ddd_cs_study_035_glossary_table.png)
+
 `docs/glossary.md` に、最低限これを書きます👇
 表にすると見やすいです😊
 
@@ -126,6 +132,8 @@ mindmap
 ---
 
 # 5. 不整合をAIに“レビュー”させる（超強い💥）🕵️‍♀️🤖
+
+![ai_reviewer](./picture/ddd_cs_study_035_ai_reviewer.png)
 
 単語帳ができたら、AIに意地悪レビューをさせます😈
 
@@ -150,6 +158,8 @@ mindmap
 ---
 
 # 6. 単語をコード命名に“変換”する（迷いゼロへ🧭）🧩
+
+![words_to_code](./picture/ddd_cs_study_035_words_to_code.png)
 
 最後に、AIに「命名ルール案」を出させます。
 これで **AIにコード生成させる時もブレにくい**です👍

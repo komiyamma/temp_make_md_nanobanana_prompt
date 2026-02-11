@@ -18,6 +18,8 @@
 
 ## まず結論：バリデーションは「境界」と「ドメイン」に置く 🧱🚪💎
 
+![two_validation_layers](./picture/ddd_cs_study_039_two_validation_layers.png)
+
 バリデーション（検証）って、実は種類が混ざりやすいんです😵‍💫
 だから、置き場所を **2つに分けて考える** のがコツです👇
 
@@ -51,6 +53,8 @@ flowchart TD
 
 ## 重要フレーズ：**「不正な状態を作れない」設計** 🛡️✨
 
+![born_valid](./picture/ddd_cs_study_039_born_valid.png)
+
 DDDのノリだとこうです👇
 
 * ❌ 作ってから `Validate()` して「エラーでした」
@@ -64,6 +68,8 @@ DDDのノリだとこうです👇
 ## ありがちな事故パターン 😱💥
 
 ### パターンA：DTOでチェックしたからOKだと思った
+
+![bypassing_check](./picture/ddd_cs_study_039_bypassing_check.png)
 
 「APIで弾いたし！」→ **別ルートから入って破滅**😇
 （バッチ処理、管理画面、将来の追加機能、テストコード…）
@@ -82,6 +88,8 @@ DDDのノリだとこうです👇
 ---
 
 ## C#での王道：Value Objectは「作る時に検証」🥇📦
+
+![single_entry](./picture/ddd_cs_study_039_single_entry.png)
 
 例：Email（値オブジェクト）📧
 **不正なEmailは生成できない**ようにします🔥
@@ -141,6 +149,8 @@ public sealed record Result<T>(bool IsSuccess, T? Value, string? Error)
 ---
 
 ## Entity/集約では「不変条件」を守る 🧑‍⚖️🔥
+
+![guarding_state](./picture/ddd_cs_study_039_guarding_state.png)
 
 たとえば「ユーザー名は空にできない」みたいなルールは、
 **Entityのメソッドで守る**のが定番です🙂
