@@ -18,6 +18,18 @@
 
 ## 1. DRYってなに？（超ざっくり）🔁
 
+![Knowledge vs Code Duplication
+
+**Labels to Render**:
+- Code: "見た目 (OK)"
+- Knowledge: "知識 (NG)"
+
+**Visual Details**:
+1. Core Concept: Distinguishing bad duplication.
+2. Metaphor: Two identical looking boxes (Code) are fine. Two identical rule books (Knowledge) are bad.
+3. Action: Comparison.
+4. Layout: Side-by-side.](./picture/ddd_cs_study_080_knowledge_vs_code.png)
+
 DRY = “Don’t Repeat Yourself（繰り返すな）” ってやつだね😊
 でもここで大事なのは…
 
@@ -33,6 +45,18 @@ DRY = “Don’t Repeat Yourself（繰り返すな）” ってやつだね😊
 ---
 
 ## 2. 1人開発で起きがちなDRYの罠 🕳️🐿️
+
+![Utility Mess
+
+**Labels to Render**:
+- Utility: "便利クラス"
+- Mess: "ぐちゃぐちゃ"
+
+**Visual Details**:
+1. Core Concept: Over-centralization.
+2. Metaphor: A giant box labeled 'Utility' overflowing with unrelated tools (hammer, spoon, ladder).
+3. Action: Overflowing.
+4. Layout: Messy pile.](./picture/ddd_cs_study_080_utility_mess.png)
 
 1人だと、ついこうなる👇
 
@@ -50,6 +74,19 @@ DRY = “Don’t Repeat Yourself（繰り返すな）” ってやつだね😊
 
 ## 3. まず結論：1人開発のDRYは「遅らせる」が強い 🐢✨
 
+![Solo Dev Priority
+
+**Labels to Render**:
+- 1st: "読みやすさ"
+- 2nd: "直しやすさ"
+- 3rd: "DRY"
+
+**Visual Details**:
+1. Core Concept: Prioritization.
+2. Metaphor: A winner's podium. 1st place is a readable book. 2nd is a wrench. 3rd is a DRY symbol.
+3. Action: Standing on podium.
+4. Layout: Podium.](./picture/ddd_cs_study_080_priority_podium.png)
+
 最初はこう考えると安定するよ😊
 
 ### 🌟 1人開発の優先順位
@@ -61,6 +98,18 @@ DRY = “Don’t Repeat Yourself（繰り返すな）” ってやつだね😊
 ---
 
 ## 4. “放置してOK”な重複の特徴 🟢😌
+
+![Context Branching
+
+**Labels to Render**:
+- Now: "現在 (似てる)"
+- Future: "未来 (別物)"
+
+**Visual Details**:
+1. Core Concept: Divergent evolution.
+2. Metaphor: Two plants that look identical as seedlings but grow into completely different trees.
+3. Action: Growing.
+4. Layout: Timeline.](./picture/ddd_cs_study_080_context_branch.png)
 
 次のどれかなら、無理にまとめなくてOKなこと多いよ👇
 
@@ -84,6 +133,18 @@ DRY = “Don’t Repeat Yourself（繰り返すな）” ってやつだね😊
 ---
 
 ## 5. “今すぐDRYすべき”重複の特徴 🔴🧨
+
+![Scattered Rules
+
+**Labels to Render**:
+- Rule: "税計算"
+- Map: "コード全体"
+
+**Visual Details**:
+1. Core Concept: Distributed logic.
+2. Metaphor: Red pins scattered all over a map, representing the same business rule copied everywhere.
+3. Action: Pinning.
+4. Layout: Map view.](./picture/ddd_cs_study_080_scattered_rules.png)
 
 これは早めにまとめた方がいいやつ👇
 
@@ -137,6 +198,19 @@ public class PurchaseService
 
 ### (2) AIが提案しがちな“共通化”（読みにくい＆未来に弱い）😵‍💫
 
+![Premature Abstraction
+
+**Labels to Render**:
+- Simple: "素直"
+- Abstract: "共通化"
+- Hard: "難解"
+
+**Visual Details**:
+1. Core Concept: Complexity cost.
+2. Metaphor: Two simple knives (Simple) vs A giant complex machine that requires a manual to operate (Abstract).
+3. Action: Comparison.
+4. Layout: Side-by-side.](./picture/ddd_cs_study_080_premature_abstraction.png)
+
 ```csharp
 public class PurchaseService
 {
@@ -164,6 +238,19 @@ public class PurchaseService
 ---
 
 ## 7. DDD的な超重要ポイント：境界を壊すDRYはNG 🚧🙅‍♀️
+
+![Boundary Wall
+
+**Labels to Render**:
+- Context A: "User"
+- Context B: "User"
+- Wall: "境界"
+
+**Visual Details**:
+1. Core Concept: Protecting boundaries.
+2. Metaphor: A brick wall separating two 'User' concepts. Merging them would break the wall.
+3. Action: Separating.
+4. Layout: Wall.](./picture/ddd_cs_study_080_boundary_wall.png)
 
 DDDは「境界線を守るゲーム」みたいなところがあるよ😊✨
 だから…

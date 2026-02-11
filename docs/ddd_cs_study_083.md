@@ -19,6 +19,18 @@
 
 ## リサーチ駆動設計ってなに？🧐
 
+![Research Architect
+
+**Labels to Render**:
+- Research: "実験 (汚)"
+- Design: "設計 (浄)"
+
+**Visual Details**:
+1. Core Concept: Research informs design.
+2. Metaphor: A scientist in a lab coat (Research) handing a data report to an architect in a suit (Design).
+3. Action: Handover.
+4. Layout: Interaction.](./picture/ddd_cs_study_083_research_architect.png)
+
 ざっくり言うと…
 
 > **「よく分からないところは、先に“調べるためのコード”を書いて、事実を集めてから設計する」**
@@ -34,6 +46,18 @@ DDDって「最初にきれいに設計しよう」って思いがちなんだ�
 ---
 
 ## でも「汚く書く」って、設計放棄じゃないの？😅
+
+![Lab vs Trash
+
+**Labels to Render**:
+- Lab: "実験室 (OK)"
+- Street: "路上 (NG)"
+
+**Visual Details**:
+1. Core Concept: Controlled mess.
+2. Metaphor: A messy experiment inside a glass lab (Safe) vs Trash scattered on the street (Bad).
+3. Action: Comparison.
+4. Layout: Side-by-side.](./picture/ddd_cs_study_083_lab_vs_trash.png)
 
 違うよ〜！ここ超大事💡
 
@@ -52,6 +76,21 @@ DDDって「最初にきれいに設計しよう」って思いがちなんだ�
 ---
 
 ## リサーチ駆動の「5つの約束」📝✨
+
+![5 Promises
+
+**Labels to Render**:
+- Time: "時間"
+- Place: "場所"
+- Memo: "メモ"
+- Exit: "出口"
+- Collect: "回収"
+
+**Visual Details**:
+1. Core Concept: The 5 rules.
+2. Metaphor: A pentagon or 5-step circular path showing the 5 promises.
+3. Action: Cycling.
+4. Layout: Diagram.](./picture/ddd_cs_study_083_5_promises.png)
 
 迷子にならないために、これだけ守ってね👇
 
@@ -87,6 +126,19 @@ flowchart LR
 
 ## AIをどう使う？🤖💡（超強い使い方）
 
+![AI Research Partner
+
+**Labels to Render**:
+- AI: "AI"
+- Questions: "質問"
+- Tests: "テスト"
+
+**Visual Details**:
+1. Core Concept: AI generating inputs.
+2. Metaphor: A robot generating a list of question marks and check marks (tests) for the human.
+3. Action: Generating.
+4. Layout: Interaction.](./picture/ddd_cs_study_083_ai_partner.png)
+
 リサーチ駆動は、AIと相性めっちゃいいよ！
 
 ### AIに投げると強いもの👇
@@ -107,6 +159,18 @@ flowchart LR
 # ハンズオン：送料計算を“スパイク”で片付けよう🚚💨
 
 ## お題（わざと曖昧😈）
+
+![Shipping Tangle
+
+**Labels to Render**:
+- Rules: "送料ルール"
+- Tangle: "複雑"
+
+**Visual Details**:
+1. Core Concept: Complex logic.
+2. Metaphor: A tangled knot of strings labeled 'Weight', 'Region', 'Rank', 'Coupon' representing the complex rules.
+3. Action: Tangled.
+4. Layout: Knot.](./picture/ddd_cs_study_083_shipping_tangle.png)
 
 ECの送料がこう決まるらしい：
 
@@ -203,6 +267,18 @@ dotnet run app.cs
 
 ## 3) “学び”を回収するメモ 🗒️💎
 
+![Learning Notes
+
+**Labels to Render**:
+- Note: "メモ"
+- Gems: "学び"
+
+**Visual Details**:
+1. Core Concept: Extracting value.
+2. Metaphor: A notebook capturing glowing gems (Facts) distilled from the experiment.
+3. Action: Writing/Collecting.
+4. Layout: Notebook.](./picture/ddd_cs_study_083_learning_notes.png)
+
 ここがリサーチ駆動の勝ち筋！
 
 例：`notes.md` にこう書く👇
@@ -254,6 +330,18 @@ Debug.Assert(CalcShipping(new Order(Region.Honshu, Rank.Normal, 9000,  2, "SHIPF
 ---
 
 ## “スパイク卒業”のサイン ✅
+
+![Spike Graduation
+
+**Labels to Render**:
+- Spike: "スパイク"
+- Diploma: "仕様書"
+
+**Visual Details**:
+1. Core Concept: Completion.
+2. Metaphor: A graduation ceremony. The Spike code (Graduate) holding a diploma labeled 'Spec/Test'.
+3. Action: Graduating.
+4. Layout: Scene.](./picture/ddd_cs_study_083_diploma.png)
 
 これが揃ったら、リサーチは成功だよ🎉
 

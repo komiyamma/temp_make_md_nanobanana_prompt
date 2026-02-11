@@ -36,6 +36,18 @@
 
 ## 「意図的な負債」 vs 「事故の負債」🚑🧯
 
+![Intentional vs Accidental Debt
+
+**Labels to Render**:
+- Intentional: "意図的 (安全)"
+- Accidental: "事故 (危険)"
+
+**Visual Details**:
+1. Core Concept: Controlled vs Uncontrolled.
+2. Metaphor: A messy box labeled 'Trash' (Intentional) vs An oil spill spreading everywhere (Accidental).
+3. Action: Containing vs Spilling.
+4. Layout: Comparison.](./picture/ddd_cs_study_081_intentional_vs_accidental.png)
+
 ### ✅ 意図的な負債（OK）
 
 * どこにあるか分かる👀
@@ -72,6 +84,19 @@
 
 ## 1人開発で「意図的な負債」が超大事な理由 🧑‍💻✨
 
+![Solo Dev Loop
+
+**Labels to Render**:
+- Release: "雑に出す"
+- Feedback: "反応"
+- Fix: "直す"
+
+**Visual Details**:
+1. Core Concept: Iteration speed.
+2. Metaphor: A fast cycling loop. Release -> Feedback -> Fix.
+3. Action: Cycling.
+4. Layout: Cycle diagram.](./picture/ddd_cs_study_081_solo_loop.png)
+
 1人だと最初に必要なのはだいたいこれ👇
 
 * 仕様が本当に合ってるか、早く確かめたい👂
@@ -84,6 +109,19 @@
 ---
 
 ## 借金していいか？判断チェックリスト ✅🧠
+
+![Debt Checklist
+
+**Labels to Render**:
+- Core: "コア?"
+- Stable: "固定?"
+- Isolated: "隔離?"
+
+**Visual Details**:
+1. Core Concept: Decision criteria.
+2. Metaphor: A clipboard with a checklist. Checking items before allowing debt.
+3. Action: Checking.
+4. Layout: Clipboard.](./picture/ddd_cs_study_081_debt_checklist.png)
 
 迷ったら、この順で考えるのがおすすめだよ✨
 
@@ -103,6 +141,19 @@
 * 共有ライブラリやドメイン根幹 → 借金NG寄り🙅‍♀️
 
 ### ④ 後で “差し替え可能” にしてる？🔌
+
+![Interface Escape Hatch
+
+**Labels to Render**:
+- Interface: "I/F"
+- Dirty: "雑コード"
+- Hide: "隠す"
+
+**Visual Details**:
+1. Core Concept: Encapsulation.
+2. Metaphor: A clean white wall (Interface) hiding a messy room (Dirty Code) behind a door.
+3. Action: Hiding.
+4. Layout: Door/Wall.](./picture/ddd_cs_study_081_interface_hatch.png)
 
 * **インターフェースで隠す**
 * **メソッド1個に押し込める**
@@ -132,6 +183,18 @@
 
 ## 借金台帳（Debt Ledger）テンプレ 📒✨
 
+![Debt Ledger
+
+**Labels to Render**:
+- Ledger: "借金台帳"
+- Plan: "返済計画"
+
+**Visual Details**:
+1. Core Concept: Recording debt.
+2. Metaphor: An open notebook or ledger with specific entries about technical debt.
+3. Action: Writing.
+4. Layout: Notebook.](./picture/ddd_cs_study_081_debt_ledger.png)
+
 そのままメモ帳やIssueに貼ってOKだよ🫶
 
 * **ID**：DEBT-001
@@ -149,6 +212,18 @@
 ---
 
 ## “借金していい実装” の作り方（C#例）🧱✨
+
+![Temporary Box
+
+**Labels to Render**:
+- Temporary: "Temporary"
+- Isolate: "隔離"
+
+**Visual Details**:
+1. Core Concept: Isolation.
+2. Metaphor: A cardboard box labeled 'Temporary' containing code blocks, sitting separately from the main architecture.
+3. Action: Containing.
+4. Layout: Box focus.](./picture/ddd_cs_study_081_temporary_box.png)
 
 例：割引ルールがまだ曖昧。でも注文は先に出したい！🛒💨
 👉 **割引だけ「差し替え前提」にして雑実装** する作戦💡
@@ -186,6 +261,19 @@ public sealed class TemporaryDiscountPolicy : IDiscountPolicy
 ---
 
 ## 絶対に“借金しちゃダメ”ゾーン 🚫🔥
+
+![No Debt Zone
+
+**Labels to Render**:
+- Auth: "認証"
+- Money: "お金"
+- Stop: "借金禁止"
+
+**Visual Details**:
+1. Core Concept: Critical areas.
+2. Metaphor: A heavy steel vault labeled 'Auth & Money' with a 'No Entry' sign for 'Debt'.
+3. Action: Guarding.
+4. Layout: Vault.](./picture/ddd_cs_study_081_no_debt_zone.png)
 
 ここで借金すると、だいたい取り返しつかなくなるよ🥶
 

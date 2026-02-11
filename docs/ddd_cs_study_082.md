@@ -22,6 +22,18 @@ DDDを学び始めると、「正しい設計で作らなきゃ…！」って�
 
 ## 1. 「崩す」ってどういう意味？😮
 
+![Shack vs Castle
+
+**Labels to Render**:
+- Broken: "崩す (小屋)"
+- Clean: "正解 (城)"
+
+**Visual Details**:
+1. Core Concept: Intentional simplicity.
+2. Metaphor: A simple wooden shack (Broken) built quickly vs A stone castle (Clean). Both are useful.
+3. Action: Comparison.
+4. Layout: Side-by-side.](./picture/ddd_cs_study_082_shack_vs_castle.png)
+
 DDD的に“きれい”な実装って、だいたいこう👇
 
 * ドメイン層にルールを書く 🧠
@@ -42,6 +54,18 @@ DDD的に“きれい”な実装って、だいたいこう👇
 ---
 
 ## 2. まず決めるのは「守るもの」と「捨てるもの」🧺🛡️
+
+![Keep vs Discard
+
+**Labels to Render**:
+- Keep: "守る (Security)"
+- Discard: "捨てる (VO)"
+
+**Visual Details**:
+1. Core Concept: Prioritizing requirements.
+2. Metaphor: Two sorting bins. One labeled 'Keep' (with shield icon), one labeled 'Discard' (with heavy box icon).
+3. Action: Sorting.
+4. Layout: Bins.](./picture/ddd_cs_study_082_keep_discard_bin.png)
 
 AIにお願いする前に、これを先に決めると迷いません😊
 
@@ -66,6 +90,20 @@ AIにお願いする前に、これを先に決めると迷いません😊
 ---
 
 ## 3. AIに“崩し実装”させるための黄金フレーム 🏆🤖
+
+![Golden Framework
+
+**Labels to Render**:
+- 1: "目的"
+- 2: "崩す範囲"
+- 3: "ルール"
+- 4: "戻り道"
+
+**Visual Details**:
+1. Core Concept: Prompt structure.
+2. Metaphor: A 4-step path or staircase leading to a successful AI output.
+3. Action: Climbing.
+4. Layout: Steps.](./picture/ddd_cs_study_082_golden_framework.png)
  
 AIに投げる指示は、だいたいこの順番にすると強いです💪
  
@@ -108,6 +146,18 @@ block-beta
 ## 4. そのままコピペで使えるプロンプト集 ✍️😺
 
 ### 4-1. 検証・スパイク用（最速で動かす）⚡
+
+![Prototype Racer
+
+**Labels to Render**:
+- Speed: "最速"
+- Prototype: "検証"
+
+**Visual Details**:
+1. Core Concept: Speed over quality.
+2. Metaphor: A stripped-down race car (Prototype) built for speed, missing creature comforts.
+3. Action: Racing.
+4. Layout: Car.](./picture/ddd_cs_study_082_prototype_racer.png)
 
 「今は正しさより“発見”が目的」タイプです🔍✨
 
@@ -161,6 +211,19 @@ block-beta
 
 ### 4-3. “汚い箱”に隔離して崩す（後で置き換える）📦🧼
 
+![Dirty Box Isolation
+
+**Labels to Render**:
+- Dirty: "汚い"
+- Clean: "綺麗"
+- Box: "隔離"
+
+**Visual Details**:
+1. Core Concept: Containment.
+2. Metaphor: A dirty, muddy box placed inside a pristine white room. The mud stays inside the box.
+3. Action: Containing.
+4. Layout: Room view.](./picture/ddd_cs_study_082_dirty_box.png)
+
 これ超おすすめです！
 **「汚いのはここだけ！」** ができると精神が平和🕊️💕
 
@@ -187,6 +250,19 @@ block-beta
 ---
 
 ## 5. ミニ例：「クーポン適用」を“崩し実装”で作る 😈🧾
+
+![Coupon Logic Flow
+
+**Labels to Render**:
+- Check: "チェック"
+- Calc: "計算"
+- Save: "保存"
+
+**Visual Details**:
+1. Core Concept: Procedural logic.
+2. Metaphor: A simple straight line flow chart showing the coupon logic steps without complex objects.
+3. Action: Flowing.
+4. Layout: Flowchart.](./picture/ddd_cs_study_082_coupon_flow.png)
 
 ここでは例として、**注文にクーポンを適用**する処理を
 「本来ならドメインでやりたいけど、今は早く出す」想定で書きます💨
@@ -265,6 +341,19 @@ public sealed class ApplyCouponService(AppDbContext db)
 ---
 
 ## 6. “崩し実装”の事故あるある＆対策 😱🧯
+
+![Accident Signs
+
+**Labels to Render**:
+- Zombie: "増殖"
+- Lost: "迷子"
+- Silent: "握りつぶし"
+
+**Visual Details**:
+1. Core Concept: Warning signs.
+2. Metaphor: Three yellow warning signs depicting a Zombie (Spread), a Question Mark (Lost), and a Ghost (Silent Error).
+3. Action: Warning.
+4. Layout: Signposts.](./picture/ddd_cs_study_082_accident_signs.png)
 
 ### 事故①：雑さが増殖して止まらない 🧟‍♂️
 
