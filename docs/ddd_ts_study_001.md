@@ -31,6 +31,9 @@ DDDはここに効く道具で、
 
 ## 3) ミニ例題：カフェ注文☕🧾（“どこが複雑？”を見つける）
 
+![ddd_ts_study_001_cafe_complexity.png](./picture/ddd_ts_study_001_cafe_complexity.png)
+
+
 今日の題材は「カフェ注文アプリ」🍰
 パッと見は簡単そうだけど、すぐ複雑になるやつ！
 
@@ -76,6 +79,9 @@ DDDはここをちゃんと扱うのが得意！([ウィキペディア][2])
 
 ## 4) DDDで“最初に”大事にする考え方 3つ🌸
 
+![ddd_ts_study_001_three_pillars.png](./picture/ddd_ts_study_001_three_pillars.png)
+
+
 ### ① ルール（業務）を真ん中に置く🧠
 
 UIやDBは後で変わりやすいけど、
@@ -112,6 +118,9 @@ DDDは“かっこいいからやる”じゃなくて、
 ---
 
 ## 6) 体験：DDDがない世界（ありがちコード）→ 何が困る？😇💥
+
+![ddd_ts_study_001_primitive_obsession.png](./picture/ddd_ts_study_001_primitive_obsession.png)
+
 
 ### 🍩 “とりあえず動く”書き方（例）
 

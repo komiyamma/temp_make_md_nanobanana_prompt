@@ -94,6 +94,9 @@ DDD学習は、**順番が命**です🫶
 
 ## 5) 図は“最小”でOK！🖼️✨（豪華にしない）
 
+![ddd_ts_study_004_simple_diagram.png](./picture/ddd_ts_study_004_simple_diagram.png)
+
+
 初心者が詰まりやすいのが「図を綺麗に描こうとして止まる」やつ😵‍💫
 図は、**1枚・1目的**で十分だよ！
 
@@ -117,6 +120,9 @@ flowchart LR
 
 ## 6) TypeScript実装は「最小差分」主義でいこう✂️💻
 
+![ddd_ts_study_004_small_steps.png](./picture/ddd_ts_study_004_small_steps.png)
+
+
 DDD学習で大事なのは、毎回 **“小さく追加して、壊さず前に進む”** こと✨
 
 ### ✅ 1章1差分の目安
@@ -136,6 +142,9 @@ DDD学習で大事なのは、毎回 **“小さく追加して、壊さず前�
 ---
 
 ## 7) テストは「最小で強く」🧪💎
+
+![ddd_ts_study_004_testing_shield.png](./picture/ddd_ts_study_004_testing_shield.png)
+
 
 DDD学習のテストは、**バグ探し**というより
 「ルール（不変条件）を守ってる証拠」なのがポイント🔒✨

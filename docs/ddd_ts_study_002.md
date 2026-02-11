@@ -47,6 +47,9 @@ DDDには大きく **戦略（ストラテジック）** と **戦術（タク�
 
 ## 3) カフェ注文で例えると…☕🧾（戦略→戦術のつながり）
 
+![ddd_ts_study_002_bounded_contexts.png](./picture/ddd_ts_study_002_bounded_contexts.png)
+
+
 ### 🗺️ 戦略っぽい見方（境界を切る）
 
 「いま扱ってる“世界”はどれ？」を分けるイメージだよ✨
@@ -89,6 +92,9 @@ flowchart TB
 ---
 
 ## 4) 迷子になりがちなポイント3つ（ここで回避！）😵‍💫🧯
+
+![ddd_ts_study_002_pitfall_perfectionism.png](./picture/ddd_ts_study_002_pitfall_perfectionism.png)
+
 
 ### ①「戦略を完璧にしてからコード書くべき？」問題
 
