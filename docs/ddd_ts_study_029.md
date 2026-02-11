@@ -16,6 +16,8 @@
 
 ## 1) まず「フォルダの意味」を超ざっくり固定しよ🧠🌸
 
+![ddd_ts_study_029_folder_meaning](./picture/ddd_ts_study_029_folder_meaning.png)
+
 DDDで混乱しやすいのは「どこに置くの？」問題なのね😵‍💫
 ここで“置き場所ルール”を先に決めちゃうよ！
 
@@ -62,6 +64,8 @@ graph TD
 
 ## 3) ここから実作業！プロジェクト作成📦💨
 
+![ddd_ts_study_029_project_creation](./picture/ddd_ts_study_029_project_creation.png)
+
 ### 3-1) npmプロジェクト作る（PowerShell）🪟⚡
 
 ```powershell
@@ -81,6 +85,8 @@ npm i -D typescript tsx vitest @types/node
 ---
 
 ## 4) フォルダと空ファイルを“まとめて作る”📁⚡
+
+![ddd_ts_study_029_folder_structure](./picture/ddd_ts_study_029_folder_structure.png)
 
 この章の主役きた！🎉
 PowerShellで一気に作っちゃおう💪✨
@@ -112,6 +118,8 @@ ni test\smoke.test.ts -ItemType File
 ---
 
 ## 5) 「空ファイル」に“道しるべコメント”だけ入れる🧭💕
+
+![ddd_ts_study_029_file_comments](./picture/ddd_ts_study_029_file_comments.png)
 
 空っぽのままだと迷うので、最初は**コメントで役割を書く**のが超おすすめ！📝✨
 （中身は次章以降で育てる🌱）
@@ -190,6 +198,8 @@ describe("smoke", () => {
 
 ## 6) `tsconfig.json` を置く（最小・安全寄り）🧩✨
 
+![ddd_ts_study_029_tsconfig](./picture/ddd_ts_study_029_tsconfig.png)
+
 ```json
 {
   "compilerOptions": {
@@ -212,6 +222,8 @@ describe("smoke", () => {
 ---
 
 ## 7) `package.json` に“走る導線”を入れる🏃‍♀️💨
+
+![ddd_ts_study_029_package_scripts](./picture/ddd_ts_study_029_package_scripts.png)
 
 `package.json` の `"scripts"` をこうしてね👇
 
@@ -276,6 +288,8 @@ DDDの学習用に src/domain src/app src/infra test を使います。
 ---
 
 ## 10) この章の卒業チェック✅🎓✨
+
+![ddd_ts_study_029_graduation_check](./picture/ddd_ts_study_029_graduation_check.png)
 
 ✅ `src/domain` `src/app` `src/infra` `test` がある
 ✅ 空ファイルに「役割コメント」が入ってる
