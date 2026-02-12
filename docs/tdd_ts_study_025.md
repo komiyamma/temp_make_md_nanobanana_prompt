@@ -9,6 +9,8 @@
 
 ---
 
+![Fake It Process](./picture/tdd_ts_study_025_fake_it_process.png)
+
 ## 💡 仮実装（Fake It）ってなに？
 
 超ざっくり言うと👇
@@ -21,6 +23,8 @@ Kent Beck の TDD でも「まず定数を返して、だんだん変数に置�
 
 ---
 
+![When to Use Fake It](./picture/tdd_ts_study_025_when_to_use.png)
+
 ## 🩹 いつ使うのが上手い？
 
 こんなときにめっちゃ効くよ💪✨
@@ -31,6 +35,8 @@ Kent Beck の TDD でも「まず定数を返して、だんだん変数に置�
 * AIが“立派すぎる実装”を出してきがちなとき（まずは小さく！）🤖🧯
 
 ---
+
+![Debt Analogy](./picture/tdd_ts_study_025_debt_analogy.png)
 
 ## ✅ ルール（これ守ると気持ちよく回る）
 
@@ -68,6 +74,8 @@ describe("totalWithTax", () => {
 
 ---
 
+![Green Constant](./picture/tdd_ts_study_025_green_constant.png)
+
 ## ② Green：仮実装で通す（定数でOK）🟩🩹
 
 はい、ここが今日の主役✨
@@ -84,6 +92,8 @@ export function totalWithTax(subtotal: number): number {
 （“必要な分だけ”がTDDのコアだよ🧠）
 
 ---
+
+![Red Break](./picture/tdd_ts_study_025_red_break.png)
 
 ## ③ Red：仮実装を壊すテストを追加する💣🟥
 
@@ -106,6 +116,8 @@ describe("totalWithTax", () => {
 ```
 
 ---
+
+![Generalization](./picture/tdd_ts_study_025_generalization.png)
 
 ## ④ Green：最小の一般化をする🟩✨
 
@@ -165,6 +177,8 @@ it("101円なら111円になる（端数は切り捨て）", () => {
 * 「そのうち、**いちばん小さい爆破**はどれ？」
 
 ---
+
+![Condition Hell Warning](./picture/tdd_ts_study_025_condition_hell.png)
 
 ## 😵‍💫 よくある事故（ここだけ注意！）🚧
 
