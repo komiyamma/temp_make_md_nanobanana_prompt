@@ -3,6 +3,8 @@
 前提：Windows🪟 / VS Code🧑‍💻 / TypeScript初級〜中級 / TDDは初めて / 設計は超入門 / AI（Copilot/Codex等）導入済み🤖✅
 ※章ごとに「🎯目的 / 📚学ぶ / 🧪手を動かす / 🤖AI / ✅チェック」つきだよ💕
 
+![ course roadmap](./picture/tdd_ts_index_course_roadmap.png)
+
 ---
 
 ## Part 1：TDDの地図（まず安心して始める）🗺️🌱（1〜6）

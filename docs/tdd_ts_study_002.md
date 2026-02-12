@@ -55,6 +55,8 @@ Vitestは **Node 20以上**が必要で、Vite 6以上に依存するよ〜っ�
 
 ## 1) Red：まず「ちゃんと失敗するテスト」を作る🔴🧨
 
+![ red state todo](./picture/tdd_ts_study_002_red_state_todo.png)
+
 ここ、初心者がやりがちなのが
 ❌「テストが動かない（importできない等）」
 ❌「エラーが別の理由」
@@ -101,6 +103,8 @@ npm run test
 
 ## 2) Green：最小の実装で通す🟢🌱
 
+![ green state minimal](./picture/tdd_ts_study_002_green_state_minimal.png)
+
 ここでの合言葉は👇
 
 ### 「勝つまで最短、盛るのは後」🏃‍♀️💨
@@ -118,6 +122,8 @@ export function add(a: number, b: number): number {
 
 ### 💚 Greenでやっちゃダメ例（あるある😇）
 
+![ anti pattern overengineering](./picture/tdd_ts_study_002_anti_pattern_overengineering.png)
+
 * 将来の拡張を考えてオプション引数・配列対応…とか始める
 * 例外設計を凝り始める
 * 入力チェックを過剰に盛る
@@ -128,12 +134,16 @@ export function add(a: number, b: number): number {
 
 ## 3) Refactor：仕様を変えずに、読みやすくする🧼✨
 
+![ refactor state cleanup](./picture/tdd_ts_study_002_refactor_state_cleanup.png)
+
 Refactor は「機能追加」じゃなくて、**掃除**🧹
 テストが守ってくれるから、安心して整えられるよ💕
 
 今回の例だと実装は十分シンプルだから、Refactorはテスト側を少しだけ “読み物” に寄せよう📘
 
 ### ✅ テストを読みやすく（AAAっぽく）整える
+
+![ aaa pattern](./picture/tdd_ts_study_002_aaa_pattern.png)
 
 ```ts
 import { describe, it, expect } from "vitest";
@@ -166,6 +176,8 @@ describe("add", () => {
 ---
 
 ## 🤖 AI（Copilot/Codex）使い方：この章の正解ムーブ✨
+
+![ ai usage do dont](./picture/tdd_ts_study_002_ai_usage_do_dont.png)
 
 AIは便利だけど、**仕様をAIに決めさせない**のがコツだよ🧠🔒
 
