@@ -44,6 +44,8 @@ flowchart TD
 
 ### 1) まず結論：Interpreterは “作る” より “使う” が正解寄り 😇
 
+![Regex Efficiency](./picture/gof_cs_study_085_regex_vs_custom_parser.png)
+
 Interpreterは本来「文法（ルール）をオブジェクトで表現して評価する」パターンなんだけど、実務で一から作ると重くなりがち💦
 なので今回は、.NETの **Regex**（テキストをルールとして解釈する道具）を使って “触るだけ” にするよ🙆‍♀️
 Regexの性能面は、できるなら **GeneratedRegex（ソース生成）** を使うのが推奨だよ🚀（起動が速く、トリミングにも有利）([Microsoft Learn][1])
@@ -53,6 +55,8 @@ Regexの性能面は、できるなら **GeneratedRegex（ソース生成）** �
 ---
 
 ### 2) “小さすぎるルール文” を決める（沼回避）🧯
+
+![Simple Rules Gate](./picture/gof_cs_study_085_simple_rule_gate.png)
 
 今回は文法を **これだけ** に制限するよ👇（小さく勝つ！🏆）
 
@@ -73,6 +77,8 @@ Regexの性能面は、できるなら **GeneratedRegex（ソース生成）** �
 
 ### 3) Interpreterっぽい部分：文字列ルール → 判定関数（Func<Order,bool>）へ 🔄
 
+![Interpreter Factory](./picture/gof_cs_study_085_text_to_func_factory.png)
+
 やることはこう👇
 
 1. 文字列を `and` で分割する
@@ -83,6 +89,8 @@ Regexの性能面は、できるなら **GeneratedRegex（ソース生成）** �
 ---
 
 ### 4) Mementoっぽい部分：Undoできるように “前の状態” を保存する 📦🔙
+
+![Memento Undo Stack](./picture/gof_cs_study_085_memento_undo_stack.png)
 
 Undoは簡単で、**「変更前の状態」を積む**だけだよ✨
 
@@ -278,6 +286,8 @@ public class InterpreterMementoChapter85Tests
 ---
 
 ### 7) もう一歩だけ（知識メモ）🧠✨：式ツリーは “Interpreterの上位互換っぽさ” がある
+
+![Expression Tree Structure](./picture/gof_cs_study_085_expression_tree_concept.png)
 
 式ツリー（System.Linq.Expressions）は「コードを木構造として表す」仕組みだよ🌳
 これを使うと、ルールを delegate だけじゃなく **構造（AST）として保持**できるから、最適化・変換・可視化がしやすいの😊
