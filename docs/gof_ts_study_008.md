@@ -63,6 +63,8 @@ mindmap
 
 ## 匂い① if / switch が太り続ける 🐷🔀
 
+![Deep Nesting](./picture/gof_ts_study_008_nesting_hell.png)
+
 **サイン👀**
 
 * 分岐が3〜4個を超えて、スクロールが増える
@@ -118,6 +120,8 @@ mindmap
 
 ## 匂い③ コピペが増えて“微妙に違う同じ処理”が乱立 📄📄📄
 
+![Copy Paste Risks](./picture/gof_ts_study_008_copy_paste.png)
+
 **サイン👀**
 
 * 似た関数が複数ある（名前だけ違う）
@@ -162,6 +166,8 @@ mindmap
 
 ## 匂い⑤ 1つの関数が全部やってる（神関数）👑💥
 
+![God Function](./picture/gof_ts_study_008_god_function.png)
+
 **サイン👀**
 
 * 1関数が50行超え
@@ -204,6 +210,8 @@ mindmap
 ---
 
 ## 匂い⑦ マジックナンバー / マジック文字列が散らばる 🪄🔢
+
+![Magic Numbers](./picture/gof_ts_study_008_magic_number.png)
 
 **サイン👀**
 
@@ -315,6 +323,8 @@ export function calcTotal(items: OrderItem[], isTakeout: boolean, nowHour: numbe
 ---
 
 ## ちょい改善：パターン無しで“読みやすく”する ✂️✨
+
+![Extract Method](./picture/gof_ts_study_008_extract_method.png)
 
 ## 改善A：マジック値に名前をつける🪄➡️📛
 

@@ -24,6 +24,8 @@ GoFパターンって、最初から当てにいくとしんどいの🥺
 
 ## 2) 判断フロー（これを毎回回す）🔁🧭
 
+![Pattern Decision Tree](./picture/gof_ts_study_009_decision_tree.png)
+
 ## ステップ0：つらさを1文にする📝
 
 例：
@@ -56,11 +58,15 @@ GoFパターンって、最初から当てにいくとしんどいの🥺
 
 ### Q2. 差し替えたい？（やり方を入れ替えたい？）🔁
 
+![Strategy Pattern](./picture/gof_ts_study_009_strategy_concept.png)
+
 * YES → **Strategy**（まずは関数）⚙️
 * 「生成を差し替えたい」なら → **Factory Method / Abstract Factory**🏭
 * 「やりたいこと×実装の2軸がある」なら → **Bridge**🌉
 
 ### Q3. 増え方は？（種類が増え続ける？組み合わせが増える？）📈💥
+
+![1-Axis vs 2-Axis Growth](./picture/gof_ts_study_009_1vs2_axis.png)
 
 * 種類が増える（1軸）→ Map登録のFactory / Strategy登録🗂️
 * 2軸で増える（組み合わせ爆発）→ **Bridge / Abstract Factory**💣
@@ -191,6 +197,8 @@ export function calcTotal(order: Order): number {
 ---
 
 ## 4-3. “増え方”がさらにヤバいとき：登録（Map）で散らばり防止🗂️📌
+
+![Map Registry](./picture/gof_ts_study_009_map_registry.png)
 
 「クーポン種類が無限に増える」みたいなときは、登録方式がラク😊
 

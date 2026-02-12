@@ -60,6 +60,8 @@ flowchart TD
 
 ## 6.5 手順③：`package.json` を整える🧾✨
 
+![Configuration Files Relationship](./picture/gof_ts_study_006_config_relations.png)
+
 ### ✅ ここがポイント
 
 * ESMにするなら `"type": "module"` を入れる📦（Nodeの公式ドキュメントでも説明あり） ([Node.js][2])
@@ -108,6 +110,8 @@ TypeScriptは **modern Nodeなら `module: "nodenext"` が推奨寄り**だよ�
 }
 ```
 
+![Strict Mode Protection](./picture/gof_ts_study_006_strict_shield.png)
+
 > 💡 `strict: true` は「安全系オプションをまとめてON」にするスイッチだよ✨ ([TypeScript][1])
 
 ---
@@ -116,6 +120,8 @@ TypeScriptは **modern Nodeなら `module: "nodenext"` が推奨寄り**だよ�
 
 `eslint.config.js` を作成👇
 （ESLint v9の流儀＝flat config！） ([ESLint][3])
+
+![Flat Config](./picture/gof_ts_study_006_flat_config.png)
 
 ```js
 import js from "@eslint/js";
@@ -175,6 +181,8 @@ describe("calcTotal", () => {
 ---
 
 ## 6.9 動作確認（3つだけ）✅✅✅
+
+![Test Execution Flow](./picture/gof_ts_study_006_test_flow.png)
 
 ```powershell
 npm run typecheck

@@ -11,6 +11,8 @@
 
 ## ✅ interfaceは「形（shape）の約束」🧩
 
+![Structural Typing](./picture/gof_ts_study_011_shape_matching.png)
+
 TypeScriptは **構造的型付け（structural typing）** だから、
 「このメンバー（プロパティ/関数）を持ってるならOK！」って感じで型が合います。([TypeScript][1])
 
@@ -19,6 +21,8 @@ TypeScriptは **構造的型付け（structural typing）** だから、
 * **“実装が何か”より、“できること（形）”が合ってるか** が大事✨
 
 ## ✅ interfaceはランタイムには存在しない（＝型は消える）👻
+
+![Compile Time Only](./picture/gof_ts_study_011_ghost_type.png)
 
 interfaceは **コンパイル時の道具** で、実行時に `instanceof` みたいな判定はできません。([TypeScript][2])
 （ここ、最初に知っておくと事故が減るよ〜🧯）
@@ -69,6 +73,8 @@ function calcTotalYen(items: readonly OrderItem[], kind: "regular" | "member" | 
 ---
 
 ## 4) interfaceで「差し替え口」を作る🥳（After）
+
+![Pricing Strategy Switch](./picture/gof_ts_study_011_pricing_switch.png)
 
 ## 4-1) ルールは “関数として” 差し替えるのがTypeScript的🧁
 
@@ -169,6 +175,8 @@ classDiagram
 ---
 
 ## 5) 「ルール表（Registry）」を作るとさらに実務っぽい🗂️✨
+
+![Record and Satisfies](./picture/gof_ts_study_011_record_satisfies.png)
 
 「会員/学割/通常」みたいに選びたいときは **Map/オブジェクトで登録** が定番💡
 ここで便利なのが `Record` と `satisfies` 💫
