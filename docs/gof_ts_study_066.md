@@ -12,7 +12,7 @@
 
 ---
 
-## 1. 「if地獄」ってどんな地獄？😵‍💫🔥
+## 1. 「if地獄」ってどんな地獄？😵‍💫🔥\n\n![If Hell Chaos](./picture/gof_ts_study_066_if_hell_chaos.png)\n
 
 ## よくあるつらさ👀
 
@@ -76,7 +76,7 @@ State のコアはこれ👇
 
 ---
 
-## 3. ハンズオン☕🧾：カフェ注文を「状態遷移」で設計しよう🚦
+## 3. ハンズオン☕🧾：カフェ注文を「状態遷移」で設計しよう🚦\n\n![Five States Icons](./picture/gof_ts_study_066_five_states_icons.png)\n
 
 ## 3.1 まずは状態と操作を“紙に書く”📋✨
 
@@ -168,7 +168,7 @@ export type OrderEvent =
   | { type: "CANCEL"; reason?: string };
 ```
 
-## 4.3 「状態ごとの処理」を1か所に集める🚦✨
+## 4.3 「状態ごとの処理」を1か所に集める🚦✨\n\n![Reducer Function Concept](./picture/gof_ts_study_066_reducer_concept.png)\n
 
 ```ts
 import { err, ok, type Result } from "./result";
@@ -330,7 +330,7 @@ describe("State: order", () => {
 最初から「返品中」「保留」「保留解除中」…とかやると死ぬ💀
 まずは **現実に必要な最小の状態** だけでOK🙂
 
-## 7.2 “状態”と“フラグ”を混ぜない🚫
+## 7.2 “状態”と“フラグ”を混ぜない🚫\n\n![Flag vs State Trap](./picture/gof_ts_study_066_flag_vs_state_trap.png)\n
 
 `status = "paid"` なのに `isCancelled = true` とかあると地獄😇
 状態は **できれば1本化**（statusに集約）がおすすめ✨
