@@ -25,6 +25,8 @@ Bridgeはね、
 ---
 
 ## 2) Bridgeがないとテストが地獄になる話😵‍💫
+![tight_coupling](./picture/gof_ts_study_041_tight_coupling.png)
+
 
 ありがちなダメ例👇（イメージ）
 
@@ -61,6 +63,8 @@ sequenceDiagram
 ---
 
 ## 3) 今日のゴール：Senderを差し替えて“秒速でテスト”する⚡🧪
+![test_speed](./picture/gof_ts_study_041_test_speed.png)
+
 
 今回の題材は「注文レシート通知」☕🧾
 
@@ -72,6 +76,8 @@ sequenceDiagram
 ## 4) ハンズオン🛠️：差し替えできるBridge構成を作ろう✨
 
 ## Step A：型（= 契約）を作る🧩
+![type_contract](./picture/gof_ts_study_041_type_contract.png)
+
 
 「送る」の最小契約だけ作るよ（余計に盛らない！）🙂
 
@@ -117,6 +123,8 @@ export class ConsoleSender implements Sender {
 ---
 
 ## Step C：抽象側（Notifier）は Sender を受け取るだけ💉✨
+![bridge_injection](./picture/gof_ts_study_041_bridge_injection.png)
+
 
 `new ConsoleSender()` しないのが大事！ここがBridgeのコア🔥
 
@@ -151,6 +159,8 @@ export class ReceiptNotifier {
 テストでは「本物Sender」じゃなくて、**テスト用Sender**に差し替えるよ〜😎
 
 ## パターン①：いちばん素朴で強い「手作りSpy」🕵️（おすすめ）
+![spy_test](./picture/gof_ts_study_041_spy_test.png)
+
 
 「送られた内容を配列に入れておく」だけ。これ超わかりやすい💕
 
@@ -207,6 +217,8 @@ describe("ReceiptNotifier", () => {
 ---
 
 ## パターン②：`vi.fn()`で“呼ばれたか”を確認（ちょい便利）📞
+![mock_fn](./picture/gof_ts_study_041_mock_fn.png)
+
 
 「何回呼ばれた？」「どんな引数だった？」が簡単になるよ✨
 
@@ -234,6 +246,8 @@ describe("ReceiptNotifier (with vi.fn)", () => {
 ---
 
 ## 6) “Bridgeの価値”が見えるチェックポイント✅👀
+![bridge_value](./picture/gof_ts_study_041_bridge_value.png)
+
 
 テストを書きながら、ここを見てね👇
 

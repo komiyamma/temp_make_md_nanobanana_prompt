@@ -1,6 +1,8 @@
 ﻿# 第36章：Adapter ① 外部APIの形が合わない問題🔌
 
 ## 1) 今日のゴール🎯✨
+![concept](./picture/gof_ts_study_036_concept.png)
+
 
 * 外部API（受け取るJSON）の「形」と、アプリ内部で使いたい「形」がズレたときに、**汚れを1か所に閉じ込める**方法を覚えるよ🧼🧹
 * 「変換（マッピング）」がコード全体に散らばる地獄😇を、**Adapterで止める**のが狙い！
@@ -8,6 +10,8 @@
 ---
 
 ## 2) あるあるの困りごと😵‍💫
+![problem](./picture/gof_ts_study_036_problem.png)
+
 
 外部APIが返してくるJSONって、こんな感じが多い👇
 
@@ -50,6 +54,8 @@ flowchart LR
 ---
 
 ## 4) まず「散らばる地獄」を見よう😇（やらない例）
+![anti_pattern](./picture/gof_ts_study_036_anti_pattern.png)
+
 
 たとえば、画面やロジックのあちこちで変換し始めると…
 
@@ -71,6 +77,8 @@ function showOrder(dto: any) {
 ---
 
 ## 5) Adapterの基本形🧼✨（DTO → ドメイン）
+![strategy](./picture/gof_ts_study_036_strategy.png)
+
 
 ### 今日の作戦📌
 
@@ -86,6 +94,8 @@ function showOrder(dto: any) {
 ## 6) ハンズオン🛠️：外部注文DTOを内部Orderへ変換する
 
 ### 6-1) 内部で使いたい「綺麗な型」（ドメイン）🧡
+![structure](./picture/gof_ts_study_036_structure.png)
+
 
 ```ts
 export type OrderItem = {
@@ -218,6 +228,8 @@ async function fetchOrder(orderId: string) {
 ---
 
 ## 7) テストで「境界の安心」を作ろう🧪✅
+![testing](./picture/gof_ts_study_036_testing.png)
+
 
 Adapterは**テストしやすい**のが最高ポイント✨（純粋関数に近いからね）
 
@@ -295,6 +307,8 @@ Adapterは「形・単位・欠損」を整える係🧹
 ---
 
 ## まとめ🎀
+![summary](./picture/gof_ts_study_036_summary.png)
+
 
 Adapterは一言でいうと…
 
