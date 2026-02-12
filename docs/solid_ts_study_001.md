@@ -18,6 +18,8 @@
 
 ## 1. そもそも「設計」ってなに？🏗️🧸
 
+![Code Room Allocation](./picture/solid_ts_study_001_room_allocation.png)
+
 プログラミングの設計って、ひとことで言うと…
 
 **「コードの部屋割り（構造づくり）」**だよ🏠✨
@@ -50,6 +52,8 @@
 
 ### 悲劇①：変更すると別の場所が壊れる💥
 
+![Domino Impact](./picture/solid_ts_study_001_domino_impact.png)
+
 「ここ直したら、あっちの表示が死んだ…」みたいなやつ😭
 
 ### 悲劇②：同じようなコードが増殖する🧟‍♀️
@@ -64,6 +68,8 @@
 ---
 
 ## 4. “良い設計”って、結局なに？🌷✨
+
+![Good Design Pillars](./picture/solid_ts_study_001_good_design_pillars.png)
 
 超ざっくり「良い設計」はこの3つが強い💪💕
 
@@ -84,6 +90,8 @@
 ---
 
 ## 5. ちょい実装で体感しよ！⚙️☕️（“設計が弱い例”）
+
+![Monolithic Chef](./picture/solid_ts_study_001_monolithic_chef.png)
 
 まずは、わざと「設計が弱い」例を見てみよう😈💡
 （※この章はまだSOLIDしない！“痛み”を先に知るやつ！）
@@ -128,6 +136,8 @@ function calcTotal(items: Item[], userType: "normal" | "student", coupon?: "NONE
 ---
 
 ## 6. “設計の第一歩”は、責務（担当）を分けること✂️🧩
+
+![Cutting Responsibilities](./picture/solid_ts_study_001_cutting_responsibilities.png)
 
 SOLIDの前に、まずは超ミニでいいから分けてみる😊✨
 （「仕事を小分けにする」だけで、だいぶ未来が楽になるよ〜）
@@ -226,6 +236,8 @@ A5. 責務（担当）を分ける✂️🧩
 ---
 
 ## 9. AI活用ミニコーナー 🤖💡（超おすすめ）
+
+![AI Blueprint](./picture/solid_ts_study_001_ai_blueprint.png)
 
 AI拡張があるなら、次のお願いがめっちゃ効くよ〜✨
 

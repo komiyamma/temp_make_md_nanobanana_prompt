@@ -33,6 +33,8 @@ SOLIDを学ぶ前に、ここで言葉をそろえると後がめちゃ楽にな
 
 ### ✅ 変更理由（Reason to change）🔧
 
+![Change Reason Target](./picture/solid_ts_study_004_change_reason_target.png)
+
 **一言**：「何が起きたらここを直す羽目になるか」だよ😺
 責務とセットで覚えると最強💪✨
 **例**（Order周辺）：
@@ -52,6 +54,8 @@ SOLIDを学ぶ前に、ここで言葉をそろえると後がめちゃ楽にな
 ---
 
 ### ✅ 抽象（Abstraction）🎭
+
+![Abstraction Curtain](./picture/solid_ts_study_004_abstraction_curtain.png)
 
 **一言**：「共通の約束だけ見せて、細部を隠す」こと😊
 TypeScriptだと `interface` が一番わかりやすい✨
@@ -76,6 +80,8 @@ interface OrderRepository {
 
 ### ✅ カプセル化（Encapsulation）🔐
 
+![Encapsulation Capsule](./picture/solid_ts_study_004_encapsulation_capsule.png)
+
 **一言**：「勝手に触られたくない情報やルールを中にしまう」こと😊
 `private` / `readonly` の出番✨
 **狙い**：外からいじられない＝バグが減る🧯
@@ -83,6 +89,8 @@ interface OrderRepository {
 ---
 
 ### ✅ 不変条件（Invariant）🧷
+
+![Invariant Anchor](./picture/solid_ts_study_004_invariant_anchor.png)
 
 **一言**：「いつでも守られていてほしいルール」だよ💎
 例：`quantity >= 1`、`price >= 0`、`orderId は空じゃない` など。
@@ -114,6 +122,8 @@ SOLIDの土台の空気感がこれ🌬️✨
 
 ### ✅ 境界（Boundary）🚧
 
+![Boundary Fence](./picture/solid_ts_study_004_boundary_fence.png)
+
 **一言**：「ここから先は別の世界」って線引き🙂
 例：
 
@@ -123,6 +133,8 @@ SOLIDの土台の空気感がこれ🌬️✨
 ---
 
 ### ✅ 副作用（Side Effect）💥
+
+![Side Effect Boom](./picture/solid_ts_study_004_side_effect_boom.png)
 
 **一言**：呼んだら「値を返す」以外に、外の世界が変わること😺
 例：保存する、ログを出す、通知する、日時を読む、乱数を使う…など。

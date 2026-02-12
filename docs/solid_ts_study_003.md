@@ -44,6 +44,8 @@
 
 ## 3) 失敗しやすいポイント：クラスは “雑に public” にしない🙅‍♀️💥
 
+![Public vs Private House](./picture/solid_ts_study_003_public_vs_private_house.png)
+
 ### 🧨ありがち事故
 
 * `public price: number` とかで公開して、外から `-100` 入れられる😱
@@ -75,6 +77,8 @@ class Product {
 ```
 
 ### 4-2) `readonly`：一度決めたら変えない🧊
+
+![Readonly Shield](./picture/solid_ts_study_003_readonly_shield.png)
 
 “ID” とか “作成日時” とか、あとから変わっちゃダメなやつに最強💪
 
@@ -108,6 +112,8 @@ class Product {
 > 迷ったら最初は普通にプロパティ宣言→慣れたら移行でOKだよ👍
 
 ### 4-4) getter：安全に見せる👀✨
+
+![Getter Display](./picture/solid_ts_study_003_getter_display.png)
 
 値を見せたいけど、直接いじられたくないときに便利！
 
@@ -151,6 +157,8 @@ class SecretBox {
 
 ## 6) ミニプロジェクト：Order と Product を “壊れない” 形で作る☕️📦✨
 
+![Order Composition](./picture/solid_ts_study_003_order_composition.png)
+
 ここから、**「Campus Café 注文アプリ（超ミニ）」** の土台を作るよ🌱
 テーマ：**注文（Order）** と **商品（Product）** を、型とクラスで表現する！
 
@@ -172,6 +180,8 @@ export type OrderLineInput = {
 ```
 
 ### 6-2) つぎに “ルールを守る” クラスを作る🛡️
+
+![Constructor Guard](./picture/solid_ts_study_003_constructor_guard.png)
 
 ポイントはここ👇✨
 
@@ -270,6 +280,8 @@ classDiagram
 ---
 
 ## 7) `interface` の練習：依存じゃなく「約束」を作る🤝✨
+
+![Interface Socket](./picture/solid_ts_study_003_interface_socket.png)
 
 この章では “差し替え” まではやらないけど、雰囲気だけ先取りしちゃお😊
 
