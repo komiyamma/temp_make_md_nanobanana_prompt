@@ -6,7 +6,7 @@
 
 ### 今日のゴール🎯💖
 
-![画像を挿入予定](./picture/tdd_cs_study_033_moq_intro.png)
+![Moq Intro](./picture/tdd_cs_study_033_moq_intro.png)
 
 この章が終わったら、あなたはこんなことができるようになります😊✨
 
@@ -105,6 +105,9 @@ dotnet add package Moq
 
 ## 4) まず“テストから”書く（Red）🚦🔴
 
+![Moq Setup](./picture/tdd_cs_study_033_moq_setup.png)
+
+
 ### 4-1) 依存（メール送信）をインターフェースにする📮
 
 ```csharp
@@ -139,6 +142,8 @@ public class PurchaseServiceTests
         await sut.PurchaseAsync(userEmail: "alice@example.com", amount: 1200);
 
         // Assert（呼ばれたことを確認する！）
+
+
         emailMock.Verify(
             x => x.SendAsync(
                 "alice@example.com",
@@ -148,6 +153,9 @@ public class PurchaseServiceTests
     }
 }
 ```
+
+![Verify Once](./picture/tdd_cs_study_033_verify_once.png)
+
 
 ポイント解説🧁✨
 
@@ -186,6 +194,9 @@ public class PurchaseService
 ---
 
 ## 6) もう1本テスト：失敗時は送らない（次のRed）🚦🔴➡️🟢
+
+![Verify Never](./picture/tdd_cs_study_033_verify_never.png)
+
 
 「失敗」を仕様にしたいので、テストで固定しよ〜💪😊
 
@@ -229,6 +240,9 @@ public async Task PurchaseAsync(string userEmail, int amount)
 ---
 
 ## 7) よくあるハマりどころ集😵‍💫🧯
+
+![Broken Mock](./picture/tdd_cs_study_033_broken_mock.png)
+
 
 * ✅ **Verifyが細かすぎる**（本文が完全一致！とか）
   → 変更に弱くなるので、**重要な部分だけ**見るのがコツ😊

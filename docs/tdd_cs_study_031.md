@@ -6,7 +6,7 @@
 
 ## 0) まずこの章のゴール🎯💕
 
-![画像を挿入予定](./picture/tdd_cs_study_031_di.png)
+![Dependency Injection](./picture/tdd_cs_study_031_di.png)
 
 この章が終わったら、こんな状態になれます👇✨
 
@@ -44,6 +44,9 @@ DI（Dependency Injection）は、超ざっくり言うと👇
 ---
 
 ## 2) ありがちな “惜しい” 状態😵‍💫（interface 化したのに…）
+
+![New as Glue](./picture/tdd_cs_study_031_new_glue.png)
+
 
 前章（第30章）で IClock を作ったのに、こんな感じになりがち👇
 
@@ -132,6 +135,9 @@ public sealed class FakeClock : IClock
 
 ### 4-2) xUnit テスト（期限切れは例外）🚫🧪
 
+![Injecting Fake](./picture/tdd_cs_study_031_fake_injection.png)
+
+
 ```csharp
 using Xunit;
 
@@ -198,6 +204,9 @@ public sealed class CouponApplierDiscountTests
 
 ## 5) 「じゃあ本番では誰が渡すの？」問題🤔➡️🙂
 
+![Injecting Real](./picture/tdd_cs_study_031_system_injection.png)
+
+
 テストでは FakeClock を渡したけど、本番では SystemClock を渡します⏰✨
 この「組み立て場所」を **コンポジションルート**って呼んだりします（覚えなくてOK😂）
 
@@ -226,6 +235,9 @@ public static class Program
 ## 6) よくある落とし穴（ここ超あるある！）😇🪤
 
 ### 6-1) コンストラクタで null を受け取って爆発💥
+
+![Null Bomb](./picture/tdd_cs_study_031_null_bomb.png)
+
 
 初心者あるあるなので、軽く守るなら👇
 

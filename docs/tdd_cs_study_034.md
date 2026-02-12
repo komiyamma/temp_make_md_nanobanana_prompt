@@ -7,7 +7,7 @@
 
 ## 今日のゴール🎯✨
 
-![画像を挿入予定](./picture/tdd_cs_study_034_verify.png)
+![Verification of Side Effects](./picture/tdd_cs_study_034_verify.png)
 
 * 「通知した / しなかった」を**テストで言い切れる**ようになる✅
 * **呼び出し回数 / 引数 / 呼ばれないこと**をチェックできるようになる✅
@@ -16,6 +16,9 @@
 ---
 
 ## まず：副作用ってなに？🌊
+
+![Side Effect Ripple](./picture/tdd_cs_study_034_side_effect.png)
+
 
 副作用＝「そのメソッドを呼ぶと、外の世界に影響が出ること」だよ〜🙂
 
@@ -48,6 +51,9 @@ graph TD
 ## いつ“呼び出し確認”を使うの？🧭
 
 ### 使ってOKな場面✅（おすすめ）
+
+![Boundary Test](./picture/tdd_cs_study_034_boundary_test.png)
+
 
 * “境界”で起きる副作用（外部I/O）
   例：`IEmailSender.Send(...)`、`ILogger.Log(...)`、`IRepository.Save(...)`
@@ -207,13 +213,21 @@ public class PurchaseService
             body: $"合計 {totalYen} 円です");
 
         _audit.Log($"Purchase completed: {toEmail}, {totalYen}");
+
+
     }
 }
 ```
 
+![Audit Log](./picture/tdd_cs_study_034_audit_log.png)
+
+
 ---
 
 ## もう一歩：引数も“仕様”にできる🎯✨
+
+![Argument Check](./picture/tdd_cs_study_034_argument_check.png)
+
 
 「誰に送った？」「合計が入ってる？」みたいな確認ね🙂
 
