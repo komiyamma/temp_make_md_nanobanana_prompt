@@ -4,6 +4,9 @@
 
 ## ねらい 🎯✨
 
+![AI Robot Tray](./picture/gof_cs_study_017_ai_tray.png)
+
+
 * AI（例：GitHub / Microsoft の開発支援、OpenAI 系の拡張など）に**雛形だけ**作ってもらい、人間が**設計レビューで“やりすぎ”を止める**流れを身につけるよ🤖➡️👀
 * Factory Method を「入れるべき時だけ入れる」判断軸を作るよ⚖️🌸
 
@@ -24,6 +27,9 @@
 
 ### 1) まず「Factory Method を入れる理由」を1文にする ✍️
 
+![Balance Scale](./picture/gof_cs_study_017_scale_balance.png)
+
+
 例）
 
 * 「支払い方法の生成分岐が増えるから、`OrderService` から生成責務を押し出したい」💳➡️🏭
@@ -40,6 +46,9 @@
 
 * ✅ **“雛形だけ”**（中身は薄く、テスト優先）
 * ✅ **過剰抽象化禁止**（基底クラス乱立、汎用フレームワーク化NG）
+
+![Castle vs Doghouse](./picture/gof_cs_study_017_castle_cross.png)
+
 * ✅ **標準/定番に寄せる**（MSTest、DIは Microsoft.Extensions.* の範囲）
 * ✅ **公開API最小**（public増やしすぎない）
 * ✅ **差し替え点は1か所**（登録/Factory に集約）
@@ -92,6 +101,9 @@ flowchart TD
 
 ### 4) 人間の設計レビュー（チェックリスト）で削る✂️👀
 
+![Review Checklist](./picture/gof_cs_study_017_checklist_board.png)
+
+
 AIは“盛る”のが得意だから、ここで止めるよ🚧💡
 
 **A. 責務（SRP）チェック 🧠**
@@ -123,6 +135,9 @@ AIは“盛る”のが得意だから、ここで止めるよ🚧💡
 ---
 
 ### 5) “戻す勇気”を持つ（削除実験）🧨➡️🌸
+
+![Undo Simplify](./picture/gof_cs_study_017_undo_button.png)
+
 
 ここがこの章のメインだよ💘
 一度こうする👇
