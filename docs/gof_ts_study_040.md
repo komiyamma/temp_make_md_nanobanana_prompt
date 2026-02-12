@@ -9,6 +9,8 @@
 ---
 
 ## まず困りごと😵：2軸が増えるとクラス地獄
+![class_hell](./picture/gof_ts_study_040_class_hell.png)
+
 
 たとえば通知で…
 
@@ -70,6 +72,8 @@ classDiagram
 ---
 
 ## 1) 最小の完成形🧁（interface注入でBridge）
+![injection](./picture/gof_ts_study_040_injection.png)
+
 
 ポイントはこれ👇
 
@@ -164,6 +168,8 @@ await new OrderConfirmedNotifier(new FakeMailSender()).notify(order);
 ---
 
 ## 2) TypeScriptらしさ🧡：クラスを増やさず“オブジェクト注入”でもOK
+![object_injection](./picture/gof_ts_study_040_object_injection.png)
+
 
 `Sender` は class じゃなくて **オブジェクト1個**でも実装できます（TSの構造的型付けが効く✨）
 
@@ -185,6 +191,8 @@ const spySender = {
 ---
 
 ## 3) テストがラクになる🧪（送信だけ差し替える）
+![testing_swap](./picture/gof_ts_study_040_testing_swap.png)
+
 
 ここでは **標準のテストランナー（`node:test`）** を使う例にします✨（追加ライブラリなし）
 Nodeには組み込みのテストランナーがあります。([Node.js][3])
@@ -224,6 +232,8 @@ test("OrderConfirmedNotifier: 注文確定の文面が作れる", async () => {
 ---
 
 ## 4) ハンズオン🛠️（今日の課題）
+![handson_ext](./picture/gof_ts_study_040_handson_ext.png)
+
 
 ## 課題A：送信手段を1個増やす📮➕
 
@@ -242,6 +252,8 @@ test("OrderConfirmedNotifier: 注文確定の文面が作れる", async () => {
 ---
 
 ## 5) ありがちなミス＆回避💡
+![thick_abstraction](./picture/gof_ts_study_040_thick_abstraction.png)
+
 
 * **「抽象が分厚すぎ」問題**：`Notifier` に業務判断を詰め込みすぎると逆に読みにくい😵‍💫
   → 抽象は“薄く”、差分がある所だけ持つのがコツ✨

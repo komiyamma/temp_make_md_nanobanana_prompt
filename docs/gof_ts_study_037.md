@@ -6,6 +6,8 @@
 ---
 
 ## 1. 今日のゴール🎯
+![goal](./picture/gof_ts_study_037_goal.png)
+
 
 * 外部から来た `unknown` データを、**安全にドメイン型へ変換**できる🛡️
 * 欠損・型違い・変な値を **「正しく失敗」**させられる🚫✅
@@ -16,6 +18,8 @@
 ---
 
 ## 2. まず前提：外部データは `unknown` から始める🧊📦
+![as_danger](./picture/gof_ts_study_037_as_danger_1.png)
+
 
 `fetch().json()` の戻りは「何が来るかわからない」ので、気持ちとしては `unknown` です😇
 ここを雑に `as` で決め打ちすると、事故りやすいです💥（欠損や型違いがそのまま通る）
@@ -43,6 +47,8 @@
 ---
 
 ## 4. 実装の全体像🗺️✨
+![flowchart](./picture/gof_ts_study_037_flowchart.png)
+
 
 やることはシンプルにこの3段階です！
 
@@ -206,6 +212,8 @@ export const toDomainOrder = (input: unknown): Result<DomainOrder, AdapterError>
 ## 6. ここが“TypeScript流の王道”ポイント💡✨
 
 ## ✅ (1) 型ガードは「形」まで（値は変換で見る）🧩
+![type_guard](./picture/gof_ts_study_037_type_guard.png)
+
 
 TypeScriptの型ガード（type predicate）は、**true/falseで型を絞り込む**仕組みです。([TypeScript][1])
 だから `isExternalOrderDto` は「キーがある」程度に留めて、**値の正規化や検証は `toDomainOrder` 側**へ寄せると、読みやすくなります📚✨
@@ -247,6 +255,8 @@ if (r1.ok) {
 ```
 
 ## (B) ありがち事故：`unit_price` が `"free"`😇
+![bad_data](./picture/gof_ts_study_037_bad_data.png)
+
 
 ```ts
 const dtoBad = {
@@ -326,6 +336,8 @@ Adapterは「変換・正規化・検証」まで。
 ---
 
 ## 10. もっと堅牢にしたい人へ：スキーマ検証（Zod/Valibot）🧾✨
+![schema_libs](./picture/gof_ts_study_037_schema_libs.png)
+
 
 手書き型ガードは小規模なら十分ですが、項目が増えるとしんどくなりがちです😵‍💫
 そのときは **スキーマ検証ライブラリ**が定番です。
@@ -356,6 +368,8 @@ DTO:
 ---
 
 ## 12. まとめ✅🎉
+![runtime_check](./picture/gof_ts_study_037_runtime_check.png)
+
 
 * Adapter ②は **「マッピング関数＋型ガード」** が王道🧩✨
 * 外部入力は `unknown` から始めて、**実行時チェック**で守る🛡️

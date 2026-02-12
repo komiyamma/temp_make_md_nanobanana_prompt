@@ -35,6 +35,8 @@
 ---
 
 ## ありがちな“爆発”コード例😇➡️😇😇😇（分岐地獄）
+![branching_hell](./picture/gof_ts_study_039_branching_hell.png)
+
 
 最初はこういう感じで書いちゃう👇（気持ちはわかる！）
 
@@ -93,6 +95,8 @@ async function enqueueDigest(_msg: string) {}
 ---
 
 ## 「これ、Bridgeかも！」の見分け方👀✨
+![diagnosis](./picture/gof_ts_study_039_diagnosis.png)
+
 
 次の質問に **2つとも**「うん…」ってなったら、Bridge候補🌉
 
@@ -127,6 +131,8 @@ graph TD
 ---
 
 ## Bridgeの発想🌉（超ざっくり）
+![concept_bridge](./picture/gof_ts_study_039_concept_bridge.png)
+
 
 **「やりたいこと（機能）」はA側に置く**
 **「どうやるか（実装）」はB側に置く**
@@ -144,6 +150,8 @@ AはBを受け取って動く。だから **A×Bを自由に組める** 🎮✨
 ## ハンズオン🛠️：爆発コードを「2軸」に分ける練習🌸
 
 ### Step 1️⃣：まず「2軸」を言葉にする🗣️
+![axes_id](./picture/gof_ts_study_039_axes_id.png)
+
 
 上のコードから軸を抜き出してメモ📝
 
@@ -153,6 +161,8 @@ AはBを受け取って動く。だから **A×Bを自由に組める** 🎮✨
 これができたら勝ち🎉（Bridgeの入口に立った！）
 
 ### Step 2️⃣：「実装っぽい方」を先に外に出す（Bを分離）📦
+![extract_impl](./picture/gof_ts_study_039_extract_impl.png)
+
 
 通知手段（B）を **関数** にして外へ出す（TypeScript的に自然🍰）
 
@@ -176,6 +186,8 @@ async function fakeEmailSend(_msg: string) {}
 ```
 
 ### Step 3️⃣：「やりたいこと側」を作る（Aを分離）🧠
+![create_abs](./picture/gof_ts_study_039_create_abs.png)
+
 
 通知タイミング（A）を「Senderを受け取る関数」にする💡
 これで “橋（Bridge）” がかかる🌉✨
@@ -237,6 +249,8 @@ await digestToInApp.flush();
 ---
 
 ## Strategyと何が違うの？🤔（初心者が混ざりやすい所）
+![vs_strategy](./picture/gof_ts_study_039_vs_strategy.png)
+
 
 * **Strategy**：だいたい「1軸の差し替え」に強い（例：割引ルールだけ増える）
 * **Bridge**：**2軸が独立して増える** ときに強い（例：通知タイミングも通知手段も増える）
