@@ -50,6 +50,9 @@ export type Icon = Readonly<{
 
 ## 3-2) Mapキャッシュ（Flyweightの本体）を作る🗃️
 
+![Factory Warehouse Cache (factory_warehouse_cache)](./picture/gof_ts_study_052_factory_warehouse_cache.png)
+
+
 ```ts
 let createdCount = 0;
 
@@ -117,6 +120,9 @@ sequenceDiagram
 
 ## 3-3) extrinsic（毎回変わるやつ）を外から渡す🎀
 
+![Sticker Extrinsic State (sticker_extrinsic_state)](./picture/gof_ts_study_052_sticker_extrinsic_state.png)
+
+
 ```ts
 type MenuItemView = {
   label: string;
@@ -150,9 +156,15 @@ export function renderMenuItem(view: MenuItemView): string {
 
 ## 4) キー設計が9割🔑💥（Flyweightの地獄ポイント）
 
+![Key Normalization Locksmith (key_normalization_locksmith)](./picture/gof_ts_study_052_key_normalization_locksmith.png)
+
+
 `Map` はキーで一致判定するから、**キーがブレると共有できない**😭
 
 ## よくあるキー事故😇
+
+![Duplicate Key Confusion (duplicate_key_confusion)](./picture/gof_ts_study_052_duplicate_key_confusion.png)
+
 
 * `"Coffee"` と `"coffee"` が別扱い → キャッシュが2倍に増える
 * `" coffee "`（空白つき）が別扱い → どんどん増える
@@ -177,10 +189,16 @@ function iconKey(theme: Theme, name: string) {
 
 ## 5) キャッシュの寿命（破棄）どうする？🧹🕰️
 
+![Cache Overflow Bucket (cache_overflow_bucket)](./picture/gof_ts_study_052_cache_overflow_bucket.png)
+
+
 `Map` キャッシュは放置すると無限に増えていく可能性があるよ😱
 だから「どこかで片付けるルール」を決めるのが大事！
 
 ## 5-1) まずは超シンプル：上限を決めて古いのを捨てる🗑️
+
+![Bouncer Eviction LRU (bouncer_eviction_lru)](./picture/gof_ts_study_052_bouncer_eviction_lru.png)
+
 
 `Map` は挿入順序を覚えてるから、最古のキーを `map.keys().next().value` で取れるよ📌 ([MDNウェブドキュメント][3])
 
@@ -204,6 +222,9 @@ function setWithCap<K, V>(map: Map<K, V>, key: K, value: V, cap: number) {
 ---
 
 ## 6) 文字列キーじゃなく「オブジェクトに紐づけたい」なら `WeakMap` 🫥🧠
+
+![Ghost Object WeakMap (ghost_object_weakmap)](./picture/gof_ts_study_052_ghost_object_weakmap.png)
+
 
 `WeakMap` は **キーがオブジェクト限定**で、キーを弱く参照するから、他で参照されなくなったらGC対象になりやすい…っていう性質があるよ🌿 ([MDNウェブドキュメント][4])
 （文字列キーはダメ！🙅‍♀️ それは普通の `Map` の役目）([MDNウェブドキュメント][5])

@@ -19,15 +19,24 @@ Flyweightの効果は、だいたいこの3つで見えます👇
 
 ## A. 生成回数（いちばん分かりやすい）🧮
 
+![Instance Count Pile (instance_count_pile)](./picture/gof_ts_study_053_instance_count_pile.png)
+
+
 * 共有前：`N回` 作ってる（大量に new してる）
 * 共有後：**ユニーク種類数だけ**作ってる（例：20種類なら20回）
 
 ## B. 実行時間（速くなった？）⏱️
 
+![Benchmark Sprint Track (benchmark_sprint_track)](./picture/gof_ts_study_053_benchmark_sprint_track.png)
+
+
 * 重要：**“同じ入力データ”で比較**すること（測定の基本！）
 * Nodeでは `performance.now()` が使えます。([nodejs.org][1])
 
 ## C. メモリ（軽くなった？）🧠
+
+![Memory Balloon Size (memory_balloon_size)](./picture/gof_ts_study_053_memory_balloon_size.png)
+
 
 * `process.memoryUsage()` でざっくり見えます。([nodejs.org][2])
 * 「heapUsed」や「rss」の増え方が目安になります📈
@@ -38,6 +47,9 @@ Flyweightの効果は、だいたいこの3つで見えます👇
 ---
 
 ## 2) ハンズオン🛠️：Flyweightの効果を“数字”で比べる
+
+![Science Lab Setup (science_lab_setup)](./picture/gof_ts_study_053_science_lab_setup.png)
+
 
 やることはシンプルです😊
 **同じデータ（大量のアイコン名）**を使って、
@@ -209,6 +221,9 @@ console.log(`heapUsed: ${formatBytes(memBefore.heapUsed)} -> ${formatBytes(memAf
 
 ## 2-2) どう読めばいい？👀✨（超重要）
 
+![Benchmark Scoreboard (benchmark_scoreboard)](./picture/gof_ts_study_053_benchmark_scoreboard.png)
+
+
 出力はだいたいこんな観点で見ます👇
 
 ## ✅ 生成回数
@@ -241,10 +256,16 @@ Nodeでの時間計測は `perf_hooks`（`performance.now()`）が基本にな�
 
 ## 落とし穴①：測定中に `Math.random()` とかやっちゃう🎲
 
+![Random Dice Hazard (random_dice_hazard)](./picture/gof_ts_study_053_random_dice_hazard.png)
+
+
 → ランダム生成がボトルネックになって、Flyweight差が埋もれます💦
 ✅ **入力データは先に作って固定**が正義！
 
 ## 落とし穴②：1回だけ測って信じる🙏
+
+![One Shot Dart Luck (one_shot_dart_luck)](./picture/gof_ts_study_053_one_shot_dart_luck.png)
+
 
 → たまたま速い/遅いが起きます（GCとか）
 ✅ **複数回**走らせて **median（中央値）**で見るのが安定✨

@@ -10,6 +10,9 @@
 
 ## 1) Facadeの“いちばんおいしい所”🍰✨＝呼び出し側が短くなる！
 
+![Multi Client Hub (multi_client_hub)](./picture/gof_ts_study_050_multi_client_hub.png)
+
+
 Facadeの価値はこれ👇
 
 * ✅ 呼び出し側が「手順」を知らなくていい（=読むのがラク）📖
@@ -157,6 +160,8 @@ const applyCouponJPY = (subtotalJPY: number, couponCode?: string): number => {
 
 ## 3-4) Facade本体：`placeOrder()`（入口はここだけ！🚪✨）
 
+![Structured Receipt (structured_receipt)](./picture/gof_ts_study_050_structured_receipt.png)
+
 **呼び出し側が知るのはこれだけ**になります🎉
 
 ```ts
@@ -204,6 +209,9 @@ export const placeOrder = async (
 ---
 
 ## 4) UI/CLI/API…入口が増えても、呼び出しは同じ😍✨
+
+![Shared Manual Guide (shared_manual_guide)](./picture/gof_ts_study_050_shared_manual_guide.png)
+
 
 ## 4-1) UI（ボタン押した時）🖱️
 
@@ -257,6 +265,9 @@ const handleApi = async (draft: OrderDraft, deps: PlaceOrderDeps) => {
 
 ## 5) Facadeは“守る”🚧（誤用防止ポイント）
 
+![Security Gate Guard (security_gate_guard)](./picture/gof_ts_study_050_security_gate_guard.png)
+
+
 Facadeがあると、こういう事故が減るよ👇
 
 * ❌ 検証を忘れて決済してしまう
@@ -269,6 +280,9 @@ Facadeがあると、こういう事故が減るよ👇
 ---
 
 ## 6) テストも“入口だけ叩けばOK”でラク🧪🎉
+
+![Test Dummy Crash (test_dummy_crash)](./picture/gof_ts_study_050_test_dummy_crash.png)
+
 
 depsを差し替えるだけでテストできるのが気持ちいい💞
 
@@ -322,12 +336,18 @@ export const testOutOfStock = async () => {
 
 ## ① Facadeが太って「神関数」になる👑💥
 
+![God Object Gluttony (god_object_gluttony)](./picture/gof_ts_study_050_god_object_gluttony.png)
+
+
 ✅ 対策：
 
 * 中身は **小関数に分ける**（上の `validateDraft` みたいに）🧩
 * 「金額計算」「通知」「在庫」などは、**別モジュールへ分離**📦
 
 ## ② “Facadeの中で全部決める”が増えて、変更が怖い😨
+
+![Strategy Gear Shift (strategy_gear_shift)](./picture/gof_ts_study_050_strategy_gear_shift.png)
+
 
 ✅ 対策：
 

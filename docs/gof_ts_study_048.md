@@ -32,6 +32,8 @@ Facade（ファサード）は、**複雑なサブシステムに対して、使
 
 入口が無いと、呼び出し側（クリックイベントやAPIルート）に全部並んで、**巨大な“手順の塊”**になりがち…😇
 
+![Direct Access Chaos (direct_access_chaos)](./picture/gof_ts_study_048_direct_access_chaos.png)
+
 ```ts
 // ❌ 入口が無い例：UIやAPIルートに手順が全部ベタ書き
 async function onClickConfirm() {
@@ -78,6 +80,8 @@ graph TD
 * 呼び出し側は **1つの関数**を呼ぶだけ🎉
 * 中で必要な手順をまとめて実行🧩
 
+![Simple Remote Entry (simple_remote_entry)](./picture/gof_ts_study_048_simple_remote_entry.png)
+
 ```ts
 // ✅ Facade（入口）
 const result = await placeOrder(draft, deps);
@@ -92,15 +96,24 @@ const result = await placeOrder(draft, deps);
 
 ## コツA：Facadeの「公開API」を小さくする🧁
 
+![Iceberg API (iceberg_api)](./picture/gof_ts_study_048_iceberg_api.png)
+
+
 * 外に見せる関数は **少なめ**（1〜3個くらいが気持ちいい）😊
 * 引数は「ドメイン的に自然な塊」にする（`draft` とか `user` とか）📦
 
 ## コツB：外部依存は“引数で渡す”💉
 
+![Dependency Injection Slots (dependency_injection_slots)](./picture/gof_ts_study_048_dependency_injection_slots.png)
+
+
 決済・在庫・通知みたいな外の世界は、Facadeに直接べったりくっつけない！
 **依存を引数（deps）で受け取る**と、テストが超ラクになる🧪✨
 
 ## コツC：Facadeは“まとめ役”。判断を全部抱えない⚠️
+
+![Orchestra Conductor (orchestra_conductor)](./picture/gof_ts_study_048_orchestra_conductor.png)
+
 
 * Facadeは **手順のオーケストラ指揮者**🎻
 * ルール（割引計算とか）は **小関数に分けて**置くとキレイ✨
@@ -333,6 +346,9 @@ test("失敗：在庫切れならOUT_OF_STOCK😢", async () => {
 * 仕様が増えたら「分岐」じゃなく「手順の部品」を増やす意識✨
 
 ## 罠②：エラーが“よく分からない”😵
+
+![Error Sorting Conveyor (error_sorting_conveyor)](./picture/gof_ts_study_048_error_sorting_conveyor.png)
+
 
 ✅ 対策：
 
