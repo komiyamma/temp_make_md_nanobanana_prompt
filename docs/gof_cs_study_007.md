@@ -21,6 +21,8 @@ GoFの考え方はそのままに、C#の言語機能（record / with / デリ�
 ## 手順 🧭✨
 
 ### 1) まず “GoFっぽい要素” と C#機能を対応づける🧩
+![Strategy Interface vs Func](./picture/gof_cs_study_007_strategy_types.png)
+
 
 「GoFを暗記」じゃなくて、「困りごとに対して道具を選ぶ」感覚が大事だよ〜🙂🌷
 
@@ -53,6 +55,8 @@ flowchart TD
 ```
 
 ### 2) 例題：割引の「方針」を差し替えたい（Strategyの題材）💳🛒
+![Record Cloning](./picture/gof_cs_study_007_record_clone.png)
+
 
 ECあるある：支払い方法や会員ランクで割引が変わるやつ！🍰
 
@@ -127,6 +131,8 @@ public sealed class DiscountService
 ---
 
 ### 4) Strategy（Func版）…小さくて速い💨✨
+![Func as a Plug](./picture/gof_cs_study_007_func_plug.png)
+
 
 「割引が1行〜数行」「増えない」「クラス作るほどじゃない」なら超便利🙂🎀
 
@@ -173,10 +179,14 @@ public sealed class DiscountServiceFunc
 ---
 
 ### 5) switch式 + パターンマッチで「分岐を読みやすく」する🔍✨
+![Switch Expression Tracks](./picture/gof_cs_study_007_switch_tracks.png)
+
 
 「条件が増えると地獄」になりがち。そこで **switch式**と**パターンマッチ**！
 
 #### 例：注文の特徴で割引ルールを切り替える🎛️
+![Pattern Matching Shapes](./picture/gof_cs_study_007_pattern_match.png)
+
 
 ```csharp
 public static Money CalcDiscountByPattern(Order order)
@@ -207,6 +217,8 @@ public static Money CalcDiscountByPattern(Order order)
 ---
 
 ### 6) record + with で「コピーして一部だけ変える」🧾✨
+![Record With Update](./picture/gof_cs_study_007_record_with.png)
+
 
 Prototypeっぽい発想を **C#らしく**軽くできるよ！
 
