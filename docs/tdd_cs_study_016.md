@@ -6,6 +6,8 @@
 
 ## この章のゴール🎯💖
 
+![画像を挿入予定](./picture/tdd_cs_study_016_cluttered_desk.png)
+
 ![画像を挿入予定](./picture/tdd_cs_study_016_parameterized_test.png)
 
 * **Arrange（準備）が長すぎるテスト**を、読みやすく整えられる✨
@@ -19,6 +21,8 @@
 
 ## まず結論：良いテストデータの条件🌟
 
+![画像を挿入予定](./picture/tdd_cs_study_016_good_data_crystal.png)
+
 テストデータは「リアルっぽさ」より、**読みやすさ**が大事だよ😊💕
 
 ### 良い感じの条件✅
@@ -31,6 +35,8 @@
 ---
 
 ## ありがちな「つらいArrange」例😵‍💫
+
+![画像を挿入予定](./picture/tdd_cs_study_016_stage_crew_block.png)
 
 「何をテストしてるのか」より「データ作る作業」が目立っちゃうやつ…💦
 
@@ -73,6 +79,8 @@ public class PriceCalculatorTests
 ---
 
 ## ステップ1：まずは「ローカル関数で最小ヘルパー化」🧩✨
+
+![画像を挿入予定](./picture/tdd_cs_study_016_helper_box.png)
 
 いきなり大げさな仕組みにしない！まずこれが一番強い💪💕
 
@@ -125,6 +133,8 @@ public class PriceCalculatorTests
 ---
 
 ## ステップ2：同じ形が増えてきたら「テストデータビルダー」🧸🧱
+
+![画像を挿入予定](./picture/tdd_cs_study_016_lego_builder.png)
 
 ここで登場！この章の主役💃✨
 **Test Data Builder** は「妥当なデフォルト」を用意して、必要な所だけ上書きできる作り方だよ🎀
@@ -202,6 +212,8 @@ Arrange が「仕様の説明」っぽくなるのが最高💕
 ---
 
 ## 「共通化しすぎて意図が消える」事故を防ぐ🧯🚨
+
+![画像を挿入予定](./picture/tdd_cs_study_016_iceberg_dependency.png)
 
 ビルダーは便利だけど、やりすぎると逆に読めなくなる😇
 

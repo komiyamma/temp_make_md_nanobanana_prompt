@@ -23,6 +23,8 @@
 
 ## 2) まずは超ざっくり：`Fact` と `Theory` の気持ち🥺🫶
 
+![画像を挿入予定](./picture/tdd_cs_study_015_fact_vs_theory.png)
+
 ### ✅ `[Fact]`
 
 * **入力がない**テスト（固定の1本）
@@ -41,6 +43,8 @@
 ---
 
 ## 3) ハンズオン：まずは `[InlineData]` で “境界値5連発” やってみよ🔫✨
+
+![画像を挿入予定](./picture/tdd_cs_study_015_inline_bottles.png)
 
 題材は「カフェ会計」の超ミニ版☕️🧾
 「小計（円）に税率をかけて、**円に四捨五入**して合計（円）を返す」ってことにするね😊
@@ -105,6 +109,8 @@ public class CafePriceCalculator
 
 ## 4) “InlineDataの限界” を知ろう😵‍💫➡️✨
 
+![画像を挿入予定](./picture/tdd_cs_study_015_long_scroll.png)
+
 `InlineData` は便利なんだけど、こうなりがち👇
 
 * ケースが増えるほど **縦に長くて読みづらい**📜😵
@@ -117,6 +123,8 @@ public class CafePriceCalculator
 ---
 
 ## 5) ケースが育ってきたら `[MemberData]` で “データを外に出す”🏃‍♀️📦
+
+![画像を挿入予定](./picture/tdd_cs_study_015_warehouse_memberdata.png)
 
 ### ✅ MemberDataって？
 
@@ -158,6 +166,8 @@ public class CafePriceTests
 ---
 
 ## 6) v3の推し：`TheoryData<>` で “型安全” にしよ🧷💖
+
+![画像を挿入予定](./picture/tdd_cs_study_015_shape_sorter_theory.png)
 
 `IEnumerable<object[]>` は動くけど、**型が弱くて事故りやすい**のが欠点🥺
 そこで `TheoryData<>` が便利！✨（公式APIとして用意されてるよ）([api.xunit.net][7])
@@ -227,6 +237,8 @@ xUnit公式に **Test ExplorerでのTheoryデータ表示の安定性**の解説
 ---
 
 ## 9) AI（Copilot/Codex）活用：この章は “ケース出し” に最強🤖💞
+
+![画像を挿入予定](./picture/tdd_cs_study_015_ai_variations.png)
 
 AIはこの章と相性よすぎる😆✨
 おすすめプロンプトはこれ👇（コピペOK）
