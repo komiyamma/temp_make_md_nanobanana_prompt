@@ -13,6 +13,8 @@
 
 ## 1) そもそも「コードのニオイ」って何？🧸🌸
 
+![Smell Detective](./picture/solid_ts_study_005_smell_detective.png)
+
 コードのニオイ（Code Smell）は、**表面に出ている「怪しいサイン」**のことだよ👀⚠️
 それ自体がバグとは限らないけど、**もっと深い問題が隠れてるかも**って教えてくれる合図なの✨ ([martinfowler.com][1])
 
@@ -44,6 +46,8 @@ SonarQubeの用語でも、Code Smellは「保守性を下げて、コードを�
 
 ### A. 長すぎ関数 🐍📏
 
+![Long Function Scroll](./picture/solid_ts_study_005_long_function_scroll.png)
+
 **症状**：1つの関数がやること多すぎ（計算・保存・通知・ログ…全部）
 **未来の痛み**：ちょい修正で全体が壊れそう、テストしづらい😇💥
 
@@ -54,10 +58,14 @@ SonarQubeの用語でも、Code Smellは「保守性を下げて、コードを�
 
 ### C. if地獄 / switch地獄 🌋🔁
 
+![If Volcano](./picture/solid_ts_study_005_if_volcano.png)
+
 **症状**：条件分岐が増殖して、読みながら迷子🧭
 **未来の痛み**：追加するたびに分岐が壊れて事故る🚑
 
 ### D. コピペ地獄 📋📋📋
+
+![Copy Paste Clones](./picture/solid_ts_study_005_copy_paste_clones.png)
 
 **症状**：似たコードがあちこちに…
 **未来の痛み**：修正漏れが必ず出る（Shotgun Surgery系）🧨
@@ -69,8 +77,10 @@ SonarQubeの用語でも、Code Smellは「保守性を下げて、コードを�
 TSは型がある分、**型まわりのニオイ**が出やすいよ〜！
 
 * `any` で逃げる（型安全の放棄）🫠
+![Any Blackhole](./picture/solid_ts_study_005_any_blackhole.png)
 * 型アサーション `as XXX` の乱用（“ほんとに？”問題）🤥
 * `string` で状態や種類を表現（例：`"cash" | "card"` をただの string にする）＝プリミティブ執着🪨
+![Primitive Obsession Rocks](./picture/solid_ts_study_005_primitive_obsession_rocks.png)
 * `null` / `undefined` チェックが散らばる（nullable地獄）☁️
 * 返り値が「成功したの？失敗したの？」曖昧（例外/Result型の整理不足）😵
 
