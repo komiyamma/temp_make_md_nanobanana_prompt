@@ -29,6 +29,8 @@
 
 ## 1) 題材：カフェメニューを木で表す☕🌳
 
+![044_nested_dolls](./picture/gof_ts_study_044_nested_dolls.png)
+
 「カテゴリ（グループ）」の中に「商品（アイテム）」が入ってる、よくある構造👇
 
 * Drinks
@@ -46,6 +48,8 @@
 ---
 
 ## 2) DFS と BFS のイメージ🧠✨
+
+![044_diver_swimmer](./picture/gof_ts_study_044_diver_swimmer.png)
 
 ## DFS（Depth First Search：深さ優先）🕳️
 
@@ -147,6 +151,8 @@ export function* bfs(root: MenuNode): IterableIterator<MenuNode> {
 
 ## 4-1) find：条件に合う最初の1個を探す🕵️‍♀️
 
+![044_detective_sketch](./picture/gof_ts_study_044_detective_sketch.png)
+
 ```ts
 // search.ts
 import { bfs, dfs, MenuItem, MenuNode } from "./menu";
@@ -170,6 +176,8 @@ export function findFirst(
 ---
 
 ## 4-2) collect：条件に合う商品だけ集める🧺✨
+
+![044_harvester_machine](./picture/gof_ts_study_044_harvester_machine.png)
 
 ```ts
 // collect.ts
@@ -216,6 +224,8 @@ export function sumPrice(
 ---
 
 ## 4-4) ちょい発展：見つかった「場所（パス）」も欲しい🧭✨
+
+![044_breadcrumbs_path](./picture/gof_ts_study_044_breadcrumbs_path.png)
 
 「Cake を見つけた！…で、どのカテゴリの中？」みたいなやつ🍰
 UIでパンくず（Foods > Sweets > Cake）を出すとき便利💡
@@ -345,6 +355,8 @@ test("findPathById returns breadcrumb", () => {
 ---
 
 ## 7) よくあるつまずきポイント集💡😵‍💫
+
+![044_infinite_loop_dog](./picture/gof_ts_study_044_infinite_loop_dog.png)
 
 ## ① 走査があちこちに散らばる🧨
 

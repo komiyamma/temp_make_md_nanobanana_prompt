@@ -24,6 +24,8 @@
 
 ## 2) 今日の題材：注文を確定する関数を“強化”したい☕🧾✨
 
+![046_burger_layers](./picture/gof_ts_study_046_burger_layers.png)
+
 たとえば、注文確定って「やりたいこと」が増えがち👇
 
 * 失敗したらリトライしたい🔁
@@ -41,6 +43,8 @@
 ---
 
 ## 3) Decorator（関数ラップ）の基本形🧁
+
+![046_robot_exoskeleton](./picture/gof_ts_study_046_robot_exoskeleton.png)
 
 ざっくりこう👇
 
@@ -77,6 +81,8 @@ type AsyncFn<Args extends unknown[] = unknown[], R = unknown> =
 
 ## 5) `withLogging`：成功/失敗をログに残す📝✨
 
+![046_stenographer_logger](./picture/gof_ts_study_046_stenographer_logger.png)
+
 ```ts
 type AsyncFn<Args extends unknown[] = unknown[], R = unknown> =
   (...args: Args) => Promise<R>;
@@ -109,6 +115,8 @@ export function withLogging<Args extends unknown[], R>(
 ---
 
 ## 6) `withTiming`：処理時間を測る⏱️✨（標準の`performance.now()`）
+
+![046_race_official_timer](./picture/gof_ts_study_046_race_official_timer.png)
 
 時間計測は `performance.now()` が定番！
 高精度タイマーで、Web APIとしても標準だよ📏✨ ([MDN Web Docs][3])
@@ -143,6 +151,8 @@ export function withTiming<Args extends unknown[], R>(
 ---
 
 ## 7) `withRetry`：失敗したらリトライする🔁🔥（指数バックオフ付き）
+
+![046_gamer_retry](./picture/gof_ts_study_046_gamer_retry.png)
 
 リトライは「無限リトライ」しちゃうと事故るので、**回数と待ち時間**をちゃんと管理しよ🧯
 
@@ -215,6 +225,8 @@ export function withRetry<Args extends unknown[], R>(
 ---
 
 ## 8) “重ねがけ”する🧁✨：読みやすくするコツ（`pipe`）
+
+![046_pipe_connection](./picture/gof_ts_study_046_pipe_connection.png)
 
 Decoratorを何個も付けるとこうなりがち👇
 `withRetry(withTiming(withLogging(fn)))` ← うっ…😵

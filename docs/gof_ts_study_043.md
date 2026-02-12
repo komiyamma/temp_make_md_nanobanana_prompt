@@ -10,6 +10,8 @@
 
 ## 1. Compositeを「クラス」じゃなく「型」でやると何が嬉しいの？😊
 
+![043_discriminated_union](./picture/gof_ts_study_043_discriminated_union.png)
+
 Compositeの本質はこれ👇
 **「葉（item）と枝（group）を同じ“ノード”として扱って、同じ操作（合計・検索・列挙）をかけられる」** こと🌳✨
 
@@ -82,6 +84,8 @@ classDiagram
 
 ## 3. 例データを作る（satisfiesで型チェック強め）✅🍓
 
+![043_satisfies_check](./picture/gof_ts_study_043_satisfies_check.png)
+
 「見た目のリテラルを保ちつつ、型チェックだけ強くしたい」時に **satisfies** が便利✨
 （TypeScriptの機能として定着してます）([TypeScript][3])
 
@@ -119,6 +123,8 @@ export const menu = {
 
 ## 4. 操作①：合計金額を出す（Compositeの王道）💰✨
 
+![043_never_guard](./picture/gof_ts_study_043_never_guard.png)
+
 ```ts
 // ops.ts
 import type { MenuNode } from "./menu";
@@ -151,6 +157,8 @@ export function totalPriceYen(node: MenuNode): number {
 
 ## 5. 操作②：商品（item）だけ一覧にする🍰📦
 
+![043_flattening_tree](./picture/gof_ts_study_043_flattening_tree.png)
+
 「木を平らにする（flatten）」は超よく使うよ〜✨
 
 ```ts
@@ -167,6 +175,8 @@ export function collectItems(node: MenuNode): MenuItem[] {
 ---
 
 ## 6. 操作③：idで検索する🔎✨
+
+![043_recursive_search](./picture/gof_ts_study_043_recursive_search.png)
 
 ```ts
 import type { MenuNode } from "./menu";
@@ -187,6 +197,8 @@ export function findById(node: MenuNode, id: string): MenuNode | undefined {
 ---
 
 ## 7. 再帰が怖い人へ：ループ（スタック）版もあるよ🧠🧯
+
+![043_stack_iteration](./picture/gof_ts_study_043_stack_iteration.png)
 
 木がめちゃ深いと、環境によっては再帰が不利になることもあるので、**配列スタック**で回す版も覚えておくと安心〜✨
 
@@ -250,6 +262,8 @@ test("findById: idでノードを検索できる", () => {
 ## 9. つまずきポイント集（ここでハマりがち！）😵‍💫🧯
 
 ## 9-1. kind（判別キー）がブレる🤯
+
+![043_key_consistency](./picture/gof_ts_study_043_key_consistency.png)
 
 * "type" と "kind" が混ざる
 * "Group" と "group" が混ざる

@@ -10,6 +10,8 @@
 
 ## まず困りごと😵‍💫：「本体に横から入れたい処理」が増えていく
 
+![045_annoyed_chef](./picture/gof_ts_study_045_annoyed_chef.png)
+
 たとえば「合計金額を計算する」だけの関数があるとして…☕🧾
 
 ```ts
@@ -53,6 +55,8 @@ export function calcTotal_messy(order: Order): number {
 ---
 
 ## Decoratorの考え方🍰：「同じ形のまま包んで、機能を足す」
+
+![045_nesting_dolls](./picture/gof_ts_study_045_nesting_dolls.png)
 
 Decorator（GoFのやつ）は超ざっくり言うと👇💡
 
@@ -100,6 +104,8 @@ graph LR
 
 ### 1) ログDecorator：withLogging 🪵
 
+![045_logging_wrapper](./picture/gof_ts_study_045_logging_wrapper.png)
+
 ```ts
 export function withLogging<A, R>(
   fn: (arg: A) => R,
@@ -115,6 +121,8 @@ export function withLogging<A, R>(
 ```
 
 ### 2) 計測Decorator：withTiming ⏱️
+
+![045_stopwatch_wrapper](./picture/gof_ts_study_045_stopwatch_wrapper.png)
 
 `performance.now()` は高精度タイマーの定番だよ⏱️✨（ブラウザで広く使える）([MDN Web Docs][1])
 Nodeでもパフォーマンス計測APIが用意されてるよ🧠([Node.js][2])
@@ -145,6 +153,8 @@ export function withTiming<A, R>(
 
 ### 3) キャッシュDecorator：withMemoize 🧠🗃️
 
+![045_gatekeeper_cache](./picture/gof_ts_study_045_gatekeeper_cache.png)
+
 キャッシュは `Map` がど定番🗃️（キー設計が命！）
 
 ```ts
@@ -173,6 +183,8 @@ export function withMemoize<A, R>(
 ---
 
 ## 4) いよいよ重ねがけ🎀（順番で結果・ログが変わる！）
+
+![045_clothing_layers](./picture/gof_ts_study_045_clothing_layers.png)
 
 ```ts
 import { calcTotal } from "./calcTotal";
@@ -252,6 +264,8 @@ describe("withMemoize", () => {
 ---
 
 ## コラム🌸：「@デコレータ」とGoF Decoratorは別モノだよ！
+
+![045_decorator_doppelgangers](./picture/gof_ts_study_045_decorator_doppelgangers.png)
 
 名前が同じで混乱しやすいけど…😵‍💫💦
 
