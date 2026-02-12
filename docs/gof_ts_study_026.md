@@ -12,6 +12,8 @@
 
 ## Builderが必要になりやすいサイン👀
 
+![Order Matters](./picture/gof_ts_study_026_order_matters.png)
+
 1. **処理の順番が意味を持つ**（割引→税→送料…みたいに順序で結果が変わる）🔁
 
 ![順番が決まっているベルトコンベア（Step Builder）。](./picture/gof_ts_study_026_step_assembly.png)
@@ -53,6 +55,8 @@
 ---
 
 ## Before：順番が自由で事故りやすい例💥
+
+![Calculation Error](./picture/gof_ts_study_026_calculation_error.png)
 
 「割引→税→送料」みたいな順番を守ってね！と言っても、呼び出し側が自由だと…こうなる😇
 
@@ -115,6 +119,8 @@ function calcTotalBad(order: Order): PriceBreakdown {
 
 ## 1) まずは型（ステップ）を用意する🧩
 
+![One Way Gate](./picture/gof_ts_study_026_one_way_gate.png)
+
 今回の流れはこれ👇
 **開始 → 割引（する/しない） → 税 → 手数料 → build**
 
@@ -174,6 +180,8 @@ stateDiagram-v2
 ---
 
 ## 2) Builder本体（クラスを増やさず関数＋クロージャで）🍰
+
+![Closure Capsule](./picture/gof_ts_study_026_closure_capsule.png)
 
 「余計な独自クラスを増やさない」ために、**関数でBuilderを作る**よ✨
 （中の状態はクロージャに隠して、外から触れないようにするのがコツ🫶）
@@ -243,6 +251,8 @@ export function priceBuilder(order: Order): StartStep {
 
 ## 3) 使い方：呼び出し側がめっちゃ読みやすい📖✨
 
+![Fluent Chain](./picture/gof_ts_study_026_fluent_chain.png)
+
 ```ts
 const order: Order = {
   items: [
@@ -274,6 +284,8 @@ console.log(breakdown);
 ---
 
 ## “順番ミス”はコンパイルで止まる🛑✨
+
+![Compile Guard](./picture/gof_ts_study_026_compile_guard.png)
 
 たとえばこれ👇
 
