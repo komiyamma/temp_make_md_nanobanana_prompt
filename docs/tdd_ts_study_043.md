@@ -24,11 +24,15 @@
 * テストの中では「この値が返ってくる前提」で話を進める
 * **検証したいのは“呼ばれ方”じゃなくて“結果（戻り値）”**が中心✨
 
+![stub_sign](./picture/tdd_ts_study_043_stub_sign.png)
+
 ### 2) ざっくり使い分け（ここ大事）⚡
 
 * **スタブ**：返す値を固定して、結果を検証する🧸
 * **スパイ**：呼ばれたか・回数・引数を“観察”する👀
 * **モック**：呼ばれ方を“仕様として固定”する🎭（第44章でやるよ！）
+
+![stub_spy_mock](./picture/tdd_ts_study_043_stub_spy_mock.png)
 
 Vitestの `vi.fn()` や `vi.spyOn()` / `vi.mock()` は公式のモック系APIの中心だよ〜📌 ([Vitest][1])
 
@@ -45,6 +49,8 @@ Vitestの `vi.fn()` や `vi.spyOn()` / `vi.mock()` は公式のモック系API�
 * 500点〜 → 10%
 
 ポイント取得は本来DBだけど、今回は **スタブで置き換える**よ🧸
+
+![replace_heavy](./picture/tdd_ts_study_043_replace_heavy.png)
 
 ---
 
@@ -89,6 +95,8 @@ describe("calcDiscountRate", () => {
 ポイント：
 
 * スタブは **「返す値」しか持たない**（余計なことしない）🧸✨
+
+![simple_return](./picture/tdd_ts_study_043_simple_return.png)
 * この段階ではDBゼロ！ネットゼロ！超安定！🧪💕
 
 ---
@@ -110,6 +118,8 @@ export async function calcDiscountRate(
 
   if (points >= 500) return 10;
   if (points >= 100) return 5;
+
+![points_logic](./picture/tdd_ts_study_043_points_logic.png)
   return 0;
 }
 ```
@@ -149,6 +159,8 @@ describe("calcDiscountRate (vi.fn stub)", () => {
   it("スタブ関数で点数を返す", async () => {
     const getPointsStub = vi.fn(async () => 120);
 
+![magic_wand](./picture/tdd_ts_study_043_magic_wand.png)
+
     const repoStub = { getPoints: getPointsStub };
     const rate = await calcDiscountRate("u1", repoStub);
 
@@ -175,6 +187,8 @@ describe("calcDiscountRate (vi.fn stub)", () => {
 ### ❌ ダメになりがちなスタブ
 
 * スタブの中にロジックが増えて「もう本物じゃん…」ってなる😵‍💫
+
+![clean_vs_messy](./picture/tdd_ts_study_043_clean_vs_messy.png)
 * 使い回しで状態が残って、テストがたまに落ちる💥
 * “呼ばれ方”までテストし始めて、モックと混線する🎭🌀
 

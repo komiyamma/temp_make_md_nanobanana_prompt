@@ -17,6 +17,8 @@
 * **モック（vi.fn）**：ニセの関数を自分で作る🎭
   → 依存を「差し替えて」呼ばれ方を見るのが得意✨ ([Vitest][1])
 * **スパイ（vi.spyOn）**：すでにあるオブジェクトのメソッドに「盗聴器」を付ける📣
+
+![mock_vs_spy](./picture/tdd_ts_study_044_mock_vs_spy.png)
   → 「どんなふうに呼ばれたか」を記録して、必要なら挙動も差し替えできるよ ([Vitest][1])
 
 > どっちも「呼び出し履歴」を持つし、同じようなメソッド（mockImplementationOnceとか）を使えるよ✅ ([Vitest][1])
@@ -32,6 +34,8 @@
 * ✅ 注文NG → 通知は **送らない**
 
 この「送る/送らない・回数・引数」が、そのまま仕様になる感じだよ🫶
+
+![behavior_spec](./picture/tdd_ts_study_044_behavior_spec.png)
 
 ---
 
@@ -77,6 +81,8 @@ describe('placeOrder', () => {
     placeOrder({ userId: 'u1', total: 1200 }, { notifier })
 
     expect(send).toHaveBeenCalledTimes(1)
+
+![expect_call](./picture/tdd_ts_study_044_expect_call.png)
     expect(send).toHaveBeenCalledWith('u1', '注文が確定しました')
   })
 
@@ -105,6 +111,8 @@ export type Notifier = { send: (userId: string, message: string) => void }
 export function placeOrder(order: Order, deps: { notifier: Notifier }) {
   if (order.total <= 0) return
   deps.notifier.send(order.userId, '注文が確定しました')
+
+![conditional_gate](./picture/tdd_ts_study_044_conditional_gate.png)
 }
 ```
 
@@ -146,7 +154,9 @@ describe('logger の呼ばれ方を見る 📣', () => {
 })
 ```
 
-* vi.spyOn は「既存メソッドにスパイを貼る」感じだよ📌 ([Vitest][2])
+* vi.spyOn は「既存メソッドにスパイを貼る」感じだよ📌
+
+![spy_logger](./picture/tdd_ts_study_044_spy_logger.png) ([Vitest][2])
 * 後始末はけっこう大事！テストの外に影響を残しがちなので、まとめて元に戻すのが安心🧯 ([Vitest][2])
 
 ---
@@ -158,6 +168,8 @@ describe('logger の呼ばれ方を見る 📣', () => {
 * **vi.clearAllMocks**：呼び出し履歴だけ消す（実装はそのまま）🧼 ([Vitest][2])
 * **vi.resetAllMocks**：履歴も消すし、モック実装もリセット🧯 ([Vitest][2])
 * **vi.restoreAllMocks**：spyOn したものを “元の実装に戻す” 🏠
+
+![cleanup_modes](./picture/tdd_ts_study_044_cleanup_modes.png)
   ただし「履歴は消えない」などクセがあるよ🧠 ([Vitest][2])
 
 👉 迷ったらこの運用がラク：
@@ -176,7 +188,9 @@ describe('logger の呼ばれ方を見る 📣', () => {
 
 ### 2) モジュールを mock したのに効かない？🤔
 
-「外から呼ばれた分」は差し替わっても、**同じモジュール内で直接呼んでる関数**は差し替わらないことがあるよ⚠️ ([Vitest][3])
+「外から呼ばれた分」は差し替わっても、**同じモジュール内で直接呼んでる関数**は差し替わらないことがあるよ⚠️
+
+![internal_call](./picture/tdd_ts_study_044_internal_call.png) ([Vitest][3])
 → この場合は「設計として依存を外から渡す」形に寄せるとスッキリすることが多いよ🧩
 
 ### 3) クラス/コンストラクタを spyOn して変なエラー🧨

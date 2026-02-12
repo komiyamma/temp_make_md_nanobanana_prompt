@@ -17,6 +17,8 @@
 2. **統合テスト**：必要なところだけ本物のファイルで確認（少数）🧪
 3. 実装は「中心（ロジック）」と「端（I/O）」を分ける（境界を作る）🚧
 
+![unit_vs_integration](./picture/tdd_ts_study_045_unit_vs_integration.png)
+
 > Vitest公式でも「VitestはファイルシステムのモックAPIを内蔵してないから、手で `vi.mock` するより **memfs** みたいな仕組みを推奨するよ」って方針だよ📌 ([Vitest][1])
 > さらに `vi.mock` は **`import` されたモジュールだけ**に効く（`require()` は対象外）って注意もあるよ⚠️ ([Vitest][2])
 
@@ -36,6 +38,8 @@
 
 ポイントはこれ👇
 **「読む処理（readText）」を引数でもらう**＝本物にも偽物にも差し替えできる✨
+
+![arg_injection](./picture/tdd_ts_study_045_arg_injection.png)
 
 ---
 
@@ -82,6 +86,8 @@ describe('loadSettings', () => {
     )
 
     await expect(loadSettings('settings.json', readTextFile)).resolves.toEqual({
+
+![mocking_read](./picture/tdd_ts_study_045_mocking_read.png)
       theme: 'dark',
       language: 'ja',
     })
@@ -92,6 +98,8 @@ describe('loadSettings', () => {
     const readTextFile = vi.fn().mockRejectedValue(err)
 
     await expect(loadSettings('settings.json', readTextFile)).resolves.toEqual({
+
+
       theme: 'light',
       language: 'ja',
     })
@@ -142,6 +150,8 @@ export async function loadSettings(
     text = await readTextFile(path)
   } catch (e) {
     if (isENOENT(e)) return DEFAULT_SETTINGS
+
+![error_branch](./picture/tdd_ts_study_045_error_branch.png)
     throw e
   }
 
@@ -171,6 +181,8 @@ export async function loadSettings(
 ## 📁 “本物”のファイルで読むアダプタ（端っこ担当）🧩
 
 中心ロジックは **`readTextFile` を受け取るだけ**。
+
+![adapter_tool](./picture/tdd_ts_study_045_adapter_tool.png)
 本物のファイルを読むのは、別ファイルに隔離するよ〜！
 
 ```ts
@@ -191,6 +203,8 @@ export async function nodeReadTextFile(path: string): Promise<string> {
 ## 🧪 統合テスト（少数精鋭⭐️）：一回だけ“本物”で確認する
 
 ユニットは偽物で十分だけど、安心のために **1本だけ** 本物でやるのはアリ😊
+
+![real_test](./picture/tdd_ts_study_045_real_test.png)
 
 ```ts
 // tests/loadSettings.integration.test.ts
@@ -221,6 +235,8 @@ describe('loadSettings (integration)', () => {
 みたいな時は、Vitest公式が **memfs推し**だよ📌 ([Vitest][1])
 
 * `vi.mock('node:fs')` / `vi.mock('node:fs/promises')` で丸ごと差し替え
+
+![virtual_fs](./picture/tdd_ts_study_045_virtual_fs.png)
 * `vol.fromJSON(...)` で仮想ファイルを作る
 * テストが速い＆安全🏎️💨
 

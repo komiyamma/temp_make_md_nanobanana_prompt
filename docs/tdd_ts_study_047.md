@@ -20,11 +20,15 @@
 ### 1) 「時間」は依存（＝テストの敵）👾
 
 * `setTimeout` / `setInterval` / “待つ” は、テストを遅くして不安定にします😵‍💫
+
+![time_enemy](./picture/tdd_ts_study_047_time_enemy.png)
 * だから **時間をコントロール**する（＝フェイクにする）！([vitest.dev][1])
 
 ### 2) フェイクタイマーの基本（Vitest）🧪
 
-* `vi.useFakeTimers()` を呼ぶと、以降のタイマー系がフェイクになります（`setTimeout`/`setInterval`/`Date` など）([vitest.dev][1])
+* `vi.useFakeTimers()` を呼ぶと、以降のタイマー系がフェイクになります（`setTimeout`/`setInterval`/`Date` など）
+
+![fake_timer_ctrl](./picture/tdd_ts_study_047_fake_timer_ctrl.png)([vitest.dev][1])
 * 時間を進める：`vi.advanceTimersByTime(ms)` / `vi.advanceTimersByTimeAsync(ms)`([vitest.dev][1])
 * まとめて実行：`vi.runAllTimersAsync()` / `vi.runOnlyPendingTimersAsync()`（非同期タイマーもOK）([vitest.dev][1])
 * 終わったら `vi.useRealTimers()`（※フェイク中に予約されたタイマーは破棄されます）([vitest.dev][1])
@@ -54,6 +58,8 @@
 ```ts
 it('1秒後に何かが起きる', async () => {
   await new Promise(r => setTimeout(r, 1000)) // ← これが地獄の入口😇
+
+![sleeping_test](./picture/tdd_ts_study_047_sleeping_test.png)
   expect(true).toBe(true)
 })
 ```
@@ -106,7 +112,9 @@ describe('sleep', () => {
 
 ポイント👇
 
-* `vi.useFakeTimers()` でタイマーをフェイクにして、`advanceTimersByTimeAsync` で時間だけ進めます([vitest.dev][1])
+* `vi.useFakeTimers()` でタイマーをフェイクにして、`advanceTimersByTimeAsync` で時間だけ進めます
+
+![warp_speed](./picture/tdd_ts_study_047_warp_speed.png)([vitest.dev][1])
 * だから**本当に待たない**のに、時間依存の挙動を確認できます😆✨
 
 ## ✅ 1-2. 実装（最小でOK）🧸
@@ -155,7 +163,9 @@ export function sleep(ms: number, signal?: AbortSignal): Promise<void> {
 
 * まず `op()` を1回やる（最初は待たない）([AWS ドキュメント][3])
 * 失敗したら **最大N回まで**リトライする（上限）([AWS ドキュメント][4])
-* 待ち時間は **指数バックオフ**（例：100ms, 200ms, 400ms…）＋必要ならジッター ([Google Cloud Documentation][2])
+* 待ち時間は **指数バックオフ**（例：100ms, 200ms, 400ms…）＋必要ならジッター
+
+![exponential_backoff](./picture/tdd_ts_study_047_exponential_backoff.png) ([Google Cloud Documentation][2])
 * リトライするかどうかは `shouldRetry(err)` で決められる（全部はリトライしない）([Google Cloud Documentation][2])
 
 ---
@@ -164,6 +174,8 @@ export function sleep(ms: number, signal?: AbortSignal): Promise<void> {
 
 ここ、超大事！
 **リトライの核（待ち時間計算/回数/判定）**は、フェイクタイマーすら不要にできます😳
+
+![logic_vs_time](./picture/tdd_ts_study_047_logic_vs_time.png)
 
 ### テスト（sleepをスタブにして “待ち時間” を記録する）📝
 
@@ -209,6 +221,8 @@ describe('retry (core)', () => {
 ## ✅ 2-3. 次に「本当にタイマーを使う形」も1本だけ確認（統合寄り）⏱️
 
 “sleepが setTimeout を使っても”ちゃんと動く？を1本だけテストします🧪
+
+![integration_timer](./picture/tdd_ts_study_047_integration_timer.png)
 
 ```ts
 // tests/retry.integration.test.ts

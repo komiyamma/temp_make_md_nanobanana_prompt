@@ -28,6 +28,8 @@ export function isCouponValid(expireAt: Date): boolean {
 
 * テスト時に「今」を固定できない😵
 * テストの実行タイミングで結果が変わる（フレーク）💥
+
+![flaky_balance](./picture/tdd_ts_study_042_flaky_balance.png)
 * 将来リファクタしたときに、別の“今”参照が混ざると地獄👻
 
 Vitestでも日付をモックする機能はあるけど、**“グローバルに時間を変える”**系は取り扱い注意（リセット忘れで事故りやすい）っていうクセがあるよ〜⚠️（例：`vi.setSystemTime` はテスト間で自動リセットされないので、戻す運用が必要） ([Vitest][1])
@@ -51,6 +53,8 @@ export function isCouponValid(expireAt: Date, now: Now): boolean {
 ```
 
 * 本番：`isCouponValid(expireAt, () => new Date())`
+
+![clock_pass](./picture/tdd_ts_study_042_clock_pass.png)
 * テスト：`isCouponValid(expireAt, () => fixedDate)`
 
 これが **関数引数DI** だよ📦➡️
@@ -90,6 +94,8 @@ describe("isCouponValid", () => {
 ここでの気持ちよさポイント😍
 
 * 「今」が固定されるから、**何回実行しても同じ結果**✨
+
+![stability_anchor](./picture/tdd_ts_study_042_stability_anchor.png)
 * 速い⚡（待ち時間ゼロ）
 * テストが仕様書っぽくなる📘
 
@@ -122,6 +128,8 @@ export function isCouponValid(expireAt: Date, now: Now = systemNow): boolean {
 ```
 
 * 本番：`isCouponValid(expireAt)`（自動で本物の時計⏰）
+
+![default_choice](./picture/tdd_ts_study_042_default_choice.png)
 * テスト：`isCouponValid(expireAt, fakeNow)`（偽物注入🎭）
 
 ---
@@ -139,6 +147,8 @@ export type Deps = {
 }
 
 const defaultDeps: Deps = {
+
+![deps_toolbox](./picture/tdd_ts_study_042_deps_toolbox.png)
   now: () => new Date(),
   random: () => Math.random(),
 }
@@ -164,6 +174,8 @@ Vitestには「日付をモックする」公式ガイドもあるよ（`vi.setS
 でもこの章の結論はこれ👇
 
 * ✅ **まずDI（引数注入）を優先**：影響範囲が狭い、事故りにくい💎
+
+![bulb_sun](./picture/tdd_ts_study_042_bulb_sun.png)
 * 🟡 `vi.setSystemTime` は「既存コードが Date 直叩きで、今すぐ直せない」時の救急箱🧰
 
   * 使ったら最後に戻す（`vi.useRealTimers()` など）を徹底しよ〜⚠️ ([Vitest][1])
@@ -183,6 +195,8 @@ AIには「実装そのもの」より、**差分最小でDIにする案**を出
 ---
 
 ## ✅チェックリスト（合格ライン）💮✨
+
+![checklist_success](./picture/tdd_ts_study_042_checklist_success.png)
 
 * [ ] テストが **時間に左右されず**、何回実行しても同じ結果🎯
 * [ ] 本番コードで `new Date()` を直叩きしてる場所が **“境界”に寄った**（または注入された）🧭
