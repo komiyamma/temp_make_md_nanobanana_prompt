@@ -30,6 +30,10 @@ C# 14 は Visual Studio 2026 / .NET 10 SDK で使える前提だよ🧁([Microso
 
 ## 2) テスト戦略（ここ大事）🧪✨
 
+![tdd_cs_study_050_test_strategy.png](./picture/tdd_cs_study_050_test_strategy.png)
+
+
+
 * **ドメイン（ルール）**：テスト多め（速い・壊れやすい所を守る）⚡
 * **ユースケース（アプリ操作）**：必要十分（登録/検索/遷移/集計）🎯
 * **UI（Blazor）**：**重要導線だけ**（「追加できる」「一覧が更新される」など）🚶‍♀️
@@ -40,6 +44,10 @@ Blazor コンポーネントテストは bUnit を使う想定（NuGet で配布
 ---
 
 ## 3) ソリューション構成（迷子防止マップ）🗺️😊
+
+![tdd_cs_study_050_architecture_map.png](./picture/tdd_cs_study_050_architecture_map.png)
+
+
 
 「UIは薄く、ルールは外へ」🧩✨
 
@@ -96,6 +104,10 @@ graph TD
 
 **A-2 状態遷移（状態機械の超ミニ版）**
 
+![tdd_cs_study_050_state_transition.png](./picture/tdd_cs_study_050_state_transition.png)
+
+
+
 * InStock → Reserved → Sold
 * Sold → InStock は禁止、とかをルールにする🚫
 
@@ -109,6 +121,10 @@ graph TD
 ---
 
 ## 6) まずはドメイン最小コード（例）🧷✨
+
+![tdd_cs_study_050_domain_objects.png](./picture/tdd_cs_study_050_domain_objects.png)
+
+
 
 ### 6-1 Value Object（価格・数量）
 
@@ -361,6 +377,10 @@ public class GoodsListTests : TestContext
 ---
 
 ## 12) 完成条件（Definition of Done）🏁💪
+
+![tdd_cs_study_050_definition_of_done.png](./picture/tdd_cs_study_050_definition_of_done.png)
+
+
 
 * テスト：`dotnet test` が常に緑✅
 * 主要ユースケース（登録/検索/遷移/集計）がテストで守られてる🧪
