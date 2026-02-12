@@ -41,6 +41,9 @@
 
 Bridgeはざっくりこう👇
 
+![Abstraction vs Implementation](./picture/gof_cs_study_037_abstraction_vs_implementation.png)
+
+
 
 ```mermaid
 classDiagram
@@ -87,6 +90,9 @@ classDiagram
 
 ### 3) .NET標準クラスを“実装側（Implementor）”に採用する✨
 
+![TextWriter Plug](./picture/gof_cs_study_037_textwriter_plug.png)
+
+
 ここがこの教材の大事ポイントだよ💖
 Bridgeの “実装側インターフェース” を、自作しなくてもOKなことが多いの！
 
@@ -100,6 +106,9 @@ Bridgeの “実装側インターフェース” を、自作しなくてもOK�
 ### 4) 最小のBridge例を“体で覚える”💪🌉（レポート形式 × 出力先）
 
 「レポート形式」を増やせる（抽象側）＋「出力先」を差し替えられる（実装側）を、最小コードで体感しよ✨
+
+![Combinatorial Explosion Avoidance](./picture/gof_cs_study_037_bridge_combination.png)
+
 
 ```csharp
 using System;
@@ -158,6 +167,9 @@ public sealed class JsonOrderReport : OrderReport
 
 ### 5) 出力先を差し替えて動かす（Console / File / Memory）🖥️📁🧪
 
+![Swapping Mechanism](./picture/gof_cs_study_037_swapping_mechanism.png)
+
+
 ```csharp
 // Consoleへ（Console.Out は TextWriter）
 var order = new Order(Guid.NewGuid(), new Money(1200m, "JPY"));
@@ -197,6 +209,8 @@ Bridgeは“パターン図どおり”だけが正解じゃなくて、**発想
 * `MemoryStream` みたいに、実体は差し替えできる🧃([Microsoft Learn][2])
 
 **例B：ADO.NET の `DbCommand`**
+
+![DbCommand Bridge](./picture/gof_cs_study_037_dbcommand_bridge.png)
 
 * `DbCommand` は共通の“命令（コマンド）”の抽象を提供して、裏側はプロバイダーごとに実装がある（という設計の匂いがする）🗄️✨([Microsoft Learn][4])
   ※ これは Abstract Factory 的な顔もあるので、「Bridgeそのもの！」と決めつけるより、**“抽象で受けて差し替える”設計感覚**として掴むのが◎だよ🙆‍♀️

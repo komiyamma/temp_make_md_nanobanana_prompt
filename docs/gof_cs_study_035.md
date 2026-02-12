@@ -49,6 +49,9 @@ flowchart LR
 
 StreamReader のコンストラクタを見ると、Adapterの“仕事”がそのまま出てくるよ🔍
 
+![StreamReader Constructor](./picture/gof_cs_study_035_constructor_wrapping.png)
+
+
 * 入力が Stream（ズレ元）
 * 出力（ふるまい）が TextReader っぽい（ReadLine/ReadToEnd など）
 * しかも「変換に必要な材料」が引数にある（Encoding 等）
@@ -66,6 +69,9 @@ StreamReader のコンストラクタを見ると、Adapterの“仕事”がそ
 
 StreamReader を使うと、呼び出し側は例えばこれを意識しなくて済む（または意識が減る）よ🙂
 
+![Hiding Complexity](./picture/gof_cs_study_035_hiding_complexity.png)
+
+
 1. バイト列→文字列への変換ロジック（Encoding変換）🧵
 2. ちょうど良い読み取り単位（行/文字）への操作📝
 3. バッファリングや効率の細かい話（ある程度お任せ）🚄
@@ -75,6 +81,9 @@ StreamReader を使うと、呼び出し側は例えばこれを意識しなく�
 ### 4) ミニ模倣コードで「ズレが消える瞬間」を作る 🪄✨
 
 ここが一番おいしいところ😋
+
+![TextReader Interface](./picture/gof_cs_study_035_textreader_interface.png)
+
 **受け取りを TextReader にしておくと**、本番はファイルでもネットでも、テストは文字列でもいけるよ🎉
 
 #### ✅ パース側（TextReaderだけ見てればOK）
@@ -183,6 +192,9 @@ public class OrderCsvParserTests
 * ふつうは using でOK✅
 * でも「Stream の寿命をどっちが持つ？」は考えよう🙂
 
+![Ownership Transfer](./picture/gof_cs_study_035_ownership_leaveopen.png)
+
+
 **よくある方針**👇
 
 * 「読み取り全体をここで完結」→ leaveOpen: false（普通これ）👍
@@ -210,6 +222,9 @@ public class OrderCsvParserTests
 ## ミニ演習（10〜30分）⏱️🎮
 
 ### 演習A：Stream → StreamReader を “自分の手”で体感する 💪🔌
+
+![Data Flow Pipeline](./picture/gof_cs_study_035_data_flow_pipeline.png)
+
 
 1. MemoryStream に UTF-8 のCSV文字列を入れる🧪
 2. StreamReader で読んで OrderCsvParser.Parse に渡す

@@ -31,6 +31,9 @@
 ### 2) ドメイン側の型を “先に” 決める 🧠🏠
 
 外部APIがどうであれ、アプリの中心は **自分たちの言葉** で持ちたいです💪✨
+
+![Domain First Design](./picture/gof_cs_study_036_domain_first.png)
+
 （ここがブレると、ずっと外部都合に振り回されます😵）
 
 ```csharp
@@ -90,6 +93,9 @@ public sealed class OrderService_Before
 
 ここがつらい😵‍💫
 
+![Tight Coupling](./picture/gof_cs_study_036_tight_coupling.png)
+
+
 * `OrderService` が **HTTPの知識**（URL/JSON）まで持っちゃう
 * DTO変更・API変更が来ると、注文処理のコードが巻き込まれる
 * テストがしにくい（HttpClientを絡めたくなる）
@@ -134,6 +140,9 @@ public sealed class ShippingApiClient : IShippingApiClient
 ```
 
 ここまでで「外部APIの知識」を `MyApp.External` に押し込められました📦✨
+
+![Layer Separation](./picture/gof_cs_study_036_layer_separation.png)
+
 （注文処理から HTTP が消える第一歩！）
 
 ---
@@ -214,6 +223,9 @@ public sealed class ShippingQuoteProviderAdapter : IShippingQuoteProvider
 
 “薄い”ってこういうこと💡
 
+![Adapter Thinness](./picture/gof_cs_study_036_adapter_thinness.png)
+
+
 * ここでやるのは **整形（型・単位・必須チェック）** まで
 * 「送料無料条件」とか「配送会社の優先順位」みたいな業務ルールは **別の場所**へ🚫
 
@@ -251,6 +263,9 @@ public sealed class OrderService
 ---
 
 ### 7) DI登録：IHttpClientFactory で HttpClient を組み立てる 🧩🔧
+
+![Dependency Injection](./picture/gof_cs_study_036_di_injection.png)
+
 
 `AddHttpClient` を使うと、`IHttpClientFactory` 経由で `HttpClient` を安全に作れます✨ ([Microsoft Learn][1])
 （よくあるトラブルの観点も公式にまとまってます📚） ([Microsoft Learn][3])
@@ -290,6 +305,9 @@ public static class ServiceRegistration
 #### 8-1) Adapter の単体テスト：フェイクでOK 🙆‍♀️
 
 HttpClientに触らず、DTOを返すフェイクで十分です✨（ここが Adapter の強み！）
+
+![Testing with Fake](./picture/gof_cs_study_036_testing_fake.png)
+
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;

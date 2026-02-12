@@ -63,6 +63,9 @@ Bridgeのコアはこれ👇
 
 ### 2) Visual Studioで“APIの設計”を読む 📚🔍
 
+![Stream Capabilities](./picture/gof_cs_study_038_stream_capabilities.png)
+
+
 やることはシンプル✨
 
 * `Stream` を F12（定義へ移動）して、**abstract** になってるのを確認👀
@@ -70,6 +73,9 @@ Bridgeのコアはこれ👇
 * 「この抽象があるから、呼び出し側は **FileかMemoryかを意識しない**で済むんだな〜」を言葉にする💬✨
 
 ### 3) “呼び出し側が知らなくていい情報”を洗い出す 📝💡
+
+![Ignorance is Bliss](./picture/gof_cs_study_038_ignorance_bliss.png)
+
 
 たとえば `Stream` を使う側は、普通こんなのを知らなくてOKだよ👇
 
@@ -80,6 +86,9 @@ Bridgeのコアはこれ👇
 ※ もしファイル側の細かい設定をしたい時は、`FileStreamOptions` みたいな標準の仕組みで調整する感じになるよ🧃🔧([Microsoft Learn][4])
 
 ### 4) “ミニ模倣コード”で体感（同じ処理をStreamで受ける）🧪✨
+
+![Stream Contract](./picture/gof_cs_study_038_stream_contract.png)
+
 
 ここでは「領収書テキストをUTF-8で書く」だけの超ミニ例でいくよ🧾💕
 
@@ -108,6 +117,9 @@ public static class ReceiptExporter
 
 ### 5) 差し替えを“テストで証明”する ✅🧪
 
+![MemoryStream Testing](./picture/gof_cs_study_038_memorystream_testing.png)
+
+
 ファイルを書いちゃうテストは遅いし壊れやすい💦
 だから **`MemoryStream`** を使って「書けたこと」だけを検証しよ🫶
 
@@ -133,6 +145,9 @@ public class ReceiptExporterTests
 ```
 
 ### 6) 同じ処理をファイルへ（実装を差し替えるだけ）📁✨
+
+![FileStream Connection](./picture/gof_cs_study_038_filestream_connection.png)
+
 
 呼び出し側は “Fileにする” と決めたら `FileStream` を作って渡すだけだよ🙂
 `File.OpenRead` みたいに、標準APIで `Stream` を返してくれるのも「抽象に寄せた設計」って感じだね🧠✨([Microsoft Learn][5])
