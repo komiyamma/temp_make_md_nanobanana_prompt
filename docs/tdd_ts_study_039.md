@@ -4,7 +4,7 @@
 
 ## 🎯目的
 
-外から来る「信用できないデータ（API/JSON/フォーム/URL/DB）」を、**いったん玄関でチェックしてから**、キレイな「中心モデル」に入れられるようになること😊✨
+外から来る「信用できないデータ（API/JSON/フォーム/URL/DB）」を、**いったん玄関でチェックしてから**\n\n![Dirty Input](./picture/tdd_ts_study_039_dirty_input.png)、キレイな「中心モデル」に入れられるようになること😊✨
 そして、その変換を **テストで固定**して「将来の事故」を減らすよ🧪✅
 
 ---
@@ -41,7 +41,7 @@
 
 ---
 
-## 🧱今回の完成形（おすすめ構造）📦
+## 🧱今回の完成形（おすすめ構造）📦\n\n![DTO Domain Flow](./picture/tdd_ts_study_039_dto_domain_flow.png)
 
 * `DTO`（外部の形）…汚くてもOK（現実を受け止める係）😌
 * `Schema`（検証）…「合格/不合格」を判定する係🧪
@@ -128,7 +128,7 @@ export const Email = (value: string): Email => value as Email;
 Zod 4 は v4 として安定扱いになってて、`zod@^4` で入れられるよ✨ ([Zod][4])
 
 ```ts
-// src/infra/api/userDto.ts
+// src/infra/api/userDto.ts\n\n![Zod Gate](./picture/tdd_ts_study_039_zod_gate.png)
 import { z } from "zod";
 
 export const UserDtoSchema = z.object({
@@ -141,7 +141,7 @@ export const UserDtoSchema = z.object({
 export type UserDto = z.infer<typeof UserDtoSchema>;
 ```
 
-※「余計なキー」を弾きたいなら👇もアリ
+※「余計なキー」を弾きたいなら👇もアリ\n\n![Strict vs Loose](./picture/tdd_ts_study_039_strict_loose.png)
 
 * 厳格にしたい: `z.strictObject({...})`
 * 余計なキーも保持したい: `z.looseObject({...})` ([Zod][3])
@@ -175,7 +175,7 @@ export const parseUser = (input: unknown): Result<User, ParseError> => {
     return err({ kind: "MappingError", message: "createdAt is invalid date" });
   }
 
-  // Domainに変換（ここが“変換層”の本体✨）
+  // Domainに変換（ここが“変換層”の本体✨）\n\n![Mapper Alchemy](./picture/tdd_ts_study_039_mapper_alchemy.png)
   return ok({
     id: UserId(dto.id),
     email: Email(dto.email),
@@ -192,7 +192,7 @@ export const parseUser = (input: unknown): Result<User, ParseError> => {
 Vitest 4.0 が出てるので、ここも今どきでOK✨ ([void(0)][2])
 
 ```ts
-// tests/userMapper.test.ts
+// tests/userMapper.test.ts\n\n![Test Spec](./picture/tdd_ts_study_039_test_spec.png)
 import { describe, it, expect } from "vitest";
 import { parseUser } from "../src/infra/api/userMapper";
 
@@ -272,7 +272,7 @@ AIはめっちゃ相性いいけど、**仕様はテストが決める**のを�
 
 ### ① 欠損/型違いパターン出し
 
-* 「このDTOで想定すべき欠損・型違い・境界値を20個列挙して。ユーザー入力/サーバ不具合/後方互換の3分類で🙏」
+* 「このDTOで想定すべき欠損・型違い・境界値を20個列挙して。ユーザー入力/サーバ不具合/後方互換の3分類で🙏」\n\n![AI Edge Cases](./picture/tdd_ts_study_039_ai_edge_cases.png)
 
 ### ② 変換ルールの日本語化（テスト名に使う）
 

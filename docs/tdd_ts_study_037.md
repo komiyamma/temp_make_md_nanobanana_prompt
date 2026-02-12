@@ -15,7 +15,7 @@
 例外は便利だけど、**“この関数が失敗するか” が型から見えない**のが弱点…！
 つまり、呼び出し側が「失敗する前提」で書かなくても、コンパイルが通っちゃう😇
 
-* ✅ 例外が向く：**プログラマのバグ**（ありえない状態、不変条件違反）
+* ✅ 例外が向く：**プログラマのバグ**（ありえない状態、不変条件違反）\n\n![Throw vs Result](./picture/tdd_ts_study_037_throw_vs_result.png)
 * ✅ Resultが向く：**想定内の失敗**（入力ミス、在庫切れ、権限なし、残高不足…）
 
 Resultにすると「失敗が起きる前提」が **型とテストに出る**から、TDDと相性が最高だよ🫶✨
@@ -24,7 +24,7 @@ Resultにすると「失敗が起きる前提」が **型とテストに出る**
 
 ## 📦 Result型ってなに？（超ざっくり）🍙
 
-Resultは「成功 or 失敗」を **値として返す** 型だよ！
+Resultは「成功 or 失敗」を **値として返す** 型だよ！\n\n![Ok and Err Boxes](./picture/tdd_ts_study_037_ok_err_boxes.png)
 
 * 成功：`Ok<T>`（値 `T` を持つ）
 * 失敗：`Err<E>`（エラー `E` を持つ）
@@ -69,7 +69,7 @@ export const match = <T, E, R>(
 ### 2) エラーを「分類」して union で表す🧷✨
 
 ```ts
-// src/domain/withdraw.ts
+// src/domain/withdraw.ts\n\n![ATM Logic Sorter](./picture/tdd_ts_study_037_atm_sorter.png)
 import { Result, ok, err } from "../shared/result"
 
 export type WithdrawError =
@@ -87,7 +87,7 @@ export const withdraw = (
 ```
 
 ここ大事ポイント💡
-👉 **エラーを文字列で雑にしないで、型で“意味”を持たせる**と、呼び出し側もテストも超ラクになるよ〜！🥰
+👉 **エラーを文字列で雑にしないで、型で“意味”を持たせる**と、呼び出し側もテストも超ラクになるよ〜！🥰\n\n![Typed Error Tags](./picture/tdd_ts_study_037_typed_error_tags.png)
 
 ---
 
@@ -104,7 +104,7 @@ describe("withdraw", () => {
   it("amount が 0 以下なら InvalidAmount を返す", () => {
     const r = withdraw(1000, 0)
 
-    const view = match(r, {
+    const view = match(r, {\n\n![Match Railway](./picture/tdd_ts_study_037_match_railway.png)
       ok: () => "OK",
       err: (e) => e.type,
     })
@@ -115,7 +115,7 @@ describe("withdraw", () => {
   it("残高不足なら InsufficientFunds を返す", () => {
     const r = withdraw(1000, 1500)
 
-    const view = match(r, {
+    const view = match(r, {\n\n![Match Railway](./picture/tdd_ts_study_037_match_railway.png)
       ok: () => "OK",
       err: (e) => e.type,
     })
@@ -144,7 +144,7 @@ describe("withdraw", () => {
 
 ---
 
-## 🧠設計の超入門ポイント：Resultにしたら「責務」が分かれる✨
+## 🧠設計の超入門ポイント：Resultにしたら「責務」が分かれる✨\n\n![Responsibility Split](./picture/tdd_ts_study_037_responsibility_split.png)
 
 Resultを使うと、自然にこう分かれるよ👇
 
@@ -173,7 +173,7 @@ AIは「エラー分類」と「テスト観点洗い出し」にめちゃ強い
 
 ## 🌟発展：ライブラリを使うなら（最新の雰囲気）📦
 
-### ✅ neverthrow（Result / ResultAsync）
+### ✅ neverthrow（Result / ResultAsync）\n\n![Neverthrow Toolkit](./picture/tdd_ts_study_037_neverthrow_toolkit.png)
 
 * Result と、Promise向けの `ResultAsync` があるよ([GitHub][1])
 * `fromPromise` みたいに Promise を ResultAsync に包める話もある（和訳記事でも例あり）([Zenn][3])
