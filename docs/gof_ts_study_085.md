@@ -52,6 +52,8 @@
 
 ## ✅ ハンズオン：割引ルールを“関数”で組み立てる☕💸
 
+![combinator_pattern](./picture/gof_ts_study_085_combinator_pattern.png)
+
 ```ts
 // 例：カフェ注文の評価に使うコンテキスト
 type MemberRank = "guest" | "silver" | "gold";
@@ -163,6 +165,8 @@ classDiagram
 
 ## ✅ 例：JSON でルールを表す（小さく）
 
+![json_tree](./picture/gof_ts_study_085_json_tree.png)
+
 ```ts
 type MemberRank = "guest" | "silver" | "gold";
 
@@ -212,6 +216,8 @@ export function evalAst(ast: RuleAst, ctx: OrderCtx): boolean {
 ---
 
 ## それでも必要なら：最小の“文字列式”Interpreter を作る🔍🧠
+
+![minimal_subset](./picture/gof_ts_study_085_minimal_subset.png)
 
 ここからが GoF Interpreter っぽい本題！
 ただし **最小のサブセット**で止めるのが超大事だよ🛑✨
@@ -477,6 +483,8 @@ export function parseExpression(tokens: Token[]): Result<Expr> {
 
 ## 4) Evaluate（評価）🧮
 
+![whitelist_guard](./picture/gof_ts_study_085_whitelist_guard.png)
+
 ここが Interpreter の “解釈” パート✨
 **識別子（ident）はホワイトリストで許可**するのが大事だよ🔐
 
@@ -680,6 +688,8 @@ TypeScriptで「条件式」を扱いたいです。
 ---
 
 ## つまずき回避💡
+
+![eval_danger](./picture/gof_ts_study_085_eval_danger.png)
 
 * `eval` は封印❌（一瞬ラクでも、後で事故りやすい）😱
 * 文字列式をやるなら、**機能を増やしすぎない**（まず AND/OR/NOT + 比較だけ）🧸

@@ -49,6 +49,8 @@ classDiagram
 
 ## 2) 題材：カフェのメニューを「木」で持つ☕🌳
 
+![composite_tree](./picture/gof_ts_study_089_composite_tree.png)
+
 ## Composite（判別Unionで木を作る）🧠
 
 ```ts
@@ -86,6 +88,8 @@ export const menu: MenuNode = {
 
 ## 3) Iterator：走査（DFS/BFS）を“交換可能”にする🔁✨
 
+![iterator_path](./picture/gof_ts_study_089_iterator_path.png)
+
 JS/TSでは **generator（`function*`）＋`for...of`** が王道で、余計なクラスを作らずに済むよ([MDNウェブドキュメント][2])
 
 ## 深さ優先 DFS（おすすめ）🌲
@@ -122,6 +126,8 @@ export function* bfs(root: MenuNode): Generator<MenuNode> {
 ---
 
 ## 4) Visitor：処理を“後から足す”🧳✨（TS流は「関数＋網羅性」）
+
+![visitor_addition](./picture/gof_ts_study_089_visitor_addition.png)
 
 TypeScriptでのコツはこれ👇
 
@@ -204,6 +210,8 @@ export const sumVisitor: MenuVisitor<number> = {
 ---
 
 ## 7) ここで合わせ技：Iterator × Visitor の分離が効く場面💪✨
+
+![separation_benefit](./picture/gof_ts_study_089_separation_benefit.png)
 
 ## こんな“現場あるある”に効くよ😵‍💫➡️😊
 

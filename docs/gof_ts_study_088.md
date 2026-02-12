@@ -59,6 +59,8 @@ sequenceDiagram
 
 ### 1) データ構造：判別Unionで「Leaf/Group」を表現🌿🌲
 
+![discriminated_union](./picture/gof_ts_study_088_discriminated_union.png)
+
 ```typescript
 // menu.ts
 export type MenuNode =
@@ -120,6 +122,8 @@ export function visit<R>(node: MenuNode, v: Visitor<R>): R {
 ---
 
 ### 4) Visitorを作る①：表示用（メニューを文字列で整形）🖊️🍰
+
+![satisfies_check](./picture/gof_ts_study_088_satisfies_check.png)
 
 ```typescript
 // renderVisitor.ts
@@ -190,6 +194,8 @@ console.log("合計:", visit(menu, totalVisitor));
 
 ## よくある拡張シーン🍀（Visitorが効くやつ）
 
+![expansion_ideas](./picture/gof_ts_study_088_expansion_ideas.png)
+
 * 表示形式を増やす：テキスト / HTML / JSON など🧩
 * 集計を増やす：合計金額 / 件数 / 最安値 / カテゴリ別合計📊
 * 検証を増やす：価格がマイナスじゃない？ id重複してない？🔍
@@ -200,16 +206,22 @@ console.log("合計:", visit(menu, totalVisitor));
 
 ### 1) 「Visitorの中で再帰したいのに、参照が難しい」問題🌀
 
+![recursion_problem](./picture/gof_ts_study_088_recursion_problem.png)
+
 上の例みたいに **visitorオブジェクト自身を参照**して再帰するのが一番シンプル👍
 （`function makeVisitor(){...}` にしてクロージャで持ってもOKだよ🧁）
 
 ### 2) 「タグ増やしたのに、どこか直し忘れた😇」
+
+![assert_never_safety](./picture/gof_ts_study_088_assert_never_safety.png)
 
 * `visit` の `switch` に `assertNever` を入れる✅ ([TypeScript][1])
 * visitor定義に `satisfies Visitor<...>` を付ける✅ ([effectivetypescript.com][3])
   この2枚看板で“漏れ”を潰せるよ💥
 
 ### 3) ファイルが増えて迷子になる📁💦
+
+![file_organization](./picture/gof_ts_study_088_file_organization.png)
 
 おすすめルール（最小）👇
 
