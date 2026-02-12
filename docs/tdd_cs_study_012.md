@@ -22,6 +22,8 @@ Assertは、テストの中で **「期待（仕様）と現実（実行結果�
 
 ## 2) Assert選びの大原則（弱いAssert → 強いAssertへ）🏋️‍♀️✨
 
+![画像を挿入予定](./picture/tdd_cs_study_012_balance_scale.png)
+
 ### ✅ 原則A：できるだけ “意味が伝わるAssert” を使う
 
 * 🙅‍♀️ Assert.True(a == b)（意味が読み取りづらい）
@@ -36,6 +38,8 @@ Assertは、テストの中で **「期待（仕様）と現実（実行結果�
 
 ## 3) “何を確認すべき？”の4カテゴリ📦✅（ここ覚えたら勝ち✨）
 
+![画像を挿入予定](./picture/tdd_cs_study_012_four_pillars.png)
+
 ### ① 値（戻り値・計算結果）🔢✅
 
 いちばん王道！
@@ -47,11 +51,15 @@ Assertは、テストの中で **「期待（仕様）と現実（実行結果�
 💡小数や日時は「完全一致」にしないのがコツ👇
 
 * doubleは **許容誤差（tolerance）** か **桁（precision）** で比較できるよ🧮✨ ([api.xunit.net][1])
+
+![画像を挿入予定](./picture/tdd_cs_study_012_tolerance_target.png)
 * DateTimeは **TimeSpanの精度** を指定して比較できるよ⏱️✨ ([api.xunit.net][1])
 
 ---
 
 ### ② 例外（異常系）💥🚫
+
+![画像を挿入予定](./picture/tdd_cs_study_012_exception_bomb.png)
 
 「エラーになること」も立派な仕様！
 
@@ -64,6 +72,8 @@ Assertは、テストの中で **「期待（仕様）と現実（実行結果�
 ---
 
 ### ③ コレクション（配列・List）📚✅
+
+![画像を挿入予定](./picture/tdd_cs_study_012_collection_types.png)
 
 * Assert.Empty / NotEmpty（空かどうか）
 * Assert.Single（1件だけ）
@@ -221,6 +231,8 @@ Assert.All と Assert.Collection は “意図が伝わる検査” に便利だ
 ---
 
 ## 5) よくある事故💣😇（ここ回避できるだけで強い！）
+
+![画像を挿入予定](./picture/tdd_cs_study_012_accident_signs.png)
 
 ### 🚫 事故1：Assertが弱すぎてバグを通す
 

@@ -23,6 +23,8 @@ xUnit では `[Fact]` に `DisplayName` を付けて、テストランナー上�
 
 ## 2) なんでテスト名がそんなに大事？😳💥
 
+![画像を挿入予定](./picture/tdd_cs_study_013_cryptic_error.png)
+
 テストが落ちたとき、最初に目に入るのはだいたいこれ👇
 
 * 🔴 テスト一覧の名前（テストエクスプローラー）
@@ -45,6 +47,8 @@ xUnit では `[Fact]` に `DisplayName` を付けて、テストランナー上�
 
 ## 3) 良いテスト名の「必須3点セット」🧩✨
 
+![画像を挿入予定](./picture/tdd_cs_study_013_naming_formula.png)
+
 テスト名には、基本この3つが入ってると強いよ💪
 
 1. **状況（条件）**：どんな状態？どんな入力？
@@ -66,6 +70,8 @@ xUnit では `[Fact]` に `DisplayName` を付けて、テストランナー上�
 ---
 
 ## 4) 命名テンプレ3選（これだけでだいぶ勝てる）🥇🥈🥉
+
+![画像を挿入予定](./picture/tdd_cs_study_013_naming_stencils.png)
 
 ### テンプレA：`Method_WhenCondition_ShouldResult`（いちばん定番）✅
 
@@ -94,6 +100,8 @@ xUnit では `[Fact]` に `DisplayName` を付けて、テストランナー上�
 
 ## 5) ダメになりがちな名前（あるある）😇💦
 
+![画像を挿入予定](./picture/tdd_cs_study_013_implementation_leak.png)
+
 ### ❌ 実装の写し（“どうやって”を書いちゃう）
 
 * `CalculateTotal_UsesDiscountService` ← 実装変えたら名前が嘘になる😵
@@ -113,6 +121,8 @@ xUnit では `[Fact]` に `DisplayName` を付けて、テストランナー上�
 ---
 
 ## 6) 長すぎ問題の解決：DisplayName を使う🎀✨
+
+![画像を挿入予定](./picture/tdd_cs_study_013_display_name_sticker.png)
 
 テストメソッド名を分かりやすくすると、どうしても長くなりがちだよね😂
 そんな時は、**表示名だけ人間向けにする**のが超便利！
@@ -140,6 +150,8 @@ public class CafeCheckoutTests
 ---
 
 ## 7) 一覧表示を読みやすくする：methodDisplay（超おすすめ）👀✨
+
+![画像を挿入予定](./picture/tdd_cs_study_013_clean_view.png)
 
 「テストエクスプローラーで、クラス名まで付いて長くて読めない〜！」ってなることある🥺
 それ、**表示ルールを変える**とスッキリするよ！

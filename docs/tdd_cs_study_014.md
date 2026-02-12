@@ -21,6 +21,8 @@ TDDって回転が命だから、**“読むのがしんどいテスト”**が�
 
 ## 「意図」ってなに？🧠💡
 
+![画像を挿入予定](./picture/tdd_cs_study_014_laser_focus.png)
+
 **意図 = このテストが守りたい“1つの約束（仕様）”**だよ📘✨
 
 たとえば…
@@ -67,6 +69,8 @@ graph TD
 
 ## まずはダメな例から🥲（意図が混ざってるテスト）
 
+![画像を挿入予定](./picture/tdd_cs_study_014_blender_mess.png)
+
 たとえばカフェ会計で☕️🧾
 
 * 税込み合計を計算する
@@ -107,6 +111,8 @@ public class CafeBillingTests
 ---
 
 ## キレイに分割しよう✨（1テスト1意図へ🪄）
+
+![画像を挿入予定](./picture/tdd_cs_study_014_bento_split.png)
 
 ポイントはこれ👇
 **「シナリオ（条件）× 意図（守りたい約束）」で分ける**🧠✨
@@ -165,6 +171,8 @@ public class CafeBillingTests
 
 ## xUnit v3 の `Assert.Multiple` はこう使う👌✨
 
+![画像を挿入予定](./picture/tdd_cs_study_014_clipboard_multiple.png)
+
 xUnit v3 には、複数のチェックをまとめて「まとめて失敗報告」できる `Assert.Multiple` があるよ🧪
 （APIとして提供されてる）([api.xunit.net][1])
 
@@ -205,6 +213,8 @@ public class ReceiptTests
 
 ## 「意図が混ざってる」ニオイ集👃🚨（見つけたら分割チャンス）
 
+![画像を挿入予定](./picture/tdd_cs_study_014_smell_detector.png)
+
 次のどれかが出たら、だいたい混ざってる😂
 
 * 🚨 **Actが2回以上ある**（同じテストで別行動してる）
@@ -235,6 +245,8 @@ public class ReceiptTests
 ---
 
 ## AIの使いどころ🤖✨（この章向け・超効くやつ）
+
+![画像を挿入予定](./picture/tdd_cs_study_014_ai_sieve.png)
 
 AIはここが得意だよ💪
 
