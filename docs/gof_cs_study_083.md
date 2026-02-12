@@ -60,6 +60,8 @@ dotnet add package MediatR
 > ちなみに昔は `MediatR.Extensions.Microsoft.DependencyInjection` が別リポジトリだったけど、今は移動済み（古いほうはアーカイブ）だよ〜🗂️ ([GitHub][4])
 
 ### 3) “最小のRequest/Handler”を作る（まずは Send だけ）🚀
+![gof_cs_study_083_request_vs_notification.png](./picture/gof_cs_study_083_request_vs_notification.png)
+
 
 ここでは「注文確定っぽい操作」を **Request（＝1個のハンドラ）** でやるよ💡
 ポイントは、**呼び出し側が `PlaceOrderHandler` を一切知らない**こと😊
@@ -101,6 +103,8 @@ public sealed class PlaceOrderHandler
 
 ### 4) DIに MediatR を登録して起動する（`AddMediatR`）🔌✨
 
+![gof_cs_study_083_handler_isolation.png](./picture/gof_cs_study_083_handler_isolation.png)
+
 `AddMediatR` はこんな感じで **アセンブリからハンドラ登録**してくれるよ〜便利！🥳
 （公式の例として `RegisterServicesFromAssemblyContaining<...>()` が案内されてる） ([NuGet][2])
 
@@ -136,6 +140,8 @@ Console.WriteLine($"{result.Success} / {result.Message}");
 > 「依存の爆発」を “仲介役（Mediator）” に寄せてスッキリさせる感じだよ🕊️✨
 
 ### 5) “Notification（複数ハンドラ）”も軽く触る 📣✨
+![gof_cs_study_083_notification_fanout.png](./picture/gof_cs_study_083_notification_fanout.png)
+
 
 Requestは基本 **1ハンドラ**。
 一方で Notificationは **複数ハンドラOK**（「注文が確定した！」をいろんな人が購読するイメージ）💌✨
@@ -185,6 +191,8 @@ await mediator.Publish(new OrderPlaced(Guid.NewGuid(), 1200m));
 
 ### 6) “横断関心”は `IPipelineBehavior` に逃がす（ログ/計測/検証など）🌈🧼
 
+![gof_cs_study_083_pipeline_onion.png](./picture/gof_cs_study_083_pipeline_onion.png)
+
 MediatRの強みの1つがこれ！
 `IPipelineBehavior<TRequest, TResponse>` は **Request（Send）に対して**前後処理を挟める仕組みだよ（※Notificationじゃなくて Request 側だよ） ([github-wiki-see.page][5])
 
@@ -231,6 +239,8 @@ builder.Services.AddMediatR(cfg =>
 > ✅ ビヘイビアの実行順は「登録順と逆（最後に登録したものが外側）」って覚えると事故りにくいよ🧠✨ ([github-wiki-see.page][5])
 
 ### 7) Visual Studioで“ここだけ読めばいい”ポイントを押さえる 🔍👀
+![gof_cs_study_083_reading_guide.png](./picture/gof_cs_study_083_reading_guide.png)
+
 
 迷子にならない読書ポイントはここ👇
 

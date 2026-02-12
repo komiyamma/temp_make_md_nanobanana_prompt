@@ -38,6 +38,8 @@ graph TD
 ## 手順 🧭✨
 
 ### 1) 式ツリーってなに？（超ミニ）🌳
+![gof_cs_study_080_tree_structure.png](./picture/gof_cs_study_080_tree_structure.png)
+
 
 式ツリーは「コードを木構造として表したデータ」だよ🧾
 たとえば `Expression<Func<int,bool>>` にラムダを代入すると、**デリゲートじゃなく“木”** が作られる感じ🌱 ([Microsoft Learn][2])
@@ -65,6 +67,8 @@ graph TD
 ---
 
 ### 3) まずは「読む」：ノード数を数える Visitor 🧮🌳
+![gof_cs_study_080_visitor_traverse.png](./picture/gof_cs_study_080_visitor_traverse.png)
+
 
 対象の例として、超ミニの注文モデルでいくよ🍰🛒
 
@@ -121,6 +125,8 @@ foreach (var kv in counter.ByType)
 ---
 
 ### 4) 次は「書き換える」：定数を差し替える Visitor 🔁💸
+![gof_cs_study_080_immutable_rewrite.png](./picture/gof_cs_study_080_immutable_rewrite.png)
+
 
 「`1000m` を `2000m` に変える」みたいな“わかりやすい書き換え”をやってみよ〜🪄
 
@@ -155,6 +161,8 @@ public sealed class ReplaceDecimalConstantVisitor : ExpressionVisitor
 
 実行して差を確認👇（式ツリーは `Compile()` して動かせるよ⚙️） ([Microsoft Learn][3])
 
+![gof_cs_study_080_compile_magic.png](./picture/gof_cs_study_080_compile_magic.png)
+
 ```csharp
 using System;
 using System.Linq.Expressions;
@@ -182,7 +190,9 @@ Console.WriteLine(f2(order)); // False（>=2000）
 
 ---
 
-### 5) AI補助（Copilot/Codex）でやるなら 🤖✍️（ミスりがちな所だけ押さえる）
+### 5) AI補助（Copilot/Codex）でやるなら 🤖✍️
+![gof_cs_study_080_safety_check.png](./picture/gof_cs_study_080_safety_check.png)
+（ミスりがちな所だけ押さえる）
 
 AIに `ExpressionVisitor` を書かせるときのコツは「絶対に守る契約」を先に縛ることだよ🪢
 
