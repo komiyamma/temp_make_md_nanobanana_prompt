@@ -16,7 +16,7 @@
 
 ざっくり言うと、こういう“線引き”だよ👇
 
-* **内側（守る）**：ビジネスルール・計算・判定（＝ドメイン）💎
+* **内側（守る）**：ビジネスルール・計算・判定（＝ドメイン）💎\n\n![Domain Jewel](./picture/tdd_ts_study_040_domain_jewel.png)
 * **外側（変わりやすい）**：HTTP、DB、ファイル、UI、環境変数、時計、乱数…🌪️
 
 **境界を守る**＝「内側は外側を直接触らない」ってこと！
@@ -39,7 +39,7 @@
 あちこちでAPI呼び出ししない！
 「ここが外部だよ」って場所を決めると迷子にならない🧭✨
 
-### ルール3：依存の向きは“内向き”⬅️
+### ルール3：依存の向きは“内向き”⬅️\n\n![Inward Arrows](./picture/tdd_ts_study_040_inward_arrows.png)
 
 ドメイン（内側）→ 外側に依存しない
 外側がドメインに合わせる（あとで差し替えられる）🔁
@@ -64,7 +64,7 @@ TypeScriptだとこれが超やりやすい！
 
 ## 🚫ダメな実装（境界がぐちゃぐちゃ）例
 
-「計算」なのに、環境変数や外部データに触ってる…😵‍💫
+「計算」なのに、環境変数や外部データに触ってる…😵‍💫\n\n![Bad Direct Access](./picture/tdd_ts_study_040_octopus_reach.png)
 
 ```ts
 // src/checkoutBad.ts
@@ -139,7 +139,7 @@ export function calcTotal(subtotal: number, taxRate: number, coupon?: Coupon): n
 「クーポン取ってきて〜」「税率ちょうだい〜」を **型で宣言**するだけ！
 
 ```ts
-// src/ports/couponRepository.ts
+// src/ports/couponRepository.ts\n\n![Adapter Plug](./picture/tdd_ts_study_040_adapter_plug.png)
 import type { Coupon } from "../domain/checkout";
 
 export type CouponRepository = {
@@ -164,7 +164,7 @@ import type { TaxRateProvider } from "../ports/taxRateProvider";
 
 export class CheckoutService {
   constructor(
-    private readonly deps: {
+    private readonly deps: {\n\n![Injection Slot](./picture/tdd_ts_study_040_injection_slot.png)
       couponRepo: CouponRepository;
       taxRate: TaxRateProvider;
     }
@@ -192,7 +192,7 @@ export class CheckoutService {
 
 ## 🧪テスト（Vitest）— 外部なしで安定！⚡️
 
-テストでは **スタブ**や **スパイ**で差し替えるだけ🙆‍♀️
+テストでは **スタブ**や **スパイ**で差し替えるだけ🙆‍♀️\n\n![Test Stub](./picture/tdd_ts_study_040_test_stub.png)
 （モック/スパイを使う時は、状態が残らないようにクリア/リストアが大事だよ〜🧼✨）([Vitest][1])
 
 ```ts
@@ -255,7 +255,7 @@ describe("CheckoutService（境界を守る版）", () => {
 
 そのまま貼ってOKだよ〜！🫶
 
-* 「この関数、`process.env` を直接触ってる。**ドメイン層が外部に依存しない**形にリファクタして。`TaxRateProvider` と `CouponRepository` を作って差し込む案にして」
+* 「この関数、`process.env` を直接触ってる。**ドメイン層が外部に依存しない**形にリファクタして。\n\n![AI Refactoring](./picture/tdd_ts_study_040_ai_refactoring.png)`TaxRateProvider` と `CouponRepository` を作って差し込む案にして」
 * 「Vitestで、**外部なし**で `CheckoutService.total()` をテストしたい。スタブ版 `couponRepo` を使って3ケース作って（クーポンなし/あり/未登録）」
 * 「テストがフレークしないように、モック状態が残らない注意点も一言添えて」
 
