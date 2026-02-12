@@ -11,6 +11,8 @@ TDDって「回転数」が命だよね🌀
 
 ## 📚 学ぶこと（遅さの原因はだいたい5種類）
 
+![slow_suspects](./picture/tdd_ts_study_054_slow_suspects.png)
+
 遅い理由って、ほぼこのどれか👇😵‍💫
 
 1. **待ち時間が入ってる**（setTimeout / retry / polling）⏳
@@ -25,6 +27,8 @@ TDDって「回転数」が命だよね🌀
 
 ## ① まず「どれが遅いか」見える化する👀
 
+![time_leaderboard](./picture/tdd_ts_study_054_time_leaderboard.png)
+
 **テストごとの時間が見える**出力にするのが最初の一歩✨
 Vitestは `--reporter=verbose` があるよ📣 ([v2.vitest.dev][1])
 
@@ -33,6 +37,8 @@ npx vitest run --reporter=verbose
 ```
 
 ## ② “狙い撃ち”で1個だけ回す🎯
+
+![sniper_scope](./picture/tdd_ts_study_054_sniper_scope.png)
 
 遅いテストを直す時は、全体実行より **1個だけ回して高速ループ**にするのがコツ💡
 
@@ -104,6 +110,8 @@ describe("retry", () => {
 ---
 
 ## ✅ 解決：Fake Timers で “時間を進める” ⏱️✨
+
+![time_skip](./picture/tdd_ts_study_054_time_skip.png)
 
 Vitestは `vi.useFakeTimers()` でタイマーを偽装して、`vi.advanceTimersByTimeAsync()` みたいに **擬似的に時間を進められる**よ🎮
 （`setTimeout / setInterval / Date` などをラップしてくれる） ([Vitest][5])
@@ -178,6 +186,8 @@ it("loadConfig reads theme", async () => {
 
 ## ✅ 解決：読む部分だけ差し替え可能にする（依存注入）💉✨
 
+![feather_mock](./picture/tdd_ts_study_054_feather_mock.png)
+
 ```ts
 // src/loadConfig.ts（改善版）
 export type ReadText = (path: string) => Promise<string>;
@@ -206,6 +216,8 @@ it("loadConfig reads theme (FAST)", async () => {
 ---
 
 ## 🧪 改善レシピ 3：jsdom を “必要なテストだけ” にする🧱➡️🌿
+
+![env_toggle](./picture/tdd_ts_study_054_env_toggle.png)
 
 UIじゃないテストまで全部jsdomだと、地味に重くなりやすいよ〜😵‍💫
 Vitestは環境を選べて、`happy-dom` は **jsdomより速いことが多い**って位置づけだよ（ただしAPI差はある） ([Vitest][6])

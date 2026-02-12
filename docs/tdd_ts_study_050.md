@@ -22,6 +22,8 @@ TypeScript の型は *実行時* には守ってくれないから、入口で�
 
 ## 📚まず “入口で守る” ってどういうこと？🚪🛡️
 
+![unknown_flow](./picture/tdd_ts_study_050_unknown_flow.png)
+
 ### ✅ 重要ポイントはこれだけ！
 
 * 外部データは **ぜんぶ疑う**（`unknown` から始める）😈
@@ -58,6 +60,8 @@ TypeScript の型は *実行時* には守ってくれないから、入口で�
 ---
 
 ## 1) まずテストを書く（Red）🚦🔴
+
+![coercion](./picture/tdd_ts_study_050_coercion.png)
 
 ```ts
 // tests/parseProfile.test.ts
@@ -172,6 +176,8 @@ export type Profile = {
 
 ## 3) スキーマを書く（入口のルール）🧷📜
 
+![schema_mold](./picture/tdd_ts_study_050_schema_mold.png)
+
 Zod 4 の要点：
 
 * `z.coerce.number()` で「文字列→数値」みたいな変換ができるよ🔄 ([Zod][3])
@@ -195,6 +201,8 @@ export type ProfileDto = z.infer<typeof ProfileDtoSchema>;
 ---
 
 ## 4) 検証→変換を書く（Green）✅
+
+![validate_transform](./picture/tdd_ts_study_050_validate_transform.png)
 
 ここが “入口” の本体だよ🚪✨
 `unknown` を受け取って、ダメなら **ValidationError** にして返す！
@@ -256,6 +264,8 @@ function formatZodError(error: z.ZodError): string[] {
 
 ## 5) Refactor：入口の “方針” を言語化しよう🧠✨
 
+![strip_keys](./picture/tdd_ts_study_050_strip_keys.png)
+
 ### ✅余計なキー、どうする？🤔
 
 Zodは **デフォルトで未知キーを削除**するよ（＝混入しにくい） ([Zod][3])
@@ -272,6 +282,8 @@ Zodは **デフォルトで未知キーを削除**するよ（＝混入しにく
 ---
 
 ## 🤖AIの使いどころ（この章での “正しいお願い”）💡
+
+![error_path](./picture/tdd_ts_study_050_error_path.png)
 
 ### ① テストケース増やし案だけ出してもらう🧪
 
