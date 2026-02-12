@@ -13,7 +13,7 @@
 
 ---
 
-## 1. まず困りごと😵‍💫
+## 1. まず困りごと😵‍💫\n\n![Monolithic vs Pipeline](./picture/gof_ts_study_070_monolithic_vs_pipeline.png)\n
 
 やりがちなのが、1つの関数に全部詰め込むパターン👇
 
@@ -52,11 +52,11 @@ async function placeOrder(input: unknown) {
 
 ---
 
-## 3. 直列パイプラインの基本形🧁
+## 3. 直列パイプラインの基本形🧁\n\n![Pipeline Flow](./picture/gof_ts_study_070_pipeline_flow.png)\n
 
 いちばん素直で、読みやすくて、実務でも超使える形✨
 
-## 3.1 途中で止めるためのResult型🧯
+## 3.1 途中で止めるためのResult型🧯\n\n![Step Result Stop](./picture/gof_ts_study_070_step_result_stop.png)\n
 
 「成功/失敗」を戻り値で統一するよ👇
 
@@ -317,7 +317,7 @@ export const withTiming: Middleware<OrderCtx> = async (ctx, next) => {
 
 ---
 
-## 8. テストで安心を作る🧪
+## 8. テストで安心を作る🧪\n\n![Testing Pipeline](./picture/gof_ts_study_070_testing_pipeline.png)\n
 
 Nodeには標準のテスト機能 `node:test` があって、Node 20で安定扱いになった流れがあるよ。([Node.js][2])
 

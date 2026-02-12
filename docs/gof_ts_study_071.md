@@ -16,7 +16,7 @@
 
 ---
 
-## 1) Chainが“強い”のは、境界が見えるから👀✨
+## 1) Chainが“強い”のは、境界が見えるから👀✨\n\n![Boundary Scissors](./picture/gof_ts_study_071_boundary_scissors.png)\n
 
 Chain は「処理を順番に並べる」だけじゃなくて、**境界をくっきりさせる**のが本体です🧼
 
@@ -27,7 +27,7 @@ Chain は「処理を順番に並べる」だけじゃなくて、**境界をく
 
 ---
 
-## 2) “順番依存”はChain最大の落とし穴⚠️（だからルール化する）
+## 2) “順番依存”はChain最大の落とし穴⚠️（だからルール化する）\n\n![Order Dependency Blocks](./picture/gof_ts_study_071_order_dependency_blocks.png)\n
 
 Chainは便利だけど、順番が重要なときに「なんとなく並べた」だと事故ります😵‍💫
 
@@ -45,7 +45,7 @@ Chainは便利だけど、順番が重要なときに「なんとなく並べた
 
 ---
 
-## 3) “途中で止める”を設計に組み込む🛑（NGは早く返す）
+## 3) “途中で止める”を設計に組み込む🛑（NGは早く返す）\n\n![Early Return Stop Sign](./picture/gof_ts_study_071_early_return_stop_sign.png)\n
 
 Chain は「最後まで回す」より、**早期停止**が気持ちいいです😆✨
 たとえば「権限NG」「在庫NG」「入力不正」は、そこで止めたいですよね。
@@ -230,7 +230,7 @@ export async function placeOrder(ctx: OrderCtx) {
 
 ---
 
-## 5) ここが“まとめのキモ”💡（レビュー観点👀）
+## 5) ここが“まとめのキモ”💡（レビュー観点👀）\n\n![Checklist Review](./picture/gof_ts_study_071_checklist_review.png)\n
 
 ## ✅ 責務の境界チェックリスト🧼
 

@@ -7,7 +7,7 @@
 
 ---
 
-## 1) Stateを“判別Union”で表すと何が嬉しいの？🍰
+## 1) Stateを“判別Union”で表すと何が嬉しいの？🍰\n\n![Discriminated Union Shield](./picture/gof_ts_study_067_discriminated_union_shield.png)\n
 
 Stateパターンって「状態によってできることが変わる」やつだよね🚦
 TypeScriptでは、**状態ごとに形（プロパティ）を変えられる**のが最強ポイント💪
@@ -28,7 +28,7 @@ TypeScriptでは、**状態ごとに形（プロパティ）を変えられる**
 
 ---
 
-## 3) まずは“状態”の型を作ろう✍️
+## 3) まずは“状態”の型を作ろう✍️\n\n![State Shape Fitting](./picture/gof_ts_study_067_state_shape_fitting.png)\n
 
 ポイントはこれ👇
 
@@ -130,7 +130,7 @@ type OrderEvent =
 
 ---
 
-## 5) 遷移関数（reducer的なやつ）を1本にまとめる🧁
+## 5) 遷移関数（reducer的なやつ）を1本にまとめる🧁\n\n![Transition Switch Logic](./picture/gof_ts_study_067_transition_switch_logic.png)\n
 
 ここがこの章のメイン🎉
 `transition(state, event)` が **次の state を返す** だけにする（なるべく純粋に）✨
@@ -246,7 +246,7 @@ function transition(state: OrderState, event: OrderEvent): Result<OrderState> {
 }
 ```
 
-## ✅ 網羅チェックが効く理由（超だいじ）🧠
+## ✅ 網羅チェックが効く理由（超だいじ）🧠\n\n![Never Exhaustiveness Check](./picture/gof_ts_study_067_never_exhaustiveness.png)\n
 
 `assertNever(event)` や `assertNever(state)` は、**全部のケースを処理していたら到達できない**ので `never` になるはず。
 もし新しい状態やイベントを追加して `switch` に `case` を足し忘れると、**`never` じゃなくなってコンパイルエラー**になるよ✅ ([TypeScript][1])
