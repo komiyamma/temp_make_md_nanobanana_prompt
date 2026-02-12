@@ -67,6 +67,8 @@ await sw.WriteAsync("Hello Low-level 👋🧰");
 
 ### 2) `HttpClient` は「HTTP通信の入口（Facade）」📡🚪
 
+![Image](./picture/gof_cs_study_047_http_iceberg.png)
+
 `HttpClient` は “HTTPで通信する” っていう巨大な話を、かなりスッキリした形で触らせてくれる入口だよ🙂🌐 ([Microsoft Learn][1])
 
 でも裏側には、こんな複雑さがいる👇
@@ -108,6 +110,8 @@ classDiagram
 ---
 
 ### 3) 差し替え点を触る：`HttpMessageHandler` を偽物にする🪄🧪
+
+![Image](./picture/gof_cs_study_047_handler_swap.png)
 
 これができると、
 
@@ -155,12 +159,16 @@ Console.WriteLine(json); // {"ok":true}
 
 ### 4) 依存性注入を使うアプリでは `IHttpClientFactory` の入口もある🧩🏭
 
+![Image](./picture/gof_cs_study_047_factory_production.png)
+
 WebアプリやDI前提のアプリだと、`HttpClient` を作りっぱなしにせず、**工場（Factory）経由で扱うのが推奨される流れ**があるよ🙂
 （接続管理まわりの事故を避けやすくするためのガイドが用意されてる🧯） ([Microsoft Learn][2])
 
 ---
 
 ## 落とし穴 ⚠️😵‍💫
+
+![Image](./picture/gof_cs_study_047_pitfall_new_client.png)
 
 ### `File` / `Directory` あるある📁
 

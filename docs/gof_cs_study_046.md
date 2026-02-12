@@ -61,6 +61,8 @@ Facadeが刺さるのは、だいたいこんな症状のとき👇
 
 ### 2) “中で起きてること”を棚卸しする📦🔍
 
+![Image](./picture/gof_cs_study_046_messy_workbench.png)
+
 例として「ファイルに保存して、必要ならHTTPで送る」みたいな処理だと、呼び出し側はこんな道具を同時に扱いがち👇
 
 * ファイル・フォルダ操作：Directory / File（保存・作成など）([Microsoft Learn][2])
@@ -73,6 +75,8 @@ Facadeが刺さるのは、だいたいこんな症状のとき👇
 
 ### 3) 利用者が欲しい“単位”にまとめて、入口を作る🚪🍰
 
+![Image](./picture/gof_cs_study_046_one_button.png)
+
 FacadeのAPIは、だいたいこういう形が強いよ👇
 
 * 「名詞」より **“動詞”** で命名（例：SaveReceiptAsync / PlaceOrderAsync）🗣️✨
@@ -82,6 +86,8 @@ FacadeのAPIは、だいたいこういう形が強いよ👇
 ---
 
 ### 4) Facadeの“やること/やらないこと”を決める⚖️🙂
+
+![Image](./picture/gof_cs_study_046_conductor.png)
 
 Facadeは「入口」なので…
 
@@ -98,6 +104,8 @@ Facadeは「入口」なので…
 ---
 
 ### 5) “Facade導入前→導入後”を見比べる👀✨
+
+![Image](./picture/gof_cs_study_046_before_after_desk.png)
 
 #### ❌ 導入前：呼び出し側が知りすぎ😵‍💫
 
@@ -198,6 +206,8 @@ public sealed class ReceiptFacade
 ---
 
 ### 6) 「.NET標準のFacadeっぽさ」を味わう🍵✨
+
+![Image](./picture/gof_cs_study_046_dotnet_facades.png)
 
 実は、.NET自体にも「Facadeっぽい」ものがあるよ🙂
 

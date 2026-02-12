@@ -104,6 +104,8 @@ public sealed class PaymentApiGateway(HttpClient http) : IPaymentGateway
 
 ### 4) Logging Decorator を作る 📝🌸
 
+![Image](./picture/gof_cs_study_045_logging_wrapper.png)
+
 ポイント👇
 
 * **同じ `IPaymentGateway` を実装**して、**中身を受け取って委譲**するだけ
@@ -150,6 +152,8 @@ public sealed class LoggingPaymentGatewayDecorator(
 ---
 
 ### 5) Retry Decorator を作る 🔁🔥
+
+![Image](./picture/gof_cs_study_045_retry_robot.png)
 
 ポイント👇
 
@@ -214,6 +218,8 @@ public sealed class RetryPaymentGatewayDecorator(
 
 ### 6) “重ね方（順番）” を理解する 🎂✨
 
+![Image](./picture/gof_cs_study_045_onion_layers.png)
+
 Decoratorは「どっちが外側？」でログの出方が変わるよ〜！
 
 * ✅ **Retry（外） → Logging（内） → 本体**
@@ -240,6 +246,8 @@ IPaymentGateway gateway =
 ---
 
 ### 7) DIで“本番っぽく”組み立てる 🧩✨
+
+![Image](./picture/gof_cs_study_045_di_assembly.png)
 
 標準のDIは `IServiceCollection` に登録して、最後に `IServiceProvider` から取るよ〜📦
 （ファクトリ登録で「包む」を表現できるのがポイント！）([Microsoft Learn][4])
@@ -281,6 +289,8 @@ var gateway = provider.GetRequiredService<IPaymentGateway>();
 
 ### 8) （最新寄り）HTTPのリトライは “Resilience拡張” が今どき 🌊🛟
 
+![Image](./picture/gof_cs_study_045_resilience_shield.png)
+
 HTTP系は、.NETの拡張で **標準の回復性（Retry/Timeout/Circuit Breakerなど）** を組める流れが強いよ〜！([Microsoft Learn][2])
 昔よく見た `Microsoft.Extensions.Http.Polly` は **非推奨（deprecated）** 扱いになっていて、置き換え先が案内されてるよ⚠️([Microsoft Learn][5])
 
@@ -289,6 +299,8 @@ HTTP系は、.NETの拡張で **標準の回復性（Retry/Timeout/Circuit Break
 ---
 
 ## よくある落とし穴 🕳️😇
+
+![Image](./picture/gof_cs_study_045_infinite_loop_trap.png)
 
 * **例外を握りつぶす**（ログしたら `throw;` で返す！）⚠️
 * **なんでもリトライ**（認証失敗やバリデーションエラーまでリトライすると地獄👹）
