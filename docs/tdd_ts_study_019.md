@@ -18,6 +18,9 @@
 
 ## 🧠 まず超重要：失敗には“種類”があるよ🗂️✨
 
+![019 spec vs bug](./picture/tdd_ts_study_019_spec_vs_bug.png)
+
+
 失敗（エラー）って全部同じじゃないの〜！😵‍💫💦
 ここを分けると、テストも設計もスッキリするよ💕
 
@@ -43,6 +46,9 @@
 
 ### 1) 同期の throw をテストする形（超大事）⚡
 
+![019 throw bubble](./picture/tdd_ts_study_019_throw_bubble.png)
+
+
 Vitestは「throwするコード」を **関数で包む** 必要があるよ！
 包まないと、expectの外で落ちちゃうの😇💥 ([Vitest][1])
 
@@ -60,6 +66,9 @@ test("マイナスはエラーになる", () => {
 ```
 
 ### 2) 非同期の reject をテストする形（Promise）⏳
+
+![019 async reject](./picture/tdd_ts_study_019_async_reject.png)
+
 
 Promiseは `rejects` で中身をほどいて検証できるよ〜！
 （この場合は “関数で包む/包まない” の注意点がちょい違うから、下の例を真似してね🙂） ([Vitest][1])
@@ -84,6 +93,9 @@ test("Promiseが失敗するとき", async () => {
 * 注文が空（items.length === 0）もダメ
 
 失敗時は **ValidationError** を投げることにするよ🙂✨
+
+![019 validation error](./picture/tdd_ts_study_019_validation_error.png)
+
 （普通の Error でもいいけど、後々ラクになるからここで慣れちゃお！）
 
 ---
@@ -121,6 +133,9 @@ describe("calcTotal（異常系）", () => {
 ```
 
 * メッセージは **完全一致より、部分一致（文字列/正規表現）** を多用すると折れにくいよ🙂✨ ([Vitest][1])
+
+![019 message match](./picture/tdd_ts_study_019_message_match.png)
+
 * `expect.objectContaining` でエラーの形も見れるよ（Vitestの例にもあるよ）💡 ([Vitest][1])
 
 ---
@@ -207,6 +222,9 @@ test("存在しないクーポンは reject", async () => {
 ---
 
 ## 🤖 AIの使い方（この章での“勝ちパターン”）🧠✨
+
+![019 ai error brainstorm](./picture/tdd_ts_study_019_ai_error_brainstorm.png)
+
 
 AIはめっちゃ便利だけど、**仕様を決めるのはあなた** だよ〜！👑💕
 使いどころは「候補出し」と「抜けチェック」がおすすめ🙂

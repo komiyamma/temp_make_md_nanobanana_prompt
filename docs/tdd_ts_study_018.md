@@ -16,6 +16,9 @@
 
 ## 📚 まず超重要：順序は「仕様」？それとも「ただの都合」？🤔
 
+![018 order matters vs not](./picture/tdd_ts_study_018_order_matters_vs_not.png)
+
+
 配列テストが難しい理由はコレ👇
 
 * ✅ **順序が仕様**：ランキング / 並び順が意味を持つ（例：おすすめ上位3件）🏆
@@ -28,6 +31,9 @@
 ## 🧪 配列Assertの基本セット（これだけで戦える）💪✨
 
 ### 1) 配列が **完全一致**（順序も要素も全部同じ）✅
+
+![018 array exact](./picture/tdd_ts_study_018_array_exact.png)
+
 
 * `toEqual`：中身の値を再帰的に比較（配列・オブジェクト向き）
 * `toStrictEqual`：より厳密（`undefined`の扱い等も厳しめ）
@@ -49,6 +55,9 @@ test("順序も含めて完全一致", () => {
 
 ### 2) 配列が **要素を含む**（プリミティブ向け）🍓
 
+![018 array contains](./picture/tdd_ts_study_018_array_contains.png)
+
+
 * `toContain("A")`：`string / number / boolean` みたいな単純値向け
 
 ```ts
@@ -63,6 +72,9 @@ test("Aを含む", () => {
 ---
 
 ### 3) 配列が **オブジェクト要素を含む**（ここが沼ポイント！）🌀
+
+![018 object in array](./picture/tdd_ts_study_018_object_in_array.png)
+
 
 * `toContainEqual({ ... })`：オブジェクトの「値」として含まれてるか（deep equal）
 * `expect.objectContaining({ ... })`：オブジェクトの一部だけ一致（超便利）✨ ([Vitest][2])
@@ -90,6 +102,9 @@ test("オブジェクト要素を含む（一部一致）", () => {
 ## 📦 「順序なしで含まれてればOK」を綺麗に書く方法（超頻出）✨
 
 ### ✅ パターンA：`arrayContaining`（順序を無視して“含有”）🧺
+
+![018 subset checklist](./picture/tdd_ts_study_018_subset_checklist.png)
+
 
 `expect.arrayContaining([...])` は
 「配列にこの要素たちが入ってればOK」っていう非対称マッチャーだよ✨ ([Vitest][2])
@@ -123,6 +138,9 @@ test("順序は問わず、AとBだけ（他はダメ）", () => {
 
 ### ✅ パターンB：ソートしてから `toEqual`（集合比較っぽくする）🔀
 
+![018 sort strategy](./picture/tdd_ts_study_018_sort_strategy.png)
+
+
 **順序が仕様じゃないなら**、テスト側でソートして「比較しやすい形」にしちゃうのも超アリ😊
 
 ```ts
@@ -142,6 +160,9 @@ test("順序は仕様じゃないのでソートして比較", () => {
 ---
 
 ## 😵 「順序依存のテスト」がフレークの原因になりやすい話💥
+
+![018 flaky order](./picture/tdd_ts_study_018_flaky_order.png)
+
 
 ありがちな例👇
 **本当は順序が仕様じゃない**のに、たまたま今はこの順で返ってる…みたいなやつ😇

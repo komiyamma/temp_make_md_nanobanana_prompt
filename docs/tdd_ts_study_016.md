@@ -73,6 +73,9 @@ test("addは足し算できる", () => {
 
 ### 2) 小数は `toBeCloseTo`（0.1+0.2問題）🫠
 
+![016 float target](./picture/tdd_ts_study_016_float_target.png)
+
+
 Vitest公式でも「小数に toBe は避けてね」って言ってるよ〜！ ([Vitest][1])
 
 ```ts
@@ -111,6 +114,9 @@ test("割引後は元より小さい", () => {
 
 ### 4) `NaN` だけは専用Assert（罠回避）🕳️
 
+![016 nan trap](./picture/tdd_ts_study_016_nan_trap.png)
+
+
 ```ts
 import { test, expect } from "vitest";
 
@@ -141,6 +147,9 @@ test("前後の空白を消す", () => {
 
 ### 2) 部分一致：`toContain`
 
+![016 string contains](./picture/tdd_ts_study_016_string_contains.png)
+
+
 `toContain` は「配列に含まれる」だけじゃなく、**文字列の部分一致**にも使えるよ✨ ([Vitest][1])
 
 ```ts
@@ -153,6 +162,9 @@ test("メッセージにキーワードを含む", () => {
 ```
 
 ### 3) パターン一致：`toMatch`（正規表現OK）🧙‍♀️
+
+![016 regex stencil](./picture/tdd_ts_study_016_regex_stencil.png)
+
 
 ```ts
 import { test, expect } from "vitest";
@@ -170,6 +182,9 @@ test("ID形式をざっくり確認する", () => {
 ## 🧪 手を動かす③：真偽Assert（“boolean”と“truthy”は別！）⚪️⚫️
 
 ### 1) booleanを守るなら：`toBe(true/false)` が基本👍
+
+![016 boolean vs truthy](./picture/tdd_ts_study_016_boolean_vs_truthy.png)
+
 
 ```ts
 import { test, expect } from "vitest";
@@ -236,6 +251,9 @@ test("無料はFREE_USERになる", () => {
 ---
 
 ## 🤖 AIの使い方（この章のおすすめプロンプト）✨
+
+![016 ai selector](./picture/tdd_ts_study_016_ai_selector.png)
+
 
 * 「このテストのAssertが弱いところを指摘して、**より仕様に近いAssert**へ直して。候補を3つ出して」
 * 「`toBe` と `toContain` と `toMatch` のどれが仕様に近い？理由つきで」

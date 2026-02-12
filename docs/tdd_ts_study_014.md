@@ -22,12 +22,18 @@ TDDって、**小さく回すほど気持ちいい**んだけど…
 
 ### 1) **1章＝1ゴール（1つの“約束”）**🤝
 
+![014 one goal](./picture/tdd_ts_study_014_one_goal.png)
+
+
 1章で増やすのは、基本 **「新しい仕様（テスト）」は1テーマだけ**にするのがコツ🎯
 テーマが2つあると、だいたい途中でグチャる🥺
 
 ---
 
 ### 2) **小さく刻む＝小さく統合できる**🧷
+
+![014 small commits](./picture/tdd_ts_study_014_small_commits.png)
+
 
 小さく刻むと何が嬉しいの？っていうと…
 
@@ -40,6 +46,9 @@ TDDって、**小さく回すほど気持ちいい**んだけど…
 ---
 
 ### 3) **コミットは“履歴の文章”**📝✨
+
+![014 commit history](./picture/tdd_ts_study_014_commit_history.png)
+
 
 おすすめは **Conventional Commits** みたいな形式👇
 `<type>(scope): <description>` の形で揃えると、履歴が読みやすくなるよ📚✨ ([conventionalcommits.org][2])
@@ -66,6 +75,9 @@ TDDって、**小さく回すほど気持ちいい**んだけど…
 
 ### ✅ ステップ1：「1章＝1〜3コミット」テンプレを作る🧱
 
+![014 conventional commits](./picture/tdd_ts_study_014_conventional_commits.png)
+
+
 この教材では、基本テンプレはこれでいこう💕
 
 * **Commit A（test:）**：仕様をテストで追加する🧪🔴
@@ -78,6 +90,9 @@ TDDって、**小さく回すほど気持ちいい**んだけど…
 ---
 
 ### ✅ ステップ2：コミット種別（type）を決める🏷️
+
+![014 commit types](./picture/tdd_ts_study_014_commit_types.png)
+
 
 最小セットはこれで十分かわいい＆強い🩷
 
@@ -115,6 +130,9 @@ refactor: extract rounding function and rename variables
 ## 🤖 AIの使いどころ（この章はここが本命）🧠✨
 
 ### 1) 「この章、デカすぎ？」をAIに判定させる🔍
+
+![014 ai scope judge](./picture/tdd_ts_study_014_ai_scope_judge.png)
+
 
 AIにこれを投げてね👇（コピペ用💕）
 
@@ -165,6 +183,9 @@ Conventional Commits形式は、こういう自動整形・自動チェックと
 ---
 
 ### 😵「refactorの時間がなくて放置…」
+
+![014 refactor insurance](./picture/tdd_ts_study_014_refactor_insurance.png)
+
 
 👉 それ、次回の自分が泣くやつ😭💦
 Refactorは “見た目” じゃなくて **次の変更をラクにする保険**だよ🛡️✨
