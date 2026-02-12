@@ -13,6 +13,8 @@ AI（Copilot / Codex など）を使っても、**TDDの品質（＝テストが
 
 ### 1) AIは“速いけど間違える”前提で扱う🧠
 
+![ ai fast but fallible](./picture/tdd_ts_study_006_ai_fast_but_fallible.png)
+
 GitHub公式も、Copilotの提案は**必ず検証（validate）**して、**テストやツールでチェック**するのを推奨しています✅ ([GitHub Docs][1])
 
 ### 2) 依頼の粒度：AIには「小さい仕事」だけ渡す🔪
@@ -20,6 +22,8 @@ GitHub公式も、Copilotの提案は**必ず検証（validate）**して、**�
 Copilotも「複雑なタスクは分解して」「要件は具体的に」って方針です✍️ ([GitHub Docs][1])
 
 ### 3) “テストが仕様”はAI時代ほど強い🧪📘
+
+![ test over ai](./picture/tdd_ts_study_006_test_over_ai.png)
 
 AIがどれだけ賢くても、**最終的に正しいかを決めるのはテスト**。
 だからこの章は、AIの使い方を「固定化」して、テストが常に上位になるようにします👑
@@ -36,6 +40,8 @@ AIがどれだけ賢くても、**最終的に正しいかを決めるのはテ�
 
 ### ルール1：仕様は「文章」じゃなく「テスト」に刻む🧪🪓
 
+![ rule spec in test](./picture/tdd_ts_study_006_rule_spec_in_test.png)
+
 * AIに説明する前に、まず自分で **Given/When/Then を1行で**書く
 * それをテスト名（またはコメント）にする
 * AIにはその“仕様の骨”を渡す
@@ -51,6 +57,8 @@ AIがどれだけ賢くても、**最終的に正しいかを決めるのはテ�
 
 AIに丸投げしないで、依頼をこの3種類に限定します👇
 
+![ ai task scope](./picture/tdd_ts_study_006_ai_task_scope.png)
+
 1. **次に足すべきテスト候補**（境界値/異常系の洗い出し）
 2. **テストの書き方の改善**（命名、AAA整形、Assert強化）
 3. **失敗ログの読み解き**（原因仮説→最小修正案）
@@ -60,6 +68,8 @@ GitHubのテストチュートリアルも「良いテストを作るには、�
 ---
 
 ### ルール3：AIが出したテストは“穴がある前提”でレビュー👀
+
+![ review ai output](./picture/tdd_ts_study_006_review_ai_output.png)
 
 Copilotには `/tests` みたいにテスト生成のショートカットもあるけど、**カバーしきれない場合があるから必ず見直してね**と明言されています🧯 ([GitHub Docs][3])
 
@@ -94,6 +104,8 @@ GitHub公式でも「自動テストやツールでチェック」って推し�
 
 ### ルール6：AIに“仕様決定権”を渡さない👑🚫
 
+![ ai no decision power](./picture/tdd_ts_study_006_ai_no_decision_power.png)
+
 AIに任せちゃダメなもの👇
 
 * 仕様の決定（ビジネスルールの最終決定）
@@ -105,6 +117,8 @@ AIは提案係！決めるのはあなた🫶
 ---
 
 ### ルール7：採用/却下の理由を1行メモする📝✨
+
+![ accept reject log](./picture/tdd_ts_study_006_accept_reject_log.png)
 
 これ、地味に最強です🔥
 あとから迷子にならないし、AIの提案も上手くなる！

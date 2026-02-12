@@ -15,6 +15,8 @@ TDDを「全部にやる」んじゃなくて、**効果がデカい場所に集
 
 ## 📚 学ぶこと（この章のキモ3つ）
 
+![ sweet spot target](./picture/tdd_ts_study_004_sweet_spot_target.png)
+
 1. **TDDが超得意な場所（◎）**：入力→出力がはっきりしてる“純粋ロジック”
 2. **TDDが苦手な場所（△/×）**：UIや外部I/Oなど“揺れる世界”
 3. **境界で分ける考え方**：外の世界は薄く、中心ロジックを厚く守る🛡️
@@ -24,6 +26,8 @@ TDDを「全部にやる」んじゃなくて、**効果がデカい場所に集
 ---
 
 ## ✅ まず結論：TDDは「変わりやすいのに壊れたら困るロジック」に全力🔥
+
+![ core logic vs io](./picture/tdd_ts_study_004_core_logic_vs_io.png)
 
 TDDって、**仕様をテストで固定して、安心してリファクタできる**のが最強ポイント🧪✨
 だから狙い目はココ👇
@@ -64,6 +68,8 @@ TDDって、**仕様をテストで固定して、安心してリファクタで
 
 ## 🔍 迷ったらコレ！「5つの質問」チェック✅
 
+![ suitability flowchart](./picture/tdd_ts_study_004_suitability_flowchart.png)
+
 次の機能（またはコード）に対して、上からYES/NOで答えてみてね👇
 
 1. **同じ入力なら、毎回同じ結果になる？**（時間・乱数・通信なし？）
@@ -93,6 +99,8 @@ TDDって、**仕様をテストで固定して、安心してリファクタで
 ---
 
 ## 🧪 手を動かす：あなたの作りたい機能を“テストしやすさ”で仕分けよう✍️💕
+
+![ sorting logic machine](./picture/tdd_ts_study_004_sorting_logic_machine.png)
 
 ### ① まず題材（例）
 
@@ -170,6 +178,8 @@ describe("applyDiscount", () => {
 ---
 
 ## 🤖 AI（Copilot/Codex等）の使い方：この章のテンプレ💬✨
+
+![ ai classification helper](./picture/tdd_ts_study_004_ai_classification_helper.png)
 
 AIはめちゃ便利だけど、**「どこをテストすべきか」まで丸投げ**すると迷子になりやすいの🥺
 だから“仕分け”に使うのが最高に相性いいよ！

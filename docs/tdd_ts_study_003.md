@@ -36,6 +36,8 @@
 
 ### ✅ステップ1：仕様を“約束の短文”にする📝
 
+![ breaking down requirements](./picture/tdd_ts_study_003_breaking_down_requirements.png)
+
 仕様をそのままテストにしないで、まず **短い約束**に分解するよ💡
 
 例：「入力が6桁の数字ならtrue」
@@ -47,10 +49,14 @@
 
 ### ✅ステップ2：1テスト＝1約束にする🧪
 
+![ one test one promise](./picture/tdd_ts_study_003_one_test_one_promise.png)
+
 * 1つのテスト名に **約束を1個だけ**入れる✨
 * 1テストの中で「AもBもCも」って確認しすぎない🙅‍♀️💦
 
 ### ✅ステップ3：順番は「正常→境界→異常」🚦
+
+![ testing order path](./picture/tdd_ts_study_003_testing_order_path.png)
 
 * 正常：まず “気持ちよく通る道” を作る🌱
 * 境界：端っこ（空白、0、最大/最小、ちょうど）を固める🧱
@@ -102,6 +108,8 @@ describe("isSixDigitNumber", () => {
 
 ### ② Red を作る（まず落とす）🚦🔴
 
+![ red not implemented](./picture/tdd_ts_study_003_red_not_implemented.png)
+
 実装ファイルを作って、とりあえず「失敗させる」よ！
 
 ```ts
@@ -116,6 +124,8 @@ export function isSixDigitNumber(_input: string): boolean {
 ---
 
 ### ③ Green（最小で通す）🚦🟢
+
+![ green regex match](./picture/tdd_ts_study_003_green_regex_match.png)
 
 ここで大事なのは「賢く作らない」こと！😆
 3本通る最小を作るよ👇
@@ -151,6 +161,8 @@ export function isSixDigitNumber(input: string): boolean {
 ---
 
 ## 🤖AIの使い方（この章はここが強い！）✨
+
+![ ai decomposition helper](./picture/tdd_ts_study_003_ai_decomposition_helper.png)
 
 ### ✅使う目的は「刻み方を小さくする」🔪
 
