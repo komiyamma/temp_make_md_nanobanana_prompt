@@ -37,6 +37,9 @@ flowchart TD
 
 ### 1) まず確認：「ファミリー（セット差し替え）」が本当にある？👨‍👩‍👧‍👦📦
 
+![021 decision tree](./picture/gof_cs_study_021_decision_tree.png)
+
+
 Abstract Factoryは「部品を**セット**で差し替えたい」時に強いです💪✨
 逆に、これが無いなら **ほぼやりすぎ候補**😅
 
@@ -47,6 +50,9 @@ Abstract Factoryは「部品を**セット**で差し替えたい」時に強い
 
 * ❌ やりすぎ例（実はセットじゃない）
 
+![021 fake set](./picture/gof_cs_study_021_fake_set.png)
+
+
   * 「送信だけ変えたい」→ それ、**Strategy**や**Factory Method**で足ります📌
   * 「設定値だけ違う」→ それ、**Options（設定）**で足ります⚙️🙂
 
@@ -55,6 +61,9 @@ Abstract Factoryは「部品を**セット**で差し替えたい」時に強い
 ---
 
 ### 2) 増殖のサインを見抜く（Factoryあるある地獄）🔥😵
+
+![021 explosion signs](./picture/gof_cs_study_021_explosion_signs.png)
+
 
 次のどれかが出たら、赤信号です🚥⚠️
 
@@ -67,6 +76,9 @@ Abstract Factoryは「部品を**セット**で差し替えたい」時に強い
 ---
 
 ### 3) 代替案を先に検討（Abstract Factoryじゃなくていい道）🛣️🌷
+
+![021 alternatives](./picture/gof_cs_study_021_alternatives.png)
+
 
 「やりたいこと」がこれなら、別ルートの方が軽くて安全です🧸✨
 
@@ -92,6 +104,9 @@ Abstract Factoryは「部品を**セット**で差し替えたい」時に強い
 ---
 
 ### 4) それでもAbstract Factoryを使うなら「最小の抽象」にする✂️🧠
+
+![021 minimal set](./picture/gof_cs_study_021_minimal_set.png)
+
 
 増殖を防ぐコツはこれだけ👇✨
 
@@ -124,6 +139,9 @@ public interface INotificationSetFactory
 
 ### 5) 「削除してみる実験」をやる（戻せる前提で勇気MAX）🧪🪄
 
+![021 delete experiment](./picture/gof_cs_study_021_delete_experiment.png)
+
+
 増殖してるか不安なときは、これが一番効きます💥
 
 1. ✅ いまの状態でテストが全部緑なのを確認🟢
@@ -140,6 +158,9 @@ public interface INotificationSetFactory
 ---
 
 ### 6) AIで雛形を出すときの「事故防止プロンプト」🧯🤖
+
+![021 ai leash](./picture/gof_cs_study_021_ai_leash.png)
+
 
 AIは油断すると、抽象化を盛ってきます😇💦
 だから先に “縛り” を書きます🧵✨

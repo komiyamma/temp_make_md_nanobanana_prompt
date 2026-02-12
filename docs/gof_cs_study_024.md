@@ -26,6 +26,9 @@
 
 ### 1) まず「導入前」のつらさを1回だけ見る😵‍💫
 
+![024 before pain](./picture/gof_cs_study_024_before_pain.png)
+
+
 「引数が多いコンストラクタ」や「途中状態を外でいじる」形は、読みづらいし壊れやすい…💦
 
 ```csharp
@@ -46,6 +49,9 @@ var order = new Order(
 ---
 
 ### 2) 最小ドメインを用意する（小さくてOK）🧁
+
+![024 domain setup](./picture/gof_cs_study_024_domain_setup.png)
+
 
 **“学習用の最小”**が大事だよ🙂（作り込みすぎない！）
 
@@ -141,6 +147,9 @@ stateDiagram-v2
 ```
 
 ### 3) `OrderBuilder` を作る（段階的に集める🧱）
+
+![024 builder class](./picture/gof_cs_study_024_builder_class.png)
+
 
 「途中はBuilderが持つ」「完成はOrder」—これが基本だよ🙂✨
 
@@ -281,9 +290,14 @@ public sealed class OrderBuilder
 * `UriBuilder` は「URLを安全に組み立てる」定番のBuilder例🌐
 * `Lines` は **コピーして渡す**（外から変更されないように）🔒
 
+![024 ensure not built](./picture/gof_cs_study_024_ensure_not_built.png)
+
 ---
 
 ### 4) 使い方（読みやすさが勝ち！）😍
+
+![024 fluent usage](./picture/gof_cs_study_024_fluent_usage.png)
+
 
 ```csharp
 var order = OrderBuilder.Create()
@@ -302,6 +316,9 @@ var summary = order.ToSummaryText(); // StringBuilderで作られる🧵
 ---
 
 ### 5) テスト（MSTest例）で「守れてる」確認🧪🌸
+
+![024 test aaa](./picture/gof_cs_study_024_test_aaa.png)
+
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -363,6 +380,9 @@ public sealed class OrderBuilderTests
 ---
 
 ## よくある落とし穴 ⚠️😵
+
+![024 pitfalls](./picture/gof_cs_study_024_pitfalls.png)
+
 
 * **途中状態を外へ漏らす**（例：`builder.Lines` を公開してしまう）
   → 外部が勝手に追加/削除できて地獄💀

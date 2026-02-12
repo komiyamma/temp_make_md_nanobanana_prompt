@@ -22,6 +22,9 @@
 
 ### 1) Builderっぽさチェックリストを先に持とう🧡
 
+![023 builder checklist](./picture/gof_cs_study_023_builder_checklist.png)
+
+
 BuilderっぽいAPIには、だいたいこの特徴があるよ👇
 
 * **途中の状態を保持できる**（mutableに編集できる）🧩
@@ -48,6 +51,9 @@ stateDiagram-v2
 ### 2) StringBuilderで体感しよう🧵🧵
 
 **ポイント：stringはイミュータブル**なので、`+` を大量にやると（状況によって）コストが増えがち💦
+
+![023 string immutable](./picture/gof_cs_study_023_string_immutable.png)
+
 そこで「ためて、最後に作る」ができるのが **StringBuilder** だよ😊
 
 #### まずは“Builderの流れ”だけ掴むミニ例 📄✨
@@ -67,6 +73,9 @@ Console.WriteLine(receiptText);
 ```
 
 ここがBuilderっぽい！👀✨
+
+![023 sb flow](./picture/gof_cs_study_023_sb_flow.png)
+
 
 * `sb` が **途中状態** を持ってる（文字が溜まっていく）🧺
 * `Append / AppendLine` で **段階的に追加** できる🧷
@@ -89,6 +98,9 @@ Console.WriteLine(sb.ToString()); // Items: Apple, Banana, Orange
 ---
 
 ### 3) UriBuilderで体感しよう🌐🔧
+
+![023 uri parts](./picture/gof_cs_study_023_uri_parts.png)
+
 
 URLって、手で文字列連結すると地味に事故るよね…😵‍💫
 
@@ -130,9 +142,15 @@ Console.WriteLine(url.ToString());
 * `Query` は `?` の扱いで混乱しがち。**最終的に出たURLを必ず確認**すればOK👌✨
 * クエリ値は基本 `Uri.EscapeDataString` でエンコードしておくと安全🍀
 
+![023 uri escape](./picture/gof_cs_study_023_uri_escape.png)
+
+
 ---
 
 ### 4) 「呼び出し側が何を知らなくていいか？」を言語化しよう🧠✨
+
+![023 burden relief](./picture/gof_cs_study_023_burden_relief.png)
+
 
 Builderを使うと、呼び出し側はだいたいこの“面倒”を背負わなくてよくなるよ😊
 

@@ -36,6 +36,9 @@
 
 例（雰囲気だけ、こんな感じ）👇
 
+![020 switch pain](./picture/gof_cs_study_020_switch_pain.png)
+
+
 ```csharp
 // こういう if/switch が OrderService の中にあるのがつらい😵
 switch (profile)
@@ -57,6 +60,9 @@ switch (profile)
 ---
 
 ### 2) “部品（Products）” を決める 🧩🙂
+
+![020 products concept](./picture/gof_cs_study_020_products_concept.png)
+
 
 Abstract Factory は「関連する部品をまとめて作る」から、まず部品を2つに絞るよ✌️💕
 
@@ -91,6 +97,9 @@ public interface INotificationSender : IAsyncDisposable
 
 ### 3) “ファミリー（セット）” を作る Abstract Factory を定義 🏭✨
 
+![020 factory interface](./picture/gof_cs_study_020_factory_interface.png)
+
+
 ここが主役💖
 Factory は「Sender と Formatter をセットで出す」だけ！
 
@@ -107,6 +116,9 @@ public interface INotificationFactory
 ポイントはここ👇
 
 * 「Devセット」「Prodセット」を **Factoryの実装として分ける**
+
+![020 dev vs prod](./picture/gof_cs_study_020_dev_vs_prod.png)
+
 * OrderService は “どのセットか” を知らない🙂✨
 
 
@@ -187,6 +199,9 @@ public sealed class HtmlOrderFormatter : INotificationFormatter
 
 #### Sender（送るのはログで疑似）🪄📝
 
+![020 impl sender](./picture/gof_cs_study_020_impl_sender.png)
+
+
 送信は “本当に送る” 必要なし！
 今回は「差し替えできる感覚」を掴むのが目的だからね🙂💕
 
@@ -238,6 +253,9 @@ public sealed class EmailNotificationSender : INotificationSender
 ---
 
 ### 6) Factory を実装して “セット” を完成させる 🏭🎁
+
+![020 factory impl](./picture/gof_cs_study_020_factory_impl.png)
+
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -310,6 +328,9 @@ public sealed class OrderService
 ---
 
 ### 8) テストで “差し替え” を確認 🧪🌸
+
+![020 test verify](./picture/gof_cs_study_020_test_verify.png)
+
 
 MSTest で「Devはテキスト」「ProdはHTML」を保証するよ！
 
