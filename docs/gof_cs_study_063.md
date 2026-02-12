@@ -46,6 +46,8 @@ sequenceDiagram
 
 ### 1) まずは「foreach＝Iterator」だと思ってOK🧺✨
 
+![gof_cs_study_063_hiding_structure](./picture/gof_cs_study_063_hiding_structure.png)
+
 C# の世界では、Iterator パターンはだいたいこういう意味だよ👇
 
 * **外からは “foreach で回せる” だけに見せたい**
@@ -98,6 +100,11 @@ public static class Program
         Console.WriteLine("---");
 
         // IEnumerator を手で回す（裏側を体験）
+```
+
+![gof_cs_study_063_manual_enumerator](./picture/gof_cs_study_063_manual_enumerator.png)
+
+```csharp
         using var e = ((IEnumerable<Order>)orders).GetEnumerator();
         while (e.MoveNext())
         {
@@ -138,6 +145,11 @@ public sealed class OrderBook : IEnumerable<Order>
     public void Add(Order order) => _orders.Add(order);
 
     // Iteratorパターンの入口：foreach できるようにする
+```
+
+![gof_cs_study_063_IEnumerable_ticket](./picture/gof_cs_study_063_IEnumerable_ticket.png)
+
+```csharp
     public IEnumerator<Order> GetEnumerator() => _orders.GetEnumerator();
 
     // 非ジェネリック版も必要（IEnumerable の契約）
@@ -164,6 +176,8 @@ foreach (var o in book)
 ---
 
 ### 5) yield return を “ちら見せ”🌟（次章の主役！）
+
+![gof_cs_study_063_yield_generator](./picture/gof_cs_study_063_yield_generator.png)
 
 yield return は、**列挙（Iterator）を作るための言語機能**だよ✨([Microsoft Learn][2])
 次章でガッツリやるけど、ここでは “雰囲気” だけ先に🙂
@@ -205,6 +219,8 @@ yield return は遅延評価になりやすいから、
 ---
 
 ### 落とし穴2：多重列挙で副作用が二重に起きる🔁🔥
+
+![gof_cs_study_063_double_enumeration](./picture/gof_cs_study_063_double_enumeration.png)
 
 列挙の中でログを書いたり、外部アクセスしたりすると、
 同じ IEnumerable を2回 foreach しただけで **2回実行される**ことがあるよ😵‍💫

@@ -64,6 +64,8 @@ classDiagram
 
 ## Commandがハマる場面・ハマらない場面🧭
 
+![gof_cs_study_060_multi_invoker](./picture/gof_cs_study_060_multi_invoker.png)
+
 ### ハマる👍💖
 
 * **同じ操作が複数の入口から呼ばれる**（ボタン/メニュー/ショートカット）
@@ -124,6 +126,8 @@ WPFは **Commanding** という仕組みが標準で入ってて、ボタンや�
 WPFでは、呼ぶ側が **Command Source** になって、CanExecuteChanged を見て勝手にグレーアウトしたりするよ🔘✨ ([Microsoft Learn][1])
 
 ### 3) CanExecute（押せる/押せない）を1つの場所に集める✅
+
+![gof_cs_study_060_can_execute_gate](./picture/gof_cs_study_060_can_execute_gate.png)
 
 「在庫がないなら押せない」みたいな条件を、クリックイベントの中じゃなく **CanExecuteに置く**💡
 
@@ -267,6 +271,8 @@ WPFには最初からコマンドがいっぱい入ってるよ！
 
 ### 落とし穴1：Commandが“サービスのコピペ”になる📦
 
+![gof_cs_study_060_command_vs_service](./picture/gof_cs_study_060_command_vs_service.png)
+
 Commandの中に業務ロジックを全部書き始めると、
 
 * どこが本体の処理かわからなくなる
@@ -290,6 +296,8 @@ Commandの中に業務ロジックを全部書き始めると、
 
 ### 落とし穴3：状態が変わったのにボタンが更新されない🔘💤
 
+![gof_cs_study_060_requery_signal](./picture/gof_cs_study_060_requery_signal.png)
+
 「在庫が復活したのに、ボタンがグレーのまま」みたいなやつ🥺
 Commandingの仕組みとして、再評価のタイミングが絡むよ。`CommandManager` の再問い合わせの仕組みを知っておくと安心🧯✨ ([Microsoft Learn][1])
 
@@ -309,6 +317,8 @@ Commandingの仕組みとして、再評価のタイミングが絡むよ。`Com
 ---
 
 ### 演習B：CommandParameterを使って“引数つき命令”にする🎯
+
+![gof_cs_study_060_command_parameter](./picture/gof_cs_study_060_command_parameter.png)
 
 * 例えば `注文確定(配送方法)` みたいに、ボタンごとに違う値を渡す
 * `Executed` 側で `e.Parameter` を読んで処理を分ける
