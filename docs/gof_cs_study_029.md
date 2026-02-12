@@ -87,6 +87,8 @@ public class PrototypeCopyPitfallsTests
 
 ### 2) 事故の原因を言葉にする 🧠📝
 
+![Shallow Room](./picture/gof_cs_study_029_shallow_room.png)
+
 * `with` は「オブジェクトを複製」するけど
   **参照型プロパティ（List/Dictionary/配列/自作classなど）は参照をコピー**しやすい
 * つまり
@@ -117,6 +119,8 @@ graph TD
 
 ### 3) 対策①：不変（immutable）に寄せて「浅いコピーでも安全」にする 🛡️🌟
 
+![Immutable Strategy](./picture/gof_cs_study_029_immutable_strategy.png)
+
 いちばん強い方針はこれ💪
 **中身が変わらないなら、共有してても問題になりにくい**よ✨
 
@@ -129,6 +133,8 @@ Prototypeは「コピーの便利さ」よりも、**“コピー後に安全に
 ---
 
 ### 4) 対策②：箱（List/Dictionary）だけ作り直して参照共有を切る ✂️📦
+
+![Container Copy](./picture/gof_cs_study_029_container_copy.png)
 
 「要素は不変（record）だから共有でもOK、でも箱は別にしたい」ってときはこれが最小で効くよ🙂✨
 
@@ -177,6 +183,8 @@ public class PrototypeCopyFixesTests
 
 ### 5) 対策③：必要な範囲だけ “深いコピー” する 🐳🔁
 
+![Deep Copy Furniture](./picture/gof_cs_study_029_deep_copy_furn.png)
+
 深いコピーは万能に見えるけど、やりすぎると **重い・複雑・壊れやすい**😵‍💫
 だから **“業務的に必要な範囲だけ”** 深くするのがコツだよ✨
 
@@ -216,6 +224,8 @@ public sealed record MutableTemplate(List<MutableOrderLine> Lines)
 ---
 
 ### 7) デバッガで「つながり」を目で見る 👀🔗
+
+![Debugger View](./picture/gof_cs_study_029_debugger_view.png)
 
 Visual Studio のデバッグで、ここを見ると一発で理解できるよ✨
 

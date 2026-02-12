@@ -50,6 +50,8 @@ graph TD
 
 ### 1) “読めない連鎖”のサインを覚える 🚨😵
 
+![Scroll Hell](./picture/gof_cs_study_025_symptom_scroll.png)
+
 次のどれかが当てはまったら黄色信号だよ⚠️
 
 * 1行にメソッドが **6個以上** 連なる（スクロール地獄）📜💦
@@ -61,6 +63,8 @@ graph TD
 ---
 
 ### 2) “Fluentは悪じゃない”ので、まず整形する ✨🧹
+
+![Split Chain](./picture/gof_cs_study_025_split_chain.png)
 
 いきなり設計を変える前に、**書き方だけ**で救えることが多いよ🙌
 
@@ -110,6 +114,8 @@ var order = builder.Build();
 ---
 
 ### 3) それでも読みにくいなら「Fluentをやめる」選択肢も正解 🙆‍♀️✅
+
+![Options Record](./picture/gof_cs_study_025_options_record.png)
 
 標準クラスの世界でも、**Fluentじゃないほうが読みやすい** 例は普通にあるよ🌸
 代表が `UriBuilder` 🙌
@@ -162,6 +168,8 @@ var order = OrderBuilder.New()
 
 ### 4) Builder側（作る側）の“読めるAPI”ルール 🧱📏
 
+![Builder Rules Check](./picture/gof_cs_study_025_builder_rules.png)
+
 Fluentを採用するなら、Builder側はここを守ると事故が減るよ🚑✨
 
 **✅ ルールA：Buildで検証する（必須）**
@@ -187,6 +195,8 @@ Fluentを採用するなら、Builder側はここを守ると事故が減るよ�
 ---
 
 ### 5) AI補助で雛形を作るときの“事故防止プロンプト” 🤖🧯
+
+![AI Prompt Safety](./picture/gof_cs_study_025_ai_prompt.png)
 
 GitHub CopilotやOpenAI系ツールに投げるなら、**禁止事項を最初に固定**すると安全だよ🙆‍♀️✨
 

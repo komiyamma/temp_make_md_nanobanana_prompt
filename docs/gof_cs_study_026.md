@@ -22,6 +22,8 @@
 
 ### 1) まず「何がつらいの？」を1つ決める😵‍💫➡️🙂
 
+![Setup Pain](./picture/gof_cs_study_026_symptom_setup.png)
+
 例：注文作成で、初期値が多くて毎回同じようなセットアップになる…💦
 
 * 送料、クーポン、ギフト設定、明細、通知設定…など
@@ -30,6 +32,8 @@
 ---
 
 ### 2) Prototypeの作戦を一言で言う🧠✨
+
+![Rubber Stamp](./picture/gof_cs_study_026_rubber_stamp.png)
 
 * **「原型（テンプレ）を用意しておいて、複製してから差分だけ変える」** 🧬🔁
 * Builderが「組み立て手順」なら、Prototypeは「**完成品のコピー**」って感じだよ🎁
@@ -56,6 +60,8 @@ flowchart LR
 ```
 
 ### 3) C#らしく `record` + `with` でテンプレを作る🧾✨
+
+![Record Magic Wand](./picture/gof_cs_study_026_record_magic.png)
 
 Prototypeは本来「Cloneメソッドを持つ」形が多いけど、C#は `with` が強い💪
 ここでは **“テンプレ用の注文”** を `record` で作ってみるよ🛒
@@ -85,6 +91,8 @@ public sealed record OrderTemplate(
 ---
 
 ### 4) 「テンプレ置き場」を作って量産する📦🔁
+
+![Template Shelf](./picture/gof_cs_study_026_template_shelf.png)
 
 テンプレはDictionaryで十分✨（オレオレ汎用フレームワーク化しない🙅‍♀️）
 
@@ -142,6 +150,8 @@ var giftForFriend = baseGift with
 ---
 
 ### 5) テストで「テンプレが壊れてない」ことを守る🧪🛡️
+
+![Test Guard](./picture/gof_cs_study_026_test_guard.png)
 
 Prototypeで大事なのはここ！
 
