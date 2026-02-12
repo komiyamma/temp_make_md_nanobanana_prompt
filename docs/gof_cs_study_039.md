@@ -100,6 +100,9 @@ public sealed class NotificationServiceLegacy
 
 ここでの「つらさ」ポイント😇💦
 
+![Switch Statement Hell](./picture/gof_cs_study_039_switch_hell.png)
+
+
 * フォーマットを1個増やす → `switch(format)` が増える
 * 通知先を1個増やす → `switch(target)` が増える
 * しかも「通知先ごとの微妙な仕様差」が混ざって、**ネストが深くなる**🌋
@@ -107,6 +110,9 @@ public sealed class NotificationServiceLegacy
 ---
 
 ### 2) テストで“現状”を固定する🧪🧷
+
+![Test Safety Net](./picture/gof_cs_study_039_test_safety_net.png)
+
 
 この章は**演習**なので、「壊さない」ために最初にテストで縛ります✨
 
@@ -225,6 +231,9 @@ classDiagram
 
 #### 3-1) Bridgeのコード（最小）🧩
 
+![Class Hierarchy](./picture/gof_cs_study_039_class_hierarchy.png)
+
+
 ```csharp
 using System;
 using System.IO;
@@ -301,6 +310,9 @@ public static class NotificationExamples
 
 #### 3-2) 何が嬉しいの？😍
 
+![Plug and Play Architecture](./picture/gof_cs_study_039_plug_and_play.png)
+
+
 * フォーマット追加（例：Markdown）→ `OrderNotification` の派生を1個増やすだけ🎁
 * 通知先追加（例：ネットワーク/別ストレージ）→ `TextWriter` を差し替える or それっぽいWriterを用意🧰
 * **通知サービスが「掛け算」を抱えない**！これが超大事🌈
@@ -308,6 +320,9 @@ public static class NotificationExamples
 ---
 
 ### 4) テストを“Bridge版”に寄せる🧪🎉
+
+![Mocking Writer](./picture/gof_cs_study_039_mocking_writer.png)
+
 
 Bridge化したら、テストがめちゃ楽になります💕
 
