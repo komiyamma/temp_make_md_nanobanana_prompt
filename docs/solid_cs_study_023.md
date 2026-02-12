@@ -10,6 +10,9 @@
 
 ## 1) まず大事な誤解をほどくね🧸💭「newは悪」じゃない！
 
+![Restricted New Zone](./picture/solid_cs_study_023_restricted_new_zone.png)
+
+
 結論から言うと…
 
 * ❌ **「どこでも new しちゃう」**のが問題
@@ -23,6 +26,9 @@
 ---
 
 ## 2) DIP と DI の関係をスッキリ整理🧼✨（ここ超重要！）
+
+![DIP King DI Worker](./picture/solid_cs_study_023_dip_king_di_worker.png)
+
 
 * **DIP（第22章）**：設計の“原則”📜
   👉「上位（業務）は下位（DB/HTTPなど）に依存しないで、**抽象（interface）に依存しよう**」
@@ -159,6 +165,9 @@ public class SmtpEmailSender : IEmailSender
 
 ### Step 3：OrderService は **newしない**！外から受け取る🎁✨
 
+![Receiving Dependencies](./picture/solid_cs_study_023_receiving_dependencies.png)
+
+
 ```csharp
 public class OrderService
 {
@@ -241,6 +250,9 @@ Debug.Assert(fakePayment.ChargedAmount == 1200m);
 
 ## 6) 「注入すべき依存」と「注入しなくていいもの」仕分け表🧺✨
 
+![Dependency Sorting](./picture/solid_cs_study_023_dependency_sorting.png)
+
+
 ここ、超ありがちな迷いポイントだから、覚え方を置いとくね😉💕
 
 ### ✅ 注入する（差し替えたい・外部とつながる・環境で変わる）
@@ -269,6 +281,9 @@ Debug.Assert(fakePayment.ChargedAmount == 1200m);
 ---
 
 ## 7) 注入のやり方は3つあるよ（でも基本はこれ！）🥇
+
+![Injection Types Podium](./picture/solid_cs_study_023_injection_types_podium.png)
+
 
 ### ① コンストラクタ注入（いちばんおすすめ）🥰
 
@@ -304,6 +319,9 @@ Debug.Assert(fakePayment.ChargedAmount == 1200m);
 ---
 
 ## 9) Visual Studio の小技🪄（楽して勝とう🥳）
+
+![IDE Magic Extract](./picture/solid_cs_study_023_ide_magic_extract.png)
+
 
 * **Ctrl + .**：提案（Quick Actions）でリファクタ候補が出やすいよ✨
 * 「Extract Interface」系の操作で、interface 化がラクになることが多いよ🧩

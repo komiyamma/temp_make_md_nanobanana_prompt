@@ -18,6 +18,9 @@
 
 ## 2. 「組み立て場所」ってなに？🧩🔧
 
+![Composition Root vs Scattered](./picture/solid_cs_study_024_composition_root_vs_scattered.png)
+
+
 DIの世界では、**アプリの部品を組み立てる場所**が必要になるよね。
 
 * どのインターフェースに、どの実装を使う？
@@ -36,6 +39,9 @@ DIの世界では、**アプリの部品を組み立てる場所**が必要に�
 ---
 
 ## 3. 依存の寿命（Lifetime）を“ざっくり確実に”選ぶ🕒✨
+
+![Lifetime Clocks](./picture/solid_cs_study_024_lifetime_clocks.png)
+
 
 .NETの基本寿命はこの3つ👇（ここ超大事！）
 Microsoftの公式ガイドでもこの3寿命と注意点がまとまってるよ。 ([Microsoft Learn][2])
@@ -58,6 +64,9 @@ Microsoftの公式ガイドでもこの3寿命と注意点がまとまってる�
 ---
 
 ## 4. ありがち寿命事故：「SingletonがScopedを抱える」😇💥（Captive Dependency）
+
+![Captive Dependency Giant](./picture/solid_cs_study_024_captive_dependency_giant.png)
+
 
 これ、初心者が一番踏む地雷💣
 
@@ -199,6 +208,9 @@ app.Run();
 
 ### 7.1 IServiceCollection 拡張メソッドで「登録モジュール化」📦✨
 
+![Service Collection Modules](./picture/solid_cs_study_024_service_collection_modules.png)
+
+
 **フォルダ例**（イメージ）
 
 * `Composition/ServiceCollectionExtensions.cs`
@@ -276,6 +288,9 @@ app.Run();
 
 ## 8. Options（設定）もDIで受け取れるようにする🎛️✨
 
+![Options Pattern Mold](./picture/solid_cs_study_024_options_pattern_mold.png)
+
+
 「設定値（APIキーとかURLとか）」を直読みすると、テストもしんどい😇
 Optionsパターンで **型付き設定**にすると超ラクだよ。 ([Microsoft Learn][6])
 
@@ -312,6 +327,9 @@ services
 ---
 
 ## 10. 絶対やりたくないDI（アンチパターン）🙅‍♀️💥
+
+![Service Locator Vending](./picture/solid_cs_study_024_service_locator_vending.png)
+
 
 ### 10.1 Service Locator（業務コードで IServiceProvider を使う）😱
 
