@@ -17,6 +17,8 @@
 ---
 
 ## まず大事な感覚🌱：「I/Oは“外の世界”」
+![tdd_cs_study_039_core_shell](./picture/tdd_cs_study_039_core_shell.png)
+
 
 Console入出力、ファイル、DB、HTTP…こういうのって全部「外の世界」🌍
 外の世界は、テストにとってはだいたい敵です😂💦
@@ -57,6 +59,8 @@ graph LR
 ---
 
 ## ありがちな“ぐちゃ混ぜ”版（テストしづらい😇）
+![tdd_cs_study_039_spaghetti_mess](./picture/tdd_cs_study_039_spaghetti_mess.png)
+
 
 最初こうなりがち👇（※例なので雑でOK！）
 
@@ -103,6 +107,8 @@ while (true)
 ---
 
 ## 解決方針✨：「境界」を増やして分離する
+![tdd_cs_study_039_separated_flow](./picture/tdd_cs_study_039_separated_flow.png)
+
 
 イメージはこれ👇
 
@@ -118,6 +124,8 @@ while (true)
 ---
 
 ## Step 1：中心ロジック側を作る🧠✨（Console禁止🚫）
+![tdd_cs_study_039_brain_dome](./picture/tdd_cs_study_039_brain_dome.png)
+
 
 ### 1) 状態（カタログ）を小さく持つ📦
 
@@ -197,6 +205,8 @@ public sealed record CommandResult(bool ShouldExit, IReadOnlyList<string> Output
 ---
 
 ## Step 2：外側（Console）を“薄い殻”にする🪺🪟
+![tdd_cs_study_039_thin_shell](./picture/tdd_cs_study_039_thin_shell.png)
+
 
 Programは「読む→渡す→出す」だけ！
 
@@ -224,6 +234,8 @@ while (true)
 ---
 
 ## Step 3：テストがめちゃ簡単になる🧪⚡️
+![tdd_cs_study_039_engine_test](./picture/tdd_cs_study_039_engine_test.png)
+
 
 Console関係ないから、普通に `Handle()` を叩くだけ😊
 
@@ -276,6 +288,8 @@ public sealed class GoodsCommandHandlerTests
 ---
 
 ## “境界”を増やす時の命名のコツ📝✨
+![tdd_cs_study_039_naming_boxes](./picture/tdd_cs_study_039_naming_boxes.png)
+
 
 ここ、迷いがちなのでテンプレ置いとくね😊
 
