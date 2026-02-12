@@ -22,6 +22,10 @@
 ![Image](./picture/gof_cs_study_044_decorator_stream_chain.png)
 
 `Stream` は **すべてのストリームの抽象基底クラス**で、読み書きの共通メソッドを提供するよ📦✨
+
+![Pipe System](./picture/gof_cs_study_044_pipe_system.png)
+
+
 つまり「ここ（`Stream`）を満たしていれば、差し替えOK」っていう強い契約！ ([Microsoft Learn][1])
 
 **Decoratorで重要なのはここ👇**
@@ -68,6 +72,10 @@ flowchart LR
 **使いどころイメージ**
 
 * 小さい書き込みを何回もする → バッファ無しだと遅くなりやすい😵‍💫
+
+![Bucket Buffer](./picture/gof_cs_study_044_bucket_buffer.png)
+
+
 * そこで `BufferedStream` を “1枚羽織る” → まとめて書いてくれる✨
 
 **ミニ例（ファイルにバイト列を書くだけ）📝**
@@ -94,6 +102,10 @@ await buffered.FlushAsync();
 さらに、`GZipStream` は “包んだ下のストリーム” を **所有して Dispose する**（＝勝手に閉じる）側の動きが基本になる点も押さえてね🧯 ([Microsoft Learn][4])
 
 **圧縮して保存→復元の最小サンプル（MemoryStreamで安全に）🧪**
+
+![Zip Lock](./picture/gof_cs_study_044_zip_lock.png)
+
+
 
 ```csharp
 using System.IO.Compression;
@@ -134,6 +146,10 @@ Console.WriteLine(text);
 
 ここで最重要⚠️
 `CryptoStream` は **最後のブロック（終端）を書かないと復号できない**事故が起きやすいの…😇
+
+![Valve Close](./picture/gof_cs_study_044_valve_close.png)
+
+
 だから「終わり」を確実にする必要があるよ👇
 
 * `FlushFinalBlock()` を呼ぶと **下のデータソースを更新して内部バッファをクリア**してくれる ([Microsoft Learn][6])
@@ -149,6 +165,10 @@ Decoratorは **順番で意味が変わる**よ！ここが楽しくて怖いと
 
 * 書くとき：**圧縮 → 暗号化**（圧縮したいのは “平文” 側だから）🗜️➡️🔐
 * 読むとき：**復号 → 解凍**（書いた順の逆）🔐➡️🗜️
+
+![Order Reverse](./picture/gof_cs_study_044_order_reverse.png)
+
+
 
 **ファイルに「圧縮してから暗号化して保存」する例🧩**
 
