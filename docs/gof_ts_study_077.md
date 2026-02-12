@@ -10,6 +10,8 @@
 
 ## 1) まとめ：MediatorがUIに効くポイント💡
 
+![Domino Effect](./picture/gof_ts_study_077_domino_effect.png)
+
 UIって、だいたいこうなりがち👇
 
 * Aの入力が変わる
@@ -31,6 +33,8 @@ Mediatorを挟むとこうなる👇
 ---
 
 ## 2) ObserverとMediatorの違い（超短く）📣🕊️
+
+![Newsboy vs Traffic Cop](./picture/gof_ts_study_077_newsboy_vs_traffic.png)
 
 * **Observer**：発行→購読へ「知らせる」
 * **Mediator**：発行→仲介者へ「知らせる」→仲介者が「誰に何をさせるか決める」
@@ -96,6 +100,8 @@ TypeScriptは今だと **5.9 のリリースノートが 2026-02-03 更新**に�
 
 ### 4-1) まずは「イベント型」を決める📦
 
+![Shape Sorter Events](./picture/gof_ts_study_077_shape_sorter.png)
+
 イベント名とpayload（detail）を**先に型で固定**すると、UIの事故が減るよ✨
 
 ```ts
@@ -146,6 +152,8 @@ function emit<K extends keyof AppEvents>(
 ---
 
 ### 4-3) “調停役”＝Mediator本体を作る🕊️🧠
+
+![Central Brain](./picture/gof_ts_study_077_central_brain.png)
 
 ポイントはこれ👇
 
@@ -286,6 +294,8 @@ on(bus, "m:submitEnabled", ({ enabled }) => {
 
 ## 5) ログで追えると、デバッグが超ラク🔍✨
 
+![Footprints Trace](./picture/gof_ts_study_077_footprints_trace.png)
+
 Mediatorは**ルールの中心**だから、ログが効く！
 
 おすすめはこの2つ👇
@@ -299,6 +309,8 @@ Mediatorは**ルールの中心**だから、ログが効く！
 ---
 
 ## 6) Mediatorが“神”になりそうなときの分割案🐘➡️🐣
+
+![Breaking Rock Mediator](./picture/gof_ts_study_077_breaking_rock.png)
 
 Mediatorは便利すぎて、放っておくと巨大化しがち…！😱
 そうなりそうなら、分け方はこのへんが鉄板👇

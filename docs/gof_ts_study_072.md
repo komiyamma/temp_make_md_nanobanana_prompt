@@ -10,6 +10,8 @@
 
 ## 1. ありがちな“つらさ”あるある😵‍💫🌀
 
+![Pain of Duplication](./picture/gof_ts_study_072_pain_duplication.png)
+
 たとえば「メニュー（カテゴリ→商品）」みたいな**木構造🌳**を扱うとき、
 
 * 画面A：一覧表示したい👀
@@ -27,6 +29,8 @@
 ---
 
 ## 2. Iteratorってなに？（超ざっくり）🍡
+
+![Iterable vs Iterator](./picture/gof_ts_study_072_iterable_iterator.png)
 
 Iteratorの気持ちよさはこれ👇
 
@@ -64,6 +68,8 @@ classDiagram
 ---
 
 ## 3. まず“つらいコード”をわざと作る🛠️😵‍💫
+
+![Menu Tree Structure](./picture/gof_ts_study_072_menu_tree.png)
 
 木構造メニューを題材にするよ☕🍰
 
@@ -147,6 +153,8 @@ export function sumAllPrices(root: MenuNode): number {
 
 ## 4. 改善：走査を“1か所に閉じる”🎯✨
 
+![Encapsulation Funnel](./picture/gof_ts_study_072_encapsulation_funnel.png)
+
 ポイントは超シンプル👇
 ✅ **「木構造 → 商品を順番に取り出せる Iterable」に変換する関数を1個だけ作る**
 
@@ -207,6 +215,8 @@ console.log(expensive);
 
 ## 5. Iteratorの“本領”：順番を変えても利用側が壊れない🔁🧠
 
+![Strategy Swap](./picture/gof_ts_study_072_strategy_swap.png)
+
 たとえば「順番をBFS（幅優先）に変えたい！」ってなっても…
 
 利用側は一切変えずに、中だけ差し替えられるのが気持ちいい🎯
@@ -241,6 +251,8 @@ export function iterateMenuItems(root: MenuNode): Iterable<MenuItem> {
 
 ## 6. つまずき回避💡（ここ超大事！）
 
+![Object vs Map Iteration](./picture/gof_ts_study_072_object_vs_map.png)
+
 ## ✅ `for..in` と `for..of` を混ぜない🧯
 
 * `for..of`：**値**を順番に取り出す（Iterable向け）🔁 ([MDN Web Docs][1])
@@ -261,6 +273,8 @@ export function iterateMenuItems(root: MenuNode): Iterable<MenuItem> {
 ---
 
 ## 7. ちいさなテスト案🧪✅（順番が仕様になる！）
+
+![Order Testing](./picture/gof_ts_study_072_order_test.png)
 
 Iteratorは「順番」が価値なので、**順番のテスト**を1本入れると安心💕
 

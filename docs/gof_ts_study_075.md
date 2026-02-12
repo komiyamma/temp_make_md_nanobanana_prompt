@@ -10,6 +10,8 @@
 
 ## 1. まず何がつらいの？😇（部品が“直接”しゃべりすぎ）
 
+![Spaghetti Mess Dependencies](./picture/gof_ts_study_075_spaghetti_mess.png)
+
 UIって、部品が増えるほど「Aが変わったらB更新」「Bが変わったらC更新」みたいな連鎖が増えるよね💦
 ここで部品同士が直接つながり始めると、すぐこうなる👇
 
@@ -48,6 +50,8 @@ submitButton.onClick = () => {
 ---
 
 ## 3. Mediatorって何？🕊️（“会話”を仲介役に集約）
+
+![Traffic Control Tower](./picture/gof_ts_study_075_traffic_tower.png)
 
 Mediatorは **部品（Colleague）同士が直接やり取りしない** ためのパターン✨
 代わりに「仲介役（Mediator）」が、こうする👇
@@ -88,6 +92,8 @@ classDiagram
 
 ## 4. TypeScriptで“イベント中心Mediator”が超ラク📣✨
 
+![Event Roundabout](./picture/gof_ts_study_075_event_roundabout.png)
+
 ここでは **EventTarget** を「仲介役の中心（イベントハブ）」として使うよ✅
 EventTargetはイベントを受け取り、`addEventListener` で購読できる標準の仕組みだよ。([MDNウェブドキュメント][1])
 そして `dispatchEvent()` でイベントを送ると、リスナーは **同期的に** 呼ばれる（その場で反応する）よ。([MDNウェブドキュメント][2])
@@ -99,6 +105,8 @@ EventTargetはイベントを受け取り、`addEventListener` で購読でき�
 ---
 
 ## 5. ハンズオン🛠️：カフェ注文フォームをMediatorで整理する☕🧁
+
+![Rulebook Judge](./picture/gof_ts_study_075_rulebook_judge.png)
 
 ## 題材👩‍🍳
 
@@ -113,6 +121,8 @@ EventTargetはイベントを受け取り、`addEventListener` で購読でき�
 ---
 
 ## 5-1. まずはイベント名とpayloadを型で固定する🧷
+
+![Event Bins](./picture/gof_ts_study_075_event_bins.png)
 
 「イベント名の乱立」を防ぐ小ワザだよ（これだけで事故減る✨）
 
@@ -291,6 +301,8 @@ mediator.submit();                       // → ボタン無効化🔒
 
 ## 6. ここが嬉しい🎁（Mediatorの勝ちポイント）
 
+![Simulator Cockpit](./picture/gof_ts_study_075_simulator_cockpit.png)
+
 * ルールが **1箇所に集まる** → 変更が追いやすい👀✨
 * UI部品が **他部品を知らない** → 再利用しやすい🔁
 * テストが **ports差し替え** で超ラク🧪🎉
@@ -340,6 +352,8 @@ describe("Mediator", () => {
 ---
 
 ## 8. つまずき回避💡（Mediatorあるある）
+
+![Infinite Mirrors Loop](./picture/gof_ts_study_075_infinite_mirrors.png)
 
 * **Mediatorが巨大化**（神クラス化👑）しがち
   → ルールを「注文計算」「入力制御」みたいに小さく分けて、関数で整理しよ✂️✨

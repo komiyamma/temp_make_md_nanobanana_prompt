@@ -9,6 +9,8 @@
 
 ## 1) “for..ofできるAPI”が嬉しい理由😊✨
 
+![Universal Plug](./picture/gof_ts_study_074_universal_plug.png)
+
 `for..of` って、使う側から見るとこんな感じ👇
 
 * 「配列っぽく」読める 📚
@@ -23,6 +25,8 @@ JavaScriptは `for..of` のときに **`[Symbol.iterator]()` を探して**、�
 
 ## 2) Iterable / Iterator の超ざっくり復習🧠🍡
 
+![Dual Tool Generator](./picture/gof_ts_study_074_dual_tool.png)
+
 * **Iterable**：`[Symbol.iterator]()` を持っていて、**Iteratorを返せる**もの
 * **Iterator**：`next()` を持っていて、`{ value, done }` を返せるもの
 
@@ -32,6 +36,8 @@ JavaScriptは `for..of` のときに **`[Symbol.iterator]()` を探して**、�
 ---
 
 ## 3) まずは最小：ジェネレータで “for..ofできる” を作る🎁
+
+![Ticket Dispenser](./picture/gof_ts_study_074_ticket_dispenser.png)
 
 ```ts
 function* range(from: number, to: number) {
@@ -67,6 +73,8 @@ export type MenuNode =
 
 ## 5) DFS / BFS を “標準のやり方” で実装する✨
 
+![Stack vs Queue](./picture/gof_ts_study_074_stack_vs_queue.png)
+
 ポイントはこれ👇
 
 * DFS：**スタック（LIFO）** 🥞
@@ -85,6 +93,8 @@ flowchart TD
 ![DFS（縦）とBFS（横）の違い](./picture/gof_ts_study_074_dfs_bfs_compare.png)
 
 ## traversal.ts（DFS/BFS/切替API）🧁
+
+![Switch Mode](./picture/gof_ts_study_074_switch_mode.png)
 
 ```ts
 export type MenuNode =
@@ -186,6 +196,8 @@ console.log(names(dfs(menu)));
 ---
 
 ## 7) 順番は “仕様” にしよう：テストで守る🧪💎
+
+![Order Ruler Verification](./picture/gof_ts_study_074_order_ruler.png)
 
 「DFSとBFS、順番が合ってるよね？」をテストで固定します✅
 テストは **Vitest** が今どきの定番で、設定も軽いです🧁([vitest.dev][3])
