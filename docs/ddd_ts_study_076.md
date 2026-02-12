@@ -11,6 +11,8 @@
 
 ## 0) まず結論：Domain Serviceってなに？👀✨
 
+![Entity vs Service](./picture/ddd_ts_study_076_entity_vs_service.png)
+
 **「ドメインのルールなんだけど、特定の1つのEntity/VOに“自然に”置けないやつを置く場所」**だよ〜🧙‍♀️📦
 
 * Entity / VO：だいたい **名詞**（Order / Money / Email…）🧾💎
@@ -19,6 +21,8 @@
 ---
 
 ## 1) いつDomain Serviceが必要？（判断チェック）✅🔍
+
+![Cross-Entity Rule](./picture/ddd_ts_study_076_cross_entity_rule.png)
 
 ### ✅ Domain Serviceにしやすいパターン（よくある！）
 
@@ -42,6 +46,8 @@
 
 ## 2) Domain Serviceの“ちょうどいい形”🧙‍♀️📐
 
+![Stateless Service](./picture/ddd_ts_study_076_stateless_service.png)
+
 ### 基本の型（おすすめ）✨
 
 * **状態を持たない（stateless）**
@@ -63,6 +69,8 @@ flowchart LR
 ---
 
 ## 3) 例題：注文を確定していい？（Order × Menu）☕🧾🍩
+
+![Architecture Flow](./picture/ddd_ts_study_076_architecture_flow.png)
 
 ここ、ありがち〜！
 「注文を確定(confirm)するとき、**注文に入ってる商品がまだ販売中か**チェックしたい」みたいなやつ🍩✅
@@ -207,11 +215,15 @@ export class ConfirmOrderUseCase {
 
 ### 🚫 なんでもServiceにする（Entityが空っぽ）
 
+![Anemic Domain Model](./picture/ddd_ts_study_076_anemic_model.png)
+
 * Orderがただのデータ袋📦
 * ルール全部 `OrderService` に…😇
   👉 対策：**「Orderだけで決まるならOrderに」**を合言葉にしよ💪✨
 
 ### 🚫 Serviceが巨大化（神サービス👼）
+
+![God Service](./picture/ddd_ts_study_076_god_service.png)
 
 * `DiscountAndTaxAndCampaignAnd...Service` みたいになる
   👉 対策：**動詞を1つに絞る**（check/compute/decideのどれ？）🎯
