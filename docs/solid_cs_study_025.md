@@ -23,6 +23,8 @@ C# 14 の新機能は Visual Studio 2026 か .NET 10 SDK で試せるよ🧠✨ 
 
 ## 25.2 「差し替え」って何を差し替えるの？🔌🧩
 
+![IO Replacement](./picture/solid_cs_study_025_io_replacement.png)
+
 アプリが“現実世界”に触るところって、だいたいここ👇
 
 * 💾 DBアクセス（Repository / EF Core / Dapper）
@@ -45,6 +47,8 @@ C# 14 の新機能は Visual Studio 2026 か .NET 10 SDK で試せるよ🧠✨ 
 
 ## 25.3 DIPが効く“気持ちいい形”🥰🧲
 
+![DIP Structure (Castle)](./picture/solid_cs_study_025_dip_structure_castle.png)
+
 DIPを超ざっくり言うと👇
 
 * 🏰 **上位（業務ロジック）**は
@@ -64,6 +68,8 @@ DIPを超ざっくり言うと👇
 ## 25.4 例題：ミニECの「注文→決済→メール」🛒💳✉️
 
 ### まずは“しんどい版”😇（差し替え不能）
+
+![Hard Dependencies](./picture/solid_cs_study_025_hard_dependencies.png)
 
 ポイント：**new / DateTime.Now / 直接HTTP** が混ざってるとテストが辛い💥
 
@@ -132,6 +138,8 @@ public interface IIdGenerator
 
 ### ② 業務ロジックは “抽象だけ” を使う🏰✨
 
+![Abstract Dependencies](./picture/solid_cs_study_025_abstract_dependencies.png)
+
 ```csharp
 public class CheckoutService
 {
@@ -179,6 +187,8 @@ public class CheckoutService
 ![Movie set: Hero fights Actor in Green Suit (Fake Monster). System doesn't know.](./picture/solid_cs_study_025_dip_testing_fake.png)
 
 ### Fakeたち（テスト専用の実装）🧸✨
+
+![Fake Object Internal](./picture/solid_cs_study_025_fake_object_internal.png)
 
 ```mermaid
 sequenceDiagram
@@ -303,6 +313,8 @@ Mockは便利だけど、やりすぎると「実装に縛られたテスト」�
 
 ## 25.8 DIコンテナごと“テスト用に組み立てる”🧱🧪
 
+![DI Container Test Setup](./picture/solid_cs_study_025_di_container_test_setup.png)
+
 「本番と同じ `ServiceCollection` 構成で、テストだけ差し替えたい！」って時あるよね😊
 .NET のDIは `ServiceCollection` に登録して `BuildServiceProvider()` する流れが基本だよ📦 ([Microsoft Learn][3])
 
@@ -384,6 +396,8 @@ Fakeにロジックを盛りすぎると、テストが“別実装”になっ�
 ---
 
 ## 25.11 練習問題（手を動かすやつ）🏃‍♀️💨✨
+
+![Fake Failure Mode](./picture/solid_cs_study_025_fake_failure_mode.png)
 
 ### 問題A：決済失敗をテストしよう💳❌
 

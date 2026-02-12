@@ -58,6 +58,8 @@
 
 ## 1-1. “変更理由”を付箋みたいに出す📝✨（超おすすめ）
 
+![SRP Task List](./picture/solid_cs_study_027_srp_task_list.png)
+
 `OrderService` を眺めて、変更理由を分類するよ👇
 
 * ✅入力チェック（必須・形式）
@@ -86,6 +88,8 @@
 ---
 
 ## 1-3. 分割後のざっくり構造（完成イメージ）🧱✨
+
+![Structure Diagram](./picture/solid_cs_study_027_structure_diagram.png)
 
 （名前は例！あなたの題材に合わせてOKだよ😊）
 
@@ -155,6 +159,8 @@ OCPのコツはね、**増える所を当てに行く**こと！🎯
 ---
 
 ## 2-1. 割引をStrategy化🎫✨（いちばん気持ちいいやつ）
+
+![OCP Discount Cartridges](./picture/solid_cs_study_027_ocp_discount_cartridges.png)
 
 ### ✅インターフェース（ルールの約束）
 
@@ -259,6 +265,8 @@ public sealed class ShippingService
 
 ## 3-1. ありがちなLSP破壊例🙅‍♀️💥（NotSupportedException地獄）
 
+![LSP Shock Button](./picture/solid_cs_study_027_lsp_shock_button.png)
+
 ```csharp
 public interface IPaymentMethod
 {
@@ -335,6 +343,8 @@ public interface IOrderRepository
 
 ## 4-2. 読み取り用・書き込み用に分割📖✍️
 
+![ISP Split Book](./picture/solid_cs_study_027_isp_split_book.png)
+
 ```csharp
 public interface IOrderReader
 {
@@ -373,6 +383,8 @@ public sealed class InMemoryOrderRepository : IOrderReader, IOrderWriter
 ---
 
 # 5) 司令塔（UseCase）で流れを整える👩‍🏫✨
+
+![UseCase Coordinator](./picture/solid_cs_study_027_usecase_coordinator.png)
 
 クラス分割ができたら、最後に「注文の流れ」を1か所にまとめるよ！
 
@@ -419,6 +431,8 @@ public sealed class PlaceOrderUseCase
 ---
 
 # 6) Visual Studio 2026 × AI活用のコツ🤖✨（この章向け）
+
+![VS AI Assistant](./picture/solid_cs_study_027_vs_ai_assistant.png)
 
 Visual Studio 2026はAI統合が強化されたよ、って公式に案内されてるよ〜😊 ([Microsoft Learn][1])
 CopilotもVSでの使い方が公式ドキュメントにまとまってる✨ ([Microsoft Learn][2])
