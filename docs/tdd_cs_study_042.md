@@ -12,6 +12,8 @@
 
 ## まずCQSってなに？🧠✨
 
+![Command vs Query](./picture/tdd_cs_study_042_command_vs_query.png)
+
 CQS（Command Query Separation）は超ざっくり言うと👇
 
 * **Command（コマンド）**：状態を変える（保存・更新・削除など）✍️🧱
@@ -38,6 +40,8 @@ graph TD
 
 ## なんでTDDと相性いいの？🧪💕
 
+![Simplified Testing](./picture/tdd_cs_study_042_simple_testing.png)
+
 TDDって「テスト＝仕様」だから、**読み物として分かりやすい**のが正義📘✨
 CQSを守ると、こういう嬉しさが出るよ👇
 
@@ -60,6 +64,8 @@ CQSを守ると、こういう嬉しさが出るよ👇
 ---
 
 ## “混ざる”と何がツラいの？💥
+
+![Side Effect Risk](./picture/tdd_cs_study_042_query_side_effect.png)
 
 ### 😱 悪い例：Queryっぽい顔して、裏で保存してる
 
@@ -133,6 +139,8 @@ public sealed class FakeGoodsRepository : IGoodsRepository
 
 ## Step 1：Commandのテストを書く（まずRed）🚦🧪
 
+![Command Test](./picture/tdd_cs_study_042_command_test_counter.png)
+
 「登録したら保存される」だけを仕様にするよ🙂
 
 ```csharp
@@ -181,6 +189,8 @@ public sealed class GoodsService
 ---
 
 ## Step 3：Queryのテストを書く（“副作用なし”を固定）🔎🚫🧪
+
+![Query Test No Side Effect](./picture/tdd_cs_study_042_query_no_side_effect.png)
 
 ここが第42章のキモ💡
 **Queryを呼んでもSaveされない** をテストで“釘打ち”するよ🔨✨
@@ -251,6 +261,8 @@ CQSの原理は「Commandは値を返さない」だけど、現実では👇が
 
 ## よくある落とし穴（チェックリスト）✅🧠
 
+![CQS Pitfalls](./picture/tdd_cs_study_042_cqs_pitfalls.png)
+
 ### ❌ Queryの中でやりがち
 
 * ログのつもりでDB更新しちゃう📝💥
@@ -262,6 +274,8 @@ CQSの原理は「Commandは値を返さない」だけど、現実では👇が
 ---
 
 ## CQSとCQRSの違い（混乱しがちなので1分で）⏱️🙂
+
+![CQS vs CQRS](./picture/tdd_cs_study_042_cqs_vs_cqrs.png)
 
 * **CQS**：メソッド（またはクラス）内で「更新」と「参照」を混ぜない原則🔀🚫
 * **CQRS**：それをさらに大きくして、読みモデル/書きモデルを分けるアーキテクチャ寄りの話🏗️✨（複雑になりやすいから慎重に、って注意も有名） ([martinfowler.com][2])
