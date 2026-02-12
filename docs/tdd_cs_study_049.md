@@ -21,6 +21,10 @@
 
 ## 2) なんでDI差し替えが大事なの？🤔💡
 
+![tdd_cs_study_049_real_vs_fake.png](./picture/tdd_cs_study_049_real_vs_fake.png)
+
+
+
 Blazorの画面って、だいたい裏でこういうことしてるよね👇
 
 * API呼ぶ🌐
@@ -65,6 +69,10 @@ graph TD
 ---
 
 ## 4) まず“テストから”書く（Red）🚦🔴
+
+![tdd_cs_study_049_di_registration_flow.png](./picture/tdd_cs_study_049_di_registration_flow.png)
+
+
 
 bUnitで「検索ボタン押したら、結果が表示される」を先に固定しよう🧪✨
 （この時点ではサービス実装はまだ無くてOK！）
@@ -160,6 +168,10 @@ public interface IGoodsQueryService
 
 ## 6) 偽サービス（スタブ）を用意する🧸✨
 
+![tdd_cs_study_049_stub_concept.png](./picture/tdd_cs_study_049_stub_concept.png)
+
+
+
 テスト用の“決め打ち”サービスだよ。いちばん分かりやすい👍
 
 ```csharp
@@ -180,6 +192,10 @@ public sealed class FakeGoodsQueryService : IGoodsQueryService
 ---
 
 ## 7) “呼ばれたか”も確認したい（スパイでOK）🕵️‍♀️✅
+
+![tdd_cs_study_049_spy_concept.png](./picture/tdd_cs_study_049_spy_concept.png)
+
+
 
 モックライブラリなしでもいけるよ〜！
 
@@ -229,6 +245,10 @@ bUnitは **描画前に `Services` へ登録**が基本だよ✨ ([bUnit][3])
 `AddSingleton<IGoodsQueryService>(...)` をもう一回やると、単体解決では後勝ちになるよ（上書きできる）🧷 ([Microsoft Learn][4])
 
 ### コツ③：ライフタイムは“ざっくり意味”だけ掴めばOK😊
+
+![tdd_cs_study_049_di_lifetimes.png](./picture/tdd_cs_study_049_di_lifetimes.png)
+
+
 
 * Singleton：1個を使い回し
 * Scoped：スコープごとに1個

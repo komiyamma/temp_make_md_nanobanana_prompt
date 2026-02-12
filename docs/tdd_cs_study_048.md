@@ -23,10 +23,18 @@ bUnitはRazorコンポーネントの**ユニットテスト**向けライブラ
 
 ## 2) bUnitテストの“基本形”🧱🧪
 
+![tdd_cs_study_048_aaa_flow.png](./picture/tdd_cs_study_048_aaa_flow.png)
+
+
+
 MicrosoftのBlazorテスト記事でも、流れはこれ👇
 **Arrange（描画して準備）→ Act（操作）→ Assert（表示確認）** ([Microsoft Learn][1])
 
 そして `MarkupMatches` はただの文字列比較じゃなくて、**HTMLの意味（空白とか）を考慮**してくれるから、テストが壊れにくいのが嬉しいポイント💖 ([Microsoft Learn][1])
+
+![tdd_cs_study_048_markup_matches.png](./picture/tdd_cs_study_048_markup_matches.png)
+
+
 
 ```mermaid
 graph LR
@@ -54,6 +62,10 @@ dotnet add package bunit --version 2.5.3
 ---
 
 ## 4) ハンズオン①：ボタン押下→表示が変わる（最小の勝ち筋）🖱️✨
+
+![tdd_cs_study_048_counter_test.png](./picture/tdd_cs_study_048_counter_test.png)
+
+
 
 いちばん王道の “Counter” でいくよ〜☝️
 （テンプレのやつ！）
@@ -149,6 +161,10 @@ public class NameEchoTests : BunitContext
 
 ## 6) ハンズオン③：非同期描画（ロード→表示）⏳✨
 
+![tdd_cs_study_048_async_wait.png](./picture/tdd_cs_study_048_async_wait.png)
+
+
+
 Blazorは `OnInitializedAsync` でデータ取ってから描画…が多いよね🙂
 その時は **“待つ”** が必要！
 
@@ -214,6 +230,10 @@ public class AsyncHelloTests : BunitContext
 ---
 
 ## 8) どこまでテストする？線引きルール🎨✂️
+
+![tdd_cs_study_048_test_scope.png](./picture/tdd_cs_study_048_test_scope.png)
+
+
 
 おすすめはこの3段階👇
 
