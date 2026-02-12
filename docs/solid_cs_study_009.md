@@ -43,6 +43,8 @@
 
 ## 3) 見分けるコツ：副作用（Side Effect）を探す🔎⚡
 
+![side_effect_traps](./picture/solid_cs_study_009_side_effect_traps.png)
+
 判断ロジックから **追い出したいもの** はこれ👇（ほぼI/Oだと思ってOK）
 
 * Console読み書き🖥️
@@ -56,6 +58,8 @@
 ---
 
 ## 4) まずは“混ざったコード”😈🧱（Before）
+
+![spaghetti_mixer](./picture/solid_cs_study_009_spaghetti_mixer.png)
 
 例：ミニECの「送料＋合計」をConsoleで計算するやつ🛒✨
 （この段階はわざと混ぜます！）
@@ -150,6 +154,8 @@ public readonly record struct OrderResult(decimal ShippingFee, decimal Total);
 
 ### ステップB：「判断」だけの計算機を作る🧠✨（Console禁止！）
 
+![pure_logic_machine](./picture/solid_cs_study_009_pure_logic_machine.png)
+
 ここが超重要！
 **Console 1行も書かない**のがポイントだよ🙅‍♀️🖥️
 
@@ -186,6 +192,8 @@ public static class OrderPricing
 ---
 
 ### ステップC：「入力」を専用にする📥✨
+
+![dedicated_io](./picture/solid_cs_study_009_dedicated_io.png)
 
 （入力の細かいバリデーション整理は次章でガッツリやるから、ここでは軽めでOK👌）
 
@@ -276,6 +284,8 @@ Console.WriteLine("完了✅");
 ---
 
 ## 6) テストが爆速で書ける！🧪🚀
+
+![easy_testing](./picture/solid_cs_study_009_easy_testing.png)
 
 判断がPureになったから、Consoleなしでテストできるよ〜！最高！🥳💕
 
