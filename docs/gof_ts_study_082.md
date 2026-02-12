@@ -20,6 +20,10 @@ Template Method はこう👇
 
 ## 1) まずは“つらい例”😵‍💫（コピペ増殖）
 
+![gof ts study 082 copy paste pain](./picture/gof_ts_study_082_copy_paste_pain.png)
+
+
+
 「レシート出力」を 2種類作ったら…
 
 * `validate`（入力チェック）
@@ -39,6 +43,10 @@ Template Method はこう👇
 ---
 
 ## 2) Template Method の形🍰
+
+![gof ts study 082 template parts](./picture/gof_ts_study_082_template_parts.png)
+
+
 
 ポイントはこの3つだけ覚えればOK😊
 
@@ -78,6 +86,8 @@ sequenceDiagram
 ---
 
 ## 3) TypeScript流の“安全装備”🛡️（`override` 推し）
+
+![gof ts study 082 override shield](./picture/gof_ts_study_082_override_shield.png)
 
 継承を使うときのあるある事故👇
 
@@ -189,6 +199,10 @@ export abstract class ReceiptPrinter {
 
 ## ここでの“最小限”ポイント✅
 
+![gof ts study 082 minimalist class](./picture/gof_ts_study_082_minimalist_class.png)
+
+
+
 * 抽象メソッドは **3つだけ**（Header / Line / Footer）
 * 本体 `print` は短く、順番が読みやすい
 * 親は状態（メンバ変数）を持たない → 事故りにくい💓
@@ -225,6 +239,10 @@ export class SimpleReceiptPrinter extends ReceiptPrinter {
 
 ## Step E：派生クラス② ギフトレシート🎁（金額を隠す）
 
+![gof ts study 082 data hiding](./picture/gof_ts_study_082_data_hiding.png)
+
+
+
 「手順は同じ。でも行の見せ方が違う」って、まさに Template Method 向き😍
 
 ```ts
@@ -255,6 +273,10 @@ export class GiftReceiptPrinter extends ReceiptPrinter {
 ---
 
 ## Step F：hook を使って「任意セクション」を差し込む🎣✨
+
+![gof ts study 082 hook usage](./picture/gof_ts_study_082_hook_usage.png)
+
+
 
 例えば「会員向けメッセージ」を **出す時だけ**出したい📣
 

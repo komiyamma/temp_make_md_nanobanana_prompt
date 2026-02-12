@@ -27,6 +27,10 @@ TypeScriptでは、クラスを盛らずに **これだけ**で成立しがち�
 
 ## 2) “immutable（不変）”が超大事🧊✨
 
+![gof ts study 079 immutable snapshot](./picture/gof_ts_study_079_immutable_snapshot.png)
+
+
+
 Undo/Redoで一番やばい事故はこれ👇😇
 
 * 「過去のスナップショット」だと思ってたのに、**あとから変更されて一緒に変わってた**
@@ -43,6 +47,10 @@ Node.jsでも `structuredClone` は **グローバル関数として用意**さ�
 ---
 
 ## 3) まずは履歴エンジンを“型＋関数”で作ろう🧁🧰
+
+![gof ts study 079 history limit](./picture/gof_ts_study_079_history_limit.png)
+
+
 
 ここが第79章の本体！
 「状態の型 `T`」をそのまま扱える **汎用の履歴**を作るよ✨
@@ -141,6 +149,10 @@ flowchart TD
 
 ## 4) カフェ注文の“編集”に繋げよう☕🧾✨
 
+![gof ts study 079 order state](./picture/gof_ts_study_079_order_state.png)
+
+
+
 題材はシンプルに👇
 
 * `Order`（注文）
@@ -230,6 +242,10 @@ h = push(h, removeItem(current(h), "coffee"), { clone: structuredClone });
 
 ## 6) テストで境界ケースを固めよう🧪✅
 
+![gof ts study 079 boundary test](./picture/gof_ts_study_079_boundary_test.png)
+
+
+
 Undo/Redoは **境界ケース**が命！
 
 * 0回目より前にUndoできない
@@ -285,6 +301,10 @@ test("push after undo discards redo future", () => {
 ## 7) よくあるつまずき集😵‍💫🩹
 
 ## つまずき①：Undoしたのに状態が変わらない（または全部一緒に変わる）😇
+
+![gof ts study 079 mutation accident](./picture/gof_ts_study_079_mutation_accident.png)
+
+
 
 * だいたい **どこかでミューテート（破壊的変更）**してる
 * 学習中は `push(..., { clone: structuredClone })` を付けると原因が炙り出しやすい🔥 ([GitHub][1])

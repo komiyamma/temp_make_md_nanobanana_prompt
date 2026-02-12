@@ -44,6 +44,10 @@ stateDiagram-v2
 
 ## 2) まず大事：状態は「プレーンなデータ」に寄せる🧼✨
 
+![gof ts study 078 plain data](./picture/gof_ts_study_078_plain_data.png)
+
+
+
 Undo/Redoにめちゃ相性いい状態はこれ👇
 
 * オブジェクトリテラル（ `{}` ）
@@ -60,6 +64,10 @@ Undo/Redoにめちゃ相性いい状態はこれ👇
 ---
 
 ## 3) なんで “深いコピー” が必要？（浅いコピー事故😇）
+
+![gof ts study 078 shallow copy accident](./picture/gof_ts_study_078_shallow_copy_accident.png)
+
+
 
 例えばこういう事故👇
 「スナップショット取ったのに、あとで配列をいじったら過去まで変わっちゃう…！」💥
@@ -106,6 +114,10 @@ type OrderDraft = Readonly<{
 
 ## 4-2) 状態更新は「新しいオブジェクトを返す関数」で🧁
 
+![gof ts study 078 immutable update](./picture/gof_ts_study_078_immutable_update.png)
+
+
+
 ```ts
 function addItem(state: OrderDraft, itemId: string): OrderDraft {
   const existing = state.items.find(x => x.itemId === itemId);
@@ -132,6 +144,10 @@ function setNote(state: OrderDraft, note: string): OrderDraft {
 ---
 
 ## 4-3) いよいよMemento：スナップショットを保存して戻す📸🗂️
+
+![gof ts study 078 history stack](./picture/gof_ts_study_078_history_stack.png)
+
+
 
 ここが主役✨
 
@@ -211,6 +227,10 @@ console.log("REDO", h.present);
   この例では `commit()` が「今を保存してから next を present にする」形だよ✨
 
 ## ✅ 新しい編集をしたらRedoは捨てる🗑️
+
+![gof ts study 078 redo clear](./picture/gof_ts_study_078_redo_clear.png)
+
+
 
 * Undoして過去に戻ったあとに別ルートの編集をしたら、未来は別世界になるよね🌍💥
   だから `commit()` で `future.length = 0` してる！
