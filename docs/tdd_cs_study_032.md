@@ -6,7 +6,7 @@
 
 ## この章のゴール🎯✨
 
-![画像を挿入予定](./picture/tdd_cs_study_032_stub_mock.png)
+![Stub vs Mock](./picture/tdd_cs_study_032_stub_mock.png)
 
 読み終わったら、これができるようになります👇
 
@@ -20,11 +20,17 @@
 
 ### ✅ スタブ（Stub）＝「返すだけの人」📦
 
+![Stub Role](./picture/tdd_cs_study_032_stub_role.png)
+
+
 * 依存先から **決まった値を返して** テストを進めるためのもの
 * 例：時間を固定したい → 「常に 2026/01/01 を返す時計」⏰✨
 * テストはだいたい **“結果（状態）”** を見る👀
 
 ### ✅ モック（Mock）＝「呼ばれ方を見張る人」👮‍♀️📞
+
+![Mock Role](./picture/tdd_cs_study_032_mock_role.png)
+
 
 * 依存先が **どう呼ばれたか**（回数・引数・順番など）を確認するもの
 * 例：メール送信が **1回だけ呼ばれた？**、宛先は合ってる？📧✅
@@ -44,6 +50,9 @@ graph TD
 ---
 
 ## いったん全体像：「テストダブル」って何？🎎✨
+
+![Test Double Family](./picture/tdd_cs_study_032_test_double_family.png)
+
 
 スタブもモックも、まとめてこう呼ばれることが多いよ👇
 
@@ -293,6 +302,9 @@ public sealed partial class SignupService
 ---
 
 ### ここが超大事！モックの“やりすぎ”注意報⚠️😇
+
+![Over Mocking](./picture/tdd_cs_study_032_over_mocking.png)
+
 
 モックを使うと「呼び出し順まで検証」「内部の細かいメソッド呼び出しまで検証」みたいに、やろうと思えば無限にできるんだけど…
 

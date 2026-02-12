@@ -7,7 +7,7 @@ TDDで「失敗時の仕様」を先に固定して、安心して実装でき�
 
 ## 0) この章でできるようになること🎯✨
 
-![画像を挿入予定](./picture/tdd_cs_study_035_exception_handling.png)
+![Exception Handling Strategy](./picture/tdd_cs_study_035_exception_handling.png)
 
 * 依存先が落ちた時に **どう振る舞うべきか（仕様）** を言葉で決められる🗣️
 * その仕様を **テストで固定**できる🧪✅
@@ -40,7 +40,7 @@ TDDで「失敗時の仕様」を先に固定して、安心して実装でき�
 
 ## 2) 依存先の失敗は“種類”があるよ🧩（ざっくり分類）
 
-![画像を挿入予定](./picture/tdd_cs_study_035_retry_tree.png)
+![Exception Classification](./picture/tdd_cs_study_035_retry_tree.png)
 
 同じ「例外」でも、意味が違うよ〜🙂
 
@@ -75,6 +75,9 @@ graph TD
 ---
 
 ## 3) どこで try/catch するのが正解？📍✨
+
+![Boundary Catch](./picture/tdd_cs_study_035_boundary_catch.png)
+
 
 おすすめの基本ルールはこれ👇😊
 
@@ -135,6 +138,9 @@ graph TD
 ## 7) 実装（最小の形）🧩✨
 
 ### 7-1) Result と Error（超ミニ版）🧁
+
+![Result Pattern](./picture/tdd_cs_study_035_result_pattern.png)
+
 
 ```csharp
 public readonly record struct Error(string Code, string Message);
@@ -299,6 +305,9 @@ public sealed class RegisterGoodsUseCase
 ---
 
 ## 10) Refactor：握りつぶし禁止を“構造”で守る🛡️🧩
+
+![Warning Sink](./picture/tdd_cs_study_035_warning_sink.png)
+
 
 「catch したけど何もしない」は、未来の自分が泣くやつ😭
 だから、次のどれかに寄せると良いよ😊
