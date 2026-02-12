@@ -52,6 +52,9 @@ C#だとこの関係を、**`event` と `EventHandler`** で自然に表現で�
 
 ### 2) “.NET標準のイベント形”を覚える（これが本命）🌟
 
+![sender args](./picture/gof_cs_study_067_sender_args.png)
+
+
 Microsoftのガイドでも、通常は **`EventHandler` / `EventHandler<TEventArgs>` を使えば良い**（独自delegateは基本いらない）って方針だよ🧡 ([Microsoft Learn][2])
 `EventHandler<TEventArgs>` 自体も「イベント用の定義済みデリゲート」だよ〜って書かれてる📚 ([Microsoft Learn][3])
 
@@ -70,6 +73,9 @@ public event EventHandler<SomethingEventArgs>? SomethingHappened2; // 情報あ�
 ---
 
 ### 3) “本物のObserver”を標準APIで見る 👀🔍
+
+![filesystem watcher](./picture/gof_cs_study_067_filesystem_watcher.png)
+
 
 「イベント＝Observer」を体感するなら、このへんが超定番✨
 
@@ -155,6 +161,8 @@ public static class Observers
 ```
 
 解除も同じくらい大事⚠️
+
+![unsubscribe](./picture/gof_cs_study_067_unsubscribe.png)
 
 ```csharp
 // 解除（これを忘れるとメモリリークになりやすい😱）

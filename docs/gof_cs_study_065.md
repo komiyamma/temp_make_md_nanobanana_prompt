@@ -79,6 +79,9 @@ public sealed record Order(
 
 ## 3) 導入前：まずは“素朴にListで返す”版を作る🧺🙂
 
+![eager vs lazy](./picture/gof_cs_study_065_eager_vs_lazy.png)
+
+
 「全部走査して、条件に合うものを List に詰めて返す」やつ。わかりやすいけど、**毎回ぜんぶ走る**し、**全部メモリに乗る**感じになりがち😵
 
 ### OrderFilters_Eager.cs
@@ -113,6 +116,9 @@ public static class OrderFiltersEager
 ---
 
 ## 4) 導入後：Iterator（yield return）版に置き換える🚶‍♀️✨
+
+![yield mechanism](./picture/gof_cs_study_065_yield_mechanism.png)
+
 
 ここが本番〜！💖
 IEnumerable<T> を返せば foreach できるし、必要な分だけ取り出せるよ😊([Microsoft Learn][2])
@@ -257,6 +263,9 @@ public class OrderFiltersTests
 * 呼び出した瞬間じゃなく、列挙したタイミングで落ちることがあるよ。遅延実行の性質だね🫠([Microsoft Learn][1])
 
 2. 2回列挙すると2回“同じ処理”が走る🔁😱
+
+![multiple enumeration](./picture/gof_cs_study_065_multiple_enumeration.png)
+
 
 * DB/HTTP みたいな重いソースに繋がってる IEnumerable だと事故る💥
 * 必要なら ToList() で一度だけ評価してキャッシュするのもアリ🙂

@@ -62,6 +62,8 @@ sequenceDiagram
 
 ### 2) `IObservable<T>` の「約束」3点セット 📜✨
 
+![three signals](./picture/gof_cs_study_068_three_signals.png)
+
 覚えるのはこれだけでOKだよ〜🧁
 
 * `OnNext(T value)`：値が届いた！📩
@@ -96,6 +98,8 @@ NuGet の `System.Reactive` を入れると、
 ---
 
 ### 4) 最小サンプル：`Subject<T>` で「通知の川」を作る 🌊📣
+
+![subject pipe](./picture/gof_cs_study_068_subject_pipe.png)
 
 `Subject<T>` は「通知する側」でもあり「通知される側」でもある便利アイテム（hotなストリーム）です✨
 まずは“注文確定イベント”っぽいものを流してみよ〜🛒🎉
@@ -168,6 +172,8 @@ service.Dispose();
 ---
 
 ### 6) “if” を購読側に寄せる：`Where` / `Select` 入門 🔎➡️✨
+
+![stream operators](./picture/gof_cs_study_068_stream_operators.png)
 
 「通知を受ける側」が増えやすいとき、購読側でフィルタすると気持ちいいよ〜🙂💕
 

@@ -45,6 +45,9 @@ C# では **`event` / `EventHandler`** がまさに定番の実装手段で、**
 
 ### 1) “変化”と“知らせたい人”を分けて書く 📝
 
+![loose coupling](./picture/gof_cs_study_066_loose_coupling.png)
+
+
 まずは超シンプルにこれだけ👇
 
 * 変化（イベント）例：注文が **確定した** / **支払い済みになった** / **発送された** 🛒📦
@@ -156,6 +159,9 @@ public sealed class OrderAuditLogger : IDisposable
 
 ### 5) “イベントの契約”を決める（めっちゃ大事）📜✨
 
+![event contract](./picture/gof_cs_study_066_event_contract.png)
+
+
 イベントは「呼べば勝手に良い感じになる魔法」じゃなくて、**契約**だよ〜🙂‍↕️
 
 最低限これを決めよう👇
@@ -187,6 +193,9 @@ public sealed class OrderAuditLogger : IDisposable
 ## よくある落とし穴 ⚠️😵
 
 ### 落とし穴1：購読解除しなくてメモリリーク🧟‍♀️
+
+![memory leak](./picture/gof_cs_study_066_memory_leak.png)
+
 
 長生きする publisher（例：アプリ全体で生きるサービス）が、短命な subscriber（例：画面）を購読したままだと、
 **subscriber が GC されにくくなって残り続ける**ことがあるよ〜😱

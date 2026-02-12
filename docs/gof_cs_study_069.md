@@ -123,6 +123,9 @@ public sealed class OrderConfirmedEventArgs : EventArgs
 * 発行は `OnOrderConfirmed()` に寄せる
 * **購読者が例外を投げても、他の購読者に通知が届く**ようにする（GetInvocationList + try/catch）🛡️🔥
 
+![robust notification](./picture/gof_cs_study_069_robust_notification.png)
+
+
 ```csharp
 // OrderService.cs
 public sealed class OrderService
@@ -206,6 +209,9 @@ public sealed class AuditLogger
 ---
 
 ### 6) Composition Root：どこで購読する？→「起動時にまとめて」📌
+
+![composition root](./picture/gof_cs_study_069_composition_root.png)
+
 
 購読の組み立ては、だいたい `Program.cs`（またはDI構成）に置くとスッキリします 😊
 
