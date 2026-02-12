@@ -35,7 +35,11 @@
 ![Image](./picture/gof_cs_study_054_structural_summary_pipeline.png)
 
 * **Decorator**：`GZipStream` で `Stream` を包んで「圧縮/解凍」を後付け🎁
+
+![Image](./picture/gof_cs_study_054_gzip_decorator.png)
 * **Adapter**：`StreamReader / StreamWriter` で「Stream ↔ テキスト」を変換🔌
+
+![Image](./picture/gof_cs_study_054_stream_adapter.png)
 * **Facade**：複雑な手順（Open→Wrap→Read→Deserialize→Map）を `OrderArchive` みたいな窓口にまとめる🚪✨
 
 
@@ -105,6 +109,8 @@ public sealed record OrderLineDto(
 ---
 
 ### 4) Facade（窓口）を作る：`OrderArchive` 🚪✨
+
+![Image](./picture/gof_cs_study_054_facade_building.png)
 
 ポイントはこれ👇
 
@@ -333,6 +339,8 @@ public class OrderArchiveTests
 ---
 
 ### 8) セキュリティ注意（超だいじ）🛡️⚠️
+
+![Image](./picture/gof_cs_study_054_security_skull.png)
 
 Streamで「オブジェクト丸ごと保存したい…」ってなると、昔の癖で `BinaryFormatter` に行きがちだけど、**セキュリティ的に危険で非推奨**だから避けようね🙅‍♀️💦([Microsoft Learn][4])
 

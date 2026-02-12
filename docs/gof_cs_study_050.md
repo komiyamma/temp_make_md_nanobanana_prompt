@@ -21,6 +21,8 @@
 
 ### 1) Flyweightを一言で言う🪶
 
+![Image](./picture/gof_cs_study_050_flyweight_concept.png)
+
 * **「同じものは共有して使い回し、メモリとGCの負担を下げる」** だよ🙂✨
 * ただし、共有できるのはだいたい **不変（immutable）** なものが中心⚠️
 
@@ -31,6 +33,8 @@
 ### 2) `string` の“共有っぽさ”を読む🧵👀
 
 #### A. 文字列リテラルは「メタデータからロードされる」📌
+
+![Image](./picture/gof_cs_study_050_string_intern.png)
 
 * C#の `"hello"` みたいな **文字列リテラル** は、IL的には `ldstr` 命令で読み込まれるよ📦
 * `ldstr` は「アセンブリのメタデータにある文字列リテラル」を扱う命令として説明されてるよ📚([Microsoft Learn][1])
@@ -79,6 +83,8 @@ stateDiagram-v2
 
 #### A. 何が嬉しい？（超ざっくり）🙂
 
+![Image](./picture/gof_cs_study_050_arraypool_lifecycle.png)
+
 * `byte[]` とか `char[]` を処理のたびに `new` すると、**大量確保→GC** がしんどくなる😵‍💫🗑️
 * そこで **配列をプール（使い回し）** して、割り当てを減らすのが `ArrayPool<T>` 📦✨
 
@@ -121,6 +127,8 @@ stateDiagram-v2
   * `Rent(1024)` したら 2048 が来ることもある → 末尾はゴミが残ってるかも🗑️
   * “実長”を無視して全部処理するとバグる😵‍💫
 * **クリア漏れ**
+
+![Image](./picture/gof_cs_study_050_dirty_buffer.png)
 
   * 秘密が入ったバッファを `clearArray:false` で返すと、別の処理に残骸が混ざる可能性😨🔐
 
