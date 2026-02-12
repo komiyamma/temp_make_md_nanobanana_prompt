@@ -63,6 +63,8 @@ classDiagram
 
 ### 2) “共有していい部分”と“毎回変わる部分”を分ける ✂️🧠
 
+![Image](./picture/gof_cs_study_049_uniform_nametags.png)
+
 Flyweightのキモはこれだけ！👏
 
 * **共有していい部分（Intrinsic）**：みんな同じ。変えない。
@@ -125,6 +127,8 @@ public readonly record struct BadgeInstance(
 ---
 
 ### 5) Flyweight Factory：同じStyleを使い回す“キャッシュ係”を作る 🧰🔁
+
+![Image](./picture/gof_cs_study_049_library_counter.png)
 
 ここがFlyweightの“パターン部分”だよ🪶
 同じキーなら同じ `BadgeStyle` を返す（=共有）！
@@ -216,6 +220,8 @@ public sealed class FlyweightTests
 
 ### 7) 近い“標準のFlyweight”：`string` の共有（Intern）🧵✨
 
+![Image](./picture/gof_cs_study_049_string_pool.png)
+
 `string` は「同じ内容なら共有したい」ケースの代表だよ🙂
 .NETには **文字列をインターン（共有）**する仕組みがあって、`String.Intern` を使うと **同じ内容の文字列を共有プールに置いて再利用**できるよ。([Microsoft Learn][2])
 
@@ -238,6 +244,8 @@ public static string NormalizeTag(string tag)
 ---
 
 ### 8) もう一つの“現実的Flyweight”：`ArrayPool<T>` で配列を使い回す 📦🔁
+
+![Image](./picture/gof_cs_study_049_rental_shop.png)
 
 大量処理で「一時バッファ配列」を何度も `new` すると、割り当てが増えてGCが忙しくなるよ😵
 そこで **`ArrayPool<T>`** が便利！共有プールから配列を借りて、使い終わったら返す仕組みだよ🪶📦 ([Microsoft Learn][3])
@@ -280,6 +288,8 @@ public static int CountDigitsFast(ReadOnlySpan<char> input)
 ---
 
 ## よくある落とし穴 ⚠️😇
+
+![Image](./picture/gof_cs_study_049_return_warning.png)
 
 1. **共有対象が可変（mutable）**で事故る
 

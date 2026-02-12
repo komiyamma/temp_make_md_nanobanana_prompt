@@ -20,6 +20,8 @@
 
 ### 1) まず「導入前」を作って、つらさを固定する 😵‍💫➡️🧪
 
+![Image](./picture/gof_cs_study_048_tangled_wires.png)
+
 呼び出し側が全部やると、こんな感じになりがち👇（手順・例外・順序・後始末が散らばる）
 
 ```csharp
@@ -50,6 +52,8 @@ return CheckoutResult.Succeeded(order.Id, receiptPath);
 
 ### 2) 部品の“契約”を小さく決める（差し替え用）🧩🔌
 
+![Image](./picture/gof_cs_study_048_component_puzzle.png)
+
 Facadeの中で使う部品を、**小さなinterface**で分けるよ（オレオレ汎用フレームワーク化は禁止🙅‍♀️、でも「業務の部品」はOK🙆‍♀️）
 
 ```csharp
@@ -79,6 +83,8 @@ public sealed record PaymentResult(bool Succeeded, string? Error = null);
 ---
 
 ### 3) Facade（窓口）を作る🚪🛒
+
+![Image](./picture/gof_cs_study_048_gatekeeper.png)
 
 
 ```mermaid
@@ -196,6 +202,8 @@ Console.WriteLine($"注文OK！ OrderId={result.OrderId} Receipt={result.Receipt
 ---
 
 ### 5) テストで「差し替えが効く」を確認する🧪🌸
+
+![Image](./picture/gof_cs_study_048_stunt_double.png)
 
 ここが超大事！✨
 **Facadeは“入口”だから、テストも入口からだけ叩く**のが気持ちいい💗
@@ -323,6 +331,8 @@ public async Task PlaceOrder_PaymentFails_DoesNotSaveOrNotify()
 ---
 
 ## 落とし穴 ⚠️😇
+
+![Image](./picture/gof_cs_study_048_god_object_bloat.png)
 
 * **FacadeがGod Object化**：何でも詰め込みすぎて、巨大クラスになる📦💥
 
