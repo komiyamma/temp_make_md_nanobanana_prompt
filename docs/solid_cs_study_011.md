@@ -40,6 +40,8 @@
 ---
 
 ## 3. SRPのコツ再確認📌（超重要✨）
+![Single Responsibility](./picture/solid_cs_study_011_change_request_reception.png)
+
 
 SRPのキモはこれ👇
 
@@ -64,16 +66,22 @@ SRPのキモはこれ👇
 * 「この処理、何のため？」「何が変わったら直す？」を箇条書き
 
 ### ステップ2：まず Extract Method（メソッド抽出）で塊を作る🧱
+![Extract Method](./picture/solid_cs_study_011_extract_method_cookie.png)
+
 
 * Visual Studio の **Extract Method** が強い💪
   ショートカット：`Ctrl + R` → `Ctrl + M` ([Microsoft Learn][2])
 
 ### ステップ3：塊をクラスへ引っ越し🚚✨
+![Moving Classes](./picture/solid_cs_study_011_moving_classes.png)
+
 
 * “かたまり”ができたら、新しいクラスに移す
 * 型を別ファイルにするのは **Move type to matching file** が便利だよ🙌 ([Microsoft Learn][3])
 
 ### ステップ4：最後に OrderService を「段取り係」にする🎬
+![Orchestration](./picture/solid_cs_study_011_conductor_orchestration.png)
+
 
 * OrderService は **オーケストレーター（流れだけ書く）** にする✨
 
@@ -131,6 +139,8 @@ public sealed class OrderService
 ---
 
 ## 6. 変更理由を “見える化” しよう📝✨（ここがSRPの勝ち筋！）
+![Labeling Responsibilities](./picture/solid_cs_study_011_labeling_machine.png)
+
 
 まずはこう分けて考えるよ😊
 
@@ -189,6 +199,8 @@ Visual Studioで、責務ごとに範囲選択 → Extract Method✨
 最初は “インターフェースなし” でもOK！（DIPは後の章でやるからね😉）
 
 #### After（分割後のイメージ）🌈
+![Dependency Hub](./picture/solid_cs_study_011_dependency_hub.png)
+
 
 ```mermaid
 classDiagram
@@ -312,6 +324,8 @@ public readonly record struct OrderTotals(decimal Subtotal, decimal Tax, decimal
 ---
 
 ## 11. ありがちな失敗😅💦（回避策つき！）
+![Over-fragmentation](./picture/solid_cs_study_011_maze_vs_hallway.png)
+
 
 ### 失敗1：細かくしすぎて迷子🥺
 

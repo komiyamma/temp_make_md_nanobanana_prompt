@@ -14,6 +14,8 @@
 ---
 
 ## 2) まず大前提：OCPは「未来予知」じゃないよ🔮❌
+![Over-Engineering](./picture/solid_cs_study_014_false_future_prophecy.png)
+
 
 OCPって聞くと「将来の追加に備えて、最初から全部インターフェースにする！」ってなりがちだけど…
 それやると高確率で **“未来の妄想”にコードが支配される** のね😵‍💫💦
@@ -26,6 +28,8 @@ OCPのコツはこれ👇
 ---
 
 ## 3) 抽象化しすぎると起きる「3大事故」🚑💥
+![Too Many Abstractions](./picture/solid_cs_study_014_confusing_map.png)
+
 
 ### 事故①：クラスが増えすぎて迷子😇🗂️
 
@@ -132,6 +136,8 @@ public sealed class PaymentService
 ---
 
 ## 6) 「ちょうどいいOCP」：Strategyに切り出す🎭✨
+![Simple Strategy](./picture/solid_cs_study_014_simple_plug_adapter.png)
+
 
 ### 6-1) まず“差し替え口”を作る（インターフェース）🚪
 
@@ -207,6 +213,8 @@ public sealed class PaymentService
 ## 8) 超実戦ルール（迷ったらこれ）📌✨
 
 ### ルールA：「2回目が来たら抽象化」🔁
+![Rule of Three](./picture/solid_cs_study_014_rule_of_three_stamp.png)
+
 
 1回目：ベタ書きでOK
 2回目：分岐が増えた！→ ここで抽象化を検討
