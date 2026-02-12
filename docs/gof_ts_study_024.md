@@ -91,6 +91,8 @@ const order = createOrderPositional(
 
 ## 24.2 何がツラいの？「長い引数リスト」の事故ポイント💥
 
+![Code Smell](./picture/gof_ts_study_024_smell_nose.png)
+
 これは有名なコードスメル（設計の“匂い”）で、よく **Long Parameter List（長すぎる引数）** って呼ばれます👃
 「直し方」として **Introduce Parameter Object（引数をオブジェクトにまとめる）** が定番で紹介されています。([refactoring.com][1])
 
@@ -105,6 +107,8 @@ const order = createOrderPositional(
 ---
 
 ## 24.3 事故デモ🧨：TypeScriptでも防げない「同じ型の入れ替え」
+
+![Argument Swap Accident](./picture/gof_ts_study_024_switch_accident.png)
 
 例えば `extraShot` と `takeout`、どっちも `boolean` ですよね。
 
@@ -136,6 +140,8 @@ const subtleBug = createOrderPositional(
 
 ## 24.4 じゃあ Builder の出番？🤔✨（まだ“症状編”だけど、気配をつかむ）
 
+![Builder Concept](./picture/gof_ts_study_024_builder_blocks.png)
+
 Builder はざっくり言うと…
 
 * **作る手順を分けて**
@@ -157,6 +163,8 @@ TypeScript/JavaScript界隈だと、まず定番は **“オプションオブ�
 ---
 
 ## 24.5 Builder が「効きそう」なサイン集🔍✨
+
+![Builder Signs](./picture/gof_ts_study_024_checklist_sign.png)
 
 次のうち、**2つ以上当てはまったら** Builder（またはそれに近い構築手法）を考え始めてOKです🙆‍♀️
 
@@ -205,6 +213,8 @@ createOrderPositional(
 
 ## Step 3️⃣：テストが“暗号”になるのを見よう🧪🔐
 
+![Cryptic Test](./picture/gof_ts_study_024_test_cryptic.png)
+
 テストが「値の列」になって、意図が消える例👇
 
 ```ts
@@ -225,6 +235,8 @@ test("latte order", () => {
 ---
 
 ## 24.7 ちょい見せ🧁：まずは「オプションオブジェクト」が王道（次章の伏線）
+
+![Parameter Object Intro](./picture/gof_ts_study_024_param_obj_intro.png)
 
 「位置で渡す」のをやめて、「名前で渡す」に寄せると、急に読みやすくなります✨
 この方向が **Introduce Parameter Object** の定番ルートです。([refactoring.com][1])

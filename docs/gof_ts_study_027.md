@@ -25,6 +25,8 @@
 
 ## まずは共通の型（ドメイン）を用意しよう🧩
 
+![Decision Tree](./picture/gof_ts_study_027_decision_tree.png)
+
 ```mermaid
 flowchart TD
     Start(["引数どうする？"]) --> Q1{"引数 3個以下？"}
@@ -71,6 +73,8 @@ export const nextOrderId = () => `o_${++seq}`;
 ![3つの手法（引数、オプション、Builder）の比較。](./picture/gof_ts_study_027_review_comparison.png)
 
 ### A案：引数の並び（positional args）🧵😵‍💫
+
+![Positional Pain](./picture/gof_ts_study_027_positional_pain.png)
 
 **最初はラク**。でも、すぐ辛くなりやすい代表です…！
 
@@ -129,6 +133,8 @@ createOrderPositional(
 ---
 
 ### B案：オプションオブジェクト（TSの王道🥇）📦✨
+
+![Options Joy](./picture/gof_ts_study_027_options_joy.png)
 
 TypeScriptで「引数が増えたらまずこれ」になりやすい形です😊
 **読む人に優しい**のが強い💪
@@ -229,6 +235,8 @@ createOrderOptions(opts);
 
 ### C案：Builder（呼び出しを “会話” にする）🧱✨
 
+![Builder Talk](./picture/gof_ts_study_027_builder_talk.png)
+
 「オプション多すぎ問題」や「順番が大事」に寄せたい時に強いです💪
 ※ この章は“過剰な独自クラス”を避けたいので、**クラスではなく関数＋オブジェクト**で書きます😊
 
@@ -300,6 +308,8 @@ const order = orderBuilder()
 ---
 
 ## どれが読みやすい？レビュー観点チェックリスト✅👀
+
+![Review Checklist](./picture/gof_ts_study_027_review_checklist.png)
 
 PRレビューでそのまま使える形にします💌✨
 
@@ -376,6 +386,8 @@ PRでこう書けると強いです💪✨（そのままコピペOK）
 ---
 
 ## 演習③：3案が同じ結果になるテスト🧪⚡
+
+![Test Shield](./picture/gof_ts_study_027_test_shield.png)
 
 テストは「呼び出しの読みやすさ」を守る盾です🛡️✨
 ここでは **Vitest** を例にします（2025年にVitest 4.0が発表されています）。([Vitest][1])

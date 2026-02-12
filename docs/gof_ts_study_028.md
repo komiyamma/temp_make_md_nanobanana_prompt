@@ -22,6 +22,8 @@
 
 ## 2. コピペ運用が壊れる理由💥（地味に効くやつ）
 
+![Copy Paste Mess](./picture/gof_ts_study_028_copy_paste_mess.png)
+
 ## コピペ地獄の症状リスト😵‍💫
 
 * 似たオブジェクトの作成コードが、あちこちに増える📄📄📄
@@ -56,6 +58,8 @@ flowchart TD
 ---
 
 ## 3. Prototypeって、超ざっくり何？🧬✨
+
+![Prototype Concept](./picture/gof_ts_study_028_prototype_concept.png)
 
 Prototypeのコアはこれだけ👇
 
@@ -154,6 +158,8 @@ const morningSetOrder: Order = {
 
 ## 7. でも！ここで最大の落とし穴⚠️「浅いコピー事故」🧨
 
+![Shallow Trap](./picture/gof_ts_study_028_shallow_trap.png)
+
 「複製」と聞くと、ついスプレッドでこう書きたくなる👇
 
 ```ts
@@ -165,6 +171,8 @@ const cloned = { ...template };
 浅いコピーは「トップレベルだけコピーして、ネストは参照が共有される」ってやつ。([MDN Web Docs][2])
 
 ## 事故の例💥「複製したつもりが、テンプレが壊れる」
+
+![Ghost Link](./picture/gof_ts_study_028_ghost_link.png)
 
 ```ts
 const template: Order = {
@@ -201,6 +209,8 @@ console.log(template.items.length); // えっ…増えてる！？😱
 
 ## 9. 2026的な「深いコピー」の本命チラ見せ👀✨（次章の主役）
 
+![Structured Clone Preview](./picture/gof_ts_study_028_structured_clone_preview.png)
+
 いまのJavaScriptには **`structuredClone()`** という標準の“深いコピー”があるよ🧬
 これは「structured clone algorithm」でオブジェクトを深く複製する仕組みで、MDNでも説明されてるよ。([MDN Web Docs][3])
 仕様の入口としては WHATWG のHTML標準にも `structuredClone(value[, options])` が載ってるよ。([html.spec.whatwg.org][4])
@@ -213,6 +223,8 @@ console.log(template.items.length); // えっ…増えてる！？😱
 ---
 
 ## 10. ミニ・ハンズオン🛠️「テンプレから注文を作る」発想を体に入れる💕
+
+![Hands On Template](./picture/gof_ts_study_028_hands_on_template.png)
 
 この章は“困りごと編”だから、実装は最小でOK👌
 （深いコピーの具体技は次章でガッツリやるよ🧁）
