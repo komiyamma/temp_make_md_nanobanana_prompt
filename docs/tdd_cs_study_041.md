@@ -5,6 +5,8 @@
 ---
 
 ## 0. この章でできるようになること🎯✨
+![tdd_cs_study_041_value_object_guard](./picture/tdd_cs_study_041_value_object_guard.png)
+
 
 ![画像を挿入予定](./picture/tdd_cs_study_041_value_object.png)
 
@@ -15,6 +17,8 @@
 ---
 
 ## 1. まず「あるある地獄」😇💥
+![tdd_cs_study_041_primitive_leak](./picture/tdd_cs_study_041_primitive_leak.png)
+
 
 たとえば、推し活グッズの価格と数量をこう書くと…
 
@@ -56,6 +60,8 @@ graph LR
 ---
 
 ## 2. 今日の作戦：Value Object（値オブジェクト）ってやつ🧸✨
+![tdd_cs_study_041_minting_machine](./picture/tdd_cs_study_041_minting_machine.png)
+
 
 ここでは超やさしく言うと👇
 
@@ -124,6 +130,8 @@ public sealed record Price
 ---
 
 ### 3-3. さらにルール追加：上限もテストで固定しよ🧪🧷
+![tdd_cs_study_041_range_gauge](./picture/tdd_cs_study_041_range_gauge.png)
+
 
 ```csharp
 public class PriceUpperBoundTests
@@ -208,6 +216,8 @@ public class QuantityTests
 ## 5. “型で守る”と何が嬉しいの？🎁✨（ここ超重要！）
 
 ### 5-1. 間違いがコンパイルで止まる🚦🛑
+![tdd_cs_study_041_type_safety_puzzle](./picture/tdd_cs_study_041_type_safety_puzzle.png)
+
 
 ```csharp
 var price = Price.Create(500);
@@ -218,6 +228,8 @@ var qty   = Quantity.Create(2);
 ```
 
 ### 5-2. ルールチェックが散らばらない🧹✨
+![tdd_cs_study_041_single_castle](./picture/tdd_cs_study_041_single_castle.png)
+
 
 * 価格のルールは **Price.Create に集約**
 * 数量のルールは **Quantity.Create に集約**
@@ -264,6 +276,8 @@ public class GoodsTests
 ## 7. 初心者がハマりがちな注意点⚠️😵‍💫
 
 ### 7-1. “struct（構造体）”で作ると default が出てくる問題🧱💥
+![tdd_cs_study_041_struct_ghost](./picture/tdd_cs_study_041_struct_ghost.png)
+
 
 値オブジェクトは `record struct` でも作れるけど、**structは `default` が必ず作れちゃう**のが落とし穴になりやすいよ〜😇
 

@@ -11,6 +11,8 @@ UIはまだ作らず、**中身（ロジック）だけ**をTDDで育てるよ�
 ---
 
 ## 1) この章のゴール🎯✨
+![tdd_cs_study_040_usecase_panel](./picture/tdd_cs_study_040_usecase_panel.png)
+
 
 ![画像を挿入予定](./picture/tdd_cs_study_040_practice_1.png)
 
@@ -23,6 +25,8 @@ UIはまだ作らず、**中身（ロジック）だけ**をTDDで育てるよ�
 ---
 
 ## 2) 今回つくるもの（完成イメージ）🎀📦
+![tdd_cs_study_040_app_mockup](./picture/tdd_cs_study_040_app_mockup.png)
+
 
 今回は **“推し活グッズ” を管理するロジック**だけ作るよ😊
 
@@ -40,6 +44,8 @@ UIはまだ作らず、**中身（ロジック）だけ**をTDDで育てるよ�
 ---
 
 ## 3) 仕様（ミニでOK！でもちゃんと “決める”）📘✨
+![tdd_cs_study_040_relay_flow](./picture/tdd_cs_study_040_relay_flow.png)
+
 
 迷子防止のため、ここは先に決めちゃうよ😊🫶
 
@@ -73,6 +79,8 @@ sequenceDiagram
 ---
 
 ## 4) 最小の設計（ちゃんと “依存” を外に出す）🔌✨
+![tdd_cs_study_040_arch_pillars](./picture/tdd_cs_study_040_arch_pillars.png)
+
 
 今回の構造はこれだけで十分🙆‍♀️
 
@@ -88,6 +96,8 @@ sequenceDiagram
 ---
 
 ## 5) まずテストケース表を作る🗂️🧪（AIもここで使うと強い！）
+![tdd_cs_study_040_test_clipboard](./picture/tdd_cs_study_040_test_clipboard.png)
+
 
 ### テストケース（おすすめ最小セット）🌼
 
@@ -371,6 +381,8 @@ internal sealed class InMemoryGoodsRepository : IGoodsRepository
 ---
 
 ## Step B：ルール違反をテストで固定（入力バリデーション）🧯🧪
+![tdd_cs_study_040_validation_bouncer](./picture/tdd_cs_study_040_validation_bouncer.png)
+
 
 ### B-1) 失敗テスト（Red）🔴：名前が空はNG
 
@@ -448,6 +460,8 @@ public sealed partial class Goods
 ---
 
 ## Step C：重複禁止（Repository依存っぽい所をUseCaseで扱う）🚫🧪
+![tdd_cs_study_040_duplicate_scanner](./picture/tdd_cs_study_040_duplicate_scanner.png)
+
 
 ここが **“UseCaseっぽさ”** 出るところ〜！🌟
 
