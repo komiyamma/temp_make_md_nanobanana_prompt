@@ -61,6 +61,9 @@ ASP.NET Core のミドルウェアは、リクエストが来るたびに
 
 ### 2) `Use` と `Run` は「流す／止める」ボタン 🎛️🛑
 
+![Image](./picture/gof_cs_study_057_use_vs_run_flow.png)
+
+
 * `app.Use(...)`：**基本形**。`next()` を呼ぶかどうか選べる（= 通す / 止める）
 * `app.Run(...)`：**終点**。そこで処理が終わる（= 以降へ渡さない）
 
@@ -69,6 +72,9 @@ ASP.NET Core のミドルウェアは、リクエストが来るたびに
 ---
 
 ### 3) `Map` / `UseWhen` は「分岐した別チェーン」🌿🔀
+
+![Image](./picture/gof_cs_study_057_middleware_branching_tree.png)
+
 
 現実のWebアプリは「URLや条件で処理を分けたい」ことが多いよね🙂
 
@@ -80,6 +86,9 @@ ASP.NET Core のミドルウェアは、リクエストが来るたびに
 ---
 
 ### 4) “順番が命”を体感しよう（特に認証/認可）🔐⚠️
+
+![Image](./picture/gof_cs_study_057_ordering_layers.png)
+
 
 ミドルウェアは **登録した順番で実行**されるから、順序ミスると事故る😵💦
 
@@ -155,6 +164,9 @@ public sealed class ApiKeyMiddleware
 
 ## `IMiddleware` と普通のミドルウェアの違い（DIで詰まりやすい所）🧩😵‍💫
 
+![Image](./picture/gof_cs_study_057_imiddleware_di_scope.png)
+
+
 ### ✅ 普通の（Conventional）ミドルウェア
 
 さっきの `ApiKeyMiddleware` みたいな形ね。
@@ -174,6 +186,9 @@ public sealed class ApiKeyMiddleware
 ---
 
 ## よくある落とし穴 ⚠️😵
+
+![Image](./picture/gof_cs_study_057_pitfall_trap.png)
+
 
 * **`next()` を呼び忘れて**、後ろの処理が全部動かない🛑
   → 「止めたい」のか「うっかり」なのか、意図をコメントで明確にしよ🙂
@@ -211,6 +226,9 @@ public sealed class ApiKeyMiddleware
 ---
 
 ## テストで“流れ”を固定する（超おすすめ）🧪📌
+
+![Image](./picture/gof_cs_study_057_test_fixed_clamp.png)
+
 
 ミドルウェアは「順番」が正義だから、テストで固定すると安心感が爆増するよ🥹✨
 ASP.NET Core には `WebApplicationFactory` を使った統合テストの定番ルートがあるよ📘 ([Microsoft Learn][4])

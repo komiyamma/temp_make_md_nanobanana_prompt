@@ -23,6 +23,9 @@
 
 ### 1) ログ用ハンドラを作る（DelegatingHandler）📝✨
 
+![Image](./picture/gof_cs_study_059_logging_wrapper.png)
+
+
 * ここが **CoRの主役**！「本体処理（`base.SendAsync`）の前後」に責務を足すよ🎁
 * `ILogger` を使うと、`IHttpClientFactory` まわりのログ設計と相性がいいよ🙂([Microsoft Learn][2])
 
@@ -77,6 +80,9 @@ public sealed class LoggingHandler : DelegatingHandler
 
 ### 2) 呼び出し側（業務側）は “HttpClientを使うだけ” にする 🛒✨
 
+![Image](./picture/gof_cs_study_059_client_transparency_curtain.png)
+
+
 * 連鎖の中身は知らない！ただ叩くだけ！がポイント💡
 
 ```csharp
@@ -103,6 +109,9 @@ public sealed class ShippingApiClient
 
 ### 3) 連鎖を組み立てる（IHttpClientFactory + 標準寄りResilience）🔗🧩
 
+![Image](./picture/gof_cs_study_059_resilience_shield.png)
+
+
 
 ```mermaid
 flowchart LR
@@ -121,7 +130,10 @@ flowchart LR
 
 * `IHttpClientFactory` は “作り方・設定・ハンドラ連鎖” をまとめて管理できるよ🙂
   （`HttpClient` を都度 `new` して捨てるのを避けるのが定番）([Microsoft Learn][3])
-* **リトライなどの耐障害化**は `Microsoft.Extensions.Http.Resilience` で “HttpClient向け”に入れられるよ([Microsoft Learn][1])
+* **リトライなどの耐障害化**は `Microsoft.Extensions.Http.Resilience` で “HttpClient向け”に入れられるよ
+
+![Image](./picture/gof_cs_study_059_retry_loop.png)
+([Microsoft Learn][1])
 * まずは最短で：**標準のResilienceハンドラ**を追加するところからでOK！🧡([Microsoft Learn][4])
 
 下の例は「外部アクセスなし」で動くように、**疑似サーバ用ハンドラ**を噛ませてるよ（デモ用）🙂
@@ -205,6 +217,9 @@ public static class Demo
 
 ### 4) ハンドラの順番を変えて観察する 👀🔁📝
 
+![Image](./picture/gof_cs_study_059_log_position_impact.png)
+
+
 * **ログを外側**に置くと「1回の呼び出しとしてログ」になりやすい🙂
 * **ログを内側**に置くと「リトライのたびにログ」になりやすい🙂
 * どっちが良いかは目的次第（障害解析なら内側が便利、静かにしたいなら外側が便利）✨
@@ -212,6 +227,9 @@ public static class Demo
 ---
 
 ## 落とし穴 ⚠️😵‍💫
+
+![Image](./picture/gof_cs_study_059_pitfalls_maze.png)
+
 
 * **リトライしていい処理だけ**にすること！
 
