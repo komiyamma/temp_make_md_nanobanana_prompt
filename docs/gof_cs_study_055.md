@@ -25,15 +25,24 @@
 
 分岐って、だいたいこの3つのどれかだよ👇
 
-* **A. 方針（Policy）＝やり方を選ぶ分岐** 🧠🔁
+* **A. 方針（Policy）＝やり方を選ぶ分岐**
+
+![Image](./picture/gof_cs_study_055_strategy_policy.png)
+ 🧠🔁
   例：割引の計算方法を選ぶ / 並び替えルールを選ぶ / 支払い計算ロジックを切り替える
   👉 だいたい **Strategy** が効く✨（.NETなら `IComparer<T>` や `Comparison<T>` もまさにそれ📏）
 
-* **B. 状態（State）＝“今どの段階？”で許可される操作が変わる分岐** 🚦📦
+* **B. 状態（State）＝“今どの段階？”で許可される操作が変わる分岐**
+
+![Image](./picture/gof_cs_study_055_state_traffic_light.png)
+ 🚦📦
   例：注文が「未払い」なら発送できない、みたいなやつ
   👉 **State** が効く✨（最初は `enum` + `switch` でもOK。でも増えてきたら状態クラスへ🧩）
 
-* **C. 通知（Notification）＝“起きた出来事”に反応する分岐** 📣🔔
+* **C. 通知（Notification）＝“起きた出来事”に反応する分岐**
+
+![Image](./picture/gof_cs_study_055_observer_broadcast.png)
+ 📣🔔
   例：注文確定したら「メール送信」「在庫引当」「ログ保存」…反応が増えるやつ
   👉 **Observer**（C#なら `event` / `EventHandler` が王道🔔）
   さらに発展すると `IObservable<T>` の世界もある🌊（.NET標準のObserver例も公式にあるよ）([Microsoft Learn][1])
@@ -60,6 +69,9 @@ flowchart TD
 
 ### 2) 迷ったら“質問3つ”で判定する🧠❓
 
+![Image](./picture/gof_cs_study_055_three_questions.png)
+
+
 コードの分岐を見て、これを自分に聞いてみてね👇
 
 1. **「やり方（アルゴリズム）を選んでる？」**
@@ -76,6 +88,9 @@ flowchart TD
 ---
 
 ### 3) “分岐地獄”を1個だけ題材にして、分類だけやってみる🧯🔥
+
+![Image](./picture/gof_cs_study_055_switch_hell_tangle.png)
+
 
 たとえば、こんな感じのコード（イメージ）👇
 （※ ここで大事なのは「書き換え」じゃなくて「分類」ね！）
@@ -130,6 +145,9 @@ public void PlaceOrder(Order order)
 ---
 
 ### 4) “パターンにするタイミング”の目安を知る⏱️⚖️
+
+![Image](./picture/gof_cs_study_055_refactoring_signs.png)
+
 
 いきなり全部パターン化しなくてOKだよ🙆‍♀️💕
 

@@ -61,12 +61,18 @@ HttpClient
 
 ### 2) 登場人物を整理しよ 👥🧠
 
+![Image](./picture/gof_cs_study_058_actors_stage.png)
+
+
 **(A) HttpMessageHandler**
 
 * “送る処理の本体側”の抽象だよ。
 * 注意：同じハンドラインスタンスに対して SendAsync が同時に呼ばれることがある（＝スレッド安全を意識）⚠️ ([Microsoft Learn][3])
 
 **(B) DelegatingHandler**
+
+![Image](./picture/gof_cs_study_058_delegating_relay.png)
+
 
 * 「自分で完結しないで、InnerHandler（次）に委譲する」ための型だよ。
 * “次のハンドラ”は InnerHandler プロパティでつながるよ 🔗 ([Microsoft Learn][4])
@@ -85,6 +91,9 @@ HttpClient
 ---
 
 ### 3) 最小のDelegatingHandlerを書いてみる ✍️✨（前→次→後）
+
+![Image](./picture/gof_cs_study_058_simple_handler_sandwich.png)
+
 
 まずは“差し込める感覚”を掴む用に、ヘッダー追加＋ログの最小例いくよ😊
 
@@ -134,6 +143,9 @@ public sealed class CorrelationIdHandler : DelegatingHandler
 
 ### 4) “差し込み”はIHttpClientFactoryでやるのが定番 🔧🧩
 
+![Image](./picture/gof_cs_study_058_factory_assembly_lego.png)
+
+
 ハンドラを差し込む代表ルートが **IHttpClientFactory**。
 HttpClientの生成・設定・ハンドラ構成をDIでまとめやすいのがメリットだよ 😊 ([Microsoft Learn][6])
 
@@ -175,6 +187,9 @@ public sealed class PaymentGatewayClient
 
 ### 5) “順番”が超大事！追加した順＝外側から入る 🧠🔁
 
+![Image](./picture/gof_cs_study_058_onion_return_path.png)
+
+
 DelegatingHandlerを複数足すときは、**順番が設計そのもの**になるよ⚠️
 
 ざっくり覚え方👇
@@ -187,6 +202,9 @@ DelegatingHandlerを複数足すときは、**順番が設計そのもの**に�
 ---
 
 ### 6) テストで“鎖の順番”を目で見る 🧪👀（超おすすめ）
+
+![Image](./picture/gof_cs_study_058_test_chain_observation.png)
+
 
 ネットワークに出ない “偽物の一番奥のハンドラ” を作ると、順番がはっきりするよ😊
 
