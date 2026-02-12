@@ -11,6 +11,9 @@
 
 ## Part 1：TDDの地図を持つ（迷子防止）🗺️😊（1〜6）
 
+![roadmap_map](./picture/tdd_cs_index_roadmap_map.png)
+
+
 ### 第1章：TDDって結局なに？（全体像を1枚にする）🙂
 
 * ねらい：TDDを「作業手順」として説明できる
@@ -63,6 +66,9 @@
 
 ## Part 2：環境づくり（手が止まらない状態にする）🪟🔧（7〜10）
 
+![environment_setup](./picture/tdd_cs_index_environment_setup.png)
+
+
 ### 第7章：Visual Studioでテストが回る土台を作る🏗️
 
 * ねらい：新規プロジェクト＋テストが1分で起動
@@ -98,6 +104,9 @@
 ---
 
 ## Part 3：テストの書き方（読みやすさ最優先）🧪📚（11〜18）
+
+![writing_tests](./picture/tdd_cs_index_writing_tests.png)
+
 
 ### 第11章：AAA（Arrange/Act/Assert）で形を固定🧱
 
@@ -350,6 +359,9 @@
 ---
 
 ## Part 6：設計が育つTDD（“壊れにくい形”へ）🏗️✨（41〜46）
+
+![design_growth](./picture/tdd_cs_index_design_growth.png)
+
 
 ### 第41章：ドメインルールを“型”で守る入門（超やさしく）🧷
 

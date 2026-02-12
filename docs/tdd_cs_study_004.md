@@ -12,11 +12,14 @@
 
 ## 1) まず結論：TDDが強いのは「純粋ロジック」💪🍰
 
-![画像を挿入予定](./picture/tdd_cs_study_004_red.png)
+![red](./picture/tdd_cs_study_004_red.png)
 
 TDDが得意なのは、ざっくり言うとこういうやつ👇
 
 ### ✅ 得意ゾーン（TDD向き）🟢
+
+![logic_vs_io](./picture/tdd_cs_study_004_logic_vs_io.png)
+
 
 **入力 → 計算/判断 → 出力** がハッキリしてて、毎回同じ結果になりやすいもの✨
 
@@ -33,6 +36,9 @@ TDDが得意なのは、ざっくり言うとこういうやつ👇
 ## 2) TDDが苦手になりやすいのは「外部要因」🌪️🧨
 
 ### ⚠️ 工夫が必要ゾーン（やり方を変えればいける）🟡
+
+![io_thin](./picture/tdd_cs_study_004_io_thin.png)
+
 
 * DBアクセス（SQL、ORM、トランザクション）🗄️
 * HTTP/API（外部サービス、通信失敗、タイムアウト）🌐
@@ -58,6 +64,9 @@ TDDが得意なのは、ざっくり言うとこういうやつ👇
 ---
 
 ## 3) 迷ったらこれ！「TDD適性チェック」7問✅🧠
+
+![check_list](./picture/tdd_cs_study_004_check_list.png)
+
 
 次の質問に **YESが多いほどTDD向き**です😊
 
@@ -89,6 +98,9 @@ graph TD
 ## 4) 具体例で体感しよう😊🧪
 
 ### 例A：ど真ん中にTDD向き（計算ルール）🟢🧾
+
+![calc_example](./picture/tdd_cs_study_004_calc_example.png)
+
 
 「合計金額を出す」みたいなやつは最高に相性いいです✨
 
@@ -136,6 +148,9 @@ public class PriceCalculatorTests
 ---
 
 ### 例B：いきなり苦手になりがち（時刻が混ざる）🟡⏰
+
+![time_mock](./picture/tdd_cs_study_004_time_mock.png)
+
 
 たとえば「締切を過ぎたらNG」みたいなやつ。
 `DateTime.Now` を直に使うと、テストが不安定になりやすいです😵
