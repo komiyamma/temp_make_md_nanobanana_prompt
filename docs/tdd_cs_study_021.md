@@ -27,6 +27,8 @@ graph TD
 
 ## 1) 3つの手筋、ざっくり復習だよ🚦✨
 
+![画像を挿入予定](./picture/tdd_cs_study_021_obvious_highway.png)
+
 ### 🩹 仮実装（Fake it）
 
 * **とにかく最短でGreen**にするために、ベタな値を返す😇
@@ -49,7 +51,11 @@ graph TD
 
 ## 2) 「明白」かどうかの判断基準🧠🔍✨
 
+![画像を挿入予定](./picture/tdd_cs_study_021_decision_tree.png)
+
 ### ✅ 明白でいってOKなサイン🌼
+
+![画像を挿入予定](./picture/tdd_cs_study_021_checklist.png)
 
 * 仕様が **式やルールでスパッと言える**（例：税込=切り捨て）🧾✨
 * 実装が **3〜10行くらいで書けそう**✍️
@@ -105,6 +111,8 @@ public class PriceCalculatorTests
 ---
 
 ### ✅ Step 2：Green（明白な実装で素直に通す）🧪🟢🌼
+
+![画像を挿入予定](./picture/tdd_cs_study_021_simple_code.png)
 
 ポイントはこれ👇
 
@@ -170,6 +178,8 @@ public static class PriceCalculator
 
 ## 5) “明白”のときにやりがちな事故あるある😵‍💫⚠️
 
+![画像を挿入予定](./picture/tdd_cs_study_021_rube_goldberg.png)
+
 ### 🚫 先回り抽象化しすぎる
 
 * `ITaxCalculator` 作る
@@ -211,6 +221,8 @@ graph TD
 
 ## 7) チェックリスト✅✨（自分で判定！）
 
+![画像を挿入予定](./picture/tdd_cs_study_021_clipboard.png)
+
 次の質問に **3つ以上YES**なら、明白でGOしやすいよ🌼🚀
 
 * 仕様を1行の式/ルールで言える？🧾
@@ -236,6 +248,8 @@ graph LR
 ---
 
 ## 8) ミニ小テスト（超かんたん）📝✨
+
+![画像を挿入予定](./picture/tdd_cs_study_021_quiz_sheet.png)
 
 次のうち「明白」で行きやすいのはどれ？（理由も一言で😊）
 

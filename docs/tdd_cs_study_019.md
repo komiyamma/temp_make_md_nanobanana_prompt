@@ -19,6 +19,8 @@
 
 ## 2) 仮実装ってなに？（超ざっくり）🩹
 
+![画像を挿入予定](./picture/tdd_cs_study_019_fake_prop.png)
+
 **仮実装（Fake it）＝「今だけ通すための“ベタ実装”でGreenにして、あとで育てる」**だよ😊
 
 たとえば…
@@ -31,11 +33,15 @@
 * 最後：ちゃんと一般化した実装にする✨
 
 TDDには「Greenにする」ための代表的な手があって、仮実装はその1つだよ〜🧪
+
+![画像を挿入予定](./picture/tdd_cs_study_019_fake_cycle.png)
 （他に「三角測量」「明白な実装」もあるやつ！） ([stanislaw.github.io][1])
 
 ---
 
 ## 3) なんで仮実装が効くの？💡😳
+
+![画像を挿入予定](./picture/tdd_cs_study_019_hurdle_jump.png)
 
 ### ✅ いいところ①：頭が止まっても前に進める🚶‍♀️✨
 
@@ -50,6 +56,8 @@ TDDには「Greenにする」ための代表的な手があって、仮実装は
 ---
 
 ## 4) 仮実装を使っていいタイミング🙆‍♀️ / ダメなタイミング🙅‍♀️
+
+![画像を挿入予定](./picture/tdd_cs_study_019_traffic_light.png)
 
 ### 🙆‍♀️ 使っていい（むしろ使うと強い）💪
 
@@ -89,6 +97,8 @@ xUnit v3 で進めるときの基本は「xunit.v3」「runner（VSTest連携）
 ---
 
 ### ✅ Step1：最初のテスト（空なら0円）→ 仮実装でGreen🩹✅
+
+![画像を挿入予定](./picture/tdd_cs_study_019_hardcoded_0.png)
 
 #### 🔴 まずRed（失敗するテストを書く）
 
@@ -132,6 +142,8 @@ public class Cart
 ---
 
 ### ✅ Step2：2つ目のテスト（1000円→1100円）→ 仮実装でしのぐ🩹✅
+
+![画像を挿入予定](./picture/tdd_cs_study_019_hardcoded_1100.png)
 
 #### 🔴 テストを追加（0固定じゃ落ちる）
 
@@ -187,6 +199,8 @@ public class CafeCheckout
 
 ### ✅ Step3：3つ目のテスト（2000円も入れたら？）→ もうベタが限界→一般化✨
 
+![画像を挿入予定](./picture/tdd_cs_study_019_generalization.png)
+
 #### 🔴 テスト追加（ベタ1100が破綻するようにする）📐
 
 ```csharp
@@ -233,6 +247,8 @@ public class CafeCheckout
 ---
 
 ## 6) 「仮実装を永住させない」ための3ルール🏡🚫
+
+![画像を挿入予定](./picture/tdd_cs_study_019_killer_test.png)
 
 ### ルール①：仮実装は“次のテストで殺す”前提🔪🧪
 
