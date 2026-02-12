@@ -13,6 +13,8 @@
 ---
 
 ## 1. まずは “あるある地獄” を見よう😵‍💫🔥
+![Monolithic Service](./picture/solid_cs_study_013_chef_overwhelmed.png)
+
 
 ミニECの「支払い」を想像してね🛒💳
 最初は支払い方法が2つくらいだから、ついこう書いちゃう👇
@@ -96,6 +98,8 @@ public sealed class OrderService
 「switchの中身」を外に出して、差し替えできるようにしていくよ🔧
 
 ### 手順①：支払いの“共通の形”をインターフェースにする📄✂️
+![Interface Definition](./picture/solid_cs_study_013_standard_socket.png)
+
 
 ```csharp
 public interface IPaymentStrategy
@@ -106,6 +110,8 @@ public interface IPaymentStrategy
 ```
 
 ### 手順②：ケースごとにクラスを作る（= Strategy）🧱✨
+![Concrete Strategies](./picture/solid_cs_study_013_compatible_plugs.png)
+
 
 ```csharp
 public sealed class CreditCardPaymentStrategy : IPaymentStrategy
@@ -153,6 +159,8 @@ public sealed class CashOnDeliveryPaymentStrategy : IPaymentStrategy
 でも、**分岐を“1か所”に閉じ込める**のが勝ち筋🏆✨
 
 ### 支払いStrategyを選ぶ係（Resolver）🗂️
+![Resolver](./picture/solid_cs_study_013_concierge_resolver.png)
+
 
 ```csharp
 public sealed class PaymentStrategyResolver
@@ -221,6 +229,8 @@ public sealed class OrderService
 ---
 
 ## 5. DI（依存性注入）で “自動で集める” と気持ちいい🤖🧲
+![Dependency Injection](./picture/solid_cs_study_013_di_magnet.png)
+
 
 ここは「あとでDIP/DI章でもっと本格的にやる」けど、今でも最低限だけ触れると超ラク😊
 
@@ -252,6 +262,8 @@ var orderService = provider.GetRequiredService<OrderService>();
 ---
 
 ## 6. 追加が来ても “既存を触らない” を体験しよ🎮✨
+![Adding Feature](./picture/solid_cs_study_013_snap_on_module.png)
+
 
 新しい支払い方法「コンビニ払い」を追加してみるね🏪
 

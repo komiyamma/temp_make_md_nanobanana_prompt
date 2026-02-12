@@ -30,6 +30,8 @@
 ---
 
 ## 12.2 “追加のたびに壊れる”の正体：分岐の増殖🌱➡️🌳💥
+![Switch Statement Growth](./picture/solid_cs_study_012_switch_tree_growth.png)
+
 
 ミニECみたいなアプリでありがちなのがこれ👇
 
@@ -67,6 +69,8 @@ OCPは、**増える種類（端）を部品化**して、
 ---
 
 ## 12.4 “増えそうポイント”の見つけ方🔮👀
+![Predicting Changes](./picture/solid_cs_study_012_crystal_ball_types.png)
+
 
 「ここ、将来増えるぞ…」を当てにいくコツは、この3つだけ覚えてね😉💕
 
@@ -89,6 +93,8 @@ OCPは、**増える種類（端）を部品化**して、
 ---
 
 ## 12.5 例：支払い方法の追加で毎回switchを直す地獄😇💸
+![Modification Scars](./picture/solid_cs_study_012_scarred_file.png)
+
 
 まずは“わざと”OCPに反する例ね（体感が大事！）🔥
 
@@ -134,6 +140,8 @@ public sealed class PaymentService
 ---
 
 ## 12.6 OCPのゴール形：「追加＝新しい部品を足す」🧱✨
+![Extension](./picture/solid_cs_study_012_lego_add_block.png)
+
 
 OCPでは、ざっくりこうしたい👇
 
@@ -192,6 +200,8 @@ public sealed class PaymentService
 ---
 
 ## 12.7 「閉じる」対象を間違えないチェックリスト✅🧠
+![OCP Checklist](./picture/solid_cs_study_012_ocp_checklist.png)
+
 
 OCPって「なんでも抽象化しよう！」になりがちだから、まずこのチェックだけでOK👌✨
 
