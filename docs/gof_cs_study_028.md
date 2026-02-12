@@ -35,6 +35,8 @@
 
 ### 2) ドメインを “最小” で作る（record中心）🧾✨
 
+![Domain Setup](./picture/gof_cs_study_028_domain_setup.png)
+
 ポイント：Prototypeは「原型がすでに“それっぽく完成してる”」のが大事です🙂
 なので、まず **テンプレになれる形** を作ります！
 
@@ -73,6 +75,8 @@ public sealed record OrderDraft(
 ---
 
 ### 3) テンプレ（Prototype）を用意する 🧬🛒
+
+![Static Store](./picture/gof_cs_study_028_static_store.png)
 
 テンプレは「静的に置く」のが一番わかりやすいです🙂✨
 
@@ -133,6 +137,8 @@ flowchart TD
 
 ### 4) テンプレから複製して “ちょい編集” する（with）🔁✨
 
+![Array Copy Fix](./picture/gof_cs_study_028_array_copy_fix.png)
+
 Prototypeの本体です！
 ここで大事なのは **コレクションをコピーして参照共有を避ける** こと⚠️
 
@@ -169,6 +175,8 @@ public static class OrderDraftFactory
 ---
 
 ### 5) テストで「共有してない」を確認する 🧪✅
+
+![Test Verification](./picture/gof_cs_study_028_test_verification.png)
 
 ここが“設計の安心ポイント”です💖
 「テンプレを壊してない？」をテストで守ります！
@@ -260,6 +268,8 @@ public class OrderPrototypeTests
 ---
 
 ### 演習B：テンプレから “追記” してもテンプレを壊さない 🧪⚠️
+
+![Concat Train](./picture/gof_cs_study_028_concat_train.png)
 
 「複製した注文」にだけ、**追加の明細**を入れてみよう！
 

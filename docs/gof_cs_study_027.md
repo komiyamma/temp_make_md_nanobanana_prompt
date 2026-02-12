@@ -37,6 +37,8 @@ C#で相性がいいのは、こういう“テンプレ/下書き”👇
 
 ### 2) `record`の超ざっくり感覚をつかむ 🧠🌸
 
+![Equality Scale](./picture/gof_cs_study_027_equality_scale.png)
+
 `record`は「データの中身が同じなら同じ扱い」に寄せた型だよ🙂
 ふつうの`class`は「同じ参照なら同じ扱い」になりがちだけど、`record`は **中身でEquals** してくれるのが大きい✨
 
@@ -64,6 +66,8 @@ classDiagram
 
 ### 3) `with`は「コピーして、指定したところだけ差し替え」🔁✨
 
+![Copy and Patch](./picture/gof_cs_study_027_copy_patch.png)
+
 `with`はこういうイメージだよ👇
 
 * 元をコピーする（複製）
@@ -74,6 +78,8 @@ classDiagram
 ---
 
 ### 4) まずは“安全寄り”の例：Immutableでコピー事故を減らす 🛡️🍀
+
+![Immutable Box](./picture/gof_cs_study_027_immutable_box.png)
 
 `List<T>`みたいな可変コレクションは、`with`しても参照が共有されやすくて危ない😵
 なのでここでは **Immutable（不変）** を使って安全にいくよ✨（定番の選択肢！）
@@ -150,6 +156,8 @@ var addOneMoreDraft = baseDraft with
 
 ### 5) Visual Studioで「`record`が生成したもの」をチラ見する👀🔍
 
+![VS Peek](./picture/gof_cs_study_027_vs_peek.png)
+
 “読む”と理解が一段深くなるよ〜📚✨
 
 * `record`の型名にカーソル置いて **F12（定義へ移動）**
@@ -161,6 +169,8 @@ var addOneMoreDraft = baseDraft with
 ---
 
 ### 6) “浅いコピー事故”をわざと起こしてみる（超大事）⚠️🧪
+
+![Shallow Accident](./picture/gof_cs_study_027_shallow_accident.png)
 
 `with`は万能な“深いコピー機”ではないよ😵
 可変な参照型メンバー（`List<T>`など）は共有されやすい！
