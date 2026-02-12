@@ -15,6 +15,9 @@
 
 ## 1) まず「外部連携あるある地獄」😵‍💫💥
 
+![External Hell](./picture/solid_cs_study_021_external_hell.png)
+
+
 外部SDKや外部APIって、だいたいこうなるの…👇
 
 * メソッドがやたら多い（太い）📌
@@ -32,6 +35,9 @@
 ---
 
 ## 2) 今日の結論：こう分けると勝ち🏆✨
+
+![Inner Outer Architecture](./picture/solid_cs_study_021_inner_outer_architecture.png)
+
 
 外部連携は、基本この形にしよう〜👇🥰
 
@@ -65,6 +71,9 @@
 
 ### 3.1 内側（業務）に「細いインターフェース」を作る✂️✨
 
+![Thin Interface](./picture/solid_cs_study_021_thin_interface.png)
+
+
 ```csharp
 public readonly record struct OrderId(string Value);
 
@@ -97,6 +106,9 @@ public interface IPaymentGateway
 ---
 
 ### 3.2 外部SDK（例：クセ強クライアント）を想定😇
+
+![Clunky SDK](./picture/solid_cs_study_021_clunky_sdk.png)
+
 
 外部SDKってだいたい、こんなノリ👇（イメージ）
 
@@ -183,6 +195,8 @@ public sealed class MegaPayAdapter : IPaymentGateway
 }
 ```
 
+![Translator Adapter](./picture/solid_cs_study_021_translator_adapter.png)
+
 ここ、めちゃ重要だよ〜！🥹✨
 
 * **外部のResultCode** を、内側の `PaymentStatus` に変換する
@@ -192,6 +206,9 @@ public sealed class MegaPayAdapter : IPaymentGateway
 ---
 
 ## 4) 業務サービス側は、外部の存在を忘れる😌💕
+
+![Blissful Ignorance](./picture/solid_cs_study_021_blissful_ignorance.png)
+
 
 ```csharp
 public sealed class OrderService
@@ -251,6 +268,9 @@ var provider = services.BuildServiceProvider();
 
 ## 6) テストが爆速でラクになる🧪🚀✨（ここが最高）
 
+![Fast Fake Test](./picture/solid_cs_study_021_fast_fake_test.png)
+
+
 外部SDKに依存してると、テストがこうなる👇
 
 * 変な初期化が必要
@@ -278,6 +298,9 @@ public sealed class FakePaymentGateway : IPaymentGateway
 ---
 
 ## 7) 外部通信するなら：HttpClientの作法も押さえる📡🧠
+
+![HttpClient Factory](./picture/solid_cs_study_021_http_client_factory.png)
+
 
 外部APIを叩く実装になるなら、.NET は “作法” があるよ〜😊
 

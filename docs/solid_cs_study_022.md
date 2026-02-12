@@ -45,6 +45,9 @@ DIPはざっくりこう👇😊
 
 ### 変更が来た瞬間に地獄🧨
 
+![Tight Coupling Chain](./picture/solid_cs_study_022_tight_coupling_chain.png)
+
+
 * DBを SQL → SQLite → CosmosDB に変えたい
 * 支払いが Stripe → 別決済 に変わる
 * テストで外部API呼びたくない（遅い・課金・不安定）🧪💸
@@ -94,6 +97,9 @@ public sealed class CheckoutService
 
 ### 5-1. まず抽象（interface）を作る✍️
 
+![Interface Blueprint](./picture/solid_cs_study_022_interface_blueprint.png)
+
+
 ```csharp
 public interface IOrderRepository
 {
@@ -107,6 +113,9 @@ public interface IPaymentGateway
 ```
 
 ### 5-2. 上位（業務）は抽象だけ見る👀✨
+
+![Looking at Interface](./picture/solid_cs_study_022_looking_at_interface.png)
+
 
 ```csharp
 public sealed class CheckoutService
@@ -171,6 +180,9 @@ public sealed class StripePaymentGateway : IPaymentGateway
 
 ## 6. “逆転”ってどこが逆転なの？🌀🧠
 
+![Plug Adapter Socket](./picture/solid_cs_study_022_plug_adapter_socket.png)
+
+
 普通の感覚だと「上位が下位を使う」から、上位→下位に依存しがち。
 でもDIPでは……
 
@@ -183,6 +195,9 @@ public sealed class StripePaymentGateway : IPaymentGateway
 ---
 
 ## 7. DIPとDI、名前が似てて混乱しがち問題😵‍💫➡️😌
+
+![DIP vs DI](./picture/solid_cs_study_022_dip_vs_di.png)
+
 
 ここ、超大事なのでスッキリさせよ〜！🧼✨
 
@@ -199,6 +214,9 @@ DIPは“考え方”、DIは“実装テク”って感じ😊
 ---
 
 ## 8. ちょい実演：テストが一気にラクになる🧪✨
+
+![Testing with Fakes](./picture/solid_cs_study_022_testing_with_fakes.png)
+
 
 DIPが効く瞬間、いちばん分かりやすいのがテストだよ💕
 

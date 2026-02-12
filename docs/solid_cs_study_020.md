@@ -17,6 +17,9 @@
 
 ## まず、ありがちな“太いインターフェース”😈📦
 
+![Fat Interface Bloat](./picture/solid_cs_study_020_fat_interface_bloat.png)
+
+
 例：注文を扱う `IOrderRepository` が全部盛り…🍔🍟🥤
 
 ```csharp
@@ -37,6 +40,9 @@ public sealed record Order(Guid Id, string CustomerName, decimal Total, OrderSta
 
 ### これの何がツラいの？😇💦
 
+![Screen Delete Risk](./picture/solid_cs_study_020_screen_delete_risk.png)
+
+
 たとえば「注文一覧を表示する画面」は、`SearchAsync` しか使わないのに…
 
 * **更新/削除メソッドまで見えちゃう** → 誤用の誘惑が増える🙈💥
@@ -49,6 +55,9 @@ ISPの気持ち：
 ---
 
 ## 使う人（利用者）を分けてみよ〜👥✨
+
+![User Types](./picture/solid_cs_study_020_user_types.png)
+
 
 同じ注文でも、利用者タイプで必要な操作が違うよね😊
 
@@ -89,6 +98,9 @@ public interface IOrderWriter
 
 ## “利用者ごと”に依存を貼る（ここが実戦！）🔥
 
+![Targeted Dependency](./picture/solid_cs_study_020_targeted_dependency.png)
+
+
 ### ① 注文一覧（読むだけ）👀📄
 
 ```csharp
@@ -126,6 +138,9 @@ public sealed class ChangeOrderStatusUseCase
 
 ### ③ 「読む＋書く」両方必要なケースもあるよね🙂🔁
 
+![Dual Dependency](./picture/solid_cs_study_020_dual_dependency.png)
+
+
 そのときは **両方に依存してOK**（無理に1本化しないのがISP脳！）
 
 ```csharp
@@ -151,6 +166,9 @@ public sealed class CheckoutUseCase
 ---
 
 ## 実装クラスは1つでもOK（でも見せる顔を変える）🎭✨
+
+![One Class Two Faces](./picture/solid_cs_study_020_one_class_two_faces.png)
+
 
 「実装は1クラス」で、**インターフェースを2つ実装**すればOKだよ😊
 
@@ -236,6 +254,9 @@ Visual Studio 2026 はAI統合が強化されていて、Copilotも統合的に�
 ---
 
 ## 演習（手を動かすやつ）🧩🔥
+
+![Exercise Kit](./picture/solid_cs_study_020_exercise_kit.png)
+
 
 ### 演習1：利用者タイプを書き出す📝
 
