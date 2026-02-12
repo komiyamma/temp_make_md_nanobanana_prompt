@@ -16,6 +16,8 @@
 
 ## 📚 学ぶこと（この章の武器）🧰
 
+![flaky_monsters](./picture/tdd_ts_study_052_flaky_monsters.png)
+
 **1) “遅い”の正体**
 
 * だいたいコレ👇
@@ -50,6 +52,8 @@
 ---
 
 ## 実験A：遅いテスト（本物の待ち時間）を即終了させる🐢➡️⚡
+
+![fast_forward](./picture/tdd_ts_study_052_fast_forward.png)
 
 ## ❌ 悪い例：本当に待ってる（遅い）
 
@@ -122,6 +126,8 @@ test('retry3Times: 最後は成功する（Fake Timers）', async () => {
 
 ## 実験B：フレーク（乱数）を“注入”で固定する🎲🚫
 
+![fixed_dice](./picture/tdd_ts_study_052_fixed_dice.png)
+
 ## ❌ 悪い例：乱数に頼ってる（たまに落ちる）
 
 ```ts
@@ -164,6 +170,8 @@ test('pickBonus: SMALLが出る（固定）', () => {
 ---
 
 ## 実験C：順序依存フレークを「シャッフル」で炙り出して直す🌀🔥
+
+![clean_state](./picture/tdd_ts_study_052_clean_state.png)
 
 ## ❌ 悪い例：共有状態が残ってる
 
@@ -218,6 +226,8 @@ test('キャッシュは空である', () => {
 
 ## 🧪 切り分けテンプレ：遅い/フレークを見つけたらこの順でOK✅
 
+![diagnosis_flow](./picture/tdd_ts_study_052_diagnosis_flow.png)
+
 ## Step 1：まず「再現」させる🔁
 
 * **フレークっぽい**なら
@@ -258,6 +268,8 @@ test('キャッシュは空である', () => {
 ---
 
 ## 🤖 AIの使いどころ（“診断”だけAIにやらせると強い）🕵️‍♀️✨
+
+![ai_diagnosis](./picture/tdd_ts_study_052_ai_diagnosis.png)
 
 そのままコピペで使えるプロンプト例だよ💕
 

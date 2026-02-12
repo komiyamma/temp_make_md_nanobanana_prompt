@@ -13,10 +13,14 @@
 
 ### 1) E2Eってなに？（ざっくり）
 
+![e2e_journey](./picture/tdd_ts_study_055_e2e_journey.png)
+
 * **ユーザーの操作を最初から最後まで通す**テスト（ログイン→購入…みたいな）🧑‍💻➡️🛒
 * PlaywrightはE2E向けのテストランナーや並列実行などをまとめて持ってるよ🧪✨ ([playwright.dev][1])
 
 ### 2) ビジュアルテスト（VRT）ってなに？
+
+![vrt_diff](./picture/tdd_ts_study_055_vrt_diff.png)
 
 * **スクショを基準（ベースライン）にして、差分が出たら検知**するテスト📸👀
 * Playwrightだと `toHaveScreenshot()` でスクショ比較ができる（初回は基準を生成、次から比較）🖼️✅ ([playwright.dev][2])
@@ -24,6 +28,8 @@
 ---
 
 ## 🧭「少数精鋭」にするための考え方（超大事）🚦✨
+
+![selection_scale](./picture/tdd_ts_study_055_selection_scale.png)
 
 E2E/VRTは強いけど…
 **遅い🐢・壊れやすい💥・直すコスト高い💸**になりがち。
@@ -63,6 +69,8 @@ E2E/VRTは強いけど…
 
 ### STEP 1：シナリオを1本だけ決める（Given/When/Then）📝💗
 
+![storyboard](./picture/tdd_ts_study_055_storyboard.png)
+
 例（注文系の最短パス）👇
 
 * **Given**：商品一覧が見えている
@@ -76,6 +84,8 @@ E2E/VRTは強いけど…
 ---
 
 ### STEP 2：壊れにくいセレクタ方針を決める🎯
+
+![robust_shield](./picture/tdd_ts_study_055_robust_shield.png)
 
 E2Eが壊れる最大原因のひとつは「要素の取り方」😵‍💫
 
@@ -132,6 +142,8 @@ test('カート表示の見た目が崩れてない', async ({ page }) => {
 * `toHaveScreenshot` は「連続して同じ見た目になるまで待ってから比較」してくれる性質があるので、VRTのフレークを減らしやすい✨ ([playwright.dev][6])
 
 ### 🧼スナップショット更新のルール（超重要）✅
+
+![approval_stamp](./picture/tdd_ts_study_055_approval_stamp.png)
 
 デザイン変更で差分が出たとき、**雑に更新しない**🙅‍♀️
 ちゃんとレビューしてから更新する！

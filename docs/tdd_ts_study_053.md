@@ -11,6 +11,8 @@ UIテストで迷子にならないために、**「どこまで自動テスト�
 
 ## 1) まず“テストの種類”を4つに分ける（頭の地図）🗺️
 
+![testing_trophy](./picture/tdd_ts_study_053_testing_trophy.png)
+
 ![画像を挿入予定](./picture/tdd_ts_study_053_test_pyramid.png)
 
 UIの世界は、だいたいこの4つで考えるとスッキリするよ👇
@@ -27,6 +29,8 @@ E2Eは強いけどコストも高いから、**「ここぞ」だけ**にする�
 ---
 
 ## 2) UIテストは「ユーザーが見えるものだけ」を触る🫶
+
+![user_view](./picture/tdd_ts_study_053_user_view.png)
 
 UIテストで壊れやすくなる原因はだいたいコレ👇
 **“実装の中身”を触りすぎる**こと😇💥
@@ -51,6 +55,8 @@ Playwrightの公式ベストプラクティスでも、
 ---
 
 ## 3) 「UIで何をテストするか」を決める3つの質問🪄
+
+![decision_filter](./picture/tdd_ts_study_053_decision_filter.png)
 
 UIテスト対象を選ぶときは、これでOK👇💕
 
@@ -80,6 +86,8 @@ UIテスト対象を選ぶときは、これでOK👇💕
 
 ## 4) どの層で守る？“おすすめ振り分け”🧠✨
 
+![layer_allocation](./picture/tdd_ts_study_053_layer_allocation.png)
+
 迷ったらこの感覚でいくと失敗しにくいよ👇
 
 * 🧠 **ロジックはUnit/Integrationに寄せる**（速い・安定）
@@ -93,6 +101,8 @@ UIテスト対象を選ぶときは、これでOK👇💕
 ## 5) “壊れにくいUIテスト”のためのルール3つ🧷✨
 
 ### ルール①：セレクタは「役割」で取る（getByRole）🎯
+
+![selector_role](./picture/tdd_ts_study_053_selector_role.png)
 
 Playwrightは **user-facing** な取り方として `getByRole()` を推してるよ([playwright.dev][3])
 （Testing Libraryでも role 系が基本の考え方として案内されてるよ🫶）([testing-library.com][4])
@@ -120,6 +130,8 @@ Testing Libraryにも `findBy...` や `waitFor` など“待つ仕組み”が�
 ## 6) 2026の“選びやすい道具セット”🧰✨（最新事情）
 
 ### 🧪 UIコンポーネント寄り：Vitest + Browser Mode（選択肢が強い！）
+
+![browser_runner](./picture/tdd_ts_study_053_browser_runner.png)
 
 Vitestには **Browser Mode** があって、**ブラウザでネイティブ実行**できるよ🖥️✨
 しかも `vitest init browser` でセットアップできたり、providerに **playwright** を選べる構成になってる！([Vitest][6])
