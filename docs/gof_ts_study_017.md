@@ -65,6 +65,9 @@ Factory Method は「難しい仕組み」じゃなくて、
 * 入力：UIやAPIから来るので、ちょい汚れてる前提（文字列の日時とか）😗
 * 出力：アプリ内部で使うので、整っててほしい（Dateになってるとか）✨
 
+
+![Input vs Output](./picture/gof_ts_study_017_input_output_types.png)
+
 ```ts
 // --- 注文アイテム（入力） ---
 export type OrderItemInput = {
@@ -151,6 +154,11 @@ const normalizeNote = (note?: string) => {
   return trimmed ? trimmed : undefined;
 };
 
+```
+
+![Validation Gate](./picture/gof_ts_study_017_validation_gate.png)
+
+```ts
 const normalizeItems = (items: OrderItemInput[]): Result<OrderItem[]> => {
   if (items.length === 0) return err("EMPTY_ITEMS", "商品が1つもないよ🥺");
 
@@ -181,6 +189,9 @@ const parsePickupAt = (iso: string): Result<Date> => {
 
 テストしやすいように、`id` と `now` を差し替えできる形にしておくと最高🧪✨（DIのミニ版だよ）
 
+
+![Dependency Injection](./picture/gof_ts_study_017_dependency_injection.png)
+
 ```ts
 type FactoryDeps = {
   now: () => Date;
@@ -193,6 +204,11 @@ const defaultDeps: FactoryDeps = {
 };
 
 // オーバーロード：入力が eatIn なら出力も eatIn と推論してほしい✨
+```
+
+![Overload Signpost](./picture/gof_ts_study_017_function_overload.png)
+
+```ts
 export function createOrder(
   req: EatInOrderRequest,
   deps?: Partial<FactoryDeps>
@@ -301,6 +317,11 @@ const fixed = {
   newId: () => "ORDER-001",
 };
 
+```
+
+![Testability](./picture/gof_ts_study_017_testability.png)
+
+```ts
 test("eatIn: note が trim されて作られる🧽", () => {
   const r = createOrder(
     {

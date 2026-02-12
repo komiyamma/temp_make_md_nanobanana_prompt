@@ -1,6 +1,7 @@
 ﻿# 第16章：Factory Method ① 困りごと編：new分岐が増えた！😵
 
 ## 1) 今日のテーマ：**「作り方の分岐」が散らばって地獄になるやつ**🌀
+![Factory Counter](./picture/gof_ts_study_016_factory_pattern.png)
 
 Factory Method（ファクトリメソッド）は、ひとことで言うと…
 
@@ -12,6 +13,7 @@ GoFの意図としては「生成を直接 `new` せず、生成用メソッド�
 ---
 
 ## 2) こんな症状が出たら要注意🚨（Factory Methodの“出番の匂い”👃）
+![Scattered New](./picture/gof_ts_study_016_scattered_new.png)
 
 次のうち、2つ以上当てはまったら「やばくなり始めてる」サインかも🫠
 
@@ -132,6 +134,7 @@ export function restoreOrder(saved: SavedOrder): Order {
 この段階では、パターン暗記より **症状を言える** のが勝ち🏆✨
 
 ### つらさ①：呼び出し側が「具体クラス」を知ってしまう😵
+![Dependency Inversion](./picture/gof_ts_study_016_dependency_inversion.png)
 
 `placeOrder` が `DineInOrder` を知ってる
 `restoreOrder` も `TakeoutOrder` を知ってる
@@ -173,6 +176,7 @@ classDiagram
 ---
 
 ## 5) 応急処置💊：まずは「生成だけ」1箇所に寄せる🧲
+![Central Control](./picture/gof_ts_study_016_centralized_logic.png)
 
 Factory Methodの入り口は、むずかしく考えなくてOK🙆‍♀️
 まずは **“生成はここ”** を1個作るだけで、世界が変わるよ🌍✨
@@ -195,6 +199,11 @@ export function createOrder(p: CreateOrderParams): Order {
       return new DineInOrder(p.id, now, p.tableNo ?? 1);
     case "takeout":
       return new TakeoutOrder(p.id, now, addMinutes(now, p.pickupInMinutes ?? 15));
+```
+
+![Safety Net](./picture/gof_ts_study_016_assert_never_safety.png)
+
+```ts
     default:
       // ✅ “増えたらここがコンパイルで気づける”ようにする保険
       return assertNever(p);
