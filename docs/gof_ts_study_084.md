@@ -8,6 +8,8 @@
 
 ## 1) Interpreterってなに？🍡💡
 
+![concept](./picture/gof_ts_study_084_concept.png)
+
 **ざっくり言うと…**
 「`"total >= 1000 and drink == 'latte'"` みたいな“文字列ルール”を、プログラムが読んで実行できるようにする仕組み」だよ🧾➡️🤖
 
@@ -18,6 +20,8 @@
 ---
 
 ## 2) いつ使う？いつ使わない？🧭😺
+
+![use_case_choice](./picture/gof_ts_study_084_use_case_choice.png)
 
 ## 使うと気持ちいい場面✅
 
@@ -34,6 +38,8 @@
 ---
 
 ## 3) 今日つくるミニ言語（DSL）☕🧾
+
+![dsl_elements](./picture/gof_ts_study_084_dsl_elements.png)
 
 「カフェ注文」に対して、こんな条件式を使えるようにするよ🍰✨
 
@@ -125,6 +131,8 @@ export type DslError =
 ---
 
 ## 6-2) 字句解析（tokenize）✂️🔍
+
+![tokenize_process](./picture/gof_ts_study_084_tokenize_process.png)
 
 **文字列を“意味のある部品”に分解**するよ！
 
@@ -240,6 +248,8 @@ export function tokenize(input: string): Result<Token[], DslError> {
 
 ## 6-3) 構文木（AST）🧱🌳
 
+![ast_structure](./picture/gof_ts_study_084_ast_structure.png)
+
 「式の構造」をデータで表すよ！
 
 ```ts
@@ -260,6 +270,8 @@ export type Expr =
 ---
 
 ## 6-4) パーサ（parse）🍳📐
+
+![parsing_layers](./picture/gof_ts_study_084_parsing_layers.png)
 
 **優先順位**を守るために、こう分けるよ👇（これがコツ！）
 
@@ -397,6 +409,8 @@ export function parse(tokens: Token[]): Result<Expr, DslError> {
 ---
 
 ## 6-5) 評価（evaluate）🔎✅
+
+![eval_magnifying](./picture/gof_ts_study_084_eval_magnifying.png)
 
 ASTをたどって `true/false` を出すよ！
 

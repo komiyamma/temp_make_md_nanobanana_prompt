@@ -27,7 +27,9 @@
 
 ## まず困りごと：同じ `switch` が増殖する😵‍💫
 
-TypeScriptで木構造を **判別Union** にすると、だいたいこうなるよね👇（判別Union自体はめちゃ良い！） ([typescriptbook.jp][1])
+TypeScriptで木構造を **判別Union** にすると、だいたいこうなるよね👇
+
+![switch_chaos](./picture/gof_ts_study_087_switch_chaos.png)（判別Union自体はめちゃ良い！） ([typescriptbook.jp][1])
 
 ```ts
 type MenuNode =
@@ -108,6 +110,8 @@ graph TD
 
 ### GoFの“教科書版”Visitorはダブルディスパッチ🧠
 
+![double_dispatch_dance](./picture/gof_ts_study_087_double_dispatch_dance.png)
+
 GoFのVisitorは、ざっくり言うと
 
 * 要素側が `accept(visitor)` を持つ
@@ -125,6 +129,8 @@ GoFのVisitorは、ざっくり言うと
 ---
 
 ## Visitorが向くとき✅ / 向かないとき❌
+
+![growth_axis](./picture/gof_ts_study_087_growth_axis.png)
 
 ### 向くとき✅（Visitorの勝ち筋🏆）
 
@@ -150,6 +156,8 @@ GoFのVisitorは、ざっくり言うと
 ---
 
 ## TypeScriptで“網羅漏れ”を防ぐ武器🛡️✨
+
+![missing_piece](./picture/gof_ts_study_087_missing_piece.png)
 
 Visitorで一番怖いのは「対応漏れ」だよね😱
 TypeScriptには、それを潰す定番があるよ！
@@ -198,6 +206,8 @@ Visitorを“関数の集合”として作るとき、`satisfies` が超便利�
 ---
 
 ## Visitorの発想にするとどう嬉しい？🎁✨（この章の結論）
+
+![evolution_lightweight](./picture/gof_ts_study_087_evolution_lightweight.png)
 
 Visitorでやりたいことは、超シンプル👇
 

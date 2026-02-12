@@ -10,6 +10,8 @@
 
 ## 1) Interpreterで一番大事な“危険ポイント”⚠️
 
+![security_risk](./picture/gof_ts_study_086_security_risk.png)
+
 ## 🔥 これだけはNG：`eval()` / `new Function()` で式を実行
 
 * 便利そうに見えて、**攻撃コード混入**・**情報漏えい**・**サーバー負荷爆発**の入口になりがち💣
@@ -58,6 +60,8 @@ flowchart LR
 ## 3) “安全性”のチェックリスト✅🧯
 
 ## 入力バリデーション（入口）🚪
+
+![guard_rails](./picture/gof_ts_study_086_guard_rails.png)
 
 * 入力長を制限（例：2000文字まで）✂️
 * トークン数を制限（例：500個まで）🧱
@@ -452,6 +456,8 @@ export function formatError(input: string, e: AnyError): string {
 
 ## 5) テストが“命”な理由🧪💓
 
+![test_pyramid](./picture/gof_ts_study_086_test_pyramid.png)
+
 Interpreterって、
 
 * 分岐が多い（文法・優先順位・型）
@@ -467,6 +473,8 @@ Interpreterって、
 ---
 
 ## 6) テスト例（Vitest）🧁🧪
+
+![fuzz_testing](./picture/gof_ts_study_086_fuzz_testing.png)
 
 Vitestは TypeScript と相性がよく、Jest互換の書き味で使いやすいよ〜✨([Vitest][4])
 
@@ -580,6 +588,8 @@ describe("compileRule", () => {
 ---
 
 ## まとめ✅🎉
+
+![safety_shield](./picture/gof_ts_study_086_safety_shield.png)
 
 * Interpreterは「小さな言語」を扱うぶん、**安全性の責任が全部こっちに来る**😱
 * だからこそ
