@@ -77,6 +77,8 @@ graph TD
 
 ### 3) ひとことで見分ける“判定ワード”を持つ🧠💡
 
+![Pattern Decision Tree](./picture/gof_cs_study_033_signpost_decision.png)
+
 迷ったらこの質問で判定します👇（超よく効くやつ！）
 
 * **「型が合わない…でも呼び出し側は変えたくない」** → Adapter 🔌
@@ -89,6 +91,8 @@ graph TD
 ---
 
 ### 4) .NETで一気に体感：Streamまわりは宝庫💎💧
+
+![Stream Decorators](./picture/gof_cs_study_033_pipe_system_stream.png)
 
 Stream周辺って、構造パターンの展示場みたいになってます😳✨
 「つなぐ」「包む」が特に分かりやすい！
@@ -117,6 +121,8 @@ var text = reader.ReadToEnd();
 
 ### 5) Facadeは「入口をシンプルにする」🚪🙂
 
+![Facade Pattern](./picture/gof_cs_study_033_remote_control_facade.png)
+
 “まとめる”は「利用者の手数を減らす」って感じです🌸
 例えば、ファイルを読むだけならこれで終わります👇
 
@@ -130,6 +136,8 @@ var text = File.ReadAllText("orders.txt");
 ---
 
 ### 6) Flyweightは「共有して軽くする」🪶📦
+
+![Flyweight Pattern](./picture/gof_cs_study_033_tool_library_flyweight.png)
 
 Flyweightは“見た目が地味”だけど、効くときはめっちゃ効きます😆🔥
 C#/.NETだと「使い回し」系の発想が近いです。
@@ -177,6 +185,8 @@ Copilot等に頼むときは、**「分類して説明」**が相性いいです
 ---
 
 ## 落とし穴⚠️😵
+
+![Decorator Overuse](./picture/gof_cs_study_033_decorator_stack_coat.png)
 
 * **全部Decoratorで解こうとする** 🎁🎁🎁
   → 便利だけど、積み重なると「何が本体？」ってなる😇

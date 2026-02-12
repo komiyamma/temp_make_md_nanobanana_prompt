@@ -41,6 +41,8 @@ Singletonにしていいか”3問チェック🧩
 
 ### 2) Lazy<T>の基本をつかむ（最小でOK）🐢
 
+![Lazy Initialization](./picture/gof_cs_study_031_lazy_sleeping_guard.png)
+
 **Lazy<T>** は「必要になった瞬間に作る」＋「（基本）スレッド安全」をセットで提供してくれる標準クラスだよ🛡️✨
 
 * いちばん大事：**“初回アクセス時に一回だけ作る”**が簡単にできる🎉
@@ -67,6 +69,8 @@ stateDiagram-v2
 ---
 
 ### 3) “教科書どおり”のLazy Singleton（sealed + private ctor）📦
+
+![Thread Safety](./picture/gof_cs_study_031_turnstile_locking.png)
 
 「プロセス内で1つだけのインスタンス」を **.NET流に安全**に作る定番形👇
 
@@ -98,6 +102,8 @@ public sealed class AppClock
 ---
 
 ### 4) “クラスを作らず”にLazyを活かす（標準型で体感）🧵✨
+
+![Lazy Wrapper](./picture/gof_cs_study_031_bubble_wrap_treasure.png)
 
 Singletonを作りたいというより、**「重い初期化を遅らせたい」**だけのことが多いよ🙂
 その場合は、**標準型をLazyで包む**のがいちばん素直✨
@@ -170,6 +176,8 @@ public class LazyTests
 
 ### 6) 例外の挙動を知っておく（地味に重要）💥🧠
 
+![Exception Caching](./picture/gof_cs_study_031_broken_stamp_exception.png)
+
 Lazyの初期化関数が例外を投げると、**以後も同じ例外を再スロー**するのが基本だよ⚠️
 「次に呼べば直るかも」が起きにくいので、設計として知っておこう🙂
 
@@ -202,6 +210,8 @@ public class LazyExceptionTests
 ---
 
 ### 7) “Singletonっぽい要件”でもDIのAddSingletonが自然な場面🧩✨
+
+![Singleton meets DI](./picture/gof_cs_study_031_singleton_di_handshake.png)
 
 ![Singleton vs DI](./picture/gof_cs_study_031_singleton_vs_di.png)
 
