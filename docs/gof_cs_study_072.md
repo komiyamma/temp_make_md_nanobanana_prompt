@@ -42,11 +42,17 @@ flowchart LR
 
 ### 1) まず「Strategy」を1行で言うと？📌
 
+![gof cs study 072 lambda arrow](./picture/gof_cs_study_072_lambda_arrow.png)
+
+
 * **変わりやすい部分（方針）を外から差し替えられるようにする**ことだよ🔁✨
 * C#では、その「差し替える方針」を **`Func`（戻り値あり）** として渡すのが超相性いいよ⚡
   `Func` は「ある引数リスト → 戻り値」を表すデリゲート型だよ。([Microsoft Learn][2])
 
 ### 2) “本体”は方針を知らない（ここが大事）🙅‍♀️💥
+
+![gof cs study 072 blind calculator](./picture/gof_cs_study_072_blind_calculator.png)
+
 
 * 「割引率は？」「曜日で変わる？」みたいな判断を、本体に `if/switch` で書き始めると…
   **本体が太って、変更が怖くなる**😵‍💫
@@ -79,6 +85,9 @@ public static class Pricing
 
 ### 4) 呼び出し側で方針を差し替える（これが気持ちいい）🎮✨
 
+![gof cs study 072 lambda injection](./picture/gof_cs_study_072_lambda_injection.png)
+
+
 ```csharp
 var baseTotal = 10_000m;
 
@@ -100,6 +109,9 @@ var b = Pricing.CalculateFinalTotal(baseTotal, fixedOff);      // 9,500
 つまり「**デリゲートでStrategy**」は.NETのど真ん中のやり方💪([Microsoft Learn][4])
 
 ### 6) テストで「方針が差し替わる」ことを固定する🧪🌸
+
+![gof cs study 072 test fixed logic](./picture/gof_cs_study_072_test_fixed_logic.png)
+
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -126,6 +138,9 @@ public class PricingTests
 * MSTestの基本フローはこの章の範囲だとこれで十分だよ🧁([Microsoft Learn][1])
 
 ### 7) 「Func と Action」使い分けの超ざっくり🍬
+
+![gof cs study 072 func vs action](./picture/gof_cs_study_072_func_vs_action.png)
+
 
 * `Func<...>`：**値を返す方針**（割引額、送料、優先度、判定など）
 * `Action<...>`：**副作用だけの方針**（ログ出力、通知、計測など）
