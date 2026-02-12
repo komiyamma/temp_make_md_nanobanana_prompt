@@ -59,6 +59,8 @@ classDiagram
 
 ### 2) `List<T>.Sort` の差し替え点を“シグネチャ”で読む👀
 
+![gof cs study 071 interface vs delegate](./picture/gof_cs_study_071_interface_vs_delegate.png)
+
 `List<T>.Sort` は **比較ルールを差し込める**オーバーロードがあるよ🌸 ([Microsoft Learn][3])
 
 * `Sort()`（既定の比較）
@@ -87,6 +89,8 @@ public sealed record Order(
 ---
 
 ### 4) Strategy（比較ルール）を `IComparer<Order>` で作る📏🧩
+
+![gof cs study 071 comparison scale](./picture/gof_cs_study_071_comparison_scale.png)
 
 「合計金額の昇順で並べたい」を Strategy にして差し込むよ💰⬆️
 
@@ -130,6 +134,8 @@ orders.Sort(new OrderByTotalAmountComparer());
 
 ### 5) もっと軽量に：`Comparison<Order>`（関数）で渡す⚡
 
+![gof cs study 071 sort injection](./picture/gof_cs_study_071_sort_injection.png)
+
 「クラス作るほどでもない」ってときの定番が `Comparison<T>` だよ〜🙂‍↕️✨ ([Microsoft Learn][2])
 
 ```csharp
@@ -146,6 +152,8 @@ orders.Sort((a, b) => b.TotalAmount.CompareTo(a.TotalAmount)); // 降順💰⬇�
 
 ### 6) `Comparer<T>.Create` で「関数 → IComparer」に変換する🪄
 
+![gof cs study 071 comparer create](./picture/gof_cs_study_071_comparer_create.png)
+
 APIによっては `IComparer<T>` しか受け付けないことがあるよね。
 そんな時に `Comparer<T>.Create(comparison)` が便利✨ ([Microsoft Learn][5])
 
@@ -161,6 +169,9 @@ orders.Sort(comparer);
 ---
 
 ### 7) LINQ でも Strategy を差し替えられる（安定ソートが嬉しい💎）
+
+![gof cs study 071 stable sort zipper](./picture/gof_cs_study_071_stable_sort_zipper.png)
+
 
 `OrderBy` は **安定ソート**（同点の順番を保つ）って明記されてるよ📌 ([Microsoft Learn][4])
 だから「同点の順序が大事」なら LINQ が気持ちいいこと多い✨

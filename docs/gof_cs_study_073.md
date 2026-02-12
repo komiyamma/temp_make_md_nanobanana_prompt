@@ -80,6 +80,9 @@ public sealed class DiscountCalculator_Before
 
 ### 2) Strategy（方針の差し替え）にする 🔁🧠
 
+![gof cs study 073 calculator flow](./picture/gof_cs_study_073_calculator_flow.png)
+
+
 今回は **C#標準の `Func<>`** を Strategy として使うよ⚡
 （Strategy を “関数として渡す” のが一番軽くて強い💪✨）
 
@@ -113,6 +116,9 @@ public sealed class DiscountCalculator
 
 ### 3) 割引ルール（Strategy）を用意する 💡🎁
 
+![gof cs study 073 add new rule](./picture/gof_cs_study_073_add_new_rule.png)
+
+
 ```csharp
 public static class DiscountStrategies
 {
@@ -134,6 +140,9 @@ public static class DiscountStrategies
 
 ### 4) 差し替えを体験する（呼び出し側）🔁✨
 
+![gof cs study 073 discount menu](./picture/gof_cs_study_073_discount_menu.png)
+
+
 同じ `DiscountCalculator` に、方針だけ差し替えて使うよ！
 
 ```csharp
@@ -150,6 +159,9 @@ var total3 = calc3.CalculateTotal(2000m); // 1500
 ---
 
 ### 5) テストを書く（差し替えできる喜び🧪🌸）
+
+![gof cs study 073 fake strategy](./picture/gof_cs_study_073_fake_strategy.png)
+
 
 MSTest は公式にチュートリアルがあるので、それに乗るのが早いよ〜🧪✨([Microsoft Learn][1])
 
@@ -200,6 +212,9 @@ public class DiscountCalculatorTests
 ---
 
 ### 6) 「どの割引を使うか」問題：選択ロジックの置き場 🧠🧩
+
+![gof cs study 073 strategy resolver](./picture/gof_cs_study_073_strategy_resolver.png)
+
 
 Strategy を入れても、**選ぶところが `if/switch` 地獄** になったら意味ないよね😵‍💫
 ここは “小さく” 2パターンだけ紹介するよ👇

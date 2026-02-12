@@ -39,6 +39,9 @@ stateDiagram-v2
 
 ### 1) まず “switch地獄” の芽を体験する🌱😇
 
+![gof cs study 074 invalid action shield](./picture/gof_cs_study_074_invalid_action_shield.png)
+
+
 例題：注文 `Order` が **状態**（New / Paid / Shipped / Cancelled）を持っていて、
 `Pay()` / `Ship()` / `Cancel()` の可否が状態で変わる🛒💳📦
 
@@ -105,6 +108,9 @@ public sealed class Order
 
 ### 2) “switchで耐えられる範囲” を先に決めちゃう📏🙂
 
+![gof cs study 074 state vs strategy](./picture/gof_cs_study_074_state_vs_strategy.png)
+
+
 まずは判断をラクにしよう！
 
 **switchのままでOKになりやすい条件**✅
@@ -127,6 +133,9 @@ public sealed class Order
 
 ### 3) Stateパターンの登場人物を“超シンプル”に理解する👥
 
+![gof cs study 074 state rooms](./picture/gof_cs_study_074_state_rooms.png)
+
+
 Stateは登場人物が少ないのが嬉しい😊
 
 * **Context（文脈）**：状態を持つ本体（例：`Order`）
@@ -138,6 +147,9 @@ Stateは登場人物が少ないのが嬉しい😊
 ---
 
 ### 4) 最小の State 実装を書いてみる（“状態クラスは最小限”）🧩✨
+
+![gof cs study 074 delegation baton](./picture/gof_cs_study_074_delegation_baton.png)
+
 
 まずは **インターフェイス1個**でOK！
 
@@ -224,6 +236,9 @@ public sealed class CancelledState : IOrderState
 ---
 
 ### 5) テストで「遷移ルール」を固定する🧪💖（MSTest例）
+
+![gof cs study 074 transition door](./picture/gof_cs_study_074_transition_door.png)
+
 
 Stateは **ルールが分散する**ので、テストが超大事！💪
 

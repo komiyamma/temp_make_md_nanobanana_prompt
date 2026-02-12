@@ -51,6 +51,9 @@ classDiagram
 
 ### 1) まず “if/switch地獄” を1回だけ味わう😵‍💫🔥
 
+![gof cs study 070 switch explosion](./picture/gof_cs_study_070_switch_explosion.png)
+
+
 題材は「割引計算」にします💸
 
 * 通常：割引なし
@@ -105,6 +108,9 @@ Strategy を入れるときの鉄板はこれ👇
 
 ### 3) “方針の契約（interface）” を作る📜✨
 
+![gof cs study 070 strategy contract](./picture/gof_cs_study_070_strategy_contract.png)
+
+
 「割引方針は、金額を受け取って、割引後の金額を返す」だけでOK👌
 契約は薄く！薄く！が大事です🧅✨
 
@@ -149,6 +155,9 @@ public sealed class PercentageDiscountStrategy : IDiscountStrategy
 
 ### 5) 呼び出し側（Context）を “interface依存” にする🔁🧩
 
+![gof cs study 070 plug and play](./picture/gof_cs_study_070_plug_and_play.png)
+
+
 ここが Strategy の本体！✨
 呼ぶ側は **「どの割引か」ではなく「割引を適用してね」**だけ言うようにします🙂
 
@@ -183,6 +192,9 @@ public sealed class PricingService
 ---
 
 ### 6) テストで「差し替え」を体験する🧪🌸
+
+![gof cs study 070 context separation](./picture/gof_cs_study_070_context_separation.png)
+
 
 MSTest 例です（超ミニ）🙂
 
@@ -222,6 +234,9 @@ public class PricingServiceTests
 ---
 
 ### 7) “戦略の選び方” はどこに置く？（ここが落とし穴の入口）🧠⚠️
+
+![gof cs study 070 selector gate](./picture/gof_cs_study_070_selector_gate.png)
+
 
 Strategy を入れても、「どの戦略を使う？」の選択が `if/switch` のままだと、そこが別の地獄になりがち😵‍💫
 
