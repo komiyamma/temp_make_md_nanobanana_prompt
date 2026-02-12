@@ -10,6 +10,8 @@
 
 ## 学ぶこと📌
 
+![Broadcaster Observer](./picture/gof_ts_study_076_broadcaster.png)
+
 * **Observer**：通知（発行→購読）の仕組み。発行側は「誰**UI部品が“誰に影響するか”を知らなくてよくなる**＝変更がラク🎉
 
 ```mermaid
@@ -37,6 +39,8 @@ sequenceDiagram
 ---
 
 ## 1) ObserverとMediatorの違い（超ざっくり）🍡✨
+
+![Orchestra Conductor](./picture/gof_ts_study_076_conductor.png)
 
 ## Observer（通知の配達係）📮
 
@@ -66,6 +70,8 @@ Mediatorはこれを
 
 ## 2) 今回の題材：注文フォームの“UI地獄”を救う☕🧁
 
+![Tangled Marionette](./picture/gof_ts_study_076_marionette_tangle.png)
+
 フォームにありがちな依存関係👇💫
 
 * サイズ変更（S/M/L）で単価が変わる📏
@@ -79,6 +85,8 @@ Mediatorはこれを
 ---
 
 ## 3) TypeScriptの定番アプローチ：EventTargetで“イベント駆動Mediator”📣🧠
+
+![Sensor Brain Motor](./picture/gof_ts_study_076_sensor_brain.png)
 
 ## ここがポイント💡
 
@@ -267,6 +275,8 @@ console.log("✅ final:", mediator.getState());
 
 ## 5) ここが“Mediatorっぽい”ポイント🕊️💖
 
+![Black Box Rules](./picture/gof_ts_study_076_blackbox_rules.png)
+
 ## ✅ 部品は「イベントを出すだけ」🎈
 
 * `size.setValue(...)` は `ui:size-changed` を投げるだけ
@@ -280,6 +290,8 @@ console.log("✅ final:", mediator.getState());
 ---
 
 ## 6) テストが楽になる理由🧪🎉
+
+![Instant Feedback Test](./picture/gof_ts_study_076_instant_feedback.png)
 
 `dispatchEvent()` はリスナーを**同期的**に呼ぶから、
 「setter呼ぶ → すぐstate検査」みたいにテストが書きやすいよ✅ ([MDNウェブドキュメント][1])

@@ -10,6 +10,8 @@
 
 ## まず超ざっくり：Iterator / Iterableってなに？🔁
 
+![Iterator Handshake](./picture/gof_ts_study_073_iterator_handshake.png)
+
 * **Iterable（反復可能）**：`for..of` で回せるもの
   → 条件：`[Symbol.iterator]()` を持っていて、**Iterator** を返す([MDN Web Docs][1])
 * **Iterator（反復子）**：`next()` を持つもの
@@ -23,6 +25,8 @@
 ---
 
 ## TypeScriptの型：`Iterable<T>` / `Iterator<T>` / `IterableIterator<T>`🧠
+
+![Type Venn Diagram](./picture/gof_ts_study_073_type_venn.png)
 
 TypeScript にはちゃんと型が用意されてるよ〜✨([TypeScript][2])
 
@@ -43,6 +47,8 @@ TypeScript にはちゃんと型が用意されてるよ〜✨([TypeScript][2])
 ---
 
 ## ジェネレータ入門：`function*` と `yield`✨
+
+![Generator Pause](./picture/gof_ts_study_073_generator_pause.png)
 
 ジェネレータは **「途中で止まって、また続きから再開できる関数」** だよ〜🧁
 
@@ -83,6 +89,8 @@ sequenceDiagram
 ---
 
 ## ハンズオン🛠️：木構造（メニュー）をDFSで `yield` する🌳🔁
+
+![Yield Delegation](./picture/gof_ts_study_073_yield_delegation.png)
 
 ## 1) 木の型を「判別Union」で用意する🧩
 
@@ -147,6 +155,8 @@ export function* dfs(node: MenuNode): IterableIterator<MenuNode> {
 
 ## 4) `Symbol.iterator` を生やして `for..of` できる形にする🎁
 
+![Symbol Wrapper](./picture/gof_ts_study_073_symbol_wrapper.png)
+
 `for..of` は **Iterable** を要求するので、入口（`[Symbol.iterator]`）を作るよ〜([MDN Web Docs][1])
 
 ```ts
@@ -174,6 +184,8 @@ for (const node of asDfsIterable(menu)) {
 ---
 
 ## “for..of できる”と何が嬉しいの？🎁✨
+
+![Abstraction Tap](./picture/gof_ts_study_073_abstraction_tap.png)
 
 * 呼び出し側が **走査の都合（DFS/BFS/フィルタ）を知らなくていい**
 * `for..of` だけじゃなく、`Array.from()` やスプレッド（`[...iterable]`）にも乗れる
