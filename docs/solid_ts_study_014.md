@@ -13,6 +13,8 @@
 
 ## まず結論：抽象化は「未来の変更のための穴」🚪🧩
 
+![Abstraction Ports](./picture/solid_ts_study_014_abstraction_ports.png)
+
 OCPって「追加に強くする」イメージだけど、実際は…
 
 * ✅ **変わりそうなところ**に“差し替え口”を作る
@@ -26,6 +28,8 @@ OCPって「追加に強くする」イメージだけど、実際は…
 ---
 
 ## やりすぎ抽象化あるある 🥲💥（見つけたら黄色信号）
+
+![Warning Traffic Light](./picture/solid_ts_study_014_warning_traffic_light.png)
 
 次の症状が出てたら「ちょい盛りすぎ」かも🚧⚠️
 
@@ -46,6 +50,8 @@ OCPって「追加に強くする」イメージだけど、実際は…
 いきなり大きい仕組みにしないで、**段階的にレベルアップ**すると失敗しにくいよ😊✨
 
 ### 🥚Lv0：まずは素直に書く（if/switch）
+
+![Level 0 Bridge](./picture/solid_ts_study_014_level0_bridge.png)
 
 「まず動く」「仕様が固まってない」ならこれでOK👌
 
@@ -68,6 +74,8 @@ function calcDiscount(code: CouponCode, totalYen: number): number {
 ---
 
 ### 🐣Lv1：「データ駆動」にする（関数マップ）
+
+![Level 1 Map](./picture/solid_ts_study_014_level1_map.png)
 
 分岐が増えそうだけど、まだ “仕組み” を作りたくないときに最強💪✨
 
@@ -101,6 +109,8 @@ export function calcDiscount(code: CouponCode, totalYen: number): number {
 ---
 
 ### 🐥Lv2：本気の“差し替え口”（Strategy / DI）
+
+![Level 2 Modules](./picture/solid_ts_study_014_level2_modules.png)
 
 次の条件がそろってきたら、戦略パターンが輝く🌟
 
@@ -158,6 +168,8 @@ export class DiscountService {
 
 ## じゃあ、いつ抽象化するの？👀🧠（判断チェックリスト）
 
+![Decision Checklist](./picture/solid_ts_study_014_decision_checklist.png)
+
 迷ったら、この質問に答えてみて📝✨
 
 1. 🔁 **同じ形の変更**が、今後2回以上来そう？
@@ -174,6 +186,8 @@ export class DiscountService {
 ---
 
 ## 抽象化の「粒度」：大きく作らないコツ 🍡✨
+
+![Goldilocks Abstraction](./picture/solid_ts_study_014_goldilocks_abstraction.png)
 
 抽象化って、でかくすると失敗しやすいの…🥲
 

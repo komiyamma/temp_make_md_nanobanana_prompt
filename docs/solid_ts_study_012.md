@@ -20,6 +20,8 @@ npm の `typescript` も **latest 5.9.3** として掲載されてるよ✨ ([np
 
 ## OCPってなに？ ざっくり一言で 🍰✨
 
+![Open vs Closed](./picture/solid_ts_study_012_open_closed_door.png)
+
 **「新しい機能を足すとき、すでに安定してるコードはなるべく触らない」** だよ😊🛡️
 
 * **拡張に開く**：新しい割引ルールを “追加” できる
@@ -49,6 +51,8 @@ npm の `typescript` も **latest 5.9.3** として掲載されてるよ✨ ([np
 「Campus Café」で、注文合計にクーポンを適用するよ〜！
 
 ### まずはダメになりやすい実装 😵‍💫
+
+![Switch Chaos](./picture/solid_ts_study_012_switch_chaos.png)
 
 ```ts
 // ❌ OCP的につらくなりやすい例：追加のたびにここを編集する
@@ -85,6 +89,8 @@ export function applyCoupon(total: number, coupon: Coupon): number {
 
 ## OCPの解決イメージ 変わるものを外に出す 🧳✨
 
+![Luggage Separation](./picture/solid_ts_study_012_luggage_separation.png)
+
 OCPのコツはこれ👇
 
 ### 1 変わりやすいところを見つける 🔎
@@ -102,6 +108,8 @@ OCPのコツはこれ👇
 ---
 
 ## 改善版 Strategy風にして OCPを満たす 🧠🔁✨
+
+![Interface Shape](./picture/solid_ts_study_012_interface_shape.png)
 
 ### フォルダ案 📁✨
 
@@ -216,6 +224,8 @@ export function applyDiscount(
 
 ### 4 追加の入口を “1か所” に集める 🧲✨
 
+![Registry Reception](./picture/solid_ts_study_012_registry_reception.png)
+
 ```ts
 // src/app/discount/discountRegistry.ts
 
@@ -259,6 +269,8 @@ console.log({ afterStudent, afterRainy });
 
 ## テストで「拡張しても壊れない」を守る ✅🛡️
 
+![Testing Shield](./picture/solid_ts_study_012_testing_shield.png)
+
 Vitest は **4.0** が出てるよ〜⚡（公式のアナウンスあり） ([vitest.dev][3])
 
 ```ts
@@ -290,6 +302,8 @@ describe("applyDiscount", () => {
 ## 演習 ミッション3本 🎯🎉
 
 ### ミッション1 新クーポン BIRTHDAY を追加 🎂🎟️
+
+![Extension Win](./picture/solid_ts_study_012_extension_win.png)
 
 要件：**合計から 200円引き**
 やること：

@@ -20,6 +20,8 @@
 
 ## まず“地獄の未来”を見よう👀💦（ダメ実装）
 
+![Switch Nightmare](./picture/solid_ts_study_015_switch_nightmare.png)
+
 「割引タイプでswitchして計算」って最初はラクなんだけど…
 割引が増えるほど **毎回ここを編集** することになるよね😵‍💫
 
@@ -53,6 +55,8 @@ export function calcTotalBad(subtotalYen: number, discount: DiscountType): numbe
 
 ## OCPの考え方（超ざっくり）🚪✨
 
+![Extension Train](./picture/solid_ts_study_015_extension_train.png)
+
 **「拡張はOK！でも“既存の重要なところ”はなるべく触らないでね」**って感じ😊
 だから「変更されやすいところ（割引）」を **差し替え口** に分離するよ🎯🔁
 
@@ -73,6 +77,8 @@ export function calcTotalBad(subtotalYen: number, discount: DiscountType): numbe
 ---
 
 ## 1) ドメインモデル（最小セット）を用意📦✨
+
+![Context Box](./picture/solid_ts_study_015_context_box.png)
 
 「値段は小数にしない」でいくよ（浮動小数の誤差こわい😇）
 日本円は整数で扱うのが楽ちん💴
@@ -108,6 +114,8 @@ export function calcSubtotalYen(ctx: PricingContext): Yen {
 
 ## 2) “拡張ポイント”＝PricingRule を作る🧩🔁
 
+![Rule Contract](./picture/solid_ts_study_015_rule_contract.png)
+
 ここが超大事！✨
 「割引ルールはこの形で追加してね」っていう **約束（interface）** を作るよ😊
 
@@ -123,6 +131,8 @@ export interface PricingRule {
 ---
 
 ## 3) 料金計算のコア（ここは“閉じる”）🛡️✨
+
+![Calculator Core](./picture/solid_ts_study_015_calculator_core.png)
 
 PricingRuleの配列を **reduceで順番に適用** するだけにするよ〜！
 
@@ -152,6 +162,8 @@ export class PriceCalculator {
 ---
 
 ## 4) 割引ルールを“追加するだけ”で増やす🎟️✨
+
+![Rule Chips](./picture/solid_ts_study_015_rule_chips.png)
 
 ### 学割（固定300円引き）👩‍🎓💖
 
@@ -217,6 +229,8 @@ export class SetDiscountRule implements PricingRule {
 ---
 
 ## 5) “組み立て”だけで拡張する（Composition Root）🧩✨
+
+![Assembly Line](./picture/solid_ts_study_015_assembly_line.png)
 
 最後に「使うルール一覧」を作って注入するだけ！
 
