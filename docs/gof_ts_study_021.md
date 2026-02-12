@@ -74,6 +74,8 @@ export type Template = (input: OrderPlaced) => string;
 ---
 
 ### Step 2️⃣：「工場（家族のまとめ役）」を定義する👨‍👩‍👧‍👦✨
+![Interface Blueprint](./picture/gof_ts_study_021_interface_blueprint.png)
+
 
 ```ts
   createSender: () => Sender;
@@ -111,6 +113,8 @@ classDiagram
 ---
 
 ### Step 3️⃣：メール家族📧を作る（オブジェクトでOK！）
+![Factory Implementation](./picture/gof_ts_study_021_factory_impl.png)
+
 
 ```ts
 const createEmailSender = (): Sender => ({
@@ -162,6 +166,8 @@ export const inAppNotificationFactory: NotificationFactory = {
 ---
 
 ### Step 5️⃣：使う側（アプリ本体）はFactoryだけ見ればOK🎉
+![Client View](./picture/gof_ts_study_021_client_view.png)
+
 
 ```ts
 export async function notifyOrderPlaced(
@@ -197,6 +203,8 @@ await notifyOrderPlaced(inAppNotificationFactory, "user-42", input);
 ---
 
 ## 5. ちょい背伸び🧠✨：ジェネリクスで「宛先の型」まで揃える（事故防止MAX）
+![Generics Lock](./picture/gof_ts_study_021_generics_lock.png)
+
 
 上の例は `recipient: string` を共通化したけど、実務だと
 

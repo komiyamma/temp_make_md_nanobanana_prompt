@@ -101,6 +101,8 @@ export const inAppFactory: NotificationFactory = {
 ---
 
 ## 3) 設定（env）を “最初に” 読んで、型にする🧠✨
+![Config Load](./picture/gof_ts_study_022_config_load.png)
+
 
 **コツ：`process.env` をアプリの奥深くで読まない！**
 （テストが辛くなる＆どこで設定が使われてるか不明になる😵）
@@ -130,6 +132,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
 ---
 
 ## 4) 起動時にFactoryを選んで “渡すだけ” 💉（DIっぽい最小形）
+![Factory Select](./picture/gof_ts_study_022_factory_select.png)
+
 
 DIコンテナ不要🙅‍♀️
 **引数で渡す**だけで成立します✨
@@ -204,6 +208,8 @@ flowchart TD
 ---
 
 ## 5) .env をどう読む？（2026の“今っぽい”選択肢）🗂️✨
+![Env File](./picture/gof_ts_study_022_env_file.png)
+
 
 ## 選択肢A：Node標準の `--env-file` を使う（依存ゼロ👍）
 
@@ -232,6 +238,8 @@ NOTIFY_CHANNEL=email
 ---
 
 ## 6) テストで “差し替えできてる感” を体感しよう🧪🎉
+![Test Switch](./picture/gof_ts_study_022_test_switch.png)
+
 
 テストランナーは今どきだと **Vitest** をよく見かけます（Vite系と相性よし）。([Vitest][4])
 

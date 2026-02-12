@@ -29,6 +29,8 @@
 ---
 
 ## ゴールの完成図🗺️
+![Architecture Map](./picture/gof_ts_study_019_architecture_map.png)
+
 
 * `orderTypes.ts`：型（Order / Input）だけ🎁
 * `orderFactory.ts`：生成だけ（登録もここ）🏭
@@ -166,6 +168,8 @@ function calcTotal(items: readonly OrderItem[]): number {
 }
 
 // depsで注入でき「作る」と「使う」が分かれてると、テストも「別々」にできるんだ🧪✨
+![Dependency Injection](./picture/gof_ts_study_019_dependency_injection.png)
+
 
 ![「作るテスト」と「使うテスト」の分離。](./picture/gof_ts_study_019_test_separation.png)
 超ラク🎉
@@ -211,6 +215,8 @@ npm i -D vitest
 ---
 
 ### 4) Factoryのテスト（生成の責務を確認）🏭✅
+![Factory Test](./picture/gof_ts_study_019_factory_test.png)
+
 
 狙いはこれ👇
 
@@ -276,6 +282,8 @@ describe("orderFactory", () => {
 ---
 
 ### 5) 利用側のテスト（Factoryに依存しすぎてないか）🔍🧪
+![Usage Test Mock](./picture/gof_ts_study_019_usage_test_mock.png)
+
 
 狙いはこれ👇
 
