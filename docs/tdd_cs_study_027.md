@@ -33,6 +33,8 @@ graph LR
 ---
 
 ## 1) なぜ if は地獄になるの？😵‍💫🌋
+![Nested If Hell](./picture/tdd_cs_study_027_if_hell.png)
+
 
 たとえばこんな感じの仕様、増えがち👇
 
@@ -52,6 +54,8 @@ graph LR
 ---
 
 ## 2) 決定表（Decision Table）ってなに？📘🗂️
+![Decision Table Concept](./picture/tdd_cs_study_027_decision_table_concept.png)
+
 
 決定表はざっくり言うと：
 
@@ -81,6 +85,8 @@ graph LR
 ---
 
 ## 4) まず “条件軸” を切り出す🔪🧠✨
+![Extracting Conditions](./picture/tdd_cs_study_027_conditions_extraction.png)
+
 
 文章から、条件っぽいものを抜きます👇
 
@@ -96,6 +102,8 @@ graph LR
 ---
 
 ## 5) 決定表にする（ルールを見える化）🗂️✨
+![Concrete Decision Table](./picture/tdd_cs_study_027_decision_table_example.png)
+
 
 ここでは **“1行＝1ルール”** の形で書いちゃいます（読みやすいから😊）
 `-` は **どっちでもOK** の意味だよ🙆‍♀️
@@ -212,6 +220,8 @@ public class DiscountPolicyTests
 ---
 
 ## 8) 実装は “表駆動” に寄せる（if を育てない）🌱😎
+![Table to Code](./picture/tdd_cs_study_027_table_to_code.png)
+
 
 ### 8.1 まずは最小の実装（ルールを順に当てる）🎯
 
@@ -250,6 +260,8 @@ public sealed class DiscountPolicy
 ---
 
 ### 8.2 “ルールの表” をコードにする（ガチの表駆動）🗂️➡️💻✨
+![Rule Object Pattern](./picture/tdd_cs_study_027_rule_object.png)
+
 
 ```csharp
 public sealed class DiscountPolicy
@@ -313,6 +325,8 @@ graph LR
 ---
 
 ## 9) 抜け・重なりチェックのやり方（超大事）👀🚨
+![Overlap and Gap Check](./picture/tdd_cs_study_027_coverage_check.png)
+
 
 ### 抜け（未定義）を防ぐ🕳️
 

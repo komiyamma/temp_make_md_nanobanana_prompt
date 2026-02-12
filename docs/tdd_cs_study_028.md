@@ -19,6 +19,8 @@
 ---
 
 ## 2) 「責務」ってなに？（超やさしく）🧠💡
+![Responsibility Overload](./picture/tdd_cs_study_028_responsibility_overload.png)
+
 
 責務＝そのクラスの「担当」だよ👩‍🏫✨
 学園祭でたとえると…
@@ -33,6 +35,8 @@
 ---
 
 ## 3) 「分けるべき？」を判断する3つの質問🧩🔍
+![Separation Questions](./picture/tdd_cs_study_028_separation_questions.png)
+
 
 ### ✅ 質問A：説明するとき「そして」が入る？
 
@@ -56,6 +60,8 @@ Arrangeが長い＝「準備しないと動かない」＝依存や責務が重�
 ---
 
 ## 4) 分割の“最小ルール”🍀（分けすぎ防止つき）
+![Refactoring Map](./picture/tdd_cs_study_028_refactor_map.png)
+
 
 ### 🌱 ルール1：まずは **メソッド抽出** から
 
@@ -141,6 +147,8 @@ public class CheckoutTests
 ---
 
 ### 5-3) “全部入り実装”（まずは通す）🩹➡️✅
+![Monolithic Class](./picture/tdd_cs_study_028_before_split.png)
+
 
 ```csharp
 public sealed class CheckoutService
@@ -176,6 +184,8 @@ public sealed class CheckoutService
 ---
 
 ### Step 1：メソッド抽出で “塊” に名前を付ける📝✨
+![Method Extraction](./picture/tdd_cs_study_028_step1_extract.png)
+
 
 ```csharp
 public sealed class CheckoutService
@@ -208,6 +218,8 @@ public sealed class CheckoutService
 ---
 
 ### Step 2：「変わりやすい塊」をクラスにする（税・割引）🧩✨
+![Class Extraction](./picture/tdd_cs_study_028_step2_class.png)
+
 
 まずは税から🧾（税率変わりがち！）
 
@@ -269,6 +281,8 @@ public sealed class CheckoutService
 ---
 
 ### Step 3：Order側も “責務として自然” に寄せる📦✨
+![Final Responsibility Map](./picture/tdd_cs_study_028_responsibility_map.png)
+
 
 ```csharp
 public sealed class Order
