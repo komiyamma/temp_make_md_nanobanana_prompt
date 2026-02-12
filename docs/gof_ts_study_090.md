@@ -56,6 +56,8 @@ sequenceDiagram
 
 ## 1-1. 型（ドメイン）を用意する 🧩
 
+![Draft Order Slip](./picture/gof_ts_study_090_draft_order_slip.png)
+
 ```ts
 // src/domain.ts
 export type MoneyYen = number;
@@ -108,6 +110,8 @@ export function formatJPY(yen: MoneyYen): string {
 
 ## 2) Strategy：割引を“差し替え可能”にする 🎟️⚙️
 
+![Swappable Discount Strategy](./picture/gof_ts_study_090_strategy_keys.png)
+
 「会員ランクが増えるたびに if/switch が太る…」を止めるやつ！🛑😵
 
 ## 2-1. Strategy型と“登録Map” 🗂️
@@ -144,6 +148,8 @@ export function getDiscount(
 ---
 
 ## 3) Observer：注文イベントを疎結合にする 📣🧩
+
+![Observer Broadcast](./picture/gof_ts_study_090_observer_broadcast.png)
 
 「注文が確定したら、在庫更新・ログ・通知…」を **直接呼び合わない** のがポイント！
 
@@ -207,6 +213,8 @@ export function registerSubscribers(bus: EventTarget) {
 ---
 
 ## 4) State：注文ライフサイクルを“型で安全に”🚦✅
+
+![State Transition Path](./picture/gof_ts_study_090_state_path.png)
 
 「draft なのに paid にしちゃった…」をコンパイル時に止めるやつ！✋🧠
 
@@ -289,6 +297,8 @@ export function cancelOrder(
 ---
 
 ## 5) Chain：注文確定の前処理を“積める”ようにする ⛓️🧼
+
+![Processing Conveyor](./picture/gof_ts_study_090_chain_conveyor.png)
 
 「検証が増えて placeOrder() が巨大化…」を止めるよ！🛑😵‍💫
 
@@ -376,6 +386,8 @@ export function calcTotal(ctx: PlaceCtx): Result<PlaceCtx, PlaceError> {
 ---
 
 ## 6) Command × Memento：編集Undo/Redoを作る 🕹️📸
+
+![Memento Snapshots](./picture/gof_ts_study_090_memento_snapshots.png)
 
 ここは合わせ技が強い！💪
 
@@ -495,6 +507,8 @@ export function toPaymentResult(dto: ExternalPaymentResponse): PaymentResult {
 ---
 
 ## 8) Facade：入口を1つにまとめる 🚪✨
+
+![Facade Counter](./picture/gof_ts_study_090_facade_counter.png)
 
 いよいよ総まとめ！「注文確定」と「支払い」をFacadeで提供するよ ☕️🎉
 
