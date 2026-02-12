@@ -38,6 +38,8 @@
 ---
 
 ### 2) Money を作る 💰✨（不変条件はここに集中）
+![Money Gold Bar](./picture/gof_cs_study_009_money_gold.png)
+
 
 不変条件は **amount >= 0** だけ入れるよ🙂
 
@@ -76,6 +78,8 @@ public readonly record struct Money
 ---
 
 ### 3) OrderId を “型” にする 🪪✨（超小さいけど効く）
+![Order ID Tag](./picture/gof_cs_study_009_order_id.png)
+
 
 IDを Guid のまま使うと、別IDと混ざりやすいのが地味につらい😵
 なので **OrderId型**にしちゃうよ。
@@ -97,6 +101,8 @@ public readonly record struct OrderId(Guid Value)
 ---
 
 ### 4) OrderStatus（状態）を enum で持たせる 🧁
+![Order Status Traffic Light](./picture/gof_cs_study_009_status_light.png)
+
 
 この章のミニ演習にもある「最小の状態」を先に入れちゃう🙂
 
@@ -116,6 +122,8 @@ public enum OrderStatus
 ---
 
 ### 5) PaymentMethod を enum で置く 💳✨
+![Payment Method Cards](./picture/gof_cs_study_009_payment_cards.png)
+
 
 後で Factory/Strategy/State などに繋げるため、最初はベタでOK👍
 
@@ -135,6 +143,8 @@ public enum PaymentMethod
 ---
 
 ### 6) Order を最小で作る 🛒✨（状態遷移だけ）
+![Order Aggregate Box](./picture/gof_cs_study_009_order_aggregate.png)
+
 
 Orderは「注文の核」だけ持つよ🙂
 
@@ -187,6 +197,8 @@ public sealed class Order
 ---
 
 ### 7) Notification を “データ” として置く 🔔✨
+![Notification Hub](./picture/gof_cs_study_009_notification_hub.png)
+
 
 通知はこの段階では「どのチャネルで、どこへ、何を」だけ🙂
 
@@ -239,6 +251,8 @@ classDiagram
 ```
 
 ### 8) JSON用DTOを用意して、System.Text.Jsonで変換する 🧾✨
+![DTO Shipping Box](./picture/gof_cs_study_009_dto_box.png)
+
 
 ここが超大事ポイント🙂
 

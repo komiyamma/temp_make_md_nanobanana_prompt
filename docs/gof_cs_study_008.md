@@ -20,6 +20,8 @@
 ## 手順 🧭🪄
 
 ### 1) まず“内側”と“外側”をざっくり定義しよう 🏠🌍
+![Inner Castle Outer Market](./picture/gof_cs_study_008_castle_market.png)
+
 
 * **内側（Core / Domain）**：業務ルール・計算・状態・不変条件（例：注文の合計、金額はマイナス禁止）🧾💰
 * **外側（Infrastructure）**：画面、DB、ファイル、メール送信、HTTP、クラウド、フレームワーク…みたいなI/O全部📦🌐
@@ -30,6 +32,8 @@
 ---
 
 ### 2) “依存の向き”のルールはこれだけ！➡️⬅️
+![Dependency Direction](./picture/gof_cs_study_008_dependency_arrows.png)
+
 
 **内側は外側を知らない**（＝参照しない、newしない、型も出さない）🙅‍♀️
 **外側が内側に合わせる**（＝外側が内側に依存する）🧩
@@ -81,6 +85,8 @@ graph TD
 ---
 
 ### 4) 境界には「インターフェース」を置くとキレイ✨🔌
+![Interface Socket](./picture/gof_cs_study_008_interface_socket.png)
+
 
 内側に「こういうことをしたい」を**契約（インターフェース）**として置くよ。
 外側がそれを実装するよ。これで依存の向きが守れる🙂
@@ -138,6 +144,8 @@ public sealed class HttpPaymentGateway : IPaymentGateway
 ---
 
 ### 5) “組み立て”は外側でやる（Composition Root）🧩🧷
+![Composition Root Puppeteer](./picture/gof_cs_study_008_composition_root.png)
+
 
 「どの実装を使うか」を決めるのは外側のお仕事！
 内側は“選ばない”。内側は“契約通りに使うだけ”🙂
@@ -153,6 +161,8 @@ var service = new OrderService(gateway);
 ---
 
 ### 6) ここでGoFが効いてくるイメージ 🎭✨
+![Adapter Plug](./picture/gof_cs_study_008_adapter_plug.png)
+
 
 * **Strategy**：支払い方針、割引方針など“方針の差し替え”💡
 * **Factory**：外側実装の選択をまとめる🏭

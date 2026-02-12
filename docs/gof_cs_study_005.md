@@ -26,6 +26,8 @@
 ## 手順🧭（AAAを体に入れる）
 
 ### 0) AAAって何？（これだけでいい）🫶
+![AAA Pattern Metaphor](./picture/gof_cs_study_005_aaa_cooking.png)
+
 
 * **Arrange**：準備（テストしたい状況を作る）🧰
 * **Act**：実行（本番コードを1回呼ぶ）▶️
@@ -47,6 +49,8 @@ flowchart LR
 ```
 
 ## 1) まずは最小ドメインで練習する🍰
+![Money Value Object](./picture/gof_cs_study_005_money_vo.png)
+
 
 GoFの前に「テストの練習台」が必要だよね😊
 ここでは **Money** と **Order** の超ミニでいくよ🛒✨
@@ -96,6 +100,8 @@ public sealed class Order
 ---
 
 ## 2) AAAで書く：まずは「例外テスト」から🧨
+![Exception Shielding](./picture/gof_cs_study_005_exception_shield.png)
+
 
 「失敗すべき入力で、ちゃんと失敗する」って超大事！
 変な値が入っても黙って進むと、後で地獄になる…😇🔥
@@ -133,6 +139,8 @@ public class MoneyTests
 ---
 
 ## 3) AAAで書く：正常系（期待した結果）🌸
+![One Test One Assert](./picture/gof_cs_study_005_one_assert.png)
+
 
 次は「普通に使ったらこうなる」を固定するよ🧁✨
 
@@ -168,6 +176,8 @@ public class OrderTests
 ---
 
 ## 4) 境界値テスト：DataRowでサクッと増やす📚✨
+![Boundary Value Testing](./picture/gof_cs_study_005_boundary_cliff.png)
+
 
 境界値は **0 / -1 / null / 空文字** あたりが定番だよ🧊🔥
 MSTestなら `DataTestMethod` が便利！
@@ -249,6 +259,8 @@ public class AsyncExceptionTests
 ---
 
 ## 7) よくある落とし穴⚠️（ここだけは避けて〜😵）
+![Helper Method Box](./picture/gof_cs_study_005_helper_box.png)
+
 
 ## 落とし穴①：実装の細部をテストして壊れがち🧨
 

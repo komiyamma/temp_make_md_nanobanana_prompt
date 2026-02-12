@@ -22,6 +22,8 @@
 ## 手順 🧭💨
 
 ### 1) まず最初に：AIの“担当範囲”を決めよう✂️🤝
+![Human Brain AI Hands](./picture/gof_cs_study_006_brain_hands.png)
+
 
 AIに頼むのはここ👇（雛形・作業量が多いところ）
 
@@ -42,6 +44,8 @@ AIに頼まない（or そのまま採用しない）のはここ👇（設計�
 ---
 
 ### 2) AIに投げる前に「失敗するテスト」を1本作る🧪🔥
+![Test Safety Net](./picture/gof_cs_study_006_test_safety_net.png)
+
 
 AIに一発で正解を書かせようとすると、だいたい迷子になるよ〜😵‍💫
 だから先に「こう動いてほしい！」をテストで固定するのが強い💪✨
@@ -75,6 +79,8 @@ public class OrderServiceTests
 ---
 
 ### 3) 依頼テンプレを使って“ブレない指示”にする📄✨
+![Request Blueprint](./picture/gof_cs_study_006_request_template.png)
+
 
 AIにお願いするときは、毎回これを埋めるだけでOK🙆‍♀️
 （コピペ用テンプレ👇）
@@ -115,6 +121,8 @@ AIにお願いするときは、毎回これを埋めるだけでOK🙆‍♀️
 ---
 
 ### 4) AIの出力は「最小差分」に誘導する✂️🧩
+![Small Steps](./picture/gof_cs_study_006_small_steps.png)
+
 
 AIにはこう言うと良い感じになりやすいよ👇
 
@@ -128,6 +136,8 @@ AIにはこう言うと良い感じになりやすいよ👇
 ---
 
 ### 5) AI出力レビューは「5点セット」で機械的にやる👀🧰
+![Review Checklist](./picture/gof_cs_study_006_review_checklist.png)
+
 
 AIが書いたコードは、感想じゃなくチェックで裁くよ✅
 この5つだけ毎回見ると、事故が激減する🚧✨
@@ -155,6 +165,8 @@ flowchart TD
 ```
 
 ### 6) “採用しない”を怖がらない🙅‍♀️💗
+![Reject Button](./picture/gof_cs_study_006_reject_button.png)
+
 
 AIは便利だけど、**採用する義務はない**よ😌
 むしろ、初心者のうちはこういう判断が育つ🌱
