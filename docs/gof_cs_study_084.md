@@ -47,6 +47,8 @@ flowchart LR
 ## 手順 🧭✨
 
 ### 1) “Mediatorなし”の辛さを1分で味見する 😵‍💫🔥
+![gof_cs_study_084_fat_service_refactor.png](./picture/gof_cs_study_084_fat_service_refactor.png)
+
 
 まずは「注文確定のたびに、呼び出し側（サービス）がいろいろ抱える」状態をイメージしよう👇
 
@@ -147,6 +149,8 @@ public sealed class Order
 ---
 
 ### 5) インフラは“薄く”インターフェイスで用意（テストしやすく）🧪✨
+![gof_cs_study_084_thin_interfaces.png](./picture/gof_cs_study_084_thin_interfaces.png)
+
 
 ```csharp
 public interface IOrderRepository
@@ -194,6 +198,8 @@ public sealed record OrderConfirmed(Guid OrderId, decimal TotalAmount) : INotifi
 ---
 
 ### 7) コマンドハンドラ（確定して、イベントをPublish）📨➡️📣
+![gof_cs_study_084_command_event_chain.png](./picture/gof_cs_study_084_command_event_chain.png)
+
 
 ```csharp
 using MediatR;
@@ -232,6 +238,8 @@ public sealed class ConfirmOrderHandler : IRequestHandler<ConfirmOrderCommand, G
 ---
 
 ### 8) 通知ハンドラ（ここが“複数”になる場所）🔔✨
+![gof_cs_study_084_notification_handlers.png](./picture/gof_cs_study_084_notification_handlers.png)
+
 
 通知は複数ハンドラが持てるよ、がMediatRの基本仕様だよ ([GitHub][1])
 
@@ -422,6 +430,8 @@ public sealed class InMemoryAuditWriter : IAuditWriter
 ---
 
 ### 演習2：MSTestで“複数ハンドラが走った”を確認 ✅🧪
+![gof_cs_study_084_test_verification.png](./picture/gof_cs_study_084_test_verification.png)
+
 
 テストでやることはこれ👇
 

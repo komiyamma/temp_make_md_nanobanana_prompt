@@ -49,6 +49,8 @@ Visitor って、「**データ構造（構造）はそのまま**にして、�
 ## 手順 🧭✨
 
 ### 1) “式ツリー”を1本つくる 🧾🙂
+![gof_cs_study_081_simple_tree.png](./picture/gof_cs_study_081_simple_tree.png)
+
 
 まずは超シンプルな式！
 `x => (x + 1) * 2` を式ツリーとして持つよ〜🧁
@@ -68,6 +70,8 @@ Console.WriteLine(expr.Body.NodeType);   // Multiply とか出るよ🔎
 ---
 
 ### 2) Visitorで “ノード数を数える” 🔢🧳
+![gof_cs_study_081_count_visitor.png](./picture/gof_cs_study_081_count_visitor.png)
+
 
 `ExpressionVisitor` は「式ツリーを走査するためのベースクラス」なので、継承して使うよ〜💡 ([Microsoft Learn][2])
 ここでは `Visit(Expression? node)` をオーバーライドして、**訪問した回数をカウント**するよ🔍
@@ -132,6 +136,8 @@ public class ExpressionVisitorTests
 ---
 
 ### 4) Visitorで “式ツリーを書き換える” 🪄🔧
+![gof_cs_study_081_simplify_logic.png](./picture/gof_cs_study_081_simplify_logic.png)
+
 
 次は本番！
 `(x + 0) * 1` みたいな式を、**同じ意味のままスッキリ**させたい😆✨
@@ -183,6 +189,8 @@ public sealed class SimplifyArithmeticVisitor : ExpressionVisitor
 ---
 
 ### 5) 書き換えた結果が “同じ意味” かをテストする 🧪💖
+![gof_cs_study_081_test_equivalence.png](./picture/gof_cs_study_081_test_equivalence.png)
+
 
 式ツリーは最後に `Compile()` して実行できるよ〜🚀
 （式ツリーを delegate にして動かす感じ！） ([Microsoft Learn][3])
@@ -236,6 +244,8 @@ AIに頼むなら、プロンプトに **制約** を入れると安定するよ
 ---
 
 ## 落とし穴 ⚠️😵
+![gof_cs_study_081_pitfall_meaning.png](./picture/gof_cs_study_081_pitfall_meaning.png)
+
 
 * **“意味が同じ” の確認が甘い**：見た目がスッキリしても挙動が壊れてることあるよ💥 → `Compile()` してテスト必須🧪 ([Microsoft Learn][3])
 * **型がズレる**：`Expression.Constant(0)` は int だけ想定。decimalやdouble混ざると破綻しやすい💦

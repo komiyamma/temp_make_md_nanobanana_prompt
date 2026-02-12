@@ -55,6 +55,8 @@ flowchart TD
 ## 手順 🧩➡️✨
 
 ### 1) 「依存の爆発」って何が起きてるの？💥😵
+![gof_cs_study_082_dependency_web.png](./picture/gof_cs_study_082_dependency_web.png)
+
 
 たとえば注文まわりで、こんな“直結”が増えると辛くなるよね👇
 
@@ -92,6 +94,8 @@ Mediatorはこうするパターンだよ👇
 ---
 
 ### 3) C#での定番：MediatR を使う（基本だけ）🤝✨
+![gof_cs_study_082_mediatr_roles.png](./picture/gof_cs_study_082_mediatr_roles.png)
+
 
 MediatRは「アプリ内メッセージ（リクエスト／通知）」を仲介してくれる定番ライブラリだよ。
 最新版のひとつとして **v14.0.0（2025-12-03リリース）** が確認できる。([Jimmy Bogard][2])
@@ -114,6 +118,8 @@ MediatRは「アプリ内メッセージ（リクエスト／通知）」を仲�
 
 ```csharp
 // ✅ リクエスト（= ユースケースの呼び出し）
+![gof_cs_study_082_request_flow.png](./picture/gof_cs_study_082_request_flow.png)
+
 // 「注文して！」という“用件”だけを表す
 using MediatR;
 
@@ -154,6 +160,8 @@ public sealed class PlaceOrderHandler : IRequestHandler<PlaceOrderCommand, Place
 
 ```csharp
 // ✅ DI登録（最小イメージ）
+![gof_cs_study_082_dependency_injection.png](./picture/gof_cs_study_082_dependency_injection.png)
+
 // AddMediatR で「ハンドラ探してね」を登録する
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -199,6 +207,8 @@ Mediatorが効きやすいサイン🚥
 ## よくある落とし穴 🕳️🐾
 
 1. **Mediatorが神クラス化** 😇➡️😱
+![gof_cs_study_082_god_class_risk.png](./picture/gof_cs_study_082_god_class_risk.png)
+
    「全部ここに書こう！」ってやると、結局“巨大サービス”が爆誕する…
    ➡️ 対策：**ユースケース単位（1リクエスト=1目的）**に分ける🎯
 
