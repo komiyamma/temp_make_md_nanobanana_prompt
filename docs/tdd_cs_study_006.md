@@ -17,10 +17,14 @@ TDDの初心者さんほど、ここでルールを先に決めると後がめ�
 
 ### 事故①：GreenでAIに「全部実装して」って頼んじゃう🥺
 
+![AI Taking Control Tug of War](./picture/tdd_cs_study_006_accident_tug_of_war.png)
+
 * すると…AIが“気を利かせて”**仕様を勝手に補完**しがち
 * 結果：**テストが仕様じゃなくなる**（主導権がAIへ）😇
 
 ### 事故②：テストまでAIに丸投げする🤖🧪
+
+![Test Mirroring Code](./picture/tdd_cs_study_006_accident_mirror.png)
 
 * それっぽいテストを書くけど、**大事な境界値が抜ける**
 * しかも **テストが実装の写し**になりがち（最悪パターン）😵
@@ -61,19 +65,27 @@ graph LR
 
 ## この章のキモ：AIの“3固定ルール”🚦🧪🤖
 
+![AI Usage Rules Traffic Light](./picture/tdd_cs_study_006_rules_traffic_light.png)
+
 ここから先は、この3つだけ覚えたらOK🙆‍♀️✨
 
 ### ルール①：AIは「案を出す係」🧠📌
+
+![AI Waiter Offering Ideas](./picture/tdd_cs_study_006_ai_idea_waiter.png)
 
 * **仕様の決定者はあなた**（テストが仕様！）
 * AIの案は「候補」扱いで、**採用条件はテスト**✅
 
 ### ルール②：AIに頼むのは “小さく” 🪡✨
 
+![Needle and Thread Small Steps](./picture/tdd_cs_study_006_small_steps.png)
+
 * 1回のお願いは **テスト1本ぶん**、または **差分20行くらい**の気持ち
 * 大きいお願いは禁止🙅‍♀️（事故る）
 
 ### ルール③：「通ったからOK」じゃなく「意図に一致したらOK」✅💖
+
+![Puzzle Piece Intent Match](./picture/tdd_cs_study_006_intent_puzzle.png)
 
 * テストが通っても、**意図と違う実装**は普通に起こる
 * 最終チェックは **“意図”* 🧷 “本体を参照するテスト”にする（tests → src）
@@ -121,6 +133,8 @@ AIに頼んでいいこと🙆‍♀️
 ---
 
 ### 🔵 Refactor（意味を変えずに整える）
+
+![Refactoring Stairs](./picture/tdd_cs_study_006_refactor_stairs.png)
 
 AIに頼んでいいこと🙆‍♀️
 

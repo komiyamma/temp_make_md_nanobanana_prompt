@@ -9,6 +9,8 @@
 
 ### 1) ねらい（この章のゴール）🎯✨
 
+![AAA Stacked Blocks](./picture/tdd_cs_study_011_stacked_blocks.png)
+
 ![画像を挿入予定](./picture/tdd_cs_study_011_one_assert.png)
 
 この章が終わったら、あなたはこうなれる！😊
@@ -21,6 +23,8 @@
 ---
 
 ### 2) AAAってなに？（超かんたん説明）🧸💬
+
+![AAA Cooking Metaphor](./picture/tdd_cs_study_011_cooking_aaa.png)
 
 ![画像を挿入予定](./picture/tdd_cs_study_011_aaa_ingredients.png)
 
@@ -48,6 +52,8 @@ graph TD
 ---
 
 ### 3) “型が固定”されると何がうれしいの？🥰📘
+
+![Assert Category Map](./picture/tdd_cs_study_011_assert_mindmap.png)
 
 AAAにそろうと…
 
@@ -90,6 +96,8 @@ mindmap
 * 両方やってもOK🙆‍♀️
 
 #### ✅ お作法2：Actは基本「1行」🎯
+
+![Single Act Target](./picture/tdd_cs_study_011_one_shot_act.png)
 
 Actが2回以上あると、**どっちが原因で失敗したか**分かりにくくなるよ😵‍💫
 （必要ならテストを分けよう🍰✂️）
@@ -135,6 +143,8 @@ public class TaxCalculatorTests
 
 ### 6) ありがち失敗あるある（先に潰す！）🚧😂
 
+![Mixing Steps Warning](./picture/tdd_cs_study_011_blender_mess.png)
+
 #### ❌ あるある1：Arrange と Assert が混ざる
 
 「準備しながら確認」みたいになると読みづらい〜😵
@@ -157,6 +167,8 @@ public class TaxCalculatorTests
 ---
 
 ### 7) 実演：散らかったテストをAAAに整形してみよ〜🧹✨
+
+![Refactoring Cleanup](./picture/tdd_cs_study_011_cleanup_refactor.png)
 
 #### 🌀 散らかり例（読みづらい…！）
 
@@ -298,6 +310,8 @@ AAAはAIに頼むと速い！でも **採用基準**はこれ👇
 ---
 
 ### 10) 練習問題（手を動かすやつ！）✍️💪✨
+
+![Test Naming Cards](./picture/tdd_cs_study_011_naming_cards.png)
 
 テスト名の構成要素
 
