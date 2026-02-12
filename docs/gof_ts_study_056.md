@@ -20,6 +20,10 @@
 
 ## 2) なぜ“魔法”に見えて危険なの？🪄💣
 
+![Hidden Trap](./picture/gof_ts_study_056_hidden_trap.png)
+
+
+
 Proxyは「見た目は普通」なのに、実体はこうなりがち👇
 
 * どこでログが出てるのか分からない😵‍💫
@@ -53,6 +57,10 @@ Proxyは「見た目は普通」なのに、実体はこうなりがち👇
 
 ### NG④：深いネストProxy（ProxyのProxyのProxy…）🌀
 
+![Heavy Backpack](./picture/gof_ts_study_056_heavy_backpack.png)
+
+
+
 * ステップ実行が追えない
 * 例外の発生地点が分からない
 * パフォーマンスの原因になりやすい
@@ -71,6 +79,10 @@ Proxyは**セキュリティ機構じゃない**よ。
 ---
 
 ## 4) Proxyより先にやる“定番の解決策”✅🧁
+
+![Alternative Map](./picture/gof_ts_study_056_alternative_map.png)
+
+
 
 Proxyは最終手段寄り。先にこれを疑うと勝ちやすいよ✨
 
@@ -104,6 +116,10 @@ graph TD
 
 ## 5) Proxyを使ってもいい“狭い範囲”🎯✨
 
+![Clean Box Scope](./picture/gof_ts_study_056_clean_box.png)
+
+
+
 Proxyを採用しても平和になりやすいのはこの辺👇
 
 * **開発時のデバッグ**（アクセスログ、書き込み監視）🔎
@@ -121,6 +137,9 @@ Proxyのトラップは、**原則 `Reflect.*` に委譲**すると事故りに�
 ---
 
 ## 7) ハンズオン🛠️：Proxyあり/なしで可読性を比べよう👀✨
+
+![Disappearing Footprints](./picture/gof_ts_study_056_detective_footprints.png)
+
 
 ### 7-A) Proxy版：アクセスログ（※目的1つに限定）🔎
 

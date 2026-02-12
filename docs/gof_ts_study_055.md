@@ -40,6 +40,10 @@ graph LR
 
 ## 2) 最小例：`get` / `set` をログする📒✨
 
+![Trap Mechanism](./picture/gof_ts_study_055_trap_mechanism.png)
+
+
+
 「読んだ」「書いた」を全部ログに残す、いちばんベタで役に立つ例からいくよ〜😊
 
 ```ts
@@ -82,6 +86,10 @@ console.log(logs);
 
 ## 3) TypeScriptで“型”をきれいに保つコツ🧠✨
 
+![Reflect Mirror](./picture/gof_ts_study_055_mirror_reflect.png)
+
+
+
 TypeScriptの標準ライブラリ（`lib.es2015.proxy.d.ts`）には `Proxy` と `ProxyHandler<T>` が用意されてるよ📦 ([GitHub][2])
 なので、`new Proxy(order, handler)` の戻り値は **ちゃんと `Order` 扱い**になりやすい👌
 
@@ -103,6 +111,10 @@ TypeScriptの標準ライブラリ（`lib.es2015.proxy.d.ts`）には `Proxy` �
 ---
 
 ## 4-2) Validation Proxy（書き込み制限）🚧
+
+![Validation Shield](./picture/gof_ts_study_055_shield_validation.png)
+
+
 
 「変な値を入れたら止めたい！」ってやつ💥
 
@@ -129,6 +141,10 @@ orderProxy.total = -1;   // エラー
 ---
 
 ## 4-3) Protection Proxy（アクセス制御）🔐
+
+![Secret Curtain](./picture/gof_ts_study_055_curtain_secret.png)
+
+
 
 「このプロパティ触らせたくない」みたいなときに使うよ。
 ※これは **“セキュリティ”ではなく設計上のガード**として使うのが現実的🙆‍♀️
@@ -190,6 +206,10 @@ console.log(profile.bio); // ここで初めて loadProfile() が走る
 これで「計測」「キャッシュ」「リトライ」などがやりやすい！
 
 ## 5-1) 呼び出し時間を測る（Timing Proxy）⏱️
+
+![Stopwatch Race](./picture/gof_ts_study_055_stopwatch_race.png)
+
+
 
 ```ts
 type CalcTotal = (prices: number[]) => number;
