@@ -25,6 +25,8 @@
 * `inApp`：ユーザーID + タイトル + 本文
 
 #### 💥ダメ例（“雑に共通化”して型が守ってくれない）
+![Bad Mix](./picture/gof_ts_study_023_bad_mix.png)
+
 
 ```ts
 // notification-bad.ts
@@ -104,6 +106,8 @@ async function notifyBad(channelForSender: Channel, channelForTemplate: Channel,
 ポイントは **マッピング型（対応表）** を作ることだよ📌
 
 ### ✅ 正しい設計（Messageの形をチャンネルごとに分ける）
+![Type Map](./picture/gof_ts_study_023_type_map.png)
+
 
 ```ts
 // notification.ts
@@ -258,6 +262,8 @@ await sendEmail(makeEmail({ id: "A1", customerName: "miku", totalYen: 1200 }));
 ```
 
 ### ❌ これは止まる（＝勝ち！）🏆✨
+![Compiler Guard](./picture/gof_ts_study_023_compiler_guard.png)
+
 
 ```ts
 import { getFactory } from "./registry.js";
@@ -278,6 +284,8 @@ await sendInApp(makeEmail({ id: "A1", customerName: "miku", totalYen: 1200 }));
 ---
 
 ## 5) テストで「門番が働いてる」ことを確認しよう🧪✅
+![Test Gatekeeper](./picture/gof_ts_study_023_test_gatekeeper.png)
+
 
 ### テスト環境のいまどきメモ📝✨
 

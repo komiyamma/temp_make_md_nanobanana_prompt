@@ -35,6 +35,8 @@
 ---
 
 ## ありがちな“やばい実装”例💣（ちぐはぐが混ざる）
+![Mismatch Puzzle](./picture/gof_ts_study_020_mismatch_puzzle.png)
+
 
 「通知手段」「テンプレ」をそれぞれ選ぶと、組み合わせが爆発するし、間違いも混ざる…😇
 
@@ -119,6 +121,8 @@ graph TD
 > **“相性がある部品セット（家族）”を、丸ごと差し替えたい** とき！
 
 ## “家族（セット）”の例👨‍👩‍👧‍👦
+![Family Set](./picture/gof_ts_study_020_family_set.png)
+
 
 * メール通知の家族📧
 
@@ -134,6 +138,8 @@ graph TD
 ---
 
 ## Factory Methodとの違い（超ざっくり）🍡
+![Factory Comparison](./picture/gof_ts_study_020_factory_comparison.png)
+
 
 * **Factory Method**：
   「Aを作る」→ Aの種類を切り替える
@@ -250,6 +256,8 @@ demo();
 ```
 
 ## ここが気持ちいいポイント🥰
+![Harmony](./picture/gof_ts_study_020_harmony.png)
+
 
 * 「メール用テンプレ」＋「メール送信」が **必ずセットで揃う** ✅
 * 「アプリ内テンプレ」＋「アプリ内送信」も **必ずセットで揃う** ✅
