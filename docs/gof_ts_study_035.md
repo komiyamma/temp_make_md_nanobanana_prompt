@@ -67,6 +67,10 @@ CommonJS（`require`）も同様に、読み込んだモジュールはキャッ
 
 ## 5-1) 設定（Config）は “共有OK” の代表🥰
 
+![gof_ts_study_035_config_singleton.png](./picture/gof_ts_study_035_config_singleton.png)
+
+
+
 * 起動時に決める
 * 以後は読み取りだけ
 * 書き換え禁止（Readonly + freeze）
@@ -106,6 +110,10 @@ export const appConfig = config;
 
 ## 5-2) ログ（Logger）は “注入できる形” が超おすすめ💉📝
 
+![gof_ts_study_035_logger_injection.png](./picture/gof_ts_study_035_logger_injection.png)
+
+
+
 * グローバル固定にしない
 * 引数で受け取れるようにして、テストは差し替え✨
 * 標準の `console` で十分（まずは！）
@@ -136,6 +144,10 @@ export function createConsoleLogger(): Logger {
 
 ## 5-3) キャッシュ（Cache）は Map が王道🗺️🗃️
 
+![gof_ts_study_035_cache_strategy.png](./picture/gof_ts_study_035_cache_strategy.png)
+
+
+
 ここは “共有したい欲” が出るけど、ルールが大事！
 
 * 共有したいなら：**クリア方法が必要**（テスト・運用）
@@ -164,6 +176,10 @@ export function createMapCache<K, V>(): Cache<K, V> {
 ---
 
 ## 6) “使う側” を組み立てる（依存が見えるのが正義）👀✨
+
+![gof_ts_study_035_architecture.png](./picture/gof_ts_study_035_architecture.png)
+
+
 
 ```ts
 // orderService.ts

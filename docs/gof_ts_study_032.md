@@ -12,6 +12,10 @@ Singletonは「インスタンスを1つだけにして、どこからでも同�
 
 ## 2) 便利に見えるポイント（なぜ皆つい使うの？）😍
 
+![gof_ts_study_032_singleton_convenience.png](./picture/gof_ts_study_032_singleton_convenience.png)
+
+
+
 * どこからでも呼べてラク🙌（引数で渡さなくていい）
 * 生成コストが重いものを1回だけ作れる気がする🐢
 * 「共有っぽい」雰囲気が出て安心する（気がする）😌
@@ -121,6 +125,10 @@ export function placeOrder(orderId: string) {
 
 ### 4-2) テストで詰む（状態が残る）🧪💥
 
+![gof_ts_study_032_test_pollution.png](./picture/gof_ts_study_032_test_pollution.png)
+
+
+
 ```ts
 // placeOrder.test.ts
 import { describe, it, expect } from "vitest";
@@ -152,6 +160,10 @@ describe("placeOrder", () => {
 ---
 
 ## 5) 応急処置と、ちゃんとした考え方💡
+
+![gof_ts_study_032_dependency_visibility.png](./picture/gof_ts_study_032_dependency_visibility.png)
+
+
 
 ### 応急処置：毎回リセットする（でも根本じゃない）🧯
 
