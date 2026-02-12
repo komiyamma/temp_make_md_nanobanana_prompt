@@ -54,6 +54,8 @@ mindmap
 
 ## 7.3 “チーム”として見るとこうなる👯‍♀️🌈（超重要）
 
+![solid_characters](./picture/solid_cs_study_007_solid_characters.png)
+
 SOLIDは、だいたいこの流れで協力するの👇
 
 ### ✅ よくある黄金ルート（実務でめちゃ使う🪄）
@@ -71,6 +73,8 @@ SOLIDは、だいたいこの流れで協力するの👇
 
 ## 7.4 SOLID早見表📖✨（症状→どれ？）
 
+![symptom_flowchart](./picture/solid_cs_study_007_symptom_flowchart.png)
+
 | つらみ/症状😵‍💫         | だいたい疑う原則🔎 | よく効く一手🪄               |
 | ------------------- | ---------- | ---------------------- |
 | 1クラスが巨大、修正が怖い       | **S**      | 責務（変更理由）で分割、I/Oとロジック分離 |
@@ -82,6 +86,8 @@ SOLIDは、だいたいこの流れで協力するの👇
 ---
 
 ## 7.5 “SOLID診断”のやり方🩺✨（地図の使い方）
+
+![diagnostic_tools](./picture/solid_cs_study_007_diagnostic_tools.png)
 
 コードを見て「どれ違反？」ってなるときは、**質問で当てにいく**のがコツだよ😊💕
 
@@ -113,6 +119,8 @@ SOLIDは、だいたいこの流れで協力するの👇
 ---
 
 ## 7.6 ミニ実例：このコード、S/O/L/I/Dで分類してみよ🧩✨
+
+![bad_code_traffic](./picture/solid_cs_study_007_bad_code_traffic.png)
 
 「注文→支払い→発送」っぽい雰囲気の、わざと“つらい”コードだよ😈（あとで直す前提！）
 
@@ -164,6 +172,8 @@ public class OrderService
 ---
 
 ## 7.7 “直す順番”のコツ🧭✨（迷子防止）
+
+![refactoring_compass](./picture/solid_cs_study_007_refactoring_compass.png)
 
 さっきの例を直すなら、だいたいこうなるよ👇
 

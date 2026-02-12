@@ -53,6 +53,8 @@ SOLIDって、だいたい「クラス分ける」「依存を差し替える」
 
 ## 6.4 テストプロジェクトを作る🧰🪄
 
+![project_setup](./picture/solid_cs_study_006_project_setup.png)
+
 ### Visual Studioで作る（いちばん楽💕）
 
 1. ソリューションを右クリック → **追加** → **新しいプロジェクト**
@@ -159,6 +161,8 @@ public class PriceCalculatorTests
 
 ## 6.7 テストを“仕様の箇条書き”にする（Theoryで増やす）🧁📌
 
+![theory_test_factory](./picture/solid_cs_study_006_theory_test_factory.png)
+
 「同じ形のテストを、入力だけ変えて何個もやりたい」ってときは **Theory** が便利✨
 
 ```csharp
@@ -201,6 +205,8 @@ public class PriceCalculatorTheoryTests
 
 ## 6.8 「テストしにくいコード」は設計の赤信号🚨😵‍💫
 
+![untestable_traps](./picture/solid_cs_study_006_untestable_traps.png)
+
 よくある“テストしづらい元凶”👇
 
 * `DateTime.Now` / `Guid.NewGuid()` / `Random`（毎回変わる）⏰🎲
@@ -228,6 +234,8 @@ public sealed class CampaignService
 テストが「朝は落ちる」「夜は通る」みたいになる😵‍💫💥
 
 ### いい例：時計を外から渡す🎁✨
+
+![dependency_injection_clock](./picture/solid_cs_study_006_dependency_injection_clock.png)
 
 ```csharp
 public interface IClock
@@ -295,6 +303,8 @@ xUnit v3 も Microsoft Testing Platform にネイティブ対応しています�
 ---
 
 ## 6.11 おまけ：カバレッジを“ざっくり”取る🧁📈
+
+![coverage_flashlight](./picture/solid_cs_study_006_coverage_flashlight.png)
 
 「テストがどこまで通ってるか」をざっくり見るなら、`dotnet test --collect:"XPlat Code Coverage"` が定番✨
 テンプレートも既定で coverlet と統合されてる説明があります📌 ([Microsoft Learn][5])
