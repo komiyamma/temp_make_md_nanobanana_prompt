@@ -31,6 +31,8 @@
 
 ## ありがちな困りごと😵‍💫💥
 
+![042_conditional_hell](./picture/gof_ts_study_042_conditional_hell.png)
+
 木構造を扱うと、ついこうなりがち👇
 
 * 価格計算のとき
@@ -44,6 +46,8 @@ Compositeはこれを **“呼び出し側から分岐を消す”**のが強み
 ---
 
 ## Compositeの超ざっくり定義🍡
+
+![042_uniform_badge](./picture/gof_ts_study_042_uniform_badge.png)
 
 * **Leaf（葉）**：子を持たない（例：商品）🍮
 * **Composite（枝）**：子を持つ（例：カテゴリ）📁
@@ -81,6 +85,8 @@ classDiagram
 
 ### 設計の形（めっちゃシンプル版）🌿
 
+![042_tree_structure](./picture/gof_ts_study_042_tree_structure.png)
+
 * `MenuNode`：どのノードも `price()` と `print()` を持つ
 * 商品ノード（Leaf）：自分の値段を返す
 * カテゴリノード（Composite）：子の `price()` を合計する（再帰）
@@ -114,6 +120,8 @@ export function createProduct(name: string, unitPrice: number): MenuNode {
 ```
 
 ### 3) Composite（カテゴリ）を作る📁
+
+![042_price_aggregation](./picture/gof_ts_study_042_price_aggregation.png)
 
 ここがCompositeのキモ🌳✨
 カテゴリ自身は価格を持たず、**子の合計**を返すよ！
@@ -203,6 +211,8 @@ describe("Composite menu", () => {
 
 ## どんな時にCompositeが効く？🔍✨
 
+![042_file_system](./picture/gof_ts_study_042_file_system.png)
+
 ### ✅ めっちゃ効くケース
 
 * フォルダ・ファイル📁📄（サイズ計算、一覧表示）
@@ -225,6 +235,8 @@ describe("Composite menu", () => {
 * 深い木になりそうなら、`print()`みたいな可視化関数を最初から入れると救われる🛟✨
 
 ### 2) Compositeが「何でも屋」になりやすい🧟‍♀️
+
+![042_responsibility_overload](./picture/gof_ts_study_042_responsibility_overload.png)
 
 * `createCategory` の中に「割引ルール」みたいな業務判断を混ぜないでね🙅‍♀️
   Compositeの責務は **“木構造をまとめて扱う”** だけ🌳
@@ -281,6 +293,8 @@ Compositeパターンの題材として、メニュー（カテゴリ→商品�
 ---
 
 ## ミニ演習🌸（5〜10分）🧠📝
+
+![042_deep_recursion](./picture/gof_ts_study_042_deep_recursion.png)
 
 1. `countLeaves()` を追加してみよう🍃
 

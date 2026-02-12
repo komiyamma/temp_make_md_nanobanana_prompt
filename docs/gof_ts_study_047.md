@@ -18,6 +18,8 @@
 
 ## 1) Decoratorが「気持ちいい〜✨」ってなる瞬間🎁
 
+![047_clean_desk](./picture/gof_ts_study_047_clean_desk.png)
+
 たとえば「メニューの価格を取得する」関数があるとして…
 
 * たまに失敗するから **リトライしたい** 🔁
@@ -40,6 +42,8 @@ Decoratorはこうする👇
 ---
 
 ## 2) 強いDecoratorの“3原則”💪✨
+
+![047_specialist_tools](./picture/gof_ts_study_047_specialist_tools.png)
 
 ## 原則①：Decoratorは「1つの責務」だけ🧼
 
@@ -99,6 +103,8 @@ export async function fetchPrice(itemId: string): Promise<number> {
 ---
 
 ## Step 1：ログDecorator 📒 `withLogging`
+
+![047_reporter_logging](./picture/gof_ts_study_047_reporter_logging.png)
 
 同期/非同期どっちでも動くようにしておくと便利✨
 
@@ -259,6 +265,8 @@ const fetchPriceSafe = decorate(
 
 ## 4) いちばん大事：Decoratorは“順番で意味が変わる”🔁🧅
 
+![047_pierced_onion](./picture/gof_ts_study_047_pierced_onion.png)
+
 ## ルール感覚🧠
 
 * **後ろに書いたDecoratorほど外側**（= 先に動く）
@@ -267,6 +275,8 @@ const fetchPriceSafe = decorate(
 ---
 
 ## 実験①：ログ📒 と キャッシュ🗃️ の順番
+
+![047_guard_gate_order](./picture/gof_ts_study_047_guard_gate_order.png)
 
 **A：ログが外側** → キャッシュヒットでもログが出る📒✨
 **B：キャッシュが外側** → キャッシュヒットだと本体（＋ログ）が呼ばれず、ログが出ない🗃️😶
@@ -334,6 +344,8 @@ sequenceDiagram
 ---
 
 ## 5) つまずきポイント集💡（ここハマりやすい！）
+
+![047_double_payment](./picture/gof_ts_study_047_double_payment.png)
 
 ## 🌀 Decoratorを盛りすぎる
 
