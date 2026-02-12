@@ -56,6 +56,8 @@ ISP（Interface Segregation Principle）は、だいたいこういう意味👇
 
 ## 4) 例：ミニECの「太すぎRepository」問題🛒💥
 
+![God Interface Monster](./picture/solid_cs_study_019_god_interface_monster.png)
+
 まず、わざと“太い”やつを見てみよっか😈
 
 ```csharp
@@ -78,6 +80,8 @@ public interface IOrderRepository
 
 ### 参照画面（検索）だけしたいクラスなのに…😇
 
+![Client Burden](./picture/solid_cs_study_019_client_heavy_backpack.png)
+
 ```csharp
 public sealed class OrderQueryService
 {
@@ -94,6 +98,8 @@ public sealed class OrderQueryService
 つまり **Delete/SaveChanges/BeginTransaction まで“知ってる側”** になっちゃうの。
 
 ### テストでも地獄（Fakeが太る）😭🧪
+
+![Mocking Hell](./picture/solid_cs_study_019_mocking_hell.png)
 
 ```csharp
 public sealed class FakeOrderRepository : IOrderRepository
@@ -135,6 +141,8 @@ public sealed class FakeOrderRepository : IOrderRepository
 
 ### Step 3：小さいインターフェースに分割✂️
 
+![Interface Split](./picture/solid_cs_study_019_interface_split_scissors.png)
+
 ```csharp
 public interface IOrderReader
 {
@@ -156,6 +164,8 @@ public interface IOrderWriter
 
 参照サービスはこうなるよ👇✨
 
+![Happy Client](./picture/solid_cs_study_019_happy_client_light.png)
+
 ```csharp
 public sealed class OrderQueryService
 {
@@ -169,6 +179,8 @@ public sealed class OrderQueryService
 ```
 
 Fakeも一気に軽くなる〜！🥹💕
+
+![Clean Fake Joy](./picture/solid_cs_study_019_clean_fake_joy.png)
 
 ```csharp
 public sealed class FakeOrderReader : IOrderReader

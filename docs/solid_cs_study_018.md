@@ -36,6 +36,8 @@
 
 ## 18-3. 合成（composition）ってなに？🧩💞
 
+![Inheritance vs Composition](./picture/solid_cs_study_018_inheritance_vs_composition.png)
+
 ![Robot body (Order) with swappable tool arms (Fulfillment).](./picture/solid_cs_study_018_composition_swappable_parts.png)
 
 ひとことで言うと…
@@ -52,6 +54,8 @@
 ---
 
 ## 18-4. 継承より合成に切り替えるサイン🚥👀
+
+![Composition Signals](./picture/solid_cs_study_018_composition_signals.png)
 
 こんな匂いがしたら、合成に寄せると幸せになりやすいよ🍀
 
@@ -76,6 +80,8 @@
 「物理商品」と「デジタル商品（ダウンロード）」があるとするよ📦📩
 
 ### 18-5-1. まず“事故る継承”を見てみよ😇💥
+
+![Digital Order Trap](./picture/solid_cs_study_018_digital_order_trap.png)
 
 「注文 Order は発送できる」って親が約束しちゃってる例👇
 
@@ -147,6 +153,8 @@ public static class ShippingWorkflow
 
 ### 18-5-3. 合成に置き換えよう🧩✨（発送は“部品”にする）
 
+![Order Fulfillment Bridge](./picture/solid_cs_study_018_order_fulfillment_bridge.png)
+
 ```mermaid
 classDiagram
     namespace Inheritance_Bad {
@@ -182,6 +190,8 @@ classDiagram
 代わりに **フルフィルメント（Fulfillment：届け方）部品**を持つ！
 
 #### ✅ポイント
+
+![Fulfillment Variants](./picture/solid_cs_study_018_fulfillment_variants.png)
 
 * 注文は「フルフィルメントにお願いする」だけ🤝
 * 物理なら“配送”の部品
@@ -291,6 +301,8 @@ public sealed class StorePickupFulfillment : IFulfillment
 ---
 
 ## 18-6. 合成でよく使う“小技パターン”4つ🧰✨
+
+![Composition Patterns](./picture/solid_cs_study_018_composition_patterns.png)
 
 ### ① Strategy（差し替え作戦）🎭
 

@@ -27,6 +27,8 @@
 
 ## まずは“呼び出し側の気持ち”になろう🥺📣
 
+![Caller Expectation](./picture/solid_cs_study_016_caller_expectation.png)
+
 呼び出し側（使う側）は、こう思ってます👇
 
 * 「この型なら、こう動くんだよね？🤝」
@@ -106,6 +108,8 @@ classDiagram
 
 ## どこがLSP違反なの？💥（超重要ポイント）
 
+![Refund Trap](./picture/solid_cs_study_016_refund_trap.png)
+
 呼び出し側がこう書いてたとします👇
 
 ```csharp
@@ -135,15 +139,21 @@ public sealed class PaymentService
 
 ### ✅ 1) 子は、親が受け取れる入力を “同じように” 受け取れる？
 
+![LSP Input Rule](./picture/solid_cs_study_016_lsp_input_rule.png)
+
 * 親：`amount > 0` ならOK
 * 子：`amount > 0` でも「それ無理」← ❌（条件をきつくしてる）
 
 ### ✅ 2) 子は、親が保証してる結果を “同じ意味” で返せる？
 
+![LSP Output Rule](./picture/solid_cs_study_016_lsp_output_rule.png)
+
 * 親：「成功したら支払いIDを返す」
 * 子：「成功したけど空文字返す」← ❌（意味が変わる）
 
 ### ✅ 3) 子は、親より “壊れやすい動き” を増やしてない？
+
+![LSP Exception Rule](./picture/solid_cs_study_016_lsp_exception_rule.png)
 
 * 親：普通に動く
 * 子：頻繁に `NotSupportedException` ← ❌（呼び出し側が死ぬ）
@@ -161,12 +171,16 @@ public sealed class PaymentService
 
 ### 直し方A：親の“約束”を小さくする（できることだけ約束する）✂️
 
+![Fix Split Interface](./picture/solid_cs_study_016_fix_split_interface.png)
+
 * `PaymentMethod` は **Chargeだけ**を約束
 * Refundは別の約束にする（返金できるやつだけが持つ）
 
 👉 これ、次の **ISP（19章）** にもつながる超大事パターンです😊✨
 
 ### 直し方B：そもそも継承しない（合成に逃げる）🧩
+
+![Fix Composition](./picture/solid_cs_study_016_fix_composition.png)
 
 * 返金の仕組みを “部品” として組み合わせる
   👉 これは **第18章** でガッツリやります💪✨
