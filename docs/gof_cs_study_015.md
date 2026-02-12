@@ -56,6 +56,11 @@ static string ComputeSha256Hex(string text)
     byte[] data = Encoding.UTF8.GetBytes(text);
 
     using SHA256 sha = SHA256.Create(); // ← ここがFactory Methodっぽい
+```
+
+![SHA256 Black Box](./picture/gof_cs_study_015_sha256_box.png)
+
+```csharp
     byte[] hash = sha.ComputeHash(data);
 
     return Convert.ToHexString(hash); // .NET標準のHEX変換
@@ -96,6 +101,11 @@ using System.IO;
 using System.Text;
 
 // 依存先を TextWriter にするのがミソ🧡
+```
+
+![TextWriter Interface Plug](./picture/gof_cs_study_015_writer_plug.png)
+
+```csharp
 static void WriteOrderSummary(TextWriter writer, int orderId, decimal total)
 {
     writer.WriteLine($"OrderId: {orderId}");
@@ -110,6 +120,11 @@ static void WriteToFile(string path)
 }
 
 // テスト：メモリに書く🧪（差し替えが超ラク）
+```
+
+![Test Set Swap](./picture/gof_cs_study_015_test_set.png)
+
+```csharp
 static string WriteToString()
 {
     using var sw = new StringWriter();
@@ -137,6 +152,9 @@ static string WriteToString()
 「生成＋初期化＋ライフサイクル（使い回し）」が絡むと、Factory Methodの価値が爆上がりする🔥
 
 * `IHttpClientFactory` は **HttpClient生成の窓口**
+
+![HttpClient Factory Reception](./picture/gof_cs_study_015_http_reception.png)
+
 * `CreateClient("name")` は **“名前で構成を切り替える差し替え点”** を提供する🧩
 * 呼び出し側は「ハンドラ構成・プール・DNS更新」みたいな複雑さを抱えずに済む🙈✨
 
@@ -193,6 +211,9 @@ static async Task<string> FetchRootAsync(IServiceProvider sp)
 * **`Dispose` を見落としてバグる**
 
   * 暗号/Stream/Writer は `using` 基本！🧤
+
+![Disposable Tap Warning](./picture/gof_cs_study_015_disposable_tap.png)
+
 * **“読むだけ”で終わる**
 
   * 1回は「差し替え」までやって体験しないと、刺さらない💦

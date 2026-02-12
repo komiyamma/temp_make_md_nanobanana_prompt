@@ -4,6 +4,9 @@
 
 ## ねらい 🎯
 
+![Universal Adapter Kit](./picture/gof_cs_study_019_universal_adapter.png)
+
+
 * **「DBが変わっても同じ書き方で動く」**って感覚を、.NETの定番APIで体感するよ〜😊
 * Abstract Factory のポイントである **“関連部品のセット（ファミリー）を丸ごと差し替える”** を、`DbProviderFactory`で見抜けるようにするよ🧠✨
 * 「利用者（呼び出し側）が知らなくていいこと」を増やして、分岐地獄を減らすよ🔥➡️🌸
@@ -42,6 +45,9 @@
 
 ### 2) IntelliSenseで“工場のカタログ”を見る👀📚
 
+![Factory Catalog](./picture/gof_cs_study_019_catalog_list.png)
+
+
 Visual Studioで `DbProviderFactory` を覗いてみてね✨（F12や「定義へ移動」でOK！）
 
 見たいメソッドはこれ👇
@@ -56,6 +62,9 @@ Visual Studioで `DbProviderFactory` を覗いてみてね✨（F12や「定義�
 ---
 
 ### 3) “呼び出し側が知らなくていいこと”を3つ言えるようにする🎁
+
+![Curtain Hidden Parts](./picture/gof_cs_study_019_curtain_hidden.png)
+
 
 `DbProviderFactory`を使うと、呼び出し側はこういうのを知らなくてよくなるよ🙈✨
 
@@ -170,6 +179,9 @@ Console.WriteLine(total);
 
 #### パターンB：名前でFactoryを引く（差し替えに強い）🔁
 
+![Console Cartridge Swap](./picture/gof_cs_study_019_console_cartridge.png)
+
+
 設定（環境変数やjson）から `"sqlite"` / `"sqlserver"` みたいに選びたい時のイメージだよ✨
 `DbProviderFactories.RegisterFactory(...)` を使うやり方が分かりやすい👍
 
@@ -196,6 +208,9 @@ Console.WriteLine(total);
 ## よくある落とし穴 ⚠️😵
 
 ### 落とし穴1：SQL方言は完全には隠れない🧨
+
+![Translator Glitch](./picture/gof_cs_study_019_translator_glitch.png)
+
 
 `DbProviderFactory`で隠せるのは **ADO.NETの部品の違い** が中心だよ✨
 でも、次は残りやすい…！

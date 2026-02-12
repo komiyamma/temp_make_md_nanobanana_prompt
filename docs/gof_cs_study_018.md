@@ -5,6 +5,9 @@
 ## ねらい 🎯
 
 * 「関連する部品セット（=ファミリー）」を、**整合性を保ったまま丸ごと差し替える**考え方をつかむよ🧩✨
+
+![Family Suit Set](./picture/gof_cs_study_018_suit_set.png)
+
 * Factory Method（1個つくる）より一段上の「**セットでつくる**」感覚を身につけるよ💡
 
 ---
@@ -66,6 +69,9 @@ Abstract Factory が刺さるのは、だいたいこういう時👇
 Abstract Factory は “役割のセット” を覚えると一気に楽になるよ😊
 
 * **Abstract Factory**：部品セットを作る工場（抽象）🏭
+
+![Tailor Shops](./picture/gof_cs_study_018_tailor_shops.png)
+
   例：`DbProviderFactory`
 * **Abstract Products**：部品の抽象（共通の型）🧩
   例：`DbConnection`, `DbCommand`, `DbParameter` …
@@ -75,6 +81,9 @@ Abstract Factory は “役割のセット” を覚えると一気に楽にな�
 
 ポイントはこれ👇
 呼び出し側は **Abstract Products だけ見て仕事する**✨
+
+![VR Goggles Client](./picture/gof_cs_study_018_vr_goggles.png)
+
 具体型（SQL Serverのなんとか…）は **工場の中に隠す**🙈
 
 
@@ -150,6 +159,9 @@ static DbParameter CreateParameter(DbProviderFactory factory, string name, objec
 
 ### 5) Factory Method との違いをハッキリさせる ✨
 
+![3D Printer vs Assembly Line](./picture/gof_cs_study_018_printer_vs_line.png)
+
+
 混乱しやすいので一発で整理するよ🧡
 
 * **Factory Method**：1種類の生成を押し出す（例：支払い方法1個を作る）🏭
@@ -184,6 +196,9 @@ C#だと、Abstract Factoryを**自作しなくても**似たことができる�
   → まずFactory Methodで足りないか疑う
 
 * **落とし穴3：製品ファミリーがズレる（混ぜる）** 🧨
+
+![Mixing Danger](./picture/gof_cs_study_018_mix_danger.png)
+
   「違うfactory由来の部品」を混ぜると、実行時に壊れがち⚠️
   → “同じfactoryから一式作る” をルール化
 

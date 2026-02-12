@@ -102,6 +102,11 @@ public sealed class PaymentService
     public async Task<PaymentResult> PayAsync(Order order, CancellationToken ct = default)
     {
         // 😵 支払い方法が増えるたびにここが増える（分岐の温床）
+```
+
+![Switch Railway Tangle](./picture/gof_cs_study_016_switch_tangle.png)
+
+```csharp
         IPaymentMethod method = order.PaymentMethod switch
         {
             PaymentMethodType.CreditCard     => new CreditCardPayment(),
@@ -118,6 +123,9 @@ public sealed class PaymentService
 ---
 
 ### 2) テストで「現状の仕様」を固定する 🧪🔒
+
+![Test Safety Belt](./picture/gof_cs_study_016_safety_belt.png)
+
 
 ここが超重要だよ〜！このテストが「安全ベルト」になります 🚗💨
 
@@ -165,6 +173,9 @@ public sealed class PaymentServiceTests
 
 ### 3) Factory Method で「生成の責務」を外へ押し出す 🏭✨
 
+![Vending Machine Creator](./picture/gof_cs_study_016_vending_machine.png)
+
+
 #### 3-1. Creator（生成役）を作る
 
 ここで Factory Method っぽさが出ます！
@@ -185,6 +196,11 @@ public abstract class PaymentMethodCreator
         => CreatePaymentMethod(); // ← ここが Factory Method（派生が決める）
 
     // 派生クラスが “何を new するか” だけ決める
+```
+
+![Creator Blueprint](./picture/gof_cs_study_016_blueprint_handover.png)
+
+```csharp
     protected abstract IPaymentMethod CreatePaymentMethod();
 }
 ```
@@ -331,6 +347,9 @@ public sealed class PaymentServiceFactoryMethodTests
 ---
 
 ### 6) （任意）DI で “追加点” を登録に寄せる 🔌✨
+
+![DI Plugboard](./picture/gof_cs_study_016_di_plugboard.png)
+
 
 アプリ側（起動時）にまとめると、拡張がさらに気持ちいいです ☺️
 
