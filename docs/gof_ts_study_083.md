@@ -7,6 +7,10 @@
 
 ## 学ぶこと📌
 
+![gof ts study 083 safety net](./picture/gof_ts_study_083_safety_net.png)
+
+
+
 * Template Methodの“効きどころ”＝**順番・必須処理・例外処理**がブレて事故る時😵‍💫
 * 差分は **hook（差し替え点）** に閉じ込める🔒✨
 * テストは **共通フローのテスト** と **差分のテスト** を分けると勝ち🏆
@@ -14,6 +18,10 @@
 ---
 
 ## 1) Template Methodが「バグを減らす」瞬間って？🧯
+
+![gof ts study 083 scattered bugs](./picture/gof_ts_study_083_scattered_bugs.png)
+
+
 
 こんなバグ、見覚えない？😇💦
 
@@ -64,6 +72,10 @@ flowchart TD
 ---
 
 ## 3) 最終形のサンプル：レシート出力🧾✨
+
+![gof ts study 083 template diagram](./picture/gof_ts_study_083_template_diagram.png)
+
+
 
 ポイントはこれ👇
 
@@ -180,6 +192,10 @@ export class MarkdownReceiptRenderer extends ReceiptRenderer {
 
 ## 4) テスト戦略：共通フロー🧪＋差分🎨 を分ける！
 
+![gof ts study 083 test scope](./picture/gof_ts_study_083_test_scope.png)
+
+
+
 ## ✅ 共通フローのテスト（Templateが守るべきこと）🛡️
 
 * 空注文は必ず失敗する（validateが抜けない）
@@ -242,6 +258,10 @@ describe("差分テスト🎨", () => {
 ---
 
 ## 5) よくある落とし穴＆回避💡😵‍💫
+
+![gof ts study 083 logic leak](./picture/gof_ts_study_083_logic_leak.png)
+
+
 
 * **差分が増えすぎる**（hookが10個とか）
   → その時点で「Template Methodで頑張りすぎ」かも！

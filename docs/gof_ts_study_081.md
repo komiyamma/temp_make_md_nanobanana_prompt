@@ -10,6 +10,10 @@
 
 ## 1. まず状況をつくる🍰「レシート出力、形式だけ変えたい！」
 
+![gof ts study 081 receipt comparison](./picture/gof_ts_study_081_receipt_comparison.png)
+
+
+
 たとえばカフェ注文のレシートを出したい☕🧾
 でも用途でちょっとだけ違う…！
 
@@ -101,6 +105,10 @@ export const calcTotal = (order: Order): number =>
 ---
 
 ## 4.2 骨組み（Template Method）を作る🧱🧁
+
+![gof ts study 081 skeleton structure](./picture/gof_ts_study_081_skeleton_structure.png)
+
+
 
 ポイントはここ👇
 
@@ -219,6 +227,10 @@ export class MarkdownReceiptRenderer extends ReceiptRenderer {
 
 ## 4.5 使ってみる🌈
 
+![gof ts study 081 polymorphism](./picture/gof_ts_study_081_polymorphism.png)
+
+
+
 ```ts
 import { TextReceiptRenderer } from "./TextReceiptRenderer";
 import { MarkdownReceiptRenderer } from "./MarkdownReceiptRenderer";
@@ -289,6 +301,10 @@ test("MarkdownReceipt: header and total exist", () => {
 
 ## 6. つまずきポイント回避💡⚠️
 
+![gof ts study 081 too many hooks](./picture/gof_ts_study_081_too_many_hooks.png)
+
+
+
 ## 6.1 差分点が増えすぎる😵‍💫
 
 * フックが10個とかになってきたら、Template Methodはしんどいサイン🚨
@@ -303,6 +319,10 @@ test("MarkdownReceipt: header and total exist", () => {
 ---
 
 ## 7. TypeScriptらしい代替🧁➡️⚙️：関数でTemplate Method（継承なし）
+
+![gof ts study 081 functional hooks](./picture/gof_ts_study_081_functional_hooks.png)
+
+
 
 「骨組みは固定、差分は引数のhooksで渡す」版だよ🪄
 クラスを増やしにくい時に便利😊
