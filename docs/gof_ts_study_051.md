@@ -10,6 +10,9 @@
 
 ## 1. あるあるの困りごと😵‍💫「一覧が重い」「同じもの作りすぎ」
 
+![Heavy Duplication Load (heavy_duplication_load)](./picture/gof_ts_study_051_heavy_duplication_load.png)
+
+
 たとえば、カフェ注文アプリで「商品一覧カード」をいっぱい描画する場面を想像してみてね☕📱
 
 * 商品は **1万件**ある（イベントで爆売れ！🎉）
@@ -62,6 +65,9 @@ classDiagram
 
 ## 3. 「共有できる/できない」仕分け練習🧠✨
 
+![Intrinsic Extrinsic Split (intrinsic_extrinsic_split)](./picture/gof_ts_study_051_intrinsic_extrinsic_split.png)
+
+
 今回の題材（商品カード）で分けるとこんな感じ👇
 
 ## ✅ 共有できる（Flyweightにする候補）🪶
@@ -83,6 +89,9 @@ classDiagram
 ---
 
 ## 4. まずはダメな例😇（同じものを毎回new）
+
+![Clone Army Waste (clone_army_waste)](./picture/gof_ts_study_051_clone_army_waste.png)
+
 
 ```ts
 type DrinkKind = "coffee" | "tea" | "juice";
@@ -136,6 +145,9 @@ function createItemCard(input: { id: string; name: string; price: number; kind: 
 
 ## 5-1. “共有Visual”をキャッシュする関数を作る🪶
 
+![Library Shelf Cache (library_shelf_cache)](./picture/gof_ts_study_051_library_shelf_cache.png)
+
+
 ```ts
 type DrinkKind = "coffee" | "tea" | "juice";
 
@@ -180,6 +192,9 @@ export function getVisual(kind: DrinkKind): Visual {
 ---
 
 ## 5-2. “個別データ”はいつも通りカードに持たせる📌
+
+![Shared Reference Puppet (shared_reference_puppet)](./picture/gof_ts_study_051_shared_reference_puppet.png)
+
 
 ```ts
 type DrinkKind = "coffee" | "tea" | "juice";
@@ -233,6 +248,9 @@ console.log("unique visual refs =", uniqueVisualRefs.size); // 期待：3
 ## 7. つまずきポイント集🧯（ここ超大事）
 
 ## ❌ 共有物を「後から書き換える」事故⚠️
+
+![Shared Paint Accident (shared_paint_accident)](./picture/gof_ts_study_051_shared_paint_accident.png)
+
 
 共有Visualを誰かがこうやって変えたら…？
 

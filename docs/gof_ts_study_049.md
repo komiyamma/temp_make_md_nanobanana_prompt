@@ -32,6 +32,8 @@ Facadeは「中で何ステップあるか」を呼び出し側に見せずに�
 
 ## ありがちな失敗例：呼び出し側が“全部知ってる”😇💥
 
+![UI Logic Overload (ui_logic_overload)](./picture/gof_ts_study_049_ui_logic_overload.png)
+
 ```ts
 // UIのクリックイベント内で、全部やっちゃう例（つらい）
 async function onClickConfirm(input: any) {
@@ -98,6 +100,9 @@ classDiagram
 
 ### 1) Result型（第15章の復習）🧯
 
+![Result Pattern Switch (result_pattern_switch)](./picture/gof_ts_study_049_result_pattern_switch.png)
+
+
 例外で吹っ飛ばすより、まずは「成功/失敗」を戻り値で揃えると Facade が安定するよ😊
 
 ```ts
@@ -112,6 +117,9 @@ export const err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 ---
 
 ### 2) 入出力の型を作る（Facadeの“契約”）📦
+
+![Contract Blueprint (contract_blueprint)](./picture/gof_ts_study_049_contract_blueprint.png)
+
 
 「入口に渡すもの」「入口から返るもの」を先に決めるとブレにくいよ✨
 
@@ -186,6 +194,9 @@ export type Deps = {
 ---
 
 ### 4) 中身は“小関数”に分割する（意味のある単位で）🧠✨
+
+![Modular Lego Blocks (modular_lego_blocks)](./picture/gof_ts_study_049_modular_lego_blocks.png)
+
 
 #### ✅ 入力チェック
 
@@ -302,6 +313,9 @@ if (!result.ok) {
 ---
 
 ## テスト🧪：Facadeは“依存を差し替えられる”から超テスト向き🎉
+
+![Testing Movie Props (testing_movie_props)](./picture/gof_ts_study_049_testing_movie_props.png)
+
 
 ### Vitestで最小テスト例🧁
 
@@ -424,6 +438,9 @@ describe("placeOrder (Facade)", () => {
 * Facadeのテストが「重い依存」だらけになってきた
 
 ### 痩せ方✨
+
+![Facade Diet Slimming (facade_diet_slimming)](./picture/gof_ts_study_049_facade_diet_slimming.png)
+
 
 * 業務判断は `priceOrder()` みたいな純粋関数へ🧼
 * 依存は `deps` に寄せて、Facadeでnewしない💉
