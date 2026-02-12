@@ -51,6 +51,8 @@ classDiagram
 ## 手順 🧭✨
 
 ### 1) まず「導入前」を作る（switch地獄を1回味わう）🔥
+![Switch Hell to State Heaven](./picture/gof_cs_study_076_switch_hell_heaven.png)
+
 
 状態を `enum` で持って、操作ごとに `switch` で分岐する、よくある形からスタートします。
 
@@ -125,6 +127,8 @@ public sealed class Order
 ---
 
 ### 2) テストで「今の仕様」を固定する 🧪🔒
+![Test Lock](./picture/gof_cs_study_076_test_lock.png)
+
 
 リファクタの前に、**仕様をテストでロック**します！（ここ超大事💗）
 
@@ -175,6 +179,8 @@ public sealed class OrderTests_Switch
 ---
 
 ### 3) 本題：Stateパターンに置き換える 🧩✨
+![State Delegation](./picture/gof_cs_study_076_delegation_office.png)
+
 
 ポイントはこれだけ！👇
 
@@ -261,6 +267,8 @@ public sealed class Order
 ---
 
 ### 4) テストを「State版」に差し替えて、同じ仕様を満たすか確認 ✅🧪
+![Invalid Transition Guard](./picture/gof_cs_study_076_invalid_guard.png)
+
 
 テストが同じまま通れば勝ち！✨（＝安全にリファクタできた証拠）
 

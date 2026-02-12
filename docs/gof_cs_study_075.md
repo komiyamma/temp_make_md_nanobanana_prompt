@@ -49,6 +49,8 @@ classDiagram
 ## 手順 👣
 
 ### 1) まず .NET の「Stateっぽさ」を読む：`Stream` の寿命（ライフサイクル）💧⏳
+![Stream Lifecycle State](./picture/gof_cs_study_075_stream_lifecycle.png)
+
 
 .NET のオブジェクトって、実は **状態（使える/閉じた/破棄済み）**で振る舞いが変わるものが多いよ〜🙂
 たとえば `Stream.Write` は、閉じた（Disposeした）あとに呼ぶと `ObjectDisposedException` が飛ぶって、公式に書いてある📌⚠️ ([Microsoft Learn][2])
@@ -127,6 +129,8 @@ public sealed class Order
 ---
 
 ### 3) 「ここから State へ」っていう境界線を見つける🚦🧩
+![Switch vs State Boundary](./picture/gof_cs_study_075_switch_vs_state.png)
+
 
 次の症状が出てきたら、switch式が急にツラくなるよ〜😇💦
 
@@ -140,6 +144,8 @@ public sealed class Order
 ---
 
 ### 4) Stateクラスは“最小限”で：Orderの中に閉じ込める🔒🧩
+![Nested State Encapsulation](./picture/gof_cs_study_075_nested_state.png)
+
 
 ポイントはこれだけ👇✨
 
@@ -223,6 +229,8 @@ public sealed class Order
 ---
 
 ### 5) テストで「状態の契約」を固定する🧪✅
+![State Transition Test](./picture/gof_cs_study_075_transition_test.png)
+
 
 Stateは「正しい遷移」と「禁止操作」が命💖
 だからテストは **“遷移表の代わり”**として効くよ〜✨

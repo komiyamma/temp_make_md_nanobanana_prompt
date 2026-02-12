@@ -37,6 +37,8 @@ sequenceDiagram
 ## 手順 🧭🧩
 
 ### 1) まずは“増えるのはどっち？”チェック ✅🔍
+![Structure vs Operations](./picture/gof_cs_study_079_tree_gardeners.png)
+
 
 Visitorはざっくりこういう時に効きます👇
 
@@ -51,6 +53,8 @@ Visitorはざっくりこういう時に効きます👇
 ---
 
 ### 2) 「switch式でやる」素朴な書き方を見て、痛みを確認 😵‍💫🔁
+![Switch Expression Growth](./picture/gof_cs_study_079_paperwork_pile.png)
+
 
 C#はswitch式が強いので、最初はこう書きがち👇（読みやすい！…けど、操作が増えると同じswitchが増殖しやすい）
 
@@ -90,6 +94,8 @@ switch式自体はとても良いです（C#の言語機能としても推奨さ
 ---
 
 ### 3) Visitorの登場人物を“1行で”覚える 🧳🧠
+![Visitor Double Dispatch](./picture/gof_cs_study_079_guest_visit.png)
+
 
 * **Element（要素）**：訪問される側。`Accept(visitor)` を持つ 🏠
 * **Visitor（訪問者）**：要素ごとの処理口。`Visit(LineItem)` みたいに型別メソッドを持つ 🧑‍💼
@@ -226,11 +232,15 @@ Console.WriteLine(receiptV.Text);
 ```
 
 ✅ **操作（Visitor）を増やすだけなら、ノード側（構造）をほぼ触らない**のが嬉しい！🎉
+![Adding New Visitor](./picture/gof_cs_study_079_plug_play.png)
+
 （例：監査ログVisitor、JSON出力Visitor、検証Visitor…を追加しやすい）
 
 ---
 
 ### 5) 「C#だとVisitorってどこで現役なの？」を知って安心する 🛟😊
+![Expression Tree Visitor](./picture/gof_cs_study_079_hiker_tree.png)
+
 
 Visitorは“教科書の昔話”じゃなくて、C#の標準・定番APIで今も普通に出ます👇
 

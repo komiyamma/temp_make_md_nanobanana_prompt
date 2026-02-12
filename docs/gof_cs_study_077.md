@@ -40,6 +40,8 @@ sequenceDiagram
 ## 手順 🧭✨
 
 ### 1) まず「固定したい順番」を1行で書く 📝
+![Template Skeleton](./picture/gof_cs_study_077_skeleton_museum.png)
+
 
 Template Methodは、まずここが命です💡
 例）
@@ -53,6 +55,8 @@ Template Methodは、まずここが命です💡
 ---
 
 ### 2) 「差分」は2種類に分ける 🧠🔍
+![Abstract vs Virtual Hooks](./picture/gof_cs_study_077_abstract_vs_virtual.png)
+
 
 差分って、だいたいこの2つに分かれます👇
 
@@ -103,6 +107,8 @@ public abstract class OrderWorkflow
 ### 4) .NET標準の「テンプレっぽい作法」を見て“感覚”を掴む 👀✨
 
 #### 例A：Disposeパターンは、めちゃくちゃ Template Method っぽい💡🧹
+![Dispose Pattern Template](./picture/gof_cs_study_077_dispose_template.png)
+
 
 `IDisposable` の作法として有名な形は、
 
@@ -159,6 +165,8 @@ public abstract class ResourceBase : IDisposable
 ---
 
 ### 5) Template Method と Strategy の使い分け（超大事）⚖️✨
+![Template vs Strategy](./picture/gof_cs_study_077_recipe_chef.png)
+
 
 * **Template Method**：
   「順番を固定したい」＋「継承の形が自然」
