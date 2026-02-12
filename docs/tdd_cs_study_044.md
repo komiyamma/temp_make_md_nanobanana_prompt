@@ -25,6 +25,8 @@ TDD的には **“失敗も仕様として固定する”** のがポイント�
 
 ## 2. まず結論：エラーは3つに分けるとラク😆🧩
 
+![Three Error Types](./picture/tdd_cs_study_044_error_types.png)
+
 エラーってね、ざっくりこう分けると事故が減るの👇
 
 ### ✅ A) ドメインエラー（仕様どおりの失敗）🧾
@@ -76,6 +78,8 @@ graph TD
 
 ## 3. “分けない”と何が起きる？😇（あるある地獄）
 
+![Unclassified Error Chaos](./picture/tdd_cs_study_044_unclassified_error_chaos.png)
+
 例えば、全部こうしてると…
 
 * `throw new Exception("エラーです")` 🙃
@@ -88,6 +92,8 @@ graph TD
 ---
 
 ## 4. 方針：ドメインは“型”で守って、外部は“包んで”届ける🎁✨
+
+![Handling Strategy](./picture/tdd_cs_study_044_handling_strategy.png)
 
 ここでは初心者にも扱いやすい形として👇を採用するよ😊
 
@@ -119,6 +125,8 @@ graph TD
 ## 6. まずテストを書く（Red）🚦🔴
 
 ### 6.1 Resultとエラー型（最小セット）を用意するよ📦✨
+
+![Result Pattern](./picture/tdd_cs_study_044_result_pattern.png)
 
 ```csharp
 public sealed record AppError(
@@ -171,6 +179,8 @@ public static class ExternalErrors
 
 ### 6.4 テスト：ドメインエラーは Result で返る🧪✅
 
+![Domain Error Test](./picture/tdd_cs_study_044_domain_error_test.png)
+
 ```csharp
 using Xunit;
 
@@ -208,6 +218,8 @@ public class RegisterGoodsTests
 ---
 
 ### 6.5 テスト：外部例外は握りつぶさず“外部エラーに変換”🧪🧯
+
+![External Error Test](./picture/tdd_cs_study_044_external_error_test.png)
 
 ```csharp
 [Fact]
@@ -296,6 +308,8 @@ public sealed class RegisterGoodsUseCase
 ---
 
 ## 9. 発展：API/Blazorに繋げるなら「ProblemDetails」で整える🧩🌐
+
+![Problem Details Mapping](./picture/tdd_cs_study_044_problem_details_mapping.png)
 
 もし将来 Web API にするなら、**例外→ProblemDetails** に統一すると超スッキリするよ✨
 ASP.NET Core 10 でもエラーハンドリングと ProblemDetails のガイドがあるよ ([Microsoft Learn][5])

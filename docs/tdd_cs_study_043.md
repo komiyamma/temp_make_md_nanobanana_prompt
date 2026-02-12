@@ -20,6 +20,8 @@
 
 ## まず超大事：状態遷移ってなに？🧩
 
+![State Transition Model](./picture/tdd_cs_study_043_state_model.png)
+
 **状態（State）**：いまのステータス（例：予約中）
 **イベント（Event）**：起こしたい操作（例：入荷する）
 **遷移（Transition）**：状態A + イベント → 状態B（例：予約中 + 入荷 → 在庫あり）
@@ -31,6 +33,8 @@
 ---
 
 ## 例題：推し活グッズの状態を決めよう🎀📦
+
+![Lifecycle Nodes](./picture/tdd_cs_study_043_lifecycle_nodes.png)
 
 今回は、シンプルにこんな状態にするよ😊
 
@@ -52,6 +56,8 @@
 ---
 
 ## 状態遷移表（これが設計図）🗂️✨
+
+![Transition Table](./picture/tdd_cs_study_043_transition_table.png)
 
 「Allowed（許可）」だけを書くのがコツだよ〜！🥰
 
@@ -91,6 +97,8 @@ stateDiagram-v2
 
 ### Step 1：まず「許可された遷移」のテストを書く🧪💕
 
+![Allowed Transition Test](./picture/tdd_cs_study_043_allowed_transition_test.png)
+
 “表の1行”を1テストにしてもいいし、**TheoryでまとめてもOK**だよ😊
 
 ```csharp
@@ -119,6 +127,8 @@ public class GoodsItemStateMachineTests
 ---
 
 ### Step 2：最小実装でGreenにする🟢✨
+
+![Dictionary Lookup](./picture/tdd_cs_study_043_dictionary_lookup.png)
 
 まずは “遷移表をコードにする” だけでOK🙆‍♀️
 
@@ -211,6 +221,8 @@ public sealed class GoodsItem
 
 ### Step 3：「禁止された遷移」もテストで固定する🚫🧪
 
+![Forbidden Transition Test](./picture/tdd_cs_study_043_forbidden_transition_test.png)
+
 ここが超大事！！！
 状態遷移って、**“できないこと”を決める**のが安全性の本体だよ😊
 
@@ -237,6 +249,8 @@ public class GoodsItemInvalidTransitionTests
 ---
 
 ## ここが“if地獄回避”ポイント👀🚨
+
+![If Hell vs State Machine](./picture/tdd_cs_study_043_if_hell_vs_state_machine.png)
 
 状態が増えたとき、ありがちな事故👇
 

@@ -20,6 +20,8 @@ TDDだと「Refactor」って毎回出てくるけど、実際はここでつま
 
 ## 2) リファクタで一番たいせつなこと🚦🧡
 
+![Refactoring Cycle](./picture/tdd_cs_study_045_refactoring_cycle.png)
+
 ### ✅ 合言葉はこれ！
 
 **「1回1ミリ」**👣✨
@@ -59,6 +61,8 @@ graph LR
 
 ### 4.1 リネーム（Rename）📝✨
 
+![Rename Refactoring](./picture/tdd_cs_study_045_rename_refactoring.png)
+
 **いちばんコスパ最強**。名前が良くなるだけで理解が爆上がりする！😍
 
 * 🔧 ショートカット：`Ctrl+R, Ctrl+R` ([Microsoft Learn][2])
@@ -69,6 +73,8 @@ graph LR
 
 ### 4.2 メソッド抽出（Extract Method）✂️➡️🧩
 
+![Extract Method](./picture/tdd_cs_study_045_extract_method.png)
+
 長い処理を小分けにして読みやすくする王道✨
 
 * 🔧 ショートカット：`Ctrl+R, Ctrl+M` ([Microsoft Learn][3])
@@ -78,6 +84,8 @@ graph LR
 ---
 
 ### 4.3 インライン化（Inline Method）🔁✨
+
+![Inline Method](./picture/tdd_cs_study_045_inline_method.png)
 
 「分けたけど、逆に読みにくい」ってときの逆操作だよ😊
 
@@ -98,6 +106,8 @@ graph LR
 ---
 
 ### 4.5 インターフェース抽出（Extract Interface）🎭🔌
+
+![Extract Interface](./picture/tdd_cs_study_045_extract_interface.png)
 
 「差し替えたい」「テストダブルにしたい」時の定番✨
 
@@ -219,6 +229,8 @@ public class PriceCalculator
 
 ## 5.5 リファクタ③：マジックナンバー排除（500に名前を付ける）🏷️✨
 
+![Magic Number Replacement](./picture/tdd_cs_study_045_magic_number_replacement.png)
+
 **やること：`500` を `CouponDiscountYen` にする**
 これだけで「500って何！？」が消える😍
 
@@ -273,6 +285,8 @@ AIは“案出し”が得意だけど、採用の合否は **テスト**が決�
 ---
 
 ## 7) よくある事故パターン😱💥（回避しよ！）
+
+![Refactoring Accidents](./picture/tdd_cs_study_045_refactoring_accidents.png)
 
 * ❌ いきなり大改造（差分が大きすぎてレビュー不能）
 * ❌ テストが赤いのにリファクタ開始（原因が迷子）

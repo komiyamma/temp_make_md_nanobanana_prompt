@@ -9,6 +9,8 @@
 
 ## この章のゴール🎯✨
 
+![Filter Pipeline](./picture/tdd_cs_study_046_filter_pipeline.png)
+
 ![画像を挿入予定](./picture/tdd_cs_study_046_practice_2.png)
 
 最後にこうなってたら勝ち！🎉
@@ -105,6 +107,8 @@ public static class GoodsItemSamples
 
 ## ステップ1：集計（合計数量・合計金額）🧾✨
 
+![Aggregation Receipt](./picture/tdd_cs_study_046_aggregation_receipt.png)
+
 ### 1-1. まずテスト（Red）🔴
 
 ```csharp
@@ -160,6 +164,8 @@ public sealed record GoodsSummary(
 
 ## ステップ2：集計（カテゴリ別）📦✨
 
+![Grouping Baskets](./picture/tdd_cs_study_046_grouping_baskets.png)
+
 ### 2-1. テスト追加（Red）🔴
 
 ```csharp
@@ -207,6 +213,8 @@ public static GoodsSummary From(IEnumerable<GoodsItem> items)
 ---
 
 ## ステップ3：並び替え（Sort）🔃✨
+
+![Sorting Stairs](./picture/tdd_cs_study_046_sorting_stairs.png)
 
 ### 3-1. まず「並び替え指定」を型にする🧷
 
@@ -283,6 +291,8 @@ public static class GoodsSearch
 ---
 
 ## ステップ4：条件検索（フィルタ）🔍✨
+
+![Filtering Sieves](./picture/tdd_cs_study_046_filtering_sieves.png)
 
 ### 4-1. キーワード検索（部分一致）から📝
 
@@ -387,6 +397,8 @@ if (query.MaxUnitPrice is not null)
 
 ## ステップ5：組み合わせ（AND）をパラメータ化で守る🛡️✨
 
+![Combination Lock Test](./picture/tdd_cs_study_046_combination_lock_test.png)
+
 条件検索って「組み合わせ」が増えると、抜け漏れが出やすい😭
 だからここで **Theory + MemberData** を使うよ〜！🧪🎁
 （xUnitの基本形は v3 でも同じ感じでOKだよ📌 ([xUnit.net][2])）
@@ -460,6 +472,8 @@ public class GoodsCombinedQueryTests
 ---
 
 ## リファクタ（読みやすさ爆上げ）🧹✨
+
+![Refactored Pipeline](./picture/tdd_cs_study_046_refactored_pipeline.png)
 
 `Run` の中が `if` だらけになってきたら、ここが整理タイム！🛠️
 （テストが守ってくれるから怖くない😊）

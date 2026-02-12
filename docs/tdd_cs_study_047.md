@@ -30,6 +30,8 @@ Blazor Web App テンプレートは **1つのプロジェクトからSSR/クラ
 
 ## まず結論：Blazorで“分離できてる”状態って？👀✅
 
+![Architecture Clean vs Messy](./picture/tdd_cs_study_047_architecture_clean_vs_messy.png)
+
 ### ✅ 良い感じ（おすすめ）🌼
 
 * `.razor`：表示、ボタン押下などのイベント、画面の状態（入力欄の文字列とか）
@@ -62,6 +64,8 @@ Blazor Web App テンプレートは **1つのプロジェクトからSSR/クラ
 
 ### 1) ソリューション構成をこうする📁✨
 
+![Solution Structure](./picture/tdd_cs_study_047_solution_structure.png)
+
 最低限これでOK！
 
 * `OshiGoods.Blazor`（Blazor Web App）
@@ -73,6 +77,8 @@ Blazor Web App テンプレートは **1つのプロジェクトからSSR/クラ
 ---
 
 ### 2) まずCoreに「ドメイン（グッズ）」を作る🎁
+
+![Domain Validation Guard](./picture/tdd_cs_study_047_domain_validation_guard.png)
 
 ### GoodsItem（入力チェックはここへ！）🧷
 
@@ -123,6 +129,8 @@ public sealed record GoodsItem
 
 ### 3) 次にCoreへ「集計ロジック」を作る📊✨
 
+![Core Calculator](./picture/tdd_cs_study_047_core_calculator.png)
+
 ```csharp
 namespace OshiGoods.Core;
 
@@ -151,6 +159,8 @@ public static class GoodsSummaryCalculator
 ---
 
 ### 4) ここでTDD！テストを先に書くよ🧪🚦
+
+![Testing Core](./picture/tdd_cs_study_047_testing_core.png)
 
 `OshiGoods.Core.Tests` にテストを書く（xUnit）✨
 
@@ -232,6 +242,8 @@ public class GoodsSummaryCalculatorTests
 ---
 
 ### 5) 最後にBlazor UIを“薄く”作る🎨🪶
+
+![Thin UI Waiter](./picture/tdd_cs_study_047_thin_ui_waiter.png)
 
 `OshiGoods.Blazor` のページ例（`Pages/Goods.razor`）
 ※UIは「入力→Coreで生成→一覧に足す→Coreで集計」だけ！
@@ -318,6 +330,8 @@ public class GoodsSummaryCalculatorTests
 ---
 
 ## この章の“分離ルール”まとめ（超だいじ）🧠✅
+
+![Separation Sorting](./picture/tdd_cs_study_047_separation_sorting.png)
 
 ### ✅ UI（.razor）に残していいもの🙆‍♀️
 
