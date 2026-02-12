@@ -29,6 +29,10 @@ DI（Dependency Injection）は難しい道具じゃなくて、
 
 ## 2. 「依存が隠れる」と何がつらいの？😢🧯
 
+![gof_ts_study_034_visible_deps.png](./picture/gof_ts_study_034_visible_deps.png)
+
+
+
 Singleton（やグローバル）で `logger` を握ると、ありがちな困りごとが出るよ👇
 
 * テストでログを止められない／検証しにくい🙅‍♀️
@@ -57,6 +61,10 @@ sequenceDiagram
 ---
 
 ## 3. TypeScriptの定番DI：依存は「第2引数のdepsオブジェクト」で渡す🧁🎁
+
+![gof_ts_study_034_deps_object.png](./picture/gof_ts_study_034_deps_object.png)
+
+
 
 TypeScriptだと、引数が増えすぎないように **依存はまとめて `deps`** にするのが王道✨
 しかも `console` は標準であるから、デフォルトに使えるよ🧡
@@ -97,6 +105,10 @@ export function placeOrder(order: Order, deps: Partial<PlaceOrderDeps> = {}) {
 ---
 
 ## 4. テストで差し替え！「偽logger」と「固定時刻」🧪⏰
+
+![gof_ts_study_034_test_fake.png](./picture/gof_ts_study_034_test_fake.png)
+
+
 
 今回は **Vitest** でいくよ（超軽くて速い子🏎️💨）。
 ※Vitestは公式ドキュメント上、Node要件などが明記されてるよ。([Vitest][1])

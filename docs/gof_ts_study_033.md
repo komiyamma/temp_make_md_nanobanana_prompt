@@ -13,6 +13,10 @@ TypeScript（というかES Modules）では、**「ファイル（モジュー�
 
 ## 2) なんで「export」でSingletonになるの？🤔✨
 
+![gof_ts_study_033_import_cache.png](./picture/gof_ts_study_033_import_cache.png)
+
+
+
 ざっくり言うと…
 
 * 「import」されたモジュールは、同じものなら**同じ実体を参照**する📦
@@ -133,6 +137,10 @@ Node.jsのESMは、解決結果がURLとして扱われてキャッシュされ�
 
 ### ② 開発中のHMR/ホットリロード
 
+![gof_ts_study_033_hmr_issue.png](./picture/gof_ts_study_033_hmr_issue.png)
+
+
+
 開発サーバーの仕組みで「モジュールを差し替え」ると、再評価が起きることがあるよ〜🔥
 （これはツール側の都合なので、ログに“初期化ログ”が何回も出て気づくことが多い👀）
 
@@ -144,6 +152,10 @@ Node.jsのESMは、解決結果がURLとして扱われてキャッシュされ�
 ---
 
 ## 6) テストで困るやつ：モジュールの状態が残る🧪😵
+
+![gof_ts_study_033_test_reset.png](./picture/gof_ts_study_033_test_reset.png)
+
+
 
 モジュールに「Mapキャッシュ」とか「カウンタ」とかを持つと、テストが影響し合いがち💦
 なので、**共有物はできるだけ不変（読み取り中心）**に寄せるのがコツだよ〜🧊✨

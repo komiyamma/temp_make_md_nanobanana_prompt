@@ -105,6 +105,10 @@ export type Order = Readonly<{
 
 ## 基本レシピ①：1か所だけ変える（スプレッド）🧁✨
 
+![gof_ts_study_030_spread_copy.png](./picture/gof_ts_study_030_spread_copy.png)
+
+
+
 「メモ（note）だけ変えたい」みたいな単純な変更はこれでOK🙆‍♀️
 
 ```ts
@@ -121,6 +125,10 @@ export function setNote(order: Order, note: string): Order {
 
 ## 基本レシピ②：配列を変える（push禁止で map/concat）🚫➕➡️✅
 
+![gof_ts_study_030_array_add.png](./picture/gof_ts_study_030_array_add.png)
+
+
+
 「商品を追加したい」なら、`items` を新しい配列で作るよ🍰
 
 ```ts
@@ -135,6 +143,10 @@ export function addItem(order: Order, item: OrderItem): Order {
 ---
 
 ## 基本レシピ③：配列の一部だけ更新（mapで差し替え）🔁✨
+
+![gof_ts_study_030_array_map.png](./picture/gof_ts_study_030_array_map.png)
+
+
 
 「数量を変えたい」みたいな“部分更新”は `map` が定番だよ🎀
 
@@ -183,6 +195,10 @@ export function newOrderFromTemplate(template: Order, newId: string, nowISO: str
 ---
 
 ## どうしても「深い複製」が欲しいとき：structuredClone🧬
+
+![gof_ts_study_030_structured_clone.png](./picture/gof_ts_study_030_structured_clone.png)
+
+
 
 ネストが深くて「どこか共有が残るの怖い…😣」ってときだけ、`structuredClone()` を使うのはアリ✅
 
