@@ -17,6 +17,8 @@
 ---
 
 ## 今回の“やさしめ仕様”📘✨（この章ではこれで固定！）
+![Calculation Flow](./picture/tdd_cs_study_026_spec_flow.png)
+
 
 計算順はこうするよ👇（ここがブレると地獄になる😇）
 
@@ -44,6 +46,8 @@
 ---
 
 ## Step 1：まずは“割引なし＝そのまま”をテストで固定🧪✅
+![Locking Current Behavior](./picture/tdd_cs_study_026_step1_lock.png)
+
 
 「仕様追加」するとき、最初にやると安心なのがこれ👇
 **“今ある挙動が変わらない”** を先にロックするやつ！🔒✨
@@ -84,6 +88,8 @@ TDDは“段階的に”が命だよ〜🧪🚦
 ---
 
 ## Step 2：%割引を追加（最初は1ケースだけ）📉✨
+![Percent Discount](./picture/tdd_cs_study_026_step2_percent.png)
+
 
 次は、超シンプルに1ケースだけ追加するよ😊
 例：小計1000円、10%割引 → 900円
@@ -160,6 +166,8 @@ public class CafePricing
 ---
 
 ## Step 4：境界値①「マイナスになったら0円」🧊➡️0️⃣
+![Clamp to Zero](./picture/tdd_cs_study_026_step4_min_zero.png)
+
 
 クーポンが強すぎるとマイナスになるよね😵
 でもレジで「-50円です！」とはならないので、0円に丸める✨
@@ -198,6 +206,8 @@ public class CafePricing
 ---
 
 ## Step 5：割引上限（discountCap）を追加📏✨
+![Discount Cap](./picture/tdd_cs_study_026_step5_cap.png)
+
 
 ここがこの章の山場🏔️🧪
 例：小計10,000円、10%割引だと本来1,000円引き
@@ -245,6 +255,8 @@ public class CafePricing
 ---
 
 ## Step 6：境界値②「上限ぴったり」「上限未満」もTheoryで一気に🧪🔁
+![Theory Table](./picture/tdd_cs_study_026_theory_table.png)
+
 
 ここからはテストを増やすターン！✨
 同じ形のケース増やすなら **[Theory]** が便利だよ〜😊
@@ -311,6 +323,8 @@ public void 上限あり割引の後に_クーポンを引く()
 ---
 
 ## ミニ・リファクタ：割引計算を“小さな関数”に分ける🧹✨
+![Splitting Functions](./picture/tdd_cs_study_026_split_function.png)
+
 
 目的：**読む人が迷子にならない** 🗺️💕
 
