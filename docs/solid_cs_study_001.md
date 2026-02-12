@@ -13,6 +13,8 @@
 
 ## SOLIDが欲しくなる瞬間（あるあるドラマ）🎬😇
 
+![solid_cs_study_001_domino_effect.png](./picture/solid_cs_study_001_domino_effect.png)
+
 想像してみてね🫶✨
 
 あなた：「注文の決済に *Apple Pay* を追加して〜！」
@@ -34,6 +36,8 @@ SOLIDは、こういう状況を **「起きにくくするための考え方セ
 ## なぜ「単一責任」なの？ (Why)
 ![Responsibility Overload](./picture/solid_cs_study_001_responsibility_overload.png)
 ## SOLIDってなに？（超ざっくり5行で）🧩🌈
+
+![solid_cs_study_001_solid_acronym.png](./picture/solid_cs_study_001_solid_acronym.png)
 
 SOLIDは、オブジェクト指向設計の基本指針（5つ）だよ😊
 （元ネタは Robert C. Martin の設計原則の文脈で、後に “SOLID” として広まった、という説明が一般的です📚）([Baeldung on Kotlin][1])
@@ -80,6 +84,8 @@ SOLIDは、この3つを減らす方向に効いてきます🧼✨
 
 ## ミニ体験：1クラスに詰め込むとどうなる？🧱😈
 
+![solid_cs_study_001_god_class_monster.png](./picture/solid_cs_study_001_god_class_monster.png)
+
 まずは「よくある地獄」を、軽く見てみよ〜😂
 （※わざと雑です！安心してね💞）
 
@@ -124,6 +130,8 @@ public class CheckoutService
 ---
 
 ## ワーク：仕様変更カード🃏✨（いまのコードだとどこが怖い？）
+
+![solid_cs_study_001_specification_cards.png](./picture/solid_cs_study_001_specification_cards.png)
 
 次の“変更”が来たとき、どこを直すか想像してみてね😊
 （紙でもメモ帳でもOKだよ📝💕）
@@ -173,6 +181,8 @@ SOLIDは、その“局所化”を作るためのガイドになってくれま
 ---
 
 ## 🤖AI（Copilot/Codex系）を「設計の相談相手」にするコツ💞
+
+![solid_cs_study_001_ai_pairing.png](./picture/solid_cs_study_001_ai_pairing.png)
 
 AIは、いきなり「正解コード」を出させるより、**整理役**にすると超強いよ〜！💪✨
 この章は特に「言語化」を手伝わせるのが最強🤖📝

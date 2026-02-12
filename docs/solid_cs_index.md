@@ -9,6 +9,8 @@
 
 # 0. この教材で作る題材（ずっと使うサンプル）📦✨
 
+![solid_cs_index_mini_ec_theme.png](./picture/solid_cs_index_mini_ec_theme.png)
+
 * 小さめの「ミニEC（注文→支払い→発送）」か「本の貸出管理」みたいな題材で進めます📚🛒
 * まず“ぐちゃぐちゃ版”を作ってから、章ごとにSOLIDで整えていきます🧹✨
 
@@ -22,11 +24,15 @@
 
 ## 2章：2026最新版の開発環境セットアップ🧰🪟
 
+![solid_cs_index_tech_stack_2026.png](./picture/solid_cs_index_tech_stack_2026.png)
+
 * Visual Studio 2026で .NET 10 / C# 14 を使う前提にするよ✅([Microsoft Learn][1])
 * GitHub Copilotも使える環境として進めるよ🤖✨([The GitHub Blog][2])
 * （任意）VS Code派は C# 拡張でもOK、でも主役はVisual Studioで👍
 
 ## 3章：まず“最悪のコード”をわざと作ろう😈🧱
+
+![solid_cs_index_project_roadmap.png](./picture/solid_cs_index_project_roadmap.png)
 
 * God Class、if地獄、コピペ祭りをわざと作る😂
 * ゴール：**なにが辛いのか**を言葉にできるようにする🗣️✨
@@ -51,6 +57,8 @@
 * 🤖AIメモ：「このメソッドのテスト観点を5つ出して」
 
 ## 7章：SOLID全体マップ🗺️🌈
+
+![solid_cs_index_solid_map.png](./picture/solid_cs_index_solid_map.png)
 
 * S/O/L/I/D を“別々”じゃなく“チーム”として見る👯‍♀️
 * ゴール：各原則が何を守るのか、ざっくり対応関係を理解する
