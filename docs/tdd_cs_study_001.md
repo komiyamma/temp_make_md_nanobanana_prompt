@@ -1,5 +1,7 @@
 ﻿# 第01章：TDDって結局なに？（全体像を1枚にする）🙂
 
+![map_overview](./picture/tdd_cs_study_001_map_overview.png)
+
 こんにちは〜😊🎀
 この章は「TDDって“何をする習慣”なの？」を、迷子にならないように“地図”として頭に入れる回だよ〜🗺️💕
 
@@ -32,7 +34,7 @@ TDDはね…
 
 ### ✅ Red（赤）：まず“失敗するテスト”を書く
 
-![画像を挿入予定](./picture/tdd_cs_study_001_cycle.png)
+![cycle](./picture/tdd_cs_study_001_cycle.png)
 
 * 「こうなってほしい！」っていう**仕様をテストで書く**📝
 * 当然まだ実装がないから、**テストは落ちる（赤）**😵‍💫
@@ -65,6 +67,9 @@ graph TD
 
 ## 4) 「テスト＝仕様書」ってどういうこと？📘🧪
 
+![test_spec_doc](./picture/tdd_cs_study_001_test_spec_doc.png)
+
+
 テストって、理想はこう👇
 
 * **読めば仕様がわかる**
@@ -80,6 +85,9 @@ graph TD
 ---
 
 ## 5) 超ミニ実演：3分でTDDを眺める☕️🧾（C# × xUnit）
+
+![mini_demo](./picture/tdd_cs_study_001_mini_demo.png)
+
 
 ここは「雰囲気を体に入れる」だけでOKだよ😊✨
 題材はミニミニでいくね（**合計金額**）💰
@@ -143,6 +151,9 @@ public sealed class TotalPriceCalculator
 
 ### ❌「TDD＝テストをいっぱい書くこと」
 
+![misconception](./picture/tdd_cs_study_001_misconception.png)
+
+
 👉 ちがうよ〜😊
 **“順番（先にテスト）”と“回し方（小さく回す）”**が本体！
 
@@ -159,6 +170,9 @@ public sealed class TotalPriceCalculator
 ---
 
 ## 7) AIの使いどころ（この章のおすすめ）🤖✨
+
+![ai_partner](./picture/tdd_cs_study_001_ai_partner.png)
+
 
 AIは便利だけど、TDDでは役割を固定すると強いよ😊✅
 

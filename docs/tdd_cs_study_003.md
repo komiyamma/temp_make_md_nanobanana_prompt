@@ -17,7 +17,7 @@
 
 ## 2. なんで“10分刻み”が最強なの？💡🫶
 
-![画像を挿入予定](./picture/tdd_cs_study_003_design.png)
+![design](./picture/tdd_cs_study_003_design.png)
 
 TDDが止まる原因って、だいたいこれ👇
 
@@ -35,6 +35,9 @@ TDDが止まる原因って、だいたいこれ👇
 
 ## 3. 10分サイクルのルール（これだけ守って🥺🙏）⏱️🚦
 
+![timer](./picture/tdd_cs_study_003_timer.png)
+
+
 1サイクルの理想はこう👇
 
 * ✅ **テストを1本だけ追加**（増やしすぎ禁止🙅‍♀️）
@@ -48,6 +51,9 @@ TDDが止まる原因って、だいたいこれ👇
 ---
 
 ## 4. “小さく刻む”ための3つの型🧩🍰✨
+
+![patterns](./picture/tdd_cs_study_003_patterns.png)
+
 
 ### 型A：例（Example）で刻む🍩
 
@@ -93,6 +99,9 @@ graph LR
 
 ### 仕様（この1文を刻む）📝
 
+![trim_spec](./picture/tdd_cs_study_003_trim_spec.png)
+
+
 「グッズ名は前後の空白を削る。空になったら例外。50文字を超えたら例外。」
 
 これ、いきなり全部テストしようとすると大きい😵‍💫
@@ -107,6 +116,9 @@ graph LR
 ---
 
 ## 6. ハンズオン：10分×3回で作るやつ⏱️🧪✨
+
+![hands_on](./picture/tdd_cs_study_003_hands_on.png)
+
 
 ここからは「1サイクル＝1テスト」を想定して、最終形（キレイにした後）も見せるね💕
 
@@ -190,6 +202,9 @@ public sealed class ProductName
 ---
 
 ## 8. AIの使いどころ（第3章向け）🤖💞
+
+![ai_slice](./picture/tdd_cs_study_003_ai_slice.png)
+
 
 AIはめっちゃ便利だけど、この章では**“刻む”部分だけ**に使うのが勝ち✌️✨
 
