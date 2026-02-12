@@ -17,6 +17,9 @@
 
 ## 🧠Watchってなに？（超ざっくり）
 
+![watch_mode_treadmill](./picture/tdd_ts_study_012_watch_mode_treadmill.png)
+
+
 Vitestは開発中、基本は **watchモードが標準**で、ファイルを変えると関連するテストをいい感じに再実行してくれるよ（ViteのHMRっぽい賢いやつ✨）([Vitest][1])
 逆に、1回だけ実行して終わりたいときは `vitest run` を使う感じ🧪✅([Vitest][2])
 
@@ -39,6 +42,9 @@ Vitestは開発中、基本は **watchモードが標準**で、ファイルを�
 * `npm test` → watchで常駐（開発の相棒）🔁
 * `npm run test:run` → 1回だけ（CIや確認用）✅([Vitest][2])
 * `npm run test:ui` → ブラウザUIで見える化（watch前提）🖥️✨([Vitest][3])
+
+![ui_mode_cockpit](./picture/tdd_ts_study_012_ui_mode_cockpit.png)
+
 
 ---
 
@@ -110,6 +116,9 @@ Vitestは絞り込みがけっこう強い✨([Vitest][2])
 
 ### ✅A) ファイルを絞る（パスに文字を含めるだけ）
 
+![filter_spotlight](./picture/tdd_ts_study_012_filter_spotlight.png)
+
+
 ```bash
 npx vitest add
 ```
@@ -117,6 +126,9 @@ npx vitest add
 これで **パスに`add`を含むテストだけ**走るよ🧠✨([Vitest][2])
 
 ### ✅B) “このテスト名だけ”走らせる（正規表現OK）
+
+![filter_sniper_scope](./picture/tdd_ts_study_012_filter_sniper_scope.png)
+
 
 ```bash
 npx vitest -t "1 \\+ 2"
@@ -146,6 +158,9 @@ npx vitest tests/add.test.ts:10
 
 ### ① 関係ないファイル変更でテストが走る…🥲
 
+![exclude_headphones](./picture/tdd_ts_study_012_exclude_headphones.png)
+
+
 「テストとして拾ってほしくない場所」があるなら、`exclude` を足すのが定番だよ🧹✨
 Vitestの `exclude` は設定やCLIで指定できる🧷([Vitest][6])
 
@@ -154,6 +169,9 @@ Vitestの `exclude` は設定やCLIで指定できる🧷([Vitest][6])
 ---
 
 ## 🤖AIの使い方（watch運用と相性よすぎ）
+
+![ai_copilot_whisper](./picture/tdd_ts_study_012_ai_copilot_whisper.png)
+
 
 watchって「失敗ログ→次の一手」が命だから、AIをここに当てると強いよ💪🤖✨
 

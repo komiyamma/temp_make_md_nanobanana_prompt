@@ -35,6 +35,9 @@ code .
 
 ### 2) Gitを初期化して main にする🌿
 
+![git_init_foundation](./picture/tdd_ts_study_007_git_init_foundation.png)
+
+
 ```powershell
 git init
 git branch -M main
@@ -43,6 +46,9 @@ git branch -M main
 ---
 
 ### 3) package.json だけ作る（まだ何も盛らない）📦
+
+![package_json_nametag](./picture/tdd_ts_study_007_package_json_nametag.png)
+
 
 ここは“名札をつけるだけ”🎀
 
@@ -64,6 +70,9 @@ mkdir tests
 ---
 
 ### 5) 空フォルダをコミットできるように “目印ファイル” を置く📌
+
+![gitkeep_placeholder](./picture/tdd_ts_study_007_gitkeep_placeholder.png)
+
 
 Gitは空フォルダをそのままは管理できないので、よく **.gitkeep** を置くよ🧸
 
@@ -129,6 +138,9 @@ git commit -m "chore: init project skeleton"
 
 ## 🧠なぜ src / tests を分けるの？（超やさしく）💞
 
+![src_vs_tests_separation](./picture/tdd_ts_study_007_src_vs_tests_separation.png)
+
+
 * **src**：アプリ本体（“作るもの”）🏗️
 * **tests**：仕様（“約束を確認するもの”）🧪
 
@@ -138,6 +150,9 @@ git commit -m "chore: init project skeleton"
 ---
 
 ## 🤖AIの使いどころ（この章は“整えすぎない”が正解）✨
+
+![ai_over_engineering_warning](./picture/tdd_ts_study_007_ai_over_engineering_warning.png)
+
 
 ### 使ってOKなお願い例🪄
 
@@ -153,6 +168,9 @@ git commit -m "chore: init project skeleton"
 ---
 
 ## ✅チェックリスト（合格ライン）🎓✨
+
+![clean_workspace_goal](./picture/tdd_ts_study_007_clean_workspace_goal.png)
+
 
 * **src/** と **tests/** がある📁
 * ルートに **package.json / README.md / .gitignore** がある📄
