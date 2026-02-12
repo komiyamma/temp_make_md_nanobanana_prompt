@@ -22,6 +22,8 @@
 
 ### 1) まず「ログの基本ルール」を決める（超重要）📌
 
+![Three Logging Gates](./picture/gof_cs_study_010_three_gates.png)
+
 ログは増やすとキリがないので、最初はこれだけ守ればOK🙆‍♀️
 
 * **入口**：処理が始まったこと（何をする？）🚪
@@ -49,6 +51,8 @@ flowchart TD
 ```
 
 ### 2) Consoleアプリに “最小のログ” を導入する 🧁
+
+![Structured vs Unstructured Log](./picture/gof_cs_study_010_structured_vs_string.png)
 
 まずは DI なしで、**LoggerFactoryだけ**で始めよう（スッキリ）😊
 
@@ -105,6 +109,8 @@ finally
 
 ### 3) 例題（小さなEC）の `OrderService` にログを入れる 🛒📝
 
+![Service Hiding behind Interface](./picture/gof_cs_study_010_service_logger.png)
+
 ここからが本題！「入口/出口/エラー」の型を作るよ😊
 
 ```csharp
@@ -155,6 +161,8 @@ public sealed class OrderService
 
 ### 4) いったん「DIなし」で `OrderService` を動かす（最小でOK）🏃‍♀️
 
+![Manual DI Setup](./picture/gof_cs_study_010_di_setup.png)
+
 `ILogger<OrderService>` が必要なので、`LoggerFactory` から作って渡すよ🧩
 
 ```csharp
@@ -181,6 +189,8 @@ loggerFactory.Dispose();
 ---
 
 ### 5) （テストの現実解）ログは「検証」より「邪魔しない」を優先 🧪🌸
+
+![Null Object Pattern](./picture/gof_cs_study_010_null_logger.png)
 
 ログの内容までガチガチにテストすると、変更で壊れやすい💦
 この教材ではまず **NullLogger** を使って、ログを無効化してテストしよう😊

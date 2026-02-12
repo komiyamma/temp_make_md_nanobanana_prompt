@@ -23,6 +23,8 @@
 
 ### 1) “newが辛い”は、だいたいこの3つに分かれるよ😅
 
+![The Three-Headed Monster](./picture/gof_cs_study_013_pain_monster.png)
+
 #### A. 分岐が増える（種類が増える）🌱➡️🌳
 
 * 例：支払い方法が増えるたびに `switch` が伸びる…📈💦
@@ -89,6 +91,8 @@ mindmap
 ```
 
 ### 2) 例題（小さなEC）で「辛さ」をわざと見る👀🔥
+
+![The Messy Kitchen](./picture/gof_cs_study_013_messy_kitchen.png)
 
 まずは、ありがちな“生成が混ざったサービス”を見てみます。
 （この章は「改善する」より「見抜ける」ことがゴールだよ😊）
@@ -168,6 +172,8 @@ public sealed class EmailNotifier
 
 ### 3) 「見つけた辛さ」をメモして、次章の武器にする📝💖
 
+![Diagnosing the Code](./picture/gof_cs_study_013_diagnosis.png)
+
 おすすめはこの“3行メモ”です✨（1分でOK）
 
 * 症状：`switch` が増える／引数が増える／テストで差し替えできない
@@ -179,6 +185,8 @@ public sealed class EmailNotifier
 ## 落とし穴⚠️🐣
 
 ### 落とし穴1：最初からFactoryを量産する🏭🏭🏭💦
+
+![Factory Overproduction](./picture/gof_cs_study_013_factory_trap.png)
 
 「newが嫌だから全部Factory！」は逆効果になりがち😵
 まずは **“辛さの種類”がどれか** を当てるのが先です🎯

@@ -31,6 +31,8 @@
 
 ### 2) 最小ドメインを用意する（まずは型だけ）🧩
 
+![Enum Building Blocks](./picture/gof_cs_study_012_enum_blocks.png)
+
 `Domain.cs` を作って、次を置きます👇
 
 ```csharp
@@ -76,6 +78,8 @@ public sealed record ProcessResult(
 ---
 
 ### 3) “わざと”全部入りの注文処理を書く（分岐地獄の本体）🔥
+
+![The Switch Tower](./picture/gof_cs_study_012_switch_tower.png)
 
 `OrderProcessor.cs` を作って、**責務ごちゃ混ぜ**でいきます😈（この章では褒められるやつ）
 
@@ -264,6 +268,8 @@ flowchart TD
 
 ### 4) テストで“仕様を固定”する（超大事）🧪🌸
 
+![Test Safety Net](./picture/gof_cs_study_012_safety_net.png)
+
 `OrderProcessorTests.cs`（MSTest）で、まず6本いきます👇
 ※ここでは「結果がこうなる」を固定できればOK！
 
@@ -389,6 +395,8 @@ public sealed class OrderProcessorTests
 ---
 
 ### 5) ここで「分岐が増える要因」をメモする📝✨
+
+![Multiplication of Factors](./picture/gof_cs_study_012_factors.png)
 
 次の3つ、コードの中で見つけてメモしてね👇（後の章で効く！）
 
