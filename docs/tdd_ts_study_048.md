@@ -15,11 +15,15 @@
 ### ✅ 乱数は「依存」だよ
 
 * 同じ入力を入れても、乱数があると出力が変わる
+
+![slot_machine](./picture/tdd_ts_study_048_slot_machine.png)
   → **テストが「運ゲー」**になる🎰💥
 
 ### ✅ `Math.random()` は“シード指定できない”
 
-`Math.random()` は実装側が初期シードを選ぶだけで、ユーザーが選んだりリセットできないよ（だから「再現」ができない）📌 ([MDNウェブドキュメント][1])
+`Math.random()` は実装側が初期シードを選ぶだけで、ユーザーが選んだりリセットできないよ
+
+![wild_horse](./picture/tdd_ts_study_048_wild_horse.png)（だから「再現」ができない）📌 ([MDNウェブドキュメント][1])
 
 ### ✅ セキュリティ用途に `Math.random()` はNG
 
@@ -46,6 +50,8 @@ export function drawPrize(): "A" | "B" | "C" {
 
 テストを「Bが出るはず！」って書いたら…運が悪いと落ちる🤣
 
+![flaky_banana](./picture/tdd_ts_study_048_flaky_banana.png)
+
 ```ts
 // tests/lottery.test.ts
 import { describe, it, expect } from "vitest"
@@ -68,6 +74,8 @@ describe("drawPrize", () => {
 
 * **本番は Math.random を渡す**
 * **テストは固定の偽物RNGを渡す**
+
+![loaded_dice](./picture/tdd_ts_study_048_loaded_dice.png)
 
 ```ts
 // src/lottery.ts
@@ -109,7 +117,9 @@ describe("drawPrize", () => {
 
 「今さら関数の形を変えられない…😭」って時の救急箱🚑
 
-Vitest は `vi.spyOn` / `mockReturnValueOnce` みたいなモック機能があるよ（基本のモック機能）🧰 ([Vitest][3])
+Vitest は `vi.spyOn` / `mockReturnValueOnce` みたいなモック機能があるよ
+
+![magician_force](./picture/tdd_ts_study_048_magician_force.png)（基本のモック機能）🧰 ([Vitest][3])
 
 ```ts
 import { describe, it, expect, vi, afterEach } from "vitest"
@@ -148,7 +158,9 @@ describe("drawPrize (spy)", () => {
 「ゲームのリプレイ」「疑似ランダムの検証」「ランダムケースを100回回す」みたいに、
 **ランダム感は欲しいけど再現もしたい**ときはこれ！
 
-たとえば `seedrandom` は “シードから再現できる疑似乱数列” を作れるライブラリとして説明されてるよ🌱 ([tessl.io][4])
+たとえば `seedrandom` は “シードから再現できる疑似乱数列” を作れるライブラリ
+
+![plant_seed](./picture/tdd_ts_study_048_plant_seed.png)として説明されてるよ🌱 ([tessl.io][4])
 
 イメージ（使い方の雰囲気）👇
 
@@ -169,6 +181,8 @@ console.log(drawPrize(rng))       // 何度実行しても同じ順で出る✨
 
 * 本番：`crypto.randomUUID()` みたいにランダム
 * テスト：固定IDを返す関数を注入
+
+![fixed_stamp](./picture/tdd_ts_study_048_fixed_stamp.png)
 
 ```ts
 // src/id.ts

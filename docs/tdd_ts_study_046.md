@@ -14,16 +14,22 @@
 
 ### 1) Vitestは「テスト関数がPromiseを返したら、解決まで待つ」⏳
 
-つまり `async () => { ... }` にして `await` すればOK、ってことだよ🙂✨ ([vitest.dev][1])
+つまり `async () => { ... }` にして `await` すればOK、ってことだよ🙂✨
+
+![wait_promise](./picture/tdd_ts_study_046_wait_promise.png) ([vitest.dev][1])
 
 ### 2) `expect(...).resolves / rejects` は **await（またはreturn）必須** 🙅‍♀️
 
 `resolves/rejects` は “Promiseをほどいてから matcher をつなげる” 機能。
+
+![unwrap_gift](./picture/tdd_ts_study_046_unwrap_gift.png)
 ただし matcher 自体も Promise になるので、**awaitしないと事故りやすい**よ⚠️ ([vitest.dev][2])
 
 ### 3) Vitestは基本「doneコールバック」方式を推奨しない（= 使わない方が安全）🧨
 
-Jestの `done` みたいな書き方は、Vitestでは **async/await に寄せる**のが基本だよ✅ ([vitest.dev][3])
+Jestの `done` みたいな書き方は、Vitestでは **async/await に寄せる**のが基本だよ✅
+
+![modern_bridge](./picture/tdd_ts_study_046_modern_bridge.png) ([vitest.dev][3])
 
 ---
 
@@ -32,6 +38,8 @@ Jestの `done` みたいな書き方は、Vitestでは **async/await に寄せ�
 ### お題：UserService（ユーザー表示名を返す）👤✨
 
 * ユーザーがいれば表示名を返す（resolve）✅
+
+![two_paths](./picture/tdd_ts_study_046_two_paths.png)
 * ユーザーがいなければ `USER_NOT_FOUND` で失敗（reject）❌
 
 ---
@@ -80,6 +88,8 @@ export interface UserRepo {
 }
 
 export class InMemoryUserRepo implements UserRepo {
+
+![in_memory_box](./picture/tdd_ts_study_046_in_memory_box.png)
   constructor(private readonly users: User[]) {}
 
   async getById(id: string): Promise<User | null> {
@@ -123,6 +133,8 @@ export class UserNotFoundError extends Error {
 
 ❌ダメ例（これ、テストが先に終わってしまう可能性があるよ）
 
+![false_green](./picture/tdd_ts_study_046_false_green.png)
+
 ```ts
 it("ダメ例", async () => {
   expect(service.getDisplayName("u1")).resolves.toBe("Alice"); // awaitしてない！
@@ -165,7 +177,9 @@ Vitestは `done` を基本サポートしない/推奨しないので、**async/
 
 ### 練習A：resolve側を「return派」で書いてみる🧁
 
-`async` を付けないなら、`return` でもOKだよ（“Promiseを返す＝待ってくれる”） ([vitest.dev][1])
+`async` を付けないなら、`return` でもOKだよ（“Promiseを返す＝待ってくれる”）
+
+![return_vs_await](./picture/tdd_ts_study_046_return_vs_await.png) ([vitest.dev][1])
 
 ```ts
 it("return派（async無し）🙂", () => {
