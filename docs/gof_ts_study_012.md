@@ -68,6 +68,11 @@ type DiscountFn = (subtotal: number) => number;
 
 const noDiscount: DiscountFn = () => 0;
 
+```
+
+![High Order Function](./picture/gof_ts_study_012_high_order_function.png)
+
+```ts
 const percentOff = (rate: number): DiscountFn => {
   return (subtotal) => Math.floor(subtotal * rate);
 };
@@ -88,6 +93,9 @@ const discountByRank = {
   vip: percentOff(0.2),
 } satisfies Record<MemberRank, DiscountFn>;
 ```
+
+![Satisfies Check](./picture/gof_ts_study_012_satisfies_record.png)
+
 
 `satisfies` は「型に合ってるかだけチェックして、推論はそのまま」っていう便利機能だよ🧡 ([TypeScript][2])
 
@@ -116,6 +124,9 @@ function calcTotal(subtotal: number, rank: MemberRank) {
 ここでおすすめは **“金額を変換する関数”をつなぐ**やり方💰➡️💰
 
 ## 4-1. 価格を変換する関数（パイプライン）🚰
+
+
+![Function Pipeline](./picture/gof_ts_study_012_pipeline_composition.png)
 
 ```ts
 type PriceRule = (price: number) => number;
@@ -178,6 +189,7 @@ flowchart LR
 ---
 
 ## 5. “引数増殖”は設定オブジェクトで止める🧁✨
+![Configuration Object](./picture/gof_ts_study_012_config_object.png)
 
 「税率、丸め、割引…」って引数が増えると、呼び出しが読みにくくなるよね😵‍💫
 
@@ -222,6 +234,7 @@ const total = calcFinal(1200);
 ---
 
 ## 6. テストがラクになる理由🧪🎉（関数Strategyの神ポイント）
+![Pure Function Testing](./picture/gof_ts_study_012_testing_pure.png)
 
 関数の割引ルールは **入出力がはっきり**してるから、テストが超書きやすい！
 

@@ -16,6 +16,7 @@
 例外（`throw`）は便利だけど、慣れてくるとこんな悩みが出がち…😵‍💫
 
 ### 例外がつらくなる瞬間😵
+![Exception vs Result](./picture/gof_ts_study_015_exception_explosion.png)
 
 * どこで `throw` されるか **呼び出し側から見えにくい**🙈
 * 複数ステップ（検証→在庫→決済→通知…）で、**どこで落ちたか追いづらい**🌀
@@ -36,6 +37,11 @@ TypeScriptでは、Resultはだいたいこの形が王道だよ〜💡
 ```ts
 // 成功: { ok: true, value }
 // 失敗: { ok: false, error }
+```
+
+![Result Type Box](./picture/gof_ts_study_015_result_structure.png)
+
+```ts
 export type Result<T, E> =
   | { ok: true; value: T }
   | { ok: false; error: E };
@@ -63,6 +69,9 @@ export const match = <T, E, R>(
 Resultをやるときのコツは、`Error` だけを返すんじゃなくて、**失敗の種類（分類）**を作ることだよ〜✨
 
 たとえば「注文確定」で起こりそうな失敗👇
+
+
+![Error Sorting](./picture/gof_ts_study_015_error_classification.png)
 
 ```ts
 export type OrderError =
@@ -175,6 +184,11 @@ import { validateOrder } from "./validate";
 import { reserveStock, chargePayment } from "./io";
 
 export async function confirmOrder(order: Order): Promise<Result<ConfirmedOrder, OrderError>> {
+```
+
+![Railway Oriented Programming](./picture/gof_ts_study_015_railway_flow.png)
+
+```ts
   const v = validateOrder(order);
   if (!v.ok) return v;
 
@@ -223,6 +237,11 @@ async function onClickConfirm() {
     items: [{ productId: "latte-001", qty: 1, unitPrice: 520 }],
   });
 
+```
+
+![Match Expression](./picture/gof_ts_study_015_match_expression.png)
+
+```ts
   const message = match(result, {
     ok: (order) => `注文OK🎉 合計 ${order.total}円だよ〜☕`,
     err: (e) => {

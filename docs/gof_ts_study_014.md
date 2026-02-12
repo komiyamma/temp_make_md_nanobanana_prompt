@@ -65,6 +65,11 @@ type OrderLine = {
 
 const productCache = new Map<ProductId, ProductMaster>();
 
+```
+
+![Key Normalization](./picture/gof_ts_study_014_normalization.png)
+
+```ts
 function normalizeProductId(id: string): ProductId {
   // キー設計の基本：表記ゆれを消す（超重要🔑）
   return id.trim().toLowerCase();
@@ -76,6 +81,11 @@ function getProductMaster(rawId: string): ProductMaster {
   const cached = productCache.get(id);
   if (cached) return cached;
 
+```
+
+![Object Creation Cost](./picture/gof_ts_study_014_master_creation.png)
+
+```ts
   // 本当はDB/APIなどから取ってくるイメージ（ここでは固定で）
   const created: ProductMaster =
     id === "latte"
@@ -93,6 +103,11 @@ function createOrderLine(productId: string, qty: number): OrderLine {
   };
 }
 
+```
+
+![Unique Key Slot](./picture/gof_ts_study_014_key_uniqueness.png)
+
+```ts
 // ✅ 共有できてるか確認！
 const a = createOrderLine("Latte", 1);
 const b = createOrderLine(" latte ", 2);
@@ -141,6 +156,11 @@ type ProductKey = string;
 
 function makeProductKey(productId: string, size: Size): ProductKey {
   return `${normalizeProductId(productId)}::${size}`;
+```
+
+![Composite Key](./picture/gof_ts_study_014_composite_key.png)
+
+```ts
 }
 ```
 
@@ -197,6 +217,11 @@ function setWithLimit<K, V>(map: Map<K, V>, key: K, value: V, limit: number) {
 ```ts
 type User = { id: string; name: string };
 
+```
+
+![WeakMap Reference](./picture/gof_ts_study_014_weakmap_gc.png)
+
+```ts
 const memo = new WeakMap<User, number>();
 
 function expensiveScore(u: User): number {

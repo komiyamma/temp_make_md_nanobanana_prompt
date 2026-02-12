@@ -13,6 +13,9 @@ type Order = {
 const order: Order = { id: "o1", status: "confrimed" }; // タイポでも通る😱
 ```
 
+![String Typing Danger](./picture/gof_ts_study_013_dangerous_string.png)
+
+
 * `"confirmed"` のつもりが `"confrimed"`…みたいな**小さな事故が本番で爆発**💥
 * `if/switch` が増えるほど「処理漏れ」も増える…🌀
 
@@ -77,6 +80,9 @@ type OrderCanceled = {
 type Order = OrderDraft | OrderConfirmed | OrderPaid | OrderCanceled;
 ```
 
+![Union Type Structure](./picture/gof_ts_study_013_union_structure.png)
+
+
 ポイント💡
 
 * `status: "draft"` みたいに **文字列リテラル**で固定する
@@ -91,6 +97,11 @@ type Order = OrderDraft | OrderConfirmed | OrderPaid | OrderCanceled;
 ```ts
 function getReceiptLine(order: Order): string {
   switch (order.status) {
+```
+
+![Switch Narrowing](./picture/gof_ts_study_013_switch_narrowing.png)
+
+```ts
     case "draft":
       return `📝 下書き（${order.items.length}点）`;
     case "confirmed":
@@ -112,6 +123,9 @@ function getReceiptLine(order: Order): string {
 TypeScript公式でも `never` を使った **網羅チェック**が紹介されてるよ。([TypeScript][2])
 
 ## 13-5-1 `assertNever` を用意しよ🧯
+
+
+![Exhaustiveness Check](./picture/gof_ts_study_013_assert_never.png)
 
 ```ts
 function assertNever(x: never): never {
@@ -166,6 +180,9 @@ function addItem(order: OrderDraft, item: { name: string; price: number }): Orde
 declare const paid: OrderPaid;
 // addItem(paid, { name: "Cookie", price: 200 }); // ❌ コンパイルで怒られる
 ```
+
+![Invalid Transition Prevention](./picture/gof_ts_study_013_transition_prevention.png)
+
 
 ---
 
