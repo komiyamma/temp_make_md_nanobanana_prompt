@@ -22,6 +22,9 @@
 
 ### 2) GoFは「23個の道具箱」🎁
 
+![gof_ts_study_001_toolbox.png](./picture/gof_ts_study_001_toolbox.png)
+
+
 * GoFは、ソフトウェア設計で何度も出る困りごとを「名前付き」でまとめたもの🧠
 * 名前があると何が嬉しい？
 
@@ -30,6 +33,9 @@
   * 解決策の“型”を使い回せる♻️
 
 ### 3) TypeScriptでも超ふつうに役立つ💙
+
+![gof_ts_study_001_scales.png](./picture/gof_ts_study_001_scales.png)
+
 
 TypeScript/JavaScriptの世界って、クラスより **関数・オブジェクト・モジュール**が自然に使われがちだよね😊
 だからこそ、GoFも **「クラスでガチガチに再現」じゃなくて、TSらしく“軽く”使う**のがコツ🎈
@@ -59,9 +65,15 @@ TypeScript/JavaScriptの世界って、クラスより **関数・オブジェ�
 
 ## まずは「つらさのサイン」を知ろう👃💡
 
+![gof_ts_study_001_pain_bulb.png](./picture/gof_ts_study_001_pain_bulb.png)
+
+
 次の匂いが出たら、パターンの出番が近いかも！
 
 ### サインA：if/switchが増え続けて、読むのが怖い😱
+
+![gof_ts_study_001_spaghetti.png](./picture/gof_ts_study_001_spaghetti.png)
+
 
 * 種類が増えるたびに分岐が増殖…
 * 修正したら別の条件が壊れた…（あるある）💥
@@ -102,6 +114,9 @@ export function calcTotal(items: Item[], membership: Membership): number {
 * でも「student」「vip」「coupon併用」「期間限定」…って増えたら？😱
 
 ### “TSの自然なやり方”で一歩だけ楽にする🧁✨（関数の表にする）
+
+![gof_ts_study_001_strategy_table.png](./picture/gof_ts_study_001_strategy_table.png)
+
 
 ```ts
 type Membership = "normal" | "silver" | "gold";

@@ -27,9 +27,15 @@
 
 ## 2. 「小さく作る」って、どれくらい小さい？🐣☕️
 
+![gof_ts_study_003_skateboard.png](./picture/gof_ts_study_003_skateboard.png)
+
+
 “最小”って聞くと迷子になりがちなので、**合格ライン**を決めちゃおう✅✨
 
 ## 最小の合格ライン（この章の基準）🏁
+
+![gof_ts_study_003_crystal_ball.png](./picture/gof_ts_study_003_crystal_ball.png)
+
 
 * **入力**：注文（何を何個）
 * **処理**：合計金額を出す
@@ -129,6 +135,9 @@ classDiagram
 
 ## Step 2：最小の関数を3つ作る⚙️✨
 
+![gof_ts_study_003_input_output.png](./picture/gof_ts_study_003_input_output.png)
+
+
 1. 注文に追加する `addLine`
 2. 合計を出す `calcTotalYen`
 3. 表示する `printTotal`
@@ -183,6 +192,9 @@ printTotal(total); // 合計: 1050円
 ---
 
 ## 6. “困る”を作るコツ👃💭（わざとでOK！）
+
+![gof_ts_study_003_nose_sniff.png](./picture/gof_ts_study_003_nose_sniff.png)
+
 
 次の章以降でパターンを使うには、**困りごとが必要**なんだよね😵‍💫
 だからここでは、あえて「増えそうなところ」を見つけよう🔎✨
@@ -251,6 +263,9 @@ AIは「設計の相棒」になれるけど、**採用判断はあなたの仕�
 ---
 
 ## 8. つまずき回避💡（この章でありがち⚠️）
+
+![gof_ts_study_003_stairs_step.png](./picture/gof_ts_study_003_stairs_step.png)
+
 
 * **最初から汎用化しちゃう** → 未来のための設計で今が死ぬ😇
 * **ファイル分割しすぎる** → 探すだけで疲れる🌀

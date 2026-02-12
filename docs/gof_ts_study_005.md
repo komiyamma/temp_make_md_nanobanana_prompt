@@ -61,15 +61,24 @@ AIに投げるときは、毎回ゼロから考えないで「型」でいこ！
 
 ### 型①：下書き（最小実装）📝
 
+![gof_ts_study_005_drafting.png](./picture/gof_ts_study_005_drafting.png)
+
+
 * **目的**：まず動く骨組みを出させる
 * **コツ**：条件を絞って「最小」にする（盛りすぎ禁止🙅‍♀️）
 
 ### 型②：比較（A vs B）⚖️
 
+![gof_ts_study_005_scales_compare.png](./picture/gof_ts_study_005_scales_compare.png)
+
+
 * **目的**：案を並べて選びやすくする
 * **コツ**：「何を優先する比較か」を書く（可読性？拡張性？テスト性？）
 
 ### 型③：説明（先生モード）👩‍🏫
+
+![gof_ts_study_005_teacher.png](./picture/gof_ts_study_005_teacher.png)
+
 
 * **目的**：理解を速める
 * **コツ**：「中学生でも分かる」「例え話」「注意点3つ」みたいに指定する
@@ -80,6 +89,9 @@ AIに投げるときは、毎回ゼロから考えないで「型」でいこ！
 * **コツ**：「バグになりそうな点」「拡張した時の地雷」「型の弱さ」を聞く
 
 ### 型⑤：テスト観点（境界/異常系）🧪
+
+![gof_ts_study_005_test_checklist.png](./picture/gof_ts_study_005_test_checklist.png)
+
 
 * **目的**：落とし穴をテストで潰す
 * **コツ**：**期待値**も書かせる（“何が正しいか”が曖昧だと崩壊💥）
@@ -156,6 +168,9 @@ TypeScriptで calcTotal(items, discount) を実装したいです。
 ---
 
 ## AIの回答を採用する「5つのチェック」✅🧯
+
+![gof_ts_study_005_safety_inspector.png](./picture/gof_ts_study_005_safety_inspector.png)
+
 
 AIの提案をコピペする前に、これだけは毎回やろうね！🥺
 

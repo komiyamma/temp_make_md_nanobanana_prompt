@@ -37,17 +37,26 @@
 
 ### 🏭 生成（作り方）の悩み例
 
+![gof_ts_study_002_factory_belt.png](./picture/gof_ts_study_002_factory_belt.png)
+
+
 * 「注文の種類が増えて、作るところが if だらけ😵」
 * 「テスト用の注文データを作るのが毎回しんどい🥺」
 * 「環境（本番/検証）で作る部品セットを切り替えたい🔁」
 
 ### 🏗️ 構造（組み立て方）の悩み例
 
+![gof_ts_study_002_lego_bridge.png](./picture/gof_ts_study_002_lego_bridge.png)
+
+
 * 「外部APIのレスポンス形式が微妙に違って、あちこちで変換してる😭」
 * 「機能を“あと付け”で重ねたい（ログ・計測・キャッシュ）🎁」
 * 「複雑な処理の入口を1つにまとめて使いやすくしたい🚪」
 
 ### 🎭 振る舞い（動き方）の悩み例
+
+![gof_ts_study_002_conductor.png](./picture/gof_ts_study_002_conductor.png)
+
 
 * 「割引ルールが増えて if の森🌳」
 * 「注文確定したら、在庫更新・通知・ログ…が連鎖してカオス📣」
@@ -73,6 +82,9 @@ mindmap
 ---
 
 ## たとえ話②：同じ“機能”でも見方が変わる👀✨
+
+![gof_ts_study_002_cube_angles.png](./picture/gof_ts_study_002_cube_angles.png)
+
 
 例：**「割引」**
 
@@ -157,6 +169,9 @@ for (const f of features) {
 ---
 
 ## つまずき回避💡（ここで詰まりがち🥺）
+
+![gof_ts_study_002_map_blur.png](./picture/gof_ts_study_002_map_blur.png)
+
 
 * **「どれに分類すれば正解？」**
   → 正解探しより、「今の痛みは何？」を言えたらOK🙆‍♀️✨

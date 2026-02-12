@@ -78,6 +78,9 @@ export function calc(o: Order, items: MenuItem[]) {
 
 ## 4.3 Rename Symbol（F2）で「責務が見える名前」にする🪄💖
 
+![gof_ts_study_004_magic_wand.png](./picture/gof_ts_study_004_magic_wand.png)
+
+
 ## まず大事：置換（検索→置換）より Rename が安全✨
 
 普通の置換だと、似た文字列まで巻き込む事故が起きやすい😱
@@ -109,6 +112,9 @@ Renameは **ファイルをまたいで** 変更してくれるよ📚✨ ([Visu
 
 ## 4.4 Referencesで「影響範囲」を先に見る👀🔎
 
+![gof_ts_study_004_magnifying_glass.png](./picture/gof_ts_study_004_magnifying_glass.png)
+
+
 設計改善で怖いのって、「どこに影響あるの？」問題だよね🥺
 そこで References！✨
 
@@ -127,6 +133,9 @@ Renameは **ファイルをまたいで** 変更してくれるよ📚✨ ([Visu
 ---
 
 ## 4.5 Extract Function で「長い処理」をスパッと割る✂️✨
+
+![gof_ts_study_004_scissors.png](./picture/gof_ts_study_004_scissors.png)
+
 
 VS Codeのリファクタは、TypeScriptでも定番の **Extract Function / Extract Constant** が使えるよ🧁
 しかも “右クリック → Refactor” や “電球（Ctrl+.)” から出せる💡 ([Visual Studio Code][2])
@@ -223,6 +232,9 @@ VS Codeは TypeScriptで **Move to a new file** みたいなリファクタも�
 
 ## 4.7 Organize Imports で「散らかった import」を一瞬で整える🧹✨
 
+![gof_ts_study_004_bookshelf.png](./picture/gof_ts_study_004_bookshelf.png)
+
+
 TypeScriptの現場で地味に効くのが **Organize Imports**！
 未使用importの削除・並び整理をしてくれるよ🧼 ([Visual Studio Code][2])
 
@@ -258,6 +270,9 @@ TypeScriptの現場で地味に効くのが **Organize Imports**！
 ---
 
 ## 4.9 Git + Timeline で「壊しても戻れる」状態にする🛟💖
+
+![gof_ts_study_004_time_machine.png](./picture/gof_ts_study_004_time_machine.png)
+
 
 設計改善でいちばん大事なのはね…
 **戻せること**！！！！！😭💗（これで安心して攻められる）
