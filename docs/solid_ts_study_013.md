@@ -23,6 +23,8 @@
 
 ## まずは“よくある地獄”を見てみよ👀💥（if/switch増殖）
 
+![Switch Maze](./picture/solid_ts_study_013_switch_maze.png)
+
 「クーポン種類が増えるたびに switch を編集する」やつ…あるある😇
 
 ```ts
@@ -66,6 +68,8 @@ export function calcTotalWithCoupon(
 
 ## OCPの王道💎：「差し替え口」を作る＝Strategy（戦略）パターン🧠🔁
 
+![Strategy Menu](./picture/solid_ts_study_013_strategy_menu.png)
+
 ポイントはこれ👇✨
 
 > **「割引の“やり方”を1つのクラス（またはオブジェクト）に閉じ込める」**
@@ -82,6 +86,8 @@ export function calcTotalWithCoupon(
 ---
 
 ## Step1：まず「Strategyの型」を作る🧩✨
+
+![Policy Blueprint](./picture/solid_ts_study_013_policy_blueprint.png)
 
 ```ts
 export type OrderContext = {
@@ -104,6 +110,8 @@ export interface CouponPolicy {
 ---
 
 ## Step2：クーポンごとに「実装を分ける」🧱✨
+
+![Implementation Cards](./picture/solid_ts_study_013_implementation_cards.png)
 
 ```ts
 export class StudentDiscountPolicy implements CouponPolicy {
@@ -146,6 +154,8 @@ export class Percent10OffPolicy implements CouponPolicy {
 ---
 
 ## Step3：「選んで使う側」を小さく作る🎛️✨（ここが差し替え口の司令塔）
+
+![Coupon Engine](./picture/solid_ts_study_013_coupon_engine.png)
 
 ```ts
 export class CouponEngine {
@@ -198,6 +208,8 @@ sequenceDiagram
 
 ## Step4：「登録（一覧に並べる）」を1か所に寄せる📌✨
 
+![Strategy Toolbox](./picture/solid_ts_study_013_strategy_toolbox.png)
+
 OCPで大事なのは、**“変更が起きる場所”を1か所に隔離する**ことだよ😊
 （この“登録場所”は、追加時に触ってOKな場所として割り切るのがコツ💡）
 
@@ -213,6 +225,8 @@ const engine = new CouponEngine([
 ---
 
 ## テスト🧪✨（Vitest例）
+
+![Unit Test Inspection](./picture/solid_ts_study_013_unit_test_inspection.png)
 
 「学割は学生のときだけ効く」みたいに、**1ポリシー＝1テスト**が超やりやすいよ💖
 

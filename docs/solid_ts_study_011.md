@@ -31,6 +31,8 @@ SRPはこれだけ覚えてればOK！👇✨
 
 ↑これ全部を1クラスが抱えると、未来で泣く😭💦
 
+![Change Reason Examples](./picture/solid_ts_study_011_change_reason_examples.png)
+
 ---
 
 ## 今日の題材：まずは“わざと最悪”からスタート😈🧪
@@ -38,6 +40,8 @@ SRPはこれだけ覚えてればOK！👇✨
 「Campus Café 注文アプリ」☕️🍰の注文処理で、ありがちな **God Service（全部入り）** を用意するよ！
 
 ### 🍱 悪い例：なんでも屋の `OrderService`（SRP違反）
+
+![God Service Burden](./picture/solid_ts_study_011_god_service_burden.png)
 
 ```ts
 // src/order/OrderService.ts
@@ -121,6 +125,8 @@ export class OrderService {
 
 ## Step 1：料金計算を `PriceCalculator` に切り出す💰✂️
 
+![Extracting Logic](./picture/solid_ts_study_011_extract_logic.png)
+
 SRP分割の最初の一手はだいたいこれ！
 
 > **副作用がない純粋ロジック（計算）を外へ出す**🧼✨
@@ -160,6 +166,8 @@ export class PriceCalculator {
 ---
 
 ## Step 2：保存を `OrderRepository` に分離する🗄️✂️
+
+![Repository Isolation](./picture/solid_ts_study_011_repository_isolation.png)
 
 次は「保存先が変わる」って理由を外へ逃がすよ！
 
@@ -208,6 +216,8 @@ export class InMemoryOrderRepository implements OrderRepository {
 ---
 
 ## Step 3：レシート出力を `ReceiptBuilder` に分離する🧾✂️
+
+![Receipt Builder](./picture/solid_ts_study_011_receipt_builder.png)
 
 レシートは「見た目」が変わりやすいから、ここも別箱へ📦✨
 ポイントは **“文字列を作るだけ”** にして、副作用（console.log）と分けるとさらに強いよ💪
@@ -263,6 +273,8 @@ export class ConsoleReceiptPrinter implements ReceiptPrinter {
 
 ## Step 4：薄くなった `OrderService`（司令塔だけやる）🧠✨
 
+![Thin Coordinator](./picture/solid_ts_study_011_thin_coordinator.png)
+
 最後に `OrderService` を「注文フローの組み立て役」だけにするよ！
 
 ```ts
@@ -307,6 +319,8 @@ export class OrderService {
 ---
 
 ## ここで“SRPの勝利”が起きる🏆✨（テストが楽！）
+
+![Testability Win](./picture/solid_ts_study_011_testability_win.png)
 
 ### ✅ 料金計算は、単体テストが超簡単💰
 
