@@ -33,6 +33,9 @@
 
 例：引数が多い呼び出し（ありがち）👇
 
+![022 telescoping args](./picture/gof_cs_study_022_telescoping_args.png)
+
+
 ```csharp
 var order = new Order(
     orderId: Guid.NewGuid(),
@@ -60,6 +63,9 @@ Builder は便利だけど、**毎回出すと重くなる**こともあるよ�
 
 * ✅ **名前付き引数**（すでに使ってるならOK！）
 * ✅ **Parameter Object（引数を1つのオブジェクトにまとめる）** 📦
+
+![022 parameter object](./picture/gof_cs_study_022_parameter_object.png)
+
 * ✅ **object initializer + required**（必須を言語で強制）🔒
 * ✅ **Optionsパターン**（設定値の束）⚙️
 
@@ -123,6 +129,9 @@ classDiagram
 
 ### 3) ここからが本題：Builderが“強い”条件を覚えよう💪🧱
 
+![022 builder steps](./picture/gof_cs_study_022_builder_steps.png)
+
+
 Builder を選ぶのは、だいたいこういう時👇
 
 * ✅ **段階的に組み立てたい**（途中で追加・編集したい）🧩
@@ -145,8 +154,14 @@ Builder を選ぶのは、だいたいこういう時👇
 Builder は基本こうです👇
 
 * Builder は **途中状態（mutable）** を持つ🧩
+
+![022 mutable state](./picture/gof_cs_study_022_mutable_state.png)
+
 * メソッドで値をセットし、最後に **Build() で完成品を返す**🎁
 * **Build() の中で必須チェック**して “不正な完成” を防ぐ🛡️
+
+![022 build gate](./picture/gof_cs_study_022_build_gate.png)
+
 
 ミニ構成（学習用の小さな業務モデルとしてOK）👇
 
@@ -219,6 +234,9 @@ public sealed class OrderBuilder
 
 呼び出し側が “読み物” になるのがポイント💡📖
 
+![022 fluent readability](./picture/gof_cs_study_022_fluent_readability.png)
+
+
 ```csharp
 var order = new OrderBuilder()
     .ForCustomer(customerId)
@@ -235,6 +253,9 @@ var order = new OrderBuilder()
 ### 5) .NETのBuilderで「これがBuilderか！」を体感しよう🧵✨
 
 #### ✅ StringBuilder（超定番）🧵
+
+![022 string builder ex](./picture/gof_cs_study_022_string_builder_ex.png)
+
 
 * 小さい `string` 連結を何回もやると、読みづらい＆ムダが出やすい💦
 * `StringBuilder` は **少しずつ組み立てて、最後に ToString()** で確定🎁
