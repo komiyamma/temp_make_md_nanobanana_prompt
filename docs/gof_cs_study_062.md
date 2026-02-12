@@ -48,6 +48,8 @@ flowchart LR
 
 ### 2) まず “導入前” を作る（switch版）🔥
 
+![gof_cs_study_062_switch_vs_dict](./picture/gof_cs_study_062_switch_vs_dict.png)
+
 Consoleでよくある形👇（これが増えるとツラい😵）
 
 ```csharp
@@ -93,9 +95,13 @@ while (true)
 
 #### 今回の最小設計（登場人物）🧩
 
+![gof_cs_study_062_console_invoker](./picture/gof_cs_study_062_console_invoker.png)
+
 * **Invoker（呼ぶ側）**：`CommandRunner`（コマンド名を見て実行するだけ）
 * **Receiver（実処理）**：`OrderService`（注文・支払い等の業務っぽい処理）
 * **Command（命令）**：`Func<CommandContext, string[], Task<int>>`（ただの関数！）⚡
+
+![gof_cs_study_062_func_command](./picture/gof_cs_study_062_func_command.png)
 
 ---
 
@@ -279,6 +285,8 @@ public static class Program
 
 ### 5) テストで “差し替え可能性” を守る🧪🌸
 
+![gof_cs_study_062_test_isolation](./picture/gof_cs_study_062_test_isolation.png)
+
 Console出力を `Console.Out` 直書きしてるとテストが痛いので、さっき `TextWriter` にしたのが効くよ👍✨
 
 ```csharp
@@ -343,6 +351,8 @@ public sealed class CommandRunnerTests
 ---
 
 ### 6) （発展）キューイングしたくなったら `Channel<T>` が定番📮✨
+
+![gof_cs_study_062_channel_queue](./picture/gof_cs_study_062_channel_queue.png)
 
 「コマンドを順番に処理したい」「バックグラウンドで流したい」ってなったら、.NET標準の **`System.Threading.Channels`** が使いやすいよ🌊
 （Producer/Consumerのパイプに強い！） ([Microsoft Learn][5])

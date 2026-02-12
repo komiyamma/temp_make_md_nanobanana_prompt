@@ -52,6 +52,8 @@ ICommandは `CanExecute / Execute / CanExecuteChanged` という形で定義さ�
 
 ### 1) まず「Commandの気持ち」を掴む 🧃
 
+![gof_cs_study_061_icommand_pillars](./picture/gof_cs_study_061_icommand_pillars.png)
+
 * **Clickイベント**：ボタンに「その場で処理」を書きがち
 * **Command**：
 
@@ -76,6 +78,8 @@ WPFのコマンド機構は `CommandManager` が関わっていて、`CanExecute
 ---
 
 ### 3) XAMLを書く（ボタン/メニュー/キーを同じCommandへ）🧷✨
+
+![gof_cs_study_061_input_binding](./picture/gof_cs_study_061_input_binding.png)
 
 `MainWindow.xaml` をこんな感じにします👇
 
@@ -155,6 +159,11 @@ public partial class MainWindow : Window
 
     private void PlaceOrder_CanExecute(object sender, CanExecuteRoutedEventArgs e)
     {
+```
+
+![gof_cs_study_061_validation_check](./picture/gof_cs_study_061_validation_check.png)
+
+```csharp
         // 金額が「正しく数値として読み取れて」「0より大きい」なら押せる
         e.CanExecute = TryReadAmount(out var amount) && amount > 0;
         e.Handled = true;
@@ -180,6 +189,11 @@ public partial class MainWindow : Window
         // ここでは明示的に再評価を促す🙂
         CommandManager.InvalidateRequerySuggested();
     }
+```
+
+![gof_cs_study_061_requery_pulse](./picture/gof_cs_study_061_requery_pulse.png)
+
+```csharp
 
     private bool TryReadAmount(out decimal amount)
     {
@@ -227,6 +241,8 @@ public partial class MainWindow : Window
 
   * 状態が変わったのにボタンが有効/無効切り替わらないときは、`CommandManager` 周り（再評価タイミング）を疑うと早いです。([Microsoft Learn][2])
 * **Executedで全部やり始めて太る**🐘
+
+![gof_cs_study_061_fat_executed](./picture/gof_cs_study_061_fat_executed.png)
 
   * 画面操作・入力検証・注文処理・ログ…を1メソッドに詰めると一気に読めなくなる😵
 * **例外やエラーメッセージがUI依存になりすぎる**⚠️

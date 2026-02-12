@@ -39,6 +39,8 @@ stateDiagram-v2
 
 ### 1) `foreach` の裏側をざっくり掴む 🚶‍♀️🧠
 
+![gof_cs_study_064_foreach_internals](./picture/gof_cs_study_064_foreach_internals.png)
+
 C#の `foreach` は、コレクションから **列挙子（Enumerator）をもらって**、
 `MoveNext()` で進めながら `Current` を読んでる…ってイメージだよ〜🌀
 （言語仕様としてそういう動きになるよ）([Microsoft Learn][1])
@@ -67,6 +69,8 @@ finally
 ---
 
 ### 2) `IEnumerable<T>` は「列挙子を作れるよ」の契約📜
+
+![gof_cs_study_064_ienumerable_contract](./picture/gof_cs_study_064_ienumerable_contract.png)
 
 `IEnumerable<T>` は **「私は反復できます」** の合図で、やることはほぼ1つだけ👇
 
@@ -112,6 +116,8 @@ public static IEnumerable<Order> HighValueOrders(IEnumerable<Order> source, deci
 
 #### 4-1) `File.ReadLines`：ファイルを「全部読まずに」1行ずつ📄✨
 
+![gof_cs_study_064_file_read_lines](./picture/gof_cs_study_064_file_read_lines.png)
+
 `File.ReadLines(...)` は `IEnumerable<string>` を返すよ。
 そして **列挙していく途中でファイル内容が読まれる**（＝全部まとめて読み込まない）って明記されてる🥹👍([Microsoft Learn][4])
 
@@ -143,6 +149,8 @@ foreach (var f in files)
 
 ### 5) 「lazy だけじゃない」：`OrderBy` みたいに先に全部必要な例もある🧠📏
 
+![gof_cs_study_064_orderby_barrier](./picture/gof_cs_study_064_orderby_barrier.png)
+
 遅延実行の説明の中で、`OrderBy` は **最初の要素を返す前に全体を処理（ソート）する必要がある**例として出てくるよ〜📌([Microsoft Learn][3])
 なので Iterator を見たらいつも「全部遅延だ！」と思わずに、**何の処理か**で考えるのがコツ💡
 
@@ -161,6 +169,8 @@ foreach (var f in files)
 `foreach` で回した瞬間に出たりする😇（遅延あるある）
 
 ### 落とし穴3：**複数回列挙**で、同じ処理が何回も走る（＆遅い／バグる）🐢💦
+
+![gof_cs_study_064_multiple_enumeration_trap](./picture/gof_cs_study_064_multiple_enumeration_trap.png)
 
 `IEnumerable` は、作った結果が **自動でキャッシュされない**（“Lazyみたいにキャッシュされるわけじゃない”）って説明されてるよ⚠️([Microsoft Learn][2])
 つまりこういうのは危ない👇
