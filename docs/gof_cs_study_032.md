@@ -55,6 +55,8 @@ flowchart TD
 
 ### 1) Prototype：注文テンプレを record + with で複製する 🧬✨
 
+![Prototype Pattern](./picture/gof_cs_study_032_rubber_stamp_prototype.png)
+
 Prototypeは「**同じ初期状態をコピーして量産**」したい時に便利だよ😊
 C#では record と with がめちゃ相性いい👍✨
 
@@ -106,6 +108,8 @@ var expressTemplate = baseTemplate with
 ---
 
 ### 2) Builder：注文を段階的に組み立てる 🧱🙂
+
+![Builder Pattern](./picture/gof_cs_study_032_conveyor_belt_builder.png)
 
 Builderは「引数が多い」「途中までしか決まってない」「最後にまとめて検証したい」時に強いよ💪✨
 
@@ -244,6 +248,8 @@ public sealed class OrderBuilder
 
 ### 3) Factory：支払い手段の生成を押し出す 🏭💳
 
+![Factory Pattern](./picture/gof_cs_study_032_vending_machine_factory.png)
+
 次は Factory だよ😊✨
 「支払い方法を増やすたびに、呼び出し側のswitchが増える…😇」を止めるやつ！
 
@@ -310,6 +316,8 @@ public sealed class PaymentMethodFactory
 ---
 
 ### 4) 3つを合体：注文作成サービスを作る 🔗🎉
+
+![Service Orchestration](./picture/gof_cs_study_032_conductor_service.png)
 
 ここがこの章のメインイベント〜！🎆😆
 
@@ -459,6 +467,8 @@ public class Chapter32Tests
 ---
 
 ## よくある落とし穴 ⚠️😵‍💫
+
+![God Object Anti-Pattern](./picture/gof_cs_study_032_god_builder_robot.png)
 
 * **Prototypeに可変Listを持たせて地獄** 😇
 

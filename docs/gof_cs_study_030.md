@@ -22,6 +22,8 @@
 
 ### 1) まず、Singletonが“解こうとしている困りごと”を1つだけ決める🧩
 
+![Three Reasons for Singleton](./picture/gof_cs_study_030_three_reasons.png)
+
 Singletonが出てくるのは、だいたいこのどれかです👇
 
 * **重いものを何度も作りたくない**（初期化が高コスト）🐘💦
@@ -50,6 +52,8 @@ flowchart TD
 ---
 
 ### 2) 「本当に“1つ”である必要ある？」をチェックする✅🔍
+
+![Valid vs Invalid Singleton](./picture/gof_cs_study_030_valid_vs_invalid.png)
 
 Singletonにしがちなもの、実はこう分けられます👇
 
@@ -82,6 +86,8 @@ Singletonにしがちなもの、実はこう分けられます👇
 
 ### 4) 次に「DIのSingletonライフタイム」で済まないか考える🔌🧩
 
+![DI Singleton Lifetime](./picture/gof_cs_study_030_di_vending_machine.png)
+
 Singletonの“1個だけ”って、**実はDIコンテナの得意分野**です🙂
 しかも、DIにすると嬉しいことが多い！🎉
 
@@ -93,6 +99,8 @@ Singletonの“1個だけ”って、**実はDIコンテナの得意分野**で�
 
 ### 5) 設定は `IOptions<T>` を優先して考える📌✨
 
+![IOptions vs Global Config](./picture/gof_cs_study_030_notebook_vs_billboard.png)
+
 「設定をどこでも参照したい」→ Singleton にしがちだけど…
 設定は `IOptions<T>`（Optionsパターン）で扱うのが定番です🙂💕
 
@@ -103,6 +111,8 @@ Singletonの“1個だけ”って、**実はDIコンテナの得意分野**で�
 ---
 
 ## よくある落とし穴 🕳️😵
+
+![Global State Side Effects](./picture/gof_cs_study_030_magic_potion_chaos.png)
 
 ### 落とし穴1：Singletonが“グローバル変数”になる🧨
 
@@ -132,6 +142,8 @@ Singletonの“1個だけ”って、**実はDIコンテナの得意分野**で�
 題材は“注文番号の発行”にしよう🛒🔢（ありがちなやつ！）
 
 ### 演習A：危ないSingleton案を作って、問題点を言語化する😈➡️📝
+
+![Testing Difficulty](./picture/gof_cs_study_030_cant_reset_machine.png)
 
 1. まず “ありがちな” Singleton を書いてみる（あえて！）👇
 

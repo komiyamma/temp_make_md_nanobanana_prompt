@@ -21,6 +21,8 @@
 
 ### 1) まず「ズレ」を見つけよう🔎💭
 
+![Adapter Mismatch](./picture/gof_cs_study_034_square_peg_round_hole.png)
+
 Adapterが活躍するズレはだいたいこのへん👇
 
 * **型のズレ**：欲しいのは `TextReader` なのに手元にあるのは `Stream` みたいなやつ📎
@@ -72,6 +74,8 @@ classDiagram
 
 ### 3) Adapterは“翻訳だけ”に徹する📘➡️📗
 
+![Adapter Responsibility](./picture/gof_cs_study_034_translator_pure.png)
+
 Adapterの中でやることは基本これだけ👇
 
 * 引数を変換する（`Notification` → `to/subject/body`）✉️
@@ -86,6 +90,8 @@ Adapterの中でやることは基本これだけ👇
 
 ### 4) まずは “オブジェクトAdapter（合成）” で作るのがC#定番🧱✨
 
+![Adapter Composition](./picture/gof_cs_study_034_adapter_composition_chest.png)
+
 C#は多重継承がないから、だいたい **合成（持つ）** が自然だよ😊
 
 * ✅ AdapterがAdapteeをフィールドで持つ（コンストラクタ注入）
@@ -95,6 +101,8 @@ C#は多重継承がないから、だいたい **合成（持つ）** が自然
 ---
 
 ### 5) .NET標準の “Adapterっぽい例” を体で覚える🧠💡
+
+![Stream Adapter](./picture/gof_cs_study_034_water_filter_stream.png)
 
 ここで感覚を掴むと、実務で見つけやすいよ✨
 
@@ -213,6 +221,8 @@ Console.WriteLine(all);
 ---
 
 ## サンプル：外部APIのDTOをドメイン型へ変換（JSONの“形ズレ”）🌐📄🔁
+
+![DTO to Domain Adapter](./picture/gof_cs_study_034_json_unpacking_dto.png)
 
 外部APIってだいたい DTO だよね。
 でもアプリの中心（ドメイン）は、**わかりやすい型**で扱いたい✨
