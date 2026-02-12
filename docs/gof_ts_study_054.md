@@ -22,6 +22,10 @@ GoFのProxyは“概念”で、実装方法はいろいろあるけど、TypeSc
 
 ## Proxyが効く代表4つ（まずコレだけ覚えよ）🧠✨
 
+![Cache Clerk](./picture/gof_ts_study_054_cache_clerk.png)
+
+
+
 | 代表用途                     | ひとことで             | ありがたみ          |
 | ------------------------ | ----------------- | -------------- |
 | Virtual（遅延）🐢            | 重いものは“必要になってから”作る | 起動が速い・無駄が減る    |
@@ -35,6 +39,10 @@ GoFのProxyは“概念”で、実装方法はいろいろあるけど、TypeSc
 
 ## 「Proxyいま欲しいかも…」のサイン🚨
 
+![Bouncer Rate Limit](./picture/gof_ts_study_054_bouncer_limit.png)
+
+
+
 * APIアクセスが多くて、**同じリクエストを何回も叩いてる**😵‍💫
 * 外部APIに負荷をかけたくないから、**レート制限**したい🚦
 * どこから何回呼ばれたか分からなくて、**ログ入れたい**🕵️
@@ -43,6 +51,10 @@ GoFのProxyは“概念”で、実装方法はいろいろあるけど、TypeSc
 ---
 
 ## ハンズオン🛠️：API呼び出しをProxyで「キャッシュ＋レート制限」🗃️🚦
+
+![Lazy Construction](./picture/gof_ts_study_054_lazy_construction.png)
+
+
 
 ここでは **関数**を `Proxy` で包むよ✨
 関数Proxyは `apply` トラップで「呼び出し」を横取りできる！ ([MDNウェブドキュメント][1])
@@ -161,6 +173,10 @@ demo().catch((e) => console.error("ERROR:", e.message));
 
 ## 仕組みをもう一段だけ理解🧠✨
 
+![Logging Camera](./picture/gof_ts_study_054_logging_camera.png)
+
+
+
 ## `apply` トラップって何？🔁
 
 * 「関数が呼ばれた瞬間」を横取りする入口だよ🚪
@@ -173,6 +189,10 @@ TypeScript側でも `ProxyHandler<T>` に `apply` が定義されていて、`Pr
 ## よくある落とし穴🕳️（ここ超だいじ！）
 
 ## 1) Proxyは“魔法”っぽく見えて、読みづらくなる🧙‍♀️💦
+
+![Magic Wizard Warning](./picture/gof_ts_study_054_magic_wizard.png)
+
+
 
 Proxyは便利だけど、やりすぎると「どこで何してるの？」ってなるやつ😵
 なので、**範囲を狭く**（例：I/O境界の関数だけ）がおすすめ✨

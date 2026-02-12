@@ -20,6 +20,10 @@
 
 ## 1) 今日の結論💡「Strategyが純粋なら、テストは呼ぶだけ」
 
+![Pure Machine](./picture/gof_ts_study_059_pure_machine.png)
+
+
+
 Strategy をこうする👇
 
 * 入力：注文データ（order）と計算済み小計（subtotal）
@@ -168,6 +172,10 @@ Node の組み込みテストは `node:test` を使うよ（Node 20 で stable�
 
 ## `src/discount.test.ts`
 
+![Clock Injection](./picture/gof_ts_study_059_clock_injection.png)
+
+
+
 ```ts
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -263,6 +271,10 @@ Node のテストランナーは標準で使えるけど、TypeScript はその�
 
 ## 6) 境界値テストの作り方🧊（Strategyはここが気持ちいい）
 
+![Ruler Boundary](./picture/gof_ts_study_059_ruler_boundary.png)
+
+
+
 「戦略が壊れやすい境界」を狙うのがコツ🎯
 
 ## よく効く境界値リスト🧪
@@ -281,6 +293,10 @@ Node のテストランナーは標準で使えるけど、TypeScript はその�
 
 ## 7) つまずき回避💡（Strategyが“テストしにくい子”になる原因）
 
+![Simple Object vs Fake](./picture/gof_ts_study_059_simple_object.png)
+
+
+
 ## ❌ ありがち地雷💣 → ✅ こう直す
 
 * ❌ `Date.now()` を Strategy 内で使う → ✅ `createdAt` を Order に入れて注入🕒
@@ -291,6 +307,10 @@ Node のテストランナーは標準で使えるけど、TypeScript はその�
 ---
 
 ## 8) 「戦略がI/Oし始めたら」分離ライン🚧（超大事）
+
+![Wall Separation](./picture/gof_ts_study_059_wall_separation.png)
+
+
 
 たとえば「割引率が管理画面で変わる」みたいになると、Strategy が設定取得をしたくなるよね😵‍💫
 でも **Strategy は計算担当に固定**するのが勝ち✨
