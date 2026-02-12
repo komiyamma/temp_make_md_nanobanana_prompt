@@ -14,6 +14,9 @@
 
 ## 📚まずは超ざっくり：モジュールって何？
 
+![lego_modules](./picture/tdd_ts_study_010_lego_modules.png)
+
+
 **モジュール＝「別ファイルにある機能を、importして使えるしくみ」**だよ📦
 TypeScriptのモジュールは基本 **ESM（ECMAScript Modules）** の `import/export` で考えるのが今どきの勝ち筋✨ ([nodejs.org][1])
 
@@ -40,6 +43,9 @@ TypeScriptのモジュールは基本 **ESM（ECMAScript Modules）** の `impor
 ---
 
 ## 🧪基本フォーム：export / import（ここだけ固定でOK）
+
+![named_vs_default_export_boxes](./picture/tdd_ts_study_010_named_vs_default_export_boxes.png)
+
 
 ### ① “名前付きexport”が基本（おすすめ）🌟
 
@@ -84,6 +90,9 @@ import add from "./math/add";
 
 ### ③ “型だけimport”は、はっきり書くと強い🛡️
 
+![import_type_ghost](./picture/tdd_ts_study_010_import_type_ghost.png)
+
+
 TypeScriptは「型のためだけのimport」を自動で消してくれるけど、**明示すると事故が減る**よ✨
 `import type` は **出力JSに残らない（＝実行時には存在しない）** って約束🧠 ([typescriptlang.org][3])
 
@@ -97,6 +106,9 @@ import { add } from "./math/add";
 ---
 
 ## 🧱“モジュール解決”で詰まらないための最小知識
+
+![module_resolution_gps](./picture/tdd_ts_study_010_module_resolution_gps.png)
+
 
 ここが詰まりポイントの正体だよ〜！🕵️‍♀️
 
@@ -130,6 +142,9 @@ console.log(calcTaxIncluded(1000, 0.1)); // 1100
 ---
 
 ### Step 2：フォルダに“窓口（index）”を作る（ちょい整理）🪟
+
+![index_file_receptionist](./picture/tdd_ts_study_010_index_file_receptionist.png)
+
 
 ```ts
 // src/price/index.ts
@@ -172,6 +187,9 @@ npx tsc --noEmit
 ---
 
 ### 2) Nodeで `ERR_MODULE_NOT_FOUND` / 拡張子のせい？😵
+
+![extension_hell_passport](./picture/tdd_ts_study_010_extension_hell_passport.png)
+
 
 NodeのESMは **相対importに拡張子が必要**（例：`./a.js`） ([nodejs.org][1])
 TypeScriptのドキュメント例も、`.ts` から `./module.js` をimportする形で書かれてたりするよ📘 ([typescriptlang.org][3])

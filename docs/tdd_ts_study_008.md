@@ -16,6 +16,9 @@ TDDって「サクサク回せる環境」が命だよね🧪💨 なのでこ�
 
 ## 1) まず結論：2026/01/19 時点のおすすめ 🌟
 
+![lts_vs_current](./picture/tdd_ts_study_008_lts_vs_current.png)
+
+
 ## ✅ Node.js：**LTS（安定版）を使う**
 
 * Node は **Current（最新）** と **LTS（安定）** があるよ
@@ -31,6 +34,9 @@ TDDって「サクサク回せる環境」が命だよね🧪💨 なのでこ�
 
 ## 2) “安定”って具体的に何するの？🧠💡
 
+![global_vs_local](./picture/tdd_ts_study_008_global_vs_local.png)
+
+
 ここが超たいじ！👇
 
 ## ✅ やることは3つだけ
@@ -43,10 +49,16 @@ TDDって「サクサク回せる環境」が命だよね🧪💨 なのでこ�
 
 ## 3) 🧪 手を動かす：バージョンを固定して「環境差ゼロ」を作る
 
+![pinning_versions](./picture/tdd_ts_study_008_pinning_versions.png)
+
+
 この教材では、Windows でラクに固定できる **Volta** を推すよ〜🤖✨
 （公式も Windows は winget をおすすめしてるよ📌） ([Volta][4])
 
 ## 3-1) Volta を入れる（バージョン管理の土台）🧰
+
+![volta_tool](./picture/tdd_ts_study_008_volta_tool.png)
+
 
 PowerShell（またはターミナル）で：
 
@@ -153,6 +165,9 @@ npm run typecheck
 
 ## 5) つまずきポイント集（ここで詰まりがち🥺）🧯
 
+![environment_consistency](./picture/tdd_ts_study_008_environment_consistency.png)
+
+
 ## 🧨 (A) `volta` が認識されない
 
 * **VS Code を再起動**（ターミナルだけじゃダメな時ある）🔁
@@ -172,6 +187,9 @@ npm run typecheck
 ---
 
 ## 6) 🤖 AI の使い方（この章の“勝ちパターン”）
+
+![ai_troubleshooting](./picture/tdd_ts_study_008_ai_troubleshooting.png)
+
 
 AI は「原因切り分け係」にすると強いよ💪✨
 （丸コピ実装係にすると、逆に沼りやすい🥺）

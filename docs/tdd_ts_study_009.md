@@ -25,15 +25,24 @@ TypeScriptは、コードを読むときに「どう解釈する？どこまで�
 
 ## ✅この章の結論（最小セットで大事なのはココだけ！）💡
 
+![strict_master_switch](./picture/tdd_ts_study_009_strict_master_switch.png)
+
+
 1. **`"strict": true`**（まずON）
    　→ strict は“まとめスイッチ”で、将来のTSアップデートでチェックが増えることもあるよ（＝新しい型エラーが出ることがある）🧠✨ ([typescriptlang.org][1])
 
 2. **`module` と `moduleResolution` を「実行環境」に合わせる**
 
+![module_resolution_plugs](./picture/tdd_ts_study_009_module_resolution_plugs.png)
+
+
 * Node寄りなら **`nodenext`** が基本になりやすい（公式もそう案内してるよ） ([typescriptlang.org][2])
 * バンドラー（Vite/Vitest）寄りなら **`bundler`** が楽（相対importで拡張子を強制しない、など） ([typescriptlang.org][3])
 
 3. **`target` は今のJSに合わせる（ES2023あたり）**
+
+![target_es2023_archer](./picture/tdd_ts_study_009_target_es2023_archer.png)
+
    TypeScript 5.9 だと Node向け設定として **`node20`** みたいな“安定モード”も用意されてるよ（`target es2023` を暗黙に使う、など）🧩 ([typescriptlang.org][4])
    （※2026-01-19 時点の安定版は npm 上は 5.9 系） ([NPM][5])
 
@@ -126,6 +135,9 @@ npm run typecheck
 
 ## 🧪ミニ演習：strict が“守ってくれる感じ”を体験しよ🛡️✨
 
+![strict_guard_any](./picture/tdd_ts_study_009_strict_guard_any.png)
+
+
 ### ❌わざと「strict に怒られる」コードを置く（体験が大事！）😈
 
 `src/demo.ts` を作ってこれ👇
@@ -175,6 +187,9 @@ export function priceLabel(yen: number): string {
 * Node寄りなら `NodeNext`（Nodeの挙動に合わせる） ([typescriptlang.org][2])
 
 ### ② Windowsでは動くのにCIで落ちる😇
+
+![case_sensitivity_teacher](./picture/tdd_ts_study_009_case_sensitivity_teacher.png)
+
 
 だから **`forceConsistentCasingInFileNames: true`** は入れとくのが安心だよ🧷
 （Windowsは大文字小文字に甘い→CIで爆発💥を予防）
