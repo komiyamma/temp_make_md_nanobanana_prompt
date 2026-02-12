@@ -18,6 +18,8 @@
 
 ---
 
+![Three Strategies Map](./picture/tdd_ts_study_027_three_strategies_map.png)
+
 ## 1) 3つの手を“1枚の地図”にする🗺️✨
 
 ## 🩹 仮実装（Fake it）
@@ -37,6 +39,8 @@
   → *“テストで約束を置いてから、迷いなく実装する”* のがコツ💖
 
 ---
+
+![Decision Checklist](./picture/tdd_ts_study_027_decision_checklist.png)
 
 ## 2) 「明白」かどうかの判断チェック✅🧠
 
@@ -66,6 +70,8 @@
 * 0円なら0pt、マイナスはエラーにする🚫
 
 ---
+
+![Hands-on Step 1 Tests](./picture/tdd_ts_study_027_hands_on_step1.png)
 
 ## 🧪 Step 1：まずテストで“約束”を置く（Red）🚦
 
@@ -99,6 +105,8 @@ describe("calcPoints", () => {
 * こうすると「一般化の方向」がブレにくい👍
 
 ---
+
+![Straightforward Logic](./picture/tdd_ts_study_027_straightforward_logic.png)
 
 ## 🌼 Step 2：明白な実装でいく（Green）✅
 
@@ -146,6 +154,8 @@ function assertNonNegative(value: number): void {
 
 ## 4) 同じお題を「別手」でやって比較してみよ🧪🔍（章のメイン！）
 
+![Comparison Fake It](./picture/tdd_ts_study_027_comparison_fake_it.png)
+
 ## 🩹仮実装でやると…
 
 * 1本目（250円→2pt）だけなら、こう書けちゃう：
@@ -160,6 +170,8 @@ export function calcPoints(_: number): number {
 次のテスト（99円→0pt）で死ぬから、そこで一般化する流れ。
 
 ---
+
+![Comparison Triangulation](./picture/tdd_ts_study_027_comparison_triangulation.png)
 
 ## 📐三角測量でやると…
 
@@ -180,6 +192,8 @@ export function calcPoints(_: number): number {
 （ただしテストは置く！ここ大事💘）
 
 ---
+
+![YAGNI Warning](./picture/tdd_ts_study_027_yagni_warning.png)
 
 ## 5) ありがち事故まとめ🚧🫠
 

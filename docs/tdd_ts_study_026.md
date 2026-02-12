@@ -9,6 +9,8 @@
 
 ---
 
+![Triangulation Concept](./picture/tdd_ts_study_026_triangulation_concept.png)
+
 ## 📌 三角測量ってなに？（超かんたん）
 
 TDDって、最初は「通すための超ベタ実装（仮実装）」でもOKだよね🩹
@@ -26,10 +28,14 @@ TDDって、最初は「通すための超ベタ実装（仮実装）」でもOK
 
 ## ✅ 2例目の“いい選び方” 3ルール 📏✨
 
+![Rule 1 Different Result](./picture/tdd_ts_study_026_rule_different_result.png)
+
 ### ルール1：**結論（期待値）が変わる例**を選ぶ
 
 同じ結果になる例を追加しても、ベタ実装が壊れない＝一般化が起きない😿
 👉「送料500円」→ 次は「送料0円」みたいに、**結果が変わる**のが強い💥
+
+![Rule 2 One Variable](./picture/tdd_ts_study_026_rule_one_variable.png)
 
 ### ルール2：**変える要素は1つだけ**
 
@@ -78,6 +84,8 @@ export function calcShippingFee(subtotalYen: number): number {
 
 ---
 
+![Boundary Break](./picture/tdd_ts_study_026_boundary_break.png)
+
 ### ② 2本目のテスト：境界をまたいで「0円」を要求する🆓💥
 
 ここが **三角測量のキモ**📐✨
@@ -101,6 +109,8 @@ describe("calcShippingFee", () => {
 この時点で、さっきの仮実装は確実に落ちるよね😄（ずっと500返してるから）
 
 ---
+
+![Generalization Step](./picture/tdd_ts_study_026_generalization_step.png)
 
 ### ③ 最小の一般化：条件分岐にする（必要な分だけ）🌿
 
@@ -135,6 +145,8 @@ it("小計が境界の1円下なら送料は500円", () => {
 
 ---
 
+![AI Generator](./picture/tdd_ts_study_026_ai_generator.png)
+
 ## 🤖 AIの使いどころ（ズルじゃないよ！）😎💞
 
 AIは **“次の一手を小さくする”** のがめちゃ得意！✨
@@ -148,6 +160,8 @@ AIは **“次の一手を小さくする”** のがめちゃ得意！✨
 ※“仕様そのもの”をAIに決めさせるんじゃなくて、**選択肢を増やす係**にするのが安定だよ🤖✨
 
 ---
+
+![Anti-Pattern Too Much](./picture/tdd_ts_study_026_anti_pattern_too_much.png)
 
 ## ✅ ありがちな失敗あるある（先に潰そ）🧯💥
 

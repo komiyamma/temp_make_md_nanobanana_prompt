@@ -17,6 +17,8 @@
 
 ## 📚 学ぶこと（超重要ポイント3つ）📌
 
+![Order Dependency](./picture/tdd_ts_study_023_order_dependency.png)
+
 ### 1) 「順序依存」ってなに？🧩
 
 **テストAが先に実行される前提**で、テストBがこっそり成立してる状態😇
@@ -29,6 +31,8 @@
 
 ---
 
+![Parallel Execution](./picture/tdd_ts_study_023_parallel_execution.png)
+
 ### 2) なぜ今すぐ直すべき？（最新の事情）⚡
 
 Vitestは **デフォで「テストファイルは並列」**で走るよ〜🏃‍♀️🏃‍♂️💨
@@ -39,6 +43,8 @@ Vitestは **デフォで「テストファイルは並列」**で走るよ〜�
 順序依存を見つける最強のライト ensure 🔥 ([Vitest][2])
 
 ---
+
+![One Test One World](./picture/tdd_ts_study_023_one_test_one_world.png)
 
 ### 3) 独立性の合言葉🪄
 
@@ -51,6 +57,8 @@ Vitestは **デフォで「テストファイルは並列」**で走るよ〜�
 ---
 
 ## 🧪 手を動かす：わざと順序依存を作って→直す💥➡️✅
+
+![Shared State Issue](./picture/tdd_ts_study_023_shared_state_issue.png)
 
 ### ステップ0：わざとダメな実装（共有状態）を作る😈
 
@@ -92,6 +100,8 @@ describe("cart（わざと順序依存）", () => {
 
 ---
 
+![Shuffle Execution](./picture/tdd_ts_study_023_shuffle_execution.png)
+
 ### ステップ1：壊れ方を体験する😵‍💫（超大事）
 
 * VS Codeで **2個目のテストだけ実行**してみてね👉
@@ -120,6 +130,8 @@ npm run test:shuffle
 ---
 
 ## ✅ 直し方（王道）：状態を「外」に出して、毎回作り直す👶✨
+
+![Fresh Creation](./picture/tdd_ts_study_023_fresh_creation.png)
 
 ### ステップ2：Cartを「作る関数」にする（独立性の基本）🧱
 
@@ -177,6 +189,8 @@ describe("cart（独立になった✨）", () => {
 * テストの並列実行でも壊れにくい✅（ファイル並列が基本だからね） ([Vitest][1])
 
 ---
+
+![Cleanup Teardown](./picture/tdd_ts_study_023_cleanup_teardown.png)
 
 ## 🧼 よくある「漏れ」パターン集（ここ超あるある）🥹
 

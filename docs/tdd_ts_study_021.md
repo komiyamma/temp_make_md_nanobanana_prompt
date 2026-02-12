@@ -25,6 +25,8 @@
 
 ---
 
+![Heavy Arrange Pattern](./picture/tdd_ts_study_021_arrange_heavy_pattern.png)
+
 ## 😵 Arrangeが重くなる典型パターン（あるある）
 
 1. **関係ない項目まで全部埋めてる**
@@ -37,6 +39,8 @@
 ---
 
 ## ✅ まず覚える合言葉（超大事）🪄
+
+![Story Data](./picture/tdd_ts_study_021_story_data.png)
 
 ### 🧸「Arrangeはデータ入力じゃなくて、物語（ストーリー）」
 
@@ -52,12 +56,16 @@
 
 ## 🧠 テストデータ最小化の3つの技（これだけで強い）💪✨
 
+![Scissors Cut](./picture/tdd_ts_study_021_scissors_cut.png)
+
 ### 技①：関係あるフィールドだけにする（まず削る）✂️
 
 「このテストで使う情報って何？」をはっきりさせよう🙂
 **使ってないフィールドは作らない！**
 
 ---
+
+![Pick Type](./picture/tdd_ts_study_021_pick_type.png)
 
 ### 技②：入力の型（形）を小さくする（設計の最短ルート）🧩✨
 
@@ -67,6 +75,8 @@
 👉 対策：`Pick` を使って **必要な情報だけ受け取る関数**にする！
 
 ---
+
+![Builder Pattern](./picture/tdd_ts_study_021_builder_pattern.png)
 
 ### 技③：データビルダー（デフォルト＋上書き）で書く🧸🛠️
 
@@ -220,6 +230,8 @@ describe("isFreeShipping", () => {
 ---
 
 ## 🧠 どこまで抽出していいの？（ルールあるよ📏）
+
+![Rule of Three](./picture/tdd_ts_study_021_rule_of_three.png)
 
 ## 📏 ルール・オブ・スリー（3回出たら抽出）✨
 

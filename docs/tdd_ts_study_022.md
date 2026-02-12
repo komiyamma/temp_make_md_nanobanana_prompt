@@ -9,6 +9,8 @@
 
 ---
 
+![Parameterization Concept](./picture/tdd_ts_study_022_parameterization_concept.png)
+
 ## 🌱 まずイメージ：こういう時に効く！
 
 たとえばこんなテスト👇
@@ -27,6 +29,8 @@
 （Vitestでも `test.each` / `it.each` が公式に用意されてるよ🧪） ([Vitest][1])
 
 ---
+
+![Suitable vs Unsuitable](./picture/tdd_ts_study_022_suitable_vs_unsuitable.png)
 
 ## 🧠 どこまでパラメータ化する？（やりすぎ防止🚧）
 
@@ -47,6 +51,8 @@
 👉 コツは **「1つのテスト＝1つの約束」**のまま、ケースだけ増やすことだよ🫶✨
 
 ---
+
+![Test Each Loop](./picture/tdd_ts_study_022_test_each_loop.png)
 
 ## 🧪 Vitestのパラメータ化：まずは王道 `test.each` 💖
 
@@ -106,6 +112,8 @@ describe('gradeOf', () => {
 
 ---
 
+![Boundary Values](./picture/tdd_ts_study_022_boundary_values.png)
+
 ## ③ ここからが第22章：境界値を “5ケース追加” して強くする💪🧪
 
 境界値って、たとえばこういう「段差の両側」だよね👇
@@ -139,6 +147,8 @@ describe('gradeOf', () => {
 })
 ```
 
+![Satisfies Guard](./picture/tdd_ts_study_022_satisfies_guard.png)
+
 ### 💡 `satisfies` を使う理由（地味に超うれしい）
 
 * ケース表の `expected` を、`Grade` 以外にすると **その場で型エラー**にしてくれる✅
@@ -146,6 +156,8 @@ describe('gradeOf', () => {
   `satisfies` は「型を保ったまま、条件だけ満たしてるかチェック」できる書き方としてよく使われるよ ([Zenn][2])
 
 ---
+
+![Named Cases Label](./picture/tdd_ts_study_022_named_cases_label.png)
 
 ## ④ もっと読みやすくする：ケースに “名前” を付ける📝💕
 
@@ -179,6 +191,8 @@ describe('gradeOf', () => {
 これ、落ちた時にログがめっちゃ親切になるよ〜🥹✨
 
 ---
+
+![Test For Wrapper](./picture/tdd_ts_study_022_test_for_wrapper.png)
 
 ## ⑤ おまけ：`test.for` って何？（ちょい発展⭐️）
 
