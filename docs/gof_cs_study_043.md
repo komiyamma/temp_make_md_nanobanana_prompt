@@ -5,6 +5,10 @@
 Decorator（デコレータ）は、**既存の処理（本体）を壊さずに**、あとから「機能を上乗せ」していくための考え方だよ〜😊✨
 ポイントは **継承じゃなくて“包む（wrap）”** こと！
 
+![Layers of Clothing](./picture/gof_cs_study_043_layers_clothing.png)
+
+
+
 .NETだと `Stream` 周りが超わかりやすい例で、`BufferedStream`（バッファ）や `GZipStream`（圧縮）みたいに、**別のStreamを包んで機能を足す**のが定番だよ💧🧵 ([hanachiru-blog.com][1])
 
 ---
@@ -75,12 +79,20 @@ Decoratorは **本体と同じ契約**（interface）を守るのが大事💡
 Decoratorの形はいつもシンプル！
 
 * 自分も `INotificationSender` を実装する
+
+![Onion Core](./picture/gof_cs_study_043_onion_core.png)
+
+
 * 中に `INotificationSender inner` を持つ
 * 基本は **innerに委譲して、その前後に処理を足す** ✨
 
 ---
 
 ### 4) 「足したい機能」ごとに1つずつ分ける🍰➡️🍰🍰
+
+![Modular Tools](./picture/gof_cs_study_043_modular_tools.png)
+
+
 
 Decoratorは **1クラス=1つの“付け足し”** が読みやすいよ😊
 （ログ＋計測を1クラスにまとめると、後で外したい時に困りがち💦）
@@ -90,6 +102,10 @@ Decoratorは **1クラス=1つの“付け足し”** が読みやすいよ😊
 ### 5) 組み合わせは“順番”が命🧩🔁
 
 包む順番で意味が変わることがあるよ⚠️
+
+![Order Matters](./picture/gof_cs_study_043_order_shoes.png)
+
+
 
 * `Stream` だと **圧縮→暗号化** と **暗号化→圧縮** は全然ちがう（暗号化するとランダムっぽくなるから圧縮しにくい、など）🗜️🔐
 * ログとリトライも、どっちを外側に置くかでログ量が変わる📝🔁
@@ -174,6 +190,9 @@ public sealed class EmailNotificationSender : INotificationSender
 }
 
 // Decorator（ログを足す）
+
+
+
 public sealed class LoggingNotificationSender : INotificationSender
 {
     private readonly INotificationSender _inner;
@@ -240,6 +259,7 @@ public static class Demo
     }
 }
 ```
+![Logger Gate](./picture/gof_cs_study_043_logger_gate.png)
 
 ---
 

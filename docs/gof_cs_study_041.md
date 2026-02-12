@@ -69,6 +69,10 @@ classDiagram
 * `GetFileSystemInfos()`：配列で一括取得（`FileSystemInfo[]`）([Microsoft Learn][3])
 
 つまり、呼び出し側は **「それがファイルかフォルダか」だけを必要なときに見分ければOK**。
+
+![Blind Handling](./picture/gof_cs_study_041_blind_handling.png)
+
+
 構造（ツリー）を “同じ扱い” に近づけられるってことだね🙂🌿
 
 ---
@@ -79,6 +83,10 @@ classDiagram
 
 * 子要素は `FileSystemInfo` として受け取る（= Component）
 * `DirectoryInfo` だったら再帰（= Compositeとして子へ）
+
+![Traversal Explorer](./picture/gof_cs_study_041_traversal_explorer.png)
+
+
 * `FileInfo` なら表示だけ（= Leaf）
 
 ```csharp
@@ -114,7 +122,10 @@ public static class Program
                 // 取得したメタ情報が古い可能性があるので更新（必要なときだけでOK）
                 entry.Refresh();
 
-                // ジャンクション/シンボリックリンク等で無限ループしやすいので軽く回避
+                // ジャンクション/シンボリックリンク等で無限ループしやすいので
+
+
+軽く回避
                 if ((entry.Attributes & FileAttributes.ReparsePoint) != 0)
                 {
                     Console.WriteLine($"{Indent(depth + 1)}🪝 {entry.Name}（リンク系っぽいのでスキップ）");
@@ -154,6 +165,7 @@ public static class Program
     private static string Indent(int depth) => new string(' ', depth * 2);
 }
 ```
+![Infinite Loop](./picture/gof_cs_study_041_infinite_loop.png)
 
 `DirectoryInfo.Exists` で存在確認できるよ([Microsoft Learn][4])。
 あと `FileSystemInfo.Attributes` を見るときは、取得した値がキャッシュされることがあるので、必要なら `Refresh()` を使うのが安心🙆‍♀️([Microsoft Learn][5])
@@ -165,6 +177,10 @@ public static class Program
 Compositeが嬉しいのは、「**構造（ツリー）** と **操作（やりたいこと）** を分けやすい」こと！
 
 たとえば「最終更新が古いものだけ見たい」ってとき👇
+
+![Filter Sieve](./picture/gof_cs_study_041_filter_sieve.png)
+
+
 `LastWriteTimeUtc` も `FileSystemInfo` 側にあるから、ファイル/フォルダを同じ目線で扱えるよ✨([Microsoft Learn][6])
 
 * **同じ型で受ける**（= `FileSystemInfo`）
@@ -184,7 +200,11 @@ Compositeが嬉しいのは、「**構造（ツリー）** と **操作（やり
 
   * 件数が多いところで強い💪
 
-「まず1件だけ探して見つかったら止めたい」みたいなときは、`Enumerate...` の方が相性いいことが多いよ😊
+「まず1件だけ探して見つかったら止めたい」みたいなときは
+
+![Enumerate vs Get](./picture/gof_cs_study_041_enumerate_vs_get.png)
+
+、`Enumerate...` の方が相性いいことが多いよ😊
 
 ---
 

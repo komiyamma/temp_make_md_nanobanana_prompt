@@ -14,6 +14,10 @@ Composite（コンポジット）は、**ツリー構造（木構造）**を「�
 
 * 呼び出し側の `if` / `switch` を減らして、**“同じ操作”で処理できる**ようにする🙆‍♀️
 
+![Uniform Treatment](./picture/gof_cs_study_040_uniform_treatment.png)
+
+
+
 （ちなみに今どきの学習環境は .NET 10 が軸で、C# 14 もその上でサポートされてるよ📦✨）([Microsoft Learn][1])
 
 ---
@@ -36,6 +40,10 @@ Composite（コンポジット）は、**ツリー構造（木構造）**を「�
 Compositeが必要になる典型はこれ👇
 
 > 「単品」と「まとめ」が混ざってるのに、呼び出し側で毎回分岐しててつらい🥲
+
+![Switch Mess](./picture/gof_cs_study_040_switch_mess.png)
+
+
 
 例：明細の合計を出したいのに…
 
@@ -85,6 +93,10 @@ Leafは「子を持たない」ので、合計は単純だよ🙂
 
 Compositeは自分の中に子（Component）を持って、同じ操作を子に投げるよ✨
 この **“再帰っぽさ”** がCompositeの気持ちよさポイント🌳💕
+
+![Recursive Structure](./picture/gof_cs_study_040_recursive_tree.png)
+
+
 
 ---
 
@@ -151,9 +163,13 @@ public static class Demo
 
         // cart が「単品」でも「セット」でも、同じ GetTotal() でOK✨
         return cart.GetTotal();
+
+
+
     }
 }
 ```
+![Total Flow](./picture/gof_cs_study_040_total_flow.png)
 
 ポイント🎀
 
@@ -168,6 +184,10 @@ Compositeの発想は、フォルダ階層みたいな世界と相性がいい�
 .NETのライブラリも毎年いろいろ強化されてるから、公式の “What’s new” を追う習慣があると強い💪📚([Microsoft Learn][2])
 
 「ツリーを同じ扱いにする」ノリだけ、`DirectoryInfo` で雰囲気を味わうならこんな感じ👇
+
+![Folder Analogy](./picture/gof_cs_study_040_folder_analogy.png)
+
+
 
 ```csharp
 using System;

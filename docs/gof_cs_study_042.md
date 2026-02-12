@@ -46,6 +46,9 @@ public static decimal CalcTotal(object menu)
     if (menu is MenuItem item) return item.Price;
 
     if (menu is MenuSet set)
+
+
+
     {
         decimal total = 0;
         foreach (var x in set.Items)
@@ -56,6 +59,7 @@ public static decimal CalcTotal(object menu)
     throw new InvalidOperationException("Unknown menu type");
 }
 ```
+![Switch Hell](./picture/gof_cs_study_042_switch_hell.png)
 
 ポイントはここ👇
 
@@ -99,11 +103,15 @@ classDiagram
     }
     
     IMenuComponent <|.. MenuItem
+
+
+
     IMenuComponent <|.. MenuGroup
     MenuGroup o-- IMenuComponent : Contains
     
     note for IMenuComponent "どれでも GetPrice() OK!"
 ```
+![Common Interface](./picture/gof_cs_study_042_common_interface.png)
 
 ---
 
@@ -186,11 +194,19 @@ var special = new MenuGroup("スペシャル🍰")
     .Add(new MenuItem("デザート", 300m));
 
 Console.WriteLine(special.GetPrice()); // 1400
+
+
+
 ```
+![Price Aggregation](./picture/gof_cs_study_042_coins_rolling.png)
 
 ---
 
 ### 6) 表示（ツリーの再帰）も“同じ扱い”でできる 📜✨
+
+![Pretty Print](./picture/gof_cs_study_042_pretty_print.png)
+
+
 
 「どのノードでも子を列挙できる」から、表示も素直に書けるよ〜😊
 
@@ -225,6 +241,10 @@ public static class MenuPrinter
 ### 7) テストで「合計が正しい」を固定する 🧪✅
 
 MSTestは標準で扱いやすいよ〜。最近の更新もちゃんと追えるのが安心ポイント💖
+
+![Test Safety](./picture/gof_cs_study_042_test_safety.png)
+
+
 
 * `MSTest.TestFramework` は 4.0.2 が 2026-02-05 更新だよ ([nuget.org][1])
 * `MSTest.TestAdapter` は 4.1.0 が 2026-02-03 更新だよ ([nuget.org][2])
