@@ -22,6 +22,8 @@
 
 ### 1) まず“困りごと”を1行で言う🙂
 
+![symptom_first](./picture/gof_cs_study_002_symptom_first.png)
+
 例：
 
 * 「支払い方法が増えるたびに `switch` が増えてつらい😵」
@@ -35,6 +37,8 @@
 ---
 
 ### 2) 困りごとテンプレを埋める📝✨（最重要！）
+
+![template_filling](./picture/gof_cs_study_002_template_filling.png)
 
 このテンプレを、章ごとに毎回埋めるよ〜！🌷
 （NotionでもMarkdownでもメモアプリでもOK）
@@ -58,6 +62,8 @@
 ---
 
 ### 3) “3分類”に当てはめて、候補を出す🏷️✨
+
+![sorting_bins](./picture/gof_cs_study_002_sorting_bins.png)
 
 困りごとが出たら、まずこれ👇のどれっぽいかを決める！
 
@@ -86,6 +92,8 @@ flowchart TD
 
 ### 4) 逆引きミニ辞書を作る📚🔁（覚えなくていい仕組み）
 
+![reverse_lookup](./picture/gof_cs_study_002_reverse_lookup.png)
+
 「症状 → 候補」を短くメモしていくと最強💪✨
 最初はこれだけでOK👇（増やしすぎない！）
 
@@ -107,6 +115,8 @@ flowchart TD
 
 ### 5) 最後に“採用判断メモ”を1行で残す🖊️✅
 
+![decision_sticky](./picture/gof_cs_study_002_decision_sticky.png)
+
 毎章の最後に、必ずこれを書く！
 
 例：
@@ -120,6 +130,8 @@ flowchart TD
 ---
 
 ## よくある落とし穴 💥（ここで損しがち！）
+
+![pitfall_maze](./picture/gof_cs_study_002_pitfall_maze.png)
 
 ### 落とし穴1：パターン名から入って「使いどころ迷子」😵‍💫
 

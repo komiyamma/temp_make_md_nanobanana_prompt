@@ -25,6 +25,8 @@
 
 ### 1) この教材の最重要ルールは「標準ファースト」🥇
 
+![standard_first_steps](./picture/gof_cs_study_003_standard_first_steps.png)
+
 GoFって、そもそも **“よくある困りごと”に名前を付けた辞書**みたいなものです📚🙂
 だから、まずは **すでに世の中が勝ち筋として固定した道具**を使います。
 
@@ -37,6 +39,8 @@ GoFって、そもそも **“よくある困りごと”に名前を付けた�
 ---
 
 ### 2) 「自作していいもの／ダメなもの」を仕分ける✂️🙂
+
+![do_dont_list](./picture/gof_cs_study_003_do_dont_list.png)
 
 この教材で作ってOKなのは、だいたいこの2種類だけです👇
 
@@ -56,6 +60,8 @@ GoFって、そもそも **“よくある困りごと”に名前を付けた�
 ### 3) 標準で体験できる「GoFっぽさ」ベスト3を触ってみる👆✨
 
 #### A. `IEnumerable` と `yield`（Iteratorの“超軽量版”）🧺🌸
+
+![yield_stream](./picture/gof_cs_study_003_yield_stream.png)
 
 「列挙したい」だけなら、Iterator用クラスを量産しなくても、`yield return` で十分なことが多いです🙂
 
@@ -96,6 +102,8 @@ foreach (var item in order.GetItems())
 
 #### B. `Stream` の重ね合わせ（Decoratorの王道）💧🎁
 
+![stream_layers](./picture/gof_cs_study_003_stream_layers.png)
+
 `Stream` は「包んで機能を足す」が最初から得意です✨
 **暗号化・圧縮・バッファ・読みやすさ**が、重ねるだけで変えられます🙂
 
@@ -121,6 +129,8 @@ await writer.WriteLineAsync("{\"orderId\": 1, \"total\": 1200}");
 ---
 
 #### C. `Microsoft.Extensions.*`（DI/Loggingは“まずこれ”）🔌📝
+
+![extensions_plug](./picture/gof_cs_study_003_extensions_plug.png)
 
 `Microsoft.Extensions.DependencyInjection` や `Microsoft.Extensions.Logging` は、現場の定番として超強いです💪
 「差し替え」「ログ統一」を、**自作せずに**体験できます🙂
@@ -166,6 +176,8 @@ public sealed class OrderService
 
 ### 4) “作りすぎ”の危険サイン（この3つが出たら止まる🛑）🚨
 
+![danger_sirens](./picture/gof_cs_study_003_danger_sirens.png)
+
 1つでも当てはまったら、いったん深呼吸〜😮‍💨💦
 
 1. **「汎用化したくなってきた」**（あらゆるケースに対応したい…）
@@ -175,6 +187,8 @@ public sealed class OrderService
 ---
 
 ### 5) 学びをブレさせない“超シンプル判断フロー”🧭
+
+![decision_flowchart](./picture/gof_cs_study_003_decision_flowchart.png)
 
 困りごとが出たら、この順でチェックします👇
 

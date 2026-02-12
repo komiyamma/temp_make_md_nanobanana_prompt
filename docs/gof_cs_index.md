@@ -32,6 +32,8 @@
 
 ## Part 0：学び方・準備（1〜12）🧰🌱
 
+![part0_toolbox](./picture/gof_cs_index_part0_toolbox.png)
+
 > ゴール：学習の型（環境・テスト・AI補助・共通ドメイン）を固め、以降の章で迷子にならないようにする。
 
 ---
@@ -416,6 +418,8 @@
 ---
 
 ## Part 1：生成パターン（13〜32）🏭🧱✨
+
+![part1_factory](./picture/gof_cs_index_part1_factory.png)
 
 > ゴール：`new`や初期化の複雑さ、生成分岐、テスト差し替えを整理し、生成を“読みやすく・差し替えやすく”する。
 
@@ -1160,6 +1164,8 @@
 ---
 
 ## Part 2：構造パターン（33〜54）🏗️🎁🔌
+
+![part2_structure](./picture/gof_cs_index_part2_structure.png)
 
 > ゴール：既存コードを壊さず、つなぐ/包む/まとめる/共有することで、拡張に強い組み立て方を身につける。
 
@@ -1980,6 +1986,8 @@
 ---
 
 ## Part 3：振る舞いパターン（55〜80）🎭⚙️📣
+
+![part3_behavior](./picture/gof_cs_index_part3_behavior.png)
 
 > ゴール：分岐と依存を減らし、流れ・状態・通知・操作を整理して“変更が怖くない”状態に近づける。
 
@@ -3137,6 +3145,8 @@
 ---
 
 ## 仕上げ：Capstone（任意・別冊）
+
+![capstone_graduation](./picture/gof_cs_index_capstone_graduation.png)
 
 > Part 0〜3の学びを“実務っぽく”束ねる回収フェーズ。章番号に縛られず、成果物ベースで進めます。
 

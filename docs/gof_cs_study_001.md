@@ -27,6 +27,8 @@
 
 ### 1) GoFの正体を1分でつかむ 🐣
 
+![concept_dictionary](./picture/gof_cs_study_001_concept_dictionary.png)
+
 GoFはざっくり言うと、
 
 * **よくある設計の困りごと**を
@@ -39,6 +41,8 @@ GoFはざっくり言うと、
 ---
 
 ### 2) なんで“今でも”学ぶの？🕰️✨
+
+![why_learn_speed](./picture/gof_cs_study_001_why_learn_speed.png)
 
 理由はシンプルで、GoFを知るとこうなる👇
 
@@ -54,6 +58,8 @@ C#は便利機能が増えていて、GoFを“軽く”書ける場面も多い
 
 ### 3) 3分類を「一言」で覚える（ここだけ！）🍡
 
+![three_types_icons](./picture/gof_cs_study_001_three_types_icons.png)
+
 細かい定義は後でいいから、まずはこの感覚だけ👇
 
 * **生成（Creational）**：作るのがツラい → **作り方を整理する** 🏭
@@ -63,6 +69,8 @@ C#は便利機能が増えていて、GoFを“軽く”書ける場面も多い
 ---
 
 ### 4) “暗記じゃない”学び方のコア 🧠✨
+
+![learning_flow_steps](./picture/gof_cs_study_001_learning_flow_steps.png)
 
 パターンは、いつもこの順番で考えると強いよ👇
 
@@ -87,6 +95,8 @@ flowchart TD
 
 ### 5) 1個だけ“困りごと例”を見てみる（雰囲気でOK）🔥
 
+![problem_spaghetti](./picture/gof_cs_study_001_problem_spaghetti.png)
+
 たとえば、こんなの👇
 「支払い方法が増えるたびに、注文処理の中の分岐が増えていく…」😵‍💫
 
@@ -110,6 +120,8 @@ else if (paymentType == PaymentType.PayPay) { /* ... */ }
 ---
 
 ### 6) この教材の“進め方”を頭に入れる（超重要）🧭✨
+
+![chapter_roadmap](./picture/gof_cs_study_001_chapter_roadmap.png)
 
 この教材は毎章、いつも同じ流れで進むよ👇
 
