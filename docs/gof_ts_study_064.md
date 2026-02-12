@@ -10,6 +10,9 @@
 
 ## 1) Commandを“関数ペア”で表すのがTSの王道🧁✨
 
+![1) Commandを“関数ペア”で表すのがTSの王道🧁✨](./picture/gof_ts_study_064_do_undo_pair.png)
+
+
 GoFのCommandは「操作をひとつの“命令”として扱う」パターンだよ🎮
 TypeScriptでは、まずこれが一番ラク＆読みやすい👇
 
@@ -25,6 +28,9 @@ TypeScriptでは、まずこれが一番ラク＆読みやすい👇
 ---
 
 ## 2) ミニ題材：カフェ注文のトッピングをUndoしたい☕🍫↩️
+
+![2) ミニ題材：カフェ注文のトッピングをUndoしたい☕🍫↩️](./picture/gof_ts_study_064_cafe_undo.png)
+
 
 ここでは「注文（Order）」にトッピングを追加/削除する操作をCommand化するよ🍓
 ポイントは **状態を直接書き換えず**、新しい状態を返すこと🧊
@@ -96,6 +102,9 @@ stateDiagram-v2
 
 ## A. いちばん簡単：スナップショット（before）方式📸
 
+![A. いちばん簡単：スナップショット（before）方式📸](./picture/gof_ts_study_064_snapshot.png)
+
+
 * do()した瞬間の **実行前state** を覚えておいて
 * undo()で **そのstateに戻す**
 
@@ -156,6 +165,8 @@ export function removeTopping(topping: string): Command<AppState> {
 ```
 
 ## ✅ “スナップショット方式”の注意⚠️
+
+![Stack Memory](./picture/gof_ts_study_064_history_stack.png)
 
 * **同じCommandインスタンスを使い回さない**（beforeが上書きされて事故る🥲）
   → ボタン押下のたびに `addTopping(...)` を呼んで「新しいCommand」を作ってね✨

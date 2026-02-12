@@ -9,6 +9,9 @@
 
 ## 1) まず結論：Command が強いのは「実行のしかた」をあとから変えられる所💪
 
+![1) まず結論：Command が強いのは「実行のしかた」をあとから変えられる所💪](./picture/gof_ts_study_065_execution_strategies.png)
+
+
 Command を「やること（処理）」として切り出しておくと……
 
 * ⏳ **キュー**：順番どおりに実行（混ぜてもOK）
@@ -100,6 +103,9 @@ export const sleep = (ms: number, signal?: AbortSignal) =>
 ---
 
 ## 6) リトライ：指数バックオフ＋ジッター（ちょい本格）🎲⏳
+
+![6) リトライ：指数バックオフ＋ジッター（ちょい本格）🎲⏳](./picture/gof_ts_study_065_exponential_backoff.png)
+
 
 「とりあえず即リトライ！」は、サーバーにも自分にも優しくない🥲
 現実では **指数バックオフ＋ジッター**が定番だよ（AWSの設計ガイドでも推されるやつ） ([Amazon Web Services, Inc.][4])
@@ -196,6 +202,9 @@ export const runQueue = async <T>(
 ---
 
 ## 8) トランザクションっぽさ：途中失敗なら“埋め合わせ”で戻す↩️🧾
+
+![8) トランザクションっぽさ：途中失敗なら“埋め合わせ”で戻す↩️🧾](./picture/gof_ts_study_065_compensation.png)
+
 
 DBのトランザクションみたいに「全部成功か全部失敗」に寄せたいとき、
 外部I/O（決済・メール送信・在庫確保）って **完全な巻き戻しが難しい**よね🥲

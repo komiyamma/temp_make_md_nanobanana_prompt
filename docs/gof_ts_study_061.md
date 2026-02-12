@@ -12,6 +12,9 @@ Observer（購読→通知）を「標準/デファクトの道具」でスッ�
 
 ## 1) まず結論：どっちを使う？🗺️✨
 
+![1) まず結論：どっちを使う？🗺️✨](./picture/gof_ts_study_061_target_vs_emitter.png)
+
+
 ### ✅ EventTarget を選ぶと気持ちいい場面🌐
 
 * ブラウザやWeb系の設計に寄せたい（Web標準のイベントモデルで統一したい）
@@ -63,6 +66,9 @@ EventEmitterはNodeのイベント通知の王道🥳
 ---
 
 ## 4) ハンズオン🛠️：EventTargetで「注文確定」を通知する☕🧾➡️📣
+
+![4) ハンズオン🛠️：EventTargetで「注文確定」を通知する☕🧾➡️📣](./picture/gof_ts_study_061_cafe_bell.png)
+
 
 ここでは **“イベントバス専用の独自クラス”は作らず**、`EventTarget` と関数でサクッと組みます😊
 （やることは「イベント名」「payload型」「emit/on」だけ✨）
@@ -134,6 +140,9 @@ offStock();
 
 ## 6) つまずき回避💡：購読解除を“自動化”する（AbortController）🧯✨
 
+![6) つまずき回避💡：購読解除を“自動化”する（AbortController）🧯✨](./picture/gof_ts_study_061_abort_signal.png)
+
+
 「解除し忘れ」が一番あるある😵‍💫
 `signal` を使うと、Abortでまとめて解除できるよ！
 
@@ -182,6 +191,9 @@ EventEmitterはNodeの基本として超強い💪
 ---
 
 ## 8) EventTarget と EventEmitter の“差”で事故りやすい所⚠️🧠
+
+![8) EventTarget と EventEmitter の“差”で事故りやすい所⚠️🧠](./picture/gof_ts_study_061_pitfalls_diff.png)
+
 
 ### 🧨 ① エラーの扱いが違う
 

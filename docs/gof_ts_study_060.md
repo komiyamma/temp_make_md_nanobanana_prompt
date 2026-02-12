@@ -34,6 +34,9 @@ Observerは、「ある出来事が起きたら、それを知りたい人たち
 
 ## 2. Observerが効く“つらさ”あるある😵‍💫➡️😊
 
+![2. Observerが効く“つらさ”あるある😵‍💫➡️😊](./picture/gof_ts_study_060_pain_point.png)
+
+
 ## こうなってきたら出番かも👀
 
 * 「注文確定」の関数がどんどん巨大化していく🐘
@@ -100,6 +103,9 @@ export type OrderConfirmedDetail = {
 
 ## 4-2. 発行側（Subject）：注文確定したらイベントを出す📣
 
+![4-2. 発行側（Subject）：注文確定したらイベントを出す📣](./picture/gof_ts_study_060_subject_broadcast.png)
+
+
 `dispatchEvent` で通知するよ✨ ([nodejs.org][4])
 
 ```ts
@@ -134,6 +140,9 @@ export class OrderService extends EventTarget {
 ---
 
 ## 4-3. 購読側（Observers）：必要な人だけ購読する🎧✨
+
+![4-3. 購読側（Observers）：必要な人だけ購読する🎧✨](./picture/gof_ts_study_060_observer_tuning.png)
+
 
 ## 在庫更新📦
 
@@ -223,6 +232,9 @@ unsubInventory();
 
 ## 5. “購読解除”をラクにする小技：`AbortController` でまとめて解除🧯✨
 
+![5. “購読解除”をラクにする小技：`AbortController` でまとめて解除🧯✨](./picture/gof_ts_study_060_abort_controller.png)
+
+
 `addEventListener` は `AbortSignal` を使って解除できるオプションがあるよ（まとめて解除に便利）🧼
 特に「画面が閉じたら購読ぜんぶ解除」みたいなとき気持ちいい！ ([MDNウェブドキュメント][6])
 
@@ -288,6 +300,9 @@ test("購読解除したら通知されない🧹", () => {
 ---
 
 ## 7. よくある落とし穴⚠️（ここで事故る人多い〜！）
+
+![7. よくある落とし穴⚠️（ここで事故る人多い〜！）](./picture/gof_ts_study_060_pitfalls.png)
+
 
 ## 7-1. イベント名が乱立してカオス🌀
 
