@@ -36,6 +36,8 @@
 
 ## 3) Step0：まずは “守るべき挙動” をテストで固定しよ🧷🧪
 
+![Test Stake](./picture/solid_cs_study_028_test_stake.png)
+
 リファクタの最終局面でありがちなのがこれ👇
 
 > 「綺麗になったけど、実は挙動が変わってた😇」
@@ -55,6 +57,8 @@
 ---
 
 ## 4) Step1：外部I/Oを “抽象（interface）” に逃がす（DIP）🏰🔁
+
+![DIP Escape](./picture/solid_cs_study_028_dip_escape.png)
 
 ### 4-1. 「外部っぽいもの」を洗い出す👀📝
 
@@ -99,6 +103,8 @@ public interface IClock
 
 ## 5) Step2：new を消して “コンストラクタ注入” にする🎁✨
 
+![Constructor Injection Gift](./picture/solid_cs_study_028_constructor_gift.png)
+
 Application のユースケース（例：PlaceOrderUseCase）が、直接インフラを作ってたらアウト🙅‍♀️
 こうする👇
 
@@ -142,6 +148,8 @@ public sealed class PlaceOrderUseCase
 
 ## 6) Step3：Program.cs に “組み立て” を集める（DI/Composition Root）🧱🧩
 
+![Program Assembly](./picture/solid_cs_study_028_program_assembly.png)
+
 .NET の DI は標準機能として用意されてるよ📦✨ ([Microsoft Learn][2])
 そして「どこで登録するか？」の答えが **Program.cs（Composition Root）**！
 
@@ -183,6 +191,8 @@ var useCase = host.Services.GetRequiredService<PlaceOrderUseCase>();
 ---
 
 ## 7) Step4：テストで “Fake差し替え” をやる（ここが気持ちいい！）🧪✨
+
+![Fake Moon Swap](./picture/solid_cs_study_028_fake_moon_swap.png)
 
 ### 7-1. Fake を用意する（手書きでOK）✍️
 
@@ -250,6 +260,8 @@ public class PlaceOrderUseCaseTests
 
 ## 8) Step5：“Before/After の挙動が同じ” を証明する✅🧪
 
+![Balance Scale](./picture/solid_cs_study_028_balance_scale.png)
+
 最後にやるのはこれ！
 
 * **大事なユースケースのテストが全部通る** ✅
@@ -263,6 +275,8 @@ public class PlaceOrderUseCaseTests
 ## 9) つまずきやすいポイント集（先に潰そう）🧯💥
 
 ### ❌ 1) Singleton が Scoped を抱えちゃった
+
+![Singleton Trap](./picture/solid_cs_study_028_singleton_trap.png)
 
 「Singleton → Scoped」を直接注入すると破綻しやすいよ😵‍💫
 スコープ検証なども含めて、公式ガイドの注意があるので要チェック✅ ([Microsoft Learn][5])

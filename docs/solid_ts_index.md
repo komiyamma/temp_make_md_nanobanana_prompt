@@ -17,6 +17,8 @@
 
 ## SOLID学習ロードマップ（全28章）📚✨
 
+![Campus Cafe Theme](./picture/solid_ts_index_campus_cafe.png)
+
 ## 第1章：はじめに（設計ってなに？）🌸
 
 * できるようになること：設計の目的が言える😊
@@ -24,6 +26,8 @@
 * ミニ課題：今の自分のコードの「困りごと」3つ書く📝
 
 ## 第2章：Windows + VS Code 開発環境セットアップ🛠️💻
+
+![Dev Environment](./picture/solid_ts_index_dev_env.png)
 
 * Node.js / npm、TypeScript、Git の基本セット✅
 * VS Code拡張：ESLint / Prettier / GitHub Copilot🤖
@@ -41,6 +45,8 @@
 * ミニ課題：Orderまわりの「変更点」を想像する🤔
 
 ## 第5章：コードのニオイ入門（やばさを嗅ぎ分ける）👃💥
+
+![Code Smell](./picture/solid_ts_index_code_smell.png)
 
 * 長すぎ関数、巨大クラス、if地獄、コピペ地獄😵
 * ミニ課題：わざと「ニオイコード」を書いてみる🧪
@@ -73,6 +79,8 @@
 
 ## 第10章：SRPの分け方パターン（分割の型）🧩✨
 
+![SRP Cake](./picture/solid_ts_index_srp_cake.png)
+
 * 分割軸：データ変換 / 永続化 / 表示 / ルール / 通信📡
 * ミニ課題：料金計算・保存・表示を分ける設計メモ📝
 
@@ -84,6 +92,8 @@
 ---
 
 ## 第12章：OCP（拡張に開く、修正に閉じる）🚪✨
+
+![OCP Chest](./picture/solid_ts_index_ocp_chest.png)
 
 * 「機能追加で既存コードを壊しにくくする」考え方🛡️
 * ミニ課題：クーポン種類が増える未来を想像🎟️
@@ -106,6 +116,8 @@
 ---
 
 ## 第16章：LSP（置換可能性）ってなに？🔁🧩
+
+![LSP Puzzle](./picture/solid_ts_index_lsp_puzzle.png)
 
 * 「親として扱えるなら、子でも壊れない」✨
 * TSでも起きる！継承/実装の落とし穴🕳️
@@ -165,6 +177,8 @@
 ---
 
 ## 第26章：卒業制作① 仕様づくり＆土台設計（設計のスタートライン）🧠📐
+
+![Graduation Construction](./picture/solid_ts_index_graduation_construction.png)
 
 * ゴール：作るものを決めて、**変更に強い土台**を用意するよ🏗️✨
 * やること
