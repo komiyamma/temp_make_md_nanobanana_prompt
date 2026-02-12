@@ -33,6 +33,8 @@
 
 ### ✅ 結論：責務は「やること」じゃなくて「変わる理由」だよ
 
+![solid_cs_study_004_responsibility_sign.png](./picture/solid_cs_study_004_responsibility_sign.png)
+
 よくある勘違い👇😵‍💫
 
 * ❌「責務＝メソッド1個！」
@@ -62,6 +64,8 @@
 ---
 
 ### 例：ミニECだと「変更理由」はこう分かれる🛒✨
+
+![solid_cs_study_004_change_reason_list.png](./picture/solid_cs_study_004_change_reason_list.png)
 
 たとえば「注文」まわりって、変更が来そうな理由がいっぱいあるよね😳
 
@@ -105,6 +109,8 @@
 
 ### 依存の矢印を描くコツ✏️➡️
 
+![solid_cs_study_004_dependency_arrow_direction.png](./picture/solid_cs_study_004_dependency_arrow_direction.png)
+
 矢印はこう考えるとミスりにくいよ😊
 
 * **「呼ぶ側」→「呼ばれる側」**
@@ -138,6 +144,8 @@
 ---
 
 ### 境界があると何が嬉しいの？😍✨
+
+![solid_cs_study_004_boundary_gate.png](./picture/solid_cs_study_004_boundary_gate.png)
 
 * テストがラクになる🧪✨（外部なしで業務だけ検証しやすい）
 * 仕様変更が局所化する🎯✨
@@ -282,6 +290,8 @@ public class OrderService
 ---
 
 ## 次章予告🎀🪄（第5章：リファクタリング最初の武器セット）
+
+![solid_cs_study_004_refactoring_checklist.png](./picture/solid_cs_study_004_refactoring_checklist.png)
 
 次はこの“言葉”を使って、実際に手を動かすよ🧹✨
 

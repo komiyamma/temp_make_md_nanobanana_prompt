@@ -43,6 +43,8 @@ Visual Studio は入れる機能（ワークロード）でサイズが変わる
 
 ### ② ワークロード（Workloads）のおすすめ構成🧁✨
 
+![solid_cs_study_002_vs_installer_workloads.png](./picture/solid_cs_study_002_vs_installer_workloads.png)
+
 SOLID学習でよく使うのは、まずこのへん👇（最小からスタートしてOK！）
 
 * **.NET desktop development**（コンソール/WPF/WinForms など）🖥️
@@ -76,6 +78,8 @@ Visual Studio だと **Installer の Optional components** から Copilot を入
 
 ## 2-4. .NET 10 SDK の確認✅🧪
 
+![solid_cs_study_002_dotnet_cli_check.png](./picture/solid_cs_study_002_dotnet_cli_check.png)
+
 Visual Studio だけでも進められるけど、**コマンドで確認できると強い**よ💪✨
 （SOLID学習は「小さく試す→直す」を繰り返すから、CLIがあると爆速🏎️💨）
 
@@ -92,6 +96,8 @@ dotnet --list-sdks
 ---
 
 ## 2-5. “この教材用”のソリューションを作る📦✨（ずっと使う箱）
+
+![solid_cs_study_002_project_creation_flow.png](./picture/solid_cs_study_002_project_creation_flow.png)
 
 ここでは中身を作り込まないよ！
 「器（Solution）」だけ作って、次章でわざと最悪コードを作る😈🧱✨
@@ -117,6 +123,8 @@ dotnet --list-sdks
 
 ## 2-7. GitHub Copilot の初期チェック🤖💬✨（30秒だけ）
 
+![solid_cs_study_002_copilot_activation.png](./picture/solid_cs_study_002_copilot_activation.png)
+
 ### ✅ Visual Studio 側
 
 * Visual Studio に **GitHub アカウントでサインイン**
@@ -133,6 +141,8 @@ Copilot の導入/状態管理は公式にもまとまってるよ✅ ([Microsof
 ---
 
 ## 2-8. （任意）VS Code 派のセットアップ💙✨
+
+![solid_cs_study_002_vscode_setup.png](./picture/solid_cs_study_002_vscode_setup.png)
 
 軽さ重視なら VS Code でも進められるよ😊
 C# は **C# Dev Kit** が中心✨ ([Visual Studio Code][4])

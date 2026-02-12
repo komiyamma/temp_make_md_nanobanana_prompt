@@ -91,6 +91,8 @@ Console.WriteLine(result);
 Console.WriteLine("Done ✅");
 
 public sealed class DoEverythingOrderService
+
+![solid_cs_study_003_god_class_structure.png](./picture/solid_cs_study_003_god_class_structure.png)
 {
     // 神クラス：注文、割引、ポイント、支払い、発送、ログ、全部ここ😇
     private static readonly Random _random = new();
@@ -115,11 +117,15 @@ public sealed class DoEverythingOrderService
         Console.WriteLine($"SubTotal = {subTotal} 💰"); // UI混在😇
 
         // ③ 割引計算（if地獄）
+
+![solid_cs_study_003_if_else_maze.png](./picture/solid_cs_study_003_if_else_maze.png)
         decimal discount = 0;
         if (order.CouponCode == "WELCOME10")
         {
             discount = subTotal * 0.10m;
             if (discount > 1200m) discount = 1200m; // マジックナンバー✨
+
+![solid_cs_study_003_magic_number_wizard.png](./picture/solid_cs_study_003_magic_number_wizard.png)
         }
         else if (order.CouponCode == "VIP20")
         {
@@ -176,6 +182,8 @@ public sealed class DoEverythingOrderService
         if (total < 0) total = 0;
 
         // ⑦ 支払い処理（if地獄＋コピペっぽさ）
+
+![solid_cs_study_003_copy_paste_clones.png](./picture/solid_cs_study_003_copy_paste_clones.png)
         string paymentResult;
         if (order.PaymentMethod == "Card")
         {
@@ -204,6 +212,8 @@ public sealed class DoEverythingOrderService
         Console.WriteLine($"Shipping... 🚚 Tracking={trackingNo}");
 
         // ログ保存（ビジネスロジックの中でI/O😇）
+
+![solid_cs_study_003_business_io_mix.png](./picture/solid_cs_study_003_business_io_mix.png)
         var log = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss}\t{order.OrderId}\t{order.CustomerId}\tTOTAL={total}\tPTS={points}\tTRK={trackingNo}\n";
         File.AppendAllText("orders.log", log);
 
@@ -263,6 +273,8 @@ public sealed record OrderItem(string Sku, string Name, int Quantity, decimal Un
 「うわ…どこ直せばいいの…😇」ってなるのが正解です😂
 
 ### 変更ミッションA：支払い方法を追加して！💳➡️📱
+
+![solid_cs_study_003_change_impact_explosion.png](./picture/solid_cs_study_003_change_impact_explosion.png)
 
 * `PaymentMethod = "PayPay"` を追加したい（例）
 * 期待：**既存コードをほぼ触らず**追加できるのが理想
