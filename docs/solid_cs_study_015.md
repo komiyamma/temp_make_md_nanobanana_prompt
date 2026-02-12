@@ -23,6 +23,8 @@
 
 ## 2. まず“あるある地獄”を見よう 😇🔥（OCP違反の典型）
 
+![Pricing Logic Chaos](./picture/solid_cs_study_015_pricing_chaos.png)
+
 例えば「合計金額」を計算するところに、割引やポイントがどんどん増えると…こうなりがち👇
 
 * 会員ランク割引（Silver/Gold/Platinum）✨
@@ -75,6 +77,8 @@ public class PriceService
 
 ## 3. OCPの方針を決めよう 🧭✨（料金計算は“ルールの集合”）
 
+![Pricing Components](./picture/solid_cs_study_015_pricing_breakdown.png)
+
 料金計算って、正体はだいたいこう👇
 
 * **小計（Subtotal）**を出す
@@ -119,6 +123,8 @@ public sealed record PricingContext(
 ```
 
 ### 4.2 割引ルール用のインターフェース 🎫✨
+
+![Discount Rule Interface](./picture/solid_cs_study_015_discount_rule_interface.png)
 
 ポイントはここ👇
 「割引を適用できるか？」「適用したらいくらになる？」を**ルール自身**に持たせる👍
@@ -183,6 +189,8 @@ public sealed class PricingEngine
 
 ### 6.1 会員ランク割引 👑✨
 
+![Member Rank Logic](./picture/solid_cs_study_015_member_rank_logic.png)
+
 ```csharp
 public sealed class MemberRankDiscountRule : IDiscountRule
 {
@@ -202,6 +210,8 @@ public sealed class MemberRankDiscountRule : IDiscountRule
 ```
 
 ### 6.2 クーポン割引 🎫✨
+
+![Coupon Logic](./picture/solid_cs_study_015_coupon_logic.png)
 
 ```csharp
 public sealed class CouponDiscountRule : IDiscountRule
@@ -224,6 +234,8 @@ public sealed class CouponDiscountRule : IDiscountRule
 ```
 
 ### 6.3 期間キャンペーン（例：11月後半は10%OFF）🛍️✨
+
+![Campaign Logic](./picture/solid_cs_study_015_campaign_logic.png)
 
 ```csharp
 public sealed class LateNovemberCampaignRule : IDiscountRule
@@ -260,6 +272,8 @@ public sealed class StandardPointRule : IPointRule
 ---
 
 ## 8. ✅OCP達成の瞬間：新しい割引を“追加だけ”で入れる 🎉✨
+
+![Adding First Purchase Rule](./picture/solid_cs_study_015_add_first_purchase.png)
 
 ### 例：初回購入は500円引き🆕🎫
 

@@ -31,6 +31,8 @@ LSPって要するにこう👇
 * **事後条件（Postconditions）**：呼んだ後に保証するよ（結果の条件）
 * **不変条件（Invariants）**：いつでも守るよ（状態のルール）
 
+![Design by Contract](./picture/solid_cs_study_017_design_by_contract.png)
+
 そしてLSPの超重要ルールはこれ👇
 
 * 子は **事前条件を強くしちゃダメ**（親より厳しくしない）
@@ -42,6 +44,8 @@ LSPって要するにこう👇
 ## 3) 典型パターンA：子が「それ無理」で例外を投げる 🙅‍♀️💥
 
 ### ✅ ありがち状況
+
+![Exception Violation](./picture/solid_cs_study_017_exception_violation.png)
 
 「親ではできる（契約上できる）」のに、子にした瞬間 **NotSupportedException** とか **InvalidOperationException** が出るやつ😇
 
@@ -160,6 +164,8 @@ public class PremiumMemberDiscount : DiscountPolicy
 
 ### ✅ イメージ
 
+![Postcondition Violation](./picture/solid_cs_study_017_postcondition_violation.png)
+
 親：「成功したら TrackingNumber は必ず入ってるよ！」
 子：「成功しても空文字返すことあるよ！」
 → それ **事後条件を弱めてる** 😭
@@ -197,6 +203,8 @@ public class TestShippingService : ShippingService
 
 ## 6) 典型パターンD：ルール（不変条件）が子で変わる 🧨🧱
 
+![Invariant Violation](./picture/solid_cs_study_017_invariant_violation.png)
+
 これは初心者さんが一番引っかかりやすい雰囲気👇
 
 * 親：「確定した注文は編集できません」
@@ -209,6 +217,8 @@ public class TestShippingService : ShippingService
 
 ## 7) 見つけ方チェックリスト ✅👀（超実戦）
 
+![LSP Warning Signs](./picture/solid_cs_study_017_lsp_warning_signs.png)
+
 次の匂いがしたらLSPを疑ってOK🙆‍♀️
 
 * `override` の中に **NotSupportedException** / **InvalidOperationException** が出てくる💣
@@ -219,6 +229,8 @@ public class TestShippingService : ShippingService
 ---
 
 ## 8) テストで守る：「置換できる」テスト（コントラクトテスト）🧪✨
+
+![Contract Testing](./picture/solid_cs_study_017_contract_testing.png)
 
 やり方はシンプルで、**親の契約テストを1セット作って、全部の実装に同じテストを流す**のが強いよ💪
 
