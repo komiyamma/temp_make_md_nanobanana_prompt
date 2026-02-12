@@ -56,6 +56,8 @@ sequenceDiagram
 
 #### ✅ 最小で体感：Valueを触るまで作られない
 
+![Image](./picture/gof_cs_study_053_lazy_box.png)
+
 ```csharp
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -85,6 +87,8 @@ public class LazyBasicsTests
 ```
 
 #### 🔒 スレッド安全性：`LazyThreadSafetyMode` を知っておく
+
+![Image](./picture/gof_cs_study_053_lazy_thread_safety.png)
 
 `Lazy<T>` は「複数スレッドから触られる可能性」があるとき、どの安全性が必要かで挙動が変わるよ🧵🔐
 その選択肢が `LazyThreadSafetyMode` だよ〜 ([Microsoft Learn][1])
@@ -135,11 +139,15 @@ public sealed class PriceTable
 
 ### 3) `DispatchProxy`：呼び出し前後に処理を挟む“動的プロキシ”🪄📣
 
+![Image](./picture/gof_cs_study_053_dispatch_interceptor.png)
+
 `DispatchProxy` は **インターフェースの呼び出しを横取り**して、`Invoke` で好きな処理を差し込める仕組みだよ🧙✨ ([Microsoft Learn][3])
 
 ただし制約があるから、そこを先に押さえるよ〜⚠️
 
 #### ✅ まず「制約」を読む（ここ超大事）📌
+
+![Image](./picture/gof_cs_study_053_interface_constraint.png)
 
 `DispatchProxy.Create` のドキュメントに、かなり重要なことがまとまってるよ👇 ([Microsoft Learn][2])
 

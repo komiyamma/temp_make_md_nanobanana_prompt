@@ -33,6 +33,8 @@
 
 ### 2) 共有対象（Intrinsic）と個別情報（Extrinsic）を分ける ✂️🧠
 
+![Image](./picture/gof_cs_study_051_intrinsic_extrinsic.png)
+
 * **共有してOK（Intrinsic）**：ラベル文字、アイコンデータ（※同じ種類なら同じ）
 * **個別（Extrinsic）**：どの商品に付くか、表示位置、表示優先度…など
 
@@ -69,6 +71,8 @@ classDiagram
 
 ### 3) Flyweight（共有オブジェクト）をFactoryで管理する 🏭🧊
 
+![Image](./picture/gof_cs_study_051_factory_shelf.png)
+
 * 種類（`LabelKind`）ごとに **共有インスタンスを1個だけ作る**
 * 取り出しは `LabelFlyweightFactory.Get(kind)` の1行でOKにする✨
 
@@ -81,6 +85,8 @@ classDiagram
 * Flyweight版：アイコン配列の参照は **種類の数だけ**のはず（理想）🎉
 
 ### 5) メモリ差は “プロファイラ” でも見てみる（任意）🧰👀
+
+![Image](./picture/gof_cs_study_051_memory_graph.png)
 
 Visual Studioの **Memory Usage**（メモリ分析）を使うと、どの型が増えてるか見えるよ📊 ([Microsoft Learn][2])
 
@@ -312,6 +318,8 @@ public class FlyweightBadgeTests
 ## よくある落とし穴 ⚠️😵‍💫
 
 * **共有対象が可変**（あとから書き換えちゃう）
+
+![Image](./picture/gof_cs_study_051_mutable_flyweight_danger.png)
   → Flyweightは基本「不変」として扱うのが安全だよ🧊✨
 * **Factoryが何でも屋**になって、依存が集まりすぎる（God Factory化）
   → “ラベル共有”だけを責務にしてね🏷️

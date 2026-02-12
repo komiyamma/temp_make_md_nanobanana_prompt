@@ -55,6 +55,8 @@ classDiagram
 
 ### 2) ProxyとDecoratorの違い（ここ大事）🧠✨
 
+![Image](./picture/gof_cs_study_052_proxy_vs_decorator.png)
+
 どっちも「包む」けど目的が違うよ〜！🎁
 
 * **Proxy**：アクセスを“制御”する（遅延・制限・キャッシュ・ログ）🚧
@@ -81,6 +83,8 @@ classDiagram
 ---
 
 ### 4) ミニ実装：キャッシュProxy（＋遅延も混ぜる）🧊⏳
+
+![Image](./picture/gof_cs_study_052_caching_proxy.png)
 
 題材は「大量に参照されるアイコン情報」🏷️
 本体は重い（外部から取る・ファイル読む・DB叩く等）想定で、Proxyが **キャッシュ**して高速化するよ〜🚀
@@ -198,6 +202,8 @@ Proxyの制御は、だいたいこのへんに落ち着くよ〜🙂
 * **アクセス制限**：権限・状態・回数制限🔐🚦
 * **ログ/計測**：前後でログ、時間測定、監査🧾⏱️
 * **リモート呼び出しの“手前”**：通信を隠す🌐（Remote Proxy）
+
+![Image](./picture/gof_cs_study_052_remote_proxy.png)
 * **HTTPまわりの“代理”**：`HttpClient` の内部は `HttpMessageHandler` を差し替えてパイプラインを作れる（近縁の発想）📨🧩([Microsoft Learn][4])
 
 ---
@@ -241,6 +247,8 @@ ProxyはAIが“盛りがち”なので、最初から縛るのが勝ち！😺
 * テスト：`IsValueCreated`（またはカウント）で **本体が遅れて作られる**ことを確認
 
 2. **保護Proxyを作る**🔐
+
+![Image](./picture/gof_cs_study_052_protection_proxy.png)
 
 * `Func<bool> canAccess` を受け取って、falseなら例外にするProxyを作る
 * テスト：許可あり/なしの2パターン
