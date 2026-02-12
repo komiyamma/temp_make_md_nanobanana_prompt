@@ -34,6 +34,8 @@
 ## 設計のコツ（超KISS）🍡
 
 * **金額は「円の整数」**で扱う（小数は事故りやすい😵‍💫）
+
+![Integer Money](./picture/gof_ts_study_007_integer_money.png)
 * 「注文」は、最初は **ただの配列**でOK（クラス禁止！…じゃなくて、今は不要🙆‍♀️）
 
 > ちなみに TypeScript の最新リリースノートは 5.9 系が公開されてるよ📌 ([TypeScript][1])
@@ -64,11 +66,21 @@ export type OrderLine = {
   qty: number; // 1以上を想定🍩
 };
 
+```
+
+![Order Data Structure](./picture/gof_ts_study_007_order_structure.png)
+
+```ts
 export type Order = {
   lines: OrderLine[];
 };
 
 // メニューを検索しやすい形にする（標準の Map を使うよ🗺️）
+```
+
+![Map Lookup](./picture/gof_ts_study_007_map_lookup.png)
+
+```ts
 export function indexMenu(menu: readonly MenuItem[]): Map<MenuItemId, MenuItem> {
   return new Map(menu.map((m) => [m.id, m]));
 }
@@ -191,6 +203,8 @@ console.log(renderReceipt(menuIndex, order));
 ---
 
 ## テストで「合計が合ってる」を守る🧪✅
+
+![Test Success](./picture/gof_ts_study_007_test_success.png)
 
 テストは“安心の自動チェック”だよ〜！🥰
 （テストランナーは Vitest が軽くて人気。4.0リリースも出てるよ📌） ([vitest.dev][2])
