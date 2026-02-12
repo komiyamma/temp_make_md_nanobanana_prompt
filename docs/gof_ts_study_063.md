@@ -26,6 +26,9 @@
 
 ## Commandパターンのコア💡（超やさしく）
 
+![Commandパターンのコア💡（超やさしく）](./picture/gof_ts_study_063_command_core.png)
+
+
 **「操作」を“命令オブジェクト（命令データ＋実行方法）”として扱う**だけ！
 
 ### 最低限これだけ覚える🧠✨
@@ -67,6 +70,9 @@ sequenceDiagram
 ---
 
 ## TypeScriptでの“自然な”書き方（クラス地獄にしない）🧁
+
+![TypeScriptでの“自然な”書き方（クラス地獄にしない）🧁](./picture/gof_ts_study_063_functional_command.png)
+
 
 GoFの本だと「Commandクラスを量産」しがちだけど、TypeScriptだともっと素直に👇
 
@@ -171,6 +177,9 @@ function makeRemoveToppingCommand(order: Order, itemId: string, topping: Topping
 
 ## Invoker（実行＆履歴）を“配列”で作る📚✨
 
+![Invoker（実行＆履歴）を“配列”で作る📚✨](./picture/gof_ts_study_063_invoker_array.png)
+
+
 ここが気持ちいいポイント！
 Invokerは「命令の種類」を知らない。**executeして積むだけ**😍
 
@@ -237,6 +246,9 @@ describe("Command: add/remove topping", () => {
 ---
 
 ## Commandが効く“ありがち場面”ベスト5🌟
+
+![Commandが効く“ありがち場面”ベスト5🌟](./picture/gof_ts_study_063_use_cases.png)
+
 
 1. **Undo/Redo**（編集・お絵描き・フォーム操作）↩️↪️
 2. **履歴（操作ログ）**（監査ログ・分析）🧾
