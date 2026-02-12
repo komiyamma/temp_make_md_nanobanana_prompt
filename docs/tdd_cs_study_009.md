@@ -7,6 +7,8 @@ CI（自動テスト）でもほぼ同じコマンドを使うから、ここ押
 
 ## 1) この章のゴール🎯✨
 
+![CLI Switch Toggle](./picture/tdd_cs_study_009_cli_switch.png)
+
 できるようになればOK👇
 
 * ✅ `dotnet test` を **ソリューション/プロジェクト/フォルダ**単位で実行できる
@@ -27,6 +29,8 @@ CI（自動テスト）でもほぼ同じコマンドを使うから、ここ押
 ---
 
 ## 3) `dotnet test` のいちばん基本🧪✨
+
+![Scope Pyramid](./picture/tdd_cs_study_009_scope_pyramid.png)
 
 ![画像を挿入予定](./picture/tdd_cs_study_009_fake_it.png)
 
@@ -59,6 +63,8 @@ dotnet test tests\MyApp.Tests\MyApp.Tests.csproj
 
 ## 4) 「1本だけ実行」できるようになる（超重要）🔍🔥
 
+![Filter Funnel](./picture/tdd_cs_study_009_filter_funnel.png)
+
 ここが第9章の主役！
 開発中は「全部回す」より「今いじってる所だけ回す」が速いから、手が止まらないよ🚀✨
 
@@ -73,6 +79,8 @@ dotnet test -t
 ---
 
 ### 4.2 フィルタで絞って実行する🎯
+
+![Filter Tags](./picture/tdd_cs_study_009_filter_tags.png)
 
 `--filter` が使える！ ([Microsoft Learn][1])
 
@@ -150,6 +158,8 @@ dotnet test --filter FullyQualifiedName~Tax_is_rounded
 
 ## 6) ログを読みやすくする小ワザ集🛠️✨
 
+![Verbosity Knob](./picture/tdd_cs_study_009_verbosity_knob.png)
+
 ### 6.1 詳細ログがほしい（原因調査向け）🧾
 
 `-v|--verbosity` があるよ ([Microsoft Learn][1])
@@ -171,6 +181,8 @@ dotnet test --tl:off
 ---
 
 ## 7) 結果をファイルに残す（TRX）📁✅
+
+![TRX Report Printer](./picture/tdd_cs_study_009_trx_printer.png)
 
 CIやあとからの共有で便利なのが **TRX（テスト結果ファイル）**✨
 `--logger` で指定できるよ ([Microsoft Learn][1])
@@ -212,6 +224,8 @@ dotnet test --diag .\artifacts\diag\test.diag.txt
 ---
 
 ## 9) 速く回すための“定番オプション”⚡🐢➡️🚀
+
+![Turbo Button Speed](./picture/tdd_cs_study_009_turbo_button.png)
 
 ### 9.1 すでにビルド済みなら `--no-build` 🌪️
 

@@ -19,6 +19,8 @@
 
 ## 0) まずは「赤の読み方」テンプレ📌✨
 
+![Reading Red Template](./picture/tdd_cs_study_008_reading_template.png)
+
 ![画像を挿入予定](./picture/tdd_cs_study_008_triangulation.png)
 
 赤が出たら、焦らずこの順で見ればOKだよ🥹💕
@@ -34,6 +36,8 @@ Visual Studio の Test Explorer は、失敗したテストを選ぶと **メッ
 
 ## 1) Test Explorerの「最低限ここだけ」操作🪟🧪
 
+![Test Explorer Navigator](./picture/tdd_cs_study_008_test_explorer_nav.png)
+
 ### 開き方＆実行
 
 * メニューから Test Explorer を開いて、**Run All**（全部実行）でOK🙆‍♀️ ([Microsoft Learn][6])
@@ -48,6 +52,8 @@ Visual Studio の Test Explorer は、失敗したテストを選ぶと **メッ
 ---
 
 ## 2) 赤の3大パターン（この章の主役）💥🧠
+
+![Three Red Patterns](./picture/tdd_cs_study_008_three_red_monsters.png)
 
 ここを分類できると一気に強くなるよ💪💕
 
@@ -69,6 +75,8 @@ xUnit v3 は **Fact に Timeout を付けられる**し、タイムアウト時�
 ---
 
 ## 3) ハンズオン：3種類の失敗を“わざと”起こして読めるようにする👩‍🔬🧪✨
+
+![Intentional Failure Practice](./picture/tdd_cs_study_008_target_practice.png)
 
 前章で作ったソリューション（App/Tests）に、練習用の超ミニ題材を足すよ🎀
 
@@ -145,6 +153,8 @@ Test Explorer の詳細ペインに **メッセージとスタックトレース
 
 ### A) Assert失敗の読み方✅❌
 
+![Assert Failure Detective](./picture/tdd_cs_study_008_assert_detective.png)
+
 見る場所はここ👇
 
 * メッセージの **Expected / Actual**
@@ -161,6 +171,8 @@ Test Explorer の詳細ペインに **メッセージとスタックトレース
 
 ### B) 例外の読み方💥
 
+![Exception Bomb Trace](./picture/tdd_cs_study_008_exception_bomb.png)
+
 見る場所はここ👇
 
 * 例外の型（例：NullReferenceException）
@@ -170,6 +182,8 @@ Test Explorer の詳細ペインに **メッセージとスタックトレース
 ---
 
 ### C) タイムアウトの読み方⏳
+
+![Timeout Clock Cancel](./picture/tdd_cs_study_008_timeout_clock.png)
 
 見る場所はここ👇
 
