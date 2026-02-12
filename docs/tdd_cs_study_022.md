@@ -7,12 +7,16 @@
 
 ## 1) 例外テストって、なんで必要？🤔💥
 
+![画像を挿入予定](./picture/tdd_cs_study_022_broken_key.png)
+
 ![画像を挿入予定](./picture/tdd_cs_study_022_gold_master.png)
 
 普通のテスト（正常系）だけだと…
 
 * 間違った入力が来た時に、**どんな失敗をするのが正しいのか**が曖昧になりがち😵
-* 結果として「たまたま落ちた」「別の例外で落ちた」が混ざって、**バグなのか仕様なのか分からない**…😭
+* 結果として「たまたま落ちた」「別の例外で落ちた」が混ざって
+
+![画像を挿入予定](./picture/tdd_cs_study_022_foggy_map.png)、**バグなのか仕様なのか分からない**…😭
 
 だから、**失敗も仕様として固定**するよ📌✨
 特に「引数が変」「状態が変」は、APIを使う側にとって超大事！
@@ -20,6 +24,8 @@
 ---
 
 ## 2) まず覚える“例外3兄弟”👭✨（超入門）
+
+![画像を挿入予定](./picture/tdd_cs_study_022_exception_trio.png)
 
 ### ✅ ArgumentNullException（nullはダメ！）
 
@@ -40,6 +46,8 @@
 ---
 
 ## 3) xUnitで例外をテストする基本セット🧪✨
+
+![画像を挿入予定](./picture/tdd_cs_study_022_toolbox.png)
 
 ### ① `Assert.Throws<T>`：**“その型ぴったり”**を期待する
 
@@ -62,6 +70,8 @@ xUnitの `Throws` は **派生型ではダメで、完全一致**を期待する
 
 ## 4) ハンズオン：カフェ会計に“無効入力”を追加する☕️🧾🚫
 
+![画像を挿入予定](./picture/tdd_cs_study_022_reject_coupon.png)
+
 ### 今日の題材：クーポン適用メソッド🎟️✨
 
 仕様（まずは超ミニ）👇
@@ -76,6 +86,8 @@ xUnitの `Throws` は **派生型ではダメで、完全一致**を期待する
 ## 5) Red → Green → Refactor で作るよ🚦✨
 
 ### ✅ Step 1: Red（落ちるテストを書く）🔴
+
+![画像を挿入予定](./picture/tdd_cs_study_022_code_throws.png)
 
 ```csharp
 using Xunit;
@@ -184,6 +196,8 @@ public static class CouponService
 
 ## 6) 例外テストの“よくある事故”あるある😵‍💫🧨
 
+![画像を挿入予定](./picture/tdd_cs_study_022_trap_accident.png)
+
 * ✅ **Assertの外でメソッド呼んじゃう**
   → 例外が先に飛んでテストが落ちる（`Assert.Throws` のラムダの中で呼ぶ！）
 * ✅ asyncなのに `Throws` を使う / `await` しない
@@ -207,6 +221,8 @@ AIはここでめちゃ便利✨
 ---
 
 ## 8) ミニ確認問題（3分）📝✨
+
+![画像を挿入予定](./picture/tdd_cs_study_022_quiz_card.png)
 
 Q1️⃣ `Assert.Throws<ArgumentException>` で、`ArgumentOutOfRangeException`（派生）が投げられたらどうなる？
 →（ヒント：`Throws` は“完全一致”） ([api.xunit.net][3])

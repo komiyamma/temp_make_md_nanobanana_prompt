@@ -12,6 +12,8 @@
 
 ## 三角測量ってなに？🤔📐
 
+![画像を挿入予定](./picture/tdd_cs_study_020_triangulation_concept.png)
+
 ざっくり言うとこう👇
 
 * **1個目のテスト**：とりあえず通す（仮実装・ベタ実装でもOK）🩹
@@ -23,6 +25,8 @@
 ---
 
 ## なぜ三角測量が効くの？🧠🚦
+
+![画像を挿入予定](./picture/tdd_cs_study_020_footsteps_path.png)
 
 TDDをやってると、最初のうちって「この先どうなるか分からん…😵」ってなることあるよね。
 
@@ -46,6 +50,8 @@ TDDをやってると、最初のうちって「この先どうなるか分か�
 ---
 
 ## Step 1：まずは1本目のテストを書く（Red🔴）
+
+![画像を挿入予定](./picture/tdd_cs_study_020_one_dot.png)
 
 テストは「例」を1つだけ置くよ〜👇
 
@@ -96,6 +102,8 @@ public class PriceCalculator
 
 ## Step 3：2本目のテストを追加する（Red🔴）＝“一般化が必要な状況”を作る📐
 
+![画像を挿入予定](./picture/tdd_cs_study_020_two_dots.png)
+
 次は **別の例** を置くよ〜👇
 
 ```csharp
@@ -123,6 +131,8 @@ public void AddTax_200yen_returns_220yen()
 ---
 
 ## Step 4：一般化する（Green🟢➡️📐）
+
+![画像を挿入予定](./picture/tdd_cs_study_020_ruler_connect.png)
 
 2例そろったので、やっと式にする！✨
 
@@ -166,6 +176,8 @@ public class PriceCalculator
 ## 三角測量の「テストケース選び」コツ集🎯✨
 
 ### コツ1：2本目は“同じ実装で通らない例”を選ぶ📌
+
+![画像を挿入予定](./picture/tdd_cs_study_020_smash_fixed.png)
 
 * 今回なら `100→110` の次に `200→220` を置いたから、固定値が死ぬ💀✨
 * もし `100→110` の次に `110→121` とかだと、偶然通る実装が残ることもある😇💦
@@ -211,6 +223,8 @@ AIは「次の一手」を出すのが得意だよ〜😆🫶
 ## ミニ演習（今日の宿題）🧪💪🎀
 
 ### 演習A：送料計算📦✨
+
+![画像を挿入予定](./picture/tdd_cs_study_020_shipping_scale.png)
 
 仕様：
 
