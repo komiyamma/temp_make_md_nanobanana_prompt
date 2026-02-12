@@ -47,6 +47,8 @@ flowchart TD
 ## 手順 🛠️✨
 
 ### 1) “共通の手順” を文章で固定する 📜✅
+![Common Flow Pipeline](./picture/gof_cs_study_078_pipeline_factory.png)
+
 
 まずは仕様を 1行で固定しよっ😺
 
@@ -68,6 +70,8 @@ flowchart TD
 * 外から呼ぶメソッド：`ExecuteAsync()`（ここが “手順固定”）
 * 子が埋めるメソッド：`ExecuteCoreAsync()`（ここが “差分”）
 * 検証はデフォルト実装を用意して、必要なときだけ上書き（`Validate()`）🙂
+
+![Logger Scope Tag](./picture/gof_cs_study_078_logger_tag.png)
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -148,6 +152,8 @@ public sealed record PlaceOrderRequest(
 ---
 
 ### 4) 子クラスで “差分だけ” 実装する 🧩🌸
+![ExecuteCore Focus](./picture/gof_cs_study_078_spotlight_core.png)
+
 
 注文確定ユースケースを最小で作るよ〜🎉
 
@@ -224,6 +230,8 @@ catch (Exception ex)
 ---
 
 ### 6) テストで “手順が固定されている” を確認する 🧪✅
+![Test Gate Verification](./picture/gof_cs_study_078_test_red_light.png)
+
 
 MSTest の基本（`[TestClass]` / `[TestMethod]`）は公式にも載ってるよ🧁([Microsoft Learn][3])
 さらに MSTest.Sdk は「多くの人におすすめ」って整理されてるよ🧪✨([Microsoft Learn][4])
