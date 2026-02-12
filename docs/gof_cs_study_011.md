@@ -25,6 +25,8 @@
 
 ### 1) まずは“手動new”のつらさを1回味わう 😵‍💫🔥
 
+![The Burden of New](./picture/gof_cs_study_011_new_pain.png)
+
 依存が増えると、呼び出し側がごちゃごちゃしてくるよね…！
 
 ```csharp
@@ -43,6 +45,8 @@ await orderService.PayAsync(PaymentKind.CreditCard, new Money(1200));
 ---
 
 ### 2) “DIの3語”を押さえる（ここ超大事！）🧠✨
+
+![Three Steps of DI](./picture/gof_cs_study_011_three_words.png)
 
 * **登録（Registration）**：`ServiceCollection` に「これ使うよ」を並べる📌
 * **解決（Resolve）**：必要になったらコンテナが作って渡す🎁
@@ -63,6 +67,8 @@ graph LR
 ```
 
 ### 3) 例題の最小ドメインを用意（小さくてOK）🛒🍰
+
+![Dependency Tree](./picture/gof_cs_study_011_dependency_graph.png)
 
 ※ここは“学習用モデル”だから、作り込み禁止ね😉🧼
 
@@ -153,6 +159,8 @@ public sealed class OrderService
 
 ### 4) DIコンテナに登録して、解決して動かす 🧩➡️🎬
 
+![The Magic Container](./picture/gof_cs_study_011_container_box.png)
+
 ここからが本番！
 `Microsoft.Extensions.DependencyInjection` を使うよ（標準寄りの定番）✨
 （コンソールだとNuGet追加が必要なことがあるよ：`dotnet add package Microsoft.Extensions.DependencyInjection`）
@@ -183,6 +191,8 @@ await orderService.PayAsync(PaymentKind.CreditCard, new Money(1200));
 
 ### 5) ライフサイクル（超重要）⏳📦
 
+![DI Lifetimes](./picture/gof_cs_study_011_lifetimes.png)
+
 DIの“事故”はだいたいここから起きるよ…！😇
 
 * `AddSingleton`：アプリ中ずっと1個（共有したい・状態が安全なら）👑
@@ -198,6 +208,8 @@ DIの“事故”はだいたいここから起きるよ…！😇
 ---
 
 ### 6) コンソールでもScopedを使うなら「スコープを作る」🧺✨
+
+![Scoped Bucket](./picture/gof_cs_study_011_scoped_bucket.png)
 
 Webみたいに自動でスコープが切られないので、自分で作るよ！
 
@@ -217,6 +229,8 @@ var session = scope.ServiceProvider.GetRequiredService<CheckoutSession>();
 ---
 
 ### 7) テストで“登録だけ”差し替えする 🧪💞
+
+![Stunt Double](./picture/gof_cs_study_011_fake_test.png)
 
 ここがDIの気持ちよさポイント！😍
 本番実装を触らず、**テスト側の登録で差し替え**できるよ。

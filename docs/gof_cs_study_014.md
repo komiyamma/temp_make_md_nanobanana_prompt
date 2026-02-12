@@ -24,6 +24,8 @@
 
 ### 1) まず「痛い `new`」を1つだけ選ぶ 😭➡️🎯
 
+![Cutting the Cord](./picture/gof_cs_study_014_separation.png)
+
 * 例：支払い手段・通知手段・保存先…などで `switch` が増えてる所🔥
 * ポイントはここ👇
 
@@ -32,6 +34,8 @@
   * **テストで差し替えたい**（本番API叩きたくない）🧪
 
 ### 2) 「作られるモノ」を抽象（interface/基底クラス）に寄せる 🧩✨
+
+![Silhouette](./picture/gof_cs_study_014_abstraction.png)
 
 * 呼び出し側が知るのは **抽象（契約）だけ**にするのが核心💡
 * 例：`CreditCardGateway` を直接知らず、`IPaymentGateway` だけ知る🙂
@@ -44,6 +48,8 @@ public interface IPaymentGateway
 ```
 
 ### 3) 「変わる点」と「変えたくない点」を分ける ✂️🧠
+
+![Island of Stability](./picture/gof_cs_study_014_change_vs_stable.png)
 
 困りごとテンプレ（超重要✨）👇
 
@@ -77,6 +83,8 @@ public abstract class PaymentWorkflow
 ```
 
 ### 5) 具体型は「派生側」に押し込む（呼び出し側から消す）🫥✨
+
+![Subclass Worker](./picture/gof_cs_study_014_subclass_impl.png)
 
 ```csharp
 public sealed class CreditCardPaymentWorkflow : PaymentWorkflow
