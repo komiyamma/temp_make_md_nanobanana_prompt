@@ -21,6 +21,8 @@
 
 ## 今日の合言葉：DRYよりDAMP 🧴🌱
 
+![DAMP vs DRY](./picture/tdd_ts_study_030_damp_vs_dry.png)
+
 * アプリのコード：重複は悪になりがち（DRY）
 * **テストコード：説明力が正義（DAMP＝Descriptive And Meaningful Phrases）**
   → **同じ言葉を繰り返すことが、仕様の強調になる**こともあるよ🫶
@@ -49,6 +51,8 @@
 ---
 
 ## ① Before：動くけど読めないテスト😇（ありがち）
+
+![Messy Test Fog](./picture/tdd_ts_study_030_messy_test_fog.png)
 
 ```ts
 import { describe, it, expect } from "vitest";
@@ -93,6 +97,8 @@ describe("calcTotalYen", () => {
 ---
 
 ## ② After：仕様が読めるテスト📘✨（おすすめ形）
+
+![Readable Test Book](./picture/tdd_ts_study_030_readable_test_book.png)
 
 ポイントはこの3つ💡
 
@@ -155,6 +161,8 @@ describe("calcTotalYen", () => {
 
 ## 🧠 テスト側リファクタの「安全な手順」🛡️✨
 
+![Refactoring Steps Flow](./picture/tdd_ts_study_030_refactoring_steps_flow.png)
+
 おすすめの順番はこれ👇（事故りにくいよ😊）
 
 1. **テスト名を直す**📝
@@ -172,6 +180,9 @@ describe("calcTotalYen", () => {
 4. **パラメータ化できるところだけ it.each**🔁
 
    * “同じルールの入力違い” だけね！（違うルールまで混ぜない）
+
+![It Each Loop](./picture/tdd_ts_study_030_it_each_loop.png)
+
 5. **失敗時メッセージを足す**💬✨
 
    * 「何の約束が破れた？」が出ると神👼
@@ -182,6 +193,8 @@ describe("calcTotalYen", () => {
 ---
 
 ## 🙅‍♀️ 共通化しすぎチェック（ここ超大事）🚨
+
+![Helper Hell Maze](./picture/tdd_ts_study_030_helper_hell_maze.png)
 
 次の匂いが出たら、共通化をやめるサイン💡
 
@@ -195,6 +208,8 @@ describe("calcTotalYen", () => {
 ---
 
 ## 🤖 AIの使い方（第30章向けテンプレ）✨
+
+![AI Editor](./picture/tdd_ts_study_030_ai_editor.png)
 
 AIはめっちゃ相性いい章だよ😍（ただし判断は自分！）
 

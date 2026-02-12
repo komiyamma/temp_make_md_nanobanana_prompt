@@ -29,6 +29,8 @@ TDDって、テストを書いて進むだけじゃなくて、**“重複が見
 
 ## 👃 “重複のにおい”ってなに？（コピペだけじゃない）🧠💡
 
+![Duplication Types](./picture/tdd_ts_study_028_duplication_types.png)
+
 「重複」はだいたいこの4タイプで出るよ👇
 
 ### 1) 📦 データの重複
@@ -141,7 +143,11 @@ describe("totalPrice", () => {
 
 ## 🪜 ステップ2：改善案を「最小→中→大」で3つ出す✨
 
+![Refactoring Steps](./picture/tdd_ts_study_028_refactoring_steps.png)
+
 ### ✅ 改善案A（最小）：テストのデータ重複だけ消す📦✨
+
+![Improvement A Small](./picture/tdd_ts_study_028_improvement_a_small.png)
 
 ポイント：**読みやすさ優先で、やりすぎない**🙂
 
@@ -173,6 +179,8 @@ describe("totalPrice", () => {
 
 ### ✅ 改善案B（中）：割引ルール（知識）を“名前”にする🧭🏷️
 
+![Improvement B Medium](./picture/tdd_ts_study_028_improvement_b_medium.png)
+
 ポイント：**“知識は1か所に集める”**（変更に強くなる）💪✨
 
 ```ts
@@ -198,6 +206,8 @@ function totalPrice(items: Item[], coupon?: Coupon): number {
 ---
 
 ### ✅ 改善案C（大）：テストの意図を“表”に寄せる（パラメータ化）🗂️🔁
+
+![Improvement C Large](./picture/tdd_ts_study_028_improvement_c_large.png)
 
 ポイント：ケースが増える未来に強い✨（第22章とつながるよ）
 
@@ -225,6 +235,8 @@ describe("totalPrice coupon", () => {
 
 ## ⚠️ DRYしすぎ注意（テストでやりがちな事故）🚑💦
 
+![Over DRY Warning](./picture/tdd_ts_study_028_over_dry_warning.png)
+
 テストは「読み物」だから、**重複を消しすぎると逆に読めなくなる**の😵‍💫
 
 ### 🚫 ありがち
@@ -242,6 +254,8 @@ describe("totalPrice coupon", () => {
 ---
 
 ## 🤖 AIの使い方（この章は相性◎）💞🤖
+
+![AI Diagnosis](./picture/tdd_ts_study_028_ai_diagnosis.png)
 
 AIには「診断と案出し」をやらせると強いよ💪✨
 （ただし、仕様決めは人間側ね😉）
