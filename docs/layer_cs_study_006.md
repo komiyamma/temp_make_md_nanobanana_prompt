@@ -17,6 +17,8 @@ IDEは **Visual Studio 2026** 系が前提でOK（VS 2026 のリリースノー�
 
 ## 6-1. Presentation層って結局なに？🤔🎯
 
+![presentation_translator](./picture/layer_cs_study_006_presentation_translator.png)
+
 Presentation層の仕事は、ざっくり **「外の世界」と「アプリ本体」をつなぐ翻訳係** だよ😊✨
 Web APIなら「HTTP ↔ UseCase」の通訳さん🗣️🔁
 
@@ -52,6 +54,8 @@ flowchart LR
 
 ## 6-2. “薄いUI”って、どれくらい薄いの？🪶✨
 
+![thin_vs_fat_ui](./picture/layer_cs_study_006_thin_vs_fat_ui.png)
+
 目安はこれ👇
 
 ### 👍 良い薄さ（理想）😊
@@ -69,6 +73,8 @@ flowchart LR
 
 ## 6-3. DTOの考え方📦✨（画面/APIの都合を隔離する）
 
+![dto_concept](./picture/layer_cs_study_006_dto_concept.png)
+
 Presentation層には **DTO（Request/Response）** を置くのが基本だよ😊
 DTOは「外に見せる形」だから、Domainとは別物でOK🙆‍♀️
 
@@ -80,6 +86,8 @@ DTOは「外に見せる形」だから、Domainとは別物でOK🙆‍♀️
 ---
 
 ## 6-4. プロジェクト/フォルダ配置のおすすめ📁🧠
+
+![presentation_folder_structure](./picture/layer_cs_study_006_presentation_folder_structure.png)
 
 Presentationプロジェクトの中は、こう分けるとスッキリするよ〜✨
 
@@ -305,6 +313,8 @@ public sealed class GlobalExceptionHandler : Microsoft.AspNetCore.Diagnostics.IE
 
 ## 6-5④ 入力チェックを “Endpoint Filter” に追い出して、さらに薄くする🪶✨
 
+![endpoint_filter_mechanism](./picture/layer_cs_study_006_endpoint_filter_mechanism.png)
+
 Minimal APIには **Filter** があるよ〜！
 「前後に共通処理を差し込む」「引数をチェックする」みたいな用途にピッタリ😊
 （Minimal API filters は公式ドキュメントにあるよ）([Microsoft Learn][5])
@@ -355,6 +365,8 @@ using Todo.Presentation.Filters;
 ---
 
 ## 6-6. エラーは “入口でHTTP向けに整える” ⚠️📮（ProblemDetails）
+
+![problem_details_format](./picture/layer_cs_study_006_problem_details_format.png)
 
 Web APIでよくある悩み👇
 

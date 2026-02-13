@@ -17,6 +17,8 @@
 
 ## 1. そもそも「依存」ってなに？🤔🔗
 
+![dependency_definition](./picture/layer_cs_study_003_dependency_definition.png)
+
 ここ、最初にハッキリさせると一気にラクになります😊
 
 ### ✅ この章で言う「依存」＝**ソースコードの依存**🧾
@@ -48,6 +50,8 @@
 ---
 
 ## 3. 4層の“矢印の正解”🧱➡️
+
+![layer_concentric_arrows](./picture/layer_cs_study_003_layer_concentric_arrows.png)
 
 今回の教材の4層を、依存の向きで描くとこうです👇
 
@@ -89,6 +93,8 @@ graph TD
 
 ## 4. なんでこのルールが大事なの？🥹🛡️
 
+![domain_shield](./picture/layer_cs_study_003_domain_shield.png)
+
 理由はシンプルで、**変わりやすいもの**から守りたいからです✨
 
 * UIは変わる（画面、入力、見た目）🎨
@@ -101,6 +107,8 @@ Dependency Rule の説明でも、外側は低レベルな詳細で、内側ほ�
 ---
 
 ## 5. ルール違反が起きる典型パターン💥（あるある集）
+
+![violation_domain_db](./picture/layer_cs_study_003_violation_domain_db.png)
 
 ここ、初心者がめっちゃハマるポイントを“事故例”で覚えるのが早いです🤣
 
@@ -134,6 +142,8 @@ Dependency Rule の説明でも、外側は低レベルな詳細で、内側ほ�
 ---
 
 ## 6. じゃあどう直すの？🛠️✨（最強の型：抽象を内側へ）
+
+![refactor_interface_dip](./picture/layer_cs_study_003_refactor_interface_dip.png)
 
 違反が起きたときの基本ムーブはこれです👇
 

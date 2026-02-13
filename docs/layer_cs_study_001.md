@@ -10,6 +10,8 @@
 
 ## 1. レイヤード＝「役割が違うものを混ぜない」🧹✨
 
+![messy_kitchen](./picture/layer_cs_study_001_messy_kitchen.png)
+
 ![レイヤード＝役割分離](./picture/layer_cs_study_001_roles.png)
 
 レイヤードアーキテクチャって、めちゃ一言でいうと👇
@@ -24,6 +26,8 @@
 ---
 
 ## 2. 何がうれしいの？😊（変更に強い／読みやすい／テストしやすい）
+
+![benefits_visual](./picture/layer_cs_study_001_benefits_visual.png)
 
 レイヤードのご褒美はこれ👇🎁
 
@@ -45,6 +49,8 @@
 ---
 
 ## 3. よくある事故：神クラス・神メソッド😇💥
+
+![god_class](./picture/layer_cs_study_001_god_class.png)
 
 ### 神クラスってなに？😇
 
@@ -77,6 +83,8 @@
 ---
 
 ## 5. ミニ体験：混ざったコードの「におい」を嗅ぐ🐶🔍
+
+![mixed_code_smell](./picture/layer_cs_study_001_mixed_code_smell.png)
 
 次のコード、動くかもしれないけど…“混ざり具合” を見てみてね👀✨
 （短い例だから安心してね😊）
@@ -145,6 +153,8 @@ flowchart TD
 ---
 
 ## 6. レイヤードは「仕事の種類」で分ける📦✨（ざっくり予告）
+
+![separation_buckets](./picture/layer_cs_study_001_separation_buckets.png)
 
 この教材の4層モデルは、ざっくりこんな担当イメージ👇🧱
 （第2章で地図をちゃんと描くから、ここは“ふんわり”でOK😊）

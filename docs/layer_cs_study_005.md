@@ -19,6 +19,8 @@
 
 ## 5.1 まず“完成図”を見よう👀🗺️
 
+![folder_structure_diagram](./picture/layer_cs_study_005_folder_structure_diagram.png)
+
 ### 物理フォルダ構成（おすすめ）
 
 こんな感じにしておくと迷子にならないよ🧭✨
@@ -40,6 +42,8 @@ TodoApp/
 ---
 
 ## 5.2 Visual Studioで作る手順🪄（いちばんラク！）
+
+![vs_create_project_steps](./picture/layer_cs_study_005_vs_create_project_steps.png)
 
 ### 手順A：Presentation（Web API）から作って、あとで追加する方法🚀
 
@@ -97,6 +101,8 @@ dotnet sln TodoApp.sln add src/TodoApp.Infrastructure/TodoApp.Infrastructure.csp
 ---
 
 ## 5.4 いちばん大事：参照ルール（依存）を固定する🔗✅
+
+![dependency_rule_visual](./picture/layer_cs_study_005_dependency_rule_visual.png)
 
 ![ソリューション構成](./picture/layer_cs_study_005_structure.png)
 
@@ -170,6 +176,8 @@ Solution Explorerの右クリックメニュー、実はめっちゃ強い！
 
 ## 5.7 ついでに“最新のおすすめ”を土台に入れちゃおう📦✨
 
+![nuget_central_management](./picture/layer_cs_study_005_nuget_central_management.png)
+
 ### ① .NETは「.NET 10（LTS）」が基準にしやすいよ🧡
 
 いまのLTSとして .NET 10 が整理しやすい（学習にも運用にも◎）([Microsoft Learn][4])
@@ -218,6 +226,8 @@ Solution Explorerの右クリックメニュー、実はめっちゃ強い！
 ---
 
 ## 5.8 よくある事故と直し方💥🩹
+
+![circular_dependency_loop](./picture/layer_cs_study_005_circular_dependency_loop.png)
 
 ### 事故①：DomainからInfrastructureを参照しちゃった😇
 

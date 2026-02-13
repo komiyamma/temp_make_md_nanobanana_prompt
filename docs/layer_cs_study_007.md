@@ -10,6 +10,8 @@
 
 ## 7-1. Application層って結局なに？📋✨
 
+![application_conductor](./picture/layer_cs_study_007_application_conductor.png)
+
 **Application層 = “やり方”を並べる層**だよ！
 
 たとえば「ToDoを追加する」ってボタンを押したとき、裏ではだいたいこうなるよね👇
@@ -31,6 +33,8 @@
 ---
 
 ## 7-2. Application層に「入れちゃダメ」なもの🙅‍♀️💥
+
+![app_dos_and_donts](./picture/layer_cs_study_007_app_dos_and_donts.png)
 
 ここが最初に事故りやすいポイント！
 
@@ -77,6 +81,8 @@ sequenceDiagram
 
 ## 7-3. “ユースケース”の設計ルール（超・実戦向け）🧠✨
 
+![usecase_rules](./picture/layer_cs_study_007_usecase_rules.png)
+
 ### ルールA：**1操作 = 1UseCase** 🎯
 
 * `CreateTodoUseCase`（追加）
@@ -110,6 +116,8 @@ sequenceDiagram
 ---
 
 ## 7-5. まずはDomainを“薄く”用意（ルールはDomainへ💎）
+
+![domain_vs_app_logic](./picture/layer_cs_study_007_domain_vs_app_logic.png)
 
 （Domainの深掘りは8〜9章でやるけど、Application層の例のために最低限だけ置くよ😊）
 
@@ -149,6 +157,8 @@ public sealed class TodoItem
 ---
 
 ## 7-6. Application層：UseCase（追加）を作る🎮✨
+
+![usecase_internal_flow](./picture/layer_cs_study_007_usecase_internal_flow.png)
 
 ### ① 依存の“窓口”インターフェース（いまはApplicationに置く案）🚪
 
@@ -245,6 +255,8 @@ app.MapPost("/todos", async (CreateTodoCommand cmd, CreateTodoUseCase useCase, C
 ---
 
 ## 7-8. 「UseCase = トランザクション境界」ってどういうこと？🗃️🔒
+
+![transaction_boundary](./picture/layer_cs_study_007_transaction_boundary.png)
 
 感覚としてはこれ👇
 
