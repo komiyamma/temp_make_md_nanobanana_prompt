@@ -69,6 +69,8 @@ Domainの変更＝業務ルールの変更
 
 ## 3. DTOの種類を整理しよ📦📦📦（これで迷子にならない）
 
+![Types of DTOs](./picture/layer_cs_study_010_dto_types.png)
+
 DTOって一口に言っても、用途があるよ〜✨
 
 * **Request DTO**：受け取る用（例：CreateTodoRequest）
@@ -91,6 +93,8 @@ DTOって一口に言っても、用途があるよ〜✨
 境界の近く＝「その形を知っていい場所」だよ！
 
 #### ✅ 基本ルール（迷ったらこれ！）
+
+![Data Mapping Flow](./picture/layer_cs_study_010_mapping_flow.png)
 
 * **Presentation**：Request/Response DTO ⇄ Application入力（Command/Query）
 * **Application**：UseCase入力 ⇄ Domainモデル（必要なら）
@@ -212,6 +216,8 @@ public sealed class TodoItem
 
 ## 6. 変換はどう書く？（まずは手書きが最強✍️✨）
 
+![Mapping Location](./picture/layer_cs_study_010_mapping_location.png)
+
 初心者のうちは、まず **手書きマッピング推奨**！✍️
 理由は「何がどこへ流れてるか」が体に入るから😊
 
@@ -253,6 +259,8 @@ DTOが増えるときは、だいたいこの2パターンで増えるよ📈
 
 ### ✅ おすすめ整理ルール（すぐ効く！）
 
+![Feature-based Folder Structure](./picture/layer_cs_study_010_folder_structure_feature.png)
+
 * **機能（Feature）単位でフォルダを切る**📁✨
   例：`Todos/Create/` `Todos/List/` `Todos/Detail/`
 * **Request/Responseを分ける**（同じDTOを使い回さない）🧠✂️
@@ -261,6 +269,8 @@ DTOが増えるときは、だいたいこの2パターンで増えるよ📈
 ---
 
 ## 8. 自動マッピングどうする？🤖✨（使いどころが大事！）
+
+![Manual vs AutoMapper](./picture/layer_cs_study_010_automapper_vs_manual.png)
 
 ### 8-1. AutoMapperについて（2026時点の注意点⚠️）
 

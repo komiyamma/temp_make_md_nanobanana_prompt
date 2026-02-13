@@ -73,12 +73,16 @@ Repositoryがないと、Applicationがこうなりがち：
 
 ## 4. Repositoryが守るべき “3つの約束”🤝✨
 
+![3 Promises of Repository](./picture/layer_cs_study_013_repository_promises.png)
+
 ## 約束①：上の層に「保存技術」を漏らさない🚫
 
 * EF Coreの型（`DbContext`, `DbSet`, `IQueryable` など）を、Application/Domainへ出さない🙅‍♀️
 * SQLやテーブル都合の概念を、Domainへ持ち込まない🙅‍♀️
 
 ## 約束②：Repositoryは “集約ルート単位” で考える📦
+
+![Repository and Aggregate Root](./picture/layer_cs_study_013_aggregate_root.png)
 
 Repositoryは「何でも入る万能箱」じゃなくて、基本は **集約（Aggregate）ごと** に作るのが定石だよ🧱✨
 （＝ドメインのまとまり単位で保存する） ([Microsoft Learn][2])
@@ -175,6 +179,8 @@ EF CoreみたいなORMだと「追跡して変更→`SaveChanges`」で更新で
 
 ## 7. Application層からの使い方（UseCaseっぽく）🎮📋
 
+![UseCase using Repository](./picture/layer_cs_study_013_usecase_calling_repo.png)
+
 「完了にする」ユースケースを例にするね！
 
 ```csharp
@@ -211,6 +217,8 @@ public class CompleteTodoUseCase
 ---
 
 ## 8. テストが一気にラクになる🎁🧪（Fake Repository）
+
+![Testing with Fake Repository](./picture/layer_cs_study_013_fake_repository_test.png)
 
 Repositoryを作る最大のご褒美の一つがこれ！🍰✨
 DB無しで “UseCaseの手順” をテストできるようになるよ〜！
@@ -284,6 +292,8 @@ Microsoftの資料では、**`DbContext`は Unit of Work と Repository の考�
 ---
 
 ## 10. 初心者がやりがち地雷💣（先に回避！）
+
+![Generic Repository Anti-Pattern](./picture/layer_cs_study_013_bad_generic_repository.png)
 
 ## 地雷①：`IRepository<T>`みたいな “何でも屋” を作る😇
 

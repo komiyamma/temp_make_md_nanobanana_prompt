@@ -70,6 +70,8 @@ Visual Studio も .NET 10 世代に合わせたリリースがあり、C#の新�
 
 ## 3. 「Policy（方針）と Detail（詳細）」で分ける🧠✨
 
+![Policy vs Detail](./picture/layer_cs_study_011_policy_vs_detail.png)
+
 レイヤードを気持ちよくする考え方👇
 
 * **Policy（方針）＝Domain / Application**
@@ -83,6 +85,8 @@ Detailを内側に入れると、方針まで一緒に揺れるのが事故ポ�
 ---
 
 ## 4. 依存の形：内側は「欲しいこと」を宣言、外側が「やり方」を担当📣🛠️
+
+![Dependency Direction](./picture/layer_cs_study_011_dependency_rule_arrows.png)
 
 ### イメージ図（言葉で）🧱
 
@@ -118,6 +122,8 @@ classDiagram
 ---
 
 ## 5. 例1：時刻（DateTime.Now）をDomainに直書きしない🕰️🙅‍♀️
+
+![Clock Abstraction](./picture/layer_cs_study_011_clock_abstraction.png)
 
 ### ありがち事故💥
 
@@ -220,6 +226,8 @@ public sealed class EfTodoRepository : ITodoRepository
 
 ## 8. “漏れてる”サイン（においチェック）👃💥
 
+![Leaky Abstraction Detection](./picture/layer_cs_study_011_leak_detection.png)
+
 次が見えたら「Infrastructureが内側に漏れてる」可能性大👇
 
 * Applicationのクラスが `DbContext` を受け取ってる🗄️😱
@@ -233,6 +241,8 @@ public sealed class EfTodoRepository : ITodoRepository
 ---
 
 ## 9. じゃあInfrastructureってどんなフォルダ構成が多い？📁✨
+
+![Infrastructure Folder Organization](./picture/layer_cs_study_011_infrastructure_folders.png)
 
 よくある “わかりやすい” 分け方👇
 
