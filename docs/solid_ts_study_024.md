@@ -23,6 +23,8 @@
 
 ### ✅ DI（実装のテクニック）
 
+![DIP vs DI](./picture/solid_ts_study_024_dip_vs_di.png)
+
 でも…抽象だけに依存してると、最後にこうなるよね？😵
 「え、じゃあ実際の実装（DB保存とか通知とか）って、どこで繋ぐの？」
 
@@ -34,6 +36,8 @@
 ## 2) 依存を「外から渡す」ってこういうこと😺
 
 ### ❌ DIなし（newしちゃうパターン）
+
+![Cake vs Topping](./picture/solid_ts_study_024_cake_vs_topping.png)
 
 * 便利そうに見えるけど、差し替え不能になりやすい😢
 
@@ -77,6 +81,8 @@ class PlaceOrderUseCase {
 ## 3) DIの注入スタイル3つ（まずは①だけで勝てる）🏆✨
 
 ### ① コンストラクタ注入（最優先で覚える）🥇
+
+![Robot Assembly](./picture/solid_ts_study_024_robot_assembly.png)
 
 * いちばん安全・わかりやすい・テストしやすい✅
 * “必要な依存が揃ってないと作れない”のが良いところ🧡
@@ -163,6 +169,7 @@ export class PlaceOrderUseCase {
 ```
 
 ✅ UseCaseは「ファイル保存」も「メール通知」も知らない！
+![Blinders Horse](./picture/solid_ts_study_024_blinders_horse.png)
 知ってるのは **OrderRepository / Notifier** だけ🎉
 
 ---
@@ -205,6 +212,7 @@ export class ConsoleNotifier implements Notifier {
 ## 8) いちばん大事！Composition Root（組み立て場所）🏗️✨
 
 DIで超重要なのはここ！
+![Control Room](./picture/solid_ts_study_024_control_room.png)
 「どの実装を使うか」を **アプリの入口** で決めるよ😊
 
 ```ts
@@ -241,6 +249,8 @@ UseCaseは変えずに、入口だけで実装を差し替えできるように�
 ---
 
 ## 9) テストが天国になる（これがDIのご褒美）👼✅
+
+![Test Angel](./picture/solid_ts_study_024_test_angel.png)
 
 ### テスト用の実装（Fake / InMemory）を作る🧪
 
@@ -321,6 +331,8 @@ DIがあるから、**UseCaseの中身を一切いじらず**、テスト用の�
 ---
 
 ## 11) 2026年の注意点：デコレータDIは「前提」を確認してね⚠️🪄
+
+![Decorator Warning](./picture/solid_ts_study_024_decorator_warning.png)
 
 DIコンテナの中には、**デコレータ＋メタデータ**に頼るものがあるよ（例：Inversifyなど）🧙‍♀️✨
 その場合、TypeScript設定で `experimentalDecorators` や `emitDecoratorMetadata` が必要になることが多いの。 ([inversify.io][3])

@@ -106,6 +106,8 @@ export class OrderService {
 
 ### このコードの問題、言語化できる？📝✨
 
+![Messy Kitchen](./picture/solid_ts_study_025_messy_kitchen.png)
+
 * 変更理由が多すぎる（SRP違反）😵‍💫
 * 割引が増えるたびに `switch` を修正（OCP違反）💣
 * 支払い/保存/通知が直結（DIP違反）🧷
@@ -121,6 +123,8 @@ export class OrderService {
 
 仕様が曖昧でもOK！
 まずは「今の挙動」を固定する **キャラクタリゼーションテスト** を置くよ✨
+
+![Snapshot Camera](./picture/solid_ts_study_025_snapshot_camera.png)
 
 ```ts
 // src/before/OrderService.spec.ts
@@ -164,6 +168,8 @@ describe("OrderService (before)", () => {
 
 「placeOrder」が抱えてる責務を **名前で分ける** だけでOK！
 
+![Sorting Boxes](./picture/solid_ts_study_025_sorting_boxes.png)
+
 * 料金計算 → `PriceCalculator` 💰
 * 割引 → `DiscountPolicy`（次でOCPに繋げる）🎟️
 * 支払い → `PaymentGateway` 💳
@@ -192,6 +198,8 @@ export class PriceCalculator {
 
 割引が増えるのが見えてるなら、`switch` は卒業🎓💥
 **戦略パターン（Strategy）**でいこ〜！
+
+![Strategy Slot](./picture/solid_ts_study_025_strategy_slot.png)
 
 ```ts
 // src/domain/discount/DiscountPolicy.ts
@@ -250,6 +258,8 @@ OCPで差し替えられるようになったら、次は **「差し替えて�
 ここで便利なのが **契約テスト（Contract Test）**✨
 「DiscountPolicyならこう振る舞うべき」をテストとして固定するよ🧪
 
+![Contract Sign](./picture/solid_ts_study_025_contract_sign.png)
+
 ```ts
 // src/domain/discount/discountPolicy.contract.spec.ts
 import { describe, it, expect } from "vitest";
@@ -284,6 +294,9 @@ describe("DiscountPolicy contract", () => {
 ## 7) ステップ4：ISP（巨大interfaceを分割）✂️📄
 
 よくある事故👇
+
+![ID Card Cut](./picture/solid_ts_study_025_id_card_cut.png)
+
 「Repositoryってさ、読み取りも書き込みも検索も全部…」ってやつ😇
 
 分割のコツはこれ：
@@ -327,6 +340,8 @@ export interface OrderReader {
     に振り回されないようにする！
 
 つまり、アプリ側は **インターフェース（抽象）**だけ知ってればOKにするよ😊✨
+
+![Throne Tribute](./picture/solid_ts_study_025_throne_tribute.png)
 
 ```ts
 // src/app/ports.ts
@@ -552,6 +567,8 @@ VS Code 1.108 のリリースノートでも、エージェント周りが強化
 ---
 
 ## 12) まとめ：第25章で身につく“最重要スキル”🌟
+
+![Refactoring Map](./picture/solid_ts_study_025_refactoring_map.png)
 
 この章で一番大事なのはこれ👇
 

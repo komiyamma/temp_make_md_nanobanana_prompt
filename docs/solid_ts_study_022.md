@@ -26,6 +26,7 @@
 
 ```ts
 // ❌ でかすぎ Notifier（なんでも屋）
+![God Notifier](./picture/solid_ts_study_022_god_notifier.png)
 export interface Notifier {
   sendEmail(to: string, subject: string, body: string): Promise<void>;
   sendPush(userId: string, message: string): Promise<void>;
@@ -61,6 +62,9 @@ export class PlaceOrderUseCase {
 ISPはざっくり言うと👇
 
 * **呼び出し側（クライアント）ごとに interface を薄くする**🧻✨
+
+![Notifier Roles](./picture/solid_ts_study_022_notifier_roles.png)
+
 * 「注文処理が必要な通知」と「厨房が必要な通知」は違うよね？って分ける🧠
 * 依存は **“必要最小限”** にする🪶
 
@@ -86,6 +90,8 @@ ISPはざっくり言うと👇
 
 ### 4-1. 小さな interface を作る🧻✂️
 
+![Split Cards](./picture/solid_ts_study_022_split_cards.png)
+
 ```ts
 export type Order = {
   id: string;
@@ -108,6 +114,8 @@ export interface AuditLogger {
 ```
 
 ### 4-2. 注文ユースケースは「必要なものだけ」依存する🪶✨
+
+![Clean Dependency](./picture/solid_ts_study_022_clean_architecture.png)
 
 ```ts
 export class PlaceOrderUseCase {
@@ -170,6 +178,8 @@ Vitest は公式サイトがあり、最近の大きなリリース情報も出�
 
 ### 6-1. 「必要な分だけ」モックすればOK🎉
 
+![Mock Lego](./picture/solid_ts_study_022_mock_lego.png)
+
 ```ts
 import { describe, it, expect, vi } from "vitest";
 
@@ -204,6 +214,9 @@ describe("PlaceOrderUseCase", () => {
 ## 7. “通知手段が増えた”ときの増やし方（壊れない）🧱🌱
 
 例：新しく「アプリ通知」を追加したい📲✨
+
+![Plugin Add](./picture/solid_ts_study_022_plugin_add.png)
+
 👉 追加するのは **新しい interface**（または既存の薄い interface を増やす）だけ。
 
 ### パターンA：新しい用途なら interface を増やす🧻✨
@@ -240,6 +253,9 @@ AIは“案出し担当”、採用判断はあなた担当👩‍💻💖
 ## 9. よくある失敗あるある⚠️😵‍💫
 
 * ❌ 「1メソッドinterface」を無限に作って、逆に迷子🌀
+
+![Puzzle Chaos](./picture/solid_ts_study_022_puzzle_chaos.png)
+
   → ✅ **用途（誰が使うか）**でまとめると安定するよ😊
 * ❌ “通知全部”を1つの usecase に押し込む
   → ✅ 注文は注文、通知は通知で責務を分けやすくする（SRPとも仲良し）🤝✨
