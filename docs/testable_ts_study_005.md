@@ -9,6 +9,8 @@
 
 ## 0) 今日時点の“おすすめ最新版”メモ📝
 
+![testable_ts_study_005_tech_stack_versions.png](./picture/testable_ts_study_005_tech_stack_versions.png)
+
 ✨* **Node.js**：**v24 系が Active LTS**（例：**v24.13.0** は 2026-01-13 のセキュリティリリース）🔒🧯 ([Node.js][1])
 
 
@@ -31,6 +33,8 @@
 ---
 
 ## 2) Node.js を入れて動作確認する🔧✅## 2-1. いちばん安心ルート：公式インストーラ🧑‍🏫✨
+
+![testable_ts_study_005_official_installer.png](./picture/testable_ts_study_005_official_installer.png)
 
 公式のダウンロードページから **LTS（今は v24 系）** を選んで入れるのが一番トラブル少ないよ🙆‍♀️ ([Node.js][5])
 
@@ -68,6 +72,8 @@ npm -v
 
 ## 3-1. フォルダ作成＆VS Codeで開く📂
 
+![testable_ts_study_005_project_init.png](./picture/testable_ts_study_005_project_init.png)
+
 ```powershell
 mkdir testable-ts
 cd testable-ts
@@ -92,6 +98,8 @@ npm i -D typescript vitest @types/node
 ---
 
 ## 4) tsconfig を用意する🛠
+
+![testable_ts_study_005_tsconfig_settings.png](./picture/testable_ts_study_005_tsconfig_settings.png)
 
 ️📘（“あとで困らない”設定）まず雛形を作るよ：
 
@@ -125,6 +133,8 @@ npx tsc --init --strict
 ---
 
 ## 5) プロジェクト構成（I/O分離しやすい形）
+
+![testable_ts_study_005_folder_structure.png](./picture/testable_ts_study_005_folder_structure.png)
 
 を先に作る🧱✨この講座らしく、最初から「中心」と「外側」を置きやすい形にしちゃうよ🏠➡️🌍
 
@@ -181,6 +191,8 @@ describe("add", () => {
 
 ## 6-3. 実行！
 
+![testable_ts_study_005_test_pass.png](./picture/testable_ts_study_005_test_pass.png)
+
 ✅
 
 ```powershell
@@ -194,6 +206,8 @@ npm test
 ## 7) VS Code で “ぽちぽち実行”できるようにする🖱️
 
 🧩## 7-1. Vitest の VS Code 拡張を入れる🧩
+
+![testable_ts_study_005_vscode_testing_icon.png](./picture/testable_ts_study_005_vscode_testing_icon.png)
 
 拡張で **Vitest** を入れると、VS Code の **Testingビュー** からテストを実行できるよ👀✨ ([GitHub][4])
 

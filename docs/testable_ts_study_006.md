@@ -26,6 +26,8 @@
 
 ## 6-2. テストランナーってなに？🚦🧠テストランナーはね、超ざっくり言うと👇
 
+![testable_ts_study_006_runner_process.png](./picture/testable_ts_study_006_runner_process.png)
+
 
 
 * 🧪 **テストファイルを見つけて**
@@ -64,6 +66,8 @@ Vitestの導入・使い方の基本は公式ガイドにまとまってるよ�
 
 ## ② テスト用のスクリプトを用意する🧷✨`package.json` の scripts に `test` を用意（コマンドで足すのが楽）
 
+![testable_ts_study_006_npm_scripts.png](./picture/testable_ts_study_006_npm_scripts.png)
+
 👇
 
 
@@ -79,6 +83,8 @@ npm pkg set scripts.test:run="vitest run"
 ---
 
 ## ③ “超小さい純粋関数” を作る🍬✨`src/sum.ts`
+
+![testable_ts_study_006_pure_function_code.png](./picture/testable_ts_study_006_pure_function_code.png)
 
 
 
@@ -111,6 +117,8 @@ describe("sum", () => {
 
 ## ⑤ 実行！
 
+![testable_ts_study_006_success_green.png](./picture/testable_ts_study_006_success_green.png)
+
 🟢🎉
 
 ```bash
@@ -142,6 +150,8 @@ export function sum(a: number, b: number): number {
 
 ## ② 失敗ログの “見る場所” はここ👀🔍失敗したら、注目するのはだいたいこの3点！
 
+![testable_ts_study_006_failure_analysis.png](./picture/testable_ts_study_006_failure_analysis.png)
+
 1. ❌ **どのテストが落ちた？**（テスト名：`2 + 3 = 5` のところ）
 2. 🧾 **期待値(Expected) と 実際(Received)** の差
 3. 🧭 **落ちた場所（ファイル名と行番号）** ← VS Codeでそこに飛べる✨
@@ -167,6 +177,8 @@ export function sum(a: number, b: number): number {
 ---
 
 ## 6-5. 基本アサーション入門（よく使うやつだけ）
+
+![testable_ts_study_006_assertion_types.png](./picture/testable_ts_study_006_assertion_types.png)
 
 🧰🧪ここだけ覚えれば当面戦えるよ〜！⚔️✨
 
@@ -212,6 +224,8 @@ expect(boom).toThrow("nope");
 ---
 
 ## 6-6. VS Codeで “気持ちよく回す” 小技💻✨* 🧪 ターミナルは **分割**して `npm test` 専用にすると快適
+
+![testable_ts_study_006_vscode_tips.png](./picture/testable_ts_study_006_vscode_tips.png)
 
 
 * 👀 失敗ログの **ファイル:行番号** をクリックして即ジャンプ
