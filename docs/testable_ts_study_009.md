@@ -22,6 +22,8 @@ TypeScriptの型って、上手に使うと **“不正な入力・不正な状�
 
 ## 9-2. 「型でテストが減る」ってどういうこと？🧠🪄### 💡減らせるテストの代表例* 「この関数に `undefined` 渡したらどうなる？」系
 
+![testable_ts_study_009_type_shield_concept.png](./picture/testable_ts_study_009_type_shield_concept.png)
+
 
 * 「ステータスに `delivereddd`（typo）入ったら？」系
 * 「オプションプロパティがある前提で触って落ちる」系
@@ -37,6 +39,8 @@ TypeScriptの型って、上手に使うと **“不正な入力・不正な状�
 ---
 
 ## 9-3. 型で「不正」を締め出す4大テク🧰✨### ① リテラル型 + ユニオン型（typo を物理的に消す）
+
+![testable_ts_study_009_union_gate.png](./picture/testable_ts_study_009_union_gate.png)
 
 🧯「文字列で状態を持つ」のが一番事故るポイント！😭
 まずはこれを “決め打ちの集合” にしちゃう👇
@@ -56,6 +60,8 @@ function canShip(status: OrderStatus): boolean {
 ---
 
 ### ② Discriminated Union（状態×データの矛盾を消す）
+
+![testable_ts_study_009_discriminated_union.png](./picture/testable_ts_study_009_discriminated_union.png)
 
 🧩「ステータスは shipped なのに trackingNumber が無い」みたいな矛盾、あるある…😇
 それ、型で “ありえない形” にしちゃお！
@@ -78,6 +84,8 @@ function label(shipping: Shipping): string {
 ---
 
 ### ③ Exhaustive Check（switch漏れをコンパイルで発見）
+
+![testable_ts_study_009_exhaustive_check.png](./picture/testable_ts_study_009_exhaustive_check.png)
 
 🕵️‍♀️「新しい状態を増やしたのに、分岐追加し忘れ」って事故を型で止めるやつ！✨
 
@@ -107,6 +115,8 @@ function fee(method: PayMethod): number {
 ---
 
 ### ④ Brand 型（ID・金額・率の取り違えを消す）
+
+![testable_ts_study_009_brand_type_keys.png](./picture/testable_ts_study_009_brand_type_keys.png)
 
 🏷️💎`userId` と `orderId` が同じ `string` だと、取り違え事故が起きるよね…😵‍💫
 Brand 型で「同じstringでも別物」にできる！
@@ -140,6 +150,8 @@ if (uid) loadUser(uid);
 
 ## 9-4. 型ガード（Type Guard）
 
+![testable_ts_study_009_boundary_guard.png](./picture/testable_ts_study_009_boundary_guard.png)
+
 で “境界の検証” をうまく書く🚧✅外から来るデータ（API/フォーム/JSON）は信用しない！🙅‍♀️
 境界でチェックして **Domain 型** に変換してから中心へ渡すと、中心のテストがスリムになるよ✨
 
@@ -166,6 +178,8 @@ function isCoupon(x: unknown): x is Coupon {
 ---
 
 ## 9-5. “最近の推奨” tsconfig の強化ポイント⚙️
+
+![testable_ts_study_009_tsconfig_strong.png](./picture/testable_ts_study_009_tsconfig_strong.png)
 
 🧊TypeScript 5.9 の `tsc --init` では、最初からけっこう強い設定が出るよ。
 特にこの2つは “事故を減らす” のに効く！ ([Microsoft for Developers][2])
