@@ -37,6 +37,8 @@ SemVer（セマンティックバージョニング）は、まさにその「�
 
 ## 1.3 更新事故のパターン😱💥
 
+![Accident Patterns](./picture/svbc_cs_study_001_accident_patterns.png)
+
 学習のために、更新事故によくあるパターンを3つに分類してみましょう。🛡️✨
 
 ```mermaid
@@ -59,6 +61,8 @@ mindmap
 ---
 
 ## 2. 「互換性」って何？✅（この教材の最重要ワード）
+
+![Consumer Viewpoint](./picture/svbc_cs_study_001_consumer_viewpoint.png)
 
 この教材で言う互換性は、超ざっくりこう👇
 
@@ -84,6 +88,8 @@ NuGetの世界でも、バージョン番号（とくにパッケージのバー
 ---
 
 ## 3. “約束”がどこにあるか：C#だと何が約束になりやすい？📣
+
+![Promise Handshake](./picture/svbc_cs_study_001_promise_handshake.png)
 
 今はざっくりでOK！この章では感覚だけつかもう😊
 
@@ -116,6 +122,8 @@ NuGetの世界でも、バージョン番号（とくにパッケージのバー
 ---
 
 ## 5. AIの使いどころ：事故を“パターン分類”して強くなる🤖🗂️
+
+![AI Collector](./picture/svbc_cs_study_001_ai_collector.png)
 
 AIは「あるあるを大量に出す」のが得意✨
 この章では AIを“事故収集係”にしちゃおう😺

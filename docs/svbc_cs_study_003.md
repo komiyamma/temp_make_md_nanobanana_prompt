@@ -48,6 +48,8 @@ flowchart TD
 
 ## 3.2 「public だから公開API」…とは限らない😇⚠️
 
+![Public Doors](./picture/svbc_cs_study_003_public_doors.png)
+
 C#では `public` は「アクセスできる」って意味だけど、**それが即 “利用者に使っていいよ” とは限りません**。
 
 たとえば👇
@@ -65,6 +67,8 @@ C#では `public` は「アクセスできる」って意味だけど、**それ
 ---
 
 ## 3.3 公開APIを線引きする「3つの質問」🎯❓
+
+![Three Questions](./picture/svbc_cs_study_003_three_questions.png)
 
 迷ったら、次の3問で決めるのが超おすすめです😊
 
@@ -98,6 +102,8 @@ C#では `public` は「アクセスできる」って意味だけど、**それ
 ---
 
 ## 3.4 公開APIを小さくするほど、SemVerが楽になる🌷✨
+
+![Fortress vs Castle](./picture/svbc_cs_study_003_fortress_vs_castle.png)
 
 ### なぜ小さいと嬉しいの？😊
 
@@ -187,6 +193,8 @@ sequenceDiagram
 
 ### ③ 署名（シグネチャ）に「内部の都合」を漏らさない🚰❌
 
+![Signature Leak](./picture/svbc_cs_study_003_signature_leak.png)
+
 公開APIの引数・戻り値・例外・ジェネリクス制約…
 ここに内部型や気分の仕様を入れると、将来めちゃ苦しくなります😇
 
@@ -215,6 +223,8 @@ SemVerでは、互換な追加ならMINORでOKになりやすいけど、
 ---
 
 ## 3.6 「公開API一覧」を作る手順📝✨
+
+![API Funnel](./picture/svbc_cs_study_003_api_funnel.png)
 
 ここから演習に直結する“型”を作ります🎯
 

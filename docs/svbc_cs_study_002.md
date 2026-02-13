@@ -57,6 +57,8 @@ SemVerでは「後方互換なバグ修正」をPATCHとして扱うよ✅ ([Sem
 
 ## 2) “後方互換”って誰視点？👀
 
+![Plug Socket Compat](./picture/svbc_cs_study_002_plug_socket_compat.png)
+
 答え：**利用者のコード視点**だよ✋✨
 「自分のライブラリが動くか」じゃなくて、**使う側が困らないか**で判定する感じ😊
 SemVer自体も「まず公開APIを宣言しようね」って前提を置いてるよ📣 ([Semantic Versioning][1])
@@ -64,6 +66,8 @@ SemVer自体も「まず公開APIを宣言しようね」って前提を置い�
 ---
 
 ## 3) 迷ったら、この3問で決める✅
+
+![SemVer Decision Tree](./picture/svbc_cs_study_002_decision_tree.png)
 
 変更したら、とりあえずこれ👇
 
@@ -104,6 +108,8 @@ flowchart TD
 
 ## 5) おまけ：プレリリースとビルドメタデータ🧡🏷️
 
+![Prerelease Stairs](./picture/svbc_cs_study_002_prerelease_stairs.png)
+
 ### プレリリース（`-alpha` / `-beta` / `-rc.1`）
 
 `1.2.3-alpha.1` みたいに `-` 以降が付くと「不安定かも」って意味になるよ✨
@@ -132,6 +138,8 @@ graph LR
 ---
 
 ## 6) C#ミニ例：同じライブラリを3回リリースしてみる📦🎮
+
+![Library Evolution](./picture/svbc_cs_study_002_library_evolution.png)
 
 「雰囲気」でOK！SemVer判断の練習だよ😊
 
