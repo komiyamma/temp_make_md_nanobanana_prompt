@@ -39,6 +39,8 @@ Domain層は、ざっくり言うと…
 
 ## 8.2 Entity と ValueObject を超やさしく🍰
 
+![Entity vs ValueObject](./picture/layer_cs_study_008_entity_vs_value.png)
+
 ## ✅ Entity（エンティティ）
 
 * **“同一性（アイデンティティ）”がある**
@@ -60,6 +62,8 @@ Domain層は、ざっくり言うと…
 ---
 
 ## 8.3 “無効な状態を作らない” 🔒✨（この章の主役）
+
+![Guarding Against Invalid State](./picture/layer_cs_study_008_invalid_state_guard.png)
 
 初心者が一番やりがち事故👇
 
@@ -139,6 +143,8 @@ public readonly record struct TodoTitle
 
 ## 8.4.3 ValueObject：期限（過去はダメにする例）⏳🚫
 
+![DueDate Validation](./picture/layer_cs_study_008_past_date_check.png)
+
 ```mermaid
 classDiagram
     direction LR
@@ -192,6 +198,8 @@ public readonly record struct DueDate
 ---
 
 ## 8.4.4 Entity：ToDoItem（状態とルールをまとめる）🧱💎
+
+![TodoItem Composition](./picture/layer_cs_study_008_todo_composition.png)
 
 Entityは「同一性」が大事だから ID を持たせるよ！
 
@@ -255,6 +263,8 @@ public class TodoItem
 ---
 
 ## 8.5 ありがち事故あるある集😇（Domainを汚さない）
+
+![Domain Layer Accidents](./picture/layer_cs_study_008_domain_accidents.png)
 
 ## 🚫 事故1：Domainに画面都合の項目を混ぜる
 

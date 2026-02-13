@@ -12,6 +12,8 @@
 
 ## 1) 「貧血モデル」ってなに？🥲
 
+![Anemic vs Rich Model](./picture/layer_cs_study_009_anemic_vs_rich.png)
+
 **貧血モデル（Anemic Domain Model）**はざっくり言うと、
 
 * Entity が **プロパティだけ**
@@ -45,10 +47,14 @@ Domainに振る舞い（メソッド）を持たせると…
 
 ### ルール①：プロパティは“勝手に”いじれないようにする🔒
 
+![Encapsulation with Private Set](./picture/layer_cs_study_009_encapsulation_lock.png)
+
 * `set` を `private` にする
 * 変更は **必ずメソッド経由**にする（＝ルールを通す）✨
 
 ### ルール②：状態が変わる操作は「動詞メソッド」にする🏃‍♀️
+
+![Verb-based Methods](./picture/layer_cs_study_009_verb_methods.png)
 
 * `Rename(...)`
 * `Complete(...)`
@@ -184,6 +190,8 @@ public sealed class TodoItem
 
 ### ここで超重要ポイント💡
 
+![State Transition Logic](./picture/layer_cs_study_009_state_transition_diagram.png)
+
 * `private set;` にしたから、外から `IsCompleted = true` とかできない🙅‍♀️
 * 更新は `Complete()` や `Rename()` を通るから、**ルールが必ず通る**✅
 * “無効な状態”が作れなくなる🔒✨
@@ -213,6 +221,8 @@ public sealed class DomainException : Exception
 ---
 
 ## 8) Application層はどう薄くなる？📋✨（ちょい見せ）
+
+![Thin Application Layer](./picture/layer_cs_study_009_thin_application.png)
 
 Domainに振る舞いがあると、Application層は「手順」だけになるよ😊
 

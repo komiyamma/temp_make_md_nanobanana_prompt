@@ -88,6 +88,8 @@ sequenceDiagram
 
 ## Step A：Domain を“DB無関係”にして作る💎
 
+![Pure Domain Model](./picture/layer_cs_study_012_domain_pure.png)
+
 例：`TodoItem` は「タイトル空はダメ」だけ守る感じでOK✨
 
 ```csharp
@@ -165,6 +167,8 @@ public sealed class CreateTodoItemUseCase
 ---
 
 ## Step C：Infrastructure に DbContext を置く🗄️
+
+![DB Isolation in Infrastructure](./picture/layer_cs_study_012_db_isolation.png)
 
 SQLite を使うとローカルで軽くて楽ちん😺
 （もちろん SQL Server に変えるのも後で簡単だよ🔁）
@@ -271,6 +275,8 @@ DbContext のライフサイクルは、Webなら基本 **Scoped** が定番だ�
 
 ## Step F：Presentation 側で呼ぶ（Composition Root）🏗️
 
+![Composition Root wiring](./picture/layer_cs_study_012_composition_root.png)
+
 `Program.cs` で Infrastructure を追加するだけにするのがキレイ😍
 
 ```csharp
@@ -295,6 +301,8 @@ app.Run();
 ---
 
 ## 5) マイグレーション（テーブル作成）🛠️✨
+
+![EF Core Migration Flow](./picture/layer_cs_study_012_migration_flow.png)
 
 ここ、初心者がつまずきやすいので丁寧にいくよ〜！🫶
 

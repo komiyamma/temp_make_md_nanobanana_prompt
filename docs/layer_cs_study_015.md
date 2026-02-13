@@ -80,6 +80,8 @@ public class AddTodoUseCase
 
 ### 3-1. 「UseCaseはRepositoryの“インターフェースだけ”を知る」📍
 
+![Constructor Injection Mechanism](./picture/layer_cs_study_015_constructor_injection.png)
+
 まず、UseCaseは **具体クラスじゃなくて interface** に依存します。
 
 ```csharp
@@ -133,6 +135,8 @@ DIは「外から渡す」なので、**どこかで組み立て**ます。
 
 ### 4-1. まずは手で配線（手動DI）🧵（理解用に最高）
 
+![Manual DI Wiring](./picture/layer_cs_study_015_manual_di.png)
+
 Presentation側（例えばConsoleやAPIの入口）でこうします👇
 
 ```csharp
@@ -149,6 +153,8 @@ useCase.Execute("牛乳を買う");
 ---
 
 ## 5. .NET標準のDIコンテナ（超さわり）🧰✨
+
+![DI Container Registration](./picture/layer_cs_study_015_container_map.png)
 
 .NET（ASP.NET Core系）には標準のDIがあって、`IServiceCollection` に登録します。([Microsoft Learn][6])
 
@@ -170,6 +176,8 @@ builder.Services.AddScoped<AddTodoUseCase>();
 DI登録には「寿命」があります👶➡️👵
 
 ### 6-1. ざっくり3兄弟👨‍👩‍👧‍👦
+
+![DI Lifecycles](./picture/layer_cs_study_015_lifecycle.png)
 
 * **Transient**：呼ばれるたびに新しい（使い捨て）🧻
 * **Scoped**：同じ“範囲”では同じ（Webなら1リクエスト単位が多い）📦
@@ -232,6 +240,8 @@ public class AddTodoUseCaseTests
 ## 8. DIでやりがちな落とし穴集⚠️（先に避けよう）
 
 ### 8-1. “Service Locator”しちゃう問題🕵️‍♀️
+
+![Service Locator Trap](./picture/layer_cs_study_015_service_locator_trap.png)
 
 ```csharp
 public class AddTodoUseCase

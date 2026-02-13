@@ -75,6 +75,8 @@ graph TD
 
 ### パターン①：**Domain に interface / Infrastructure に実装**（いちばん王道👑）
 
+![Repository Placement Pattern 1 (Write)](./picture/layer_cs_study_014_placement_pattern_1.png)
+
 おすすめ度：★★★★★ 😆✨
 
 **向いてるケース**
@@ -95,6 +97,8 @@ graph TD
 ---
 
 ### パターン②：**Application に interface / Infrastructure に実装**（クエリ寄りに強い🔎）
+
+![Repository Placement Pattern 2 (Read)](./picture/layer_cs_study_014_placement_pattern_2.png)
 
 おすすめ度：★★★★☆ 😊
 
@@ -130,6 +134,8 @@ graph TD
 ---
 
 ## 5) この教材ではこうしよう（おすすめ運用）🧭✨
+
+![Write vs Read Separation (CQRS Hint)](./picture/layer_cs_study_014_cqrs_hint.png)
 
 まず迷ったら、こう切るとスッキリするよ😊
 
@@ -201,6 +207,8 @@ public sealed class TodoRepository : ITodoRepository
 
 ## 7) 参照設定（Visual Studioでやること）🔗✅
 
+![Project Reference Rules](./picture/layer_cs_study_014_reference_rules.png)
+
 ### ✅ 正しい参照（最小セット）
 
 * **MyApp.Presentation**
@@ -239,6 +247,8 @@ public sealed class TodoRepository : ITodoRepository
 ---
 
 ### ワザ②：Repository interface のメソッドは “保存の言葉” に寄せる🗣️
+
+![Intent-based Naming](./picture/layer_cs_study_014_naming_intent.png)
 
 * `AddAsync`, `FindAsync`, `SaveChangesAsync` みたいに
 * 「DBっぽい言葉（SQL/Query/Join）」はなるべく避ける
