@@ -58,6 +58,8 @@ graph TD
 
 ### ✅ ここがポイント
 
+![Combination Explosion](./picture/state_machine_ts_study_004_combination_explosion.png)
+
 フラグが増えると、**ありえない組み合わせ**が発生するの！
 
 たとえば3つのフラグだけでも、
@@ -82,9 +84,13 @@ if地獄は、こういう事故を呼びやすいよ👇
 
 ### ② 画面とロジックがズレる🖥️💔
 
+![UI Logic Mismatch](./picture/state_machine_ts_study_004_ui_logic_mismatch.png)
+
 UIは「送信中」表示なのに、内部では `isSubmitting = false` になってるとか…。
 
 ### ③ 非同期で“時間差パンチ”が来る⏳🥊
+
+![Async Race](./picture/state_machine_ts_study_004_async_race.png)
 
 APIの結果が遅れて返ってきて、**すでに別の状態に進んでるのに上書き**しちゃうやつ😱
 （フォーム送信でめちゃ起きる😭）
@@ -173,6 +179,8 @@ async function fakeApi(_: unknown): Promise<ApiResult> {
 
 ## 4-6. “まず一歩”の改善：フラグをやめて状態を1個にする🙂🧩
 
+![Single Switch](./picture/state_machine_ts_study_004_single_switch.png)
+
 まだ状態機械を完成させなくても、**1変数に寄せるだけで事故が減る**よ✨
 
 ```ts
@@ -198,6 +206,8 @@ TypeScriptの強み、ここで効いてくるよ〜🧡
 ---
 
 ## 4-7. 成果物：アンチパターン集（“何が辛いか一言で”）🧾💥
+
+![Refactoring Tangle](./picture/state_machine_ts_study_004_refactoring_tangle.png)
 
 この章のゴールはこれ！👇（コピペして自分メモにしてOK🥰）
 

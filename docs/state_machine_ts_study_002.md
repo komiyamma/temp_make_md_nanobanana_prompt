@@ -6,6 +6,8 @@
 
 ## 0) まず“今の最新”を押さえる（2026-01-20時点）📌🗓️
 
+![Versions Dashboard](./picture/state_machine_ts_study_002_versions_dashboard.png)
+
 * Node.js は **v24 系が Active LTS**（安定して長く使う枠）で、直近もセキュリティリリースが出てるよ 🔒✨ ([Node.js][1])
 * TypeScript は公式サイトで「最新は **5.9**」として案内されてるよ 🧩 ([typescriptlang.org][2])
 * ESLint は “Flat Config” が主流になってて、`defineConfig()` などの流れが整理されてきてるよ 🧹 ([eslint.org][3])
@@ -63,6 +65,8 @@ VS Code の拡張機能で、最低これだけ入れよう〜！😊
 
 ## 3) ミニプロジェクト雛形を作る（コピペでOK）📦✨
 
+![Folder Structure](./picture/state_machine_ts_study_002_folder_structure.png)
+
 ### 3-1. フォルダ作成 & npm 初期化 📁
 
 ```text
@@ -110,6 +114,8 @@ npm i -D vitest vite
 ---
 
 ## 5) 設定ファイルを作る（ここが“迷子防止”の要）🧭✨
+
+![Config Pillars](./picture/state_machine_ts_study_002_config_pillars.png)
 
 ### 5-1. tsconfig.json（TypeScript のルール）🧩
 
@@ -214,6 +220,8 @@ main();
 
 ## 7) package.json に “ワンボタンコマンド” を作る 🧰✨
 
+![Command Panel](./picture/state_machine_ts_study_002_command_panel.png)
+
 `package.json` の `"scripts"` をこうするよ👇
 
 ```json
@@ -288,6 +296,8 @@ AI が昔の `.eslintrc` 前提で書いちゃうことがあるの…🥺
 ---
 
 ## ✅ この章の“完成チェックリスト”🧾💖
+
+![Success Checklist](./picture/state_machine_ts_study_002_success_checklist.png)
 
 * `node -v` が v24 系になってる🟩 ([Node.js][1])
 * `npm run dev` で `Hello TypeScript` が出る🎉
