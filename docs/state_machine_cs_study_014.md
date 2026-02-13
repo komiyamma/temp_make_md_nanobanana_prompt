@@ -45,6 +45,8 @@ graph TD
 
 ## 仕様書に入れる“最低セット”✅✨（これだけで強い）
 
+![Spec Components](./picture/state_machine_cs_study_014_spec_components.png)
+
 README（仕様書）に、まずはこの順番で入れるのが安定です📘✨
 
 ```mermaid
@@ -91,6 +93,8 @@ mindmap
 
 ### ❷ 状態名とイベント名の“文法”を固定する📌
 
+![Naming Convention](./picture/state_machine_cs_study_014_naming_convention.png)
+
 おすすめの型👇
 
 * 状態（State）：**名詞/形容詞（結果）**
@@ -111,6 +115,8 @@ mindmap
 
 ### 例外のテンプレ🧩
 
+![Exception Template](./picture/state_machine_cs_study_014_exception_template.png)
+
 * **いつ起きる？**（トリガー）
 * **何がダメ？**（禁止 or 条件NG）
 * **どう返す？**（理由コード＋メッセージ）
@@ -129,6 +135,8 @@ mindmap
 ---
 
 ## README（仕様書）テンプレ：そのまま使ってOK📝✨
+
+![Mermaid Integration](./picture/state_machine_cs_study_014_mermaid_integration.png)
 
 GitHubのREADMEに **Mermaid図**も埋め込めます🗺️✨（そのまま表示されるよ） ([GitHub Docs][1])
 
@@ -192,6 +200,8 @@ stateDiagram-v2
 👉 **用語集（ミニ辞書）**をREADMEに1ブロック作ると強い📚✨
 
 ### ステップ2：遷移表と図を突き合わせる🧐
+
+![Consistency Check](./picture/state_machine_cs_study_014_consistency_check.png)
 
 * 図にある矢印が、表にある？
 * 表にある遷移が、図にある？

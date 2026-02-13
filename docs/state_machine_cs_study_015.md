@@ -69,6 +69,8 @@ v1は「最短で動かす」ために、こう割り切るよ😊
 * メソッド内で `switch (CurrentState)` して遷移を決める
 * 禁止遷移は「例外」じゃなく、まずは **Resultで返す**（ユーザーに優しい方向へ寄せる🌷）
 
+![Result Pattern](./picture/state_machine_cs_study_015_result_pattern.png)
+
   * ※Result設計は19章で本格的にやるけど、v1でも超ミニでOK！
 
 ---
@@ -84,6 +86,8 @@ v1は「最短で動かす」ために、こう割り切るよ😊
 ---
 
 ## 15.4 コード：enum + switch の最小状態機械（コピペで動く）🛠️🤖✨
+
+![Switch Logic Flow](./picture/state_machine_cs_study_015_switch_logic.png)
 
 ```mermaid
 flowchart TD
@@ -206,6 +210,8 @@ namespace CafeteriaOrder.StateMachineV1
 
 ## 15.5 動作確認：Consoleで試す（最短テスト）🖥️✨
 
+![Console Test](./picture/state_machine_cs_study_015_console_test.png)
+
 「ほんとに動いた！」って体験しよ〜！😊🎉
 
 ```csharp
@@ -280,6 +286,8 @@ class Program
 ## 15.8 AI活用（Copilot / Codex）🤖✨
 
 ### ① switchの雛形を作らせる（最強）🛠️
+
+![AI Switch Generation](./picture/state_machine_cs_study_015_ai_switch_gen.png)
 
 プロンプト例：
 

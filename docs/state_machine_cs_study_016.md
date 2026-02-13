@@ -174,12 +174,17 @@ public sealed class Order
 
 * 「どこに追記すればいいんだっけ…？」迷子😵‍💫🧭
 * 「同じ例外メッセージ、コピペしよ…」コピペ祭り📋📋📋
+
+![Copy Paste Chaos](./picture/state_machine_cs_study_016_copy_paste_chaos.png)
+
 * 「このイベント、他の状態でも弾かないとダメ？」漏れ不安😨
 * 「禁止ルールがコードのあちこちに散ってる…」散らばり🌀
 
 ---
 
 ## 4) 演習B：イベントを“1個追加”したときの破壊力💣
+
+![Ripple Effect](./picture/state_machine_cs_study_016_ripple_effect.png)
 
 ここがswitchの地味にヤバいところ😇
 **イベント1個増えるだけで、全部の状態に影響**しがち。
@@ -236,6 +241,8 @@ graph LR
 
 ## 6) “痛みメモ”テンプレ（これが超大事）📝💎
 
+![Pain Note](./picture/state_machine_cs_study_016_pain_note.png)
+
 次章以降で改善したとき、**改善が本物か**が分かるようになるよ✨
 
 * 追加したもの：状態 `___`、イベント `___`
@@ -259,6 +266,8 @@ graph LR
 ---
 
 ## 8) おまけ：switch“式”で「漏れ」を警告にできる⚠️✨
+
+![Switch Expression Warning](./picture/state_machine_cs_study_016_switch_warning.png)
 
 C# は **switch式**だと「網羅されてないよ！」って警告が出ることがあるよ（CS8509）⚠️ ([Microsoft Learn][2])
 さらに `.editorconfig` でそれを **エラー化**もできる✨ ([Stack Overflow][3])

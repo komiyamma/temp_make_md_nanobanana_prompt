@@ -109,6 +109,8 @@ graph LR
 
 ### ステップB：コアは “Effect を返すだけ” にする🎁
 
+![Effect Return](./picture/state_machine_cs_study_012_effect_return.png)
+
 「実行」はしない。**“やることリスト” を返すだけ**にするよ📋✨
 
 ### ステップC：外側で Effect を実行する🏃‍♀️💨
@@ -270,9 +272,13 @@ public static class OrderStateMachineCore
 
 ✅ポイント：`CallPaymentApi` を **“呼ぶ” じゃなくて “呼べ” と指示**してるところがミソだよ💡💖
 
+![Command vs Call](./picture/state_machine_cs_study_012_command_vs_call.png)
+
 ---
 
 ### 5.3 外側：Effect を実行する（DI と相性◎）🔌✨
+
+![Dependency Injection Runner](./picture/state_machine_cs_study_012_di_runner.png)
 
 ```csharp
 using System.Threading;
@@ -337,6 +343,8 @@ public sealed class EffectRunner(
 ---
 
 ## 6. ここが嬉しい！🎉✨（テストが爆速になる）
+
+![Pure Test Speed](./picture/state_machine_cs_study_012_pure_test_speed.png)
 
 ### ✅ コアは “超” 単体テスト向き🧪💨
 
