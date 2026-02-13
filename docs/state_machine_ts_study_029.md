@@ -21,6 +21,8 @@
 
 ## 29-2. まず大前提：「全部リトライ」は危険😱
 
+![Thundering Herd](./picture/state_machine_ts_study_029_thundering_herd.png)
+
 リトライは優しさに見えるけど、**失敗の原因が“過負荷”のとき**、みんなが一斉に再送してさらに混む…っていう最悪パターンがあるの😭🔥
 だから基本は、
 
@@ -32,6 +34,8 @@
 ---
 
 ## 29-3. Retryable / Not Retryable の仕分け表📋✨
+
+![Retry Sorting](./picture/state_machine_ts_study_029_retry_sorting.png)
 
 ここ、状態機械にするなら **「ガード条件」** の中心になるよ🛡️
 
@@ -57,6 +61,8 @@
 ---
 
 ## 29-4. Retry-After を“最優先”で尊重しよう⏱️🙏
+
+![Retry-After Cop](./picture/state_machine_ts_study_029_retry_after_cop.png)
 
 429/503 のとき、サーバーが「◯秒待ってね」って教えてくれることがあるよ〜！
 それが Retry-After ヘッダー🧾✨ ([MDNウェブドキュメント][4])
@@ -119,6 +125,8 @@ POST/PATCH を安全にリトライするために、Idempotency-Key ヘッダ�
 ## 29-7. 状態機械に落とす：Retry設計の“型”🧩✨
 
 ### 状態（例）🚦
+
+![Retry State Diagram](./picture/state_machine_ts_study_029_retry_state_diagram.png)
 
 * Idle（待機）
 * Editing（入力中）
@@ -313,6 +321,8 @@ function reducer(state: State, event: Event): { state: State; effects: Effect[] 
 ---
 
 ## 29-9. “古いレスポンス”で状態が巻き戻る事故を防ぐ🌀
+
+![Ignore Old Response](./picture/state_machine_ts_study_029_ignore_old_response.png)
 
 非同期って、順番が入れ替わることあるの😵‍💫
 だから Effect 実行側で、

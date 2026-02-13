@@ -7,6 +7,8 @@
 
 ## 0. この章のゴール🎯✨
 
+![Graduation Trophy](./picture/state_machine_ts_study_030_graduation_trophy.png)
+
 最終的に、こうなるのがゴールだよ😊
 
 * ✅ **状態が明確**（いま何中？が一目で分かる）👀
@@ -33,6 +35,8 @@
 ## 2. 仕様（今回はこれを満たす！）📋✨
 
 ### 2.1 状態（State）🧩
+
+![Form Metro Map](./picture/state_machine_ts_study_030_form_metro_map.png)
 
 * `idle`：まだ何もしてない
 * `editing`：入力中
@@ -170,6 +174,8 @@ export const createInitialSnapshot = (): Snapshot => ({
 ---
 
 ## 6. コード：Reducer（reducer.ts）🧠✨（ここが“心臓”）
+
+![Reducer Heart](./picture/state_machine_ts_study_030_reducer_heart.png)
 
 ポイントはこれだよ👇
 
@@ -481,6 +487,8 @@ export const reduce = (snapshot: Snapshot, event: Event, deps: ReduceDeps): Redu
 
 ## 7. 副作用ランナー（effectsRunner.ts）🌿⚙️
 
+![Runner Toolbelt](./picture/state_machine_ts_study_030_runner_toolbelt.png)
+
 ここで `SUBMIT_FORM` とか `SCHEDULE_RETRY` を実行するよ〜！✨
 requestIdごとに AbortController を持つと、キャンセルが綺麗にできる🧯
 
@@ -604,6 +612,8 @@ send({ type: "SUBMIT" });
 
 ## 9. テスト：遷移表から“表駆動テスト”を作る🧪📋✨
 
+![Test Factory](./picture/state_machine_ts_study_030_test_factory.png)
+
 ### 9.1 AIに投げるプロンプト例（テスト）🤖
 
 * 「このReducerの主要パスを表駆動テストにして。ケース名、初期状態、イベント、期待stateを列挙して」
@@ -674,6 +684,8 @@ describe("reducer", () => {
 ---
 
 ## 10. ログ設計：requestIdで追跡できる遷移ログ🔎🪵✨
+
+![Log Footprints](./picture/state_machine_ts_study_030_log_footprints.png)
 
 この章のログは、**“あとで調査できる”** のがポイントだよ😊
 おすすめは「1行JSON」📦（検索もしやすい！）
