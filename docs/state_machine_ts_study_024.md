@@ -53,6 +53,8 @@ sequenceDiagram
 
 ## 3) まずは型を用意しよ🧩（小さめフォーム例📨）
 
+![Blueprint](./picture/state_machine_ts_study_024_state_components.png)
+
 題材：フォーム送信（editing → submitting → success / error）😊
 
 ```ts
@@ -84,6 +86,8 @@ export type Effect =
 ---
 
 ## 4) Reducer（状態遷移の中心）を書く🍰
+
+![Checkpoint](./picture/state_machine_ts_study_024_validation_effect.png)
 
 send方式でも、中心は変わらず **(state, event) → {state, effects}** だよ✨
 
@@ -166,6 +170,8 @@ export function reducer(state: State, event: Event): ReduceResult {
 
 ## 5-A) まずは「effectsを返すだけ」版（超わかりやすい）😊
 
+![Vending Machine (Manual)](./picture/state_machine_ts_study_024_manual_machine.png)
+
 ```ts
 // machine.ts
 export type Reducer<S, E, Eff> = (state: S, event: E) => { state: S; effects: Eff[] };
@@ -234,6 +240,8 @@ r3.effects.forEach(runEffect);
 
 ## 6) さらに便利！「EffectもMachineが自動で回す」版🚀✨
 
+![Vending Machine (Automatic)](./picture/state_machine_ts_study_024_auto_machine.png)
+
 “使う側がeffects回し忘れる問題”を根絶できるよ🧯
 
 ```ts
@@ -283,6 +291,8 @@ export function createMachine<S, E, Eff>(opts: {
 ---
 
 ## 7) Effect実装例：fetchで送信して、結果をsendで戻す📨➡️📮
+
+![Boomerang](./picture/state_machine_ts_study_024_async_loop.png)
 
 キャンセルやタイムアウトは次章で本格的にやるけど、ここでは雰囲気だけ先取り☺️
 `AbortController` はWeb標準で、fetch等の中断に使えるよ🧯📡 ([MDN Web Docs][1])

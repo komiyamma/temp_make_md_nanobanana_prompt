@@ -58,6 +58,8 @@ TypeScriptでは **判別可能ユニオン**（`kind` / `type`）で作ると�
 
 ### 3-1) State / Event / Effect を型で固める🔒
 
+![The Triad](./picture/state_machine_ts_study_023_triad_structure.png)
+
 > Effect = 「Reducerの外でやってね」の指示書📜✨
 > （Reducer内でAPI呼ばない！ってやつ。Reduxの用語でも“Reducerは副作用を入れない”って強く言われがち🥺） ([redux.js.org][3])
 
@@ -98,6 +100,8 @@ export type ReduceResult = {
 ---
 
 ## 4) Reducer本体：まずは“状態ごとに分ける”のがラク😊✨
+
+![Dispatch Center](./picture/state_machine_ts_study_023_divide_conquer.png)
 
 大きい `switch` 1個に全部詰めると、初心者ほど迷子になるの…🥺
 だから王道は👇
@@ -146,6 +150,8 @@ function assertNever(x: never): never {
 ## 5) 各状態のReducerを書こう✍️✨（禁止遷移もここで扱う）
 
 ### 5-1) 禁止遷移ポリシーを決める🚫➡️🧭
+
+![Bouncer Logic](./picture/state_machine_ts_study_023_illegal_logic.png)
 
 初心者におすすめはこれ👇（迷いにくい）
 
@@ -308,6 +314,8 @@ function reduceError(state: Extract<State, { kind: "error" }>, event: Event): Re
 
 ## 6) Reducerの外：Effectを実行する“薄い殻”🥚✨
 
+![The Egg](./picture/state_machine_ts_study_023_pure_impure.png)
+
 Reducerは「指示書（Effect）」まで作って終わり！
 実行は外側でやるよ〜🚪🌿
 
@@ -343,6 +351,8 @@ export async function runEffects(effects: Effect[], deps: Deps) {
 ---
 
 ## 7) テスト：表駆動で遷移を一気に固める🧪📋✨
+
+![Assembly Line](./picture/state_machine_ts_study_023_table_test.png)
 
 Vitestは `test.for([...])` みたいに“データ駆動”が書けるよ〜😊（公式API例もある！） ([vitest.dev][4])
 
