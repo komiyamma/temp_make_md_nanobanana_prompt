@@ -20,6 +20,8 @@
 
 ## 2. まず確認：なんで継承がLSPを壊しやすいの？😵‍💫
 
+![Broken Promise](./picture/solid_ts_study_018_broken_promise.png)
+
 LSPって「**親として使えるなら、子も同じように使えなきゃダメ**」だよね🔁✨
 
 ところが継承って、こうなりがち👇
@@ -32,6 +34,8 @@ LSPって「**親として使えるなら、子も同じように使えなきゃ
 ---
 
 ## 3. 例題：注文キャンセルでLSPが崩れるやつ📦💣
+
+![Cancel Explosion](./picture/solid_ts_study_018_cancel_explosion.png)
 
 「注文(Order)はキャンセルできるよね？」って気持ちで、こう書いちゃう例👇
 
@@ -104,6 +108,8 @@ classDiagram
 ---
 
 ## 5. 解決策A：Strategyで「キャンセル方針」を合成する🎛️✨
+
+![Strategy Plug](./picture/solid_ts_study_018_strategy_plug.png)
 
 ### 5-1. まず “方針” の口（インターフェース）を作る🧩
 
@@ -180,6 +186,8 @@ cancelOrder(prepared);  // ✅（例外で壊れない！）
 
 ## 6. 解決策B：Stateで「注文の状態」を合成する🧠🧱（さらに強い）
 
+![State Transition](./picture/solid_ts_study_018_state_transition.png)
+
 キャンセル以外にも「支払い」「調理」「受け渡し」…って増えてくると、
 Strategyより **State（状態オブジェクト）** がスッキリしやすいよ😊
 
@@ -229,6 +237,8 @@ class Order {
 
 ## 7. 「継承 vs 合成」迷ったときの判断基準🧭✨
 
+![Decision Scale](./picture/solid_ts_study_018_decision_scale.png)
+
 ### 継承が向いてるのはこんな時👇
 
 * 本当に “〜である(is-a)” が自然（例：`AdminUser is-a User`）
@@ -245,6 +255,8 @@ class Order {
 ---
 
 ## 8. AI（Copilot/Codex系）に手伝わせるコツ🤖🧠✨
+
+![AI Refactoring Partner](./picture/solid_ts_study_018_ai_refactoring_partner.png)
 
 合成に直すとき、AIにはこう頼むと強いよ👍
 

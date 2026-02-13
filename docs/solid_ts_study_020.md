@@ -14,6 +14,8 @@
 
 ## ISPってなに？🤔💭（超ざっくり）
 
+![ISP Plug Mismatch](./picture/solid_ts_study_020_isp_plug_mismatch.png)
+
 **ISP（Interface Segregation Principle）**は、ひとことで言うと👇
 
 > **使わないメソッドに依存させないでね！**（＝必要なものだけ見せてね！）✂️😊
@@ -24,6 +26,8 @@
 ---
 
 ## 「巨大interface地獄」ってどんな感じ？😵‍💫🔥
+
+![Mock Hell Scroll](./picture/solid_ts_study_020_mock_hell_scroll.png)
 
 こんな症状が出たら、ISP違反のニオイがするよ👃💥
 
@@ -46,6 +50,8 @@ TypeScriptは「形（構造）が合えばOK」な世界だから、interface�
 ---
 
 ## ハンズオン①：まずは「ダメな例」を見る👀💥
+
+![Fat Interface Robot](./picture/solid_ts_study_020_fat_interface_robot.png)
 
 題材：Campus Caféの「注文データ置き場（Repository）」っぽいもの☕️📦
 
@@ -127,6 +133,8 @@ describe("OrderListService", () => {
 
 ## ISPの出番！✂️✨「使う分だけ」に分ける
 
+![Interface Split Scissors](./picture/solid_ts_study_020_interface_split_scissors.png)
+
 コツはこれ👇
 **“利用者（クライアント）”を主語にして分ける**🎯
 
@@ -196,6 +204,8 @@ describe("OrderListService", () => {
 
 ## 「でも実装クラスはどうするの？」🤔🔧
 
+![One Class Many Masks](./picture/solid_ts_study_020_one_class_many_masks.png)
+
 分割した interface を、**同じ1つのクラスが複数 implements**してOKだよ👌✨
 
 ```ts
@@ -239,6 +249,8 @@ export class InMemoryOrderRepo
 ---
 
 ## ISPの「分け方」ミニルール🧭✨
+
+![Client Perspective](./picture/solid_ts_study_020_client_perspective.png)
 
 初心者は、まずこの3つだけ覚えれば強いよ💪😊
 

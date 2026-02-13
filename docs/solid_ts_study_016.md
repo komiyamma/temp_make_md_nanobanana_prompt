@@ -22,6 +22,8 @@
 
 ## 2. LSPを一言でいうと？🧸🔁
 
+![LSP Plug Swap](./picture/solid_ts_study_016_lsp_plug_swap.png)
+
 > **“親のつもりで使ったとき、子に変えても期待が崩れないこと”** 💡✨
 
 LSPは、型の互換（代入できる/できない）よりも **“振る舞いの互換”** を気にする考え方だよ🧠
@@ -30,6 +32,8 @@ LSPは、型の互換（代入できる/できない）よりも **“振る舞�
 ---
 
 ## 3. TypeScriptでLSPが“ややこしく見える”理由😵‍💫🌀
+
+![Structural Typing Shape](./picture/solid_ts_study_016_structural_typing_shape.png)
 
 TypeScriptの型の互換は **構造的（structural）** だよね。
 つまり「名前（クラス名）じゃなくて、**メンバーの形（shape）** が合えばOK」になりやすいの🧩 ([TypeScript][3])
@@ -50,6 +54,8 @@ TypeScriptの型の互換は **構造的（structural）** だよね。
 
 ### よくある「契約の破り方」3点セット📛💥
 
+![Contract Violation Bomb](./picture/solid_ts_study_016_contract_violation_bomb.png)
+
 1. **前提条件を厳しくする**（親より“うるさくなる”）😤
 2. **結果の保証を弱くする**（親より“雑になる”）😵
 3. **例外を増やす/意味を変える**（呼び出し側が想定できない）💣
@@ -59,6 +65,8 @@ TypeScriptの型の互換は **構造的（structural）** だよね。
 ---
 
 ## 5. ミニ題材：Campus Café の「割引」☕️🎟️✨
+
+![Discount Policy Contract](./picture/solid_ts_study_016_discount_policy_contract.png)
 
 「注文合計に割引を適用する」ってよくあるよね😊
 ここで **DiscountPolicy を差し替え可能** にしていくよ〜！
@@ -127,6 +135,8 @@ export class PercentageDiscount implements DiscountPolicy {
 ---
 
 ## 7. LSP違反の例（型は合うのに壊す）😈💥
+
+![Exception Violation](./picture/solid_ts_study_016_exception_violation.png)
 
 ### 7.1 「条件を満たさないと例外」←これ超ありがち🥶
 
@@ -211,6 +221,8 @@ export class MinimumOrderDiscount implements DiscountPolicy {
 ---
 
 ## 9. LSPは「テスト」で守るのが最強🧪🛡️✨
+
+![Contract Test Machine](./picture/solid_ts_study_016_contract_test_machine.png)
 
 TypeScriptは構造的型付けだから、**型だけでLSPは保証できない**の。([TypeScript][3])
 だから **契約テスト** を作って「差し替えてもOK」を自動チェックするよ✅
