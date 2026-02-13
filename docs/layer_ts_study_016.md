@@ -91,6 +91,8 @@ npm i -D eslint typescript-eslint eslint-plugin-boundaries eslint-plugin-import 
 
 ### 16-4-1 eslint.config.mjs を作る📝
 
+![ESLint Flat Config Structure](./picture/layer_ts_study_016_eslint_flat_config.png)
+
 プロジェクトルートに `eslint.config.mjs` を作って、こんな感じ👇
 （※サンプルなので、最初はコピペで動かしてOK！）
 
@@ -168,6 +170,8 @@ export default tseslint.config(
 
 ### 16-4-2 動作確認（わざと違反してみる😈➡️✅）
 
+![Boundary Violation Alarm](./picture/layer_ts_study_016_boundary_violation.png)
+
 例えば `src/domain/todo.ts` から `src/adapters/db.ts` を import してみてね👇
 （※この「悪い例」をやるのは今だけね！笑）
 
@@ -191,6 +195,8 @@ npx eslint .
 
 ## 16-5 「設定できてるか不安…」を救う：Config Inspector🔍🧁
 
+![Config Inspector Detective](./picture/layer_ts_study_016_config_inspector.png)
+
 flat configって、設定が合ってるか迷子になりやすいの🥺
 そんな時は **ESLint Config Inspector** が超助かるよ✨
 
@@ -211,6 +217,8 @@ npx @eslint/config-inspector
 ## 16-6 依存を“見える化”する📈🗺️（dependency-cruiser / madge）
 
 ### 16-6-1 dependency-cruiserで健康診断🚢🩺
+
+![Dependency Cruiser Ship](./picture/layer_ts_study_016_dep_cruiser_ship.png)
 
 dependency-cruiser は「循環参照」「依存の向き」「孤立ファイル」みたいな **構造チェック**に強いよ💪([npm][5])
 
@@ -271,6 +279,8 @@ graph TD
 
 ### 16-6-2 グラフを“画像化”する🖼️✨（Graphviz）
 
+![Graphviz Magic](./picture/layer_ts_study_016_graphviz_magic.png)
+
 Graphviz は winget で入れられるよ📦([Graphviz][7])
 
 ```powershell
@@ -330,6 +340,8 @@ npm run quality
 ---
 
 ## 16-8 CIに入れて“未来の自分”を助ける🤖🛟
+
+![CI Robot Guard](./picture/layer_ts_study_016_ci_robot_guard.png)
 
 GitHub Actions（例：`.github/workflows/quality.yml`）
 

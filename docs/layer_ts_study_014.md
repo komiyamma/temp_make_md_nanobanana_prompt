@@ -7,6 +7,8 @@
 
 ## 0. まず結論：外部APIは“別の国の言葉”🗺️🗣️
 
+![External API Chaos](./picture/layer_ts_study_014_external_api_chaos.png)
+
 外部APIって、だいたいこう👇
 
 * 返ってくるJSONの形が**自分のドメインと合わない**（snake_case/謎のnull/文字列日付…）😵‍💫
@@ -87,6 +89,8 @@ flowchart LR
 
 ## 4. 実装の“型”🧩（これ覚えたら勝ち✨）
 
+![API Port and Adapter](./picture/layer_ts_study_014_port_adapter_api.png)
+
 外部API連携は毎回ほぼ同じ型になるよ〜！
 
 ### 4.1 まず Application に Port（interface）を置く🔌
@@ -128,6 +132,8 @@ Infrastructure は「具体的に fetch して、翻訳して返す」をやる�
 
 ### ルール①：タイムアウトは絶対つける⏱️
 
+![Timeout Mechanism](./picture/layer_ts_study_014_timeout_bomb.png)
+
 `fetch()` はタイムアウトを勝手にしてくれない前提で設計するよ〜😇
 （だから AbortSignal/AbortController を使う）([Tasuke Hub][5])
 
@@ -136,6 +142,8 @@ Node では `AbortSignal.timeout(ms)` が使える（Node 16.14+ / 17.3+ で追�
 ---
 
 ### ルール②：リトライは“選ぶ”🔁
+
+![Retry Gatekeeper](./picture/layer_ts_study_014_retry_gatekeeper.png)
 
 なんでもリトライすると、逆に迷惑＆悪化するの🥲
 
@@ -171,6 +179,8 @@ Node では `AbortSignal.timeout(ms)` が使える（Node 16.14+ / 17.3+ で追�
 ---
 
 ### ルール④：外部都合のフィールド名を内側に持ち込まない🙅‍♀️
+
+![Translation Shield](./picture/layer_ts_study_014_translation_shield.png)
 
 `publish_date` とか `author_name` とか、そのままDomainに入れたら負け😵‍💫
 **Infrastructure で変換して** `publishedAt` とかに整えて渡す🎁
@@ -233,6 +243,8 @@ export class ExternalApiError extends Error {
 ```
 
 #### (B) スリープ＆バックオフ（ジッター付き）🎲
+
+![Jitter Backoff Visual](./picture/layer_ts_study_014_jitter_backoff.png)
 
 ```ts
 // src/infrastructure/http/retry.ts

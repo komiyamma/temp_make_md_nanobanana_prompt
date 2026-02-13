@@ -61,6 +61,8 @@ flowchart LR
 
 ## 2. ありがちな事故💥（Portが無い世界）
 
+![Direct DB Import Chaos](./picture/layer_ts_study_012_direct_db_chaos.png)
+
 ### 😵‍💫事故例：ApplicationがDBライブラリを直接import
 
 * 「ToDo追加」のユースケースの中で Prisma/SQLite/Fetch などを直接触り始める
@@ -75,6 +77,8 @@ flowchart LR
 ---
 
 ## 3. 置き場所ルール🗂️✨（めっちゃ大事！）
+
+![Port Location Map](./picture/layer_ts_study_012_port_location_map.png)
 
 Port（interface）は基本こう置くのがキレイ👇
 
@@ -216,6 +220,8 @@ export class InMemoryTodoRepository implements TodoRepositoryPort {
 
 ### 4.6 “組み立て” して動かす（ミニ Composition Root）🧩🏗️
 
+![Mini Composition Root](./picture/layer_ts_study_012_composition_root_mini.png)
+
 ```typescript
 // src/main/compositionRoot.ts
 import { AddTodoUseCase } from "../application/usecases/addTodo";
@@ -253,6 +259,8 @@ main().catch(console.error);
 
 ### コツ①：Portは “ユースケース目線” で作る👀🎮
 
+![UseCase-Centric Port Design](./picture/layer_ts_study_012_port_design_usecase_eye.png)
+
 Portが「DBのテーブル操作セット」みたいになると太りがち😵‍💫
 
 * ❌ `save/update/delete/findAll/findByX/findByY...` が無限に増える
@@ -261,6 +269,8 @@ Portが「DBのテーブル操作セット」みたいになると太りがち�
 ---
 
 ### コツ②：読みPortと書きPortを分ける📖✍️（ミニCQS気分）
+
+![Reader Writer Split](./picture/layer_ts_study_012_reader_writer_split.png)
 
 例えばこう分割できるよ👇
 
@@ -322,6 +332,8 @@ TypeScriptの `interface` は型だけなので、実行時に存在しないよ
 ---
 
 ### 演習B：時刻Port（ClockPort）を作ろう⏰✨
+
+![Clock Port Swap](./picture/layer_ts_study_012_clock_port_swap.png)
 
 「作成日時を入れたい」ってなったとき、`Date.now()` を直呼びするとテストが辛い😇
 だから Port にしちゃう！
