@@ -23,6 +23,8 @@
 
 ## 11.1 そもそも“境界線”ってなに？🧃🚪### ✅ 境界線＝「差し替えポイント」🎁
 
+![testable_ts_study_011_boundary_definition.png](./picture/testable_ts_study_011_boundary_definition.png)
+
 ✨テスタブル設計で言う境界は、ざっくりこう👇
 
 
@@ -37,6 +39,8 @@
 ---
 
 ## 11.2 境界線を引く“7つの判断軸”📐🧠✨
+
+![testable_ts_study_011_decision_axes.png](./picture/testable_ts_study_011_decision_axes.png)
 
 「どこで切る？」は正解が1つじゃない😵‍💫
 でも、**判断軸**があると迷子にならないよ〜🧭💕
@@ -127,6 +131,8 @@
 
 ## 11.4 境界線の引き方：迷わない“5ステップ”🧭✨### Step1：やりたいことを1文にする📝
 
+![testable_ts_study_011_step_method.png](./picture/testable_ts_study_011_step_method.png)
+
 例：「天気を見て、傘がいるか判定して表示する」☔🙂
 
 
@@ -169,6 +175,8 @@
 
 ## 線引き案A：境界なし（全部ごちゃ混ぜ）
 
+![testable_ts_study_011_plan_a_no_boundary.png](./picture/testable_ts_study_011_plan_a_no_boundary.png)
+
 😱🌀「早く作れる」けど…テスト地獄になりやすいタイプ💥
 
 
@@ -196,6 +204,8 @@ export async function shouldTakeUmbrella(city: string): Promise<boolean> {
 ---
 
 ## 線引き案B：HTTPだけ境界にする（DTOは中心へ持ち込む）
+
+![testable_ts_study_011_plan_b_http_only.png](./picture/testable_ts_study_011_plan_b_http_only.png)
 
 🙂🌐「境界の第一歩」って感じ！👏✨
 
@@ -228,6 +238,8 @@ export function createUmbrellaJudge(api: WeatherApi) {
 ---
 
 ## 線引き案C：境界で変換して“中心はドメイン型だけ”💎🧠このコース的に「気持ちいい線引き」✨
+
+![testable_ts_study_011_plan_c_domain_boundary.png](./picture/testable_ts_study_011_plan_c_domain_boundary.png)
 中心は **純粋に判断だけ** になるよ〜🍰
 
 ```ts
@@ -264,6 +276,8 @@ export function createUmbrellaUseCase(port: WeatherPort) {
 ---
 
 ## 3案の比較まとめ📊✨
+
+![testable_ts_study_011_comparison_table.png](./picture/testable_ts_study_011_comparison_table.png)
 
 | 観点          | A: 境界なし😱 | B: HTTPだけ🙂 | C: ドメイン型まで💎 |
 | ----------- | --------- | ----------- | ------------ |

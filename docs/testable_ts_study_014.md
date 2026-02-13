@@ -22,6 +22,8 @@
 
 ## 2) まず直感：アプリは「部品」と「組み立て係」でできてる🧸🧩
 
+![testable_ts_study_014_app_structure.png](./picture/testable_ts_study_014_app_structure.png)
+
 アプリって、ざっくりこう👇
 
 
@@ -40,6 +42,8 @@
 
 ## 3) コンストラクタ注入ってなに？🏗️
 
+![testable_ts_study_014_constructor_injection.png](./picture/testable_ts_study_014_constructor_injection.png)
+
 ➡️🎁**クラス**を使うとき、依存（Clock/Logger/Repositoryなど）を
 **コンストラクタで受け取る**やり方だよ😊
 
@@ -50,6 +54,8 @@
 ---
 
 ## 4) 引数注入 vs コンストラクタ注入：使い分けのコツ🍰🧁**引数注入（第13章）**が得意なのは👇
+
+![testable_ts_study_014_arg_vs_ctor.png](./picture/testable_ts_study_014_arg_vs_ctor.png)
 
 
 
@@ -64,6 +70,8 @@
 ---
 
 ## 5) Composition Root（組み立て場所）
+
+![testable_ts_study_014_composition_root_location.png](./picture/testable_ts_study_014_composition_root_location.png)
 
 ってどこ？📌🏠超シンプルに言うと…
 
@@ -82,6 +90,8 @@
 ---
 
 ## 6) ハンズオン：ミニ機能を「組み立て係つき」にする🧪🏗️
+
+![testable_ts_study_014_order_service_diagram.png](./picture/testable_ts_study_014_order_service_diagram.png)
 
 ✨題材：**注文を保存してログを出す**（ついでに受付時刻も使う）🛒🕒📝
 
@@ -243,6 +253,8 @@ main().catch((e) => {
 ---
 
 ## 7) テスト：依存を差し替えて“中心だけ”を守る🧪💕テストランナーは **Vitest** が最近も活発で、Vite系と相性よく進化してるよ〜（Vitest 4 系が出てる）
+
+![testable_ts_study_014_test_replacement.png](./picture/testable_ts_study_014_test_replacement.png)
 
 🧪⚡ ([Vitest][1])
 （※ここは章の主題じゃないので、テスト環境の細かい話は最小限ね😊）

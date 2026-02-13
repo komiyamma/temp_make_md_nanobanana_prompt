@@ -34,6 +34,8 @@ Node.jsは **v24 が Active LTS**（安定運用向き）なので、教材の�
 
 ## 3) 「依存」ってなに？（I/O寄りのやつ）
 
+![testable_ts_study_013_io_list.png](./picture/testable_ts_study_013_io_list.png)
+
 🌀🚪たとえば👇は全部「外の世界」に触れてる（＝テストで面倒になりやすい）やつ！
 
 
@@ -50,6 +52,8 @@ Node.jsは **v24 が Active LTS**（安定運用向き）なので、教材の�
 ---
 
 ## 4) つらい例：直 `Date` と直 `console` 😵‍💫「トライアル開始」みたいな処理を想像してね🛒🍰
+
+![testable_ts_study_013_bad_example_visual.png](./picture/testable_ts_study_013_bad_example_visual.png)
 
 
 
@@ -75,6 +79,8 @@ export function startTrial(userId: string) {
 
 ## 5) 解決：引数注入（Dependency Injection by Parameters）
 
+![testable_ts_study_013_di_pattern_b.png](./picture/testable_ts_study_013_di_pattern_b.png)
+
 🎁➡️### パターンA：依存を「関数」として渡す（最小で好き）
 
 🧼✨* `now(): Date` だけ渡す
@@ -93,6 +99,8 @@ export function startTrial(userId: string) {
 ---
 
 ## 6) ハンズオン：Clock/Loggerを引数で受け取る版に変える⏰📝
+
+![testable_ts_study_013_step_flow.png](./picture/testable_ts_study_013_step_flow.png)
 
 🧪### Step 1：依存の型（最小の約束）
 
@@ -184,6 +192,8 @@ export const trialDeps: TrialDeps = {
 
 ### Step 4：テストで差し替える（時間を止める＆ログを拾う）
 
+![testable_ts_study_013_test_freeze_time.png](./picture/testable_ts_study_013_test_freeze_time.png)
+
 🧪⏰📝最近は **Vitest 4** がメジャーとして進んでるので、例はVitestでいくね🧡（Vitest 4.0 の告知あり）([vitest.dev][3])
 
 
@@ -223,6 +233,8 @@ describe("startTrial", () => {
 ---
 
 ## 7) よくある落とし穴あるある👃
+
+![testable_ts_study_013_pitfall_huge_deps.png](./picture/testable_ts_study_013_pitfall_huge_deps.png)
 
 💨（回避テク付き）### 落とし穴1：引数が増えすぎてつらい😇✅ 対策：**depsをオブジェクトにまとめる**（もうやってる！
 

@@ -18,6 +18,8 @@
 
 ## まずは超ざっくり！
 
+![testable_ts_study_010_three_questions.png](./picture/testable_ts_study_010_three_questions.png)
+
 臭い判定の3問👃💨コードを見た瞬間、これ聞いてみて〜😊
 
 1. **毎回同じ入力なら、毎回同じ結果？**（揺れてたら臭い🎲⏰）
@@ -29,6 +31,8 @@ YESが増えるほど、テストはつらくなるよ〜🧪💦
 ---
 
 ## “赤ペン入れ”の手順🖍️
+
+![testable_ts_study_010_red_pen_method.png](./picture/testable_ts_study_010_red_pen_method.png)
 
 🧠（超おすすめ）コードを見たら、次の順でマークすると迷子になりにくいよ✨
 
@@ -50,6 +54,8 @@ YESが増えるほど、テストはつらくなるよ〜🧪💦
 ---
 
 ## 1) 関数の奥でnewしてる🧱
+
+![testable_ts_study_010_smell_new.png](./picture/testable_ts_study_010_smell_new.png)
 
 😱（依存を自作臭）### 見つけ方👀* 関数の中に new がいる（しかもDB/HTTP/Logger系）
 
@@ -91,6 +97,8 @@ export async function getUserName(userId: string, api: UserApi) {
 
 ## 2) 直Date（現在時刻ベタ書き）
 
+![testable_ts_study_010_smell_date.png](./picture/testable_ts_study_010_smell_date.png)
+
 ⏰🧊### 見つけ方👀* Date / Date.now がロジックの中にいる
 
 
@@ -112,6 +120,8 @@ export function isExpired(expireAt: Date, clock: Clock) {
 ---
 
 ## 3) 直fetch（HTTP直叩き）
+
+![testable_ts_study_010_smell_fetch.png](./picture/testable_ts_study_010_smell_fetch.png)
 
 🌐😱### 見つけ方👀* fetch が中心っぽい処理の中にいる
 
@@ -166,6 +176,8 @@ export function shouldShowDebugPanel(config: Config) {
 ---
 
 ## 5) 巨大関数（なんでも屋）
+
+![testable_ts_study_010_smell_god_function.png](./picture/testable_ts_study_010_smell_god_function.png)
 
 🧟‍♀️📦### 見つけ方👀* 1つの関数で「取得→変換→判断→保存→ログ」ぜんぶやってる
 
