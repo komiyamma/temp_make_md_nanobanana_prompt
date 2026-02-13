@@ -39,6 +39,8 @@ graph TD
 ---
 
 ## 17.2 いちばんシンプルな書き方（ベタ書き）🍰
+![state machine ts study 017 typo error](./picture/state_machine_ts_study_017_typo_error.png)
+
 
 ```ts
 export type State =
@@ -60,6 +62,8 @@ state = "sucess"; // ❌ successのつもり…！スペルミスでコンパイ
 ---
 
 ## 17.3 おすすめ：状態一覧から「型を自動生成」する（as const）🪄✨
+![state machine ts study 017 as const magic](./picture/state_machine_ts_study_017_as_const_magic.png)
+
 
 ベタ書きでもOKなんだけど、状態が増えると「一覧」と「型」を二重管理しがちでつらい😵‍💫
 そこで **“一覧から型を作る”** のが便利！
@@ -99,6 +103,8 @@ VS Codeだと、`State` を使ってる箇所は補完が効くから、命名�
 ---
 
 ## 17.5 「状態ごとの表示文言」みたいな対応表は `satisfies` で守る🛡️✨
+![state machine ts study 017 satisfies shield](./picture/state_machine_ts_study_017_satisfies_shield.png)
+
 
 状態ごとにラベルや色を持ちたくなるよね？🎨
 でも普通に書くと「キーの書き忘れ」が起きがち😱
@@ -132,6 +138,8 @@ export const stateLabel = {
 ---
 
 ## 17.6 switchで“状態の漏れ”を絶対に許さない（assertNever）🚫✅
+![state machine ts study 017 switch gatekeeper](./picture/state_machine_ts_study_017_switch_gatekeeper.png)
+
 
 状態機械は **漏れがバグ** になりやすいから、`switch` も型で縛っちゃおう🔥
 （次章以降、イベントが入るとさらに効いてくる！）
@@ -165,6 +173,8 @@ function renderMessage(state: State): string {
 ---
 
 ## 17.7 よくある落とし穴まとめ（ここだけ注意⚠️）🍓
+![state machine ts study 017 string trap](./picture/state_machine_ts_study_017_string_trap.png)
+
 
 * **`as const` を付け忘れる**
   → `string[]` になって `typeof STATES[number]` がただの `string` になっちゃう😵‍💫 ([TypeScript][2])

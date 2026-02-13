@@ -86,6 +86,8 @@ export type Event =
 ---
 
 ## 5. `switch(event.type)` で “勝手に型が合う” 快感😆✨
+![state machine ts study 018 sorting chutes](./picture/state_machine_ts_study_018_sorting_chutes.png)
+
 
 イベントを処理する側（Reducer/Transition）でこうなる👇
 `case` の中では **event がその型に絞られる**よ！ ([TypeScript][4])
@@ -124,6 +126,8 @@ function handleEvent(event: Event) {
 ---
 
 ## 6. ハンドリング漏れを “コンパイルで止める” 🚫✅（never のやつ）
+![state machine ts study 018 leak detector](./picture/state_machine_ts_study_018_leak_detector.png)
+
 
 イベントが増えたのに `switch` を直し忘れる…あるある😇
 ここで **`never` を使うと、漏れた瞬間に型エラー**にできるよ！ ([TypeScript][4])
@@ -159,6 +163,8 @@ function handleEventStrict(event: Event) {
 ---
 
 ## 7. よくある沼ポイント🫠（ここ超大事）
+![state machine ts study 018 mystery box snake](./picture/state_machine_ts_study_018_mystery_box_snake.png)
+
 
 ### ❌ `type: string` にしちゃう
 
@@ -183,6 +189,8 @@ type BadEvent =
 ---
 
 ## 8. “イベント作成関数” を用意すると、さらに事故が減る🧯✨
+![state machine ts study 018 event factory](./picture/state_machine_ts_study_018_event_factory.png)
+
 
 毎回 `{ type: "...", ... }` を手打ちすると、地味にミスるのよ…🥺
 だから **イベントを作る関数（creator）**を用意しよ！
@@ -217,6 +225,8 @@ VS Code の補完がめちゃ気持ちいいやつ…😆💞
 ---
 
 ## 9. `satisfies` を使うと “形のチェック” が上手くできる🧩✨（おすすめ）
+![state machine ts study 018 satisfies checklist](./picture/state_machine_ts_study_018_satisfies_checklist.png)
+
 
 `events` の一覧とか「この形で揃っててほしい！」ってとき、`satisfies` が便利だよ🪄
 （値の推論を潰さずに “満たしてるか” をチェックできる） ([TypeScript][5])

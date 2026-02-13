@@ -67,6 +67,8 @@ graph LR
 ---
 
 ## 3. ① Effectリスト方式（いちばん状態機械らしい）📋✨
+![state machine ts study 016 shopping list](./picture/state_machine_ts_study_016_shopping_list.png)
+
 
 ### 仕組み（超やさしく）🧸
 
@@ -200,6 +202,8 @@ export async function runEffects(effects: Effect[], deps: Deps) {
 ---
 
 ## 4. ② コールバック方式（とにかく入りやすい）☎️🌸
+![state machine ts study 016 phone call](./picture/state_machine_ts_study_016_phone_call.png)
+
 
 ### 仕組み🧸
 
@@ -264,6 +268,8 @@ export function createMachine(services: Services) {
 ---
 
 ## 5. ③ DI方式（大きくなっても崩れにくい）🔌🏗️
+![state machine ts study 016 plug components](./picture/state_machine_ts_study_016_plug_components.png)
+
 
 ### 仕組み🧠
 
@@ -328,6 +334,8 @@ class FormMachine {
 ---
 
 ## 6. で、初心者がハマりにくいのはどれ？😳👉（結論）
+![state machine ts study 016 selection podium](./picture/state_machine_ts_study_016_selection_podium.png)
+
 
 私はこう推すよ〜✨（迷ったらこれでOK）
 
@@ -358,6 +366,8 @@ XStateみたいに「命令じゃなくて“解釈されるアクション”�
 ---
 
 ## 8. よくある地雷💣→回避🧯
+![state machine ts study 016 minefield](./picture/state_machine_ts_study_016_minefield.png)
+
 
 * 💥 reducerの中で `fetch()` しちゃう
   → ✅ 「Effectを返す」に統一しよ
