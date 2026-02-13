@@ -65,6 +65,8 @@ mindmap
 
 ## 5.3 ① コンパイル破壊（型で止まる）🧷⚠️
 
+![Compile Error](./picture/svbc_ts_study_005_compile_error.png)
+
 ### 代表例：引数や戻り値の型を変えた🧊
 
 ```ts
@@ -123,6 +125,8 @@ export type Mode = "safe"; // "fast" が消えた
 
 ## 5.4 ② 実行時破壊（動くけど落ちる）💣🔥
 
+![Runtime Bomb](./picture/svbc_ts_study_005_runtime_bomb.png)
+
 ここは「型では止まらない」から、事故りやすいよ〜😇
 
 ### 代表例：エラーを投げるようになった💥
@@ -171,6 +175,8 @@ export function getConfig(): any {
 
 ## 5.5 ③ 意味の破壊（動くけど“期待が裏切られる”）🌀💔
 
+![Meaning Change](./picture/svbc_ts_study_005_meaning_change.png)
+
 これがいちばんイヤなやつ〜😭
 **壊れたって気づきにくい**し、バグ報告も遅れて地獄になりがち🔥
 
@@ -210,6 +216,8 @@ export function sortPosts(posts: Post[]): Post[] { ... }
 ---
 
 ## 5.7 迷ったときの判断フロー🧭✨
+
+![Judgment Flow](./picture/svbc_ts_study_005_judgment_flow.png)
 
 変更を見たら、この順でチェックすると迷いが減るよ✅
 

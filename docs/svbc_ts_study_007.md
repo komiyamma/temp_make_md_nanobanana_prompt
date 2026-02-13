@@ -11,6 +11,8 @@
 
 ## 7.1 「見えてる面（API surface）」ってなに？🌊👀
 
+![API Surface](./picture/svbc_ts_study_007_api_surface.png)
+
 **API surface = 利用者（他人のコード）が触れる“入口”ぜんぶ** だよ〜📣✨
 TypeScriptだと、特にこのへんが入口になりがち👇
 
@@ -46,6 +48,8 @@ import { parseUser } from "your-lib";
 
 ### 理由②：「型だけ export」と「値も export」は別物🧠🧷⚡
 
+![Type vs Value](./picture/svbc_ts_study_007_type_vs_value.png)
+
 TypeScriptには **type-only export** があるよね👇
 `export type` は **型としては使えるけど、実行時には消える**（出力JSに残らない）✨ ([TypeScript][3])
 
@@ -78,6 +82,8 @@ Node.jsの公式ドキュメントでも、`exports` は **エントリーポイ
 ---
 
 ## 7.3 “門番”パターン：`index.ts` で公開面をコントロールしよ🧩🚪✨
+
+![Gatekeeper](./picture/svbc_ts_study_007_gatekeeper.png)
 
 ### ✅ おすすめ方針：公開は「1か所からだけ」📣
 
@@ -130,6 +136,8 @@ export type { User, UserId } from "./features/user";
 
 ### 事故①：export名変更（=だいたいMAJOR）💥
 
+![Broken Link](./picture/svbc_ts_study_007_broken_link.png)
+
 * `export { foo }` → `export { bar }` に変える
   → 利用者のimportが壊れる😭 → **MAJOR**
 
@@ -170,6 +178,8 @@ import hello from "your-lib";
 ---
 
 ## 7.5 公開面を“漏らさない”テク：`@internal` + `stripInternal` 🕵️‍♀️🧹
+
+![Cleaning Tools](./picture/svbc_ts_study_007_cleaning_tools.png)
 
 「内部のつもりだったのに `.d.ts` に出ちゃった〜😭」って時に役立つのがこれ👇
 
