@@ -8,6 +8,7 @@
 ## 1. AIは“3つの使い方”に分けると超ラク🤖🧠
 
 ![AIとの協働](./picture/layer_cs_study_020_ai_partner.png)
+![AI Usage Modes](./picture/layer_cs_study_020_ai_modes_toolkit.png)
 
 AIって、ざっくりこの3モードで使い分けると事故りにくいよ〜！✨
 
@@ -32,6 +33,8 @@ Copilot ChatはIDE（Visual Studio含む）でも使えるよ〜！ ([GitHub Doc
 ---
 
 ## 2. レイヤー違反チェックをAIに“習慣化”させよう✅🧱
+
+![Layer Violation Check](./picture/layer_cs_study_020_ai_gatekeeper.png)
 
 レイヤードの一番こわい敵はこれ👇
 
@@ -58,6 +61,8 @@ Copilot ChatはIDE（Visual Studio含む）でも使えるよ〜！ ([GitHub Doc
 
 ## 3. Visual StudioのCopilot Chatで“解決策全体”を見せて相談💬🏗️
 
+![Solution-Wide Context](./picture/layer_cs_study_020_context_map_guide.png)
+
 Visual StudioのCopilotには「解決策（#solution）を参照して質問する」系の使い方があるよ〜！🧠
 （ファイル参照や意図指定のコツも紹介されてる） ([Visual Studio][2])
 
@@ -80,6 +85,8 @@ Visual StudioのCopilotには「解決策（#solution）を参照して質問す
 ---
 
 ## 4. 変更が来たらAIにまず聞く：「どの層が変わる？」🧠🔍
+
+![Change Impact Analysis](./picture/layer_cs_study_020_impact_analysis_map.png)
 
 機能追加や仕様変更で一番やるべきはこれ👇
 
@@ -107,6 +114,8 @@ AIに「分解」をやらせると速いよ✨
 
 ## 5. AIレビューを“儀式”にする（PR前の3点セット）🧪📝✅
 
+![PR Review Checklist](./picture/layer_cs_study_020_pre_flight_checklist.png)
+
 Copilotにはコードレビュー支援やPR要約もあるので、運用に組み込みやすいよ〜！ ([GitHub Docs][1])
 
 ### PR前の3点セット（おすすめ）🎀
@@ -131,6 +140,8 @@ PRレビューして！
 ---
 
 ## 6. テストはAIに増やしてもらうのが最強🍰🧪
+
+![AI Test Generation](./picture/layer_cs_study_020_test_factory.png)
 
 レイヤードのご褒美はテスト！
 特にDomainは**依存が少ないからAIがテストを書きやすい**💎✨
@@ -160,6 +171,8 @@ AIが出したテストは、最後に**自分の言葉で仕様チェック**�
 ---
 
 ## 7. 安全運用：秘密情報・ライセンス・脆弱性は要注意🔐⚖️🛡️
+
+![Security & Secrets Filtering](./picture/layer_cs_study_020_security_filter.png)
 
 ここ、超だいじ！！！✨
 

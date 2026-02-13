@@ -20,6 +20,8 @@ ASP.NET Core（いま主流のテンプレ）だと、**Program.cs がほぼComp
 
 ## 2. なんで必要なの？（“迷子”が消える）🧠💭
 
+![Composition Root Benefit](./picture/layer_cs_study_016_maze_vs_map.png)
+
 DIをやってると、初心者がハマりやすいのがコレ👇
 
 ### 😵あるある事故
@@ -37,6 +39,8 @@ DIをやってると、初心者がハマりやすいのがコレ👇
 ---
 
 ## 3. イメージ図（頭の中を1枚絵に）🧩🧱
+
+![Object Graph](./picture/layer_cs_study_016_object_graph_tree.png)
 
 「依存オブジェクトのつながり（Object Graph）」を、入口で作る感じだよ〜😊
 
@@ -81,6 +85,8 @@ graph TD
 
 ## 4. “やっていいnew / ダメなnew” ルール🔥
 
+![Allowed vs Forbidden New](./picture/layer_cs_study_016_allowed_vs_forbidden_new.png)
+
 ### ✅やっていい（ほぼここだけ）
 
 * **Composition Root（Program.cs 付近）での登録・組み立て**
@@ -101,6 +107,8 @@ graph TD
 ここから、ミニ例で「組み立てが1か所になる」体験をしよ〜！🥳
 
 ### 5.1 Application：UseCaseは“お願いするだけ”🙏
+
+![UseCase Interface Usage](./picture/layer_cs_study_016_usecase_ordering_menu.png)
 
 ```csharp
 // Application
@@ -207,6 +215,8 @@ app.Run();
 
 ## 7. Program.csが太る問題…どうする？😵 → “登録をまとめる”✨
 
+![Grouping DI Registrations](./picture/layer_cs_study_016_grouping_registrations.png)
+
 規模が増えると、Program.csが `AddScoped` だらけでつらくなるよね💦
 そこで、公式ドキュメントでもよく出てくる定番が👇
 
@@ -264,6 +274,8 @@ app.Run();
 
 ## 8. “差し替え”が気持ちよすぎる例🎁（テスト・環境別）
 
+![Easy Implementation Swap](./picture/layer_cs_study_016_easy_swap_cartridge.png)
+
 ### 8.1 テストのときだけFakeにする🧪
 
 テストプロジェクトで、Composition Root相当の場所に…👇
@@ -291,6 +303,8 @@ services.AddScoped<ITodoRepository, SqlTodoRepository>();
 → DIの意味が半減🥲（差し替えできない）
 
 ### 罠②：`IServiceProvider` を注入して取り出す（Service Locator）
+
+![Service Locator Trap](./picture/layer_cs_study_016_service_locator_mystery_box.png)
 
 → “必要な依存”が見えなくなる😵‍💫
 
