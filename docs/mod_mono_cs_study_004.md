@@ -50,6 +50,8 @@ graph TD
 
 ## 2) モジュラーモノリスでSoCが超大事な理由🏠🧩
 
+![Shield of Logic](./picture/mod_mono_cs_study_004_shield_of_logic.png)
+
 モジュラーモノリスは「1つのアプリの中を、モジュール境界で分けて強くする」やり方だよね🏠✨
 このとき SoC ができてないと…
 
@@ -68,6 +70,8 @@ Visual Studio も **Visual Studio 2026** が出ていて、AI統合もどんど�
 ---
 
 ## 3) まずダメ例😇→ “混ぜた地獄”を体験しよう🔥
+
+![Code Blender](./picture/mod_mono_cs_study_004_code_blender.png)
 
 やりがちな「全部入り」例（注文確定＋決済＋DB＋メール＋ログが1か所）👇
 
@@ -126,6 +130,8 @@ public async Task<IActionResult> Checkout(CheckoutRequest req)
 同じ「注文する」でも、役割で分けるよ👇
 
 ### 分け方の定番（1モジュール内の基本形）🧅
+
+![Layered Responsibility](./picture/mod_mono_cs_study_004_layered_responsibility.png)
 
 * **UI（Controller / API）**：HTTPの受け取り、入力の一次整形、結果の返却🖥️
 * **Application（UseCase）**：ユースケース進行役（注文確定の手順）📋
@@ -223,6 +229,8 @@ public sealed class DomainException : Exception
 
 ### Step B：Application（UseCase）を作る（手順担当）📋
 
+![UseCase Conductor](./picture/mod_mono_cs_study_004_usecase_conductor.png)
+
 UseCaseは「注文の流れ」を組み立てるけど、**具体実装には触れない**（触れるのは interface だけ）🧩
 
 ```csharp
@@ -313,6 +321,8 @@ sequenceDiagram
 
 ### Step C：UIは“薄く”する（HTTP担当）🖥️
 
+![Thin UI Waiter](./picture/mod_mono_cs_study_004_thin_ui_waiter.png)
+
 コントローラは「HTTPの受け渡し」が主役✨
 
 ```csharp
@@ -351,6 +361,8 @@ public sealed record CheckoutItem(string ProductId, int Qty);
 ---
 
 ### Step D：Infrastructureで“具体”を実装する🧰
+
+![Infra Toolbox](./picture/mod_mono_cs_study_004_infra_toolbox.png)
 
 ここはDB（EF Coreなど）や外部APIの具体を置く場所✨
 （サンプルなので雰囲気だけ👇）
@@ -398,6 +410,8 @@ public sealed class FakePaymentGateway : IPaymentGateway
 ---
 
 ## 8) AI活用プロンプト例🤖✨（コピペOK）
+
+![AI Refactoring Bot](./picture/mod_mono_cs_study_004_ai_refactoring_bot.png)
 
 ### 目的：混ぜたコードをSoCに直す✂️
 

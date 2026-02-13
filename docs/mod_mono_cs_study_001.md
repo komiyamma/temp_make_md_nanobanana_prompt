@@ -46,6 +46,8 @@ graph TD
 
 ## 2) 3兄弟を整理しよ：モノリス / モジュラーモノリス / マイクロサービス🧠✨
 
+![Architecture Trio](./picture/mod_mono_cs_study_001_architecture_trio.png)
+
 ### まず「モノリス」って悪口じゃないよ😇
 
 モノリスは「**コアの動きが1つのプロセスで完結**していて、**だいたい1つの単位でデプロイ**する」形のことだよ📦
@@ -94,6 +96,8 @@ graph TD
 
 ## 3) よくある悩み：変更が怖い😵 の正体
 
+![Fear of Change](./picture/mod_mono_cs_study_001_fear_of_change.png)
+
 「変更が怖い」って、だいたいこれ👇
 
 * どこが影響範囲かわからない🕵️‍♀️
@@ -110,6 +114,8 @@ graph TD
 ## 4) まずダメ例😇 → 良い例😎（“境界が溶ける”ってこういうこと）
 
 ### ダメ例😇：全部まぜまぜサービス🍲💥
+
+![Soup vs Bento](./picture/mod_mono_cs_study_001_soup_vs_bento.png)
 
 * 1つのクラスが、注文も、在庫も、支払いも、メールも…全部やる
 * しかも他の機能も直接触り放題
@@ -132,6 +138,8 @@ public class OrderService
 ```
 
 ### 良い例😎：モジュールごとに“部屋”を作って、窓口で会話🪟✨
+
+![Module Interaction](./picture/mod_mono_cs_study_001_module_interaction.png)
 
 * 「注文は注文の部屋（Ordering）」
 * 「商品は商品（Catalog）」
@@ -169,6 +177,8 @@ flowchart LR
 （まだ厳密な強制はしないよ。強制は後の章でやる！👌）
 
 ### フォルダ（または名前空間）イメージ📁
+
+![Code Structure](./picture/mod_mono_cs_study_001_code_structure.png)
 
 ```text
 App/
@@ -272,6 +282,8 @@ Console.WriteLine(ordering.PlaceOrder(productId: 3, userId: 10)); // 買えな�
 
 ### 演習1：境界を言葉で👄
 
+![Leak Detection](./picture/mod_mono_cs_study_001_leak_detection.png)
+
 次のうち「境界が溶けてる」兆候はどれ？（複数OK）
 
 * A) 注文モジュールが商品モジュールのDBテーブルを直接UPDATEする
@@ -289,6 +301,8 @@ Ordering側のメッセージに商品名を入れてみてね😊
 ---
 
 ## 7) AI活用プロンプト例🤖✨（コピペOK）
+
+![AI Architect](./picture/mod_mono_cs_study_001_ai_architect.png)
 
 * 「この機能分割（Catalog/Ordering/Identity）は境界として自然？理由も添えて候補を3案出して」
 * 「このコード、どこが“境界越え”になってる？直し方を“公開API経由”に寄せて提案して」

@@ -39,6 +39,8 @@
 
 ## 1) ありがちなダメ例😇💥 → どう壊れる？
 
+![Monolith Chaos](./picture/mod_mono_cs_study_006_monolith_chaos.png)
+
 ### ダメ例：1プロジェクト巨大化モノリス🍝
 
 * `WebApp` 1個だけ
@@ -54,6 +56,8 @@
 ---
 
 ## 2) 良い例😎✨：SolutionとProjectで“境界”を作る🧱
+
+![Dependency Flow](./picture/mod_mono_cs_study_006_dependency_flow.png)
 
 ### 良い例：Host / Modules / Shared を物理的に分ける🏠📦
 
@@ -139,6 +143,8 @@ Solution Folderの `Modules` の下に置く（さらに **Catalog/Ordering/Iden
 
 ## 4) いちばん大事：参照ルール（今日の最小ルール）🚦📌
 
+![Reference Prohibition](./picture/mod_mono_cs_study_006_reference_prohibition.png)
+
 この章では、いったん **これだけ守ればOK** でいくよ😊✨
 
 ### ルール（最小）✅
@@ -218,6 +224,8 @@ public static class ModuleInfo
 
 ### 5-2. Hostに「読み込んでるモジュール一覧」APIを作る📣
 
+![Browser Output](./picture/mod_mono_cs_study_006_browser_output.png)
+
 `MiniECommerce.Host.Api` の `Program.cs` に1本だけ追加しよう✨
 （Minimal APIの書き方だよ〜😊）
 
@@ -256,6 +264,8 @@ Visual StudioはSolution Folderで整うけど、VS Codeは**実フォルダが�
 
 ### dotnet CLIで作る版（VS Code派向け）🧪
 
+![CLI Construction](./picture/mod_mono_cs_study_006_cli_construction.png)
+
 ```bash
 dotnet new sln -n MiniECommerce
 mkdir -p src/Host src/Modules/Catalog src/Modules/Ordering src/Modules/Identity src/Shared
@@ -290,6 +300,8 @@ dotnet add src/Host/MiniECommerce.Host.Api/MiniECommerce.Host.Api.csproj referen
 
 ## 8) ミニ演習📝✨（15〜30分）
 
+![Shipping Add](./picture/mod_mono_cs_study_006_shipping_add.png)
+
 1. `Modules/Shipping` を追加してみよう🚚
 
 * `MiniECommerce.Modules.Shipping`（クラスライブラリ）を作る
@@ -304,6 +316,8 @@ dotnet add src/Host/MiniECommerce.Host.Api/MiniECommerce.Host.Api.csproj referen
 ---
 
 ## 9) AI活用プロンプト例🤖✨（コピペOK）
+
+![AI Solution Review](./picture/mod_mono_cs_study_006_ai_solution_review.png)
 
 ### 9-1. 構成レビューしてもらう👀
 

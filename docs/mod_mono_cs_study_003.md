@@ -17,6 +17,8 @@
 
 ## まずは世界観（ストーリー）📚✨
 
+![Mini EC Cast](./picture/mod_mono_cs_study_003_mini_ec_cast.png)
+
 あなたは小さなネットショップの開発者さん👩‍💻🧑‍💻
 売ってるのは雑貨でもゲームグッズでもOK🎁
 最初は機能を絞って、**“境界の練習”** に集中するよ🧩✨
@@ -150,6 +152,8 @@ graph TD
 
 ## “衝突しそうな言葉” を先にメモしよう📝💥
 
+![Term Collision](./picture/mod_mono_cs_study_003_term_collision.png)
+
 モジュールが分かれると、同じ英単語でも意味がズレがち😵‍💫
 今のうちに「この言葉、誰の辞書？」を決めると事故が減るよ🛡️✨
 
@@ -173,6 +177,8 @@ graph TD
 ---
 
 ### 良い例😎（モジュールに聞きに行く）
+
+![Snapshot Strategy](./picture/mod_mono_cs_study_003_snapshot_strategy.png)
 
 * Orderingは「注文の状態」と「注文のルール」に集中🧾🚥
 * 商品のことはCatalogに聞く🛍️
@@ -202,6 +208,8 @@ graph LR
 ---
 
 ## 手を動かす（C#）⌨️✨：まずは “会話の窓口” をスケッチしてみよ！
+
+![Interface Contract](./picture/mod_mono_cs_study_003_interface_contract.png)
 
 この章ではまだ大工事しないで、**「モジュール同士がどう話すか」** の形だけ作るよ😊
 （実装は薄くてOK！“境界の姿” が目的🧩）
@@ -249,6 +257,8 @@ public sealed record PlaceOrderCommand(
 
 ## ざっくりフロー図（注文する）🧾🛒
 
+![Flow Diagram](./picture/mod_mono_cs_study_003_flow_diagram.png)
+
 「Orderingが中心で、必要な情報を他に聞く」感じを掴もう〜✨
 
 ```mermaid
@@ -272,6 +282,8 @@ sequenceDiagram
 
 ### 演習1：仕分けゲーム🎮
 
+![Sorting Game](./picture/mod_mono_cs_study_003_sorting_game.png)
+
 次の機能はどのモジュール？（迷ったら理由も一言♪）
 
 * 商品検索 🔎
@@ -292,6 +304,8 @@ sequenceDiagram
 ---
 
 ## AI活用プロンプト例🤖✨（コピペOK）
+
+![AI Design Assistant](./picture/mod_mono_cs_study_003_ai_design_assistant.png)
 
 ### ① 境界の候補を増やしたい🧩
 
