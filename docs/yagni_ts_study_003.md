@@ -12,6 +12,8 @@
 
 ## 1. まずMVPってなに？🍰
 
+![MVP Cake Slice](./picture/yagni_ts_study_003_mvp_cake.png)
+
 MVPはざっくり言うと…
 
 > **最小で、価値が出る形**（最小なのに“使える”）✨
@@ -59,6 +61,8 @@ MVPはざっくり言うと…
 
 ### ステップ1：ユーザーを“1人”に決める👤
 
+![Target User Spotlight](./picture/yagni_ts_study_003_target_user.png)
+
 ターゲットを広げるほど、機能が増える😇
 だから最初は1人でOK！
 
@@ -96,6 +100,8 @@ MVPはざっくり言うと…
 
 ### ステップ4：受け入れ条件（Acceptance Criteria）を書く✅📝
 
+![Acceptance Gate](./picture/yagni_ts_study_003_acceptance_gate.png)
+
 MVPは「気分」じゃなくて、**合格ライン**で守るのが大事💮
 
 #### 例：MVPの受け入れ条件（推し活メモ）
@@ -111,6 +117,8 @@ MVPは「気分」じゃなくて、**合格ライン**で守るのが大事💮
 ---
 
 ### ステップ5：未来の機能は「TODO置き場」に隔離🧊📝
+
+![Feature Icebox](./picture/yagni_ts_study_003_icebox.png)
 
 ここがYAGNIの核心✨
 **「作らない」＝「忘れる」じゃない**よ！
@@ -159,6 +167,8 @@ MVPは「気分」じゃなくて、**合格ライン**で守るのが大事💮
 ---
 
 ### 5.3 「3画面以内 or 1画面完結」ルール📱✨
+
+![One Screen UI](./picture/yagni_ts_study_003_one_screen.png)
 
 あなたのロードマップにある縛り、これめっちゃ良い縛り！🙌
 
@@ -224,6 +234,8 @@ MVPは「気分」じゃなくて、**合格ライン**で守るのが大事💮
 ---
 
 ## 8. AI活用🤖✨（盛らせないプロンプト付き！）
+
+![AI Leash](./picture/yagni_ts_study_003_ai_leash.png)
 
 ここ、超大事！！AIは放っておくと盛る🎈😅
 だから**最初に縛る**よ〜！

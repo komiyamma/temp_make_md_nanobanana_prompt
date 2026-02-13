@@ -58,6 +58,8 @@ YAGNIって「作らない」だけど、雑にサボるのとは違うよね�
 
 ## 3. 作り方の流れ（YAGNI実装スタイルの型）🧱✨
 
+![Implementation Stones](./picture/yagni_ts_study_004_step_stones.png)
+
 ### ステップA：まず動く（1ファイルでOK）🏃‍♀️💨
 
 * とにかく UI を作って **追加→一覧** を成立させる
@@ -96,6 +98,8 @@ Vite は Node のバージョン条件があるから、警告が出たら Node 
 ---
 
 ## 5. ステップA：まず動く（最小 App）✅🧱
+
+![Single File Icon](./picture/yagni_ts_study_004_single_file.png)
 
 まずは **App.tsx だけ**で作っちゃおう！
 （この段階で “分割” とか考えない！YAGNI！✂️）
@@ -174,6 +178,8 @@ export default function App() {
 
 ## 6. ステップB：名前を整える（リファクタは“軽く”）🧼✨
 
+![Name Polishing](./picture/yagni_ts_study_004_name_polish.png)
+
 YAGNIって、リファクタしないって意味じゃないよ🙅‍♀️
 むしろ **“小さく作って、小さく整える”** が大事！🌿
 
@@ -193,6 +199,8 @@ YAGNIって、リファクタしないって意味じゃないよ🙅‍♀️
 **UI から “ロジック” を抜く**と、未来に強くなるよ〜🙂
 
 ### フォルダ構成（最小）📁✨
+
+![Simple Folder Tree](./picture/yagni_ts_study_004_folder_tree.png)
 
 * `src/domain/memo.ts`（ロジック）
 * `src/domain/memo.test.ts`（テスト）
@@ -384,6 +392,8 @@ npm test
 ---
 
 ## 11. AI活用（盛らせない指示）🤖🧯✨
+
+![AI Logic Assistant](./picture/yagni_ts_study_004_ai_logic.png)
 
 AIは放っておくと盛りがち🎈😇
 だから最初に **縛り**を渡すのがコツ！

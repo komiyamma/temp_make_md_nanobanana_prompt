@@ -40,6 +40,8 @@ YAGNIって言うと、たまにこう誤解されます👇
 
 ### ❌ よくある誤解
 
+![Misconception: Lazy vs Focus](./picture/yagni_ts_study_001_misconception.png)
+
 * 「手抜きでしょ？」🙅‍♀️
 * 「設計しないってこと？」🙅‍♀️
 * 「何も考えずに書き散らかすやつ？」🙅‍♀️
@@ -102,6 +104,8 @@ YAGNIで大事なのは、これ👇
 
 ## 5. TypeScript開発でYAGNIが効く場面（個人開発あるある）📦
 
+![TypeScript Traps](./picture/yagni_ts_study_001_ts_traps.png)
+
 「未来用の罠」が出やすいポイントを、TypeScriptあるあるで紹介するね👇
 
 ### 5.1 API設計：先に完璧なAPIを作りがち🛰️
@@ -129,6 +133,8 @@ YAGNIで大事なのは、これ👇
 ---
 
 ## 6. ちいさなコード例で体感しよ🧪✨（早すぎる抽象化）
+
+![Code Comparison](./picture/yagni_ts_study_001_code_compare.png)
 
 ### ❌ “未来のため”に頑張りすぎ例
 
@@ -173,6 +179,8 @@ export function loadMemo(): string {
 
 ## 7. ミニ演習📝：「いつか作りたい機能」10個 → “今必要”を2個に絞る✂️
 
+![Feature Funnel](./picture/yagni_ts_study_001_funnel_filter.png)
+
 ### ステップ1：まず10個、ノンストップで書く🖊️💨
 
 例（推し活メモ系でも何でもOK）
@@ -208,6 +216,8 @@ export function loadMemo(): string {
 ---
 
 ## 8. AI活用🤖：「今作る範囲」を盛らせずに出してもらう
+
+![AI Fence](./picture/yagni_ts_study_001_ai_fence.png)
 
 Copilot ChatはVS Code内のチャットとして使えます。([Visual Studio Code][5])
 （アイコンから開いて、自然文で質問できるやつね🙂）
