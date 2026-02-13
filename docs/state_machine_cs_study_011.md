@@ -32,6 +32,8 @@ Draft → Submitted → Paid → Cooking → Ready → PickedUp
 
 ## 11.3 Entry / Exit / Transition って何？（超やさしく）🌷
 
+![action types](./picture/state_machine_cs_study_011_action_types.png)
+
 ![011 Actions](./picture/state_machine_cs_study_011_actions.png)
 
 ```mermaid
@@ -87,6 +89,8 @@ UMLでも「遷移に effect を持てる」感じで説明されるよ〜📘�
 
 ## 11.4 置き場所の決め方：3秒ルール⏱️✨
 
+![3 second rule](./picture/state_machine_cs_study_011_3_second_rule.png)
+
 迷ったら、この3つで決めるよ👇
 
 1. **“その状態にいる”ことが条件？** → Entry/Exit（状態の所属）
@@ -99,6 +103,8 @@ UMLでも「遷移に effect を持てる」感じで説明されるよ〜📘�
 ## 11.5 具体例で練習しよ🎮✨（学食フロー版）
 
 ### 例1：Paidになったらレシート発行🧾
+
+![receipt action](./picture/state_machine_cs_study_011_receipt_action.png)
 
 * 状態：Paid に“入ったら”やる
   → **Entry（Paid）** が自然💡
@@ -246,7 +252,11 @@ sm.Fire(OrderTrigger.Pay);
 
 ## 11.7 よくある事故💥（ここ超大事😇）
 
+![common accidents](./picture/state_machine_cs_study_011_common_accidents.png)
+
 ### 事故1：通知が二重に飛ぶ📣📣
+
+![double notification](./picture/state_machine_cs_study_011_double_notification.png)
 
 例：
 
@@ -299,6 +309,8 @@ Stateless でも「OnEntry中に Fire() したい」ケースの議論がある�
 ---
 
 ## 11.9 AI活用コーナー🤖✨（Copilot / Codex）
+
+![ai implementation](./picture/state_machine_cs_study_011_ai_implementation.png)
 
 そのまま貼って使えるプロンプト例だよ〜💌
 

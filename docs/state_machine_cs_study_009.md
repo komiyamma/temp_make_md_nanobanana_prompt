@@ -19,6 +19,8 @@
 
 ## 1. 「禁止の遷移」ってなに？🚫
 
+![forbidden transition](./picture/state_machine_cs_study_009_forbidden_transition.png)
+
 ![009 Forbidden](./picture/state_machine_cs_study_009_forbidden.png)
 
 ```mermaid
@@ -32,6 +34,8 @@ graph LR
 
 
 ### ✅ “バグ”じゃなくて “仕様”だよ
+
+![bug vs spec](./picture/state_machine_cs_study_009_bug_vs_spec.png)
 
 状態機械って、ざっくり言うと
 
@@ -101,6 +105,8 @@ Draft → Submitted → Paid → Cooking → Ready → PickedUp
 
 ## 4. ユーザー向けメッセージの作り方💬💖（超大事！）
 
+![user message creation](./picture/state_machine_cs_study_009_user_message_creation.png)
+
 禁止遷移メッセージって、**3点セット**が最強だよ✨
 
 ```mermaid
@@ -154,6 +160,8 @@ graph TD
 
 ## 6. 未来の実装につながる“データ構造”だけ先に作る📦✨
 
+![data structure prep](./picture/state_machine_cs_study_009_data_structure_prep.png)
+
 この章は仕様章だから、「今すぐ動く実装」じゃなくて、**仕様をそのままコードに落とせる形**を作るのが目的だよ😊
 
 ```csharp
@@ -192,6 +200,8 @@ AIは **「文案作り」と「漏れチェック」**が超得意💪
 逆に **「業務ルールを決める」**のは人間が主役だよ😊（AIは勝手に決めがち💦）
 
 ### 7.1 禁止遷移リストの漏れチェック🔍
+
+![missing check](./picture/state_machine_cs_study_009_missing_check.png)
 
 ```text
 学食注文の状態一覧とイベント一覧を渡すので、
