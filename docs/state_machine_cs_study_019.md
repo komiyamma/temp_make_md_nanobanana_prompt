@@ -90,6 +90,8 @@ classDiagram
 
 ### 4-1. 失敗理由コード（まずはこれ！）🧾
 
+![Failure Code Bins](./picture/state_machine_cs_study_019_failure_code_bins.png)
+
 ```csharp
 public enum TransitionFailureCode
 {
@@ -103,6 +105,8 @@ public enum TransitionFailureCode
 ### 4-2. 遷移結果（Success/Failure を1つにまとめる）✅❌
 
 初心者さんに優しい形でいくね（読みやすさ優先）😊
+
+![Transition Result Object](./picture/state_machine_cs_study_019_transition_result_object.png)
 
 ```csharp
 public readonly record struct TransitionResult
@@ -209,7 +213,11 @@ public sealed class Order
             [(OrderState.Submitted, typeof(CancelCommand))] = new(OrderState.Cancelled),
         };
     }
+```
 
+![TryFire Pipeline](./picture/state_machine_cs_study_019_try_fire_pipeline.png)
+
+```csharp
     public TransitionResult TryFire(IOrderEvent ev)
 
         var key = (State, ev.GetType());

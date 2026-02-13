@@ -150,6 +150,10 @@ public static class TransitionTable
 }
 ```
 
+![Duplicate Key Detection](./picture/state_machine_cs_study_017_duplicate_key.png)
+
+> ※ 図解：ループの中でキー重複を見つけている様子
+
 > Frozenじゃなくて普通の `Dictionary` でも全然OKだよ👍
 > 「静的に1回作って、以後は読取りだけ」なら Frozen が相性よい、ってだけ❄️✨ ([Microsoft Learn][1])
 
@@ -221,6 +225,8 @@ public readonly record struct TransitionResult(
 ---
 
 ### 3-5) 動作確認ミニランナー 🏃‍♀️💨
+
+![Runner Execution](./picture/state_machine_cs_study_017_runner_execution.png)
 
 ```csharp
 public static class Program
