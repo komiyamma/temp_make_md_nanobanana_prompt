@@ -20,6 +20,8 @@
 
 ## 2) “安全に先送り”の合言葉はこれ👇✨
 
+![Safety Exit](./picture/yagni_ts_study_005_safety_exit.png)
+
 ### ✅ 「変える場所を決める」→ ✅「今は素直に書く」→ ✅「痛みが出たら強くする」💪🙂
 
 ポイントは「将来の変更に備える」じゃなくて、
@@ -30,6 +32,8 @@
 ## 3) 先送りを安全にする「3つの最小装備」🧰🛡️
 
 ### 装備①：境界（boundary）を1枚だけ置く 🧱✨
+
+![Boundary Wall](./picture/yagni_ts_study_005_boundary_wall.png)
 
 たとえば「API」「保存（localStorage等）」「日時」みたいな、変わりがちな所にだけ薄い壁を作るよ🙂
 
@@ -63,6 +67,8 @@ export function saveMemos(memos: Memo[]): void {
 ---
 
 ### 装備②：変換（mapping）で“雑な世界”と“きれいな世界”を分ける 🧼✨
+
+![Data Mapping](./picture/yagni_ts_study_005_data_mapping.png)
 
 APIレスポンスとかって、いつ変わるかわからないよね😇
 だから **“外”は雑でもOK**、中に入れる時に整える！
@@ -201,6 +207,8 @@ Genericsってカッコいいけど、早いとだいたい事故る😂
 
 ## 7) 【フォルダ】最初から大規模にしない📁😌
 
+![Simple Feature Folder](./picture/yagni_ts_study_005_simple_folder.png)
+
 最初からこういうの作ると、だいたい燃える🔥
 
 * `domain/` `application/` `infrastructure/` …（立派すぎるやつ）🏰😇
@@ -277,6 +285,8 @@ export function addMemo(memos: Memo[], text: string): Memo[] {
 ---
 
 ## 9) AI活用🤖：盛らせない“指示テンプレ”🧯✨
+
+![AI Blueprint Control](./picture/yagni_ts_study_005_ai_blueprint.png)
 
 Copilotは **Agent mode** みたいに自律で編集してくれる機能もあるけど、油断すると“立派なアーキ”に走りやすいの〜😂
 （Agent modeは、タスクに応じて複数ファイル編集やコマンド提案まで自律で進めるモードだよ）([GitHub Docs][2])

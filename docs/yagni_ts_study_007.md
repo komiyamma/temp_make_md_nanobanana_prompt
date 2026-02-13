@@ -17,6 +17,8 @@ AIって優秀なんだけど、放っておくと**“親切心で盛る”**�
 
 ## 1. AIが盛りがちなポイント🎈😇（あるある集）
 
+![AI Bloat Balloon](./picture/yagni_ts_study_007_ai_balloon.png)
+
 AIは「一般に正しいっぽい」方向に寄せがち。だから、要件が小さいのに…👇
 
 * いきなり **Clean Architecture / レイヤー分割** しがち🏗️
@@ -32,6 +34,8 @@ AIは「一般に正しいっぽい」方向に寄せがち。だから、要件
 ---
 
 ## 2. AIとYAGNIの基本戦略🗺️✨（3ステップだけ覚えよ）
+
+![3 Steps Strategy](./picture/yagni_ts_study_007_three_steps.png)
 
 ### ステップA：AIに渡すのは「要件」じゃなくて「受け入れ条件」✅
 
@@ -66,6 +70,8 @@ VS Codeは、AIの出力を安定させる仕組みが用意されてます🙂
 
 ### 3.1 指示ファイル：`.github/copilot-instructions.md` を置く🧾✨
 
+![Instruction Shield](./picture/yagni_ts_study_007_shield_guard.png)
+
 VS Codeはワークスペース用の指示ファイルを作れて、チャットのたびに効かせられます🛡️
 しかも VS Code から **自動生成** もできるよ（Chatの設定から）⚙️✨ ([Visual Studio Code][1])
 
@@ -97,6 +103,8 @@ VS Codeはワークスペース用の指示ファイルを作れて、チャッ�
 ---
 
 ### 3.2 プロンプトファイル：`.prompt.md` で「盛らせない命令」をワンボタン化📌✨
+
+![Prompt Button](./picture/yagni_ts_study_007_prompt_button.png)
 
 VS Codeには **Prompt files（`.prompt.md`）** があって、よく使う命令を `/` で呼び出せます📚✨
 （ワークスペースなら `.github/prompts` に置くのが基本）([Visual Studio Code][3])
@@ -283,6 +291,8 @@ GitHub Copilot には、タスクを任せて裏でPRを作る「coding agent」
 ---
 
 ## 8. セキュリティ注意（さらっと大事）🔐🧯
+
+![Secret Whisper](./picture/yagni_ts_study_007_secret_whisper.png)
 
 AIチャットは、**間接プロンプト注入（prompt injection）**で“変な指示”を混ぜられることがあります😨
 VS Codeでの対策や注意点も公式に解説されています ([The GitHub Blog][6])

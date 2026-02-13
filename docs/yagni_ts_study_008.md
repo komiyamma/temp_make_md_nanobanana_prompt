@@ -16,9 +16,13 @@
 
 ## 1) まず「追加要件」を1つだけ選ぶ👇😺
 
+![Pick One Only](./picture/yagni_ts_study_008_pick_one.png)
+
 次のどれか **1つだけ** ね！（2つ目に手を出したらYAGNI負けやすい😂）
 
 ### A. 検索🔎（おすすめ！差分が小さくて勝ちやすい🏆）
+
+![Simple Search Lens](./picture/yagni_ts_study_008_search_lens.png)
 
 * 画面に検索ボックス1つ追加
 * タイトル（または本文）で「含む」フィルタするだけでOK
@@ -173,6 +177,8 @@ function normalizeTag(tag: string): string {
 
 ## 5) “差分が小さい＝勝ち”のチェック👀🏆
 
+![Small Diff Win](./picture/yagni_ts_study_008_diff_scale.png)
+
 実装中ずっとこれ意識してね〜🙂✨
 
 * 追加したファイルが増えすぎてない？📁💥
@@ -195,6 +201,8 @@ function normalizeTag(tag: string): string {
 ---
 
 ## 7) 軽ADR🗒️✨（1枚でOK！未来の自分に優しい🥹）
+
+![Sticky Note ADR](./picture/yagni_ts_study_008_sticky_adr.png)
 
 テンプレ（コピペして埋めるだけ）👇
 
@@ -219,6 +227,8 @@ function normalizeTag(tag: string): string {
 ---
 
 ## 8) AIの使い方（盛らせないテンプレ）🤖🧯✨
+
+![AI Nail Down](./picture/yagni_ts_study_008_ai_nail.png)
 
 AIは放っておくと、わりと簡単に「立派すぎる設計」を提案しがち😂
 だから最初に釘を刺すのがコツ！

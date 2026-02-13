@@ -35,6 +35,8 @@ YAGNIの話って古くならないんだけど、周辺ツールの進化は早
 
 ### ✅ 4ステップ・テンプレ
 
+![YAGNI Cycle Flow](./picture/yagni_ts_study_006_cycle_flow.png)
+
 **① MVP（or 今回のゴール）決める** 🎯
 **② 最小実装する** 🧱
 **③ 小リファクタする** 🧹
@@ -164,6 +166,8 @@ export function saveMemos(memos: Memo[]): void {
 
 ### 例：表示と操作（Reactの場合の最小イメージ）⭐
 
+![Minimal UI Component](./picture/yagni_ts_study_006_ui_example.png)
+
 ```tsx
 type Props = {
   memo: Memo;
@@ -191,6 +195,8 @@ export function MemoItem({ memo, onTogglePin }: Props) {
 ---
 
 ## 6. ステップ③：小リファクタする🧹✨（“今必要な範囲だけ”）
+
+![Small Refactor](./picture/yagni_ts_study_006_small_sweep.png)
 
 小リファクタは、**やりすぎ厳禁**だよ〜！🚫😅
 目的はこれ👇
@@ -236,6 +242,8 @@ test("togglePin flips pinned", () => {
 
 ## 7. ステップ④：次の1歩を決める👣✨（“やらない”も決める！）
 
+![Next Step Decision](./picture/yagni_ts_study_006_next_step.png)
+
 ここがYAGNIの心臓💓
 
 ### 次の1歩の決め方（超シンプル）🧭
@@ -276,6 +284,8 @@ test("togglePin flips pinned", () => {
 ---
 
 ## 9. AI活用🤖：盛らせないプロンプト（第6章版）🧯✨
+
+![AI Box Control](./picture/yagni_ts_study_006_ai_box.png)
 
 AIは放っておくと、親切で盛ってくるよ〜！🎈😇
 だから最初から枠を渡すのがコツ！
