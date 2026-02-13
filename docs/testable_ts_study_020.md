@@ -20,6 +20,8 @@
 
 ## 20.1 まず敵を知ろう😈：HTTP直書きの「テストしにくい臭い」👃
 
+![testable_ts_study_020_chef_fishing.png](./picture/testable_ts_study_020_chef_fishing.png)
+
 💨こんなの、つい書きがち…👇😵‍💫
 
 
@@ -43,6 +45,8 @@ export async function getUserLabel(userId: string): Promise<string> {
 ---
 
 ## 20.2 “正解の絵”を先に見よう🗺
+
+![testable_ts_study_020_hexagonal_port.png](./picture/testable_ts_study_020_hexagonal_port.png)
 
 ️✨（Port & Adapter）合言葉はこれ👇💖
 
@@ -96,6 +100,8 @@ export async function getUserLabel(userId: string): Promise<string> {
 ---
 
 ## 20.5 Step1：ドメイン型を作る💎🧠（中心の言葉）
+
+![testable_ts_study_020_pure_domain_gem.png](./picture/testable_ts_study_020_pure_domain_gem.png)
 
 ```ts
 // src/domain/user.ts
@@ -152,6 +158,8 @@ export async function getUserLabel(
 ---
 
 ## 20.8 Step4：外側にHTTPアダプタを書く🌐🧩
+
+![testable_ts_study_020_dto_mapper_machine.png](./picture/testable_ts_study_020_dto_mapper_machine.png)
 
 （DTO→Domain変換はココ！）### DTO（外の形）
 
@@ -283,6 +291,8 @@ describe("getUserLabel", () => {
 
 ### 20.10.2 外側（HTTPアダプタ）
 
+![testable_ts_study_020_msw_stage_prop.png](./picture/testable_ts_study_020_msw_stage_prop.png)
+
 のテスト（MSWでHTTPを“演出”）🎭🧸MSWは「テスト中のHTTPを横取りして、好きなレスポンス返す」やつだよ〜✨
 Nodeで使うとき **Node 18+ が前提**だよ📌 ([mswjs.io][5])
 
@@ -321,6 +331,8 @@ describe("FetchUserGateway", () => {
 ---
 
 ## 20.11 よくある落とし穴💣😵‍💫（ここだけ注意！
+
+![testable_ts_study_020_leaky_port.png](./picture/testable_ts_study_020_leaky_port.png)
 
 ）### ① Portが“HTTPっぽく”なる🌐➡️
 

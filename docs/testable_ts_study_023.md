@@ -24,7 +24,11 @@
 
 ---
 
-## DTOとDomainって、結局なに？🤔🧩### DTO（Data Transfer Object）
+## DTOとDomainって、結局なに？🤔🧩
+
+![testable_ts_study_023_dto_vs_domain_shape.png](./picture/testable_ts_study_023_dto_vs_domain_shape.png)
+
+### DTO（Data Transfer Object）
 
 📦* API・DB・外部サービスなど、**外の世界の形のまま**運ばれてくるデータ
 
@@ -41,6 +45,8 @@
 ---
 
 ## なぜ「境界で変換」しないとつらいの？😵‍💫💥外の形をそのまま中心に持ち込むと…
+
+![testable_ts_study_023_logic_room_chaos.png](./picture/testable_ts_study_023_logic_room_chaos.png)
 
 
 
@@ -68,6 +74,8 @@
 ---
 
 ## 置き場所の正解：DTOは「外側」、Domainは「中心」🏠➡️
+
+![testable_ts_study_023_decontamination_chamber.png](./picture/testable_ts_study_023_decontamination_chamber.png)
 
 🌍イメージはこれだよ👇✨
 
@@ -109,6 +117,8 @@ type OrderDto = {
 
 ### 2) 中心で扱いたいDomain（きれいな型）
 
+![testable_ts_study_023_type_branding.png](./picture/testable_ts_study_023_type_branding.png)
+
 💎「中心はこういうのが好き！」を作るよ✨
 （※ここでは分かりやすさ優先で、Value Objectは最小の形にしてるよ☺️）
 
@@ -136,7 +146,11 @@ type Order = {
 
 ---
 
-### 3) 変換の出口を「Result」にして、失敗もテストできるようにする🧪🧯例外でもいいけど、初心者のうちは Result だと見通しがよくておすすめ☺️
+### 3) 変換の出口を「Result」にして、失敗もテストできるようにする🧪🧯
+
+![testable_ts_study_023_result_railway_switch.png](./picture/testable_ts_study_023_result_railway_switch.png)
+
+例外でもいいけど、初心者のうちは Result だと見通しがよくておすすめ☺️
 
 ✨
 
@@ -236,6 +250,8 @@ TypeScriptの型はコンパイル時の助けで、実行時に勝手に検証�
 ---
 
 ## テスト：変換は“純粋”だからユニットで一瞬🧪⚡
+
+![testable_ts_study_023_pure_conversion_machine.png](./picture/testable_ts_study_023_pure_conversion_machine.png)
 
 ```ts
 import { describe, it, expect } from "vitest";
