@@ -19,6 +19,8 @@
 
 ## 2) まず結論：エラーは3段階で“姿が変わる”👻➡️
 
+![testable_ts_study_026_error_transformation_pipeline.png](./picture/testable_ts_study_026_error_transformation_pipeline.png)
+
 📦➡️🖥️エラーは同じ“失敗”でも、置き場所で最適な形が違うよ〜って話です😊
 
 
@@ -53,6 +55,8 @@
 ---
 
 ### 3-1) まずは Result 型を用意する📦✨
+
+![testable_ts_study_026_result_container_structure.png](./picture/testable_ts_study_026_result_container_structure.png)
 
 ```ts
 // src/core/result.ts
@@ -120,6 +124,8 @@ export interface UserGateway {
 
 ### 3-4) 外側（Adapter）
 
+![testable_ts_study_026_adapter_catcher_mitt.png](./picture/testable_ts_study_026_adapter_catcher_mitt.png)
+
 ：例外をキャッチして Result に変換する🧯➡️📦ここが第26章のど真ん中✨
 **外側の例外を“中心が扱える形”へ翻訳**します🔁
 
@@ -182,6 +188,8 @@ async function safeText(res: Response): Promise<string | undefined> {
 
 ### 3-5) 中心（UseCase）
 
+![testable_ts_study_026_usecase_railway_switching.png](./picture/testable_ts_study_026_usecase_railway_switching.png)
+
 ：例外ゼロで分岐できる🥰🧪
 
 ```ts
@@ -212,6 +220,8 @@ export async function buildGreeting(
 ---
 
 ### 3-6) 表示（Presentation）
+
+![testable_ts_study_026_presentation_translator.png](./picture/testable_ts_study_026_presentation_translator.png)
 
 ：Result を “見せる形” に変換する🖥️🎀ここが「結果→表示」の翻訳ポイント💡
 
@@ -334,7 +344,9 @@ test("成功すると挨拶文が返る😊🌸", async () => {
 
 ---
 
-## 6) よくある事故ポイント😵‍💫🧨* 中心で `throw` し始めて、また try/catch が増える（逆戻り）
+## 6) よくある事故ポイント😵‍💫🧨
+
+![testable_ts_study_026_anti_pattern_trio.png](./picture/testable_ts_study_026_anti_pattern_trio.png)* 中心で `throw` し始めて、また try/catch が増える（逆戻り）
 
 🔙
 
@@ -368,7 +380,9 @@ test("成功すると挨拶文が返る😊🌸", async () => {
 
 ---
 
-## 9) 次章につながる“ひとこと予告”🍱🧪第27章は「どこをユニットで守って、どこを結合で確認する？」の**粒度設計**だよ〜😊
+## 9) 次章につながる“ひとこと予告”🍱🧪
+
+![testable_ts_study_026_preview_granularity.png](./picture/testable_ts_study_026_preview_granularity.png)第27章は「どこをユニットで守って、どこを結合で確認する？」の**粒度設計**だよ〜😊
 今日作った「中心＝Resultで安定」構造が、そのまま最強の土台になります💪✨
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause?utm_source=chatgpt.com "Error: cause - JavaScript - MDN Web Docs"
