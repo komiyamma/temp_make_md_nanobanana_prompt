@@ -86,6 +86,8 @@ public interface IEmailSender
 
 ## 4-2) ロジック側はインターフェースだけを見る
 
+![testable_cs_study_012_logic_viewing_interface.png](./picture/testable_cs_study_012_logic_viewing_interface.png)
+
 ```csharp
 public sealed class WelcomeService
 {
@@ -113,6 +115,8 @@ public sealed class WelcomeService
 ## 5) テストでFakeを差し替える 🎭🧪✨
 
 ## 5-1) Fake実装を作る
+
+![testable_cs_study_012_fake_mailbox.png](./picture/testable_cs_study_012_fake_mailbox.png)
 
 ```csharp
 public sealed class FakeEmailSender : IEmailSender
@@ -155,6 +159,8 @@ public class WelcomeServiceTests
 ---
 
 ## 6) 2026っぽい最新ネタ　時間は TimeProvider が便利 🕰️✨
+
+![testable_cs_study_012_time_provider_module.png](./picture/testable_cs_study_012_time_provider_module.png)
 
 「IClock作る」でも全然OKなんだけど、今どきは **TimeProvider** っていう公式の抽象があるよ〜！
 `.NET 10 + C# 14` が現行の最新ラインで、C# 14 は .NET 10 でサポートされてるよ。([Microsoft Learn][1])
@@ -205,6 +211,8 @@ public class ExpiryCheckerTests
 
 ## 7) 命名のコツ　動詞より「役割」📝✨
 
+![testable_cs_study_012_bad_naming_blob.png](./picture/testable_cs_study_012_bad_naming_blob.png)
+
 命名って悩むよね〜😵‍💫 でもコツがあるよ！
 
 ## ✅ よくある良い例
@@ -223,6 +231,8 @@ public class ExpiryCheckerTests
 ---
 
 ## 8) 粒度のコツ　インターフェースは「細め」が正義🧼✨
+
+![testable_cs_study_012_granularity_tools.png](./picture/testable_cs_study_012_granularity_tools.png)
 
 インターフェースが大きいと、Fake作るのが地獄になるよ〜😇💦
 

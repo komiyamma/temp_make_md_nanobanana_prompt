@@ -15,6 +15,8 @@
 
 ## 2. DIをひとことで言うと？🧠💡
 
+![testable_cs_study_011_di_concept.png](./picture/testable_cs_study_011_di_concept.png)
+
 **「クラスが必要なもの（依存）を、自分で作らずに外から渡してもらう」**ことだよ〜✉️😊
 
 * 自分で作る：`new` して固定される🧊
@@ -47,6 +49,8 @@
 いきなりDIコンテナを触るより、まずは **「渡す」だけ**でOK！😊
 
 ### 4.1 例題：期限チェック（“今”がI/O）🕰️🚧
+
+![testable_cs_study_011_unstable_time.png](./picture/testable_cs_study_011_unstable_time.png)
 
 **やりたいこと**：締切が過ぎてたら `true` を返す
 でも `DateTime.Now` を直で読むとテストが不安定になる😵‍💫
@@ -117,6 +121,8 @@ public sealed class DeadlineService
 
 ### 6.1 FakeClock（固定のNowを返す）📌
 
+![testable_cs_study_011_fake_clock_prop.png](./picture/testable_cs_study_011_fake_clock_prop.png)
+
 ```csharp
 public sealed class FakeClock : IClock
 {
@@ -168,6 +174,8 @@ public sealed class DeadlineServiceTests
 
 ## 7. 次に：.NET標準DIコンテナで“組み立て”を楽にする 🧰✨
 
+![testable_cs_study_011_di_robot_assembly.png](./picture/testable_cs_study_011_di_robot_assembly.png)
+
 ここからは「本番では毎回 `new` するの面倒だよ〜😵」を解決するための道具！
 .NETには `Microsoft.Extensions.DependencyInjection` が用意されてるよ📦✨ ([Microsoft Learn][1])
 
@@ -198,6 +206,8 @@ Console.WriteLine(deadlineService.IsOverdue(DateTimeOffset.Now.AddMinutes(-1)));
 
 ## 8. ここだけ押さえる！ライフタイム3兄弟 👪✨
 
+![testable_cs_study_011_lifetime_trio.png](./picture/testable_cs_study_011_lifetime_trio.png)
+
 DIコンテナを使うときに必ず出てくるのが **ライフタイム**（寿命）だよ〜🕯️
 `AddSingleton / AddScoped / AddTransient` という登録方法があるよね🧩 ([Microsoft Learn][2])
 
@@ -210,6 +220,8 @@ DIコンテナを使うときに必ず出てくるのが **ライフタイム**�
 ---
 
 ## 9. よくあるミス集（ここで事故る）🚨😵‍💫
+
+![testable_cs_study_011_service_locator_ghost.png](./picture/testable_cs_study_011_service_locator_ghost.png)
 
 ### ❌ 1) “重要ロジック”の中で `new` しちゃう
 

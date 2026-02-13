@@ -7,6 +7,8 @@
 
 ## 1) なんで “今” はテストの敵なの？😈🧪
 
+![testable_cs_study_014_time_instability.png](./picture/testable_cs_study_014_time_instability.png)
+
 `DateTime.Now` / `DateTime.UtcNow` を **重要ロジックの中で直読み**すると、テストがこうなる👇
 
 * ⏱️ 実行する“瞬間”で結果が変わる（＝不安定）
@@ -59,6 +61,8 @@ public sealed class CouponService
 ## 4) やり方A：自分で `IClock` を作る（超わかりやすい）🧩🕰️
 
 ## 4-1) インターフェースを作る
+
+![testable_cs_study_014_iclock_blueprint.png](./picture/testable_cs_study_014_iclock_blueprint.png)
 
 ポイントは **返す型を `DateTimeOffset` にする**こと💡
 「“今” を曖昧にしない」用途に向いてるってMicrosoftも説明してるよ〜🧠✨ ([Microsoft Learn][3])
@@ -179,6 +183,8 @@ public sealed class CouponService
 
 ## 5-3) テストでは `FakeTimeProvider` を使う 🎭✨
 
+![testable_cs_study_014_fake_time_controller.png](./picture/testable_cs_study_014_fake_time_controller.png)
+
 `FakeTimeProvider` は **Microsoft公式のテスト用 TimeProvider**で、時間を進めたり固定したりできるよ〜！
 `Advance` / `SetUtcNow` みたいなAPIがあるのが強い🧪⚡ ([Microsoft Learn][4])
 
@@ -232,10 +238,14 @@ public class CouponService_TimeProviderTests
 
 ## 🕳️ 落とし穴1：比較演算子が境界でズレる
 
+![testable_cs_study_014_boundary_tightrope.png](./picture/testable_cs_study_014_boundary_tightrope.png)
+
 * `ExpiresAtUtc > now` か `>=` か、**仕様で固定**しよ！
 * 「期限ちょうどの瞬間はOK？NG？」を最初に決めるのが大事😊📝
 
 ## 🕳️ 落とし穴2：テストで `Thread.Sleep()` しちゃう
+
+![testable_cs_study_014_sleep_sloth.png](./picture/testable_cs_study_014_sleep_sloth.png)
 
 * 遅い🐢＆不安定😵
 * Fakeで時間を進めるほうが100倍ラク💖（`FakeTimeProvider.Advance` など） ([NuGet][5])
