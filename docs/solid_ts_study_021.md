@@ -22,6 +22,8 @@ ISP（Interface Segregation Principle）は、ひとことで言うと…
 
 > **使わない機能まで依存させない**（持たせない）✂️💖
 
+![ISP Benefit (Travel Light)](./picture/solid_ts_study_021_hiker_backpack.png)
+
 ### ありがちな地獄🔥
 
 * `Repository` なのに、読む・書く・検索・削除・集計・CSV出力・キャッシュ…ぜんぶ入ってる😵‍💫
@@ -58,6 +60,8 @@ export interface OrderRepository {
 ---
 
 ### ✅ 分割例：読み取り用 / 更新用に分ける 🧻✨
+
+![Repository Split](./picture/solid_ts_study_021_repo_split.png)
 
 ```ts
 export interface OrderReader {
@@ -106,6 +110,8 @@ graph LR
 
 ### ⭐ “依存する側” を薄くする（ここが主役！）👑✨
 
+![Dependency Weight](./picture/solid_ts_study_021_usecase_weight.png)
+
 #### 注文履歴（読むだけ）UseCase
 
 ```ts
@@ -128,6 +134,8 @@ export class GetRecentOrdersUseCase {
 ここは「設計の考え方」を一段レベルアップさせるやつ〜😊🌟
 
 ### CQS（Command–Query Separation）って考え方🧠
+
+![CQS Doors](./picture/solid_ts_study_021_cqs_doors.png)
 
 * **Query**：状態を変えずに「情報を返す」
 * **Command**：状態を変える（基本「返さない」か、返しても “結果” だけ）
@@ -155,6 +163,9 @@ async getOrderAndIncrementViewCount(id: string): Promise<Order | null> {
 ```
 
 これ、呼ぶ側からすると「取得」のつもりなのに副作用がある😵‍💫
+
+![Side Effect Trap](./picture/solid_ts_study_021_side_effect_trap.png)
+
 バグの温床〜〜〜😭💥
 
 #### ✅ 分ける（Query / Command）✨
@@ -201,6 +212,8 @@ export interface OrderStatsReader {
 ---
 
 ## 6. TypeScriptならではの “薄くする道具” 🧰✨
+
+![TypeScript Tools](./picture/solid_ts_study_021_ts_tools.png)
 
 ### 6-1. `Pick` / `Omit` で「既存interfaceから切り出す」✂️
 
@@ -298,6 +311,8 @@ const orderReaderMock = {
 ## 8. よくある失敗あるある⚠️（ここ大事！）
 
 ### 8-1. 分けすぎて迷子🌀
+
+![Interface Maze](./picture/solid_ts_study_021_interface_maze.png)
 
 * interface が細かすぎて、どれ使うの？状態に
   → **“クライアント視点”**で割るとちょうどよくなるよ😊
