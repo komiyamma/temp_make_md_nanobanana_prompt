@@ -40,6 +40,8 @@ graph LR
 ---
 
 ## 2) Contextに入れるもの / 入れないもの（ここ超大事）🧯
+![state machine ts study 019 context bouncer](./picture/state_machine_ts_study_019_context_bouncer.png)
+
 
 ### ✅ 入れると良いもの（だいたい正解）👍
 
@@ -83,6 +85,8 @@ Contextが太ると「どこで変わった？」が追えなくなる😵‍�
 * `Idle` → `Editing` → `Submitting` → `Success` / `Error`
 
 ### 4-1) Context型を作る🧠🧩
+![state machine ts study 019 backpack structure](./picture/state_machine_ts_study_019_backpack_structure.png)
+
 
 ```ts
 type FormField = "email" | "message";
@@ -112,6 +116,8 @@ export type Context = {
 ---
 
 ### 4-2) 初期Contextを “型崩れしない” 形で作る🧊✨
+![state machine ts study 019 mold casting](./picture/state_machine_ts_study_019_mold_casting.png)
+
 
 TypeScriptだと初期値が原因で型がゆるくなったりするので、ここは丁寧にいこう💖
 `satisfies` を使うと「形のチェック」だけしてくれて便利だよ（型が広がりにくい）✨
@@ -145,6 +151,8 @@ export type Event =
 ---
 
 ### 4-4) Context更新は “関数”でまとめる（事故防止）🛡️✨
+![state machine ts study 019 surgical update](./picture/state_machine_ts_study_019_surgical_update.png)
+
 
 Context更新が散らばると、未来の自分が泣く😭
 なので「Contextを更新する小さな関数」を作っておくのが超おすすめ💖
@@ -234,6 +242,8 @@ export function reduce(model: Model, event: Event): Model {
 ---
 
 ## 5) “Contextに入れない派生値”はどうする？🤔💡
+![state machine ts study 019 calculator derived](./picture/state_machine_ts_study_019_calculator_derived.png)
+
 
 たとえば「送信ボタン無効」は Context に入れたくなりがちだけど…
 多くの場合は **計算で出せる** よ😊✨
