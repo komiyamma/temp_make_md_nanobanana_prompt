@@ -27,6 +27,8 @@
 
 ## 1) 品質チェック（最低ライン）を“全部グリーン”にする ✅🟢
 
+![Quality Dashboard](./picture/solid_ts_study_028_quality_dashboard.png)
+
 この章の最初に、**毎回同じコマンドで確認できる状態**にしようね💪✨
 
 ### 1-1. 「通すべきチェック」セット 🎁
@@ -68,6 +70,8 @@
 
 ### 2-1. SRP（単一責任）チェック 🌷
 
+![SRP Checklist](./picture/solid_ts_study_028_srp_checklist.png)
+
 ✅ 質問：
 
 * このクラス（/関数）って、**変更理由が1個**って言える？🤔
@@ -84,6 +88,8 @@
 
 ### 2-2. OCP（拡張に開く）チェック 🚪✨
 
+![OCP Safe and Open](./picture/solid_ts_study_028_ocp_safe_open.png)
+
 ✅ 質問：
 
 * 割引や支払いが増えたとき、**既存コードをゴリゴリ修正**する設計になってない？😭
@@ -97,6 +103,8 @@
 ---
 
 ### 2-3. LSP（置換可能性）チェック 🔁🧩
+
+![LSP Puzzle Swap](./picture/solid_ts_study_028_lsp_puzzle_swap.png)
 
 ✅ 質問：
 
@@ -125,6 +133,8 @@
 ---
 
 ### 2-5. DIP（依存性逆転）チェック 🧲✨
+
+![DIP Arrow Up](./picture/solid_ts_study_028_dip_arrow_up.png)
 
 ✅ 質問：
 
@@ -161,6 +171,8 @@
 ---
 
 ## 4) README を“採点者に優しい”形に仕上げる 📄💗
+
+![README Structure](./picture/solid_ts_study_028_readme_structure.png)
 
 README は「作品の顔」だよ😳✨
 読む人が迷子にならないように、テンプレで整えよう🧭
@@ -233,6 +245,8 @@ flowchart TB
 ---
 
 ## 6) AI拡張を“最後の味方”にする使い方 🤖🧡（でも暴走注意⚠️）
+
+![AI Reviewer](./picture/solid_ts_study_028_ai_reviewer.png)
 
 最後のレビューは AI がめっちゃ便利！ただし **丸投げ禁止**だよ〜🥹💦
 

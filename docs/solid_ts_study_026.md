@@ -10,6 +10,8 @@
 
 ### 0) 2026-01-10 時点の “いまどき” メモ 🗓️🆕
 
+![Tech Stack 2026](./picture/solid_ts_study_026_tech_stack_2026.png)
+
 * VS Code は **2025年12月版（v1.108）** が **2026-01-08** リリースで、Copilot まわりに **Agent Skills** みたいな “拡張しやすい仕組み” が増えてるよ🤖📚 ([Visual Studio Code][1])
 * TypeScript は **5.9 のリリースノート**が公開されてて、`--module node20` みたいな Node 寄りの改善や、型推論＆パフォ改善も進んでるよ🧩⚡️ ([TypeScript][2])
 * Node.js は **24 系が LTS（Krypton）** に入り、**2028年4月末**まで更新が続く想定だよ🟢🔒 ([Node.js][3])
@@ -44,6 +46,8 @@
 
 # 2) 仕様は「ユーザーストーリー」で書く👩‍🎓📝✨
 
+![User Story Template](./picture/solid_ts_study_026_user_story_template.png)
+
 “機能一覧”よりも、ストーリーで書くと迷子になりにくいよ🥹🧭
 
 ## テンプレ（コピペOK）📋
@@ -70,6 +74,8 @@
 
 # 3) 「未来の変更点」を先に洗い出す🔮🧠✨（ここがSOLIDの当てどころ！）
 
+![Future Changes Radar](./picture/solid_ts_study_026_future_changes_radar.png)
+
 SOLID は “綺麗にする魔法”じゃなくて、**変化しそうな場所を守る技**だよ🛡️✨
 
 ## 変更点リスト（例）📝
@@ -83,6 +89,8 @@ SOLID は “綺麗にする魔法”じゃなくて、**変化しそうな場�
 ---
 
 # 4) モジュール境界を “3つ” に切る✂️📦✨
+
+![Module King](./picture/solid_ts_study_026_module_king.png)
 
 ![Clean Architecture](./picture/solid_ts_study_026_clean_architecture.png)
 
@@ -159,6 +167,8 @@ src/
 
 # 6) “差し替え口” を interface で作る🚪🧩（DIPの入口だよ💡）
 
+![Interface Socket](./picture/solid_ts_study_026_interface_socket.png)
+
 ここがあるだけで、後から DB でも API でも差し替えできる🎉
 
 ## app/ports/order-repository.ts 🗄️
@@ -183,6 +193,8 @@ export interface Notifier {
 ---
 
 # 7) domain は「ルールだけ」置く🧠✨（外部は見ない！）
+
+![Domain Bubble](./picture/solid_ts_study_026_domain_bubble.png)
 
 ## domain/money.ts 💴
 
@@ -313,6 +325,8 @@ export class ConsoleNotifier implements Notifier {
 ---
 
 # 10) main.ts が “合体場所” 🧩✨（Composition Root）
+
+![Composition Switchboard](./picture/solid_ts_study_026_composition_switchboard.png)
 
 ここだけは「全部知っててOK」な特別ゾーンだよ😎
 
