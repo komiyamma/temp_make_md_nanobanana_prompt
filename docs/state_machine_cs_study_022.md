@@ -18,6 +18,8 @@
 ## 2) まず結論：遷移表って、そのままテスト仕様書だよ📊💎
 
 ![022 Table To Test](./picture/state_machine_cs_study_022_table_to_test.png)
+![Table to Test Mapping](./picture/state_machine_cs_study_022_table_to_test_mapping.png)
+![AAA Pattern](./picture/state_machine_cs_study_022_aaa_pattern.png)
 
 ```mermaid
 graph TD
@@ -75,6 +77,8 @@ graph TD
 
 ## 4) テストしやすい「状態機械の返り値」形を決めよう📦✨
 
+![Result Object](./picture/state_machine_cs_study_022_result_object.png)
+
 テストがラクになる“推し”の形はこれ👇
 
 * `Apply(event)` が **例外を投げず**（※禁止遷移は“失敗として返す”）
@@ -120,6 +124,8 @@ public sealed class OrderStateMachine
 
 ## 5) テストプロジェクト作成＆実行（最短）🏃‍♀️💨
 
+![Test Explorer Success](./picture/state_machine_cs_study_022_test_explorer_green.png)
+
 CLIで作るならこれだけ👇（xUnit テンプレあり✨） ([Microsoft Learn][2])
 
 ```bash
@@ -152,6 +158,8 @@ public sealed record TransitionCase(
 ```
 
 ### 6.2 遷移表（の一部）を “そのまま” データ化📚✨
+
+![Theory Funnel](./picture/state_machine_cs_study_022_theory_funnel.png)
 
 xUnitでは **Theory + MemberData**（データ駆動）が相性抜群です💖
 Theoryは「同じテストを入力違いで回す」機能だよ〜🧠✨ ([Microsoft Learn][4])

@@ -19,6 +19,7 @@
 ## 2) まず“なぜ中間状態が要るの？”🤔💡
 
 ![024 Intermediate State](./picture/state_machine_cs_study_024_intermediate_state.png)
+![Intermediate Bridge](./picture/state_machine_cs_study_024_intermediate_bridge.png)
 
 ```mermaid
 stateDiagram-v2
@@ -54,6 +55,8 @@ stateDiagram-v2
 
 ## 3) 非同期の基本は “TAP（Taskベース）”で考える 🧠✨
 
+![Await vs Block](./picture/state_machine_cs_study_024_await_vs_block.png)
+
 .NET の非同期は基本的に **Task（Task<T>）** を使う「TAP」が推奨です🙆‍♀️
 C# の async/await は、このTAPを読みやすく書くための仕組みだよ〜😊 ([Microsoft Learn][3])
 
@@ -83,6 +86,8 @@ C# の async/await は、このTAPを読みやすく書くための仕組みだ�
 * PaymentSucceeded / PaymentFailed を **イベント** として状態機械に投げ直す 📣✨
 
 ### ✅ ルールC：完了イベントには “照合用ID” を持たせる
+
+![Request ID Match](./picture/state_machine_cs_study_024_request_id_match.png)
 
 * requestId（支払い依頼ID）が一致する時だけ反映✅
 * 遅れて届いた古い成功通知を弾ける🧯（超大事）
@@ -273,6 +278,7 @@ public static class OrderStateMachine
 ## 7) “await する人”＝オーケストレーターを作る 🤝⚡
 
 ![024 Async Flow](./picture/state_machine_cs_study_024_async_flow.png)
+![Async Orchestrator](./picture/state_machine_cs_study_024_async_orchestrator.png)
 
 ```mermaid
 sequenceDiagram
@@ -460,6 +466,8 @@ UIイベントや同期コンテキストが絡むとデッドロックしやす
 → requestId を持とう🔑✨
 
 ### ❌ 4) CancellationToken を渡さない
+
+![Cancellation Relay](./picture/state_machine_cs_study_024_cancellation_relay.png)
 
 止めたいのに止まらない…🧯💦
 → ct を末端まで通すのが基本🙆‍♀️ ([Microsoft Learn][2])
