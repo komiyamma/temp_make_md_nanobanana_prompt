@@ -14,6 +14,8 @@
 
 ## 1. なんで “親/子” が必要なの？😵‍💫➡️😌
 
+![Flat vs Hierarchy](./picture/state_machine_ts_study_026_flat_vs_hierarchy.png)
+
 第25章の「非同期（Loading/Timeout/Cancel）」を入れると、だいたいこうなるよね👇
 
 * loading
@@ -85,6 +87,8 @@ graph TD
 
 ## Step B：親状態に “看板” をつける🏷️
 
+![Parent Signboard](./picture/state_machine_ts_study_026_parent_signboard.png)
+
 親は「ユーザー視点の大カテゴリ」がおすすめ💡
 例：Submitting / Authenticating / Purchasing
 
@@ -111,6 +115,8 @@ graph TD
 ---
 
 ## 5. 例：フォーム送信を “親: Submitting” で整理する📨✨
+
+![Submitting Structure](./picture/state_machine_ts_study_026_submitting_structure.png)
 
 ## 5-1. 設計（まず言葉で）📝
 
@@ -239,10 +245,14 @@ actor.send({ type: "SUBMIT" });
 
 ## 落とし穴①：親が “ただのフォルダ” になってる📁
 
+![Empty Folder Trap](./picture/state_machine_ts_study_026_empty_folder_trap.png)
+
 親に「共通イベント」「共通ガード」「共通アクション」がないなら、階層のうまみ薄め🥲
 → “親は共通ルール置き場” にする意識が大事✨
 
 ## 落とし穴②：深掘りしすぎて迷子🕳️😵
+
+![Deep Nesting Maze](./picture/state_machine_ts_study_026_deep_nesting_maze.png)
 
 階層が 3〜4段を超えると、読むのがしんどくなりがち。
 → まずは **2段（親→子）** で十分強い💪💖
@@ -272,6 +282,8 @@ actor.send({ type: "SUBMIT" });
 ---
 
 ## 9. AI活用（超使えるプロンプト集）🤖✨
+
+![AI Architect](./picture/state_machine_ts_study_026_ai_architect.png)
 
 そのままコピペでOKだよ〜🫶
 
