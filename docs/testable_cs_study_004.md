@@ -33,6 +33,8 @@
 
 ## まずは例で一発理解しよ 😆🧡
 
+![testable_cs_study_004_pure_vs_impure_factory.png](./picture/testable_cs_study_004_pure_vs_impure_factory.png)
+
 ## ピュアな例 ✅
 
 税計算とか、割引計算とか、文字列整形とかはピュアにしやすいです🌿
@@ -80,6 +82,8 @@ public static class PriceLogic
 
 ## 副作用ってなに？ありがちなやつ一覧 🚨
 
+![testable_cs_study_004_side_effect_monsters.png](./picture/testable_cs_study_004_side_effect_monsters.png)
+
 「副作用＝外の世界を触る or 外の世界に依存する」って思えばOK🙆‍♀️✨
 
 * 🕰️ 時刻：`DateTime.Now`, `DateTime.UtcNow`
@@ -95,6 +99,8 @@ public static class PriceLogic
 
 ## ピュアだとテストが爆速になる理由 ⚡🧪
 
+![testable_cs_study_004_test_speed.png](./picture/testable_cs_study_004_test_speed.png)
+
 ピュアな関数はこうなるからです👇✨
 
 * ✅ **準備がラク**：入力を渡すだけ📦
@@ -107,6 +113,8 @@ public static class PriceLogic
 ---
 
 ## C#でピュアに寄せるコツ 7つ 🧼✨
+
+![testable_cs_study_004_tips_toolbox.png](./picture/testable_cs_study_004_tips_toolbox.png)
 
 ## 1 依存は引数で渡す 📦
 
@@ -156,6 +164,8 @@ public static decimal CalcTotal(IEnumerable<CartItem> items)
 
 ## ミニ実験 ピュアに分けると一気にキレイになる 🎉
 
+![testable_cs_study_004_discount_refactor.png](./picture/testable_cs_study_004_discount_refactor.png)
+
 題材：会員ランクで割引して合計を出す💳✨
 「割引計算」はピュアにできる典型です🌿
 
@@ -202,6 +212,8 @@ public static class DiscountLogic
 
 ## テストの雰囲気だけ先に見せるね 🧪👀
 
+![testable_cs_study_004_test_case_matrix.png](./picture/testable_cs_study_004_test_case_matrix.png)
+
 （テスト環境の作り方は第8章でしっかりやるよ🛠️✨）
 
 ```csharp
@@ -238,6 +250,8 @@ public class DiscountLogicTests
 ---
 
 ## AIに手伝ってもらうコツ 🤖💡
+
+![testable_cs_study_004_ai_refactoring.png](./picture/testable_cs_study_004_ai_refactoring.png)
 
 Copilot/Codex にこう頼むと超便利です🧡✨
 
