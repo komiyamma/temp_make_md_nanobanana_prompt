@@ -26,6 +26,8 @@ flowchart LR
 
 ## 2) まず用語をふわっと整理🧸📌
 
+![State vs Side Effect](./picture/state_machine_ts_study_013_state_vs_side_effect.png)
+
 ### ✅ Guard（ガード）🛡️
 
 「遷移していい？」の **条件チェック**。
@@ -48,6 +50,8 @@ flowchart LR
 
 ### ルール①：状態遷移の中心は「できれば純粋」に🍰
 
+![Pure Core Shell](./picture/state_machine_ts_study_013_pure_core_shell.png)
+
 理想はこれ👇
 
 * **中心**：`今の状態 + イベント → 次の状態 + やりたいこと(Effect)`
@@ -63,6 +67,8 @@ flowchart LR
 ---
 
 ### ルール②：Actionは「名前」が9割📛💖
+
+![Action Naming](./picture/state_machine_ts_study_013_action_naming.png)
 
 良い名前は、読んだ瞬間に目的が伝わる😊
 
@@ -96,6 +102,8 @@ flowchart LR
 
 ## 4) まずは棚卸し！「アクション台帳」を作ろう📒✨
 
+![Action Ledger](./picture/state_machine_ts_study_013_action_ledger.png)
+
 おすすめはこの3列で書くこと😊🖊️
 
 * **何をする？（目的）**
@@ -123,6 +131,8 @@ flowchart LR
 ここからは「状態遷移は純粋、やりたいことはEffectとして返す」の王道パターンだよ😊✨
 
 ### 5-1) 型を用意する🧩
+
+![Effect Blueprints](./picture/state_machine_ts_study_013_effect_blueprints.png)
 
 ```ts
 type State =
@@ -207,6 +217,8 @@ APIは叩いてない！ログも書いてない！偉い！👏✨
 ---
 
 ### 5-3) Effectを実行する“外側”を書く🌿
+
+![Effect Runner Robot](./picture/state_machine_ts_study_013_effect_runner_robot.png)
 
 ```ts
 type Deps = {
