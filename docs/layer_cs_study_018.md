@@ -21,6 +21,8 @@
 
 ## 2. ありがちな事故💥（設計してないとこうなる）
 
+![Unhandled Error Chaos](./picture/layer_cs_study_018_error_chaos.png)
+
 例：ToDoアプリで「タイトル空」で登録しようとした時…
 
 * Domainで例外スロー😱
@@ -35,6 +37,8 @@
 ---
 
 ## 3. エラーを3種類に分けよう🧩⚠️
+
+![Three Error Types](./picture/layer_cs_study_018_error_categories.png)
 
 まず分類！これが最初の勝ち筋🏆
 
@@ -63,6 +67,8 @@
 
 ## 4. 例外（Exception）と Result、どっち使うの？🤔
 
+![Result vs Exception Usage](./picture/layer_cs_study_018_result_vs_exception.png)
+
 ここも迷いどころだけど、初心者向けの強いルールはこれ👇
 
 ### ✅ ルール（超実用）
@@ -79,6 +85,7 @@ ASP.NET Coreも「例外ハンドラーでRFC 7807準拠のエラーペイロー
 ## 5. どこで例外を捕まえる？🧤（境界で握る、が基本）
 
 ![エラーの境界](./picture/layer_cs_study_018_error_boundary.png)
+![Global Exception Handler](./picture/layer_cs_study_018_global_safety_net.png)
 
 レイヤードの考え方で、こう分担すると超ラク👇
 
@@ -118,6 +125,8 @@ ASP.NET Core なら、例外ハンドリングは **Exception Handler Middleware
 
 ## 6. 実装してみよう：最小 Result 型📦✨（まずは自作でOK）
 
+![Result Object Structure](./picture/layer_cs_study_018_result_box_structure.png)
+
 外部ライブラリ（FluentResults等）もあるけど、最初は“仕組みを理解”したいので小さく自作しよ🧠💡
 
 ```csharp
@@ -151,6 +160,8 @@ public sealed class Result<T>
 ---
 
 ## 7. Domainエラーを定義する💎⚠️（コードとメッセージは分ける）
+
+![Error Code vs Message](./picture/layer_cs_study_018_error_code_card.png)
 
 「画面に出す文言」をDomainに直接埋め込むと、UI都合に引っ張られやすい🥲
 なのでまずは **Code中心**にするのがおすすめ！
@@ -289,6 +300,8 @@ ASP.NET Coreは **Exception Handler Middleware** が基本✨([Microsoft Learn][
 ---
 
 ## 11. グローバル例外ハンドラ（IExceptionHandler）を作る🧯✨
+
+![ProblemDetails Conversion](./picture/layer_cs_study_018_exception_to_problem_details_machine.png)
 
 「想定外」をここで **まとめてProblemDetails化**しよう！
 

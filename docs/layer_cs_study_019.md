@@ -7,6 +7,8 @@
 
 ## 1) まず結論：テストは「層ごとに得意分野」がある🏗️🧠
 
+![Layered Test Tools](./picture/layer_cs_study_019_test_strategy_tools.png)
+
 レイヤードのテストは、ざっくりこう分けるとハマりにくいよ👇
 
 * **Domain**：ユニットテストの天国🍰（最速・最強）
@@ -21,6 +23,7 @@
 ## 2) テストの「ピラミッド」感覚を持つ🔺✨
 
 ![テストピラミッド](./picture/layer_cs_study_019_test_pyramid.png)
+![Unit vs Integration Speed](./picture/layer_cs_study_019_speed_vs_cost.png)
 
 理想の比率はこんな感じ（目安だよ）👇
 
@@ -52,6 +55,8 @@ block-beta
 ---
 
 ## 3) ソリューション構成：テスト用プロジェクトを“層別”にする📦🧩
+
+![Test Project Structure](./picture/layer_cs_study_019_project_mirroring.png)
 
 おすすめはこう👇（例：ToDo題材）
 
@@ -89,6 +94,8 @@ block-beta
 ---
 
 ## 5) Domainのユニットテストが一番おいしい🍰✨
+
+![Pure Domain Testing](./picture/layer_cs_study_019_clean_lab_testing.png)
 
 ### ✅ Domainテストのルール（超大事）
 
@@ -164,6 +171,8 @@ public class TodoTitleTests
 
 ## 6) Applicationは「手順書」をテストする🎮🧪（モックが効く！）
 
+![Mocking Dependencies](./picture/layer_cs_study_019_puppeteer_mocking.png)
+
 Application層は「順番の調整係」📋
 だからテストはこうなるよ👇
 
@@ -224,6 +233,8 @@ public class AddTodoUseCaseTests
 ---
 
 ## 7) Infrastructureの統合テスト：ここは“最低限の線”でOK✍️🧪
+
+![Integration Testing](./picture/layer_cs_study_019_integration_pipe_connection.png)
 
 DBや外部I/Oを含むところは、統合テストで「動く保証」を取る場所😊
 ただし増やしすぎ注意⚠️（遅い＆壊れやすい）
@@ -289,6 +300,8 @@ ASP.NET Core の統合テストは公式ドキュメントがまとまってる�
 ---
 
 ## 9) コードカバレッジ：数字は“健康診断”🩺📈
+
+![Code Coverage Health](./picture/layer_cs_study_019_coverage_thermometer.png)
 
 Visual Studio 2026 ではテスト実行と一緒にコードカバレッジが見やすくなってるよ（テストメニューやTest Explorerから実行できる）🧪✨ ([Microsoft Learn][8])
 

@@ -17,6 +17,8 @@
 
 ## 1. まず“ライフサイクル”って何？⏳
 
+![Instance Lifetime](./picture/layer_cs_study_017_lifetime_clock.png)
+
 DIの登録って、実は「どのくらい生きるインスタンスを作る？」を宣言してるだけ！😊
 
 > **ライフサイクル＝インスタンスの寿命**
@@ -69,6 +71,8 @@ gantt
 
 ### 3.1 Web（ASP.NET Core）のScoped 🌐
 
+![Web Request Scope](./picture/layer_cs_study_017_web_scope_tray.png)
+
 Webでは **基本：1リクエスト＝1スコープ** だよ😊
 
 * リクエストの間は同じインスタンスを使い回す
@@ -81,6 +85,8 @@ Webでは **基本：1リクエスト＝1スコープ** だよ😊
 
 ### 3.2 デスクトップ / Console のScoped 🖥️
 
+![Manual Scope Creation](./picture/layer_cs_study_017_manual_scope_switch.png)
+
 デスクトップやConsoleは「リクエスト」がないから、**自動スコープが生まれない**の🥺
 だから Scoped を使うなら、**自分でスコープを作る**必要があるよ！
 
@@ -89,6 +95,8 @@ Webでは **基本：1リクエスト＝1スコープ** だよ😊
 ---
 
 ## 4. 事故ポイントその①：Singleton が Scoped を抱えると爆発💥（超ある）
+
+![Captive Dependency](./picture/layer_cs_study_017_captive_dependency_giant.png)
 
 ### 4.1 何が起きるの？😱
 
@@ -109,6 +117,8 @@ ASP.NET Core だと、これが原因で **「ScopedをSingleton扱いしてる�
 
 ## 5. 事故ポイントその②：状態（mutable）をSingletonに置いて混ざる💥🌀
 
+![Shared State Corruption](./picture/layer_cs_study_017_singleton_whiteboard_mess.png)
+
 Singletonは **全員で共有**だから…
 
 * 「前のユーザーの値が残る」
@@ -122,6 +132,8 @@ Singletonは **全員で共有**だから…
 ---
 
 ## 6. 事故ポイントその③：DbContext を Scoped 以外にして地獄🗄️🔥
+
+![DbContext Accumulation](./picture/layer_cs_study_017_heavy_dbcontext_backpack.png)
 
 `DbContext` は基本 **Scopedが正解**。
 `AddDbContext` が既定でScoped登録なのも、そのためだよ ([Microsoft Learn][3])
@@ -243,6 +255,8 @@ ASP.NET CoreのDIでは、この手のミスを避けるための注意が明確
 ---
 
 ## 12. BackgroundService（常駐処理）とScopedの付き合い方🕰️🤖
+
+![Background Service Scoping](./picture/layer_cs_study_017_background_scope_dive.png)
 
 `BackgroundService` は長生き（=Singleton的）になりやすいので、`DbContext` を直で持つと危ない😇
 このときは「仕事1回ごとにスコープを作る」が基本！

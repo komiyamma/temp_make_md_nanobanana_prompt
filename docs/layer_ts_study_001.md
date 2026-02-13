@@ -8,6 +8,7 @@
 ## 1) まず結論：混ざると何が困るの？💥
 
 ![Mixed Code Pain](./picture/layer_ts_study_001_mixed_pain.png)
+![Pain of Mixed Code](./picture/layer_ts_study_001_mixed_code_juggling.png)
 
 いきなりだけど、混ぜこぜの典型的な末路はこの3つ👇
 
@@ -23,6 +24,8 @@
 ---
 
 ## 2) いったん「混ぜこぜ」例を見よう👀💣（※わざとだよ！）
+
+![Monolithic Code File](./picture/layer_ts_study_001_single_file_monster.png)
 
 題材は「ToDoを追加するAPI」みたいなやつにするね📝
 **1ファイルに全部入ってる**感じの例👇
@@ -127,6 +130,8 @@ app.listen(3000, () => {
 
 ## 3) ミニ演習：このコードの「困りポイント探し」🔎🧩
 
+![Identifying Responsibilities](./picture/layer_ts_study_001_responsibility_bugs.png)
+
 紙でもメモでもOK✍️
 上のコードを見て、次の質問に答えてみてね🙂
 
@@ -141,6 +146,8 @@ app.listen(3000, () => {
 * 画面都合っぽい整形（uiBadgeColor みたいな）🎨
 
 ### Q2：「仕様変更」が来たらどこが怖い？😱
+
+![Unpredictable Side Effects](./picture/layer_ts_study_001_ripple_effect_domino.png)
 
 例えば👇みたいな変更が来たとするね。
 
@@ -164,6 +171,8 @@ app.listen(3000, () => {
 
 ## 4) “混ぜこぜ”が起きる理由（超やさしく）🙂🍬
 
+![Technical Debt Accumulation](./picture/layer_ts_study_001_convenience_trap_trash.png)
+
 だいたい原因はこれ👇
 
 ### ✅ 1ファイルに「時間の都合」が集まる⏳
@@ -181,6 +190,8 @@ app.listen(3000, () => {
 ---
 
 ## 5) レイヤードは何を“約束”してくれるの？🤝🏗️（超ざっくり予告）
+
+![Layered Organization](./picture/layer_ts_study_001_organized_shelf.png)
 
 細かい地図は後の章で作るんだけど、まず雰囲気だけ🫶
 
@@ -224,6 +235,8 @@ flowchart TD
 ---
 
 ## 6) AI活用：混ざってる場所を“指摘してもらう”🤖💡
+
+![AI Code Analysis](./picture/layer_ts_study_001_ai_scanning_mess.png)
 
 Copilot Chat には「責務の分解」みたいな相談がかなり相性いいよ〜🧠✨
 Copilot Chat や inline suggestions など、IDE内で使える機能も整理されてるよ。 ([GitHub Docs][1])
