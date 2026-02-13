@@ -90,11 +90,17 @@ xUnit は v3 系が進んでて、.NET 8 以降対応って書かれてるよ〜
 * `CafeMemo.App`：コンソールで動かすだけ（UIっぽい所）🖥️
 * `CafeMemo.Tests`：最小テスト🧪
 
+![Project Layers](./picture/yagni_cs_study_004_project_layers.png)
+
+
 > 「Webにしたい」「保存したい」が来たら、あとで増築できる形🏗️✨
 
 ---
 
 ## 4-4. 実装（コード）👩‍💻✨
+
+![CafeLog Logic](./picture/yagni_cs_study_004_cafelog_logic.png)
+
 
 ### ① `CafeMemo.Core`：ドメイン＆処理（いちばん大事な所）🧠
 
@@ -147,6 +153,9 @@ public sealed class CafeLog
 * `DateTimeOffset` で時刻を扱って、将来の困りごとを減らす🕰️✨（これは“お得な最小”）
 
 ---
+
+![Console UI Interaction](./picture/yagni_cs_study_004_console_ui.png)
+
 
 ### ② `CafeMemo.App`：動かして確認（登録→一覧）🖥️☕
 
@@ -251,6 +260,9 @@ public sealed class CafeLogTests
 
 ## 4-6. “小リファクタ”の例：やるならコレだけ🔧✨
 
+![Tiny Refactoring](./picture/yagni_cs_study_004_tiny_refactor.png)
+
+
 ### ✅ いまやってOK（効果がすぐ出る）🙆‍♀️
 
 * 変数名をわかりやすくする（`v` → `visit`）📝
@@ -269,6 +281,9 @@ public sealed class CafeLogTests
 ---
 
 ## 4-7. AI活用：盛らせないプロンプト集🤖✂️💡
+
+![AI Constraint](./picture/yagni_cs_study_004_ai_constraint.png)
+
 
 Copilot/Codexに投げるときは、最初にこれを付けるだけで事故りにくいよ〜🙂✨
 
