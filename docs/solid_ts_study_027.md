@@ -88,6 +88,8 @@ if (result.ok) {
 
 # 2) ドメイン：まず Money（お金）を最強にする 💴🛡️
 
+![Money Shield](./picture/solid_ts_study_027_money_shield.png)
+
 お金は **浮動小数点で事故りやすい** から、Value Object にしちゃうのが鉄板！😇
 
 ```ts
@@ -165,6 +167,8 @@ export class Order {
 ---
 
 # 4) OCP：割引を Strategy で “追加し放題” にする 🎟️🧠✨
+
+![Discount Cartridge](./picture/solid_ts_study_027_discount_cartridge.png)
 
 ## 4-1. まず差し替え口（interface）を作る 🚪✨
 
@@ -281,6 +285,8 @@ export class CashPayment implements PaymentMethod {
 
 # 7) ISP：Repository と Notifier を “薄く” する 🧻✨
 
+![ISP Slicing](./picture/solid_ts_study_027_isp_slicing.png)
+
 ## 7-1. 注文保存（Repository）💾
 
 ```ts
@@ -337,6 +343,8 @@ export class ConsoleNotifier implements Notifier {
 ---
 
 # 8) DIP/DI：ユースケース（アプリ層）が “詳細” に依存しないようにする 💉🤖✨
+
+![DIP Robot Ports](./picture/solid_ts_study_027_dip_robot_ports.png)
 
 ユースケースは **重要ロジックの中心** だから、
 DB や通知サービスみたいな詳細に振り回されないようにするよ🙅‍♀️✨
@@ -472,6 +480,8 @@ describe("StudentDiscountPolicy", () => {
 
 ## 9-3. LSPっぽい！割引の “共通テスト（契約テスト）” 🧩🛡️✨
 
+![Contract Scanner](./picture/solid_ts_study_027_contract_scanner.png)
+
 「DiscountPolicy はこう振る舞うべし」っていう約束を、全部の割引に適用するよ😊
 
 ```ts
@@ -515,6 +525,8 @@ discountPolicyContract(() => new StudentDiscountPolicy());
 ---
 
 ## 9-4. ユースケースのテスト（DIの強さを体験）💉✨
+
+![Fast Test Car](./picture/solid_ts_study_027_fast_test_car.png)
 
 `OrderRepository` と `Notifier` を **偽物（Fake/Spy）** にして、
 “ユースケースだけ” を検査するよ🧪🔍
@@ -576,6 +588,8 @@ describe("PlaceOrderUseCase", () => {
 ---
 
 # 10) “追加機能” を1個入れよう 🎉✨（OCPの成果を味わう）
+
+![Rainy Day Module](./picture/solid_ts_study_027_rainy_day_module.png)
 
 例：**雨の日割（-50円）☔️** を追加してみよう！
 

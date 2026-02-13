@@ -8,6 +8,8 @@
 
 題材（全章で共通）🍙📱
 
+![Cafeteria App](./picture/state_machine_cs_index_cafeteria_app.png)
+
 * 「学食モバイル注文」
   状態例：Draft（下書き）→ Submitted（注文）→ Paid（支払い）→ Cooking（調理中）→ Ready（受け取り可）→ PickedUp（受取済）／ Cancelled（キャンセル）／ Refunded（返金済）など✨
 
@@ -16,6 +18,8 @@
 ## 第1部：まず“状態機械の考え方”に慣れる（1〜4章）🌱😊
 
 1章：この講座でできるようになること🎓✨
+
+![State Machine Core](./picture/state_machine_cs_index_core_concept.png)
 
 * ねらい：状態機械を「図・表・コード」で説明できるようにする
 * 学ぶ：状態／イベント／遷移の超基本、学習の進め方
@@ -30,6 +34,8 @@
 * AI活用：プロジェクト作成手順を箇条書きにしてもらう（手順書化）📋✨
 
 3章：if文地獄を“わざと”体験😵‍💫🔥
+
+![If-Else Mess](./picture/state_machine_cs_index_if_else_mess.png)
 
 * ねらい：状態機械が必要になる理由を体感する
 * 学ぶ：フラグ乱立・条件漏れ・追加が怖い、の典型パターン
@@ -63,6 +69,8 @@
 
 7章：遷移表を作る（最重要）📊✨
 
+![Transition Grid](./picture/state_machine_cs_index_transition_grid.png)
+
 * ねらい：網羅性を手に入れる（抜け漏れ防止）
 * 学ぶ：現在状態×イベント→次状態、できる/できないを明確化✅❌
 * 演習：遷移表の“空欄”を埋めていくゲーム🎮
@@ -84,6 +92,8 @@
 
 10章：ガード条件（条件つき遷移）🛡️✨
 
+![Guard Knight](./picture/state_machine_cs_index_guard_knight.png)
+
 * ねらい：「同じイベントでも条件で分かれる」を扱える
 * 学ぶ：Guardの置き方（状態の中？遷移の中？）
 * 演習：例：Cancelは“調理開始前のみOK”など条件を追加🍳
@@ -101,6 +111,8 @@
 * AI活用：AIに「アクション候補」を洗い出させる🤖✨
 
 12章：副作用の分離（ロジック vs I/O）🚪📤
+
+![Clean Room IO](./picture/state_machine_cs_index_clean_room_io.png)
 
 * ねらい：テストしやすく、事故りにくくする
 * 学ぶ：「遷移の判断」は純粋に／通知・DB・外部APIは外へ
@@ -197,6 +209,8 @@
 ## 第6部：実務の壁（async・並行・時間・保存）（24〜28章）🧱⚡
 
 24章：非同期（async/await）と中間状態⏳⚡
+
+![Hourglass State](./picture/state_machine_cs_index_hourglass_state.png)
 
 * ねらい：支払いAPIなど“待ち”がある世界に対応
 * 学ぶ：Processing状態、完了イベントで遷移する考え方
