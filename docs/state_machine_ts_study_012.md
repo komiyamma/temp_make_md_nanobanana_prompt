@@ -45,6 +45,8 @@ flowchart LR
 
 ## 2) なんでガードが大事なの？💖
 
+![Scattered vs Centralized Logic](./picture/state_machine_ts_study_012_scattered_vs_centralized.png)
+
 ガードがないと、条件分岐がこうなる👇😵‍💫
 
 * 画面側に if が増える
@@ -61,6 +63,8 @@ flowchart LR
 ---
 
 ## 3) ガードに入れていいもの / ダメなもの🙅‍♀️✅
+
+![Pure vs Impure Guard](./picture/state_machine_ts_study_012_pure_vs_impure_guard.png)
 
 ### ✅ ガードに入れていい（おすすめ）🌟
 
@@ -83,6 +87,8 @@ flowchart LR
 ---
 
 ## 4) ガードの命名ルール（地味に超効く）🧠✨
+
+![Guard Naming Keys](./picture/state_machine_ts_study_012_guard_naming_keys.png)
 
 おすすめはこの3つ💕
 
@@ -133,6 +139,8 @@ type Context = {
 
 ### 5-2) ガード関数を作る🛡️✨
 
+![Readonly Guard](./picture/state_machine_ts_study_012_readonly_guard.png)
+
 ```typescript
 function canSubmit(ctx: Readonly<Context>): boolean {
   const hasNoErrors = Object.keys(ctx.errors).length === 0;
@@ -151,6 +159,8 @@ function canSubmit(ctx: Readonly<Context>): boolean {
 ---
 
 ### 5-3) 「遷移定義」にガードをくっつける💞
+
+![Guard on Transition](./picture/state_machine_ts_study_012_guard_on_transition.png)
 
 「イベントごとに、遷移候補を並べて、上から順にガードを見る」方式が分かりやすいよ〜😊✨
 
@@ -209,6 +219,8 @@ function nextState(
 ---
 
 ## 6) ガードが false のとき、どうする？（設計の分かれ道）🧭✨
+
+![Guard Failure Paths](./picture/state_machine_ts_study_012_guard_failure_paths.png)
 
 ここはチームやプロダクト方針が出るとこだよ😊
 よくある3パターン👇

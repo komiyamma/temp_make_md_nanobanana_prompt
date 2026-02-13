@@ -12,6 +12,8 @@
 
 ## 1) 副作用（Side Effect）ってなに？🤔💭
 
+![Side Effect Icons](./picture/state_machine_ts_study_014_side_effect_icons.png)
+
 めちゃ雑に言うと…
 
 **「関数が値を返す以外に、外の世界に影響しちゃうこと」** だよ🌍💥
@@ -31,6 +33,8 @@ Reduxの世界でも「Reducerは副作用NG（純粋であるべき）」って
 
 ## 2) なんで分けるの？（分けないと何がつらい？）😵‍💫💦
 
+![Tangled Logic Pain](./picture/state_machine_ts_study_014_tangled_logic_pain.png)
+
 ### ✅ 分けると嬉しいこと（超重要）💖
 
 1. **テストがラク**🧪✨
@@ -49,6 +53,8 @@ Reduxの世界でも「Reducerは副作用NG（純粋であるべき）」って
 ---
 
 ## 3) 「純粋（Pure）」ってどういう状態？🧼✨
+
+![Pure Function Prism](./picture/state_machine_ts_study_014_pure_function_prism.png)
 
 純粋な関数はこんな感じ👇
 
@@ -97,6 +103,8 @@ XStateみたいなライブラリだと、遷移に紐づく “Actions” を�
 
 ## 5) 実装して体で覚える💪✨：「純粋な遷移 + Effect（やること指示）」方式
 
+![Recipe vs Cooking](./picture/state_machine_ts_study_014_recipe_vs_cooking.png)
+
 この章では、**遷移関数は純粋**にして、
 必要な副作用は **Effect（命令のメモ）として返す** 方式でいくよ📝✨
 
@@ -129,6 +137,8 @@ type Effect =
 ```
 
 ### 6-2) 純粋な遷移関数（ここに fetch を書かない！）🧼✨
+
+![No Fetch in Core](./picture/state_machine_ts_study_014_no_fetch_in_core.png)
 
 ```ts
 type TransitionResult = { next: State; effects: Effect[] };
@@ -222,6 +232,8 @@ async function runEffects(effects: Effect[], deps: Deps): Promise<Event[]> {
 ---
 
 ## 8) テストが急に簡単になる🧪💕（Vitestで“中心だけ”検証）
+
+![Toy Model Testing](./picture/state_machine_ts_study_014_toy_model_testing.png)
 
 Vitest 4 が出ていて、移行ガイドやカバレッジの説明も更新されてるよ📘✨ ([vitest.dev][3])
 

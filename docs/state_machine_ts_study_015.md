@@ -17,6 +17,8 @@
 
 ## 1) そもそも I/O って何がイヤなの？😵‍💫💥
 
+![IO Monster](./picture/state_machine_ts_study_015_io_monster.png)
+
 I/O（外部とのやりとり）はだいたいこう👇
 
 * 遅い🐢（通信・ファイル・DB…）
@@ -68,6 +70,8 @@ flowchart TD
 
 ## 3) 薄いアダプタの“3つの約束”📜✨
 
+![Thin Adapter Diet](./picture/state_machine_ts_study_015_thin_adapter_diet.png)
+
 アダプタを薄く保つコツはこれだけ覚えればOK🙆‍♀️💕
 
 1. **ビジネス判断を入れない**🙅‍♀️
@@ -108,6 +112,8 @@ export type Effect =
 ```
 
 ### 4-2. 状態機械コア：I/Oしない（ピュア）🍰✨
+
+![Pure Core Lab](./picture/state_machine_ts_study_015_pure_core_lab.png)
 
 ポイント：**次状態 + Effectリスト** を返すだけ🌟
 
@@ -151,6 +157,8 @@ export function reduce(state: State, event: Event): ReduceResult {
 
 ## 5) 外側：薄いアダプタで I/O を実行する🧰📡
 
+![Adapter Translator](./picture/state_machine_ts_study_015_adapter_translator.png)
+
 アダプタは Effect を受け取って実行して、結果を Event にして返すよ📮
 
 ```ts
@@ -188,6 +196,8 @@ export async function runEffect(effect: Effect): Promise<Event | null> {
 
 ## 6) “配線”する（アプリ層）🔌✨
 
+![Application Wiring](./picture/state_machine_ts_study_015_application_wiring.png)
+
 状態機械の「中心」と「外側」をつなぐだけの層だよ〜☺️
 
 ```ts
@@ -224,6 +234,8 @@ export function createMachine(onState: (s: State) => void) {
 ---
 
 ## 7) フォルダ構成おすすめ🏠✨
+
+![Folder Structure Cabinet](./picture/state_machine_ts_study_015_folder_structure_cabinet.png)
 
 ```text
 src/
