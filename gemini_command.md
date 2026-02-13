@@ -77,8 +77,16 @@ description: Generate an image generation plan for a range of Markdown files bas
                 - If no duplicate concept is found:
                 - **Generate ID**: Determine the next available ID for the plan table. Read the last line of `docs/picture/image_generation_plan.md` to get the last ID, then increment it. (Do NOT use `<current_id>` from the loop as the table ID).
                 - **Format Prompt**: Replace all newline characters (`\n`) in your `<prompt>` with HTML `<br>` tags to keep the table row on a single line.
-                - **Append**: Use `run_in_bash_session` to append the new row to the file.
-                    - Command: `echo "| <next_plan_id> | <filename> | <proposed_image_filename> | <relative_link> | <formatted_prompt> | <insertion_point> |" >> docs/picture/image_generation_plan.md`
+                - **Append**: Use `run_in_bash_session` to create and run a temporary Python script. Use a heredoc with quoted delimiter (`<<'EOF'`) to prevent shell expansion of backticks.
+                    - Command:
+                      ```bash
+                      cat <<'EOF' > append_row.py
+                      with open('docs/picture/image_generation_plan.md', 'a', encoding='utf-8') as f:
+                          f.write("""| <next_plan_id> | <filename> | <proposed_image_filename> | <relative_link> | <formatted_prompt> | <insertion_point> |\n""")
+                      EOF
+                      python3 append_row.py
+                      rm append_row.py
+                      ```
                 - **Note**: Ensure the column count matches the existing table in `docs/picture/image_generation_plan.md` (6 columns: ID, File Name, Proposed Image Filename, Relative Link Path, Prompt, Insertion Point).
 
         e.  **Modify Markdown File**:
