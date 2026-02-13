@@ -39,6 +39,8 @@ graph TD
 
 ## 6.2 “壊れてない”って何？ 3つだけ意識しよ🧠🧩
 
+![Compatibility Trio](./picture/svbc_cs_study_006_compatibility_trio.png)
+
 C#/.NETの世界だと「壊れた😇」はだいたいこの3系統に分かれます👇
 
 1. **ソース互換が壊れた**：再コンパイルしたらエラー💥
@@ -58,6 +60,8 @@ C#/.NETの世界だと「壊れた😇」はだいたいこの3系統に分か�
 
 ### パターンA：新しい “型” を足す（クラス/record/enumなど）🧱➕
 
+![Safe Extension (New Type)](./picture/svbc_cs_study_006_safe_extension_type.png)
+
 * 新しい`public class`や`record`を追加する
 * 既存の型は触らない（触るほど事故りやすい😇）
 
@@ -76,6 +80,8 @@ public sealed record FormatOptions
 ---
 
 ### パターンB：新しい “メソッド名” を足す（オーバーロードより安全）🧰✨
+
+![Safe Extension (New Method Name)](./picture/svbc_cs_study_006_safe_extension_method.png)
 
 オーバーロード追加って実は罠があるので（後述💣）、**まずは別名メソッド**が安全です😊
 
@@ -117,11 +123,15 @@ Microsoftのガイドでも、**新しいオーバーロードで以前は一意
 
 ### 地雷1：既存メソッドに “引数を足す” ➕（これはMINORじゃない！）
 
+![Binary Break (Arg Add)](./picture/svbc_cs_study_006_binary_break_arg.png)
+
 これは **バイナリ互換が壊れます**。古い利用者バイナリが実行時に死ぬやつ💣 ([Microsoft Learn][2])
 
 ---
 
 ### 地雷2：インターフェイスにメンバー追加🧨
+
+![Interface Trap](./picture/svbc_cs_study_006_interface_trap.png)
 
 「実装してる側」が全部壊れる可能性が高いです😵
 ガイドでも **“インターフェイスに何か足すと既存実装が壊れる”** と強めに注意されています⚠️ ([Microsoft Learn][2])
@@ -129,6 +139,8 @@ Microsoftのガイドでも、**新しいオーバーロードで以前は一意
 ---
 
 ### 地雷3：オーバーロード追加で “呼ばれる先が変わる” 🌀
+
+![Overload Trap](./picture/svbc_cs_study_006_overload_trap.png)
 
 これがいちばん初心者が踏みがち😂
 例：もともと `uint` しか無かったのに `int` を足すと、昔は `int` を渡しても `uint` 側に吸われてたのが、再コンパイル後に `int` 側へ移る…みたいなやつです💥
@@ -201,6 +213,8 @@ public void Save(int id); // 追加
 ---
 
 ## 6.7 AIの使いどころ🤖💡（MINOR編）
+
+![AI Safety Check](./picture/svbc_cs_study_006_ai_safety_check.png)
 
 AIは「案を増やす」より、**事故らない確認役**にすると超強いです🛡️✨
 

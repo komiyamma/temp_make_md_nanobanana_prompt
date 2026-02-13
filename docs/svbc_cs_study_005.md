@@ -13,6 +13,8 @@
 
 ## 5.1 PATCHって結局なに？🔢🐛
 
+![Bug Fix Definition](./picture/svbc_cs_study_005_bug_fix_definition.png)
+
 SemVerのルールでは、**PATCH（x.y.Z）**はこういう位置づけです👇
 
 * **後方互換なバグ修正だけ**を入れたときに、PATCHを上げる
@@ -42,6 +44,8 @@ SemVerのルールでは、**PATCH（x.y.Z）**はこういう位置づけです
 
 ### C) パフォーマンス改善（機能追加なし）🚀
 
+![Performance Boost](./picture/svbc_cs_study_005_performance_boost.png)
+
 SemVer系の仕様・解説では、**機能を増やさずに性能特性を改善する**のは“バグ修正”扱いに含める考え方があります([Semantic Versioning][2])
 （ただし、性能改善が原因でタイミングや順序が変わると、利用者が困る場合もあるよ⚠️）
 
@@ -55,17 +59,23 @@ PATCHは「壊さない修正」なんだけど、**“壊れ方”はAPIだけ�
 
 ### 地雷①：例外の種類・タイミングが変わる⚡
 
+![Exception Change Trap](./picture/svbc_cs_study_005_exception_change_trap.png)
+
 * 以前：`ArgumentException`
 * 変更後：`InvalidOperationException`
   → 利用者が `catch` してたら挙動が変わる😱
 
 ### 地雷②：戻り値の“意味”が変わる🌀
 
+![Return Value Trap](./picture/svbc_cs_study_005_return_value_trap.png)
+
 * 以前：空文字 `""` を返していた
 * 変更後：`null` を返す（またはその逆）
   → 利用者側が落ちる・分岐が変わる💥
 
 ### 地雷③：シリアライズ結果（JSONなど）の形が変わる📦
+
+![Serialization Trap](./picture/svbc_cs_study_005_serialization_trap.png)
 
 * プロパティ名の大小文字、出力順、既定値の扱いが変わる
   → “動くけど壊れる”が起きやすい😵
@@ -155,6 +165,8 @@ PATCHは「安心して上げられる」ことが価値なので、**短くて�
 ---
 
 ## 5.7 実装面：C#の“バージョン”は複数あるよ🔢🧩
+
+![Versioning Layers](./picture/svbc_cs_study_005_versioning_layers.png)
 
 .NETライブラリは、**NuGetのバージョン**だけじゃなく、アセンブリ側にも複数のバージョン情報があります。公式ガイダンスでも、この違いが整理されています([Microsoft Learn][4])
 
