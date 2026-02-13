@@ -20,6 +20,8 @@
 
 ## 2) まず「事故」をイメージしよ😵‍💫💥
 
+![Double Click Spark](./picture/state_machine_cs_study_025_double_click_spark.png)
+
 学食モバイル注文でありがちなやつ👇
 
 * **支払いボタン連打**：Payが2回飛ぶ💳💳
@@ -58,6 +60,7 @@
 ## 4) 防衛ラインは3層🛡️🛡️🛡️
 
 ![025 Three Layers](./picture/state_machine_cs_study_025_three_layers.png)
+![Defense Layers](./picture/state_machine_cs_study_025_defense_layers.png)
 
 ```mermaid
 graph TD
@@ -128,6 +131,8 @@ EF Coreなら `rowversion`（`[Timestamp]`）などの concurrency token で衝�
 
 ## 5) まず「壊れる」コードを作ってみよう😈🧨
 
+![Race Collision](./picture/state_machine_cs_study_025_race_collision.png)
+
 例：支払い処理を `await` してる間に、もう1本が入り込むやつ。
 
 ```csharp
@@ -194,6 +199,8 @@ sequenceDiagram
 ---
 
 ## 6) 解決①：注文ごとに “asyncロック” で直列化🔑✨（おすすめ）
+
+![Semaphore Gate](./picture/state_machine_cs_study_025_semaphore_gate.png)
 
 `lock` は **async内でawaitできない** から注意だよ⚠️（CS1996） ([Microsoft Learn][5])
 なので、ここは `SemaphoreSlim` が素直で強い💪✨
@@ -299,6 +306,8 @@ public sealed class OrderMailbox
 ---
 
 ## 8) 解決③：DBで衝突を検知して“負けた方”をやり直す💾♻️
+
+![Optimistic Version](./picture/state_machine_cs_study_025_optimistic_version.png)
 
 Web API + DB だと、複数インスタンス（スケールアウト）もあるから、
 **インメモリロックだけでは守れない** 場面が出るよ⚠️

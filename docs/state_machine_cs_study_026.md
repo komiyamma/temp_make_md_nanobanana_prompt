@@ -17,6 +17,7 @@
 ## 2) まず冪等性ってなに？🧠✨
 
 ![026 Idempotency](./picture/state_machine_cs_study_026_idempotency.png)
+![Idempotency Mirror](./picture/state_machine_cs_study_026_idempotency_mirror.png)
 
 ```mermaid
 flowchart TD
@@ -46,6 +47,8 @@ HTTPの公式定義（超要約すると）も、「同じリクエストを複�
 ---
 
 ## 3) なぜ状態機械で冪等性が必要？😵‍💫💥（事故あるある）
+
+![Retry Safety](./picture/state_machine_cs_study_026_retry_safety.png)
 
 「学食モバイル注文」で想像してみよ〜🍙📱
 
@@ -118,6 +121,8 @@ Stripeみたいな決済系も「同じキーなら安全にリトライでき�
 
 ### Lv2：IdempotencyKeyで重複排除＋結果再利用（おすすめ）🥇
 
+![Cached Result](./picture/state_machine_cs_study_026_cached_result.png)
+
 * イベントに **IdempotencyKey** を付ける🔑
 * サーバー側で「このキー処理済み？」を記録🗃️
 * 処理済みなら **前回の結果を返す**🔁✨
@@ -131,6 +136,8 @@ Stripeみたいな決済系も「同じキーなら安全にリトライでき�
 ---
 
 ## 6) IdempotencyKey設計のコツ🔑✨（ここが勝負！）
+
+![Idempotency Keyring](./picture/state_machine_cs_study_026_idempotency_keyring.png)
 
 ### ✅ ルール1：**リトライ時は“同じキー”を使う**
 
@@ -351,6 +358,8 @@ public sealed class OrderStateMachine
   みたいな対策が必要になるよ💥
 
 ### 9-2. 冪等性と並行制御は別モノだよ🧩
+
+![Idempotency vs Concurrency](./picture/state_machine_cs_study_026_idempotency_vs_concurrency.png)
 
 * 冪等性：**同じ操作の重複**を安全に
 * 並行制御：**別操作が同時に走る**のを安全に
