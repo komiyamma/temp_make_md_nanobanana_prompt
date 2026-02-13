@@ -37,6 +37,8 @@
 
 ## 25.2 どっち？判定のコツ✂️
 
+![testable_ts_study_025_error_decision_tree.png](./picture/testable_ts_study_025_error_decision_tree.png)
+
 🧠迷ったら、この質問👇
 
 
@@ -59,6 +61,8 @@
 
 ## 25.3 設計ルール：エラーは“データ”として持つのが最強🧊✨
 
+![testable_ts_study_025_discriminated_union_switch.png](./picture/testable_ts_study_025_discriminated_union_switch.png)
+
 TypeScript だと特に、
 
 
@@ -72,6 +76,8 @@ TypeScript だと特に、
 ---
 
 ## 25.4 ハンズオン題材：注文（Place Order）
+
+![testable_ts_study_025_order_error_examples.png](./picture/testable_ts_study_025_order_error_examples.png)
 
 🛒🍕「注文する」って処理で起きそうな失敗を分けてみよ〜！✍️✨
 
@@ -93,6 +99,8 @@ TypeScript だと特に、
 ---
 
 ## 25.5 型を作る（ドメイン vs インフラ）
+
+![testable_ts_study_025_infra_retry_flag.png](./picture/testable_ts_study_025_infra_retry_flag.png)
 
 🧩✨ここからコードだよ〜！🧸
 （※ 例は最小構成。ファイル分割してもOK！）
@@ -142,6 +150,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 ---
 
 ## 25.7 中心ロジックは「ドメインエラー」を返すのが基本🍰✨
+
+![testable_ts_study_025_safe_return_box.png](./picture/testable_ts_study_025_safe_return_box.png)
 
 中心（ロジック）は、できるだけ **外部の事故を知らない** ほうがキレイ！🙈
 なので、中心ロジックは「仕様としての失敗」を丁寧に返すのが王道だよ〜😇
@@ -199,6 +209,8 @@ describe("validateCart", () => {
 
 ## 25.9 よくある事故パターン（ここ注意！
 
+![testable_ts_study_025_throw_chaos_vs_return_peace.png](./picture/testable_ts_study_025_throw_chaos_vs_return_peace.png)
+
 ）⚠️😵‍💫### ❌ 1) ドメインエラーを全部 `throw` にする* 使う側が毎回 `try/catch` 地獄になりがち😇🌀
 
 
@@ -217,6 +229,8 @@ describe("validateCart", () => {
 ---
 
 ## 25.10 章末ミニ課題📝
+
+![testable_ts_study_025_sorting_game_ui.png](./picture/testable_ts_study_025_sorting_game_ui.png)
 
 ✨### 課題A：分類ゲーム🎮次を「ドメイン/インフラ」に分けてね👇
 

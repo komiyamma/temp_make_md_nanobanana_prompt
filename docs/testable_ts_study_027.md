@@ -12,6 +12,8 @@
 
 ## 1) 粒度ってなに？（テストの“距離感”）
 
+![testable_ts_study_027_unit_vs_integration_gears.png](./picture/testable_ts_study_027_unit_vs_integration_gears.png)
+
 📏🙂## ユニットテスト（Unit）
 
 🍪* **小さい**：関数・クラス1個くらい
@@ -40,7 +42,9 @@
 
 ---
 
-## 2) まずは基本方針を1枚で🍙📝## 基本方針（この講座の型）
+## 2) まずは基本方針を1枚で🍙📝
+
+![testable_ts_study_027_testing_strategy_map.png](./picture/testable_ts_study_027_testing_strategy_map.png)## 基本方針（この講座の型）
 
 ✅1. **中心はユニットでガチガチに守る** 🏠🧪
 2. **外側は“要所だけ”結合で守る** 🌍🔌
@@ -73,7 +77,9 @@
 
 ---
 
-## 4) ハンズオン：同じ機能を「中心テスト」「結合テスト」で作る🙂🔁題材：**クーポン付き注文の合計金額** 🛒💰
+## 4) ハンズオン：同じ機能を「中心テスト」「結合テスト」で作る🙂🔁
+
+![testable_ts_study_027_coupon_order_structure.png](./picture/testable_ts_study_027_coupon_order_structure.png)題材：**クーポン付き注文の合計金額** 🛒💰
 
 
 
@@ -82,6 +88,8 @@
 * 境界：`CouponRepository` interface（差し替え点）
 
 ## 4-1) フォルダ構成（おすすめ）
+
+![testable_ts_study_027_folder_structure_tree.png](./picture/testable_ts_study_027_folder_structure_tree.png)
 
 📁✨* `src/core/` … 中心🏠
 
@@ -95,6 +103,8 @@
 ---
 
 ## 5) 実装：中心（core）
+
+![testable_ts_study_027_pure_logic_room.png](./picture/testable_ts_study_027_pure_logic_room.png)
 
 🏠✨## `src/core/types.ts
 
@@ -254,6 +264,8 @@ describe("calcOrderTotal (unit)", () => {
 
 ## 8) 結合テスト（外側の“要所”だけ刺す🍱🎯）
 
+![testable_ts_study_027_integration_wiring.png](./picture/testable_ts_study_027_integration_wiring.png)
+
 狙い：
 
 * JSONファイルから読む実装が壊れてない？
@@ -313,7 +325,9 @@ Vitestは **追加引数を“テストファイルのパスに含まれる文�
 
 ---
 
-## 9) よくある事故と回避テク🚧😵‍💫## 事故1：結合テストだらけで遅い🐢* 症状：CIが10分超え、誰も回さない😇
+## 9) よくある事故と回避テク🚧😵‍💫
+
+![testable_ts_study_027_slow_turtle_integration.png](./picture/testable_ts_study_027_slow_turtle_integration.png)## 事故1：結合テストだらけで遅い🐢* 症状：CIが10分超え、誰も回さない😇
 
 
 * 回避：**中心はユニット**、結合は「変換」「配線」「I/Oアダプタ」だけに絞る🎯

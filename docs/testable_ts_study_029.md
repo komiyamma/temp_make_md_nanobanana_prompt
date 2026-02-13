@@ -11,6 +11,8 @@ AI（Copilot / Codex など）を**“テスタブル設計（I/O境界の分離
 
 ## 29-1. まず大事な考え方：AIは「手」🖐️
 
+![testable_ts_study_029_human_brain_ai_hands.png](./picture/testable_ts_study_029_human_brain_ai_hands.png)
+
 、設計は「脳」🧠💗AIが得意🥰
 
 
@@ -36,6 +38,8 @@ AIに丸投げしない🙅‍♀️
 ## 29-2. 2026年っぽいAI機能の使い分け（知ってるだけで勝ち）
 
 🏆✨## ① Copilot Edits：複数ファイル編集の2モード🧩
+
+![testable_ts_study_029_copilot_modes.png](./picture/testable_ts_study_029_copilot_modes.png)
 
 🧹* **Edit mode**：触らせるファイルを自分で選んで、提案を見ながら進める（コントロール重視）🫶
 
@@ -94,6 +98,8 @@ AIに丸投げしない🙅‍♀️
 
 ## 29-3. テスタブル設計を守る「AI利用3ルール」🧪🛡
 
+![testable_ts_study_029_ai_three_rules.png](./picture/testable_ts_study_029_ai_three_rules.png)
+
 ️✨## ルールA：先に“境界ルール”を宣言する📣AIは放っておくと、平気で中心に `Date.now()` とか `fetch()` とか混ぜるよ〜😇💥
 だから最初のプロンプトでこれを言う👇
 
@@ -125,6 +131,8 @@ AIに丸投げしない🙅‍♀️
 ---
 
 ## 29-4. すぐ使える✨
+
+![testable_ts_study_029_prompt_recipe_cards.png](./picture/testable_ts_study_029_prompt_recipe_cards.png)
 
 「良いプロンプト」テンプレ集📝🤖## ① テストケース洗い出し（最強に便利）
 
@@ -215,6 +223,8 @@ export interface Logger { info(msg: string, meta?: Record<string, unknown>): voi
 
 ## 29-5. ダメ回答の見抜き方（赤信号🚥あるある）
 
+![testable_ts_study_029_ai_red_flags.png](./picture/testable_ts_study_029_ai_red_flags.png)
+
 😵‍💫AIの提案がこうだったら黄色信号⚠️
 
 
@@ -235,7 +245,9 @@ export interface Logger { info(msg: string, meta?: Record<string, unknown>): voi
 
 ---
 
-## 29-6. ハンズオン：AIと一緒に“境界を守る”練習しよ🎮🧪💗## お題：クーポン適用つき合計計算🛒🎟️
+## 29-6. ハンズオン：AIと一緒に“境界を守る”練習しよ🎮🧪💗
+
+![testable_ts_study_029_refactoring_with_ai.png](./picture/testable_ts_study_029_refactoring_with_ai.png)## お題：クーポン適用つき合計計算🛒🎟️
 
 最初はわざと「ぐちゃぐちゃ版」からスタート😈
 
@@ -373,6 +385,8 @@ export function makeCheckout(deps: {
 ---
 
 ## 29-7. さらに一歩：AIに“掟”を覚えさせる📁🧠（Agent Skills 的発想）
+
+![testable_ts_study_029_teaching_ai_rules.png](./picture/testable_ts_study_029_teaching_ai_rules.png)
 
 VS Code の Agent Skills は「AIに読ませる指示フォルダ」みたいな方向で、Copilot にドメイン知識や手順を渡せる設計が進んでるよ〜（実験）📦✨
 ([Visual Studio Code][2])
