@@ -19,6 +19,8 @@
 
 ## 1) まず“スコープ切り”のゴールを決めよう🏁💡
 
+![yagni_cs_study_003_small_gem.png](./picture/yagni_cs_study_003_small_gem.png)
+
 YAGNIのスコープ切りは、**「小さく完成」**がいちばん大事！🎀
 完成っていうのは、ざっくり言うと👇
 
@@ -56,6 +58,8 @@ MVPって「小さく薄く」って勘違いされやすいんだけど、YAGNI
 
 ## 3) 切り方の基本：ユースケース単位で切る🏃‍♀️🧩
 
+![yagni_cs_study_003_usecase_cake.png](./picture/yagni_cs_study_003_usecase_cake.png)
+
 DDDを初めて触る人向けに、超ざっくり言うと…💡
 **ユースケース＝ユーザーの目的（やりたいこと）** だよ😊
 
@@ -72,6 +76,8 @@ DDDを初めて触る人向けに、超ざっくり言うと…💡
 ---
 
 ## 4) “今必要？”を決める3つの質問🧠❓❓❓
+
+![yagni_cs_study_003_filter_funnel.png](./picture/yagni_cs_study_003_filter_funnel.png)
 
 要件を見たら、1個ずつこれを当ててみてね👇
 
@@ -127,6 +133,8 @@ DDDを初めて触る人向けに、超ざっくり言うと…💡
 
 ### (C) “NOT-DO リスト”🧊📝
 
+![yagni_cs_study_003_icebox.png](./picture/yagni_cs_study_003_icebox.png)
+
 「今回はやらない」を、気持ちよく書くやつ！
 
 例：
@@ -142,6 +150,8 @@ DDDを初めて触る人向けに、超ざっくり言うと…💡
 ---
 
 ## 6) 仕様を未来へ押し出す「未実装境界の明示」🧊🚧
+
+![yagni_cs_study_003_construction_sign.png](./picture/yagni_cs_study_003_construction_sign.png)
 
 「後でやる」を安全にするには、**境界を見える化**するのがコツ！
 
@@ -189,6 +199,8 @@ DDDを初めて触る人向けに、超ざっくり言うと…💡
 ---
 
 ### Step 2：3画面に押し込む📱✨
+
+![yagni_cs_study_003_cafeteria_mvp.png](./picture/yagni_cs_study_003_cafeteria_mvp.png)
 
 たとえばこう👇
 
@@ -242,6 +254,8 @@ DDDを初めて触る人向けに、超ざっくり言うと…💡
 ---
 
 ## 8) AI活用🤖：盛らせないプロンプト集🧯✨
+
+![yagni_cs_study_003_ai_leash.png](./picture/yagni_cs_study_003_ai_leash.png)
 
 Copilot / Codex に投げるときは、最初に「制約」を渡すのがコツだよ〜！🎀
 

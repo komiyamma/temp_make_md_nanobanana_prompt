@@ -6,6 +6,8 @@
 
 ## 第1章：YAGNIってなに？「作らない勇気」の入門 🌱🙂
 
+![yagni_cs_index_definition.png](./picture/yagni_cs_index_definition.png)
+
 **ねらい🎯**：YAGNIを“誤解なく”説明できるようになる
 
 * YAGNIの一言定義：「今必要なものだけ作る」🧩
@@ -19,6 +21,8 @@
 
 ## 第2章：作り込みすぎのサインを見抜く 👀🚨
 
+![yagni_cs_index_warning_sign.png](./picture/yagni_cs_index_warning_sign.png)
+
 **ねらい🎯**：「それ今いる？」を見抜けるようになる
 
 * 未来用の作り込みあるある📚（抽象化先行、汎用化しすぎ等）
@@ -30,6 +34,8 @@
 ---
 
 ## 第3章：「今必要」を決める技術（スコープの切り方）✂️🗺️
+
+![yagni_cs_index_scope_cutting.png](./picture/yagni_cs_index_scope_cutting.png)
 
 **ねらい🎯**：小さく完成させる判断ができるようになる
 
@@ -44,6 +50,8 @@
 
 ## 第4章：YAGNIを支える実装スタイル（小さく作って育てる）🧱🌿
 
+![yagni_cs_index_small_impl.png](./picture/yagni_cs_index_small_impl.png)
+
 **ねらい🎯**：「作らない」と「後で詰む」を分ける土台を作る
 
 * “後で足せる最小設計”の作り方🧰
@@ -56,6 +64,8 @@
 ---
 
 ## 第5章：C#でやりがちな“未来用設計”を安全に先送りする 🧯🧠
+
+![yagni_cs_index_csharp_shield.png](./picture/yagni_cs_index_csharp_shield.png)
 
 **ねらい🎯**：C#らしい過剰抽象化を回避できるようになる
 

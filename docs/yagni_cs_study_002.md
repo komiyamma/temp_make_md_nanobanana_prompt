@@ -57,6 +57,8 @@
 
 ### サイン2：プロジェクト分割が最初から豪華（Domain / Application / Infra…）📦📦📦
 
+![yagni_cs_study_002_project_split.png](./picture/yagni_cs_study_002_project_split.png)
+
 **症状**：フォルダじゃなくて、いきなり複数プロジェクトに分けてる
 **よくある理由**：「DDDっぽいから」
 **YAGNI的ツッコミ**：今の規模で、分けたメリットが勝ってる？
@@ -66,6 +68,8 @@
 
 ### サイン3：リポジトリ＋UnitOfWorkが“儀式”になってる 🧙‍♀️🌀
 
+![yagni_cs_study_002_repo_ritual.png](./picture/yagni_cs_study_002_repo_ritual.png)
+
 **症状**：DBアクセスのために抽象が二重三重
 **よくある理由**：「昔からのテンプレ」
 **YAGNI的ツッコミ**：今のCRUDで、それ必要？ただの中継じゃない？
@@ -74,6 +78,8 @@
 ---
 
 ### サイン4：イベント駆動・メッセージバス・ドメインイベントが先に入る 📣🚌
+
+![yagni_cs_study_002_event_bus.png](./picture/yagni_cs_study_002_event_bus.png)
 
 **症状**：まだ画面1つなのに非同期基盤がいる
 **よくある理由**：「拡張性！疎結合！」
@@ -96,6 +102,8 @@
 
 ### サイン6：ジェネリクス汎用化が早い 🧬😵‍💫
 
+![yagni_cs_study_002_generics_complex.png](./picture/yagni_cs_study_002_generics_complex.png)
+
 **症状**：たった2箇所の似た処理を無理に共通化
 **よくある理由**：「重複は悪！」
 **YAGNI的ツッコミ**：“重複の痛み”がまだ弱いなら、将来の方が変わるかも
@@ -105,6 +113,8 @@
 
 ### サイン7：パターン（Factory/Strategy等）が“目的”になってる 🎭📦
 
+![yagni_cs_study_002_pattern_factory.png](./picture/yagni_cs_study_002_pattern_factory.png)
+
 **症状**：困ってないのにパターンを当てはめる
 **よくある理由**：学んだことを使いたい
 **YAGNI的ツッコミ**：そのパターン、今の問題を何秒で説明できる？
@@ -113,6 +123,8 @@
 ---
 
 ### サイン8：将来の入力バリデーションが超完備（でも画面1つ）🧪🧷
+
+![yagni_cs_study_002_validation_overkill.png](./picture/yagni_cs_study_002_validation_overkill.png)
 
 **症状**：汎用バリデーション基盤、パイプライン、反射、属性まみれ
 **よくある理由**：ちゃんとしたい
@@ -131,6 +143,8 @@
 ---
 
 ### サイン10：AIが出した設計が立派すぎる（盛り）🤖🎈
+
+![yagni_cs_study_002_ai_complexity.png](./picture/yagni_cs_study_002_ai_complexity.png)
 
 **症状**：AIが急に「Clean Architecture！CQRS！Event Sourcing！」
 **よくある理由**：AIは“網羅的に良さげな提案”をしがち
