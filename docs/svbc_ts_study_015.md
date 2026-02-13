@@ -37,6 +37,8 @@ graph LR
 
 ## 15.2 alpha / beta / rc の “感覚” 🥚➡️🐣➡️🕊️
 
+![Lifecycle Metaphor](./picture/svbc_ts_study_015_lifecycle_metaphor.png)
+
 ### alpha（アルファ）🥚
 
 * 目的：**早めに形を見せる**／方向性のフィードバックをもらう
@@ -76,6 +78,8 @@ SemVerは「数字→ラベル」の順で比較して並べます。ビルド�
 
 ## 15.4 npmでの配り方：dist-tagで“安定版を守る”🏷️🛡️
 
+![Dist Tags](./picture/svbc_ts_study_015_dist_tags.png)
+
 npmには **dist-tag**（例：`latest`, `beta`, `next`）があって、
 「このタグを付けたバージョンを入れてね」って誘導できます。 ([npmドキュメント][1])
 
@@ -85,6 +89,8 @@ npmには **dist-tag**（例：`latest`, `beta`, `next`）があって、
 ---
 
 ## 15.5 利用者が入れるとき：プレリリースは“勝手に入らない”🙅‍♀️✅
+
+![Explicit Install](./picture/svbc_ts_study_015_explicit_install.png)
 
 npmのsemverレンジは、基本的に **プレリリースを自動では拾いにくい**設計です。
 （うっかり全員にベータが入ると事故るからね…！） ([npmドキュメント][4])
@@ -140,6 +146,8 @@ rcで機能追加し始めると、利用者が「結局いつ固まるの？」
 ---
 
 ## 15.8 “現実の例”でつかむ：TypeScript自身も beta/rc を配ってる 🧑‍💻✨
+
+![TS Beta Install](./picture/svbc_ts_study_015_ts_beta_install.png)
 
 TypeScriptも npm でベータ版を配って、試したい人が入れられるようにしてます。 ([Microsoft for Developers][5])
 
@@ -197,6 +205,8 @@ npm i cute-math@alpha
 ```
 
 ### ✅ 最後にチェック（設計問題）📝
+
+![Experimental Check](./picture/svbc_ts_study_015_experimental_check.png)
 
 * 「安定版の利用者が `npm i cute-math` したら、alpha入っちゃう？」→ **入らないようにするのが正解**🙆‍♀️
 * 「experimental を通常importで触れるようにしちゃってない？」→ **入口を分ける**のが安全🧱

@@ -46,6 +46,8 @@ graph TD
 
 ## 16.1 リリースノートとChangelogの違い📝📘
 
+![Note vs Log](./picture/svbc_ts_study_016_note_vs_log.png)
+
 * **Release Notes（リリースノート）**：今回のリリースで利用者が知りたいこと✨
 
   * 追加された機能✨
@@ -73,6 +75,8 @@ graph TD
 ---
 
 ## 16.3 “最低限のリリース基本セット”を作ろう🧰✅
+
+![Release Essentials](./picture/svbc_ts_study_016_release_essentials.png)
 
 ここだけ整ってれば、かなり事故が減るよ〜！
 
@@ -110,6 +114,8 @@ graph TD
 
 ## 16.5 Changesets：日常の使い方（超やさしく）🌸
 
+![Changesets Flow](./picture/svbc_ts_study_016_changesets_flow.png)
+
 ### ① 変更したら changeset を1個作る
 
 ```bash
@@ -134,6 +140,8 @@ Changesetsは「changesetが溜まったら、まとめて version bump + change
 
 ## 16.6 “公開”はセキュアに：Trusted Publishing（トークン無し）🔐✨
 
+![Trusted Publishing](./picture/svbc_ts_study_016_trusted_publishing.png)
+
 2026っぽい超重要ポイント！🌟
 GitHub Actionsからnpmへ公開する時、**OIDCでトークン不要**にできるよ（Trusted Publishers）([npmドキュメント][4])
 
@@ -147,6 +155,8 @@ GitHub Actionsからnpmへ公開する時、**OIDCでトークン不要**にで�
 ---
 
 ## 16.7 Provenance（来歴）もつけよう🧾🛡️
+
+![Provenance Badge](./picture/svbc_ts_study_016_provenance_badge.png)
 
 npmは **provenance（どこでビルドされ誰が公開したか）** を付けられるよ([npmドキュメント][1])
 GitHub公式ドキュメントでも **`npm publish --provenance`** が推奨されてる([GitHub Docs][5])

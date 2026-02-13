@@ -3,17 +3,23 @@
 
 ## 第1章：まずはゴールのイメージを作ろう 🧭😊✨
 
+![Testable World](./picture/testable_cs_index_goal_world.png)
+
 * 「テストしやすいコード」って何が嬉しいの？✨
 * “怖くない変更”ができる世界へ🛡️
 * 今日からの合言葉：**I/Oを外に出す！** 🚪
 
 ## 第2章：テストがつらいコードあるある 😵‍💫💥
 
+![Untestable Chaos](./picture/testable_cs_index_untestable_chaos.png)
+
 * DB直アクセス、DateTime.Now直読み、HttpClient直叩き…
 * テストが「環境依存」になると何が起きる？🌪️
 * “再現できないバグ”の地獄🔥
 
 ## 第3章：I/Oってなに？どこからがI/O？🔌📦✨
+
+![I/O Separation](./picture/testable_cs_index_io_separation.png)
 
 * I/Oの代表：ファイル🗂️ / DB🗄️ / ネット🌐 / 時刻🕰️ / 乱数🎲 / UI🖥️
 * 「I/O＝外の世界」だと思えばOK🙆‍♀️
@@ -27,6 +33,8 @@
 
 ## 第5章：境界（Boundary）の考え方 🚧😊
 
+![Boundary Interface](./picture/testable_cs_index_boundary_interface.png)
+
 * “内側（ルール）”と“外側（I/O）”を分ける📦↔️🌍
 * 境界があると、交換できる🔁
 * 境界は **インターフェース**で作るのが定番🧩
@@ -38,6 +46,8 @@
 * “分けると一瞬でテストできる”を体験🎉
 
 ## 第7章：テストの種類をゆるく知る 🔍😊
+
+![Test Pyramid](./picture/testable_cs_index_test_pyramid.png)
 
 * 単体テスト（ユニット）🧩
 * 結合テスト🤝
@@ -52,6 +62,8 @@
 
 ## 第9章：AI（Copilot/Codex）をテスト学習に使うコツ 🤖💡🧪
 
+![AI Pair Testing](./picture/testable_cs_index_ai_pair.png)
+
 * 「テストケース案を出して」って頼む📝
 * Arrange/Act/Assertの骨組みを作らせる🧱
 * “鵜呑み禁止ポイント”も知る⚠️（境界/責務が崩れてない？）
@@ -63,6 +75,8 @@
 * 「差し替えできる場所」を作るのが設計💎
 
 ## 第11章：DIの最小（コンストラクタ注入）✉️✨
+
+![DI Constructor](./picture/testable_cs_index_di_constructor.png)
 
 * まずはこれだけでOK：コンストラクタで受け取る🧰
 * 引数で渡せる＝テストで偽物にできる🎭
