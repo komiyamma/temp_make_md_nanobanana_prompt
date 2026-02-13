@@ -49,6 +49,8 @@
 
 ## 6-4. 矢印でつなぐ（遷移を書く）➡️📝
 
+![Valid Transitions](./picture/state_machine_ts_study_006_valid_transitions.png)
+
 ここからが状態機械の核心〜！✨
 「この状態で、このイベントが来たら、次はどこ？」を決めます。
 
@@ -64,6 +66,8 @@
 ---
 
 ## 6-5. 禁止遷移（やっちゃダメ）を決める🚫😱
+
+![Forbidden Lock](./picture/state_machine_ts_study_006_forbidden_lock.png)
 
 ここが状態機械の“バグ防止装置”ポイント🧯✨
 
@@ -130,6 +134,8 @@ stateDiagram-v2
 
 ## 6-7. “抜け漏れ”を一瞬で見つけるコツ🔍✨
 
+![State Event Grid](./picture/state_machine_ts_study_006_state_event_grid.png)
+
 ここでミニ必殺技🪄
 
 **「全状態 × 全イベント」**を1回だけ見渡す👀
@@ -150,6 +156,8 @@ stateDiagram-v2
 
 ### お題A：半開き（Ajar）を追加してみて🚪😳
 
+![Ajar State](./picture/state_machine_ts_study_006_ajar_state.png)
+
 状態：
 
 * Closed / Open / **Ajar** / Locked
@@ -167,6 +175,8 @@ stateDiagram-v2
 ---
 
 ## 6-9. おまけ：TypeScriptで「超ミニ」状態遷移を書いてみる🧑‍💻✨
+
+![Nested Switch](./picture/state_machine_ts_study_006_nested_switch.png)
 
 手書きで決めたルールを、**そのまま関数**にするだけ！
 （まだ実装回じゃないので、ほんとにミニでOK😊）
@@ -212,6 +222,8 @@ function transition(state: DoorState, event: DoorEvent): DoorState {
 ---
 
 ## 6-10. AI活用（この章でめちゃ効くプロンプト）🤖💖
+
+![AI Table Gen](./picture/state_machine_ts_study_006_ai_table_gen.png)
 
 Copilot / Codex / ChatGPT などに投げるならこんな感じ👇✨
 
