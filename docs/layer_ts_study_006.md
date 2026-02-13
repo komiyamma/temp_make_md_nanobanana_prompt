@@ -22,6 +22,8 @@
 
 ### 題材チェック5問✅（YESが多いほど良い！）
 
+![Subject Selection Checklist](./picture/layer_ts_study_006_subject_criteria.png)
+
 * ✅ **ルールが自分の言葉で説明できる**（業務知識いらない）🙂
 * ✅ **状態が少ない**（例：未完了/完了 くらい）🔁
 * ✅ **入力が少ない**（フォーム項目が多いと地獄😇）
@@ -29,6 +31,8 @@
 * ✅ **将来の拡張を妄想できる**（でも今はやらない！）🧠💭
 
 ### 題材のおすすめ3つ🎀
+
+![Recommended Subjects](./picture/layer_ts_study_006_recommended_subjects.png)
 
 * 📝 **ToDo**：王道！状態（未完了/完了）がわかりやすい
 * 📚 **読書ログ**：本のタイトル＋感想、進捗の更新もできる
@@ -71,6 +75,8 @@ mindmap
 
 ## 3) 「できた判定」＝受け入れ条件を作る✅📋
 
+![Given-When-Then Pattern](./picture/layer_ts_study_006_gwt_pattern.png)
+
 レイヤード設計って、**“何が完成か”**が曖昧だと迷子になるの🥺
 だから先に **受け入れ条件（Acceptance Criteria）**を作るよ✨
 
@@ -100,6 +106,8 @@ mindmap
 ---
 
 ### ✅ ストーリー1：追加➕
+
+![User Story: Add](./picture/layer_ts_study_006_story_add.png)
 
 **私は利用者として、ToDoを追加したい。なぜなら、やることを忘れたくないから。**📝✨
 
@@ -136,6 +144,8 @@ mindmap
 ---
 
 ## 5) “盛りたい欲”の受け止め方🅿️😂（YAGNIガード！）
+
+![YAGNI Parking Lot](./picture/layer_ts_study_006_parking_lot.png)
 
 作ってると、こういう欲が出るのよね〜🤣💦
 

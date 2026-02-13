@@ -61,6 +61,8 @@ block-beta
 
 ## 3) いちばん大事：「やること / やらないこと」表✅
 
+![Responsibility Map](./picture/layer_ts_study_003_responsibility_map.png)
+
 ここが“地図の中心”だよ🧭✨
 （迷ったらこの表に戻ってくる！）
 
@@ -121,6 +123,8 @@ sequenceDiagram
 
 ## 5) “何をどこに置く？”仕分けのコツ🧺✨（超実用）
 
+![Sorting Logic Steps](./picture/layer_ts_study_003_sorting_steps.png)
+
 迷ったら、この順番で仕分けしてね👇
 
 ### Step A：機能を「入力→したいこと→結果」に分解する✂️
@@ -153,6 +157,8 @@ sequenceDiagram
 ここから一気に具体化しよ〜😊✨
 
 ### ✅ Presentation（HTTP）🎛️
+
+![Presentation Flow](./picture/layer_ts_study_003_presentation_flow.png)
 
 * 受け取る：`req.body`
 * 返す：`res.json(...)`
@@ -222,6 +228,8 @@ export class AddTodoUseCase {
 ---
 
 ### ✅ Domain（ルールの中心）💎🔒
+
+![Domain Guard](./picture/layer_ts_study_003_domain_guard.png)
 
 * 「無効な状態を作らせない」
 * 「状態遷移を守る」
@@ -324,6 +332,8 @@ src/
 ---
 
 ## 8) よくある“置き間違い”あるある😇（そして直し方）
+
+![Common Layer Mistakes](./picture/layer_ts_study_003_common_mistakes.png)
 
 ### あるある①：Presentationが太る🍔
 

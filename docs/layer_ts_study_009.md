@@ -18,6 +18,8 @@
 
 ## 2. まず“あるある地獄”から🏜️😵‍💫
 
+![Flag Hell Anti-Pattern](./picture/layer_ts_study_009_flag_hell.png)
+
 たとえばToDoで、こんなふうに作りがち👇
 
 * `isDone: boolean`
@@ -37,6 +39,8 @@
 
 ## 3. 状態（state）って何？🧩✨
 
+![State Definition Islands](./picture/layer_ts_study_009_state_definition.png)
+
 **状態 = “今どのフェーズにいるか”** だよ😊
 ドメイン的にはこう考えると気持ちいい👇
 
@@ -52,6 +56,8 @@
 ---
 
 ## 4. まずは“状態遷移表”を1枚作ろう🗒️✨（超重要）
+
+![Transition Table Visual](./picture/layer_ts_study_009_transition_table.png)
 
 ### 例：ToDoの状態と操作🎛️
 
@@ -115,6 +121,8 @@ type TodoError =
 
 ### 6-2. ToDoを“状態ごとに別の型”にする💎
 
+![Discriminated Union Shape](./picture/layer_ts_study_009_discriminated_union.png)
+
 ```ts
 type TodoId = string;
 
@@ -176,6 +184,8 @@ classDiagram
 
 ## 7. “遷移”をドメイン関数として書く🔁✨
 
+![Pure Transition Function](./picture/layer_ts_study_009_pure_transition.png)
+
 ### 7-1. complete（未完了 → 完了）✅
 
 ```ts
@@ -230,6 +240,8 @@ function archive(todo: Todo, now: Date): Result<ArchivedTodo, TodoError> {
 ---
 
 ## 8. “禁止遷移”を可視化できてる？👀✨（ドメインレビュー観点）
+
+![Review Checkpoints](./picture/layer_ts_study_009_review_checkpoints.png)
 
 ここまでできたら、次の質問にYESなら勝ち🏆
 

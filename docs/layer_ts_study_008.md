@@ -12,6 +12,8 @@
 
 ## 1) まずは“あるある事故”から😭💥
 
+![ID Swap Accident](./picture/layer_ts_study_008_id_swap_accident.png)
+
 たとえば ToDo アプリで…
 
 * ToDoのID（TodoId）もユーザーID（UserId）も、どっちも「ただのstring」
@@ -26,6 +28,8 @@
 ---
 
 ## 2) Entity と ValueObject の超ざっくり理解🍓
+
+![Entity vs VO Metaphor](./picture/layer_ts_study_008_entity_vo_metaphor.png)
 
 ![Entity vs VO](./picture/layer_ts_study_008_entity_vs_vo.png)
 
@@ -64,6 +68,8 @@ flowchart TD
 ---
 
 ## 3) 迷ったらコレ！Entity / VO 判定の5問クイズ🎮💡
+
+![Entity vs VO Sorting Quiz](./picture/layer_ts_study_008_sorting_quiz.png)
 
 次の質問に「YES」が多いほど…👇
 
@@ -118,6 +124,8 @@ export class DomainError extends Error {
 
 ### 5-2) VO例①：TodoTitle（空文字禁止とか）📝🔒
 
+![ValueObject Factory](./picture/layer_ts_study_008_vo_factory.png)
+
 ポイントは3つ🎯
 
 * 作るときに検証して、以後は不変✨
@@ -156,6 +164,8 @@ export class TodoTitle {
 ---
 
 ### 5-3) VO例②：ID取り違え事故を防ぐ（ブランド型）🪪🛡️
+
+![Brand Type Protection](./picture/layer_ts_study_008_brand_protection.png)
 
 TypeScriptは構造的型付けなので、ただの string だと混ざりやすいです。公式の “nominal typing” の例でも、こういう「混ぜたくない値」を区別したいケースが紹介されています。([TypeScript][1])
 
@@ -196,6 +206,8 @@ flowchart LR
 ---
 
 ## 6) Entityを作る：TodoItem（主役）🪪🌟
+
+![Entity Methods Gate](./picture/layer_ts_study_008_entity_methods.png)
 
 Entityのコツはこれ👇
 

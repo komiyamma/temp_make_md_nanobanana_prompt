@@ -9,6 +9,8 @@
 
 ## 7.1 まず「不変条件」ってなに？🤔💭
 
+![Invariant Definition](./picture/layer_ts_study_007_invariant_definition.png)
+
 ![Invariant Guard](./picture/layer_ts_study_007_invariant_guard.png)
 
 **不変条件（Invariant）** は「いつ見ても守られててほしいルール」のことだよ✅
@@ -34,6 +36,8 @@ flowchart LR
 ---
 
 ## 7.2 どうやって守るの？基本の考え方3点セット🧰✨
+
+![Protection Steps](./picture/layer_ts_study_007_protection_steps.png)
 
 ### ✅(1) 「生の値」をそのままDomainに入れない🙈
 
@@ -81,6 +85,8 @@ classDiagram
 ---
 
 ## 7.4 方式A：まずは超わかりやすい「Resultで返す」方式🎁✨
+
+![Result Pattern](./picture/layer_ts_study_007_result_pattern.png)
 
 ### 7.4.1 Result型を用意する📦
 
@@ -150,6 +156,8 @@ if (!r.ok) {
 
 ## 7.5 方式B：実行時もガチで隠す「#private クラス」方式🧱🔥
 
+![Private Encapsulation](./picture/layer_ts_study_007_private_encapsulation.png)
+
 ブランド型は軽くて便利なんだけど、**実行時に“本当に隠したい”** ときはクラスが強い💪
 JavaScriptの `#private` は **言語仕様でアクセスできない** のがポイントだよ🔐 ([MDN Web Docs][3])
 
@@ -190,6 +198,8 @@ export class TodoTitle2 {
 ---
 
 ## 7.6 「不変条件」探しのコツ🔎✨（ここ超大事！）
+
+![Finding Invariants](./picture/layer_ts_study_007_finding_invariants.png)
 
 機能を見たら、まずこの3つをチェック✅
 
@@ -265,6 +275,8 @@ export class TodoTitle2 {
 ---
 
 ## 7.10 よくある事故あるある💥（先に潰そ〜！）
+
+![Type Alias Trap](./picture/layer_ts_study_007_type_alias_trap.png)
 
 ### 😵‍💫事故①：`type TodoTitle = string` だけ作って満足
 

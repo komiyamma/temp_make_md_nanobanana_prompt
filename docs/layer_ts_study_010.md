@@ -16,6 +16,8 @@
 
 ## 1) ユースケースって何？🤔➡️「やりたいこと」単位だよ🎮✨
 
+![UseCase Recipe](./picture/layer_ts_study_010_usecase_recipe.png)
+
 ![UseCase Conductor](./picture/layer_ts_study_010_usecase_conductor.png)
 
 ユースケースは一言でいうと…
@@ -40,6 +42,8 @@
 ---
 
 ## 2) Command / Query の気持ち🔁✨（更新と参照を混ぜない💎）
+
+![Command vs Query](./picture/layer_ts_study_010_command_query.png)
 
 ユースケースを作るとき、まずこの分け方を入れると世界が平和になるよ🕊️✨
 
@@ -88,6 +92,8 @@ flowchart LR
 
 ## 3) Application層の“持ち物”🧰✨（何を書いていい場所？）
 
+![Application Coordinator](./picture/layer_ts_study_010_app_coordinator.png)
+
 Application層で書いていいのはこんな役割だよ👇😊
 
 * ✅ **手順**（Domainをどういう順で呼ぶか）
@@ -105,6 +111,8 @@ Application層で書いていいのはこんな役割だよ👇😊
 ---
 
 ## 4) ユースケース実装テンプレ🧩✨（困ったらこれ）
+
+![UseCase Flow Template](./picture/layer_ts_study_010_usecase_flow.png)
 
 ユースケースはだいたいこの形になるよ👇🎮
 
@@ -136,6 +144,8 @@ sequenceDiagram
 ---
 
 ## 5) 例：ToDoを追加する（Command）📝✨
+
+![Add ToDo Action](./picture/layer_ts_study_010_add_todo_action.png)
 
 ここでは最小構成で、**ApplicationがDomainを呼ぶ順番**を体感しよう😊
 （Domain側は「タイトル空は禁止」みたいな不変条件を持ってる想定💎）
@@ -250,6 +260,8 @@ export class GetTodoListQuery {
 ---
 
 ## 7) ありがち事故集🚑💥（回避ワザ付き）
+
+![Fat UseCase Accident](./picture/layer_ts_study_010_fat_usecase.png)
 
 ### 事故①：Domainに手順を書き始める😵‍💫
 
