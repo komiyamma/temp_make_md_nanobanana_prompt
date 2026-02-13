@@ -1,17 +1,5 @@
 | ID | File Name | Proposed Image Filename | Relative Link Path | Prompt | Insertion Point |
 |---|---|---|---|---|---|
-  List references or packages of a .NET project.
-Usage:
-  dotnet list [<PROJECT | SOLUTION>] [command] [options]
-Arguments:
-  <PROJECT | SOLUTION>  The project or solution file to operate on. If a file
-                        is not specified, the command will search the current
-                        directory for one. [default: /app/]
-Options:
-  -?, -h, --help  Show command line help.
-Commands:
-  package    List all package references of the project or solution.
-  reference  List all project-to-project references of the project. shining into a dark cave, revealing hidden dependency spiders (Libs) hanging from the ceiling.<br>3. Action: Illuminating.<br>4. Layout: Cave scene. | ## ステップ1：依存を「見える化」する👀 |
 | 1 | test_ts_study_000.md | test_ts_study_000_input_output_types.png | ./picture/test_ts_study_000_input_output_types.png | **Theme**: Input vs Output<br><br>**Labels to Render**:<br>- Rock: "Input"<br>- Gem: "Output"<br><br>**Visual Details**:<br>1. Core Concept: Transformation.<br>2. Metaphor: A rough rock (Input data) enters a machine and a polished gem (Domain Object) comes out.<br>3. Action: Polishing.<br>4. Layout: Transformation flow. | // --- 注文アイテム（入力） --- |
 | 2 | solid_cs_index.md | solid_cs_index_mini_ec_theme.png | ./picture/solid_cs_index_mini_ec_theme.png | **Theme**: Mini EC Project Overview<br><br>**Labels to Render**:<br>- Order: "注文"<br>- Payment: "支払い"<br>- Shipping: "発送"<br><br>**Visual Details**:<br>1. Core Concept: E-commerce workflow.<br>2. Metaphor: A clean flow from a shopping cart to a credit card to a delivery truck.<br>3. Action: Arrows connecting the three stages.<br>4. Layout: Horizontal flow from left to right. | # 0. この教材で作る題材（ずっと使うサンプル）📦✨ |
 | 3 | solid_cs_index.md | solid_cs_index_tech_stack_2026.png | ./picture/solid_cs_index_tech_stack_2026.png | **Theme**: Modern Tech Stack<br><br>**Labels to Render**:<br>- IDE: "Visual Studio 2026"<br>- Framework: ".NET 10"<br>- Partner: "AI Copilot"<br><br>**Visual Details**:<br>1. Core Concept: Development Environment.<br>2. Metaphor: A sleek toolbox or dashboard containing the three key technologies.<br>3. Action: Tools ready to be used.<br>4. Layout: Balanced composition with the three icons/logos arranged harmoniously. | ## 2章：2026最新版の開発環境セットアップ🧰🪟 |
