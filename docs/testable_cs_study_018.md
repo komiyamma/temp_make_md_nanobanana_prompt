@@ -19,6 +19,8 @@
 
 ## 2) 外部APIが “テストの敵” な理由 😈🌪️
 
+![testable_cs_study_018_api_pain_points.png](./picture/testable_cs_study_018_api_pain_points.png)
+
 外の世界はコントロール不能…！たとえば👇
 
 * ネットワークが不安定でタイムアウトする 🐢💤
@@ -32,6 +34,8 @@
 ---
 
 ## 3) まず “やらない形” 🙅‍♀️💣（混ぜるとつらい）
+
+![testable_cs_study_018_socket_exhaustion.png](./picture/testable_cs_study_018_socket_exhaustion.png)
 
 * 重要ロジックの中で `new HttpClient()` して叩く
 * 重要ロジックが `HttpResponseMessage` やステータスコードの都合に引きずられる
@@ -71,6 +75,8 @@
 ---
 
 ## 5-1) 境界（インターフェース）を作る 🧩📮
+
+![testable_cs_study_018_return_type_simplification.png](./picture/testable_cs_study_018_return_type_simplification.png)
 
 ```csharp
 public interface IExchangeRateApi
@@ -117,6 +123,8 @@ public sealed class CurrencyConverter
 ---
 
 ## 5-3) 外（HTTP実装）を書く 🌐🔧
+
+![testable_cs_study_018_http_client_factory.png](./picture/testable_cs_study_018_http_client_factory.png)
 
 `HttpClient` は **IHttpClientFactory（AddHttpClient）** 経由で使うのが定番です。 ([Microsoft Learn][3])
 
@@ -165,6 +173,8 @@ public sealed class ExchangeRateApiClient : IExchangeRateApi
 
 ## 6-1) Typed Client として登録する（おすすめ）🧩
 
+![testable_cs_study_018_resilience_shield.png](./picture/testable_cs_study_018_resilience_shield.png)
+
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -194,6 +204,8 @@ var app = builder.Build();
 ## 7) テスト戦略：単体はFake、結合は少しだけ 🤏🧪✨
 
 ## 7-1) 中（ルール）の単体テスト：Fakeで一瞬 🎉⚡
+
+![testable_cs_study_018_fake_api_swap.png](./picture/testable_cs_study_018_fake_api_swap.png)
 
 ```csharp
 public sealed class FakeExchangeRateApi : IExchangeRateApi
@@ -322,6 +334,8 @@ public class ExchangeRateApiClientTests
   ➡️ Typed client を singleton に突っ込むのも注意 ⚠️ ([Microsoft Learn][7])
 
 ## 落とし穴C：リトライしすぎて相手を殴る 👊😵
+
+![testable_cs_study_018_infinite_retry.png](./picture/testable_cs_study_018_infinite_retry.png)
 
 * 回復性は大事だけど、**無限リトライ**とかは逆効果
   ➡️ 標準パイプラインの考え方（制限/タイムアウト/遮断）を使うと安全寄り 💪 ([Microsoft for Developers][4])

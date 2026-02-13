@@ -6,6 +6,8 @@
 
 ## 17.1 まず、DB直アクセスが“しんどい理由”🐘💦
 
+![testable_cs_study_017_direct_db_pain.png](./picture/testable_cs_study_017_direct_db_pain.png)
+
 DBをロジックのど真ん中で直に叩くと…👇
 
 * テストが遅い（DB起動・接続・初期化が重い）🐢
@@ -19,6 +21,8 @@ DBをロジックのど真ん中で直に叩くと…👇
 ---
 
 ## 17.2 Repositoryってなに？（超ざっくり）🧩😊
+
+![testable_cs_study_017_repository_window.png](./picture/testable_cs_study_017_repository_window.png)
 
 Repositoryは一言でいうと…
 
@@ -64,6 +68,8 @@ DBは後でつなぐ！🔌
 ---
 
 ## 17.5 まずは「ドメイン（ルール）」をピュアに書く🌿✨
+
+![testable_cs_study_017_pure_domain_logic.png](./picture/testable_cs_study_017_pure_domain_logic.png)
 
 ```csharp
 public sealed record MemberId(Guid Value);
@@ -119,6 +125,8 @@ public interface IMemberRepository
 
 ## 17.7 ユースケース（アプリの処理）でRepositoryを使う🧰✨
 
+![testable_cs_study_017_usecase_flow.png](./picture/testable_cs_study_017_usecase_flow.png)
+
 ```csharp
 public sealed class AddPointsUseCase
 {
@@ -147,6 +155,8 @@ public sealed class AddPointsUseCase
 ---
 
 ## 17.8 テストでは“インメモリRepository”に差し替える🎭🧪
+
+![testable_cs_study_017_test_double_swap.png](./picture/testable_cs_study_017_test_double_swap.png)
 
 DBなしでテストできるのが、今日の勝ち筋！🏆✨
 
@@ -299,10 +309,14 @@ useCase.Execute(new MemberId(Guid.NewGuid()), 100);
 
 ## ❌ 1) Repositoryが“なんでも屋”になる
 
+![testable_cs_study_017_god_repository.png](./picture/testable_cs_study_017_god_repository.png)
+
 `GetAll()` とか `SearchAny()` とか増やしすぎると地獄👻
 ➡️ **ユースケースが必要な操作だけ**を足すのが安全🙆‍♀️
 
 ## ❌ 2) `IQueryable` を返してしまう
+
+![testable_cs_study_017_iqueryable_leak.png](./picture/testable_cs_study_017_iqueryable_leak.png)
 
 内側がEFのクエリ仕様に依存しちゃう😢
 ➡️ **内側にORMの型を漏らさない**が鉄則🛡️

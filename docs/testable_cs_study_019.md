@@ -8,6 +8,8 @@
 
 ## 19-1. UIは「外の世界」＝I/Oだよ！🌍🔌
 
+![testable_cs_study_019_ui_is_io.png](./picture/testable_cs_study_019_ui_is_io.png)
+
 UIって、やってることを分解すると超シンプル👇
 
 * ユーザー入力を受け取る（クリック・文字・選択）🖱️⌨️
@@ -19,6 +21,8 @@ UIって、やってることを分解すると超シンプル👇
 ---
 
 ## 19-2. UIにロジック置くと何が起きる？👻💥
+
+![testable_cs_study_019_fat_ui_nightmare.png](./picture/testable_cs_study_019_fat_ui_nightmare.png)
 
 UIコード（WinFormsのイベント、WPFのCode-behind、BlazorのUI側）に、判断が増えると…😵‍💫
 
@@ -33,6 +37,8 @@ UIコード（WinFormsのイベント、WPFのCode-behind、BlazorのUI側）に
 ---
 
 ## 19-3. “薄いUI”の正体：UIは変換・表示だけ🪄🖥️
+
+![testable_cs_study_019_thin_ui_filter.png](./picture/testable_cs_study_019_thin_ui_filter.png)
 
 UIに残してOKなもの（おすすめ）👇😊
 
@@ -89,6 +95,8 @@ UIから追い出したいもの（ここからが“判断”）👇🚫
 
 ## 19-6. “中身（ルール）”をピュアに作る🧼✨
 
+![testable_cs_study_019_pure_logic_isolation.png](./picture/testable_cs_study_019_pure_logic_isolation.png)
+
 ```csharp
 public enum MemberRank
 {
@@ -121,6 +129,8 @@ public static class PointsRule
 ---
 
 ## 19-7. UIアダプタ（Presenter）で「文字→型」変換する🌉🔁
+
+![testable_cs_study_019_presenter_translation.png](./picture/testable_cs_study_019_presenter_translation.png)
 
 UIから来るのはだいたい **string** だからね😅
 それを中で使える形にして、UseCase/Ruleを呼ぶよ✨
@@ -225,6 +235,8 @@ public partial class PointsForm : Form, IPointsView
 
 ## 19-9. 単体テスト：UI無しでPresenterもテストできる🎭🧪
 
+![testable_cs_study_019_fake_view_testing.png](./picture/testable_cs_study_019_fake_view_testing.png)
+
 フォームを起動しなくてOK！最高！⚡
 
 ```csharp
@@ -289,6 +301,8 @@ ViewModelは `INotifyPropertyChanged` とかでUIと繋ぐけど、
 ---
 
 ## 19-11. UIテスト（E2E）は“少なめ”が正解💡🚦
+
+![testable_cs_study_019_test_balance.png](./picture/testable_cs_study_019_test_balance.png)
 
 UI自動化テストって、できるけど重い＆壊れやすい😵‍💫
 だからおすすめはこのバランス👇
