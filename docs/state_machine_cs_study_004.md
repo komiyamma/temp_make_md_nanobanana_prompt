@@ -20,6 +20,8 @@
 
 ### ✅ 状態（State）ってなに？🧊
 
+![State Definition Ice](./picture/state_machine_cs_study_004_state_definition_ice.png)
+
 ![004 Three Pillars](./picture/state_machine_cs_study_004_three_pillars.png)
 
 ```mermaid
@@ -53,6 +55,8 @@ mindmap
 
 ### ✅ イベント（Event）ってなに？⚡
 
+![Event Definition Lightning](./picture/state_machine_cs_study_004_event_definition_lightning.png)
+
 **一瞬で起きる “きっかけ”** のことだよ😊
 例：
 
@@ -67,6 +71,8 @@ mindmap
 ---
 
 ### ✅ 遷移（Transition）ってなに？➡️
+
+![Transition Bridge](./picture/state_machine_cs_study_004_transition_bridge.png)
 
 **イベントが来たときに、状態がどう変わるか**のルールだよ😊
 基本形はこれ👇✨
@@ -175,6 +181,8 @@ graph LR
 
 ## 6) 演習①：これは状態？イベント？クイズ🎯💖
 
+![State vs Event Quiz](./picture/state_machine_cs_study_004_state_vs_event_quiz.png)
+
 次を「状態🧊」か「イベント⚡」に分けてね😊
 （直感でOK！あとで答え合わせ✨）
 
@@ -200,6 +208,8 @@ graph LR
 ---
 
 ## 7) 演習②：遷移を“日本語で3本”書いてみよう📝➡️
+
+![Transition Sentence Card](./picture/state_machine_cs_study_004_transition_sentence_card.png)
 
 下を埋めてみてね😊（答えは1つじゃないよ✨）
 
