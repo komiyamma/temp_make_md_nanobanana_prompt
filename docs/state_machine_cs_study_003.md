@@ -20,6 +20,8 @@ C# 14 の新機能は Visual Studio 2026 または .NET 10 SDK で試せる、�
 
 ## まず結論：フラグ地獄の正体👻
 
+![Flag Explosion](./picture/state_machine_cs_study_003_flag_explosion.png)
+
 ![003 Comparison](./picture/state_machine_cs_study_003_comparison.png)
 
 ```mermaid
@@ -38,6 +40,8 @@ mindmap
       矛盾した状態（バグ）が
       防げない...🧨
 ```
+
+![Contradictory State Alert](./picture/state_machine_cs_study_003_contradictory_state_alert.png)
 
 
 boolフラグを増やすと、状態の組み合わせが爆発します💥
@@ -73,6 +77,8 @@ flowchart TD
 ### 1) クラスを作る（フラグ乱立バージョン）🚩🚩🚩
 
 下のコードをそのまま貼って実行してみてね（わざとツッコミどころ多め）😇
+
+![Order If Hell Class](./picture/state_machine_cs_study_003_order_if_hell_class.png)
 
 ```csharp
 using System;
@@ -291,9 +297,13 @@ public static class Program
 
 ## 演習②：破綻点を3つ探す🔎🧨（この章のメイン！）
 
+![Nested If Maze](./picture/state_machine_cs_study_003_nested_if_maze.png)
+
 上のコード、**実行ログとDump**を見ながら、次のどれかを最低3つ見つけてね🫶
 
 ### 破綻点候補（見つけやすい順）🎯
+
+![Bug Discovery Magnifier](./picture/state_machine_cs_study_003_bug_discovery_magnifier.png)
 
 * ✅ **矛盾状態が作れる**：Draft と Submitted が両方 true のまま…😇
 * ✅ **順序依存バグ**：Ready を先に立てられる（Cooking前なのにReady）🍳❌📣

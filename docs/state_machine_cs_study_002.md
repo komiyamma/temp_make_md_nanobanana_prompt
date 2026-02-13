@@ -29,6 +29,8 @@ C# 14 は .NET 10 でサポートされるよ、って明記されてるので�
 
 ### 2-1) Visual Studio 2026 のインストール🧰
 
+![Visual Studio Workload](./picture/state_machine_cs_study_002_vs_workload_selection.png)
+
 * インストール中に「ワークロード（Workload）」を選ぶ画面が出ます👀
 * Console / Library / Test を回すだけなら、まずは **“.NET系の開発ワークロード”** が入ってればOKです🙆‍♀️
 
@@ -41,6 +43,8 @@ C# 14 は .NET 10 でサポートされるよ、って明記されてるので�
 ---
 
 ## 3) 動作確認：`dotnet` が使えるかチェック✅🧪
+
+![Dotnet Info Terminal](./picture/state_machine_cs_study_002_dotnet_info_terminal.png)
 
 Windows のターミナル（PowerShell など）で確認します🖥️✨
 
@@ -88,6 +92,8 @@ graph TD
 
 ### 4-2) 作り方（GUI手順）🖱️✨
 
+![Solution Structure Tree](./picture/state_machine_cs_study_002_solution_structure_tree.png)
+
 1. Visual Studio を起動
 2. **新規作成** → **空のソリューション（Blank Solution）** を作る
 
@@ -99,6 +105,8 @@ graph TD
    * Test：`GakushokuOrder.Tests`（xUnit / MSTest どれでもOK。ここでは例として xUnit を想定🧪）
 
 ### 4-3) 参照をつなぐ（App → Domain）🔗✨
+
+![Reference Add Dialog](./picture/state_machine_cs_study_002_reference_add_dialog.png)
 
 * `GakushokuOrder.App` を右クリック
   → **参照の追加**
@@ -162,12 +170,16 @@ sequenceDiagram
 
 ### 5-3) 実行✅
 
+![Console Draft Output](./picture/state_machine_cs_study_002_console_draft_output.png)
+
 * Visual Studio 上で **起動（Ctrl+F5）** すると Console が出ます🎉
 * `📌 現在の状態: Draft` が出たらクリア✅✨
 
 ---
 
 ## 6) テストが走るか確認🧪✨（ここまでできると強い！）
+
+![Test Runner Success](./picture/state_machine_cs_study_002_test_runner_success.png)
 
 `GakushokuOrder.Tests` にテストを1本だけ置いて、通るか見ます😊
 
