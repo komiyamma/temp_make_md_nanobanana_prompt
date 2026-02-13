@@ -6,6 +6,8 @@
 
 ## 第1章：YAGNIってなに？「作らない勇気」の入門 🌱🙂
 
+![YAGNI Definition](./picture/yagni_ts_index_definition.png)
+
 **ねらい🎯**：YAGNIを“誤解なく”説明できるようになる
 
 * YAGNIの一言：**「今必要なものだけ作る」**🧩
@@ -28,6 +30,8 @@
 ---
 
 ## 第2章：作り込みすぎのサインを見抜く 👀🚨
+
+![Over-Engineering Sign](./picture/yagni_ts_index_warning_sign.png)
 
 **ねらい🎯**：「それ今いる？」を見抜けるようになる
 
@@ -53,6 +57,8 @@
 
 ## 第3章：「今必要」を決める技術（MVPとスコープの切り方）✂️🗺️
 
+![Scope Cutting](./picture/yagni_ts_index_scope_cutting.png)
+
 **ねらい🎯**：小さく完成させる判断ができるようになる
 
 * MVP（最小で価値が出る形）を決める🍰
@@ -77,6 +83,8 @@
 
 ## 第4章：YAGNIを支える実装スタイル（小さく作って育てる）🧱🌿
 
+![Small Implementation](./picture/yagni_ts_index_small_impl.png)
+
 **ねらい🎯**：「作らない」と「後で詰む」を分ける土台を作る
 
 * “後で足せる最小設計”ってどう作る？🧰
@@ -99,6 +107,8 @@
 ---
 
 ## 第5章：TypeScriptでやりがちな“未来用設計”を安全に先送りする 🧯🧠
+
+![TS Specifics](./picture/yagni_ts_index_ts_shield.png)
 
 **ねらい🎯**：型・共通化・レイヤーの作り込みを回避できるようになる
 
@@ -124,6 +134,8 @@
 
 ## 第6章：YAGNIで進める開発フロー（基本）🚶‍♀️✨
 
+![Development Flow](./picture/yagni_ts_index_flow_steps.png)
+
 **ねらい🎯**：YAGNIを“手順”として回せるようになる
 
 * 進め方テンプレ📌
@@ -141,6 +153,8 @@
 ---
 
 ## 第7章：AIと一緒にYAGNI（盛らせない使い方）🤖🧯
+
+![AI Interaction](./picture/yagni_ts_index_ai_robot.png)
 
 **ねらい🎯**：AIを味方にしつつ、過剰設計を防ぐ
 

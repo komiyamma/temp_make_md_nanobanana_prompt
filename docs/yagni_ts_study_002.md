@@ -39,6 +39,8 @@
 
 ### サイン①：「汎用にしといたよ！」が増え始める（早すぎる抽象化）🧰😵‍💫
 
+![Swiss Army Knife Syndrome](./picture/yagni_ts_study_002_swiss_knife.png)
+
 **症状**
 
 * `utils/` や `helpers/` が増える
@@ -119,6 +121,8 @@ type Action =
 
 ### サイン③：Genericsを使いたくてウズウズする（Generics芸）🧬🎭
 
+![Generics Flowchart](./picture/yagni_ts_study_002_generics_flow.png)
+
 **症状**
 
 * `T`, `K`, `V` が増える
@@ -147,6 +151,8 @@ flowchart TD
 ---
 
 ### サイン④：interfaceが増えすぎる（差し替え前提の乱立）🪓🧱
+
+![Interface Axe](./picture/yagni_ts_study_002_interface_axe.png)
 
 **症状**
 
@@ -182,6 +188,8 @@ export async function fetchMemos(): Promise<Memo[]> {
 ---
 
 ### サイン⑤：APIクライアントを完璧にしてからUIに行けない😇📡
+
+![API Antenna](./picture/yagni_ts_study_002_api_antenna.png)
 
 **症状**
 
@@ -230,6 +238,8 @@ export async function fetchMemos(): Promise<Memo[]> {
 ---
 
 ## 3. “今必要” を決める2つの基準🧭✅
+
+![Criteria Scale](./picture/yagni_ts_study_002_criteria_scale.png)
 
 ここ、超大事だよ〜！
 
@@ -283,6 +293,8 @@ H. リトライ/キャッシュ/メトリクス📊
 ---
 
 ## 5. AI活用🤖：盛られた設計を“削る”ためのプロンプト集✂️✨
+
+![AI Red Light](./picture/yagni_ts_study_002_ai_red_light.png)
 
 AIって、放っておくと **善意で盛る** ことがあるのね😂（立派にしたくなる…）
 
