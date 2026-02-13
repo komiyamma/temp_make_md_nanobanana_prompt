@@ -29,6 +29,8 @@
 
 ### ✅ 嬉しいこと
 
+![Order vs Chaos](./picture/state_machine_ts_study_021_table_vs_ifelse.png)
+
 * **仕様が1か所に集まる**（迷子にならない）🧭
 * 「この状態でこのイベント来たらどうなる？」が **検索なしで見える**🔍
 * 差分（git）で **仕様変更が一目で分かる**👀✨
@@ -42,6 +44,8 @@
 ---
 
 ## 4) 今日の題材：フォーム送信の状態（例）📨✨
+
+![Form Lifecycle](./picture/state_machine_ts_study_021_form_flow.png)
 
 ここでは例として、よくあるやつ！
 
@@ -68,6 +72,8 @@
 ![Transition Table Record](./picture/state_machine_ts_study_021_transition_record.png)
 
 ### Record の気持ち😊
+
+![Nested Dictionary](./picture/state_machine_ts_study_021_record_structure.png)
 
 * `Record<K, V>` は「**キーがKで、値がVの辞書**」って意味だよ🗂️
 * `Partial<T>` は「**全部 optional（あってもなくてもOK）**」って意味だよ🧸
@@ -172,6 +178,8 @@ const transitions = {
 
 ## 7) 遷移表を使って nextState を作る🚦➡️✨
 
+![The Reducer Machine](./picture/state_machine_ts_study_021_reduce_logic.png)
+
 「表がある」＝「遷移ロジックがシンプル」になるよ😊
 
 ```ts
@@ -250,6 +258,8 @@ function reduce(machine: Machine, event: Event): Machine {
 ---
 
 ## 11) よくあるつまずき😭➡️😊
+
+![Safety Net](./picture/state_machine_ts_study_021_satisfies_safety.png)
 
 * **`as any` を使っちゃう**
   → それやると型安全が消える〜〜😵‍💫（困ったら型を一緒に整えよ✨）

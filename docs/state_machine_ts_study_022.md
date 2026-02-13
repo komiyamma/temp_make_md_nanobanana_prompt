@@ -34,6 +34,8 @@
 
 ## 3. “禁止遷移を止める”ための基本戦略🧩🔒
 
+![Security Gates](./picture/state_machine_ts_study_022_two_gates.png)
+
 やり方は大きく2段階にするとラクだよ😊✨
 
 ### 🥚段階1：**遷移表そのものの漏れを止める**（書き忘れ防止）
@@ -74,6 +76,8 @@ export type EventType = Event["type"];
 ## 5. 段階1：遷移表の“書き忘れ”をコンパイルで止める📋✅✨
 
 ### 5.1 「状態ごとに許可するイベント」を宣言する🛡️
+
+![Access Control List](./picture/state_machine_ts_study_022_allowed_map.png)
 
 ここが最重要ポイントだよ〜！💖
 **「この状態では、どのイベントが“正当な入力”なの？」**を先に決めちゃう✨
@@ -155,6 +159,8 @@ export type AllowedEvent<S extends State> =
 
 ### 6.2 send関数：状態とイベントの組み合わせを型で縛る🔒
 
+![Shape Sorter](./picture/state_machine_ts_study_022_send_filter.png)
+
 ```ts
 export function send<S extends State>(state: S, event: AllowedEvent<S>): State {
   // event.type は「その state で許可された type」だけになる
@@ -191,6 +197,8 @@ flowchart TD
 
 ### 7.1 state が “ただの State” だと弱くなる
 
+![Blurred Vision](./picture/state_machine_ts_study_022_widening.png)
+
 例えばこういうとき👇
 
 ```ts
@@ -226,6 +234,8 @@ function onRetryClick(state: State) {
 ---
 
 ## 8. switch の“網羅性チェック”も一緒にやると最強🧠⚔️✨
+
+![The Final Guard](./picture/state_machine_ts_study_022_exhaustiveness.png)
 
 状態やイベントが増えたとき、switch の case 書き忘れも怖いよね😱
 そこで **never を使った網羅性チェック**が便利💡

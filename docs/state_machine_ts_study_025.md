@@ -7,6 +7,8 @@
 
 ## 1) まず結論：非同期は「結果をイベントで戻す」だけ！📮✨
 
+![The Loop](./picture/state_machine_ts_study_025_event_loop.png)
+
 非同期処理（fetchとか）は、状態機械の外で起きるよね。
 だから状態機械側では、
 
@@ -110,6 +112,8 @@ sequenceDiagram
 
 ## 5) 遷移表（超重要）📋✨
 
+![ID Check](./picture/state_machine_ts_study_025_guard_logic.png)
+
 例として「送信まわり」だけ抜き出すね😊
 
 | 現在の状態      | イベント                 | ガード          | 次の状態       | Effect（外でやること）                                                |
@@ -163,6 +167,8 @@ const newRequestId = (): RequestId => crypto.randomUUID();
 ---
 
 ### 6-2. reducer：状態遷移だけを書く（副作用ゼロ）✨
+
+![Command Center](./picture/state_machine_ts_study_025_submitting_handling.png)
 
 ```ts
 function reduce(state: State, event: Event): ReduceResult {
@@ -230,6 +236,8 @@ function reduce(state: State, event: Event): ReduceResult {
 ---
 
 ## 7) Effect Runner：fetch + AbortController + タイマー ⏳🛑
+
+![Control Room](./picture/state_machine_ts_study_025_runner_internals.png)
 
 `fetch` は `AbortController` の `signal` を渡すとキャンセル可能になるよ🧯
 そして `abort()` すると `AbortError` で失敗になる（＝catchに入る）📌 ([MDN Web Docs][1])
