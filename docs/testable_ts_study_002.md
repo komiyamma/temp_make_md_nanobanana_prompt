@@ -40,14 +40,24 @@
 
 ## 3) I/Oっぽいものカタログ 🗂️
 
+![testable_ts_study_002_checklist.png](./picture/testable_ts_study_002_checklist.png)
+
 👀（ここ超大事！）「これ見たらI/O！」っていう定番リストを作っちゃおう😊✨
 
 
 
-## 3.1 ネットワーク系 🌐* HTTP/API：`fetch()` / axios など
+## 3.1 ネットワーク系 🌐
+
+![testable_ts_study_002_network_bridge.png](./picture/testable_ts_study_002_network_bridge.png)
+
+* HTTP/API：`fetch()` / axios など
   Node.js だと `fetch` はグローバルで使えて、最近のNodeでは“experimental外れた”扱いになってるよ📌 ([nodejs.org][1])
 
-## 3.2 永続化系 🗄️* DBアクセス（SELECT/INSERT/UPDATE）
+## 3.2 永続化系 🗄️
+
+![testable_ts_study_002_db_weight.png](./picture/testable_ts_study_002_db_weight.png)
+
+* DBアクセス（SELECT/INSERT/UPDATE）
 
 
 * Redis / KVストア
@@ -58,7 +68,11 @@
 
 * 画像アップロード、ログファイル出力
 
-## 3.4 “見落としがちI/O” 🌀（地雷ゾーン）* 時刻：`Date`, `Date.now()` ⏰
+## 3.4 “見落としがちI/O” 🌀（地雷ゾーン）
+
+![testable_ts_study_002_time_instability.png](./picture/testable_ts_study_002_time_instability.png)
+
+* 時刻：`Date`, `Date.now()` ⏰
 
 
 * 乱数：`Math.random()` 🎲
@@ -70,6 +84,8 @@
 ---
 
 ## 4) なぜI/Oと副作用が“悪者扱い”されるの？😈➡️
+
+![testable_ts_study_002_env_puzzle.png](./picture/testable_ts_study_002_env_puzzle.png)
 
 😇I/Oそのものが悪いわけじゃないよ！必要だからね😊
 ただし **「ロジックの中心に混ぜる」と困る** の💦
@@ -88,7 +104,11 @@
 
 ---
 
-## 5) ミニ実例：I/Oとロジックを“仕分け”してみよ🧺🧠## 例：一見ふつうの処理（でもI/Oまみれ）
+## 5) ミニ実例：I/Oとロジックを“仕分け”してみよ🧺🧠
+
+![testable_ts_study_002_midnight_bug.png](./picture/testable_ts_study_002_midnight_bug.png)
+
+## 例：一見ふつうの処理（でもI/Oまみれ）
 
 😇➡️😱
 
@@ -159,6 +179,8 @@ export async function placeOrder(userId: string, amount: number) {
 ---
 
 ## 8) AI（Copilot/Codex）
+
+![testable_ts_study_002_ai_scanner.png](./picture/testable_ts_study_002_ai_scanner.png)
 
 に手伝ってもらうプロンプト例 🤖🧁そのまま貼ってOK系だよ✨
 

@@ -1,5 +1,10 @@
 
 # テスタブル設計（I/O境界の分離）30章アウトライン🌟🧪
+
+![testable_ts_index_world_overview.png](./picture/testable_ts_index_world_overview.png)
+
+![testable_ts_index_roadmap.png](./picture/testable_ts_index_roadmap.png)
+
 ## 第1章：はじめに（この講座のゴール）🎯😊
 * ねらい：テスタブル設計＝「怖くない変更」を作る感覚をつかむ✨
 * 学ぶ：I/O境界の分離って何？どこが嬉しい？🧠
@@ -8,6 +13,9 @@
 ---
 
 ## 第2章：I/Oと副作用ってなに？⚡🚪
+
+![testable_ts_index_unstable_chaos.png](./picture/testable_ts_index_unstable_chaos.png)
+
 * ねらい：「I/O＝外の世界」を言語化できるようにする
 * 学ぶ：HTTP/DB/ファイル/時刻/乱数/環境変数/ログ…ぜんぶI/O寄り🌀
 * ハンズオン：自分が書きがちな処理を「I/O」「ロジック」に分ける📝
@@ -22,6 +30,9 @@
 ---
 
 ## 第4章：「中心（ロジック）」と「外側（I/O）」モデル🏠➡️🌍
+
+![testable_ts_index_io_separation.png](./picture/testable_ts_index_io_separation.png)
+
 * ねらい：頭の中に設計の地図を作る
 * 学ぶ：中心＝純粋ロジック／外側＝アダプタ、境界＝インターフェース📌
 * ハンズオン：図を描く練習（中心・外側・境界線）🖊️
@@ -50,6 +61,9 @@
 ---
 
 ## 第8章：純粋関数の作り方（I/Oゼロの中心）🍰✨
+
+![testable_ts_index_pure_function.png](./picture/testable_ts_index_pure_function.png)
+
 * ねらい：中心を“きれい”にする技術
 * 学ぶ：副作用を持たない、同じ入力なら同じ出力、例外の扱い方の基本
 * ハンズオン：文字列整形・料金計算など“日常ネタ”で練習🍩💰
@@ -197,6 +211,9 @@
 ---
 
 ## 第29章：AI拡張と上手に進める（丸投げしないコツ）🤖🎀
+
+![testable_ts_index_ai_pair.png](./picture/testable_ts_index_ai_pair.png)
+
 * ねらい：AIで速くなるけど設計は自分が握る
 * 学ぶ：AIに頼るところ（テストケース列挙、モック下書き、命名案）📝
   逆に頼らないところ（境界判断・要件解釈の丸投げ）🙅‍♀️

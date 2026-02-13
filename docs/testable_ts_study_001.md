@@ -9,6 +9,8 @@
 
 ## 1) この講座のゴールはこれ！
 
+![testable_ts_study_001_goal_architecture.png](./picture/testable_ts_study_001_goal_architecture.png)
+
 🎓🌈### ゴール（最終的にこうなりたい）* 変更が来ても「怖くない😌」コードを書けるようになる
 
 
@@ -26,6 +28,8 @@
 
 ## 2) テスタブル設計ってなに？🧪✨
 
+![testable_ts_study_001_benefits_shield.png](./picture/testable_ts_study_001_benefits_shield.png)
+
 （ざっくり超大事）テスタブル設計は、ひとことで言うと…
 
 > **「テストを書きやすい形に整えておく設計」＝「変更が怖くない設計」**🎀
@@ -41,6 +45,8 @@
 ---
 
 ## 3) I/O境界の分離って何？🚪
+
+![testable_ts_study_001_logic_io_split.png](./picture/testable_ts_study_001_logic_io_split.png)
 
 ⚡（この講座の主役）### I/Oってなに？I/Oは「外の世界」とのやり取りだよ🌍
 たとえば👇
@@ -81,10 +87,16 @@
 
 ---
 
-## 5) ハンズオン：テストしにくいコードを“眺めて”つらさを体験😵‍💫👀ここは、**あえて直さない**よ！
+## 5) ハンズオン：テストしにくいコードを“眺めて”つらさを体験😵‍💫👀
+
+![testable_ts_study_001_untestable_luck.png](./picture/testable_ts_study_001_untestable_luck.png)
+
+ここは、**あえて直さない**よ！
 「どこがつらいのか」を観察する練習✨
 
 ### サンプル：いろいろ混ざっちゃったコード例🍝💥
+
+![testable_ts_study_001_bad_vs_good.png](./picture/testable_ts_study_001_bad_vs_good.png)
 
 ```ts
 // orderService.ts（※わざと混ぜ混ぜの例）
@@ -153,6 +165,8 @@ export async function createReceiptText(order: Order): Promise<string> {
 
 ## 6) AI（Copilot/Codex）
 
+![testable_ts_study_001_ai_assistant.png](./picture/testable_ts_study_001_ai_assistant.png)
+
 を使って“観察”してみよう🤖🎀（短いお遊び）AIに「修正」じゃなくて「分類」を頼むのがコツだよ✨
 たとえばこんな感じ👇
 
@@ -165,6 +179,8 @@ export async function createReceiptText(order: Order): Promise<string> {
 ---
 
 ## 7) まとめ（今日の1分）
+
+![testable_ts_study_001_future_happy.png](./picture/testable_ts_study_001_future_happy.png)
 
 ⏱️🌸* テスタブル設計は「変更が怖くない」を作るための設計🎯
 
