@@ -15,6 +15,8 @@
 
 ## 1) そもそも「依存」ってなに？🤔🧩
 
+![testable_cs_study_010_dependency_hooks.png](./picture/testable_cs_study_010_dependency_hooks.png)
+
 超ざっくり言うと…
 
 > **ある処理が、他のモノ（クラス・関数・外部サービス）に頼って動くこと**＝依存
@@ -32,6 +34,8 @@
 ---
 
 ## 2) `new` は悪じゃない🙆‍♀️ でも「場所」が大事📍
+
+![testable_cs_study_010_safe_vs_scary_baskets.png](./picture/testable_cs_study_010_safe_vs_scary_baskets.png)
 
 ## ✅ 安全な `new`（だいたいOK）😊
 
@@ -54,6 +58,8 @@
 
 ## 3) 「重要ロジックの中の new」が困る理由💥
 
+![testable_cs_study_010_new_problems.png](./picture/testable_cs_study_010_new_problems.png)
+
 ## 理由A：テストで“偽物”にできない🎭
 
 `new` しちゃうと、その瞬間に **本物** が確定しちゃうの😭
@@ -72,6 +78,8 @@
 ---
 
 ## 4) 体験：`new` が混ざるとテストがつらい😵‍💫💥
+
+![testable_cs_study_010_unstable_greeting.png](./picture/testable_cs_study_010_unstable_greeting.png)
 
 ## ❌ ダメ寄り例：時間＆乱数が直で混ざってる
 
@@ -182,6 +190,8 @@ public void BuildMessage_時間と乱数を固定できる()
 
 ## 7) じゃあ `new` はどこでやるの？🏗️📍
 
+![testable_cs_study_010_composition_factory.png](./picture/testable_cs_study_010_composition_factory.png)
+
 答えはシンプル👇
 
 > **外側（アプリ起動時とか）でまとめて new して、内側（重要ロジック）に渡す**
@@ -198,6 +208,8 @@ var service = new GreetingService(new SystemClock(), new SystemRandom());
 ---
 
 ## 8) AI（Copilot/Codex）に手伝わせるコツ🤖💡
+
+![testable_cs_study_010_ai_detective.png](./picture/testable_cs_study_010_ai_detective.png)
 
 AIにお願いするときは「依存探し」が相性いいよ〜！
 
@@ -233,6 +245,8 @@ A. うん、同じ“怖さ”枠だよ😈
 ---
 
 ## 10) 練習問題✍️🧠（ミニでいこ！）
+
+![testable_cs_study_010_suspect_lineup.png](./picture/testable_cs_study_010_suspect_lineup.png)
 
 ## 問1：この中で「怖い依存」はどれ？👀
 

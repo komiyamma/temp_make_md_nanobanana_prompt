@@ -45,9 +45,13 @@
 2. 検索欄に `test` と入れる
 3. 好きなフレームワークのテンプレを選ぶ（後で比較するよ）🧪✨ ([Microsoft Learn][4])
 
+![testable_cs_study_008_add_project_dialog.png](./picture/testable_cs_study_008_add_project_dialog.png)
+
 ---
 
 ## 3) テストフレームワーク3兄弟を “ゆるく” つかむ 🧪💕
+
+![testable_cs_study_008_framework_mascots.png](./picture/testable_cs_study_008_framework_mascots.png)
 
 結論：**どれでもOK**！ただし「迷ったら」基準があるよ😊✨
 
@@ -61,6 +65,8 @@
 ---
 
 ## 4) “テストが発見される” の三種の神器 🔍🧰
+
+![testable_cs_study_008_discovery_treasures.png](./picture/testable_cs_study_008_discovery_treasures.png)
 
 Visual Studio の Test Explorer がテストを見つけて実行するには、だいたいこの3点が大事！
 
@@ -154,6 +160,8 @@ Microsoftのドキュメントでも Test Explorer の流れが説明されて�
 
 ## 7) まずは “動くテスト” を1本通す（最短ルート）🚀🧪
 
+![testable_cs_study_008_first_green_test.png](./picture/testable_cs_study_008_first_green_test.png)
+
 ## 本体側（例：足し算）
 
 ```csharp
@@ -191,6 +199,8 @@ public class CalcTests
 
 ## 8) VS Code 派のための最低ライン（CLI実行）⌨️✨
 
+![testable_cs_study_008_cli_dotnet_test.png](./picture/testable_cs_study_008_cli_dotnet_test.png)
+
 Visual Studio がメインでも、たまに **CLI** が便利なときがあるよ😊
 （CIや、軽く確認したい時とか！）
 
@@ -207,6 +217,8 @@ dotnet test
 ---
 
 ## 9) “テストが出てこない😵‍💫” ときのチェックリスト ✅🧯
+
+![testable_cs_study_008_troubleshoot_checklist.png](./picture/testable_cs_study_008_troubleshoot_checklist.png)
 
 Test Explorer にテストが表示されないときは、だいたいココ！
 
