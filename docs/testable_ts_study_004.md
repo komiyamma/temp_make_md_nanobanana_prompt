@@ -22,7 +22,11 @@
 
 ## 2) まずは超ざっくり地図🗺
 
-️🏠➡️🌍### ✅ 2つに分けるだけで世界が変わる🌈* **中心（ロジック）
+### ✅ 2つに分けるだけで世界が変わる🌈
+
+![testable_ts_study_004_house_world.png](./picture/testable_ts_study_004_house_world.png)
+
+* **中心（ロジック）
 
 🏠**：計算・判断・ルール（= 仕様のコア）
 
@@ -55,6 +59,8 @@
 
 ### ✅ 境界（インターフェース）
 
+![testable_ts_study_004_boundary_gate.png](./picture/testable_ts_study_004_boundary_gate.png)
+
 の役割* 中心から見ると「外側の都合」を知らなくていい🙈✨
 
 
@@ -69,7 +75,11 @@
 
 
 
-### ✅ ルール：矢印は“中心に向かう”🏠* **中心は外側の具体を知らない**（`fetch` とか `Date` とか触らない）
+### ✅ ルール：矢印は“中心に向かう”🏠
+
+![testable_ts_study_004_dependency_arrow.png](./picture/testable_ts_study_004_dependency_arrow.png)
+
+* **中心は外側の具体を知らない**（`fetch` とか `Date` とか触らない）
 
 🙅‍♀️
 
@@ -90,6 +100,8 @@
 
 
 ### 🏠 中心（純粋ロジック）
+
+![testable_ts_study_004_coupon_logic.png](./picture/testable_ts_study_004_coupon_logic.png)
 
 例* 入力：商品リスト、クーポン情報
 
@@ -144,6 +156,8 @@ export function calcTotal(items: Item[], coupon: Coupon): number {
 
 ### ステップ2：中心と外側を箱で描く📦テンプレ👇（まずはコピペして埋めるだけでOK！
 
+![testable_ts_study_004_box_template.png](./picture/testable_ts_study_004_box_template.png)
+
 ）
 
 
@@ -188,6 +202,8 @@ export function calcTotal(items: Item[], coupon: Coupon): number {
 ---
 
 ## 8) AI活用ミニコーナー🤖🎀（境界の練習に最高！
+
+![testable_ts_study_004_ai_boundary.png](./picture/testable_ts_study_004_ai_boundary.png)
 
 ）AIにお願いする時は、「中心/外側/境界」を**言葉で縛る**と良いよ✨
 
