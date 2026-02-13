@@ -16,6 +16,8 @@
 
 ## 14.1 互換性って、テストでどこまで守れるの？🤔
 
+![Compatibility Break Types](./picture/svbc_cs_study_014_breakage_types.png)
+
 互換性の“壊れ方”はだいたい3種類（第4章の復習だね）🧩
 
 1. **ソース互換**：利用者コードがコンパイルできない💥
@@ -46,6 +48,8 @@ graph TD
 ---
 
 ## 14.2 最低ラインの「互換性テスト」3点セット✅✅✅
+
+![Compatibility Test Pyramid](./picture/svbc_cs_study_014_test_pyramid.png)
 
 “やりすぎない”が超大事！まずはこの3つだけでOK🙂🌷
 
@@ -120,6 +124,8 @@ public class PublicApiTests
 
 ## 14.4 セットA強化：Microsoftの互換性チェックツール（ApiCompat）🔍🧰
 
+![ApiCompat Tool](./picture/svbc_cs_study_014_apicompat_tool.png)
+
 「公開APIの差分を、ちゃんと“互換性”として判定」したいときに便利！
 Microsoftの `Microsoft.DotNet.ApiCompat.Tool` は、アセンブリやパッケージの互換性チェックを行えるよ ([Microsoft Learn][2])
 
@@ -167,6 +173,8 @@ dotnet tool install --local Microsoft.DotNet.ApiCompat.Tool --version 10.0.102
 
 ## 14.6 セットC：公開APIのスモークテスト🔥（薄いのに効く！）
 
+![Smoke Testing](./picture/svbc_cs_study_014_smoke_ignition.png)
+
 “広く浅く”が正義👑✨
 特に **利用者の最短ルート**だけ押さえよう！
 
@@ -209,6 +217,8 @@ public class SmokeTests
 
 ## 14.7 “壊れやすい場所”に重点テストを置く🔍💣
 
+![Testing Danger Zones](./picture/svbc_cs_study_014_danger_zones.png)
+
 全部テストしない！でもここは狙って守る🎯
 
 ### 優先度 高🔥
@@ -223,6 +233,8 @@ public class SmokeTests
 ---
 
 ## 14.8 CIで「互換性ゲート」を作ろう🚦🤖
+
+![CI Gate](./picture/svbc_cs_study_014_ci_gate.png)
 
 やることはシンプル！
 
@@ -248,6 +260,8 @@ flowchart LR
 ---
 
 ## 14.9 AIの使いどころ🤖💡（この章、相性よすぎ）
+
+![AI Test Gen](./picture/svbc_cs_study_014_ai_test_gen.png)
 
 AIは“テストの編集者”にすると強いよ〜！🧑‍🏫✨
 

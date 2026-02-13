@@ -13,6 +13,8 @@
 
 ## 12.1 まず、依存更新が怖い理由😱🧩
 
+![Transitive Dependency Risk](./picture/svbc_cs_study_012_transitive_chain.png)
+
 SemVerは“約束”だけど、使う側の現実はこう👇
 
 * **依存は自分のコードじゃない**（＝急に挙動が変わっても驚けない）😇
@@ -38,6 +40,8 @@ graph TD
 ---
 
 ## 12.2 バージョン指定、ざっくり3タイプ🔢✨（使う側の基本）
+
+![Versioning Strategies](./picture/svbc_cs_study_012_versioning_strategies.png)
 
 ### A) ガチ固定（ピン止め）📌
 
@@ -68,10 +72,14 @@ NuGetの依存解決でも “floating versions” は重要要素として扱�
 
 ### 戦略①：更新は「小さく・こまめに」🐾
 
+![Small Updates vs Big Bang](./picture/svbc_cs_study_012_update_steps.png)
+
 * 月1でドカン更新 → 地獄😇🔥
 * 週1（または隔週）で少量更新 → 事故が小さい✨
 
 ### 戦略②：更新前に見るものは3つだけ👀📌
+
+![Update Safety Checks](./picture/svbc_cs_study_012_update_check_trio.png)
 
 1. **Changelog / Release notes**📰
 2. **Breaking changes**（破壊変更）💥
@@ -181,6 +189,8 @@ flowchart TD
 
 ### CLIでlocked mode（CIでよく使う）🧊
 
+![CI Locked Mode](./picture/svbc_cs_study_012_ci_locked_mode.png)
+
 ```bash
 dotnet restore --locked-mode
 ```
@@ -192,6 +202,8 @@ dotnet restore --locked-mode
 ---
 
 ## 12.6 大きめの解決策：中央管理（Central Package Management）📦🏢
+
+![Central Package Management](./picture/svbc_cs_study_012_cpm_control_tower.png)
 
 プロジェクトが増えると、こうなりがち👇
 「AはNewtonsoft 13.0.1、Bは13.0.3…え、どれが正解？😇」
@@ -241,6 +253,8 @@ dotnet restore --locked-mode
 ---
 
 ## 12.8 AIの使いどころ（更新事故を減らす使い方）🤖💡
+
+![AI Update Helper](./picture/svbc_cs_study_012_ai_update_helper.png)
 
 AIは「更新の不安」を減らすのにめちゃ向いてるよ〜！
 

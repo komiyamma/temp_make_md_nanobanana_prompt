@@ -11,6 +11,8 @@
 
 # 13.1 推移依存ってなに？🧩🧩
 
+![Hidden Dependency](./picture/svbc_cs_study_013_hidden_dependency.png)
+
 たとえばあなたのアプリが `A` というパッケージを入れたとします📦
 でも `A` は内部で `B` に依存してた…つまり👇
 
@@ -84,6 +86,8 @@ NuGet は依存関係を解決するとき、**直接参照したパッケージ
 
 ## そして衝突しきると「NU1107」💥
 
+![Version Conflict](./picture/svbc_cs_study_013_tug_of_war.png)
+
 NU1107 は、要するに
 **“B を v3.5 で固定してって言う人と、v4.0 で固定してって言う人がいて、どっちも譲らないから決められない😭”** って状態です。
 解決策として「衝突してるパッケージを直接参照して解決してね」と案内されます ([Microsoft Learn][4])
@@ -123,6 +127,8 @@ dotnet package list --include-transitive --vulnerable
 * 対処の基本：**問題のパッケージを直接参照して、解決したい版を明示** ([Microsoft Learn][4])
 
 ## ② NU1605：Detected package downgrade⚠️
+
+![Downgrade Alert](./picture/svbc_cs_study_013_downgrade_warning.png)
 
 * 症状：ビルドは通るけど警告が出る😇
 * 背景：Direct dependency wins の結果、**必要だった版より低い版が選ばれた** ([Microsoft Learn][3])
@@ -168,6 +174,8 @@ CI でこれを使うと「依存が勝手にズレて壊れる」事故が減�
 
 ## ステップ1：依存を「見える化」する👀
 
+![Visualizing Dependencies](./picture/svbc_cs_study_013_cli_flashlight.png)
+
 ```sh
 dotnet package list --include-transitive
 ```
@@ -180,6 +188,8 @@ dotnet package list --include-transitive
 * **NU1605**：ダウングレード → “揃える” or “上位を更新” を検討 ([Microsoft Learn][3])
 
 ## ステップ3：方針を選ぶ（揃える/固定する/中央管理）🧠
+
+![Three Keys to Resolution](./picture/svbc_cs_study_013_resolution_keys.png)
 
 小規模なら「直接参照で揃える」でもOK👌
 複数プロジェクトなら **CPM** がすごく効くよ〜 ([Microsoft Learn][8])
@@ -225,6 +235,8 @@ AIに「ダイヤモンド依存で壊れる話」を作らせて、どこで詰
 
 ## 演習3：脆弱性チェックも一回やってみる🚨🔍
 
+![Security Audit](./picture/svbc_cs_study_013_vuln_scanner.png)
+
 ```sh
 dotnet package list --include-transitive --vulnerable
 ```
@@ -236,6 +248,8 @@ dotnet package list --include-transitive --vulnerable
 ---
 
 # 13.10 AIの使いどころ（この章専用プロンプト集🤖💡）
+
+![AI Conflict Solver](./picture/svbc_cs_study_013_ai_conflict_solver.png)
 
 ## ① 依存ツリー読み解き補助🧠
 

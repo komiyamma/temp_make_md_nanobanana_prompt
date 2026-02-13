@@ -45,6 +45,8 @@ NuGetは、.NET（C#）の世界での「部品の配達サービス」みたい
 
 ## 11.2 まずは“バージョンの種類”を整理しよ（ここ超重要）🧠🔢
 
+![Version Types Priority](./picture/svbc_cs_study_011_version_types_podium.png)
+
 .NETのライブラリには、バージョンが複数あります😵‍💫
 でも最優先で覚えるのはこの4つです👇（Microsoftのガイダンスでもここが重要扱い）([Microsoft Learn][1])
 
@@ -66,6 +68,8 @@ NuGetのバージョンの考え方は **SemVer 2.0.0** がベースです📘
 
 ### ✅ よく使う形（配布で頻出）🧩
 
+![SemVer Suffixes](./picture/svbc_cs_study_011_semver_suffixes.png)
+
 * 安定版：`1.2.3`
 * プレリリース：`1.2.3-alpha.1` / `1.2.3-rc.2`（ハイフン `-` の後ろ）([Microsoft Learn][2])
 * ビルドメタデータ：`1.2.3+git.abc123`（`+` の後ろ。優先順位には影響しない）([Semantic Versioning][3])
@@ -78,6 +82,8 @@ NuGetのバージョンの考え方は **SemVer 2.0.0** がベースです📘
 ---
 
 ## 11.4 “どこにバージョン番号を書くの？”問題🔧😇
+
+![Package Identity](./picture/svbc_cs_study_011_csproj_id_card.png)
 
 今どきのSDKスタイル（普通の`.csproj`）では、**プロジェクトファイルに書く**のが基本です📄✨
 （`.nuspec` を別に作らず、csprojにメタ情報を載せられるよ）([Microsoft Learn][4])
@@ -143,6 +149,8 @@ NuGetのバージョンの考え方は **SemVer 2.0.0** がベースです📘
 
 ### Step 3：packする📦
 
+![Dotnet Pack Transformation](./picture/svbc_cs_study_011_pack_factory.png)
+
 CLIでもOK！（中身の理解が進むのでおすすめ😊）
 
 ```bash
@@ -181,6 +189,8 @@ flowchart LR
 
 ## 11.7 READMEは“最重要UI”だよ📄💗
 
+![README as Storefront](./picture/svbc_cs_study_011_readme_storefront.png)
+
 NuGetページで最初に読まれるのはREADMEです📌
 公式にも「最初に見られる要素で第一印象に直結」としてREADME同梱を強く推してます([Microsoft Learn][5])
 
@@ -215,6 +225,8 @@ NuGetページで最初に読まれるのはREADMEです📌
 
 ## 11.8 シンボル（.snupkg）も作ると“神デバッグ”になる🐞✨
 
+![Debugging with Symbols](./picture/svbc_cs_study_011_symbol_xray.png)
+
 利用者が「ライブラリ内部まで追ってデバッグ」できると、満足度が爆上がりします🔥
 そのために **`.snupkg`（シンボルパッケージ）** を用意できます🧩([Microsoft Learn][8])
 
@@ -235,6 +247,8 @@ dotnet pack -c Release --include-symbols --include-source
 配布側としては「最新TFMに寄せる」だけじゃなくて、**利用者の環境幅**も考えるのがコツです🤝
 
 ### 11.9.1 ターゲットフレームワーク（TFM）の考え方（超ざっくり）🎯
+
+![Multi-Targeting](./picture/svbc_cs_study_011_multi_target_slots.png)
 
 * 最新機能を使いたい：`net10.0` 🌟
 * 利用者が幅広い：`net8.0` など、もう少し広い土台も検討😊
