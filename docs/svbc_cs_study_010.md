@@ -8,6 +8,8 @@
 
 ## 1. まず結論：Changelog とリリースノートは役割が違うよ📌
 
+![Changelog vs Release Notes Analogy](./picture/svbc_cs_study_010_changelog_news.png)
+
 ![Changelog vs Release Notes](./picture/svbc_cs_study_010_changelog_vs_notes.png)
 
 ### Changelog（変更履歴）🗂️
@@ -45,6 +47,8 @@ graph LR
 
 ## 2. “利用者が助かる” 文章に必須の4点セット🧰✨
 
+![4 Essentials of Release Notes](./picture/svbc_cs_study_010_four_essentials.png)
+
 リリースノート／Changelog、どっちでも大事なのはこれ👇
 
 1. **何が変わった？**（変更点）
@@ -68,12 +72,16 @@ Keep a Changelog のおすすめポイント👇
 
 ### よく使う見出し（カテゴリ）📌
 
+![Keep a Changelog Categories](./picture/svbc_cs_study_010_changelog_bins.png)
+
 * Added / Changed / Deprecated / Removed / Fixed / Security
   この6つに寄せると読み手が迷わない✨ ([keepachangelog.com][5])
 
 ---
 
 ## 4. “SemVer別” 書き分けルール（ここ超大事😺✨）
+
+![SemVer Writing Guide](./picture/svbc_cs_study_010_semver_writing_rules.png)
 
 ### PATCH（例：1.2.3 → 1.2.4）🐛
 
@@ -167,6 +175,8 @@ Changelog は網羅寄り、リリースノートは **利用者が今読むべ�
 
 ## 7. GitHub の「自動生成リリースノート」も賢く使おう🤖🧡
 
+![GitHub Release Automation](./picture/svbc_cs_study_010_github_release_bot.png)
+
 GitHub Releases では **自動生成**ができるよ！
 PR一覧・貢献者・フルChangelogへのリンクが出るので、土台に最高✨ ([GitHub Docs][2])
 
@@ -198,6 +208,8 @@ changelog:
 ---
 
 ## 8. AI（Copilot/Codex等）で爆速に書く方法🤖🪄
+
+![AI Release Note Drafting](./picture/svbc_cs_study_010_ai_drafting.png)
 
 AIは「下書き作成」には神！でも **最終チェックは人間の仕事**ね🙂✨
 
