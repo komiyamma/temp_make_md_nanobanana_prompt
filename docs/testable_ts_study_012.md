@@ -21,6 +21,8 @@
 
 ## 1. 「押し出す→薄くする」ってなに？🧹🪄### 押し出す（Push out）
 
+![testable_ts_study_012_thin_adapter.png](./picture/testable_ts_study_012_thin_adapter.png)
+
 ➡️* **I/O（外の世界）**を中心から追い出す！
 
 
@@ -47,6 +49,8 @@
 ---
 
 ## 3. Step0：最悪コード（まずは現状を直視👀💦）
+
+![testable_ts_study_012_bad_code_visual.png](./picture/testable_ts_study_012_bad_code_visual.png)
 
 ```ts
 // src/checkout.ts
@@ -88,6 +92,8 @@ export async function checkout(userId: string, items: Item[]) {
 ---
 
 ## 4. Step1：中心抽出（まずはロジックを“外に出す”🧠✨
+
+![testable_ts_study_012_step1_extract_core.png](./picture/testable_ts_study_012_step1_extract_core.png)
 
 ）コツはこれ👇
 **「コピペでいいから中心候補を別関数にして、あとで整える」**🧼
@@ -148,6 +154,8 @@ export async function checkout(userId: string, items: Item[]) {
 
 ## 5. Step2：I/Oを外へ押し出す（中心に“値だけ”渡す📦➡️
 
+![testable_ts_study_012_step2_push_io.png](./picture/testable_ts_study_012_step2_push_io.png)
+
 🧠）次は、中心に渡すものを **“I/Oの結果（値）だけ”**に揃えるよ✨
 （中心は `fetch` も `fs` も `Date` も知らない世界へ…！）
 
@@ -162,6 +170,8 @@ export async function checkout(userId: string, items: Item[]) {
 ---
 
 ## 6. Step3：境界をinterface化（差し替え可能にする📜✨
+
+![testable_ts_study_012_step3_interface.png](./picture/testable_ts_study_012_step3_interface.png)
 
 ）ここからが「薄くする」の本番だよ〜🧼🫶
 中心が欲しいのは「HTTPの詳細」じゃなくて、**“価格が取れること”**だけ！
@@ -269,6 +279,8 @@ export class FileOrderLog implements OrderLog {
 ---
 
 ## 7. Step4：テスト追加（中心を速く・確実に守る🧪🛡
+
+![testable_ts_study_012_step4_test_protection.png](./picture/testable_ts_study_012_step4_test_protection.png)
 
 ️）### まず中心（純粋関数）
 
