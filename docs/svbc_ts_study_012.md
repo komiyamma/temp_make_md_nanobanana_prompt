@@ -11,6 +11,8 @@
 
 ## 12.2 まず“1分で”イメージをつかもう⏱️🍌
 
+![Host Plugin Connection](./picture/svbc_ts_study_012_host_plugin_connection.png)
+
 `peerDependencies` はひとことで言うと…
 
 > **「うちのパッケージ（プラグイン）は、ホスト（本体）の◯◯のこの範囲と一緒に使えるよ！」**
@@ -51,6 +53,8 @@ npm は v7 以降、peer もインストール対象になって、衝突時に�
 
 ## 12.4 使い分け早見（ここ超大事）🧠📌
 
+![Dependency Buckets](./picture/svbc_ts_study_012_dep_types_buckets.png)
+
 ### 🧩 ざっくりルール
 
 * **dependencies**：あなたのパッケージが「必ず使う部品」。ユーザー側に入ってほしい部品📦
@@ -70,6 +74,8 @@ npm は v7 以降、peer もインストール対象になって、衝突時に�
 ![Dependency Conflict](./picture/svbc_ts_study_012_dependency_conflict.png)
 
 ### 💥 あるある1：ホストのメジャーが違う（React 18 ↔ 19 とか）
+
+![Wide Range Bridge](./picture/svbc_ts_study_012_wide_range_bridge.png)
 
 プラグインAは `react@^18` 前提、プラグインBは `react@^19` 前提…
 同じプロジェクトに入れると **どっちかが不満** で衝突しがち🥲
@@ -118,6 +124,8 @@ npm公式も「できるだけ広く」「パッチにロックしないでね�
 ---
 
 ## 12.7 optional peer（入ってたら嬉しい連携）🍯✨
+
+![Optional Peer Switch](./picture/svbc_ts_study_012_optional_peer_switch.png)
 
 「入ってたら豆乳ラテ対応できます☕️」みたいなノリで、optional にできるよ🥰
 npm は `peerDependenciesMeta` で optional 指定ができる📌 ([npmドキュメント][1])
@@ -181,7 +189,11 @@ pnpm（10.x）の設定には、peer 関連がまとまってるよ👇
 
 ## 12.10 トラブルシュート：相性事故を最短で潰す🔧🚑
 
+![Conflict Explosion](./picture/svbc_ts_study_012_conflict_explosion.png)
+
 ### ① まず“誰が何を要求してるか”を見える化👀
+
+![NPM LS Tree](./picture/svbc_ts_study_012_npm_ls_tree.png)
 
 * `npm ls <package>`：ツリーを見て、複数入ってないか確認🌳
 * `npm explain <package>`：なぜ入ったか説明してくれる（原因追跡に便利）🕵️‍♀️

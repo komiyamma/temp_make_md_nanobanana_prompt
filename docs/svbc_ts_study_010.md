@@ -45,6 +45,8 @@
 
 ## 10.3 どこまで上がるの？早見表🔢👀✨
 
+![Range Visualizer](./picture/svbc_ts_study_010_range_visualizer.png)
+
 例として `1.2.3` を入れたとき👇
 
 * 固定 `1.2.3`
@@ -59,6 +61,8 @@
 ---
 
 ## 10.4 ⚠️超重要：0.x の世界は別ルールが混ざる🚧💥
+
+![Zero-X Trap](./picture/svbc_ts_study_010_zero_x_trap.png)
 
 ここ、初心者がいちばん事故るポイント😭
 
@@ -91,12 +95,16 @@
 
 ### 事故②：自分の直接依存じゃなく、孫依存が更新される👶➡️👶➡️👶
 
+![Transitive Accident](./picture/svbc_ts_study_010_transitive_accident.png)
+
 Aを入れたら、中でBを使ってて、さらにBがCを…みたいなやつ🌀
 これが更新されて壊れると「え、私なにも変えてないのに😭」ってなる！
 
 ---
 
 ### 事故③：再インストールしたら別バージョンが入った🔄
+
+![Reinstall Drift](./picture/svbc_ts_study_010_reinstall_drift.png)
 
 `node_modules` 消して入れ直すと、`^` / `~` が効いて
 **より新しい版** が入って壊れることがある💥
@@ -190,6 +198,8 @@ npm i lodash@4.17.21
 
 ## 10.7 初心者向け：どれを使えばいいの？決め方テンプレ🧠🧭💕
 
+![App vs Lib Strategy](./picture/svbc_ts_study_010_app_vs_lib_strategy.png)
+
 ここ、迷ったらこのルールでOKだよ🙆‍♀️
 
 ### ① 自分が作ってるのは「アプリ」？「ライブラリ」？🎮📦
@@ -217,6 +227,8 @@ npm i lodash@4.17.21
 ---
 
 ## 10.8 npmのデフォルト挙動も知っておこう🧾✨
+
+![NPM Save Prefix](./picture/svbc_ts_study_010_npm_save_prefix.png)
 
 npm は設定で「保存するときの記号」を変えられるよ🎚️
 公式の設定項目に `save-prefix`（デフォルト `^`）と `save-exact`（固定保存）があるよ📌([npm ドキュメント][1])

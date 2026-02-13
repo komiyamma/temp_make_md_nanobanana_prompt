@@ -7,6 +7,8 @@
 
 ### 1) まず結論：lockfileは「依存関係の確定メモ」📌
 
+![Wishlist vs Snapshot](./picture/svbc_ts_study_011_wishlist_vs_snapshot.png)
+
 * `package.json`：**こういうバージョンが欲しいな〜**（希望条件）
 * lockfile（`package-lock.json` / `pnpm-lock.yaml` / `yarn.lock`）：**実際に入れた“確定版”の一覧**（スナップショット）
 * `node_modules`：**現物**（重いし環境で変わりがち）
@@ -49,7 +51,11 @@ graph TD
 
 ### 3) 「CIでは“lockfileを絶対に書き換えない”」が超大事🔥
 
+![CI Immutable Shield](./picture/svbc_ts_study_011_ci_immutable_shield.png)
+
 #### npmの場合：`npm ci` が最強🧼
+
+![NPM CI Flow](./picture/svbc_ts_study_011_npm_ci_flow.png)
 
 `npm ci` はCI向けで、ざっくり言うと👇
 
@@ -93,6 +99,8 @@ yarn install --immutable
 
 #### (2) 差分が見える：依存ツリーの変化がレビューできる👀
 
+![Diff Review](./picture/svbc_ts_study_011_diff_review.png)
+
 lockfileがあると、依存の増減や解決結果の変化が**Git差分で見える**ので、「あれ？なんか大量に増えたけど大丈夫？」が発見しやすいです。([npmドキュメント][1])
 
 #### (3) 速くなる：インストールの無駄が減る⚡
@@ -102,6 +110,8 @@ npmは lockfile によって、メタデータ解決の繰り返しを減らし�
 ---
 
 ### 5) いつ lockfile を更新するの？（迷わないルール）🧭
+
+![Update Trigger](./picture/svbc_ts_study_011_update_trigger.png)
 
 ここ、いちばん大事です🛡️✨
 **基本ルール：依存が変わったPRでは、lockfileも一緒に変わるのが正しい**です。
