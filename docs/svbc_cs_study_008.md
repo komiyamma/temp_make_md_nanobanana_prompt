@@ -52,6 +52,8 @@ mindmap
 
 ## 何が起きる？😱
 
+![Missing Method Crash](./picture/svbc_cs_study_008_missing_method_crash.png)
+
 * 利用者が再コンパイル → **コンパイルエラー**（ソース互換アウト）🧯
 * 利用者が再コンパイルせずに差し替え → **MissingMethodException など**（バイナリ互換アウト）💣
   「公開メンバーを消す/改名する」は、超ド直球で壊れます。公式ルールでも **“DISALLOWED（ダメ）”**扱いです。 ([Microsoft Learn][1])
@@ -91,6 +93,8 @@ mindmap
 # 地雷② 引数・戻り値の変更（型/順序/個数）🔧💥
 
 ## 何が起きる？😱
+
+![Signature Mismatch](./picture/svbc_cs_study_008_signature_mismatch.png)
 
 * 署名（シグネチャ）が変わると、ソースもバイナリも壊れやすいです💣
   公式ルールでも「型変更」「パラメータ追加/削除/順序変更」は **DISALLOWED**です。 ([Microsoft Learn][1])
@@ -134,6 +138,8 @@ mindmap
 
 ## 危ない変更例💣
 
+![Exception Catch Miss](./picture/svbc_cs_study_008_exception_catch_miss.png)
+
 * 今まで `false` を返してたのに、急に例外を投げるようにした
 * `ArgumentException` を投げてたのを、別系統の例外に変えた
 * 例外の発生条件が増えた（入力が同じでも落ちる）
@@ -168,6 +174,8 @@ mindmap
 # 地雷④ null許容の変更（受け入れ/返す）🚫➡️✅ / ✅➡️🚫
 
 ## 何が起きる？😱
+
+![Nullability Warning](./picture/svbc_cs_study_008_nullability_warning.png)
 
 nullまわりは **“コンパイルは通るのに事故る”** が多いです😇
 さらに、Nullable Reference Types（NRT）の注釈変更は、実際に **source breaking**（警告が増える等）として扱われることがあります。 ([Microsoft Learn][5])
@@ -227,6 +235,8 @@ nullまわりは **“コンパイルは通るのに事故る”** が多いで�
 
 ## さらに2026っぽい注意⚡（最新系）
 
+![Span Overload Trap](./picture/svbc_cs_study_008_span_overload_trap.png)
+
 C# 13 / 14 + .NET 9 / 10 では、**span 系の新ルールでオーバーロード解決が変わる**ケースが実際に起きています。 ([Microsoft Learn][6])
 つまり、「追加しただけ」で将来の言語更新でも揺れやすい…！😵
 
@@ -269,6 +279,8 @@ C# 13 / 14 + .NET 9 / 10 では、**span 系の新ルールでオーバーロー
 このへん、**テストが薄いと本番で発覚**しがちです💥
 
 ### 6-A) 既定値（default）変更は公式にNG寄り🚫
+
+![Compiled Constant Trap](./picture/svbc_cs_study_008_compiled_constant_trap.png)
 
 公式ルールで **「既定値変更はDISALLOWED」**で、
 「再コンパイル後に挙動が変わって破壊になり得る」と説明されています。 ([Microsoft Learn][1])

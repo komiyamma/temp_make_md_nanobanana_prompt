@@ -25,11 +25,15 @@ SemVerでは、**Public APIに後方互換がない変更が入ったら MAJOR �
 
 ### A) 物理的に壊す系（分かりやすい💥）
 
+![Breaking Types A (Physical)](./picture/svbc_cs_study_007_breaking_types_a.png)
+
 * public 型・メソッド・プロパティの削除 🗑️
 * 名前変更（リネーム）✍️
 * シグネチャ変更（引数の型/数、戻り値型）🔁
 
 ### B) 見た目は残ってるのに壊す系（事故りやすい😇）
+
+![Breaking Types B (Invisible)](./picture/svbc_cs_study_007_breaking_types_b.png)
 
 * 例外の種類/タイミングが変わる（try/catch が崩壊）💣
 * null 許容が変わる（受け取り/戻り値）🫠
@@ -56,6 +60,8 @@ flowchart TD
 
 ### Step 1：破壊変更リストを作る📝
 
+![Breaking Change List](./picture/svbc_cs_study_007_breaking_change_list.png)
+
 * 何が壊れる？（コンパイル？実行時？挙動？）
 * 影響範囲は？（利用者コードのどのパターンが死ぬ？）
 
@@ -68,10 +74,14 @@ flowchart TD
 
 ### Step 3：非推奨（Deprecated）で段階移行🧡⚠️
 
+![Obsolete Warning](./picture/svbc_cs_study_007_obsolete_warning.png)
+
 C#なら **`[Obsolete]`** を使って「次はこっち使ってね」を明示できるよ📣
 `Obsolete` は **警告にもエラーにもできる**（段階を作れるのが強い）✨ ([Microsoft Learn][3])
 
 ### Step 4：移行ガイドを書く📄✨
+
+![Migration Guide Map](./picture/svbc_cs_study_007_migration_guide_map.png)
 
 * 変更点 → 影響 → 置き換え → コピペ例
   この順で、利用者が迷子にならない導線を作る🧭
@@ -111,6 +121,8 @@ public static class UserId
 ```
 
 #### v1.2.0（MINOR）：旧APIを Obsolete（警告）🧡⚠️
+
+![Obsolete Code Visual](./picture/svbc_cs_study_007_obsolete_code_visual.png)
 
 ```csharp
 public static class UserId
@@ -188,6 +200,8 @@ graph LR
 ---
 
 ## 7.7 リリースノートでの書き方📰🚨
+
+![Release Note Headline](./picture/svbc_cs_study_007_release_note_headline.png)
 
 NuGetの世界でも、バージョンは **Major＝Breaking changes** の意味を持つよ📦 ([Microsoft Learn][6])
 だから MAJOR のリリースノートは、最低でも👇を入れるのが優しさ💕
