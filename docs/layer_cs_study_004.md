@@ -19,6 +19,8 @@
 
 ## 4.1 レイヤード学習に向く題材の条件🧩
 
+![subject_selection](./picture/layer_cs_study_004_subject_selection.png)
+
 題材は何でも良い…んだけど、**学びが出やすい条件** があるよ😊✨
 
 ### ✅ ちょうどいい題材はこういうやつ！
@@ -39,6 +41,8 @@
 ---
 
 ## 4.2 題材おすすめ3選🍀（迷ったらこのどれかでOK！）
+
+![mvp_candidates](./picture/layer_cs_study_004_mvp_candidates.png)
 
 ここは “設計の練習としておいしい” 三銃士！⚔️😎
 
@@ -63,6 +67,8 @@
 ---
 
 ## 4.3 最小要件（MVP）の決め方🧱✨
+
+![mvp_slicing](./picture/layer_cs_study_004_mvp_slicing.png)
 
 ここからが本番！🔥
 MVPは「小さく作れる」だけじゃなくて、**レイヤードの勉強になる最小** にするのがコツだよ😊
@@ -127,6 +133,8 @@ mindmap
 
 ## 4.5 受け入れ条件（Acceptance Criteria）を1行で書く✍️✨
 
+![acceptance_criteria_checklist](./picture/layer_cs_study_004_acceptance_criteria_checklist.png)
+
 要件はフワッとしがちだから、**“できた判定”** を付けようね😊
 
 ToDoの例だとこんな感じ👇
@@ -140,6 +148,8 @@ ToDoの例だとこんな感じ👇
 ---
 
 ## 4.6 “レイヤード視点”で要件を仕分ける🧠🧱
+
+![requirement_sorting](./picture/layer_cs_study_004_requirement_sorting.png)
 
 この章の裏テーマはここ！✨
 要件を見た瞬間に「どの層が責任か」うっすら分かるようになると強いよ💪
