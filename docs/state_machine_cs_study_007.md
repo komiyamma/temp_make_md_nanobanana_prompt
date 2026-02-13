@@ -6,6 +6,8 @@
 
 ## 7.1 この章のゴール🎯✨
 
+![goal setting](./picture/state_machine_cs_study_007_goal_setting.png)
+
 この章が終わったら、こんな状態になってるのが理想だよ😊💖
 
 * ✅ 「**今の状態 × 起きたイベント → 次の状態**」を、表でサクッと書ける
@@ -83,6 +85,8 @@ flowchart TD
 
 ### ステップ3：ハッピーパス（理想ルート）を1本決める🌈
 
+![happy path](./picture/state_machine_cs_study_007_happy_path.png)
+
 まずはこれを表に通すと、作るのが超ラク💖
 
 `Draft → Submitted → Paid → Cooking → Ready → PickedUp`
@@ -96,6 +100,8 @@ flowchart TD
 ハッピーパス + 明らかに自然なものから埋めてOK😊
 
 ### ステップ6：残りを❌で埋める（禁止を仕様化）
+
+![forbidden cells](./picture/state_machine_cs_study_007_forbidden_cells.png)
 
 ここが大事！！🔥
 禁止を埋める＝**抜け漏れ潰し**だから、バグが減るよ〜🛡️✨
@@ -169,6 +175,8 @@ graph TD
 
 ## 7.7 “矛盾チェック”のやり方（ここがプロっぽい✨）🔍
 
+![consistency check](./picture/state_machine_cs_study_007_consistency_check.png)
+
 遷移表ができたら、次のチェックをするだけで完成度が一気に上がるよ📈💖
 
 ### ✅チェックリスト（超実戦）
@@ -187,6 +195,8 @@ graph TD
 ---
 
 ## 7.8 AI活用：遷移表の“矛盾探し”をやらせよう🤖🔍✨
+
+![ai review](./picture/state_machine_cs_study_007_ai_review.png)
 
 AIはこの章、めちゃ強い相棒だよ💖（人間が見落とす「表の穴」を見つけがち！）
 

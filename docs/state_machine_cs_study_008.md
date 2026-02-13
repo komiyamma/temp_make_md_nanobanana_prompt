@@ -20,6 +20,8 @@
 
 ## 2) 状態遷移図って、結局なにが嬉しいの？😳💡
 
+![diagram benefits](./picture/state_machine_cs_study_008_diagram_benefits.png)
+
 ![008 Diagram](./picture/state_machine_cs_study_008_diagram.png)
 
 遷移表は「正確さ最強」だけど、初見だと脳が疲れる…😵‍💫
@@ -52,6 +54,8 @@
 ---
 
 ## 4) おすすめの描き方は3つ🧰✨（どれでもOK）
+
+![tool selection](./picture/state_machine_cs_study_008_tool_selection.png)
 
 ### ① READMEにそのまま貼れる：Mermaid（最推し）🧜‍♀️📝
 
@@ -118,6 +122,8 @@ graph LR
 
 ### Step 3：Mermaidで“ラフ版”を作る（まずは主線だけ）🧜‍♀️✨
 
+![mermaid draft](./picture/state_machine_cs_study_008_mermaid_draft.png)
+
 ```mermaid
 stateDiagram-v2
   [*] --> Draft : Start
@@ -160,7 +166,11 @@ stateDiagram-v2
 
 ## 6) 図がゴチャついた時の「整えテク」🧹✨
 
+![diagram cleanup](./picture/state_machine_cs_study_008_diagram_cleanup.png)
+
 ### テク①：図を“2枚”に分ける📄📄
+
+![split diagrams](./picture/state_machine_cs_study_008_split_diagrams.png)
 
 * 1枚目：通常フローだけ🌈
 * 2枚目：例外（キャンセル/返金/失敗）だけ🚫

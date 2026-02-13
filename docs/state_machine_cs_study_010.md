@@ -20,6 +20,8 @@
 
 ## 2) ガード条件ってなに？🛡️
 
+![guard definition](./picture/state_machine_cs_study_010_guard_definition.png)
+
 ![010 Guard](./picture/state_machine_cs_study_010_guard.png)
 
 ざっくり言うと…
@@ -66,6 +68,8 @@ graph TD
 ---
 
 ## 4) どこにガードを置く？（3つの置き方）📍✨
+
+![guard placement](./picture/state_machine_cs_study_010_guard_placement.png)
 
 「ガードってどこに書けばいいの〜？」をここでスッキリさせるよ😊
 
@@ -198,6 +202,8 @@ graph LR
 
 ## 7) ガード条件の“良い書き方”5か条🧁✨
 
+![best practices](./picture/state_machine_cs_study_010_best_practices.png)
+
 初心者が一気に強くなるやつ💪😊
 
 1. **“業務用語”で命名する**（CanCancel / HasItems みたいに）
@@ -209,6 +215,8 @@ graph LR
 ---
 
 ## 8) “条件のテストケース”の作り方🧪✨
+
+![guard testing](./picture/state_machine_cs_study_010_guard_testing.png)
 
 ガードは **true/false** だから、基本はこれだけで超強い😊
 
@@ -323,6 +331,8 @@ public static (OrderState next, string? error) Handle(OrderState state, object e
 ---
 
 ## 12) AI活用（この章はめっちゃ相性いい🤖💖）
+
+![ai guard assistance](./picture/state_machine_cs_study_010_ai_guard_assistance.png)
 
 コピペで使えるプロンプト置いとくね😊✨
 
