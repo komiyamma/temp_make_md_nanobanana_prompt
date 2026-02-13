@@ -48,6 +48,8 @@ graph LR
 
 ## 2. 事故る原因：「同じ単語」でも意味が違う😇💥
 
+![Word Collision Map](./picture/mod_mono_cs_study_005_word_collision_map.png)
+
 ### 例：Order（オーダー）問題😵
 
 ミニECだと “Order” がめちゃくちゃ揉めがち〜！
@@ -117,6 +119,8 @@ Bounded Context の入り口は、だいたいここ！
 
 ### ダメ例：ぜんぶ “Order” に押し込む🧟‍♀️
 
+![Order Blob Monster](./picture/mod_mono_cs_study_005_order_blob_monster.png)
+
 「表示順」も「購入注文」も “Order” でいっちゃうとこうなる👇
 
 ```csharp
@@ -146,6 +150,8 @@ public class Order
 ---
 
 ### 良い例：言葉の意味が同じ範囲ごとに分ける🧱✨
+
+![Rename Surgery](./picture/mod_mono_cs_study_005_rename_surgery.png)
 
 “Order” を **Ordering の中だけ**で「購入注文」として扱う。
 Catalog 側は、そもそも “Order” じゃなくて **SortOrder / DisplayOrder** と呼ぶ。
@@ -214,6 +220,8 @@ public sealed class PurchaseOrder
 
 ### 手順①：衝突単語を 5〜10 個書き出す📝
 
+![Sorting Workbench](./picture/mod_mono_cs_study_005_sorting_workbench.png)
+
 例：Order / Customer / Product / Price / Status
 
 ### 手順②：単語ごとに「意味」を一行で書く✍️
@@ -223,6 +231,8 @@ public sealed class PurchaseOrder
 * Identity の Customer：ログイン＋会員情報（認証・個人情報）
 
 ### 手順③：意味が同じ単語同士を“島”にまとめる🏝️
+
+![Context Islands](./picture/mod_mono_cs_study_005_context_islands.png)
 
 * Catalog：商品・カテゴリ・表示順・在庫表示…
 * Ordering：注文・決済・注文明細・金額計算…
@@ -262,6 +272,8 @@ graph TD
 ---
 
 ## 6. “境界をまたぐ”ときは、翻訳が必要になる🗺️🔁
+
+![Translation Bridge](./picture/mod_mono_cs_study_005_translation_bridge.png)
 
 たとえば Ordering が「商品名」を注文に入れたいとするよね？
 
@@ -354,6 +366,8 @@ Console.WriteLine($"注文: {order.OrderId} / 状態: {order.Status}");
 ---
 
 ## 9. AI活用プロンプト例🤖✨（コピペOK）
+
+![AI Word Detective](./picture/mod_mono_cs_study_005_ai_word_detective.png)
 
 ### ① 衝突単語の洗い出し
 

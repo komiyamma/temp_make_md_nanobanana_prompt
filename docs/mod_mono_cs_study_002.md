@@ -39,6 +39,8 @@ graph LR
 
 ### よくある“見た目だけ分割”😇
 
+![Folder Illusion](./picture/mod_mono_cs_study_002_folder_illusion.png)
+
 * `Catalog/` フォルダ
 * `Ordering/` フォルダ
 * `Identity/` フォルダ
@@ -57,6 +59,8 @@ graph LR
 ---
 
 ## 3) “境界を越える”ってどういうこと？🧱➡️🧱
+
+![Boundary Violations](./picture/mod_mono_cs_study_002_boundary_violations.png)
 
 境界を越える＝だいたいこの3つのどれか！👇
 
@@ -103,10 +107,14 @@ flowchart TD
 
 ### ルール②：「見せない」を言語機能で作る🙅‍♀️
 
+![Internal Keyword](./picture/mod_mono_cs_study_002_internal_keyword.png)
+
 C# の `internal` は「**同じアセンブリ（同じプロジェクト）内だけ**見える」アクセス修飾子だよ🔒
 つまりプロジェクトを分けると、**内部を物理的に隠せる**！最高〜😆✨ ([Microsoft Learn][2])
 
 ### ルール③：境界を“破ったらコンパイルで落とす”🧯
+
+![Compiler Guard](./picture/mod_mono_cs_study_002_compiler_guard.png)
 
 * 「ルールはドキュメント」だけだと破られる（人は急ぐので…😇）
 * **破れない形**にしておくと、未来の自分が救われる🫶✨
@@ -133,6 +141,8 @@ graph TD
 ---
 
 ## 5) 手を動かす（C#）⌨️：フォルダ分けの罠を“コンパイルエラー”で体験しよう💥✅
+
+![Project Separation](./picture/mod_mono_cs_study_002_project_separation.png)
 
 ここはミニ実験だよ😊🧪
 **3プロジェクト**作って「内部に侵入すると怒られる」を体感する！
@@ -238,6 +248,8 @@ Console.WriteLine(useCase.Run("p-1"));
 
 ### 演習A：公開APIに“必要なものだけ”追加しよう🪟✨
 
+![Public API Design](./picture/mod_mono_cs_study_002_public_api_design.png)
+
 `CatalogApi` に次を追加してね👇
 
 * `GetProductSnapshot(productId)` を作る
@@ -266,6 +278,8 @@ Console.WriteLine(useCase.Run("p-1"));
 「Catalogモジュールの内部（DbContextやEntity）を外に出さずに、Orderingが注文に必要な最小情報だけ取得できる公開API案を3つ出して。DTO設計も一緒に。」
 
 ### プロンプト②：境界違反レビュー🔍
+
+![AI Boundary Review](./picture/mod_mono_cs_study_002_ai_boundary_review.png)
 
 「このコードはモジュラーモノリスの境界を破ってる？破ってるなら理由と、公開API経由に直す修正案を提示して。」
 

@@ -77,6 +77,8 @@ block-beta
 
 ### 3-1. まず入れるもの📦
 
+![Vitest Setup](./picture/layer_ts_study_019_vitest_setup.png)
+
 * vitest（本体）
 * カバレッジ（V8 providerが手軽✨）
   Vitestはv8/istanbul等のカバレッジ方式をサポートしてるよ📊 ([vitest.dev][6])
@@ -157,6 +159,8 @@ describe("TodoTitle", () => {
 
 #### Domainテストのコツ3つ🧠✨
 
+![Domain Pure Testing](./picture/layer_ts_study_019_domain_pure_test.png)
+
 * 🎯 “ルール（不変条件）” をテスト名に書いちゃう
 * 🧪 例外/エラーも「仕様」なので、ちゃんと確認する
 * 🧊 テストデータは少量でOK（速度優先！）
@@ -205,6 +209,8 @@ export class AddTodoUseCase {
 ```
 
 ### 5-2. Fake Repository（インメモリ）🧸
+
+![Fake Repository Architecture](./picture/layer_ts_study_019_fake_repo_arch.png)
 
 ```ts
 // src/application/__tests__/FakeTodoRepository.ts
@@ -277,6 +283,8 @@ sequenceDiagram
 
 ## 6. Mock/Spyはどこで使う？（使いすぎ注意⚠️）🧩
 
+![Mock vs Spy vs Fake](./picture/layer_ts_study_019_mock_spy_fake.png)
+
 Vitestには vi というヘルパがあって、Mock/Spyもできるよ🕵️‍♀️✨ ([vitest.dev][9])
 
 でも初心者のうちは、まずこう考えると失敗しにくいよ👇
@@ -293,6 +301,8 @@ Infrastructureは “外部の都合” が入るから、テストが遅くな�
 だから **「最小限だけ」** にするのがコツ！
 
 ### 7-1. Repository実装の統合テスト（例）🧪
+
+![Infrastructure Integration Test](./picture/layer_ts_study_019_integration_test.png)
 
 * ✅ “保存して→読み出せる”
 * ✅ “マッピングが壊れてない”
@@ -330,6 +340,8 @@ Presentationは理想としてこう👇
 
 ## 9. カバレッジ：数字より “守れてる感” を優先📊💖
 
+![Strategic Coverage](./picture/layer_ts_study_019_coverage_radar.png)
+
 カバレッジは便利だけど、**数字を上げるためのテスト**になった瞬間に負けやすい🥲
 Vitestは v8/istanbul 等でカバレッジ取得ができるよ📈 ([vitest.dev][6])
 
@@ -355,6 +367,8 @@ Vitest用の統合パッケージもあるよ〜！ ([npm][12])
 ---
 
 ## 11. AI活用🤖✨（この章、めちゃ相性いい！）
+
+![AI Test Partner](./picture/layer_ts_study_019_ai_test_partner.png)
 
 AIはテストで特に強いよ〜！💪💕
 
