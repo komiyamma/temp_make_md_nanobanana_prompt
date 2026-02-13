@@ -26,6 +26,8 @@
 
 ## 作り方の全体像（迷子防止マップ）🗺️✨
 
+![Architecture Map](./picture/state_machine_cs_study_030_architecture_map.png)
+
 ![030 Architecture](./picture/state_machine_cs_study_030_architecture.png)
 
 ```mermaid
@@ -70,6 +72,8 @@ flowchart LR
 ---
 
 ## 1) 仕様パック（この章の心臓🫀）🧾✨
+
+![Full Map Overview](./picture/state_machine_cs_study_030_full_map_overview.png)
 
 ## 状態一覧（例）🏷️
 
@@ -145,6 +149,8 @@ stateDiagram-v2
 ---
 
 ## 2) コア実装（UIなしで動く状態機械）🧱✨
+
+![Core Engine](./picture/state_machine_cs_study_030_core_engine.png)
 
 ここができると、**ConsoleでもWeb APIでも同じロジック**が使えて強いよ💪💖
 
@@ -247,6 +253,8 @@ public sealed class Order
 
 ## 3) 遷移テーブル駆動（表→コードの直結🔁✨）
 
+![Table to Code Morph](./picture/state_machine_cs_study_030_table_to_code_morph.png)
+
 辞書で “遷移表そのもの” を表すよ📚✨（第17章の集大成！）
 
 ```csharp
@@ -337,6 +345,8 @@ public sealed class OrderStateMachine
 ---
 
 ## 4) ログ（遷移ログは宝物📜💎）
+
+![Black Box Recorder](./picture/state_machine_cs_study_030_black_box_recorder.png)
 
 ログは “あとで自分を助けるタイムマシン” だよ🕰️✨
 .NETのログは `ILogger` が基本になるよ〜！ ([Microsoft Learn][2])
@@ -470,6 +480,8 @@ APIのエラー応答を標準化するなら ProblemDetails が王道だよ〜�
 ---
 
 ## 7) READMEテンプレ（そのまま貼れる📝✨）
+
+![Manual Book](./picture/state_machine_cs_study_030_manual_book.png)
 
 READMEは「未来の自分」と「初見の人」へのラブレター💌
 

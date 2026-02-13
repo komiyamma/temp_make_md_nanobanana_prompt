@@ -16,6 +16,8 @@
 
 ## 1. なんで保存が必要なの？🤔💡
 
+![Memory vs DB](./picture/state_machine_cs_study_028_memory_vs_db.png)
+
 ![028 Snapshot](./picture/state_machine_cs_study_028_snapshot.png)
 
 ```mermaid
@@ -46,6 +48,8 @@ graph LR
 
 ## 2. 保存する“最小項目”って何？📦✨
 
+![Snapshot Essentials](./picture/state_machine_cs_study_028_snapshot_essentials.png)
+
 まずは「現在状態を復元できる」だけに集中します（履歴は次章📜）
 
 **最小セット（おすすめ）✅**
@@ -74,6 +78,8 @@ EF Core 10 は .NET 10 で動くLTSの世代だよ〜という前提で進めま
 ---
 
 ## 4. 更新競合（同時更新）ってなに？😵‍💫➡️😊
+
+![Optimistic Lock Block](./picture/state_machine_cs_study_028_optimistic_lock_block.png)
 
 同じ注文に対して、
 
@@ -149,6 +155,8 @@ public interface IOrderSnapshotStore
 ```
 
 ## A-3. JSONファイル実装（原子書き込みで安全寄り）🧯✨
+
+![Atomic File Swap](./picture/state_machine_cs_study_028_atomic_file_swap.png)
 
 ポイント：
 
@@ -287,6 +295,8 @@ SQLite を EF Core で使うときは `Microsoft.EntityFrameworkCore.Sqlite` が
 
 ## B-2. テーブル（Entity）設計：Versionで更新競合を検出🛡️
 
+![DB Schema Version](./picture/state_machine_cs_study_028_db_schema_version.png)
+
 SQLiteには SQL Server の `rowversion` みたいな自動更新列がないので、**Versionを自分で増やす方式**が分かりやすいです😊
 （EF Core の “Concurrency Token” の考え方自体は公式ドキュメントど真ん中） ([Microsoft Learn][3])
 
@@ -420,6 +430,8 @@ public sealed class EfOrderSnapshotStore : IOrderSnapshotStore
 ---
 
 ## 5. “Stateは文字列？int？”のおすすめ判断🍀
+
+![String vs Int](./picture/state_machine_cs_study_028_string_vs_int.png)
 
 * **文字列（"Paid"）**：DB見たとき分かりやすい😊
 
