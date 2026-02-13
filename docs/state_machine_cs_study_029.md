@@ -20,6 +20,8 @@ C# 14 もこの世代で扱えます🧠✨ ([Microsoft Learn][3])
 
 ## 2. まず超大事：いま保存してるのは「現在」だけ🧊➡️📜
 
+![Snapshot vs History](./picture/state_machine_cs_study_029_snapshot_vs_history.png)
+
 第28章の保存は、ざっくり言うとこう👇
 
 * 注文（Order）の **“今の状態”** をDBに保存する
@@ -36,6 +38,8 @@ C# 14 もこの世代で扱えます🧠✨ ([Microsoft Learn][3])
 ---
 
 ## 3. 履歴テーブルで答えたい“4つの質問”🧠📝
+
+![Detective Questions](./picture/state_machine_cs_study_029_detective_questions.png)
 
 ![029 Audit Timeline](./picture/state_machine_cs_study_029_audit_timeline.png)
 
@@ -75,6 +79,8 @@ graph TD
 ---
 
 ## 4. いちばんわかりやすい設計：遷移履歴テーブルを「追記専用」で持つ📌💾
+
+![Append Only Scroll](./picture/state_machine_cs_study_029_append_only_scroll.png)
 
 ### ✅ 方針：履歴は「更新しない」✋📜
 
@@ -118,6 +124,8 @@ graph TD
 ---
 
 ## 6. 実装イメージ：状態機械 → 遷移結果 → DBに「現在＋履歴」を同時保存🔁💾
+
+![Transaction Wrapper](./picture/state_machine_cs_study_029_transaction_wrapper.png)
 
 じゃないと「状態だけ更新されたけど履歴がない」事故が起きる😵‍💫💦
 
@@ -338,6 +346,7 @@ timeline
 
 ## 8. タイムライン表示（注文の履歴を“見える化”）🕰️✨
 
+![Timeline UI Concept](./picture/state_machine_cs_study_029_timeline_ui_concept.png)
 
 ### 8.1 クエリ例（OrderIdの履歴を時系列で取得）
 
@@ -398,6 +407,8 @@ public static class TimelineQueries
 2. “重要な遷移だけ”スナップショット追加（Paid/Refundedとか）✨
 
 ### 9.3 DB機能で履歴を持つ案もあるよ（SQL Server Temporal Tables）🗃️✨
+
+![Temporal Table Clock](./picture/state_machine_cs_study_029_temporal_table_clock.png)
 
 SQL Server には **システムバージョン管理（Temporal Tables）** があって、行の変更履歴を自動で残せるよ💡 ([Microsoft Learn][5])
 ただし「誰がやったか」はアプリ側で別途持たないと分からないことが多いので、学習題材としては **アプリの遷移履歴テーブル** が理解しやすいよ👍💕

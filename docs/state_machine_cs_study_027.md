@@ -14,6 +14,8 @@
 
 ## 1) “時間で動く”って、どういうこと？⏳💡
 
+![Time is Event](./picture/state_machine_cs_study_027_time_is_event.png)
+
 ![027 Time Event](./picture/state_machine_cs_study_027_time_event.png)
 
 ```mermaid
@@ -46,6 +48,8 @@ graph LR
 
 ## 2) いちばん大事な考え方：時間も“イベント”にする⏰➡️📣
 
+![Inject Time](./picture/state_machine_cs_study_027_inject_time.png)
+
 ポイントはこれ👇✨
 
 * **時間は外から渡す**（または `TimeProvider` を注入）と、めちゃ安定する💪✨
@@ -73,6 +77,8 @@ graph TD
 
 ## 3) 期限には2種類あるよ⏰🧠
 
+![Relative vs Absolute](./picture/state_machine_cs_study_027_relative_vs_absolute.png)
+
 ## A) 相対期限（Timeout）⌛
 
 「状態に入ってから30分」みたいなやつ
@@ -92,6 +98,8 @@ graph TD
 ---
 
 ## 4) “期限イベント”を発火させる方法 3パターン🎛️✨
+
+![Polling Scanner](./picture/state_machine_cs_study_027_polling_scanner.png)
 
 ## ① 定期スキャン（ポーリング）🔁🕒（初心者におすすめ）
 
@@ -121,6 +129,8 @@ graph TD
 ---
 
 ## 5) 実装のコツ：タイマーはアプリ層に置く🧱➡️🏗️
+
+![Timer Placement](./picture/state_machine_cs_study_027_timer_placement.png)
 
 * **状態機械（ドメイン）**：期限切れの判定と遷移だけ担当
 * **アプリ層（ホスト/サービス）**：一定間隔で `TimeoutCheck` を投げる担当
@@ -343,6 +353,8 @@ public sealed class TimeoutScannerService : BackgroundService
 ---
 
 ## 6-3) テスト：FakeTimeProvider で “30分経過” を一瞬で再現🧪⚡
+
+![Fake Time Warp](./picture/state_machine_cs_study_027_fake_time_warp.png)
 
 時間ものテストで「30分待つ」とか、無理すぎるよね😂🫠
 そこで `FakeTimeProvider` を使うと、**時間を手で進められる**よ✨ ([Microsoft Learn][5])
