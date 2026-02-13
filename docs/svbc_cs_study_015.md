@@ -45,6 +45,8 @@ mindmap
 
 ## 15.2 まず結論：A4 1枚テンプレ（これを埋めれば完成）🧩✅
 
+![A4 Policy Template](./picture/svbc_cs_study_015_policy_template.png)
+
 この章のゴールはこれ！👇（コピペして `COMPATIBILITY_POLICY.md` にすると便利だよ📝）
 
 ---
@@ -117,6 +119,8 @@ mindmap
 
 ## 15.3 「公開API」の決め方が9割✂️📣
 
+![Public API Boundary](./picture/svbc_cs_study_015_public_api_boundary.png)
+
 SemVerは「公開APIが何か」を先に定義する前提だよ〜って仕様にも書いてあります📘 ([Semantic Versioning][1])
 なので、ここが曖昧だと **毎回揉める**😇
 
@@ -136,6 +140,8 @@ SemVerは「公開APIが何か」を先に定義する前提だよ〜って仕�
 ---
 
 ## 15.4 バージョン番号：.NETは「どこに書くか」もルール化しよ🔧✨
+
+![Csproj Versioning](./picture/svbc_cs_study_015_csproj_versioning.png)
 
 .NETライブラリには「バージョンっぽいもの」が複数あるので、**ポリシーに “どれを何に使うか”** も書いとくと事故が減ります🧯
 （Microsoftもライブラリのバージョニング指針を出してるよ） ([Microsoft Learn][3])
@@ -160,6 +166,8 @@ SemVerは「公開APIが何か」を先に定義する前提だよ〜って仕�
 
 ## 15.5 MAJOR/MINOR/PATCH を“文章で判定できる”ようにする🚦📝
 
+![SemVer Traffic Light](./picture/svbc_cs_study_015_semver_traffic_light.png)
+
 SemVerの定義（MAJOR＝破壊変更、MINOR＝後方互換な機能追加、PATCH＝後方互換なバグ修正）は仕様のど真ん中📘 ([Semantic Versioning][1])
 でも現場はグレーが多いので、ポリシーに **“うちの判定基準”** を足すのがコツだよ😊
 
@@ -180,6 +188,8 @@ SemVerの定義（MAJOR＝破壊変更、MINOR＝後方互換な機能追加、P
 ---
 
 ## 15.6 非推奨（Deprecated）：Obsoleteの使い方を“規約化”しよ🧡⚠️
+
+![Obsolete Warning](./picture/svbc_cs_study_015_obsolete_warning.png)
 
 C#なら `[Obsolete]` が基本武器！
 メッセージと、必要なら `error:true`（コンパイルエラー化）も選べます🧰 ([Microsoft Learn][5])
@@ -208,6 +218,8 @@ public class PriceCalculator
 ---
 
 ## 15.7 サポート方針：どのMAJORを面倒見る？🧸🎯
+
+![Support Umbrella](./picture/svbc_cs_study_015_support_umbrella.png)
 
 ここはプロっぽさが出るところ✨
 迷ったら “少なく、はっきり” が正義です😺✂️
@@ -260,6 +272,8 @@ public class PriceCalculator
 ---
 
 ## 15.11 ミニ演習：あなたの互換ポリシーを完成させる（A4 1枚）🎓📄
+
+![Policy Completion](./picture/svbc_cs_study_015_policy_completion.png)
 
 ### Step 1：公開APIを3行で書く📣
 

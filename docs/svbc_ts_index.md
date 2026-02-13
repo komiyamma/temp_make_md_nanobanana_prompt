@@ -12,6 +12,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 
 ## 第1章　バージョンで何が変わるの？📦😵‍💫
 
+![Update Fail Reaction](./picture/svbc_ts_index_update_fail_reaction.png)
+
 **できるようになる**：バージョンが「誰を安心させる仕組み」かわかる
 
 * あるある：更新したら壊れた💥（利用者の世界を想像する👀）
@@ -23,6 +25,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 ---
 
 ## 第2章　SemVerの超基本：MAJOR/MINOR/PATCH🔢✨
+
+![SemVer Blocks](./picture/svbc_ts_index_semver_blocks.png)
 
 **できるようになる**：3つの番号の役割を説明できる
 
@@ -36,6 +40,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 
 ## 第3章　0.x と 1.0.0 の意味（ここ超大事）🚧➡️🏁
 
+![Zero vs One](./picture/svbc_ts_index_zero_vs_one.png)
+
 **できるようになる**：0系での“約束の弱さ”を理解する
 
 * 0.xは「まだ固まってないよ」期間になりやすい🚧
@@ -47,6 +53,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 ---
 
 ## 第4章　SemVerが効く範囲：まず「公開API」を決めよう📣🧱
+
+![Public API Iceberg](./picture/svbc_ts_index_public_api_iceberg.png)
 
 **できるようになる**：「約束するもの／しないもの」を分けられる
 
@@ -87,6 +95,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 
 ## 第7章　TypeScriptの地雷②：exportの変更と“見えてる面”📤👀
 
+![Export Shop Window](./picture/svbc_ts_index_export_shop_window.png)
+
 **できるようになる**：公開面（API surface）という考え方を掴む
 
 * export名の変更＝ほぼ破壊💥
@@ -126,6 +136,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 
 ## 第10章　依存管理①：`^` `~` 固定 の違いを体感する🎚️🧨
 
+![Npm Ranges](./picture/svbc_ts_index_npm_ranges.png)
+
 **できるようになる**：npmのバージョン範囲の“事故り方”がわかる
 
 * `^` はどこまで上がる？ `~` はどこまで？ 固定は？📌
@@ -137,6 +149,8 @@ Windows🪟＋VS Code🧑‍💻＋TypeScript（2026最新版想定）✨＋AI�
 ---
 
 ## 第11章　依存管理②：lockfileの意味（あなたを守る盾）🔒🛡️
+
+![Lockfile Shield](./picture/svbc_ts_index_lockfile_shield.png)
 
 **できるようになる**：lockfileの役割を説明できる
 
