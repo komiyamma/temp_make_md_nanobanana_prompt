@@ -20,6 +20,8 @@ SemVer（セマンティックバージョニング）は、バージョンを *
 
 ## 2.1 “互換”って誰に対して？👥（←ここがいちばん大事）
 
+![User Perspective](./picture/svbc_ts_study_002_user_perspective.png)
+
 互換っていうのは、「あなたのライブラリ（またはアプリ）を使ってる人」の世界で起きること！🌍✨
 たとえば「利用者」がこう書いてたとして…
 
@@ -47,6 +49,8 @@ SemVerの仕様でも、だいたいこの意味で増やすって書いてあ�
 
 ## 2.3 “壊れる”って、具体的には何？💥🔍
 
+![Break Types](./picture/svbc_ts_study_002_break_types.png)
+
 初心者さん向けに、まずはこの3つでOK！✅
 
 1. **コンパイルが通らない**（TSで型エラーになる）🧷
@@ -58,6 +62,8 @@ SemVerの仕様でも、だいたいこの意味で増やすって書いてあ�
 ---
 
 ## 2.4 迷ったときの“判断フロー”🧠🧭（超つよテンプレ）
+
+![Decision Flow](./picture/svbc_ts_study_002_decision_flow.png)
 
 次の順番で考えると、めっちゃ迷いが減るよ〜！🎯✨
 
@@ -92,6 +98,8 @@ flowchart TD
 ---
 
 ## 2.5 TypeScriptで“ありがち”な例で体感しよ〜🧩✨
+
+![TS Examples](./picture/svbc_ts_study_002_ts_examples.png)
 
 ### ベース：小さなライブラリを想像📦
 
@@ -193,6 +201,8 @@ export type User = { id: string; name: "Alice" | "Bob" }; // ←狭めた
 
 ## 2.6 よくある勘違いTOP5😵‍💫➡️🙂
 
+![SemVer Myths](./picture/svbc_ts_study_002_semver_myths.png)
+
 1. **「内部実装変えたからMAJOR」** → 公開APIに影響しないなら不要なこと多いよ🙆‍♀️
 2. **「新機能追加＝MAJOR」** → 互換を保って足すならMINOR✨ ([Semantic Versioning][1])
 3. **「バグ修正＝絶対PATCH」** → その修正が“仕様変更級”なら要注意⚠️
@@ -232,6 +242,8 @@ export type User = { id: string; name: "Alice" | "Bob" }; // ←狭めた
 ---
 
 ## 2.8 実践：バージョン番号を上げる（コマンドで）⌨️✨
+
+![Npm Version Terminal](./picture/svbc_ts_study_002_npm_version_terminal.png)
 
 「よし、これはPATCHだね！」みたいに決めたら、番号を上げよう📦⬆️
 

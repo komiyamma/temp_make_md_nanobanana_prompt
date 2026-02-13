@@ -18,6 +18,8 @@
 
 ## 2) まず最初にあるある💥「更新したら壊れた」
 
+![Update Shock](./picture/svbc_ts_study_001_update_shock.png)
+
 ### ある日のあなた（利用者側）👩‍💻🍌
 
 * いつも通り依存パッケージを更新
@@ -30,6 +32,8 @@
 ---
 
 ## 3) バージョン番号って、結局なに？🔢✨
+
+![SemVer Breakdown](./picture/svbc_ts_study_001_semver_breakdown.png)
 
 バージョン番号は、ただの飾りじゃなくて…
 
@@ -60,6 +64,8 @@ flowchart TD
 
 ## 4) 「互換性」ってなに？🤝🔍（超やさしく）
 
+![Plug Compatibility](./picture/svbc_ts_study_001_plug_compatibility.png)
+
 ### 互換性（後方互換）がある✅
 
 古い使い方のままでも、だいたい動く / コンパイル通る / 意味が同じ✨
@@ -74,6 +80,8 @@ flowchart TD
 ---
 
 ## 5) 「契約」「約束」って何のこと？📜✨
+
+![Public API Scroll](./picture/svbc_ts_study_001_public_api_scroll.png)
 
 ここで言う“契約”は、法的な話じゃなくて、**開発上の約束**だよ😊
 
@@ -106,6 +114,8 @@ graph LR
 
 ## 6) ここで現実の小ネタ🧂（TypeScriptはちょい特殊）
 
+![TS Version Caution](./picture/svbc_ts_study_001_ts_version_caution.png)
+
 TypeScript本体（コンパイラ）の世界では、一般的なSemVerの感覚とズレることがあるよ〜⚠️
 「minorでも破壊が入りうる」前提で扱おう、という整理が紹介されてるよ📌 ([Semver TS][2])
 
@@ -114,6 +124,8 @@ TypeScript本体（コンパイラ）の世界では、一般的なSemVerの感�
 ---
 
 ## 7) ミニ演習📝✨（10〜15分）
+
+![Library Picker](./picture/svbc_ts_study_001_library_picker.png)
 
 ### 演習：自分が使ってるライブラリを1つ選ぼう📦
 

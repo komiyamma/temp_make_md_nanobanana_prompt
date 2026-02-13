@@ -40,6 +40,8 @@ flowchart TD
 
 ## 16.2 今回作る題材：小さな文字変換ライブラリ「CuteSlug」🍌✨（例）
 
+![CuteSlug Concept](./picture/svbc_cs_study_016_cuteslug_concept.png)
+
 やることを小さくして、互換性の話に集中するよ〜😊
 **用途：文字列をURL向けのslugにする**（ブログURLみたいなやつ）
 
@@ -53,6 +55,8 @@ flowchart TD
 ---
 
 ## 16.3 リポジトリ構成（おすすめ）📁✨
+
+![Repo Structure](./picture/svbc_cs_study_016_repo_structure.png)
 
 * `src/CuteSlug/`（ライブラリ本体）
 * `tests/CuteSlug.Tests/`（利用者コードっぽいテスト）
@@ -102,6 +106,8 @@ public static class Slugger
 
 ### パッケージ化の“最低ライン”📦
 
+![Dotnet Pack Action](./picture/svbc_cs_study_016_dotnet_pack_action.png)
+
 `dotnet pack` は `-p:PackageVersion=1.0.0` みたいに指定できるよ🔧([Microsoft Learn][5])
 
 ```bat
@@ -112,6 +118,8 @@ dotnet pack -c Release -p:PackageVersion=1.0.0
 ---
 
 ## 16.5 リリース②：v1.0.1（PATCH：バグ修正🐛✨）
+
+![Patch Fix Visual](./picture/svbc_cs_study_016_patch_fix_visual.png)
 
 ### シナリオ（よくあるやつ）😇
 
@@ -129,6 +137,8 @@ dotnet pack -c Release -p:PackageVersion=1.0.0
 ---
 
 ## 16.6 リリース③：v1.1.0（MINOR：後方互換の追加➕✨）
+
+![Minor Update Options](./picture/svbc_cs_study_016_minor_update_options.png)
 
 ここが「SemVerが効いてる感」いちばん出るよ〜😊
 
@@ -179,6 +189,8 @@ public static class Slugger
 
 ## 16.7 リリース④：v2.0.0（MAJOR：破壊変更💥📄）
 
+![Major Break Cleanup](./picture/svbc_cs_study_016_major_break_cleanup.png)
+
 ついに「壊すなら正しく壊す」💥🌷
 
 ### 今回の破壊変更
@@ -197,6 +209,8 @@ public static class Slugger
 ---
 
 ## 16.8 NuGetのバージョン表現：プレリリースも知っておくと強い🥷✨
+
+![Prerelease Visual](./picture/svbc_cs_study_016_prerelease_visual.png)
 
 NuGetは SemVer 2.0.0 の要素（例：`1.0.0-alpha.1` や `+metadata`）を扱うけど、古いクライアントだと対応が弱い話もあるよ〜って公式に書かれてる📦([Microsoft Learn][7])
 
