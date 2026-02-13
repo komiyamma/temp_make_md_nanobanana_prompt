@@ -15,6 +15,8 @@
 
 ## 1) まずは「混ぜるとつらい」例 😇➡️😱
 
+![testable_cs_study_006_bad_mix_blender.png](./picture/testable_cs_study_006_bad_mix_blender.png)
+
 やりがちな例：**税計算しつつ、そのままレシートを書き出す**🧾🗂️
 こういうの、動くんだけど…テストがしんどい💦
 
@@ -69,6 +71,8 @@ public sealed class ReceiptService_Bad
 
 ## 3) “ピュアな核”を作る（税計算）🧮🌿
 
+![testable_cs_study_006_pure_calculator_robot.png](./picture/testable_cs_study_006_pure_calculator_robot.png)
+
 まずは「税計算だけ」を **純粋関数**にしちゃうよ✨
 入力：`subtotal`, `taxRate` → 出力：`tax`, `total`（それだけ！）
 
@@ -92,6 +96,8 @@ public static class TaxCalculator
 ---
 
 ## 4) I/O（レシート出力）を “境界” に押し出す🚧🧾
+
+![testable_cs_study_006_interface_boundary_slot.png](./picture/testable_cs_study_006_interface_boundary_slot.png)
 
 次に、出力は「差し替えできる形」にするよ🧩✨
 最小のやり方：**インターフェース1個**で包む！
@@ -175,6 +181,8 @@ public sealed class ReceiptService
 
 ## 6) これで「一瞬でテストできる」体験🎉⚡
 
+![testable_cs_study_006_fake_printer_bear.png](./picture/testable_cs_study_006_fake_printer_bear.png)
+
 ファイルは使わず、メモリに溜める Fake を作っちゃう🧸✨
 
 ```csharp
@@ -229,6 +237,8 @@ public static class MiniCheck
 
 ## 7) まとめ：この章の “最小パターン”✅✨
 
+![testable_cs_study_006_separation_pattern_icons.png](./picture/testable_cs_study_006_separation_pattern_icons.png)
+
 頭の中はこれだけでOK🧠💡
 
 * ① **ピュア**：計算・判定・変換（同じ入力→同じ出力）🧮🌿
@@ -251,6 +261,8 @@ public static class MiniCheck
 ---
 
 ## 9) ミニ課題（手を動かすやつ）✍️🎮
+
+![testable_cs_study_006_exercise_markers.png](./picture/testable_cs_study_006_exercise_markers.png)
 
 ## 課題A🧪：境界の発見
 

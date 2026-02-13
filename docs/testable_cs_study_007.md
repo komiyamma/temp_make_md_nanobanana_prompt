@@ -34,6 +34,8 @@
 
 ## 2. 単体テスト（ユニット）ってなに？🧩✨
 
+![testable_cs_study_007_unit_puzzle_piece.png](./picture/testable_cs_study_007_unit_puzzle_piece.png)
+
 ### ✅ ひとことで
 
 **「小さく切ったロジックだけを、外の世界なしでテストする」**やつ！🌿
@@ -55,6 +57,8 @@ Microsoftのベストプラクティスでも、**読みやすくて壊れにく
 ---
 
 ## 3. 結合テスト（Integration）ってなに？🤝✨
+
+![testable_cs_study_007_integration_handshake.png](./picture/testable_cs_study_007_integration_handshake.png)
 
 ### ✅ ひとことで
 
@@ -83,6 +87,8 @@ ASP.NET Coreの統合テストの公式説明も、
 
 ## 4. E2E（End-to-End）ってなに？🚀✨
 
+![testable_cs_study_007_e2e_user_journey.png](./picture/testable_cs_study_007_e2e_user_journey.png)
+
 ### ✅ ひとことで
 
 **「ユーザー目線で、最初から最後まで通るか」**を見るテスト！
@@ -109,6 +115,8 @@ ASP.NET Coreの統合テストの公式説明も、
 
 ## 5. I/O境界の分離と、テスト種類の相性が最高にいい話 🚪✨
 
+![testable_cs_study_007_io_push_out.png](./picture/testable_cs_study_007_io_push_out.png)
+
 ここがこのロードマップの本題につながるところ！💡😊
 
 ### 🎯 理想の割り振り（めちゃおすすめ）
@@ -124,6 +132,8 @@ ASP.NET Coreの統合テストの公式説明も、
 ---
 
 ## 6. 「これはどのテスト？」分類ゲーム 🎮✨
+
+![testable_cs_study_007_sorting_game.png](./picture/testable_cs_study_007_sorting_game.png)
 
 想像してみてね👇
 
@@ -151,6 +161,8 @@ ASP.NET Coreの統合テストの公式説明も、
 ---
 
 ## 7. 初心者がハマりやすい罠トップ5 😵‍💫💥
+
+![testable_cs_study_007_ice_cream_cone_trap.png](./picture/testable_cs_study_007_ice_cream_cone_trap.png)
 
 ### ① E2Eだけで全部守ろうとする 🚀🚀🚀
 
