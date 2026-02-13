@@ -55,6 +55,8 @@ graph TD
 
 ここ、めっちゃ混ざりやすいので超大事〜〜⚠️😵‍💫
 
+![Guard vs Invariant](./picture/state_machine_cs_study_013_guard_vs_invariant.png)
+
 ```mermaid
 sequenceDiagram
     participant User as ユーザー
@@ -93,6 +95,8 @@ sequenceDiagram
 
 ### Step A：注文が持つデータ項目を“棚卸し”🧺
 
+![Data Inventory](./picture/state_machine_cs_study_013_data_inventory.png)
+
 例（最低限）👇
 
 * OrderId
@@ -106,6 +110,8 @@ sequenceDiagram
 * RefundedAt / RefundAmount
 
 ### Step B：「状態ごとの必須項目チェック表」を作る📊✅
+
+![Invariant Matrix](./picture/state_machine_cs_study_013_invariant_matrix.png)
 
 ここが本章のメイン！💖
 （例：学食モバイル注文）
@@ -132,6 +138,8 @@ sequenceDiagram
 ---
 
 ## 5) どこでチェックする？おすすめの置き場所🏠✨
+
+![Check Locations](./picture/state_machine_cs_study_013_check_locations.png)
 
 初心者向けの結論だけ言うね😊
 
@@ -328,6 +336,9 @@ public sealed class Order
 ポイントはここだよ〜🧡
 
 * **不変条件は「最後の砦」**：状態が変わったあとに必ずチェック✅
+
+![Last Fortress](./picture/state_machine_cs_study_013_last_fortress.png)
+
 * これだけで「PaidなのにPaidAt無い」とかが即爆発する💥→事故が早期発見できる🎉
 
 ---
