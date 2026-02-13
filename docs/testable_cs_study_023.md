@@ -27,7 +27,7 @@ C# は **C# 14** が .NET 10 / Visual Studio 2026 で使えるよ〜🧩 ([Micro
 
 ## 23.2 設計の地図（超ざっくり）🗺️😊
 
-
+![testable_cs_study_023_architecture_map.png](./picture/testable_cs_study_023_architecture_map.png)
 
 ![testable_cs_study_023_mini_app_arch.png](./picture/testable_cs_study_023_mini_app_arch.png)
 
@@ -138,6 +138,8 @@ public interface IRandom
 ```
 
 ## ③ 進行役（ユースケース）：QuizGame
+
+![testable_cs_study_023_game_master.png](./picture/testable_cs_study_023_game_master.png)
 
 `QuizGame.cs` を作るよ🎮✨
 「**Consoleを直接触らない**」で、IConsole 経由にするのがキモ！💡
@@ -279,6 +281,8 @@ public sealed class DotNetRandom : IRandom
 
 ## 23.6 Composition Root（組み立て）：Program.cs に集める🏗️✨
 
+![testable_cs_study_023_program_wiring.png](./picture/testable_cs_study_023_program_wiring.png)
+
 `Program.cs` は「配線するだけ」🔌
 ここに “本物” を集めるのがコツだよ〜！📍😊
 
@@ -301,6 +305,8 @@ console.WriteLine("👋 またね〜！");
 ---
 
 ## 23.7 テストを書く：Fake差し替えで “速い・安定” を体感🧪⚡
+
+![testable_cs_study_023_test_setup_fakes.png](./picture/testable_cs_study_023_test_setup_fakes.png)
 
 ここが今日のメインイベント🥳✨
 `QuizApp.Tests` に Fake/Stub を置いて、`QuizGame` をテストするよ！
@@ -432,6 +438,8 @@ public class QuizGameTests
 ---
 
 ## 23.8 よくあるミスあるある 😵‍💫💥（先回りで回避！）
+
+![testable_cs_study_023_direct_access_fail.png](./picture/testable_cs_study_023_direct_access_fail.png)
 
 * **ロジックの中で `Console.ReadLine()` を直接呼ぶ** → テスト不能😇
 * **Randomを直接 new して使う** → テストが揺れる🌪️

@@ -15,6 +15,7 @@
 
 ## 1) 卒業の合言葉（最重要）📦➡️🌍
 
+![testable_cs_study_025_io_out_rule_in.png](./picture/testable_cs_study_025_io_out_rule_in.png)
 
 ![testable_cs_study_025_graduation.png](./picture/testable_cs_study_025_graduation.png)
 
@@ -33,6 +34,8 @@
 
 ## 2) 3つの箱で考えると一生迷わない 📦📦📦✨
 
+![testable_cs_study_025_three_boxes.png](./picture/testable_cs_study_025_three_boxes.png)
+
 イメージはこれだけでOK😊
 
 * **① ルール箱（ドメイン）**：純粋ロジック🌿
@@ -48,6 +51,8 @@
 ---
 
 ## 3) 卒業テンプレ（最小構成）🧰✨
+
+![testable_cs_study_025_clean_folders.png](./picture/testable_cs_study_025_clean_folders.png)
 
 「これだけ守れば勝ち」っていう型を置いておくね😊💕
 
@@ -98,12 +103,16 @@ services.AddScoped<IssueCouponUseCase>();
 
 ## 落とし穴①：抽象化しすぎ（インターフェース作りすぎ）🧩🧩🧩
 
+![testable_cs_study_025_over_abstraction.png](./picture/testable_cs_study_025_over_abstraction.png)
+
 * 何でも `IWhatever` にすると、逆に読みづらい😇
   **回避**：
 * 「外の世界（I/O）」だけ包む、から始めるのが安定👍✨
 * 迷ったら **“テストで差し替えたい？”** で判断💡
 
 ## 落とし穴②：Mock地獄👻（呼ばれた回数テストばかり）
+
+![testable_cs_study_025_mock_hell.png](./picture/testable_cs_study_025_mock_hell.png)
 
 * “実装の形” をテストしてしまうと、リファクタで壊れやすい💥
   **回避**：
@@ -149,6 +158,8 @@ services.AddScoped<IssueCouponUseCase>();
 ---
 
 ## 7) 卒業課題（ミニアプリ案）🎮💖
+
+![testable_cs_study_025_coupon_blueprint.png](./picture/testable_cs_study_025_coupon_blueprint.png)
 
 「1〜2日で作れて、境界が気持ちよく分かれる」やつ✨
 

@@ -21,6 +21,8 @@ Visual Studio 2026 は 2026-01-13 に 18.2.0 の更新が出てるよ🛠️ ([M
 
 ## 21-2. 分解の地図を1枚持とう 🗺️😊
 
+![testable_cs_study_021_breakdown_map.png](./picture/testable_cs_study_021_breakdown_map.png)
+
 コードの中身って、だいたいこの3つが混ざってるのが原因だよ〜😵‍💫💥
 
 ### A) ルール（ピュア）🌿
@@ -53,10 +55,14 @@ Visual Studio 2026 は 2026-01-13 に 18.2.0 の更新が出てるよ🛠️ ([M
 
 ### 型1：I/Oに蛍光ペンを引く🖍️
 
+![testable_cs_study_021_highlight_io.png](./picture/testable_cs_study_021_highlight_io.png)
+
 「Console」「Http」「DB」「File」「DateTime.Now」「Random」…見つけたら全部マーキング✅
 → それが “外の世界” だよ🚪🌍
 
 ### 型2：“判断”を先に終わらせる🎯
+
+![testable_cs_study_021_decide_then_do.png](./picture/testable_cs_study_021_decide_then_do.png)
 
 I/Oしながら判断しない！
 先に「どうする？」を決めて、後で「実行」する✨
@@ -88,6 +94,7 @@ I/Oしながら判断しない！
 
 ### 21-4-1. Before：ぜんぶ混ぜた地獄コード 👻
 
+![testable_cs_study_021_spaghetti_mix.png](./picture/testable_cs_study_021_spaghetti_mix.png)
 
 ![testable_cs_study_021_bad_spaghetti.png](./picture/testable_cs_study_021_bad_spaghetti.png)
 
@@ -199,6 +206,8 @@ public sealed record Order(string UserId, decimal Total, DateTime OrderedAt);
 
 ## 21-6. Step 2：“判断だけ”をピュアに抜き出す 🌿🎯
 
+![testable_cs_study_021_extract_pure_rule.png](./picture/testable_cs_study_021_extract_pure_rule.png)
+
 次は「割引率を決める」みたいな **ルール** を関数に分離するよ✂️✨
 I/O いっさい無しにするのがコツ🧼
 
@@ -228,6 +237,8 @@ public static class CheckoutRules
 ---
 
 ## 21-7. Step 3：ユースケースで組み立てる 🧩🏗️✨
+
+![testable_cs_study_021_usecase_orchestrator.png](./picture/testable_cs_study_021_usecase_orchestrator.png)
 
 つなぎ役を “UseCase” として作るよ😊
 ここが「判断（ルール）」と「I/O」をつなぐ場所！
