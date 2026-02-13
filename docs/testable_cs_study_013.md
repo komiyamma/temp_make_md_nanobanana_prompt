@@ -31,6 +31,8 @@
 
 ## 13.2 Fake / Stub / Mock の違い（超ざっくり）🍰
 
+![testable_cs_study_013_stub_fake_mock_trio.png](./picture/testable_cs_study_013_stub_fake_mock_trio.png)
+
 ここ、まずはこの3つだけ覚えればOKだよ😊✨
 
 ### ✅ Stub（スタブ）📌：返す値を固定する子
@@ -142,6 +144,8 @@ public sealed class RegisterUserUseCase
 
 ## 13.6 Stub：時刻を固定してテストを安定させる🕰️📌
 
+![testable_cs_study_013_stub_clock_nail.png](./picture/testable_cs_study_013_stub_clock_nail.png)
+
 ```csharp
 public sealed class StubClock : IClock
 {
@@ -156,6 +160,8 @@ public sealed class StubClock : IClock
 ---
 
 ## 13.7 Fake：インメモリRepositoryで“それっぽく動かす”🧸🗃️
+
+![testable_cs_study_013_fake_repo_basket.png](./picture/testable_cs_study_013_fake_repo_basket.png)
 
 ```csharp
 public sealed class FakeUserRepository : IUserRepository
@@ -181,6 +187,8 @@ Fakeは **DBを使わずに「保存された事実」を確認できる**のが
 ---
 
 ## 13.8 Mock：メールが送られたことを検証する👀📮
+
+![testable_cs_study_013_mock_detective.png](./picture/testable_cs_study_013_mock_detective.png)
 
 ### A) まずは“手書きMock”でやってみる（初心者に超おすすめ）✍️💖
 
@@ -300,6 +308,8 @@ public sealed class MoqExampleTests
 ---
 
 ## 13.11 よくある落とし穴（ここ超大事）⚠️🫠
+
+![testable_cs_study_013_mock_hell_strings.png](./picture/testable_cs_study_013_mock_hell_strings.png)
 
 ### ❌ なんでもMockにする（モック地獄）🕳️
 

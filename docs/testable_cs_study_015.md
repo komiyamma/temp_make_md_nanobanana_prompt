@@ -21,6 +21,8 @@
 
 ## 1) 乱数があると、テストが“揺れる”理由 🌪️😵‍💫
 
+![testable_cs_study_015_random_instability.png](./picture/testable_cs_study_015_random_instability.png)
+
 たとえば「くじ引きで当たりが出たらOK」みたいな処理を考えるね🎯
 ロジックの中で `Random` を直接使うと…
 
@@ -48,6 +50,8 @@
 ---
 
 ## 3) 最小の境界：`IRandom` を作ろう 🧩🎲
+
+![testable_cs_study_015_irandom_panel.png](./picture/testable_cs_study_015_irandom_panel.png)
 
 ポイントは「機能を盛りすぎない」こと！
 まずは **必要なメソッドだけ**に絞るのが勝ち✨
@@ -93,6 +97,8 @@ public sealed class DotNetRandom : IRandom
 ---
 
 ## 5) テスト用の偽物：決め打ちで返す `SequenceRandom` 🎭🧪
+
+![testable_cs_study_015_sequence_script.png](./picture/testable_cs_study_015_sequence_script.png)
 
 テストでは「次はこれ、次はこれ」って返せると最強だよ💪😊
 “乱数っぽい顔をしてるけど中身は台本” って感じ📜✨
@@ -147,6 +153,8 @@ public sealed class SequenceRandom : IRandom
 ---
 
 ## 6) 例題：ガチャ（レア度抽選）をテスタブルにする 🎮🎁✨
+
+![testable_cs_study_015_gacha_test.png](./picture/testable_cs_study_015_gacha_test.png)
 
 ## やりたい仕様（かわいいやつ）😊
 
@@ -245,6 +253,8 @@ public class GachaServiceTests
 なので教材としては、**SequenceRandom みたいに自前で台本化**がいちばん安心だよ🎭✨
 
 ## ❌ セキュリティ用途に `Random` を使う（ダメ、ゼッタイ）🔐💥
+
+![testable_cs_study_015_security_lock_comparison.png](./picture/testable_cs_study_015_security_lock_comparison.png)
 
 パスワード、トークン、認証コードみたいな “安全が必要な乱数” は `RandomNumberGenerator` を使うのが公式に案内されてるよ🛡️ ([Microsoft Learn][5])
 
