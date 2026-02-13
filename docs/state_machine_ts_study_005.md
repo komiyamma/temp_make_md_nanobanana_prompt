@@ -89,6 +89,8 @@
 
 ### 2-4) Guard（ガード）🛡️
 
+![Guard Check](./picture/state_machine_ts_study_005_guard_check.png)
+
 **Guardは「その遷移、していい？」のチェック**だよ😊
 
 例：
@@ -102,6 +104,8 @@
 ---
 
 ### 2-5) Action（アクション）🧰
+
+![Action Robot](./picture/state_machine_ts_study_005_action_robot.png)
 
 **Actionは「遷移したときにやる処理」**だよ！
 
@@ -118,6 +122,8 @@
 
 ### 2-6) Context（コンテキスト）🧠
 
+![Context Backpack](./picture/state_machine_ts_study_005_context_backpack.png)
+
 **Contextは「状態とは別に持つデータ箱」**！
 
 例：
@@ -133,6 +139,8 @@
 ---
 
 ## 3) 6語がどう繋がるか（超重要の1枚）🧩✨
+
+![Flow Process](./picture/state_machine_ts_study_005_flow_process.png)
 
 * **Event** が来る
 * いまの **State** を見る
@@ -165,6 +173,8 @@ flowchart TD
 ※ここでは「用語と形」が伝わればOK！ガチ実装は後の章でやるよ😊
 
 ### 4-1) State / Event を型で表す（判別可能ユニオン）🎫✨
+
+![Discriminated Union Cards](./picture/state_machine_ts_study_005_discriminated_union_cards.png)
 
 TypeScriptは、タグ（例：`type` や `kind`）で **ユニオンを判別**できるのが強みだよ〜！💖 ([typescriptlang.org][1])
 
