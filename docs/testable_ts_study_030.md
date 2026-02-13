@@ -27,6 +27,8 @@
 
 ### やること（要件）
 
+![testable_ts_study_030_spec_flow.png](./picture/testable_ts_study_030_spec_flow.png)
+
 ✅1. 注文アイテム（SKUと数量）を受け取る
 2. **合計計算**（小計 → 割引 → 税 → 合計）💰
 3. **在庫チェック＆確保**（外の世界＝I/O）📦
@@ -83,6 +85,8 @@ graph TD
 
 
 ### 例：フォルダ構成（おすすめ）
+
+![testable_ts_study_030_folder_structure.png](./picture/testable_ts_study_030_folder_structure.png)
 
 📂
 
@@ -187,6 +191,8 @@ export type MoneyBreakdown = Readonly<{
 
 ### 4.2 合計計算（src/core/domain/pricing.ts）
 
+![testable_ts_study_030_pricing_logic.png](./picture/testable_ts_study_030_pricing_logic.png)
+
 💰
 
 
@@ -281,6 +287,8 @@ describe("calcTotal", () => {
 
 ### 5.1 Port（src/core/ports/ports.ts）
 
+![testable_ts_study_030_inventory_port.png](./picture/testable_ts_study_030_inventory_port.png)
+
 📜
 
 ```ts
@@ -327,6 +335,8 @@ export const Err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 ```
 
 ### 5.3 Usecase（src/core/usecases/placeOrder.ts）
+
+![testable_ts_study_030_placeorder_flow.png](./picture/testable_ts_study_030_placeorder_flow.png)
 
 🛒
 
@@ -468,6 +478,8 @@ test("placeOrder: 在庫不足", async () => {
 ---
 
 ## 7. 外側（Adapters）
+
+![testable_ts_study_030_adapters_impl.png](./picture/testable_ts_study_030_adapters_impl.png)
 
 を作る：本物I/O担当🔌✨（外側接続ステップ）ここから先は「中心のお願い（Port）」を満たす実装を書くだけ〜！
 
@@ -631,6 +643,8 @@ describe("httpInventory integration", () => {
 ---
 
 ## 9. アプリの組み立て（Composition Root）
+
+![testable_ts_study_030_composition_root.png](./picture/testable_ts_study_030_composition_root.png)
 
 🏗️✨“組み立て係”は **外側**に置くよ〜！
 

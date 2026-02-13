@@ -26,6 +26,8 @@ YAGNIはXP（エクストリーム・プログラミング）で語られてき�
 
 ## 2. なんでYAGNIが大事なの？（超リアルな理由）😅💥
 
+![yagni_cs_study_001_maintenance_cost.png](./picture/yagni_cs_study_001_maintenance_cost.png)
+
 「未来のために作っとこ！」って、優しさに見えるんだけど…実際はこうなりがち👇
 
 * **未来が当たらない**🎯💦（当たったとしても“別の形で必要”になりがち）
@@ -40,6 +42,8 @@ YAGNIはXP（エクストリーム・プログラミング）で語られてき�
 ## 3. よくある誤解をぜんぶ潰す（ここ超大事）🧯✨
 
 ### 誤解①：YAGNI = 手抜き？😵‍💫
+
+![yagni_cs_study_001_misconception.png](./picture/yagni_cs_study_001_misconception.png)
 
 **違うよ〜！🙅‍♀️**
 YAGNIは「雑に作る」じゃなくて、**価値が出るところに集中する**ってこと✨
@@ -59,6 +63,8 @@ YAGNIは、XPの文脈だと「シンプルに作って、必要になったら�
 ---
 
 ## 4. KISS / DRY とどう関係するの？（ざっくりおいしく）🧁✨
+
+![yagni_cs_study_001_principles_trio.png](./picture/yagni_cs_study_001_principles_trio.png)
 
 ### KISS（シンプルにしよう）🍭
 
@@ -137,6 +143,8 @@ YAGNIは、XPの文脈だと「シンプルに作って、必要になったら�
 
 ## 6. “C#あるある”で見る：YAGNIの空気感 🧠🧯
 
+![yagni_cs_study_001_over_engineering.png](./picture/yagni_cs_study_001_over_engineering.png)
+
 ### ありがち：最初から全部「差し替え可能」にしたくなる😇
 
 * まだ差し替えないのに `IService` / `IRepository` を量産
@@ -172,6 +180,8 @@ public sealed record Participant(string Name, string StudentId, string Email);
 ---
 
 ## 7. AI活用🤖：MVP範囲をAIに箇条書きさせる（盛らせないコツ付き）🧯✨
+
+![yagni_cs_study_001_ai_prompting.png](./picture/yagni_cs_study_001_ai_prompting.png)
 
 ### 7-1. “盛らせない”プロンプト（コピペOK）📝
 
