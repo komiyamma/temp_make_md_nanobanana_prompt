@@ -90,6 +90,8 @@ Visual Studioで「ソリューション」作って、プロジェクト2つ追
 
 ## 4.4 ソース互換アウト例：コンパイルで落ちる🧯😇
 
+![Source Break Puzzle](./picture/svbc_cs_study_004_source_break_puzzle.png)
+
 ### v1.0.0（MyLib）
 
 ```csharp
@@ -129,6 +131,8 @@ public static int AddTaxIncluded(int price) => (int)(price * 1.10);
 ---
 
 ## 4.5 バイナリ互換アウト例：実行時に壊れる💣🔥
+
+![Binary Explosion](./picture/svbc_cs_study_004_binary_explosion.png)
 
 ここ、初心者さんが一番「え、なんで？😳」ってなりやすいとこ！
 
@@ -174,6 +178,8 @@ sequenceDiagram
 
 ## 4.6 挙動互換アウト例：動くけど結果が変わる😵🌀
 
+![Behavior Shift](./picture/svbc_cs_study_004_behavior_shift.png)
+
 これが一番やっかい😇（CIが通っても混ざる…）
 
 ### v1.0.0（例：丸め方が雑）
@@ -201,6 +207,8 @@ public static int AddTax(int price) => (int)Math.Round(price * 1.10); // 四捨�
 ---
 
 ## 4.7 SemVerの判断にどう繋がる？🔢🧠（超シンプル版）
+
+![SemVer Mapping](./picture/svbc_cs_study_004_semver_mapping_arrows.png)
 
 SemVerの基本ルールはこれ👇（公開APIが前提）([Semantic Versioning][3])
 
@@ -252,6 +260,8 @@ SemVerの基本ルールはこれ👇（公開APIが前提）([Semantic Versioni
 ---
 
 ## 4.9 AIの使いどころ🤖💡（この章の最強コンボ）
+
+![AI Test Gen](./picture/svbc_cs_study_004_ai_test_gen.png)
 
 ### ✅ コンボA：利用者コードをAIに作らせる👩‍💻➡️🤖
 

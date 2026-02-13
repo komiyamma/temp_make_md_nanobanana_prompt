@@ -1,5 +1,7 @@
 # セマンティックバージョニング（SemVer）＋互換ポリシー：16章アウトライン📘✨
 
+![SemVer Shield](./picture/svbc_cs_index_semver_shield.png)
+
 （Windows＋Visual Studio中心／必要ならVS CodeもOK／Copilot・Codex等のAI導入済み前提🤖💡）
 
 ## 第1章：バージョンは“約束”って何？🤝🔢
@@ -17,6 +19,8 @@
 ---
 
 ## 第2章：SemVer超入門（MAJOR.MINOR.PATCH）🧱✨
+
+![SemVer Blocks](./picture/svbc_cs_index_semver_blocks.png)
 
 * **ねらい**：3つの数字の意味を即答できるようにする💬
 * **扱う内容**
@@ -89,6 +93,8 @@
 ---
 
 ## 第7章：MAJORの作法（壊すなら“優しく壊す”💥🌷）
+
+![Major Update Sign](./picture/svbc_cs_index_major_update_sign.png)
 
 * **ねらい**：破壊変更を計画的にやる流れを学ぶ🪜
 * **扱う内容**
@@ -204,6 +210,8 @@
 ---
 
 ## 第15章：互換ポリシーを書こう（SemVerを運用に落とす）📘🖊️
+
+![Policy Frame](./picture/svbc_cs_index_policy_frame.png)
 
 * **ねらい**：「番号ルール」から「チームのルール」へ格上げする✨
 * **扱う内容（ポリシー必須項目）**
