@@ -31,6 +31,8 @@ TypeScriptは **構造的型付け（形が同じならOK）** だから…
 
 ## LSPの“実戦”で見るべきポイント👀⚔️
 
+![LSP Violations List](./picture/solid_ts_study_019_lsp_violations_list.png)
+
 差し替えで壊れるのって、だいたいこの4つ😵‍💫
 
 1. **入力の前提（事前条件）を勝手にキツくする**
@@ -80,6 +82,8 @@ TypeScriptは **構造的型付け（形が同じならOK）** だから…
 
 # 1) まずは「金額」を型で守ろう💰🔐
 
+![Money Brand](./picture/solid_ts_study_019_money_brand.png)
+
 「numberでいいじゃん」と思うけど、numberは何でも入るから事故が起きる😇
 なので **ブランド型（branded type）** で “ただのnumber” と区別しよ〜🪄✨
 
@@ -111,6 +115,8 @@ function createMoney(value: number): { ok: true; value: Money } | { ok: false; e
 
 # 2) 失敗は `Result` で返す（throwしない）🎁🧯
 
+![Result Type Gift](./picture/solid_ts_study_019_result_type_gift.png)
+
 支払いって失敗するよね？（残高不足とか）😢
 それを `throw` にすると、実装ごとにバラついて地獄になりがち🔥
 
@@ -132,6 +138,8 @@ function err<E>(error: E): Err<E> {
 ---
 
 # 3) 差し替え口（interface）を「契約」として設計する🧩📜
+
+![Interface Contract Scroll](./picture/solid_ts_study_019_interface_contract_scroll.png)
 
 今回の契約はこんな感じにするよ👇
 （ポイントは **“どの実装でも守れる” ちょうどよい約束** にすること！）
@@ -238,6 +246,8 @@ class CardPayment implements PaymentMethod {
 
 # 5) 「LSP違反」をわざと作ってみよう😈💥
 
+![Bad Implementation Trap](./picture/solid_ts_study_019_bad_implementation_trap.png)
+
 やりがちな事故：**実装だけ勝手に throw しちゃう**やつ🔥
 
 ```ts
@@ -264,6 +274,8 @@ class BadCardPayment implements PaymentMethod {
 ---
 
 # 6) 共通テストで「契約」を固定する🧪🔒✨（ここが本番）
+
+![Universal Tester](./picture/solid_ts_study_019_universal_tester.png)
 
 ここからが第19章のメインディッシュ🍰✨
 **“どの実装でも同じテストが通る”** を作って、置換可能性を守るよ！
@@ -348,6 +360,8 @@ describe("PaymentMethod contract tests 🧪✨", () => {
 ---
 
 # 7) TypeScriptの小ワザ：`satisfies` で “形はOK” を安全に確認🧷✨
+
+![Satisfies Check](./picture/solid_ts_study_019_satisfies_check.png)
 
 たとえば実装を class じゃなくオブジェクトで用意したい時、
 `as PaymentMethod` でゴリ押しすると危ない😇
