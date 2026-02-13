@@ -80,12 +80,9 @@ description: Generate an image generation plan for a range of Markdown files bas
                 - **Append**: Use `run_in_bash_session` to create and run a temporary Python script. Use a heredoc with quoted delimiter (`<<'EOF'`) to prevent shell expansion of backticks.
                     - Command:
                       ```bash
-                      cat <<'EOF' > append_row.py
-                      with open('docs/picture/image_generation_plan.md', 'a', encoding='utf-8') as f:
-                          f.write("""| <next_plan_id> | <filename> | <proposed_image_filename> | <relative_link> | <formatted_prompt> | <insertion_point> |\n""")
+                      python3 -c "import sys; open('docs/picture/image_generation_plan.md', 'a', encoding='utf-8').write(sys.stdin.read().lstrip())" <<'EOF'
+                      | <next_plan_id> | <filename> | <proposed_image_filename> | <relative_link> | <formatted_prompt> | <insertion_point> |
                       EOF
-                      python3 append_row.py
-                      rm append_row.py
                       ```
                 - **Note**: Ensure the column count matches the existing table in `docs/picture/image_generation_plan.md` (6 columns: ID, File Name, Proposed Image Filename, Relative Link Path, Prompt, Insertion Point).
 
