@@ -110,7 +110,11 @@ public enum OrderState
 public interface IOrderCommand;
 
 public sealed record SubmitCommand() : IOrderCommand;
+```
 
+![Command Payload](./picture/state_machine_cs_study_018_command_payload.png)
+
+```csharp
 // Pay は金額が必要！💳
 public sealed record PayCommand(decimal Amount) : IOrderCommand;
 
@@ -150,6 +154,11 @@ public sealed record TransitionResult(
 ```csharp
 public static class OrderStateMachine
 {
+```
+
+![Pattern Match Switch](./picture/state_machine_cs_study_018_pattern_match_switch.png)
+
+```csharp
     public static TransitionResult Apply(OrderState state, IOrderCommand command)
         => (state, command) switch
         {
@@ -239,6 +248,11 @@ public sealed record CancelCommand(string Reason) : IOrderCommand
 ```csharp
 public static class OrderTransitions
 {
+```
+
+![Command Kind Bridge](./picture/state_machine_cs_study_018_command_kind_bridge.png)
+
+```csharp
     // (現在状態, コマンド種別) -> 次状態
     public static readonly Dictionary<(OrderState, CommandKind), OrderState> Map = new()
     {

@@ -171,6 +171,8 @@ graph LR
 
 ---
 
+![Problem Details Package](./picture/state_machine_cs_study_020_problem_details_pkg.png)
+
 ## 6) APIは “Problem Details（RFC 9457）” をベースにする📦✨
 
 HTTP APIのエラー形式は、近年は **Problem Details** が標準寄りで、RFC 9457 が RFC 7807 を置き換える形になってるよ📌([RFC Editor][2])
@@ -226,6 +228,8 @@ public sealed record TransitionResult(
 ```
 
 ### エラーカタログ（コードと文言を一箇所管理）📚✨
+
+![Error Catalog Book](./picture/state_machine_cs_study_020_error_catalog_book.png)
 
 ```csharp
 public static class ErrorCatalog
