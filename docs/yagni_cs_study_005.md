@@ -167,6 +167,9 @@ public class NotifyUserTests
 
 ## DIコンテナはいつ入れる？📦（結論：手動注入で詰み始めたら）
 
+![Pain Sign for DI](./picture/yagni_cs_study_005_di_pain.png)
+
+
 .NET には標準のDIがあって便利だけど、**最初から入れると構成が理解しづらい**ことも多いです😵‍💫
 （IDEもどんどんAI前提になってるので、なおさら“見通し”が大事！）([Microsoft for Developers][3])
 
@@ -197,6 +200,9 @@ await notifyUser.ExecuteAsync("a@example.com", "hello!");
 ---
 
 ## パターンはいつ使う？🎭（結論：困りごとから入る）
+
+![Pattern Trap](./picture/yagni_cs_study_005_pattern_trap.png)
+
 
 ### ありがちな失敗例😅
 
@@ -229,6 +235,9 @@ public decimal CalcShippingFee(string prefecture, decimal price)
 
 ## ジェネリクス汎用化の目安🧬（結論：重複が“痛い”まで待つ）
 
+![Rule of Three](./picture/yagni_cs_study_005_rule_of_three.png)
+
+
 ### ❌ 早すぎる例（ありがち）😇
 
 `IRepository<T>` を先に作って、結局 `T` ごとに例外処理が増えて破綻…💣
@@ -256,6 +265,9 @@ flowchart TD
 ---
 
 ## ミニ演習📝：「先に作り込み版」をYAGNI的に削る✂️✨
+
+![Cutting Bloat](./picture/yagni_cs_study_005_cutting_bloat.png)
+
 
 ### お題🎯
 
@@ -312,6 +324,9 @@ public sealed record User(string Email);
 ---
 
 ## AI活用🤖：AIに“逆質問”させて判断材料を出す 🧠🧯
+
+![AI Reverse Questioning](./picture/yagni_cs_study_005_ai_reverse_question.png)
+
 
 AIって放っておくと盛りがちなので、指示がコツです😆🎈
 

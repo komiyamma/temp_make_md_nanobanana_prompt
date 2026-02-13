@@ -17,6 +17,9 @@
 
 ## 7-2. AIが“盛りがち”な理由（知っておくと勝てる）🎈😅
 
+![AI Bloat](./picture/yagni_cs_study_007_ai_bloat.png)
+
+
 AIって親切だから、ついこういう方向に行きがち👇
 
 * 将来の拡張を想定して、**レイヤーを増やす**（Application / Domain / Infrastructure…）🏗️
@@ -30,6 +33,9 @@ AIって親切だから、ついこういう方向に行きがち👇
 ---
 
 ## 7-3. “盛らせない”指示の基本ルール3つ 🧾🧯
+
+![Constraint Rules](./picture/yagni_cs_study_007_constraint_rules.png)
+
 
 ### ルール①：スコープを先に固定する📌
 
@@ -77,6 +83,9 @@ AIって文章でもコードでも盛るから、枠を決めると安定する
 ---
 
 ## 7-5. Copilot / Codex を“YAGNI向け”に使う役割分担 🧑‍🍳🤖
+
+![Human vs AI Roles](./picture/yagni_cs_study_007_role_division.png)
+
 
 AIに全部やらせようとすると盛るので、役割分担が最強！✨
 
@@ -133,6 +142,9 @@ YAGNI×AIの基本ムーブはこれ！💃
 
 ## 7-7. “盛らせない”プロンプトテンプレ集（コピペOK）📚✨
 
+![Prompt Card](./picture/yagni_cs_study_007_prompt_card.png)
+
+
 ### A) 最小実装を出させるテンプレ🧱
 
 ```text
@@ -184,6 +196,9 @@ YAGNI×AIの基本ムーブはこれ！💃
 
 ## 7-8. ミニ演習：AI提案を“削って勝つ”練習 ✂️🏆✨
 
+![Sorting Exercise](./picture/yagni_cs_study_007_sorting_exercise.png)
+
+
 ### お題🎯：第4章アプリに「並び替え」を追加する🔁
 
 要件はこれだけ👇
@@ -211,6 +226,9 @@ YAGNI×AIの基本ムーブはこれ！💃
 ---
 
 ## 7-9. VS / VS Code での“盛らせない”運用Tips 🧠✨
+
+![Inline Chat Control](./picture/yagni_cs_study_007_inline_chat.png)
+
 
 ### Visual StudioのTips（YAGNI向け）🪄
 

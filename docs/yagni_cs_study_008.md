@@ -7,6 +7,9 @@
 
 ## 0. まずゴール確認しよっ 🎯💕
 
+![Goal State](./picture/yagni_cs_study_008_goal_trophy.png)
+
+
 この章が終わったら、こんな状態になってたら勝ち🏆✨
 
 * ✅ 追加要件を **1つだけ** 実装できた
@@ -30,6 +33,9 @@
 ---
 
 ## 2. 追加要件は「1つだけ」選ぶよ✂️😤
+
+![Choice Constraint](./picture/yagni_cs_study_008_choice_constraint.png)
+
 
 ここ超大事〜！2つ選びたくなるのをグッと我慢🥹✊
 
@@ -95,6 +101,9 @@ UI（Program.cs）でフィルタするのもアリだけど、ここは
 ---
 
 ### 5-1. `CafeLog` に引数を足す（最小変更）🧠
+
+![Logic Flow](./picture/yagni_cs_study_008_logic_funnel.png)
+
 
 `GetAll()` を `GetAll(string? search)` に変えるだけ！
 
@@ -171,6 +180,9 @@ else if (cmd == "list")
 
 ## 6. 最小テスト（検索が壊れてないか）🧪✨
 
+![Testing Search](./picture/yagni_cs_study_008_search_test.png)
+
+
 ### 6-1. `GetAll` をテストすれば安心💗
 
 ```csharp
@@ -228,6 +240,9 @@ public class CafeLogTests
 
 ## 8. 軽ADR（1枚）🗒️✨ 〜“やらなかった理由”を書く〜
 
+![ADR Note](./picture/yagni_cs_study_008_adr_note.png)
+
+
 > ADRって「将来の自分への優しい手紙」だよ💌
 
 テンプレ（コピペOK）👇
@@ -261,6 +276,9 @@ public class CafeLogTests
 ---
 
 ## 9. 最終チェック（YAGNI自己採点）✅💯
+
+![Scorecard](./picture/yagni_cs_study_008_scorecard.png)
+
 
 各1点で合計10点満点🎀（7点以上なら優勝🏆）
 
