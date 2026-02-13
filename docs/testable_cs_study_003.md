@@ -10,12 +10,16 @@
 
 ## まず結論：I/O＝外の世界とのやりとり🌍↔️📦
 
+![testable_cs_study_003_io_definition.png](./picture/testable_cs_study_003_io_definition.png)
+
 I/O（Input/Output）は、ざっくり言うと **「プログラムの外側とデータをやりとりする操作」**だよ〜！😊
 Windowsの世界でも、I/Oは「デバイスなど外部とのデータの流れ」を扱うモデルとして整理されてる（＝外に触るやつはI/O）って考え方でOK✨ ([Microsoft Learn][1])
 
 ---
 
 ## I/Oの代表メンバーたち（C#あるある付き）🧑‍🤝‍🧑✨
+
+![testable_cs_study_003_io_cast.png](./picture/testable_cs_study_003_io_cast.png)
 
 ### 1) ファイル🗂️
 
@@ -61,6 +65,8 @@ Windowsの世界でも、I/Oは「デバイスなど外部とのデータの流�
 
 ## 「I/Oかどうか迷ったら」判定ルール✅🧠
 
+![testable_cs_study_003_io_criteria.png](./picture/testable_cs_study_003_io_criteria.png)
+
 次のどれかに当てはまったら、だいたいI/Oだよ〜！🙆‍♀️✨
 
 * **失敗する理由が自分のコード以外にある**（ネット落ちた、DB止まった、ファイル無い、権限ない…）😵
@@ -88,6 +94,8 @@ Windowsの世界でも、I/Oは「デバイスなど外部とのデータの流�
 ## 実例：I/O混ぜ混ぜコードを見抜こう🕵️‍♀️🔍💥
 
 ### 例1：I/Oが混ざってるパターン😵‍💫
+
+![testable_cs_study_003_mixed_salad.png](./picture/testable_cs_study_003_mixed_salad.png)
 
 ```csharp
 public class ReportService
@@ -124,6 +132,8 @@ public class ReportService
 
 ## もっと実戦的：「I/O発掘チェックリスト」🧾✅✨
 
+![testable_cs_study_003_io_checklist.png](./picture/testable_cs_study_003_io_checklist.png)
+
 コードレビューで、ここだけ目を皿にする👀🔥
 
 * **System.IO** が見えたらI/O率高い🗂️
@@ -137,6 +147,8 @@ public class ReportService
 ---
 
 ## ミニ演習：I/Oに赤丸をつけよう🔴📝
+
+![testable_cs_study_003_exercise_lottery.png](./picture/testable_cs_study_003_exercise_lottery.png)
 
 次のコードの「I/O行」を当ててみてね😊✨
 
@@ -158,6 +170,8 @@ public int DrawLotteryAndSave(string path)
 ---
 
 ## AI（Copilot/Codex）活用：I/O探しを手伝わせる🤖🔍✨
+
+![testable_cs_study_003_ai_detector.png](./picture/testable_cs_study_003_ai_detector.png)
 
 おすすめの頼み方（コピペでOK）💖
 

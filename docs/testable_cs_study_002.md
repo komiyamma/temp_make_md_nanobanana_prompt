@@ -7,6 +7,8 @@
 
 ## 2-1. あるある①：DB直アクセス 🗄️💥（重い・遅い・壊れやすい）
 
+![testable_cs_study_002_db_weight.png](./picture/testable_cs_study_002_db_weight.png)
+
 たとえばロジックのど真ん中で、いきなりDBに繋ぎに行くやつ👇
 
 ```csharp
@@ -40,6 +42,8 @@ public class UserService
 
 ## 2-2. あるある②：`DateTime.Now` 直読み 🕰️💥（“今”は揺れる）
 
+![testable_cs_study_002_time_balance.png](./picture/testable_cs_study_002_time_balance.png)
+
 「今日ならOK」「期限内ならOK」みたいな判定、ついこう書きがち👇
 
 ```csharp
@@ -60,6 +64,8 @@ public bool CanUseCoupon(DateTime expiresAt)
 ---
 
 ## 2-3. あるある③：`HttpClient` 直叩き 🌐💥（外部は落ちる・遅い・変わる）
+
+![testable_cs_study_002_http_bridge.png](./picture/testable_cs_study_002_http_bridge.png)
 
 ```csharp
 public async Task<decimal> GetUsdRateAsync()
@@ -82,6 +88,8 @@ public async Task<decimal> GetUsdRateAsync()
 ---
 
 ## 2-4. テストが「環境依存」になると何が起きる？🌪️
+
+![testable_cs_study_002_environment_puzzle.png](./picture/testable_cs_study_002_environment_puzzle.png)
 
 環境依存っていうのは、ざっくり言うと👇
 **“コード”じゃなくて“環境”の状態で結果が変わる**ってこと😵‍💫
@@ -126,6 +134,8 @@ public async Task<decimal> GetUsdRateAsync()
 
 ## 2-6. ミニ体験：0時またぎでテストが落ちる例 🌙⏱️💥
 
+![testable_cs_study_002_midnight_bug.png](./picture/testable_cs_study_002_midnight_bug.png)
+
 ```csharp
 public class GreetingService
 {
@@ -148,6 +158,8 @@ public class GreetingService
 
 ## 2-7. “つらいコード”を見分けるチェックリスト ✅😵‍💫
 
+![testable_cs_study_002_bad_practice_checklist.png](./picture/testable_cs_study_002_bad_practice_checklist.png)
+
 当てはまるほどテストがつらくなる率UP⬆️
 
 * ロジックの途中で `DateTime.Now` / `UtcNow` を読んでる🕰️
@@ -164,6 +176,8 @@ public class GreetingService
 ---
 
 ## 2-8. AI（Copilot/Codex）に助けてもらう小ワザ 🤖📝✨
+
+![testable_cs_study_002_ai_audit.png](./picture/testable_cs_study_002_ai_audit.png)
 
 コードを貼って、こんなお願いをするとめちゃ捗るよ🫶
 

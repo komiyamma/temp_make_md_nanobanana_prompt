@@ -7,6 +7,8 @@
 
 ## 5-1. まず「境界」ってなに？🤔🚧
 
+![testable_cs_study_005_inner_outer_castle.png](./picture/testable_cs_study_005_inner_outer_castle.png)
+
 境界（Boundary）は、ざっくり言うと……
 
 * **内側**：アプリの“ルール”や“判断” 🧠📦
@@ -23,6 +25,8 @@
 
 ## 5-2. なんで境界を作ると嬉しいの？🎉
 
+![testable_cs_study_005_swappable_cartridges.png](./picture/testable_cs_study_005_swappable_cartridges.png)
+
 境界を作ると、こうなります👇
 
 * **内側（ルール）が純粋に近づく** 🌿✨
@@ -38,6 +42,8 @@
 ---
 
 ## 5-3. “境界がある世界”のイメージ図 🗺️✨
+
+![testable_cs_study_005_dependency_direction.png](./picture/testable_cs_study_005_dependency_direction.png)
 
 ポイントはこれ👇
 **「内側が外側に依存しない」**（超だいじ！）🙌
@@ -109,6 +115,8 @@ public sealed class SystemClock : IClock
 
 ## 5-6. ミニ例：境界があるとテストがラクになる🎉
 
+![testable_cs_study_005_clock_swap.png](./picture/testable_cs_study_005_clock_swap.png)
+
 内側（ルール）に「期限チェック」があるとします⏳
 `DateTime.Now` を直読みするとテストが揺れます🌀
 
@@ -146,6 +154,8 @@ public sealed class FakeClock : IClock
 
 ## 5-7. 境界の作り方のコツ 🧠🧩
 
+![testable_cs_study_005_interface_tips.png](./picture/testable_cs_study_005_interface_tips.png)
+
 ### コツ①：境界は “欲しい能力” で切る ✂️✨
 
 * ✅ `IClock`（時刻）🕰️
@@ -168,6 +178,8 @@ public sealed class FakeClock : IClock
 ---
 
 ## 5-8. よくある落とし穴（あるある）😇💥
+
+![testable_cs_study_005_leak_warning.png](./picture/testable_cs_study_005_leak_warning.png)
 
 * **境界を作ったのに、結局内側が外側の型に依存してる** 😵
 
@@ -206,6 +218,8 @@ public sealed class FakeClock : IClock
 ---
 
 ## 5-11. AI（Copilot/Codex）に手伝わせるプロンプト例 🤖💡
+
+![testable_cs_study_005_ai_architect.png](./picture/testable_cs_study_005_ai_architect.png)
 
 コピペでOK系👇✨
 
