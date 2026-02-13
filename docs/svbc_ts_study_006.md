@@ -96,6 +96,8 @@ export function find(id: string) {}
 
 ### 地雷② optional → required（省略OK→必須）🙅‍♀️⚠️ → ほぼMAJOR
 
+![Optional to Required](./picture/svbc_ts_study_006_optional_to_required.png)
+
 ```ts
 // Before ✅
 export function connect(options?: { timeoutMs?: number }) {}
@@ -110,6 +112,8 @@ export function connect(options: { timeoutMs?: number }) {}
 ---
 
 ### 地雷③ 戻り値が “undefined かも” になる（widening）😱 → ほぼMAJOR
+
+![Return Undefined](./picture/svbc_ts_study_006_return_undefined.png)
 
 ```ts
 // Before ✅
@@ -130,6 +134,8 @@ export function getUserName(): string | undefined { return undefined; }
 
 ### 地雷④ union からメンバーを削る（`"a"|"b"` → `"a"`）🧊⚠️ → MAJOR寄り
 
+![Union Reduction](./picture/svbc_ts_study_006_union_reduction.png)
+
 ```ts
 // Before ✅
 export type Status = "pending" | "done";
@@ -144,6 +150,8 @@ export type Status = "done";
 ---
 
 ### 地雷⑤ enum の変更（名前変更/削除/値変更）🧨 → “型も実行時も”壊す
+
+![Enum Change](./picture/svbc_ts_study_006_enum_change.png)
 
 ```ts
 // Before ✅
@@ -218,6 +226,8 @@ TypeScriptはバージョンアップで「より正しく」なる分、**今�
 ---
 
 ## 6.6 “壊さず進化”の定番テク🛟✨（超使う！）
+
+![Evolution Technique](./picture/svbc_ts_study_006_evolution_technique.png)
 
 ### ✅ テク1：追加で解決（MINOR）✨
 

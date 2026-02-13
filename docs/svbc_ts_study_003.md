@@ -55,6 +55,8 @@ flowchart LR
 
 ## 3.3 “約束”って何？— TypeScriptだとここが刺さる🧷⚡
 
+![Contract Items](./picture/svbc_ts_study_003_contract_items.png)
+
 TSのライブラリで「約束」になりやすいのは、だいたいここ👇
 
 * exportされてる関数名・引数・戻り値（型も含む）📤
@@ -68,6 +70,8 @@ TSのライブラリで「約束」になりやすいのは、だいたいここ
 ---
 
 ## 3.4 じゃあ「いつ 1.0.0 にするの？」判断基準🧱✅
+
+![Go Stop Signs](./picture/svbc_ts_study_003_go_stop_signs.png)
 
 “完璧”を待つと一生1.0にならないので🤣、目安を作ろう💡
 
@@ -89,6 +93,8 @@ TSのライブラリで「約束」になりやすいのは、だいたいここ
 ---
 
 ## 3.5 0.xでも“最低限の約束”を作ると強い💪✨（おすすめ）
+
+![My Rule Shield](./picture/svbc_ts_study_003_my_rule_shield.png)
 
 SemVer的には0.xは不安定扱いだけど、利用者の安心のために **自分ルール** を添えるのが人気だよ🙂✨
 
@@ -128,6 +134,8 @@ SemVer的には0.xは不安定扱いだけど、利用者の安心のために *
 ---
 
 ## 3.7 例で体感しよう：0.x → 1.0.0 の“ストーリー”📦🎬
+
+![Version Timeline](./picture/svbc_ts_study_003_version_timeline.png)
 
 ### 🧪 0.1.0（実験）
 
