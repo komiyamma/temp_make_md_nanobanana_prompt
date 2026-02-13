@@ -30,6 +30,8 @@
 
 ## まず作る「最小テンプレ」構成🧩📁
 
+![Minimal Project Structure](./picture/layer_ts_study_005_folder_structure.png)
+
 レイヤードに繋げるため、最初からフォルダだけ用意しちゃう😊✨
 
 ```text
@@ -64,6 +66,8 @@ npm init -y
 ---
 
 ## Step 1：TypeScriptを“ミス検出強め”にする🔒🧠
+
+![Strict Mode Gatekeeper](./picture/layer_ts_study_005_strict_mode.png)
 
 ### 1-1. TypeScript入れる📦✨
 
@@ -158,6 +162,8 @@ npx eslint .
 ---
 
 ## Step 3：Prettier（見た目統一）を入れる🧼✨
+
+![Prettier Ironing](./picture/layer_ts_study_005_prettier_ironing.png)
 
 Prettierは「見た目の統一担当」💅
 公式はローカル導入＋`--save-exact`（固定）を推してるよ📌 ([prettier.io][8])
@@ -257,6 +263,8 @@ flowchart TD
 
 ## Step 5：VS Codeで「保存したら自動で整う」状態にする🪄✨
 
+![On-Save Automation](./picture/layer_ts_study_005_onsave_magic.png)
+
 `.vscode/settings.json` を作ってこれ👇
 
 ```json
@@ -283,6 +291,8 @@ flowchart TD
 ---
 
 ## Step 6：パス別名（alias）を“実行時も”動かす🚀🧵
+
+![Path Alias Bridge](./picture/layer_ts_study_005_path_alias_bridge.png)
 
 `paths` はTypeScriptの解決なので、Nodeの実行ではそのままだと詰まりがち😵‍💫 ([TypeScript][5])
 教材のテンプレでは「実行時もaliasが効く」ように、素直な方法でいくよ😊✨
