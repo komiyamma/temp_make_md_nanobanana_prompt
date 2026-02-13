@@ -57,6 +57,8 @@
 
 ## 2) 「どこまで投げる？どこで握る？」の基本ルール📍✨
 
+![testable_cs_study_020_inner_vs_outer_handling.png](./picture/testable_cs_study_020_inner_vs_outer_handling.png)
+
 ここが今日のメイン！🎯
 
 ### ルール①：内側（ルール層）は、I/O例外を知らない🙅‍♀️
@@ -87,6 +89,8 @@ MS公式でも「よくある条件は例外を避ける」方向が推奨だよ
 
 ## 3) Result型っぽい考え方（チラ見せ👀✨）
 
+![testable_cs_study_020_result_structure.png](./picture/testable_cs_study_020_result_structure.png)
+
 C#/.NETに標準の `Result<T>` は（基本）用意されてないので、**最小自作**が理解しやすいよ😊
 （「TryParse」系が“戻り値で失敗を表す文化”の代表だよね🧠）
 
@@ -110,6 +114,8 @@ public sealed record InfrastructureError(string Code, string Message) : Error(Co
 * **DomainError**：ルール違反（入力ミス・条件未達）
 * **InfrastructureError**：I/O失敗（DB/ネット/ファイル）
 
+![testable_cs_study_020_domain_vs_infra_error.png](./picture/testable_cs_study_020_domain_vs_infra_error.png)
+
 この2種類を分けるだけで「どこで処理する？」が急に見える👓✨
 
 ---
@@ -117,6 +123,8 @@ public sealed record InfrastructureError(string Code, string Message) : Error(Co
 ## 4) 具体例：ユーザー登録（ルール違反 vs DB障害）🧑‍💻🗄️
 
 ### 4-1) 内側：ルールは Result で返す📦🧾
+
+![testable_cs_study_020_pure_logic_validation.png](./picture/testable_cs_study_020_pure_logic_validation.png)
 
 ```csharp
 public static class PasswordRules
@@ -226,6 +234,8 @@ public class PasswordRulesTests
 
 ### 5-2) I/O失敗は「例外を投げるFake」で再現する🎭💥
 
+![testable_cs_study_020_throwing_fake.png](./picture/testable_cs_study_020_throwing_fake.png)
+
 ```csharp
 using Xunit;
 using System.Threading;
@@ -263,6 +273,8 @@ public class RegisterUserUseCaseTests
 
 ### 落とし穴①：例外で分岐してしまう（例外＝if代わり）🙅‍♀️
 
+![testable_cs_study_020_exception_flow_control.png](./picture/testable_cs_study_020_exception_flow_control.png)
+
 「ログイン失敗＝例外」とかやると、テストもしんどいし読みづらい💦
 MS公式も「よくある条件は例外を避ける」方向でまとめてるよ。([Microsoft Learn][1])
 
@@ -273,6 +285,8 @@ MS公式も「よくある条件は例外を避ける」方向でまとめてる
 ※この系の注意も例外ベストプラクティスで触れられてるよ。([Microsoft Learn][1])
 
 ### 落とし穴③：何でも `catch (Exception)` で握って成功扱いにする🤝💣
+
+![testable_cs_study_020_quiet_failure.png](./picture/testable_cs_study_020_quiet_failure.png)
 
 それ“静かに壊れる”ので超危険…
 握るなら「**失敗として返す**」か「ログして落とす」かを決めよ〜。

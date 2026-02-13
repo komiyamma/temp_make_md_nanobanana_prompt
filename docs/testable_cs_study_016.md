@@ -7,6 +7,8 @@
 
 ## 1. まず結論：ファイルは「外の世界」🗂️🌍
 
+![testable_cs_study_016_file_io_problems.png](./picture/testable_cs_study_016_file_io_problems.png)
+
 ファイルI/Oは、テストにとって敵になりがち😵‍💫💥
 
 * ✅ PCの環境で結果が変わる（権限・パス・改行・文字コード…）🌀
@@ -15,11 +17,16 @@
 * ✅ “準備と後片付け”が面倒（作る→消す→失敗したら残骸）🧹
 
 だから合言葉👇
+
+![testable_cs_study_016_boundary_wall.png](./picture/testable_cs_study_016_boundary_wall.png)
+
 **「ファイルは境界の外！中に入れない！」** 🚪🧊
 
 ---
 
 ## 2. ダメな例：「重要ロジックの中で File を直呼び」💥
+
+![testable_cs_study_016_direct_access_trap.png](./picture/testable_cs_study_016_direct_access_trap.png)
 
 ```csharp
 public class UserProfileService
@@ -42,6 +49,8 @@ public class UserProfileService
 
 ## 3. 目標の形：「ファイルアクセスはインターフェースの向こう側」🧩🚪✨
 
+![testable_cs_study_016_interface_bridge.png](./picture/testable_cs_study_016_interface_bridge.png)
+
 やり方はシンプル👇
 
 1. **必要なファイル操作だけ** を小さなIFにする🧩
@@ -53,6 +62,8 @@ public class UserProfileService
 ## 4. 最小の境界：IFileStore を作ろう 📦🧩
 
 ### 4.1 インターフェース（境界）🚪
+
+![testable_cs_study_016_minimal_interface.png](./picture/testable_cs_study_016_minimal_interface.png)
 
 ```csharp
 public interface IFileStore
@@ -85,6 +96,8 @@ public class PhysicalFileStore : IFileStore
 ---
 
 ### 4.3 使う側（重要ロジック）📦✨
+
+![testable_cs_study_016_dependency_injection.png](./picture/testable_cs_study_016_dependency_injection.png)
 
 ここが主役！
 **重要ロジックは IFileStore だけ見て生きる** 🙌
@@ -210,6 +223,8 @@ public class UserProfileServiceTests
 ---
 
 ## 8. 便利ライブラリ案：System.IO.Abstractions を使う手もある 🧰✨
+
+![testable_cs_study_016_abstraction_library.png](./picture/testable_cs_study_016_abstraction_library.png)
 
 「自前でIFileStore作るのもいいけど、もっと網羅したい！」って時は
 **System.IO.Abstractions** が定番です💡
