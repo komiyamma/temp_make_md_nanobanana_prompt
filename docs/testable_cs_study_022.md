@@ -14,6 +14,7 @@
 
 ## 1. Composition Root ってなに？🏗️🔌
 
+![testable_cs_study_022_wiring_room.png](./picture/testable_cs_study_022_wiring_room.png)
 
 ![testable_cs_study_022_composition_root.png](./picture/testable_cs_study_022_composition_root.png)
 
@@ -30,6 +31,8 @@
 ---
 
 ## 2. なんで “1か所” がそんなに大事？😵‍💫➡️😊
+
+![testable_cs_study_022_scattered_vs_central.png](./picture/testable_cs_study_022_scattered_vs_central.png)
 
 ## ✅ new が散らばると起きること💥
 
@@ -68,6 +71,8 @@
 ---
 
 ## 4. まずはイメージ：内側と外側と“配線室”📦🌍🏗️
+
+![testable_cs_study_022_architecture_map.png](./picture/testable_cs_study_022_architecture_map.png)
 
 * **内側（ルール / ユースケース）**：純粋に近い、判断の中心🧠🌿
 * **外側（I/O実装）**：DB / ファイル / HTTP / 時刻など🌐🗄️🗂️🕰️
@@ -137,6 +142,8 @@ public sealed class CheckoutUseCase
 
 ## パターンA：小さければ “手で new” でもOK🙆‍♀️（超わかりやすい）
 
+![testable_cs_study_022_manual_wiring.png](./picture/testable_cs_study_022_manual_wiring.png)
+
 ```csharp
 // Program.cs（Composition Root）
 var clock = new SystemClock();
@@ -153,6 +160,8 @@ await useCase.RunAsync(total: 1200m);
 ---
 
 ## パターンB：DI コンテナで配線（少し大きくなったら便利）🧰🔌
+
+![testable_cs_study_022_di_robot.png](./picture/testable_cs_study_022_di_robot.png)
 
 .NET の DI は “サービス登録” と “ライフタイム（寿命）” が大事です🧠✨ ([Microsoft Learn][4])
 
@@ -177,6 +186,8 @@ await useCase.RunAsync(total: 1200m);
 ```
 
 ### ライフタイムの超ざっくりイメージ🧁
+
+![testable_cs_study_022_lifetime_characters.png](./picture/testable_cs_study_022_lifetime_characters.png)
 
 * **Singleton**：1個を使い回す（重いもの・共有したいもの向き）♻️
 * **Transient**：毎回 new（軽いユースケースとかに便利）✨
@@ -235,6 +246,8 @@ public static class ServiceCollectionExtensions
 ---
 
 ## 8. テスト側の “別の組み立て” 🧪🎭
+
+![testable_cs_study_022_test_assembly.png](./picture/testable_cs_study_022_test_assembly.png)
 
 Composition Root を分けると、テストはこうなります👇
 

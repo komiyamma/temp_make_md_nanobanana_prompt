@@ -27,6 +27,7 @@
 
 ## 24.3 まず手で見る！設計チェックリスト（I/O境界）🧾✅
 
+![testable_cs_study_024_checklist_clipboard.png](./picture/testable_cs_study_024_checklist_clipboard.png)
 
 ![testable_cs_study_024_design_checklist.png](./picture/testable_cs_study_024_design_checklist.png)
 
@@ -69,6 +70,8 @@ AIに頼む前に、まず自分でサッと確認できると強いです💪�
 ---
 
 ## 24.4 AIにレビューさせるときの“基本姿勢”🤖🧠
+
+![testable_cs_study_024_ai_strength_weakness.png](./picture/testable_cs_study_024_ai_strength_weakness.png)
 
 AIは便利だけど、得意不得意があります😉
 
@@ -127,6 +130,8 @@ Copilotは「具体的な依頼」が強いです（細かく、分割して頼�
 
 ### ❌ダメ寄り例：ルールの中にI/Oが直撃してる💥
 
+![testable_cs_study_024_bad_coupling.png](./picture/testable_cs_study_024_bad_coupling.png)
+
 ```csharp
 public class CouponService
 {
@@ -153,6 +158,8 @@ public class CouponService
   テストしやすい形にしたい」
 
 ### ✅改善例：I/Oを境界へ、ルールはピュアへ🌿✨
+
+![testable_cs_study_024_good_separation.png](./picture/testable_cs_study_024_good_separation.png)
 
 ```csharp
 public interface IClock
@@ -206,6 +213,8 @@ public class CouponService
 ---
 
 ## 24.7 AIの提案を採用するかの判断ルール（超重要）🚦🧠
+
+![testable_cs_study_024_judgment_traffic_light.png](./picture/testable_cs_study_024_judgment_traffic_light.png)
 
 AIが「interfaceいっぱい作ろう！」って言い出したら、一旦これで止めます✋😆
 
