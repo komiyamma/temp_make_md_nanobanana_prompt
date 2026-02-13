@@ -6,6 +6,8 @@
 
 ## 0. まず最初に：例外地獄ってどんな状態？😵‍💫💥
 
+![Exception Hell](./picture/layer_ts_study_018_exception_hell.png)
+
 ありがちなやつ👇
 
 * どこでも `throw` → どこでも `try/catch` → どこで握ってるか不明😇
@@ -29,7 +31,7 @@
 
 ## 2. エラーは「仕様」📜✨ まずは3種類に分けよう🧩
 
-![Error Strategy](./picture/layer_ts_study_018_error_strategy.png)
+![Error Classification Mindmap](./picture/layer_ts_study_018_error_classification_mindmap.png)
 
 ### ✅ 分類A：Domainエラー（ルール違反）💎🚫
 
@@ -70,6 +72,8 @@ mindmap
 
 ## 3. ルールはこれだけ覚えればOK👌✨
 
+![Boundary Catch Flow](./picture/layer_ts_study_018_boundary_catch_flow.png)
+
 ### ルール①：**想定内の失敗は「Resultで返す」**📦✅
 
 例外で表現しない（ログも荒れないし、分岐が見える）😊
@@ -107,6 +111,8 @@ flowchart BT
 
 ## 4. TypeScriptで「Result型」を作る🧩✨（超定番パターン）
 
+![Result Box](./picture/layer_ts_study_018_result_box.png)
+
 まずは最小のResultを用意しよう👇
 
 ```ts
@@ -126,6 +132,8 @@ export const isErr = <T, E>(r: Result<T, E>): r is Err<E> => !r.ok;
 ---
 
 ## 5. Domainエラーを「文字列じゃなくて型」にする💎✨
+
+![Discriminated Union Shapes](./picture/layer_ts_study_018_discriminated_union_shapes.png)
 
 文字列で `return "TITLE_EMPTY"` とかすると、将来ほぼ確実に破綻します😇
 なので **判別可能（discriminated union）** にしよう👇
@@ -244,6 +252,8 @@ RFC 9457は RFC 7807 を置き換える形の仕様だよ。([RFCエディタ][2
 ---
 
 ## 9. エラー変換テーブルを作ろう🗂️✨（これが最強の護身術🛡️）
+
+![Error Translation Table](./picture/layer_ts_study_018_error_translation_table.png)
 
 ミニ表（例）👇
 

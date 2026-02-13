@@ -78,6 +78,8 @@ flowchart TD
 
 ## 4) 「Port」は内側に置く🔌（復習ちょい😊）
 
+![Port Location in App](./picture/layer_ts_study_013_port_location_app.png)
+
 第12章で作った想定の `TodoRepository`（Port）は、**Application側**に置くのが分かりやすいです✨
 （Domainに置く流派もあるけど、今は迷子防止でApplicationに寄せよ〜🧭）
 
@@ -103,6 +105,8 @@ export interface TodoRepository {
 ---
 
 ## 5) いきなりDBに行かない！まずインメモリで勝つ🧸✨
+
+![InMemory Teddy Bear](./picture/layer_ts_study_013_inmemory_teddy.png)
 
 Infrastructureは「差し替え」を見せると理解が一気に進むよ😊
 最初に **InMemory実装** を作って、ユースケースが動く状態にしよ〜🔁
@@ -139,6 +143,8 @@ export class InMemoryTodoRepository implements TodoRepository {
 
 ## 6) “保存形式”と“ドメイン”は別物だよ🧩📦
 
+![DB Row vs Domain Object](./picture/layer_ts_study_013_db_row_vs_domain.png)
+
 DBはだいたいこういう形になる👇
 
 * DBの行：`{ id: string, title: string, is_done: 0/1, created_at: ... }`
@@ -148,6 +154,8 @@ DBはだいたいこういう形になる👇
 この変換が “境界” のお仕事です🚪
 
 ### ✅ 方針：Infrastructureに「DB用モデル」を置く
+
+![Rehydration Magic](./picture/layer_ts_study_013_rehydration_magic.png)
 
 ```ts
 // src/infrastructure/persistence/models/TodoRow.ts
@@ -197,6 +205,8 @@ export const TodoMapper = {
 ---
 
 ## 7) SQLiteで永続化する実装例🗄️✨（Prisma版）
+
+![Prisma Repo Flow](./picture/layer_ts_study_013_prisma_flow.png)
 
 ローカル学習でいちばん楽なのは **SQLite**（ファイル1つでDBになる📄✨）
 そしてTypeScript界隈で強い選択肢が Prisma です。Prisma ORM 7.2.0 のリリースも出てます。([Prisma][1])
@@ -362,6 +372,8 @@ DBは `null` を持てることが多い
 ---
 
 ## 11) ミニ演習🧩✨（手を動かそ〜！）
+
+![Swap Victory](./picture/layer_ts_study_013_swap_victory.png)
 
 ### 演習A：差し替えをやってみる🔁
 

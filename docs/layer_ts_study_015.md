@@ -48,6 +48,8 @@ flowchart TD
 
 ## 15.2 なんで必要なの？（ないとどうなる？）😵‍💫💥
 
+![Scattered New Chaos](./picture/layer_ts_study_015_scattered_new_chaos.png)
+
 ### ✅ あると嬉しいこと
 
 * Repository差し替えがラク（インメモリ→DB、ダミー→本物）🔁
@@ -65,6 +67,8 @@ flowchart TD
 
 ## 15.3 「どこに置くの？」おすすめ配置📁✨
 
+![Composition Root Location](./picture/layer_ts_study_015_root_location.png)
+
 迷ったら、まずはこのどれかでOK🙆‍♀️
 
 * Web APIなら：`src/main.ts` / `src/server.ts`
@@ -79,6 +83,8 @@ flowchart TD
 ---
 
 ## 15.4 まずは「手動DI」で勝つ💪（DIコンテナ無し）😊
+
+![Manual DI Wiring](./picture/layer_ts_study_015_manual_di_wiring.png)
 
 初心者ほど、最初は **手動DI（Pure DI）** がわかりやすいよ✨
 「必要になったらDIコンテナ」でも全然遅くない👍
@@ -205,6 +211,8 @@ const app = build();
 
 ## 15.6 「設定値（Config）」もRootでまとめる🔐🧃
 
+![Config Distribution](./picture/layer_ts_study_015_config_distribution.png)
+
 設定値が各所に散らばると、後で泣く😭
 だから **Rootで読み、型のあるConfigにして渡す** のが安心だよ💕
 
@@ -241,6 +249,8 @@ function build() {
 ---
 
 ## 15.7 依存の配線図を描こう🧵🗺️（めちゃ効く！）
+
+![Dependency Graph Visual](./picture/layer_ts_study_015_dependency_graph_visual.png)
 
 紙でもメモでもOKだよ✍️
 例（矢印は「知ってる/依存してる」）👇
@@ -284,6 +294,8 @@ graph TD
 ---
 
 ## 15.8 DIコンテナはいつ要る？🤖📦（2026の注意も添えて）
+
+![DI Container Choice](./picture/layer_ts_study_015_di_container_choice.png)
 
 ### ✅ 使うと便利なタイミング
 

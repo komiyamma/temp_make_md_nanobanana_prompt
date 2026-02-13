@@ -10,6 +10,8 @@
 
 ## 1) まず大前提：入力は“だいたい嘘”😇（型は守ってくれない）
 
+![Input Reality Chaos](./picture/layer_ts_study_017_input_reality_chaos.png)
+
 HTTPの `req.body` やフォーム入力って、実体は **unknown（正体不明）** です💭
 TypeScriptの型はコンパイル時の安心で、**実行時の値は別世界**🌍
 
@@ -67,6 +69,8 @@ flowchart LR
 
 ## 3) 2026の“実行時バリデーション”定番ルート🛠️✨
 
+![Zod Parsing Machine](./picture/layer_ts_study_017_zod_parsing_machine.png)
+
 今は「スキーマ（schema）で unknown を parse して型付きにする」流れが王道です👑
 
 ### よく使われる選択肢（代表）
@@ -115,6 +119,8 @@ export type CreateTodoRequest = z.infer<typeof CreateTodoRequestSchema>;
 ---
 
 ### 4-2. ハンドラで safeParse（失敗したら“丁寧に返す”）💌
+
+![Field Error Response](./picture/layer_ts_study_017_field_error_response.png)
 
 `safeParse` は成功/失敗が分岐できて、例外で荒れにくいよ🌿 ([Zod][4])
 
@@ -169,6 +175,8 @@ export async function createTodoHandler(req: HttpRequest): Promise<HttpResponse>
 
 ### 4-3. “変換”は境界でやる（DTO→Domain）🚪
 
+![Double Guard Roles](./picture/layer_ts_study_017_double_guard_role.png)
+
 たとえば Domain 側では「空はダメ」みたいな不変条件を守る✨
 （第7章の内容とつながるやつだね🔒）
 
@@ -197,6 +205,8 @@ export class TodoTitle {
 
 ## 5) バリデーション設計のコツ 10個🍓
 
+![Validation Tips Checklist](./picture/layer_ts_study_017_validation_tips_checklist.png)
+
 1. **unknown → parse してから使う**（最優先！）🧱
 2. 「必須」「型」「形式」は Presentation が得意🎛️
 3. 「不変条件」「矛盾」は Domain の仕事💎
@@ -223,6 +233,8 @@ stateDiagram-v2
 ---
 
 ## 6) ミニ演習🧩✨（手を動かすやつ！）
+
+![Test Case Matrix](./picture/layer_ts_study_017_test_case_matrix.png)
 
 ### 演習A：無効入力パターン表を作る📋
 

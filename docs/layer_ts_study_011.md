@@ -11,6 +11,8 @@
 
 ## 1) DTOってなに？🍱（超ざっくり）
 
+![DTO vs Domain Box](./picture/layer_ts_study_011_dto_vs_domain_box.png)
+
 DTOは **Data Transfer Object** の略で、ひとことで言うと…
 
 > **外の世界（画面/HTTP/DB/外部API）とデータをやり取りするための“運搬用の箱”📦**
@@ -24,6 +26,8 @@ DTOは **“都合の箱”** であって、**ルールの本体（Domain）で
 ---
 
 ## 2) なんでDomainと分けるの？💥（混ぜると事故る）
+
+![Screen Logic Invasion](./picture/layer_ts_study_011_screen_invasion.png)
 
 DTOとDomainを混ぜると、こういう事故が起きがち😵‍💫
 
@@ -70,6 +74,8 @@ Presentation(HTTP/画面) 🎛️
 
 ## 4) 「境界で変換する」ってどこ？🚪🧩
 
+![Boundary Gates](./picture/layer_ts_study_011_boundary_gates.png)
+
 “境界”っていうのは、だいたいこの2つの境目だよ🙂
 
 ### ✅ 境界①：Presentation → Application（入口）🚪📥
@@ -97,6 +103,8 @@ Presentation(HTTP/画面) 🎛️
 ---
 
 ### 5-1. フォルダ配置（迷子防止）🗂️✨
+
+![UseCase Folder Structure](./picture/layer_ts_study_011_folder_structure_usecase.png)
 
 UseCase単位でまとまってると最高にラク😊
 
@@ -225,6 +233,8 @@ HTTPやフォームの入力は **unknown** と思って扱うのが安全😊
 
 ### 6-1. Presentation側で「unknown→入力DTO」へ📥🚪
 
+![Zod Gatekeeper](./picture/layer_ts_study_011_zod_gatekeeper.png)
+
 例としてZodでやってみるね✨（入口で弾くのが気持ちいい🧼）
 
 ```ts
@@ -258,6 +268,8 @@ export async function createTodoHandler(
 ---
 
 ## 7) 「変換だらけで迷子」防止の整理術🧹🧭
+
+![Mapper Rules](./picture/layer_ts_study_011_mapper_rules.png)
 
 ここ、超大事！！✨ 迷子になる人めっちゃ多い😵‍💫
 
