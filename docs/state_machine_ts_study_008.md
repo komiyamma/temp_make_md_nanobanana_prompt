@@ -8,6 +8,8 @@
 
 ## 8.1 状態遷移図って、何がうれしいの？😳✨
 
+![Diagram Benefits Icons](./picture/state_machine_ts_study_008_diagram_benefits_icons.png)
+
 ![State Diagram](./picture/state_machine_ts_study_008_state_diagram.png)
 
 状態遷移図があると、こんな良いことが起きます👇
@@ -24,6 +26,8 @@
 ---
 
 ## 8.2 いきなり描かない！遷移表→遷移図の変換手順📋➡️🗺️
+
+![Table to Diagram](./picture/state_machine_ts_study_008_table_to_diagram.png)
 
 おすすめ手順はこれです😊✨
 
@@ -47,6 +51,8 @@ flowchart TD
 ---
 
 ## 8.3 VS Codeで描くなら、どれが楽？🧰✨
+
+![Tool Selection](./picture/state_machine_ts_study_008_tool_selection.png)
 
 この章では「すぐ描けて、貼れて、共有しやすい」を優先します💕
 
@@ -78,6 +84,8 @@ Inspector は statecharts.io で提供されています🧩 ([statecharts.io][4
 
 ### ✅ Mermaidの状態遷移図コード（コピペOK）✍️
 
+![Door Mermaid Diagram](./picture/state_machine_ts_study_008_door_mermaid.png)
+
 ```mermaid
 stateDiagram-v2
   [*] --> Closed
@@ -103,6 +111,8 @@ Mermaidでは開始/終了に `[*]` を使えます🧭 ([mermaid.ai][2])
 
 ## 8.5 VS Codeでプレビューする手順（Mermaid）🪄
 
+![VS Code Preview](./picture/state_machine_ts_study_008_vscode_preview.png)
+
 やることはこれだけ😊
 
 1. 拡張機能で **“Markdown Preview Mermaid Support”** を入れる📦 ([Visual Studio Marketplace][1])
@@ -115,6 +125,8 @@ Mermaidでは開始/終了に `[*]` を使えます🧭 ([mermaid.ai][2])
 ---
 
 ## 8.6 図レビューのチェックリスト✅🕵️‍♀️
+
+![Bad Patterns](./picture/state_machine_ts_study_008_bad_patterns.png)
 
 状態遷移図を見たら、ここを機械的にチェックすると強いです💪✨
 
@@ -163,6 +175,8 @@ Mermaidでは開始/終了に `[*]` を使えます🧭 ([mermaid.ai][2])
 イベント例：`Edit` `Submit` `Succeeded` `Failed` `Retry` `Reset`
 
 ### ① まず図だけ作る（表はあと）🗺️
+
+![Form Diagram](./picture/state_machine_ts_study_008_form_diagram.png)
 
 Mermaidでこんな感じを作ってみてね👇
 

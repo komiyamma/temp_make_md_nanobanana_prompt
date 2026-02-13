@@ -22,6 +22,8 @@
 
 ## 2) まずは“記号ルール”を決めよう🧷✨
 
+![Table Structure](./picture/state_machine_ts_study_007_table_structure.png)
+
 遷移表は、マスに何を書くかを先に決めるとラクだよ😊
 
 おすすめルール（初心者向け）👇
@@ -44,6 +46,8 @@ flowchart LR
 ---
 
 ## 3) 手順：遷移表を作る5ステップ🏃‍♀️💨
+
+![Filling Steps](./picture/state_machine_ts_study_007_filling_steps.png)
 
 ### Step 0：題材を決める🎮
 
@@ -105,6 +109,8 @@ flowchart LR
 
 ## 4) 例題：ドアの遷移表 v1（基本形）🚪📋✨
 
+![Door Table](./picture/state_machine_ts_study_007_door_table.png)
+
 | 状態＼イベント | OPEN | CLOSE  | LOCK   | UNLOCK |
 | ------- | ---- | ------ | ------ | ------ |
 | Closed  | Open | -      | Locked | ✖      |
@@ -120,6 +126,8 @@ flowchart LR
 ---
 
 ## 5) 「✖（禁止）」をどう扱う？3つの作戦🚫🎛️
+
+![Forbidden Strategies](./picture/state_machine_ts_study_007_forbidden_strategies.png)
 
 禁止遷移（ありえないイベント）って、実装で扱いを決めないとグダる😵‍💫
 初心者向けに、よくある3パターン👇
@@ -142,6 +150,8 @@ flowchart LR
 ---
 
 ## 6) AI（Copilot / Codex）で遷移表を爆速レビュー🤖💖
+
+![AI Reviewer](./picture/state_machine_ts_study_007_ai_reviewer.png)
 
 ### 6-1. 抜け漏れ指摘プロンプト🕵️‍♀️
 
@@ -182,6 +192,8 @@ flowchart LR
 
 ### 演習B：フォーム送信の“超ミニ”遷移表📨✨
 
+![Form Exercise](./picture/state_machine_ts_study_007_form_exercise.png)
+
 状態：`Idle / Editing / Submitting / Success / Error`
 イベント：`EDIT / SUBMIT / RESOLVE / REJECT / RETRY`
 
@@ -198,6 +210,8 @@ flowchart LR
 ---
 
 ## 9) 2026年1月20日時点のミニ環境メモ🧩🛠️
+
+![Tech Stack 2026](./picture/state_machine_ts_study_007_tech_stack_2026.png)
 
 この章の作業自体はバージョン依存ほぼ無いけど、教材前提の「最新」を押さえると安心なのでメモだけ👇😊
 
