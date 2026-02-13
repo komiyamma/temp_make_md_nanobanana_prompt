@@ -19,6 +19,8 @@ SemVer自体は「バージョン番号で意味を伝える」仕組みだよ�
 
 ## 8.1 そもそも互換ポリシーって何？🤝💡
 
+![Policy Foundation](./picture/svbc_ts_study_008_policy_foundation.png)
+
 超ざっくり言うと……
 
 > **利用者に向けて「ここは守るよ！」って宣言する文章**🫶
@@ -31,6 +33,8 @@ SemVerは “番号のルール” だけど、現実の運用では
 ---
 
 ## 8.2 最小セットはこれだけでOK✅（3点セット）
+
+![Three Keys to Policy](./picture/svbc_ts_study_008_three_keys.png)
 
 まずは3つだけ決めよう！🙆‍♀️✨
 
@@ -51,6 +55,8 @@ SemVerの基本方針は「破壊的変更→MAJOR、機能追加→MINOR、バ�
 ここではそれを **あなたの公開APIの定義に紐づけて**書くのがポイント💡
 
 ### ✅③ 非推奨（deprecation）の方針🧓➡️🆕
+
+![Deprecation Steps](./picture/svbc_ts_study_008_deprecation_steps.png)
 
 いきなり消さずに、段階を踏むよ〜って約束🪜✨
 （詳しくは後の章でやるけど、第8章では “最小文” に入れちゃう！）
@@ -123,6 +129,8 @@ mindmap
 
 ## 8.5 “公開API” の線引き、超ラクな決め方✂️✨
 
+![Public API Decision Tree](./picture/svbc_ts_study_008_public_api_decision.png)
+
 迷うポイントはだいたいここ👇
 
 ### A) “exportしてる型”は契約？🧷
@@ -144,6 +152,8 @@ mindmap
 ---
 
 ## 8.6 例：ミニTSライブラリで書いてみる🍌✨
+
+![Banana Math Library](./picture/svbc_ts_study_008_banana_math.png)
 
 例として `banana-math` っていう小さいライブラリを想像するね🍌📦
 
@@ -185,6 +195,8 @@ export type AddOptions = { clamp?: boolean };
 ---
 
 ## 8.7 ミニ演習：互換ポリシーを「6行」で書こう📝💕
+
+![Readme Badge](./picture/svbc_ts_study_008_readme_badge.png)
 
 あなたのプロジェクト（または練習用の架空ライブラリ）を1つ選んで👇
 
