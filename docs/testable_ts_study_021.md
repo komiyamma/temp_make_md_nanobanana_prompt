@@ -20,6 +20,8 @@
 
 ## 2) なんでDBが中心にいるとツラいの？😵‍💫🌀中心コードの中に…
 
+![testable_ts_study_021_dirty_db_boots.png](./picture/testable_ts_study_021_dirty_db_boots.png)
+
 
 
 * SQLが混ざる🧂
@@ -38,6 +40,8 @@
 ---
 
 ## 3) Repositoryは「永続化の窓口」🚪
+
+![testable_ts_study_021_repository_window.png](./picture/testable_ts_study_021_repository_window.png)
 
 📌Repositoryは、ざっくり言うと
 
@@ -63,6 +67,8 @@
 ---
 
 ## 5) ファイル構成イメージ📁✨
+
+![testable_ts_study_021_architecture_kingdom.png](./picture/testable_ts_study_021_architecture_kingdom.png)
 
 こんな感じに分けると迷子になりにくいよ〜😊
 
@@ -148,6 +154,9 @@ export async function addTodo(
 ---
 
 ## 9) テスト用：インメモリRepositoryを作る🧸⚡ここが気持ちいいポイント！
+
+![testable_ts_study_021_inmemory_box.png](./picture/testable_ts_study_021_inmemory_box.png)
+
 DBなしでテストできるから **速い・安定・ラク** 😇✨
 
 ```ts
@@ -210,6 +219,8 @@ describe("addTodo", () => {
 ---
 
 ## 11) 外側：SQLiteで永続化するAdapterを書く🗄️
+
+![testable_ts_study_021_sqlite_plug.png](./picture/testable_ts_study_021_sqlite_plug.png)
 
 🧩ここからDBの話！でも **外側だけ** だよ😊✨
 
@@ -353,6 +364,8 @@ describe("SqliteTodoRepository", () => {
 ---
 
 ## 15) よくあるミス集👃
+
+![testable_ts_study_021_sql_leak.png](./picture/testable_ts_study_021_sql_leak.png)
 
 💨 → 直し方🛠️✨### ❌ ユースケース内にSQLを書く➡️ ✅ Repositoryへ追い出す🧩
 

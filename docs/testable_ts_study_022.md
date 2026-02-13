@@ -18,6 +18,8 @@
 
 ## 22-1 「設定」って実はI/Oだよね？🌍🚪
 
+![testable_ts_study_022_chaotic_weather_window.png](./picture/testable_ts_study_022_chaotic_weather_window.png)
+
 環境変数って、アプリの外から入ってくる情報だよね？👀
 つまり `process.env` は **外の世界（I/O）** そのもの⚡
 
@@ -33,6 +35,8 @@
 ---
 
 ## 22-2 まず「ダメな例」😵‍💫（中心が env を直読み）
+
+![testable_ts_study_022_direct_air_pipe.png](./picture/testable_ts_study_022_direct_air_pipe.png)
 
 たとえば「送料無料ライン」の金額が設定で変わるケース🛒💰
 
@@ -56,6 +60,8 @@ export function calcShippingFee(orderTotal: number): number {
 ---
 
 ## 22-3 ゴール形：Configを注入する✨
+
+![testable_ts_study_022_config_package.png](./picture/testable_ts_study_022_config_package.png)
 
 🎁中心はこうなってほしい👇💕
 
@@ -97,6 +103,8 @@ export function calcShippingFee(orderTotal: number, config: AppConfig): number {
 ---
 
 ## ステップ2：Config Loader（外側）
+
+![testable_ts_study_022_zod_guard.png](./picture/testable_ts_study_022_zod_guard.png)
 
 を作る📦🚪外側の仕事：
 
@@ -190,6 +198,8 @@ node --env-file=.env dist/main.js
 
 ## 22-6 テスト：Config差し替えで分岐を固定する🧪✅テストランナーは Vitest が最近も活発で、4系が出てるよ〜⚡ ([Vitest][6])
 
+![testable_ts_study_022_config_cards_test.png](./picture/testable_ts_study_022_config_cards_test.png)
+
 
 
 ```ts
@@ -225,6 +235,8 @@ describe("calcShippingFee", () => {
 ---
 
 ## 22-7 よくある落とし穴まとめ🕳️
+
+![testable_ts_study_022_silent_failure_machine.png](./picture/testable_ts_study_022_silent_failure_machine.png)
 
 😱（回避テク）* `Number(process.env.X)` を中心でやる → ❌
   → 外側でスキーマ検証して、中心は型付きConfigだけ✅
