@@ -10,6 +10,8 @@
 
 ## まずは結論：依存の矢印はこう！➡️🧅
 
+![Dependency Onion Flow](./picture/mod_mono_cs_study_008_dependency_onion.png)
+
 ![Dependency Rule](./picture/mod_mono_cs_study_008_dependency_rule.png)
 
 モジュール内の基本ルールはこれでいこう👇
@@ -55,6 +57,8 @@ graph TD
 
 ### ダメ例1：Domain が “外側の詳細” を参照しちゃう
 
+![Domain Purity Violation](./picture/mod_mono_cs_study_008_domain_pollution.png)
+
 * Domain が **EF Core** を参照する
 * Domain が **HttpClient** を叩く
 * Domain が **設定（Configuration）** や **ログ（ILogger）** を触る
@@ -78,6 +82,8 @@ graph TD
 
 ### ✅「変わりやすいもの」を外へ追い出す🏃‍♀️💨
 
+![Stability Gradient](./picture/mod_mono_cs_study_008_volatile_vs_stable.png)
+
 * DB（EF Core）・外部API・ファイル・フレームワーク
   → **Infrastructure**へ
 
@@ -89,6 +95,8 @@ graph TD
 ---
 
 ## 依存OK/NG 早見ルール🚦
+
+![Dependency Traffic Light](./picture/mod_mono_cs_study_008_ok_ng_traffic_light.png)
 
 * Domain → Application：❌（逆流！）
 * Domain → Infrastructure：❌（地獄への扉🚪🔥）
@@ -109,6 +117,8 @@ graph TD
 * `Host`（Web でも Console でもOK）
 
 ### ① Project 参照はこう貼る🚦
+
+![Project Reference Stack](./picture/mod_mono_cs_study_008_project_references.png)
 
 * Ordering.Application ➡️ Ordering.Domain を参照
 * Ordering.Infrastructure ➡️ Ordering.Application を参照（結果として Domain も見える）
@@ -237,6 +247,8 @@ Console.WriteLine("Paid ✅");
 
 ## “逆流” をわざと起こしてみる😇🔥（学習にめっちゃ効く）
 
+![Compiler Guard](./picture/mod_mono_cs_study_008_compiler_guard.png)
+
 ### 実験：Domain に Infrastructure を使わせようとしてみて？
 
 たとえば Domain 側で `InMemoryOrderRepository` を `new` しようとすると…
@@ -260,6 +272,8 @@ graph TD
 ---
 
 ## ミニ演習📝✨（5分）
+
+![Dependency Quiz](./picture/mod_mono_cs_study_008_dependency_quiz.png)
 
 ### Q1：OK/NG 判定してみてね🚦
 

@@ -20,6 +20,8 @@ EF Coreは基本ちゃんと作ってくれるけど、**意図が伝わらな�
 
 ## いちばん大事な3原則🧡（これだけで事故率が激減する）
 
+![Three Pillars of Migration Safety](./picture/mod_mono_cs_study_014_migration_rules.png)
+
 ![Migration Flow](./picture/mod_mono_cs_study_014_migration_flow.png)
 
 ```mermaid
@@ -45,6 +47,8 @@ graph LR
 
 ### ③ 「壊れる変更」は2段階以上でやる🧯🪜
 
+![Expand Migrate Contract Bridge](./picture/mod_mono_cs_study_014_expand_migrate_contract.png)
+
 列削除・型変更・NOT NULL化…みたいな変更は、いきなりやると死にがち😇
 安全にやる王道は **Expand → Migrate → Contract**（増やす→移す→消す）だよ✨ ([PlanetScale][3])
 
@@ -68,6 +72,8 @@ graph TD
 ## 最小の運用フロー（これをテンプレ化しよ！）📋✨
 
 ### Step 0：前提の“形”（モジュール別Migrationの置き場）🏠🧩
+
+![Migration File Cabinets](./picture/mod_mono_cs_study_014_migration_folders.png)
 
 おすすめはこんな感じ👇
 
@@ -102,6 +108,8 @@ graph TD
 
 ### Step 2：Migrationを作る🛠️✨（**モジュールのDbContextを指定**）
 
+![CLI Context Scope](./picture/mod_mono_cs_study_014_cli_context.png)
+
 CLI例（イメージ）👇
 ※ `--project` と `--startup-project` をちゃんと指定すると迷子にならないよ🧭 ([Microsoft Learn][1])
 
@@ -116,6 +124,8 @@ dotnet ef migrations add AddCustomerNoteToOrder ^
 ---
 
 ### Step 3：Migrationを“必ずレビュー”する👀⚠️（ここが命！）
+
+![Migration Code Review](./picture/mod_mono_cs_study_014_migration_review.png)
 
 レビュー観点はこれだけでOK✅
 
@@ -142,6 +152,8 @@ EF Coreの「適用方法の選び方」も公式にまとまってるよ✅ ([M
 ---
 
 ### Step 5：本番向けSQLを生成する🧾✨（レビュー＆CI向け）
+
+![Idempotent Stamp](./picture/mod_mono_cs_study_014_idempotent_sql.png)
 
 #### ✅ 基本：最新までのSQLを生成
 
@@ -182,6 +194,8 @@ DbContextが複数あるのに、全部が同じ `__EFMigrationsHistory` を使�
 ---
 
 ## 事故を減らすチェックリスト📋🛡️（PRに貼っとくと強い！）
+
+![Safety Checklist](./picture/mod_mono_cs_study_014_checklist.png)
 
 ### ✅ Migration作成時
 
