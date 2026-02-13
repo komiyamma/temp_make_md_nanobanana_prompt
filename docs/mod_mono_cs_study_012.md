@@ -10,6 +10,8 @@
 
 ## まず結論：Repositoryは“ドメインのための本棚”📚🧩
 
+![Repository Bookshelf](./picture/mod_mono_cs_study_012_repository_bookshelf.png)
+
 ![Repository Bookshelf](./picture/mod_mono_cs_study_012_repository.png)
 
 Repository は、ざっくり言うと👇
@@ -63,6 +65,8 @@ graph LR
 
 ## まずダメ例😇➡️「万能Repository」になって事故るやつ💥
 
+![Generic Repository Trap](./picture/mod_mono_cs_study_012_generic_repository_trap.png)
+
 ## ダメ例あるある🙅‍♀️
 
 * `IGenericRepository<T>` を作って
@@ -74,6 +78,8 @@ graph LR
 ---
 
 ## 良い例😎➡️「集約に寄せたRepository」になる✨
+
+![Specific Repository Buttons](./picture/mod_mono_cs_study_012_specific_repository.png)
 
 ## 良いRepositoryの形🧠
 
@@ -161,6 +167,8 @@ public interface IOrderRepository
 
 ### ここが“境界の芯”🧠✨
 
+![Pure Domain Clean Room](./picture/mod_mono_cs_study_012_pure_domain_boundary.png)
+
 Domain は **EF Coreを一切知らない**！
 `DbContext` も `DbSet` も `EntityTypeConfiguration` も出てこないのが勝ち🏆
 
@@ -194,6 +202,8 @@ public sealed class OrderingDbContext : DbContext
 }
 
 // “DB用の形” は Domain と分ける（まずは最小でOK）
+
+![Data vs Domain Model](./picture/mod_mono_cs_study_012_model_separation.png)
 public sealed class OrderRow
 {
     public Guid Id { get; set; }
@@ -282,6 +292,8 @@ graph TD
 ```
 
 ### ここでの学びポイント📌
+
+![Mapping Factory Line](./picture/mod_mono_cs_study_012_mapping_factory.png)
 
 * Infrastructure は **EF Coreを使ってOK**（むしろここが担当）🛠️
 * でも Domain には **EFの型を漏らさない**🧱

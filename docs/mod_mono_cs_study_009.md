@@ -16,6 +16,8 @@
 
 ### 1) DIP（依存関係逆転）ってなに？🔄
 
+![DIP Socket and Plug](./picture/mod_mono_cs_study_009_dip_concept.png)
+
 ![DIP Visualized](./picture/mod_mono_cs_study_009_dip.png)🧩
 
 「大事なルール（中心のロジック）」が「細かい都合（DBや外部API）」に引っ張られないようにする考え方だよ😊✨
@@ -43,7 +45,11 @@ graph TD
 
 ### DI（依存性注入）って？🔌
 
+![Dependency Injection Wiring](./picture/mod_mono_cs_study_009_di_wiring.png)
+
 ### DI（依存性注入）って？🔌
+
+![Dependency Injection Wiring](./picture/mod_mono_cs_study_009_di_wiring.png)
 
 DIPを実現しやすくする **配線テク** だよ〜！
 「必要なものは自分でnewしないで、外から渡してもらう」ってやつ😊🎁 ([Microsoft Learn][2])
@@ -51,6 +57,8 @@ DIPを実現しやすくする **配線テク** だよ〜！
 ---
 
 ## なんでモジュラーモノリスで超効くの？🏠🧩
+
+![Boundary Swappability](./picture/mod_mono_cs_study_009_boundary_plug.png)
 
 モジュール内でも外でも、**境界の外（DB/外部API/メール送信/決済など）** は変わりやすいの🥺💦
 そこをinterfaceで“コンセント化🔌”しておくと…
@@ -79,6 +87,8 @@ graph LR
 ---
 
 ## まずダメ例😇💥（境界が溶ける）
+
+![Direct New Trap](./picture/mod_mono_cs_study_009_direct_new_trap.png)
 
 「注文する」ユースケースが、外部決済を直接newしちゃう例👇
 
@@ -119,6 +129,8 @@ public sealed class PlaceOrderUseCase
 
 ## 1) Application層：境界interfaceを作る🧩
 
+![Interface Contract](./picture/mod_mono_cs_study_009_interface_contract.png)
+
 （例）Ordering.Application に置くイメージ✨
 
 ```csharp
@@ -142,6 +154,8 @@ public sealed record PaymentResult(
 ---
 
 ## 2) Application層：UseCaseはinterfaceに依存する😎
+
+![UseCase Abstraction Dependency](./picture/mod_mono_cs_study_009_usecase_dependency.png)
 
 ```csharp
 public sealed class PlaceOrderUseCase
@@ -245,6 +259,8 @@ graph TD
 ---
 
 ## 5) テストがめちゃラクになる🧪🌈（DIコンテナ不要でもOK）
+
+![Testing with Fakes](./picture/mod_mono_cs_study_009_testing_with_fakes.png)
 
 UseCaseにニセモノを渡すだけでテストできるよ〜！🎉
 

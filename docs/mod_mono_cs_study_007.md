@@ -10,6 +10,8 @@
 
 ## まず超ざっくりイメージ🧠💡
 
+![Onion Architecture Layers](./picture/mod_mono_cs_study_007_onion_layers.png)
+
 ![Onion Architecture](./picture/mod_mono_cs_study_007_onion.png)
 
 モジュールの中って、だいたいこの3層に分けると事故が減るの✨
@@ -41,7 +43,11 @@ graph TD
 
 ## 3層それぞれ「何を置く？」早見表📦✨
 
+![Sorting Code Artifacts](./picture/mod_mono_cs_study_007_sorting_layers.png)
+
 ### 1) Domain（ルールの中心）❤️
+
+![Domain Purity](./picture/mod_mono_cs_study_007_domain_rules.png)
 
 ここに置くもの👇
 
@@ -63,6 +69,8 @@ graph TD
 
 ### 2) Application（ユースケースを回す）🎬✨
 
+![Application Conductor](./picture/mod_mono_cs_study_007_application_conductor.png)
+
 ここに置くもの👇
 
 * ユースケース（例：`PlaceOrder`、`CancelOrder`）
@@ -81,6 +89,8 @@ graph TD
 ---
 
 ### 3) Infrastructure（現実世界との接着剤）🔌🌍
+
+![Infrastructure Adapter](./picture/mod_mono_cs_study_007_infrastructure_adapter.png)
 
 ここに置くもの👇
 
@@ -116,6 +126,8 @@ graph LR
 ---
 
 ## ありがち事故😇💥（ダメ例→良い例）
+
+![Domain Pollution Leak](./picture/mod_mono_cs_study_007_domain_db_leak.png)
 
 ### ダメ例：DomainがDBを知ってしまう🪦
 
@@ -174,6 +186,8 @@ public sealed class EfOrderRepository : IOrderRepository
 ---
 
 ## 手を動かす（C#）⌨️✨：Orderingモジュールを3層で作るよ🛒
+
+![Layered Construction](./picture/mod_mono_cs_study_007_ordering_construction.png)
 
 ここでは「注文する」ユースケースを超ミニで作るよ😊
 ポイントは **“どこに置くか”** だけに集中！✨

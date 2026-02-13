@@ -2,6 +2,8 @@
 
 ## 第10章　公開API設計：モジュール間は“窓口”だけで話す📣🪟
 
+![Public API Window](./picture/mod_mono_cs_study_010_public_api_window.png)
+
 ![Public API Window](./picture/mod_mono_cs_study_010_public_api.png)
 
 ### 今日のゴール🎯✨
@@ -13,6 +15,8 @@
 ---
 
 ## 1) “窓口ルール”ってなに？🪟🙂
+
+![Module Iceberg Structure](./picture/mod_mono_cs_study_010_module_structure.png)
 
 モジュールって「お店」だと思ってね🏪✨
 
@@ -45,6 +49,8 @@ graph LR
 ---
 
 ## 2) まずダメ例😇💥（依存が雪だるま☃️）
+
+![Dependency Snowball](./picture/mod_mono_cs_study_010_dependency_snowball.png)
 
 ### やりがちパターン
 
@@ -98,6 +104,8 @@ Catalog の中は「どう実装してるか」知らなくてOK🙆‍♀️
 
 ## 4) 公開APIの“3点セット”🎁🪟
 
+![Public API Components Trio](./picture/mod_mono_cs_study_010_api_trio.png)
+
 公開APIはだいたいこの3つで組むと安定するよ😊
 
 1. **窓口インターフェース（Facade）**
@@ -111,6 +119,8 @@ Catalog の中は「どう実装してるか」知らなくてOK🙆‍♀️
 ## 5) 手を動かす（ミニEC：Catalog の窓口を作る）⌨️🛠️
 
 ### 5-1) プロジェクト構成（イメージ）📦
+
+![Project Tray Layout](./picture/mod_mono_cs_study_010_project_layout.png)
 
 * Modules
 
@@ -165,6 +175,8 @@ graph TD
 ---
 
 ### 5-2) Catalog.PublicApi：窓口とDTOを作る🪟✨
+
+![DTO vs Entity](./picture/mod_mono_cs_study_010_dto_contract.png)
 
 ```csharp
 namespace Catalog.PublicApi;
@@ -299,6 +311,8 @@ public sealed class PlaceOrderService
 ---
 
 ## 6) 公開API設計の“鉄板ルール”🚦✅
+
+![API Traffic Rules](./picture/mod_mono_cs_study_010_api_rules.png)
 
 ### ✅ ルール1：公開面は “細く短く”🪡
 
