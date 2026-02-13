@@ -80,6 +80,8 @@ flowchart LR
 
 ## 14.4 TypeScriptで“非推奨”を目立たせる🧷👀✨（いちばん大事）
 
+![VS Code Deprecation](./picture/svbc_ts_study_014_vscode_warning.png)
+
 TypeScriptは **JSDocの `@deprecated`** が使えるよ！
 これを付けると、VS Codeなどで「非推奨だよ」が見えやすくなる🧠✨ ([TypeScript][2])
 
@@ -152,6 +154,8 @@ export { createClient } from "./client";
 
 ### パターンA：旧APIを新APIのラッパーにする（おすすめ）🥇
 
+![Wrapper Pattern](./picture/svbc_ts_study_014_wrapper_pattern.png)
+
 * 旧APIは残しつつ、中身は新APIへ
 * バグ修正も新APIに入れれば両方に効く🛠️✨
 
@@ -213,6 +217,8 @@ export function newFeature() {
 
 ## 14.7 npmで「このバージョン非推奨です」って宣言する📦⚠️
 
+![Npm Deprecate Message](./picture/svbc_ts_study_014_npm_deprecate_msg.png)
+
 ライブラリ作者側の必殺技✨
 npmは **特定バージョン（またはパッケージ）に“非推奨メッセージ”を付けられて、インストール時に表示**されるよ📣 ([npmドキュメント][4])
 
@@ -259,6 +265,8 @@ const d = parseIsoDate("2026-01-21");
 
 ## 14.9 リリースノートの書き方：非推奨は“見える化”が命📝👀
 
+![Release Note Structure](./picture/svbc_ts_study_014_release_note_sections.png)
+
 非推奨って、**気づかれなかったら無かったこと**になりがち😇
 だから、リリースノートはこの形が強い👇
 
@@ -277,6 +285,8 @@ const d = parseIsoDate("2026-01-21");
 ---
 
 ## 14.10 自動化：deprecated使用をCIで止める🛡️🤖
+
+![CI Lint Check](./picture/svbc_ts_study_014_ci_lint_check.png)
 
 「チームで気づかず旧API使い続ける問題」あるある😵‍💫
 これ、ESLintで検出できるよ！

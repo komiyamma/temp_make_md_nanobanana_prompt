@@ -81,6 +81,8 @@ flowchart TD
 
 ## 13.3 MAJOR / MINOR / PATCH の判断基準（超圧縮）🔢✨
 
+![Major/Minor/Patch Visuals](./picture/svbc_ts_study_013_semver_types.png)
+
 SemVerの基本ルールはこれだよ👇
 
 * **MAJOR**：公開APIに**後方互換性のない変更**が入ったとき💔
@@ -107,6 +109,8 @@ SemVerの基本ルールはこれだよ👇
 ---
 
 ### B) デフォルト値の変更（地味に地雷）🎚️💥
+
+![Default Value Trap](./picture/svbc_ts_study_013_default_value_trap.png)
 
 * 利用者が引数省略してたら、**結果が変わる**よね？
   → だいたい **MAJOR**（少なくとも“意味が変わる”）🌀
@@ -136,6 +140,8 @@ SemVerの基本ルールはこれだよ👇
 ---
 
 ## 13.5 「型を厳しくしたい問題」🤔🧷⚠️（超よく迷うやつ！）
+
+![Strict Type Break](./picture/svbc_ts_study_013_strict_type_break.png)
 
 ここはケース分けで決めよ〜！🧠✨
 結論から言うと…
@@ -200,6 +206,8 @@ SemVerの基本ルールはこれだよ👇
 ---
 
 ## 13.7 ミニ演習：20問の分類トレーニング🎯💪✨
+
+![Quiz Training](./picture/svbc_ts_study_013_quiz_concept.png)
 
 各問いを **MAJOR / MINOR / PATCH** で答えてね！
 （迷ったら 13.2 のテンプレに戻るんだよ〜🧭💕）
@@ -275,6 +283,8 @@ SemVerの基本ルールはこれだよ👇
 ---
 
 ## 13.8 AI活用🤖✨：判断を“秒速で言語化”するプロンプト集
+
+![AI Judge](./picture/svbc_ts_study_013_ai_judge.png)
 
 ### ① 変更を分類してもらう（判断の型を作る）🧠
 
