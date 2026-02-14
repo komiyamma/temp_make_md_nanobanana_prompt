@@ -20,6 +20,8 @@
 
 ## 2) まず「decimalだけ金額」って何が怖いの？😱💥
 
+![](./picture/entity_obj_cs_study_010_decimal_vs_double.png)
+
 たとえばカフェで、こういうコードを書きがち👇
 
 * `decimal price = 480;`
@@ -40,6 +42,8 @@ JPYなの？USDなの？EURなの？って情報がどこにもない…🌪️
 ---
 
 ## 3) Money VOの設計の芯💎✨
+
+![](./picture/entity_obj_cs_study_010_money_bag.png)
 
 ![](./picture/entity_obj_cs_study_010_banknote_flag.png)
 
@@ -92,6 +96,8 @@ C#では `decimal` が「金融・通貨計算に向く」型として位置づ�
 ---
 
 ## 6) 実装してみよう：Currency（通貨）🌍✨
+
+![](./picture/entity_obj_cs_study_010_currency_mismatch.png)
 
 まずは「通貨の情報」を1か所に集めます📦
 
@@ -220,6 +226,8 @@ public readonly record struct Money : IComparable<Money>
 
 ## 8) 税・割引・丸めはどこでやる？🤔🧾
 
+![](./picture/entity_obj_cs_study_010_tax_calc.png)
+
 ここ、現場でめっちゃ差が出ます⚠️
 「税の丸め」って、たとえば👇
 
@@ -284,6 +292,8 @@ public sealed class OrderLine
 ---
 
 ## 10) テストを書こう（Moneyはテスト相性が最高）🧪💖
+
+![](./picture/entity_obj_cs_study_010_test_scale.png)
 
 xUnitでサクッといきます👇
 
