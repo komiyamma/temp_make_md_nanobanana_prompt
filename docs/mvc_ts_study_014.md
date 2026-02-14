@@ -10,6 +10,8 @@
 
 ## 1) まず“つらみ”を確認しよ🥺💦
 
+![](./picture/mvc_ts_study_014_service_spaghetti_persistence.png)
+
 第13章で `localStorage` 保存ができた！えらい！🎉
 でも…もし Service の中にこんなのが入ってたらどうなる？👇
 
@@ -63,6 +65,8 @@ classDiagram
 
 ## 3) 重要ポイント：LocalStorageは“文字列の箱”📦🧵
 
+![](./picture/mvc_ts_study_014_localstorage_kv_strings.png)
+
 LocalStorageは **キー/値のペア**で、キーは文字列で扱われるよ🗝️🧾([MDN Web Docs][2])
 あと、`localStorage` は基本的に **同期的**（処理がその場で走る）だから、デカいデータを頻繁に出し入れすると重くなりがち⚠️([MDN Web Docs][3])
 
@@ -112,6 +116,8 @@ export interface ITodoRepository {
 ---
 
 ## 6) Step2：LocalStorage実装を“外側”に作る💾🧱
+
+![](./picture/mvc_ts_study_014_repository_encapsulation.png)
 
 ### 6-1. Dateがあるなら注意！⏰⚠️
 
@@ -219,6 +225,8 @@ export class TodoService {
 
 ## 8) Step4：差し替えポイントは“組み立て側”だけ🧩✨
 
+![](./picture/mvc_ts_study_014_main_assembly.png)
+
 `main.ts`（またはComposition Root）で「どのRepositoryを使うか」を決めるよ🎛️
 
 ```ts
@@ -239,6 +247,8 @@ const service = new TodoService(repo);
 ---
 
 ## 9) ミニ演習：メモリRepositoryに差し替えてみよ🧸✨
+
+![](./picture/mvc_ts_study_014_repo_swap_inmemory.png)
 
 「保存しないけど動作確認したい」って時に便利！
 

@@ -18,6 +18,8 @@ CampusTodoを、あとから機能追加しても崩れにくい形にしてい�
 
 ## 1) まず問題：Fat Controllerってなに？😇🍔
 
+![](./picture/mvc_ts_study_012_fat_controller_chaos.png)
+
 機能が増えると、Controllerがこうなりがち👇
 
 * DOMから値を取る🖱️
@@ -100,6 +102,8 @@ Serviceに寄せるのは👇
 
 ### 4-1) Result型（成功/失敗を返す箱）📦✨
 
+![](./picture/mvc_ts_study_012_result_box_pattern.png)
+
 「失敗してもアプリ落とさない😌」ために、Serviceはこう返すのが便利👇
 
 ```ts
@@ -115,6 +119,8 @@ export const fail = (errors: string[]): Result<never> => ({ ok: false, errors })
 ---
 
 ### 4-2) Model（TodoItem）🛡️📦
+
+![](./picture/mvc_ts_study_012_model_guard_rules.png)
 
 Model側で「空タイトル禁止」みたいな最低限のルールを守るよ✨
 （第9章の“不変条件”の考え方ね🛡️）
@@ -189,6 +195,8 @@ export class TodoStore {
 
 ### 4-4) Service（ユースケースの中心）🥗✨
 
+![](./picture/mvc_ts_study_012_service_orchestration.png)
+
 ここが主役！
 Controllerが抱えてた「追加処理の手順」を全部ここへ移すよ〜🧠🔁
 
@@ -227,6 +235,8 @@ export class TodoService {
 ---
 
 ### 4-5) Controller（イベントだけ担当にして痩せる）🚦✨
+
+![](./picture/mvc_ts_study_012_slim_controller.png)
 
 Controllerは「DOM→Service→View」だけやる感じにするよ！
 “手順の中心”がなくなるのでスッキリ✨
