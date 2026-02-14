@@ -15,6 +15,8 @@
 
 ## 2) エラーカタログってなに？なんで要るの？🤔📚
 
+![catalog_heaven_hell](./picture/err_model_ts_study_016_catalog_heaven_hell.png)
+
 エラーカタログ（エラー台帳）は、ざっくり言うと👇
 
 > 「このアプリに存在するエラーの一覧表」＋「運用ルール」🗂️✨
@@ -40,6 +42,8 @@
 
 ## 3) 台帳に書くべき項目（最小セット）🧩✨
 
+![catalog_card_structure](./picture/err_model_ts_study_016_catalog_card_structure.png)
+
 まずはミニマムでOK！💪😊
 おすすめはこの8つ👇
 
@@ -62,6 +66,8 @@
 ---
 
 ## 4) codeの命名ルール（ここが超大事）📛⚖️
+
+![naming_blocks](./picture/err_model_ts_study_016_naming_blocks.png)
 
 ここがゆるいと、台帳がすぐ崩壊するよ〜😱💥
 おすすめルール👇（迷ったらコレで！）
@@ -107,6 +113,8 @@
 ---
 
 ## 6) TypeScriptで「codeの存在」を型で保証しよう🛡️✨
+
+![ts_gatekeeper](./picture/err_model_ts_study_016_ts_gatekeeper.png)
 
 ここからが気持ちいいところ😆💖
 **台帳にないcodeを使おうとするとコンパイルで怒られる**ようにするよ！
@@ -159,6 +167,8 @@ export type Severity = (typeof errorCatalog)[ErrorCode]["severity"];
 
 ## 7) AppError（アプリ標準エラー）を作って台帳と接続🔌🎀
 
+![lookup_machine](./picture/err_model_ts_study_016_lookup_machine.png)
+
 「エラーの形」を揃えると、UIもログも超楽になるよ😊🧁
 
 ```ts
@@ -199,6 +209,8 @@ export function toLogPayload(err: AppError) {
 
 ## 8) 「原因を失わない」ための設計メモ🧵🎁🧯
 
+![error_chain_doll](./picture/err_model_ts_study_016_error_chain_doll.png)
+
 JavaScriptには `Error` に **cause** を付けられる仕組みがあるよ〜（エラー連鎖）🧵✨
 MDNでも紹介されてる🧾([MDNウェブドキュメント][2])
 
@@ -222,6 +234,8 @@ try {
 ---
 
 ## 9) 台帳を育てる運用ルール（軽くでOK）🪴📈
+
+![gardening_catalog](./picture/err_model_ts_study_016_gardening_catalog.png)
 
 エラーカタログは “作って終わり” じゃなくて、**育てるもの**🌱✨
 まずはこの3つだけ守ると続くよ😊
