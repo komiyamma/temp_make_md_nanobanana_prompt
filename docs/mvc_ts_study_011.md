@@ -66,6 +66,8 @@ Viewに置くと、別画面・別入力手段が増えた瞬間に破綻しや�
 
 ## 4) まずはViewで「形式チェック」🌼（HTMLの力を借りる）
 
+![](./picture/mvc_ts_study_011_html_guard.png)
+
 HTMLの属性だけでも、けっこう守れるよ〜！✨
 （ブラウザの検証は Constraint Validation API によるものだよ） ([MDN Web Docs][1])
 
@@ -160,6 +162,8 @@ form.addEventListener("submit", (e) => {
 
 ## 6) 次はModel側の「ルールチェック」🛡️✨（Domainの守護神）
 
+![](./picture/mvc_ts_study_011_factory_result.png)
+
 ここからがMVCらしいところ！😎
 「画面がどれだけ増えても」同じルールで守れるようにするよ💪
 
@@ -226,6 +230,8 @@ export const TodoItemFactory = {
 
 ## 7) Controller：失敗しても“復帰”できる流れにする🔁🧯
 
+![](./picture/mvc_ts_study_011_error_translation.png)
+
 Controllerは交通整理🚦
 
 * 形式チェック（View）
@@ -257,6 +263,8 @@ function mapErrors(errors: TodoValidationError[]): FieldErrorViewModel[] {
 ---
 
 ## 8) View：エラーの出し方（怖くしないコツ）🌷✨
+
+![](./picture/mvc_ts_study_011_error_ui_layout.png)
 
 ### ✅ “やさしいエラー”のテンプレ🫶
 
@@ -294,6 +302,8 @@ function clearErrors() {
 ---
 
 ## 9) 形式チェック＋ルールチェックを繋げた“完成形”🎉✨
+
+![](./picture/mvc_ts_study_011_validation_pipeline.png)
 
 ```ts
 form.addEventListener("submit", (e) => {

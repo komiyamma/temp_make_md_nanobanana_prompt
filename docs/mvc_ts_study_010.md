@@ -117,6 +117,8 @@ flowchart LR
 
 ### (A) ViewModelの型を作る📦
 
+![](./picture/mvc_ts_study_010_vm_structure_comparison.png)
+
 `src/viewmodel/TodoItemVM.ts`
 
 ```ts
@@ -137,6 +139,8 @@ export type TodoItemVM = {
 ---
 
 ### (B) 「日付を表示用に変換する」関数を作る🗓️✨
+
+![](./picture/mvc_ts_study_010_date_logic_flow.png)
 
 今回の「あと◯日」表示は、ブラウザで広く使える `Intl.RelativeTimeFormat` を使うよ✅ ([MDN Web Docs][4])
 （Temporalは将来有力だけど、まだ全ブラウザで安定って感じじゃないから今回は見送り🙅‍♀️） ([tc39.es][3])
@@ -216,6 +220,8 @@ export function buildDuePresentation(dueDate: Date | null, now: Date): {
 
 ### (C) TodoItem → TodoItemVM へ変換する（Mapper）🧩✨
 
+![](./picture/mvc_ts_study_010_mapper_mechanism.png)
+
 `src/viewmodel/todoItemMapper.ts`
 
 ```ts
@@ -241,6 +247,8 @@ export function toTodoItemVM(item: TodoItem, now: Date): TodoItemVM {
 
 ### (D) ControllerからViewへ「VMで渡す」🧠➡️🎨
 
+![](./picture/mvc_ts_study_010_controller_vm_flow.png)
+
 Controllerの再描画部分を、こんな感じにするよ👇
 （※あなたのプロジェクトのファイル名に合わせて読み替えてOK！）
 
@@ -259,6 +267,8 @@ render() {
 ---
 
 ### (E) ViewはVMだけ見て描画する📋✨
+
+![](./picture/mvc_ts_study_010_view_blindness_vm.png)
 
 ```ts
 import type { TodoItemVM } from "../viewmodel/TodoItemVM";

@@ -47,6 +47,8 @@ flowchart LR
 
 ### 2-1. 文字列しか入らない📎
 
+![](./picture/mvc_ts_study_013_localstorage_string_limitation.png)
+
 `localStorage` は **key/value どっちも文字列**。
 だから **JSONにして保存** → **JSONをパースして復元** が基本だよ📄✨ ([MDN Web Docs][3])
 
@@ -79,6 +81,8 @@ flowchart LR
 
 ### 4-1. 永続化用の型（DTO）を作る📦🧷
 
+![](./picture/mvc_ts_study_013_persistence_dto_transform.png)
+
 **ポイント**：Modelの型（`Date` とか）をそのまま保存しないで、保存用に整えるよ🧁
 Dateは文字列（ISO）にして保存→復元時に Date に戻すのが王道✨
 
@@ -100,6 +104,8 @@ export type PersistedTodoStateV1 = {
 ---
 
 ### 4-2. localStorage アダプターを作る💾🧱
+
+![](./picture/mvc_ts_study_013_localstorage_adapter.png)
 
 * 保存キーはアプリ名＋バージョンで固定（あとで移行しやすい）🗝️✨
 * `JSON.parse` は壊れたデータで落ちるので、必ず `try/catch` 🧯
@@ -165,6 +171,8 @@ export class TodoLocalStorageStore {
 
 ### 4-3. Controller（または起動処理）で「復元」する🔁✨
 
+![](./picture/mvc_ts_study_013_startup_load_flow.png)
+
 アプリ起動時に
 
 1. store.load()
@@ -208,6 +216,8 @@ export class TodoController {
 ---
 
 ### 4-4. Serviceで「操作のあと保存」する✅💾
+
+![](./picture/mvc_ts_study_013_save_trigger_flow.png)
 
 「追加したら保存」「トグルしたら保存」みたいに、**状態が変わる操作の最後**で `store.save(...)` を呼ぶのが超わかりやすいよ🍀
 
