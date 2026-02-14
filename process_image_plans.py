@@ -30,9 +30,6 @@ def process_plans(json_file):
 
     for plan in plans:
         filename = plan['filename']
-        if filename in existing_filenames:
-            print(f"Skipping duplicate: {filename}")
-            continue
 
         # Update Markdown file
         md_file = plan['file_path']
@@ -47,6 +44,24 @@ def process_plans(json_file):
         if filename in content:
             print(f"Skipping duplicate (in markdown): {filename}")
             continue
+
+        # Step 2: Check Existing Plans and Resolve Conflict
+        base_name, ext = os.path.splitext(filename)
+        candidate_filename = filename
+        counter = 1
+
+        while candidate_filename in existing_filenames or candidate_filename in content:
+            candidate_filename = f"{base_name}_{counter}{ext}"
+            counter += 1
+
+        if candidate_filename != filename:
+            print(f"Renamed {filename} to {candidate_filename}")
+            # Update relative link
+            if plan['relative_link'].endswith(filename):
+                plan['relative_link'] = plan['relative_link'][:-len(filename)] + candidate_filename
+            else:
+                plan['relative_link'] = plan['relative_link'].replace(filename, candidate_filename)
+            filename = candidate_filename
 
         last_id += 1
         # Format prompt: replace newlines with <br>
