@@ -16,6 +16,8 @@
 
 ## 1. まず超大事：async/awaitの“捕まえ方ルール”🧷
 
+![Async Escaping Net](./picture/err_model_ts_study_006_async_net_fail.png)
+
 ### ルール①：`async function` は **必ず Promise を返す**🎁
 
 つまり、`throw` は「例外を投げる」じゃなくて、**Promiseをrejectする**に変換される感じ💡
@@ -35,6 +37,8 @@
 ## 2. try/catchが“効かない”あるある4連発😵‍💫💥
 
 ### あるある①：awaitし忘れ（いちばん多い）🥇😇
+
+![Forgotten Await](./picture/err_model_ts_study_006_forgotten_shadow.png)
 
 **ダメ例（try/catchが素通り）**👇
 
@@ -73,7 +77,7 @@ async function main(): Promise<void> {
 
 ### あるある②：火付け役（fire-and-forget）で燃える🔥😱
 
-![火付け役（fire-and-forget）で燃える[(./picture/err_model_ts_study_006_fire_and_forget.png)
+![火付け役（fire-and-forget）で燃える](./picture/err_model_ts_study_006_fire_and_forget.png)
 
 「待たなくていいから投げっぱなしで！」ってやるやつ。
 実はこれ、設計としてアリなんだけど…**必ず後始末が必要**🧹✨
@@ -107,6 +111,8 @@ function onClick(): void {
 ---
 
 ### あるある③：タイマー／イベントの中で落ちる⏰🎮
+
+![Timer Error Bomb](./picture/err_model_ts_study_006_time_bomb.png)
 
 try/catchの外側では、**未来の処理**は捕まえられないよ〜😵‍💫
 
@@ -159,6 +165,8 @@ async function main(): Promise<void> {
 ---
 
 ### あるある④：`forEach(async () => ...)` 事故🌀😇
+
+![forEach Async Trap](./picture/err_model_ts_study_006_domino_push.png)
 
 これ、**罠として有名**！
 `forEach` は Promise を待ってくれないの🥲
@@ -289,6 +297,8 @@ function onClick(): void {
 ---
 
 ## 7. “awaitし忘れ”を仕組みで潰す🧠🧰（めちゃ効く！）
+
+![ESLint Guardian](./picture/err_model_ts_study_006_eslint_robot.png)
 
 ### ESLintで「Promise置き去り」を検出✅
 

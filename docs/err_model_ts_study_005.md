@@ -10,6 +10,8 @@
 
 ## 1) なんで `unknown` 前提なの？🤔💥
 
+![Unknown Catch Goalie](./picture/err_model_ts_study_005_unknown_goalie.png)
+
 TypeScript/JavaScriptの世界では、`throw` で **なんでも投げられます**🎲
 `Error` だけじゃなく、こういうのも普通に来ます👇
 
@@ -41,6 +43,8 @@ flowchart LR
 
 ## 2) `catch` を “自動で unknown” にする設定🧷✨
 
+![Strict Config Shield](./picture/err_model_ts_study_005_strict_shield.png)
+
 TypeScriptには `catch` 変数を `unknown` 扱いにするオプションがあります✅
 名前は **`useUnknownInCatchVariables`** です。([typescriptlang.org][1])
 
@@ -64,6 +68,8 @@ TypeScriptには `catch` 変数を `unknown` 扱いにするオプションが�
 ---
 
 ## 3) unknown を安全に触る「型ガード」基本セット🧤🧠
+
+![Type Guard Scanner](./picture/err_model_ts_study_005_type_guard_scanner.png)
 
 ### 3-1) まずは王道：`instanceof Error` 👑
 
@@ -113,6 +119,8 @@ export function isPrimitiveThrowable(x: unknown): x is string | number | boolean
 ---
 
 ## 4) いちばん大事：unknown → Error に「正規化」しよう🧼🧺
+
+![Normalization Factory](./picture/err_model_ts_study_005_normalization_factory.png)
 
 アプリの中では、エラーをなるべく **同じ形（Error）** で扱えるとラクです😊
 そのために “正規化関数” を1個用意しちゃうのが超おすすめ💖
@@ -178,6 +186,8 @@ flowchart TD
 ---
 
 ## 5) catchの中で「やっちゃダメ」あるある🙅‍♀️💥
+
+![Catch Block Accident](./picture/err_model_ts_study_005_banana_slip.png)
 
 ### ❌ そのまま `err.message` を読む
 

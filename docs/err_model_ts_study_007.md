@@ -18,6 +18,8 @@
 
 ## 7-1 合成ってなに？　並列のまとめ方 🌈⚡
 
+![Composition Toolbox](./picture/err_model_ts_study_007_composition_toolbox.png)
+
 非同期をまとめたい場面って、だいたいこのどれか👇
 
 * ✅ **全部成功したらOK**：例）ユーザー情報・注文履歴・おすすめを同時に取る
@@ -44,7 +46,7 @@
 
 ## 7-3 罠その1　1つ落ちた瞬間に全体が落ちる　でも裏で他は動く😱⚡
 
-![罠その1　1つ落ちた瞬間に全体が落ちる[(./picture/err_model_ts_study_007_domino_chain.png)
+![罠その1　1つ落ちた瞬間に全体が落ちる](./picture/err_model_ts_study_007_domino_chain.png)
 
 たとえばこんな感じ👇
 
@@ -94,6 +96,8 @@ main();
 ---
 
 ## 7-4 罠その2　どれが失敗したのか分からない🙈💥
+
+![Unknown Failure Source](./picture/err_model_ts_study_007_unknown_failure.png)
 
 `Promise.all` が返してくれるのは、基本「最初の失敗理由」だけ！ ([MDNウェブドキュメント][1])
 だからこうなる👇
@@ -159,6 +163,8 @@ async function main() {
 
 ## 7-6 Promise.allSettled　成功も失敗も全部ちょうだい📦✨
 
+![AllSettled Report](./picture/err_model_ts_study_007_report_card.png)
+
 `Promise.allSettled` は性格が真逆で、**全員が終わるまで待ってから**結果をくれる！
 「成功・失敗を含む一覧」が欲しいときに超強い💪 ([MDNウェブドキュメント][3])
 
@@ -206,6 +212,8 @@ flowchart TD
 
 ## 7-7 Promise.any　どれか1個成功でOK　救世主スタイル🦸‍♀️✨
 
+![Promise.any Race](./picture/err_model_ts_study_007_relay_win.png)
+
 `Promise.any` はこういう性格👇
 
 * **最初に成功したやつ**で fulfill する
@@ -234,6 +242,8 @@ async function fetchFromMirror(urls: string[]) {
 ---
 
 ## 7-8 Promise.race　一番早く決着したものを採用🏁⚡
+
+![Race with Abort](./picture/err_model_ts_study_007_race_referee.png)
 
 `Promise.race` は「最初に settle したもの」で決着するよ。
 成功でも失敗でも、**先に決まった方**が勝ち🏁 ([MDNウェブドキュメント][7])
