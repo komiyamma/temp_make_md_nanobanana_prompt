@@ -10,6 +10,10 @@
 
 ## まずは超イメージ：Repositoryってなに？🧠☕
 
+![entity_obj_ts_study_019_handshake_contract.png](./picture/entity_obj_ts_study_019_handshake_contract.png)
+
+
+
 Repositoryはひと言でいうと…
 
 > **「保存・取得の“窓口”を、ドメイン側が“約束”として持つ」もの**📮
@@ -25,6 +29,10 @@ Repositoryはひと言でいうと…
 ---
 
 ## DIP入門：依存の向きをひっくり返す🔁🧲
+
+![entity_obj_ts_study_019_plug_socket.png](./picture/entity_obj_ts_study_019_plug_socket.png)
+
+
 
 設計初心者が一番ハマりやすいのがこれ😵‍💫
 
@@ -86,6 +94,10 @@ classDiagram
 ---
 
 ## Repository設計のコツ（初心者向けチートシート）📄✨
+
+![entity_obj_ts_study_019_cheat_sheet.png](./picture/entity_obj_ts_study_019_cheat_sheet.png)
+
+
 
 Repositoryのメソッドを考えるとき、まずこの3つだけでOK🙆‍♀️
 
@@ -205,6 +217,10 @@ export interface OrderRepository {
 
 ## ハンズオン②：インメモリ実装で動かす（外側の実装）🧺🧱
 
+![entity_obj_ts_study_019_ram_stick.png](./picture/entity_obj_ts_study_019_ram_stick.png)
+
+
+
 次に、外側（infra）で interface を実装するよ！
 
 ```ts
@@ -234,6 +250,10 @@ export class InMemoryOrderRepository implements OrderRepository {
 ---
 
 ## ハンズオン③：UseCaseから使ってみよう🎬🚀
+
+![entity_obj_ts_study_019_director_scene.png](./picture/entity_obj_ts_study_019_director_scene.png)
+
+
 
 「Repositoryを受け取って使う」＝依存性注入（DI）の超シンプル版だよ💉✨
 
@@ -293,6 +313,10 @@ console.log("created:", id.value);
 
 ## ちょいテスト🧪🍰（Repositoryがあるとテストが楽！）
 
+![entity_obj_ts_study_019_flight_simulator.png](./picture/entity_obj_ts_study_019_flight_simulator.png)
+
+
+
 Vitest 4.0 が出てるよ🧪✨ ([vitest.dev][3])
 ここでは「DBなしで」UseCaseをテストしちゃう💕
 
@@ -326,6 +350,10 @@ describe("PlaceOrderUseCase", () => {
 ---
 
 ## “Repositoryのやりすぎ”あるある😇💥
+
+![entity_obj_ts_study_019_bloated_knife.png](./picture/entity_obj_ts_study_019_bloated_knife.png)
+
+
 
 ### あるある①：Repositoryが何でも屋になる🧹
 

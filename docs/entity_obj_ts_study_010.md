@@ -18,6 +18,10 @@
 
 ## 1) Period（期間）って、なに？🧸📅
 
+![entity_obj_ts_study_010_timeline_ruler.png](./picture/entity_obj_ts_study_010_timeline_ruler.png)
+
+
+
 Periodは「点」じゃなくて「範囲」だよ〜！✨
 たとえばこんなやつ👇
 
@@ -38,6 +42,10 @@ Periodは「点」じゃなくて「範囲」だよ〜！✨
 ### ✅ まず決める3つ（超重要）🚦
 
 #### ① 終了は「含む？含まない？」🤔
+
+![entity_obj_ts_study_010_inclusive_exclusive.png](./picture/entity_obj_ts_study_010_inclusive_exclusive.png)
+
+
 
 よくある2パターン👇
 
@@ -75,6 +83,10 @@ Periodは「点」じゃなくて「範囲」だよ〜！✨
 
 ## 3) 期間のVOに“ありがちな事故”💥😇（先に知って勝つ！）
 
+![entity_obj_ts_study_010_temporal_vs_date.png](./picture/entity_obj_ts_study_010_temporal_vs_date.png)
+
+
+
 * `start` と `end` を別々に持って、いつの間にか片方だけ更新される😱
 * `end` を含む/含まないが曖昧で、境界でバグる🥲
 * `Date` で時差・丸め・不変じゃない問題が出る🌀
@@ -110,6 +122,10 @@ export class DomainError extends Error {
 ---
 
 ### 4-2) DatePeriod（期間VO）📅↔️
+
+![entity_obj_ts_study_010_class_structure.png](./picture/entity_obj_ts_study_010_class_structure.png)
+
+
 
 ```ts
 // DatePeriod.ts
@@ -205,6 +221,14 @@ flowchart LR
 
 ## 5) 使ってみよう😊✨（例）
 
+![entity_obj_ts_study_010_overlap_strips.png](./picture/entity_obj_ts_study_010_overlap_strips.png)
+
+
+
+![entity_obj_ts_study_010_contains_bucket.png](./picture/entity_obj_ts_study_010_contains_bucket.png)
+
+
+
 ```ts
 import { DatePeriod } from "./DatePeriod";
 import { Temporal } from "@js-temporal/polyfill";
@@ -220,6 +244,10 @@ console.log(p.contains(Temporal.PlainDate.from("2026-01-13"))); // false ❌（e
 ---
 
 ## 6) テストしよう🧪💖（境界が命！！）
+
+![entity_obj_ts_study_010_boundary_tester.png](./picture/entity_obj_ts_study_010_boundary_tester.png)
+
+
 
 テストは **境界** を叩くのがいちばん効くよ〜！🎯
 （ちょうど start / end、startの前日、endの日…みたいな）

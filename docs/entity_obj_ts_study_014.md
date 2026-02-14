@@ -7,6 +7,10 @@
 
 ## 0) まず“Aggregate”って何者？📦✨
 
+![entity_obj_ts_study_014_aggregate_bubble.png](./picture/entity_obj_ts_study_014_aggregate_bubble.png)
+
+
+
 Aggregate（集約）はひとことで言うと…
 
 > **「この範囲の中は、いまこの瞬間もルールが正しい（整合してる）って約束する境界」**🎀
@@ -20,6 +24,10 @@ Aggregate（集約）はひとことで言うと…
 ---
 
 ## 1) なぜ「更新ルート1本化」が必要なの？🚑💥
+
+![entity_obj_ts_study_014_inconsistency_theft.png](./picture/entity_obj_ts_study_014_inconsistency_theft.png)
+
+
 
 ### ありがちな事故😇💦
 
@@ -35,6 +43,10 @@ Aggregate（集約）はひとことで言うと…
 ---
 
 ## 2) この章のキーワード3つだけ覚えよ💡🧸
+
+![entity_obj_ts_study_014_repository_library.png](./picture/entity_obj_ts_study_014_repository_library.png)
+
+
 
 ### ✅(1) 整合性境界（Consistency Boundary）🧱
 
@@ -115,6 +127,10 @@ classDiagram
 
 ## 4) “やりたいルール”を先に決めよう🧾✨（ここ超大事！）
 
+![entity_obj_ts_study_014_order_rules_board.png](./picture/entity_obj_ts_study_014_order_rules_board.png)
+
+
+
 今回は Order を例に、こんなルールにするね☺️🍰
 
 * ルールA：**同じ商品は1行にまとめる（重複行を作らない）**🧺
@@ -127,6 +143,14 @@ classDiagram
 ---
 
 ## 5) 実装してみよ〜（TypeScript）🛠️💖
+
+![entity_obj_ts_study_014_merge_apple.png](./picture/entity_obj_ts_study_014_merge_apple.png)
+
+
+
+![entity_obj_ts_study_014_private_items_safe.png](./picture/entity_obj_ts_study_014_private_items_safe.png)
+
+
 
 ### ポイント🌟
 
@@ -244,6 +268,10 @@ class Order {
 ---
 
 ## 6) 「RepositoryはRootに1個」の感覚もつかも🧠📚
+
+![entity_obj_ts_study_014_submit_gate.png](./picture/entity_obj_ts_study_014_submit_gate.png)
+
+
 
 DDDの定番ルールとして、**集約の整合性を保つために**
 

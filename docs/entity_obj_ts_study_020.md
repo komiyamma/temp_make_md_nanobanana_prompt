@@ -37,6 +37,10 @@ graph LR
 
 ## 2) Mapperが無いと何が起きるの？😱（よくある地獄）
 
+![entity_obj_ts_study_020_common_hell.png](./picture/entity_obj_ts_study_020_common_hell.png)
+
+
+
 ### 🧨地雷あるある
 
 * `null` が混ざってドメインが壊れる😇
@@ -65,6 +69,10 @@ Mapperを作ると👇
 
 ## 4) 実装で学ぼう！ミニ題材：注文 Order 🛒✨
 
+![entity_obj_ts_study_020_domain_vs_persistence.png](./picture/entity_obj_ts_study_020_domain_vs_persistence.png)
+
+
+
 ### Domain 側（ルールの世界）💎
 
 * `Email`：作る時に検証して、無効値を作らない📧✅
@@ -76,6 +84,10 @@ Mapperを作ると👇
 ## 5) サンプル実装（Domain / Record / Mapper / Test）🧩🧪
 
 ### 5-1. Domain（Email / Money / Order など）💎
+
+![entity_obj_ts_study_020_bigint_safe.png](./picture/entity_obj_ts_study_020_bigint_safe.png)
+
+
 
 ```ts
 // domain/valueObjects.ts
@@ -185,6 +197,10 @@ export class Order {
 
 ### 5-2. Persistence（Record：DBの行っぽい形）💾
 
+![entity_obj_ts_study_020_snake_case_scroll.png](./picture/entity_obj_ts_study_020_snake_case_scroll.png)
+
+
+
 ここは **DB都合が強い**世界！🐍（snake_case だし、bigintはstringで持つ…とか）
 
 ```ts
@@ -210,6 +226,10 @@ export type OrderItemRow = {
 ---
 
 ### 5-3. Mapper（翻訳係）🌉✨
+
+![entity_obj_ts_study_020_mapper_booth.png](./picture/entity_obj_ts_study_020_mapper_booth.png)
+
+
 
 ポイントはこれ👇
 
@@ -331,6 +351,14 @@ sequenceDiagram
 ---
 
 ### 5-4. テスト（Vitest 4）🧪✨
+
+![entity_obj_ts_study_020_boomerang_test.png](./picture/entity_obj_ts_study_020_boomerang_test.png)
+
+
+
+![entity_obj_ts_study_020_librarian_sort.png](./picture/entity_obj_ts_study_020_librarian_sort.png)
+
+
 
 狙いは「**往復しても壊れない**」こと！🔁✅
 Vitest 4 が現行で案内されてるよ🧁 ([Vitest][3])

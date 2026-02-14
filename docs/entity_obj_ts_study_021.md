@@ -30,6 +30,10 @@
 
 ## 3) Mapper（第20章）との違いは？🤔🔁
 
+![entity_obj_ts_study_021_warehouse_vs_customs.png](./picture/entity_obj_ts_study_021_warehouse_vs_customs.png)
+
+
+
 * **Mapper（前章）**：自分のDB都合 ↔ ドメイン（Record変換）💾🔁
 * **ACL（今回）**：他人（外部API）の都合 ↔ ドメイン（翻訳＆吸収）🌍🔁
 
@@ -41,6 +45,10 @@
 ---
 
 ## 4) 外部APIの「歪み」あるある大全 😇⚠️
+
+![entity_obj_ts_study_021_external_monster.png](./picture/entity_obj_ts_study_021_external_monster.png)
+
+
 
 外部ってだいたいこういうの持ってくるよね…ってやつ🧯
 
@@ -56,6 +64,10 @@
 ---
 
 ## 5) 置き場所（どこに作る？）🏠🧩
+
+![entity_obj_ts_study_021_diplomat_border.png](./picture/entity_obj_ts_study_021_diplomat_border.png)
+
+
 
 ドメインを守るために、ACLは **外側（infra）** に置くのが基本🙂✨
 ドメイン層は「自分の言葉」だけで生きるのが理想だよ🧠💎
@@ -78,6 +90,10 @@ sequenceDiagram
 ---
 
 ## 6) ハンズオン：架空の決済サービス “PayFast” を翻訳する 💳⚡
+
+![entity_obj_ts_study_021_payfast_machine.png](./picture/entity_obj_ts_study_021_payfast_machine.png)
+
+
 
 ### 今回やりたいこと 🧩
 
@@ -132,6 +148,10 @@ classDiagram
 
 ## 8) まずはドメイン側（受け入れ先）💎🛡️
 
+![entity_obj_ts_study_021_money_vending.png](./picture/entity_obj_ts_study_021_money_vending.png)
+
+
+
 ### Money（最小限）
 
 * **centsを受け取らない**（外部都合はACLで止める）
@@ -169,6 +189,10 @@ export type PaymentStatus = "Pending" | "Paid" | "Failed" | "Cancelled";
 ---
 
 ## 9) 外部DTOは “unknown → 検証 → 確定” が安全 ✅🧪
+
+![entity_obj_ts_study_021_shape_sorter.png](./picture/entity_obj_ts_study_021_shape_sorter.png)
+
+
 
 外部は信用しない！😇💥
 なので **`unknown` を zod で検証してから**扱います。
@@ -218,6 +242,10 @@ export class PayFastClient {
 ---
 
 ## 11) 🌉 ACL本体：翻訳ルールを全部ここへ！🧼✨
+
+![entity_obj_ts_study_021_switch_yard.png](./picture/entity_obj_ts_study_021_switch_yard.png)
+
+
 
 ポイントはここ👇
 

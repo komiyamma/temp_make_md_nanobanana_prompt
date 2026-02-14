@@ -12,6 +12,10 @@
 
 ## 1) まず超大事：Set/Mapは“オブジェクトを値で比較しない”😇💥
 
+![entity_obj_ts_study_011_object_equality_trap.png](./picture/entity_obj_ts_study_011_object_equality_trap.png)
+
+
+
 JavaScript/TypeScript の `Set` や `Map` は、基本「SameValueZero」という仕組みで “同じ” を決めます✅
 
 * `NaN` は `NaN` と同じ扱い（`NaN !== NaN` なのに！）😳
@@ -47,6 +51,10 @@ VOの思想はシンプル😊
 ---
 
 ## 3) “equals”の作り方：まずは素直に比較しよ🙂✨
+
+![entity_obj_ts_study_011_key_machine.png](./picture/entity_obj_ts_study_011_key_machine.png)
+
+
 
 例：`Tag`（ラベル）VO を作る（小文字に正規化して扱う）🏷️
 
@@ -84,6 +92,10 @@ export class Tag {
 ---
 
 ## 4) Set？List？迷ったらこの3問で決めよ🧠🧺✨
+
+![entity_obj_ts_study_011_collection_choice.png](./picture/entity_obj_ts_study_011_collection_choice.png)
+
+
 
 ### ✅ Q1：重複していい？
 
@@ -123,6 +135,10 @@ flowchart TD
 
 ## 5) コレクションもVOにしちゃおう🧺💎（この章のメイン！）
 
+![entity_obj_ts_study_011_tags_container.png](./picture/entity_obj_ts_study_011_tags_container.png)
+
+
+
 「タグ集合」「行アイテム一覧」みたいな **“集まり”** にこそルールが乗ります🎁✨
 例：Tags のルール
 
@@ -136,6 +152,10 @@ flowchart TD
 ---
 
 ## 6) 実装例：Tags（Set的コレクションVO）🏷️🧺✨
+
+![entity_obj_ts_study_011_tags_bouncer.png](./picture/entity_obj_ts_study_011_tags_bouncer.png)
+
+
 
 中では `Map<string, Tag>` を使うのが扱いやすいです😊
 
@@ -208,6 +228,10 @@ export class Tags {
 
 ## 7) 実装例：LineItems（List的コレクション）🧾📦
 
+![entity_obj_ts_study_011_lineitems_receipt.png](./picture/entity_obj_ts_study_011_lineitems_receipt.png)
+
+
+
 LineItemは「順序が意味ある（表示順・追加順）」ケースが多いので List 寄りになりやすいです🙂✨
 （※ここでは雰囲気だけ：設計の着眼点が大事だよ🫶）
 
@@ -259,6 +283,10 @@ describe("Tags", () => {
 ---
 
 ## 9) ありがち事故💥（ここ、試験に出るよ〜😆📝）
+
+![entity_obj_ts_study_011_json_stringify_danger.png](./picture/entity_obj_ts_study_011_json_stringify_danger.png)
+
+
 
 ### ❌ 事故1：VOを `Set<VO>` に入れれば重複消えると思う
 

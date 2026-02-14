@@ -21,6 +21,10 @@
 
 ## 1. 境界（Boundary）ってなに？🚪🙂
 
+![entity_obj_ts_study_017_mystery_box.png](./picture/entity_obj_ts_study_017_mystery_box.png)
+
+
+
 ![Boundary Gate](./picture/entity_obj_ts_study_017_boundary_gate.png)
 
 境界は「外の世界（信用できない）」と「内の世界（安全）」の **関所** だよ〜🏯✨
@@ -37,6 +41,10 @@ DTO（string/number/null/optionalだらけ） ← まだ危険⚠️
 
 ### ✅ なぜ DTO をそのままドメインに入れちゃダメ？
 
+![entity_obj_ts_study_017_xray_scanner.png](./picture/entity_obj_ts_study_017_xray_scanner.png)
+
+
+
 * TypeScriptの型は **実行時に消える** 😭（つまり `as` は嘘つけちゃう）
 * 外から来る値はこうなりがち👇
 
@@ -48,6 +56,10 @@ DTO（string/number/null/optionalだらけ） ← まだ危険⚠️
 ---
 
 ## 2. エラーは2種類に分けると楽ちん🧠✨
+
+![entity_obj_ts_study_017_user_vs_system_error.png](./picture/entity_obj_ts_study_017_user_vs_system_error.png)
+
+
 
 ここ、めちゃ大事〜！🌟
 
@@ -116,6 +128,10 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 
 ### 4-2. エラー型（ドメインエラーは “型で分類” しよう）🧯✨
 
+![entity_obj_ts_study_017_sorting_hats.png](./picture/entity_obj_ts_study_017_sorting_hats.png)
+
+
+
 ```ts
 export type DomainError =
   | { kind: "Validation"; field: string; message: string }
@@ -162,11 +178,19 @@ export function parseCreateOrderRequest(input: unknown): Result<CreateOrderReque
 
 #### 🌟ちょい最新ネタ：optionalの罠を減らす
 
+![entity_obj_ts_study_017_optional_trap.png](./picture/entity_obj_ts_study_017_optional_trap.png)
+
+
+
 Zod v4 には `exactOptional()` みたいな “optionalの厳密化” もあるよ（`undefined` を明示で渡すのを嫌う時に便利）🧷✨ ([GitHub][6])
 
 ---
 
 ### 4-4. DTO → ドメイン（VOへ変換して安全にする）💎🔁
+
+![entity_obj_ts_study_017_clay_brick_machine.png](./picture/entity_obj_ts_study_017_clay_brick_machine.png)
+
+
 
 ここがこの章の本体だよ〜！💖
 
@@ -227,6 +251,10 @@ export function toCreateOrderCommand(dto: CreateOrderRequestDto): Result<CreateO
   }
 
   if (errors.length > 0) return err(errors);
+
+![entity_obj_ts_study_017_error_basket.png](./picture/entity_obj_ts_study_017_error_basket.png)
+
+
 
   return ok({
     customerId: dto.customerId,

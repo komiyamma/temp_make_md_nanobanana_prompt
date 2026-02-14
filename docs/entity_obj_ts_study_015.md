@@ -18,6 +18,10 @@
 
 ## まずイメージ：不変条件ってなに？🧸💭
 
+![entity_obj_ts_study_015_invariant_diamond.png](./picture/entity_obj_ts_study_015_invariant_diamond.png)
+
+
+
 **不変条件（Invariant）**は、ざっくり言うと👇
 
 > 「このオブジェクトは、いつ見ても *これだけは必ず成立しててほしい* ルール」✨
@@ -55,6 +59,10 @@ DDDでも「集約の不変条件はルートが責任を持って守る」っ�
 
 ### ❌ パターンA：どこでもチェックしてて散らかる
 
+![entity_obj_ts_study_015_scattered_leaks.png](./picture/entity_obj_ts_study_015_scattered_leaks.png)
+
+
+
 * 画面でもチェック
 * APIでもチェック
 * サービスでもチェック
@@ -70,6 +78,10 @@ DDDでも「集約の不変条件はルートが責任を持って守る」っ�
 ## 入口で守るための「型」🧩✨（設計の型だよ！）
 
 ### 1) コンストラクタは隠す（むやみに new させない）🚪🙅‍♀️
+
+![entity_obj_ts_study_015_constructor_curtain.png](./picture/entity_obj_ts_study_015_constructor_curtain.png)
+
+
 
 * `constructor` を `private` にして
 * `static create()` だけを入口にする
@@ -89,6 +101,10 @@ JavaScriptの `#` private は、**言語として外から触れない**のが�
 # ハンズオン：Orderで「入口に不変条件を集める」🛒🛡️✨
 
 ## 0) 今日の不変条件（この章で守るルール）📋🖊️
+
+![entity_obj_ts_study_015_rules_clipboard.png](./picture/entity_obj_ts_study_015_rules_clipboard.png)
+
+
 
 Order（集約ルート）で、まずはこの3つでいくね😊
 
@@ -172,6 +188,10 @@ export class LineItem {
 ---
 
 ## 2) 主役：Order（入口に不変条件を集約する）🪪🚪🛡️
+
+![entity_obj_ts_study_015_private_safe.png](./picture/entity_obj_ts_study_015_private_safe.png)
+
+
 
 ```ts
 // domain/order.ts
@@ -270,6 +290,10 @@ export class Order {
 
 ### ここが大事ポイントだよ～！💖
 
+![entity_obj_ts_study_015_calculator_total.png](./picture/entity_obj_ts_study_015_calculator_total.png)
+
+
+
 * **チェックが `create/submit/pay/cancel` に集まってる**✨
 * だから内部は「正しい前提」で書けて、コードがスッキリ🧹
 * `total` を保存しないで **毎回計算**すると、整合性が壊れにくい💪
@@ -302,6 +326,10 @@ sequenceDiagram
 ---
 
 ## 3) テストで「不変条件が守られてる」を確認する🧪✨（Vitest）
+
+![entity_obj_ts_study_015_test_shield.png](./picture/entity_obj_ts_study_015_test_shield.png)
+
+
 
 Vitestは「Vite前提の高速テスト」だけど、Vite無しでも普通に使えるよ🧪 ([Vitest][5])
 

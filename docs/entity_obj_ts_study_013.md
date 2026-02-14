@@ -23,6 +23,10 @@
 
 ### ❌ ありがちな（危ない）更新
 
+![entity_obj_ts_study_013_dangerous_update.png](./picture/entity_obj_ts_study_013_dangerous_update.png)
+
+
+
 * Entityの中に `string` を持ってて
 * いろんな場所で正規表現チェックして
 * そのうちどこかが漏れて事故る…💥😇
@@ -44,6 +48,10 @@
 ---
 
 ## 2. 今回の題材（ミニ注文）🛒✨
+
+![entity_obj_ts_study_013_order_box.png](./picture/entity_obj_ts_study_013_order_box.png)
+
+
 
 この章では **Order（注文）Entity** を作るよ〜！📦💕
 
@@ -79,6 +87,10 @@ Orderが持つVOはこんな感じ👇
 ---
 
 ## 4. 実装：DomainError（最低限）⚠️🧯
+
+![entity_obj_ts_study_013_domain_error_whistle.png](./picture/entity_obj_ts_study_013_domain_error_whistle.png)
+
+
 
 「ルール違反だよ〜」を投げるためのエラーを用意しよっ✨
 
@@ -128,6 +140,10 @@ export class Email {
 
 ### 5.2 Money VO 💰（“円”だけのミニ版）
 
+![entity_obj_ts_study_013_money_calculator.png](./picture/entity_obj_ts_study_013_money_calculator.png)
+
+
+
 ```ts
 // src/domain/valueObjects/Money.ts
 import { DomainError } from "../errors/DomainError";
@@ -163,6 +179,10 @@ export class Money {
 ```
 
 ### 5.3 Period VO 📅↔️（Dateの罠に注意⚠️）
+
+![entity_obj_ts_study_013_date_photocopier.png](./picture/entity_obj_ts_study_013_date_photocopier.png)
+
+
 
 JSの `Date` は **ミュータブル（書き換え可能）** だから、外に渡すときに事故りがち😇
 ここでは **内部はepoch(ms)で保持** して安全にするよ🛡️✨
@@ -211,6 +231,10 @@ export class Period {
 ---
 
 ## 6. いよいよ本題：Order EntityがVOを持つ🪪📦💎
+
+![entity_obj_ts_study_013_ensure_draft_gate.png](./picture/entity_obj_ts_study_013_ensure_draft_gate.png)
+
+
 
 ポイントはここ👇✨
 
@@ -332,6 +356,10 @@ sequenceDiagram
 ---
 
 ## 7. テスト（Vitest）🧪🍰
+
+![entity_obj_ts_study_013_spot_difference.png](./picture/entity_obj_ts_study_013_spot_difference.png)
+
+
 
 2026でも **Vitest** はTypeScriptと相性よくて人気だよ〜✨
 （型テストの仕組みも公式ガイドがあるよ📌） ([vitest.dev][2])
