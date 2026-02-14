@@ -22,6 +22,7 @@
 * “単一デプロイ＋モジュール境界” という発想が中心だよ📦🧩 ([Thoughtworks][1])
 
 ### ☁️ マイクロサービス（小さいサービスがたくさん）
+![Architecture Comparison](./picture/mod_mono_ts_study_001_architecture_comparison.png)
 
 * 機能ごとに **別々にデプロイ** できる（強い！）
 * その代わり **運用・監視・通信・障害対応** が一気に難しくなることも…😵‍💫 ([martinfowler.com][2])
@@ -58,6 +59,7 @@ graph TD
 ---
 
 ## 2. 「分ける」って何がうれしいの？未来の自分が助かる話🕰️💖
+![Future Self Thanks](./picture/mod_mono_ts_study_001_future_self_thanks.png)
 
 “分ける” の目的は、かっこよさじゃなくて **人生をラクにするため** だよ😌✨
 
@@ -73,6 +75,7 @@ Thoughtworks も、モジュラーモノリスは **インフラが軽くなり�
 ---
 
 ## 3. なんで最初からマイクロサービスにしないの？🤔🧯
+![Microservices Risk Mountain](./picture/mod_mono_ts_study_001_microservices_risk.png)
 
 ここ、超だいじポイント！📌
 Martin Fowler は新規開発では “まずモノリスから始める” という考え方（Monolith First）を述べていて、いきなりマイクロサービスに飛ぶのはリスクが増えやすい…という話があるよ🧭 ([martinfowler.com][3])
@@ -99,6 +102,7 @@ Martin Fowler は新規開発では “まずモノリスから始める” と�
 ---
 
 ## 5. この章の重要キーワード📌✨（やさしめ）
+![Core Keywords Icons](./picture/mod_mono_ts_study_001_keywords_icons.png)
 
 * 🧩 **モジュール**：機能のまとまり（箱）
 * 🚪 **公開API**：箱の入口（ここからだけ触ってOK）
@@ -110,6 +114,7 @@ Martin Fowler は新規開発では “まずモノリスから始める” と�
 ## 6. ミニ演習（5〜10分）🧩📝✨
 
 ### 演習A：あなたの脳内アプリを “箱” にしてみる📦🧠
+![Brainstorming Modules](./picture/mod_mono_ts_study_001_brain_boxes.png)
 
 まだ題材アプリは決めないけど、練習だけするよ〜！
 
@@ -128,6 +133,7 @@ Martin Fowler は新規開発では “まずモノリスから始める” と�
 > 「箱に分けて考えるクセ」をつけるのが目的✨
 
 ### 演習B：事故ポイントを想像する💥🧯
+![Tangle Chaos](./picture/mod_mono_ts_study_001_chaos_spark.png)
 
 次の質問に1行で答えてみてね👇
 

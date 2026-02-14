@@ -63,11 +63,13 @@ graph TD
   **新しい実装に少しずつ流す**イメージだよ🚦 ([Microsoft Learn][6])
 
 ### 2) Branch by Abstraction（中身を差し替え）🧩
+![Branch by Abstraction Railroad](./picture/mod_mono_cs_study_030_branch_by_abstraction.png)
 
 * 既存の呼び出しを**いったんインターフェースに寄せて**、
   旧実装と新実装を並走させて切り替えるやつ🔁 ([martinfowler.com][2])
 
 ### 3) ACL（アンチコラプションレイヤ）🧼🧱
+![Anti-Corruption Layer Airlock](./picture/mod_mono_cs_study_030_acl.png)
 
 * レガシー側の言葉・型・都合が、新モジュールに侵入して“汚染”するのを防ぐ💦
 * 翻訳はACLでやって、モジュールの中は**自分の言葉を守る**✨ ([Microsoft Learn][7])
@@ -75,6 +77,7 @@ graph TD
 ---
 
 ## “最初に切る境界”の選び方🧠🪓（迷ったらこの採点でOK）
+![Boundary Scoring Board](./picture/mod_mono_cs_study_030_boundary_scoring.png)
 
 次の5項目を、各0〜2点で採点して合計が高いものから✨
 
@@ -92,6 +95,7 @@ graph TD
 ## 段階移行のロードマップ🏁（この順でやると事故りにくい）
 
 ### Step 0：安全装置を付ける🛡️
+![Migration Safety Net](./picture/mod_mono_cs_study_030_safety_net.png)
 
 * まずは**テストの最低ライン**（主要ユースケースのE2E or APIテスト）を用意🧪
 * ログ・メトリクスも最低限（失敗の検知が早いと強い）🔭
@@ -122,6 +126,7 @@ graph TD
 * 直接UPDATEし合うのは最初に潰す🧯
 
 ### Step 6：参照ルールを“自動で怒る”ようにする😠➡️✅
+![Architecture Test Guard](./picture/mod_mono_cs_study_030_arch_test_guard.png)
 
 * 人の注意だけに頼らず、**アーキテクチャテスト**で破りを検出🔍
 * 例：NetArchTest系で「HostはModuleのInternalに触るな」みたいなルールにする📏 ([GitHub][8])
@@ -250,6 +255,7 @@ public class ModuleRulesTests
 ---
 
 ## 卒業制作（最終課題）✨🎓：あなたの題材でモジュール化して提出！
+![Final Project Completion](./picture/mod_mono_cs_study_030_final_project.png)
 
 ### 必須要件✅
 
