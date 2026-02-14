@@ -27,6 +27,8 @@
 
 ## 2. なんで Result が欲しくなるの？（例外だけだと困る場面）😵‍💫💥
 
+![Exception Jump vs Result Flow](./picture/err_model_cs_study_015_exception_vs_result_flow.png)
+
 ### 2-1. 例外は “よく起きる失敗” に使うとしんどい🙅‍♀️
 
 Microsoft の例外ベストプラクティスでも、**起きがちな条件は例外を避けて if で扱う**のが推奨されてるよ🧯
@@ -43,6 +45,8 @@ Microsoft の例外ベストプラクティスでも、**起きがちな条件�
 ---
 
 ## 3) 「例外」VS「Result」ざっくり使い分け早見表🚦✨
+
+![Exception vs Result Decision Table](./picture/err_model_cs_study_015_decision_table.png)
 ```mermaid
 flowchart TD
     Start["エラー発生"] --> IsBug{"バグ・想定外？\nNull/配列外/ロジックミス"}
@@ -71,6 +75,8 @@ flowchart TD
 
 ## 4. Result 的な考え方、もう .NET にあるよ！（TryParse がそれ）🧠✨
 
+![TryParse Analogy](./picture/err_model_cs_study_015_try_parse_analogy.png)
+
 たとえば `TryParse` は
 
 * 変換できた？ → `true`
@@ -91,6 +97,8 @@ Result はこれをもっと一般化して、
 ---
 
 ## 5. 例外版 → Result版 にすると何が嬉しい？🎀✨
+
+![Visible Control Flow](./picture/err_model_cs_study_015_visible_flow.png)
 
 ### 5-1. 呼び出し側が「読んだだけで分かる」📖👀
 
@@ -127,6 +135,8 @@ public static bool TryParseBudget(string text, out int budget)
 ```
 
 ### 6-3. Result にすると「失敗理由」まで運べる🎁🧾
+
+![Validation Flow with Result](./picture/err_model_cs_study_015_validation_flow.png)
 
 ※Result本体の“完成版”は次章（第16章）で作るから、ここは最小の雰囲気だけね😊
 
@@ -186,6 +196,8 @@ Console.WriteLine($"予算OK: {result.Value} 円🎉");
 ---
 
 ### 演習2：「例外？Result？」仕分けクイズ🎯
+
+![Quiz Sorting Game](./picture/err_model_cs_study_015_quiz_sorting.png)
 
 次をどっちで扱う？理由も1行で✨
 

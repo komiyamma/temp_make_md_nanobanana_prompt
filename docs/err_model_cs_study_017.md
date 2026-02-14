@@ -11,6 +11,8 @@ ASP.NET Core でも `AddProblemDetails()` を使う流れがちゃんと案内�
 
 ## 1) まず結論：Errorに入れる情報は「誰のため？」で決める👥🎯
 
+![Error Audience](./picture/err_model_cs_study_017_error_audience.png)
+
 失敗の情報って、実は“受け取り手”が複数いるの👇
 
 * ユーザー向け：画面に出す文言💬🎀（やさしく、短く、原因を責めない）
@@ -24,6 +26,8 @@ ASP.NET Core でも `AddProblemDetails()` を使う流れがちゃんと案内�
 ---
 
 ## 2) “ちょうどいい”Error設計のおすすめセット🧰✨
+
+![Minimal vs Practical Error Set](./picture/err_model_cs_study_017_design_sets.png)
 
 ### 最小構成（第16章のResultに足すならまずコレ）🥚➡️🐣
 
@@ -42,6 +46,8 @@ ASP.NET Core でも `AddProblemDetails()` を使う流れがちゃんと案内�
 ---
 
 ## 3) ありがちな設計ミスあるある🙅‍♀️💥（先に潰そ！）
+
+![Common Error Design Pitfalls](./picture/err_model_cs_study_017_common_pitfalls.png)
 
 ### ❌ Codeが無い（または毎回変わる）
 
@@ -138,6 +144,8 @@ var err = new AppError(
 
 ## 6) FieldErrors（項目別エラー）があるとUIが一気に優しくなる🎀✨
 
+![FieldErrors Structure](./picture/err_model_cs_study_017_field_errors.png)
+
 たとえば入力チェックのResult失敗にこう入れる👇
 
 ```csharp
@@ -158,6 +166,8 @@ UI側は「フォームの横に出す」だけで超親切になるよ🪞💗
 ---
 
 ## 7) ミニ演習📝✨（“同じエラー”を2つに書き分けよう！）
+
+![UI vs Log Exercise](./picture/err_model_cs_study_017_ui_log_exercise.png)
 
 ### お題🎀
 

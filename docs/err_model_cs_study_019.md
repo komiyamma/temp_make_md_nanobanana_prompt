@@ -12,6 +12,8 @@
 
 ## 1) 伝播ってなに？🤔
 
+![Result Propagation Flow](./picture/err_model_cs_study_019_propagation_flow.png)
+
 Resultを使うと、処理の流れは基本こうなるよ👇
 
 * 成功：次の処理へスッと進む🏃‍♀️💨
@@ -22,6 +24,8 @@ Resultを使うと、処理の流れは基本こうなるよ👇
 ---
 
 ## 2) まずは“ネスト地獄”を見てみよう😵‍💫🌀
+
+![Nested Code Hell](./picture/err_model_cs_study_019_nested_hell.png)
 
 ### 悪い例：ifが深くなるパターン🙅‍♀️
 
@@ -87,6 +91,8 @@ return Result.Ok();
 
 ## 4) 解決②：Resultを“つなぐ”定番テク（Map / Bind）🔗✨
 
+![Functional Helpers (Map/Bind)](./picture/err_model_cs_study_019_functional_helpers.png)
+
 ガード節でも十分だけど、処理が増えると「毎回 if (IsFailure) return…」が増えがち😅
 そこで **“つなぐ関数”** を用意すると、さらにスッキリするよ🎀
 
@@ -100,6 +106,8 @@ return Result.Ok();
 ---
 
 ## 5) “つなぐ”ための拡張メソッドを用意しよう🧰✨
+
+![Result Extension Toolbox](./picture/err_model_cs_study_019_extension_toolbox.png)
 
 > ※ここでは第16章の最小Resultを想定して、分かりやすい形で載せるね😊
 > `Result.Ok()` / `Result.Fail(error)` がある想定だよ🎁
@@ -196,6 +204,8 @@ sequenceDiagram
 
 ### まずは各ステップを「Resultで返す」関数にする😊
 
+![Purchase Flow Steps](./picture/err_model_cs_study_019_purchase_flow.png)
+
 ```csharp
 public sealed record PurchaseRequest(string UserId, string ItemId, int Quantity);
 
@@ -263,6 +273,8 @@ public static Result Purchase(PurchaseRequest req)
 ---
 
 ### B) Bindで“レール”に乗せる版🚄✨（伝播がさらに気持ちいい）
+
+![Bind Rail Track](./picture/err_model_cs_study_019_bind_rail.png)
 
 ```csharp
 public static Result Purchase(PurchaseRequest req)

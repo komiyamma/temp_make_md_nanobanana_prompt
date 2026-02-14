@@ -18,6 +18,8 @@
 
 ## 2) なんで「文字列エラー」じゃダメなの？😵‍💫💦
 
+![String vs Type Error](./picture/err_model_cs_study_014_string_vs_type.png)
+
 たとえばこういうの、ありがち👇
 
 * `"在庫が足りません"` みたいな文字列だけ返す
@@ -53,6 +55,8 @@ Microsoft公式でも、recordは
 
 ## 4) まずは“共通の箱”を作ろう📦✨（ベースエラー）
 
+![AppError Structure](./picture/err_model_cs_study_014_app_error_structure.png)
+
 エラーに最低限ほしい情報って、だいたいこれ👇
 
 * `Code`：機械的に識別するコード（エラーカタログと対応）🏷️
@@ -79,6 +83,8 @@ public abstract record AppError(
 ---
 
 ## 5) ドメインエラーを record で作る💗🧷（例：推し活グッズ購入）
+
+![Error Inheritance](./picture/err_model_cs_study_014_error_inheritance.png)
 
 ```mermaid
 classDiagram
@@ -149,6 +155,8 @@ public sealed record BudgetExceeded(
 
 ## 6) インフラエラーも作ってみる🌩️🧷（例：DBが落ちた）
 
+![Retryable Error](./picture/err_model_cs_study_014_retryable_error.png)
+
 インフラ系は「再試行OKか？」が超大事だよ🔁
 
 ```csharp
@@ -166,6 +174,8 @@ public sealed record DatabaseUnavailable(
 ---
 
 ## 7) switchで分岐してみよう🔀✨（演習の核）
+
+![Switch Routing](./picture/err_model_cs_study_014_switch_routing.png)
 
 「エラー型」を作ったら、呼び出し側はこうやって扱うと読みやすいよ📖💕
 
@@ -240,6 +250,8 @@ AIはこの章だと「命名・項目設計・漏れチェック」に最強だ
 ---
 
 ## 10) よくある落とし穴🙅‍♀️💥
+
+![Common Pitfalls](./picture/err_model_cs_study_014_pitfalls.png)
 
 * **Messageに技術用語を詰め込む**（ユーザーが困る）😵
 * **Detailが空っぽ**（ログで原因に辿れない）🔎

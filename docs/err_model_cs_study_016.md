@@ -32,6 +32,8 @@ Result<T> は「成功 or 失敗」を **1つの箱**に入れる型だよ。
 
 ## 2) この章で作る“最小セット”🧩
 
+![Result Components](./picture/err_model_cs_study_016_result_components.png)
+
 第16章のゴールは「最低限これだけあれば動くよね」の形👇
 
 * `IsSuccess`（成功？）
@@ -45,6 +47,8 @@ Result<T> は「成功 or 失敗」を **1つの箱**に入れる型だよ。
 ---
 
 ## 3) まずは Error 型（最小）🏷️
+
+![Error Record Anatomy](./picture/err_model_cs_study_016_error_anatomy.png)
 
 「失敗理由」を型にしておくと、あとで **分類・ログ・ProblemDetails** に繋げやすくなるよ🧾✨
 
@@ -60,6 +64,8 @@ public sealed record Error(string Code, string Message);
 ---
 
 ## 4) Result（値なし版）も最小で作る（あると便利）🎁
+
+![Constructor Guard Logic](./picture/err_model_cs_study_016_constructor_guard.png)
 
 「ただ成功/失敗だけ返したい」ケースって結構あるの。なので先に作っちゃう😊
 
@@ -100,6 +106,8 @@ public sealed class Result
 ---
 
 ## 5) 本命！Result<T>（値あり）を作る🧰✨
+
+![Result<T> Generic Box](./picture/err_model_cs_study_016_result_t_box.png)
 
 次は「成功なら値」「失敗ならエラー」を持つバージョン！
 
@@ -150,6 +158,8 @@ public sealed class Result<T>
 
 ## 6) 使ってみる（超ミニ例）🧪✨
 
+![Usage Flow Example](./picture/err_model_cs_study_016_usage_flow.png)
+
 「空文字は想定内の失敗」にしてみよう〜！
 
 ```csharp
@@ -178,6 +188,8 @@ Console.WriteLine($"Hello, {r.Value}!");
 ---
 
 ## 7) ミニ演習：ユニットテストちょっと書く🧪💖
+
+![Unit Test Visualization](./picture/err_model_cs_study_016_unit_test_visual.png)
 
 ここは「Resultが正しく動く」証拠を作る感じ！
 xUnit は v3 が .NET 8+ 対応だよ🧪 ([xUnit.net][3])
