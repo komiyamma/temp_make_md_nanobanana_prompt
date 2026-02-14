@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import re
 
 def process_plans(json_file):
     with open(json_file, 'r', encoding='utf-8') as f:
@@ -41,8 +42,21 @@ def process_plans(json_file):
             content = f.read()
 
         # Step 1: Check if image is already in Markdown (Global Uniqueness Check)
-        if filename in content:
-            print(f"Skipping duplicate (in markdown): {filename}")
+        existing_images_in_md = set()
+        md_images = re.findall(r'!\[.*?\]\((.*?)\)', content)
+        for img in md_images:
+            parts = img.split()
+            if parts:
+                url = parts[0] # Handle title
+                existing_images_in_md.add(os.path.basename(url))
+
+        html_images = re.findall(r'<img.*?src=["\'](.*?)["\']', content)
+        for img in html_images:
+            if img.strip():
+                existing_images_in_md.add(os.path.basename(img))
+
+        if filename in existing_images_in_md:
+            print(f"Skipping duplicate (already implemented in markdown): {filename}")
             continue
 
         # Step 2: Check Existing Plans and Resolve Conflict
@@ -50,7 +64,7 @@ def process_plans(json_file):
         candidate_filename = filename
         counter = 1
 
-        while candidate_filename in existing_filenames or candidate_filename in content:
+        while candidate_filename in existing_filenames or candidate_filename in existing_images_in_md:
             candidate_filename = f"{base_name}_{counter}{ext}"
             counter += 1
 
