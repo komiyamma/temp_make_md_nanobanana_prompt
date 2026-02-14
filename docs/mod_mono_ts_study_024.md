@@ -40,6 +40,8 @@ DIのいちばん王道は **コンストラクタ注入（Constructor Injection
 
 ## 2) 「newしないで」って、どういう意味？😳🆕
 
+![Where to new Map](./picture/mod_mono_ts_study_024_new_location_map.png)
+
 誤解しやすいんだけど…
 
 * **アプリのどこかで `new` は必要**（世界にオブジェクトは出現しないので🤣）
@@ -53,6 +55,8 @@ DIのいちばん王道は **コンストラクタ注入（Constructor Injection
 ---
 
 ## 3) ありがちな「new地獄」例😱🧨（DI前）
+
+![Hidden Dependency Anvil](./picture/mod_mono_ts_study_024_hidden_dependency_anvil.png)
 
 たとえばイベント登録のUseCaseが、内部でRepositoryを勝手に作ってると…
 
@@ -74,6 +78,8 @@ class RegisterEventUseCase {
 ---
 
 ## 4) DIの基本形：コンストラクタ注入👍🎁
+
+![Constructor Injection Slot](./picture/mod_mono_ts_study_024_constructor_injection_slot.png)
 
 UseCaseは「Repositoryが必要！」とだけ言って、**作り方は知らない**ようにするよ🧠✨
 
@@ -98,6 +104,8 @@ export class RegisterEventUseCase {
 
 ## 5) 「組み立て場所（Composition Root）」でnewする🏗️✨
 
+![Composition Root Assembly](./picture/mod_mono_ts_study_024_composition_root_factory.png)
+
 ここでやっと `new` の出番だよ〜！😆🆕
 
 ```ts
@@ -118,6 +126,8 @@ export const app = {
 ---
 
 ## 6) 演習：Fake実装に差し替える🧪🎭
+
+![Swap Cartridge Test](./picture/mod_mono_ts_study_024_swap_cartridge.png)
 
 ### (1) Fake（インメモリ）を作る
 
@@ -148,6 +158,8 @@ console.log(fakeRepo.saved); // [{ title: "新歓イベント" }]
 ---
 
 ## 7) モジュラーモノリスでのDI配置のコツ🧩🧭
+
+![Module Factory Pattern](./picture/mod_mono_ts_study_024_module_factory.png)
 
 モジュールが増えると「どこで組み立てるの？」って迷うよね😵‍💫
 
@@ -215,6 +227,8 @@ export const app = { events };
 ## 9) つまづきポイント集⚠️🐣
 
 ### ❗(1) 「依存が多すぎる」問題
+
+![Too Many Args Pitfall](./picture/mod_mono_ts_study_024_too_many_args.png)
 
 コンストラクタ引数が8個とかになったら、だいたい設計のサインかも🫣
 

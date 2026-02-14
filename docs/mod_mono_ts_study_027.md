@@ -11,6 +11,8 @@
 
 ## 0️⃣ まず超ざっくり：トランザクション境界って？🔒
 
+![Transaction All or Nothing](./picture/mod_mono_ts_study_027_transaction_all_or_nothing.png)
+
 トランザクションは「成功ならまとめて確定（commit）」「失敗なら全部なかったことに（rollback）」する“ひとまとまりの操作”だよ💡
 ここでいう **トランザクション境界** は、もっと設計寄りの言い方で、
 
@@ -21,6 +23,8 @@
 ---
 
 ## 1️⃣ なんで境界を決めないとヤバいの？😱💥
+
+![Race Condition Seat](./picture/mod_mono_ts_study_027_race_condition_seat.png)
 
 境界が曖昧だと、こんな事故が起きやすい…👇
 
@@ -76,6 +80,8 @@ graph TD
 
 ## 3️⃣ “集約 = だいたい1トランザクション” の肌感✨
 
+![Consistency Boundary Circle](./picture/mod_mono_ts_study_027_consistency_boundary_circle.png)
+
 初心者のうちは、まずこの感覚でOK🙆‍♀️
 
 * **集約の内側で守るべき不変条件（invariant）**は、1回のトランザクションで守る
@@ -97,6 +103,8 @@ graph TD
 このとき、自然な集約はこう👇
 
 ### 🌰 集約案：Event 集約
+
+![Event Aggregate Structure](./picture/mod_mono_ts_study_027_event_aggregate_structure.png)
 
 * **Event（集約ルート）**
 
@@ -171,6 +179,8 @@ export class Event {
 
 ### 5-2. アプリケーション層：トランザクション境界を作る🎬🔒
 
+![Transaction Scope Flow](./picture/mod_mono_ts_study_027_transaction_scope_flow.png)
+
 ユースケースは「手順の組み立て役」だよ🧑‍🍳✨
 ここで **“この操作は1トランザクション”** を宣言する感覚！
 
@@ -239,6 +249,8 @@ export class PrismaTransactionRunner {
 
 ### ❌ 落とし穴1：ユースケースが集約ルートを飛ばして子を更新
 
+![Bypass Root Trap](./picture/mod_mono_ts_study_027_bypass_root_trap.png)
+
 * ルールが散らばって、どこかで必ず破れる💥
 
 ### ❌ 落とし穴2：1トランザクションに詰め込みすぎ
@@ -263,6 +275,8 @@ export class PrismaTransactionRunner {
 * 定員を別テーブルで管理して制約をかける、など（DBで守る）🧱
 
 ### ✅ B) 楽観ロック（versionで弾く）
+
+![Optimistic Lock Version](./picture/mod_mono_ts_study_027_optimistic_lock_version.png)
 
 * Eventに `version` を持たせて、保存時に「versionが一致しないなら失敗」にする
 * 失敗したら「読み直して再実行」する🔁

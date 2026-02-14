@@ -16,6 +16,8 @@
 
 ## 2) なんで「差し替え」ると嬉しいの？🥹💡
 
+![Speed vs Stability Comparison](./picture/mod_mono_ts_study_025_speed_stability_comparison.png)
+
 ![代役でテスト (Testing with Doubles)](./picture/mod_mono_ts_study_025_test_double.png)
 
 ```mermaid
@@ -60,6 +62,8 @@ graph TD
 
 ## 3) テストダブル超ざっくり図鑑📚🧸
 
+![Test Double Types](./picture/mod_mono_ts_study_025_test_doubles_types.png)
+
 難しい言葉だけど、使うのはだいたいこの4つでOK！
 
 * **Fake（フェイク）**：簡易実装（in-memoryのRepositoryとか）🧺
@@ -88,6 +92,8 @@ graph TD
 
 ### 5.1 フォルダの雰囲気📁✨
 
+![Test Folder Structure](./picture/mod_mono_ts_study_025_folder_structure_test.png)
+
 * `modules/events/`
 
   * `public/` … 外に公開する入口🚪
@@ -99,6 +105,8 @@ graph TD
 ---
 
 ## 6) 「ポート（interface）」を切る✂️🧩
+
+![Port Plug Mechanism](./picture/mod_mono_ts_study_025_port_plug_mechanism.png)
 
 ### 6.1 ports（外部依存）を定義する
 
@@ -165,6 +173,8 @@ export class CreateEvent {
 ## 8) テストで差し替える🧪💚（Fake + Spy）
 
 ### 8.1 Fake（インメモリRepository）を作る🧺
+
+![Fake Repository Visual](./picture/mod_mono_ts_study_025_fake_repo_visual.png)
 
 ```ts
 // modules/events/__tests__/fakes/FakeEventRepository.ts
@@ -253,6 +263,8 @@ describe("CreateEvent", () => {
 
 ## 10) 「モック/スタブ」っていつ使うの？🧸🎭
 
+![Mock vs Stub](./picture/mod_mono_ts_study_025_mock_vs_stub.png)
+
 ### Stubが便利なとき
 
 外部が「結果だけ返せばいい」時（例：外部APIが成功したことにしたい）
@@ -272,6 +284,8 @@ describe("CreateEvent", () => {
 ---
 
 ## 11) モジュール単位テストの“ちょうど良さ”📏✨
+
+![Test Granularity Target](./picture/mod_mono_ts_study_025_test_granularity_target.png)
 
 やりがち罠も置いとくね👇
 

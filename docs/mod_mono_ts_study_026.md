@@ -61,6 +61,8 @@ graph TD
 
 ### 事故①：他モジュールのテーブルを直SELECTし始める📎
 
+![Hidden Coupling Chain](./picture/mod_mono_ts_study_026_hidden_coupling_chain.png)
+
 最初は「ちょっと読むだけだし…🙂」
 でも次にこうなる👇
 
@@ -77,6 +79,8 @@ graph TD
 ---
 
 ## 26-3. データ所有権の決め方：おすすめ3段階📶🧩
+
+![Ownership Levels](./picture/mod_mono_ts_study_026_ownership_levels.png)
 
 「いきなり完璧」は無理なので、段階でOKだよ〜☺️💕
 
@@ -142,6 +146,8 @@ DBが1つだと、ついこうしたくなる👇
 
 ## 26-5. じゃあ他モジュールのデータ、どう使うの？🤔💡
 
+![Data Access Patterns](./picture/mod_mono_ts_study_026_data_access_patterns.png)
+
 横断JOINしない代わりに、定番はこの3つだよ〜🍀
 
 ### パターンA：ID参照＋公開APIで必要分だけ取る📞
@@ -171,6 +177,8 @@ DBが1つだと、ついこうしたくなる👇
 
 ## 26-6. 実装の基本形：所有者だけがDB層を持つ👑🧩
 
+![Golden Rule Structure](./picture/mod_mono_ts_study_026_golden_rule_structure.png)
+
 ここからは **形（テンプレ）** を覚えちゃお〜🫶✨
 
 ### ルール（この章のコア）👑
@@ -193,6 +201,8 @@ DBが1つだと、ついこうしたくなる👇
 * `registrations`：参加登録
 
 ### “所有権マップ”を作る🗺️✍️（まずはこれだけで勝ち！）
+
+![Ownership Map Example](./picture/mod_mono_ts_study_026_ownership_map_example.png)
 
 | テーブル/スキーマ                          | 所有モジュール          | 他モジュールがやって良いこと         |
 | ---------------------------------- | ---------------- | ---------------------- |
@@ -294,6 +304,8 @@ export class RegisterToEventUsecase {
 ## 26-9. 実務で効く“追加の縛り”アイデア👮‍♀️✨
 
 ### ① スキーマ分割（Schema per Module）🧩
+
+![Schema per Module](./picture/mod_mono_ts_study_026_schema_per_module.png)
 
 * `users.*`, `events.*` みたいに分ける
 * “所有権が目で見える”のが強い👀✨
