@@ -26,11 +26,13 @@
 * requestIdログ＋安全ログ方針🧵🔎🔒
 * 失敗ケース中心テスト🧪✨
 
-![総合演習の設計図：エラー設計の全貌を広げる[(./picture/err_model_ts_study_030_blueprint_roll.png)
+![総合演習の設計図：エラー設計の全貌を広げる](./picture/err_model_ts_study_030_blueprint_roll.png)
 
 ---
 
 ## 1. ミニプロジェクトの仕様（小さくてリアル）🛍️✨
+
+![Goods Manager App](./picture/err_model_ts_study_030_project_overview.png)
 
 ### 1-1. 画面（最低限）🖥️🎀
 
@@ -56,6 +58,8 @@
 
 ## 2. まず最初にやる：失敗の棚卸し＆分類表📋🗺️
 
+![Failure Inventory](./picture/err_model_ts_study_030_failure_inventory.png)
+
 ここが総合演習の「核」だよ🧠🔥
 コードを書く前に、失敗を先に出し切る！
 
@@ -77,6 +81,8 @@
 
 ## 3. エラーカタログ（台帳）を作る🏷️📚✨
 
+![Error Catalog Book](./picture/err_model_ts_study_030_error_catalog.png)
+
 「エラー名」じゃなくて、**運用できる形**にするよ😊
 
 ### 3-1. カタログの項目（最小セット）📌
@@ -95,6 +101,8 @@
 ---
 
 ## 4. 型設計：Result と “アプリ標準エラー” を作る🎁🧼
+
+![Result Type Definition](./picture/err_model_ts_study_030_result_type.png)
 
 ここで「設計が統一」されるよ✨
 
@@ -134,6 +142,8 @@ export type AppError = DomainError | InfraError | BugError;
 
 ## 5. unknown を “正規化” する（最後の砦）🛡️🧼
 
+![Normalization Funnel](./picture/err_model_ts_study_030_normalization.png)
+
 **どんな throw が来ても同じ形にする**のが目的！✨
 （tsconfig の `useUnknownInCatchVariables` と相性バツグン🛡️） ([TypeScript][5])
 
@@ -150,6 +160,8 @@ export function normalizeUnknown(e: unknown): BugError | InfraError {
 ---
 
 ## 6. APIの例外境界：Problem Details で返す🧾🚪
+
+![Problem Details JSON](./picture/err_model_ts_study_030_problem_details.png)
 
 **RFC 9457** に沿って `application/problem+json` で統一すると、フロントが機械的に扱えて超ラク！ ([RFCエディタ][4])
 
@@ -212,6 +224,8 @@ export function toProblemDetails(err: AppError, instance: string, requestId: str
 ---
 
 ## 7. requestId を通す（ログが“一本道”になる）🧵🚶‍♀️✨
+
+![Request ID Trace](./picture/err_model_ts_study_030_request_id_trace.png)
 
 * API入口で `requestId` 作る
 * レスポンスヘッダに `X-Request-Id`

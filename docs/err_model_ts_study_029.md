@@ -7,6 +7,8 @@
 
 ## 0. レジリエンスってなに？🌧️→🌈
 
+![Resilience Pillars](./picture/err_model_ts_study_029_resilience_intro.png)
+
 レジリエンス（Resilience）は、ざっくり言うと…
 
 * 外部APIが遅い😵‍💫
@@ -22,11 +24,13 @@
 * **キャンセル**🛑：もう要らない処理を止める
 * **リトライ**🔁：条件つきで再挑戦する
 
-![リトライ時計：タイミングを見計らって再挑戦[(./picture/err_model_ts_study_029_retry_clock.png)
+![リトライ時計：タイミングを見計らって再挑戦](./picture/err_model_ts_study_029_retry_clock.png)
 
 ---
 
 ## 1. まず大事な結論💡「リトライは正義じゃない」😇❌
+
+![Retry Danger](./picture/err_model_ts_study_029_retry_danger.png)
 
 リトライって便利そうだけど、雑にやると地獄になる😱
 
@@ -40,6 +44,8 @@
 ---
 
 ## 2. タイムアウト⏳：待ちすぎないのが優しさ💗
+
+![AbortSignal Timeout](./picture/err_model_ts_study_029_timeout_signal.png)
 
 ### 2-1. なぜ必要？🧐
 
@@ -90,6 +96,8 @@ export async function fetchWithTimeoutFallback(url: string, ms: number): Promise
 ---
 
 ## 3. キャンセル🛑：「失敗」じゃないこともある🙂✨
+
+![Cancel Search](./picture/err_model_ts_study_029_cancel_search.png)
 
 たとえば…
 
@@ -148,6 +156,8 @@ function isAbortError(e: unknown): boolean {
 
 ## 4. リトライ🔁：やっていい条件・ダメな条件を決めよう🧠
 
+![Retry Logic Flow](./picture/err_model_ts_study_029_retry_logic.png)
+
 ### 4-1. リトライしていいことが多いパターン✅
 
 だいたいこういうやつ👇（※代表例）
@@ -182,6 +192,8 @@ function isAbortError(e: unknown): boolean {
 ---
 
 ## 5. バックオフ（間隔を空ける）🧊：リトライの作法✨
+
+![Exponential Backoff](./picture/err_model_ts_study_029_exponential_backoff.png)
 
 リトライは **すぐ連打しない**！
 「指数バックオフ + 上限 + jitter（ゆらぎ）」が定番だよ🔁📈✨ ([Amazon Web Services, Inc.][8])
