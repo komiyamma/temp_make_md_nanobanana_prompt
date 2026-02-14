@@ -19,6 +19,9 @@
 
 ### 「同じ単語」が、場面で別モノになるから…！
 
+![Polysemy of User](./picture/mod_mono_ts_study_009_user_polysemy.png)
+
+
 例：あなたのアプリに「ユーザー」が出てくるとして…
 
 * 申込みの画面だと「参加者」👩‍🎓
@@ -50,6 +53,9 @@ DDD（ドメイン駆動設計）では、**モデルと言葉（ユビキタス
 
 ## モジュラーモノリスとの関係🧩✨
 
+![Bounded Context Hint](./picture/mod_mono_ts_study_009_bc_module_hint.png)
+
+
 モジュラーモノリスは「デプロイは1つ、内部は分割」だよね。
 この“分割”の候補として、**Bounded Context がめちゃ強いヒント**になるよ🧭
 
@@ -70,6 +76,9 @@ DDD（ドメイン駆動設計）では、**モデルと言葉（ユビキタス
 
 ## 例でつかむ！「イベント」という地雷ワード💣🎇
 
+![Event Term Collision](./picture/mod_mono_ts_study_009_event_collision.png)
+
+
 学内イベント管理アプリでありがちな「イベント」って…
 
 * ① **学内イベント（文化祭の出し物）**📅
@@ -84,6 +93,9 @@ DDD（ドメイン駆動設計）では、**モデルと言葉（ユビキタス
 ---
 
 ## 境界を見つけるコツ3つ🧭✨（初心者向けの実戦版）
+
+![Boundary Tips](./picture/mod_mono_ts_study_009_boundary_tips.png)
+
 
 ### ① “変更理由”で分ける✂️
 
@@ -129,6 +141,9 @@ DDD（ドメイン駆動設計）では、**モデルと言葉（ユビキタス
 
 ### Step 3：仮コンテキストを3つに分けてみる🧱
 
+![Context Map Example](./picture/mod_mono_ts_study_009_context_map_example.png)
+
+
 最初は“3つ”くらいがちょうどいい😊（細かくしすぎない！）
 
 例（学内イベント管理なら）
@@ -169,6 +184,9 @@ mindmap
 
 ## 成果物テンプレ（この章のゴール）🗂️✨
 
+![Chapter Deliverables](./picture/mod_mono_ts_study_009_deliverables.png)
+
+
 ### ① コンテキストカード（1つにつき1枚）🪪
 
 * 名前：参加申込みコンテキスト
@@ -186,6 +204,9 @@ mindmap
 ---
 
 ## TypeScriptで“ズレ”を可視化する小ネタ🧠✨
+
+![TS Type Separation](./picture/mod_mono_ts_study_009_ts_type_separation.png)
+
 
 「同じUserIdでも意味が違う」なら、型名で分けちゃうのが超効くよ👍
 （まだフォルダ分割前でも、概念整理に使える！）

@@ -10,6 +10,9 @@
 
 # 1) 依存関係ってなに？🔗
 
+![Dependency Definition](./picture/mod_mono_ts_study_013_dependency_definition.png)
+
+
 ざっくり言うと、
 
 * AがBを`import`して使う
@@ -21,6 +24,9 @@
 ---
 
 # 2) なんでルールが必要？（ルールがないと起きる地獄😱）
+
+![No Rules Hell](./picture/mod_mono_ts_study_013_no_rules_hell.png)
+
 
 ルールがないと、だいたいこうなるよ👇
 
@@ -41,6 +47,9 @@
 
 # この教材の第13章では、それを **モジュラーモノリス向けに**こう言い換えるよ👇
 
+![Three Rules](./picture/mod_mono_ts_study_013_three_rules.png)
+
+
 > ✅「モジュールの“中身”に依存しない」
 > ✅「入口（公開API）だけに依存する」
 > ✅「依存の向きを決めて、逆流を禁止する」
@@ -48,6 +57,9 @@
 ---
 
 ## 4) 依存関係ルールは “3枚セット” で決めると強い💪✨
+
+![Rules Trio](./picture/mod_mono_ts_study_013_rules_trio.png)
+
 
 ### A. モジュール間のルール🧩↔️🧩
 
@@ -148,6 +160,9 @@ graph TD
 
 ### 禁止例①：内部ファイル直import🙈
 
+![Ban Internal Import](./picture/mod_mono_ts_study_013_ban_internal_import.png)
+
+
 ```ts
 // ❌ ダメ：内部に手を突っ込んでる
 import { createUserCore } from "@/modules/user/internal/createUserCore";
@@ -165,6 +180,9 @@ import { createUser } from "@/modules/user";
 ---
 
 ### 禁止例②：循環依存（A↔B）🔁💥
+
+![Circular Dependency](./picture/mod_mono_ts_study_013_circular_dependency.png)
+
 
 ありがちなパターン👇
 
@@ -194,6 +212,9 @@ import { createUser } from "@/modules/user";
 ---
 
 ## 9) ミニ課題🧩✨（手を動かすやつ）
+
+![Task Matrix](./picture/mod_mono_ts_study_013_task_matrix.png)
+
 
 ### 課題1：あなたの題材アプリを “4モジュール” に分けてみて🧩
 
