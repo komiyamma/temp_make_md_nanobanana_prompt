@@ -7,6 +7,8 @@
 
 ## 1) この章のゴール🎯💖
 
+![entity_obj_ts_study_003_goal_artifacts](./picture/entity_obj_ts_study_003_goal_artifacts.png)
+
 今日の成果物はこれだけ👇（シンプルでOK！）
 
 * **ミニ仕様（10行くらい）**📝
@@ -18,6 +20,8 @@
 ---
 
 ## 2) まず題材を決めよ〜（迷ったらこの2択）🎲✨
+
+![entity_obj_ts_study_003_subject_fork](./picture/entity_obj_ts_study_003_subject_fork.png)
 
 ### A：ミニ注文（おすすめ）🛒🍰
 
@@ -33,6 +37,8 @@
 ---
 
 ## 3) “仕様”って何を書くの？（書かないのも大事）🚦✨
+
+![entity_obj_ts_study_003_spec_filter](./picture/entity_obj_ts_study_003_spec_filter.png)
 
 ### 仕様に書く✅
 
@@ -52,6 +58,8 @@
 ---
 
 ## 4) 10行仕様テンプレ（コピペして埋めるだけ）📝✨
+
+![entity_obj_ts_study_003_10_line_scroll](./picture/entity_obj_ts_study_003_10_line_scroll.png)
 
 `docs/ch03-spec.md` を作って、これを埋めてみてね👇
 
@@ -123,6 +131,8 @@ stateDiagram-v2
 
 ## 6) ルール候補（不変条件のタネ）🛡️✨
 
+![entity_obj_ts_study_003_rule_vault](./picture/entity_obj_ts_study_003_rule_vault.png)
+
 仕様の中で「絶対守りたい約束」を集めるよ！
 
 * 明細は **1件以上** 必要
@@ -137,6 +147,8 @@ stateDiagram-v2
 ---
 
 ## 7) 用語リスト（ユビキタス言語ごっこ）📘🎀
+
+![entity_obj_ts_study_003_glossary_open](./picture/entity_obj_ts_study_003_glossary_open.png)
 
 `docs/ch03-glossary.md` を作って、**同じものを同じ名前で呼ぶ**練習するよ😊
 
@@ -229,6 +241,8 @@ C. コード量を増やすため
 ---
 
 ## 11) AIプロンプト集（この章でめっちゃ使えるやつ）🤖💬✨
+
+![entity_obj_ts_study_003_ai_scanner](./picture/entity_obj_ts_study_003_ai_scanner.png)
 
 ### ① 名詞と動詞を抜き出してもらう🔍
 

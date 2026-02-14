@@ -24,6 +24,8 @@
 
 ### ❌ `number` のお金が危険な理由
 
+![entity_obj_ts_study_009_float_nightmare](./picture/entity_obj_ts_study_009_float_nightmare.png)
+
 * **小数の誤差**（0.1 + 0.2 が 0.3 にならない系）😇
 * **通貨が混ざる**（JPY + USD とか地獄）🌍💥
 * **丸めがバラバラ**（画面とDBと計算が一致しない）🌀
@@ -40,6 +42,8 @@
 
 ## 2) この章のゴール🎯✨
 
+![entity_obj_ts_study_009_receipt_flow](./picture/entity_obj_ts_study_009_receipt_flow.png)
+
 最終的に、こんなコードが気持ちよく書ける状態にするよ😊💖
 
 ```ts
@@ -55,7 +59,11 @@ const total = subtotal.add(tax);                // 6,534円
 
 ## 3) 設計の方針（迷ったらここに戻る）🧭✨
 
+![entity_obj_ts_study_009_golden_rules](./picture/entity_obj_ts_study_009_golden_rules.png)
+
 ### Money VOの基本ルール（おすすめ）
+
+![entity_obj_ts_study_009_add_machine](./picture/entity_obj_ts_study_009_add_machine.png)
 
 1. **内部表現は “最小単位” の整数**（円=1円、USD=1セント）
 2. **通貨を必ず持つ**（"JPY" とか）
@@ -120,6 +128,8 @@ export class DomainError extends Error {
 
 ### 5-2) Currency（通貨情報：小数桁）🌍💱
 
+![entity_obj_ts_study_009_currency_flags](./picture/entity_obj_ts_study_009_currency_flags.png)
+
 JPYは小数0桁、USDは2桁…みたいな “最小限” の情報を持たせるよ。
 
 ```ts
@@ -149,6 +159,8 @@ export class Currency {
 ```
 
 ### 5-3) Money（本体）💎💰
+
+![entity_obj_ts_study_009_money_safe](./picture/entity_obj_ts_study_009_money_safe.png)
 
 ポイントはこれ👇
 
@@ -335,6 +347,8 @@ describe("Money", () => {
 ---
 
 ## 7) よくあるバグ集（初心者が踏みがち）🥲💥 → 回避策✨
+
+![entity_obj_ts_study_009_bug_museum](./picture/entity_obj_ts_study_009_bug_museum.png)
 
 ### ① `number` の小数で金額を持つ
 

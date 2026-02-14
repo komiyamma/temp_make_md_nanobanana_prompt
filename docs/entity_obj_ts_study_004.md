@@ -20,6 +20,8 @@
 
 ## 2) 同一性（Identity）と 等価性（Equality）を分けよう🔍✨
 
+![entity_obj_ts_study_004_identity_fork](./picture/entity_obj_ts_study_004_identity_fork.png)
+
 ここ、Entity/VOの分かれ道！🚪
 
 ### ✅ Entity（エンティティ）
@@ -42,6 +44,8 @@
 
 ## 3) 「IDは本質じゃない」ってどういう意味？🤔🪪
 
+![entity_obj_ts_study_004_tracking_lens](./picture/entity_obj_ts_study_004_tracking_lens.png)
+
 よく「Entity＝ID持ってるやつ」って言われるけど…
 **本質はそこじゃなくて**、
 
@@ -53,6 +57,8 @@ IDはそのための **手段** だよ🧰✨
 ---
 
 ## 4) Entity候補を見つける「5つの質問」🗺️💡
+
+![entity_obj_ts_study_004_five_questions](./picture/entity_obj_ts_study_004_five_questions.png)
 
 迷ったら、この質問にYESが多いほどEntityっぽいよ〜！🙌✨
 
@@ -98,6 +104,8 @@ flowchart TD
 ## 6) TypeScriptで「同一性」を体感しよ〜🧪✨
 
 ### 6-1) Entityは「IDで同一判定」しがち🪪
+
+![entity_obj_ts_study_004_entity_instances](./picture/entity_obj_ts_study_004_entity_instances.png)
 
 ```ts
 // Entityの最小イメージ（超ミニ）
@@ -148,6 +156,8 @@ console.log(a.snapshot(), b.snapshot()); // 状態は違うことがある
 
 ### 6-2) VOは「値で等価判定」するよ💎
 
+![entity_obj_ts_study_004_vo_letters](./picture/entity_obj_ts_study_004_vo_letters.png)
+
 ```ts
 export class Email {
   private constructor(private readonly value: string) {}
@@ -178,6 +188,8 @@ VOは「誰かのEmail」という“個体”じゃなくて、**値そのも�
 ---
 
 ## 7) 初心者がやりがちなID事故あるある⚠️🥺
+
+![entity_obj_ts_study_004_unstable_foundation](./picture/entity_obj_ts_study_004_unstable_foundation.png)
 
 ### ❌ EmailをIDにしちゃう
 
@@ -216,6 +228,8 @@ VOは「誰かのEmail」という“個体”じゃなくて、**値そのも�
 ---
 
 ## 9) 演習②：Entityっぽさ判定クイズ（5つの質問）🗺️✅
+
+![entity_obj_ts_study_004_sorting_game](./picture/entity_obj_ts_study_004_sorting_game.png)
 
 次の候補に、さっきの「5つの質問」でYES/NOつけてみてね😊
 
