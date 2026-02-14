@@ -91,8 +91,12 @@ description: Generate an image generation plan for a range of Markdown files bas
             - **Tag**: `![<description>](<relative_link>)`
             - **Method**:
                 - Identify a unique line of text *before* or *after* your desired insertion point.
-                - Use `replace_file_content` to replace `Target Text` with `Target Text + \n + Image Tag`.
-                - **CRITICAL**: Do NOT replace the `Target Text` with *just* the Image Tag. You must KEEP the `Target Text` in the replacement.
+                - Use `replace_with_git_merge_diff` with a `merge_diff` string.
+                - **Format**:
+                    - `<<<<<<< SEARCH`: The unique line(s) of text exactly as they appear in the file.
+                    - `=======`: Separator.
+                    - `>>>>>>> REPLACE`: The original text PLUS the new image tag.
+                - **CRITICAL**: Do NOT replace the `Target Text` with *just* the Image Tag. You must KEEP the `Target Text` in the replacement block (after `=======`).
                 - **Goal**: Place the image tag exactly where described in `<insertion_point>`.
                 - **Constraint**: Do NOT use `div`, `class`, `attr`, or `edge` attributes. Just a simple Markdown image link `![]()`.
                 - **Verification**: Ensure the file is updated and no original content is missing. THIS IS MANDATORY. The task is INCOMPLETE if this file is not modified.
