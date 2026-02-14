@@ -48,6 +48,8 @@
 
 ## 3) ログレベルの基本セット🎚️✨（迷子防止）
 
+![Log Levels Hierarchy](./picture/err_model_cs_study_024_log_levels.png)
+
 ざっくり指針はこれ👇
 
 * **Trace / Debug**：開発中の細かい流れ（本番は基本OFF寄り）🐾
@@ -61,6 +63,8 @@
 ---
 
 ## 4) 「何を残す？」の最小チェックリスト✅🧾
+
+![Log Content Checklist](./picture/err_model_cs_study_024_log_checklist.png)
 
 ログに入れる情報は、基本このへんが強いよ💪✨
 
@@ -86,6 +90,8 @@
 ---
 
 ## 5) エラー分類（ドメイン/インフラ/バグ）ごとのログ方針🚦✨
+
+![Category Logging Strategy](./picture/err_model_cs_study_024_category_strategy.png)
 
 ここが「エラーモデリング」らしさポイントだよ🫶
 
@@ -121,6 +127,8 @@
 
 ## 6) C#での構造化ログ：最低限の書き方✍️✨
 
+![Structured vs String Interpolation](./picture/err_model_cs_study_024_structured_vs_string.png)
+
 `ILogger` のテンプレログはこんな感じ😊 ([Microsoft Learn][2])
 
 ```csharp
@@ -137,6 +145,8 @@ logger.LogInformation(
 ---
 
 ## 7) スコープ（BeginScope）で“文脈”を付ける🧠🧵
+
+![Log Scope Container](./picture/err_model_cs_study_024_scope_container.png)
 
 「この処理中のログ全部に UserId を付けたい！」みたいなとき便利✨
 
@@ -157,6 +167,8 @@ using (logger.BeginScope(new Dictionary<string, object>
 ---
 
 ## 8) 高性能ログ：LoggerMessage（ソースジェネレータ）🌪️✨
+
+![LoggerMessage Performance](./picture/err_model_cs_study_024_logger_message.png)
 
 ログは地味に頻度が高いから、性能も大事だよ〜😌
 `LoggerMessageAttribute` を使うと、**実行時の割り当て等を減らして高速化**できる仕組みが用意されてるよ🚀 ([Microsoft Learn][4])
@@ -181,6 +193,8 @@ Log.PurchaseCompleted(logger, orderId, userId);
 ---
 
 ## 9) 成果物：「ログ方針 1枚シート」📄✨（テンプレ）
+
+![Log Policy Sheet](./picture/err_model_cs_study_024_policy_sheet.png)
 
 この章のミニ成果物はこれ！📌（そのままコピペして埋めてOK💗）
 

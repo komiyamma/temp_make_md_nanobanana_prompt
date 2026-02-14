@@ -10,6 +10,8 @@
 
 ## 1) UIエラー設計って、なにを設計するの？🤔💡
 
+![Scope of UI Error Design](./picture/err_model_cs_study_023_design_scope.png)
+
 UIのエラーって「赤い文字を出す」だけじゃなくて、
 
 * **どこに**出す？（項目の下？画面上？ダイアログ？）🧭
@@ -23,6 +25,8 @@ UIのエラーって「赤い文字を出す」だけじゃなくて、
 ---
 
 ## 2) 3分類（ドメイン/インフラ/バグ）をUIに落とす🧩🎯
+
+![Error Category to UI Strategy](./picture/err_model_cs_study_023_category_ui_map.png)
 
 「第6章の3分類」を、UIではこう扱うのが基本だよ👇
 
@@ -93,6 +97,8 @@ Microsoftのエラーメッセージ指針でも、この3点を入れるのが�
 
 ## 5) アクセシビリティ：最低限これだけは守る🧑‍🦯✨
 
+![Accessibility Rules](./picture/err_model_cs_study_023_a11y_rules.png)
+
 フォーム系はここが超重要👇
 
 * **エラーは“テキストで”説明する**（色だけに頼らない）🎨❌
@@ -104,6 +110,8 @@ WCAGでも「エラーが起きたこと・何が間違いかをテキストで�
 ---
 
 ## 6) Result型からUI表示へ： “画面用メッセージ”を別で持つ🎁➡️🪞
+
+![Result to UI Transformation](./picture/err_model_cs_study_023_result_to_ui.png)
 
 ポイントはこれ👇
 **同じエラーでも**
@@ -168,6 +176,8 @@ public static UiError ToUiError(AppError error, string? correlationId = null)
 
 ## 7) ミニ演習（同じエラーを「画面用」と「ログ用」に書き分ける）📝🎓
 
+![Exercise Scenarios](./picture/err_model_cs_study_023_exercise_scenarios.png)
+
 題材：推し活グッズ購入🛍️💖（購入フォームがある想定）
 
 ### お題① ドメイン（入力エラー）💗
@@ -208,6 +218,8 @@ public static UiError ToUiError(AppError error, string? correlationId = null)
 
 ## 8) AI活用（案出し→人が選ぶ）🤖✨
 
+![AI Copywriter](./picture/err_model_cs_study_023_ai_writer.png)
+
 UI文言づくりはAIがめっちゃ得意だよ🎀
 おすすめプロンプト例👇
 
@@ -239,6 +251,8 @@ MicrosoftのUI文言ガイドでも「分かりやすく・短く・タスク達
 ---
 
 ## 9) ありがち落とし穴（先に潰そ😉）🕳️💦
+
+![Bad UI Pitfalls](./picture/err_model_cs_study_023_bad_ui_examples.png)
 
 * ❌ 画面に例外メッセージそのまま表示（専門用語＆情報漏れ）
 * ❌ エラーコードだけ表示（ユーザーが動けない）
