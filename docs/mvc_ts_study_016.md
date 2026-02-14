@@ -51,6 +51,8 @@ flowchart TD
 
 ## 16.3 この章で使うテスト道具（いまどき構成）🧰✨
 
+![](./picture/mvc_ts_study_016_vitest_speed.png)
+
 今回は **Vitest** を使うよ〜！
 Vite系の開発と相性が良くて、導入も軽め🪽
 公式でも「依存関係として入れるのがおすすめ」って書かれてるよ📦✨ ([vitest.dev][1])
@@ -119,6 +121,8 @@ export default defineConfig({
 ---
 
 ## 16.5 テストの置き場所＆命名ルール（迷子防止）🗂️✨
+
+![](./picture/mvc_ts_study_016_folder_structure.png)
 
 おすすめはこれ👇（シンプルでOK）
 
@@ -343,6 +347,8 @@ describe('TodoService.add', () => {
 
 ## 16.8 境界値テストの作り方（初心者でもすぐ強くなる）📏✨
 
+![](./picture/mvc_ts_study_016_boundary_testing.png)
+
 境界値っていうのは「ギリギリ」のところだよ〜🧠💡
 たとえば👇
 
@@ -397,6 +403,8 @@ npm run test:coverage
 ---
 
 ## 16.11 まとめ🎀✨
+
+![](./picture/mvc_ts_study_016_model_vs_service_test.png)
 
 * まず守るべきは **Model / Service**（ロジックの心臓部）🫀🛡️
 * テストは「未来の自分を助ける保険」💝

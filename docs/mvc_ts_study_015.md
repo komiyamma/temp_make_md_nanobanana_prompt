@@ -21,6 +21,8 @@
 
 ## 1) まず「テストしにくいコード」ってどんなの？😇💦
 
+![](./picture/mvc_ts_study_015_test_pain.png)
+
 ### ありがちな地獄🔥：クラスの中で `new` してる
 
 例：Serviceの中でRepositoryを作っちゃうパターン。
@@ -142,6 +144,8 @@ export class InMemoryTodoRepository implements ITodoRepository {
 ---
 
 ## 5) Step2：ServiceにRepositoryを注入する（コンストラクタ注入）🔌✨
+
+![](./picture/mvc_ts_study_015_constructor_injection.png)
 
 ```ts
 // src/app/TodoService.ts
@@ -278,6 +282,8 @@ graph TD
 **`new`はここに集約！**（←超大事‼️）
 アプリの入口（例：`main.ts`）で全部組み立てるよ〜🧷
 
+![](./picture/mvc_ts_study_015_manual_wiring.png)
+
 ```ts
 // src/main.ts
 import { LocalStorageTodoRepository } from "./infra/LocalStorageTodoRepository";
@@ -308,6 +314,8 @@ const service = new TodoService(repo);
 ---
 
 ## 8) 演習：Fakeで動作確認（手動でOK）✅🧸
+
+![](./picture/mvc_ts_study_015_fake_repo.png)
 
 ### ミッション🎒
 

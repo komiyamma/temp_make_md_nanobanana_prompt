@@ -100,6 +100,8 @@ function buildTodoListVM(items: TodoItem[], query: TodoQuery): TodoItem[] {
 
 ## 17-3 仕上げ機能②：並び替え🔃（“if地獄”にしない）
 
+![](./picture/mvc_ts_study_017_sort_mechanism.png)
+
 ### まず“並び替え条件”を型で固定🧷✨
 
 ```ts
@@ -148,6 +150,8 @@ function sortItems(items: TodoItem[], sort: SortState): TodoItem[] {
 
 ## 17-4 リファクタ（ここが本番）🧹✨
 
+![](./picture/mvc_ts_study_017_refactoring_broom.png)
+
 「動いてるからOK」じゃなくて、**“役割が分かれてるから強い”**へ💪
 
 ### リファクタ目標（この3つだけで大勝利）🏆
@@ -175,6 +179,8 @@ function sortItems(items: TodoItem[], sort: SortState): TodoItem[] {
 ---
 
 ## 17-5 テストで「壊してない」を保証する🧪🛡️
+
+![](./picture/mvc_ts_study_017_test_priority.png)
 
 ### 何を守る？（優先度）🥇🥈🥉
 
@@ -271,6 +277,8 @@ npm run test
 ---
 
 ## 17-7 “MVCを説明できる”練習🗣️✨（口に出すと一気に定着するよ〜！）
+
+![](./picture/mvc_ts_study_017_presentation.png)
 
 ### 30秒バージョン⏱️
 
