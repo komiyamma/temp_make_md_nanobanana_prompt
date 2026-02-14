@@ -29,6 +29,8 @@ Entity / VO を迷ったときは、まずここから👇✨
 
 ---
 
+![](./picture/entity_obj_cs_study_022_quiz_intro.png)
+
 ## 2. クイズのやり方（おすすめ）📝🎮
 
 1. まず答えを見ずに、**E（Entity）/ V（VO）/ B（境界）**で書く✍️
@@ -44,6 +46,8 @@ Entity / VO を迷ったときは、まずここから👇✨
 
 > **E=Entity / V=Value Object / B=境界（設計次第）**
 
+![](./picture/entity_obj_cs_study_022_money_quantity.png)
+
 ### Q1：Money（例：¥450）💰
 
 * これは？ **E / V / B**
@@ -56,6 +60,8 @@ Entity / VO を迷ったときは、まずここから👇✨
 
 * これは？ **E / V / B**
 
+![](./picture/entity_obj_cs_study_022_order_id.png)
+
 ### Q4：Order（注文そのもの）🧾
 
 * これは？ **E / V / B**
@@ -63,6 +69,8 @@ Entity / VO を迷ったときは、まずここから👇✨
 ### Q5：OrderId（注文ID）🆔
 
 * これは？ **E / V / B**
+
+![](./picture/entity_obj_cs_study_022_orderline_debate.png)
 
 ### Q6：OrderLine（注文明細：ラテ×2 みたいな1行）📄
 
@@ -84,6 +92,8 @@ Entity / VO を迷ったときは、まずここから👇✨
 
 * これは？ **E / V / B**
 
+![](./picture/entity_obj_cs_study_022_student_identity.png)
+
 ### Q11：Student（学生ユーザー）👩‍🎓
 
 * これは？ **E / V / B**
@@ -91,6 +101,8 @@ Entity / VO を迷ったときは、まずここから👇✨
 ### Q12：StudentId（学籍番号）🪪
 
 * これは？ **E / V / B**
+
+![](./picture/entity_obj_cs_study_022_address_boundary.png)
 
 ### Q13：Address（住所）🏠
 
@@ -219,6 +231,8 @@ flowchart LR
 * Entity案：行単位の編集履歴が追える🆔
 
 ---
+
+![](./picture/entity_obj_cs_study_022_ai_scorer.png)
 
 ## 7. AI（Copilot/Codex）に頼むときの“良い頼み方”🤖💬✨
 
