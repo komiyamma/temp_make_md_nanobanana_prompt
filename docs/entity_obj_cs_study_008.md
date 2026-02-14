@@ -20,6 +20,8 @@
 
 ## 1. まず「等価性」って何？🤔💎（EntityとVOで違うよ！）
 
+![](./picture/entity_obj_cs_study_008_entity_vs_vo_equality.png)
+
 ### ✅ Entity（エンティティ）
 
 * 「同じ人か？」みたいに **ID（同一性）で追う**🆔
@@ -35,6 +37,8 @@ C# の record / record struct は、まさにこの **“値で同じなら同�
 ---
 
 ## 2. Equals と GetHashCode の“超だいじな約束”🧠🧾
+
+![](./picture/entity_obj_cs_study_008_equals_hash_handshake.png)
 
 VOをHashSetやDictionaryで安全に使うには、この約束が命…！🔥
 
@@ -72,6 +76,8 @@ graph TD
 
 ### 🗝️ Dictionary（キーで高速に探す）
 
+![](./picture/entity_obj_cs_study_008_dictionary_key_lookup.png)
+
 1. キーの **GetHashCode** で候補を絞る
 2. **Equals** で「このキーだ！」を確定する
 
@@ -81,6 +87,8 @@ graph TD
 ---
 
 ## 4. 実装はどうする？いちばんラクで強いのは record 💎🧩
+
+![](./picture/entity_obj_cs_study_008_record_magic_wand.png)
 
 VOは「値の集まり」だから、基本はこれが気持ちいい👇
 
@@ -191,6 +199,8 @@ public static class MutableDemo
 ---
 
 ## 7. 「同じ」の定義をカスタムしたい時（IEqualityComparer）🎛️✨
+
+![](./picture/entity_obj_cs_study_008_custom_comparer_glasses.png)
 
 たとえば Email を「大文字小文字を無視して同じ扱いにしたい」みたいな時があるよね📧🙂
 そんな時は **IEqualityComparer<T>** をHashSet/Dictionaryに渡せる！ ([Microsoft Learn][7])

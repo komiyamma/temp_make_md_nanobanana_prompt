@@ -7,6 +7,8 @@
 
 ## 1) この章のゴール🎯✨
 
+![](./picture/entity_obj_cs_study_009_string_bomb.png)
+
 * 入力された文字列を、**EmailというVO**に変換できる📧➡️💎
 * **変なEmailは“生成できない”**ようにできる🚫
 * 失敗したときに、**理由（エラーメッセージ）**も返せる🙂🧾
@@ -14,6 +16,8 @@
 ---
 
 ## 2) Emailの検証って、実は3段階あるの😳📮
+
+![](./picture/entity_obj_cs_study_009_typo_prevention.png)
 
 Emailって「見た目がそれっぽい」だけじゃ足りないことがあるよ〜💦
 だいたいこんな3段階👇
@@ -29,6 +33,8 @@ Emailって「見た目がそれっぽい」だけじゃ足りないことがあ
 
 ## 3) 今回の「最小ライン」ルール（やりすぎない）🧁✅
 
+![](./picture/entity_obj_cs_study_009_regex_lens.png)
+
 学内カフェ注文アプリ☕️🧾では、まずこれで十分なことが多いよ👇
 
 * 空じゃない（null/空文字/空白だけはNG）🚫
@@ -40,6 +46,8 @@ Emailって「見た目がそれっぽい」だけじゃ足りないことがあ
 ---
 
 ## 4) 実装：Email VO（TryCreateパターン）💎📧
+
+![](./picture/entity_obj_cs_study_009_factory_belt.png)
 
 ```mermaid
 flowchart TD
@@ -133,6 +141,8 @@ public readonly record struct Email
 ---
 
 ## 5) 使い方イメージ（注文の連絡先Email）☕️🧾📧
+
+![](./picture/entity_obj_cs_study_009_usecase_form.png)
 
 「画面入力→VO化→ドメインは安心」って流れを作るとスッキリするよ✨
 

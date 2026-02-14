@@ -74,6 +74,8 @@ flowchart TD
 
 ## 12.3 パターン①：Factory（Create/TryCreate）🏭✨
 
+![](./picture/entity_obj_cs_study_012_factory_robot.png)
+
 ### ✅ ルール
 
 * コンストラクタは **private** にして、**勝手に作れない**ようにする🔒
@@ -136,6 +138,8 @@ public sealed record Email
 
 ## 12.4 パターン②：Parse/TryParse（.NETの文化に寄せる）🧠📏
 
+![](./picture/entity_obj_cs_study_012_parse_funnel.png)
+
 `.NET` には **Parse / TryParse** 文化があるよね（`int.Parse` とか）🔢✨
 それに寄せると、使う人が迷いにくい👍
 
@@ -185,6 +189,8 @@ public sealed record Quantity
 ---
 
 ## 12.5 どれを使う？迷ったときの判断🧭✨
+
+![](./picture/entity_obj_cs_study_012_compass_choice.png)
 
 * DTO/画面入力/API：**TryCreate / TryParse**（失敗が普通）🙂
 * アプリ内部の計算結果：**Create**（失敗したらバグとして潰したい）😎
@@ -270,6 +276,8 @@ public sealed record CreateOrderCommand(
 
 ### ✅ エラーを集めるためのミニResult（超軽量）🧺✨
 
+![](./picture/entity_obj_cs_study_012_result_basket_mini.png)
+
 ```csharp
 public sealed record ValidationError(string Field, string Message);
 
@@ -281,6 +289,8 @@ public sealed record Result<T>(bool IsSuccess, T? Value, IReadOnlyList<Validatio
 ```
 
 ### ✅ DTO→Command 変換（ここが本題！）🔥✨
+
+![](./picture/entity_obj_cs_study_012_dto_vo_bridge.png)
 
 ```csharp
 public static class CreateOrderMapper

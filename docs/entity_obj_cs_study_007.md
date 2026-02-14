@@ -7,6 +7,8 @@
 
 ## 1) まずVOの“理想形”を1枚で覚えよ〜💎📌
 
+![](./picture/entity_obj_cs_study_007_three_pillars_temple.png)
+
 VOが気持ちいい理由は、だいたいこの3つセット👇
 
 * **不変（基本、作ったら変えない）**🔒
@@ -18,6 +20,8 @@ VOが気持ちいい理由は、だいたいこの3つセット👇
 ---
 
 ## 2) 道具①：record（“値っぽい型”を作る神機能）🧩✨
+
+![](./picture/entity_obj_cs_study_007_code_gem.png)
 
 C#の **record** は「データ中心の型」に便利な仕組みが最初から入ってるのが強いよ💪
 特にVOと相性がいいのは👇
@@ -43,6 +47,8 @@ record struct には「各フィールドを既定値にするパラメータな
 
 ## 3) 道具②：init-only（作成時だけセットOK）🧊✨
 
+![](./picture/entity_obj_cs_study_007_immutability_diamond.png)
+
 record（特に record class / readonly record struct）の“位置指定プロパティ”は **init-only** になって、
 **作った後にプロパティを書き換えにくい**方向へ寄せられるよ🔒✨([Microsoft Learn][1])
 
@@ -53,6 +59,8 @@ record（特に record class / readonly record struct）の“位置指定プロ
 ---
 
 ## 4) 道具③：Nullable参照型（null事故をコンパイルで潰す）🚧✨
+
+![](./picture/entity_obj_cs_study_007_self_validation_bouncer.png)
 
 VOは「作れた時点で正しい」が命💎
 だから **“nullが入り得るか”を型で表現**できる Nullable参照型は、めちゃ相性いいよ〜🙌
@@ -151,6 +159,8 @@ public sealed record Email
 ---
 
 ## 7) もっと“VOっぽく”する小ワザ集🧰✨
+
+![](./picture/entity_obj_cs_study_007_equality_balance.png)
 
 ### (A) 正規化してから持つ（等価性が安定する）🧼✨
 
