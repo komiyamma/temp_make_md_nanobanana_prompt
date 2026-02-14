@@ -34,6 +34,20 @@ def process_plans(json_file):
             print(f"Skipping duplicate: {filename}")
             continue
 
+        # Update Markdown file
+        md_file = plan['file_path']
+        if not os.path.exists(md_file):
+            print(f"Error: Markdown file {md_file} not found.")
+            continue
+
+        with open(md_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Step 1: Check if image is already in Markdown (Global Uniqueness Check)
+        if filename in content:
+            print(f"Skipping duplicate (in markdown): {filename}")
+            continue
+
         last_id += 1
         # Format prompt: replace newlines with <br>
         formatted_prompt = plan['prompt'].replace('\n', '<br>')
@@ -44,15 +58,6 @@ def process_plans(json_file):
         row = f"| {last_id} | {file_name_only} | {filename} | {plan['relative_link']} | {formatted_prompt} | {plan['insertion_point']} |\n"
         new_lines.append(row)
         existing_filenames.add(filename)
-
-        # Update Markdown file
-        md_file = plan['file_path']
-        if not os.path.exists(md_file):
-            print(f"Error: Markdown file {md_file} not found.")
-            continue
-
-        with open(md_file, 'r', encoding='utf-8') as f:
-            content = f.read()
 
         insertion_point = plan['insertion_point']
         if insertion_point not in content:
