@@ -16,6 +16,8 @@
 モジュラーモノリスで気持ちよく学ぶには、題材がめちゃ大事！😳✨
 おすすめは、次の3条件がそろうもの👇
 
+![Three Conditions for Good Topic](./picture/mod_mono_ts_study_002_three_conditions.png)
+
 ### 条件A：「登場人物」が2種類以上いる👩‍🎓👨‍🏫
 
 例：参加者／主催者／管理者…みたいに役割が分かれると境界が出やすい！
@@ -35,6 +37,8 @@
 ![題材選び (Selecting a Topic)](./picture/mod_mono_ts_study_002_domain.png)
 
 ここでは、境界が自然に生まれる題材を3つ出すよ〜😊💕
+
+![Event Management Boundaries](./picture/mod_mono_ts_study_002_example_event.png)
 
 ### ① 学内イベント管理📅🎤（いちばんおすすめ！）
 
@@ -74,6 +78,8 @@ graph TD
 
 ---
 
+![Accounting Boundaries](./picture/mod_mono_ts_study_002_example_accounting.png)
+
 ### ② サークル会計💰🧾
 
 **よくある機能**
@@ -93,6 +99,8 @@ graph TD
 ➡️ ルール（不正防止・承認）が入りやすいので、設計の話につなげやすい😊
 
 ---
+
+![Flea Market Boundaries](./picture/mod_mono_ts_study_002_example_market.png)
 
 ### ③ フリマ（学内限定）🛍️🎒
 
@@ -118,6 +126,8 @@ graph TD
 
 迷ったら、この順番で決めるとスムーズだよ〜😊✨
 
+![Topic Selection Steps](./picture/mod_mono_ts_study_002_selection_steps.png)
+
 ### Step1：候補を3つ書く📝
 
 「これなら作れそう！」を3つだけ。10個出すより、まず3つがちょうどいい😌
@@ -140,6 +150,8 @@ graph TD
 * 通知や検索、画像アップロードは後回し
 
 ---
+
+![Requirement Compression](./picture/mod_mono_ts_study_002_requirement_compression.png)
 
 ## 要件を「10行」にする（AIで要約）🤖📝✨
 
@@ -185,6 +197,8 @@ graph TD
 ## “境界が作れそう”を、もう一段だけ具体化🧩✨
 
 次に、「モジュール候補」を雑に置きます。ここでは正解不要！🙆‍♀️
+
+![Noun Extraction](./picture/mod_mono_ts_study_002_noun_extraction.png)
 
 ### やり方：名詞に線を引く✏️
 

@@ -7,6 +7,8 @@
 
 ---
 
+![Node.js, npm, TypeScript Relationship](./picture/mod_mono_ts_study_003_node_npm_ts.png)
+
 ## 3-0. まず「登場人物」をざっくり把握しよ🧑‍🤝‍🧑✨
 
 ### Node.js 🟩
@@ -28,6 +30,8 @@
 
 ## 3-1. Node.js を入れる（いちばん安全ルート）🧷🟢
 
+![LTS vs Current Version](./picture/mod_mono_ts_study_003_lts_vs_current.png)
+
 ### ✅ 基本方針：LTS を入れる
 
 * 「安定してて壊れにくい」やつが LTS ✨
@@ -46,6 +50,8 @@ npm -v
 * もし `node` が見つからない系なら、**いったんターミナルを閉じて開き直す**と治ること多いよ（PATHの反映）🔁✨
 
 ---
+
+![Project vs Global Install](./picture/mod_mono_ts_study_003_project_vs_global.png)
 
 ## 3-2. TypeScript を入れる（プロジェクトにだけ入れるのが正解）🧰🟦
 
@@ -114,6 +120,8 @@ flowchart LR
 mkdir src
 ```
 
+![tsconfig.json Structure](./picture/mod_mono_ts_study_003_tsconfig_structure.png)
+
 ### ② TypeScript設定ファイル（tsconfig）を作る⚙️
 
 TypeScript 5.9 では `tsc --init` も整理されてて、最初の導入がやりやすいよ🧼✨ ([Microsoft for Developers][3])
@@ -162,6 +170,8 @@ npx tsc
 
 `dist/index.js` ができてたら成功🎉✨
 
+![Hello TS Success](./picture/mod_mono_ts_study_003_hello_ts_success.png)
+
 ### ⑤ 実行する（Nodeで動かす）▶️
 
 ```powershell
@@ -171,6 +181,8 @@ node dist/index.js
 `✅ Hello TS が動いたよ〜！` が出たらクリアだよ〜🥳💕
 
 ---
+
+![npm scripts Shortcut](./picture/mod_mono_ts_study_003_npm_scripts.png)
 
 ## 3-5. npm scripts を作って「毎回ラクする」🪄✨
 
@@ -196,6 +208,8 @@ npm start
 ```
 
 ---
+
+![Troubleshooting Guide](./picture/mod_mono_ts_study_003_troubleshooting.png)
 
 ## 3-6. よくあるつまずき集（ここだけ見れば大丈夫）🩹😵‍💫
 
