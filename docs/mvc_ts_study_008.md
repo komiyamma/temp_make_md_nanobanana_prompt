@@ -19,6 +19,8 @@
 
 ## 1) まず、if地獄ってどんな状態？😇🔥
 
+![If-Else Hell](./picture/mvc_ts_study_008_if_else_hell.png)
+
 例えばControllerにこういうのが増えていくやつ👇（あるある〜）
 
 ```ts
@@ -58,6 +60,8 @@ handleClick(action: string, payload: unknown) {
 > 「操作名を見て、対応する関数にジャンプする」だけにする💨
 
 イメージは学食の券売機🍜🎟️
+
+![Command Pattern Vending Machine](./picture/mvc_ts_study_008_vending_machine_metaphor.png)
 
 ```mermaid
 flowchart LR
@@ -102,6 +106,8 @@ export type Action =
 ---
 
 ## 4) Controllerに「操作表」を作る🧾✨（Action → Handler）
+
+![Action Handler Map](./picture/mvc_ts_study_008_handlers_map.png)
 
 ### 4-1) まずは素朴に “表” を作る（気持ちを掴む😆）
 
@@ -206,6 +212,8 @@ export class TodoController {
 
 ## 5) View側：イベントは “Action” に変換してControllerへ投げる🎮➡️🧠
 
+![View Action Bubble](./picture/mvc_ts_study_008_view_action_bubble.png)
+
 ここがキモ〜！！💖
 Viewは「クリックされた！」を受け取ったら、**Actionを作って投げるだけ**にする✨
 
@@ -283,6 +291,8 @@ export class TodoView {
 ---
 
 ## 6) “操作表”を入れると、何が嬉しいの？🎁✨
+
+![Ease of Adding Features](./picture/mvc_ts_study_008_add_feature_ease.png)
 
 ### ✅ 追加がラク
 

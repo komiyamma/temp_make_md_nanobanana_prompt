@@ -83,6 +83,8 @@ Modelに入れる直前で「検証＆変換」する✨
 
 ### 作戦C：失敗を握りつぶさず Result で返す📦
 
+![Validation Flow](./picture/mvc_ts_study_009_validation_flow.png)
+
 例：
 
 * 成功 → Todoが返る🎉
@@ -124,6 +126,8 @@ export const err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 
 ### 4-2. エラー型（何がダメかを“言語化”）🗣️🚨
 
+![Error Types](./picture/mvc_ts_study_009_error_types.png)
+
 ```ts
 // model/todoErrors.ts
 export type TodoValidationError =
@@ -138,6 +142,8 @@ export type TodoValidationError =
 ---
 
 ### 4-3. Value Object（タイトルはただのstringじゃない🧷）
+
+![Value Object Wrapper](./picture/mvc_ts_study_009_value_object_wrapper.png)
 
 「タイトルは文字列です」って言いつつ、
 実は **空NG** とか **最大文字数** とか“条件つき文字列”だよね？👀
@@ -213,6 +219,8 @@ export function createDueDateISO(raw: string): Result<DueDateISO | null, TodoVal
 ---
 
 ### 4-5. Todo本体：Factoryでしか作れないようにする🏭🛡️
+
+![Factory Gate](./picture/mvc_ts_study_009_factory_gate.png)
 
 ```ts
 // model/todo.ts
@@ -299,6 +307,8 @@ export function rescheduleTodo(todo: Todo, newDueDateRaw: string): Result<Todo, 
 ---
 
 ## 5. Controllerにつなぐ（最小版）🎮➡️🧠
+
+![Controller Result Check](./picture/mvc_ts_study_009_controller_result_check.png)
 
 第11章でちゃんとエラー表示するから、ここでは超ミニでOK👌✨
 

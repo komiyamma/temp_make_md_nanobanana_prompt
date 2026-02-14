@@ -32,6 +32,8 @@
 
 ## 2) “固定データフロー”のルール3つ🧷✨
 
+![Fixed Data Flow Rules](./picture/mvc_ts_study_007_data_flow_rules.png)
+
 この3つを **クラス設計の憲法** にします📜💘
 
 ### ルールA：状態（真実）はModelにだけ置く📦✨
@@ -101,6 +103,8 @@ src/
 ---
 
 ## 5) Model：TodoStore（状態の正本）📦🛡️
+
+![TodoStore Structure](./picture/mvc_ts_study_007_store_structure.png)
 
 * `toggleDone(id)` で **状態更新はここだけ**
 * `subscribe()` で変更通知🔔
@@ -173,6 +177,8 @@ export class TodoStore {
 ---
 
 ## 6) View：表示だけ担当（イベントは“通知”だけ）🎨📣
+
+![View Notification](./picture/mvc_ts_study_007_view_notification.png)
 
 * `render()` は DOM更新だけ
 * クリックを受けたら「idを渡してコールバック呼ぶ」だけ💡
@@ -271,6 +277,8 @@ function escapeHtml(s: string): string {
 
 ## 7) Controller：交通整理（更新の入口をここに寄せる）🚦🧠
 
+![Controller Wiring Subscribe](./picture/mvc_ts_study_007_controller_connection.png)
+
 Controller は「操作→Model更新」をやって、再描画は **Modelのsubscribeで固定**します🔁✨
 これで Controller が「render呼び忘れた！」が起きなくなります🎉
 
@@ -328,6 +336,8 @@ controller.init();
 ---
 
 ## 9) “責務まざり”あるある事故まとめ😇💥（チェックリスト）
+
+![Responsibility Mixing Anti-Patterns](./picture/mvc_ts_study_007_anti_patterns.png)
 
 以下が出たら、この章に戻ってね📌✨
 

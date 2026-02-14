@@ -44,6 +44,8 @@ Controllerは一言でいうと、
 
 ## 今日つくる動き（CampusTodo）🧠➡️✅
 
+![Today's Features](./picture/mvc_ts_study_006_features_visual.png)
+
 ### ✅ 1) 追加（Add）
 
 * 入力欄にタイトル入れる✍️
@@ -59,6 +61,8 @@ Controllerは一言でいうと、
 ---
 
 ## “責務まぜまぜ”を防ぐルール🍀🙅‍♀️
+
+![View Responsibility Rules](./picture/mvc_ts_study_006_view_rules.png)
 
 **Viewに書いていいのはコレだけ！**👇
 
@@ -81,6 +85,8 @@ Controllerは一言でいうと、
 （あとで第12章でService層に分けるから、今はControllerが少し頑張る💪）
 
 ## ファイル構成（例）📁✨
+
+![Controller Chapter File Structure](./picture/mvc_ts_study_006_file_structure.png)
 
 * `src/model/TodoTypes.ts`
 * `src/model/TodoStore.ts`
@@ -300,6 +306,8 @@ export class TodoController {
 
 ## 4) main.ts：全部つないで起動🔌✨
 
+![MVC Assembly in Main](./picture/mvc_ts_study_006_mvc_assembly.png)
+
 ```ts
 // src/main.ts
 import "./style.css";
@@ -355,6 +363,8 @@ controller.init();
 対策：`e.preventDefault()` 🛑 ([MDN Web Docs][6])
 
 ## ② submitイベントをボタンに付けて動かない🙃
+
+![Submit Event Pitfall](./picture/mvc_ts_study_006_submit_pitfall.png)
 
 submitは **formに発火**するよ〜！ ([MDN Web Docs][5])
 なので `form.addEventListener("submit", ...)` が正解✅
