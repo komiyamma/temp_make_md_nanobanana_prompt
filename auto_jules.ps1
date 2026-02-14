@@ -19,14 +19,14 @@ function Run-JulesForRange {
 
     if ($targetRange -notmatch '^\s*(\d+)\s*-\s*(\d+)\s*$') {
         Write-Error "形式が違います: $targetRange"
-        return
+        return $false
     }
 
     $startLine = [int]$Matches[1]
     $endLine = [int]$Matches[2]
     if ($startLine -gt $endLine) { 
         Write-Error "開始行は終了行以下にしてください: $targetRange"
-        return
+        return $false
     }
 
     Write-Host "`n===============================================" -ForegroundColor Gray
@@ -69,7 +69,7 @@ function Run-JulesForRange {
         }
         elseif ($current.state -eq "FAILED" -or $current.state -eq "CANCELLED") {
             Write-Error "❌ Jules の作業が失敗またはキャンセルされました。 (State: $($current.state))"
-            return
+            return $false
         }
 
         if ($checkCount -ge $maxChecks) {
@@ -90,11 +90,11 @@ function Run-JulesForRange {
         catch {
             Write-Warning "⚠️ セッション削除に失敗しました: $sessionName / $($_.Exception.Message)"
         }
-        return
+        return $false
     }
 
     if (-not $isCompleted) {
-        return
+        return $false
     }
 
     # 4. GitHub CLI (gh) を使った操作
@@ -119,7 +119,7 @@ function Run-JulesForRange {
     gh pr merge $prUrl --merge --delete-branch
     if ($LASTEXITCODE -ne 0) {
         Write-Error "❌ PRのマージに失敗しました。処理を中断します。"
-        return
+        return $false
     }
 
     Write-Host "⏳ GitHubへの反映と同期を待機中 (20秒)..." -ForegroundColor Gray
@@ -131,15 +131,23 @@ function Run-JulesForRange {
     git pull origin main
 
     Write-Host "✨ 範囲 $targetRange の全工程が完了しました！" -ForegroundColor Green
+    return $true
 }
 
 # --- メインロジック ---
 if ($Loop) {
     # 自動ループモード (デフォルト設定)
-    for ($i = 1; $i -le 1000; $i += 6) {
+    for ($i = 1; $i -le 1000; ) {
         $r = "$i-$($i + 5)"
-        Run-JulesForRange -targetRange $r
-        Start-Sleep -Seconds 5
+        $success = Run-JulesForRange -targetRange $r
+        if ($success) {
+            $i += 6
+            Start-Sleep -Seconds 5
+        }
+        else {
+            Write-Host "⚠️ $r の実行に失敗しました。5秒後に再試行します..." -ForegroundColor Yellow
+            Start-Sleep -Seconds 5
+        }
     }
 }
 elseif ($Range -and $Increment -gt 0) {
@@ -147,13 +155,20 @@ elseif ($Range -and $Increment -gt 0) {
     if ($Range -match '^(\d+)-(\d+)$') {
         $startTotal = [int]$Matches[1]
         $endTotal = [int]$Matches[2]
-        for ($i = $startTotal; $i -le $endTotal; $i += $Increment) {
+        for ($i = $startTotal; $i -le $endTotal; ) {
             $subEnd = [Math]::Min($i + $Increment - 1, $endTotal)
             $r = "$i-$subEnd"
-            Run-JulesForRange -targetRange $r
+            $success = Run-JulesForRange -targetRange $r
             
-            # 少し待機して次のリクエストへ
-            Start-Sleep -Seconds 5
+            if ($success) {
+                $i += $Increment
+                # 少し待機して次のリクエストへ
+                Start-Sleep -Seconds 5
+            }
+            else {
+                Write-Host "⚠️ $r の実行に失敗しました。5秒後に再試行します..." -ForegroundColor Yellow
+                Start-Sleep -Seconds 5
+            }
         }
     }
     else {
@@ -180,10 +195,18 @@ else {
         if ($r -match '^(\d+)-(\d+)$') {
             $startTotal = [int]$Matches[1]
             $endTotal = [int]$Matches[2]
-            for ($i = $startTotal; $i -le $endTotal; $i += $inc) {
+            for ($i = $startTotal; $i -le $endTotal; ) {
                 $subEnd = [Math]::Min($i + $inc - 1, $endTotal)
-                Run-JulesForRange -targetRange "$i-$subEnd"
-                Start-Sleep -Seconds 5
+                $r = "$i-$subEnd"
+                $success = Run-JulesForRange -targetRange $r
+                if ($success) {
+                    $i += $inc
+                    Start-Sleep -Seconds 5
+                }
+                else {
+                    Write-Host "⚠️ $r の実行に失敗しました。5秒後に再試行します..." -ForegroundColor Yellow
+                    Start-Sleep -Seconds 5
+                }
             }
         }
     }
