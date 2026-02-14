@@ -7,6 +7,8 @@ C#っぽい感覚のままだとハマりやすいポイントが **ちょうど
 
 ## 2-0. 結論：この3つが“難しさの根っこ”🌱
 
+![Three Villains of TS Errors](./picture/err_model_ts_study_002_three_villains.png)
+
 1. **throw は何でも飛ぶ** 🎲
 2. **Promise / async で“落ち方”が変わる** ⚡
 3. **TypeScript の型は実行時に消える** 🫥
@@ -16,6 +18,8 @@ C#っぽい感覚のままだとハマりやすいポイントが **ちょうど
 ---
 
 ## 2-1. 理由①：throw は何でも飛ぶ🎲（= 受け取る側が地獄になりやすい😵）
+
+![Throw Anything](./picture/err_model_ts_study_002_throw_chaos.png)
 
 ### ✅ どういうこと？
 
@@ -31,7 +35,7 @@ MDN でも `throw` は “例外の値を投げる” と説明されてて、�
 
 ### 🛡️ 対策の基本：catch したらまず疑う（unknown で受ける）
 
-![対策の基本：catch したらまず疑う[(./picture/err_model_ts_study_002_catch_mystery.png)
+![対策の基本：catch したらまず疑う](./picture/err_model_ts_study_002_catch_mystery.png)
 
 TypeScript には「catch の変数を `unknown` 扱いにする」設定があります✅
 これを有効にすると「投げられた値は信用できない」前提で安全に書けます🛡️✨ ([typescriptlang.org][2])
@@ -72,6 +76,8 @@ try {
 ---
 
 ## 2-2. 理由②：Promise / async で“落ち方”が変わる⚡（= try/catch が効かないことがある😱）
+
+![Async Fall](./picture/err_model_ts_study_002_async_fall.png)
 
 ### ✅ どういうこと？
 
@@ -134,6 +140,8 @@ sequenceDiagram
 ---
 
 ## 2-3. 理由③：TypeScript の型は実行時に消える🫥（= 型で守られてる“気がするだけ”になりやすい😵）
+
+![Runtime Type Ghost](./picture/err_model_ts_study_002_type_ghost.png)
 
 ### ✅ どういうこと？
 

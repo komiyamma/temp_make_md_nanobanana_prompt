@@ -13,6 +13,8 @@ try/catch を「とりあえず付けるお守り」じゃなくて、**事故�
 
 ## 1) try/catch の超基本📘🧯
 
+![Try Catch Safety Net](./picture/err_model_ts_study_004_try_catch_net.png)
+
 ### 1-1. 何が起きたら catch に行くの？🤔
 
 `try` の中で例外（throw）が発生したら、**その瞬間に** `catch` に移動するよ。
@@ -56,6 +58,8 @@ try {
 
 ### 1-3. finally の「絶対やっちゃダメ」もある😱
 
+![Finally Return Trap](./picture/err_model_ts_study_004_finally_sweeper.png)
+
 `finally` の中で `return` / `throw` しちゃうと、**try/catch側の結果を上書き**しちゃうの…！
 （投げた例外すら“なかったこと”にできちゃう）💥 ([MDN ウェブドキュメント][1])
 
@@ -76,6 +80,8 @@ doIt(); // 2
 ---
 
 ## 2) やりがち事故①：握りつぶし🙈💥
+
+![Swallowing Error Monster](./picture/err_model_ts_study_004_swallow_monster.png)
 
 ### ダメ例：失敗を無かったことにする😇
 
@@ -143,6 +149,8 @@ flowchart LR
 
 ## 3) やりがち事故②：広すぎcatch🕸️🌀
 
+![Broad vs Narrow Catch](./picture/err_model_ts_study_004_broad_net.png)
+
 ### ダメ例：なんでもかんでも try に突っ込む📦
 
 ```ts
@@ -190,6 +198,8 @@ return user;
 ---
 
 ## 4) やりがち事故③：情報欠落の再throw🫥💔
+
+![Error Baton Pass](./picture/err_model_ts_study_004_baton_pass.png)
 
 ### ダメ例：messageだけで作り直しちゃう
 
