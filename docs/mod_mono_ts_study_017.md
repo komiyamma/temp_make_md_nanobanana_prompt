@@ -75,6 +75,8 @@ graph TD
 
 ## 超重要ルール📜：「依存の向き」を固定する➡️
 
+![依存の重力 (Dependency Gravity)](./picture/mod_mono_ts_study_017_dependency_arrow.png)
+
 いちばん大事なのはこれ👇
 
 * Presentation → Application → Domain ✅
@@ -89,9 +91,13 @@ graph TD
 
 ## “薄く入れる”ってどういうこと？🥞🫧
 
+![薄いレイヤー (Thin Layers)](./picture/mod_mono_ts_study_017_thin_layers.png)
+
 「層を作る」と言っても、各層を分厚くしないよ〜！
 
 ### ✅ 薄いレイヤーのコツ3つ✨
+
+![プレゼンテーションのダイエット (Presentation Diet)](./picture/mod_mono_ts_study_017_presentation_diet.png)
 
 1. **Presentationは痩せさせる**🏃‍♀️💨
 
@@ -110,6 +116,8 @@ graph TD
 ---
 
 ## 置き場所テンプレ🧩📁（1モジュール内）
+
+![フォルダ整理箱 (Folder Box)](./picture/mod_mono_ts_study_017_folder_box.png)
 
 例：`modules/events/`（学内イベント管理📅を想定）
 
@@ -222,6 +230,8 @@ export async function createEventController(
   → Infrastructureへ🔌（Applicationは“口（interface）”だけ見る）
 
 ### ❌ 事故3：Domainが外部ライブラリに依存
+
+![ドメインの純粋性 (Domain Purity)](./picture/mod_mono_ts_study_017_domain_purity.png)
 
 * DomainがHTTP/DB/フレームワークに触ると、中心が汚れる🥲
   → Domainはピュアに保つ💎([Zenn][1])

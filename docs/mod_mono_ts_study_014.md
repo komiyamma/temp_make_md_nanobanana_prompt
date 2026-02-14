@@ -17,6 +17,8 @@
 
 ## 2) 「公開面」ってなに？🚪🧸
 
+![店構えのメタファー (Shop Entrance Metaphor)](./picture/mod_mono_ts_study_014_shop_metaphor.png)
+
 モジュールを **お店**だと思ってね🏪✨
 
 * **公開面（公開API）**＝レジ前のカウンター（ここから注文する）🧾
@@ -33,6 +35,8 @@
 
 ## 3) 内部ファイルを直importすると何が地獄？😱🧨
 
+![インポートの混乱 (Import Chaos)](./picture/mod_mono_ts_study_014_import_chaos.png)
+
 たとえばこう👇
 
 * 🔥 内部の関数名を変えただけで、別モジュールが壊れる
@@ -44,6 +48,8 @@
 ---
 
 ## 4) ルールはこれだけ🧾✅
+
+![きれいなインポートフロー (Clean Import Flow)](./picture/mod_mono_ts_study_014_clean_import_flow.png)
 
 ### ルールA：外から触っていいのは「公開API」だけ🚪
 
@@ -186,6 +192,8 @@ export function chargeForEvent(eventId: EventId) {
 
 ## 6) 公開APIに何を出す？出さない？⚖️🧠
 
+![エクスポートの選定 (Export Selection)](./picture/mod_mono_ts_study_014_export_selection.png)
+
 おすすめはこの感覚👇
 
 ### ✅ 出してOKになりやすいもの
@@ -228,6 +236,8 @@ export function chargeForEvent(eventId: EventId) {
 ---
 
 ## 8) ミニ課題🧩✨（VS Codeでできる！）
+
+![リファクタリング前後 (Refactoring Imports)](./picture/mod_mono_ts_study_014_refactor_before_after.png)
 
 ### 課題A：直import探し🔎
 
