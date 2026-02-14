@@ -7,6 +7,8 @@
 
 ## 4-1. Modelってなに？（ここがアプリの“心臓”だよ❤️）
 
+![Model Definition](./picture/mvc_cs_study_004_model_definition.png)
+
 Modelはざっくり言うと👇
 
 * **アプリが扱うデータ**（Todoの中身📦）
@@ -76,6 +78,8 @@ Modelはざっくり言うと👇
 
 ### ステップ2：Priority（重要度）を enum で作る🎚️✨
 
+![Enum vs String Safety](./picture/mvc_cs_study_004_enum_vs_string.png)
+
 ```csharp
 namespace CampusTodo.Models;
 
@@ -90,6 +94,8 @@ public enum Priority
 ---
 
 ### ステップ3：TodoItem を “record” で作る📦✨（おすすめ）
+
+![Record Immutability](./picture/mvc_cs_study_004_record_immutable.png)
 
 recordは **「データの箱」** として超便利！
 さらに `with` で“変更したコピー”が作れるから、うっかり破壊的変更しにくいよ〜🧼✨
@@ -151,6 +157,8 @@ classDiagram
 
 ## 4-5. ミニ演習：仮データを3件作ってみよう🧪🎉
 
+![In-Memory Fake Data](./picture/mvc_cs_study_004_fake_data_memory.png)
+
 `Program.cs` で仮データを作って、まずはModelが動く感覚をつかもう〜！
 
 ```csharp
@@ -188,6 +196,8 @@ foreach (var t in todos)
 
 ## 4-6. “無効な状態を作らない” 超入門🛡️✨
 
+![Model Validation Shield](./picture/mvc_cs_study_004_model_shield.png)
+
 この章では、まずこれだけ守れれば100点💯💕
 
 * タイトルは空にしない
@@ -223,6 +233,8 @@ AIの出力にありがち👇
 ---
 
 ## 4-8. よくあるつまずきポイント集😵‍💫🧯
+
+![Bool vs Int Clarity](./picture/mvc_cs_study_004_pitfall_bool_int.png)
 
 * `Title` を `string?` にして、nullが入り放題になる
   → 必須は `string` + `required` が安心🧱✨

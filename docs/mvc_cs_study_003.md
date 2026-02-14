@@ -28,6 +28,8 @@
 
 ## 2. まずは“作るもの”を一言で決めよう📣🧁
 
+![Project Goal / North Star](./picture/mvc_cs_study_003_north_star.png)
+
 要件を始める前に、キャッチコピーを1行で固定しよ！
 
 **CampusTodo：**
@@ -38,6 +40,8 @@
 ---
 
 ## 3. ユーザー（主人公）を決めよう👩‍🎓🎒
+
+![User Persona Card](./picture/mvc_cs_study_003_persona_card.png)
 
 要件って、結局「誰が」「何をしたいか」だからね！
 
@@ -108,6 +112,8 @@ MVP（最小の完成）として、まずはこの3つに絞ろう✂️✨
 
 ## 6. 受け入れ条件（Acceptance Criteria）を付ける✅📏
 
+![GWT Acceptance Criteria](./picture/mvc_cs_study_003_acceptance_criteria_gwt.png)
+
 ここがあると、**実装が終わったか判定できる**よ！🎯
 形式は “Given/When/Then” が分かりやすい✨
 
@@ -145,6 +151,8 @@ stateDiagram-v2
 
 ## 7. 今回は“やらないこと”も決める🙅‍♀️✨
 
+![YAGNI Sweeping](./picture/mvc_cs_study_003_yagni_sweeping.png)
+
 これを決めると、設計がスッキリするよ〜！🧹🌸
 
 **第3章時点（MVP）ではやらない例**
@@ -160,6 +168,8 @@ stateDiagram-v2
 ---
 
 ## 8. 要件を“優先度つきバックログ”にする📌🗂️
+
+![Backlog Priority Buckets](./picture/mvc_cs_study_003_backlog_buckets.png)
 
 ここまで来たら、タスクの並びを確定しよ！
 
@@ -182,6 +192,8 @@ stateDiagram-v2
 ---
 
 ## 9. MVCに落とし込む“境界線”を引く🧠🪄
+
+![MVC Traffic Control](./picture/mvc_cs_study_003_mvc_traffic_control.png)
 
 ここがこの章の本番！✨
 要件を「責務」に変換すると、MVCの設計が爆速になるよ⚡

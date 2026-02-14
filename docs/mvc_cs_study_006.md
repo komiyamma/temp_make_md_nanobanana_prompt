@@ -7,6 +7,8 @@ Model（データ）と View（表示）を作ったら、次はそれらをつ�
 
 ## 6章のゴール🎯✨
 
+![Controller Workflow](./picture/mvc_cs_study_006_controller_workflow.png)
+
 この章が終わったら、こうなってるのが理想👇
 
 * Controllerが **「入力を受ける」→「どの処理を呼ぶか決める」→「表示をお願いする」** 係だと説明できる🗣️✨
@@ -32,6 +34,8 @@ Controllerは **「ユーザー操作の受付係」** だよ🙋‍♀️
 ---
 
 ## まず“やること / やらないこと”をハッキリしよう✂️✅
+
+![Controller Do's and Don'ts](./picture/mvc_cs_study_006_dos_and_donts.png)
 
 ### Controllerがやること🙆‍♀️
 
@@ -63,6 +67,8 @@ Controllerは **「ユーザー操作の受付係」** だよ🙋‍♀️
 ---
 
 ## フォルダ構成（この章でのおすすめ）📁✨
+
+![MVC Folder Structure](./picture/mvc_cs_study_006_mvc_house_rooms.png)
 
 Consoleアプリでも「役割の部屋」を分けると一気にMVCっぽくなるよ〜🏠✨
 
@@ -216,6 +222,8 @@ sequenceDiagram
     View-->>User: 一覧を表示
 ```
 
+![Sequence Relay](./picture/mvc_cs_study_006_sequence_relay.png)
+
 ### TodoController.cs
 
 ```csharp
@@ -307,9 +315,13 @@ flowchart TD
     Exit --> Stop([停止])
 ```
 
+![Switch Dispatch](./picture/mvc_cs_study_006_switch_dispatch.png)
+
 ---
 
 ## 実装ステップ④：Program.cs（全部つなぐ🔌✨）
+
+![Wiring the App](./picture/mvc_cs_study_006_wiring_plug.png)
 
 ```csharp
 using CampusTodo.Controllers;

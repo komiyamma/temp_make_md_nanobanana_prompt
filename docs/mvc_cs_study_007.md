@@ -15,6 +15,8 @@
 
 ## まず大事：2つの矢印を分けよう🧠➡️➡️
 
+![Dependency vs Data Flow](./picture/mvc_cs_study_007_dependency_arrows.png)
+
 ![Dependency vs Flow](./picture/mvc_cs_study_007_dependency_vs_flow.png)
 
 
@@ -86,6 +88,8 @@ Model（どこにも依存しない）
 
 ## 実装：MVCを“接続”する最小セット🛠️💖
 
+![MVC Execution Cycle](./picture/mvc_cs_study_007_mvc_cycle_spin.png)
+
 フォルダはこんな感じにすると迷子になりにくいよ〜📁✨
 
 ```text
@@ -103,6 +107,8 @@ CampusTodo/
 ---
 
 ## 1) Model：TodoItem + TodoList（更新はModelが担当）📦🛡️
+
+![Model Validation Guard](./picture/mvc_cs_study_007_model_rule_guard.png)
 
 ### Models/TodoItem.cs
 
@@ -173,6 +179,8 @@ Controllerが直接 IsDone をいじり始めると、責務が混ざりやす�
 
 ## 2) View：表示は表示だけ（入力もここでOK）🎨⌨️
 
+![View Formatter Painter](./picture/mvc_cs_study_007_view_formatter_painter.png)
+
 ### Views/ConsoleTodoView.cs
 
 ```csharp
@@ -242,6 +250,8 @@ Viewは「見せ方」係だから、**完了にする処理（MarkDone）とか
 ---
 
 ## 3) Controller：受け取って振り分け、Model更新して、Viewへ🔁🚦
+
+![Controller Dispatch Desk](./picture/mvc_cs_study_007_controller_dispatch_desk.png)
 
 ### Controllers/TodoController.cs
 
@@ -352,12 +362,16 @@ sequenceDiagram
     end
 ```
 
+![Exception Handling Catcher](./picture/mvc_cs_study_007_exception_catcher.png)
+
 ここが第7章の核心💖
 **Controllerが「更新したら、必ず再表示する」**って流れを作ると、MVCが気持ちよく回り始めるよ〜🌀✨
 
 ---
 
 ## 4) Program：3人（Model/View/Controller）を出会わせて、ループ開始🔁🚀
+
+![Main Loop Engine](./picture/mvc_cs_study_007_main_loop_engine.png)
 
 ### Program.cs
 
