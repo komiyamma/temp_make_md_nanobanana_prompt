@@ -80,6 +80,8 @@ public IReadOnlyList<TodoItem> Search(string keyword)
 
 ## 4) 仕上げ機能②：並び替えで「気持ちよさ」UP↕️✨
 
+![Sort Logic](./picture/mvc_cs_study_017_sort_logic.png)
+
 ### まずはこの2つが鉄板🥇
 
 * 期限が近い順（DueDate asc）⏰
@@ -115,6 +117,8 @@ public IReadOnlyList<TodoItem> GetList(ListOptions opt)
 
 ## 5) 最終リファクタ：MVCの“責務”を整えて完成形へ🧹✨
 
+![Refactoring Cleanup](./picture/mvc_cs_study_017_refactoring_cleanup.png)
+
 ここは「設計の超入門者」が一番伸びるとこ！🌱
 
 ### 5-1) “依存の向き” 最終点検🔁🚦
@@ -134,6 +138,8 @@ public IReadOnlyList<TodoItem> GetList(ListOptions opt)
 
 ### 5-3) フォルダ構成を整える📁✨（例）
 
+![Final Folder Structure](./picture/mvc_cs_study_017_final_folder_structure.png)
+
 * `Models/`
 * `Services/`
 * `Repositories/`
@@ -146,6 +152,8 @@ public IReadOnlyList<TodoItem> GetList(ListOptions opt)
 ---
 
 ## 6) テスト：最終章は「守り」を最低限つけて完成🛡️🧪✨
+
+![Final Defense](./picture/mvc_cs_study_017_final_defense.png)
 
 テストは欲張らなくてOK！
 **「壊れたら困るところだけ」** 守ろう☺️
@@ -161,6 +169,8 @@ public IReadOnlyList<TodoItem> GetList(ListOptions opt)
 ---
 
 ## 7) READMEを作って「作品」にする📘✨（超重要！）
+
+![README Portfolio](./picture/mvc_cs_study_017_readme_portfolio.png)
 
 提出物として強いのはここ！💪
 
@@ -269,6 +279,8 @@ Visual Studio の Copilot Chat は、VSのバージョンによってはイン�
 ---
 
 ## 最終成果物（提出セット）🎁✨
+
+![Graduation Gift](./picture/mvc_cs_study_017_graduation_gift.png)
 
 * ✅ CampusTodo 完成版
 * ✅ README（使い方＋構造説明）📘

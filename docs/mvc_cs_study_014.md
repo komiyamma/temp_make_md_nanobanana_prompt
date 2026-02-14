@@ -18,6 +18,7 @@
 ## なんでRepositoryが必要なの？🤔💡
 
 ![](./picture/mvc_cs_study_014_repository_plug.png)
+![Fat Service vs Repository](./picture/mvc_cs_study_014_fat_service_vs_repo.png)
 
 第13章で「ファイルに保存できた！🎉」ってなったあと、だいたいこうなるの👇
 
@@ -37,6 +38,8 @@ Repository は「保存の出入口（倉庫の受付）」みたいな役だよ
 ---
 
 ## 今日の主役：DIP（依存関係逆転）の超やさしい感覚🔄🧠
+
+![Dependency Inversion](./picture/mvc_cs_study_014_dip_inversion.png)
 
 **DIPの気持ち：**
 
@@ -88,6 +91,8 @@ JsonFileTodoRepository / InMemoryTodoRepository はあとで自由に差し替�
 
 ## 実装ステップ①：Repositoriesフォルダを作る📁✨
 
+![Repository Folder Structure](./picture/mvc_cs_study_014_folder_structure_repo.png)
+
 プロジェクトにこういう構成を足すイメージ👇
 
 * `Models/`
@@ -99,6 +104,8 @@ JsonFileTodoRepository / InMemoryTodoRepository はあとで自由に差し替�
 ---
 
 ## 実装ステップ②：まずは“最小の約束”を決める（interface）🧩✍️
+
+![Interface as Contract](./picture/mvc_cs_study_014_interface_contract.png)
 
 `Repositories/ITodoRepository.cs` を作るよ✨
 ポイントは **「最小」** にすること！✂️（最初から盛りすぎない）
@@ -297,6 +304,8 @@ public sealed class TodoItem
 
 ## 実装ステップ⑤：ServiceをRepository経由にする🥗➡️🧲
 
+![Service calling Repository](./picture/mvc_cs_study_014_service_repo_flow.png)
+
 Service が **File/JSON を知らない** 状態にするのが最重要だよ〜！🥰
 
 ```csharp
@@ -361,6 +370,8 @@ sequenceDiagram
 
 ## 実装ステップ⑥：Program.cs（組み立て係）で差し替え可能にする🧩🔧✨
 
+![Repository Swapping](./picture/mvc_cs_study_014_swap_mechanism.png)
+
 ここが「差し替えポイント」になるよ！
 後の第15章（DI）で、ここをもっと気持ちよくするよ〜🔌✨
 
@@ -389,6 +400,8 @@ Console.WriteLine("CampusTodo ready! ✅");
 ---
 
 ## ミニ演習①：InMemory版Repositoryを作って差し替えよう🧸🔁✨
+
+![In-Memory Repository](./picture/mvc_cs_study_014_inmemory_repo.png)
 
 「保存しない（メモリだけ）」Repository を作ると、テストや動作確認が爆速になるよ〜！🚀
 
