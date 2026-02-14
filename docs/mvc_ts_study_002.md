@@ -32,6 +32,8 @@ Viteは最近のNode.jsが必要だよ〜！
 
 ### ② インストール手順（超ざっくり）🪟✨
 
+![](./picture/mvc_ts_study_002_nodejs_version.png)
+
 1. Node.js公式サイトから **LTS** を入れる
 2. インストーラは基本「次へ次へ」でOK🙆‍♀️
 3. 入ったか確認する（ここ大事！）🔎
@@ -62,6 +64,8 @@ VS Codeは **TypeScriptサポートが標準で強い**のが最高ポイント�
 
 ### ② 拡張機能：最低限これだけ入れよ🧰✨
 
+![](./picture/mvc_ts_study_002_vscode_extensions.png)
+
 **絶対おすすめ**（“迷ったらこれ”セット）👇
 
 * ✅ ESLint（コードのミスを早めに教えてくれる）
@@ -80,6 +84,8 @@ Viteは「爆速で開発開始できる」便利ツール💨
 
 ### ① プロジェクト作成コマンド🛠️
 
+![](./picture/mvc_ts_study_002_vite_creation_flow.png)
+
 VS Codeのターミナルで、作業したい場所に移動してから👇
 
 ```bash
@@ -97,6 +103,8 @@ npm run dev
 成功したら、ターミナルに出るURL（だいたい `http://localhost:5173/`）を開いて🎉✨
 
 ### ② 「動いた！」のチェックポイント✅
+
+![](./picture/mvc_ts_study_002_browser_success.png)
 
 * ブラウザにViteの画面が出る
 * ターミナルがエラーで赤くなってない
@@ -132,6 +140,8 @@ flowchart TD
 
 ## 2-5. AIへの「勝ちやすい頼み方」テンプレ集📮💬🤖
 
+![](./picture/mvc_ts_study_002_ai_prompt_template.png)
+
 ここ、めっちゃ効くよ〜！✨
 **AIにお願いするときは「条件」「出力形式」「確認ポイント」をセット**にすると成功率UP⤴️
 
@@ -163,6 +173,8 @@ ESLintとPrettierを入れたいです。
 
 ### 演習A：起動できた証拠を作ろう📸✅
 
+![](./picture/mvc_ts_study_002_exercise_a_result.png)
+
 `src/main.ts` の表示文言を変えてみてね👇
 
 ```ts
@@ -191,6 +203,8 @@ AIにこう聞いてみて👇
 ---
 
 ## 2-7. つまずき救急箱🧯💨（よくあるやつ）
+
+![](./picture/mvc_ts_study_002_troubleshooting_kit.png)
 
 * 😭 `npm install` が失敗する
   → まずは **ターミナル再起動**、それでもダメなら **Nodeのバージョン確認**（Vite 7はNode要件あり）([vitejs][1])
