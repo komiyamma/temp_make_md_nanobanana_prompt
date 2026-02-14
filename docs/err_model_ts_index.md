@@ -1,6 +1,8 @@
 
 # エラーモデリング（例外境界 / Result型 / 分類）TypeScript版：30章アウトライン📚✨
 
+![Course Roadmap](./picture/err_model_ts_index_roadmap.png)
+
 ## 第1章：エラーは“バグ”じゃなく“仕様”でもあるよ😊📌
 
 * ねらい🎯：失敗を設計の対象として見る
@@ -9,6 +11,8 @@
 * AI活用🤖：失敗の言語化（原因・状況・期待結果）を整えてもらう
 
 ## 第2章：TS/JSのエラーが難しい3つの理由😵‍💫🧩
+
+![JS Error Chaos](./picture/err_model_ts_index_js_chaos.png)
 
 * ねらい🎯：C#っぽく考えるとハマるポイントを先に知る
 * 学ぶこと🧠：throwは何でも飛ぶ🎲／Promiseで落ち方が変わる⚡／型が実行時に消える🫥
@@ -58,6 +62,8 @@
 * AI活用🤖：境界の置き方にツッコミ役をさせる😆
 
 ## 第9章：分類の軸を作ろう（迷ったら戻る地図）🗺️🏷️
+
+![3 Error Categories](./picture/err_model_ts_index_3_categories.png)
 
 * ねらい🎯：分類がないと設計が毎回ブレるのを防ぐ
 * 学ぶこと🧠：ドメイン／インフラ／バグ（不変条件）＋重大度（軽/中/重）
@@ -115,6 +121,8 @@
 
 ## 第17章：Result型の考え方（TSはユニオンが強い）🎁🌈
 
+![Result Pattern Concept](./picture/err_model_ts_index_result_pattern.png)
+
 * ねらい🎯：例外を減らして読みやすくする
 * 学ぶこと🧠：Ok/Errの判別可能ユニオンの発想
 * ミニ演習📝：Ok/Errの2分岐だけ設計して使う
@@ -171,6 +179,8 @@
 
 ## 第25章：APIレスポンス契約（Problem Detailsで返す）🧾🌐
 
+![API Contract ProblemDetails](./picture/err_model_ts_index_problem_details.png)
+
 * ねらい🎯：クライアントが機械的に扱える失敗形式を作る
 * 学ぶこと🧠：status/type/title/detail/instance＋拡張（code等）
 * ミニ演習📝：Error/Result → ProblemDetails の対応表を作る📋
@@ -192,6 +202,8 @@
 
 ## 第28章：ログ設計② requestIdで一本道にする🧵🚶‍♀️
 
+![Log Tracing Thread](./picture/err_model_ts_index_log_tracing.png)
+
 * ねらい🎯：非同期でも“この1件”を追える
 * 学ぶこと🧠：requestId/correlationId の発想／伝播の考え方
 * ミニ演習📝：1リクエストの流れを追えるログ設計を作る🧵
@@ -205,6 +217,8 @@
 * AI活用🤖：反例（リトライすると地獄になるケース）を出させる😱
 
 ## 第30章：総合演習（AI込み）ミニプロジェクト🎓🤝🤖💖
+
+![Final Project Goal](./picture/err_model_ts_index_final_project.png)
 
 * ねらい🎯：設計→実装→テスト→運用観点まで一通り体験
 * 題材例🛍️：推し活グッズ管理（予算・在庫・外部支払いAPI）

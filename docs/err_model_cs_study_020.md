@@ -7,6 +7,8 @@
 
 ## 今日のゴール🎯✨
 
+![Exception to Result Conversion](./picture/err_model_cs_study_020_goal_conversion.png)
+
 * ✅ インフラ例外を **「インフラエラーResult」** に変換する“型”を持つ🎁
 * ✅ **Transient（一時的）/ Permanent（恒久的）** を判断できるようにする🌩️➡️☀️
 * ✅ **ログに残す粒度**を決める（多すぎ/少なすぎ防止）🔎
@@ -15,6 +17,8 @@
 ---
 
 ## まず結論：変換ルールの基本「7つ」🧠🧷
+
+![Protection Rules](./picture/err_model_cs_study_020_rules_shield.png)
 
 1. **インフラ例外は、そのまま上に投げない**🙅‍♀️
    → 上の層は「例外の種類」じゃなくて「失敗の意味」を知りたいの。
@@ -77,6 +81,8 @@
 
 ## “変換先”のエラー型（例）🧷✨
 
+![InfraError Structure](./picture/err_model_cs_study_020_infra_error_struct.png)
+
 ※第14〜17章で作ったエラー型の流れを引き継ぐ感じでOKだよ😊
 
 ```csharp
@@ -94,6 +100,8 @@ public sealed record InfraError(
 
 ## 変換の“置き場所”はここが安定😊📍
 
+![Placement Strategy A vs B](./picture/err_model_cs_study_020_placement_ab.png)
+
 おすすめはこのどちらか：
 
 ### A) インフラアダプタの出口で変換（いちばん分かりやすい）🧱
@@ -109,6 +117,8 @@ public sealed record InfraError(
 ---
 
 ## HTTP（HttpClient）でよくある例外 → 変換ルール🌐🧯
+
+![HTTP Exception Mapping](./picture/err_model_cs_study_020_http_mapping_flow.png)
 
 ### 1) タイムアウト判定の“定番”⏳
 
@@ -174,6 +184,8 @@ public static InfraError MapHttpException(Exception ex)
 
 ## DB（EF Core / SqlClient）でよくある失敗 → 変換ルール🗄️🧯
 
+![DB Retry Logic](./picture/err_model_cs_study_020_db_retry_loop.png)
+
 ### 1) EF Core は「接続回復（リトライ）」の仕組みがある🔁
 
 EF Core の “Connection Resiliency” は、**一時的な失敗を検知して再試行する**考え方だよ😊 ([Microsoft Learn][3])
@@ -191,6 +203,8 @@ SqlClient には **Configurable Retry Logic** があって、transient エラー
 ---
 
 ## ログ粒度の方針（ここ超大事！）🔎🧵
+
+![Structured Log](./picture/err_model_cs_study_020_log_structure.png)
 
 .NET は `ILogger` で **構造化ログ**を前提にできるよ😊 ([Microsoft Learn][5])
 

@@ -72,6 +72,8 @@ ASP.NET Core のログも、設定すると **`TraceId` / `SpanId` / `ParentId`*
 
 ## 2. 実装①：ログに TraceId を自動で載せる🔎🧵
 
+![Automatic Log Scope](./picture/err_model_cs_study_025_log_scope_auto.png)
+
 ASP.NET Core のログは、設定しだいで **TraceId などをスコープへ自動付与**してくれるよ✨ ([Microsoft Learn][2])
 
 ### 2-1. Program.cs：スコープ＋ActivityTrackingOptions をON✅
@@ -116,6 +118,8 @@ app.Run();
 ---
 
 ## 3. 実装②：相関IDミドルウェア（X-Correlation-ID 対応）💌🧵
+
+![Middleware Flow](./picture/err_model_cs_study_025_middleware_flow.png)
 
 「クライアントが相関IDを送ってきたら尊重する」＋「返す」までやると、問い合わせ対応がめっちゃ楽になるよ😊📞✨
 
@@ -190,6 +194,8 @@ app.Run();
 
 ## 4. 実装③：ProblemDetails に「問い合わせ用ID」を入れる🧾🆔
 
+![ProblemDetails Injection](./picture/err_model_cs_study_025_problemdetails_inject.png)
+
 ProblemDetails は **RFC 9457** の標準形式だよ🧾✨ ([ねののお庭。][3])
 そして ASP.NET Core は **`AddProblemDetails`** で ProblemDetails を生成できる（例外/ステータスコードページ等）って公式に書かれてるよ😊 ([Microsoft Learn][4])
 さらに RFC 9457 は「拡張メンバー（extension）」も持てるので、`traceId` みたいなのを追加してOKな設計にできるよ🧠✨ ([ねののお庭。][3])
@@ -240,6 +246,8 @@ app.Run();
 
 ## 5. レジリエンス入門：待ちすぎない＆壊れにくい⏳🛡️
 
+![Resilience Pillars](./picture/err_model_cs_study_025_resilience_trio.png)
+
 ここからは「外部APIが遅い/落ちる」は“普通に起こる”前提で守るよ😊🌩️
 
 ### 5-1. まずは3点セット🔰
@@ -249,6 +257,8 @@ app.Run();
 * **リトライ**：一時的な失敗だけ、条件つきで再試行🔁
 
 ### 5-2. 「リトライしていい？」の判断（超重要⚠️）
+
+![Double Purchase Risk](./picture/err_model_cs_study_025_double_purchase.png)
 
 * GET みたいな **読み取り**は比較的リトライしやすい😊
 * POST で「購入を作る」みたいな **追加/更新**は、リトライすると二重購入になりがち😱
@@ -262,6 +272,8 @@ Microsoft公式で、`Microsoft.Extensions.Http.Resilience` を使って HttpCli
 `AddStandardResilienceHandler()` は、**タイムアウト/リトライ/サーキットブレーカー等を標準構成で積む**って説明されてるよ🧱✨ ([Microsoft Learn][5])
 
 ### 6-1. 標準ハンドラの“中身”（知ってると強い💪）
+
+![Resilience Handler Pipeline](./picture/err_model_cs_study_025_resilience_pipeline.png)
 
 標準ハンドラは、既定でだいたいこういう構成になってるよ（順番も大事）🧠
 
@@ -290,6 +302,8 @@ builder.Services.AddHttpClient<ShippingClient>(client =>
 ---
 
 ## 7. ミニ総合演習：推し活グッズ購入管理🛍️💖（通しで完成🎓）
+
+![Full Architecture Flow](./picture/err_model_cs_study_025_full_architecture.png)
 
 ### 7-1. 題材（最小の仕様）📌
 

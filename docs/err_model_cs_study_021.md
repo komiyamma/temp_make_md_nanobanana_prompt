@@ -7,6 +7,8 @@ APIの失敗って、**「仕様」**として揃ってないとクライアン�
 
 ## 1) 今日のゴール🎯✨
 
+![HTTP Status Goal](./picture/err_model_cs_study_021_goal_status.png)
+
 ### できるようになること😊
 
 * エラーを見て「何番のステータスにする？」を判断できる🚦
@@ -46,6 +48,8 @@ HTTPステータスは「誰が直すべき？」を伝える記号だよ📶
 
 ## 4) ステータス決定の“判断フロー”🚦🔀（これを型にしよう！）
 
+![Status Decision Flowchart](./picture/err_model_cs_study_021_decision_flow.png)
+
 迷ったらこの順番でOK😊
 
 1. **認証いる？** → 401 / 403 🔐
@@ -64,6 +68,8 @@ Retry-After は **429/503** で「どれくらい待ってね」を伝えられ�
 ---
 
 ## 5) よく使うステータス：実戦セット🍙✨
+
+![Status Icons Collection](./picture/err_model_cs_study_021_practical_icons.png)
 
 「推し活グッズ購入管理🛍️💖」っぽい例でいくね！
 
@@ -106,6 +112,8 @@ Retry-After は **429/503** で「どれくらい待ってね」を伝えられ�
 
 ## 7) エラーカタログに「Status列」を足す📋✨（今日の成果物）
 
+![Catalog Column Update](./picture/err_model_cs_study_021_catalog_column.png)
+
 第13章のエラーカタログがこういう列だったとして👇
 
 * Code / Title / UserMessage / Detail / Retryable / Action …
@@ -138,6 +146,8 @@ Retry-After は **429/503** で「どれくらい待ってね」を伝えられ�
 ---
 
 ## 9) 実装イメージ（Result → HTTP）🧰✨
+
+![API Mapping Logic](./picture/err_model_cs_study_021_api_mapping.png)
 
 ここでは「ステータスに変換する場所」を **API境界**に置くのがポイントだよ🚪
 （ドメインやアプリ層は “HTTPを知らない” ままにして守る🛡️）
@@ -180,6 +190,8 @@ ASP.NET Core側でも「ステータスが400以上＝エラー結果」とし�
 ---
 
 ## 10) AI活用🤖💬（今日の“いい使い方”）
+
+![AI Status Assistant](./picture/err_model_cs_study_021_ai_helper.png)
 
 ### ✅ 割り当てのブレを消す質問テンプレ🧠
 

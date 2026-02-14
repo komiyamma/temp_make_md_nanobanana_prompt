@@ -11,6 +11,8 @@
 
 ## 1) ProblemDetailsってなに？🧠🧾
 
+![Standardization](./picture/err_model_cs_study_022_concept_standard.png)
+
 **ProblemDetails** は、HTTP API のエラー内容を返すための **標準JSONフォーマット** だよ📦✨
 RFC 9457 では、JSONとして返すときのメディアタイプが **`application/problem+json`** って決まってるよ。 ([RFCエディタ][1])
 
@@ -68,6 +70,8 @@ RFC 9457 の基本メンバーはこの5つ👇 ([RFCエディタ][1])
 
 ## 3) 拡張フィールド（Extensions）で“あなたのAPI仕様”を入れる🎀✨
 
+![Extensions as Add-ons](./picture/err_model_cs_study_022_extensions_lego.png)
+
 ProblemDetailsは **基本5つ＋自由な追加メンバー** がOK！
 RFCではこれを **Extension Members** と呼んでいて、**知らない拡張は無視できる設計**になってるよ（これが強い💪） ([RFCエディタ][1])
 
@@ -86,6 +90,8 @@ RFCの例だと、バリデーションは `errors` という拡張で **配列�
 ---
 
 ## 4) type（問題タイプURI）をどう設計する？🧭✨
+
+![Type URI Options](./picture/err_model_cs_study_022_type_uri_options.png)
 
 ここ、センス出る！😆
 おすすめはこの2択👇
@@ -107,6 +113,8 @@ IANAに **HTTP Problem Types レジストリ** があるよ！📚
 ---
 
 ## 5) Result → ProblemDetails 変換マップを作ろう🗺️✨（この章のコア！）
+
+![Conversion Logic Map](./picture/err_model_cs_study_022_conversion_map.png)
 
 第21章で決めた「ステータス」と、第6章の「分類」、第13章の「エラーカタログ」を合体させるよ〜😊
 
@@ -132,6 +140,8 @@ IANAに **HTTP Problem Types レジストリ** があるよ！📚
 ---
 
 ## 6) C#での実装（Minimal API例）🧰✨
+
+![Code Transformation Flow](./picture/err_model_cs_study_022_code_transform.png)
 
 ### (1) まずは Results.Problem の形を知ろう📌
 
@@ -227,6 +237,8 @@ public static class ResultToProblemDetails
 
 ## 7) フレームワーク側の ProblemDetails 自動生成も使おう🤝✨
 
+![Auto Generation Factory](./picture/err_model_cs_study_022_auto_gen.png)
+
 ASP.NET Core では、ProblemDetails を自動生成＆カスタムできる仕組みが用意されてるよ〜😊
 代表的には👇
 
@@ -250,6 +262,8 @@ builder.Services.AddProblemDetails(options =>
 ---
 
 ## 8) ミニ演習🧪✨（Result→ProblemDetails変換マップ作り）
+
+![Exercise Roadmap](./picture/err_model_cs_study_022_exercise_steps.png)
 
 ### 🎯 お題：購入APIの失敗をProblemDetailsで統一しよう🛍️💖
 
