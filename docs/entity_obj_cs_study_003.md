@@ -18,6 +18,8 @@
 
 ## 2) まずは“カフェ注文アプリ”の世界を1分で想像 ☕️🧾
 
+![](./picture/entity_obj_cs_study_003_cafe_flow.png)
+
 学内カフェでありがちな流れ👇✨
 
 1. メニューを見る👀
@@ -52,6 +54,8 @@ DDDで“共通で厳密な言葉”を作ろうっていうのは、まさに�
 ---
 
 ## 4) 手順A：名詞を“ざざっ”と書き出す（5〜10分）✍️✨
+
+![](./picture/entity_obj_cs_study_003_noun_storm.png)
 
 紙でもメモでもOK！まずは雑に名詞を出すよ〜😆
 
@@ -99,6 +103,8 @@ DDDで“共通で厳密な言葉”を作ろうっていうのは、まさに�
 
 ## 6) 手順C：用語集（ミニ辞書）を作る 📓✨（10語でOK）
 
+![](./picture/entity_obj_cs_study_003_dictionary_book.png)
+
 ```mermaid
 flowchart LR
     A[バラバラな名詞<br>・価格<br>・値段<br>・金額] -->|B. 整理・統合| C{1つの概念に<br>絞る}
@@ -139,6 +145,8 @@ flowchart LR
 
 ## 7) 手順D：動詞（ユースケース）も“最低限”揃える 🏃‍♀️💨
 
+![](./picture/entity_obj_cs_study_003_action_verbs.png)
+
 名詞だけじゃなくて、**操作（動詞）**も揃えると強いよ〜！
 
 例👇✨
@@ -155,6 +163,8 @@ flowchart LR
 ---
 
 ## 8) “用語をコードに映す”ミニ例 🧩✨（まだ中身は空でOK）
+
+![](./picture/entity_obj_cs_study_003_code_blueprint.png)
 
 「名前を揃える」のが目的なので、実装は薄くてOK🙆‍♀️
 先に“器”だけ作っちゃおう✨

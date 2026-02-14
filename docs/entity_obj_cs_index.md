@@ -5,11 +5,15 @@
 教材の題材は引き続き、ずっと同じ例で進むとラクなので
 **「学内カフェ注文アプリ」☕️🧾**で統一！
 
+![](./picture/entity_obj_cs_index_cafe_concept.png)
+
 ## 全体の進め方（ざっくり）🗺️✨
 
 * 前半：**VO（値オブジェクト）を体で覚える**💎
 * 中盤：**Entity（エンティティ）に“ルール”を乗せる**🆔
 * 後半：**境界（DTO/DB/テスト/リファクタ）で崩れない形**🧱🧪
+
+![](./picture/entity_obj_cs_index_identity_vs_value.png)
 
 ## 第1章：まず全体像！Entity/VOって何が嬉しいの？🤔🌟
 
@@ -24,6 +28,8 @@
 
 ---
 
+![](./picture/entity_obj_cs_index_dev_env.png)
+
 ## 第2章：開発環境セットアップ（Windows）🪟🛠️
 
 * 🎯 目標：学習用のプロジェクトを“迷わず動かせる”状態にする
@@ -36,6 +42,8 @@
 * 🤖 AI活用：AIに「学習用の最小構成のソリューション構成案」を出してもらう🧩
 
 ---
+
+![](./picture/entity_obj_cs_index_common_language.png)
 
 ## 第3章：題材を決めて“言葉”を揃える（超かんたんユビキタス言語）🗣️☕️
 
@@ -61,6 +69,8 @@
 
 ---
 
+![](./picture/entity_obj_cs_index_lifecycle.png)
+
 ## 第5章：Entity入門（ID・更新・履歴）🆔🧍‍♀️
 
 * 🎯 目標：Entityの特徴をつかむ
@@ -71,6 +81,8 @@
 * 🧪 ミニ演習：Orderに入る“変わる情報”を整理する🧾📝
 
 ---
+
+![](./picture/entity_obj_cs_index_immutability.png)
 
 ## 第6章：Value Object入門（不変・自己検証・等価性）💎✅
 
