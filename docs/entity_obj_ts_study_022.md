@@ -19,6 +19,10 @@
 
 ## 2) 2026年のテスト環境、どれが今っぽい？🧰✨
 
+![entity_obj_ts_study_022_cheetah_vitest.png](./picture/entity_obj_ts_study_022_cheetah_vitest.png)
+
+
+
 結論：**TypeScriptなら「Vitest」中心がかなり扱いやすい**よ〜！⚡️
 VitestはVite由来で高速＆設定が軽め、TSとも相性が良いのが強み💨 ([Vitest][1])
 
@@ -80,7 +84,15 @@ flowchart TD
 
 ## 4) “良いテスト”の最低ルール3つ🧠✨
 
+![entity_obj_ts_study_022_test_aaa.png](./picture/entity_obj_ts_study_022_test_aaa.png)
+
+
+
 ### ① テスト名は「仕様の日本語」っぽく📝💕
+
+![entity_obj_ts_study_022_file_cabinet.png](./picture/entity_obj_ts_study_022_file_cabinet.png)
+
+
 
 * ❌ `shouldWork()`
 * ✅ `無効なEmailは作れない()`
@@ -107,6 +119,10 @@ flowchart TD
 ---
 
 ### 5-1) VO：Email（作れない状態を作らない）📧🚫
+
+![entity_obj_ts_study_022_diamond_hammer.png](./picture/entity_obj_ts_study_022_diamond_hammer.png)
+
+
 
 #### Email VO（例）
 
@@ -171,6 +187,10 @@ describe("Email", () => {
 ---
 
 ### 5-2) Entity：Order（ルール＆状態遷移をテスト）🪪🚦
+
+![entity_obj_ts_study_022_robot_lever.png](./picture/entity_obj_ts_study_022_robot_lever.png)
+
+
 
 #### OrderStatus（状態）
 
@@ -258,6 +278,10 @@ describe("Order", () => {
 
 ### 5-3) 境界：DTO→ドメイン（変な入力を止める）🚪⚠️
 
+![entity_obj_ts_study_022_castle_gate.png](./picture/entity_obj_ts_study_022_castle_gate.png)
+
+
+
 境界ではよくこうなる👇
 
 * 入力は string / number / null 混ざりがち😇
@@ -327,6 +351,10 @@ describe("createOrderFromDto", () => {
 ---
 
 ### 5-4) Mapper：Domain ↔ Record（変換事故を潰す）🔁💾
+
+![entity_obj_ts_study_022_boomerang_mapper.png](./picture/entity_obj_ts_study_022_boomerang_mapper.png)
+
+
 
 Mapperでありがち事故👇😇
 

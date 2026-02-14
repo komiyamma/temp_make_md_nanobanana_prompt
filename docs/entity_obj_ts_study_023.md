@@ -68,6 +68,10 @@ export class Order {
 
 ## 2. ゴール：どんな姿になったら勝ち？🏁✨
 
+![entity_obj_ts_study_023_messy_clean_room.png](./picture/entity_obj_ts_study_023_messy_clean_room.png)
+
+
+
 VO化後はこうなるのが理想だよ👇💎
 
 ```txt
@@ -90,6 +94,10 @@ Order (Entity) 🪪
 ## 3. いちばん大事：リファクタの鉄則3つ🛡️✨
 
 ### ✅ 鉄則A：小さく刻む（1コミット1安全）🧩
+
+![entity_obj_ts_study_023_mountain_climb.png](./picture/entity_obj_ts_study_023_mountain_climb.png)
+
+
 
 「VOを全部一気に入れる！」は事故りやすい😇
 **最小変更 → テスト → コミット**のリズムでいくよ🎵
@@ -122,6 +130,10 @@ flowchart TD
 ---
 
 ### Step 1：現状把握テストを書く🧪🔍
+
+![entity_obj_ts_study_023_wobbly_house_photo.png](./picture/entity_obj_ts_study_023_wobbly_house_photo.png)
+
+
 
 「今の仕様って何？」を固定するよ。
 **“正しいかどうか”じゃなく、“今こう動いてる”を記録**するイメージ📸
@@ -170,6 +182,10 @@ describe("Order characterization", () => {
 ---
 
 ### Step 2：VOを“薄く”導入（まず型だけ差し込む）💎🧩
+
+![entity_obj_ts_study_023_empty_containers.png](./picture/entity_obj_ts_study_023_empty_containers.png)
+
+
 
 
 
@@ -265,6 +281,10 @@ export class Period {
 ---
 
 ### Step 3：Order内部だけVO化（外の形は一旦そのまま）🪪➡️💎
+
+![entity_obj_ts_study_023_wiring_replacement.png](./picture/entity_obj_ts_study_023_wiring_replacement.png)
+
+
 
 いきなりコンストラクタの引数を全部VOにすると、呼び出し側が大炎上🔥
 だからまずは **Orderの中でVOを使う**ところからいくよ🙂
@@ -379,6 +399,10 @@ describe("Order", () => {
 
 ### Step 5：いよいよ“プロパティの型”をVOに置き換える（段階的）💎➡️🧱
 
+![entity_obj_ts_study_023_steel_beam_swap.png](./picture/entity_obj_ts_study_023_steel_beam_swap.png)
+
+
+
 ここが本番の「Replace Primitive with Object」だよ✨
 でも一気にやらず、**1フィールドずつ**いくのがコツ🙂
 
@@ -472,6 +496,10 @@ export class Order {
 ## 6. 演習（手を動かすコーナー）✍️🎀
 
 ### 演習1：Address VO を作って、Orderからstringを追い出してね🏠✨
+
+![entity_obj_ts_study_023_envelope_address.png](./picture/entity_obj_ts_study_023_envelope_address.png)
+
+
 
 * `Address` が `PostalCode` を持つ
 * `Address.create(postalCodeRaw)` みたいに入口を作る

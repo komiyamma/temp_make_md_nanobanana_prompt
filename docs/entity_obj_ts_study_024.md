@@ -7,6 +7,10 @@
 
 ## 0) 今日のゴール 🎯✨
 
+![entity_obj_ts_study_024_puzzle_complete.png](./picture/entity_obj_ts_study_024_puzzle_complete.png)
+
+
+
 * **ドメイン（Entity/VO）**が中心にいて、外側（DB/外部API/UI）があとから差し替えられる 🧠🔁
 * **境界でガード**して、変なデータを中に入れない 🚧🛡️
 * **永続化はRepository＋Mapperで分離**して、DB都合でモデルを歪めない 💾🧼
@@ -16,6 +20,10 @@
 ---
 
 ## 1) ミニプロジェクト題材：ミニ注文（Order）🛒✨
+
+![entity_obj_ts_study_024_conveyor_belt.png](./picture/entity_obj_ts_study_024_conveyor_belt.png)
+
+
 
 「注文を作る → 送信 → 支払い → キャンセル」の超ミニ版だよ🍰
 外部決済は“クセのあるレスポンス”が返ってくる想定にして、ACLも使うよ😉
@@ -147,6 +155,10 @@ tests/
 
 ### ミッション1：Result型（失敗を安全に返す）🎁⚠️
 
+![entity_obj_ts_study_024_gift_box_result.png](./picture/entity_obj_ts_study_024_gift_box_result.png)
+
+
+
 「例外投げる」より、初心者はまず **Result** でいくと迷子になりにくいよ☺️
 
 ```ts
@@ -170,6 +182,10 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 ### ミッション2：VO（Email / Money / OrderId）💎🛡️
 
 #### Email（生成時に検証）📧✅
+
+![entity_obj_ts_study_024_mail_slot.png](./picture/entity_obj_ts_study_024_mail_slot.png)
+
+
 
 ```ts
 // src/domain/valueObjects/Email.ts
@@ -262,6 +278,10 @@ export class OrderId {
 ---
 
 ### ミッション3：Entity（Order）＋状態遷移 🚦🔄
+
+![entity_obj_ts_study_024_gatekeeper_draft.png](./picture/entity_obj_ts_study_024_gatekeeper_draft.png)
+
+
 
 ```ts
 // src/domain/entities/Order.ts
@@ -376,6 +396,10 @@ export interface OrderRepository {
 
 ### ミッション5：Mapper（Order ↔ Record）🔁💾
 
+![entity_obj_ts_study_024_restoration_expert.png](./picture/entity_obj_ts_study_024_restoration_expert.png)
+
+
+
 「永続化の形」と「ドメインの形」を切り分けるよ✨
 
 ```ts
@@ -459,6 +483,10 @@ export class InMemoryOrderRepository implements OrderRepository {
 ---
 
 ### ミッション7：ACL（外部決済の翻訳係）🌉💳✨
+
+![entity_obj_ts_study_024_currency_exchange.png](./picture/entity_obj_ts_study_024_currency_exchange.png)
+
+
 
 外部の返り値が **「変な文字列」**だとしても、
 ドメイン側には **きれいな型**だけ渡したいよね🙂

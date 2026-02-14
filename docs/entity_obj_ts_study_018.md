@@ -10,6 +10,10 @@
 
 ## まず結論：DBは“保管庫”、ドメインは“ルールの世界”🏦📘
 
+![entity_obj_ts_study_018_warehouse_courtroom.png](./picture/entity_obj_ts_study_018_warehouse_courtroom.png)
+
+
+
 ![Shape Shifter](./picture/entity_obj_ts_study_018_shape_shifter.png)
 
 DB（永続化）は、データを安全に保管して取り出すための都合（型・正規化・ID・JOIN・NULL・インデックス…）がいっぱい😵‍💫
@@ -36,10 +40,18 @@ DB（永続化）は、データを安全に保管して取り出すための都
 
 ### 事故パターンA：ドメインがDBカラム名に支配される 😵
 
+![entity_obj_ts_study_018_pipe_invasion.png](./picture/entity_obj_ts_study_018_pipe_invasion.png)
+
+
+
 * `user_id` とか `created_at` とか **DBの命名**がそのままドメインに入り込む
 * 「本当に必要な意味」が見えなくなって、ルールが散らかる🌀
 
 ### 事故パターンB：NULLがドメインに侵入して、分岐地獄 🤯
+
+![entity_obj_ts_study_018_null_weeds.png](./picture/entity_obj_ts_study_018_null_weeds.png)
+
+
 
 * DB都合の `NULL` がそのまま来て
   `if (x == null)` が増殖していく…🌱🌱🌱
@@ -52,6 +64,10 @@ DB（永続化）は、データを安全に保管して取り出すための都
 ---
 
 ## 図解イメージ：依存の向きが命だよ！🧭✨
+
+![entity_obj_ts_study_018_castle_island.png](./picture/entity_obj_ts_study_018_castle_island.png)
+
+
 
 ```text
 [ 外の世界 ]  DTO / API / DB / ORM
@@ -143,6 +159,10 @@ export class Order {
 
 ### 2) 永続化側（保存しやすい形）💾📦
 
+![entity_obj_ts_study_018_flat_sheet_vs_3d.png](./picture/entity_obj_ts_study_018_flat_sheet_vs_3d.png)
+
+
+
 DBに入れやすくするために、**プリミティブ寄せ**（string/number/boolean）にするのがよくあるよ🙂
 
 ```ts
@@ -165,6 +185,10 @@ export type OrderRecord = {
 
 ## じゃあ“createdAt / updatedAt”はドメインに要る？🤔⏰
 
+![entity_obj_ts_study_018_juice_extractor.png](./picture/entity_obj_ts_study_018_juice_extractor.png)
+
+
+
 ここ、初心者が迷いやすいとこ！💡
 
 * ✅ **ドメインに必要**：
@@ -178,6 +202,10 @@ export type OrderRecord = {
 ---
 
 ## 章のメイン：分離のための「3つの線引き」✍️🧼
+
+![entity_obj_ts_study_018_guard_posts.png](./picture/entity_obj_ts_study_018_guard_posts.png)
+
+
 
 ### 線引き①：ドメイン層は「DB語」をしゃべらない 🙊💾
 

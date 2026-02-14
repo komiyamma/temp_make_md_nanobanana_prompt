@@ -18,6 +18,10 @@
 
 ## 1. State Machineってなに？🧠🚦
 
+![entity_obj_ts_study_016_board_game.png](./picture/entity_obj_ts_study_016_board_game.png)
+
+
+
 めっちゃ簡単に言うとこう👇
 
 * **状態（State）**：いまのステータス（例：下書き、提出済み、支払い済み…）
@@ -30,6 +34,10 @@
 ---
 
 ## 2. お題：OrderStatus を作ろう🛒✨
+
+![entity_obj_ts_study_016_lifecycle_plant.png](./picture/entity_obj_ts_study_016_lifecycle_plant.png)
+
+
 
 今回はこの超定番でいくね👇
 
@@ -49,6 +57,10 @@
 ---
 
 ## 3. 図で見るとこう！🗺️✨（図解イメージ）
+
+![entity_obj_ts_study_016_subway_map.png](./picture/entity_obj_ts_study_016_subway_map.png)
+
+
 
 ```mermaid
 stateDiagram-v2
@@ -88,6 +100,10 @@ stateDiagram-v2
 ---
 
 ## 5. 実装①：いちばんやさしい “遷移マップ方式” 🗺️🧸
+
+![entity_obj_ts_study_016_dictionary_lookup.png](./picture/entity_obj_ts_study_016_dictionary_lookup.png)
+
+
 
 まずは「辞書（map）」でルールを固定するやり方！初心者にやさしい💕
 
@@ -141,6 +157,10 @@ export function transition(
 ---
 
 ## 6. 実装②：Entity（Order）に組み込む🪪🧱
+
+![entity_obj_ts_study_016_security_check.png](./picture/entity_obj_ts_study_016_security_check.png)
+
+
 
 State Machineのいいところは、Entityの更新がスッキリすること✨
 「状態を勝手に書き換える」を禁止して、**メソッド経由だけにする**よ〜🚪🛡️
@@ -232,6 +252,10 @@ sequenceDiagram
 
 ## 7. テスト（遷移テスト）を書こう🧪✨
 
+![entity_obj_ts_study_016_blocked_path.png](./picture/entity_obj_ts_study_016_blocked_path.png)
+
+
+
 State Machineはテストが超書きやすい！
 表（遷移表）をそのままテストにできるよ〜😊💕
 
@@ -264,6 +288,10 @@ Vitest 4 系が現役ラインだよ〜🧪✨ ([Vitest][4])
 ---
 
 ## 8. よくあるバグあるある🥺👉 こう防ぐ！
+
+![entity_obj_ts_study_016_maze_bugs.png](./picture/entity_obj_ts_study_016_maze_bugs.png)
+
+
 
 ### 😭あるある1：状態が増えたのに、遷移が更新されてない
 

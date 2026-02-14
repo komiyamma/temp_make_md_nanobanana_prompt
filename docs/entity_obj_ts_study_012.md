@@ -22,6 +22,10 @@ Entityの骨格は、だいたいこの3点セットでできてるよ👇
 
 ## 2) 図でイメージしよ〜📦🧠
 
+![entity_obj_ts_study_012_entity_factory.png](./picture/entity_obj_ts_study_012_entity_factory.png)
+
+
+
 Entityはこういう流れが気持ちいい👇
 
 ```text
@@ -48,6 +52,10 @@ Entityはこういう流れが気持ちいい👇
 ---
 
 ## 4) 実装：ID（OrderId）から作る🆔✨
+
+![entity_obj_ts_study_012_id_passport.png](./picture/entity_obj_ts_study_012_id_passport.png)
+
+
 
 まず、Entityの同一性の核になる **ID** を用意するよ！
 
@@ -92,6 +100,10 @@ export class OrderId {
 ---
 
 ## 5) 実装：Entity本体（Order）🪪🧱
+
+![entity_obj_ts_study_012_private_gate.png](./picture/entity_obj_ts_study_012_private_gate.png)
+
+
 
 次に、Orderを「骨格どおり」に書くよ！
 
@@ -215,6 +227,14 @@ export class Order {
 
 ### ここ、めっちゃ大事な観点だよ〜🧠✨
 
+![entity_obj_ts_study_012_equality_scanner.png](./picture/entity_obj_ts_study_012_equality_scanner.png)
+
+
+
+![entity_obj_ts_study_012_change_note_window.png](./picture/entity_obj_ts_study_012_change_note_window.png)
+
+
+
 * **コンストラクタは private**：外から `new Order(...)` させない🚫
 * **create() が唯一の“新規作成入口”**：最初からルールを守る✅
 * **更新は changeNote() みたいなメソッド経由**：勝手に壊せない🔒
@@ -246,6 +266,10 @@ classDiagram
 ---
 
 ## 6) テスト（Vitest想定）🧪✨
+
+![entity_obj_ts_study_012_snapshot_camera.png](./picture/entity_obj_ts_study_012_snapshot_camera.png)
+
+
 
 骨格はテストで固めると一気に安心になるよ〜😊🍰
 
@@ -300,6 +324,10 @@ describe("Order", () => {
 ---
 
 ## 7) よくある事故パターン💥（先に潰そ〜😇）
+
+![entity_obj_ts_study_012_accident_scene.png](./picture/entity_obj_ts_study_012_accident_scene.png)
+
+
 
 ### ❌ 事故1：プロパティをpublicにして外から書き換え放題
 
