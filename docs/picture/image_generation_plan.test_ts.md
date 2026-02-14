@@ -1,3 +1,0 @@
-| ID | File Name | Proposed Image Filename | Relative Link Path | Prompt | Insertion Point |
-|---|---|---|---|---|---|
-| 1 | docs/test_ts_index.md | test_ts_index_definition.png | ./picture/test_ts_index_definition.png | **Theme**: YAGNI Definition<br><br>**Labels to Render**:<br>- Person 1: "Light (YAGNI)"<br>- Person 2: "Heavy (Overkill)"<br>- Load: "Unnecessary Code"<br><br>**Visual Details**:<br>1. Core Concept: Traveling light.<br>2. Metaphor: A hiker with a small backpack (YAGNI) walking easily next to a hiker with a massive, overflowing backpack (Overkill).<br>3. Action: Hiking.<br>4. Layout: Side-by-side. | ## 第1章：YAGNIってなに？「作らない勇気」の入門 🌱🙂 |
