@@ -11,8 +11,12 @@
 
 * **CQS（Command–Query Separation）**：1つの操作は「読む」か「書く」どっちかにする考え方🧠✨ ([martinfowler.com][1])
 * **Command**：状態を変える（更新・作成・削除）✍️🔥
+
+![Command vs Query Cards](./picture/mod_mono_ts_study_021_command_vs_query_card.png)
 * **Query**：状態を変えずに情報を返す（副作用なし）👀📚 ([martinfowler.com][1])
 * **副作用（side effect）**：DB更新・イベント発行・メール送信・外部API呼び出しなど、世界が変わるやつ🌍⚡
+
+![Side Effect Bomb](./picture/mod_mono_ts_study_021_side_effect_bomb.png)
 * **CQRS**：CQSをさらに大きくした設計パターン（読むモデルと書くモデルを分ける）🧩📈 ([martinfowler.com][2])
 
 ---
@@ -120,6 +124,8 @@ src/
 ポイント🧠✨
 
 * commands / queries を物理的に分けると、**混ぜにくくなる**👍
+
+![Folder Separation](./picture/mod_mono_ts_study_021_folder_separation.png)
 * `index.ts` で「外に出していいものだけ」出す（第11〜12章の流れと合体！）🛡️
 
 ---
@@ -147,6 +153,8 @@ export type Query<Result> = {
 ## 実装例：混ざった関数を分離してみよう✂️✨
 
 ### 🚨ダメ例（混ざってる）
+
+![Bad Mixing](./picture/mod_mono_ts_study_021_bad_mixing.png)
 
 「参加する」なのに、イベント詳細（でかいデータ）を返してる＆内部でいろいろ読んでる…😵‍💫
 
@@ -238,6 +246,8 @@ export class GetEventDetailHandler {
 * 表示したい → **eventsのQuery** を呼ぶ👀
 
 **“参加させて、その結果の画面表示”** をしたいなら、こうする👇
+
+![Interaction Flow](./picture/mod_mono_ts_study_021_interaction_flow.png)
 
 1. Command実行（参加）✅
 2. Query実行（最新詳細を取得）📖

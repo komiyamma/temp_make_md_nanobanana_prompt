@@ -77,6 +77,8 @@ DIPを入れると、こんな嬉しさが出るよ👇
 
 ## よくある“DIPなし”の形（つらい版）😇💥
 
+![Direct DB Chain](./picture/mod_mono_ts_study_023_direct_db_chain.png)
+
 ユースケースがDB直叩きしちゃう例👇
 
 ```ts
@@ -107,6 +109,8 @@ export async function createTicket(input: { title: string; userId: string }) {
 **ユースケース側が “必要な約束（Port/Interface）” を持つ** → それを **下位が実装**する！
 
 ## 5-1) まず「ポート（interface）」を切る🔌
+
+![Port in Domain](./picture/mod_mono_ts_study_023_port_in_domain.png)
 
 ```ts
 // modules/tickets/domain/ports/TicketRepository.ts
@@ -182,6 +186,8 @@ console.log(ticket);
 
 # 6) DIPのご褒美：テストが一気にラクになる🧪💚
 
+![Fake Repo Test](./picture/mod_mono_ts_study_023_fake_repo_test.png)
+
 DBなしでテストしたい？OK！✨
 Fake（偽物）を作って差し替えるだけ〜🎉
 
@@ -230,6 +236,8 @@ test();
 
 ## ② 抽象に“DB都合”が漏れる🫠
 
+![Leaky Abstraction](./picture/mod_mono_ts_study_023_leaky_abstraction.png)
+
 * `findByPrismaWhere` みたいなのはNG🙅‍♀️
   ✅ 抽象は「業務として欲しい操作」だけにする✨
 
@@ -271,6 +279,8 @@ test();
 ---
 
 # 10) まとめチェックリスト✅✨
+
+![DIP Flow Summary](./picture/mod_mono_ts_study_023_dip_flow_summary.png)
 
 * [ ] ユースケースがDB/HTTP/外部SDKを **importしてない**
 * [ ] interface（Port）が **中心側**に置かれている
