@@ -14,6 +14,9 @@
 
 ## 1. 迷子が起きる典型パターン😵‍💫📦
 
+![Lost Files Chaos](./picture/mod_mono_ts_study_010_lost_files_chaos.png)
+
+
 こうなると、未来の自分が泣きます😭
 
 * `src/` の直下にファイルが増殖して、検索しないと見つからない🔍
@@ -26,6 +29,9 @@
 ---
 
 ## 2. フォルダ設計の“3つの約束”🤝💖
+
+![Three Promises](./picture/mod_mono_ts_study_010_three_promises.png)
+
 
 ### 約束①：モジュール（機能）を最上位の主役にする🧩👑
 
@@ -78,6 +84,9 @@ graph LR
 
 ## 4. 1モジュールの基本構造（テンプレ）🧱✨
 
+![Module Structure Tree](./picture/mod_mono_ts_study_010_module_structure_tree.png)
+
+
 中はあとでレイヤーを入れやすい形にしておくと、成長がラク🌱💕
 
 ```text
@@ -99,6 +108,9 @@ src/modules/events/
 ---
 
 ## 5. 命名ルール（テンプレ化しよう）🧾✨
+
+![Naming Suffixes](./picture/mod_mono_ts_study_010_naming_suffixes.png)
+
 
 ここを決めると、**探す時間が激減**するよ⏱️💕
 
@@ -128,6 +140,9 @@ event.repository.ts
 
 ## 6. “入口ファイル”を先に薄く置いておく🚪✨
 
+![Index Door](./picture/mod_mono_ts_study_010_index_door.png)
+
+
 次章でガッツリやるけど、今の段階でも「入口がある」だけで迷子が減るよ😊
 
 例：`src/modules/events/index.ts`（中身は仮でOK）
@@ -141,6 +156,9 @@ export {};
 ---
 
 ## 7. ちょい発展：importを気持ちよくする話（注意つき⚠️）
+
+![Relative vs Alias](./picture/mod_mono_ts_study_010_relative_vs_alias.png)
+
 
 ### A) まずは安全：相対パスでOK🙂
 
@@ -159,6 +177,9 @@ export {};
 ---
 
 ## 8. AIに手伝ってもらうプロンプト例🤖📝✨
+
+![AI Folder Gen](./picture/mod_mono_ts_study_010_ai_folder_gen.png)
+
 
 ### フォルダを一気に作りたい
 

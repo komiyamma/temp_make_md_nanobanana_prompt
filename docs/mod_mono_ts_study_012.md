@@ -74,6 +74,9 @@ src/
 
 ## 2) 「何を公開する？」の判断基準🧠⚖️
 
+![Public vs Internal](./picture/mod_mono_ts_study_012_public_vs_internal.png)
+
+
 ### ✅ 公開していいもの（だいたいコレ）
 
 * 他モジュールから使わせたい **ユースケース関数**（例：イベント登録する、一覧を取る）🎬
@@ -89,6 +92,9 @@ src/
 ---
 
 ## 3) “便利だから直import” がヤバい理由😱💥
+
+![Deep Import Danger](./picture/mod_mono_ts_study_012_deep_import_danger.png)
+
 
 たとえば他モジュールが、こんなimportをし始めると…👇
 
@@ -126,6 +132,9 @@ export function calcFee(...) { ... }
 ---
 
 ## 5) ミニ演習：外からinternalに触ろうとして “失敗” させる🚫🧩
+
+![ESLint Guard](./picture/mod_mono_ts_study_012_eslint_guard.png)
+
 
 ### 目標🎯
 
@@ -187,6 +196,9 @@ import { calcFee } from "../events/internal/calcFee"; // ❌ここで怒られ�
 
 ### 5-3) 正しい直し方：必要なら「公開APIに昇格」させる👑✨
 
+![Promote to Public](./picture/mod_mono_ts_study_012_promote_to_public.png)
+
+
 「calcFee を他モジュールにも使わせたい」なら、internalに置きっぱなしじゃなくて、**公開APIとして設計**し直すのが筋だよ〜😊
 
 * events/application/ に “外に見せてもいい形” の関数を作る
@@ -213,6 +225,9 @@ import { calcEventFee } from "../events";
 
 ## 6) ちょい上級：パッケージの “exports” で deep import を物理的に止める🧱🔒（興味ある人だけ）
 
+![Package Exports Wall](./picture/mod_mono_ts_study_012_package_exports_wall.png)
+
+
 もし将来「モジュール=workspace package」みたいに分けるなら、package.json の exports が超強い味方になるよ💪
 exports を定義すると、**exports に書いてないサブパスはimportできなくなる**（ERR_PACKAGE_PATH_NOT_EXPORTED）って挙動になるのがポイント✨ ([Node.js][3])
 ただし「絶対に破れない壁」ではなく、絶対パスで読めちゃう等の抜け道はあるよ（でも実用上かなり効く）🧯 ([Node.js][3])
@@ -223,6 +238,9 @@ exports を定義すると、**exports に書いてないサブパスはimport�
 
 ## AIに手伝わせるプロンプト例🤖📝
 
+![AI API Helper](./picture/mod_mono_ts_study_012_ai_api_helper.png)
+
+
 * 「このモジュールの公開API候補を3つ提案して。内部に置くもの/公開するものの理由も添えて」🧠✨
 * 「internal直importの箇所を探して、公開API経由に直すパッチ案を出して」🔧✅
 * 「このindex.tsのexportが多すぎる気がする。公開APIを絞る方針を提案して」✂️🚪
@@ -230,6 +248,9 @@ exports を定義すると、**exports に書いてないサブパスはimport�
 ---
 
 ## 章末チェックリスト✅✅✅
+
+![Checklist](./picture/mod_mono_ts_study_012_checklist.png)
+
 
 * [ ] 各モジュールに index.ts（公開API）がある🚪
 * [ ] internal/ に “変えたい中身” が隔離されてる🙈

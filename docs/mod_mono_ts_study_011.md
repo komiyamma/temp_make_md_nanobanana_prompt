@@ -29,6 +29,9 @@
 
 ## 3) 公開APIってなに？🧩💡
 
+![Public API Contract](./picture/mod_mono_ts_study_011_public_api_contract.png)
+
+
 公開APIは、ひとことで言うと
 
 > **「他モジュールとの約束（契約）」**📜🤝
@@ -44,6 +47,9 @@
 ---
 
 ## 4) 外に出していいもの／ダメなもの🙆‍♀️🙅‍♀️
+
+![Export Dos and Donts](./picture/mod_mono_ts_study_011_export_dos_donts.png)
+
 
 ### ✅ 外に出していいもの（基本）🟢
 
@@ -104,6 +110,9 @@ TypeScriptは、`module` 設定が**型チェックや解決の挙動にも影�
 ## 6) 例：イベント管理モジュールで作ってみよ〜📅✨
 
 ### フォルダ構成イメージ📁🧭
+
+![Folder Structure](./picture/mod_mono_ts_study_011_folder_structure.png)
+
 
 ```text
 src/
@@ -195,6 +204,9 @@ await createEvent(input);
 
 ### ✅ `package.json` の `exports`（サブパス封鎖）🛡️
 
+![Package Exports Block](./picture/mod_mono_ts_study_011_package_exports_block.png)
+
+
 Node.jsでは `exports` を定義すると、**許可されてないサブパス import を封じられる**よ🔒✨ ([Node.js][2])
 （つまり「入口以外は入れません！」が本当にできる）
 
@@ -204,6 +216,9 @@ Node.jsでは `exports` を定義すると、**許可されてないサブパス
 ---
 
 ## 8) よくある失敗あるある😵‍💫⚠️（回避策つき）
+
+![Anti Patterns](./picture/mod_mono_ts_study_011_anti_patterns.png)
+
 
 ### ❶ index.ts が“なんでも屋”になって肥大化🐘
 
@@ -222,6 +237,9 @@ Node.jsでは `exports` を定義すると、**許可されてないサブパス
 ---
 
 ## 9) ミニ課題🧩✍️（15〜30分）
+
+![Task Visual](./picture/mod_mono_ts_study_011_task_visual.png)
+
 
 ### 課題A：入口を作る🚪✨
 
@@ -270,6 +288,9 @@ Node.jsでは `exports` を定義すると、**許可されてないサブパス
 ---
 
 ## 11) 章末チェックリスト✅✅✅
+
+![Checklist](./picture/mod_mono_ts_study_011_checklist.png)
+
 
 * [ ] 他モジュールが触るのは `modules/x/index.ts` だけになってる？🚪
 * [ ] 公開する型は DTO（境界用）に寄ってる？🧾
