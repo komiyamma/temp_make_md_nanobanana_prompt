@@ -22,6 +22,8 @@ DDDでいう **Aggregate（集約）** は、ひとことで言うと…
 ---
 
 ## まずダメ例😇💥（“誰でも中身を触れる”地獄）
+![mod_mono_cs_study_015_bad_design](./picture/mod_mono_cs_study_015_bad_design.png)
+
 
 ### ❌ ダメな設計の特徴
 
@@ -91,7 +93,9 @@ graph TD
 
 ---
 
-### 1) 値オブジェクト（Value Object）を作る💎✨（Money と Id）
+### 1) 値オブジェクト（Value Object）を作る💎✨
+![mod_mono_cs_study_015_money_vo](./picture/mod_mono_cs_study_015_money_vo.png)
+（Money と Id）
 
 「金額」や「ID」はプリミティブで雑に扱うと事故りやすいので、軽く包むよ😊
 
@@ -128,6 +132,8 @@ public readonly record struct Money(decimal Amount, string Currency)
 ---
 
 ### 2) 子Entity：OrderLine（注文行）を作る📦🧾
+![mod_mono_cs_study_015_order_line_structure](./picture/mod_mono_cs_study_015_order_line_structure.png)
+
 
 子は **外から勝手に new できなくてもOK**（必要なら内部だけで作る）😊
 
@@ -159,6 +165,9 @@ public sealed class OrderLine
 ---
 
 ### 3) 集約ルート：Order を作る🏰🧱✨
+![mod_mono_cs_study_015_order_methods](./picture/mod_mono_cs_study_015_order_methods.png)
+![mod_mono_cs_study_015_state_transition](./picture/mod_mono_cs_study_015_state_transition.png)
+
 
 ここが本番！
 **ルールはここに置く**よ😊（支払い後は追加できない、発送は支払い後だけ、など）
@@ -286,6 +295,8 @@ graph LR
 * 同一商品は最大10個まで🧾
 
 ### 演習2：境界クイズ🧠
+![mod_mono_cs_study_015_aggregate_boundaries_quiz](./picture/mod_mono_cs_study_015_aggregate_boundaries_quiz.png)
+
 
 「Customer（会員）」は Order集約に入れる？入れない？🤔
 

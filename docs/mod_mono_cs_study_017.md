@@ -9,6 +9,8 @@
 ---
 
 ## まずダメ例😇（あるある）
+![mod_mono_cs_study_017_bad_error](./picture/mod_mono_cs_study_017_bad_error.png)
+
 
 * 何でも `throw new Exception("失敗")` で終わり💥
 * 画面には「エラーが発生しました」だけ😭（ユーザーは何していいかわからない）
@@ -42,6 +44,8 @@ mindmap
 だからまずは「分類」を決めちゃう！
 
 ### まずは“3つ＋α”でOK🧩
+![mod_mono_cs_study_017_error_categories_mindmap](./picture/mod_mono_cs_study_017_error_categories_mindmap.png)
+
 
 **基本の3つ**
 
@@ -59,10 +63,14 @@ mindmap
 ---
 
 ## 分類ごとの「扱い方」ルール📌（超大事！）
+![mod_mono_cs_study_017_handling_flow](./picture/mod_mono_cs_study_017_handling_flow.png)
+
 
 分類が決まると、次が自動で決められるよ😊✨
 
 ### 1) 直す人は誰？👤
+![mod_mono_cs_study_017_responsibility_matrix](./picture/mod_mono_cs_study_017_responsibility_matrix.png)
+
 
 * Validation：**ユーザー/クライアントが直す**
 * Domain：**仕様として“できない”**（画面の案内が必要）
@@ -94,6 +102,8 @@ graph TD
 ---
 
 ## HTTP（Web API）に返す形は「Problem Details」で揃える📦✨
+![mod_mono_cs_study_017_problem_details_structure](./picture/mod_mono_cs_study_017_problem_details_structure.png)
+
 
 今のASP.NET Coreでは、APIのエラー応答を **ProblemDetails** で統一するのが王道だよ🙂
 標準はRFC 9457（Problem Details for HTTP APIs）で、RFC 7807を置き換える形になってるよ📜 ([RFCエディタ][1])
@@ -154,6 +164,8 @@ public static class Errors
 ```
 
 ### エラーコード命名のミニルール📛
+![mod_mono_cs_study_017_error_code_vs_message](./picture/mod_mono_cs_study_017_error_code_vs_message.png)
+
 
 * **大文字スネーク**：`ORDER_ALREADY_PAID` / `CATALOG_PRODUCT_NOT_FOUND`
 * **モジュール名を先頭に**してもOK：`ORDERING_ORDER_ALREADY_PAID`（大規模になったら効く）💪

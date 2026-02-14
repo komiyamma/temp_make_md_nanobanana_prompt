@@ -16,6 +16,8 @@
 ---
 
 ## 1) なんで「混ぜる」と地獄になるの？😇🔥
+![mod_mono_cs_study_016_mixed_chaos](./picture/mod_mono_cs_study_016_mixed_chaos.png)
+
 
 たとえばこんなメソッド、見たことない？👇
 
@@ -47,6 +49,8 @@ graph TD
 ---
 
 ## 2) CQSって何？（Command と Query）🧠🧩
+![mod_mono_cs_study_016_command_vs_query](./picture/mod_mono_cs_study_016_command_vs_query.png)
+
 
 ![CQS Separation](./picture/mod_mono_cs_study_016_cqs.png)
 
@@ -122,6 +126,8 @@ graph LR
 ---
 
 ### 5-2) Command：注文を作る✍️🛒
+![mod_mono_cs_study_016_command_structure](./picture/mod_mono_cs_study_016_command_structure.png)
+
 
 ```csharp
 namespace Modules.Ordering.Application.Commands;
@@ -148,6 +154,8 @@ public interface IPlaceOrderHandler
     Task<CommandResult<Guid>> HandleAsync(PlaceOrderCommand command, CancellationToken ct);
 }
 ```
+
+![mod_mono_cs_study_016_handler_logic](./picture/mod_mono_cs_study_016_handler_logic.png)
 
 ```csharp
 using Modules.Ordering.Domain;
@@ -183,6 +191,8 @@ public sealed class PlaceOrderHandler(IOrderRepository repo) : IPlaceOrderHandle
 ---
 
 ### 5-3) Query：注文詳細を取る👀📄
+![mod_mono_cs_study_016_query_structure](./picture/mod_mono_cs_study_016_query_structure.png)
+
 
 ```csharp
 namespace Modules.Ordering.Application.Queries;
@@ -241,6 +251,8 @@ public sealed class GetOrderDetailHandler(OrderingDbContext db) : IGetOrderDetai
 ---
 
 ## 6) APIにすると、何が嬉しい？📣🪟✨
+![mod_mono_cs_study_016_api_endpoints](./picture/mod_mono_cs_study_016_api_endpoints.png)
+
 
 例えばHost側（Web API）で…
 
