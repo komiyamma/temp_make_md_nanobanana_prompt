@@ -31,6 +31,8 @@
 
 # 9-2. なんでイベントソーシングだと超大事？📜🔥
 
+![Append Only Scroll](./picture/es_cs_study_009_append_only.png)
+
 イベントソーシングは「状態を保存」じゃなくて「出来事（イベント）を積む」設計だったよね🔁✨
 そしてイベントは **基本的に追加専用（append-only）** で、履歴として残り続ける📚🧾
 だから一度「おかしなイベント」を出しちゃうと、ずっと残っちゃう可能性が高い😱💦
@@ -43,6 +45,8 @@
 ---
 
 # 9-3. 不変条件と“ただの入力チェック”の違い🧠🧁
+
+![Validation vs Invariant Funnel](./picture/es_cs_study_009_validation_funnel.png)
 
 ここ、よく混ざるので分けようね😊✨
 
@@ -71,6 +75,8 @@ graph TD
 
 # 9-4. 不変条件はどこに置くのが正解？📍🧩
 
+![Aggregate Fortress](./picture/es_cs_study_009_aggregate_fortress.png)
+
 結論：**ドメインの中心（のちの章で出てくる Aggregate の中）** に集めるのが基本だよ📌✨
 （Aggregate は10章で詳しくやるけど、今は「1つのルールのまとまり」くらいでOK😊）
 
@@ -94,6 +100,8 @@ graph TD
 # 9-6. 例で理解しよう🛒✨（ショッピングカート）
 
 ## カートの不変条件（例）🧷
+
+![ES Processing Flow](./picture/es_cs_study_009_processing_flow.png)
 
 1. **チェックアウト済みなら変更禁止** 🔒
 2. **数量は1以上** ➕
@@ -214,6 +222,8 @@ public static class CartUseCases
 
 # 9-8. ミニ演習📝✨（不変条件を3つ書いてみよう）
 
+![Writing Rules Exercise](./picture/es_cs_study_009_exercise_blackboard.png)
+
 題材はあなたの教材ドメイン（カートでもToDoでも家計簿でもOK）でやってね😊💕
 
 ## ステップ1：まず自然言語で3つ✍️
@@ -243,6 +253,8 @@ public static class CartUseCases
 
 # 9-9. 不変条件 → テスト観点への変換🧪✨
 
+![Rule to Test Conversion](./picture/es_cs_study_009_rule_to_test.png)
+
 不変条件は、そのまま **失敗テスト** になりやすいよ😊🧠
 
 例：空カートはチェックアウトできない🕳️❌
@@ -256,6 +268,8 @@ public static class CartUseCases
 ---
 
 # 9-10. よくある落とし穴😵‍💫⚠️
+
+![Scattered Rules Pitfall](./picture/es_cs_study_009_scattered_rules.png)
 
 ## ❶ 不変条件が散らばる🌀
 
