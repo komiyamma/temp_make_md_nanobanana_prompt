@@ -21,6 +21,8 @@ Result を受け取る側の鉄板はこれ👇
 
 ## 2) 今日のサンプル（Result と Error）🎁🧾
 
+![Result and Error Hierarchy](./picture/err_model_cs_study_018_class_sample.png)
+
 第16〜17章で作った “最小Result” を想定して、受け取り側の練習をするね😊
 （ここでは **Match / switch** を使うために、必要な形だけ置くよ）
 
@@ -47,6 +49,8 @@ public readonly record struct Result<T>(T? Value, AppError? Error)
 
 ## 3) 受け取り側の基本形①：if で “失敗だけ先に返す” 🧯
 
+![Early Return Pattern](./picture/err_model_cs_study_018_early_return.png)
+
 一番わかりやすい型👇（まずこれでOK！）
 
 ```csharp
@@ -70,6 +74,8 @@ OpenThanksPage(result.Value!);
 ---
 
 ## 4) 受け取り側の基本形②：switch で “エラー型ごとに対応を固定” 🔀
+
+![Switch Logic for UI](./picture/err_model_cs_study_018_switch_ui.png)
 
 Resultの良さは、**失敗の種類を switch で“仕様として分岐”できる**ところ🎯
 
@@ -118,6 +124,8 @@ public static UiMessage ToUiMessage(AppError error) =>
 
 ## 5) Match を使うと “Result分岐が1か所に集約” できる🎯✨
 
+![Match Expression Flow](./picture/err_model_cs_study_018_match_flow.png)
+
 if でもOKだけど、**UI側で「成功→画面遷移 / 失敗→表示」をまとめたい**時は Match が気持ちいい😊
 
 ```csharp
@@ -141,6 +149,8 @@ else
 ---
 
 ## 6) ちょい実戦：API風に「成功は200、失敗はいい感じに返す」🌐🚦
+
+![API Response Mapping](./picture/err_model_cs_study_018_api_mapping.png)
 
 （ProblemDetails は第22章でガッツリやるから、ここは雰囲気だけね😊）
 
@@ -168,6 +178,8 @@ app.MapPost("/buy", (BuyRequest req, PurchaseService svc) =>
 ---
 
 ## 7) よくある事故ポイント（ここだけ避ければ勝ち🥇）⚠️
+
+![Common Result Pitfalls](./picture/err_model_cs_study_018_pitfalls.png)
 
 ### 事故①：成功前提で `Value!` を触る😇💥
 

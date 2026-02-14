@@ -7,6 +7,8 @@
 
 ## 1) まず結論！境界は「入口」と「出口」だけ見ればOK🧠🚪➡️🚪
 
+![Entry and Exit Gates](./picture/err_model_ts_study_008_entry_exit_gates.png)
+
 レイヤ構造（UI→Service→Repository…）って便利なんだけど、TS/JSのエラーは **非同期** と **throw何でもOK問題** で、レイヤだけで考えると迷子になりがち😵‍💫
 
 だからこう考えるのが最強👇✨
@@ -49,6 +51,8 @@
 ---
 
 ## 4) 例外境界で“やること”はだいたい5つだけ✅🧤✨
+
+![5 Boundary Tasks](./picture/err_model_ts_study_008_boundary_tasks.png)
 
 境界は「なんでも屋」じゃなくて、**外界⇄アプリ内部の変換所**だよ🚉✨
 ここでやるのはこの5つだけに絞ると強い💪
@@ -99,6 +103,8 @@ flowchart LR
 
 ## 5) 例外境界で“やらないこと”🙅‍♀️🧱
 
+![Boundary Anti-Patterns](./picture/err_model_ts_study_008_boundary_antipatterns.png)
+
 境界でこれをやると、設計がぐちゃる率が爆上がり😱
 
 * ❌ 業務ルール判断（ドメイン判定）を境界でやる
@@ -111,6 +117,8 @@ flowchart LR
 ---
 
 ## 6) TS/Reactだと“入口と出口”が特に効く理由⚡🧠
+
+![React Error Boundary Scope](./picture/err_model_ts_study_008_react_scope.png)
 
 ### Reactのエラーバウンダリは万能じゃない😳
 
@@ -200,6 +208,8 @@ async function onSubmit() {
 
 ## 8) ミニ例：API側の境界（入口：ルート、出口：レスポンス）🌐🚪🎁
 
+![API Boundary Flow](./picture/err_model_ts_study_008_api_flow.png)
+
 まだ“分類”は次章だけど、ここでは「境界の形」だけ作っちゃう😊✨
 **やること：catch → 正規化 → レスポンスへ変換**！
 
@@ -239,6 +249,8 @@ export function withHttpBoundary(
 ---
 
 ## 9) ミニ演習：自分のアプリの“入口と出口”を列挙して境界を引こう🖊️🗺️✨
+
+![Mapping Entry and Exit](./picture/err_model_ts_study_008_mapping_exercise.png)
 
 ### ステップ1：入口を全部書く🚪
 
