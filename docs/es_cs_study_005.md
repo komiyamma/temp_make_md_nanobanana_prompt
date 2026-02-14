@@ -10,6 +10,8 @@
 
 ## 5-1. まず「GitHubで何を管理するか」超ざっくり整理🧺✨
 
+![GitHub Flow](./picture/es_cs_study_005_github_flow.png)
+
 **GitHub** で管理するのは、ざっくりこの3つだよ😊
 
 ```mermaid
@@ -33,6 +35,8 @@ graph LR
 
 AIに強い人ほど、実は **プロンプトが上手い** というより、**作業の順番がいつも同じ** なんだよね😊🧠
 
+![AI Development Cycle](./picture/es_cs_study_005_ai_cycle.png)
+
 ```mermaid
 flowchart LR
     A[下書き生成] --> B[レビュー]
@@ -54,6 +58,8 @@ flowchart LR
 ---
 
 ## 5-3. “AIに渡す情報”は最小でOK！でも「形」は揃える📌😊
+
+![Prompt Ingredients](./picture/es_cs_study_005_prompt_ingredients.png)
 
 AIが迷子になるのは、だいたい **前提がバラバラ** なとき😵‍💫
 だから、毎回この **4点セット** を渡すのがおすすめ✨
@@ -87,6 +93,8 @@ AIが迷子になるのは、だいたい **前提がバラバラ** なとき�
 ---
 
 ## 5-4. PR（Pull Request）を“レビューしやすい形”にする🧁🔎
+
+![PR Template](./picture/es_cs_study_005_pr_template.png)
 
 PRは「差分」だけじゃなくて、**説明** が超大事！
 説明が揃ってると、AIレビューも人間レビューも当たりやすいよ😊✨
@@ -124,6 +132,8 @@ PRテンプレは、指定の場所にファイルを置くだけで使えるよ
 
 ## 5-5. “レビューを自動で呼ぶ”CODEOWNERS（チーム開発の入口）👥✨
 
+![Code Owners Map](./picture/es_cs_study_005_codeowners_map.png)
+
 ちょっと背伸びだけど、**レビュー担当を自動で割り当て** できる仕組みもあるよ📌
 `CODEOWNERS` は `.github/` などに置ける（場所の優先順位も決まってる）よ。([GitHub Docs][4])
 
@@ -136,6 +146,8 @@ PRテンプレは、指定の場所にファイルを置くだけで使えるよ
 ---
 
 ## 5-6. GitHub Actionsで「テストは自動で回す」🌀🧪
+
+![CI Robot](./picture/es_cs_study_005_ci_robot.png)
 
 PRを出したら、**自動でテストが走る** ようにすると最高にラク😊
 ワークフローは `.github/workflows` に YAML を置く仕組みだよ。([GitHub Docs][5])
@@ -208,6 +220,8 @@ jobs:
 ---
 
 # ✅ ステップ② レビュー：AIに“自分でダメ出し”させる🔍🤖
+
+![AI Self Review](./picture/es_cs_study_005_ai_review.png)
 
 ## やること
 

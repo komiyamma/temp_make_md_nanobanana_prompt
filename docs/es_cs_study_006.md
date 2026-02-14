@@ -153,6 +153,8 @@ Swaggerが出たら、CRUDは完成〜🎉🙌
 
 # 3. ここからが本番：追加要求が来る😇📮
 
+![Requirement Avalanche](./picture/es_cs_study_006_req_avalanche.png)
+
 CRUDが動いた瞬間に、だいたいこう言われるよ👇（ほんとに“あるある”😵‍💫）
 
 ## 追加要求A：変更履歴を見たい📜👀
@@ -184,6 +186,8 @@ CRUDが動いた瞬間に、だいたいこう言われるよ👇（ほんとに
 
 ## 4-1. 素直にやる案：監査ログテーブルを足す📚
 
+![Audit Log Complexity](./picture/es_cs_study_006_audit_chaos.png)
+
 例：`TodoAuditLogs` を追加して、更新前後を保存する…みたいなやつ。
 
 * ✅ できる
@@ -199,6 +203,8 @@ CRUDが動いた瞬間に、だいたいこう言われるよ👇（ほんとに
 ---
 
 # 5. “時点Tの状態”をCRUDで出すのがなぜ大変？🧠💥
+
+![CRUD vs ES Update](./picture/es_cs_study_006_crud_vs_es.png)
 
 ## 状態保存モデルの本質😺
 
@@ -223,6 +229,8 @@ graph TD
 
 ## 例：時点TのToDo一覧を出す（監査ログ方式）
 
+![SQL Knot](./picture/es_cs_study_006_sql_knot.png)
+
 「ToDo本体」＋「監査ログ」を組み合わせて、時点Tの状態を復元するには…
 
 * ToDoが “いつ作られたか” が要る
@@ -235,6 +243,8 @@ graph TD
 ---
 
 # 6. この章のキモ：CRUDの“限界”チェックリスト✅🧾
+
+![Limit Warning Dashboard](./picture/es_cs_study_006_warning_dashboard.png)
 
 CRUD（状態保存）が苦しくなるサインはこれ👇
 
@@ -279,6 +289,8 @@ mindmap
 
 ### 演習A（おすすめ）：過去時点の一覧🕰️
 
+![Time Travel Dial](./picture/es_cs_study_006_time_dial.png)
+
 * 「指定時刻 `asOf`（例：2026-02-01T10:00:00Z）時点で未完了だったToDo一覧を返して」
 
 👉 必要になりがちな追加情報：
@@ -308,6 +320,8 @@ mindmap
 * 「テストの雛形も作って」
 
 ## 8-2. OpenAI Codex系に“将来要求”を出させる🔮
+
+![Future Complexity](./picture/es_cs_study_006_crystal_ball.png)
 
 * 「ToDoアプリに将来追加されそうな要求を10個出して。監査・履歴・検索・巻き戻し・同時更新も混ぜて。」
 * 「その要求が“状態保存CRUD”をどこから壊すかも説明して」
