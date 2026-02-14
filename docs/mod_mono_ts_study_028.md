@@ -32,6 +32,8 @@
 
 ## 2) 不変条件ってなに？🍰
 
+![Broken vs Valid Object](./picture/mod_mono_ts_study_028_broken_vs_valid.png)
+
 ![壊れたものは作らない (Build Only Valid)](./picture/mod_mono_ts_study_028_invariant_shield.png)
 
 ```mermaid
@@ -66,6 +68,8 @@ graph TD
 
 ## 3) “入力チェック”と“不変条件”は別物だよ🧠✨
 
+![Validation vs Invariant](./picture/mod_mono_ts_study_028_validation_vs_invariant.png)
+
 混ざると事故るので、役割分担しよ〜👇
 
 ### ✅ 入力チェック（Validation）
@@ -84,6 +88,8 @@ graph TD
 ---
 
 ## 4) 不変条件を守る“置き場所”はここ一択に近い📍
+
+![Guard Locations](./picture/mod_mono_ts_study_028_guard_locations.png)
 
 初心者が迷いやすいところだけど、基本は👇
 
@@ -105,6 +111,8 @@ graph TD
 
 ### Event（イベント）の例
 
+![Event Rules Visual](./picture/mod_mono_ts_study_028_event_rules_visual.png)
+
 * **タイトル**：空文字NG
 * **開催期間**：start < end
 * **定員**：capacity >= 1
@@ -119,6 +127,8 @@ graph TD
 ## 6) TypeScriptで“壊れない”を作る基本セット🧩✨
 
 ### (A) Value Object（VO）で「値の時点で守る」💎
+
+![Capacity Value Object](./picture/mod_mono_ts_study_028_vo_capacity.png)
 
 `Capacity` とか `EventPeriod` とかを VO にすると、めっちゃ事故減るよ😊
 
@@ -140,6 +150,8 @@ export class Capacity {
 ---
 
 ### (B) Aggregate Root に「更新メソッド」を置く🛡️
+
+![Direct Set Block](./picture/mod_mono_ts_study_028_direct_set_block.png)
 
 ```ts
 // modules/event/domain/Event.ts
@@ -266,6 +278,8 @@ describe("Event invariants", () => {
 ---
 
 ## 9) モジュール公開API側は「形」を整える（Zod例）🚪🧼
+
+![Zod Shape Sorter](./picture/mod_mono_ts_study_028_zod_shape_sorter.png)
 
 外から来るデータは信用しない！ってやつね😊
 Zod は「型推論できるバリデーション」って立ち位置でよく使われるよ📦 ([Zod][5])
