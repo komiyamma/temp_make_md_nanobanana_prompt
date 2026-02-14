@@ -49,6 +49,8 @@
 
 ## Raise位置を決める3つの判断軸🧭✨
 
+![Raise Point Decision Guide](./picture/mod_mono_cs_study_020_raise_decision.png)
+
 ### ① それは「集約の状態変化」？🧱
 
 例：Orderが `Paid` になった、`Shipped` になった
@@ -89,6 +91,8 @@ graph TD
 
 ## ざっくり構図（これが気持ちいいやつ）🧠🧩
 
+![Side Effects Delegation Flow](./picture/mod_mono_cs_study_020_side_effects_delegation.png)
+
 1. **集約**：状態を変える + イベントを `DomainEvents` に積む🧺
 2. **アプリ層**：保存（コミット）成功後に、積まれたイベントを配る📣
 3. **ハンドラ**：メール・通知・ログ・他モジュール連携などの副作用を担当📦
@@ -119,6 +123,8 @@ sequenceDiagram
 
 ### 1) Domain：イベントの型と、集約の土台🧱🔔
 
+![Domain Event Structure](./picture/mod_mono_cs_study_020_domain_event_structure.png)
+
 ```csharp
 namespace Ordering.Domain;
 
@@ -140,6 +146,8 @@ public abstract class AggregateRoot
 ```
 
 ### 2) Domain：Order集約で「事実成立の瞬間」にRaiseする🛒✅
+
+![Raise in Method Moment](./picture/mod_mono_cs_study_020_raise_in_method.png)
 
 ```csharp
 namespace Ordering.Domain;
@@ -179,6 +187,8 @@ public sealed class Order : AggregateRoot
 ```
 
 ### 3) Application：保存成功後にイベントを配る📦📣
+
+![Dispatch After Save Sequence](./picture/mod_mono_cs_study_020_dispatch_after_save.png)
 
 ```csharp
 namespace Ordering.Application;
@@ -230,6 +240,8 @@ public sealed class PayOrderUseCase
 ---
 
 ## ちょい上級🍰：EF Coreで“コミット後に配る”を自動化する話（軽く）
+
+![EF Core Interceptor Automation](./picture/mod_mono_cs_study_020_interceptor_concept.png)
 
 「`SaveChanges` のタイミングで配りたい」ってなったら、EF Coreには **SaveChangesInterceptor** があるよ🧩
 公式にも `SaveChangesInterceptor` が用意されてる（EF Core 10でもOK） ([Microsoft Learn][2])

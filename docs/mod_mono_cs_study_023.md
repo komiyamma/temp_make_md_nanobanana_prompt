@@ -61,6 +61,8 @@ graph LR
 
 ## 1) Outboxテーブル（最低限）🧱🗄️
 
+![Outbox Table Schema](./picture/mod_mono_cs_study_023_table_schema.png)
+
 「まず動く」最小カラムはこれ👇
 
 * `Id`：主キー（Guid）🔑
@@ -87,6 +89,8 @@ classDiagram
 
 ## 2) EF Core のエンティティを作る🧩
 
+![JSON Serialization](./picture/mod_mono_cs_study_023_json_serialization.png)
+
 ```csharp
 using System.Text.Json;
 
@@ -109,6 +113,8 @@ public sealed class OutboxMessage
 ---
 
 ## 3) DbContext に足す🧠🛠️
+
+![DbContext Integration](./picture/mod_mono_cs_study_023_dbcontext_integration.png)
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
@@ -139,6 +145,8 @@ public sealed class AppDbContext : DbContext
 ---
 
 ## 4) 「注文更新」＋「Outbox書き込み」を同じ SaveChanges に乗せる🧁✨
+
+![Transaction Boundary](./picture/mod_mono_cs_study_023_transaction_boundary.png)
 
 ここが本章のキモ‼️
 **1回の SaveChanges でまとめて保存**すると、EF Coreは（プロバイダが対応していれば）**トランザクションで包んでくれる**よ✅([Microsoft Learn][3])
@@ -199,6 +207,8 @@ public sealed class PayOrderService
 ---
 
 ## ミニ演習📝🌸
+
+![Payload Indentation](./picture/mod_mono_cs_study_023_payload_indentation.png)
 
 1. `OrderShipped` イベントも作って、発送処理でOutboxに積んでみよう🚚📦
 2. `Type` を `nameof(...)` じゃなくて `typeof(OrderPaid).FullName` にしてみよう🔎（あとでルーティングしやすいよ）

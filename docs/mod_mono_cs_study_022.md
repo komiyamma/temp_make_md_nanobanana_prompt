@@ -85,6 +85,8 @@ graph TD
 
 ### ケースB：DB失敗❌ / 送信成功✅（さらに怖い）
 
+![Ghost Message](./picture/mod_mono_cs_study_022_ghost_message.png)
+
 * DBには注文がない（ロールバック）
 * でもイベントだけ飛んだ
   → 受け手は「注文がある前提」で動く
@@ -130,6 +132,8 @@ graph LR
 
 ## 良い例😎：Outboxの考え方（第22章はここを理解する章！）📤✅
 
+![Outbox Concept Metaphor](./picture/mod_mono_cs_study_022_outbox_concept.png)
+
 ### アイデアはこれだけ！
 
 **イベントを送る前に、まず「送る予定」をDBに保存する。**
@@ -156,6 +160,8 @@ graph LR
 
 ### 1) 「DB成功なのに送れない」を“あとで回収”できる🔁
 
+![Outbox Recovery](./picture/mod_mono_cs_study_022_outbox_recovery.png)
+
 送信が失敗しても、Outboxに残ってるから
 **リトライで取り返せる**💪
 
@@ -176,6 +182,8 @@ DB更新がコミットされなかったら、Outboxにも書かれない。
 Outboxは「ズレ」を減らすけど、**別の現実**が出るよ👇
 
 ### ✅ 基本は “少なくとも1回” 配信（At-least-once）
+
+![At-Least-Once Delivery](./picture/mod_mono_cs_study_022_at_least_once.png)
 
 リトライすると、**同じイベントが2回届く**ことがある🔁
 だから次の章（第25章：冪等性🔁🛡️）が超重要になる！

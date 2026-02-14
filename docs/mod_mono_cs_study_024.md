@@ -26,6 +26,8 @@
 
 ## 良い例😎✅（“未送信→送信→完了”の状態管理）
 
+![Outbox State Machine](./picture/mod_mono_cs_study_024_state_machine.png)
+
 ![Outbox Dispatcher Flow](./picture/mod_mono_cs_study_024_dispatcher_flow.png)
 
 ```mermaid
@@ -66,6 +68,8 @@ Outboxの配信処理は、ざっくりこう👇
 ---
 
 ## 配信処理の3パターン🔁🧰（ポーリング/バッチ/別プロセス）
+
+![Delivery Patterns Trio](./picture/mod_mono_cs_study_024_delivery_patterns.png)
 
 ### ① ポーリング（アプリ内で定期実行）🔁🧃
 
@@ -141,6 +145,8 @@ graph TD
 ---
 
 ## 手を動かす（C#）⌨️😊：ポーリング版（BackgroundService）🔁
+
+![Background Service Loop](./picture/mod_mono_cs_study_024_bg_service_loop.png)
 
 「最小」なので、送信先はまず **Console出力** にします（外部MQは後でOK）🧪✨
 
@@ -311,6 +317,8 @@ BackgroundService の注意点（`ExecuteAsync` をブロックさせない等�
 
 ## “複数配達員”になったときのコツ👥🚚（重複を減らす）
 
+![Locking Mechanism](./picture/mod_mono_cs_study_024_locking_mechanism.png)
+
 スケールアウトや別プロセス化をすると、**同時に複数インスタンスがポーリング**します。
 
 ここで強いのが **「DBで行ロックして奪い合いを回避」** するやり方✨
@@ -348,6 +356,8 @@ BackgroundService の注意点（`ExecuteAsync` をブロックさせない等�
 ---
 
 ## ミニ演習📝✨
+
+![Exponential Backoff](./picture/mod_mono_cs_study_024_exponential_backoff.png)
 
 ### 演習1（必須）🧪
 

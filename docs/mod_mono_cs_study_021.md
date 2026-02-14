@@ -17,6 +17,8 @@
 
 ### ダメ例😇：集約の中で副作用やりまくり💥
 
+![Side Effects Hell](./picture/mod_mono_cs_study_021_side_effects_hell.png)
+
 「支払い完了したらメール送って、ポイント付与して、Slack通知して…」を **Orderの中で直に**やるやつ。
 
 * テストが地獄😵（メール送信のモック、外部API、ログ…）
@@ -63,6 +65,8 @@ graph LR
 
 ### ルール2️⃣：ハンドラは「反応して外へ投げる係」📩➡️
 
+![Handler Responsibilities](./picture/mod_mono_cs_study_021_clean_handlers.png)
+
 ハンドラの仕事はだいたいこの3つ：
 
 * 通知する（メール、Push、Slack）📣
@@ -70,6 +74,8 @@ graph LR
 * “次の仕事”を作る（別処理のキック）🚀
 
 ### ルール3️⃣：**ハンドラから集約を直接いじらない**🙅‍♀️
+
+![Handler Loop Ban](./picture/mod_mono_cs_study_021_handler_loop_ban.png)
 
 イベントを受けて、また同じ集約を更新すると…
 
@@ -97,6 +103,8 @@ graph LR
 ---
 
 ## 置き場所のおすすめ（モジュラーモノリス向け）🏠🧩
+
+![Handler Folder Structure](./picture/mod_mono_cs_study_021_folder_structure.png)
 
 Orderingモジュールの例：
 
@@ -242,6 +250,8 @@ public sealed class SendReceiptEmailOnOrderPaidHandler
 
 #### ✅ 監査ログハンドラ📝
 
+![Audit Log Handler](./picture/mod_mono_cs_study_021_audit_handler.png)
+
 ```csharp
 namespace Modules.Ordering.Application.EventHandlers;
 
@@ -268,6 +278,8 @@ public sealed class AuditOnOrderPaidHandler
 ---
 
 ### 6) “配送係（ディスパッチャ）”を用意する📦🚚
+
+![Dispatcher Mechanism](./picture/mod_mono_cs_study_021_dispatcher_mechanism.png)
 
 溜まっている DomainEvents を集めて、該当ハンドラ全部に配る係！
 
