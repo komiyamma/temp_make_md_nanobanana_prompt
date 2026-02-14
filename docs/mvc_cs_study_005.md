@@ -17,6 +17,8 @@ CampusTodo の「一覧表示」を、**読みやすく・きれいに**して�
 
 ## まず大事：Viewって何する係？👀🎨
 
+![View as Chef Plating](./picture/mvc_cs_study_005_view_as_chef_plating.png)
+
 ![View Responsibility](./picture/mvc_cs_study_005_view_responsibility.png)
 
 
@@ -50,6 +52,8 @@ Todo一覧を「表っぽく」綺麗に表示する View を作るよ📋✨
 ---
 
 ## 実装方針：Viewを“文字列生成係”にすると強い💪✨
+
+![View String Factory](./picture/mvc_cs_study_005_view_string_factory.png)
 
 Consoleに直接 `WriteLine` してもいいんだけど、最初は **Viewが「表示文字列を作る」→ 最後に出力** の形がめっちゃ学びやすいよ😊
 
@@ -91,6 +95,8 @@ public sealed record TodoItem(
 
 ### 3) Viewのインターフェイスを作る（責務の境界線）🧱✨
 
+![Interface Contract](./picture/mvc_cs_study_005_interface_contract.png)
+
 ```csharp
 // Views/ITodoListView.cs
 using CampusTodo.Models;
@@ -111,6 +117,8 @@ public interface ITodoListView
 ---
 
 ### 4) Console用のViewを実装する🎨🖥️
+
+![Formatting Tools](./picture/mvc_cs_study_005_formatting_tools.png)
 
 ```csharp
 // Views/TodoListConsoleView.cs
@@ -207,6 +215,8 @@ Console.Write(view.Render(items));
 
 ## よくある事故ポイント😇💥（ここで矯正しよ！）
 
+![Bad View Overreach](./picture/mvc_cs_study_005_bad_view_overreach.png)
+
 ### 🚫 ViewでやりがちNG
 
 * `item.IsDone = true;` みたいに **更新してしまう**
@@ -231,6 +241,8 @@ Viewのメソッドを見て、これが入ってたら黄色信号🚥💛
 ## ミニ演習📝✨（ちゃんと身につくやつ）
 
 ### 演習A：表示フォーマットを3種類作る🎨
+
+![Output Variations](./picture/mvc_cs_study_005_format_variations.png)
 
 同じ items を、次の3パターンで表示してみて〜✨
 
