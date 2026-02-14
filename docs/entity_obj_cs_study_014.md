@@ -148,6 +148,8 @@ classDiagram
 
 ## 4-3. ルールをメソッドに閉じ込める🏠✨
 
+![control_panel](./picture/entity_obj_cs_study_014_control_panel.png)
+
 Orderに「やっていいこと」だけを用意する感じ！
 
 * `AddLine(...)`（明細追加）➕
