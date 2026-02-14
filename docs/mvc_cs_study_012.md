@@ -38,6 +38,8 @@ Controllerが、こんな感じになってくるやつ👇
 
 ## 2) Service層ってなにをするの？🥗✨
 
+![Service Chef](./picture/mvc_cs_study_012_service_chef.png)
+
 一言でいうと…
 
 > **「アプリとしての処理（ユースケース）」をまとめる場所**🧠✨
@@ -99,6 +101,8 @@ flowchart TD
 
 ## 4) 「どこに何を書く？」判断基準🚦🧠✨
 
+![Traffic Control Map](./picture/mvc_cs_study_012_traffic_control_map.png)
+
 ### Controllerに書く✅（交通整理）
 
 * 入力を受け取る（文字列）🧾
@@ -154,6 +158,8 @@ public sealed record AppResult(bool IsSuccess, string Message)
 ---
 
 ### 5-3) TodoService（追加・完了）を作る🥗✅
+
+![Relay Race](./picture/mvc_cs_study_012_relay_race.png)
 
 ここではまだ永続化しないので、いったん **List<TodoItem>** を握ってOK👌✨
 （保存は次の章以降で綺麗に分離する💾）
@@ -330,6 +336,8 @@ public sealed class TodoController
 ---
 
 ## 7) よくある落とし穴⚠️😵‍💫
+
+![Fat Service Trap](./picture/mvc_cs_study_012_fat_service_trap.png)
 
 * **Serviceが“第二のController”になって太る**🍔
   → ユースケース単位でメソッドを分けて、長くなったら小さく分割✂️

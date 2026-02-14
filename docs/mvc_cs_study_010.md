@@ -45,6 +45,8 @@ IDE も **Visual Studio 2026** のリリースノートが公開されてる🛠
 
 ## 3) ViewModelって結局なに？🧠✨（超ざっくり）
 
+![ViewModel Container](./picture/mvc_cs_study_010_viewmodel_container.png)
+
 **View が描画に必要な情報だけを持つ、表示専用の入れ物**だよ🧺💕
 
 * だいたい `string` が増える（表示テキスト化するから）📝
@@ -123,6 +125,8 @@ public sealed record TodoListViewModel(
 ---
 
 ### Step 3：ViewModel を作る場所を決める🏭✨（Factory / Mapper）
+
+![ViewModel Factory](./picture/mvc_cs_study_010_viewmodel_factory.png)
 
 初心者におすすめはこれ👇
 
@@ -267,6 +271,8 @@ public sealed class TodoController
 
 ### Step 5：View を “ViewModelだけ” で描画する🎨✨
 
+![View Blindness](./picture/mvc_cs_study_010_view_blindness.png)
+
 View はもう Model を知らなくてOK🙆‍♀️（気持ちいい分離〜！）
 
 ```csharp
@@ -298,6 +304,8 @@ public sealed class ConsoleTodoView : ITodoView
 ---
 
 ## 6) ミニ演習（やってみよ〜！）🧪💕
+
+![Display Logic Examples](./picture/mvc_cs_study_010_display_logic_examples.png)
 
 ### 演習A：完了済みは期限表示を短くする✂️✨
 

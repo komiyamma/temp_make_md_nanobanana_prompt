@@ -36,6 +36,8 @@ ASP.NET Core MVC でも「URL → アクション」の対応を **ルート**�
 
 ## 2. まず、ありがちな“if地獄”を体感しよ😇🧨
 
+![If-Else Hell](./picture/mvc_cs_study_008_if_else_hell.png)
+
 最初はだいたいこうなる：
 
 ```csharp
@@ -77,6 +79,8 @@ else
 ---
 
 ## 3. 解決アイデア：コマンド辞書（ルート表）🗂️✨
+
+![Command Lookup Table](./picture/mvc_cs_study_008_lookup_table.png)
 
 ![Routing Map](./picture/mvc_cs_study_008_routing_map.png)
 
@@ -125,6 +129,8 @@ public sealed record CommandDefinition(
 ---
 
 ### 4.2 CommandRouter（振り分け係）🛣️➡️🎯
+
+![Tokenizer Chopping](./picture/mvc_cs_study_008_tokenizer_chop.png)
 
 ```csharp
 public sealed class CommandRouter
@@ -198,6 +204,8 @@ flowchart TD
 ```
 
 ## 5. Controllerに組み込もう🎮➡️🧠✨
+
+![Controller Delegating to Router](./picture/mvc_cs_study_008_controller_router_delegation.png)
 
 ここからが「Controller入門②」っぽいところだよ〜！
 
@@ -291,6 +299,8 @@ public sealed class TodoController
 
 ## 6. View側：help表示をちょい足ししよ📺✨
 
+![Help Menu](./picture/mvc_cs_study_008_help_menu.png)
+
 ```csharp
 public sealed class TodoView
 {
@@ -349,6 +359,8 @@ public sealed class TodoView
 ---
 
 ## 9. AI活用🤖💡（この章でめっちゃ相性いい！）
+
+![AI Routing Brainstorm](./picture/mvc_cs_study_008_ai_routing_brainstorm.png)
 
 使い方は「丸投げ」じゃなくて、**案を出させて自分で選ぶ**のがコツだよ✂️✨
 
