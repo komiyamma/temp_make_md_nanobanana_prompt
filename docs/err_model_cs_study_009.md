@@ -7,6 +7,8 @@
 
 ## 1) まず整理！「想定内の失敗」vs「バグ」🚦💥
 
+![err_model_cs_study_009_expected_vs_bug.png](./picture/err_model_cs_study_009_expected_vs_bug.png)
+
 ここ、超大事ポイントだよ🫶✨
 
 ### ✅ 想定内の失敗（＝仕様の範囲内）
@@ -30,6 +32,8 @@
 
 ## 2) 不変条件（Invariant）ってなに？🧱✨
 
+![err_model_cs_study_009_invariant_pillar.png](./picture/err_model_cs_study_009_invariant_pillar.png)
+
 **不変条件**は「そのオブジェクト（や処理）が正しいなら、常に成立してる条件」だよ✅
 
 たとえば「推し活グッズ購入管理🛍️💖」なら…
@@ -44,6 +48,8 @@
 ---
 
 ## 3) Fail Fast ってなに？⚡🚨
+
+![err_model_cs_study_009_fail_fast_trip.png](./picture/err_model_cs_study_009_fail_fast_trip.png)
 
 Fail Fast は、ざっくり言うと
 
@@ -78,6 +84,8 @@ public static void GuardPositive(int value, string paramName)
 
 ### パターンB：不変条件はコンストラクタで守る（“常に正しい”モデル）🧱💎
 
+![err_model_cs_study_009_constructor_bouncer.png](./picture/err_model_cs_study_009_constructor_bouncer.png)
+
 「作れた時点で正しい」を目指すと、バグ激減するよ😊
 
 ```csharp
@@ -100,6 +108,8 @@ public readonly record struct Budget(decimal Amount)
 
 ### パターンC：アサーション（Debug.Assert / Trace.Assert）で“ここ絶対おかしい”を明示する🧨🧠
 
+![err_model_cs_study_009_debug_assert.png](./picture/err_model_cs_study_009_debug_assert.png)
+
 「ここ通ったらバグだよ！」の旗を立てるやつ🚩
 
 ```csharp
@@ -114,6 +124,8 @@ Debug.Assert(total >= 0, "total should never be negative");
 ---
 
 ## 5) 「ユーザー表示」と「ログ」を分ける考え方🫶🧾🔎
+
+![err_model_cs_study_009_user_vs_dev_log.png](./picture/err_model_cs_study_009_user_vs_dev_log.png)
 
 Fail Fast って「ユーザーに怖いエラーを見せる」って意味じゃないよ🙅‍♀️💦
 

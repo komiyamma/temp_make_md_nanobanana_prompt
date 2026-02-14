@@ -31,11 +31,15 @@
 
 ### ❌ ダメ例A：握りつぶし
 
+![err_model_cs_study_012_swallowing_exception.png](./picture/err_model_cs_study_012_swallowing_exception.png)
+
 * 何が起きたか分からない
 * ログも残らない
 * ユーザーには謎の失敗
 
 ### ❌ ダメ例B：全部throwで上に丸投げ
+
+![err_model_cs_study_012_rethrow_chaos.png](./picture/err_model_cs_study_012_rethrow_chaos.png)
 
 * UI/APIまで例外が到達して、表示もHTTPもバラバラ😵‍💫
 * 再試行判断もできない
@@ -60,6 +64,8 @@
 
 ## 5) 型を用意しよう（最小構成）🧰✨
 
+![err_model_cs_study_012_result_structure.png](./picture/err_model_cs_study_012_result_structure.png)
+
 > ここは「教材用ミニ実装」だよ😊（後の章で洗練できる）
 
 ```csharp
@@ -82,6 +88,8 @@ public readonly record struct Result<T>(bool IsSuccess, T? Value, InfraError? Er
 ---
 
 ## 6) 例外分類ルール（まずはこの6つだけ）🚦🧠
+
+![err_model_cs_study_012_classification_bins.png](./picture/err_model_cs_study_012_classification_bins.png)
 
 境界で拾うのは基本「インフラ起因」ね🌩️
 逆に、**バグっぽい例外は変換しない**（Fail Fast⚡）
@@ -167,6 +175,8 @@ public static class InfraExceptionMapper
 
 💡コツ：
 
+![err_model_cs_study_012_retryable_flag.png](./picture/err_model_cs_study_012_retryable_flag.png)
+
 * **Retryable=true** は「やってもいい可能性が高い」だけに絞るのが安全🔁
 * “未知” を何でもリトライにしない（地獄になる😇）
 
@@ -219,6 +229,8 @@ public sealed class InventoryClient
 ここ、めっちゃ大事ポイント3つね🥹✨
 
 1. **キャンセルは変換しない**（ユーザーがやめただけ🛑）
+
+![err_model_cs_study_012_cancellation_vs_error.png](./picture/err_model_cs_study_012_cancellation_vs_error.png)
 2. **境界でだけ例外→Result変換**
 3. **Resultに“再試行の意図”を乗せる**🚦
 

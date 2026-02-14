@@ -30,6 +30,8 @@ ASP.NET Coreだと、外側（HTTPパイプライン）で `UseExceptionHandler`
 
 ## 例外境界がない世界😱（あるある）
 
+![err_model_cs_study_010_no_boundary_chaos.png](./picture/err_model_cs_study_010_no_boundary_chaos.png)
+
 例外境界を決めてないと、こうなりがち👇💦
 
 * 画面/Controller/Endpointごとに `try/catch` が増殖🌱🌱🌱
@@ -69,7 +71,11 @@ ASP.NET Coreだと、外側（HTTPパイプライン）で `UseExceptionHandler`
 
 ## じゃあ、境界はどこに置くの？📍✨（おすすめ3パターン）
 
+![err_model_cs_study_010_boundary_placement_map.png](./picture/err_model_cs_study_010_boundary_placement_map.png)
+
 ### ① Web APIなら「HTTPパイプラインの入口」🚪🌐（最強）
+
+![err_model_cs_study_010_global_handler_funnel.png](./picture/err_model_cs_study_010_global_handler_funnel.png)
 
 * ASP.NET Core の `UseExceptionHandler` がまさにこれ✨
 * 未処理例外をキャッチして、別の処理へ回したり、ログを残したりできるよ🧯📝 ([Microsoft Learn][1])
@@ -95,6 +101,8 @@ ASP.NET Coreだと、外側（HTTPパイプライン）で `UseExceptionHandler`
 
 ## 例外境界のルール（これを1枚にして持ち帰ろう📄✨）
 
+![err_model_cs_study_010_boundary_policy.png](./picture/err_model_cs_study_010_boundary_policy.png)
+
 この章の成果物はこれっ👇😊💕
 
 ### ✅ 例外境界ポリシー（最小版）
@@ -114,6 +122,8 @@ ASP.NET Coreだと、外側（HTTPパイプライン）で `UseExceptionHandler`
 ---
 
 ## ハンズオン①：最小の例外境界（Minimal API）🧪✨
+
+![err_model_cs_study_010_problemdetails_card.png](./picture/err_model_cs_study_010_problemdetails_card.png)
 
 ```mermaid
 sequenceDiagram
@@ -203,6 +213,8 @@ app.Run();
 ---
 
 ## ちょい上級：`IExceptionHandler` で“知ってる例外だけ”丁寧に扱う🧯💎
+
+![err_model_cs_study_010_iexceptionhandler_specialist.png](./picture/err_model_cs_study_010_iexceptionhandler_specialist.png)
 
 ASP.NET Core には `IExceptionHandler` って仕組みがあって、**中央で既知の例外を扱える**んだ〜！ ([Microsoft Learn][1])
 登録は `AddExceptionHandler<T>` でできるよ🧩 ([Microsoft Learn][3])

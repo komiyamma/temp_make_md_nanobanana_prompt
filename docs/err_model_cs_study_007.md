@@ -7,6 +7,8 @@
 
 ## 1) ドメインエラーってなに？💡💗
 
+![err_model_cs_study_007_business_rule_violation.png](./picture/err_model_cs_study_007_business_rule_violation.png)
+
 **ドメインエラー＝「業務ルール的にダメです🙅‍♀️」の失敗**だよ✨
 システムが壊れたわけじゃなくて、**仕様どおりに止めてあげる失敗**。
 
@@ -26,6 +28,8 @@
 ---
 
 ## 2) ドメインエラーの「いい設計」って？🫶✨
+
+![err_model_cs_study_007_friendly_error_ui.png](./picture/err_model_cs_study_007_friendly_error_ui.png)
 
 ドメインエラーは、**ユーザーが次の行動を決められる情報**を持ってるのが理想だよ😊🌸
 
@@ -78,6 +82,8 @@
 
 ## 5) 命名ルール（おすすめの型）🏷️✨
 
+![err_model_cs_study_007_naming_convention.png](./picture/err_model_cs_study_007_naming_convention.png)
+
 ### ✅ 名前（開発者向け）
 
 **`<文脈>.<理由>`** がすごく読みやすいよ😊
@@ -105,6 +111,8 @@
 ---
 
 ## 6) まずは“ドメインエラー型”を作る（最小実装）🧷✨
+
+![err_model_cs_study_007_error_hierarchy.png](./picture/err_model_cs_study_007_error_hierarchy.png)
 
 ```mermaid
 classDiagram
@@ -181,6 +189,8 @@ public sealed record CouponExpired(
 
 ### 使う側の超シンプル例（この章の範囲）✨
 
+![err_model_cs_study_007_validation_flow.png](./picture/err_model_cs_study_007_validation_flow.png)
+
 「成功なら `null`、失敗なら `DomainError` を返す」でも十分練習になるよ😊
 
 ```csharp
@@ -243,6 +253,8 @@ Action : 受取後に返品手続きを案内する
 ---
 
 ## 8) AI活用（命名＆文言づくりがめちゃ強い🤖✨）
+
+![err_model_cs_study_007_ai_naming_helper.png](./picture/err_model_cs_study_007_ai_naming_helper.png)
 
 ### 🧠 命名案を10個出させるプロンプト例
 
