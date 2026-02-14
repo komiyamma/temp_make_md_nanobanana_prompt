@@ -83,6 +83,8 @@ catch (Exception ex)
 
 Microsoftの静的解析ルールでも **「一般的な例外型をcatchしないで」** って出るくらい定番の地雷だよ💣（CA1031） ([Microsoft Learn][3])
 
+![err_model_cs_study_004_catch_specific.png](./picture/err_model_cs_study_004_catch_specific.png)
+
 ### ✅ 基本の改善：**捕まえるのは“想定してる例外だけ”**🎯
 
 ```csharp
@@ -112,6 +114,8 @@ catch (TimeoutException ex)
 ## 4-3. やっちゃダメ③：情報欠落throw📉💥（原因が消える投げ方）
 
 ここが一番もったいないやつ😭
+
+![err_model_cs_study_004_throw_vs_throw_ex.png](./picture/err_model_cs_study_004_throw_vs_throw_ex.png)
 
 ### ❌ ダメ：`throw ex;`（スタックトレースがリセットされる🧨）
 
@@ -145,6 +149,8 @@ catch (Exception ex)
 }
 ```
 
+![err_model_cs_study_004_wrapping_exception.png](./picture/err_model_cs_study_004_wrapping_exception.png)
+
 ### ✅ ラップするなら“原因をつなぐ”🔗
 
 ```csharp
@@ -160,8 +166,12 @@ catch (Exception ex)
 
 Microsoftのガイドでも「例外はこう扱うといいよ」がまとまってるので、超重要だけ拾うね😊 ([Microsoft Learn][5])
 
+![err_model_cs_study_004_exception_flow_control.png](./picture/err_model_cs_study_004_exception_flow_control.png)
+
 * ❌ **例外で通常フロー制御**（if の代わりに例外）
   ✅ まずは `if` / 事前チェックで回避🌱
+![err_model_cs_study_004_log_exception_object.png](./picture/err_model_cs_study_004_log_exception_object.png)
+
 * ❌ **例外メッセージだけログ**（ex を渡さない）
   ✅ `logger.LogError(ex, "...")` で例外まるごと渡す🔎
 * ❌ **catchして状態が中途半端なまま続行**
@@ -266,6 +276,8 @@ catch (Exception ex)
   「この try/catch を“想定している例外だけ捕まえる”形に直して。候補の例外型も提案して」
 
 ---
+
+![err_model_cs_study_004_checklist.png](./picture/err_model_cs_study_004_checklist.png)
 
 ## 4-7. 今日の成果物（1枚）📄✨：「例外やっちゃダメチェックリスト」✅
 

@@ -23,6 +23,8 @@
 
 ## 2. 「例外地獄あるある」😱🔥（見覚えあるやつ）
 
+![err_model_cs_study_001_swallow_exception.png](./picture/err_model_cs_study_001_swallow_exception.png)
+
 ### あるある①：握りつぶし（何も分からない）🫥
 
 ```csharp
@@ -45,6 +47,8 @@ public bool Purchase(string itemId)
 
 ---
 
+![err_model_cs_study_001_broad_catch.png](./picture/err_model_cs_study_001_broad_catch.png)
+
 ### あるある②：広すぎcatch（全部“想定内”みたいに見える）🪤
 
 `catch(Exception)` で全部捕まえると、
@@ -57,6 +61,8 @@ public bool Purchase(string itemId)
 「例外メッセージ文字列」に依存すると、環境や言語で変わって事故るよ〜😵‍💫
 
 ---
+
+![err_model_cs_study_001_definitions.png](./picture/err_model_cs_study_001_definitions.png)
 
 ## 3. エラー／失敗／バグ：言葉をそろえる🧩📝
 
@@ -76,6 +82,8 @@ public bool Purchase(string itemId)
 ## 4. “怖くない設計”ってこういうこと🫶🎀
 
 エラーモデリングをすると、世界がこう変わるよ〜✨
+
+![err_model_cs_study_001_friendly_ui.png](./picture/err_model_cs_study_001_friendly_ui.png)
 
 ### ✅ ユーザーにやさしくなる
 
@@ -152,6 +160,8 @@ public bool SaveProfile(Profile profile)
 3. ログに何が残る？🔎
 
 ---
+
+![err_model_cs_study_001_info_loss.png](./picture/err_model_cs_study_001_info_loss.png)
 
 ### 演習B：情報欠落throw探し🧯
 

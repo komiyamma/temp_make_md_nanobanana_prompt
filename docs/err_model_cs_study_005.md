@@ -21,6 +21,8 @@
 
 ![想定内と想定外の天秤](./picture/err_model_cs_study_005_decision_scale.png)
 
+![err_model_cs_study_005_expected_failure.png](./picture/err_model_cs_study_005_expected_failure.png)
+
 ### ✅ 想定内の失敗（Expected failure）🎁
 
 **「普通に起こりうる」** 失敗。
@@ -29,6 +31,8 @@
 * ユーザーに **やさしく説明できる** 💬🎀
 * 呼び出し側が **分岐して処理できる** 🔀✨
 * “よく起きる条件”は **例外で表現しない**（例外は重くなりがち）🧯💦 ([Microsoft Learn][2])
+
+![err_model_cs_study_005_unexpected_abnormality.png](./picture/err_model_cs_study_005_unexpected_abnormality.png)
 
 ### ❌ 想定外の異常（Unexpected abnormality）⚡
 
@@ -63,6 +67,8 @@ flowchart TD
     Resource -- No --> Unknown[調査が必要]
 ```
 
+![err_model_cs_study_005_decision_checklist.png](./picture/err_model_cs_study_005_decision_checklist.png)
+
 ### 🚦判断質問チェックリスト（超実用）
 
 1. **ユーザーが普通に使ってても起きうる？** 👩‍💻
@@ -82,6 +88,8 @@ flowchart TD
    → 再現しない・環境依存・ランダムっぽいなら、想定外（またはインフラ）として扱ってログ重視
 
 ---
+
+![err_model_cs_study_005_examples_comparison.png](./picture/err_model_cs_study_005_examples_comparison.png)
 
 ## 4. 具体例で感覚をつかもう🌰✨（超あるある）
 
@@ -103,6 +111,8 @@ flowchart TD
 * switch の default に来た（到達しない前提なのに…）
 
 ---
+
+![err_model_cs_study_005_code_atmosphere.png](./picture/err_model_cs_study_005_code_atmosphere.png)
 
 ## 5. コードの“雰囲気”だけ先に見よっか😊💻
 
@@ -196,6 +206,8 @@ if (order.IsConfirmed && order.OrderId is null)
 Visual Studio の **[例外設定]** で、どの例外で中断するか選べる（Debug > Windows > Exception Settings）🪟🛠️ ([Microsoft Learn][3])
 
 ---
+
+![err_model_cs_study_005_classification_sheet.png](./picture/err_model_cs_study_005_classification_sheet.png)
 
 ## 9. この章の「成果物（1枚）」📄✨
 

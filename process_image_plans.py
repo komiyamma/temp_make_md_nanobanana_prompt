@@ -1,123 +1,111 @@
-import json
 import sys
 import os
-import re
 
-def process_plans(json_file):
-    with open(json_file, 'r', encoding='utf-8') as f:
-        plans = json.load(f)
+PLAN_FILE = 'docs/picture/image_generation_plan.md'
 
-    plan_file = 'docs/picture/image_generation_plan.md'
+def get_next_id():
+    if not os.path.exists(PLAN_FILE):
+        return 1
+    with open(PLAN_FILE, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
 
-    # Read existing plan to get last ID
-    if os.path.exists(plan_file):
-        with open(plan_file, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
+    # Filter for table rows (lines starting with | and containing |)
+    table_lines = [l for l in lines if l.strip().startswith('|') and '|' in l]
 
-        last_id = 0
-        existing_filenames = set()
-        for line in lines:
-            if line.strip().startswith('|') and not line.strip().startswith('| ID'):
-                parts = [p.strip() for p in line.split('|')]
-                if len(parts) > 2 and parts[1].isdigit():
-                    last_id = int(parts[1])
-                if len(parts) > 3:
-                    existing_filenames.add(parts[3])
-    else:
-        print(f"Error: {plan_file} not found.")
-        return
+    if len(table_lines) < 2:
+        # Only header or nothing
+        return 1
 
-    new_lines = []
+    last_line = table_lines[-1]
+    try:
+        parts = [p.strip() for p in last_line.split('|')]
+        # parts[0] is usually empty string if line starts with |
+        # parts[1] should be ID
+        if len(parts) > 1 and parts[1].isdigit():
+             return int(parts[1]) + 1
+        return 1
+    except Exception:
+        return 1
 
-    for plan in plans:
-        filename = plan['filename']
-
-        # Update Markdown file
-        md_file = plan['file_path']
-        if not os.path.exists(md_file):
-            print(f"Error: Markdown file {md_file} not found.")
-            continue
-
-        with open(md_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-
-        # Step 1: Check if image is already in Markdown (Global Uniqueness Check)
-        existing_images_in_md = set()
-        md_images = re.findall(r'!\[.*?\]\((.*?)\)', content)
-        for img in md_images:
-            parts = img.split()
-            if parts:
-                url = parts[0] # Handle title
-                existing_images_in_md.add(os.path.basename(url))
-
-        html_images = re.findall(r'<img.*?src=["\'](.*?)["\']', content)
-        for img in html_images:
-            if img.strip():
-                existing_images_in_md.add(os.path.basename(img))
-
-        if filename in existing_images_in_md:
-            print(f"Skipping duplicate (already implemented in markdown): {filename}")
-            continue
-
-        # Step 2: Check Existing Plans and Resolve Conflict
-        base_name, ext = os.path.splitext(filename)
-        candidate_filename = filename
-        counter = 1
-
-        while candidate_filename in existing_filenames or candidate_filename in existing_images_in_md:
-            candidate_filename = f"{base_name}_{counter}{ext}"
-            counter += 1
-
-        if candidate_filename != filename:
-            print(f"Renamed {filename} to {candidate_filename}")
-            # Update relative link
-            if plan['relative_link'].endswith(filename):
-                plan['relative_link'] = plan['relative_link'][:-len(filename)] + candidate_filename
-            else:
-                plan['relative_link'] = plan['relative_link'].replace(filename, candidate_filename)
-            filename = candidate_filename
-
-        last_id += 1
-        # Format prompt: replace newlines with <br>
-        formatted_prompt = plan['prompt'].replace('\n', '<br>')
-
-        # Create table row
-        # Columns: ID | File Name | Proposed Image Filename | Relative Link Path | Prompt | Insertion Point
-        file_name_only = os.path.basename(plan['file_path'])
-        row = f"| {last_id} | {file_name_only} | {filename} | {plan['relative_link']} | {formatted_prompt} | {plan['insertion_point']} |\n"
-        new_lines.append(row)
-        existing_filenames.add(filename)
-
-        insertion_point = plan['insertion_point']
-        if insertion_point not in content:
-            print(f"Error: Insertion point '{insertion_point}' not found in {md_file}. Skipping image insertion.")
-            continue
-
-        if content.count(insertion_point) > 1:
-            print(f"Warning: Insertion point '{insertion_point}' found multiple times in {md_file}. Using the first occurrence.")
-
-        image_tag = f"\n\n![{filename}]({plan['relative_link']})\n\n"
-
-        # Strategy: Insert image *after* the insertion point line
-        # But we need to be careful not to break the insertion point if it's part of a larger block.
-        # We'll replace the insertion_point string with insertion_point + image_tag
-
-        new_content = content.replace(insertion_point, insertion_point + image_tag, 1)
-
-        with open(md_file, 'w', encoding='utf-8') as f:
-            f.write(new_content)
-
-        print(f"Processed: {filename} into {md_file}")
-
-    # Append to plan file
-    if new_lines:
-        with open(plan_file, 'a', encoding='utf-8') as f:
-            f.writelines(new_lines)
-        print(f"Appended {len(new_lines)} rows to {plan_file}")
-
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 process_image_plans.py <json_file>")
+def main():
+    if len(sys.argv) < 5:
+        print("Usage: python3 process_image_plans.py <markdown_file> <image_filename> <anchor_text> <insertion_mode>")
         sys.exit(1)
 
-    process_plans(sys.argv[1])
+    markdown_file = sys.argv[1]
+    image_filename = sys.argv[2]
+    anchor_text = sys.argv[3]
+    insertion_mode = sys.argv[4]
+
+    # Read prompt from stdin
+    prompt = sys.stdin.read().strip()
+    if not prompt:
+        print("ERROR: No prompt provided via stdin.")
+        sys.exit(1)
+
+    # Check Plan File Uniqueness
+    if os.path.exists(PLAN_FILE):
+        with open(PLAN_FILE, 'r', encoding='utf-8') as f:
+            plan_content = f.read()
+            if image_filename in plan_content:
+                print(f"SKIP: Image {image_filename} already in plan.")
+                sys.exit(0)
+
+    # Check Markdown File
+    if not os.path.exists(markdown_file):
+        print(f"ERROR: File {markdown_file} not found.")
+        sys.exit(1)
+
+    with open(markdown_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    if image_filename in content:
+        print(f"SKIP: Image {image_filename} already in {markdown_file}.")
+        sys.exit(0)
+
+    if anchor_text not in content:
+        print(f"ERROR: Anchor '{anchor_text}' not found in {markdown_file}.")
+        sys.exit(1)
+
+    if content.count(anchor_text) > 1:
+        print(f"ERROR: Anchor '{anchor_text}' appears {content.count(anchor_text)} times in {markdown_file}. Must be unique.")
+        sys.exit(1)
+
+    # Update Markdown
+    image_tag = f"![{image_filename}](./picture/{image_filename})"
+    new_content = ""
+
+    if insertion_mode == 'before':
+        new_content = content.replace(anchor_text, f"{image_tag}\n\n{anchor_text}")
+    elif insertion_mode == 'after':
+        new_content = content.replace(anchor_text, f"{anchor_text}\n\n{image_tag}")
+    else:
+         print(f"ERROR: Invalid insertion mode '{insertion_mode}'. Use 'before' or 'after'.")
+         sys.exit(1)
+
+    with open(markdown_file, 'w', encoding='utf-8') as f:
+        f.write(new_content)
+
+    # Append to Plan
+    next_id = get_next_id()
+    relative_link = f"./picture/{image_filename}"
+    formatted_prompt = prompt.replace('\n', '<br>').replace('|', r'\|')
+
+    row = f"| {next_id} | {os.path.basename(markdown_file)} | {image_filename} | {relative_link} | {formatted_prompt} | {anchor_text} |\n"
+
+    with open(PLAN_FILE, 'a', encoding='utf-8') as f:
+        # Check if file ends with newline
+        if os.path.exists(PLAN_FILE) and os.path.getsize(PLAN_FILE) > 0:
+             with open(PLAN_FILE, 'rb') as f_rb:
+                 try:
+                     f_rb.seek(-1, os.SEEK_END)
+                     if f_rb.read(1) != b'\n':
+                         f.write('\n')
+                 except OSError:
+                     pass
+        f.write(row)
+
+    print(f"SUCCESS: Added {image_filename} to plan and updated {markdown_file}")
+
+if __name__ == "__main__":
+    main()

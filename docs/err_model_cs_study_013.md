@@ -29,6 +29,8 @@
 
 ---
 
+![err_model_cs_study_013_format_choice.png](./picture/err_model_cs_study_013_format_choice.png)
+
 ## 2) どの形式で作る？（おすすめ2択）🗂️✨
 
 どっちでもOK。大事なのは **“一箇所に集約”** です😊
@@ -44,6 +46,8 @@
 * ただし差分レビューはMarkdownより弱め
 
 ---
+
+![err_model_cs_study_013_catalog_fields.png](./picture/err_model_cs_study_013_catalog_fields.png)
 
 ## 3) カタログに入れる項目（これだけで強い）📋✨
 
@@ -70,6 +74,8 @@ Problem Details は RFC 9457 で標準化されていて、`type/title/status/de
 
 ---
 
+![err_model_cs_study_013_naming_rules.png](./picture/err_model_cs_study_013_naming_rules.png)
+
 ## 4) エラーコードの命名ルール（ここが9割）🏷️✨
 
 エラーコードは **“変えにくい識別子”** なので、最初にルールを決めるのが超大事😊
@@ -89,6 +95,8 @@ Problem Details は RFC 9457 で標準化されていて、`type/title/status/de
 
 ---
 
+![err_model_cs_study_013_user_vs_dev_message.png](./picture/err_model_cs_study_013_user_vs_dev_message.png)
+
 ## 5) UserMessage と DevDetail を分けるコツ🫶🔧
 
 ここ、初心者が一番やりがちポイント！
@@ -106,6 +114,8 @@ Problem Details は RFC 9457 で標準化されていて、`type/title/status/de
 * ❌ 個人情報や秘密情報は入れすぎない（必要最小限）🔒
 
 ---
+
+![err_model_cs_study_013_catalog_example.png](./picture/err_model_cs_study_013_catalog_example.png)
 
 ## 6) 例：推し活グッズ購入管理🛍️💖（カタログ10件サンプル）
 
@@ -128,6 +138,8 @@ Problem Details は RFC 9457 で標準化されていて、`type/title/status/de
 HTTPエラーの返し方（ステータスやエラー情報の持ち方）は、Microsoft系APIでも “コードとメッセージをセットで返す” 形式がよく使われています ([Microsoft Learn][2])
 
 ---
+
+![err_model_cs_study_013_operational_rules.png](./picture/err_model_cs_study_013_operational_rules.png)
 
 ## 7) “運用で強くなる”エラーカタログ運用ルール（超おすすめ）🧠🔁
 

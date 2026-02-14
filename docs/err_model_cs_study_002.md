@@ -33,6 +33,8 @@
 
 ## 2) Visual Studio 2026 の入れ方（最短ルート）🚀🧁
 
+![err_model_cs_study_002_installer_workloads.png](./picture/err_model_cs_study_002_installer_workloads.png)
+
 ### 2-1. インストールで選ぶもの（ここだけ外さないで🙏）
 
 インストーラーの「ワークロード」で、まずはこの2つだけでOK✨
@@ -43,6 +45,8 @@
 あとから増やせるから、最初は軽めが正義😆🧡
 
 ---
+
+![err_model_cs_study_002_verify_sdk.png](./picture/err_model_cs_study_002_verify_sdk.png)
 
 ## 3) .NET 10 が入ってるか確認しよ 🔎✨
 
@@ -61,6 +65,8 @@ dotnet --list-sdks
 ---
 
 ## 4) 演習①：Consoleアプリを作って動かす 🧪🖥️
+
+![err_model_cs_study_002_console_app_creation.png](./picture/err_model_cs_study_002_console_app_creation.png)
 
 ### 4-1. Visual Studio で作る（いちばん簡単）
 
@@ -81,6 +87,8 @@ Console.WriteLine($"OS: {Environment.OSVersion}");
 ---
 
 ## 5) 演習②：最小のWeb APIを作って動かす 🌐🧪
+
+![err_model_cs_study_002_web_api_creation.png](./picture/err_model_cs_study_002_web_api_creation.png)
 
 ### 5-1. Visual Studio で作る（テンプレで一瞬✨）
 
@@ -123,6 +131,8 @@ dotnet run --project ApiPlayground
 
 AIって便利だけど、**使い方の型**を最初に決めると事故らないよ〜！🚗💨
 
+![err_model_cs_study_002_ai_rules.png](./picture/err_model_cs_study_002_ai_rules.png)
+
 ### 7-1. “3つだけ”守るルール ✅✅✅
 
 1. **生成したら必ず説明させる**（理解が本体！）
@@ -144,6 +154,8 @@ VS 2026のリリースノートでもCopilot機能の案内が続いてるよ ([
 ---
 
 ## 8) よくある詰まりポイント（秒で直す）🧯✨
+
+![err_model_cs_study_002_troubleshooting_cycle.png](./picture/err_model_cs_study_002_troubleshooting_cycle.png)
 
 ### トラブルシューティングの基本フロー🕵️‍♀️🛠️
 
