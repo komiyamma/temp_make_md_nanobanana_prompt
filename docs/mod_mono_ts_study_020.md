@@ -31,12 +31,16 @@ modules/
 
 ---
 
+![Synchronous Call](./picture/mod_mono_ts_study_020_sync_call.png)
+
 ## 同期呼び出しって何？📞🙂
 
 ここで言う「同期」は、ネットワーク越しじゃなくて **同一プロセス内の関数呼び出し** のことだよ〜☺️
 JS/TS的には `async/await` でもOK！（DBアクセスとかは非同期だからね）🌙✨
 
 ---
+
+![DTO Concept](./picture/mod_mono_ts_study_020_dto_box.png)
 
 ## 今日の主役：DTOってなに？📦💡
 
@@ -58,6 +62,8 @@ DTO（Data Transfer Object）は、**境界をまたぐための“持ち運び�
 * 参加登録時に「学生が存在するか」「表示名を取る」ために `students` を呼ぶ📞
 
 ---
+
+![Public API Facade](./picture/mod_mono_ts_study_020_public_api.png)
 
 ## 1) studentsモジュール：公開DTOと公開APIを作る🚪📦
 
@@ -106,6 +112,8 @@ export function createStudentsApi(repo: StudentRepository): StudentsApi {
 **eventsは “studentsの中身” を知らない**。知るのは `StudentsApi` と `StudentSummaryDTO` だけ！🛡️✨
 
 ---
+
+![Registration Sequence](./picture/mod_mono_ts_study_020_registration_flow.png)
 
 ## 2) eventsモジュール：studentsの公開APIを注入して使う🎬📞
 
@@ -228,10 +236,14 @@ export const eventsApi = createEventsApi({
 * 「便利だから全部返しちゃえ」→ 境界が溶ける🫠
 * DTOは **“このユースケースに必要な分だけ”** が正義✨
 
+![N+1 Problem (Chatty)](./picture/mod_mono_ts_study_020_n_plus_1.png)
+
 ### 事故3：呼び出し回数が多すぎる（チャットty）📞📞📞
 
 * 例：学生一覧100人に対して `getStudentSummary()` を100回…😱
 * 対策：**まとめ取得API**（`getStudentSummaries(ids)`）を公開APIに追加するのもアリ👌✨
+
+![Result Type Pattern](./picture/mod_mono_ts_study_020_result_type.png)
 
 ### 事故4：例外の投げっぱなし🎢
 
@@ -257,6 +269,8 @@ import境界の取り締まりは、Nxの `@nx/enforce-module-boundaries` とか
 ---
 
 ## AIに投げると強いプロンプト例🤖📝✨
+
+![Circular Dependency Warning](./picture/mod_mono_ts_study_020_circular_dependency.png)
 
 * 「`students` の domain を漏らさずに、`events` が欲しい情報だけ返すDTO案を3つ出して」📦
 * 「この公開APIが太りすぎてない？境界として適切？レビューして」👀

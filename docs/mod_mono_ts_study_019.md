@@ -13,6 +13,8 @@
 
 # 1) ドメイン層ってなに？🍰💎
 
+![Domain Layer as Center](./picture/mod_mono_ts_study_019_domain_center.png)
+
 **ドメイン層＝「アプリの中心にあるルールの保管庫」**だよ✨
 ここには「正しい振る舞い」だけを置くのが基本😊
 
@@ -48,6 +50,8 @@ graph TD
     style Pure fill:#e1bee7,stroke:#4a148c
     style Error fill:#ffcdd2,stroke:#c62828
 ```
+
+![Broken State Prevention](./picture/mod_mono_ts_study_019_broken_state_prevention.png)
 
 不正な値（例：参加費-100円）を **作れない** ようにするのが最強💪✨
 「チェックし忘れ」がなくなるよ🥹💖
@@ -102,6 +106,8 @@ graph TD
 ここからは “それっぽい” ドメインモデルを作ってみるね😊🧩
 （※この章は「値オブジェクト中心」だけど、Entity も軽く出すよ〜）
 
+![Domain Folder Structure](./picture/mod_mono_ts_study_019_folder_structure.png)
+
 ## フォルダ例📁✨
 
 * modules/
@@ -148,6 +154,8 @@ export const err = <T = never>(error: DomainError): Result<T> => ({ ok: false, e
 ```
 
 ---
+
+![Money Value Object](./picture/mod_mono_ts_study_019_money_vo.png)
 
 ## 5-2) Money（値オブジェクト）💰✨
 
@@ -211,6 +219,8 @@ export class EventTitle {
 
 ---
 
+![DateRange Logic](./picture/mod_mono_ts_study_019_daterange_logic.png)
+
 ## 5-4) DateRange（値オブジェクト）📅✨
 
 「開始日 <= 終了日」を絶対守るやつ〜🛡️✨
@@ -267,6 +277,8 @@ export class DateRange {
 ```
 
 ---
+
+![Event Entity Logic](./picture/mod_mono_ts_study_019_event_entity.png)
 
 ## 5-5) Event（エンティティ）🎪🏷️
 
@@ -332,6 +344,8 @@ export class Event {
 ---
 
 # 6) よくある罠あるある😵‍💫⚠️（先に潰そ！）
+
+![Anemic vs Rich Model](./picture/mod_mono_ts_study_019_anemic_vs_rich.png)
 
 * 「金額」や「日付」や「名前」を全部プリミティブ（number/string）で済ませる
   → 便利だけど、ルールが散って壊れる💥💔
