@@ -71,8 +71,8 @@ description: Generate an image generation plan for a range of Markdown files bas
 
         d.  **Append to Plan**:
             - **Duplicate Check (Concept)**:
-                - Check if there is already a row for the `<current_id>` with a similar concept to avoid redundant entries for the same ID.
-                - If a similar entry exists for this ID, **SKIP** appending.
+                - Check if there is already a row for the `<file_name>` with a similar concept to avoid redundant entries for the same file.
+                - If a similar entry exists for this file, **SKIP** appending.
             - **Safe Append**:
                 - If no duplicate concept is found:
                 - **Generate ID**: Determine the next available ID for the plan table. Read the last line of `docs/picture/image_generation_plan.md` to get the last ID, then increment it. (Do NOT use `<current_id>` from the loop as the table ID).
