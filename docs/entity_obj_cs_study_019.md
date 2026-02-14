@@ -54,6 +54,9 @@ graph TD
 
 ## 2) 集約が必要な理由（やさしく3つ）🧠✨
 
+![entity_obj_cs_study_019_consistency_boundary.png](./picture/entity_obj_cs_study_019_consistency_boundary.png)
+
+
 ### 理由①：ルール（不変条件）を“守りきる”ため🔒
 
 「注文は確定したら明細をいじれない」みたいなルールって、Order と OrderLine にまたがるよね？
@@ -75,6 +78,9 @@ graph TD
 
 ## 3) 超重要ワード3点セット📌💡
 
+![entity_obj_cs_study_019_keywords_triad.png](./picture/entity_obj_cs_study_019_keywords_triad.png)
+
+
 ### ✅ 集約（Aggregate）
 
 * まとめて **整合性を守る**オブジェクトの集合📦
@@ -92,6 +98,9 @@ graph TD
 ---
 
 ## 4) カフェ注文アプリで：どこを集約にする？☕️🧾
+
+![entity_obj_cs_study_019_order_placement.png](./picture/entity_obj_cs_study_019_order_placement.png)
+
 
 ### 🎯まず結論：この章ではこう置くのが分かりやすい！
 
@@ -115,6 +124,9 @@ graph TD
 ---
 
 ## 5) いちばん大事：ルールを“言葉で”書こう✍️🌸
+
+![entity_obj_cs_study_019_rule_scroll.png](./picture/entity_obj_cs_study_019_rule_scroll.png)
+
 
 コードより先に、まず文章でOK！✨
 （この文章が、そのまま **メソッド**や **テスト名**になるよ🧪）
@@ -217,6 +229,9 @@ public readonly record struct Result(bool IsSuccess, string? Error)
 ---
 
 ## 7) テストで「箱のルール」を固定しよう🧪🧷
+
+![entity_obj_cs_study_019_test_black_box.png](./picture/entity_obj_cs_study_019_test_black_box.png)
+
 
 集約は **テストと相性がめちゃ良い**よ✨
 なぜなら「ルールが箱に集まる」から！
