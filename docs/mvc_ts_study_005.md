@@ -16,6 +16,8 @@
 
 ## 1) Viewの仕事ってなに？👀✨
 
+![View as Artist](./picture/mvc_ts_study_005_view_role_artist.png)
+
 Viewはね、ざっくりこう👇
 
 * ✅ **Modelの状態を画面に見せる**
@@ -95,6 +97,8 @@ Viewを作る前に、DOMの置き場所を決めよう📌✨
 ---
 
 ## 5) 実装していこう🛠️✨（Viewだけ作る）
+
+![View Implementation Components](./picture/mvc_ts_study_005_view_implementation_trio.png)
 
 ### 5-1) index.html（器を用意）🏠✨
 
@@ -249,6 +253,8 @@ export class TodoListView {
 
 ### ✅ ここ大事：`innerHTML` より `textContent` 寄りが安全👮‍♀️✨
 
+![textContent Safety](./picture/mvc_ts_study_005_textcontent_safety.png)
+
 ユーザー入力が混ざる表示で `innerHTML` を使うと、危険な文字列が混ざったときに事故りやすいの🥲
 MDNでも `innerHTML` の危険性と対策（Trusted Typesなど）が警告されてるよ。 ([MDN Web Docs][1])
 文字を入れるだけなら `textContent` が基本の安心枠💖 ([MDN Web Docs][2])
@@ -256,6 +262,8 @@ MDNでも `innerHTML` の危険性と対策（Trusted Typesなど）が警告さ
 ---
 
 ## 6) ミニ演習：仮データ3件を描画してみよう🧪📋✨
+
+![Mock Data Flow](./picture/mvc_ts_study_005_mock_data_flow.png)
 
 `main.ts` で、まずView単体を動かしてみるよ〜！
 
@@ -315,6 +323,8 @@ view.bindToggle((id) => console.log("Toggle requested:", id));
 ---
 
 ## 9) この章のセルフチェック✅💖
+
+![View Checklist](./picture/mvc_ts_study_005_checklist.png)
 
 * [ ] Viewは **render(todos)** を持ってる
 * [ ] Viewは **Modelを更新してない**
