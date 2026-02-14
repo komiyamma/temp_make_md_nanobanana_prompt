@@ -7,6 +7,8 @@
 
 ## 1) まずVOって何？（一言で）💎✨
 
+![](./picture/entity_obj_cs_study_006_vo_definition.png)
+
 VOはね、**「値そのものに“意味”と“ルール”を持たせたもの」**だよ〜！😊☕️
 
 * ❌ `string email`（ただの文字）
@@ -22,6 +24,8 @@ VOにすると何が嬉しいかというと…
 ---
 
 ## 2) VOの3大特性（ここが試験範囲！）📌💎✅
+
+![](./picture/entity_obj_cs_study_006_three_pillars.png)
 
 ```mermaid
 mindmap
@@ -56,6 +60,8 @@ mindmap
 
 ### ② 自己検証（Self-validating）🧪
 
+![](./picture/entity_obj_cs_study_006_bouncer_validation.png)
+
 VOは **作る瞬間にルールをチェック**するよ〜！
 
 * ✅ Emailは `@` が必要、とか
@@ -78,6 +84,8 @@ C#の `record` は **値の等価性が標準装備**だから、VOにめっち�
 ---
 
 ## 3) カフェ注文アプリで「VO候補」探しゲーム🎯☕️
+
+![](./picture/entity_obj_cs_study_006_vo_hunt.png)
 
 VOっぽいのは、だいたいこういうやつ👇
 
@@ -267,6 +275,8 @@ Console.WriteLine(a == b); // True（同じ値なら同じ✨）
 ## 9) よくある事故パターン集（ここ注意〜！⚠️😱）
 
 ### ❌ 事故1：VOがミュータブル（後から変えられる）
+
+![](./picture/entity_obj_cs_study_006_mutable_accident.png)
 
 * HashSetに入れたあと値が変わって、行方不明になるやつ…😇
 

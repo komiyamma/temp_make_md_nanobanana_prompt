@@ -2,6 +2,8 @@
 
 ### 🎯 この章のゴール
 
+![](./picture/entity_obj_cs_study_001_goal_roadmap.png)
+
 読み終わったら、次の2つを**自分の言葉で**言えるようになろう〜！😆✨
 
 1. **Entity（エンティティ）**って何？🆔
@@ -15,11 +17,15 @@
 
 ### 🆔 Entity（エンティティ）
 
+![](./picture/entity_obj_cs_study_001_entity_metaphor.png)
+
 * ひとことで言うと：**「IDで追いかける“本人”」**
 * 中身（状態）が変わっても、**同じ人（同じ注文）として扱う**よ！
 * 例：注文 `Order` は、内容が変わっても「その注文」でしょ？🧾🔁
 
 ### 💎 Value Object（値オブジェクト / VO）
+
+![](./picture/entity_obj_cs_study_001_vo_metaphor.png)
 
 * ひとことで言うと：**「値そのものが主役」**
 * **値が同じなら同じ扱い（等価性）**
@@ -53,6 +59,8 @@
 ---
 
 ## 3) カフェ注文アプリで「Entityっぽい」「VOっぽい」を並べてみよ☕️🧾✨
+
+![](./picture/entity_obj_cs_study_001_cafe_objects.png)
 
 ### 🧾 Entity になりやすいもの（IDで追う“本人”系）
 
@@ -90,6 +98,8 @@ flowchart TD
 
 ### ✅ 嬉しいこと①：**変な状態を作れなくなる**（最強）🔒💎
 
+![](./picture/entity_obj_cs_study_001_safety_shield.png)
+
 たとえば「金額」って、マイナスになったら困るよね？😅
 
 * `decimal price = -100;` ← うっかり入っちゃう😱
@@ -114,6 +124,8 @@ flowchart TD
 VOにすると「そもそも代入できない」＝事故が減る💪✨
 
 ### ✅ 嬉しいこと③：**ルールの置き場所が決まってスッキリ**🏠✨
+
+![](./picture/entity_obj_cs_study_001_rules_home.png)
 
 * 金額のルール（端数、通貨、加算）→ `Money` に集める💰
 * 注文のルール（確定後は変更不可、キャンセル条件）→ `Order` に集める🧾

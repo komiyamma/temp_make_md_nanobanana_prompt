@@ -15,12 +15,16 @@
 
 ### 🆔 同一性（Identity）
 
+![](./picture/entity_obj_cs_study_004_fingerprint_identity.png)
+
 「**IDで追いかける“同じ”**」
 
 * 状態（中身）が変わっても「同じ本人」
 * 例：**Order（注文）**は、合計金額や明細が変わっても「同じ注文」だよね🧾🔁
 
 ### 💎 等価性（Value Equality）
+
+![](./picture/entity_obj_cs_study_004_scale_equality.png)
 
 「**値が同じなら“同じ”**」
 
@@ -79,6 +83,8 @@ flowchart TD
 ここ、知らないとバグりやすい〜😇💥
 
 ### ✅ class（普通のクラス）は基本「参照が同じ」＝同じ
+
+![](./picture/entity_obj_cs_study_004_reference_pointers.png)
 
 つまり **別々に new したら、値が同じでも“別物”** になりやすい😱
 
@@ -161,6 +167,8 @@ public readonly record struct Money(decimal Amount, string Currency)
 
 ## 🧪 ミニ演習：テストで「同じ」を確かめよう！🧪✨
 
+![](./picture/entity_obj_cs_study_004_equality_test.png)
+
 xUnit想定でいくね〜😊
 
 ```csharp
@@ -203,6 +211,8 @@ public class EqualityTests
 ---
 
 ## 😇 よくある落とし穴（この章で潰しておくと強い）💥
+
+![](./picture/entity_obj_cs_study_004_pitfall_trap.png)
 
 ### ❶ 「VOをclassで作って Equals 未実装」問題 😱
 

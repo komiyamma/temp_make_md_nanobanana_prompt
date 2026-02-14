@@ -34,6 +34,8 @@ CafeOrder/
 
 ### ✅ いま入ってるか確認（超だいじ）
 
+![](./picture/entity_obj_cs_study_002_dotnet_cli.png)
+
 PowerShell（またはコマンドプロンプト）で👇
 
 ```bash
@@ -54,6 +56,8 @@ Visual Studio のインストールは、Microsoft Learn の手順がいちば�
 
 ### ✅ 入れておくと安心なワークロード（目安）
 
+![](./picture/entity_obj_cs_study_002_vs_workload.png)
+
 * **.NET関連（C#を気持ちよく書くやつ）**
 * テストもやるので、テスト周りが入る構成にしておく（不足したら後で追加できるよ）✨
 
@@ -62,6 +66,8 @@ Visual Studio のインストールは、Microsoft Learn の手順がいちば�
 ---
 
 ## 3) ソリューション作成（いちばん迷わない方法）🧱✨
+
+![](./picture/entity_obj_cs_study_002_sln_commands.png)
 
 ここは **dotnet CLI** で作っちゃうのが安定！
 作ったあとに Visual Studio で開けばOKだよ〜😊
@@ -108,6 +114,8 @@ flowchart TD
 
 ### ✅ まずテスト実行（コマンドでOK）
 
+![](./picture/entity_obj_cs_study_002_green_test.png)
+
 ```bash
 dotnet test
 ```
@@ -131,6 +139,8 @@ dotnet test
 
 ### いちばん簡単：Visual Studio から作る
 
+![](./picture/entity_obj_cs_study_002_git_commit.png)
+
 Visual Studio のメニューで **Git → Create Git Repository** って流れで作れるよ。([Microsoft Learn][8])
 
 💡このタイミングで、まず1回コミットしちゃお！
@@ -140,6 +150,8 @@ Visual Studio のメニューで **Git → Create Git Repository** って流れ�
 ---
 
 ## 6) AI拡張（Copilot / Codex）を“学習に使える状態”にする 🤖✨
+
+![](./picture/entity_obj_cs_study_002_ai_helper.png)
 
 ### ✅ Copilot（Visual Studio）
 
