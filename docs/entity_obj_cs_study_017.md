@@ -13,6 +13,9 @@
 
 ## 1. まず感覚をつかもう！VOとEntity、どっちが何を守るの？💡💎🧾
 
+![entity_obj_cs_study_017_vo_entity_guard.png](./picture/entity_obj_cs_study_017_vo_entity_guard.png)
+
+
 ### VOが守るもの（値の正しさ）💎✅
 
 * Money が **マイナスになれない** 🚫💰
@@ -34,6 +37,9 @@
 
 ## 2. “ルールが散る”とどうなる？😱🧯
 
+![entity_obj_cs_study_017_scattered_rules.png](./picture/entity_obj_cs_study_017_scattered_rules.png)
+
+
 ありがちな事故👇
 
 * 画面Aでは「確定後は変更禁止」をチェックしてるのに…
@@ -46,6 +52,9 @@
 ---
 
 ## 3. 今日の題材ルール（学内カフェ注文）☕️🧾✨
+
+![entity_obj_cs_study_017_draft_confirmed_canceled.png](./picture/entity_obj_cs_study_017_draft_confirmed_canceled.png)
+
 
 ### 状態（OrderStatus）を3つにするよ！🔁
 
@@ -86,6 +95,9 @@ flowchart LR
 ---
 
 ### 4-1. Result（超ミニ版）🧩✨
+
+![entity_obj_cs_study_017_result_pattern.png](./picture/entity_obj_cs_study_017_result_pattern.png)
+
 
 ```csharp
 namespace Cafe.Domain;
@@ -314,6 +326,9 @@ public class Order_InvariantTests
 ---
 
 ## 8. よくある事故集（この章の落とし穴）🧯😵‍💫
+
+![entity_obj_cs_study_017_public_setter_danger.png](./picture/entity_obj_cs_study_017_public_setter_danger.png)
+
 
 ### ❌事故1：確定後でもプロパティを書き換えられる
 

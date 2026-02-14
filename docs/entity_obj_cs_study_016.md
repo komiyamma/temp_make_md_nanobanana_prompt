@@ -19,6 +19,9 @@
 
 ## 1) まずは「あるある事故」😇💥
 
+![entity_obj_cs_study_016_negative_money_accident.png](./picture/entity_obj_cs_study_016_negative_money_accident.png)
+
+
 たとえば…
 
 * 合計金額がなぜか **-450円** になってる
@@ -34,6 +37,9 @@
 ---
 
 ## 2) 不変条件（Invariant）ってなに？🧷✨
+
+![entity_obj_cs_study_016_invariant_definition.png](./picture/entity_obj_cs_study_016_invariant_definition.png)
+
 
 **どんなタイミングでも絶対に守られててほしいルール**のことだよ✅
 
@@ -76,6 +82,9 @@ VOの強みはコレ👇
 ---
 
 ## 4) 実装方針：Moneyはこう作る💰✨
+
+![entity_obj_cs_study_016_money_strategy.png](./picture/entity_obj_cs_study_016_money_strategy.png)
+
 
 今回のMoneyは、学習用にわかりやすく👇
 
@@ -179,6 +188,9 @@ public sealed class Money : IEquatable<Money>
 
 ## 6) Guard（チェック関数）で読みやすくする🛡️✨
 
+![entity_obj_cs_study_016_guard_clauses.png](./picture/entity_obj_cs_study_016_guard_clauses.png)
+
+
 チェックが増えると `if` が並びがち😅
 そこで Guard を作るとスッキリするよ〜！
 
@@ -209,6 +221,9 @@ public static class Guard
 ---
 
 ## 7) テストで「破れない」ことを確認🧪💖
+
+![entity_obj_cs_study_016_test_assurance.png](./picture/entity_obj_cs_study_016_test_assurance.png)
+
 
 xUnit想定でいくよ〜！
 
@@ -266,6 +281,9 @@ public class MoneyTests
 ---
 
 ## 8) ここ、超大事：VOの“不変条件”はどこまでやる？📏🤔
+
+![entity_obj_cs_study_016_vo_vs_entity_scope.png](./picture/entity_obj_cs_study_016_vo_vs_entity_scope.png)
+
 
 やりすぎると窮屈、やらないと事故る😇
 

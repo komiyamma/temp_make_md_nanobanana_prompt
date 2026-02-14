@@ -56,6 +56,9 @@ MicrosoftのDDDガイダンスでも「集約ルートが子の更新をコン�
 
 ## 2) ここが本題：OrderLineは Entity？それとも VO？🤔🧾
 
+![entity_obj_cs_study_020_entity_vs_vo_decision.png](./picture/entity_obj_cs_study_020_entity_vs_vo_decision.png)
+
+
 迷うよね〜！でも判断のコツはあるよ✅✨
 
 ### ✅ OrderLineを「Entity」に寄せたいとき
@@ -95,9 +98,15 @@ MicrosoftのDDDガイダンスでも「集約ルートが子の更新をコン�
 
 ## 4) 実装してみよう！🎮✨（最小で気持ちいい形）
 
+![entity_obj_cs_study_020_implementation_map.png](./picture/entity_obj_cs_study_020_implementation_map.png)
+
+
 > 目的：**Orderに「明細追加」「合計計算」を持たせる**➕💰
 
 ### 4-1) VO（値）たち：ID / ProductCode（例）💎
+
+![entity_obj_cs_study_020_vo_ids.png](./picture/entity_obj_cs_study_020_vo_ids.png)
+
 
 （Money/Quantityは前の章で作った想定でOKだよ〜！😆）
 
@@ -138,6 +147,9 @@ public sealed record ProductCode
 ---
 
 ### 4-2) OrderLine（子Entity）🧾🆔
+
+![entity_obj_cs_study_020_internal_line.png](./picture/entity_obj_cs_study_020_internal_line.png)
+
 
 ```csharp
 public sealed class OrderLine
@@ -342,6 +354,9 @@ AIは速いけど、最後の判断（ルール決め）は人間がやるのが
 ---
 
 ## 8) ありがちな落とし穴（超重要）⚠️😵‍💫
+
+![entity_obj_cs_study_020_public_list_trap.png](./picture/entity_obj_cs_study_020_public_list_trap.png)
+
 
 * `public set;` を開けて、外からOrderLineを改造される🔓➡️崩壊
 * `List<OrderLine>` をそのまま公開して、勝手に `Add` される📦➡️崩壊

@@ -10,6 +10,9 @@
 
 ## 1) まず結論：GuidでOK？🙂
 
+![entity_obj_cs_study_015_naked_guid_danger.png](./picture/entity_obj_cs_study_015_naked_guid_danger.png)
+
+
 多くのアプリでは **Guidで全然OK** だよ〜！🙆‍♀️✨
 しかも今の最新環境だと、.NET 10 / C# 14 で開発できるので、実装も気持ちよく書ける👍（.NET 10がリリース済み＆C# 14が最新）([Microsoft for Developers][1])
 
@@ -25,6 +28,9 @@
 ---
 
 ## 2) IDってなに？（Entity/VOの話とつながるよ）🧠✨
+
+![entity_obj_cs_study_015_identity_badge.png](./picture/entity_obj_cs_study_015_identity_badge.png)
+
 
 * Entityは「同一性（ID）で追いかける存在」🆔
 * VOは「値そのものが意味」💎
@@ -95,6 +101,9 @@ flowchart TD
 
 ## 6) 実装してみよ！OrderId を作る🆔✨（VOとして）
 
+![entity_obj_cs_study_015_typed_id_structure.png](./picture/entity_obj_cs_study_015_typed_id_structure.png)
+
+
 ここでは「Guidを包むだけ」の、いちばん分かりやすい形でいくよ🙂💕
 
 ```csharp
@@ -137,6 +146,9 @@ public readonly record struct OrderId(Guid Value)
 
 ## 7) Order（Entity）側で使う🧾💪✨
 
+![entity_obj_cs_study_015_entity_using_id.png](./picture/entity_obj_cs_study_015_entity_using_id.png)
+
+
 ```csharp
 namespace Cafe.Domain.Orders;
 
@@ -164,6 +176,9 @@ public sealed class Order
 ---
 
 ## 8) EF CoreでDB保存できるようにする🗄️✨（ValueConverter）
+
+![entity_obj_cs_study_015_ef_value_converter.png](./picture/entity_obj_cs_study_015_ef_value_converter.png)
+
 
 型付きIDは、そのままだとEFが「どう保存していいか分からん🤔」ってなりがち。
 そこで **ValueConverter** を使って、DBには `Guid` として保存するよ🙂✨([Microsoft Learn][4])
