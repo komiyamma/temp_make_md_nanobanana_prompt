@@ -20,6 +20,7 @@
 ## 1. テストって結局なに？🧠🧪
 
 ![](./picture/mvc_cs_study_016_safety_net.png)
+![Test as Watcher](./picture/mvc_cs_study_016_test_watcher.png)
 
 テストは超ざっくり言うと…
 
@@ -35,6 +36,8 @@ MVCでいうと、まず守りたいのはここ👇
 
 ## 2. どのテストから書くのが楽？🥳✨（おすすめ順）
 
+![Test Priority Steps](./picture/mvc_cs_study_016_test_priority_steps.png)
+
 初心者がつまずきにくい順に並べるね👇
 
 1. **Model の不変条件テスト**（例外が投げられる/投げられない）🛡️
@@ -44,6 +47,8 @@ MVCでいうと、まず守りたいのはここ👇
 ---
 
 ## 3. テスト環境を作ろう🛠️✨（VS / CLIどっちでもOK）
+
+![Test Project Setup](./picture/mvc_cs_study_016_test_project_setup.png)
 
 ### 3-1. Visual Studioで作る（かんたん）🎀
 
@@ -84,6 +89,8 @@ dotnet test
 （あなたの `TodoItem` の実装に合わせて、コンストラクタ/Factory/メソッド名は読み替えてね🙏💦）
 
 ### 4-1. AAA（Arrange / Act / Assert）だけ覚えよ🧁
+
+![AAA Pattern](./picture/mvc_cs_study_016_aaa_pattern.png)
 
 * Arrange：準備
 * Act：実行
@@ -159,6 +166,8 @@ Service は「アプリの中心」だから、テストの効果がデカいよ
 
 ### 5-1. FakeRepository（偽物）でテストする🧸✨
 
+![Simple Fake Repository](./picture/mvc_cs_study_016_fake_repo_simple.png)
+
 モックの道具を増やす前に、まずは **手書き Fake** が最強に分かりやすいです🙂‍↕️✨
 
 ```csharp
@@ -177,6 +186,8 @@ public sealed class FakeTodoRepository : ITodoRepository
 ```
 
 ### 5-2. Service のテストを書く✅🧪
+
+![Service Test Flow](./picture/mvc_cs_study_016_service_test_flow.png)
 
 ```csharp
 using Xunit;
@@ -210,6 +221,7 @@ public class TodoServiceTests
 ## 6. 境界値テストってなに？📏🧪（やさしく）
 
 ![](./picture/mvc_cs_study_016_boundary_ruler.png)
+![Theory and InlineData](./picture/mvc_cs_study_016_theory_inline_data.png)
 
 「ギリギリのところ」がバグりやすいから、そこを刺す感じ🎯
 

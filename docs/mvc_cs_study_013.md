@@ -16,6 +16,7 @@
 ## 2) まず考え方：永続化は「アプリの外」🌍➡️📦
 
 ![](./picture/mvc_cs_study_013_hospital_chart.png)
+![Persistence as External World](./picture/mvc_cs_study_013_persistence_outside.png)
 
 保存先（ファイル/DB/クラウド）はアプリから見ると **外の世界**だよね🌏
 なので Model に `Save()` とかを書き始めると、Model が急に「外界の事情」に詳しくなってしまう…😵‍💫
@@ -31,6 +32,8 @@
 
 ## 3) 今回の保存方針（いちばん気楽で、あとで置き換えやすい）🍀
 
+![JSON Format Benefits](./picture/mvc_cs_study_013_json_format_benefits.png)
+
 ### 保存形式：JSON にする📄✨
 
 * 人間が開いて読める（デバッグが超ラク）👀
@@ -44,6 +47,8 @@
 
 ## 4) 保存場所：ユーザーごとのデータ領域に置く📁🪟
 
+![LocalAppData Location](./picture/mvc_cs_study_013_local_app_data.png)
+
 おすすめは **LocalApplicationData**（ユーザーごとの安全な場所）にアプリ用フォルダを作るやり方💡
 `Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)` が王道だよ〜！ ([Microsoft Learn][3])
 
@@ -55,6 +60,7 @@
 ## 5) ファイルが壊れにくい保存のコツ（超入門）🛡️💾
 
 ![](./picture/mvc_cs_study_013_safe_save.png)
+![Safe Save Flow](./picture/mvc_cs_study_013_safe_save_flow.png)
 
 いきなり本番ファイルに上書きすると、書き込み途中で落ちたときに壊れがち😇
 そこでよくある作戦👇
@@ -69,6 +75,8 @@
 ## 6) 実装：保存専用クラスを 1 個作ろう🧱✨
 
 ### 6-1) まず「保存用の型（DTO）」を用意する📦
+
+![Model vs DTO](./picture/mvc_cs_study_013_dto_separation.png)
 
 Model は “アプリの中心” だから、**保存の都合で Model をいじらない**方向にするよ〜🧼✨
 （今は同じ形でもOKだけど、分ける癖をつけると後が楽🥳）
@@ -98,6 +106,8 @@ public sealed record TodoFileData(
 ---
 
 ### 6-2) 保存・読み込みクラス（ファイル担当）を作る💾🧰
+
+![FileStore Class Responsibility](./picture/mvc_cs_study_013_file_store_class.png)
 
 ポイントはここ👇
 
@@ -226,6 +236,8 @@ public static class AppPaths
 * 変更（add/done/edit/delete）したら：保存する
 
 ### 7-1) Service に「入出力」メソッドを足す（最小改造）🧩
+
+![Service I/O Integration](./picture/mvc_cs_study_013_service_io.png)
 
 ```csharp
 // Services/TodoService.cs（例：必要なところだけ）

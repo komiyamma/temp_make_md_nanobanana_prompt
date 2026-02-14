@@ -18,12 +18,16 @@
 
 ## 2) DIってなに？いちばん短い説明🍀
 
+![DI Concept](./picture/mvc_cs_study_015_di_concept_simple.png)
+
 DI（Dependency Injection）＝ **「必要な部品を、外から渡してもらう設計」** だよ✨
 .NET には DI が “標準の考え方” として組み込まれていて、`IServiceCollection` に登録して `IServiceProvider` から取り出す感じになるよ〜📦 ([Microsoft Learn][3])
 
 ---
 
 ## 3) いま何がツラい？（DIが欲しくなる瞬間）😇💥
+
+![Tight Coupling Pain](./picture/mvc_cs_study_015_tight_coupling_pain.png)
 
 たとえば Service の中でこうなってるとするね👇
 
@@ -38,6 +42,8 @@ DI（Dependency Injection）＝ **「必要な部品を、外から渡しても�
 
 ## 4) 依存を “見える化” しよっか👀📝✨
 
+![Visualizing Dependencies](./picture/mvc_cs_study_015_dependency_visualization.png)
+
 CampusTodo で DI したい依存、だいたいこの3つが鉄板だよ〜👇
 
 1. **Repository**：保存先（ファイル/DB/メモリ）を差し替えたい💾🔁
@@ -47,6 +53,8 @@ CampusTodo で DI したい依存、だいたいこの3つが鉄板だよ〜👇
 ---
 
 ## 5) まずは “差し替え口” を作る（Interface化）🧩✨
+
+![Interface Socket](./picture/mvc_cs_study_015_interface_socket.png)
 
 ### 5-1. Repository を interface にする💾➡️🧲
 
@@ -96,6 +104,8 @@ public sealed class SystemClock : IClock
 ---
 
 ## 6) “new を消す” メイン作業：コンストラクタ注入🔌✨
+
+![Constructor Injection](./picture/mvc_cs_study_015_constructor_injection_mechanism.png)
 
 ### 6-1. Service が依存を受け取る🍔➡️🥗
 
@@ -192,6 +202,8 @@ controller.Run();
 
 ## 8) AddSingleton / AddTransient の使い分け（超ざっくり）🍀
 
+![Singleton vs Transient](./picture/mvc_cs_study_015_singleton_vs_transient.png)
+
 * `AddSingleton`：1個をずっと使う（Repository/Clockみたいに軽いやつ）♾️
 * `AddTransient`：呼ばれるたび新しい（Controller/Serviceによく使う）🔁
 
@@ -281,6 +293,8 @@ graph TD
 ---
 
 ## 10) やりがち注意⚠️（テスタビリティが下がるやつ）
+
+![Service Locator Trap](./picture/mvc_cs_study_015_service_locator_trap.png)
 
 * ❌ Service の中で `new FileTodoRepository()` しちゃう（差し替え不能）
 * ❌ `IServiceProvider` をあちこちに渡す（Service Locator になりがち）😵‍💫
