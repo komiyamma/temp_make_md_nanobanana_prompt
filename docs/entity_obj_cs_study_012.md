@@ -365,6 +365,8 @@ public sealed class CreateOrderMapperTests
 
 ## 12.8 AI活用（Copilot/Codex想定）🤖✨：この章で効く使い方
 
+![test_checklist](./picture/entity_obj_cs_study_012_test_checklist.png)
+
 ### 💡 生成してもらうと速いもの
 
 * VOの雛形（Create/TryCreate/Parse/TryParse）🏭
