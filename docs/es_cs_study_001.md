@@ -16,6 +16,8 @@
 
 ### そもそもイベントソーシングって？（超ざっくり）🌸
 
+![State vs Event Shopping](./picture/es_cs_study_001_state_vs_event.png)
+
 イベントソーシングは、**「いまの状態」ではなく「起きた出来事の履歴」を貯めていく**考え方だよ📚✨
 状態の変化をイベントとして記録し、そのイベント列を順番に適用して、いつでも状態を作り直せる（＝復元できる）イメージ🔁😊
 
@@ -45,6 +47,8 @@ graph LR
 
 ## 学びの順番（このコースの“型”）🧩✨
 
+![Learning Steps Staircase](./picture/es_cs_study_001_learning_steps.png)
+
 イベントソーシングは、**順番を間違えると急に難しく感じる**やつです😵‍💫
 だからこのコースは、ずーっとこの順番で進むよ👇😊
 
@@ -73,12 +77,16 @@ flowchart TD
 
 ### 挫折ポイント①：イベント名が決まらない😵
 
+![Naming Pitfall](./picture/es_cs_study_001_pitfall_naming.png)
+
 **対策：まず“出来事の日本語”でOK**🙆‍♀️✨
 
 * 「商品を追加した」→ `ItemAddedToCart` みたいに、**起きたことを過去形**で言うだけで十分だよ⏳🧡
   ([Microsoft Learn][2])
 
 ### 挫折ポイント②：「結局DBに状態を保存したほうが早くない？」🤔
+
+![DB vs Event Store](./picture/es_cs_study_001_pitfall_db.png)
 
 短期的にはYESだけど、イベントソーシングは「あとで効いてくる」タイプ💊✨
 
@@ -104,6 +112,8 @@ flowchart TD
 ---
 
 ## この章のミニ演習：身近な例を「出来事」で書き出す📝✨
+
+![Writing Events Exercise](./picture/es_cs_study_001_mini_exercise.png)
 
 ### お題（どれか1つ選んでね）🍀
 
@@ -158,6 +168,8 @@ flowchart TD
 ---
 
 ## AI活用：この章で使うプロンプト雛形🤖✨
+
+![AI Assistant Role](./picture/es_cs_study_001_ai_assistant.png)
 
 ### ① 例え話を3パターン作る（理解が一気にラクになる）🌈
 
