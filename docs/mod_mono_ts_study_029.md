@@ -98,6 +98,8 @@ graph TD
 
 ## 29.4 “共通化ポリシー”のおすすめテンプレ📝💖
 
+![Foundation vs Shared Kernel](./picture/mod_mono_ts_study_029_foundation_vs_kernel.png)
+
 共通化は、**ルールがないと必ず膨張**します😱
 なので、最小でいいから「判断の型」を作ろう〜！✨
 
@@ -131,6 +133,8 @@ graph TD
 
 ### パターンA：共通化じゃなくて「DTOで合わせる」📦
 
+![DTO Bridge](./picture/mod_mono_ts_study_029_pattern_dto_bridge.png)
+
 モジュール間は **公開API + DTO** でやり取りするのが安全🎀
 （中身のドメイン型は共有しない）
 
@@ -146,6 +150,8 @@ class BillingMoney {
 ```
 
 ### パターンB：「同じだけど別物」は、別々に持つ（複製OK）🧬
+
+![Duplication is OK](./picture/mod_mono_ts_study_029_pattern_duplication_ok.png)
 
 `UserId` といっても、モジュールによって
 「会員ID」「学籍番号」「管理ユーザーID」みたいに意味が違うことあるよね？👀
@@ -163,6 +169,8 @@ Shared Kernel は **境界分離の例外**だから、
 ---
 
 ## 29.6 実践：`shared/utils` を解体して救出する手順🛠️🚑
+
+![Refactoring Steps](./picture/mod_mono_ts_study_029_refactoring_steps.png)
 
 ### ステップ1：まず棚卸し（分類）📋
 
@@ -188,6 +196,8 @@ Shared Kernel は **境界分離の例外**だから、
 ---
 
 ## 29.7 ミニ演習🧩💖（そのまま授業で使えるやつ）
+
+![Classification Quiz](./picture/mod_mono_ts_study_029_quiz_items.png)
 
 ### 演習①：これ、共通化していい？🙋‍♀️
 

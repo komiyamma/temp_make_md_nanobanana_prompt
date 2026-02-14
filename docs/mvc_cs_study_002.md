@@ -34,6 +34,8 @@
 
 ### 1-2. インストールで入れるもの（チェックを入れるだけ✅）
 
+![VS Installer Workloads](./picture/mvc_cs_study_002_vs_installer_workloads.png)
+
 インストーラーの「ワークロード」で、まずはこれを入れるのが安心👇
 
 * **.NET デスクトップ開発**（Console/Winアプリの土台）🧱
@@ -46,6 +48,8 @@
 ## 2) VS Codeルート（軽くやりたい・補助ルート）🧭💡
 
 ### 2-1. .NET SDK を入れる（VS Codeルートの必須アイテム）🔧
+
+![Dotnet Info Terminal](./picture/mvc_cs_study_002_dotnet_info_terminal.png)
 
 .NETのダウンロードページでは **.NET 10 SDK** が提供されてるよ（2026/01の最新更新も載ってる）📌 ([Microsoft][1])
 
@@ -138,6 +142,8 @@ flowchart LR
 ---
 
 ## 5) ミニ演習：Hello Console を作って実行🎉🧪
+
+![Hello Console Output](./picture/mvc_cs_study_002_hello_console_output.png)
 
 ### 5-1. Visual Studioでやる（王道）👑
 

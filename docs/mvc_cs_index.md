@@ -12,6 +12,8 @@ AI：GitHub Copilot / OpenAI Codex等導入済み前提🤖💡
 
 ## 第1章：MVCってなに？まず「分ける理由」を体で理解しよう🧠✨
 
+![MVC Role Division](./picture/mvc_cs_index_role_division.png)
+
 * **ゴール**：Model / View / Controller を“自分の言葉”で説明できる🗣️
 * **内容**
 
@@ -85,6 +87,8 @@ AI：GitHub Copilot / OpenAI Codex等導入済み前提🤖💡
 
 ## 第7章：MVCのデータ流れを接続する（Model→Controller→View）🔁✨
 
+![MVC Data Flow Cycle](./picture/mvc_cs_index_data_flow.png)
+
 * **ゴール**：MVCが“回る”感覚をつかむ🌀
 * **内容**
 
@@ -108,6 +112,8 @@ AI：GitHub Copilot / OpenAI Codex等導入済み前提🤖💡
 ---
 
 ## 第9章：Model入門②：不変条件（守るべきルール）をModel側に置く🛡️📦
+
+![Model Invariant Shield](./picture/mvc_cs_index_invariant_shield.png)
 
 * **ゴール**：ルールを散らさない
 * **内容**
@@ -172,6 +178,8 @@ AI：GitHub Copilot / OpenAI Codex等導入済み前提🤖💡
 
 ## 第14章：永続化②：Repositoryで差し替え可能にする🔁🧲
 
+![Repository Swap](./picture/mvc_cs_index_repository_swap.png)
+
 * **ゴール**：保存先を変えても上が壊れない
 * **内容**
 
@@ -195,6 +203,8 @@ AI：GitHub Copilot / OpenAI Codex等導入済み前提🤖💡
 ---
 
 ## 第16章：テスト入門（MVCの“守り方”）🛡️🧪✨
+
+![Test Defense](./picture/mvc_cs_index_test_defense.png)
 
 * **ゴール**：壊れやすい所をテストで守れる
 * **内容**
