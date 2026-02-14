@@ -2,6 +2,8 @@
 
 ## この章のゴール🎯
 
+![form_assist_fairy](./picture/err_model_ts_study_021_form_assist_fairy.png)
+
 フォームで失敗したときに、ユーザーが **「どこが悪いか一瞬で分かって、すぐ直せる」** 形を作れるようになるよ😊💪
 具体的には👇
 
@@ -30,6 +32,8 @@ GOV.UKのデザインガイドでも、**入力欄の近くのエラーメッセ
 
 ## 2) エラーの置き場所は3つだけ覚えればOK🧺✨
 
+![error_locations_map](./picture/err_model_ts_study_021_error_locations_map.png)
+
 ### A. fieldErrors（項目別）🧷
 
 * 「メールが変」「パスワード短い」みたいな **入力欄に紐づく失敗**
@@ -49,6 +53,8 @@ GOV.UKのデザインガイドでも、**入力欄の近くのエラーメッセ
 ---
 
 ## 3) TypeScriptで「エラーの形」を決めよう🏗️🎁
+
+![error_iceberg](./picture/err_model_ts_study_021_error_iceberg.png)
 
 ここでは、フォームのエラー状態を **毎回ブレない形** に固定するよ😊
 おすすめは「文字列だけ」より、**code（機械向け）＋message（表示向け）** の二段構え✨
@@ -98,6 +104,8 @@ type Result<T, E> = Ok<T> | Err<E>;
 
 ## 4) 「同じ失敗」をfieldErrorsとformErrorで出し分ける練習💡📝
 
+![password_mismatch_puzzle](./picture/err_model_ts_study_021_password_mismatch_puzzle.png)
+
 ### 例題：パスワード確認が一致しない🔁
 
 * **本質**：2項目にまたがる矛盾（Cross-field）
@@ -132,6 +140,8 @@ function validatePasswordMatch(
 ---
 
 ## 5) バリデーションライブラリのエラーを「標準形」に変換する🧼✨
+
+![flattening_roller](./picture/err_model_ts_study_021_flattening_roller.png)
 
 ### Zod v4の最新：`z.treeifyError()` / `z.flattenError()` が主役🌳🧾
 
@@ -185,6 +195,8 @@ Valibotも issues を `flatten` して **root（全体）／nested（項目）**
 
 ## 6) UIに出すときの「アクセシブル設計」超重要♿✨
 
+![aria_invisible_thread](./picture/err_model_ts_study_021_aria_invisible_thread.png)
+
 ### 基本セット🎒
 
 * 入力が無効なら **`aria-invalid`** を使う（無効状態を支援技術に伝える）([MDN Web Docs][5])
@@ -230,6 +242,8 @@ export function TextField({ id, label, value, onChange, issues }: Props) {
 ---
 
 ## 7) UXで事故らないための鉄板ルール集🧷✨
+
+![ux_message_contrast](./picture/err_model_ts_study_021_ux_message_contrast.png)
 
 ### ✅ ルール1：項目の近く＋上部の要約（エラーサマリ）📌
 

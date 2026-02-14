@@ -10,6 +10,8 @@ TypeScriptは **判別可能ユニオン（discriminated union）** が超強い
 
 ## 1) Result型ってなに？（一言で）🎯
 
+![result_box_concept](./picture/err_model_ts_study_017_result_box_concept.png)
+
 **成功 or 失敗を「戻り値で」表す** 型だよ😊
 
 ![Result型：成功（Ok）と失敗（Err）の箱[(./picture/err_model_ts_study_017_ok_err_boxes.png)
@@ -23,6 +25,8 @@ throwしないで、
 ---
 
 ## 2) なんでResultにすると嬉しいの？💡✨
+
+![try_catch_vs_result](./picture/err_model_ts_study_017_try_catch_vs_result.png)
 
 ### ✅ try/catchより「見落としにくい」👀
 
@@ -40,6 +44,8 @@ Resultだと「戻り値がResult」なので、呼び出し側が **分岐を�
 ---
 
 ## 3) まずは最小のResult型を作ろう（Ok/Errだけ）🧩✨
+
+![minimal_implementation](./picture/err_model_ts_study_017_minimal_implementation.png)
 
 ここでは「2分岐だけ」に絞るよ！（便利ヘルパーは次章でモリモリやる🪄🙂）
 
@@ -98,6 +104,8 @@ if (r.ok) {
 
 ## 4) 「例外」じゃなくて「Result」にすべき境界（判断ルール）🧭✨
 
+![sorting_gate_result](./picture/err_model_ts_study_017_sorting_gate_result.png)
+
 迷ったらこのルールでOKだよ😊🌸
 
 ### Resultで返す（＝仕様として起きる）✅
@@ -116,6 +124,8 @@ if (r.ok) {
 ---
 
 ## 5) エラー型は「分類」と相性バツグン🧠🏷️
+
+![error_classification_balls](./picture/err_model_ts_study_017_error_classification_balls.png)
 
 Resultの `E`（エラー側）に、前の章までの分類をそのまま入れられるよ✨
 
@@ -145,6 +155,8 @@ type AppError = DomainError | InfraError | BugError;
 ---
 
 ## 6) Result設計でありがちな罠3つ😵‍💫🧨
+
+![result_traps](./picture/err_model_ts_study_017_result_traps.png)
 
 ### 罠①：Resultなのに結局throwしちゃう💥
 
@@ -201,6 +213,8 @@ type AppError = DomainError | InfraError | BugError;
 ---
 
 ## 9) まとめ🎀✨
+
+![victory_podium](./picture/err_model_ts_study_017_victory_podium.png)
 
 * Result型は「成功/失敗を戻り値で表す」🎁
 * TypeScriptは判別可能ユニオンが強いのでResultと相性最高🌈 ([TypeScript][1])

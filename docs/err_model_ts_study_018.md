@@ -48,6 +48,8 @@ Resultヘルパーはだいたいこの3カテゴリに分かれるよ〜👇
 
 ## 2. “最小で強い” Result ヘルパーを作ろう🧰✨
 
+![result_toolbox](./picture/err_model_ts_study_018_result_toolbox.png)
+
 ここでは **依存なし**で学習できるように、自分たちの `result.ts` を用意するよ🙂
 （あとで本番では neverthrow 等に置き換えてもOK🙆‍♀️）
 
@@ -71,6 +73,8 @@ export const isErr = <T, E>(r: Result<T, E>): r is Err<E> => !r.ok;
 ---
 
 ## 3. map：Okのときだけ value を変換する🍳✨
+
+![map_transformation](./picture/err_model_ts_study_018_map_transformation.png)
 
 ### 3-1. 何が嬉しいの？🥰
 
@@ -96,6 +100,8 @@ const r2 = map((n: number) => `合計は ${n} 円だよ✨`)(r1);
 ---
 
 ## 4. mapErr：Errのときだけ error を変換する🧯✨
+
+![map_err_polish](./picture/err_model_ts_study_018_map_err_polish.png)
 
 ### 4-1. どこで使うの？🧐
 
@@ -128,6 +134,8 @@ const r2 = mapErr(toFriendly)(r1);
 
 ## 5. andThen：Resultを返す処理をつなぐ（最重要）⛓️🔥
 
+![and_then_chain](./picture/err_model_ts_study_018_and_then_chain.png)
+
 ### 5-1. map と andThen の違い（ここ超大事！）⚡
 
 * `map`：**普通の値**を返す変換（失敗しない前提の加工）
@@ -158,6 +166,8 @@ const good = andThen((n: number) => ok(n + 1))(ok(1));
 
 ## 6. match：最後に“読みやすく”取り出す🎀📦
 
+![match_merge](./picture/err_model_ts_study_018_match_merge.png)
+
 `if (isErr) return ...` を最後に散らさないために、**出口で match** するのが気持ちいいよ🙂✨
 
 ```ts
@@ -170,6 +180,8 @@ export const match =
 ---
 
 ## 7. unwrapOr：失敗ならデフォ値で救う🛟🙂
+
+![unwrap_parachute](./picture/err_model_ts_study_018_unwrap_parachute.png)
 
 「失敗したらとりあえず 0 で続けたい」みたいな時に使うよ（乱用は注意⚠️）
 
@@ -203,6 +215,8 @@ export const tryCatch = <T, E>(
 ---
 
 ## 9. 3段階処理を Result でつなぐ（ミニ演習）⛓️📝✨
+
+![pipeline_factory](./picture/err_model_ts_study_018_pipeline_factory.png)
 
 題材：**「入力された予算（文字列）→ 数値化 → 上限チェック → 表示用フォーマット」**💖
 

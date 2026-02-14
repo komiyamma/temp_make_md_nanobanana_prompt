@@ -16,6 +16,8 @@
 
 ## 1. まず結論：AsyncResultってなに？🎁⚡
 
+![async_result_bubble](./picture/err_model_ts_study_019_async_result_bubble.png)
+
 AsyncResult はひとことで言うとこれ👇
 
 * Result：同期の「成功/失敗の箱」🎁
@@ -34,6 +36,8 @@ AsyncResult はひとことで言うとこれ👇
 ---
 
 ## 2. “reject”が増えると何がつらいの？😵‍💫💥
+
+![reject_explosion](./picture/err_model_ts_study_019_reject_explosion.png)
 
 Promiseが reject されたのに拾われないと、環境によってはグローバルに “未処理” として扱われるよ⚠️
 
@@ -67,6 +71,8 @@ export type AsyncResult<T, E> = Promise<Result<T, E>>;
 
 ## 4. AsyncResultの「事故らないルール」5つ🧸🛡️
 
+![safety_shield_rules](./picture/err_model_ts_study_019_safety_shield_rules.png)
+
 ### ルール①：async関数は “原則 throw しない” 🙅‍♀️💥
 
 * 想定内の失敗：Errで返す
@@ -93,6 +99,8 @@ if地獄を避ける🫠
 
 ## 5. “tryCatchAsync” を作ると世界が平和になる🕊️✨
 
+![try_catch_async_chamber](./picture/err_model_ts_study_019_try_catch_async_chamber.png)
+
 「Promiseがrejectする可能性がある処理」を、強制的に AsyncResult に変換しちゃう道具だよ🎁⚡
 
 ```ts
@@ -115,6 +123,8 @@ export const tryCatchAsync = async <T, E>(
 
 ## 6. 合成ヘルパー：andThenAsync（超よく使う）⛓️✨
 
+![async_bridge_chain](./picture/err_model_ts_study_019_async_bridge_chain.png)
+
 「前の処理がOkなら次へ、Errならそのまま返す」やつ！
 
 ```ts
@@ -132,6 +142,8 @@ export const andThenAsync = async <T, E, U>(
 ---
 
 ## 7. ミニ実装：asyncな3ステップを Promise<Result> で成立させる🎓🧪
+
+![relay_race_flow](./picture/err_model_ts_study_019_relay_race_flow.png)
 
 ### お題🎀
 
@@ -221,6 +233,8 @@ export const registerFlow = async (
 ---
 
 ## 8. 例外との住み分け（ここ超テストに出る📌😆）
+
+![result_vs_exception_river](./picture/err_model_ts_study_019_result_vs_exception_river.png)
 
 ### Resultで返すべきもの✅
 

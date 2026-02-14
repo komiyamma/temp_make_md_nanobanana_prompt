@@ -11,6 +11,8 @@
 
 ## 1) 今日のゴール🎯✨
 
+![normalization_machine](./picture/err_model_ts_study_015_normalization_machine.png)
+
 * `catch (e)` の `e`（＝**unknown**）を、必ず **AppError** に変換できるようにする🧠
 * 変換のときに、できるだけ **情報（原因・文脈）を失わない** ようにする🎁
 * 変換後は、アプリの中で
@@ -27,6 +29,8 @@
 ## 2) なんで “unknown を正規化” が必要なの？😵‍💫💥
 
 ### ✅ 理由その1：JS は「何でも throw できる」🎲
+
+![js_throw_chaos](./picture/err_model_ts_study_015_js_throw_chaos.png)
 
 `throw "文字列"` とか `throw {…}` とか、普通に飛んでくる世界…！
 だから TypeScript も「捕まえた値は信用しないでね」って方向に寄ってるよ🛡️
@@ -77,6 +81,8 @@ export type AppError = DomainError | InfraError | BugError;
 ---
 
 ## 4) 正規化の “基本ルール” 🗺️🧼
+
+![sorting_logic](./picture/err_model_ts_study_015_sorting_logic.png)
 
 ![「正規化」ってなに？（洗濯機だよ！）[(./picture/err_model_ts_study_015_laundry_filter.png)
 
@@ -146,6 +152,8 @@ const isAppError = (e: unknown): e is AppError => {
 
 ### 5-2) いちばん大事：normalizeUnknown 本体🧼🧺
 
+![washing_machine](./picture/err_model_ts_study_015_washing_machine.png)
+
 ```ts
 export type NormalizeContext = {
   op?: string;        // 例: "loadUser", "saveOrder"
@@ -163,6 +171,8 @@ export function normalizeUnknown(err: unknown, ctx: NormalizeContext = {}): AppE
     const name = err.name;
 
     // 2-1) AbortError（キャンセル系）は “インフラ” で OK（必ずしも異常じゃないけど、扱いは統一）
+
+![translator_bot](./picture/err_model_ts_study_015_translator_bot.png)
     if (name === "AbortError") {
       return {
         kind: "infra",
@@ -325,6 +335,8 @@ fakeFetchUser("1")
 
 ## 7) ミニ演習📝✨（変な throw を全部 AppError にしてね！）
 
+![quiz_board](./picture/err_model_ts_study_015_quiz_board.png)
+
 次の “投げられ方” を想定して、`normalizeUnknown` がどう変換するか、紙に書いてみて〜😊🫶
 
 * `throw "oops";`
@@ -352,6 +364,8 @@ fakeFetchUser("1")
 ---
 
 ## 9) まとめ✅🧼
+
+![summary_checklist](./picture/err_model_ts_study_015_summary_checklist.png)
 
 * JS/TS は **何でも throw** されるので、`catch` の値は基本信用しない🛡️ ([TypeScript][4])
 * だから **unknown → AppError** の “洗濯機” を 1 個作る🧺✨

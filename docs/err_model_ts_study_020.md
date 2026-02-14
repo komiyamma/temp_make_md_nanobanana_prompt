@@ -7,6 +7,8 @@
 
 ## 20-1. なんで“実行時チェック”が必要なの？🫥➡️🧪
 
+![runtime_ghost_knight](./picture/err_model_ts_study_020_runtime_ghost_knight.png)
+
 TypeScriptの型は、**コンパイル後に消える**（= 実行時には守ってくれない）からだよ😳💦
 つまり…
 
@@ -23,6 +25,8 @@ TypeScriptの型は、**コンパイル後に消える**（= 実行時には守�
 ---
 
 ## 20-2. “validate” と “parse” を分けて考えよう🍳✨
+
+![validate_vs_parse](./picture/err_model_ts_study_020_validate_vs_parse.png)
 
 ここ、設計が一気にラクになるポイント💡
 
@@ -43,6 +47,8 @@ TypeScriptの型は、**コンパイル後に消える**（= 実行時には守�
 
 ## 20-3. 入力チェック設計の鉄板ルール3つ🔩✨
 
+![input_rules_pillars](./picture/err_model_ts_study_020_input_rules_pillars.png)
+
 ### ルール①：境界の入力はまず `unknown` として扱う🫥
 
 「信用しない」から始めるのが安全🥹🛡️
@@ -61,10 +67,14 @@ TypeScriptの型は、**コンパイル後に消える**（= 実行時には守�
 
 ## 20-4. まずは王道：スキーマバリデーション（Zod例）🧪🧩
 
+![zod_scanner](./picture/err_model_ts_study_020_zod_scanner.png)
+
 フォーム/JSONの検証で超よく使われる形だよ🙂
 Zodは **`safeParse`** で「例外にしない検証」ができて、さらに **`flatten()`** で **formErrors / fieldErrors** に整形できるのが強い✨ ([Zod][1])
 
 ### 20-4-1. 例：会員登録入力を“入口で”パースする🎀
+
+![error_sorting_flatten](./picture/err_model_ts_study_020_error_sorting_flatten.png)
 
 ```ts
 import { z } from "zod";
@@ -155,6 +165,8 @@ export function parseRegisterInput(raw: unknown) {
 
 ## 20-7. 「入力エラー」を“ドメインエラー”として美しく扱うコツ🎀🧠
 
+![fortress_boundary](./picture/err_model_ts_study_020_fortress_boundary.png)
+
 ### ✅ 入口関数はこう分けると超運用しやすい
 
 * `parseXxx(raw: unknown)`：入口の正規化（Resultで返す）
@@ -166,6 +178,8 @@ export function parseRegisterInput(raw: unknown) {
 ---
 
 ## 20-8. ミニ演習📝✨（15〜30分）
+
+![search_query_filter](./picture/err_model_ts_study_020_search_query_filter.png)
 
 ### お題：検索条件（クエリ）を検証して “入力エラー” で返そう🔎
 
