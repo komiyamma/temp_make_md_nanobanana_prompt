@@ -53,6 +53,8 @@ TypeScriptの型チェックは超強いけど、**「このフォルダから�
 
 ## Step 1：tsconfigで「公開APIへ誘導」する🧭✨
 
+![tsconfigのパス設定 (tsconfig Paths)](./picture/mod_mono_ts_study_015_tsconfig_paths.png)
+
 ここは「**正しい道を歩きやすくする**」設定だよ🚶‍♀️💨
 （悪い道を完全に封鎖するのは後のESLintでやるよ！）
 
@@ -86,6 +88,8 @@ TypeScriptの型チェックは超強いけど、**「このフォルダから�
 ---
 
 ## Step 2：ESLint（Flat Config）を土台として用意🧱✨
+
+![ESLint設定ブロック (ESLint Config Blocks)](./picture/mod_mono_ts_study_015_flat_config_blocks.png)
 
 ### ESLintの方針💡
 
@@ -175,6 +179,8 @@ rules: {
 
 ## Step 4：禁止ルール② import/no-restricted-paths で “深掘り” を止める🕳️🚫
 
+![深掘りインポートの阻止 (Deep Import Stop)](./picture/mod_mono_ts_study_015_deep_import_stop.png)
+
 「他モジュールの中身を深掘りして import」も事故の元💥
 `eslint-plugin-import` の `no-restricted-paths` は、**フォルダ間の輸入ルール**を作れるよ📦✨ ([GitHub][6])
 
@@ -199,6 +205,8 @@ rules: {
 ---
 
 ## Step 5：eslint-plugin-boundaries で「モジュール境界ルール」を美しく書く🧱✨
+
+![境界ゾーン (Boundaries Zones)](./picture/mod_mono_ts_study_015_boundaries_zones.png)
 
 ここがこの章のメイン火力💥
 `eslint-plugin-boundaries` は **「フォルダ構造＝アーキ境界」** をルールとして表現できるやつだよ！ ([npm][7])
@@ -238,6 +246,8 @@ rules: {
 ---
 
 ## ミニ演習🧩👩‍💻：違反したら“本当に怒られる”状態を作ろう👮‍♀️💥
+
+![親切なLintエラー (Friendly Lint Error)](./picture/mod_mono_ts_study_015_lint_error_msg.png)
 
 ### お題🎒
 

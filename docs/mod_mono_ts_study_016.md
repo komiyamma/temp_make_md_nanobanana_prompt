@@ -9,6 +9,8 @@
 
 # 0) 今日のゴール🎯✨
 
+![CIパイプラインの組み立て (CI Pipeline Assembly)](./picture/mod_mono_ts_study_016_ci_pipeline.png)
+
 ![自動門番 (Automated Gatekeeper)](./picture/mod_mono_ts_study_016_ci_gatekeeper.png)
 
 ```mermaid
@@ -77,6 +79,8 @@ CIは「ターミナルで叩けるコマンド」しか実行できないよ！
 
 # 2) GitHub ActionsでCIを回す🛠️🤖✨
 
+![GitHub Actionsランナー (GitHub Actions Runner)](./picture/mod_mono_ts_study_016_gh_actions_runner.png)
+
 `.github/workflows/ci.yml` を作って、PRのたびに走らせるよ〜！
 
 ポイントはこれ👇
@@ -134,6 +138,8 @@ runs-on: ${{ matrix.os }}
 
 # 3) “境界違反したらCIが落ちる”を確認しよう😈✅
 
+![赤と緑のCI (Red vs Green CI)](./picture/mod_mono_ts_study_016_red_vs_green.png)
+
 ここ、めっちゃ大事！
 **わざと違反して、CIがちゃんと赤くなるか**を試すよ🔥
 
@@ -148,6 +154,8 @@ CIが赤く落ちたら勝ち✌️✨（門番が働いてる！）
 
 # 4) PRで壊させない：Required status checks を必須化👮‍♀️🚧
 
+![ブランチ保護シールド (Branch Protection Shield)](./picture/mod_mono_ts_study_016_branch_protection.png)
+
 CIが動いたら、次は「通らないPRはマージ禁止」にするよ！
 
 GitHub の **保護ブランチ**で
@@ -161,6 +169,8 @@ GitHub の **保護ブランチ**で
 ---
 
 # 5) “速くする”小ワザ💨✨（地味に効く）
+
+![npmキャッシュの速度 (npm Cache Speed)](./picture/mod_mono_ts_study_016_npm_cache_speed.png)
 
 * `npm ci` を使う（再現性＆安定）([GitHub][5])
 * `actions/setup-node` の `cache: npm` を使う（速くなりがち）([GitHub][4])

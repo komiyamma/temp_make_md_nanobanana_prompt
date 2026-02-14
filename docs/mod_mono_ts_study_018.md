@@ -44,6 +44,8 @@ DDDの整理でも、Application Layer は「プレゼン層とドメイン層�
 
 # 3) ユースケースのイメージ：映画監督🎬👩‍💻
 
+![アプリケーション指揮者 (Application Conductor)](./picture/mod_mono_ts_study_018_conductor.png)
+
 ![監督の役割 (Director's Role)](./picture/mod_mono_ts_study_018_director.png)
 
 ```mermaid
@@ -88,9 +90,13 @@ graph TD
 
 ## コツ③：入出力は DTO でスッキリ🎁
 
+![DTOパッケージング (DTO Packaging)](./picture/mod_mono_ts_study_018_dto_packaging.png)
+
 ユースケースの引数・戻り値は「境界用の型」にすると事故が減るよ🚧✨
 
 ## コツ④：ユースケース名は「動詞＋名詞」📝
+
+![動詞と名詞のカード (Verb-Noun Cards)](./picture/mod_mono_ts_study_018_verb_noun_cards.png)
 
 例：
 
@@ -215,6 +221,8 @@ export type CreateEventOutput =
 
 ## 6-5) application：ユースケース本体🎬✨（薄く書く！）
 
+![ユースケースのチェックリスト (UseCase Checklist)](./picture/mod_mono_ts_study_018_usecase_checklist.png)
+
 ```ts
 // src/modules/events/application/createEventUseCase.ts
 import { Event } from "../domain/event";
@@ -262,6 +270,8 @@ export class CreateEventUseCase {
 ---
 
 ## 6-6) 公開API（入口）から呼べるようにする🚪✨
+
+![公開API呼び出しフロー (Public API Call Flow)](./picture/mod_mono_ts_study_018_api_call_flow.png)
 
 ```ts
 // src/modules/events/index.ts
