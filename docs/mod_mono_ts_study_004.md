@@ -8,6 +8,8 @@
 
 ## 1) まずは拡張機能を入れる（最小で勝つ💪✨）
 
+![Essential Extensions Kit](./picture/mod_mono_ts_study_004_essential_extensions.png)
+
 VS Codeの拡張は入れすぎると逆に混乱しがち😵‍💫
 なので「必須セット」＋「あると助かる」を分けます🎯
 
@@ -32,6 +34,8 @@ VS Codeの拡張は入れすぎると逆に混乱しがち😵‍💫
 
 ## 2) “保存したら自動で整う”を作る（ここが本丸🏰✨）
 
+![Format on Save Flow](./picture/mod_mono_ts_study_004_format_on_save_flow.png)
+
 ![保存で整形 (Format on Save)](./picture/mod_mono_ts_study_004_save.png)
 
 VS Codeの保存時自動処理は主に2つあります👇
@@ -53,6 +57,8 @@ flowchart TD
 `editor.codeActionsOnSave` は最近のVS Codeでは **`"explicit" / "always" / "never"`** で指定する流れが明確です（`explicit` は“手動保存したときだけ”） ([Visual Studio Code][3])
 
 ### ✅ オススメ設定（迷ったらこれでOK💯）
+
+![Settings Scope](./picture/mod_mono_ts_study_004_settings_scope.png)
 
 プロジェクト直下に `.vscode/settings.json` を作って👇を入れます（プロジェクトごとに効くので安全🧸）
 
@@ -79,6 +85,8 @@ flowchart TD
 ---
 
 ## 3) よくあるハマりポイント回避😵‍💫🧯（ここ読むだけで事故減る）
+
+![Prettier vs ESLint Conflict](./picture/mod_mono_ts_study_004_prettier_eslint_conflict.png)
 
 ### 🧨 罠1：Prettierが効かない／別の拡張が勝つ
 
@@ -115,6 +123,8 @@ ESLint v9 系では **Flat Config（`eslint.config.*`）前提の挙動**が絡�
 
 ## 4) TypeScriptの「VS Code内のバージョン」をプロジェクトと揃える🧠🧩
 
+![TS Version Mismatch](./picture/mod_mono_ts_study_004_ts_version_mismatch.png)
+
 VS Codeは内部にTypeScriptを持っていて、プロジェクトのTypeScriptと違うと「型の挙動が違う😱」が起きます。
 なので **ワークスペースのTypeScriptを使う**のが定番です✨
 
@@ -134,6 +144,8 @@ VS Codeは内部にTypeScriptを持っていて、プロジェクトのTypeScrip
 ---
 
 ## 5) チーム（未来の自分👩‍💻💕）のための“おすすめ拡張”共有📦✨
+
+![Team Extensions Gift](./picture/mod_mono_ts_study_004_team_extensions.png)
 
 `.vscode/extensions.json` を置いておくと、開いた人に「この拡張おすすめだよ」って出せます🎁
 
@@ -166,6 +178,8 @@ VS Codeは内部にTypeScriptを持っていて、プロジェクトのTypeScrip
 ---
 
 ## 7) AIに頼るときの“勝ちパターン”プロンプト🤖📝✨
+
+![AI Setup Prompt](./picture/mod_mono_ts_study_004_ai_setup_prompt.png)
 
 （コピペして使ってOKだよ💖）
 

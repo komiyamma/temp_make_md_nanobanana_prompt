@@ -13,6 +13,8 @@
 
 ## 1) まず超イメージ：モジュラーモノリスって何？🧠🧩
 
+![Modular Monolith Definition](./picture/mod_mono_ts_study_007_mod_mono_definition.png)
+
 モジュラーモノリスは **「デプロイ（配布）単位は1つ」だけど、内部は“ちゃんと別々の部屋（モジュール）”に分かれてる** アーキテクチャです🏠✨
 
 * 外から見ると：アプリは1個（単体で動く）📦
@@ -25,6 +27,8 @@
 ---
 
 ## 2) “モノリス”なのに、なぜわざわざ分けるの？🤔🧩
+
+![Best of Both Worlds](./picture/mod_mono_ts_study_007_best_of_both.png)
 
 モノリスの一番の強みは、運用がラクなことです😌💓
 
@@ -84,6 +88,8 @@ graph TD
 
 ## 4) 基本思想その②：境界は“気合い禁止”🙅‍♀️ → ルールで守る📜👮‍♀️
 
+![Rule Enforcement Guard](./picture/mod_mono_ts_study_007_rule_guard.png)
+
 人間は疲れるし忘れます😇（そして締切前は特に…！）
 だから境界は **ツールで強制** するのが基本です🛡️✨
 
@@ -99,6 +105,8 @@ graph TD
 ---
 
 ## 5) 基本思想その③：「フォルダ分け」＝「モジュール」じゃない⚠️
+
+![Folder vs Module](./picture/mod_mono_ts_study_007_folder_vs_module.png)
 
 ここ、初心者が一番ハマります😵‍💫💦
 
@@ -120,6 +128,8 @@ graph TD
 
 ## 6) 例：題材アプリをモジュールで見てみる🎒📅
 
+![Campus Modules](./picture/mod_mono_ts_study_007_campus_modules.png)
+
 例として「学内イベント管理」を想像してみます👩‍🎓✨
 
 * `events`：イベント作成、参加登録、定員管理🎟️
@@ -132,6 +142,8 @@ graph TD
 ---
 
 ## 7) “受付（公開API）”ってどんな感じ？🚪✨（ミニ例）
+
+![Receptionist API](./picture/mod_mono_ts_study_007_receptionist_api.png)
 
 モジュール内部のファイルを直importしちゃうと、境界が崩れます😱
 なので「公開する面」を1個に寄せるのが王道です🧩
@@ -164,6 +176,8 @@ import { UserEntity } from "../users/internal/domain/UserEntity";
 ## 8) よくある失敗パターン（先に潰そっ）💣👀
 
 ### ❶ Shared/Utils 地獄🕳️
+
+![Shared Hell](./picture/mod_mono_ts_study_007_shared_hell.png)
 
 「便利だから」と共通フォルダに何でも突っ込む → だんだん“全員が依存する神棚”になる🙏😇
 ➡️ 結果：変更すると全部が壊れる💥

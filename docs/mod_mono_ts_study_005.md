@@ -14,6 +14,8 @@
 
 ## 2) まずはAI拡張の「3つのモード」を分けて覚える🧠✨
 
+![Three AI Modes](./picture/mod_mono_ts_study_005_three_ai_modes.png)
+
 VS CodeでのAI支援は、ざっくりこの3つに分けると迷子にならないよ〜🧭💕
 
 ### A. インライン補完✍️✨（短距離走）
@@ -35,6 +37,8 @@ VS CodeでのAI支援は、ざっくりこの3つに分けると迷子になら�
 ---
 
 ## 3) いちばん大事な考え方🍱✨
+
+![AI Workflow Steps](./picture/mod_mono_ts_study_005_ai_workflow_steps.png)
 
 ![役割分担 (Role Division)](./picture/mod_mono_ts_study_005_ai_pair.png)
 
@@ -73,6 +77,8 @@ flowchart TD
 
 ## 4) AIに任せてOK／ダメの線引き⚖️🚦
 
+![AI Safety Traffic Light](./picture/mod_mono_ts_study_005_ai_safety_traffic_light.png)
+
 ### ✅ 任せてOK（成功率が上がるやつ）✨
 
 * ルーティンな実装（DTO、バリデーション、変換、エラーハンドリングの雛形）🧱
@@ -97,6 +103,8 @@ flowchart TD
 
 ## 5) これをコピペで使う！「依頼テンプレ（黄金の型）」🧾✨
 
+![Golden Request Template](./picture/mod_mono_ts_study_005_golden_request_template.png)
+
 AIへの頼み方は、毎回これに当てはめるだけで品質が上がるよ〜📈💕
 
 ```text
@@ -114,6 +122,8 @@ AIへの頼み方は、毎回これに当てはめるだけで品質が上がる
 ---
 
 ## 6) agent mode を使う“ちょうどいい場面”🌀🧑‍🔧
+
+![Agent Mode Sweet Spot](./picture/mod_mono_ts_study_005_agent_mode_sweet_spot.png)
 
 agent modeは「作業を回してくれる」のが強み💪
 GitHub Docsでも、**どのファイルを変えるか決めて編集し、必要ならコマンド提案や修正ループ**まで行くって説明されてるよ〜🧠🔧 ([GitHub Docs][2])
@@ -171,6 +181,8 @@ Codexは「コードを読んで、編集して、実行もできる」系のコ
 
 ### Step4：仕上げ（境界チェック）🧱👀
 
+![AI Boundary Guard](./picture/mod_mono_ts_study_005_ai_boundary_guard.png)
+
 * importが暴れてない？（内部に突っ込んでない？）
 * 依存の向きが変になってない？
 * 名前がドメインっぽい？（雑な命名になってない？）
@@ -188,6 +200,8 @@ Codexは「コードを読んで、編集して、実行もできる」系のコ
 * テスト観点10個
 
 ### 課題B（できたら最高）🌟
+
+![Agent Skills Backpack](./picture/mod_mono_ts_study_005_agent_skills_backpack.png)
 
 Copilotの「Agent Skills」みたいな仕組みを使うと、**繰り返し使う手順やルールを“フォルダ化”してAIに毎回読ませられる**よ📁🤖
 （指示・スクリプト・リソースを入れて、関連タスク時に自動ロードされる、って案内されてる） ([The GitHub Blog][6])

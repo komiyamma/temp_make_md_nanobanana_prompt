@@ -12,6 +12,8 @@
 
 ## 1) そもそも「モジュール」って何？🧩
 
+![Module Definition](./picture/mod_mono_ts_study_008_module_definition.png)
+
 イメージはこれ👇
 
 * **ひとまとまりの機能**（目的がハッキリしてる）
@@ -53,12 +55,16 @@
 
 ### ✅ ルール：**“一緒に変わるもの”を一緒に置く**
 
+![Vertical Slicing](./picture/mod_mono_ts_study_008_vertical_slicing.png)
+
 モジュールは「ビジネス上のまとまり」に寄せると、**凝集が上がって（まとまる）／結合が下がって（絡みにくい）**、探しやすくなります。
 “機能ごとに縦に切る（package by feature / vertical slicing）”の利点として、凝集↑・結合↓・関連コードが見つけやすい、が挙げられています。([static.simonbrown.je][1])
 
 ---
 
 ## 4) もう1つの強い基準：「言葉の意味が変わる場所」📚🧱
+
+![Context Dictionary](./picture/mod_mono_ts_study_008_context_dictionary.png)
 
 同じ単語でも、場所によって意味が変わることあるよね？👀
 例：
@@ -72,6 +78,8 @@
 ---
 
 ## 5) 「ちょうどいいモジュール」の特徴チェック✅✨
+
+![Module Magnet](./picture/mod_mono_ts_study_008_module_magnet.png)
 
 良いモジュールはだいたいこの性質に寄っていきます👇
 
@@ -87,6 +95,8 @@
 ---
 
 ## 6) “変更履歴”で境界の正解に近づく🕵️‍♀️📜（めっちゃ実践的！）
+
+![Change Coupling](./picture/mod_mono_ts_study_008_change_coupling.png)
 
 設計って、机上だけだと外しがち😇
 そこで使えるのが **Change Coupling（変更が一緒に起きる関係）** です✨
@@ -164,6 +174,8 @@ graph TD
 
 ## 8) 今日作るやつ：モジュール候補の「カード」🪪✨（超おすすめ）
 
+![Module Card](./picture/mod_mono_ts_study_008_module_card.png)
+
 このテンプレを埋めるだけで、一気に設計っぽくなるよ😊💕
 
 ### 🧩 Module Card テンプレ
@@ -206,6 +218,8 @@ graph TD
 ```
 
 ### ② “小さすぎ/大きすぎ”の診断👩‍⚕️
+
+![AI Granularity Diagnosis](./picture/mod_mono_ts_study_008_ai_diagnosis.png)
 
 ```text
 このモジュール分割案が「小さすぎ」「大きすぎ」になってないか診断して。
