@@ -16,6 +16,8 @@
 ---
 
 ## まずダメ例😇💥（副作用を集約に詰め込む）
+![mod_mono_cs_study_019_side_effects_bad](./picture/mod_mono_cs_study_019_side_effects_bad.png)
+
 
 「支払い処理の中で、メールも在庫もポイントも全部やる」みたいなやつ…最初は気持ちいいけど、あとで爆発しがち💣😵‍💫
 
@@ -59,6 +61,8 @@ graph TD
 ---
 
 ## 良い例😎✨（“起きた事実”だけを出す）
+![mod_mono_cs_study_019_event_flow_good](./picture/mod_mono_cs_study_019_event_flow_good.png)
+
 
 ![Past Tense Event](./picture/mod_mono_cs_study_019_past_tense_event.png)
 
@@ -77,6 +81,8 @@ graph LR
 ```
 
 ### ドメインイベントとは？🔔
+![mod_mono_cs_study_019_naming_convention](./picture/mod_mono_cs_study_019_naming_convention.png)
+
 
 * **「何かをしろ」じゃない**
 * **「何が起きた」**を表す（過去形！）🕰️
@@ -115,6 +121,8 @@ public interface IDomainEvent
 ---
 
 ### 2) “イベントを溜める”基底クラスを作る📦✨
+![mod_mono_cs_study_019_entity_events_structure](./picture/mod_mono_cs_study_019_entity_events_structure.png)
+
 
 集約（Entity / Aggregate）がイベントを出したら、いったん自分の中に保持しておく作戦！
 
@@ -195,6 +203,8 @@ public sealed class Order : Entity
 ---
 
 ### 5) アプリ層でイベントを取り出して処理する📦📩
+![mod_mono_cs_study_019_handler_dispatch](./picture/mod_mono_cs_study_019_handler_dispatch.png)
+
 
 ここは「最小の雰囲気」だけ作るね😊（ガチ運用は第22〜24章のOutboxで強化するよ📤💥）
 
@@ -264,6 +274,8 @@ sequenceDiagram
 ---
 
 ## ちょい整理🧠✨「イベント」と「コマンド」の違い
+![mod_mono_cs_study_019_command_vs_event](./picture/mod_mono_cs_study_019_command_vs_event.png)
+
 
 * **コマンド（Command）✍️**：
   「支払って！」みたいに **お願い・命令**（未来形っぽい）

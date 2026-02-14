@@ -50,6 +50,8 @@ graph TD
 ---
 
 ## 2) まずダメ例😇💥：例外が「仕様」になって地獄
+![mod_mono_cs_study_018_exception_flow_bad](./picture/mod_mono_cs_study_018_exception_flow_bad.png)
+
 
 ### ダメ例あるある☠️
 
@@ -62,8 +64,12 @@ graph TD
 ---
 
 ## 3) モジュラーモノリス的“正解ムーブ”🧩🏠✨（3つのゾーン）
+![mod_mono_cs_study_018_result_flow_good](./picture/mod_mono_cs_study_018_result_flow_good.png)
+
 
 ### 🥚ゾーンA：モジュール内部（Domain / Application）
+![mod_mono_cs_study_018_zones](./picture/mod_mono_cs_study_018_zones.png)
+
 
 * **想定内の失敗 → Result**
 * **想定外の失敗 → 例外（投げてOK）**
@@ -104,6 +110,8 @@ graph LR
 ---
 
 ## 4) 手を動かす（C#）⌨️✨：ミニResult型を作ろう🎁
+![mod_mono_cs_study_018_result_object](./picture/mod_mono_cs_study_018_result_object.png)
+
 
 「Shared」に置いてOKなやつ（ドメイン知識じゃなくて技術の道具だからね）🧰😊
 
@@ -169,6 +177,8 @@ public readonly record struct Result<T>
 * “ありえない”状態（不変条件が壊れた、バグっぽい）
 
 ### 例外を“止める”場所🧱
+![mod_mono_cs_study_018_boundary_handling](./picture/mod_mono_cs_study_018_boundary_handling.png)
+
 
 * **公開API（モジュールの窓口）**
 * もしくは Application の「ユースケース入口」でもOK（呼び出し規約として）
@@ -272,6 +282,8 @@ public sealed class Order
 ---
 
 ## 7) （APIなら）Result → HTTP ProblemDetailsへ📮✨
+![mod_mono_cs_study_018_http_mapping](./picture/mod_mono_cs_study_018_http_mapping.png)
+
 
 Minimal API なら、`TypedResults` や `ProblemDetails` 系に繋げるとキレイ！
 .NET 10 の Minimal API まわりは ProblemDetails とも相性良くなってるよ🧩 ([Microsoft Learn][5])
