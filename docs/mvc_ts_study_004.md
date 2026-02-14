@@ -18,6 +18,8 @@ MVCでいう **Model** は、まず **“データの形”をきれいに決め
 
 ## 1) Modelってなに？（今日は“データの形”だけ集中🎯）
 
+![](./picture/mvc_ts_study_004_model_concept.png)
+
 Modelはざっくり言うと…
 
 * **アプリが持つデータ（状態）** 📦
@@ -29,6 +31,8 @@ Modelはざっくり言うと…
 ---
 
 ## 2) TodoItemの最小セットを決めよ〜✂️✅
+
+![](./picture/mvc_ts_study_004_todoitem_class_diagram.png)
 
 第3章で決めた最小機能（追加／一覧／完了）から考えると、最低これが必要だよね👇
 
@@ -57,6 +61,8 @@ classDiagram
 
 ## 3) `type` と `interface` の使い分け（ふわっとでOK🙆‍♀️）
 
+![](./picture/mvc_ts_study_004_type_vs_interface.png)
+
 TypeScript公式でも「どっちも似てるけど違いあるよ」って説明されてるよ📘✨
 たとえば…
 
@@ -84,10 +90,14 @@ TypeScript公式でも「どっちも似てるけど違いあるよ」って説�
 
 ### コツ②：期限が「ない」をどう表すか決める📅
 
+![](./picture/mvc_ts_study_004_date_representation.png)
+
 `dueDate?: Date`（ない＝undefined）でもいいし、`Date | null`（ない＝null）でもいい。
 今回は **`Date | null`** にして、「ない」を明確にするよ〜🙌
 
 ### コツ③：Todoを作る関数（Factory）を用意する🧁
+
+![](./picture/mvc_ts_study_004_factory_pattern.png)
 
 `TodoItem` を直書きで作りまくると、あとでルール追加したときに大変💦
 だから **create関数**で作る入口をひとつにするのが気持ちいい✨
@@ -170,6 +180,8 @@ export function toggleDone(todo: TodoItem): TodoItem {
 
 ## 6) 仮データ3件を作ってみよ🧪✨
 
+![](./picture/mvc_ts_study_004_sample_data_cards.png)
+
 次は「表示の準備」用にサンプルを作るよ〜📋💕
 
 ### 6-1) `src/model/sampleTodos.ts`
@@ -231,6 +243,8 @@ Copilot / Codex に投げるならこんな感じが便利だよ〜🌸
 ---
 
 ## 9) よくあるハマりポイント😵‍💫🧯
+
+![](./picture/mvc_ts_study_004_pitfall_date_json.png)
 
 * **`Date` はJSONにすると文字列になる**
   → 保存（第13章）でちゃんと扱うから今はOK👌✨

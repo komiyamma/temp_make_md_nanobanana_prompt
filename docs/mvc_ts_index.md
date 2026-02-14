@@ -10,6 +10,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 
 ## 第1章：MVCってなに？まず“分ける理由”をつかもう🧠✨
 
+![](./picture/mvc_ts_index_role_division.png)
+
 * **ゴール**：Model / View / Controller を自分の言葉で説明できる💬
 * **内容**：
 
@@ -47,6 +49,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 
 ## 第4章：Model入門①：データを型で表す（TodoItem）📦🧷
 
+![](./picture/mvc_ts_index_model_structure.png)
+
 * **ゴール**：Todoのデータ構造をTypeScriptで表現できる
 * **内容**：
 
@@ -71,6 +75,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 ---
 
 ## 第6章：Controller入門①：入力（イベント）を受けて指示する🎮➡️🧠
+
+![](./picture/mvc_ts_index_controller_flow.png)
 
 * **ゴール**：Controller＝交通整理を理解する🚦
 * **内容**：
@@ -109,6 +115,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 
 ## 第9章：Model入門②：不変条件（ルール）をModel側に寄せる🛡️📦
 
+![](./picture/mvc_ts_index_model_invariant.png)
+
 * **ゴール**：ルールを散らさない
 * **内容**：
 
@@ -120,6 +128,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 ---
 
 ## 第10章：ViewModel導入：表示都合でModelを汚さない🧺✨
+
+![](./picture/mvc_ts_index_viewmodel_transformation.png)
 
 * **ゴール**：表示用の形を作れる
 * **内容**：
@@ -170,6 +180,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 
 ## 第14章：永続化②：Repositoryで差し替え可能にする🔁🧲
 
+![](./picture/mvc_ts_index_repository_pattern.png)
+
 * **ゴール**：保存先変更に強くなる
 * **内容**：
 
@@ -205,6 +217,8 @@ AI：Copilot / Codex 等導入済み前提🤖💡
 ---
 
 ## 第17章：総合演習（完成）＋ふりかえり（MVCを説明できる）🎓🌸
+
+![](./picture/mvc_ts_index_final_structure.png)
 
 * **ゴール**：MVCで作って、構造を説明できる状態にする🗣️✨
 * **内容**：

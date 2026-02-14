@@ -58,6 +58,8 @@ addButton.onclick = () => {
 
 ## 3) MVCってなに？ひとことで言うと…🧩✨
 
+![](./picture/mvc_ts_study_001_mvc_definition.png)
+
 MVCは、UIまわりの作り方でよく使われる「設計パターン」だよ〜📚
 **Model / View / Controller に分けて**、役割をごちゃ混ぜにしないのがポイント✨
 MDNも「UI・データ・制御ロジックを分ける」って説明してるよ。([MDN Web Docs][1])
@@ -103,6 +105,8 @@ MDNも「UI・データ・制御ロジックを分ける」って説明してる
 
 ## 5) CampusTodoをMVCで仕分けしてみよう📝✅
 
+![](./picture/mvc_ts_study_001_campustodo_division.png)
+
 CampusTodo（課題メモ）なら、こんな感じで分けられるよ〜🌸
 
 * **Model**：Todoの配列、`addTodo()`、`toggleDone()`、（あとで）ルール🛡️
@@ -112,6 +116,8 @@ CampusTodo（課題メモ）なら、こんな感じで分けられるよ〜🌸
 ---
 
 ## 6) MVCが“回る”ってこういうこと🌀✨
+
+![](./picture/mvc_ts_study_001_mvc_cycle_sequence.png)
 
 超ざっくりの流れはこれ👇
 
@@ -143,6 +149,8 @@ sequenceDiagram
 
 ### 演習A：仕分けゲーム🧺✅
 
+![](./picture/mvc_ts_study_001_sorting_game.png)
+
 次の「やりたいこと」を、Model / View / Controller に振り分けてみてね✍️
 
 * ①「追加ボタンが押された」
@@ -160,6 +168,8 @@ sequenceDiagram
 ---
 
 ### 演習B：1本の処理をMVCに分割して“擬似コード”で書く📝
+
+![](./picture/mvc_ts_study_001_code_split_pseudo.png)
 
 （まだプロジェクト作ってなくてもOK👌）
 
@@ -207,6 +217,8 @@ GitHub Copilot には「提案」「チャット」「編集支援」など色�
 
 ### そのまま使えるプロンプト例🎪
 
+![](./picture/mvc_ts_study_001_ai_prompt_examples.png)
+
 * 「MVCを学園祭に例えて、女子大生向けにやさしく説明して！絵文字多めで！」🎪💖
 * 「この処理（貼り付ける）をModel/View/Controllerに分けるとしたら、どこに何を書く？」🧺✅
 * 「Viewに入れちゃダメな処理って何？初心者がやりがちなミスも教えて」🙅‍♀️💦
@@ -219,6 +231,8 @@ GitHub Copilot には「提案」「チャット」「編集支援」など色�
 ---
 
 ## 9) よくある落とし穴あるある🐣💥（先に知ると勝ち）
+
+![](./picture/mvc_ts_study_001_pitfalls.png)
 
 * Viewが **保存** を始める（Viewが外部に触ると壊れやすい）💾❌
 * Modelが **DOM** を触る（Modelは画面を知らない方が強い）🖥️❌
