@@ -33,6 +33,8 @@ flowchart LR
 
 ---
 
+![](./picture/entity_obj_cs_study_024_vo_storage.png)
+
 ## 1) 永続化の考え方：VOは「値として保存」🗄️💎
 
 VOはDBにそのまま突っ込むというより、だいたいこのどれかで保存するよ👇✨
@@ -59,6 +61,8 @@ EF Core 10では**Complex TypeをJSON列にマッピング**できるように�
 例：`OrderLines` は別テーブルが自然なことが多い（件数が増える＆検索もしたい）
 
 ---
+
+![](./picture/entity_obj_cs_study_024_complex_type.png)
 
 ## 2) EF Core 10で“VOっぽさ”を壊さないコツ：Complex Typeが強い💎✨
 
@@ -174,6 +178,8 @@ public class OrderLine
 
 ---
 
+![](./picture/entity_obj_cs_study_024_value_converter.png)
+
 ### 3-3) EF Core：ValueConverter と ComplexProperty を使い分ける 🧠✨
 
 **ValueConverter**は「モデルの型 ⇄ DBが分かる型」を変換して保存できる仕組みだよ（読み書き時に変換）🪄 ([Microsoft Learn][2])
@@ -258,6 +264,8 @@ public class OrderLineConfig : IEntityTypeConfiguration<OrderLine>
 
 ---
 
+![](./picture/entity_obj_cs_study_024_test_layers.png)
+
 ## 4) テスト戦略：3段構えが“安心”🧪🛡️
 
 ![](./picture/entity_obj_cs_study_024_persistence_mapping.png)
@@ -340,6 +348,8 @@ public class PersistenceTests
 
 ---
 
+![](./picture/entity_obj_cs_study_024_refactor_steps.png)
+
 ## 5) 段階リファクタ：プリミティブ地獄 → VO へ安全移行🧹✨
 
 「いきなり全部VO化」は事故りやすいので、**段階でやる**のがいちばん強いよ💪✨
@@ -371,6 +381,8 @@ public class PersistenceTests
 
 ---
 
+![](./picture/entity_obj_cs_study_024_ai_pair.png)
+
 ## 6) AI活用：雛形は任せて、判断は人間が握る🤖👑
 
 C# 14 は .NET 10 世代の最新言語で、Visual Studio 2026 で触れるよ✨ ([Microsoft Learn][4])
@@ -399,6 +411,8 @@ C# 14 は .NET 10 世代の最新言語で、Visual Studio 2026 で触れるよ�
 * 🧪 変換（Converter/ComplexProperty）が統合テストで守られてる？
 
 ---
+
+![](./picture/entity_obj_cs_study_024_final_goal.png)
 
 ## 7) 最終課題（この章のゴール演習）🎓☕️🧾✨
 

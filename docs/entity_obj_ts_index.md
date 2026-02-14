@@ -4,6 +4,8 @@
 
 ---
 
+![](./picture/entity_obj_ts_index_roadmap.png)
+
 # 全体構成（24章）🌈
 
 * **Part 1（1〜6章）**：概念の土台づくり（Entity/VOの芯）🧠✨
@@ -24,6 +26,8 @@
 * **AIプロンプト例**🤖：
 
   * 「初心者向けに“EntityとVOの違い”を、例3つで説明して」
+
+![](./picture/entity_obj_ts_index_env_setup.png)
 
 ## 第2章：Windows＋VS Code＋TypeScript環境づくり💻🪟
 
@@ -55,6 +59,8 @@
 
   * 「この候補がEntityっぽい理由を“同一性”の観点で説明して」
 
+![](./picture/entity_obj_ts_index_entity_vo.png)
+
 ## 第5章：Value Objectの芯＝不変＋自己検証＋値の等価性💎✅
 
 * **ねらい**：VOの“気持ちよさ”を先に味わう🍰
@@ -64,6 +70,8 @@
 * **AIプロンプト例**🤖：
 
   * 「このVOに必要な“不変条件”を、初心者向けに箇条書きで」
+
+![](./picture/entity_obj_ts_index_immutability.png)
 
 ## 第6章：Entityの芯＝更新の入口を絞って“壊れない”設計🧱🪪
 
@@ -183,6 +191,8 @@
 
   * 「この状態遷移で抜けてそうなケースを5つ出して」
 
+![](./picture/entity_obj_ts_index_boundary.png)
+
 ## 第17章：境界（DTO→ドメイン）とエラーの基本（Result/例外）🚪⚠️
 
 * **ねらい**：外から来たデータを“安全に”中へ入れる🙂
@@ -196,6 +206,8 @@
 ---
 
 # Part 4：永続化/変換/ACL/テスト/総合演習（18〜24章）🚀🧪
+
+![](./picture/entity_obj_ts_index_persistence.png)
 
 ## 第18章：永続化とドメインは別物（分離の考え方）💾🧼
 
@@ -246,6 +258,8 @@
 * **AIプロンプト例**🤖：
 
   * 「この機能のテスト、足りない観点をチェックして追加案を出して」
+
+![](./picture/entity_obj_ts_index_refactoring.png)
 
 ## 第23章：リファクタ演習（Entity→VO化でバグを減らす）🔧✨
 

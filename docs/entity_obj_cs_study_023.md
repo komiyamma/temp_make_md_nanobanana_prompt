@@ -33,6 +33,8 @@ DTOの `string` や `int` の都合をドメインに流し込むと、すぐに
 
 ---
 
+![](./picture/entity_obj_cs_study_023_primitive_hell.png)
+
 ## 23-2. 入口が弱いと起きる事故あるある😱💥
 
 たとえば「学内カフェ注文アプリ」☕️で…
@@ -59,6 +61,8 @@ flowchart LR
 ![](./picture/entity_obj_cs_study_023_input_conversion_pipeline.png)
 
 
+![](./picture/entity_obj_cs_study_023_3step_conversion.png)
+
 ### ✅ ステップ①：DTOで受け取る（外の形そのまま）📦
 
 * API/画面に都合がいい形でOK
@@ -75,6 +79,8 @@ flowchart LR
 * ここで “ドメインのルール” を守る（第16〜17章のノリ！）🔒✨
 
 ---
+
+![](./picture/entity_obj_cs_study_023_http_codes.png)
 
 ## 23-4. 実装してみよ！（Minimal API + DTO → ドメイン変換）🛠️🚀
 
@@ -106,6 +112,8 @@ public sealed record CreateOrderLineRequest(
 （ドメインの厳密ルールはVO側でやるよ💎）
 
 ---
+
+![](./picture/entity_obj_cs_study_023_result_pattern_flow.png)
 
 ### ② ドメイン変換で使う Result（簡易版）⚠️➡️✅
 
@@ -267,6 +275,8 @@ public sealed record OrderLine(ProductCode ProductCode, Quantity Quantity, Money
 
 ---
 
+![](./picture/entity_obj_cs_study_023_minimal_api.png)
+
 ### ⑥ API（Minimal API）でつなぐ🚀✨
 
 .NET 10 では Minimal API に **組み込みバリデーション**が追加されたよ〜！
@@ -320,6 +330,8 @@ ASP.NET Core では、エラーレスポンスの標準として **ProblemDetail
 （ここは“やり込み”なので、まずは「422で errors を返せた！」ができればOK🙆‍♀️✨）
 
 ---
+
+![](./picture/entity_obj_cs_study_023_test_boundary.png)
 
 ## 23-6. テストのコツ（境界はテストしやすい！）🧪💖
 
@@ -380,6 +392,8 @@ public class CreateOrderMapperTests
 
 * `Currency` を `"jpy"` で送っても `"JPY"` に正規化されるようにする🌍✨
 * `lines[0].quantity` みたいな **Target整形** をちゃんと付ける🎯
+
+![](./picture/entity_obj_cs_study_023_ux_error.png)
 
 ### 演習B：エラーの見せ方（UX）を良くしよう🫶
 

@@ -36,6 +36,8 @@
 
 ---
 
+![](./picture/entity_obj_ts_study_002_install_trio.png)
+
 ## 2. いちばんカンタンなインストール方法（winget）🪄
 
 ターミナル（PowerShell）でこれ👇（コピペOK！）
@@ -59,6 +61,8 @@ git --version
 
 ---
 
+![](./picture/entity_obj_ts_study_002_extension_pack.png)
+
 ## 3. VS Codeに入れておく拡張（迷ったらこれだけ）🧩✨
 
 ### 必須級🧸
@@ -74,6 +78,8 @@ git --version
 * **GitLens**（履歴が見える🔍）
 
 ---
+
+![](./picture/entity_obj_ts_study_002_settings_json.png)
 
 ## 4. “保存したら整う”設定を入れよう✨（超だいじ）
 
@@ -123,6 +129,8 @@ pnpm -v
 > その場合は、NodeをLTSにするか、Corepackを別途入れる選択になるよ〜。
 
 ---
+
+![](./picture/entity_obj_ts_study_002_project_init.png)
 
 ## 6. TypeScript + Lint + Format + Test を導入🧁✨
 
@@ -248,6 +256,8 @@ describe("sum", () => {
 }
 ```
 
+![](./picture/entity_obj_ts_study_002_test_run.png)
+
 ### 8-3. 実行！🚀
 
 ```bash
@@ -260,6 +270,8 @@ pnpm fmt
 
 ---
 
+![](./picture/entity_obj_ts_study_002_ts_version.png)
+
 ## 9. VS Codeで“プロジェクトのTypeScript”を使う🧠✨
 
 VS CodeはTS言語機能は入ってるけど、`tsc` は別途必要だよ（今入れたからOK）([code.visualstudio.com][13])
@@ -270,6 +282,8 @@ VS CodeはTS言語機能は入ってるけど、`tsc` は別途必要だよ（�
 これ大事〜！🩷([code.visualstudio.com][14])
 
 ---
+
+![](./picture/entity_obj_ts_study_002_ai_rule.png)
 
 ## 10. AI拡張の“いい使い方”🤖💡（使いすぎ注意も⚠️）
 
