@@ -7,6 +7,8 @@
 
 ## 0. まず超大事：**呼び出しの矢印**と**依存の矢印**は別ものだよ📌
 
+![Runtime vs Compile Time](./picture/mod_mono_ts_study_022_runtime_vs_compile.png)
+
 * **呼び出し（runtime）**：実行時にAがBを使う（関数コールとか）
 * **依存（compile-time）**：コード上でAがBを`import`してる（型・クラス・定数を知ってる）
 
@@ -28,6 +30,8 @@
 ## 2. 依存の向きを整える「3つの作戦」🧤✨
 
 ### 作戦A：まずは“正攻法”✅「公開APIだけに依存する」
+
+![Public API Door](./picture/mod_mono_ts_study_022_public_api_door.png)
 
 第20章の復習っぽいけど最強！
 Bの`index.ts`（公開API）**だけ**をAが使う。
@@ -81,6 +85,8 @@ graph TD
 ## 3. 作戦Bの“型”を手で覚えよう🧩✍️（例つき）
 
 ### 例：`billing`が「ユーザーの状態更新」をしたい
+
+![Billing User Port](./picture/mod_mono_ts_study_022_billing_user_port.png)
 
 でも `billing -> user` に**強い依存**を作りたくない！
 
@@ -141,6 +147,8 @@ export class UserStatusAdapter implements UserStatusPort {
 
 ### 最後に「組み立て役（Composition Root）」で接続する🔧🎀
 
+![Composition Root Wiring](./picture/mod_mono_ts_study_022_composition_root_wiring.png)
+
 ```ts
 // app/compositionRoot.ts
 import { PayInvoice } from "../modules/billing/application/PayInvoice";
@@ -161,6 +169,8 @@ export function createPayInvoice() {
 
 ### ✅ ルール1：モジュール間で渡すのは「DTO（境界用の形）」が基本
 
+![DTO Passport](./picture/mod_mono_ts_study_022_dto_passport.png)
+
 別モジュールのドメイン型をそのまま持つと、仕様変更が伝染するよ🦠💥
 
 * 👍 `UserSummaryDTO`みたいな“境界用の型”にする
@@ -178,6 +188,8 @@ DIPは万能じゃなくて、やりすぎると逆に読みにくい🥺
 ---
 
 ### ✅ ルール3：循環依存は即アウト💣
+
+![Circular Dependency Trap](./picture/mod_mono_ts_study_022_circular_trap.png)
 
 見つけたら、だいたいどっちか👇
 
