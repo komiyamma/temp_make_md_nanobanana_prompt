@@ -71,6 +71,8 @@ mindmap
 
 ## 3) CampusTodoに当てはめると、3役はこうなるよ📚✅
 
+![CampusTodo Breakdown](./picture/mvc_cs_study_001_campustodo_example.png)
+
 この教材の通し課題「CampusTodo（課題メモ）」で考えてみよ〜💡
 
 ### Model（モデル）📦🛡️
@@ -138,6 +140,8 @@ sequenceDiagram
 
 ## 5) “混ぜるコード” vs “分けるコード”をチラ見して感覚を掴む👀✨
 
+![Code Structure Comparison](./picture/mvc_cs_study_001_code_structure_comparison.png)
+
 まだ本格実装はしないけど、「空気感」を先に掴むと超ラク〜☺️
 
 ### ❌ 混ぜるとこうなりがち😇（全部入り弁当🍱）
@@ -172,6 +176,8 @@ controller.Handle(input);
 
 ## 6) ミニ演習：Todoアプリの処理を3つに仕分けしよう📝✨（紙でOK！）
 
+![Sorting Exercise](./picture/mvc_cs_study_001_sorting_exercise.png)
+
 やることは超シンプル！でも効果バツグン💪💕
 
 ### 手順🍀
@@ -198,6 +204,8 @@ controller.Handle(input);
 ---
 
 ## 7) AI活用🤖💡（第1章用：たとえ話で理解を固定する）
+
+![Cafe Analogy](./picture/mvc_cs_study_001_cafe_analogy.png)
 
 AIは“理解の補助輪🚲”にすると最強だよ✨
 おすすめプロンプト👇（コピペOK！）

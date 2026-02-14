@@ -64,6 +64,8 @@ graph LR
 
 ### フォルダ案📁✨
 
+![Platform Folder Structure](./picture/mod_mono_ts_study_030_folder_platform.png)
+
 * `modules/<A>/domain/...`：集約や値オブジェクト
 * `modules/<A>/application/...`：ユースケース
 * `platform/eventing/...`：イベントバス（横断だけど、意図が明確な“基盤モジュール”に寄せる）🧱✨
@@ -88,6 +90,8 @@ export type DomainEvent<TType extends string = string, TPayload = unknown> = Rea
 * `correlationId` を付けると、ログ追跡が神になります🙏📌
 
 ### ② イベントをためる集約（超よくある型）🌰✨
+
+![Aggregate Event Bag](./picture/mod_mono_ts_study_030_aggregate_events_bag.png)
 
 ```ts
 // platform/eventing/aggregate-root.ts
@@ -332,6 +336,8 @@ export class CalendarAcl {
 
 ## 3-1. ADRってなに？🤔
 
+![ADR Card](./picture/mod_mono_ts_study_030_adr_card.png)
+
 ADR（Architectural Decision Record）は、**重要な決定とその理由/結果**を1枚ずつ残す小さな文書です📝
 「あとで読める」「更新しやすい」が強み！ ([Architectural Decision Records][2])
 
@@ -384,6 +390,8 @@ Accepted
 
 ## 4-2. 一番安全な移行の考え方：Strangler Fig🌳✨
 
+![Strangler Fig Pattern](./picture/mod_mono_ts_study_030_strangler_fig.png)
+
 いきなり全部書き直さず、**新旧が共存しながら少しずつ置き換える**方法が定番です🌱
 “変換 → 共存 → 置換（古いのを消す）”の流れで進めます。 ([AWS ドキュメント][3])
 
@@ -402,6 +410,8 @@ Accepted
 ---
 
 # 5) 最終課題（自己採点チェックリスト）✅✅✅
+
+![Final Graduation Checklist](./picture/mod_mono_ts_study_030_final_checklist.png)
 
 ## 提出物（3点セット）🎁✨
 
