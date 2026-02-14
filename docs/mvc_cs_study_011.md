@@ -188,6 +188,8 @@ public static class CommandParsers
 
 ## Step3：Modelで「ルールチェック」する🛡️📦✨
 
+![Validation Flowchart](./picture/mvc_cs_study_011_validation_flowchart.png)
+
 前章（不変条件）の流れを使って、TodoItem を **ルールで守る** ようにします💪
 
 ```csharp
@@ -267,6 +269,8 @@ flowchart TD
 
 ## Step4：Viewで「怖くないエラー表示」にする🌸🖥️✨
 
+![Friendly Error Helper](./picture/mvc_cs_study_011_friendly_error_helper.png)
+
 エラーメッセージの基本形はこれが強いです👇
 **①何が起きた？ → ②なぜ？ → ③どう直す？**
 これはWindowsのエラーメッセージガイドでも「分かりやすく役に立つ内容に」みたいな方向で整理されています([Microsoft Learn][2])
@@ -298,6 +302,8 @@ public static class ConsoleView
 ---
 
 ## Step5：アプリの最上位で「予期しない例外」を受け止める🧯🧠✨
+
+![Global Exception Safety Net](./picture/mvc_cs_study_011_global_exception_net.png)
 
 入力ミスは Result で処理してOK👌
 でも「バグ」や「想定外」は起きます。だから最上位で **保険の try/catch** を置きます🧯

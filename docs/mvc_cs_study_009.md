@@ -89,6 +89,8 @@ CampusTodo（コンソールMVC）で、まずはこのへんから始めるの�
 
 ## 6) まずはコード：DomainException（ルール違反専用）🚨📦
 
+![Domain Exception Card](./picture/mvc_cs_study_009_domain_exception_card.png)
+
 Modelが「それはルール違反だよ〜🥺」って伝えるための例外クラスを作るよ✨
 （例外がイヤならResult方式もあるけど、まずはこれがわかりやすい🍬）
 
@@ -127,6 +129,8 @@ public enum TodoPriority
 ```
 
 ### 7-2) TodoItem本体：Createで検証、変更はメソッド経由に🧱✨
+
+![Todo Factory QC](./picture/mvc_cs_study_009_todo_factory_qc.png)
 
 ```csharp
 // Models/TodoItem.cs
@@ -243,6 +247,8 @@ flowchart TD
 
 ### 🌟ここが「MVCの美しさ」ポイント
 
+![Encapsulated Safe](./picture/mvc_cs_study_009_encapsulated_safe.png)
+
 * ルールは **Model（TodoItem）に集約** 🛡️
 * Controllerは「入力を受けて呼ぶ」だけに近づく🚦✨
 * Viewは表示するだけ🎨👀
@@ -250,6 +256,8 @@ flowchart TD
 ---
 
 ## 8) Controller側はどうする？（落とさず案内する）🚦😌
+
+![Controller Defusing Error](./picture/mvc_cs_study_009_controller_catch_defuse.png)
 
 Controllerは「形式チェック（パース）」と「例外を受けて表示」が担当だよ✨
 （ルール判断の本体はModelがやる！）
