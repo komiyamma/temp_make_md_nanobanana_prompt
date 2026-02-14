@@ -16,6 +16,8 @@
 
 ## 1. なんで“判定フロー”が必要なの？🤔🧸
 
+![entity_obj_ts_study_007_confusion_crossroads](./picture/entity_obj_ts_study_007_confusion_crossroads.png)
+
 Entity/VOの切り分けって、最初はこうなりがち👇
 
 * 「IDがあるからEntityでしょ？」🆔💦
@@ -28,6 +30,8 @@ Entity/VOの切り分けって、最初はこうなりがち👇
 ---
 
 ## 2. まずは“3点セット”だけ覚えよ🧠✨
+
+![entity_obj_ts_study_007_three_filters](./picture/entity_obj_ts_study_007_three_filters.png)
 
 ```mermaid
 flowchart TD
@@ -106,6 +110,8 @@ flowchart TD
 
 ### 4-1. 「IDがある＝Entity」じゃないよ🆔❌
 
+![entity_obj_ts_study_007_id_tag_dog](./picture/entity_obj_ts_study_007_id_tag_dog.png)
+
 IDは“都合で付く”ことがある！
 例：画面上の一時ID、DBの主キー、外部APIの識別子…などなど💦
 **本質は「追跡したいか」**だよ〜🕵️‍♀️✨
@@ -113,6 +119,8 @@ IDは“都合で付く”ことがある！
 ---
 
 ### 4-2. 「住所」ってEntity？VO？🏠🤔
+
+![entity_obj_ts_study_007_address_duality](./picture/entity_obj_ts_study_007_address_duality.png)
 
 多くの学習題材だと **住所はVO** が気持ちいいことが多い💎✨
 
@@ -137,6 +145,8 @@ IDは“都合で付く”ことがある！
 ---
 
 ## 5. ハンズオン：自分専用チートシートを作ろう📝💎
+
+![entity_obj_ts_study_007_cheat_sheet_hand](./picture/entity_obj_ts_study_007_cheat_sheet_hand.png)
 
 ここからが実作業だよ〜！
 あなたの題材が「ミニ注文」でも「サークル会計」でも同じ手順でいける☺️🌷
@@ -174,6 +184,8 @@ Member / Payment / Receipt / Money / Date / Period / Category / Note / Budget / 
 ---
 
 ## 6. 演習：仕分けクイズ（理由もセットで！）🧩💖
+
+![entity_obj_ts_study_007_sorting_baskets](./picture/entity_obj_ts_study_007_sorting_baskets.png)
 
 次の10個を、**Entity / VO** に分けてみてね☺️✨
 （題材は注文っぽいけど、考え方は共通だよ〜）
@@ -252,6 +264,8 @@ Q1=B / Q2=A,C / Q3=D / Q4=B / Q5=B 🎉✨
 ---
 
 ## 8. AIプロンプト集（ブレない相談テンプレ）🤖🪄
+
+![entity_obj_ts_study_007_ai_judge_score](./picture/entity_obj_ts_study_007_ai_judge_score.png)
 
 ### 8-1. まずは“Plan”で質問を作らせる📋✨
 
