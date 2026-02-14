@@ -12,6 +12,8 @@
 
 ---
 
+![err_model_cs_index_overview_3_categories.png](./picture/err_model_cs_index_overview_3_categories.png)
+
 ## 第1章：エラーモデリングって何？なぜ必要？🤔🌱
 
 * ねらい：エラーを「仕様」として扱う感覚をつかむ
@@ -25,6 +27,8 @@
 * 内容：Visual Studio 2026 / .NET 10 / C# 14 の想定、AI拡張の使い方ルール ([Microsoft Learn][3])
 * 演習：Consoleアプリ＋最小のWeb APIどっちも作って動かす🔧
 * AI活用：Copilotに「雛形生成」→自分で読み解く👀
+
+![err_model_cs_index_exception_flow.png](./picture/err_model_cs_index_exception_flow.png)
 
 ## 第3章：例外の基礎復習（C#）🧯
 
@@ -46,6 +50,8 @@
 * 内容：入力ミス＝想定内／不変条件違反＝想定外 など
 * 演習：例を20個分類（想定内/想定外）📌
 * AI活用：分類の迷いどころを相談して判断軸を固める🤝
+
+![err_model_cs_index_domain_vs_infra.png](./picture/err_model_cs_index_domain_vs_infra.png)
 
 ## 第6章：エラー分類の全体像（3分類）🧩
 
@@ -74,6 +80,8 @@
 * 内容：例外の役割（バグを早く発見）／ユーザー表示とログの分離
 * 演習：「不変条件」を3つ決めて“破ったらどうする？”を書く📝
 * AI活用：不変条件の候補を洗い出してもらう🔎
+
+![err_model_cs_index_boundary_shield.png](./picture/err_model_cs_index_boundary_shield.png)
 
 ## 第10章：例外境界（Exception Boundary）ってなに？🚪
 
@@ -109,6 +117,8 @@
 * 内容：`record` を使う理由（不変・比較しやすい・テストしやすい）
 * 演習：エラー型を3種類作ってswitchで分岐🔀
 * AI活用：型名・フィールド名の改善提案をもらう🧠
+
+![err_model_cs_index_result_pattern_box.png](./picture/err_model_cs_index_result_pattern_box.png)
 
 ## 第15章：Result型の考え方（成功/失敗の箱）🎁✅❌
 
@@ -159,6 +169,8 @@
 * 演習：エラーカタログの各項目にステータスを割り当てる📌
 * AI活用：割り当て理由の文章を整えてもらう✍️
 
+![err_model_cs_index_problem_details.png](./picture/err_model_cs_index_problem_details.png)
+
 ## 第22章：APIエラー設計② ProblemDetails（RFC 9457）🧾✨
 
 * ねらい：クライアントが扱いやすい標準形式で返せる
@@ -179,6 +191,8 @@
 * 内容：ドメインエラーは“期待通りの失敗”として記録／例外は詳細も
 * 演習：ログ方針（レベル・項目・例外の扱い）を1枚にまとめる📄
 * AI活用：ログ項目のチェックリストを作らせる✅
+
+![err_model_cs_index_resilience_retry.png](./picture/err_model_cs_index_resilience_retry.png)
 
 ## 第25章：ログ設計② 相関ID＋レジリエンス＋ミニ総合演習🧵⏳🎓
 

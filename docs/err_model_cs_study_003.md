@@ -17,6 +17,8 @@
 
 ---
 
+![err_model_cs_study_003_exception_mechanism.png](./picture/err_model_cs_study_003_exception_mechanism.png)
+
 ## 2) 例外（Exception）ってなに？💥😳
 
 例外はひとことで言うと、
@@ -100,6 +102,8 @@ static void C()
 
 ---
 
+![err_model_cs_study_003_stack_trace_reading.png](./picture/err_model_cs_study_003_stack_trace_reading.png)
+
 ## 5) スタックトレースの読み方🔎🧵（ここが勝ち筋！）
 
 スタックトレースは「呼び出し履歴」だよ📞➡️📞➡️📞
@@ -160,6 +164,8 @@ catch (Exception ex)
 
 ---
 
+![err_model_cs_study_003_async_exception.png](./picture/err_model_cs_study_003_async_exception.png)
+
 ## 8) async/await の例外（超入門）⏳⚡
 
 「非同期って何か難しそう…」ってなるけど、ここだけ覚えればOK😊
@@ -190,6 +196,8 @@ static async Task BoomAsync()
 ---
 
 ## 9) デバッガで追う（Visual Studio）🐞🪄
+
+![err_model_cs_study_003_debug_break_on_throw.png](./picture/err_model_cs_study_003_debug_break_on_throw.png)
 
 ### 9-1) 「投げられた瞬間」に止める🛑✨（最強）
 
