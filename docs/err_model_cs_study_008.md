@@ -7,6 +7,8 @@
 
 ## 8.1 インフラエラーってなに？🏗️🌐
 
+![err_model_cs_study_008_infra_error_concept.png](./picture/err_model_cs_study_008_infra_error_concept.png)
+
 **インフラエラー**は、ざっくり言うとこう👇
 
 * **自分の業務ルール（ドメイン）** じゃなくて
@@ -31,6 +33,8 @@
 
 ### ✅ Transient（一時的）＝“時間が解決するかも”
 
+![err_model_cs_study_008_transient_cloud.png](./picture/err_model_cs_study_008_transient_cloud.png)
+
 * 一瞬ネットが不安定📶
 * 相手が混んでる（429 / 503）🚦
 * DBが一時的に忙しい🗄️💦
@@ -38,6 +42,8 @@
 👉 基本方針：**条件つきでリトライ検討**🔁✨
 
 ### 🚫 Permanent（恒久的）＝“待っても直らない”
+
+![err_model_cs_study_008_permanent_key.png](./picture/err_model_cs_study_008_permanent_key.png)
 
 * APIキー間違い（401/403）🔑❌
 * URLが間違い（404）🗺️❌
@@ -70,6 +76,8 @@
 → **Permanent寄り**🚫
 
 ### 軸C：「操作の性質」はリトライ安全？⚠️
+
+![err_model_cs_study_008_idempotency_danger.png](./picture/err_model_cs_study_008_idempotency_danger.png)
 
 * **GET（参照）**：比較的リトライしやすい😊
 * **POST（購入・送金）**：雑にリトライすると二重処理の危険😱
@@ -115,6 +123,8 @@
 ---
 
 ## 8.6 リトライ判断表（これを作るのが本章の成果物）📋✨
+
+![err_model_cs_study_008_exponential_backoff.png](./picture/err_model_cs_study_008_exponential_backoff.png)
 
 ```mermaid
 stateDiagram-v2

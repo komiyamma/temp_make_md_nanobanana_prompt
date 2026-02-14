@@ -20,6 +20,8 @@
 
 ## 2) まず「境界」ってなに？🚪🧸
 
+![err_model_cs_study_011_clean_boundary.png](./picture/err_model_cs_study_011_clean_boundary.png)
+
 超ざっくり言うとね👇
 
 * **ドメイン**：アプリの“芯”💗（ルール・判断・不変条件）
@@ -103,6 +105,8 @@ public sealed record BudgetExceeded(decimal Total, decimal Budget)
 
 ### 6-2) ドメインが欲しい「外部の力」を interface で宣言📜✨（ポート）
 
+![err_model_cs_study_011_interface_contract.png](./picture/err_model_cs_study_011_interface_contract.png)
+
 ![Plug and Socket](./picture/err_model_cs_study_011_plug_and_socket.png)
 
 **Repository** や **外部決済**は、ドメインから見ると「お願いしたい能力」だよね🙏
@@ -133,6 +137,8 @@ public sealed record PaymentResult(bool IsSuccess, string? TransactionId, string
 ---
 
 ## 7) 次にアプリ層（UseCase）を書く🎤🧩
+
+![err_model_cs_study_011_usecase_conductor.png](./picture/err_model_cs_study_011_usecase_conductor.png)
 
 ```mermaid
 sequenceDiagram
@@ -284,6 +290,8 @@ public sealed class PaymentClient : IPaymentPort
 
 ## 9) DI登録（API側で“刺す”）🧩🪡
 
+![err_model_cs_study_011_di_puzzle.png](./picture/err_model_cs_study_011_di_puzzle.png)
+
 ASP.NET Core は標準で DI を持ってるから、**ここで実装を差し込む**のが定番だよ！🧰✨ ([Microsoft Learn][1])
 
 ```csharp
@@ -353,6 +361,8 @@ app.Run();
 * `IPaymentPort` / `IInventoryPort` を作って、UseCase は interface だけ呼ぶようにする✨
 
 ### 演習B：fake に差し替えてテスト🧪🌈
+
+![err_model_cs_study_011_fake_testing.png](./picture/err_model_cs_study_011_fake_testing.png)
 
 * `FakeInventoryPort` を作って、在庫 0 のケースをテスト
 * `FakePaymentPort` を作って、決済失敗のケースをテスト
