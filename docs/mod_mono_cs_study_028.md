@@ -12,6 +12,8 @@
 
 ## まずダメ例😇 → 「enumだけ」だと起きがちな事故💥
 
+![Switch Gap](./picture/mod_mono_cs_study_028_enum_switch_gap.png)
+
 「状態はenumで持って、ifで分岐すればいいよね！」ってやると…👇
 
 * 新しい状態が増えたのに、分岐を書き忘れる🙈
@@ -100,6 +102,8 @@ public static class OrderStateMachine
 
 ### レベル2：その警告を “エラー化” して、漏れをコンパイルで止める🚫🧱
 
+![Compiler Error](./picture/mod_mono_cs_study_028_compiler_error.png)
+
 C#のswitch式は、網羅してないと **CS8509**（非網羅）になりやすいよね👀 ([Microsoft Learn][2])
 これを **「警告じゃなくてエラー」** にして、ビルドを落とすと最強🛡️✨
 
@@ -118,6 +122,8 @@ dotnet_diagnostic.CS8509.severity = error
 ---
 
 ### レベル3：本命🔥「型（typestate）で、そもそも呼べなくする」🧩✨
+
+![Typestate Diagram](./picture/mod_mono_cs_study_028_typestate_diagram.png)
 
 ![Typestate Pattern](./picture/mod_mono_cs_study_028_typestate.png)
 
@@ -145,6 +151,8 @@ graph LR
 * つまり **不正な遷移が“書けない”**（＝コンパイルで落ちる）🧱✨
 
 #### 手を動かす（C#）⌨️🌟：状態を「型」にする
+
+![Generics Magic](./picture/mod_mono_cs_study_028_generics_magic.png)
 
 ```csharp
 // 状態を “型” で表すよ🧱
@@ -207,6 +215,8 @@ var o3 = o2.Ship();  // ✅ OK（Paid→Shipped）
 ---
 
 ## でも現実ではどう使うの？🤔（落とし所💡）
+
+![Pragmatic Balance](./picture/mod_mono_cs_study_028_pragmatic_balance.png)
 
 型で守るのは強いけど、実務では👇も考えるよ🧠
 

@@ -19,6 +19,8 @@
 
 ## まずダメ例😇💥
 
+![Chaos State](./picture/mod_mono_cs_study_026_bad_example.png)
+
 ## ダメなやつ：if地獄で状態が破壊される
 
 「今の状態」を意識せずに処理すると、すぐ破綻するよ〜😇
@@ -87,6 +89,8 @@ public void Pay()
 
 ## 状態遷移表を作ろう🚥📋✨
 
+![State Diagram](./picture/mod_mono_cs_study_026_state_machine_diagram.png)
+
 ![State Machine Table](./picture/mod_mono_cs_study_026_state_machine.png)
 
 ```mermaid
@@ -107,6 +111,8 @@ stateDiagram-v2
 「行＝今の状態」「列＝やりたい操作」にして、セルに結果を書く感じ😊
 
 ## 注文の状態遷移表📋
+
+![Transition Table](./picture/mod_mono_cs_study_026_state_transition_table.png)
 
 | 現在の状態＼トリガー | Pay（決済）               | Ship（発送）               | Cancel（キャンセル）        |
 | ---------- | --------------------- | ---------------------- | -------------------- |
@@ -134,6 +140,8 @@ stateDiagram-v2
 
 ### 1) enum を作る🧩
 
+![Enum Definition](./picture/mod_mono_cs_study_026_enum_code.png)
+
 ```csharp
 public enum OrderStatus
 {
@@ -152,6 +160,8 @@ public enum OrderTrigger
 ```
 
 ### 2) 遷移表をコードにする📋➡️🧱
+
+![Specification Class](./picture/mod_mono_cs_study_026_spec_class.png)
 
 ```csharp
 public static class OrderStateMachineSpec

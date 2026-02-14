@@ -48,6 +48,8 @@
 
 ## 2) テストの種類：モジュラーモノリス向けの“ちょうどいい”配分🍰🧪
 
+![Test Pyramid](./picture/mod_mono_cs_study_029_test_pyramid_cake.png)
+
 ![Testing Strategy](./picture/mod_mono_cs_study_029_test_strategy.png)
 
 ```mermaid
@@ -162,12 +164,16 @@ public class PayOrderUseCaseTests
 
 ## 5) インフラ統合テスト：DB・Outbox・Repository を“現実寄り”に確かめる🗄️🧪
 
+![Unit vs Integration](./picture/mod_mono_cs_study_029_unit_vs_integration.png)
+
 ### ありがちな落とし穴⚠️
 
 * 「InMemoryで通ったのに本番DBで死ぬ」😵
   （SQLの制約、トランザクション、インデックス、ロック…現実は厳しい🥲）
 
 ### そこで：Testcontainers という選択肢🐳✨
+
+![Testcontainers Ship](./picture/mod_mono_cs_study_029_testcontainers_ship.png)
 
 テスト用に **使い捨てDBコンテナ**を立てて検証できるライブラリだよ！
 Testcontainers for .NET は NuGet でも配布されてる📦（例：4.10.0 のリリース情報あり）([GitHub][1])
@@ -214,6 +220,8 @@ public class OrderingRepositoryTests : IAsyncLifetime
 ---
 
 ## 6) 本丸🔥：アーキテクチャテストで“境界破り”を自動検知する🔍🛡️
+
+![Architecture Test Guard](./picture/mod_mono_cs_study_029_arch_test_guard.png)
 
 ![Architecture Test Robot](./picture/mod_mono_cs_study_029_architecture_test.png)
 
@@ -283,6 +291,8 @@ public class LayerRulesTests
 ---
 
 ### 6-2) モジュール境界ルール（他モジュールを勝手に触らない）📦🙅‍♀️
+
+![Module Boundary Test](./picture/mod_mono_cs_study_029_module_boundary_test.png)
 
 **ルール例**
 

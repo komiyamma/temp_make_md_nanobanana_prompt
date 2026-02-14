@@ -17,6 +17,8 @@
 
 ## まず超大事：冪等性ってなに？🤔💡
 
+![Idempotency Definition](./picture/mod_mono_cs_study_025_idempotency_def.png)
+
 冪等＝**同じリクエストを何回送っても、最終的な結果が1回と同じ** になること🌈
 
 HTTPの世界だと「PUT/DELETE は冪等」「POST は基本冪等じゃない」って扱いが定番だよ📮
@@ -32,6 +34,8 @@ HTTPの世界だと「PUT/DELETE は冪等」「POST は基本冪等じゃない
 ---
 
 ## まずダメ例😇💥（二重課金・二重発送が起きるやつ）
+
+![Duplicate POST Risk](./picture/mod_mono_cs_study_025_duplicate_post.png)
 
 たとえば「支払い確定」を素直に書くと…
 
@@ -151,6 +155,8 @@ ON IdempotencyRecords (Scope, UserKey, IdempotencyKey);
 
 ## 2) RequestHash（fingerprint）を作る🧠🔍
 
+![Request Fingerprint](./picture/mod_mono_cs_study_025_fingerprint_check.png)
+
 「同じIdempotency-Keyなのに中身が違う」を検出したい！
 IETF draftでも「fingerprint（payloadから作る印）」の話があるよ🧾 ([IETF Datatracker][2])
 
@@ -172,6 +178,8 @@ static string ComputeRequestHash<T>(T body)
 ---
 
 ## 3) “冪等化ラッパー”を作る🧩🔁（アプリ層でOK）
+
+![Idempotency Wrapper Logic](./picture/mod_mono_cs_study_025_wrapper_logic.png)
 
 今回は「支払いAPI」だけ冪等にする想定で、ハンドラで包むよ😊
 
@@ -333,6 +341,8 @@ app.MapPost("/orders/{orderId:guid}/pay", async (
 ---
 
 ## ここがキモ🧠🛡️：冪等性は「キー」だけじゃ足りない
+
+![Two Layer Defense](./picture/mod_mono_cs_study_025_two_layer_defense.png)
 
 冪等性って、実は **2階建て** で守ると強いよ✨
 

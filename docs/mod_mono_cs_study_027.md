@@ -25,6 +25,8 @@
 
 ## まずダメ例😇：ガード条件が散ると、バグる💥
 
+![Scattered Guards](./picture/mod_mono_cs_study_027_scattered_guards.png)
+
 ### ありがちな事故あるある💣
 
 * UIでチェック
@@ -54,6 +56,8 @@ order.State = OrderState.Shipped;
 
 ## 良い例😎：ガード条件は「遷移の横」に置く🧠✨
 
+![Guard on Transition](./picture/mod_mono_cs_study_027_guard_on_transition.png)
+
 ![Guard Conditions](./picture/mod_mono_cs_study_027_guard_conditions.png)
 
 ```mermaid
@@ -77,6 +81,8 @@ graph TD
 前章で作った状態遷移表に、右側へ「条件」列を足すイメージだよ🧾💕
 
 ### ガード条件はだいたい4種類に分かれるよ🧠
+
+![Guard Types](./picture/mod_mono_cs_study_027_guard_types.png)
 
 1. **状態系**：今の状態が合ってる？（Paid からしか Ship できない等）
 2. **データ系**：必要な情報が揃ってる？（住所/在庫/金額/本人確認など）
@@ -164,6 +170,8 @@ public readonly record struct Result(bool IsSuccess, string? Error)
 ```
 
 ### 4) 「遷移」と「ガード」を並べて固定する🧠🚦
+
+![Transition Record](./picture/mod_mono_cs_study_027_transition_record.png)
 
 ```csharp
 public sealed class OrderStateMachine
@@ -300,6 +308,8 @@ Console.WriteLine(order.State); // Shipped
 ---
 
 ## 便利ライブラリもあるよ（参考）📚✨
+
+![Stateless Library](./picture/mod_mono_cs_study_027_stateless_lib.png)
 
 「状態機械をいい感じに書きたい！」ってなったら、**Stateless** が定番だよ〜😊
 
