@@ -5,6 +5,7 @@
 ---
 
 ## 1章：ようこそモジュラーモノリスへ🌱🧩
+![Course Journey Map](./picture/mod_mono_ts_index_journey_map.png)
 
 * モノリス／マイクロサービスとの違いを超ざっくり
 * “分ける”って何が嬉しいの？（未来の自分が助かる話）
@@ -17,6 +18,7 @@
 * “境界が作れそうな題材”の選び方
 
 ## 3章：Windowsでの開発準備（Node/TypeScript）🪟⚙️
+![Developer Toolbox](./picture/mod_mono_ts_index_toolbox.png)
 
 * Node.js と npm の役割
 * TypeScriptのコンパイルの流れ
@@ -49,6 +51,7 @@
 * よくある失敗パターンも先に知る👀
 
 ## 8章：モジュールって何？（粒度の決め方）🧩📏
+![Module Puzzle](./picture/mod_mono_ts_index_module_puzzle.png)
 
 * 小さすぎ／大きすぎ問題
 * 目安：「変更理由」で切る✂️
@@ -63,6 +66,7 @@
 ---
 
 ## 10章：フォルダ構成で迷子を防ぐ📁🧭
+![Folder Structure Compass](./picture/mod_mono_ts_index_folder_compass.png)
 
 * `modules/` を中心に置く考え方
 * 1モジュールの中の基本構造
@@ -109,6 +113,7 @@
 ---
 
 ## 17章：レイヤー（層）を薄く入れる🥞
+![Layered Architecture Pancakes](./picture/mod_mono_ts_index_layer_pancakes.png)
 
 * Presentation / Application / Domain / Infrastructure（超ざっくり）
 * “層を跨ぐルール”を決める
@@ -149,6 +154,7 @@
 ---
 
 ## 23章：DIP入門（抽象に依存する）🔌⬆️
+![Dependency Injection Plug](./picture/mod_mono_ts_index_dip_plug.png)
 
 * 下位（DB/HTTP）に引きずられない
 * ポート（interface）を切る感覚
@@ -195,6 +201,7 @@
 * 演習：共通化ポリシーを作る⚖️
 
 ## 30章：仕上げ（イベント・ACL・ADR・将来の分割）🎉🚀
+![Course Completion Rocket](./picture/mod_mono_ts_index_finish_rocket.png)
 
 * ドメインイベントで疎結合📣
 * 外部連携はACLで守る🧼

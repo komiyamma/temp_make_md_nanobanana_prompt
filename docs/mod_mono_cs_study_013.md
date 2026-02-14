@@ -91,12 +91,14 @@
 * 共有しがちなもの（Utils/共通DTO）あるある
 * Sharedに入れていいもの・ダメなもの🙅‍♀️
 * “ドメイン知識”はSharedに置かない
+![Shared Kernel Risk](./picture/mod_mono_cs_study_013_shared_kernel_risk.png)
 
 ---
 
 ### 第12章　データ境界①：Repositoryって何者？🗃️✨
 
 * Repositoryの役割（ドメインをDBから守る）
+![Repository Mediator](./picture/mod_mono_cs_study_013_repository_pattern.png)
 * Application/Domainとどう繋ぐ？
 
 ### 第13章　データ境界②：DBが1つでもモジュール分けはできる🧠🗄️
@@ -132,13 +134,16 @@ graph TD
     Ord -. "❌ No Direct Access" .-> Schema_Cat
 ```
 * スキーマ分割／テーブル所有の考え方
+![Logical Schema Separation](./picture/mod_mono_cs_study_013_schema_separation.png)
 * “誰がそのデータの責任者？”を決める
+![Data Ownership Guardian](./picture/mod_mono_cs_study_013_data_ownership.png)
 
 ### 第14章　データ境界③：Migration運用の最小ルール🧰✅
 
 * Migrationの流れ（作成→適用→レビュー）
 * モジュール単位での整理の仕方
 * 事故を減らすチェックリスト📋
+![Migration Safety Checklist](./picture/mod_mono_cs_study_013_migration_safety.png)
 
 ---
 
