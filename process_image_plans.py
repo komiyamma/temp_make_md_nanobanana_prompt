@@ -1,5 +1,6 @@
 import sys
 import os
+import re
 
 PLAN_FILE = 'docs/picture/image_generation_plan.md'
 
@@ -59,7 +60,14 @@ def main():
     with open(markdown_file, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    if image_filename in content:
+    # Parse for existing images
+    markdown_images = re.findall(r'!\[.*?\]\((.*?)\)', content)
+    html_images = re.findall(r'<img\s+[^>]*src=[\'"](.*?)[\'"]', content)
+    all_images = markdown_images + html_images
+
+    # Extract basenames and check
+    existing_basenames = [os.path.basename(img_path) for img_path in all_images]
+    if image_filename in existing_basenames:
         print(f"SKIP: Image {image_filename} already in {markdown_file}.")
         sys.exit(0)
 
