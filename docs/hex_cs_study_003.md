@@ -53,6 +53,8 @@ flowchart TD
 
 ## 2) Core（コア）ってなに？🏠❤️
 
+![Core Brain](./picture/hex_cs_study_003_core_brain.png)
+
 ### Coreの正体✨
 
 **「アプリの目的そのもの」**だよ😊
@@ -97,6 +99,8 @@ Cockburnも、Portは “目的のある会話を識別するもの” という
 
 ### 3-1) Inbound Port（外→中の入口）🚪⬅️
 
+![Inbound Door](./picture/hex_cs_study_003_inbound_door.png)
+
 「Coreをこう呼び出してね！」っていう入口の約束✨
 
 例：
@@ -109,6 +113,8 @@ Cockburnも、Portは “目的のある会話を識別するもの” という
 ---
 
 ### 3-2) Outbound Port（中→外の出口）➡️🚪
+
+![Outbound Blueprint](./picture/hex_cs_study_003_outbound_blueprint.png)
 
 「Coreが外部を使いたいとき、こういう形でお願い！」っていう出口の約束✨
 
@@ -123,6 +129,8 @@ AWSの解説でも、ヘキサはUIやDBなど外部依存からCoreを切り離
 ---
 
 ## 4) Adapter（アダプター）ってなに？🔁🔌
+
+![Translator Adapter](./picture/hex_cs_study_003_translator_adapter.png)
 
 Adapterは **「Portにつなぐための変換係」** だよ😊✨
 
@@ -296,6 +304,8 @@ public sealed class OrdersController
 ---
 
 ## 7) ありがち事故あるある🍝😭（第3章のうちに潰す！）
+
+![Pollution Accident](./picture/hex_cs_study_003_pollution_accident.png)
 
 * **事故①**：Coreの中で `HttpClient` / `DbContext` を直接使う
   → “外の都合” がCoreに侵入して、差し替え不能に😵‍💫

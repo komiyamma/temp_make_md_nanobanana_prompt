@@ -32,9 +32,13 @@ flowchart LR
 この「内と外を分ける」のが Ports & Adapters の核だよ❤️
 （ポート＝会話の目的、アダプタ＝差し替え可能な接続役、って感じ！） ([Alistair Cockburn][1])
 
+![King Messenger](./picture/hex_cs_study_007_king_messenger.png)
+
 ---
 
 ## 7.2 なんで Outbound を分けるの？🥺➡️😊
+
+![Clean Room Airlock](./picture/hex_cs_study_007_clean_room_airlock.png)
 
 ### ① Coreが汚れない🧼✨
 
@@ -57,6 +61,8 @@ DBなし、ネットなしでも、Coreのテストが回せるようになる�
 ---
 
 ## 7.3 Outbound になりやすいものリスト🗂️✅
+
+![Volatile Suspects](./picture/hex_cs_study_007_volatile_suspects.png)
 
 「これ外部じゃん！」って判断しやすい代表例をまとめるね👇😆
 
@@ -85,6 +91,8 @@ DBなし、ネットなしでも、Coreのテストが回せるようになる�
 ---
 
 ## 7.4 Outbound設計の基本：Coreは「欲しいこと」だけ言う🗣️✨
+
+![Boss Intent](./picture/hex_cs_study_007_boss_intent.png)
 
 Coreが言うべきなのは👇
 
@@ -202,6 +210,8 @@ public sealed record OrderItemCommand(string MenuItemId, int Quantity);
 ---
 
 ## 7.8 Outbound Adapterの役目：外部の都合を全部ここで受け止める🤝🧯
+
+![Shock Absorber](./picture/hex_cs_study_007_shock_absorber.png)
 
 Outbound Adapter（外側の実装）がやることは👇
 

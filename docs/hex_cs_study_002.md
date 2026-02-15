@@ -11,6 +11,8 @@
 
 ## “六角形”って大事？実は図の都合だよ😆🔶
 
+![Hexagon Myth](./picture/hex_cs_study_002_hexagon_myth.png)
+
 「六角形＝6個の何かが必要！」って意味じゃないよ〜🙅‍♀️💦
 六角形はただの**イメージ**で、言いたいことはこれ👇
 
@@ -25,6 +27,8 @@
 
 ## “中心（Core）”ってなに？🏠❤️
 
+![Timeless Core](./picture/hex_cs_study_002_timeless_core.png)
+
 ここでいう中心は、ざっくり言うと👇
 
 * **業務ルール（ドメイン）**：例）「注文は合計金額が0円じゃダメ」💰🚫
@@ -36,6 +40,8 @@
 ---
 
 ## “境界”ってなに？📌🚧
+
+![Boundary Gate](./picture/hex_cs_study_002_boundary_gate.png)
 
 境界は、中心と外側の間にある「ここから先は別世界〜！」の線引きだよ😆🚧✨
 
@@ -103,6 +109,8 @@ flowchart LR
 ---
 
 ## C#で“雰囲気だけ”コード（超ミニ）👶💻
+
+![Plug and Adapter](./picture/hex_cs_study_002_plug_adapter.png)
 
 まだ第2章だから、**完成形じゃなくてイメージ優先**でね😊✨
 
@@ -175,6 +183,8 @@ classDiagram
 ## よくある勘違い（ここで潰しとこ）💣🙂
 
 ### ❌「interfaceをいっぱい作る設計でしょ？」
+
+![Over Engineering](./picture/hex_cs_study_002_over_engineering.png)
 
 → いっぱい作るのが目的じゃないよ〜！😆
 **“変わりやすい境界だけ”にPortを置く**のがコツ🔌✨

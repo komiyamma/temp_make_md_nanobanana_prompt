@@ -18,6 +18,8 @@
 
 ## 1) まず“変わるもの”を正直に見よう👀🔁
 
+![Hurricane Core](./picture/hex_cs_study_005_hurricane_core.png)
+
 アプリ開発って、だいたいこうです👇
 
 * 画面：デザイン変更・UX改善・スマホ対応・管理画面追加…📱🎨
@@ -39,6 +41,8 @@
 
 ## 2) 2026年の現実：外側の進化が速い🏎️💨
 
+![Tech Evolution](./picture/hex_cs_study_005_tech_evolution.png)
+
 いまの最新系だと、.NETは **.NET 10 がLTS**（長期サポート）で、2026年1月時点の最新パッチは **10.0.2** だよ📌 ([Microsoft][1])
 そしてC#も **C# 14** を .NET 10 / Visual Studio 2026 で試せるって公式に書いてあるよ✨ ([Microsoft Learn][2])
 さらに Visual Studio 2026 も 2026年1月に更新が出てる（例：18.2.0が2026/1/13）📅 ([Microsoft Learn][3])
@@ -51,6 +55,8 @@
 ---
 
 ## 3) Coreが主役って、どういう形？🔷🏠
+
+![King Decree](./picture/hex_cs_study_005_king_decree.png)
 
 ![Stable Core](./picture/hex_cs_study_005_stable_core.png)
 
@@ -94,6 +100,8 @@ flowchart TD
 ---
 
 ## 4) Coreに入れていいもの／ダメなもの🚦🙂
+
+![Core Security](./picture/hex_cs_study_005_core_security.png)
 
 ### ✅ Coreに入れていい（入れてほしい）もの
 
@@ -153,6 +161,8 @@ flowchart LR
 ---
 
 ## 6) “悪い混ぜ方”を見てピンと来よう🍝😭
+
+![Muddy Footprints](./picture/hex_cs_study_005_muddy_footprints.png)
 
 たとえば、CoreのEntityにDB都合を混ぜると…
 
