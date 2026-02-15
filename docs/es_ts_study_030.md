@@ -10,6 +10,8 @@
 
 ## 1) まず“読み側API”って何？🔎✨
 
+![Command vs Query API](./picture/es_ts_study_030_command_query.png)
+
 イベントソーシングでは、**書き込み（Command）**と**読み取り（Query）**の役割を分けるのが超大事だよ😊🌸
 
 * **Command側**：ルール（不変条件）を守る🛡️ → Eventを生む📜
@@ -75,6 +77,8 @@ DTOは「画面が欲しいものだけ」入れればOK😊✨
 
 ## 5) 実装：Projection → DTO → Expressで返す🧱🚀
 
+![Layered Architecture](./picture/es_ts_study_030_api_structure.png)
+
 ## フォルダ例（迷子防止🧭）
 
 * `src/readmodel/` … Projection（読みモデル）置き場🔎
@@ -84,6 +88,8 @@ DTOは「画面が欲しいものだけ」入れればOK😊✨
 ---
 
 ## 5-1) DTOを作る🍱✨（一覧用・詳細用）
+
+![DTO Transformation](./picture/es_ts_study_030_dto_transform.png)
 
 ```ts
 // src/api/dto.ts
@@ -113,6 +119,8 @@ export type CartDetailDto = CartSummaryDto & {
 ---
 
 ## 5-2) ReadModel（Projectionの取り出し口）をインターフェース化する🔌✨
+
+![Interface Abstraction](./picture/es_ts_study_030_readmodel_interface.png)
 
 「APIがProjectionの内部にベッタリ依存」しないように、**読み取りサービス（QueryService）** を挟むのがきれいだよ🧼💕
 
@@ -193,6 +201,8 @@ export class InMemoryCartReadModel implements CartReadModel {
 
 ### エラーの返し方（小さく統一）🚦
 
+![Error Handling](./picture/es_ts_study_030_error_uniformity.png)
+
 「失敗時の形」がバラバラだと画面が泣くので、最小でいいから統一するよ😊
 
 ```ts
@@ -205,6 +215,8 @@ export type ApiErrorBody = {
 ```
 
 ### ルーター実装（一覧・詳細）📋🔎
+
+![Pagination Logic](./picture/es_ts_study_030_pagination.png)
 
 ```ts
 // src/api/cartQueryRoutes.ts

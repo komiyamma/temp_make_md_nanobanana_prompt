@@ -11,6 +11,8 @@
 
 ## 1. そもそも「性能」って何の話？🧠💭
 
+![Performance Metrics](./picture/es_ts_study_027_metrics.png)
+
 性能って、ざっくり言うとこの3つだよ😊
 
 1. **待ち時間（レイテンシ）**：1回のコマンドが完了するまで何ms？⌛
@@ -25,6 +27,8 @@
 
 ## 2. イベントソーシングで“遅くなりがち”トップ3🥇🥈🥉
 
+![Top 3 Bottlenecks](./picture/es_ts_study_027_top3.png)
+
 この章では、次の3つに絞って測るよ！🔎✨
 
 1. **復元（Rehydrate）**：イベント列を読んで状態を作る🔁🧠
@@ -36,6 +40,8 @@
 ---
 
 ## 3. 計測は「3段階」でOK🪜✨
+
+![Measurement Levels](./picture/es_ts_study_027_levels.png)
 
 ## レベル1：最速で測る（ざっくり）⏱️🙂
 
@@ -96,6 +102,8 @@ console.log(`rehydrate: ${ms.toFixed(3)}ms`);
 
 ## 4. “1回だけ計測”は危険⚠️（必ず複数回やろう）🔁😊
 
+![Latency Distribution](./picture/es_ts_study_027_distribution.png)
+
 同じ処理でも、毎回ちょっと揺れるよ〜📉📈
 理由はだいたいこれ👇
 
@@ -113,6 +121,8 @@ console.log(`rehydrate: ${ms.toFixed(3)}ms`);
 ---
 
 ## 5. ミニ演習：復元（Rehydrate）の時間をイベント数で見てみよう🔁⏱️
+
+![Benchmark Loop](./picture/es_ts_study_027_benchmark_setup.png)
 
 ## やること📝✨
 
@@ -190,6 +200,8 @@ for (const n of [100, 1000, 10_000, 50_000]) {
 ---
 
 ## 6. “どこが重いか”を分解して測ろう🧩🔍
+
+![Bottleneck Analysis](./picture/es_ts_study_027_bottleneck.png)
 
 イベント保存が遅いとき、いきなり「DBが遅い！」って言いがちなんだけど…😇
 だいたい混ざってるのはこの3つ👇
