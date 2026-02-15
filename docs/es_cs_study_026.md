@@ -127,6 +127,8 @@ public sealed record SnapshotEnvelope(
 
 * `StateType` は「これは何の状態？」っていう保険🛟（将来ちょい便利）
 
+![Snapshot Envelope](./picture/es_cs_study_026_snapshot_envelope.png)
+
 ---
 
 # 4.2 ISnapshotStore（保存/読取）を作る🧰✅
@@ -174,6 +176,8 @@ public sealed class InMemorySnapshotStore : ISnapshotStore
 
 * **Version が古いスナップで上書きしない** のが大事だよ🔒✅
 
+![Snapshot Store Latest Wins](./picture/es_cs_study_026_store_logic.png)
+
 ---
 
 # 4.4 集約側：スナップの “出し入れ” を用意する🧺📸
@@ -189,6 +193,8 @@ public sealed record ShoppingCartSnapshot(
     IReadOnlyDictionary<string, int> Items
 );
 ```
+
+![Aggregate vs Snapshot DTO](./picture/es_cs_study_026_aggregate_vs_dto.png)
 
 ## 4.4.2 集約に ToSnapshot / LoadSnapshot を用意🔁
 
@@ -300,6 +306,8 @@ flowchart TD
     style GetEvents fill:#fff9c4
 ```
 
+![Repository Load Logic](./picture/es_cs_study_026_repository_load.png)
+
 ```csharp
 using System.Text.Json;
 
@@ -374,6 +382,8 @@ public static class SnapshotPolicy
 }
 ```
 
+![Snapshot Trigger Policy](./picture/es_cs_study_026_trigger_policy.png)
+
 ### 5.2 保存する処理（例：Append後に呼ぶ）📸✅
 
 「AppendしてVersionが進んだあと」にスナップを作るのが自然だよ🌷
@@ -421,6 +431,8 @@ public static class SnapshotSaver
 2. スナップ無しで復元 → ApplyCount を見る
 3. 途中（Version=150）でスナップを入れる
 4. スナップ有りで復元 → ApplyCount が減るのを見る
+
+![ApplyCount Comparison](./picture/es_cs_study_026_apply_count.png)
 
 ### 6.2 時間も測りたいなら Stopwatch ⏱️
 

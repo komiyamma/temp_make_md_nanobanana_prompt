@@ -76,6 +76,8 @@ EventStore 側は保存の瞬間に、
 つまり👇
 **currentVersion = events.Count - 1** ✅
 
+![Version Numbering Rule](./picture/es_cs_study_023_version_numbering.png)
+
 保存時はこう👇
 
 * 期待：expectedVersion
@@ -174,6 +176,8 @@ flowchart TD
     style Loop fill:#e8f5e9
 ```
 
+![Atomic Lock Mechanism](./picture/es_cs_study_023_atomic_lock.png)
+
 #### ここ大事ポイント💡
 
 * **expectedVersion のチェックと Append は “一体” でやる**（原子性）🔒
@@ -221,6 +225,8 @@ public sealed class InMemoryEventStoreWithResult
 }
 ```
 
+![AppendResult Object](./picture/es_cs_study_023_append_result.png)
+
 ---
 
 ## 5. ミニ演習：わざと競合を起こして、保存が止まるのを確認しよう🧨✅
@@ -229,6 +235,8 @@ public sealed class InMemoryEventStoreWithResult
 
 * 2人が同じ version を見て更新
 * **1人は成功✅、もう1人は失敗🛑** になるのを体験する！
+
+![Concurrency Experiment Sequence](./picture/es_cs_study_023_experiment_sequence.png)
 
 ### 手順📝
 
@@ -331,6 +339,8 @@ public sealed class OptimisticLockTests
 
 “怒ってない感” 大事〜🧸💕
 
+![Friendly Concurrency Message](./picture/es_cs_study_023_friendly_message.png)
+
 ---
 
 ## 8. よくある落とし穴⚠️😵‍💫
@@ -339,6 +349,8 @@ public sealed class OptimisticLockTests
 
 expectedVersion をチェックしない設定（Any）を多用すると、競合が見えなくなってデータが壊れがち💥
 基本は **チェックON** が安心だよ🔒✨ ([Kurrent Docs][1])
+
+![Danger of Any Version](./picture/es_cs_study_023_danger_any.png)
 
 ### 8.2 「チェックだけして、Append が別操作」にならないように⚠️
 

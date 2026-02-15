@@ -64,6 +64,8 @@ graph TD
 
 同じ集約が短時間に何度も更新されると、復元コストが効いてきます💥
 
+![Snapshot Need Scenarios](./picture/es_cs_study_025_need_scenarios.png)
+
 ---
 
 # 3) まず覚える「大原則」3つ 🧷✅
@@ -83,6 +85,8 @@ graph TD
 
 イベントが増えすぎる原因が「集約がデカすぎ」なら、
 スナップショットより先に **集約の境界見直し** で解決できることもあります⚖️ ([EventSourcingDB][3])
+
+![Snapshot Principles](./picture/es_cs_study_025_principles.png)
 
 ---
 
@@ -128,6 +132,8 @@ Martenのドキュメントでも「一定間隔 or 特定イベントタイプ�
 
 **向いてる**：イベントの種類で重さがバラバラな集約
 
+![Snapshot Strategies](./picture/es_cs_study_025_strategies.png)
+
 ---
 
 # 5) スナップショットに入れるもの（最低限）🍱🏷️
@@ -144,6 +150,8 @@ Martenのドキュメントでも「一定間隔 or 特定イベントタイプ�
 
 さらに設計としては「スナップショットも専用タイプとして扱う（イベント扱いに近い形）」みたいな方針もあります。 ([EventSourcingDB][3])
 
+![Snapshot Content Box](./picture/es_cs_study_025_content_box.png)
+
 ---
 
 # 6) よくある事故パターン（ここ超大事）🧯😱
@@ -159,6 +167,8 @@ Martenのドキュメントでも「一定間隔 or 特定イベントタイプ�
 * 「スナップショットは **versionまで適用済み**」を厳密に定義
 * 復元コードで `snapshot.Version + 1` から読むように固定
 
+![Version Mismatch Accident](./picture/es_cs_study_025_version_mismatch.png)
+
 ---
 
 ## 事故②：スナップショットが壊れてる（でもイベントは正しい）🧨
@@ -173,6 +183,8 @@ Martenのドキュメントでも「一定間隔 or 特定イベントタイプ�
 ---
 
 * スナップショットは再生成できる設計にする🔁
+
+![Restoration Fallback Flow](./picture/es_cs_study_025_restoration_flow.png)
 
 ```mermaid
 flowchart TD
@@ -253,6 +265,8 @@ Console.WriteLine($"rehydrate x10: {sw.ElapsedMilliseconds}ms");
 * イベント数が増えると、**復元が比例して重くなる**
 * Applyが重いと、さらに効く
 * だから「最新状態を途中保存できたら嬉しい」ってなる📸✨
+
+![Event Count vs Time Graph](./picture/es_cs_study_025_performance_graph.png)
 
 ---
 
