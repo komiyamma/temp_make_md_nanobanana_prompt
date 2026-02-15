@@ -46,6 +46,8 @@ flowchart LR
 
 ### Inbound Adapter（外→中）⬅️🚪
 
+![In Out Adapter](./picture/hex_cs_study_009_in_out_adapter.png)
+
 外から来る呼び出しを、Portで呼べる形に整える係😊
 例：Controller / CLI / バッチ / メッセージ購読（Queue）など
 
@@ -57,6 +59,8 @@ Coreが外部を使うとき、Portの約束に沿って実装する係😊
 ---
 
 ## 4) Adapterの責務（やっていいこと）✅✨
+
+![Adapter Duties](./picture/hex_cs_study_009_adapter_duties.png)
 
 Adapterがやっていいのは、だいたいこの4つに集約されるよ👇😊
 
@@ -86,6 +90,8 @@ Adapterがやっていいのは、だいたいこの4つに集約されるよ�
 
 ## 5) Adapterがやっちゃダメなこと🚫🍝
 
+![Adapter Antipatterns](./picture/hex_cs_study_009_adapter_antipatterns.png)
+
 ここ超大事〜！😵‍💫
 
 * 🚫 **業務ルールをAdapterに書く**（あとで入口が増えると破綻しやすい）
@@ -97,6 +103,8 @@ Adapterは「通訳」だから、**物語（業務ルール）を作らない**
 ---
 
 ## 6) ミニ題材：カフェ注文アプリで体感しよ☕🧾
+
+![Type Translation](./picture/hex_cs_study_009_type_translation.png)
 
 ### 登場する“世界の違い”🌍
 
@@ -165,6 +173,8 @@ null許容なのが“外側っぽい”よね😇
 Coreにこのnull地獄を持ち込まないのが勝ち🏆✨
 
 ### Controller（Adapter本体）🔁🔌
+
+![Controller Flow](./picture/hex_cs_study_009_controller_flow.png)
 
 ```csharp
 using Cafe.Core.Ports.Inbound;
@@ -255,6 +265,8 @@ Adapterが「DBに合わせた形」に変換して保存する🔁🗃️
 ---
 
 ## 10) Adapterに変換を押し込むと何が嬉しい？🎁✨
+
+![Swappability](./picture/hex_cs_study_009_swappability.png)
 
 * UIが増えても（Web/CLI/バッチ）**Coreがそのまま**😆🔁
 * DBを変えても（InMemory→SQL）**Coreがそのまま**😆🔁

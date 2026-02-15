@@ -9,6 +9,8 @@
 
 ## 1) まず、いちばん大事な絵（依存の向き）🧲➡️
 
+![Customer Menu Cook](./picture/hex_cs_study_012_customer_menu_cook.png)
+
 やりたい世界はこれ👇
 
 * Core（業務ルール・ユースケース）は **「〜してほしい」** だけ言う
@@ -21,6 +23,8 @@
 ---
 
 ## 2) DIPってなに？（超やさしく）🧠🪄
+
+![Dip Concept](./picture/hex_cs_study_012_dip_concept.png)
 
 DIP（依存性逆転の原則）は、ざっくり言うと👇
 
@@ -36,6 +40,8 @@ DIP（依存性逆転の原則）は、ざっくり言うと👇
 ---
 
 ## 3) ありがちな事故🍝😭：CoreがDB直叩きしちゃう
+
+![Concrete Trap](./picture/hex_cs_study_012_concrete_trap.png)
 
 たとえばユースケースが、DBのクラスを直接 new しちゃうと…👇
 
@@ -82,6 +88,8 @@ Coreが欲しいのは「DBの種類」じゃなくて、
 
 ### 4-1) Coreに Port を作る（約束）📝
 
+![Port In Core](./picture/hex_cs_study_012_port_in_core.png)
+
 ```csharp
 // ✅ Core側（Application or Domain）に置く
 public interface IOrderRepository
@@ -125,6 +133,8 @@ public class CreateOrderUseCase
 ---
 
 ## 5) Adapter（外側）が Port を実装する🔁🗄️
+
+![Plug Adapter](./picture/hex_cs_study_012_plug_adapter.png)
 
 次に外側（Infrastructure / Outbound Adapter）で、約束を守る実装を書くよ👇
 
@@ -210,6 +220,8 @@ builder.Services.AddScoped<CreateOrderUseCase>();
 
 ## 8) テストが一気にラクになる🧪💖
 
+![Test Swap](./picture/hex_cs_study_012_test_swap.png)
+
 Portがあると、テストでは **Fake（偽物Adapter）** を差すだけ！
 
 ```csharp
@@ -252,6 +264,8 @@ Assert.Single(fakeRepo.Saved);
   A：増やす理由は「差し替えたい」「テストしたい」「外部都合を隔離したい」があるときだけでOK👌✨
 
 * **Q：Portに“DBっぽいメソッド”を置いちゃった…**
+
+![Leaky Port](./picture/hex_cs_study_012_leaky_port.png)
   A：ありがち！🤣
   `ExecuteSql(string sql)` みたいなのは **外部都合そのもの** だから、Portに置くとCoreが汚れちゃう🧼💥
   → Portは「業務の言葉」で作ろう☕🧾
