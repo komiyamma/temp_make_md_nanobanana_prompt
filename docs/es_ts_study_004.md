@@ -42,6 +42,8 @@ TypeScriptの最新リリース表示は **5.9.3 が “Latest”** になって
 
 ## 4-2. インストール後の動作チェック（ここ大事）✅🔍
 
+![Terminal Check](./picture/es_ts_study_004_terminal_check.png)
+
 VS Codeでターミナルを開いて（`Ctrl + @` で出るよ💡）、次を確認するよ〜😊
 
 ```powershell
@@ -62,6 +64,8 @@ git --version
 
 ## 4-3. VS Codeに入れる拡張（“最低限”で気持ちよく）🧩💖
 
+![VS Code Extensions](./picture/es_ts_study_004_vscode_extensions.png)
+
 VS Codeの拡張（Extensions）で、まずはこれだけ✨
 
 * **ESLint** 🧹（変な書き方を早めに注意してくれる）
@@ -79,6 +83,8 @@ VS Codeの拡張（Extensions）で、まずはこれだけ✨
 
 ### 1) フォルダ作成 & 初期化 📁✨
 
+![Project Folder Creation](./picture/es_ts_study_004_project_folder.png)
+
 ```powershell
 mkdir es-tutorial
 cd es-tutorial
@@ -94,6 +100,8 @@ npm i -D typescript vitest @types/node
 ```
 
 ### 3) tsconfig を作る ⚙️✨
+
+![tsconfig Settings](./picture/es_ts_study_004_tsconfig_settings.png)
 
 ```powershell
 npx tsc --init
@@ -169,6 +177,8 @@ describe("add", () => {
 
 ### 7) テスト実行！（成功体験〜！）🎉✨
 
+![Test Pass Celebration](./picture/es_ts_study_004_test_pass.png)
+
 ```powershell
 npm test
 ```
@@ -179,6 +189,8 @@ npm test
 ---
 
 ## 4-5. よくある詰まりポイント集（ここ見ればだいたい助かる）🧯😵‍💫
+
+![Troubleshooting Kit](./picture/es_ts_study_004_troubleshooting_kit.png)
 
 ### 🌀 1) `npx` や `npm` が動かない
 
@@ -204,6 +216,8 @@ npm i
 ---
 
 ## 4-6. ミニ演習（チェックリスト）📝✅✨
+
+![Checklist Complete](./picture/es_ts_study_004_checklist_complete.png)
 
 今日のゴールはこれだけっ🌸
 

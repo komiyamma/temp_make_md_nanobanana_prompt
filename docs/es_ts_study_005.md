@@ -15,6 +15,8 @@ AIを「丸投げ道具」じゃなくて、**開発の流れの中で安定し�
 
 ## ✅ AIは「優秀だけど早とちりする後輩」👩‍💻🧑‍💻
 
+![AI Runner](./picture/es_ts_study_005_ai_runner.png)
+
 ![AIとの協業フロー：Draft -> Review -> Test -> Refine](./picture/es_ts_study_005_ai_workflow.png)
 
 * 仕事は速いけど、たまに **前提を勝手に決めて** 走る💨
@@ -46,6 +48,8 @@ flowchart TD
 
 ## ① 下書き生成（Draft）✍️🤖
 
+![Draft Sketch](./picture/es_ts_study_005_draft_sketch.png)
+
 **目的：ゼロから悩む時間を減らす**🕒✨
 ただし「正解を出してもらう」じゃなくて、**叩き台を作る**のがコツ！
 
@@ -72,6 +76,8 @@ flowchart TD
 
 ## ② レビュー（Review）🔍🤖✅
 
+![AI Review Detective](./picture/es_ts_study_005_review_detective.png)
+
 **目的：AIに“引っかかりポイント”を先に見つけてもらう**🧠✨
 
 ## A) エディタ内レビュー（軽く）🪄
@@ -96,6 +102,8 @@ PR（プルリク）では、**Copilotをレビュワーにできる**よ✅ ([G
 
 ## ③ テスト追加（Test）🧪✨
 
+![Test Pinning](./picture/es_ts_study_005_test_pinning.png)
+
 **目的：AIの“それっぽい”を現実の動作に縛る**🔒😺
 
 AIにお願いするときは、次の順が安定するよ👇
@@ -116,6 +124,8 @@ AIにお願いするときは、次の順が安定するよ👇
 
 ## ④ 手直し（Refine）🛠️✨
 
+![Refine Gem](./picture/es_ts_study_005_refine_gem.png)
+
 **目的：AIが作ったものを“自分のコード”に仕上げる**💅😊
 
 ここでやること👇
@@ -128,6 +138,8 @@ AIにお願いするときは、次の順が安定するよ👇
 ---
 
 ## 5.3 “ブレないAI”にする：指示ファイルを置こう📌📁
+
+![Instructions Rulebook](./picture/es_ts_study_005_instructions_rulebook.png)
 
 AIが安定する最大のコツはこれ！
 **リポジトリにルールを書いておく**と、Copilot Chat・コードレビュー・エージェントにも効きやすいよ✅ ([GitHub Docs][2])
@@ -199,6 +211,8 @@ OpenAI側も「Codex CLI」という形で、ターミナルUIでの支援やコ
 ---
 
 ## 5.6 セキュリティ注意（超だいじ）🔐⚠️
+
+![Security Wolf](./picture/es_ts_study_005_security_wolf.png)
 
 ## ✅ 拡張機能は“公式っぽい名前”でも危ないことがある😱
 
