@@ -27,6 +27,8 @@ flowchart TD
 
 # 2.1 まずは“揃えるもの”チェックリスト✅🧾✨
 
+![cap_cs_study_002_tools_set](./picture/cap_cs_study_002_tools_set.png)
+
 * Visual Studio（.NET 10 を気持ちよく使うなら **Visual Studio 2026** がいちばんスムーズ）💡 ([Microsoft][1])
 * **.NET 10 SDK**（`dotnet` コマンドが使えるやつ）🧩 ([Microsoft][2])
 * Git（GitHubにpushするため）🐙
@@ -40,6 +42,8 @@ flowchart TD
 # 2.2 “入ってるか確認”しよう🔎💻✨
 
 ## ✅ .NET SDK が入ってるか
+
+![cap_cs_study_002_terminal_version](./picture/cap_cs_study_002_terminal_version.png)
 
 PowerShell（または Windows Terminal）でこれ👇
 
@@ -61,6 +65,8 @@ Visual Studio を開いて、
 ---
 
 # 2.3 Visual Studio に入れる機能（ワークロード）🧩🛠️
+
+![cap_cs_study_002_vs_workload](./picture/cap_cs_study_002_vs_workload.png)
 
 Visual Studio Installer を開いて、最低これだけ入ってればOK😊✨
 
@@ -135,6 +141,8 @@ app.Run();
 
 実行して、ブラウザで👇を開く✨
 
+![cap_cs_study_002_browser_health](./picture/cap_cs_study_002_browser_health.png)
+
 * `https://localhost:xxxx/health`
 
 `{"status":"ok"}` が返ってきたら勝ち🏆💖
@@ -185,6 +193,8 @@ public class PriceCalculatorTests
 
 ## ③ テスト実行✅
 
+![cap_cs_study_002_test_success](./picture/cap_cs_study_002_test_success.png)
+
 ```powershell
 dotnet test
 ```
@@ -206,6 +216,8 @@ git commit -m "ch2: init solution + minimal api + xunit"
 ```
 
 ## ② GitHub にリポジトリを作る🐙✨
+
+![cap_cs_study_002_git_push](./picture/cap_cs_study_002_git_push.png)
 
 GitHub の Web で `CampusCafe` リポジトリを作成して、表示される手順どおりに `remote add` → `push` すればOK😊
 

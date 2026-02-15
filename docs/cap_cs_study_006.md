@@ -27,15 +27,21 @@ CAP定理の超・正しい入口はこれ👇
 
 ### 誤解①：「3つのうち2つを“常に”選ぶんでしょ？」🙅‍♀️
 
+![cap_cs_study_006_pick_two_myth](./picture/cap_cs_study_006_pick_two_myth.png)
+
 → ちがうよ！
 **“Pが起きたときに” CとAのどっちを守るか**の話だよ📌 ([sites.cs.ucsb.edu][2])
 
 ### 誤解②：「P（分断耐性）って選べるオプション？」🤔
 
+![cap_cs_study_006_p_is_rain](./picture/cap_cs_study_006_p_is_rain.png)
+
 → 現実の分散（クラウド/複数ノード/別サービス/別DB）では **分断は起きる前提**になりがち。
 だから実務の悩みはだいたい **“Pが起きる世界でどうする？”** に寄るよ📡😵‍💫 ([AWS ドキュメント][3])
 
 ### 誤解③：「A＝高可用性（落ちない）だよね？」😇
+
+![cap_cs_study_006_cap_a_vs_ha](./picture/cap_cs_study_006_cap_a_vs_ha.png)
 
 → CAPのAは、かなり“数学っぽい”定義で、
 **「落ちてないノードに届いたリクエストは、必ずレスポンスを返す（内容が最新とは限らない）」** って意味だよ📮✅ ([cs.princeton.edu][1])
@@ -59,6 +65,8 @@ CAPの定義は、ざっくりこう覚えると事故りにくいよ🧯
 ---
 
 ## 6.4 図で体感：2サーバ＋1データ（この章の主役）🖥️🖥️📦
+
+![cap_cs_study_006_split_brain](./picture/cap_cs_study_006_split_brain.png)
 
 ### 状況セット🎬
 
@@ -90,6 +98,8 @@ AとBが通信できなくなった！（Wi-Fi死んだ/ルータ不調/クラ�
 ➡️ **正しさは守れる**けど、**注文が失敗（Aを落とす）**になりがち😢 ([cs.princeton.edu][1])
 
 #### 選択肢②：Aを守る（APっぽい判断）🚀
+
+![cap_cs_study_006_cp_ap_fork](./picture/cap_cs_study_006_cp_ap_fork.png)
 
 ```mermaid
 flowchart TD
