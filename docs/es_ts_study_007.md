@@ -9,6 +9,8 @@
 
 ## まずは4語を1行で覚えよう📌🧠
 
+![Four Terms Cards](./picture/es_ts_study_007_four_terms_cards.png)
+
 ![基本サイクル](./picture/es_ts_study_007_cycle.png)
 
 
@@ -26,6 +28,8 @@
 
 ## Command（お願い）📮
 
+![Command Shout](./picture/es_ts_study_007_command_shout.png)
+
 * `AddItemToCart`（カートに商品を入れて！）
 * `RemoveItemFromCart`（カートから商品を消して！）
 * `Checkout`（購入確定して！）
@@ -34,6 +38,8 @@
 （通るとは限らない。ルール違反なら拒否もある🙅‍♀️）
 
 ## Event（起きた事実）📜
+
+![Event Stamp](./picture/es_ts_study_007_event_stamp.png)
 
 * `ItemAddedToCart`（商品がカートに追加された）
 * `ItemRemovedFromCart`（商品がカートから削除された）
@@ -44,6 +50,8 @@
 
 ## State（いまの状態）🧠
 
+![State Scoreboard](./picture/es_ts_study_007_state_scoreboard.png)
+
 * カートの中身（商品と数量）
 * 合計金額
 * 購入確定済みかどうか
@@ -51,6 +59,8 @@
 ✅ポイント：StateはEventの積み重ねから作れる（あとで第15章でやるやつ🔁）
 
 ## Projection（画面用の見やすい形）🔎
+
+![Projection Screen](./picture/es_ts_study_007_projection_screen.png)
 
 * カート一覧画面用：`{ items: [...], totalPrice, canCheckout }`
 * 注文履歴一覧用：`{ orderId, date, totalPrice }`
@@ -63,6 +73,8 @@ Stateと同じ形じゃなくてOK！
 ## 4語を混ぜると起きる“事故”あるある💥😵‍💫
 
 ## 事故1：CommandをEventとして保存しちゃう📮➡️📜（ダメ！）
+
+![Command History Accident](./picture/es_ts_study_007_accident_command_history.png)
 
 * `AddItemToCart` を「履歴」として残す
   → それ、**お願い**が残ってるだけで、成功したか不明🤯
@@ -89,6 +101,8 @@ Stateと同じ形じゃなくてOK！
 ---
 
 ## これが超大事：流れの固定（最小）🔁✨
+
+![Minimal Flow Pipeline](./picture/es_ts_study_007_minimal_flow_pipeline.png)
 
 **Command →（ルールチェック）→ Event →（Apply）→ State →（更新）→ Projection**
 
@@ -149,6 +163,8 @@ flowchart LR
 ---
 
 ## TypeScriptで最小の型を作ってみよう🧩✨
+
+![TS Types Blueprint](./picture/es_ts_study_007_ts_types_blueprint.png)
 
 「4語を混ぜない」ために、まず**型で分ける**のが超おすすめ！😊
 （この章は“雰囲気”でOK。第13章以降で育てるよ🌱）

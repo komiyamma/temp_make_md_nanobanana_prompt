@@ -11,6 +11,8 @@
 
 ## 不変条件ってなに？🧷
 
+![Invariant Shield](./picture/es_ts_study_009_invariant_shield.png)
+
 不変条件（Invariants）は、ざっくり言うとこう👇
 
 * 「アプリの世界で、**絶対に成立しててほしい状態**」
@@ -28,6 +30,8 @@
 
 ## 超大事ポイント：型は“守ってくれるけど”、現実は型だけじゃ守れない😇🌀
 
+![Types vs Runtime Ninja](./picture/es_ts_study_009_types_vs_runtime_ninja.png)
+
 TypeScript の型は超便利だけど、**実行時の現実**はこう👇
 
 * APIや画面から来る値は、**間違ってる可能性がある**（空、マイナス、変な文字列…）😵‍💫
@@ -41,6 +45,8 @@ TypeScript の型は超便利だけど、**実行時の現実**はこう👇
 ---
 
 ## 不変条件を「散らす」と起きる地獄😇🔥
+
+![Scattered Fence](./picture/es_ts_study_009_scattered_fence.png)
 
 ## ありがちな事故パターン🙅‍♀️
 
@@ -159,6 +165,8 @@ function apply(state: CartState, event: CartEvent): CartState {
 
 ## 3) Decide：ここが「不変条件の本丸」🛡️🔥
 
+![Decide Guardian](./picture/es_ts_study_009_decide_guardian.png)
+
 Decideは「コマンドを受けて、**新しいイベントを作る**」場所！
 つまり **イベントを作る前に、ここでルールを守る**💪✨
 
@@ -240,6 +248,8 @@ function decide(state: CartState, cmd: CartCommand): Result<CartEvent[]> {
 
 ## ちょい補足：入力チェックと不変条件は別モノ🧾🧷
 
+![Input vs Invariant Checkpoint](./picture/es_ts_study_009_input_vs_invariant_checkpoint.png)
+
 * **入力チェック**：型や形式（空文字、数値か、など）🧾
 * **不変条件**：ドメインのルール（Checkout後NG、在庫や上限、整合性）🧷
 
@@ -248,6 +258,8 @@ function decide(state: CartState, cmd: CartCommand): Result<CartEvent[]> {
 ---
 
 ## 不変条件 → テスト観点に変換するコツ🧪👀
+
+![Test Traffic Light](./picture/es_ts_study_009_test_traffic_light.png)
 
 不変条件はテストにしやすい！✨
 やり方は超単純👇
@@ -285,6 +297,8 @@ function decide(state: CartState, cmd: CartCommand): Result<CartEvent[]> {
 ---
 
 ## ミニ演習 2：不変条件を Decide に足そう🛡️➕
+
+![Max Items Basket](./picture/es_ts_study_009_max_items_basket.png)
 
 次の不変条件を追加してみよう👇
 

@@ -10,6 +10,8 @@
 
 ## 1) 今日の題材：ミニ「お買い物カート」🛒💕
 
+![CRUD Actions](./picture/es_ts_study_006_crud_actions.png)
+
 ![CRUDの限界](./picture/es_ts_study_006_crud_limit.png)
 
 
@@ -143,6 +145,8 @@ export function newId(prefix: string): string {
 ---
 
 ## 3-2. “状態”をJSONに保存するストア📦🗄️
+
+![JSON File Store](./picture/es_ts_study_006_json_file_store.png)
 
 `src/cartStore.ts`
 
@@ -305,6 +309,10 @@ npm run dev
 
 ## 4-1. 追加要求①「いつ・誰が・何をしたか知りたい」🕵️‍♀️📝
 
+![Missing History Detective](./picture/es_ts_study_006_missing_history.png)
+
+![Architecture Mess](./picture/es_ts_study_006_architecture_mess.png)
+
 先生（または未来の自分）がこう言い出す：
 
 * 「監査で必要だから、変更履歴が欲しいんだけど？」😇
@@ -346,6 +354,8 @@ flowchart TD
 ---
 
 ## 4-2. 追加要求②「昨日の状態に戻したい」⏪🕰️
+
+![Broken Time Travel](./picture/es_ts_study_006_broken_time_travel.png)
 
 さらに言われる：
 
@@ -389,6 +399,8 @@ CRUDの状態保存だと、**履歴がないから検索できない**。
 
 ## 5-1. 状態には「なぜ」が入ってない😵
 
+![Result vs Reason](./picture/es_ts_study_006_result_only.png)
+
 状態は「結果」だけ。
 でも実務で欲しいのは、だいたいこっち👇
 
@@ -409,6 +421,8 @@ CRUDは、ここを後付けし始めると **構造が崩れやすい** 😭
 ---
 
 ## 5-3. 結局、ログを足して…それって…？🤔
+
+![Log Realization](./picture/es_ts_study_006_log_realization.png)
 
 ここで気づきが来る✨
 
