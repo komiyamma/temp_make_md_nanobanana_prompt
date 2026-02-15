@@ -42,6 +42,8 @@ sequenceDiagram
 
 ## どうしてこの型が大事なの？🤔💗
 
+![es_cs_study_016_direct_state_mess](./picture/es_cs_study_016_direct_state_mess.png)
+
 もし Command の中で “状態を直接書き換え” しちゃうと…
 
 * 「何が起きたか」の履歴が薄くなる😵‍💫
@@ -64,6 +66,8 @@ sequenceDiagram
 
 # 1) Load：過去イベントを読む📚🔁
 
+![es_cs_study_016_load_phase](./picture/es_cs_study_016_load_phase.png)
+
 EventStore には「その集約で過去に起きた出来事」が並んでるよね。
 だからまず **ストリームID**（例：`cart-123`）でイベント列を読む！
 
@@ -76,6 +80,8 @@ EventStore には「その集約で過去に起きた出来事」が並んでる
 
 # 2) Decide：ルールチェックして、新イベントを作る🛡️✨
 
+![es_cs_study_016_decide_phase](./picture/es_cs_study_016_decide_phase.png)
+
 Decide は **Aggregate の仕事**だよ😊
 
 * 不変条件（守るべきルール）をチェック🧷
@@ -85,6 +91,8 @@ Decide は **Aggregate の仕事**だよ😊
 ---
 
 # 3) Append：新イベントを保存する🧾✅
+
+![es_cs_study_016_append_phase](./picture/es_cs_study_016_append_phase.png)
 
 最後に新イベントを EventStore に append（追記）するよ✨
 このとき「順番（version）」も超大事！
@@ -115,6 +123,8 @@ public sealed record ItemAddedToCart(
 ---
 
 ## ② EventEnvelope（メタデータ入り）🏷️🍱
+
+![es_cs_study_016_event_envelope](./picture/es_cs_study_016_event_envelope.png)
 
 イベントには「起きた事実」＋「付帯情報」があると運用しやすいよ✨
 
@@ -207,6 +217,8 @@ public sealed class ShoppingCart
 ```
 
 ここで大事なのは👇💕
+
+![es_cs_study_016_decide_vs_apply](./picture/es_cs_study_016_decide_vs_apply.png)
 
 * **Decide は “イベントを返す”**（何が起きたか）
 * **Apply は “状態を変える”**（どう変わったか）

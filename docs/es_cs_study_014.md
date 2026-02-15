@@ -34,6 +34,8 @@
 
 ## 1-1. 原則：集約IDから“一意に”作る✅
 
+![es_cs_study_014_stream_id_naming](./picture/es_cs_study_014_stream_id_naming.png)
+
 ストリームIDは、だいたいこれでOK👇
 
 * 例）カート集約（Cart）なら
@@ -61,6 +63,8 @@
 # 2. version（通し番号）の決め方🔢🧷
 
 ## 2-1. versionは“ストリーム内の番号”📼🔢
+
+![es_cs_study_014_version_sequence](./picture/es_cs_study_014_version_sequence.png)
 
 ![ストリームの隔離](./picture/es_cs_study_014_stream_isolation.png)
 
@@ -102,6 +106,8 @@ graph TD
 
 # 3. 最小EventStoreを“複数ストリーム対応”に進化させよう🧪🚀
 
+![es_cs_study_014_dictionary_structure](./picture/es_cs_study_014_dictionary_structure.png)
+
 ここから実装だよ〜💻✨
 前章（読み書きだけ）を、こう変える👇
 
@@ -122,6 +128,8 @@ public interface IDomainEvent;
 
 ## 4-2. 保存される形（StoredEvent）📦
 
+![es_cs_study_014_stored_event_version](./picture/es_cs_study_014_stored_event_version.png)
+
 今回は「まず順番が命！」なので、イベント本体をそのまま持たせる最小にするよ🍱
 （永続化やJSONは後半でやるよ🗄️✨）
 
@@ -137,6 +145,8 @@ public sealed record StoredEvent(
 ```
 
 ## 4-3. EventStore本体（複数ストリーム＋version採番）📼🔢
+
+![es_cs_study_014_append_logic](./picture/es_cs_study_014_append_logic.png)
 
 ```csharp
 using System.Collections.Concurrent;
@@ -226,6 +236,8 @@ public sealed record ItemAdded(Guid CartId, Guid ItemId, int Quantity) : IDomain
 ```
 
 ## 5-2. streamIdの作り方（事故防止）🏷️✅
+
+![es_cs_study_014_stream_id_factory](./picture/es_cs_study_014_stream_id_factory.png)
 
 ```csharp
 namespace EventSourcingMini;

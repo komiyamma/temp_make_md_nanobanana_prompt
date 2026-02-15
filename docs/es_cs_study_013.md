@@ -13,6 +13,8 @@
 イベントソーシングでは、状態（State）を直接保存する代わりに、**出来事（Event）を時系列に積む**よね⏳🧱
 その「積む箱」が **EventStore** です📦✨
 
+![es_cs_study_013_append_read_flow](./picture/es_cs_study_013_append_read_flow.png)
+
 ```mermaid
 graph LR
     User[ユーザー/アプリ] -- "AppendAsync 📮" --> ES[EventStore 📦]
@@ -53,6 +55,8 @@ graph LR
 ### 3-1. イベントは「変更不可」に寄せたい🧊🛡️
 
 イベントって「過去の事実」だから、あとから書き換わると困るの😵‍💫
+
+![es_cs_study_013_immutable_event](./picture/es_cs_study_013_immutable_event.png)
 C# の `record` を使うと、**不変っぽく書けてラク**だよ✍️✨
 （C# 14 は .NET 10 でサポートされてるよ📌）([Microsoft Learn][1])
 
@@ -90,6 +94,8 @@ public interface IEventStore
 ポイント🌟
 
 * `StoredEvent` は「封筒」みたいなもの✉️
+
+![es_cs_study_013_stored_event_envelope](./picture/es_cs_study_013_stored_event_envelope.png)
 
   * `Data`：中身（ドメインイベント）
   * `OccurredAt`：いつ起きた？⏰
@@ -197,6 +203,8 @@ public sealed class InMemoryEventStore : IEventStore
         }
     }
 }
+
+![es_cs_study_013_defensive_copy](./picture/es_cs_study_013_defensive_copy.png)
 ```
 
 ここ、超大事ポイント3つ🌟🌟🌟
@@ -283,6 +291,8 @@ public sealed class InMemoryEventStoreTests
 ```
 
 テストで見てること👀✨
+
+![es_cs_study_013_stream_isolation](./picture/es_cs_study_013_stream_isolation.png)
 
 * **Appendした順に読める**（イベント列＝履歴だから超重要）
 * **streamが違うと混ざらない**（これが「集約ごとに履歴」への入口🚪）

@@ -25,6 +25,8 @@
 
 # 18.2 作成系の「設計の型」🧠✨
 
+![es_cs_study_018_empty_load](./picture/es_cs_study_018_empty_load.png)
+
 ![作成フロー](./picture/es_cs_study_018_create_flow.png)
 
 ```mermaid
@@ -58,6 +60,8 @@ sequenceDiagram
 
 # 18.3 イベント設計：CartCreated は何を持つ？🍱🏷️
 
+![es_cs_study_018_cart_created_cert](./picture/es_cs_study_018_cart_created_cert.png)
+
 ## ✅ CartCreated に入れる（payload）
 
 * CartId：どのカート？
@@ -65,6 +69,8 @@ sequenceDiagram
 * CreatedAt：いつ作られた？（例：UTC）⏰
 
 💡イベントは「事実」なので、**命令っぽい情報**（例：CreateReason みたいな“気持ち”）は入れすぎ注意です🙅‍♀️✨
+
+![es_cs_study_018_fact_vs_intent](./picture/es_cs_study_018_fact_vs_intent.png)
 
 > なお、今の .NET 10 の System.Text.Json は予約っぽい名前（$type / $id / $ref など）と衝突するプロパティ名を早めにエラーにする挙動があるので、イベント payload の命名でそこは避けるのが安全です⚠️ ([Microsoft Learn][2])
 
@@ -159,11 +165,15 @@ flowchart TD
     style Success fill:#e8f5e9
 ```
 
+![es_cs_study_018_decide_logic](./picture/es_cs_study_018_decide_logic.png)
+
 ✅ これで「イベントが状態を作る」骨格は完成です🎉
 
 ---
 
 # 18.5 実装：ユースケース（CreateCart）を通す📮➡️📜➡️📦
+
+![es_cs_study_018_usecase_conductor](./picture/es_cs_study_018_usecase_conductor.png)
 
 ここは「アプリ層（UseCase）」の仕事です😊
 集約はルールを守るだけ、永続化は EventStore がやるだけ、に分けるとスッキリします✨
@@ -301,6 +311,8 @@ Console.WriteLine($"CartId: {cart.CartId}");
 * 迷ったら「事実だけ」に寄せるのが安全✨
 
 ## ミス3：Apply の書き忘れ（復元でバグる）🫠
+
+![es_cs_study_018_ghost_event](./picture/es_cs_study_018_ghost_event.png)
 
 * Decide でイベントを作ったら、Apply に必ず対応を作る✅
 * Apply 漏れは「イベントはあるのに状態が変わらない」地獄🥶

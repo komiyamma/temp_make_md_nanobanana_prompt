@@ -33,6 +33,8 @@
 
 ## 3. 更新イベントの設計（まずここが命！）🧠🔥
 
+![es_cs_study_019_non_empty_load](./picture/es_cs_study_019_non_empty_load.png)
+
 ![更新フロー](./picture/es_cs_study_019_update_flow.png)
 
 ```mermaid
@@ -55,6 +57,8 @@ sequenceDiagram
 
 ### 3.1 イベント命名（過去形）⏳✅
 
+![es_cs_study_019_naming_past_tense](./picture/es_cs_study_019_naming_past_tense.png)
+
 イベントは「やったこと（事実）」なので、**過去形**が基本✨
 
 * `ItemAddedToCart`（カートに商品が追加された）
@@ -62,6 +66,8 @@ sequenceDiagram
 * `ItemRemovedFromCart`（商品が削除された）
 
 ### 3.2 粒度（でかすぎ vs ちょうどいい）⚖️👀
+
+![es_cs_study_019_event_granularity](./picture/es_cs_study_019_event_granularity.png)
 
 ありがちなNG👇
 
@@ -107,6 +113,8 @@ public sealed record ItemRemovedFromCart(Guid CartId, string Sku) : IDomainEvent
 
 ポイント💡
 
+![es_cs_study_019_delta_vs_absolute](./picture/es_cs_study_019_delta_vs_absolute.png)
+
 * 更新系は「差分」を入れるか「結果（NewQuantity）」を入れるか迷うけど、初心者コースでは **結果（NewQuantity）**がおすすめ😊
 
   * リプレイしてもブレない✅
@@ -131,6 +139,8 @@ public sealed record RemoveItem(Guid CartId, string Sku) : ICommand;
 ---
 
 ### 5.3 集約（Cart Aggregate）🧺✨
+
+![es_cs_study_019_command_dispatch](./picture/es_cs_study_019_command_dispatch.png)
 
 ```csharp
 public sealed class Cart
@@ -268,6 +278,8 @@ public sealed class Cart
     public IReadOnlyDictionary<string, int> GetItems() => _items;
 }
 ```
+
+![es_cs_study_019_common_validation](./picture/es_cs_study_019_common_validation.png)
 
 ```mermaid
 flowchart TD
