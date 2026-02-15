@@ -12,6 +12,10 @@
 
 ## まずイメージしよ〜📦🚚
 
+![es_cs_study_012_payload_metadata_box.png](./picture/es_cs_study_012_payload_metadata_box.png)
+
+
+
 宅配便で言うと…
 
 * **Payload🍱**：箱の中身（商品そのもの）
@@ -22,6 +26,10 @@
 ---
 
 # 1) Payload（イベントの中身🍱）って何を入れるの？🧠✨
+
+![es_cs_study_012_payload_filter.png](./picture/es_cs_study_012_payload_filter.png)
+
+
 
 ![イベント封筒](./picture/es_cs_study_012_envelope.png)
 
@@ -62,6 +70,10 @@ graph TD
 
 # 2) Metadata（メタデータ🏷️）って何を入れるの？🧰✨
 
+![es_cs_study_012_metadata_7_pillars.png](./picture/es_cs_study_012_metadata_7_pillars.png)
+
+
+
 ## Metadataは「配送ラベル＋追跡タグ」📍🔎
 
 Payloadが“ドメインの真実”なら、Metadataは **保存・追跡・運用・デバッグ**のための情報だよ😊
@@ -75,6 +87,10 @@ Payloadが“ドメインの真実”なら、Metadataは **保存・追跡・�
 5. **RecordedAt**：保存した時刻（遅延がある場合に便利）🗄️
 6. **CorrelationId**：一連の流れをまとめるID（例：注文処理全体）🔗
 7. **CausationId**：直前の原因イベントID（「これが原因でこれが起きた」）➡️
+
+
+
+![es_cs_study_012_correlation_causation_chain.png](./picture/es_cs_study_012_correlation_causation_chain.png)
 
 ```mermaid
 flowchart LR
@@ -130,6 +146,10 @@ flowchart LR
 ---
 
 # 5) 実装ミニ：イベントを“包む”入れ物（Envelope）📩✨
+
+![es_cs_study_012_envelope_json_structure.png](./picture/es_cs_study_012_envelope_json_structure.png)
+
+
 
 `.NET` なら JSON で保存・転送する場面が多いので、**Envelope（外側）にPayloadとMetadataを分けて持たせる**のが定番だよ📦
 JSONのシリアライズは `System.Text.Json` が公式の基本セットとして使えるよ🧾✨ ([Microsoft Learn][2])
@@ -202,6 +222,10 @@ public sealed record ItemAddedToCart(
 
 # 7) 「標準のイベント形」に寄せたいとき：CloudEvents🏷️🌍
 
+![es_cs_study_012_cloudevents_passport.png](./picture/es_cs_study_012_cloudevents_passport.png)
+
+
+
 外部システム連携が増えてくると、**CloudEvents** みたいな「イベントの共通フォーマット」をEnvelopeとして採用する手もあるよ📨✨
 CloudEventsは、イベントに付けるメタ情報（属性）を標準化する仕様で、拡張属性も持てるよ🧩 ([GitHub][3])
 
@@ -210,6 +234,10 @@ CloudEventsは、イベントに付けるメタ情報（属性）を標準化す
 ---
 
 # 8) よくあるミス集（超あるある）😵‍💫➡️✅
+
+![es_cs_study_012_bloated_payload.png](./picture/es_cs_study_012_bloated_payload.png)
+
+
 
 ## ミス1：Payloadに“表示用”を入れてしまう📺💥
 

@@ -7,6 +7,10 @@
 
 ## 1) Problem Detailsってなに？なんで嬉しいの？🤝🎯
 
+![err_model_ts_study_025_client_confusion.png](./picture/err_model_ts_study_025_client_confusion.png)
+
+
+
 ### ✅ 目的
 
 APIが失敗したとき、毎回バラバラなJSON（`{ message: "..." }` とか）を返すと…
@@ -21,6 +25,10 @@ JSONとして返すときのContent-Typeは **`application/problem+json`** が�
 ---
 
 ## 2) Problem Detailsの“基本5点セット”🧾🖐️
+
+![err_model_ts_study_025_problem_details_structure.png](./picture/err_model_ts_study_025_problem_details_structure.png)
+
+
 
 ![エラーダッシュボード：問題を構造化して表示[(./picture/err_model_ts_study_025_error_dashboard.png)
 
@@ -41,6 +49,10 @@ Problem Detailsは「JSONオブジェクト」で、代表的なメンバーが�
 
 ## 3) まず決めるのは「type（問題タイプURI）」🏷️🔗
 
+![err_model_ts_study_025_type_uri_contract.png](./picture/err_model_ts_study_025_type_uri_contract.png)
+
+
+
 ### 🎯 コツ：typeは“安定した契約”にする
 
 * 例：`https://api.example.com/problems/validation-error`
@@ -54,6 +66,10 @@ Problem Detailsは「JSONオブジェクト」で、代表的なメンバーが�
 ---
 
 ## 4) 「拡張フィールド」を設計しよう🧩✨（ここが実戦！）
+
+![err_model_ts_study_025_extensions_lego.png](./picture/err_model_ts_study_025_extensions_lego.png)
+
+
 
 Problem Detailsは **自由にメンバーを足してOK**（拡張）です💪
 そしてクライアントは **知らない拡張が来ても無視できる** 設計が前提だよ😊([RFCエディタ][3])
@@ -75,6 +91,10 @@ RFC 9457では、detailは「クライアントが直せるように」が主眼
 ---
 
 ## 5) ステータス割り当ての“ざっくり地図”🗺️🚦
+
+![err_model_ts_study_025_status_code_map.png](./picture/err_model_ts_study_025_status_code_map.png)
+
+
 
 あなたの分類（Domain / Infra / Bug）に合わせて、まずはこの感覚でOK😊
 
@@ -139,6 +159,10 @@ export type AppError = DomainError | InfraError | BugError;
 ---
 
 ## 7) Error/Result → Problem Details 変換（対応表の“実装版”）🧾➡️🧾
+
+![err_model_ts_study_025_error_converter.png](./picture/err_model_ts_study_025_error_converter.png)
+
+
 
 ここがこの章のキモだよ〜！💖
 **「内部分類」と「HTTP契約」を接続**します🔌✨
@@ -288,6 +312,10 @@ export async function apiFetch<T>(input: RequestInfo, init?: RequestInit): Promi
 ---
 
 ## 10) OpenAPIにも載せよう（契約が“見える化”）📘✨
+
+![err_model_ts_study_025_openapi_contract.png](./picture/err_model_ts_study_025_openapi_contract.png)
+
+
 
 OpenAPI 3.0+ なら `application/problem+json` のレスポンスを定義できるよ🧾
 ProblemDetailsスキーマ例もよく紹介されています([Qiita][5])
