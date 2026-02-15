@@ -12,6 +12,8 @@
 
 ### ✅ 完成フォルダ構成（最終形）
 
+![Project Folder Structure](./picture/cap_ts_study_002_folder_structure.png)
+
 ```text
 cap-lab/
   apps/
@@ -135,6 +137,8 @@ npm init -y
 ---
 
 ## 3) TypeScript の “共通設定” を置く🧠🧱
+
+![Common Configuration](./picture/cap_ts_study_002_tsconfig_base.png)
 
 ルートに `tsconfig.base.json` を作るよ📄✨
 （この1枚が “迷わない型” になる！）
@@ -312,6 +316,8 @@ while (true) {
 
 ## 6) 依存関係を一気に入れる📦⚡
 
+![Concurrently Package](./picture/cap_ts_study_002_concurrently.png)
+
 ルート（`cap-lab/`）でこれだけ👇
 （workspaces なので、全部まとめて入るよ〜！）
 
@@ -338,6 +344,8 @@ sequenceDiagram
 
 ## 7) 2プロセス同時起動してみよう🚀🧵
 
+![API vs Worker Processes](./picture/cap_ts_study_002_api_vs_worker.png)
+
 ### ✅ 起動🔥
 
 ```powershell
@@ -346,8 +354,12 @@ npm run dev
 
 ### ✅ 動作チェック👀
 
+![Browser Health Check](./picture/cap_ts_study_002_health_check.png)
+
 * ブラウザで：`http://localhost:3000/health`
 * 遅延確認：`http://localhost:3000/slow?ms=2000`（2秒待つ⏳🐢）
+
+![Simulated Latency](./picture/cap_ts_study_002_slow_endpoint.png)
 
 ターミナルにはこんな感じで出るはず👇
 
@@ -357,6 +369,8 @@ npm run dev
 ---
 
 ## 8) VS Code を “気持ちよくする” 最小セット🎛️✨
+
+![VS Code Task Runner](./picture/cap_ts_study_002_vscode_tasks.png)
 
 ### ✅ `.vscode/settings.json`（保存時フォーマットなど）
 

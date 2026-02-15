@@ -13,6 +13,8 @@
 
 ## ネットワークって、どんなふうに壊れるの？🌍💥
 
+![Network Failures](./picture/cap_ts_study_004_network_chaos.png)
+
 ネットワーク越しの呼び出し（HTTPとか）は、だいたいこういう事件が起きます👇😵‍💫
 
 * **遅い**：返事が来るまで数秒〜数十秒待つ🐢
@@ -27,6 +29,8 @@
 ---
 
 ## タイムアウトの正体 ⏳🧩
+
+![Timeout Ghost](./picture/cap_ts_study_004_timeout_ghost.png)
 
 タイムアウトはざっくり言うとこう👇
 
@@ -53,6 +57,8 @@ sequenceDiagram
 
 ### クライアント側（呼ぶ側）のタイムアウト
 
+![AbortSignal Deadline](./picture/cap_ts_study_004_abort_signal.png)
+
 Node.js の `fetch` は **デフォルトでタイムアウトしません**（待てるだけ待つ）ので、自分で“締切”をつけるのが大事だよ⏰
 `AbortSignal.timeout(ms)` が使えるので、これで「○ms で諦める」を作れます🧷 ([nodejs.org][2])
 
@@ -65,6 +71,8 @@ Node.js の `fetch` は **デフォルトでタイムアウトしません**（�
 ---
 
 ## リトライ（再送）の罠：二重になる 😱🔁
+
+![Double Execution Trap](./picture/cap_ts_study_004_double_execution.png)
 
 タイムアウトすると、人はこう考えがち👇
 
@@ -82,6 +90,8 @@ Node.js の `fetch` は **デフォルトでタイムアウトしません**（�
 ---
 
 ## ハンズオン：ランダム失敗スイッチ（Fault Injection）を付ける🎛️🎲
+
+![Fault Injection Panel](./picture/cap_ts_study_004_fault_injection.png)
 
 ### できあがるもの 🧱✨
 
@@ -366,6 +376,8 @@ Workerを実行すると、たまにこうなる👇
 
 ## 観察ポイント（ログで“真実”を見る）🕵️‍♀️🧵
 
+![Log Timeline Evidence](./picture/cap_ts_study_004_log_timeline.png)
+
 APIのログはこういうJSONが出るはず👇
 
 * `requestId`：各リクエストの識別子🪪
@@ -406,6 +418,8 @@ sequenceDiagram
 ---
 
 ## 💡ミニおまけ：二重を減らす“超・簡易版”の考え方（チラ見せ）👀🧷
+
+![Idempotency Key Teaser](./picture/cap_ts_study_004_idempotency_teaser.png)
 
 本格的には後の章でやるけど、発想だけ先に言うね👇
 
