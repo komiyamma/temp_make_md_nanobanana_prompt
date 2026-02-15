@@ -19,6 +19,9 @@ IDEも **Visual Studio 2026** が提供されてる流れだよ🪟✨ ([Microso
 
 ## 35-1 エラーは3種類に分けるのが勝ち🧯✨
 
+![hex_cs_study_035_error_tree.png](./picture/hex_cs_study_035_error_tree.png)
+
+
 ![Final Fort](./picture/hex_cs_study_035_polished_app.png)
 
 ```mermaid
@@ -62,10 +65,16 @@ mindmap
 
 ### なんで例外じゃなくて Result？🤔
 
+![hex_cs_study_035_conveyor.png](./picture/hex_cs_study_035_conveyor.png)
+
+
 * 「数量0は例外！」って言われると、**毎回 try/catch だらけ**になりがち🍝
 * “想定内の失敗”は **戻り値で普通に返す**と、流れが読みやすい✨
 
 ### Core側に置く最小セット（エラーコード＋メッセージ）📦
+
+![hex_cs_study_035_error_card.png](./picture/hex_cs_study_035_error_card.png)
+
 
 ```csharp
 namespace Cafe.Core;
@@ -126,6 +135,9 @@ public Result<CreateOrderOutput> Handle(CreateOrderInput input)
 
 ### Outbound Adapter（例：Repository）🗄️
 
+![hex_cs_study_035_gift_wrap.png](./picture/hex_cs_study_035_gift_wrap.png)
+
+
 ```csharp
 public sealed class OrderRepositorySql : IOrderRepository
 {
@@ -153,6 +165,9 @@ public sealed class RepositoryUnavailableException : Exception
 ```
 
 ### Inbound（Web API）側：ProblemDetailsで返す🧾✨
+
+![hex_cs_study_035_converter.png](./picture/hex_cs_study_035_converter.png)
+
 
 ASP.NET Coreには **ProblemDetails** っていう標準エラー形式があるよ〜📌 ([Microsoft Learn][4])
 
@@ -241,6 +256,9 @@ public sealed class ApiExceptionHandler : IExceptionHandler
 
 ### ✅ 残すと強いログ（例）💪
 
+![hex_cs_study_035_log_table.png](./picture/hex_cs_study_035_log_table.png)
+
+
 * 注文作成リクエスト受けた（OrderId/商品数）📥
 * 注文作成成功（OrderId）✅
 * 外部呼び出し失敗（どの外部か＋例外）🌩️
@@ -283,6 +301,9 @@ ASP.NET Coreならこの形が基本でOK〜📝
 ---
 
 ## 35-6 “つながる”観測：OpenTelemetryは最小だけ入れる🔗📡
+
+![hex_cs_study_035_trace_beam.png](./picture/hex_cs_study_035_trace_beam.png)
+
 
 「このリクエストの失敗、DB？外部API？どこ？」を追うのに、
 トレース（TraceId）があると一気に楽になるよ〜😆

@@ -45,6 +45,9 @@ Core は interface に向かって話すだけ。外側の実装（Adapter）は
 
 ## 2) この章でやるテストの範囲🎯
 
+![hex_cs_study_033_scope_spotlight.png](./picture/hex_cs_study_033_scope_spotlight.png)
+
+
 ここでは **Coreの単体テスト**に集中するよ😊
 
 * ✅ Domainのテスト（値の制約・計算・不変条件）💎
@@ -54,6 +57,9 @@ Core は interface に向かって話すだけ。外側の実装（Adapter）は
 ---
 
 ## 3) 用語をゆるく整理：Fake / Stub / Mock 🍰
+
+![hex_cs_study_033_doubles_cast.png](./picture/hex_cs_study_033_doubles_cast.png)
+
 
 初心者向けに、まずこの感覚でOKだよ〜😊✨
 
@@ -66,6 +72,9 @@ Core は interface に向かって話すだけ。外側の実装（Adapter）は
 ---
 
 ## 4) テストの基本型：AAAで書こう📐✨
+
+![hex_cs_study_033_aaa_steps.png](./picture/hex_cs_study_033_aaa_steps.png)
+
 
 テストはだいたいこの3段で書くと読みやすいよ👇
 
@@ -94,6 +103,9 @@ public interface IOrderRepository
 ```
 
 #### “時刻”も外に逃がす（テストしやすさUP）⏰✨
+
+![hex_cs_study_033_clock_port.png](./picture/hex_cs_study_033_clock_port.png)
+
 
 実務だと `DateTime.UtcNow` がテストを壊しがちなので、ClockもPortにしちゃうのがコツ👍
 
@@ -163,6 +175,9 @@ public sealed class CreateOrderUseCase
 ---
 
 ### 5-2) テスト側：Fake Adapter（InMemory Repository）を作る🧪📦
+
+![hex_cs_study_033_fake_list.png](./picture/hex_cs_study_033_fake_list.png)
+
 
 テストプロジェクト内に、こんなのを置くと便利だよ😊
 
@@ -246,6 +261,9 @@ public sealed class CreateOrderUseCaseTests
 
 ## 6) Visual Studioでの回し方（Windows）🪟🧪
 
+![hex_cs_study_033_green_light.png](./picture/hex_cs_study_033_green_light.png)
+
+
 * テストプロジェクトを右クリック → **テストの実行** ▶️
 * **テスト エクスプローラー**で一覧が見える👀✨
 * 失敗したらクリックで詳細が出る🧯
@@ -286,6 +304,9 @@ MSTest を Microsoft.Testing.Platform で動かす場合は、プロジェクト
 「テストが不安定」って悩みの8割はここで消えるよ😊✨
 
 ### コツB：テストは速く・少なく・気持ちよく🏎️💨
+
+![hex_cs_study_033_race_car.png](./picture/hex_cs_study_033_race_car.png)
+
 
 * 1テストは 10〜50ms くらいで走るのが理想（体感）⚡
 * 速いと「常に回す」文化になって勝てる🏆

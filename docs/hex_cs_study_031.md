@@ -8,6 +8,9 @@
 
 ## 1) まずは全体像：DIって何してるの？🧠🔌
 
+![hex_cs_study_031_dependency_web.png](./picture/hex_cs_study_031_dependency_web.png)
+
+
 ざっくり言うと👇
 
 * **どの interface（Port）に、どの実装（Adapter）を使うか** を登録しておく📝
@@ -17,6 +20,9 @@
 ---
 
 ## 2) どこに登録する？ → だいたい Program.cs 💡🧩
+
+![hex_cs_study_031_reg_desk.png](./picture/hex_cs_study_031_reg_desk.png)
+
 
 ASP.NET Core のテンプレだと、だいたいこういう場所にあります👇
 （`WebApplication.CreateBuilder()` で作った `builder.Services` に登録）✨
@@ -73,6 +79,9 @@ sequenceDiagram
 
 ### A. Transient（毎回新品）🆕🆕🆕
 
+![hex_cs_study_031_transient.png](./picture/hex_cs_study_031_transient.png)
+
+
 * **解決（Resolve）されるたびに新しいインスタンス**
 * 登録：`AddTransient`
 * 「軽い・状態を持たない・使い捨て」向き✨
@@ -88,6 +97,9 @@ builder.Services.AddTransient<PriceCalculator>();
 
 ### B. Scoped（リクエストごとに1回）📩➡️1回✨
 
+![hex_cs_study_031_scoped.png](./picture/hex_cs_study_031_scoped.png)
+
+
 * **Webなら「1リクエスト（接続）に1インスタンス」**
 * 登録：`AddScoped`
 * リクエストが終わると **Dispose** 🧹 ([Microsoft Learn][1])
@@ -102,6 +114,9 @@ builder.Services.AddScoped<ICreateOrderUseCase, CreateOrderUseCase>();
 ---
 
 ### C. Singleton（アプリ全体で1個だけ）👑✨
+
+![hex_cs_study_031_singleton.png](./picture/hex_cs_study_031_singleton.png)
+
 
 * **最初の1回だけ作って、ずっと同じインスタンス**
 * 登録：`AddSingleton`
@@ -127,6 +142,9 @@ builder.Services.AddSingleton<SystemClock>();
 
 ## 5) いちばん多い事故：ScopedをSingletonに混ぜる💥😵‍💫
 
+![hex_cs_study_031_bad_mix.png](./picture/hex_cs_study_031_bad_mix.png)
+
+
 ### ❌ ダメなやつ（例）
 
 「Singletonの中にScopedをコンストラクタ注入」すると…
@@ -142,6 +160,9 @@ builder.Services.AddSingleton<SystemClock>();
 * ScopedをSingletonに注入してない？ ([Microsoft Learn][1])
 
 ### ✅ どうしてもSingletonの中でScopedを使いたいとき
+
+![hex_cs_study_031_factory.png](./picture/hex_cs_study_031_factory.png)
+
 
 `IServiceScopeFactory` で **明示的にスコープを作って** そこから解決する🙏✨
 （BackgroundServiceなどでよく使うやつ） ([Microsoft Learn][1])

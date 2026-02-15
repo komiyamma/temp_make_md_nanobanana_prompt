@@ -42,6 +42,9 @@ DBと同じで、外部APIやメールもこういう特徴があるよね👇
 
 ## 2) 例：注文確定で「確認メール」＋「ポイント付与API」☕🧾➡️✉️➡️📡
 
+![hex_cs_study_029_confirm_flow.png](./picture/hex_cs_study_029_confirm_flow.png)
+
+
 カフェ注文アプリでよくある流れを想像してみよ😊
 
 * 注文できた！✅
@@ -53,6 +56,9 @@ DBと同じで、外部APIやメールもこういう特徴があるよね👇
 ---
 
 ## 3) 手順①：Core側に Outbound Port（interface）を作る📝🔌
+
+![hex_cs_study_029_clean_dto.png](./picture/hex_cs_study_029_clean_dto.png)
+
 
 Coreが欲しいのは「メールを送れること」「ポイントを付けられること」だけ。
 SMTPとかHttpClientとかは知らないでOK🙆‍♀️
@@ -148,6 +154,9 @@ public sealed class CreateOrderUseCase : ICreateOrderUseCase
 
 ### 5.1 外部API Adapter：HttpClientで呼ぶ📡
 
+![hex_cs_study_029_http_shield.png](./picture/hex_cs_study_029_http_shield.png)
+
+
 HttpClientは “Factory経由” が基本だよ（いわゆる `AddHttpClient`）🧰✨
 さらに最近は **回復性（リトライ等）を足しやすい仕組み** が用意されてるよ〜💪
 `Microsoft.Extensions.Http.Resilience` を入れて `AddStandardResilienceHandler()` みたいに付けられる（そして回復性ハンドラーは基本1つにするのが推奨）だよ📌 ([Microsoft Learn][1])
@@ -212,6 +221,9 @@ builder.Services
 
 ### 5.2 メール Adapter：SmtpClientより MailKit が推奨✉️✨
 
+![hex_cs_study_029_mail_evolution.png](./picture/hex_cs_study_029_mail_evolution.png)
+
+
 .NETの `SmtpClient` は “新規開発ではおすすめしない” って明言されてて、MailKit等が推奨だよ📌 ([Microsoft Learn][2])
 （メールは地味に罠が多いので、実績あるライブラリに寄せるのが安心😌）
 
@@ -274,6 +286,9 @@ public sealed record SmtpOptions(
 
 ## 6) リトライ、どこまでやる？😵‍💫🔁（初心者向けの現実ライン）
 
+![hex_cs_study_029_idempotency_gate.png](./picture/hex_cs_study_029_idempotency_gate.png)
+
+
 外部APIにリトライを入れたくなるけど、**何でもかんでもリトライは危険**⚠️
 
 * GET（参照）はリトライしやすい😊
@@ -288,6 +303,9 @@ public sealed record SmtpOptions(
 ---
 
 ## 7) テストがめっちゃ楽になる瞬間🧪💖
+
+![hex_cs_study_029_fake_switch.png](./picture/hex_cs_study_029_fake_switch.png)
+
 
 Coreのテストは、外部APIもメールも **Fake差し替え**で爆速になるよ😆
 
