@@ -13,6 +13,9 @@
 
 ## まず結論：2026の鉄板3点セット🧰✨
 
+![hex_ts_study_014_three_pillars](./picture/hex_ts_study_014_three_pillars.png)
+
+
 * **ESLint**：Lint担当（今の安定は v9 系。v10 はRCが出てる）🕵️‍♀️ ([ESLint][1])
 * **Prettier**：Format担当（3.8 が 2026/01/14 に出てるよ）🎀 ([Prettier][2])
 * **Vitest**：Test担当（v4 移行が本格化）⚡
@@ -23,6 +26,9 @@ TypeScript自体は、現時点の最新安定が **5.9.3**（GitHubのrelease t
 ---
 
 ## 14.1 「機械に任せる」と何が嬉しいの？🤖💖
+
+![hex_ts_study_014_robot_vs_human](./picture/hex_ts_study_014_robot_vs_human.png)
+
 
 * **PRの差分が小さくなる**（見た目の差分が消える）👀✨
 * **“うっかり”を先に怒ってくれる**（未使用変数、型の取り違え…）😵‍💫➡️😌
@@ -44,6 +50,9 @@ npm i -D eslint @eslint/js typescript typescript-eslint prettier vitest @vitest/
 ---
 
 ### ✅ Step 2：ESLint（Lint）を設定する🕵️‍♀️✨
+
+![hex_ts_study_014_flat_config](./picture/hex_ts_study_014_flat_config.png)
+
 
 ESLint v9 以降の基本は **Flat Config**（`eslint.config.*`）だよ📌
 `eslint.config.mjs` をプロジェクト直下に作ってね📝
@@ -74,6 +83,9 @@ export default tseslint.config(
 
 ### ✅ Step 3：Prettier（Format）を設定する🎀✨
 
+![hex_ts_study_014_prettier_machine](./picture/hex_ts_study_014_prettier_machine.png)
+
+
 `.prettierrc.json` を作るよ〜（シンプルでOK）😊
 
 ```json
@@ -95,6 +107,9 @@ node_modules
 ---
 
 ### ✅ Step 4：Vitest（Test）を設定する🧪⚡
+
+![hex_ts_study_014_vitest_bolt](./picture/hex_ts_study_014_vitest_bolt.png)
+
 
 `vitest.config.ts` を作るよ〜！
 
@@ -144,6 +159,9 @@ describe("sum", () => {
 
 ### ✅ Step 6：npm scripts を整える🔧✨
 
+![hex_ts_study_014_check_button](./picture/hex_ts_study_014_check_button.png)
+
+
 `package.json` の `scripts` をこうしてね👇
 
 ```json
@@ -170,6 +188,9 @@ npm run check
 ---
 
 ## 14.3 VS Code を“気持ちよく”する設定🧠✨
+
+![hex_ts_study_014_format_on_save](./picture/hex_ts_study_014_format_on_save.png)
+
 
 拡張機能は **ESLint** と **Prettier** を入れて、`.vscode/settings.json` を作るのがおすすめ💕
 

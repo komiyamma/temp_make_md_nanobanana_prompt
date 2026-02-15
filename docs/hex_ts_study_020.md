@@ -9,6 +9,9 @@
 
 ## 1) DTOってなに？ざっくり言うと「受け渡し用の伝票」🧾✨
 
+![hex_ts_study_020_dto_courier](./picture/hex_ts_study_020_dto_courier.png)
+
+
 DTOは、ユースケースが受け取る＆返す**“ただのデータ”**だよ📦
 ポイントはこれ👇
 
@@ -27,6 +30,9 @@ DTOは、ユースケースが受け取る＆返す**“ただのデータ”**�
 
 ## 2) なぜ domain の型を外に漏らさないの？😱🧨
 
+![hex_ts_study_020_domain_leak](./picture/hex_ts_study_020_domain_leak.png)
+
+
 もしユースケースが `Todo` クラス（ドメイン）そのまま返すと、外側がこうなる👇
 
 * 外側（HTTP/CLI）が **Todoの内部構造に依存**しちゃう
@@ -42,6 +48,9 @@ DTOにしておくと…
 ---
 
 ## 3) DTOの設計ルール（これだけ守ればOK）✅✨
+
+![hex_ts_study_020_dto_shield](./picture/hex_ts_study_020_dto_shield.png)
+
 
 DTOは「外へ渡す前提」だから、だいたいこうするのが安全だよ👇
 
@@ -62,6 +71,9 @@ DTOは「外へ渡す前提」だから、だいたいこうするのが安全�
 ---
 
 ## 4) TodoミニアプリのDTOを作ろう📝🍰
+
+![hex_ts_study_020_dto_structure](./picture/hex_ts_study_020_dto_structure.png)
+
 
 フォルダ例（迷子防止）📁🧭
 
@@ -107,6 +119,9 @@ export type ListTodosOutputDto = Readonly<{
 
 ## 5) ドメイン → DTO への変換（Mapper）🔁🧩
 
+![hex_ts_study_020_mapper_press](./picture/hex_ts_study_020_mapper_press.png)
+
+
 ここが**超大事**✨
 **変換は中心じゃなくて“アプリ層（ユースケース寄り）”か“アダプタ”**でやるとキレイだよ🧼
 
@@ -131,6 +146,9 @@ export function toTodoDto(todo: Todo): TodoDto {
 ---
 
 ## 6) ユースケースの「入口と出口」をDTOで固定する🚪📤✨
+
+![hex_ts_study_020_usecase_gate](./picture/hex_ts_study_020_usecase_gate.png)
+
 
 ユースケースは、外側の都合（HTTPのRequestとか）を知らない🙅‍♀️
 なので、**DTOだけ**知ってればOKにするよ！
@@ -180,6 +198,9 @@ expect(out.todo.completed).toBe(false);
 ---
 
 ## 8) 「DTOが薄いか」セルフチェック✅🥗
+
+![hex_ts_study_020_fat_dto_scale](./picture/hex_ts_study_020_fat_dto_scale.png)
+
 
 DTOが太り始めると事故るので、これで点検しよ〜🚨
 
