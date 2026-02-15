@@ -10,6 +10,8 @@
 
 ## まず結論：競合対応は “この3択” が基本だよ🧡
 
+![Three Strategies](./picture/es_ts_study_024_three_strategies.png)
+
 競合は、前章の **expectedVersion（楽観ロック）** で検知できるようになったよね🔒
 イベントストア側で「**そのversionのはず**」って指定してAppendして、ズレてたら失敗にするやつ！([Kurrent Docs][1])
 
@@ -39,6 +41,8 @@
 
 ## ① 自動リトライが向いてるケース🔁✅
 
+![Retry Suitability](./picture/es_ts_study_024_retry_suitability.png)
+
 * コマンドが **“足し算系”**（AddとかIncrementとか）で、
   最新状態に対してもう一回判断し直せば自然に通るやつ💡
 * 例：`AddItem` / `IncreaseQuantity` / `AddTag` など🧺➕
@@ -56,6 +60,8 @@
 
 ## ③ マージが向いてるケース🧩✨（ただし条件つき）
 
+![Merge Puzzle](./picture/es_ts_study_024_merge_puzzle.png)
+
 * 両方の変更が **衝突しにくい** or **合体ルールが明確** なとき
 * 例：タグ追加同士は合体できる🏷️＋🏷️、数量変更はルール次第🔢
 
@@ -66,6 +72,8 @@
 ## “やっちゃダメ寄り”の対応も知っておこう🙅‍♀️💦
 
 ## ❌ Last Writer Wins（最後に来た人が勝つ）🏁
+
+![Last Writer Wins Disaster](./picture/es_ts_study_024_lww_disaster.png)
 
 状態保存の世界だとやりがちだけど、**更新が消える（ロストアップデート）** 事故につながりやすい😱
 イベントソーシングでも「衝突を無視する」設定にすると危険なので、まずは避けようね⚠️([Kurrent Docs][1])
@@ -218,6 +226,8 @@ export async function handleAddItemWithRetry(
 ```
 
 ## ここがポイントだよ💡✨
+
+![Infinite Loop Trap](./picture/es_ts_study_024_infinite_loop.png)
 
 * **リトライ回数は必ず上限を決める**（無限ループ防止）🌀🚫
 * リトライは「**読み直し→再判断**」が基本（古いstateで再Appendしない）🔁

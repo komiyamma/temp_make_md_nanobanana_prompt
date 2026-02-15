@@ -10,6 +10,8 @@
 
 ## 1) 競合（concurrency conflict）ってなに？🤔⚔️
 
+![Cake Conflict](./picture/es_ts_study_022_cake_conflict.png)
+
 **同じ集約（同じストリーム）に対して、ほぼ同時に2つ以上の更新が走る**と起きる事故だよ💥
 
 イメージはこんな感じ🍰💨
@@ -23,6 +25,8 @@
 ---
 
 ## 2) イベントソーシングだと、どこで壊れやすいの？🧠🔁
+
+![Danger Gap](./picture/es_ts_study_022_danger_gap.png)
 
 イベントソーシングの基本の流れ（前の章の型）📮✅
 
@@ -376,6 +380,8 @@ npx vitest
 
 ## 10) どうして「例外が出ずに」壊れるの？😵‍💫🧨
 
+![Silent Corruption](./picture/es_ts_study_022_silent_corruption.png)
+
 今回の事故はこう👇
 
 * AもBも **同じ過去（version=3）の世界**で判断してる
@@ -388,6 +394,8 @@ npx vitest
 ---
 
 ## 11) じゃあどう守るの？（次章の前フリ）🔒✨
+
+![Optimistic Lock Preview](./picture/es_ts_study_022_optimistic_lock_preview.png)
 
 イベントストア界隈でよく使う考え方が **expectedVersion**（楽観ロック）だよ🔢✅
 「**あなたが読んだ時のversionのままなら書いていいよ**。違ってたら失敗にするね」っていう仕組み。

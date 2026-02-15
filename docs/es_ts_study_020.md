@@ -10,6 +10,8 @@
 
 ## 1) まず超重要：イベントソーシングのテストは「状態」じゃなく「イベント」を見る👀📜✨
 
+![Test Scope](./picture/es_ts_study_020_test_scope.png)
+
 イベントソーシングでは、ざっくりこう考えるとラクです😊
 
 * **Given**：これまでに起きた出来事（イベントの列）📚
@@ -43,6 +45,8 @@ block-beta
 ---
 
 ## 2) 今どきのTypeScriptテスト基盤：Vitestでいこう😺⚡
+
+![Vitest Speed](./picture/es_ts_study_020_vitest_speed.png)
 
 最近は **Vitest** がかなり主流で、ドキュメントも継続的に更新されています📈✨
 （Vitest 4.0 のアナウンスも出ています）([Vitest][1])
@@ -192,6 +196,8 @@ export const handle = (command: CartCommand, history: CartEvent[]): Result<CartE
 
 ## 5) Given-When-Then テストを書く🧪🌸✨（成功/失敗を2本）
 
+![GWT Code Block](./picture/es_ts_study_020_gwt_code_block.png)
+
 ## 基本形（超まっすぐ版）📏
 
 ```ts
@@ -247,6 +253,8 @@ describe("カート：Given-When-Then 🛒🧪", () => {
 
 ## 6) もっと読みやすくする：GWTヘルパー🧁✨
 
+![Helper Wrapper](./picture/es_ts_study_020_helper_wrapper.png)
+
 テストが増えると、毎回同じ形を書くのがだるい😵‍💫
 だから “文章っぽく” 読めるヘルパーを作ると幸せ😊🌸
 
@@ -299,11 +307,15 @@ describe("GWTヘルパー版 🧁🧪", () => {
 
 ## ① Then で「状態」を期待しはじめる🧟‍♀️
 
+![State vs Event Testing](./picture/es_ts_study_020_state_vs_event.png)
+
 * “状態はApplyの結果” だから、まずは **Then＝イベント** で安定させるのがコツ😊
 * 状態を見たくなったら、別テストとして「rehydrateした状態」を確認するのはアリ👌
   でも最初はイベント中心がラク✨
 
 ## ② テストがDB/時間/乱数に依存して不安定🎲⏰
+
+![Pure Function Test](./picture/es_ts_study_020_pure_test.png)
 
 * ドメイン層は **外部要因を入れない** のが正義💪✨
 * 日時が必要なら「Clockを渡す」みたいに、値を固定できる形にするよ🕰️📌

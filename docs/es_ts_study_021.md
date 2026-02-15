@@ -66,6 +66,8 @@ end
 
 ### Resultの形（いちばんシンプル）🧸💡
 
+![Result Pattern TS](./picture/es_ts_study_021_result_ts.png)
+
 ```ts
 // src/shared/result.ts
 export type Ok<T> = { ok: true; value: T };
@@ -82,6 +84,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 ---
 
 ## 4. Decideは「例外を投げない」が基本（おすすめ）📮🧠
+
+![Decide Logic with Result](./picture/es_ts_study_021_decide_result.png)
 
 イベントソーシングの中核は Decide（新しいイベントを決める）だよね✅
 ここは **ドメインのルールの場所**だから、
@@ -120,6 +124,8 @@ export const formatCartDomainError = (e: CartDomainError): string => {
   }
 };
 ```
+
+![Exhaustive Check](./picture/es_ts_study_021_exhaustive_check.png)
 
 > `default` の `never` は「ケース漏れ」をコンパイルで気づけるテクだよ🔒✨
 > （最近のTypeScriptは型まわりがどんどん強くなってて、こういう“漏れ防止”が効きやすいよ〜🧠）([TypeScript][1])
@@ -206,6 +212,8 @@ export type EventStoreError =
 ---
 
 ## 8. アプリ層で「ドメイン vs インフラ」を合流させる🌉✨
+
+![AppError Structure](./picture/es_ts_study_021_app_error.png)
 
 画面やAPIから見ると「失敗」だけど、**意味が違う**よね🥺
 だから「AppError」を作って、最後にまとめるのがやりやすいよ😊
@@ -377,6 +385,8 @@ Resultで全部やればOK！…と言いたいけど、実際は「例外が向
 ```
 
 ### プロンプト②：Result型のユーティリティを足す🧰
+
+![Railroad Programming](./picture/es_ts_study_021_railroad.png)
 
 ```text
 TypeScriptでResult型（ok/err）を使っています。

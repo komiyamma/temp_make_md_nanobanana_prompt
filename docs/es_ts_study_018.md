@@ -10,6 +10,8 @@
 
 ## 18.1 作成系が“ちょっと特別”な理由 🧠✨
 
+![Creation from Nothing](./picture/es_ts_study_018_creation_concept.png)
+
 更新系は「すでに存在するもの」を変えるけど、作成系は **「存在しないところから、存在を生む」** んだよね👶✨
 
 だから作成系では…
@@ -39,11 +41,15 @@
 
 ### ✅ イベント名は過去形
 
+![Command vs Event Naming](./picture/es_ts_study_018_command_vs_event.png)
+
 * CartCreated（作成された）✅
 * CartCreate（命令っぽい）❌
 * CreateCart（コマンドっぽい）❌
 
 ### ✅ Payloadは「事実」だけ
+
+![Payload Content](./picture/es_ts_study_018_payload_facts.png)
 
 CartCreatedに入れるのは例えばこんな感じ👇
 
@@ -81,6 +87,8 @@ flowchart LR
 ---
 
 ## 18.5 実装：EventStore（インメモリ）📦✅
+
+![Concurrency Error Logic](./picture/es_ts_study_018_concurrency_error.png)
 
 ```ts
 // src/infra/inMemoryEventStore.ts
@@ -274,6 +282,9 @@ export const cartStreamId = (cartId: string) => `cart-${cartId}`;
 
 ### ちょいメモ（型の話）📝✨
 
+![Decide Logic Flow](./picture/es_ts_study_018_decide_logic.png)
+![Apply State Transition](./picture/es_ts_study_018_apply_transition.png)
+
 * 「Decideはイベントを返す」→ ここがイベントソーシングの心臓部💓
 * 「Applyは状態を作る」→ 復元もProjectionも、だいたいこの考え方でいける🔁
 
@@ -430,6 +441,8 @@ console.log("create #2:", r2);
 表示はProjectionで作る🔎✨
 
 ### ❌ ミス3：作成系なのに expectedVersion を見てない
+
+![Expected Version Check](./picture/es_ts_study_018_expected_version.png)
 
 作成系は「空っぽのはず」を主張するのが大事📼✅
 だから expectedVersion=-1 みたいなチェックが効いてくるよ🔒

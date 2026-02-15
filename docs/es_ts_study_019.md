@@ -20,6 +20,8 @@
 
 ## 1) 題材：ショッピングカートの「更新」をイベントにする 🛒✨
 
+![Three Update Types](./picture/es_ts_study_019_three_updates.png)
+
 ここではカートの更新をこの3つに絞るよ（超よくあるやつ！）😊
 
 * **商品を追加**（Add）➕
@@ -35,6 +37,8 @@
 ---
 
 ## 2) まずは「Command」「Event」「State」を揃える 🧩📦
+
+![Command Event State Triad](./picture/es_ts_study_019_triad.png)
 
 > ポイント：更新系は **「操作（Command）」と「事実（Event）」を混ぜない** のが超大事だよ〜！🙅‍♀️💥
 
@@ -98,6 +102,8 @@ export type CartState = {
 
 ## パターンA：追加は “差分（increment）” として記録する ➕📈
 
+![Event Granularity](./picture/es_ts_study_019_granularity.png)
+
 * `ItemAddedToCart(productId, quantity)`
 * 何回でも足せる（同じ商品を +1, +2…）
 * ログとして自然（何回足したかも履歴に残る）📜✨
@@ -116,6 +122,8 @@ export type CartState = {
 ---
 
 ## 4) Apply：イベントを State に反映する 🔁🧠✨
+
+![Apply Logic Mapping](./picture/es_ts_study_019_apply_mapping.png)
 
 > ポイント：**イベントを増やしたら Apply も必ず増やす**（忘れると復元が壊れる😱）
 
@@ -223,6 +231,8 @@ export function decideAddItem(state: CartState, cmd: AddItem): Result<CartEvent[
 ---
 
 ## 5.3 RemoveItem：なければ削除できないよね？ ➖🧺
+
+![Decide Constraint](./picture/es_ts_study_019_decide_constraint.png)
 
 ```ts
 export function decideRemoveItem(state: CartState, cmd: RemoveItem): Result<CartEvent[]> {
@@ -398,6 +408,8 @@ demo();
 
 ## 演習B：Apply漏れをわざと起こして直す 🫣🔧
 
+![Missing Apply Danger](./picture/es_ts_study_019_missing_apply.png)
+
 1. 新イベントを作る
 2. Apply に書き忘れる
 3. 復元して「なんか変…😱」を体験する
@@ -436,6 +448,8 @@ demo();
 * **Applyを書き忘れる** → 復元がズレる 😱
 
 * **“更新の意味” が曖昧なイベントを作る**
+
+  ![Naming Pitfall](./picture/es_ts_study_019_naming_pitfall.png)
 
   * 例：`ItemUpdated` は便利そうで地獄になりやすい🫠
   * 「何がどう変わったか」が履歴から読めなくなるよ〜💦
