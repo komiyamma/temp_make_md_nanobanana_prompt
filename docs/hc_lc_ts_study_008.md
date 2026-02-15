@@ -9,6 +9,8 @@
 
 ## 8-1. あるある地獄🔥「プリミティブだらけ問題」😱
 
+![Primitive Obsession Hell](./picture/hc_lc_ts_study_008_primitive_hell.png)
+
 たとえば、こういうの👇
 
 * `email: string`
@@ -82,6 +84,8 @@ flowchart LR
 
 ## パターンA：まずは最小「生成関数で守る」🛡️（初心者に一番やさしい）
 
+![Implementation Patterns Ladder](./picture/hc_lc_ts_study_008_implementation_patterns.png)
+
 * `type Email = string` のままだと混ざる事故は止めにくい
 * でも **生成関数**を作るだけで、ルールは集約できる✨
 
@@ -103,6 +107,8 @@ export function createEmail(input: string): Email {
 ---
 
 ## パターンB：Branded Types（混ぜる事故を型で止める）🚧✨
+
+![Branded Type Seal](./picture/hc_lc_ts_study_008_branded_seal.png)
 
 TypeScriptは**構造的型付け**なので、基本は「形が同じなら同じ扱い」になりがち。
 そこで **ブランド（目印）を付けたstring/number**を作るよ🏷️
@@ -303,6 +309,8 @@ export function parseEmail(input: unknown): string {
 
 この章の立ち位置としては：
 
+![Zod Two-Stage Rocket](./picture/hc_lc_ts_study_008_zod_rocket.png)
+
 * **Zodで外部入力をチェック**（実行時）
 * **createEmailでEmail型に変換**（ドメイン型）
   みたいに“二段ロケット”にすると超きれい🚀✨
@@ -329,6 +337,8 @@ export function parseEmail(input: unknown): string {
 ---
 
 # 8-10. よくある落とし穴集🕳️😱
+
+![Pitfall Warning Signs](./picture/hc_lc_ts_study_008_pitfall_warning.png)
 
 * `as Email` をあちこちで使う（入口が崩壊）💥
 * ルールを「使う側」に書き散らかす（凝集が下がる）🧯

@@ -49,6 +49,8 @@
 
 ### ✅ チェック①：Outline（アウトライン）を見る
 
+![VS Code Quick Checks](./picture/hc_lc_ts_study_005_vscode_checks.png)
+
 アウトラインが「長すぎスクロール地獄」なら、だいたい肥大してる🐘💦
 → “関数の集まり方” も見えるので、責務ラベル付けの準備に最高🎨
 
@@ -134,6 +136,8 @@ export async function placeOrder(input: {
 
 ### 4-2. 責務ラベルを貼る🎨（手でやるのが超大事！）
 
+![Color Coded Responsibilities](./picture/hc_lc_ts_study_005_color_coded_responsibilities.png)
+
 このファイルの中身を、まず **4つの色**で分ける気持ちで見てね👇
 
 * 🟦 **ドメイン（型・ルール）**：Order/Money、注文として守りたいこと
@@ -165,6 +169,8 @@ graph TD
 ```
 
 ### おすすめ構成案📁
+
+![Split Architecture Diagram](./picture/hc_lc_ts_study_005_split_architecture.png)
 
 * `src/order/domain.ts` 🟦：型・バリデーション（注文としての守り）
 * `src/order/pricing.ts` 🟩：金額計算・フォーマット（純粋処理中心）
@@ -260,6 +266,8 @@ export async function placeOrder(input: {
 ```
 
 🎉 ね！「役割ごとに部屋が分かれた」感じになったよね🏠✨
+
+![Dependency Flow Layering](./picture/hc_lc_ts_study_005_dependency_flow.png)
 この状態だと…
 
 * 送料ロジック変更 → `infra.ts` だけ見ればいい📦
@@ -278,6 +286,8 @@ export async function placeOrder(input: {
 「このファイルを責務でグルーピングして、分割後のファイル名案も出して」
 
 ### 使い方のコツ🎀
+
+![AI Proposal Review](./picture/hc_lc_ts_study_005_ai_proposal_review.png)
 
 AIが出した案は、そのまま採用しないで👇をチェック✅
 
