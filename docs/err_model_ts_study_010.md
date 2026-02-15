@@ -2,6 +2,8 @@
 
 ## 1. ドメインエラーってなに？🧁
 
+![Domain Errors](./picture/err_model_ts_study_010_domain_hurdles.png)
+
 **ドメインエラー**は、「ユーザーの操作や入力、業務ルールの都合で“起きて当然”の失敗」だよ〜✨
 たとえばこんなやつ👇
 
@@ -33,6 +35,8 @@
 ---
 
 ## 3. ドメインエラー設計の“3点セット”🎁✨
+
+![Domain Error 3-Piece Set](./picture/err_model_ts_study_010_gift_box_set.png)
 
 ドメインエラーは、最低これがあると強いよ💪🙂
 
@@ -67,6 +71,8 @@ classDiagram
 
 ### 4.1 ドメインエラー型（判別可能ユニオン）🏷️
 
+![Discriminated Union](./picture/err_model_ts_study_010_shape_sorter.png)
+
 ```ts
 type DomainError =
   | { kind: "BudgetExceeded"; required: number; current: number }
@@ -85,6 +91,8 @@ type DomainError =
 ## 5. Result型で「成功/失敗」を普通に分岐できるようにする🎁🌈
 
 ### 5.1 最小のResult型
+
+![Result Type Container](./picture/err_model_ts_study_010_result_box.png)
 
 ```ts
 type Result<T, E> =
@@ -128,6 +136,8 @@ function purchase(itemId: string, requestedQty: number, budget: number): Result<
 
 ## 6. UIに優しく変換する（表示文言はここで！）🎀💬
 
+![Error to Message Translation](./picture/err_model_ts_study_010_translation_machine.png)
+
 **ドメインエラーの型**と **ユーザー表示**は分けようね🙂
 （型は機械用、文言は人間用👭）
 
@@ -153,6 +163,8 @@ function toUserMessage(e: DomainError): string {
 
 ## 7. “エラーカタログ”のミニ版を作ろう📚🏷️
 
+![Error Catalog](./picture/err_model_ts_study_010_error_menu.png)
+
 「kindの意味」「見せ方」「ユーザーの次の行動」を1枚にまとめると強いよ🙂
 ここで `satisfies` を使うと「書き漏れ」検出に役立つ✨（型を変えずにチェックできるよ） ([TypeScript][1])
 
@@ -168,6 +180,8 @@ const domainErrorCatalog = {
 ---
 
 ## 8. ミニ演習（手を動かそ〜！）📝💗
+
+![Domain Error Exercise](./picture/err_model_ts_study_010_exercise_sheet.png)
 
 ### 演習A：ドメインエラーを5個作って命名🏷️✨
 
