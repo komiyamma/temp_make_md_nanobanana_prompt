@@ -36,6 +36,9 @@
 
 ## 1-2. わざと「全部入り」1ファイルを作る🍲💥
 
+![Bad Component Anatomy](./picture/hc_lc_ts_study_002_bad_component.png)
+
+
 ファイル例：`src/BadTodoPage.tsx`（新規）
 そして `App.tsx` から `<BadTodoPage />` を呼ぶだけにしてね🙆‍♀️
 
@@ -240,6 +243,9 @@ export function BadTodoPage() {
 
 ## 変更お題A：並び順を変えて！📌
 
+![Ripple Effect Sort](./picture/hc_lc_ts_study_002_ripple_sort.png)
+
+
 **今**：優先度順（高→中→低）、同率はID順
 **変更後**：**期限が早い順**（dueDate 昇順）、同じ日なら「未完了が先」✅
 
@@ -264,6 +270,9 @@ export function BadTodoPage() {
 ---
 
 ## 変更お題C：APIの形が変わりました📦💣
+
+![Ripple Effect API](./picture/hc_lc_ts_study_002_ripple_api.png)
+
 
 **今**：dueDate
 **変更後**：deadline に名前が変わった（中身はISO文字列のまま）
@@ -315,6 +324,9 @@ graph TD
 
 # 4) “変更が連鎖する”ときの犯人👮‍♀️🚨（あるある3つ）
 
+![Three Culprits](./picture/hc_lc_ts_study_002_three_culprits.png)
+
+
 ## 犯人①：仕様が「直書き」されて散らばる📌🧨
 
 * 並び替えルールが、一覧生成の中にベタ書き
@@ -356,6 +368,9 @@ graph TD
 ---
 
 # 6) AIに“地雷探知”してもらう🤖💡（この章のAIプロンプト）
+
+![AI Scanner](./picture/hc_lc_ts_study_002_ai_scanner.png)
+
 
 ## 使うプロンプト（この章は1個だけ🎀）
 

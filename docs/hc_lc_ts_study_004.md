@@ -10,6 +10,9 @@
 ## まずは超大事な合言葉📣
 ### 4-1. まず「変更理由」ってなに？🤔💡
 
+![Boundary by Reason](./picture/hc_lc_ts_study_004_boundary_reason.png)
+
+
 ![Change Reasons](./picture/hc_lc_ts_study_004_change_reasons.png)
 ### ✅「変更理由が同じなら、一緒にしていい」🧲
 
@@ -48,6 +51,9 @@
 ---
 
 ## 4-3. まずは「3つの箱」で境界線を引こう📦📦📦
+
+![Three Boxes Detailed](./picture/hc_lc_ts_study_004_three_boxes_detail.png)
+
 
 ![Three Boxes](./picture/hc_lc_ts_study_004_three_boxes.png)✨
 
@@ -120,6 +126,9 @@
 
 ### Step 4：箱の間に“壁”を作る🧱✨
 
+![Wall Construction](./picture/hc_lc_ts_study_004_wall_construction.png)
+
+
 壁＝「境界」だよ💡
 境界を作るときのコツはこれ👇
 
@@ -132,6 +141,9 @@
 ## コードで体感：悪い例😱→良い例😄
 
 ### ❌ 悪い例（全部入り🍲💥）
+
+![Bad Example Mixed](./picture/hc_lc_ts_study_004_bad_example.png)
+
 
 「表示」「入力」「ルール」「保存」が1ファイルに混ざるパターン👇
 
@@ -175,6 +187,9 @@ export function addTodoFromForm(inputTitle: string, inputDue: string) {
 ---
 
 ### ✅ 良い例（変更理由で分ける🧠✨）
+
+![Good Architecture Flow](./picture/hc_lc_ts_study_004_good_arch.png)
+
 
 フォルダはこんな感じが分かりやすいよ📁💖
 
@@ -300,6 +315,9 @@ export async function onClickAdd(title: string, dueText: string) {
 ---
 
 ## この章のハンズオン🛠️✨（やってみよ〜！）
+
+![Hands On Workflow](./picture/hc_lc_ts_study_004_hands_on.png)
+
 
 ### お題：あなたの小機能（or 例題ToDo）で境界を引く🗺️
 

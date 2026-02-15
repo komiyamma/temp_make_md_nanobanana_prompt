@@ -8,6 +8,9 @@ AI支援（GitHub Copilot / OpenAI Codex等）導入済み前提🤖💡
 
 ## 第1章：AIと仲良く進めるルール（TS版の共通作法）🤖✨
 
+![AI Workflow](./picture/hc_lc_ts_index_workflow.png)
+
+
 * **ねらい🎯**：AIを便利に使いながら、設計判断は自分でできるようにする
 * **主な内容📚**：AIは案出しが得意💡／最終判断は「責務混在🍲」「依存増加🔗」でチェック🧠✅／1章1〜2プロンプト🎀
 * **ハンズオン🛠️**：AI案を“採用/保留/却下”に分けて理由を書く📝
@@ -29,6 +32,9 @@ AI支援（GitHub Copilot / OpenAI Codex等）導入済み前提🤖💡
 
 ## 第3章：凝集と結合を“ふんわり”理解する🧩📚
 
+![Core Concept](./picture/hc_lc_ts_index_core_concept.png)
+
+
 * **ねらい🎯**：「良い/悪い」を言葉にできるようになる
 * **主な内容📚**：高凝集＝同じ目的でまとまる🎯／低結合＝必要以上に依存しない🔗／結合ゼロは正義じゃない🙅‍♀️
 * **ハンズオン🛠️**：短い例を見て「凝集高い？結合強い？」クイズ🧠
@@ -39,6 +45,9 @@ AI支援（GitHub Copilot / OpenAI Codex等）導入済み前提🤖💡
 
 ## 第4章：設計の判断軸は「変更理由」🧠✨
 
+![Change Reasons](./picture/hc_lc_ts_index_change_reasons.png)
+
+
 * **ねらい🎯**：分け方の基準を覚える（“好み分割”を卒業）
 * **主な内容📚**：変更理由が同じものをまとめる🧲／UI・業務・外部I/O（HTTP/DB/Storage）を分ける🚪
 * **ハンズオン🛠️**：要件から「変わりそうな点」を3〜5個書き出し→境界を引く🗺️
@@ -48,6 +57,9 @@ AI支援（GitHub Copilot / OpenAI Codex等）導入済み前提🤖💡
 ---
 
 ## 第5章：ニオイ図鑑① “God Module” を見抜く👃💦
+
+![Bad Smells](./picture/hc_lc_ts_index_bad_smells.png)
+
 
 * **ねらい🎯**：1ファイル何でも屋（巨大module）を検出できる
 * **主な内容📚**：exportが増えすぎ／責務が散らばる／修正が怖い😵‍💫
@@ -128,6 +140,9 @@ AI支援（GitHub Copilot / OpenAI Codex等）導入済み前提🤖💡
 ---
 
 ## 第13章：低結合③ “組み立て場所”を作る（Composition Root）🏗️✨
+
+![Layered Architecture](./picture/hc_lc_ts_index_clean_arch.png)
+
 
 * **ねらい🎯**：依存の生成は1箇所に寄せて、中心ロジックを軽くする
 * **主な内容📚**：usecaseは依存を受け取るだけ🎀／生成はアプリの入口でやる🚪

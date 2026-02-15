@@ -23,6 +23,9 @@
 
 ### MVP要件（最小の仕様）🎯
 
+![MVP Requirements](./picture/hc_lc_cs_study_017_mvp_requirements.png)
+
+
 1. ToDoを追加できる（タイトル必須）➕
 2. 期限（任意）を付けられる⏳
 3. 一覧表示できる📋
@@ -41,6 +44,9 @@
 
 ## 2-1) 変更理由（＝境界の根拠）を3つ書く🧠✨
 
+![Change Axes](./picture/hc_lc_cs_study_017_change_axes.png)
+
+
 例：
 
 * 通知方法が変わる（Console → LINE風 → Slack風…）📣🔁
@@ -57,6 +63,9 @@
 * **Infrastructure**：保存/時刻/通知の実装（Json/Clock/Console）🧰
 
 ## 2-3) クラス一覧（最小セット）📄✨
+
+![Class Overview](./picture/hc_lc_cs_study_017_class_overview.png)
+
 
 **Domain（ルールの中心）**
 
@@ -144,6 +153,9 @@ classDiagram
 
 ## 3-2) Domain（ルール）から書く🏛️✨
 
+![Domain Factory](./picture/hc_lc_cs_study_017_domain_factory.png)
+
+
 ```csharp
 // TodoMini.Domain/TodoTitle.cs
 namespace TodoMini.Domain;
@@ -228,6 +240,9 @@ public sealed class TodoItem
 ---
 
 ## 3-3) Application（ユースケース）を書く🧭✨
+
+![Notify UseCase](./picture/hc_lc_cs_study_017_usecase_notify.png)
+
 
 ```csharp
 // TodoMini.Application/Ports.cs
@@ -363,6 +378,9 @@ public sealed class NotifyDueSoonUseCase
 ---
 
 ## 3-4) Infrastructure（実装）を書く🧰✨
+
+![JSON Repository](./picture/hc_lc_cs_study_017_infra_json.png)
+
 
 ```csharp
 // TodoMini.Infrastructure/SystemClock.cs

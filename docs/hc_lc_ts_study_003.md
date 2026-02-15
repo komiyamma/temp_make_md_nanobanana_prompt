@@ -28,6 +28,9 @@
 
 ## 2) いちばん役立つ測り方：**“変更”で考える**🔧✨
 
+![Measurement by Change](./picture/hc_lc_ts_study_003_measurement.png)
+
+
 「凝集と結合ってフワッとしてる…😵」ってなりがちなんだけど、**変更**を基準にすると急にわかりやすいよ！
 
 * **結合**：変更がどれだけ“広がる”か（波及範囲）🌊
@@ -38,6 +41,9 @@
 ---
 
 ## 3) TypeScriptでの“単位”はこれ！📦🧩
+
+![TS Units](./picture/hc_lc_ts_study_003_ts_units.png)
+
 
 TSでは特にこの3つが「凝集/結合」を考える単位になりやすいよ👇
 
@@ -50,6 +56,9 @@ TSでは特にこの3つが「凝集/結合」を考える単位になりやす�
 ---
 
 ## 4) “結合ゼロ”は正義じゃない🙅‍♀️✨
+
+![Coupling Types](./picture/hc_lc_ts_study_003_coupling_types.png)
+
 
 ここ超だいじ！
 
@@ -65,6 +74,9 @@ TSでは特にこの3つが「凝集/結合」を考える単位になりやす�
 ## 5) 例でつかむ：高凝集ってこういうこと🎯✨
 
 ### ❌ 低凝集の例：目的が混ざってる🍲💥
+
+![Low Cohesion Example](./picture/hc_lc_ts_study_003_low_cohesion.png)
+
 
 ```ts
 export function handleUserLabel(userId: string) {
@@ -95,6 +107,9 @@ export function handleUserLabel(userId: string) {
 ---
 
 ### ✅ 高凝集の例：目的でまとまる🎯
+
+![High Cohesion Example](./picture/hc_lc_ts_study_003_high_cohesion.png)
+
 
 ```ts
 type User = { id: string; name: string; plan: "free" | "pro" };
@@ -133,6 +148,9 @@ export function getUserNameLabel(id: string) {
 ---
 
 ### ✅ 低結合：相手の“契約（外から使う口）”だけを見る📜✨
+
+![Low Coupling Example](./picture/hc_lc_ts_study_003_low_coupling.png)
+
 
 ```ts
 // userStore.ts
