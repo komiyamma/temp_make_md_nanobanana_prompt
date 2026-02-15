@@ -33,6 +33,8 @@ flowchart LR
 
 ## 2) なんで“不変”がうれしいの？🔒😊
 
+![hex_cs_study_020_immutability_diamond.png](./picture/hex_cs_study_020_immutability_diamond.png)
+
 ValueObjectを不変にすると、こういう良いことが起きます👇✨
 
 * **途中で書き換わらない** → 追いかけるバグが激減😇
@@ -44,6 +46,8 @@ MicrosoftのDDDガイドでも、ValueObjectは「作ったら変えない」前
 ---
 
 ## 3) “プリミティブ地獄”を脱出しよ🍝💥
+
+![hex_cs_study_020_primitive_wire_mess.png](./picture/hex_cs_study_020_primitive_wire_mess.png)
 
 たとえば、金額を全部 `decimal` で持ってると…
 
@@ -58,6 +62,8 @@ MicrosoftのDDDガイドでも、ValueObjectは「作ったら変えない」前
 
 ## 4) 2026のC#/.NETだと、VOは“record”が超やりやすい😆
 
+![hex_cs_study_020_record_struct_box.png](./picture/hex_cs_study_020_record_struct_box.png)
+
 いまの最新の土台は **.NET 10（LTS）** で、2026-01-13時点だと 10.0.2 が最新パッチです。 ([Microsoft][3])
 言語は **C# 14** が現行の「最新世代」だよ〜🧡 ([Microsoft Learn][4])
 
@@ -69,6 +75,8 @@ MicrosoftのDDDガイドでも、ValueObjectは「作ったら変えない」前
 ---
 
 ## 5) 例①：Money（お金）💰✨
+
+![hex_cs_study_020_money_coin_press.png](./picture/hex_cs_study_020_money_coin_press.png)
 
 カフェ題材ならまずは **JPY固定** でOK！（最初から多通貨にすると難易度上がる😵‍💫）
 
@@ -112,6 +120,8 @@ public readonly record struct Money
 
 ## 6) 例②：Quantity（数量）🔢✨
 
+![hex_cs_study_020_quantity_turnstile.png](./picture/hex_cs_study_020_quantity_turnstile.png)
+
 ```csharp
 namespace Cafe.Domain.ValueObjects;
 
@@ -135,6 +145,8 @@ public readonly record struct Quantity
 ---
 
 ## 7) カフェ注文ドメインに組み込む☕🧾
+
+![hex_cs_study_020_order_item_assembly.png](./picture/hex_cs_study_020_order_item_assembly.png)
 
 `OrderItem`（注文の1行）を、プリミティブじゃなくVOで守るとこうなるよ👇
 
@@ -182,6 +194,8 @@ public sealed class OrderItem
 ---
 
 ## 9) テストして「安心の土台」を作る🧪💖
+
+![hex_cs_study_020_vo_balance_scale.png](./picture/hex_cs_study_020_vo_balance_scale.png)
 
 VOはテストが超ラク！少し書くだけで効くよ〜😊
 

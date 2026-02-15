@@ -17,6 +17,8 @@
 
 ## 1) いまの「最新セット」を入れる 🧰✨
 
+![hex_cs_study_016_env_toolbox.png](./picture/hex_cs_study_016_env_toolbox.png)
+
 ### ✅ Visual Studio（最新）
 
 * **Visual Studio 2026**（例：**18.2.1 / 2026-01-20** の更新あり）を入れるのがいちばん楽だよ〜🫶
@@ -35,6 +37,8 @@
 ---
 
 ## 2) Visual Studio のインストール設定（迷わない版）🧩✨
+
+![hex_cs_study_016_workload_check.png](./picture/hex_cs_study_016_workload_check.png)
 
 Visual Studio Installer を開いたら、だいたいこれでOK！
 
@@ -77,6 +81,8 @@ classDiagram
 
 ### Visual Studio で作る手順（おすすめ）🪄
 
+![hex_cs_study_016_creation_flowchart.png](./picture/hex_cs_study_016_creation_flowchart.png)
+
 1. **新しいプロジェクト作成**
 
 2. まずは **「空のソリューション（Blank Solution）」** を作る（名前：`CafeOrder` など）📦
@@ -96,6 +102,8 @@ classDiagram
 
 ## 4) まず「起動」と「テスト」を通して安心する 😌✅
 
+![hex_cs_study_016_green_test_light.png](./picture/hex_cs_study_016_green_test_light.png)
+
 ### ✅ Web API 起動チェック
 
 * `CafeOrder.Adapters.Inbound.WebApi` を **スタートアッププロジェクト**にする
@@ -109,6 +117,8 @@ classDiagram
 ---
 
 ## 5) VS Code + dotnet CLI でもできる（サブ）💻✨
+
+![hex_cs_study_016_ide_choice.png](./picture/hex_cs_study_016_ide_choice.png)
 
 「軽くやりたい」「CLI好き」ならこっちもOK！
 
@@ -132,6 +142,8 @@ dotnet --version
 
 ## 6) ⚠️ 2026っぽい最新注意点：`.slnx` が増えるかも！😳
 
+![hex_cs_study_016_slnx_warning.png](./picture/hex_cs_study_016_slnx_warning.png)
+
 .NET 10 から、`dotnet new sln` の既定が **`.sln` じゃなくて `.slnx`** になったよ〜（CLI派はびっくりしがち）🫨
 ([Microsoft Learn][7])
 
@@ -146,6 +158,8 @@ dotnet new sln --format sln
 ---
 
 ## 7) Copilot が迷子にならない“指示書”を置く 🗺️🤖✨
+
+![hex_cs_study_016_copilot_map.png](./picture/hex_cs_study_016_copilot_map.png)
 
 ここ、超大事〜！！✨
 リポジトリ直下に **`.github/copilot-instructions.md`** を置くと、Copilot がそのプロジェクトのルールを先に読んでくれるよ📌

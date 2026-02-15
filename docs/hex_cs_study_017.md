@@ -34,6 +34,8 @@ DB版（EF Core など）は第28章あたりで増やせばOKだから、今は
 
 ## 2) “依存の向き” を先に固定しよ！🧭🚦（ここ超だいじ）
 
+![hex_cs_study_017_dependency_compass.png](./picture/hex_cs_study_017_dependency_compass.png)
+
 ヘキサで一番大事なのは **矢印の向き**だよ🔁💥
 
 ### ✅ OKな依存（外→中）
@@ -82,6 +84,8 @@ mindmap
 
 ### 3-1) CafeOrder.Core（中心🏠❤️）
 
+![hex_cs_study_017_core_floor_plan.png](./picture/hex_cs_study_017_core_floor_plan.png)
+
 #### ✅ Core の中は “2大エリア” に分けるのがラクだよ
 
 * **Domain**：業務の言葉・ルール・制約🧠💎
@@ -116,6 +120,8 @@ mindmap
 
 ### 3-2) CafeOrder.Adapters.Inbound.WebApi（入口🌐🚪）
 
+![hex_cs_study_017_thin_controller.png](./picture/hex_cs_study_017_thin_controller.png)
+
 ここは「Webの都合」を全部引き受ける場所だよ😊✨
 Coreに Webの匂いを持ち込まないための“防波堤”🌊🧱
 
@@ -137,6 +143,8 @@ Coreに Webの匂いを持ち込まないための“防波堤”🌊🧱
 ---
 
 ### 3-3) CafeOrder.Adapters.Outbound.InMemory（出口📦🗄️）
+
+![hex_cs_study_017_adapter_plug.png](./picture/hex_cs_study_017_adapter_plug.png)
 
 Core の Outbound Port を実装する“差し替え部品”だよ🔁✨
 
@@ -171,6 +179,8 @@ Core中心にテストすると気持ちいいよ〜😆✨
 
 ## 4) “見た目” と “実体” を揃えるコツ📁✨
 
+![hex_cs_study_017_file_cabinet_structure.png](./picture/hex_cs_study_017_file_cabinet_structure.png)
+
 Visual Studio の **Solution Folder** は「見た目の整理」だよ😊
 でも、実体のフォルダ構造も揃えておくと未来の自分が助かる…！🥹🙏
 
@@ -188,6 +198,8 @@ Visual Studio の **Solution Folder** は「見た目の整理」だよ😊
 ---
 
 ## 5) Visual Studioでの作り方（手順）🛠️🪄
+
+![hex_cs_study_017_reference_wiring.png](./picture/hex_cs_study_017_reference_wiring.png)
 
 やることはシンプルだよ😊✨
 
@@ -238,6 +250,8 @@ Core は **誰も参照しない**のが理想じゃなくて、
 ---
 
 ## 7) ルール破りを“起きにくくする”小ワザ🧷😆
+
+![hex_cs_study_017_arch_test_shield.png](./picture/hex_cs_study_017_arch_test_shield.png)
 
 ### ✅ 小ワザ1：Coreをプロジェクト分割する（強い）💪
 
