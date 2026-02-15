@@ -30,6 +30,8 @@ graph LR
 
 ### ✅ ① 外側を差し替えられる🔁
 
+![Swap Impl](./picture/hex_cs_study_008_swap_impl.png)
+
 DBを InMemory → SQL に変えても、外部APIをモックにしても、**Core側は“約束（Port）”だけ見てればOK**になるよ😊
 
 ### ✅ ② テストがラクになる🧪✨
@@ -46,6 +48,8 @@ Portがinterfaceなら、テストでFake（ニセ実装）を差し込めるか
 ---
 
 ## 3) Portには2種類あるよ🚪➡️
+
+![In Out Ports](./picture/hex_cs_study_008_in_out_ports.png)
 
 ### 🟦 Inbound Port（外→中）🚪
 
@@ -76,6 +80,8 @@ Coreが外側（DB/外部API/時計/メールなど）を **使うための口**
 
 ### コツ①：Portは“小さく”🧸
 
+![Small Vs God](./picture/hex_cs_study_008_small_vs_god.png)
+
 「なんでも屋interface」になった瞬間に壊れる😭
 **1つの目的に絞る**のが正義！
 
@@ -85,6 +91,8 @@ Coreが外側（DB/外部API/時計/メールなど）を **使うための口**
 ---
 
 ### コツ②：技術の匂いを入れない🧼
+
+![Clean Vs Dirty](./picture/hex_cs_study_008_clean_vs_dirty.png)
 
 Portは“約束”だから、外側都合を混ぜないのが大事！
 
@@ -183,6 +191,8 @@ public interface IOrderRepository
 
 ## 6) 「Portはどこに置く？」迷子にならないルール📦🧭
 
+![Port Location](./picture/hex_cs_study_008_port_location.png)
+
 ### ✅ 置き場所の鉄板
 
 * **Port（interface）＝Core側（ApplicationやDomainの近く）**
@@ -231,6 +241,8 @@ AIはPort設計でめっちゃ役立つよ〜！ただし **“境界ルール�
 ## 9) 章末ミニ練習（手を動かそ〜！）✍️✨
 
 ### 練習①：時計Portを作ろう⏰
+
+![Clock Port](./picture/hex_cs_study_008_clock_port.png)
 
 「現在時刻が欲しい」ってCoreが言ってる設定！
 

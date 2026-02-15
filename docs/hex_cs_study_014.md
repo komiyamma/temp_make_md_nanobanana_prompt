@@ -20,6 +20,8 @@
 
 ## 2) レイヤード（層）ってどんなノリ？🍰
 
+![Layered Cake](./picture/hex_cs_study_014_layered_cake.png)
+
 レイヤードは、だいたいこんな“積み重ね”イメージ👇
 
 * Presentation（画面/API）
@@ -40,6 +42,8 @@
 
 ## 3) クリーンアーキは「同心円＋依存ルール」🎯⭕️
 
+![Clean Circles](./picture/hex_cs_study_014_clean_circles.png)
+
 クリーンアーキの超コアはこれ！
 
 * **依存（ソースコードの参照）は“内側”に向ける**
@@ -51,6 +55,8 @@
 ---
 
 ## 4) オニオンは「ドメイン中心を厚めに守る」🧅💎
+
+![Onion Layers](./picture/hex_cs_study_014_onion_layers.png)
 
 オニオンアーキは、ドメインを中心に置いて、外側に向かって層を作っていく考え方。
 そして「DIP（依存逆転）」に強く依存してるよ〜ってのがポイント！([jeffreypalermo.com][2])
@@ -66,6 +72,8 @@
 ---
 
 ## 5) ヘキサ（Ports & Adapters）は「入口と出口を“対等”に見る」🔷🚪➡️🗄️
+
+![Hex Symmetry](./picture/hex_cs_study_014_hex_symmetry.png)
 
 ヘキサの独特ポイントはここ！👇
 
@@ -120,6 +128,8 @@ flowchart TD
 
 ## 8) “ヘキサで学んでる人”がクリーンを見た時の対応表🗺️✨
 
+![Translation Map](./picture/hex_cs_study_014_translation_map.png)
+
 * **Use Case（クリーンの内側）** ⇔ **Application（Core内の手順）**
 * **Interface Adapters（クリーンの外寄り）** ⇔ **Adapters（Inbound/Outbound）**
 * **Frameworks & Drivers（最外周）** ⇔ **DB/HTTP/GUIなどの外部世界**
@@ -146,6 +156,8 @@ flowchart TD
 ---
 
 ## 10) ミニ演習：それってPort？Adapter？それとも層？🎮✨
+
+![Categorization Game](./picture/hex_cs_study_014_categorization_game.png)
 
 次のやつ、どこに置くのが自然か考えてみてね👇（答えは下）
 

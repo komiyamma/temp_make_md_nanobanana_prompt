@@ -14,10 +14,14 @@
 
 ### 理由①：差し替えたくなった瞬間、Coreが巻き添え💥
 
+![Ripple Effect](./picture/hex_cs_study_011_ripple_effect.png)
+
 DBを **SQL Server → PostgreSQL** にしたい、ORMを **EF → Dapper** にしたい、みたいな話って普通に起きます🔁
 でもCoreがDBやORMを直に呼んでると、**業務ルールまで一緒に書き換え**になって地獄😵‍💫
 
 ### 理由②：テストが遅くてしんどい😫🧪
+
+![Test Speed](./picture/hex_cs_study_011_test_speed.png)
 
 Coreのテストをしたいだけなのに、DB起動・接続・データ準備…ってなると
 「テスト書く気が消える」現象が起きます🫠
@@ -31,6 +35,8 @@ Coreが外を知らなければ、**DBなしで秒速テスト**ができるよ�
 ---
 
 ## 2) 依存の矢印を「絵」で理解しよ📌➡️
+
+![Dependency Arrows](./picture/hex_cs_study_011_dependency_arrows.png)
 
 依存って、ざっくりこうです👇
 
@@ -87,6 +93,8 @@ public class CreateOrderService
 ---
 
 ## 4) OK例：Coreは「やりたいこと」だけ言う📝✨（外は後で付ける）
+
+![Port Adapter Pair](./picture/hex_cs_study_011_port_adapter_pair.png)
 
 ポイントはこれ👇
 Coreは **「保存してね」** とだけ言う（= 約束）。
@@ -152,6 +160,8 @@ public class EfOrderRepository : IOrderRepository
 
 ## 5) じゃあ「Coreが外を知らない」って、具体的に何を守ればいい？🚦✨
 
+![Project Refs](./picture/hex_cs_study_011_project_refs.png)
+
 ### ✅ 最低限のルール（超だいじ）💎
 
 * Coreプロジェクトには **EF Core / ASP.NET Core / HttpClient / Serilog** みたいな外側ライブラリを入れない
@@ -171,6 +181,8 @@ public class EfOrderRepository : IOrderRepository
 
 ## 6) ミニ演習🧪😆（10分で「強さ」を体験）
 
+![Swap Exercise](./picture/hex_cs_study_011_swap_exercise.png)
+
 ### お題☕
 
 「注文保存」を **InMemory → EF Core** に変える時、**CreateOrderService を1行も変えない**でできる？🔁
@@ -186,6 +198,8 @@ public class EfOrderRepository : IOrderRepository
 ---
 
 ## 7) ガチで事故を減らす「アーキテクチャテスト」✅🧪
+
+![Arch Test](./picture/hex_cs_study_011_arch_test.png)
 
 「うっかりCoreにEF入れちゃった」をテストで止めるやつです🚓✨
 たとえば **ArchUnitNET** みたいなライブラリで「CoreはInfrastructureを参照しない」を自動チェックできます🧠

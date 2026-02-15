@@ -15,6 +15,8 @@
 
 ## 1) まずは「混ぜない」って、何が嬉しいの？😆🧼
 
+![Maze Vs Map](./picture/hex_cs_study_013_maze_vs_map.png)
+
 混ぜると何が起こるかというと…
 
 * 「これ…Controllerの責務？UseCaseの責務？Repositoryの責務？」って迷子になる😵‍💫
@@ -30,6 +32,8 @@
 ---
 
 ## 2) ヘキサの一枚絵（今日の脳内イメージ）🧠🔷
+
+![Hexagon Map](./picture/hex_cs_study_013_hexagon_map.png)
 
 ポイントは「会話（やりとり）＝Port」「つなぐ変換＝Adapter」だよ🙂
 Cockburnの説明でも、Portは“目的のある会話（conversation）”として捉えられてるよ。 ([Alistair Cockburn][1])
@@ -58,6 +62,8 @@ Cockburnの説明でも、Portは“目的のある会話（conversation）”�
 
 ### ✅ ステップC：それは“業務の言葉”？？☕🧾
 
+![Decision Flow](./picture/hex_cs_study_013_decision_flow.png)
+
 * 注文、金額、商品、在庫…みたいに **業務の概念**で書ける
   → **Core**（Domain/Application）寄り🏠❤️
 
@@ -77,6 +83,8 @@ flowchart TD
 ---
 
 ## 4) よくある判定例（カフェ注文アプリ☕で見る）👀✨
+
+![Cafe Map](./picture/hex_cs_study_013_cafe_map.png)
 
 ### 🟩 Inbound側（外→中）⬅️🚪
 
@@ -102,6 +110,8 @@ flowchart TD
 
 ## 5) “混ぜると壊れる”あるある集（超重要）⚠️🥲
 
+![Heavy Rock](./picture/hex_cs_study_013_heavy_rock.png)
+
 ### ❌ あるある①：CoreがASP.NETを知ってる🌐🚫
 
 * UseCaseが `IActionResult` を返す
@@ -126,6 +136,8 @@ flowchart TD
 
 ## 6) 今日の“混ぜない”チェックリスト✅🧼✨
 
+![Checklist](./picture/hex_cs_study_013_checklist.png)
+
 作業中に、これを毎回チラ見してね👀💕
 
 * Coreのプロジェクトから、ASP.NET/EF/HttpClient等を参照してない？🛡️
@@ -136,6 +148,8 @@ flowchart TD
 ---
 
 ## 7) ミニ演習：「Port？Adapter？」クイズ🎮✨
+
+![Quiz](./picture/hex_cs_study_013_quiz.png)
 
 次の10個、どれか当ててみて〜！😆🎯
 （答えは下にあるよ👇）
