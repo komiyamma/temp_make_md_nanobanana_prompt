@@ -10,6 +10,8 @@
 
 # 4.1 まず最初に：ネット越しは、ローカル呼び出しじゃない🙅‍♀️🌐
 
+![cap_cs_study_004_local_vs_network](./picture/cap_cs_study_004_local_vs_network.png)
+
 同じ `await` でも…
 
 * ローカル関数：だいたい速い・壊れにくい・順番はわりと期待できる
@@ -20,6 +22,8 @@
 ---
 
 # 4.2 分散の4大つらい(この章の主役)😇📦
+
+![cap_cs_study_004_pain_points](./picture/cap_cs_study_004_pain_points.png)
 
 ```mermaid
 mindmap
@@ -96,6 +100,8 @@ dotnet sln add OrderService/OrderService.csproj
 ---
 
 # 4.5 InventoryService：わざと遅くしたり落ちたりする在庫API🧨📦
+
+![cap_cs_study_004_chaos_server](./picture/cap_cs_study_004_chaos_server.png)
 
 ## InventoryService の `Program.cs` を置き換え✍️
 
@@ -212,6 +218,8 @@ record Reservation(string ReservationId, string ItemId, int Quantity, DateTimeOf
 ---
 
 # 4.6 OrderService：在庫APIを呼ぶだけなのに、地獄が始まる😇☎️
+
+![cap_cs_study_004_impatient_retry](./picture/cap_cs_study_004_impatient_retry.png)
 
 ## OrderService の `Program.cs` を置き換え✍️
 
@@ -357,6 +365,8 @@ Minimal APIの基本操作（Swagger含む）は公式チュートリアルに�
 
 ## 実験①「遅い」🐢⏱️：タイムアウトは“曖昧”を生む
 
+![cap_cs_study_004_timeout_ambiguity](./picture/cap_cs_study_004_timeout_ambiguity.png)
+
 1. まず在庫を見る
 
 * `GET http://localhost:5101/inventory/state`
@@ -424,6 +434,8 @@ Minimal APIの基本操作（Swagger含む）は公式チュートリアルに�
 ---
 
 ## 実験④「二重に来る」📨📨：タイムアウト→リトライ→二重予約（やばい）
+
+![cap_cs_study_004_double_order](./picture/cap_cs_study_004_double_order.png)
 
 ここが一番の“転びポイント”💥
 
