@@ -11,6 +11,8 @@
 
 ## 1. Payload と Metadata のざっくり違い🌸
 
+![Payload vs Metadata](./picture/es_ts_study_012_payload_vs_metadata.png)
+
 ![イベント封筒](./picture/es_ts_study_012_envelope.png)
 
 
@@ -48,6 +50,8 @@ classDiagram
 
 ## 2. Payload に入れるべきもの／入れないほうがいいもの🍱✨
 
+![Payload Filtering](./picture/es_ts_study_012_payload_filtering.png)
+
 ## ✅ Payload に入れるべき（基本）👍
 
 * **状態復元に必要な最小の事実**
@@ -70,6 +74,8 @@ classDiagram
 
 ## 3. Metadata の「最小セット」と「あると強いセット」🏷️💪
 
+![Metadata Layers](./picture/es_ts_study_012_metadata_layers.png)
+
 ## 3.1 最小セット（まずはこれでOK）✅
 
 * `eventId`：イベントの一意なID（重複排除にも使える）🆔
@@ -81,6 +87,8 @@ classDiagram
 > ここで言う `eventId` は CloudEvents の `id` に近いイメージ😊
 
 ## 3.2 あると強いセット（運用がラクになる）✨
+
+![Causation Chain](./picture/es_ts_study_012_causation_chain.png)
 
 * `actorId`：誰がやった？（ユーザーIDなど）👤
 * `correlationId`：同じ操作・同じリクエストのまとまり🧵
@@ -136,6 +144,8 @@ export type EventMeta = {
 ---
 
 ## 5.2 Payload（事実）をイベントごとに定義🍱
+
+![TypeScript Event Structure](./picture/es_ts_study_012_type_structure.png)
 
 ```ts
 export type CartCreated = {
@@ -202,6 +212,8 @@ export type CartEvent =
 
 ## 5.3 “入れすぎ” 例（ダメ寄り）と理由🙅‍♀️🍱
 
+![Bloated Payload](./picture/es_ts_study_012_bloated_payload.png)
+
 ```ts
 // ❌ 例：やりがち（入れすぎ）
 export type ItemAdded_Bad = {
@@ -235,6 +247,8 @@ export type ItemAdded_Bad = {
 ## 6. 便利テク：イベント生成を “型安全に” する🧰✨
 
 ## 6.1 `satisfies` でイベント辞書を検査✅
+
+![Satisfies Inspector](./picture/es_ts_study_012_satisfies_inspector.png)
 
 `**satisfies**` は「この形を満たしてるかチェックしつつ、推論も強く保つ」構文だよ💡（TypeScript 4.9 で導入）([TypeScript][4])
 

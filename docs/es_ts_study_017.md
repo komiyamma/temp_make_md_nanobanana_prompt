@@ -10,6 +10,8 @@
 
 ## 1. まず超ざっくり：どこで“ルール”を守るの？🤔🧠
 
+![Apply vs Decide Roles](./picture/es_ts_study_017_apply_vs_decide.png)
+
 イベントソーシングの基本ルールはこれ👇✨
 
 * **Apply**：イベントを「そのまま反映」して状態を作る（復元係）🔁
@@ -39,6 +41,8 @@ flowchart LR
 
 ## 2. 例外じゃなくて“ドメインエラー”にする理由 😺📌
 
+![Exception vs Result](./picture/es_ts_study_017_exception_vs_result.png)
+
 「残高不足」とか「未作成の口座に入金」みたいなものは、**ユーザー操作で普通に起きる**よね？🙂
 こういうものを例外にすると…
 
@@ -56,6 +60,8 @@ flowchart LR
 ## 3. 題材：ウォレット（残高）でやってみよう💰👛
 
 ## 3.1 ルール（不変条件）を3つだけ決める🧷
+
+![Wallet Rules](./picture/es_ts_study_017_wallet_rules.png)
 
 この章の不変条件はこれ👇（少なくてOK！）😊
 
@@ -173,6 +179,8 @@ export const rehydrate = (events: WalletEvent[]): WalletState => {
 
 ## 4.5 ドメインエラー（例外じゃないやつ）🛑🙂
 
+![Domain Error Cards](./picture/es_ts_study_017_domain_errors.png)
+
 ```ts
 // src/domain/wallet/errors.ts
 export type WalletNotOpened = {
@@ -212,6 +220,8 @@ export const errorMessage = (e: WalletDomainError): string => {
 ---
 
 ## 4.6 Decide：ここで“不変条件”を守る🛡️⚖️✨
+
+![Decide Logic Flow](./picture/es_ts_study_017_decide_flow.png)
 
 ```ts
 // src/domain/wallet/decide.ts
@@ -346,6 +356,8 @@ export const handleWalletCommand = (
 
 ## 7. テスト：Given-When-Then で書く🧪🌸
 
+![Given-When-Then Test](./picture/es_ts_study_017_gwt_test.png)
+
 この教材ではユニットテストに **Vitest** を使う形がやりやすいよ✨
 （TypeScriptプロジェクトでも設定少なめで始めやすい、という説明が整理されてるよ🙂）([TypeScript入門『サバイバルTypeScript』][3])
 
@@ -437,6 +449,8 @@ describe("Wallet decide (Given-When-Then)", () => {
 ## 9. よくあるミス集（ここで詰まりやすい）😵‍💫🧯
 
 ## ❌ Applyでルールチェックしちゃう
+
+![Apply Check Trap](./picture/es_ts_study_017_apply_check_trap.png)
 
 → リプレイ（復元）が「途中で止まる」ようになって地獄👹
 ✅ ルールは Decide に集める🛡️

@@ -11,6 +11,8 @@
 
 ## 1. まずはイメージ：streamId と version って何？🧠💡
 
+![Stream Boxes](./picture/es_ts_study_014_stream_boxes.png)
+
 イベントソーシングって「出来事（イベント）を、起きた順に積む」よね？📚✨
 このとき **“どの箱に積むか”** と **“何番目か”** が超大事！
 
@@ -52,6 +54,8 @@ gantt
 
 ## 2. なんで「順番（version）」が命なの？😺🔁
 
+![Rehydration Order](./picture/es_ts_study_014_rehydration_order.png)
+
 イベントソーシングの復元（Rehydrate）は、だいたいこう👇
 
 1. イベントを **古い順** に読む📖
@@ -85,6 +89,8 @@ gantt
 ---
 
 ## 4. コード：EventEnvelope（包み）を追加する🍱🏷️
+
+![Event Envelope Detail](./picture/es_ts_study_014_envelope_detail.png)
 
 イベント本体（DomainEvent）だけだと、保存するときに困ることがあるの。
 だから「包み（Envelope）」に入れて保存するよ😊
@@ -140,6 +146,8 @@ export function newEvent<TType extends string, TData>(
 
 ## 5.1 インターフェース＋実装（同じファイルに続けてOK）✅
 
+![Append Logic](./picture/es_ts_study_014_append_logic.png)
+
 ```ts
 // src/eventStore.ts（続き）
 
@@ -193,6 +201,8 @@ export class InMemoryEventStore<E extends DomainEvent = DomainEvent> implements 
 ---
 
 ## 6. 動かして確認：2つのストリームに別々に積む🧺🧺✨
+
+![Two Streams Flow](./picture/es_ts_study_014_two_streams.png)
 
 `src/demo14.ts` を作って、動きを見てみよ〜！
 
@@ -261,6 +271,8 @@ cartB: [ { v: 0, type: 'CartCreated', ... }, { v: 1, type: 'ItemAdded', ... } ]
 
 ## 事故①：version を “全体で1本” にしちゃう💥
 
+![Global Version Trap](./picture/es_ts_study_014_global_version_trap.png)
+
 「全部のイベントで 0,1,2…」にすると、ストリームごとの順番じゃなくなるよ〜。
 → 復元や競合管理がややこしくなる😵
 
@@ -270,6 +282,8 @@ cartB: [ { v: 0, type: 'CartCreated', ... }, { v: 1, type: 'ItemAdded', ... } ]
 → これは後で “競合” の話に直結する⚔️
 
 ## 事故③：readStream が “全ストリーム” を返す😇
+
+![Read Leak](./picture/es_ts_study_014_read_leak.png)
 
 間違って「全部のイベント」を返すと、カートAを復元したいのにBのイベントが混ざるよね…？😱
 → `readStream(streamId)` は streamId で必ず絞る！

@@ -11,6 +11,8 @@
 
 ## 11.2 なんで“手書き”が効くの？📝💞
 
+![Value of Visualization](./picture/es_ts_study_011_visualization_value.png)
+
 イベントソーシングは「状態を保存」じゃなくて、「状態が変わった出来事（イベント）を積む」やり方だよ📚🔁
 だから、**イベントが起きたときに状態がどう変わるか**を一回 “目で見える形” にすると、一気に迷子が減るの🧭✨
 この考え方自体がイベントソーシングの基本コンセプトとして整理されているよ。([AWS ドキュメント][1])
@@ -23,6 +25,8 @@
 （カートでもToDoでも同じ手順でOK🙆‍♀️✨）
 
 ### 状態（ざっくり）📍
+
+![5 Order States](./picture/es_ts_study_011_order_states.png)
 
 * `Draft`（下書き・編集OK）✍️
 * `Submitted`（確定した！）📮
@@ -60,6 +64,8 @@
 ---
 
 ## 11.5 手順②：イベントを「時系列で」並べる📜➡️
+
+![Event Timeline](./picture/es_ts_study_011_timeline_events.png)
 
 次に、イベントを **起きそうな順** で並べてみよう😊
 
@@ -113,6 +119,8 @@ stateDiagram-v2
 
 ## 11.7 手順④：状態遷移表にして「実装の下書き」にする🧾🖊️
 
+![Transition Table](./picture/es_ts_study_011_transition_table.png)
+
 図を描いたら、次は表！
 表にすると「実装のif/else地獄」を防げるよ🛟✨
 
@@ -131,6 +139,8 @@ stateDiagram-v2
 ---
 
 ## 11.8 手順⑤：「できない遷移」をあえて書く🙅‍♀️🧯
+
+![Forbidden Transitions](./picture/es_ts_study_011_forbidden_transitions.png)
 
 ここが超大事！！🔥
 イベントソーシングの設計って、「何ができる」より「何ができない」をハッキリさせると強くなる💪✨
@@ -155,6 +165,8 @@ stateDiagram-v2
 ---
 
 ## 11.9 TypeScriptに落とす：`Apply` と `Decide` の最小スケルトン🧩🧠
+
+![Apply vs Decide Roles](./picture/es_ts_study_011_apply_decide_roles.png)
 
 図と表を “そのまま” コードに写す感じだよ✍️✨
 （ここでは雰囲気優先で最小にしてるよ）
@@ -292,6 +304,8 @@ function decideSubmit(state: OrderState, at: string): Result<OrderEvent[]> {
 ---
 
 ## 11.11 AI活用（そのまま貼れる🧠🤖）✨
+
+![AI Reviewer](./picture/es_ts_study_011_ai_reviewer.png)
 
 エディタのAIに、**図と表のレビュー係** をやってもらうのが強いよ💪
 （コード生成より “抜け漏れ検知” が特に便利👀）
