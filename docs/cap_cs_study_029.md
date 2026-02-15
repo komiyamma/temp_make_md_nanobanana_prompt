@@ -11,6 +11,9 @@
 
 ## まず結論：分散メッセージは「だいたい少なくとも1回」届く📬
 
+![cap_cs_study_029_at_least_once_mail.png](./picture/cap_cs_study_029_at_least_once_mail.png)
+
+
 メッセージングでは、ネットワークの都合で「受け取ったのにACKが返せなかった」「処理中に落ちた」みたいなことが起きるよね…😵‍💫
 だから多くのブローカーは **at-least-once（少なくとも1回）** の世界になりがち。
 
@@ -20,6 +23,9 @@
 ---
 
 ## CampusCafeで「壊れやすい」代表例💥
+
+![cap_cs_study_029_double_points_bug.png](./picture/cap_cs_study_029_double_points_bug.png)
+
 
 たとえば `OrderPaid`（決済完了イベント）を受けたコンシューマが、
 
@@ -59,6 +65,9 @@ flowchart TD
 
 ### パターンA：処理そのものを“自然に冪等”にする（Upsert/一意制約）🌱
 
+![cap_cs_study_029_natural_idempotency_switch.png](./picture/cap_cs_study_029_natural_idempotency_switch.png)
+
+
 * 例：注文ステータス更新を「`Paid` 以外なら `Paid` にする」みたいにする
 * 例：ポイント付与を「（OrderId, Rule）に一意制約」して二重付与をDBで止める
 
@@ -91,6 +100,9 @@ flowchart TD
 ---
 
 ## DB設計（最小構成）🗃️
+
+![cap_cs_study_029_inbox_transaction.png](./picture/cap_cs_study_029_inbox_transaction.png)
+
 
 ### テーブルイメージ📌
 
@@ -203,6 +215,9 @@ CREATE TABLE IF NOT EXISTS orders (
 
 ### どうしても順番が必要な例📌
 
+![cap_cs_study_029_fifo_session.png](./picture/cap_cs_study_029_fifo_session.png)
+
+
 * `OrderCreated → OrderPaid → OrderCompleted` を**必ず順に**処理したい
 * “同じOrderIdのイベントだけ”順番が守れればOK
 
@@ -212,6 +227,9 @@ CREATE TABLE IF NOT EXISTS orders (
 ---
 
 ## DLQ（配信不能キュー）は「失敗の墓場」じゃなく「調査の保管庫」🗑️🔎
+
+![cap_cs_study_029_dlq_lab.png](./picture/cap_cs_study_029_dlq_lab.png)
+
 
 何度やっても失敗する“毒メッセージ”はあるある…🥲
 そこでDLQに逃がして、あとで**調査・修正・再投入**できるようにするのが大事！
@@ -227,6 +245,9 @@ CREATE TABLE IF NOT EXISTS orders (
 ---
 
 ## Azure Service Busでの“確定/放棄”のイメージ（超ざっくり）✅↩️🕰️
+
+![cap_cs_study_029_bus_actions.png](./picture/cap_cs_study_029_bus_actions.png)
+
 
 Service Busの .NET クライアントでは、メッセージに対して代表的にこんな操作があるよ👇
 
