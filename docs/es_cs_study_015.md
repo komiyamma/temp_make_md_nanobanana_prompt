@@ -25,6 +25,8 @@
 
 # 2) 今日の主役：Apply（反映）って何するの？🍱🏷️
 
+![es_cs_study_015_apply_role](./picture/es_cs_study_015_apply_role.png)
+
 `Apply` は「イベントに書かれてる事実を、状態に反映する」だけの係です🙌
 ここで大事な感覚👇
 
@@ -35,6 +37,8 @@
 ---
 
 # 3) ざっくり図でイメージ🎬✨
+
+![es_cs_study_015_rehydration_assembly](./picture/es_cs_study_015_rehydration_assembly.png)
 
 ```mermaid
 graph LR
@@ -103,6 +107,8 @@ public sealed record ItemRemoved(
 
 ## 4-2) 状態（State）と Apply を作る🧠✨
 
+![es_cs_study_015_cart_evolution](./picture/es_cs_study_015_cart_evolution.png)
+
 「復元」は、まず **空の状態** を作って、イベントを順に `Apply` します🔁
 
 ```csharp
@@ -170,6 +176,8 @@ flowchart TD
 
 ---
 
+![es_cs_study_015_apply_switch](./picture/es_cs_study_015_apply_switch.png)
+
 # 5) ミニ演習：イベント3つで復元してみよう🎬🛒
 
 ## 5-1) 手で「いまの状態」を当ててみる📝✨
@@ -213,6 +221,8 @@ Console.WriteLine($"Banana = {cart.Items["Banana"]}");
 
 # 6) こわい話：Apply漏れで何が起きる？😱🕳️
 
+![es_cs_study_015_missing_apply](./picture/es_cs_study_015_missing_apply.png)
+
 イベントソーシングでありがちな事故がこれ👇
 
 * 新しいイベントを追加した✅
@@ -225,6 +235,8 @@ Console.WriteLine($"Banana = {cart.Items["Banana"]}");
 ---
 
 # 7) Apply漏れを減らす「型」3つ🧰🛡️
+
+![es_cs_study_015_safety_guards](./picture/es_cs_study_015_safety_guards.png)
 
 ## 型①：`Apply` を1か所に集める📍
 

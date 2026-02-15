@@ -10,6 +10,8 @@
 
 # 1. 不変条件ってなに？🧷🛡️
 
+![es_cs_study_017_invariant_fortress](./picture/es_cs_study_017_invariant_fortress.png)
+
 不変条件（Invariant）は、ざっくり言うと…
 
 * **「このドメインでは、絶対にこうでなきゃダメ！」**というルール✅
@@ -26,6 +28,8 @@ UIの入力チェックは「親切」だけど、**不変条件は“最後の�
 ---
 
 # 2. どこで不変条件をチェックするの？🧭
+
+![es_cs_study_017_decide_gatekeeper](./picture/es_cs_study_017_decide_gatekeeper.png)
 
 答え：**Decide（イベントを作る直前）** でチェックする✅
 
@@ -91,6 +95,8 @@ graph TD
 ---
 
 # 4. 実装してみよう：Result と DomainError 🧱✨
+
+![es_cs_study_017_result_box](./picture/es_cs_study_017_result_box.png)
 
 ```csharp
 public interface IDomainEvent { }
@@ -171,6 +177,8 @@ public sealed class ShoppingCartState
 
 ## 5.3 Decide：ここが本題！不変条件で弾く🛡️🚧
 
+![es_cs_study_017_cart_rules](./picture/es_cs_study_017_cart_rules.png)
+
 ```csharp
 public static class ShoppingCartDecider
 {
@@ -236,6 +244,8 @@ public static class ShoppingCartDecider
 ---
 
 # 6. Command Handler側：失敗なら Append しない 🧯✅
+
+![es_cs_study_017_fail_no_append](./picture/es_cs_study_017_fail_no_append.png)
 
 “DecideがFailならイベントは積まない” が最重要ルールだよ💡
 
@@ -310,6 +320,8 @@ public sealed class CartInvariantsTests
 ---
 
 # 8. エラーメッセージ設計のコツ 💬✨
+
+![es_cs_study_017_friendly_error](./picture/es_cs_study_017_friendly_error.png)
 
 ユーザー向けの `Message` は、こうすると優しくて強い😊🌸
 
