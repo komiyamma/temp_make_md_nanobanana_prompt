@@ -54,6 +54,8 @@ flowchart TD
 * そのコマンドが「最新状態で再判断してもだいたい通る」ケース😊
 * ユーザー体験を途切れさせたくないケース🌸
 
+![Server-Side Retry Strategy](./picture/es_cs_study_024_server_retry.png)
+
 同期（HTTP等）だと、競合時に即リトライして吸収する、という考え方もよく出てくるよ。([Ecotone][3])
 
 ---
@@ -70,6 +72,8 @@ flowchart TD
 * 「勝手にリトライして通すと、ユーザーの意図とズレる」ケース😵‍💫
   （例：残り在庫が変わった、別の人が内容を大きく変更した、など）
 
+![Client-Side Retry Strategy](./picture/es_cs_study_024_client_retry.png)
+
 ---
 
 ## 方針C：マージ（自動解決）する🤝🧠（難しいけど強い）
@@ -81,6 +85,8 @@ flowchart TD
 
 * “足し算系”で衝突しにくい（例：閲覧回数の加算、在庫の補充）📈
 * ルールが明確で「自動合成しても意味が変わらない」操作✅
+
+![Merge Strategy](./picture/es_cs_study_024_merge_strategy.png)
 
 ---
 
@@ -111,6 +117,8 @@ graph TD
   → **方針B（409/412でやり直し）**が安全🛡️
 * 操作が「順番入れ替えても意味が変わらない」＆「自動合成ルールが書ける」？
   → **方針C（マージ）**に挑戦🤝✨
+
+![Strategy Decision Tree](./picture/es_cs_study_024_decision_tree.png)
 
 ---
 
@@ -211,6 +219,8 @@ public abstract record CommandResult
 * リトライするのは **競合系だけ**（不変条件違反はリトライしても同じになりがち）🛡️
 * 回数制限をつける（maxRetries）🧯
 
+![Retry Loop Logic](./picture/es_cs_study_024_retry_loop_logic.png)
+
 ---
 
 # 5. ミニ演習（手を動かすパート）✍️💪
@@ -230,6 +240,8 @@ public abstract record CommandResult
 # 6. テスト例（Given-When-Thenっぽく）🧪🌸
 
 ※「競合が一度だけ起きる偽イベントストア」を使う例だよ😊
+
+![Mock Conflict Store](./picture/es_cs_study_024_mock_conflict_store.png)
 
 ```csharp
 using Xunit;

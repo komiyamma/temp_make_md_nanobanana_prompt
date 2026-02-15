@@ -24,6 +24,8 @@ C#でよくあるのがこれ👇
 * 呼び出し元が `try/catch` 地獄になる🌀
 * 「失敗が仕様」なのに、「失敗＝異常」みたいな雰囲気になって、設計がグチャる😿
 
+![Exception Chaos vs Result Order](./picture/es_cs_study_021_exception_chaos.png)
+
 なのでこの章では、
 
 * **起きて当然の失敗（ドメインエラー）** は `Result` で返す🚦
@@ -45,6 +47,8 @@ flowchart TD
     Result --> User[ユーザーに理由を伝えて <br/>リトライ/修正を促す]
     Throw --> Logs[システムログに記録して <br/>エンジニアが対応する]
 ```
+
+![Domain vs Infra Error Metaphor](./picture/es_cs_study_021_domain_vs_infra_metaphor.png)
 
 ## ✅ ドメインエラー（Resultで返したい）🧩
 
@@ -118,6 +122,8 @@ public sealed record DomainError(
 }
 ```
 
+![DomainError Anatomy](./picture/es_cs_study_021_domain_error_anatomy.png)
+
 * `Code` は **機械向け**（後でHTTPのステータスやUI表示分岐に便利）🤖
 * `Message` は **人間向け**（ただし内部情報を漏らさない）🗣️
 * `Target` は **どの項目？** を指せる（`quantity` とか）🎯
@@ -145,6 +151,8 @@ public readonly struct Result<T>
     public static Result<T> Fail(DomainError error) => new(false, default, error);
 }
 ```
+
+![Result<T> Container](./picture/es_cs_study_021_result_container.png)
 
 この形にすると、呼び出し側はこう書ける👇
 
@@ -248,6 +256,8 @@ public static class CartDecider
 }
 ```
 
+![Decide Function Flow](./picture/es_cs_study_021_decide_flow.png)
+
 ここが超大事💡
 **ルール違反は例外じゃなく Result.Fail** で返してるよ🚦❌
 
@@ -311,6 +321,8 @@ graph LR
     R4 -- "Map" --> H4
 ```
 
+![Result to HTTP Mapping](./picture/es_cs_study_021_http_mapping.png)
+
 ---
 
 # 7. テストの型：失敗ケースが主役🧪🌸
@@ -342,6 +354,8 @@ public class CartDeciderTests
     }
 }
 ```
+
+![Failure Test Focus](./picture/es_cs_study_021_failure_test.png)
 
 * 「例外が投げられたか」じゃなくて
 * **「どんな失敗が返るか」** をテストしてる😊✅

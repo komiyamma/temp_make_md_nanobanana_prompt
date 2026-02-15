@@ -17,6 +17,9 @@
 * “ダメな入力なら、イベントは出ない？”
 
 ここがズレると、**履歴が壊れる**のね😵‍💫💥
+
+![Test as Contract](./picture/es_cs_study_020_test_contract.png)
+
 なのでテストは **イベントの契約書** みたいなもの📄✨
 
 ---
@@ -58,6 +61,8 @@ graph LR
 * **Act = When（コマンド）**
 * **Assert = Then（出るイベント or エラー）**
 
+![AAA vs GWT Mapping](./picture/es_cs_study_020_aaa_vs_gwt.png)
+
 ---
 
 # 20.3 テストプロジェクトを作る最短ルート 🛠️🚀
@@ -79,6 +84,8 @@ dotnet add EsTutorial.Tests/EsTutorial.Tests.csproj reference EsTutorial.Domain/
 dotnet test
 ```
 
+![Test Project CLI Setup](./picture/es_cs_study_020_cli_setup.png)
+
 ## Visual Studio（GUIでやる）🪟✨
 
 * ソリューション作成 → Class Library（Domain）＋ xUnit テストプロジェクト追加
@@ -98,6 +105,8 @@ dotnet test
 # 20.5 ドメインの最小コード（イベント・コマンド・Decision）🧩
 
 > ✅ ここは「テストで使う最低限」だけ！
+
+![Shopping Cart Domain Map](./picture/es_cs_study_020_cart_domain.png)
 
 ```csharp
 // EsTutorial.Domain
@@ -203,6 +212,8 @@ flowchart TD
 ここからが本題🌸
 コメントで **Given / When / Then** を固定するだけで、めちゃ読みやすくなるよ😊
 
+![Success Test Flow](./picture/es_cs_study_020_success_flow.png)
+
 ```csharp
 // EsTutorial.Tests
 
@@ -252,6 +263,8 @@ public class ShoppingCart_GivenWhenThen_Specs
 イベントソーシングは **失敗したらイベントを出さない** が超大事😊
 だから失敗テストもセットで書くよ！
 
+![Failure Test Flow](./picture/es_cs_study_020_failure_flow.png)
+
 ```csharp
 using EsTutorial.Domain;
 using Xunit;
@@ -297,6 +310,8 @@ public class ShoppingCart_Failure_Specs
 
 イベントソーシングでは、基本は **イベントが正しいか** を見る✅
 （状態はイベントの結果だから、重要なときだけでOK）
+
+![Readability Tips](./picture/es_cs_study_020_readability_tips.png)
 
 ---
 

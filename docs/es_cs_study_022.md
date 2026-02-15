@@ -68,6 +68,8 @@ graph TD
 **イベントを作る（Decide）ときは、いったん現在状態を復元して判断する**よね？🔁🧠
 その判断が「古い状態（古い版）」を元に行われると、**今の現実とズレたイベント**ができちゃうの😱
 
+![Danger of Old State](./picture/es_cs_study_022_old_state_danger.png)
+
 つまりこう👇
 
 * 「イベントは追記だから安全」✅
@@ -87,6 +89,8 @@ graph TD
 
 * `MoneyDeposited(100)`（100円入金）
 * `MoneyWithdrawn(80)`（80円出金）
+
+![Bank Account Rules](./picture/es_cs_study_022_bank_rules.png)
 
 ---
 
@@ -168,6 +172,8 @@ public sealed class BankAccount
 }
 ```
 
+![Naive Store Blindness](./picture/es_cs_study_022_naive_blindness.png)
+
 ---
 
 ## 4-3. “危ない”イベントストア（競合チェックなし）😈📚
@@ -205,6 +211,8 @@ public sealed class NaiveEventStore
   この2つが「ほぼ同時」に走ると、AもBも**同じ版**を見てイベントを作っちゃう😵
 
 だから、実験では「Prepare（イベント作る）→あとでAppend」をやるよ🧪✨
+
+![Concurrency Simulation Flow](./picture/es_cs_study_022_concurrency_simulation.png)
 
 ```csharp
 public sealed record PreparedAppend(int ExpectedVersion, IReadOnlyList<IDomainEvent> NewEvents);
@@ -257,6 +265,8 @@ Console.WriteLine($"最終残高: {final.Balance}");
 * Bが見たVersion: 0
 * 最終残高: **-60** 😱💥
 
+![Crash Result](./picture/es_cs_study_022_crash_result.png)
+
 ---
 
 # 5) 何がヤバいの？（本質）🧠⚡
@@ -300,6 +310,9 @@ HTTPの世界でも **ETag + If-Match** みたいな形で「版が一致した�
 
 イベントストア界隈では「expectedVersion / expectedRevision」という言い方で、**期待する版を渡して、合ってたら追記、違ったら失敗**が定番✨
 （例：`expected_version` は楽観ロックとして働く、同時書き込みでは1つだけ成功する、など）([Rails Event Store][4])
+
+![Optimistic Lock Preview](./picture/es_cs_study_022_optimistic_lock_preview.png)
+
 またEventStoreDB（Kurrent）の.NETクライアントでは用語を `ExpectedVersion` より明確な `ExpectedRevision` に寄せた、という話もあるよ([Kurrent Docs][5])
 
 ---
