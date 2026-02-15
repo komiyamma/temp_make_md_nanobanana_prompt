@@ -12,6 +12,8 @@
 
 ## 14.2 まず結論：TypeScriptの“型”は実行時に消える👻🫥
 
+![Ghost Types](./picture/hc_lc_ts_study_014_ghost_types.png)
+
 TypeScriptは **実行するときはJavaScript** になるよね？
 そのとき、**型注釈は消える**＝実行時に守ってくれないの🥲
 
@@ -71,6 +73,8 @@ flowchart LR
 
 ## 14.5 代表的なやり方 3つ🧰✨
 
+![Validation Tools](./picture/hc_lc_ts_study_014_validation_tools.png)
+
 ### ① スキーマバリデーション（いちばん実務向き）🛡️✅
 
 最近は **Zod v4** が安定版で、機能追加も活発だよ📈✨ ([Zod][3])
@@ -121,6 +125,8 @@ npm i zod@latest
 
 ### 14.6.3 domain：ドメイン型を作る💎✨
 
+![Infra vs Domain Type](./picture/hc_lc_ts_study_014_infra_vs_domain_type.png)
+
 ```ts
 // src/domain/todo.ts
 export type TodoId = string & { readonly __brand: "TodoId" };
@@ -158,6 +164,8 @@ export async function fetchTodosJson(): Promise<unknown> {
 
 ### 14.6.5 schema：Zodで“実行時に”形を検証する🧪🛡️
 
+![Zod Gate](./picture/hc_lc_ts_study_014_zod_gate.png)
+
 ```ts
 // src/infra/todoSchema.ts
 import { z } from "zod";
@@ -183,6 +191,8 @@ export type TodoApi = z.infer<typeof TodoApiSchema>;
 ---
 
 ### 14.6.6 mapper：検証済み→ドメイン型へ変換🧼💎
+
+![Mapper Machine](./picture/hc_lc_ts_study_014_mapper_machine.png)
 
 ```ts
 // src/mapper/todoMapper.ts

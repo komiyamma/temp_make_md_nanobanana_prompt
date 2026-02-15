@@ -10,6 +10,8 @@
 
 ## 1) まずは“よくある地獄”を言語化😱🔥
 
+![New Everywhere Chaos](./picture/hc_lc_ts_study_013_new_everywhere.png)
+
 次みたいな状態、見覚えない？👀
 
 * いろんなファイルで `new` してる（RepoもLoggerもHTTPも…）💥
@@ -70,6 +72,8 @@
 
 ### フォルダ構成（おすすめ）📁🧭
 
+![Clean Folder Map](./picture/hc_lc_ts_study_013_folder_map.png)
+
 ```text
 src/
   domain/
@@ -101,6 +105,8 @@ src/
 ---
 
 ## 6) コード：UseCaseは“受け取るだけ”🎁✨
+
+![UseCase Dependencies](./picture/hc_lc_ts_study_013_usecase_deps.png)
 
 ### ports（契約）📜
 
@@ -194,6 +200,8 @@ export async function addTask(deps: AddTaskDeps, input: AddTaskInput): Promise<T
 
 ## 7) infra（外界の実装）🌍🧰
 
+![Infrastructure Toolbox](./picture/hc_lc_ts_study_013_infra_toolbox.png)
+
 ```ts
 // src/infra/systemClock.ts
 import type { Clock } from "../ports/clock";
@@ -249,6 +257,8 @@ export class FileTaskRepository implements TaskRepository {
 ---
 
 ## 8) そして主役：Composition Root🏗️✨
+
+![Wiring the App](./picture/hc_lc_ts_study_013_wiring_root.png)
 
 ```ts
 // src/app/compositionRoot.ts

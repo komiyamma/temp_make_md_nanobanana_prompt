@@ -10,6 +10,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 
 ## 第2章　ヘキサゴナルを一言で！🔷✨
 
+![Hexagonal Architecture Overview](./picture/hex_cs_index_hexagonal_overview.png)
+
 * 「中心（Core）を外側から守る設計」
 * 六角形は図の都合、ポイントは“境界”📌
 * どう嬉しい？：UI/DBを差し替えやすい🔁
@@ -35,6 +37,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 ---
 
 ## 第6章　Inboundの考え方（外→中）⬅️🚪
+
+![Inbound vs Outbound](./picture/hex_cs_index_inbound_outbound.png)
 
 * 外がCoreを呼ぶ入口（API/画面/CLI）
 * Inboundは「呼び出し」を整える係
@@ -74,6 +78,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 
 ## 第12章　依存の向き③：Portで逆転する（DIPの超入門）🔁🧠
 
+![Dependency Inversion](./picture/hex_cs_index_dependency_inversion.png)
+
 * 具体に依存しない＝抽象に依存
 * RepositoryやClientをinterfaceで受ける
 * ここがヘキサの心臓部❤️
@@ -95,6 +101,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 
 ## 第15章　ミニ題材決定：カフェ注文アプリ☕🧾
 
+![Cafe App Domain](./picture/hex_cs_index_cafe_domain.png)
+
 * 要件：注文作成／注文一覧
 * まずはInMemoryで完成→後でDB差し替え🔁
 * これで「強さ」を体験するよ😆
@@ -106,6 +114,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 * （必要なら）VS Code + dotnet CLIも紹介💻
 
 ## 第17章　フォルダ/プロジェクト構成（おすすめ）📦🏷️
+
+![Project Folder Structure](./picture/hex_cs_index_folder_structure.png)
 
 * Core（Domain / Application）
 * Adapters（Inbound / Outbound）
@@ -193,6 +203,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 
 ## 第30章　DI入門①：DIって何？なぜ必要？🧠🔧
 
+![DI Mechanism](./picture/hex_cs_index_di_mechanism.png)
+
 * newしないと何が嬉しい？
 * テスト差し替えができる✨
 * “配線は外で”の考え方🧩
@@ -212,6 +224,8 @@ C#初級〜中級／設計超入門／ヘキサ初めて／Windows／Visual Stud
 ---
 
 ## 第33章　テスト設計①：Coreの単体テストが簡単になる🧪💖
+
+![Test Strategy](./picture/hex_cs_index_test_strategy.png)
 
 * Fake/StubのAdapterを差してテスト
 * DBなしでユースケース検証できる快感😆

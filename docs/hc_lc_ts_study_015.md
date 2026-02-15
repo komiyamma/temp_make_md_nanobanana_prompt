@@ -53,6 +53,8 @@ renderPrice(1200, false, "simple");
 
 ### 🚩 フラグ引数がまずい理由
 
+![Mystery Boolean](./picture/hc_lc_ts_study_015_mystery_boolean.png)
+
 Martin Fowlerが「**Flag Argument**（フラグ引数）」を **“引数で別の処理をさせる匂い”** として説明してます。つまり「1つの関数が、実質2つ以上の仕事をしてる」状態になりやすいんだよね🍲💦 ([martinfowler.com][2])
 
 * 呼び出し側が「中の分岐」を知ってないと使えない（= 結合UP）🔗
@@ -72,6 +74,8 @@ graph TD
 ```
 
 ### 🔤 “文字列で指示”がまずい理由（stringly-typed）
+
+![Stringly Typed Typo](./picture/hc_lc_ts_study_015_string_typo.png)
 
 “stringly typed” は「本当は型で表せるのに、文字列に寄せすぎてツラい」っていう皮肉な用語だよ😇
 Jeff Atwood（Coding Horror）も「文字列に頼りすぎる実装」を例つきで説明してるよ🧯 ([Coding Horror][4])
@@ -139,6 +143,8 @@ type Viewer =
 
 ### ✅ Step3：引数を “1つの命令” としてまとめる🎁
 
+![Command Object](./picture/hc_lc_ts_study_015_command_object.png)
+
 ```ts
 type RenderPriceCommand = {
   yen: number;
@@ -148,6 +154,8 @@ type RenderPriceCommand = {
 ```
 
 ### ✅ Step4：switchで分岐（TSが勝手に絞り込んでくれる）🧠✨
+
+![Discriminated Union Tags](./picture/hc_lc_ts_study_015_discriminated_tags.png)
 
 ```ts
 export function renderPrice(cmd: RenderPriceCommand): string {
@@ -246,6 +254,8 @@ export function parseMode(input: string): Mode {
 4. modeを1個追加（例：`"compact"`）して、**網羅チェックが効く**のを確認する🔥
 
 ### 仕上げの確認✅
+
+![Exhaustiveness Shield](./picture/hc_lc_ts_study_015_exhaustiveness_shield.png)
 
 * `"detial"` を書こうとしてコンパイルで止まる？🧯
 * `"compact"` を追加したのに `switch` が未対応だと怒られる？😆

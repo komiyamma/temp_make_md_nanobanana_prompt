@@ -21,6 +21,8 @@
 
 ![Guarded Gate](./picture/hc_lc_ts_study_016_guarded_gate.png)
 
+![Deep Import Chaos](./picture/hc_lc_ts_study_016_deep_import_mess.png)
+
 コードが増えると、だいたいこうなるの👇
 
 * A機能が、B機能の “奥の奥” のファイルを直接 import しはじめる🕳️
@@ -51,6 +53,8 @@ graph TD
 ---
 
 ## 2) 今日覚えるキーワード📚✨
+
+![Barrel (Index.ts) Reception](./picture/hc_lc_ts_study_016_reception_desk.png)
 
 * **公開面（Public API）**：外部が触っていい “玄関” 🚪
 * **内部（Internal）**：モジュール内でだけ使う “部屋の中” 🛋️
@@ -109,6 +113,8 @@ src/
 
 ## 5) 公開面（index.ts）の作り方：細く、強く🦴✨
 
+![Explicit vs Star Export](./picture/hc_lc_ts_study_016_export_menu.png)
+
 ### ✅ 良い index.ts（必要最小限だけ出す）
 
 ```ts
@@ -143,6 +149,8 @@ export * from "./infra";
 ---
 
 ## 6) import ルールを「人の気合い」から「自動」にする🤖🧱✨
+
+![ESLint Guard](./picture/hc_lc_ts_study_016_eslint_guard.png)
 
 ここが超大事！
 ルールを決めたら、**破った瞬間に赤くなる**ようにするよ🔴😎
@@ -222,6 +230,8 @@ export default [
 ---
 
 ## 7) 循環依存を見つける（そして消す）🔁🧯
+
+![Circular Dependency Trap](./picture/hc_lc_ts_study_016_circular_trap.png)
 
 循環依存は「なぜか実行時に undefined…」みたいな事故になりがちで怖い😱
 だから **検知ツール**を使うよ！

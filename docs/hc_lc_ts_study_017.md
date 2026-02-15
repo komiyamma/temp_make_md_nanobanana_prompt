@@ -21,6 +21,8 @@ Node.js は **24系が LTS（Krypton）** に入ってるよ ([Node.js][2])
 
 ## 1) 要件を “小さく” 固める✅📝
 
+![Requirements Clipboard](./picture/hc_lc_ts_study_017_requirements_clipboard.png)
+
 今回は最小でこれだけにするよ（増やすのは後でOK！）✨
 
 * ToDoを追加する ➕
@@ -37,6 +39,8 @@ Node.js は **24系が LTS（Krypton）** に入ってるよ ([Node.js][2])
 ---
 
 ## 2) “変更理由” を先に出す🧠✨（境界を引く材料）
+
+![Change Drivers](./picture/hc_lc_ts_study_017_change_arrows.png)
 
 このアプリ、将来どこが変わりそう？を先にメモるよ📝
 
@@ -67,6 +71,8 @@ Node.js は **24系が LTS（Krypton）** に入ってるよ ([Node.js][2])
 * **composition**：依存を組み立てる場所（Composition Root）🏗️
 
 ### 依存の矢印（大事！）➡️
+
+![Dependency Direction](./picture/hc_lc_ts_study_017_dependency_arrows.png)
 
 * domain ← どこにも依存しない🥇
 * usecase → domain & ports
@@ -339,6 +345,8 @@ export class ConsoleNotifier implements Notifier {
 
 ## 5) composition root（組み立て）🏗️✨
 
+![Composition Factory](./picture/hc_lc_ts_study_017_composition_factory.png)
+
 ```ts
 // src/composition/root.ts
 import { FileTaskRepository } from "../infra/fileTaskRepository";
@@ -409,6 +417,8 @@ main().catch((e) => {
 Vitest 4.0 が現行メジャーとしてまとまってるよ ([vitest.dev][3])
 
 ## 2) Fake（偽物）で差し替える🎭✨
+
+![Fake vs Real](./picture/hc_lc_ts_study_017_fake_vs_real.png)
 
 * Repo：メモリ配列でOK
 * Clock：固定時刻を返す

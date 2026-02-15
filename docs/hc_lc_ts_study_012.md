@@ -32,6 +32,8 @@
 
 ## 12-2. TypeScriptは「形が合えばOK」な世界🧩✨（構造的型付け）
 
+![Structural Typing](./picture/hc_lc_ts_study_012_structural_typing.png)
+
 TypeScriptは基本、**“形（members）が同じならOK”** という考え方（構造的型付け）だよ🐣
 公式ドキュメントでも、型の互換性は “structural subtyping” が基準って説明されてるよ。([TypeScript][1])
 
@@ -59,6 +61,8 @@ f(a);
 
 ## 12-3. `interface` と `type`：まずはこの判断でOK🧠🪄
 
+![Interface vs Type](./picture/hc_lc_ts_study_012_interface_vs_type.png)
+
 迷ったら、最初はこのルールでほぼ勝てるよ✌️✨
 （TypeScript公式も「だいたい同等だけど差がある」と整理してるよ）([TypeScript][2])
 
@@ -85,6 +89,8 @@ f(a);
 外側（I/O）の都合じゃなく、**内側（利用側）の必要**で決めるのが大人っぽい設計🧠✨
 
 ### コツ②：読み取りと書き込みを分ける📖✍️
+
+![Read/Write Separation](./picture/hc_lc_ts_study_012_read_write_split.png)
 
 「読むだけ欲しい」場所に「書き込み権限」まで渡すと、結合が増えるよ🔗💦
 （小さな契約に分けると、差し替えもテストもラク！）
@@ -185,6 +191,8 @@ export class InMemoryStore implements KeyValueStore {
 
 ### Step4：利用側は「契約だけ」を見る😍✨（低結合！）
 
+![Storage Swap](./picture/hc_lc_ts_study_012_storage_swap.png)
+
 ```ts
 // usecase/draftUsecase.ts
 import type { KeyValueStore } from "../ports/KeyValueStore";
@@ -243,6 +251,8 @@ classDiagram
 * 公式ドキュメントでも、`interface` は契約を表す役割として説明されがちだよ ([TypeScript][3])
 
 ### ✅ エラー表現は `type` のUnionが強い🚑🧩
+
+![Union Error](./picture/hc_lc_ts_study_012_union_error.png)
 
 ```ts
 export type DraftLoadError =
