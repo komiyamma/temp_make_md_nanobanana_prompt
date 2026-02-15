@@ -15,6 +15,8 @@
 
 ## 1) まず知っておく「fetchの罠」🕳️😱
 
+![Fetch Promise Resolution](./picture/err_model_ts_study_022_fetch_gotcha.png)
+
 `fetch()` は **ネットワーク系の失敗だけ** Promise を reject します。
 **404 や 500 は reject しません**（普通に resolve して `Response` が返ってきます）😵‍💫
 だから **`catch` だけ見てると事故る**んだよね💥 ([MDN Web Docs][1])
@@ -25,7 +27,7 @@
 
 ## 2) “失敗の種類”を地図にする🗺️🏷️
 
-![HTTP信号機：通信エラー、HTTP失敗、正常応答を振り分ける[(./picture/err_model_ts_study_022_http_traffic_light.png)
+![HTTP Failure Categories](./picture/err_model_ts_study_022_failure_bins.png)
 
 ここから先、HTTPクライアントの結果を **いつも同じ形**に揃えます✨
 
@@ -64,6 +66,8 @@
 ---
 
 ## 3) “統一結果”の設計（Resultで返す）🎁🌈
+
+![Unified Result Wrapper](./picture/err_model_ts_study_022_unified_box.png)
 
 ここでは **`Promise<Result<T, HttpError>>`** を返す形にします😊
 （第19章の AsyncResult のノリだね⚡）
@@ -124,6 +128,8 @@ export type HttpError =
 ---
 
 ## 4) fetchラッパー実装（成功/失敗を統一する）🧰✨
+
+![Fetch Wrapper Logic](./picture/err_model_ts_study_022_pipeline_funnel.png)
 
 ポイントは3つ👇
 
@@ -254,6 +260,8 @@ export async function fetchJson<T>(
 
 ## 5) 使う側：UIで“反応”を変える😊🎀
 
+![UI Reaction to Errors](./picture/err_model_ts_study_022_dashboard_reaction.png)
+
 ```ts
 const r = await fetchJson<{ name: string }>("/api/me");
 
@@ -288,6 +296,8 @@ if (r.ok) {
 
 ## 6) “リトライしていい？”の目安🔁🧠
 
+![Retry Gatekeeper](./picture/err_model_ts_study_022_gatekeeper.png)
+
 HTTPの意味としてはざっくりこんな感じ👇（超実用だけに絞るね😊）
 
 * ✅ **リトライしがち**：Network / Timeout / 502 / 503 / 504 / 429
@@ -301,6 +311,8 @@ HTTPの意味としてはざっくりこんな感じ👇（超実用だけに絞
 ---
 
 ## 7) ミニ演習📝💖
+
+![Fetch Experiment](./picture/err_model_ts_study_022_lab_experiment.png)
 
 ### 演習1：失敗をわざと起こして分類する🧪
 

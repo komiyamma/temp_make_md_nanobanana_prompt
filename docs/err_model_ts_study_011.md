@@ -7,6 +7,8 @@
 
 ## 1) インフラエラーってなに？🤔🌐
 
+![Infrastructure Failures](./picture/err_model_ts_study_011_infra_break.png)
+
 ざっくり言うと **「自分のコードの外で起きる失敗」** だよ🔌
 
 * ネットが不安定📶
@@ -45,6 +47,8 @@
 
 ## 3) “再試行していいか”は、実はもう1個条件がある⚠️🧨
 
+![Idempotency](./picture/err_model_ts_study_011_idempotent_stamp.png)
+
 それが **「同じリクエストをもう一回送っても安全？」** だよ🙂
 
 HTTPには「冪等（idempotent）」って概念があって、**同じ操作を何回やっても結果が同じになりやすいメソッド**があるの👇
@@ -58,6 +62,8 @@ RFCでは **PUT / DELETE と “safe method（GET/HEADなど）” は冪等** �
 ---
 
 ## 4) fetchの“超重要ポイント”🌐🧠（ここで事故る人が多い）
+
+![Fetch Trap](./picture/err_model_ts_study_011_fetch_trap.png)
 
 ### ✅ fetchは「HTTPエラー（404とか）」では失敗扱いにならない😳
 
@@ -78,6 +84,8 @@ flowchart TD
 ---
 
 ## 5) まずは“タイムアウト”を標準装備しよ⏳🛑
+
+![Timeout Mechanism](./picture/err_model_ts_study_011_timeout_clock.png)
 
 「待ち続ける」は最悪のUX＆最悪の運用…😇
 最近は `AbortSignal.timeout()` が使いやすいよ✨
@@ -137,6 +145,8 @@ export type InfraError =
 ---
 
 ## 8) 429 は “Retry-After” を尊重しよう⏱️🙏
+
+![Retry-After](./picture/err_model_ts_study_011_retry_calendar.png)
 
 429やメンテ系の応答で `Retry-After` が来ることがあるよ。
 これは「どれくらい待ってから再試行してね」を伝えるヘッダー📮 ([MDN Web Docs][6])
@@ -250,6 +260,8 @@ export async function fetchJsonAsInfra<T>(
 ---
 
 ## 11) “再試行OK/NG表”を作るミニ演習📝🔁
+
+![Retry Decision Checklist](./picture/err_model_ts_study_011_retry_checklist.png)
 
 あなたのアプリを想像して、外部I/Oを10個くらい書いてみてね✍️✨
 例：外部API、画像CDN、決済、ログ送信、DB、ファイル保存…など

@@ -15,6 +15,8 @@
 
 ## 1) なんでカスタムErrorが必要なの？🤔💭
 
+![Code vs String Parsing](./picture/err_model_ts_study_013_barcode_scan.png)
+
 ### ✅ メッセージ解析は壊れやすい💥
 
 エラーメッセージって、人間が読むための文章だから、句読点や言い回しが変わるだけで判定ロジックが崩れがち😵‍💫
@@ -32,7 +34,7 @@ MDNでも「メッセージを解析させるより、区別できる仕組み�
 
 ## 2) カスタムErrorに入れておくと強い情報たち🧺✨
 
-![なぜ Error を継承するの？[(./picture/err_model_ts_study_005_rich_error_card.png)
+![Error Object Components](./picture/err_model_ts_study_013_id_card.png)
 
 最低限ここが強いよ👇
 
@@ -48,7 +50,7 @@ TypeScript側でも、ES2022ターゲット/ライブラリで「new Error の c
 
 ## 3) まずは土台：AppError（共通の親）を作ろう🏗️✨
 
-![改善の方向性[(./picture/err_model_ts_study_004_inheritance_tree.png)
+![AppError Base Class](./picture/err_model_ts_study_013_chassis.png)
 
 ポイントはこれ👇🙂
 
@@ -211,6 +213,8 @@ export class InvariantViolationError extends AppError {
 
 ## 5) “投げ分け”の実例：ミニ業務ロジック🍰🛍️
 
+![Throwing Different Errors](./picture/err_model_ts_study_013_pitcher.png)
+
 ```ts
 // src/example.ts
 import { ValidationError } from "./errors/ValidationError";
@@ -262,6 +266,8 @@ cause は「原因のエラー」を保持できるので、上で握った情�
 
 ## 6) 受け取り側：文字列じゃなくて “型 or code” で分岐しよう🧠✨
 
+![Catching by Type](./picture/err_model_ts_study_013_sorting_chutes.png)
+
 ```ts
 // src/handle.ts
 import { AppError } from "./errors/AppError";
@@ -307,6 +313,8 @@ export function handle(err: unknown) {
 ---
 
 ## 8) ミニ演習📝🎓（15〜25分）
+
+![Error Design Challenge](./picture/err_model_ts_study_013_puzzle_challenge.png)
 
 ### お題🛍️💳
 
