@@ -19,6 +19,8 @@
 
 ## 2) InMemoryRepositoryって何がうれしいの？ 🥰
 
+![InMemory Joy](./picture/hex_ts_study_026_inmemory_joy.png)
+
 InMemoryは「アプリを落としたら消える」けど、それが逆に強い✨
 
 * 🧪 **テストが爆速**（ファイル/DB待ちがゼロ）
@@ -28,6 +30,8 @@ InMemoryは「アプリを落としたら消える」けど、それが逆に強
 ---
 
 ## 3) 置き場所（迷子防止）📁🧭
+
+![Folder Structure](./picture/hex_ts_study_026_folder_structure.png)
 
 この章ではこんな配置にします（例）👇
 
@@ -127,6 +131,8 @@ export class Todo {
 
 ### 5-3) InMemory Adapter（本命）🧩✨
 
+![Snapshot Copy](./picture/hex_ts_study_026_snapshot_copy.png)
+
 ```ts
 // src/adapters/outbound/InMemoryTodoRepository.ts
 import { Todo, TodoSnapshot } from "../../domain/Todo";
@@ -169,6 +175,8 @@ function structuredCloneSafe<T>(v: T): T {
 
 ## 6) 差し替え体験：UseCaseは何も知らない 🙅‍♀️✨
 
+![UseCase Blindfold](./picture/hex_ts_study_026_usecase_blindfold.png)
+
 UseCaseは Port（TodoRepository）しか見ないので、InMemoryでもFileでもDBでもOKになります🔁💖
 （例：AddTodoUseCase）
 
@@ -191,6 +199,8 @@ export class AddTodoUseCase {
 
 ## 7) Composition Rootで組み立てる 🧩🏗️
 
+![Composition Root Assembly](./picture/hex_ts_study_026_composition_root.png)
+
 「newする場所は1か所！」の体験をここでちょい入れ✨
 
 ```ts
@@ -208,6 +218,8 @@ console.log("追加できたよ〜🎉");
 ---
 
 ## 8) テストが一気に楽になるよ🧪⚡（Vitest例）
+
+![Test Speed](./picture/hex_ts_study_026_test_speed.png)
 
 2026年初め時点で Vitest 4 系が提供されていて、移行ガイドも更新されています。なので「今から始める」なら Vitest 4 前提でOK😊 ([Vitest][2])
 
@@ -247,6 +259,8 @@ describe("AddTodoUseCase", () => {
 ---
 
 ## 9) “Adapterが薄いか”セルフチェック 🥗✅
+
+![Thin Waiter](./picture/hex_ts_study_026_thin_waiter.png)
 
 InMemoryRepoに限らず、Outbound Adapterはこれで判定すると超ラク👇
 

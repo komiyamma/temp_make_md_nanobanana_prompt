@@ -19,6 +19,8 @@
 
 ## 2. なぜ「CLI入力→DTO変換」を Adapter に置くの？🧩
 
+![Adapter Translation](./picture/hex_ts_study_025_adapter_translation.png)
+
 CLI入力って、だいたいこんな “外側都合” のかたまりだよね👇😵‍💫
 
 * 文字列しか来ない（`"123"` とか `"true"` とか）🧻
@@ -49,6 +51,8 @@ ToDoミニアプリのコマンドを、こんな感じにするよ😊
 
 ## 4. パースの道具：Node標準 `parseArgs` を使う 🔧✨
 
+![ParseArgs Machine](./picture/hex_ts_study_025_parse_args.png)
+
 Nodeには **コマンドライン引数を構造化してくれる** `util.parseArgs` があるよ！
 `options / short / strict / positionals` など、欲しい機能がまとまってる🧠✨ ([Node.js][1])
 
@@ -57,6 +61,8 @@ Nodeには **コマンドライン引数を構造化してくれる** `util.pars
 ---
 
 ## 5. DTOってどこに置く？（置き場所のおすすめ）📁🧭
+
+![DTO Location Map](./picture/hex_ts_study_025_dto_location.png)
 
 DTOは「中心が食べる形」だから、**app層（ユースケース寄り）**に置くのが扱いやすいよ✨
 
@@ -92,6 +98,8 @@ export type CompleteTodoDto = {
 
 ### 6-2. バリデーション：Zod で「入口チェック」する 🧪✨
 
+![Zod Validation](./picture/hex_ts_study_025_zod_validation.png)
+
 Zodは **スキーマ（型＋制約）**を作って、入力を検証できるよ😊
 `z.object(...)` みたいに書けるのが特徴✨ ([Zod][2])
 さらに最近は Zod v4 の情報も出てるから、プロジェクトの採用バージョンは固定しておくと安心だよ🧷✨ ([Zod][3])
@@ -115,6 +123,8 @@ export type AddTodoInput = z.infer<typeof addTodoSchema>;
 ---
 
 ### 6-3. コマンドをパースする（`parseArgs`）🔍⌨️
+
+![Command Switch](./picture/hex_ts_study_025_command_switch.png)
 
 `util.parseArgs` は Node公式のドキュメントに仕様がまとまってるよ✨
 `options` を定義して、戻り値の `values / positionals` を使う感じ😊 ([Node.js][1])
@@ -258,6 +268,8 @@ export async function runCli(argv: string[]) {
 
 ### 7-1. ダブルクォート忘れ問題 `"..."` 😇
 
+![Quote Trap](./picture/hex_ts_study_025_quote_trap.png)
+
 PowerShellだとスペース入りは引用符が必要！
 
 * ✅ `--title "牛乳を買う"`
@@ -270,6 +282,8 @@ PowerShellだとスペース入りは引用符が必要！
 ---
 
 ## 8. 「Adapterが太ってない？」チェック🥗⚠️
+
+![Fat Adapter Check](./picture/hex_ts_study_025_fat_adapter_check.png)
 
 この章の CLI Adapter は **薄いほど正義**✨
 

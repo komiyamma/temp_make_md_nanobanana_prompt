@@ -9,6 +9,8 @@ GUIもHTTPもまだいらない！まずは **CLI（コマンド入力）**で�
 
 ## 1) 今日の完成イメージ🎯✨
 
+![CLI Success](./picture/hex_ts_study_024_cli_success.png)
+
 PowerShellでこんな感じに打てるようにするよ👇
 
 * 追加：`npm run cli -- add "牛乳を買う"` 🥛
@@ -16,6 +18,9 @@ PowerShellでこんな感じに打てるようにするよ👇
 * 完了：`npm run cli -- done <id>` ✅
 
 ポイントはこれ👇
+
+![Thin Adapter Layers](./picture/hex_ts_study_024_thin_adapter_layers.png)
+
 Inbound Adapter（CLI）は **薄く**！薄く！薄く！🥗✨
 
 * ✅ 引数を読む（parse）
@@ -78,6 +83,8 @@ npm i -D tsx
 ## 5) CLI Adapter（入口）は「薄く」書く🥗⌨️
 
 ### 5-1. まずはユースケースを“関数”として受け取る🔌✨
+
+![Adapter DI](./picture/hex_ts_study_024_adapter_di.png)
 
 CLIは「中心（ユースケース）をnewしない」。
 **依存は外から渡される**形にしておくと、ヘキサっぽさが一気に出るよ😊🛡️
@@ -193,6 +200,8 @@ export class CliAdapter {
 
 ## 6) `main.ts`：とりあえず動かす簡易組み立て🧩🏗️
 
+![Main Assembly](./picture/hex_ts_study_024_main_assembly.png)
+
 `src/adapters/inbound/cli/main.ts`
 
 ここは2パターン用意するね😊
@@ -304,6 +313,8 @@ npm run cli -- done 1
 
 ### ✅ npm の `--` を忘れる
 
+![NPM Run Trap](./picture/hex_ts_study_024_npm_trap.png)
+
 `npm run cli add "..."` だと、引数がうまく渡らないことがあるよ〜
 👉 **必ず `--` を挟む**：`npm run cli -- add "..."` ✨
 
@@ -328,6 +339,8 @@ CLI Adapterは **定型が多い**からAIが得意だよ😊
 ---
 
 ## 10) “薄いAdapter”セルフチェック✅🥗
+
+![Adapter Check](./picture/hex_ts_study_024_adapter_check.png)
 
 最後にこれ見てOKなら勝ち🎉
 

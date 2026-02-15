@@ -9,6 +9,8 @@
 
 ## 1) 今日のゴール 🎯✨
 
+![File Persistence Ninja](./picture/hex_ts_study_027_file_persistence.png)
+
 できるようになることはこれ👇
 
 * JSONファイル（`todos.json`）に ToDo を保存・読み込みできる📄💾
@@ -19,6 +21,8 @@
 
 ## 2) まず大事な考え方（超短く）🛡️🔌🧩
 
+![Port vs Adapter Role](./picture/hex_ts_study_027_port_adapter_role.png)
+
 * **Port（Repository interface）**：中心が「こうしてね」ってお願いする約束🔌
 * **Adapter（FileRepository）**：その約束を「ファイルI/Oで実現」する変換器🧩
 * Adapterの仕事は **変換＆呼び出し**まで！
@@ -27,6 +31,8 @@
 ---
 
 ## 3) 保存形式を決める（シンプルが最強）📄✨
+
+![Record Format Flattening](./picture/hex_ts_study_027_record_format.png)
 
 今回はこうしよ👇
 
@@ -64,6 +70,8 @@ export interface TodoRepository {
 ---
 
 ### 4-2) FileRepository 本体（JSON読み書き＋安全対策）📄💾🧩
+
+![Write Queue](./picture/hex_ts_study_027_write_queue.png)
 
 `src/adapters/out/file/FileTodoRepository.ts`
 
@@ -159,6 +167,8 @@ export class InfrastructureError extends Error {
 
 #### ここ、めっちゃ大事ポイントだよ〜📌✨
 
+![Safe Write](./picture/hex_ts_study_027_safe_write.png)
+
 * `ENOENT`（ファイル無い）は **初回あるある** → 空配列にするのがやさしい😊
 * JSON壊れた、権限ない、などは **I/O失敗** → `InfrastructureError` で包む🧯
 * 保存は **tmpに書いてから rename** → 途中クラッシュ時に壊れにくい💪✨
@@ -167,6 +177,8 @@ export class InfrastructureError extends Error {
 ---
 
 ## 5) Composition Root で差し替える 🧩🏗️✨
+
+![Repository Swap](./picture/hex_ts_study_027_repo_swap.png)
 
 「InMemory から File に変える」のはここだけにしてね👇
 
@@ -204,6 +216,8 @@ CLIを作ってる前提だと、こんな流れ👇
 ---
 
 ## 7) Adapter が “太ってない？”チェック 🥗⚠️✅
+
+![Fat Adapter Check 2](./picture/hex_ts_study_027_fat_check.png)
 
 **NG（太る）**😱
 
