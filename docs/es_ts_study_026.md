@@ -10,6 +10,8 @@
 
 ## まずイメージ🌈📸
 
+![Save Point Metaphor](./picture/es_ts_study_026_save_point.png)
+
 スナップショットは、ざっくり言うと **セーブデータ** だよ🎮✨
 
 * **イベント列**＝プレイ履歴（最初から再生すると長い）📼
@@ -23,6 +25,8 @@
 ---
 
 ## スナップショットの「最小要件」✅📦
+
+![Snapshot Structure](./picture/es_ts_study_026_structure.png)
 
 最小で必要なのはこれだけ👇
 
@@ -67,6 +71,8 @@ export interface SnapshotStore<TState> {
 ---
 
 ## 2) 最小SnapshotStore（インメモリ）📦🧠
+
+![InMemory Snapshot Store](./picture/es_ts_study_026_inmemory_store.png)
 
 「最新だけ保存」でOK🙆‍♀️（まずは最小！）
 
@@ -157,6 +163,8 @@ export class InMemoryEventStore implements EventStore {
 ---
 
 ## 4) 集約（カート）を「スナップ対応」にする🛒📸
+
+![State vs Event](./picture/es_ts_study_026_state_vs_event.png)
 
 ここで大事なのは👇
 
@@ -262,6 +270,8 @@ function structuredCloneSafe<T>(v: T): T {
 ---
 
 ## 5) ここが本題：Loadを「スナップ→残りイベント」にする🔁📸
+
+![Repository Load Flow](./picture/es_ts_study_026_repo_flow.png)
 
 流れはこれ👇
 
@@ -442,6 +452,8 @@ main().catch(console.error);
 ---
 
 ## 7) テスト（Given-When-Then）🧪🌸
+
+![Test Scenario](./picture/es_ts_study_026_test_case.png)
 
 ここでは「状態が一致する」と「Apply回数が減る」をチェックするよ✅
 

@@ -57,6 +57,8 @@ sequenceDiagram
 
 ## 3. ただし注意！デュアルライト問題 🧨✍️
 
+![Dual Write Problem](./picture/es_ts_study_029_dual_write.png)
+
 同期更新はラクなんだけど、現実では「イベント保存」と「Projection保存」が**別の保存先**になりがち。
 このとき **片方だけ成功** すると、データがズレる事故が起きるよ😱
 
@@ -73,6 +75,8 @@ sequenceDiagram
 
 ## 4. 今回作るProjectionの例 🛒📋
 
+![Cart Summary DTO](./picture/es_ts_study_029_cart_summary.png)
+
 「カート一覧用Projection」を作るね😊
 カートIDごとに、こんな情報が欲しいとするよ👇
 
@@ -87,6 +91,8 @@ sequenceDiagram
 ---
 
 ## 5. 実装の全体像 🧩🗺️
+
+![Implementation Components](./picture/es_ts_study_029_components.png)
 
 ざっくり構造はこう👇
 
@@ -231,6 +237,8 @@ export class InMemoryCartSummaryRepo {
 
 ## 7.3 Projector（イベントを食べてProjectionを更新）🍴🔎
 
+![Projector Logic Flow](./picture/es_ts_study_029_projector_logic.png)
+
 ポイントは2つだよ😊
 
 * **イベントの順番（version）通りに反映**する
@@ -324,6 +332,8 @@ export class CartSummaryProjector {
 
 ## 8. CommandHandlerに同期Projection更新を組み込む 📮⚡
 
+![Handler Execution Steps](./picture/es_ts_study_029_handler_flow.png)
+
 超大事ルール👇
 **Appendが成功した後**に、**Appendされたイベントだけ**をProjectorへ渡すよ✅
 
@@ -409,6 +419,8 @@ describe("同期Projection", () => {
 ---
 
 ## 10. ミニ演習 ✍️😊
+
+![ItemKinds Logic](./picture/es_ts_study_029_itemkinds_logic.png)
 
 ## 演習A：itemKindsをちゃんと計算しよう🍎🍊
 

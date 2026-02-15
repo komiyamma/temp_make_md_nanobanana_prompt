@@ -4,6 +4,8 @@
 
 ## 1) Projectionは「表示しやすい形の別データ」だよ😊🧺
 
+![CQRS Balance](./picture/es_ts_study_028_cqrs_scale.png)
+
 イベントソーシングでは、真実（ソース・オブ・トゥルース）は **イベントの列（出来事の履歴）** です📜✨
 でも画面や検索で「毎回イベント全部を読んで計算」するのは、だんだんキツくなります😵‍💫
 
@@ -41,6 +43,8 @@ graph LR
 
 ## 3) なんでProjectionが必要になるの？（嬉しさ）🎁😊
 
+![Projection Conveyor Belt](./picture/es_ts_study_028_flow_metaphor.png)
+
 ## ① 画面がラクになる🖥️✨
 
 画面って「一覧」「検索」「集計」みたいな **読みやすさ優先** が多いよね📋🔎
@@ -53,6 +57,8 @@ Projectionで **表示に必要な形に“先に整形”** しておくと、U
 
 ## ③ 追加の画面・集計が増えても“作り足せる”🔁✨
 
+![One Event Stream, Many Views](./picture/es_ts_study_028_one_to_many.png)
+
 イベントは「履歴」なので、あとから「新しい読みモデル」を作りたくなったら
 **イベントを最初から流して（リプレイして）作り直せる** のが強いです🔁🧹
 そもそもイベントソーシングは、変更をイベント列として保存し、必要ならそこから状態を再構成できる、という考え方です📜🧠 ([martinfowler.com][3])
@@ -60,6 +66,8 @@ Projectionで **表示に必要な形に“先に整形”** しておくと、U
 ---
 
 ## 4) ここでありがちな勘違い（先に潰す）🧯😆
+
+![Common Mistakes](./picture/es_ts_study_028_mistakes.png)
 
 ## ❌ 勘違いA：Projection = “DBのVIEW” でしょ？
 
@@ -81,6 +89,8 @@ Projectionは **イベントを材料にして作る「表示用データ」そ�
 ---
 
 ## 5) Projection設計のいちばん簡単な手順（迷ったらコレ）🧩😊
+
+![Design Steps Flow](./picture/es_ts_study_028_design_steps.png)
 
 ## Step 1：まず“画面で欲しいもの”を箇条書き📝🖥️
 
@@ -115,6 +125,8 @@ Projectionは **イベントを材料にして作る「表示用データ」そ�
 ---
 
 ## 6) “畳み込み（reduce）”で理解するProjection（ミニコード）🧠🔁
+
+![Reduce Operation](./picture/es_ts_study_028_reduce_visual.png)
 
 イベントが並んでいて、それを左から順に適用して「表示用の状態」を作る…
 これは **reduce（畳み込み）** のノリです✨

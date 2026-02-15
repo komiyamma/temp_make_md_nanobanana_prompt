@@ -10,6 +10,8 @@
 
 ## 1. まずは“同期Projection”の限界を思い出そ〜😺🧱
 
+![Sync vs Async Comparison](./picture/es_ts_study_031_sync_vs_async.png)
+
 前章（29〜30章）では、イベントをAppendした直後にProjectionも更新してましたよね⚡
 
 でも同期更新って、地味にツラいことがあるの👇
@@ -75,6 +77,8 @@ Projection更新は **別ルート**（キュー＋Projector）で追いかけ�
 
 ## 3. 最終的整合性ってなに？😳🔁
 
+![Eventual Consistency](./picture/es_ts_study_031_eventual_consistency.png)
+
 非同期にするとこうなります👇
 
 * 書いた直後：Queryが古いデータを返すことがある🙈（まだ投影が追いついてない）
@@ -124,6 +128,8 @@ src/
 ---
 
 ## 5-2. 疑似キュー（AsyncQueue）を作る📬🧺
+
+![Event Queue](./picture/es_ts_study_031_queue_metaphor.png)
 
 「入れる（enqueue）」と「取り出す（dequeue）」だけの最小キューです😊
 取り出しは「無ければ待つ」方式にします⏳
@@ -354,6 +360,8 @@ projector.stop();
 
 ## 7. 遅延を“いい感じ”に見せる定番アイデア集✨🧠
 
+![Async UX Patterns](./picture/es_ts_study_031_ux_strategies.png)
+
 ## 7-1. 「更新中…」を出す🔄🫧
 
 * 画面のどこかに「最終更新: 12:34:56」みたいに出す⏱️
@@ -382,11 +390,15 @@ projector.stop();
 
 ## 8-2. 重複が来る（At-least-once）🔁😳
 
+![Idempotency Check](./picture/es_ts_study_031_idempotency_gate.png)
+
 * キューは「たまに同じメッセージが複数回届く」前提になりがち
 * だから投影側は**冪等（同じのが来ても大丈夫）**が必要
 * 今回は `eventId` のSetで“入口”だけ体験したよ🧷✨
 
 ## 8-3. 失敗イベント（Poison）☠️📩
+
+![Poison Pill Event](./picture/es_ts_study_031_poison_pill.png)
 
 * 1件が失敗すると、その先が詰まる…が起きがち
 * だから現実は「隔離（DLQ）」や「リトライ回数制限」などを入れる🧯
