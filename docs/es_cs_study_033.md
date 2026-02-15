@@ -31,6 +31,9 @@ classDiagram
 
 ## テーブル設計（最小構成）📐
 
+![Table Structure](./picture/es_cs_study_033_events_table_structure.png)
+
+
 * `stream_id`：どの集約（Aggregate）の履歴？（＝ストリームID）
 * `version`：そのストリーム内の連番（1,2,3…）🔢
 * `event_id`：イベント自体のID（重複防止にも使える）🪪
@@ -52,9 +55,15 @@ SQLiteはファイルDBだから、並行アクセスで「database is locked」
 
 ## ✅ WALモード（読み取りと書き込みの同居がしやすい）📖✍️
 
+![WAL Mode](./picture/es_cs_study_033_wal_mode_visual.png)
+
+
 `PRAGMA journal_mode=WAL;` で有効化できるよ。([SQLite][1])
 
 ## ✅ busy_timeout（ロック中はちょっと待つ）⏳
+
+![Busy Timeout](./picture/es_cs_study_033_busy_timeout_wait.png)
+
 
 SQLite公式APIとして「ロック中は指定ms待つ」仕組みがあるよ。([SQLite][2])
 
@@ -127,6 +136,9 @@ public sealed class ConcurrencyException : Exception
 
 ## 5-2) 保存するイベントの形（DB行）🧱
 
+![Stored Event Mapping](./picture/es_cs_study_033_stored_event_mapping.png)
+
+
 ```csharp
 public sealed record StoredEvent(
     string StreamId,
@@ -162,6 +174,12 @@ public interface IEventStore
 ---
 
 ## 5-4) SQLite実装（初期化＋PRAGMA＋Append＋Read）🗄️✨
+
+![Concurrency Exception](./picture/es_cs_study_033_concurrency_exception_trigger.png)
+
+
+![Transaction Flow](./picture/es_cs_study_033_transaction_flow_metaphor.png)
+
 
 ```mermaid
 flowchart TD

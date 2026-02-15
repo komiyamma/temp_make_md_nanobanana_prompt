@@ -10,6 +10,9 @@
 
 # 1. Projection（読みモデル）を同期更新するってどういうこと？🔎⚡
 
+![同期更新](./picture/es_cs_study_029_projection_lag.png)
+
+
 ![同期更新の流れ](./picture/es_cs_study_029_sync_projection.png)
 
 ```mermaid
@@ -42,6 +45,9 @@ sequenceDiagram
 # 2. 同期Projectionのメリット・注意点 🌟⚠️
 
 ## メリット 🌈
+
+![Read-Your-Writes](./picture/es_cs_study_029_write_read_cycle.png)
+
 
 * **すぐ読める（Read-your-writes）**：保存直後に一覧や詳細が最新で出る✨
 * **学習にめちゃ向いてる**：流れが一直線で理解しやすい😊
@@ -182,6 +188,9 @@ public sealed record CartSummaryView(
 ```
 
 ### 7-2. Projectionストア（インメモリ）＋チェックポイント🔖
+
+![Version Check](./picture/es_cs_study_029_version_check_logic.png)
+
 
 「二重反映しない」ために、**各Streamの最後に処理したVersion**を覚えるよ😊
 
@@ -349,6 +358,9 @@ flowchart TD
 
 ### パターンB：EventStore側で “Append+Project” を一体化 ✅（事故りにくい）
 
+![Transaction Scope](./picture/es_cs_study_029_transaction_scope.png)
+
+
 「イベント保存だけ成功」事故を減らすには、**同じ“単位”として扱う**のが強い💪
 （RDBなら同一トランザクション化が王道だよ）([Event-Driven][1])
 
@@ -456,6 +468,9 @@ public sealed class ProjectionSyncTests
 ## 13. よくある落とし穴あるある 😵‍💫🕳️
 
 ### 1) Projection更新が重くてレスポンスが遅い⌛
+
+![Projection Explosion](./picture/es_cs_study_029_projection_explosion.png)
+
 
 同期は **“その場で全部やる”**ので、更新が重いと即つらい💦
 ➡️ 対策：Projectionを **小さく・速く**、必要なら非同期へ（次の章）📬⏳

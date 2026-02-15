@@ -53,6 +53,9 @@ ASP.NET Coreでは新規プロジェクトは **Minimal APIs** が推奨され�
 
 ## 3. DTO設計：Projectionをそのまま返さない🍱🙅‍♀️
 
+![DTO vs Projection](./picture/es_cs_study_030_dto_vs_projection.png)
+
+
 Query APIで返すのは **DTO（表示・通信に最適化した形）** が基本だよ😊✨
 理由👇
 
@@ -82,6 +85,12 @@ Query APIで返すのは **DTO（表示・通信に最適化した形）** が�
 > Projection（読みモデル）の作り方は前章（Projection更新）でやった想定で、ここでは **“読むためのAPI”** を作るよ〜📮👀
 
 ### 5.1 Program.cs（このまま貼って動く最小例）🚀
+
+![OpenAPI Blueprint](./picture/es_cs_study_030_openapi_blueprint.png)
+
+
+![Minimal API Structure](./picture/es_cs_study_030_minimal_api_structure.png)
+
 
 ```csharp
 using System.Collections.Concurrent;
@@ -282,6 +291,9 @@ public sealed class InMemoryCartReadModelStore : ICartReadModelStore
 }
 ```
 
+
+![List Filtering](./picture/es_cs_study_030_list_filtering.png)
+
 ### 5.2 ここで使ってる“最新ポイント”✨
 
 * **TypedResultsが推奨**（`Results`より型がしっかりして、OpenAPIや戻り値も綺麗✨） ([Microsoft Learn][1])
@@ -320,6 +332,9 @@ public sealed class InMemoryCartReadModelStore : ICartReadModelStore
   * `[AsParameters]` で受けて、フィルタする
 
 ### 演習B：一覧を「カーソルページングっぽく」する🧵📌
+
+![Cursor Paging](./picture/es_cs_study_030_paging_cursor.png)
+
 
 * `NextCursor` を「最後に返した `UpdatedAt`」にしてみよう✨
   （本格的には検索用Projectionを作ると超強い💪）

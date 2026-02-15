@@ -10,6 +10,9 @@
 
 # 1. 同期更新と非同期更新、何が違うの？⚡🆚⏳
 
+![Sync vs Async](./picture/es_cs_study_031_sync_vs_async_comparison.png)
+
+
 ![非同期更新のイメージ](./picture/es_cs_study_031_async_projection.png)
 
 ```mermaid
@@ -58,6 +61,9 @@ sequenceDiagram
 ---
 
 # 2. 「最終的整合性」って、どんな体験？🧠🍀
+
+![Eventual Consistency](./picture/es_cs_study_031_eventual_consistency_clock.png)
+
 
 イメージはこれ👇
 
@@ -108,6 +114,9 @@ public sealed record ProjectionWorkItem(
 ---
 
 ## 4.2 キュー本体（インプロセス疑似キュー）📦
+
+![Channel Queue](./picture/es_cs_study_031_channel_queue_structure.png)
+
 
 `Channel<T>` を使うと、アプリ内で安全にキューが作れるよ✨
 （「逐次処理のキュー」例は公式のHosted Serviceサンプルでも紹介されてるよ） ([Microsoft Learn][1])
@@ -182,6 +191,9 @@ public sealed class TodoListReadModelStore
 
 ## 4.4 Projector（イベント→読みモデル更新）🔎✨
 
+![Idempotency Check](./picture/es_cs_study_031_idempotency_check_logic.png)
+
+
 ```csharp
 using System.Text.Json;
 
@@ -233,6 +245,9 @@ public sealed class TodoProjector : ITodoProjector
 ---
 
 ## 4.5 投影ワーカー（BackgroundService）👷‍♀️⏳
+
+![Worker Loop](./picture/es_cs_study_031_worker_process.png)
+
 
 キューを監視して、入ってきた仕事を1つずつ処理するよ📬
 `BackgroundService` はWorker/バックグラウンド処理の基本として公式でも案内されてるよ🧩 ([Microsoft Learn][1])
@@ -300,6 +315,9 @@ public sealed class ProjectionStatusStore
 ---
 
 ## 4.6 最小APIでつなぐ（書き込み→キュー投入→読み取り）🧩🌸
+
+![Polling Status](./picture/es_cs_study_031_polling_status_api.png)
+
 
 Minimal APIの基本はこの流れでOKだよ〜というのが公式チュートリアルにもあるやつ📘 ([Microsoft Learn][3])
 （.NET 10 ではMinimal APIの検証まわりも強化されてるよ📌） ([Microsoft Learn][4])

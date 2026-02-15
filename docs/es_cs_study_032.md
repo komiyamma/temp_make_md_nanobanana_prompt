@@ -10,6 +10,9 @@
 
 # 1. Projectionって「作り直せる」前提のデータだよ🧠✨
 
+![Projection Lifecycle](./picture/es_cs_study_032_projection_lifecycle.png)
+
+
 イベントソーシングでは、イベントは「起きた事実」を積む方式で、そこから状態や読みモデルを再生成できます。つまり Projection は **派生物** なので、最悪 **消して再構築**できるのが強みです😊🧹🔁 ([Microsoft Learn][1])
 
 ---
@@ -31,6 +34,9 @@
 ---
 
 # 3. リプレイ再構築の3つのレベル🎚️（学習→実務）
+
+![Rebuild Levels](./picture/es_cs_study_032_rebuild_levels.png)
+
 
 ![再構築のイメージ](./picture/es_cs_study_032_rebuild.png)
 
@@ -293,6 +299,9 @@ public sealed record ItemRemoved(string Sku);
 
 ## 7.1 チェックポイント（どこまで処理したか）🏁
 
+![Checkpoint](./picture/es_cs_study_032_checkpoint_mechanism.png)
+
+
 最小は「最後に処理したPosition」を保存すればOKです。
 
 ```csharp
@@ -322,6 +331,9 @@ public sealed class InMemoryCheckpointStore : ICheckpointStore
 ---
 
 ## 7.2 Rebuild（全消し→全流し）🚿➡️🏗️
+
+![Rebuild Flow](./picture/es_cs_study_032_rebuild_flow.png)
+
 
 ```mermaid
 flowchart TD
@@ -448,6 +460,9 @@ public class ProjectionRebuildTests
 # 10. よくある落とし穴（ここだけ見れば事故減る）🧯✨
 
 ## 落とし穴1：Projectionで副作用しちゃう📣💥
+
+![Bad Side Effect](./picture/es_cs_study_032_bad_side_effect.png)
+
 
 * 再構築で過去イベントを何千件も流す
 * そのたびに「通知メール送信」みたいなのをすると地獄📩😱

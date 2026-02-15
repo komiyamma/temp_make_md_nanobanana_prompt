@@ -10,6 +10,9 @@
 
 # 1) Projectionってなに？🧁🔎
 
+![Projectionの概念](./picture/es_cs_study_028_projection_concept.png)
+
+
 イベントソーシングでは「真実」は **イベント（出来事の履歴）** だよね📜✨
 でも…イベント列って、そのままだと **画面表示や検索に向いてない**ことが多いの🥺💦
 
@@ -82,6 +85,9 @@ MicrosoftのCQRS解説でも「イベントが読みモデルの入力になっ�
 ---
 
 # 4) Projection設計のコツ：イベントから作るんじゃなく、画面から逆算🪞✨
+
+![画面から逆算](./picture/es_cs_study_028_screen_to_projection.png)
+
 
 初心者がやりがちなミス：
 「イベントを見て、なんとなくProjection作る」😵‍💫
@@ -198,6 +204,9 @@ public sealed class CartSummaryReadModel
 
 ## 6-3. Projector（イベント→Read Model更新）🔁🧰
 
+![Projector Engine](./picture/es_cs_study_028_projector_engine.png)
+
+
 「Read Model専用の更新処理」って感じだよ😊✨
 
 ```csharp
@@ -272,6 +281,9 @@ public sealed class CartSummaryProjector
 
 ### 🔥ここで大事ポイント
 
+![情報不足](./picture/es_cs_study_028_missing_data_problem.png)
+
+
 `QuantityChanged` や `ItemRemoved` を正しく一覧に反映するには、**「その商品の現在数量」みたいな状態が必要**になることが多いのね。
 だから実務ではよく👇のどっちかをやるよ💡
 
@@ -284,6 +296,9 @@ Projectionは「質問に答えるために、必要な最小状態を持ってO
 ---
 
 # 7) テストで「Projectionが更新される」を確認🧪✅
+
+![Projectionのテスト](./picture/es_cs_study_028_testing_projection.png)
+
 
 Projectionはバグると画面が壊れるので、**軽いテスト**がめちゃ効くよ〜！💕
 
