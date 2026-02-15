@@ -31,6 +31,7 @@ CampusCafeでありがちな事故👇
 ## 20.2 ステートマシンが冪等性に効く理由🛡️🚦
 
 ![cap_cs_study_020_state_machine_guard](./picture/cap_cs_study_020_state_machine_guard.png)
+![cap_cs_study_020_guard_logic](./picture/cap_cs_study_020_guard_logic.png)
 
 冪等性って「同じことが複数回起きても結果が壊れない」だったよね🙂
 でも現実は、冪等キーだけでは守りきれない場面があるの。
@@ -50,6 +51,8 @@ CampusCafeでありがちな事故👇
 
 ## 20.3 CampusCafeの注文状態を決めよう☕📱📦
 
+![cap_cs_study_020_state_icons](./picture/cap_cs_study_020_state_icons.png)
+
 まずは“増やしすぎない”がコツだよ〜😺✨
 今回はわかりやすさ重視でこの7つ👇
 
@@ -63,6 +66,8 @@ CampusCafeでありがちな事故👇
 
 > 💡「Cancelled / Failed / Completed」は **終端状態**（Terminal）にすると楽😊
 > ここに入ったら基本 “もう動かさない” 🚪🔒
+
+![cap_cs_study_020_terminal_lock](./picture/cap_cs_study_020_terminal_lock.png)
 
 ---
 
@@ -154,6 +159,8 @@ public enum OrderStatus
 
 ### 20.6.2 “状態遷移”をDB条件付き更新で守る🗃️🛡️
 
+![cap_cs_study_020_db_update](./picture/cap_cs_study_020_db_update.png)
+
 EF Core の「条件に合う行だけ更新」を使うと、すっごく安全にできるよ😊
 （EF Core 10 は .NET 10 向けで、2025年11月のLTSリリース） ([Microsoft Learn][2])
 
@@ -191,6 +198,8 @@ public sealed class OrdersService
   → **二重適用が物理的に起きない**🎉🛡️
 
 ### 20.6.3 API側は「2回目でも落とさない」がコツ😊🌸
+
+![cap_cs_study_020_gentle_ignore](./picture/cap_cs_study_020_gentle_ignore.png)
 
 イベントが2回届くのは“正常”なので、2回目は穏やかに扱うと強いよ〜📩✨
 
@@ -239,6 +248,8 @@ app.MapPost("/orders/{id:guid}/payment-succeeded", async (
 ---
 
 ## 20.8 テスト：2回来ても壊れないを証明✅🧪
+
+![cap_cs_study_020_test_scenario](./picture/cap_cs_study_020_test_scenario.png)
 
 ポイントは2つだよ👇
 

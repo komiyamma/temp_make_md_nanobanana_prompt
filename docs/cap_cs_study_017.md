@@ -2,6 +2,8 @@
 
 ## 1) この章でつかむ“肌感覚”🎯✨
 
+![cap_cs_study_017_timeout_is_unknown](./picture/cap_cs_study_017_timeout_is_unknown.png)
+
 分散の世界では、**「タイムアウト＝失敗」じゃない**ことが普通に起きます😳💦
 むしろタイムアウトは、だいたいこういう意味です👇
 
@@ -39,6 +41,8 @@
 ---
 
 ## 3) まず超重要：結果は3種類あるよ🧠🧊
+
+![cap_cs_study_017_three_states](./picture/cap_cs_study_017_three_states.png)
 
 分散あるあるを雑にまとめると👇
 
@@ -107,6 +111,8 @@ CampusCafeでおすすめの考え方を、実戦寄りにまとめるね😊�
 
 ### パターン①：同期で確定させない（202 Acceptedに逃がす）🏃‍♀️💨
 
+![cap_cs_study_017_202_accepted](./picture/cap_cs_study_017_202_accepted.png)
+
 **注文は「受付」だけ先に返す**✨
 
 * 返す：`orderId`、状態=`Processing`
@@ -116,6 +122,8 @@ CampusCafeでおすすめの考え方を、実戦寄りにまとめるね😊�
 これで、タイムアウトしても **“失敗”って言い切らなくて済む**🙆‍♀️🌸
 
 ### パターン②：結果照会APIを用意する（ポーリングOK）🔄📡
+
+![cap_cs_study_017_polling](./picture/cap_cs_study_017_polling.png)
 
 `GET /orders/{orderId}` みたいにして、状態を取りにいけるようにする✅
 UIは「最新状態を取得」ボタンがあるだけでも安心感が爆上がり💖✨
@@ -155,6 +163,8 @@ UIは「最新状態を取得」ボタンがあるだけでも安心感が爆上
 ---
 
 ## 6) UXの勝ちパターン：タイムアウト時に“安心”を作る💬🌸✨
+
+![cap_cs_study_017_friendly_ux](./picture/cap_cs_study_017_friendly_ux.png)
 
 タイムアウトって、ユーザーはめちゃ不安になります🥺💦
 だから「言い方」で救えるよ〜🫶
@@ -327,6 +337,8 @@ Invoke-RestMethod "$base/orders/<orderId>"
 HTTPだけじゃなく、イベント駆動でも「来ない/遅い」は起きるよ〜📨🐢
 
 ### DLQ（Dead-letter queue）って？📮
+
+![cap_cs_study_017_dlq_box](./picture/cap_cs_study_017_dlq_box.png)
 
 「配れない」「処理できない」メッセージを隔離して置いておく箱だよ🧰
 後で調査して、必要なら再投入できる設計にするのが王道✨ ([Microsoft Learn][1])
