@@ -1,6 +1,6 @@
-﻿# 第45章：自主課題（提出形式まで）📝🎀
+# 第45章：自主課題（提出形式まで）📝🎀
 
-![hex_ts_study_045[(./picture/hex_ts_study_045_final_assessment_trophy.png)
+![hex_ts_study_045](./picture/hex_ts_study_045_final_assessment_trophy.png)
 
 # 第45章：自主課題（提出形式つき）📝🎀
 
@@ -10,6 +10,8 @@
 ---
 
 ## 0) まず今日の“提出物”のルールだよ📦✨
+
+![hex_ts_study_045](./picture/hex_ts_study_045_submission_box.png)
 
 ### ✅ 提出物（最低限セット）
 
@@ -67,6 +69,8 @@
 
 ## 2) 共通の合格ライン（A/B/Cぜんぶ同じ）🛡️🔥
 
+![hex_ts_study_045](./picture/hex_ts_study_045_passing_shield.png)
+
 ### ✅ 合格ライン 5つ✨
 
 1. **domain/app が adapters を import しない** 🙅‍♀️
@@ -83,6 +87,8 @@
 ---
 
 ## 3) 課題A：Repository を “DB版”に差し替え🔁💾（中心は無修正で！）
+
+![hex_ts_study_045](./picture/hex_ts_study_045_repo_swap_action.png)
 
 ### 🎯 ゴール
 
@@ -134,6 +140,8 @@
 
 ## 4) 課題B：通知（ダミー）Port を追加📨🤖（Port設計の練習！）
 
+![hex_ts_study_045](./picture/hex_ts_study_045_notification_socket.png)
+
 ### 🎯 ゴール
 
 「中心が `console.log` や Slack API を知らずに、通知できる」✨
@@ -172,6 +180,8 @@
 ---
 
 ## 5) 課題C：状態追加で “状態機械の入口” を体験🚦✨
+
+![hex_ts_study_045](./picture/hex_ts_study_045_state_machine_core.png)
 
 ### 🎯 ゴール
 
