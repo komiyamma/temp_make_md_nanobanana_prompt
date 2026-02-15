@@ -12,6 +12,9 @@ AIを「便利な相棒💡」として使いつつ、**設計の最終判断は
 
 ## 1) 役割分担ルール：AIは案出し、人間は設計判断🧑‍💻🤖
 
+![AI Pros and Cons](./picture/hc_lc_ts_study_001_ai_pros_cons.png)
+
+
 AIはすごく強い👇
 
 * 代替案をたくさん出す💡
@@ -29,6 +32,9 @@ AIはすごく強い👇
 ---
 
 ## 2) 最終判断の2大チェック✅（これだけ覚えればOK）
+
+![Judgment Checklist](./picture/hc_lc_ts_study_001_judgment_checklist.png)
+
 
 AIの提案を見たら、まずこれをチェックするよ〜👀✨
 
@@ -55,6 +61,9 @@ AIの提案を見たら、まずこれをチェックするよ〜👀✨
 ---
 
 ## 3) 1章1〜2プロンプト🎀（混乱しないための鉄則）
+
+![Prompt Strategy](./picture/hc_lc_ts_study_001_prompt_strategy.png)
+
 
 この教材では、各章でAIに投げるプロンプトは **1〜2個まで**に絞るよ🙆‍♀️✨
 理由：AIに聞きすぎると「案が多すぎて迷子」になりがちだから🧭💦
@@ -84,6 +93,9 @@ AIの提案を見たら、まずこれをチェックするよ〜👀✨
 ---
 
 ## 5) “採用/保留/却下” 仕分け術（この章のコア）📝✨
+
+![Triage Flow](./picture/hc_lc_ts_study_001_triage_flow.png)
+
 
 AIの提案は、こうやって仕分けるのが超おすすめだよ🎀
 
@@ -136,6 +148,9 @@ flowchart TD
 
 ### 6-1) ミニ題材（わざと混ぜたコード🍲💥）
 
+![Messy Code](./picture/hc_lc_ts_study_001_messy_code.png)
+
+
 「ユーザーを取得して、名前を整形して、ログも出す」…全部ごっちゃにした例😇
 
 ```ts
@@ -173,6 +188,9 @@ AIにこう聞く👇
 ```
 
 #### （例）AIが出しがちな分割案📦✨
+
+![Clean Separation](./picture/hc_lc_ts_study_001_clean_separation.png)
+
 
 * `src/infra/userApi.ts`：fetchしてJSONを返す🌐
 * `src/domain/userProfile.ts`：表示名整形やVIP判定🧠

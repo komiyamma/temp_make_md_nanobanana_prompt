@@ -77,6 +77,9 @@ flowchart LR
 
 ## 4) “小さく始める”なら、まずフォルダ分けでOK📁🌱
 
+![Folder Structure](./picture/hc_lc_cs_study_016_folder_structure.png)
+
+
 最初から複数プロジェクトに分けなくて大丈夫🙆‍♀️
 まずは 1プロジェクトの中をこう分けるのが超おすすめ👇
 
@@ -98,6 +101,9 @@ MyApp/
 ---
 
 ## 5) 公開面（public）を絞ると、壊れにくくなる🔒✨
+
+![Public vs Internal](./picture/hc_lc_cs_study_016_public_vs_internal.png)
+
 
 プロジェクトが壊れやすくなる原因の1つが、
 **なんでも public にしちゃう問題**😇💦
@@ -129,6 +135,9 @@ C# は「トップレベル（名前空間直下）の型」は public / interna
 ---
 
 ### Step 2：Domain（本体）に “ルール” を閉じ込める💎🔒
+
+![Domain Rules](./picture/hc_lc_cs_study_016_domain_rules.png)
+
 
 例：ToDo は「締切が過去なら登録できない」とか「完了したら完了日時を持つ」とかね😊
 
@@ -166,6 +175,9 @@ public sealed class TodoItem
 ---
 
 ### Step 3：Application に “やりたいことの流れ” を置く🎬✨
+
+![Application Flow](./picture/hc_lc_cs_study_016_application_flow.png)
+
 
 Application は「手順の司令塔」👑
 ここで “外の世界” は **インターフェイス（契約）** にするよ🔌✨
@@ -217,6 +229,9 @@ public sealed class AddTodoUseCase
 
 ### Step 4：Infrastructure に “外の世界の実装” を置く🔌🌍
 
+![Infrastructure Implementation](./picture/hc_lc_cs_study_016_infra_impl.png)
+
+
 ここで初めて「実際の時計」「実際の保存先」を書くよ〜🧱✨
 
 ```csharp
@@ -249,6 +264,9 @@ public sealed class InMemoryTodoRepository : MyApp.Application.ITodoRepository
 ---
 
 ### Step 5：UI は “組み立て役（Composition Root）” を持つ🖥️🏗️
+
+![Composition Root](./picture/hc_lc_cs_study_016_composition_root.png)
+
 
 最後に UI 側で「パーツを組み立てて」動かすよ〜😊✨
 
