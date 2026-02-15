@@ -1,4 +1,4 @@
-﻿# 第29章：HTTP導入①：ルーティング→ユースケース呼ぶだけ 🚪🌐
+# 第29章：HTTP導入①：ルーティング→ユースケース呼ぶだけ 🚪🌐
 
 ![hex_ts_study_029[(./picture/hex_ts_study_029_http_adapter_express.png)
 
@@ -18,6 +18,8 @@ CLIで動いてる中心（ユースケース/ドメイン）はそのままに�
 ---
 
 ## 2 今回の方針 合言葉はこれ 🗣️✨
+
+![Controller Role](./picture/hex_ts_study_029_controller_role.png)
 
 * **Controllerは翻訳係**🧩
   「HTTPの世界 → DTO → ユースケース呼ぶ → 返す」だけ！
@@ -65,6 +67,8 @@ npm i -D @types/express tsx
 
 ## 6 フォルダ配置はここに置く 📁🧭
 
+![HTTP Folder Structure](./picture/hex_ts_study_029_http_folder.png)
+
 この章で増えるのは「HTTPの入口」だけ！
 
 ```txt
@@ -83,6 +87,8 @@ src/
 ## 7 コード 入口の本体を作る 🧩🌐
 
 ### 7.1 ルーター todoRoutes.ts 🚪➡️🧠
+
+![Router Logic Flow](./picture/hex_ts_study_029_router_flow.png)
 
 ポイント：**ルートの中でやるのは3つだけ**
 ① 受け取る → ② ユースケース呼ぶ → ③ 返す
@@ -138,6 +144,8 @@ export function createTodoRouter(deps: {
 
 ### 7.2 アプリ組み立て createHttpApp.ts 🧩🏗️
 
+![Express App Assembly](./picture/hex_ts_study_029_app_assembly.png)
+
 ```ts
 // src/adapters/inbound/http/createHttpApp.ts
 import express from "express";
@@ -163,6 +171,8 @@ export function createHttpApp(deps: Parameters<typeof createTodoRouter>[0]) {
 ---
 
 ### 7.3 エラーミドルウェア errorMiddleware.ts 🧯✨
+
+![Error Middleware](./picture/hex_ts_study_029_error_catcher.png)
 
 ここも「薄く」ね🥗
 （本格エラー設計は後の章でやるけど、最低限あると安心）
@@ -247,6 +257,8 @@ curl.exe -X POST http://localhost:3000/todos/123/complete
 
 ## 10 Controllerが薄いかチェックする ✅🥗✨
 
+![Thin Controller Check](./picture/hex_ts_study_029_thin_controller.png)
+
 ControllerでやってOK👇
 
 * ✅ `req` から必要情報を拾う
@@ -286,6 +298,8 @@ express型(Request/Response)が中心へ漏れていないかも確認して。
 ---
 
 ## 12 まとめ 🎁💕
+
+![HTTP Adapter Summary](./picture/hex_ts_study_029_http_plug.png)
 
 * HTTPは **Inbound Adapter** として追加するだけ🌐🔌
 * ルーティングは **ユースケース呼ぶだけ**にして薄く🥗✨

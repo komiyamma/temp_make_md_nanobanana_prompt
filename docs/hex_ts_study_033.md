@@ -1,4 +1,4 @@
-﻿# 第33章：エラー設計①：中心のエラー（仕様）📌😌
+# 第33章：エラー設計①：中心のエラー（仕様）📌😌
 
 ![hex_ts_study_033[(./picture/hex_ts_study_033_handling_domain_errors.png)
 
@@ -22,6 +22,8 @@
 ---
 
 ## 2) まず分けよう！エラーは2種類だけでOK😊✌️
+
+![Two Error Types](./picture/hex_ts_study_033_two_error_types.png)
 
 ### A. 仕様エラー（中心のエラー）📌
 
@@ -47,6 +49,8 @@
 ---
 
 ## 3) 方針：中心は「Resultで返す」🧯✨（投げ散らかさない）
+
+![Result vs Exception](./picture/hex_ts_study_033_result_vs_exception.png)
 
 中心でおすすめはこれ👇
 
@@ -83,6 +87,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 
 ## 5) 実装：中心のエラーを「判別可能ユニオン」で作る🔖✨
 
+![Discriminated Union](./picture/hex_ts_study_033_discriminated_union.png)
+
 ポイントはこれ👇
 
 * **共通の識別子フィールド（例：`type`）**を持つ
@@ -117,6 +123,8 @@ export const assertNever = (x: never): never => {
 ---
 
 ## 6) 例：ドメイン側で「仕様エラー」を返す🧠📝
+
+![Domain Rule Check](./picture/hex_ts_study_033_domain_check.png)
 
 `src/domain/todo.ts`（超ミニ例）
 
@@ -207,6 +215,8 @@ export const completeTodoUseCase = async (
 ---
 
 ## 8) 「中心エラー」を人間向けに変換する（Adapterでやる）🧩✨（チラ見せ）
+
+![Error Translation](./picture/hex_ts_study_033_error_translator.png)
 
 中心は型でキレイだけど、そのままだとユーザーに見せにくいよね👀
 なので **外側（CLI/HTTP）が翻訳**するよ🔁

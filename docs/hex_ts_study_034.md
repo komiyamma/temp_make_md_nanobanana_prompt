@@ -1,4 +1,4 @@
-﻿# 第34章：エラー設計②：外側のエラー（I/O失敗）😵‍💫
+# 第34章：エラー設計②：外側のエラー（I/O失敗）😵‍💫
 
 ![hex_ts_study_034[(./picture/hex_ts_study_034_handling_i_o_errors_infra.png)
 
@@ -47,6 +47,8 @@
 
 ## 3. 超重要：中心のエラーと、外側のエラーは“別もの”🧠🧩
 
+![Separation of Errors](./picture/hex_ts_study_034_separation_of_errors.png)
+
 ### ✅ 中心（仕様）のエラー（第33章の範囲）
 
 * 「タイトル空はダメ」
@@ -69,6 +71,8 @@
 ---
 
 ## 4. 外側エラー設計の型：おすすめの最小セット🧩✨
+
+![InfraError Structure](./picture/hex_ts_study_034_infra_error_structure.png)
 
 「アプリ的に意味がある」情報だけ持つのがコツだよ✂️💖
 
@@ -137,6 +141,8 @@ function isNodeErrno(e: unknown): e is NodeErrnoException {
 ```
 
 ### 5.2 JSONロード（壊れてた/無い/権限ない…を分岐）📥😵‍💫
+
+![File Read Error Handling](./picture/hex_ts_study_034_file_read_flow.png)
 
 ```ts
 import fs from "node:fs/promises";
@@ -209,6 +215,8 @@ Nodeの `fetch()` は **undiciベースの内蔵 fetch** だよ ([Node.js][3])
 
 ### 6.1 タイムアウトは AbortController で止める⌛🛑
 
+![Fetch Timeout Mechanism](./picture/hex_ts_study_034_fetch_timeout.png)
+
 ```ts
 export async function fetchWithTimeout(
   url: string,
@@ -274,6 +282,8 @@ export async function callRemoteApiExample(url: string): Promise<unknown> {
 
 ## 7. リトライ方針：**「何でも再試行」はダメ**⚠️🔁
 
+![Retry Policy](./picture/hex_ts_study_034_retry_policy.png)
+
 * ✅ 再試行してOK：ネット一時不調、5xx、瞬断
 * ❌ 再試行しても無駄：JSON壊れ、権限不足、4xx（大半）
 
@@ -314,6 +324,8 @@ export async function withRetry<T>(
 
 ## 8. ログ：外側で「状況」を残す📝🪪
 
+![Contextual Logging](./picture/hex_ts_study_034_context_log.png)
+
 最低限でも **「どの操作」「どのファイル/URL」「どの失敗種別」**があると救われるよ〜🙏
 
 ### 8.1 まずは最小：consoleでもOK😊
@@ -337,6 +349,8 @@ pino は Node 向け JSON ロガーとして広く使われてるよ ([getpino.i
 ---
 
 ## 9. 入口（CLI/HTTP）では「表示用」に整形する🎀🧩
+
+![User Friendly Error Message](./picture/hex_ts_study_034_user_friendly_error.png)
 
 外側エラーは、ユーザーにそのまま生で見せないで、**優しい文**にするのが吉🥹💕
 
