@@ -22,6 +22,9 @@
 
 ## 1. 不変条件（Invariants）ってなに？🧷
 
+![hex_ts_study_018_invariant_skeleton](./picture/hex_ts_study_018_invariant_skeleton.png)
+
+
 超かんたんに言うと👇
 
 > **「この世界（ドメイン）では、絶対にこうでなきゃダメ！」**
@@ -37,6 +40,9 @@
 ---
 
 ## 2. なんで“不変条件”をドメインに置くの？🏰🛡️
+
+![hex_ts_study_018_central_fortress](./picture/hex_ts_study_018_central_fortress.png)
+
 
 ここがヘキサゴナルの気持ちよさポイント😍✨
 
@@ -58,6 +64,9 @@
 ---
 
 ## 3. “入力チェック”と“不変条件”のちがい🧠✨
+
+![hex_ts_study_018_input_vs_invariant](./picture/hex_ts_study_018_input_vs_invariant.png)
+
 
 ここ、混ざりがちだから整理するね😊📌
 
@@ -88,6 +97,9 @@
 ---
 
 ### 4.1 ドメイン側の最小コード（Todo + 不変条件）🧩🧷
+
+![hex_ts_study_018_state_transition](./picture/hex_ts_study_018_state_transition.png)
+
 
 ポイントはこれ👇😊
 
@@ -155,6 +167,9 @@ export function completeTodo(todo: Todo): Todo {
 
 ## 5. いまのコード、どこが“ヘキサゴナル的に良い”の？🔌🧩✨
 
+![hex_ts_study_018_hexagonal_protection](./picture/hex_ts_study_018_hexagonal_protection.png)
+
+
 ### ✅ 入口が何であれ、domainが最後に守る🛡️
 
 CLIでもHTTPでも、最終的に `createTodo` / `completeTodo` を通る限り、ルールは破れない💖
@@ -166,6 +181,9 @@ CLIでもHTTPでも、最終的に `createTodo` / `completeTodo` を通る限り
 ---
 
 ## 6. すぐ試せる！ミニテスト（Vitest）🧪✨
+
+![hex_ts_study_018_stress_test](./picture/hex_ts_study_018_stress_test.png)
+
 
 不変条件は **テストで守ると超つよい**💪💖
 Vitestは今も活発に更新されてて、移行ガイドも整備されてるよ📘✨ ([Vitest][1])
@@ -199,6 +217,9 @@ describe("Todo invariants 🧷", () => {
 ---
 
 ## 7. よくある事故パターン😱💥（先に潰す！）
+
+![hex_ts_study_018_scattered_if](./picture/hex_ts_study_018_scattered_if.png)
+
 
 ### ❌ 入口にしかチェックがない
 

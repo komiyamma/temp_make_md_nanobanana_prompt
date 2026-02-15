@@ -17,6 +17,9 @@ Node.jsは **v24がActive LTS**、v22はMaintenance LTS…みたいに世代が�
 
 ## 1) ドメインってなに？🧠💡
 
+![hex_ts_study_016_domain_rules](./picture/hex_ts_study_016_domain_rules.png)
+
+
 **ドメイン＝アプリの「ルール」と「意味」** を置く場所だよ😊✨
 
 Todoでいうと…
@@ -31,6 +34,9 @@ Todoでいうと…
 
 ## 2) “データ”と“ドメイン”は別モノだよ😳
 
+![hex_ts_study_016_data_vs_domain](./picture/hex_ts_study_016_data_vs_domain.png)
+
+
 ありがちな勘違いはこれ👇
 
 * ❌ ドメイン＝ただの `type Todo = { ... }`（データ袋）
@@ -41,6 +47,9 @@ Todoでいうと…
 ---
 
 ## 3) ルールをControllerに置くと何が起きる？😱💥
+
+![hex_ts_study_016_scattered_logic](./picture/hex_ts_study_016_scattered_logic.png)
+
 
 最初は動くんだけど、すぐ地獄になるやつ…🥺
 
@@ -76,6 +85,9 @@ export function addTodoHandler(req: any) {
 ---
 
 ## 5) 良い例：ドメインが「不正を作らせない」🛡️✨
+
+![hex_ts_study_016_centralized_logic](./picture/hex_ts_study_016_centralized_logic.png)
+
 
 ドメイン側に「空タイトルは禁止」を入れると、入口が何個あっても安全になるよ💖
 
@@ -122,6 +134,9 @@ export class StateError extends TodoError {
 
 ## 8) 実装：Todoは「ルール込みの存在」にする 🧩✨
 
+![hex_ts_study_016_todo_class](./picture/hex_ts_study_016_todo_class.png)
+
+
 ```ts
 // src/domain/todo/Todo.ts
 import { StateError, ValidationError } from "./TodoError";
@@ -160,6 +175,9 @@ export class Todo {
 
 ## 9) ドメインに入れてOK / ダメ 🙆‍♀️🙅‍♀️
 
+![hex_ts_study_016_domain_boundary](./picture/hex_ts_study_016_domain_boundary.png)
+
+
 ### ✅ 入れてOK（ルール系）
 
 * Entity（Todoみたいな存在）🧩
@@ -194,6 +212,9 @@ export class Todo {
 ---
 
 ## 11) AIの使いどころ（安全運転🤖🧰）
+
+![hex_ts_study_016_ai_assist](./picture/hex_ts_study_016_ai_assist.png)
+
 
 AIにはこう頼むとめっちゃ強いよ💖
 

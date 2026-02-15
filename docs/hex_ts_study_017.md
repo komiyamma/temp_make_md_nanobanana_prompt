@@ -9,6 +9,9 @@
 
 ## 1) 今日作る “最小モデル” はこれだけ 🎯
 
+![hex_ts_study_017_todo_pillars](./picture/hex_ts_study_017_todo_pillars.png)
+
+
 Todoは、まず **3つの情報**があれば成立するよ👇
 
 * `id`：識別子（同じタイトルでも区別できる）🪪
@@ -34,6 +37,9 @@ Todoは、まず **3つの情報**があれば成立するよ👇
 
 ## 3) まず “ドメインのエラー” を1個だけ用意 🧯✨
 
+![hex_ts_study_017_domain_error_badge](./picture/hex_ts_study_017_domain_error_badge.png)
+
+
 ドメイン層で「ルール違反だよ！」って言いたいときの、専用エラーだよ😊
 
 ```ts
@@ -56,6 +62,9 @@ export class DomainError extends Error {
 ---
 
 ## 4) Todoモデル（超シンプル版）を作る 🧩📝
+
+![hex_ts_study_017_creation_guard](./picture/hex_ts_study_017_creation_guard.png)
+
 
 「**private constructor + static create**」で、**必ずチェックを通す**形にするよ🛡️
 
@@ -122,6 +131,9 @@ console.log(ng);
 
 ## 6) “ちょい背伸び版（任意）”：titleを型で守る 🧠✨
 
+![hex_ts_study_017_value_object](./picture/hex_ts_study_017_value_object.png)
+
+
 「titleはstringだけど、空は禁止！」を **型で表現**したい人向け🎀
 （この発想、あとでValue Objectにもつながるよ！）
 
@@ -150,6 +162,9 @@ export function createTodoTitle(input: string): TodoTitle {
 
 ## 7) よくある事故あるある 😵‍💫💥（先に潰す）
 
+![hex_ts_study_017_immutability_shield](./picture/hex_ts_study_017_immutability_shield.png)
+
+
 * **Todoをただのinterfaceで作るだけ**
   → どこでも `title: ""` のTodoが作れちゃう😱
 * **trimしない**
@@ -160,6 +175,9 @@ export function createTodoTitle(input: string): TodoTitle {
 ---
 
 ## 8) AIに頼るならここが安全 🤖✨
+
+![hex_ts_study_017_ai_safety_uuid](./picture/hex_ts_study_017_ai_safety_uuid.png)
+
 
 この章でAIに頼ってOKなもの👇
 
