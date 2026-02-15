@@ -12,6 +12,8 @@
 
 ## 8.1 「データだけのクラス📦」が増えると何がヤバいの？😱
 
+![hc lc cs study 008 anemic model](./picture/hc_lc_cs_study_008_anemic_model.png)
+
 まず、ありがちな構図👇
 
 * `Order` は **プロパティだけ**（データ置き場）📦
@@ -127,6 +129,8 @@ public class OrderService
 
 ### 8.4.3 “データ＋振る舞い” に寄せた形（After）🌷
 
+![hc lc cs study 008 smart object](./picture/hc_lc_cs_study_008_smart_object.png)
+
 ```csharp
 public sealed class Coupon
 {
@@ -176,6 +180,8 @@ public sealed class Order
 
 **ここが気持ちいいポイント🥹💖**
 
+![hc lc cs study 008 ask dont touch](./picture/hc_lc_cs_study_008_ask_dont_touch.png)
+
 * 「期限切れか？」は **Couponに聞けばいい**（探さなくて済む）⏳✨
 * 「最終金額は？」は **Orderに聞けばいい**（計算が散らばらない）💰✨
 * `Order` が「自分が正しい状態か」を自分で守りやすい🛡️
@@ -207,6 +213,8 @@ classDiagram
 
 ### コツ1：プロパティを `set` し放題にしない🔓➡️🔒
 
+![hc lc cs study 008 property guard](./picture/hc_lc_cs_study_008_property_guard.png)
+
 * “いつでもどこでも値が変わる” は、ルール破壊の入口💥
 * まずは `private set` やコンストラクタで守るだけでも世界が変わるよ🌍✨
 
@@ -215,6 +223,8 @@ classDiagram
 * 「期限切れはダメ」なら `Coupon` / `Order.ApplyCoupon` あたりが自然👌
 
 ### コツ3：迷ったら「読む人が一番探しやすい場所」📍
+
+![hc lc cs study 008 lost logic map](./picture/hc_lc_cs_study_008_lost_logic_map.png)
 
 * 未来の自分（or チーム）が
 

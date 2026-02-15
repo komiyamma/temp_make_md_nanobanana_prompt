@@ -66,6 +66,8 @@ Visual Studio も **Visual Studio 2026** が出てて、.NET 10 / C# 14 をサ�
 
 ---
 
+![hc lc cs study 003 cohesion onigiri](./picture/hc_lc_cs_study_003_cohesion_onigiri.png)
+
 ## 4) すぐ使える！判定チェックリスト✅✨
 
 ## 4-1) 高凝集チェック🎯
@@ -190,6 +192,8 @@ classDiagram
 
 ### Q1：これはどう？🧾✨
 
+![hc lc cs study 003 quiz calculator](./picture/hc_lc_cs_study_003_quiz_calculator.png)
+
 ```csharp
 public class PriceCalculator
 {
@@ -210,6 +214,8 @@ public class PriceCalculator
 ---
 
 ### Q2：これはどう？😵‍💫
+
+![hc lc cs study 003 quiz messy desk](./picture/hc_lc_cs_study_003_quiz_messy_desk.png)
 
 ```csharp
 public class UserManager
@@ -287,6 +293,8 @@ public class CsvExporter
 ---
 
 ## 9) Visual Studio の“指標”も味方にする📏✨（信じすぎ注意！）
+
+![hc lc cs study 003 metrics radar](./picture/hc_lc_cs_study_003_metrics_radar.png)
 
 「結合」は数でもざっくり見えるよ👀
 Visual Studio の Code Metrics には **Class Coupling（クラス結合度）**があって、「そのクラスが何種類のクラスを使ってるか」を測る指標があるよ📌 ([Microsoft Learn][4])
