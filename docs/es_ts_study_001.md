@@ -38,6 +38,8 @@ graph LR
 
 ## このコースのゴール（36章でたどり着く場所）🏁🎉
 
+![Course Goals Pentagon](./picture/es_ts_study_001_course_goals.png)
+
 このコースの最終ゴールは「イベントソーシングが分かった！」で終わらず、**最小でも筋の通った形**で作れるようになることです😊🧩
 
 * イベントを**それっぽく命名**できる（過去形・粒度）📝✅
@@ -49,6 +51,8 @@ graph LR
 ---
 
 ## 学びの順番（迷子にならないルート）🧭🐣
+
+![Learning Path Steps](./picture/es_ts_study_001_learning_path.png)
 
 この36章は、ちゃんと「軽い→重い」の順に並んでいます😊✨
 第1章では、**どう進むとスムーズか**だけ先に共有するね🌸
@@ -80,6 +84,8 @@ mindmap
 ---
 
 ## よくある挫折ポイント（先に知ると強い）🚧🫶
+
+![Common Pitfalls Warning](./picture/es_ts_study_001_pitfalls_warning.png)
 
 イベントソーシングは、ここでつまずきやすいです👇（先に知っておくと安心！）
 
@@ -127,6 +133,8 @@ mindmap
 
 ### お題：カフェのポイントカード☕⭐（例）
 
+![Cafe Point Card Example](./picture/es_ts_study_001_cafe_card_example.png)
+
 「状態」で考えると…
 
 * いまのポイント：`37pt` みたいに“現在だけ”を持ちがち📌
@@ -155,6 +163,8 @@ mindmap
 ---
 
 ## AI活用：たとえ話を3パターン作ってもらう🤖💭✨
+
+![AI Metaphor Categories](./picture/es_ts_study_001_ai_metaphors.png)
 
 イベントソーシングは「比喩」があると急に分かりやすくなるよ😊🌸
 AIには、まず**分かりやすい例え**を量産してもらおう🧃✨

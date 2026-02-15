@@ -11,6 +11,8 @@
 
 # 1. 現実でよく起きる2つの事故 😵‍💫💥
 
+![Evolution Accidents](./picture/es_cs_study_035_evolution_accidents.png)
+
 ## 事故A：イベントの形を変えたら、過去が読めない🧊
 
 例）`CartItemAdded` に「単価（UnitPrice）」を後から足したい
@@ -70,6 +72,8 @@ flowchart LR
 ---
 
 # 4. 最小の道具：「イベントエンベロープ」🍱🏷️
+
+![Envelope Versioning](./picture/es_cs_study_035_envelope_versioning.png)
 
 イベント本体だけだと、進化や運用で困りがちなので、最低限の包み（Envelope）をつけます🧸✨
 
@@ -137,6 +141,8 @@ public static class Json
 
 ## 6.1 Upcastの方針（超重要）📌
 
+![Upcast Wizard](./picture/es_cs_study_035_upcast_wizard.png)
+
 * 旧イベントを読み込んだら、即座に“最新形”へ変換してからドメインに渡す
 * 変換結果は「その場だけ」でもOK（最小）
 
@@ -183,6 +189,8 @@ public static class EventUpcaster
 
 ## 7.1 冪等性ってなに？🙂
 
+![Idempotency Key Lock](./picture/es_cs_study_035_idempotency_key_lock.png)
+
 同じリクエスト（同じ意図）が複数回来ても、結果が一回分になる性質だよ🔁✅
 実務のREST APIでも「冪等性キー」を使って重複を防ぐ設計がよく紹介されています。([Milan Jovanović][4])
 
@@ -198,6 +206,8 @@ public static class EventUpcaster
 # 8. 実装：SQLiteで冪等性テーブルを作る🗄️🧷
 
 ## 8.1 テーブル（最小DDL）🧱
+
+![Idempotency Table Structure](./picture/es_cs_study_035_idempotency_table.png)
 
 ```sql
 CREATE TABLE IF NOT EXISTS idempotency (
@@ -215,6 +225,8 @@ CREATE TABLE IF NOT EXISTS idempotency (
 ---
 
 # 9. 実装：冪等性つきコマンド処理（最小の型）📮✅🔁
+
+![Double Click Prevention](./picture/es_cs_study_035_double_click_prevention.png)
 
 ここでは「AddItem（商品追加）」を例にするね🛒✨
 
