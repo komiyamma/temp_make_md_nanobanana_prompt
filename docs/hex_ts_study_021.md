@@ -18,6 +18,8 @@ TypeScript は **6.0→7.0** に向けて大きく変わる流れ（6.0が“橋
 
 ## 2. Inbound Portってなに？（一言で）🗣️🔌
 
+![Inbound Port Definition](./picture/hex_ts_study_021_inbound_port_def.png)
+
 **Inbound Port = “中心（UseCase）を呼ぶための約束（契約）”** だよ〜😊✨
 
 * 外側（CLI/HTTP/GUIなど）「これ呼びたいんだけど！」
@@ -30,6 +32,8 @@ TypeScript でいうと、だいたい **`interface`** or **関数型 `type`** �
 ---
 
 ## 3. Inbound Portが決める3点セット 🍱✨
+
+![Port Essentials](./picture/hex_ts_study_021_port_essentials.png)
 
 Inbound Port では、最低この3つを決めるよ〜👇
 
@@ -56,6 +60,8 @@ Inbound Port では、最低この3つを決めるよ〜👇
 ---
 
 ## 4. 入口の“入力チェック”はどこでやる？📌😊
+
+![Validation Gates](./picture/hex_ts_study_021_validation_gates.png)
 
 ここ、設計で迷いがちポイント〜〜😵‍💫💥
 結論からいくね👇
@@ -84,6 +90,8 @@ Inbound Port では、最低この3つを決めるよ〜👇
 ---
 
 ## 5. 今回のミニアプリで作る Inbound Port（3つ）📝✅
+
+![Todo Ports](./picture/hex_ts_study_021_todo_ports.png)
 
 Todoミニで、UseCaseはこの3つだったよね（第19章あたりのやつ）👇
 
@@ -209,6 +217,8 @@ export interface ListTodosPort {
 
 ## 9. Port を “小さく保つ”コツ ✂️✨（増やしすぎ防止）
 
+![Port Granularity](./picture/hex_ts_study_021_port_granularity.png)
+
 Inbound Port がダメになりやすいのはこの2つ👇
 
 ### ❌ でかいポート（何でも屋）🐘💥
@@ -268,6 +278,8 @@ export async function runAddTodoCli(addTodo: AddTodoPort, rawTitle: string) {
 ---
 
 ## 12. “良い Inbound Port” チェックリスト ✅🔍✨
+
+![Inbound Port Checklist](./picture/hex_ts_study_021_checklist.png)
 
 作ったらこれでセルフチェックしてね〜😊💖
 

@@ -19,6 +19,8 @@ Repository は **“保存のお願い窓口”**（Outbound Port）って感じ
 
 ## 2. Repositoryってなに？（超やさしく）🧺💡
 
+![Repository Definition](./picture/hex_ts_study_022_repo_definition.png)
+
 Repository は、ざっくり言うと
 
 > **「ドメインのオブジェクトを“メモリ上のコレクションみたいに扱える”ようにする仕組み」**
@@ -39,6 +41,8 @@ Repository は、ざっくり言うと
 
 ## 3. なんで“Outbound Port”として切るの？🧭🔥
 
+![Outbound Port Reason](./picture/hex_ts_study_022_outbound_port_reason.png)
+
 ヘキサゴナルの気持ちよさはここ😍
 
 * 中心は **「保存が必要」** だけ知ってればいい
@@ -56,6 +60,8 @@ Repository は、ざっくり言うと
 ---
 
 ## 4. Repository Port の決め方（手順）🪜✨
+
+![Repo Tailoring](./picture/hex_ts_study_022_repo_tailoring.png)
 
 Repository って、最初にDBを見て決めるとだいたい失敗する😵‍💫💥
 うまくいく順番はこれ👇
@@ -81,6 +87,8 @@ Portは「ユースケースが必要な分だけ」でOK！
 
 ## 5. よくある事故（先に潰す）🚨😇
 
+![Fat vs Slim Repo](./picture/hex_ts_study_022_fat_vs_slim_repo.png)
+
 ### ❌ 事故①：なんでもRepository 🧹💥
 
 「RepositoryってCRUD全部あるよね？」でこうなる👇
@@ -104,6 +112,8 @@ Portは「ユースケースが必要な分だけ」でOK！
 ## 6. Repository Port の形（TSでのおすすめ）🧩✨
 
 ### ポイント1：Repositoryは“ドメイン型”を扱ってOK 🧠💞
+
+![Domain Type Rule](./picture/hex_ts_study_022_domain_type_rule.png)
 
 Repositoryは **中心側の契約** だから、返すのが `Todo` でも全然OK😊
 （DBの行とかORMモデルは外側の話！）
@@ -144,6 +154,8 @@ export interface TodoRepositoryPort {
 
 ## 8. ユースケース側はこうなる（中心がスッキリ😍）🧠✨
 
+![UseCase Dependency Inversion](./picture/hex_ts_study_022_usecase_dependency.png)
+
 例：CompleteTodo の雰囲気👇
 
 ```ts
@@ -176,6 +188,8 @@ export class CompleteTodo {
 ---
 
 ## 9. “良いRepository Port”チェックリスト ✅🔎✨
+
+![Repository Checklist](./picture/hex_ts_study_022_checklist.png)
 
 Repositoryを決めたら、これでセルフチェックしてね😊
 

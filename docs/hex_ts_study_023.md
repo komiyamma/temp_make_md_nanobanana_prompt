@@ -4,6 +4,8 @@
 
 ## 1) この章のゴール 🎯💖
 
+![Sweep Dependencies](./picture/hex_ts_study_023_sweep_dependencies.png)
+
 * 「時間」「UUID」「乱数」みたいな **小さな外部依存**を、中心（ユースケース/ドメイン）から追い出せるようになるよ🏃‍♀️💨
 * その結果…
 
@@ -17,6 +19,8 @@
 ---
 
 ## 2) 「小さな依存」って何がダメなの？😵‍💫💥
+
+![Moving Target](./picture/hex_ts_study_023_moving_target.png)
 
 たとえばユースケースでこう書いちゃう👇
 
@@ -50,6 +54,8 @@
 
 ## 4) 実装：Port を作る（中心側）🧠🔌
 
+![Small Ports](./picture/hex_ts_study_023_small_ports.png)
+
 `src/app/ports/ClockPort.ts` ⏰
 
 ```ts
@@ -75,6 +81,8 @@ export interface IdGeneratorPort {
 ---
 
 ## 5) Adapter を作る（外側）🧩🚀
+
+![Small Adapters](./picture/hex_ts_study_023_small_adapters.png)
 
 ### 5-1) SystemClockAdapter（実際の現在時刻）⏰🌍
 
@@ -111,6 +119,8 @@ export class CryptoIdGeneratorAdapter implements IdGeneratorPort {
 ---
 
 ## 6) ユースケースで使う（中心は外側を知らない）🧠🛡️
+
+![Ingredient Delivery](./picture/hex_ts_study_023_ingredient_delivery.png)
 
 例：Todo に `createdAt` を足してみよう📝✨（“時間が必要になる瞬間” をわざと作る）
 
@@ -169,6 +179,8 @@ export class AddTodoUseCase {
 ---
 
 ## 7) テストがラクになる（ここがご褒美）🧪🍰✨
+
+![Fake Control](./picture/hex_ts_study_023_fake_control.png)
 
 ### 7-1) FakeClock（固定の時間）⏰🧊
 
@@ -251,6 +263,8 @@ JS には `Temporal`（Date の置き換えを目指す新API）があるよ📌
 ---
 
 ## 10) アンチパターン警報 🚨😱
+
+![Dependency Anti-Patterns](./picture/hex_ts_study_023_anti_patterns.png)
 
 ### ❌ 中心で直接呼ぶ
 
