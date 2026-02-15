@@ -26,6 +26,8 @@
 
 ## 2. そもそも「観測（Observability）」って？👀✨
 
+![hex_ts_study_036_three_pillars.png](./picture/hex_ts_study_036_three_pillars.png)
+
 ざっくり“三本柱”があるよ👇
 
 * **Logs（ログ）**：起きたことの記録（今回の主役）🪵
@@ -51,6 +53,8 @@
 
 ## 4. ヘキサゴナルで「ログはどこに置く？」🧭🛡️
 
+![hex_ts_study_036_logging_location_map.png](./picture/hex_ts_study_036_logging_location_map.png)
+
 結論これ👇😊
 
 ### ✅ Adapterに置いていいログ
@@ -73,6 +77,8 @@
 
 ## 5. 相関IDってなに？🪪✨（超だいじ！）
 
+![hex_ts_study_036_correlation_flow.png](./picture/hex_ts_study_036_correlation_flow.png)
+
 **相関ID**は「この一連の処理をまとめて追うためのID」だよ😊
 HTTPだと 1リクエストにつき1つ。CLIでも 1コマンド実行につき1つ、みたいに使う。
 
@@ -88,6 +94,8 @@ OpenTelemetry などはこの文脈（Trace ID/Span ID）をログへ関連付�
 ---
 
 ## 6. 実装方針：Context（相関ID）を “勝手に” 取れるようにする🪄
+
+![hex_ts_study_036_als_magic.png](./picture/hex_ts_study_036_als_magic.png)
 
 ここが今日のキモ👇😊
 
@@ -176,6 +184,8 @@ export function getCorrelationId(): string | undefined {
 
 ### 7.3 HTTP Inbound Adapter で相関IDを作って入れる🚪🌐🪪
 
+![hex_ts_study_036_middleware_diagram.png](./picture/hex_ts_study_036_middleware_diagram.png)
+
 HTTPの入口でやることは超シンプル👇😊
 
 1. 相関IDを決める（ヘッダ優先、なければ新規）
@@ -229,6 +239,8 @@ export function requestLoggingMiddleware(logger: Logger) {
 ---
 
 ### 7.4 Outbound Adapter（FileRepository）に “現場ログ” を入れる💾🪵
+
+![hex_ts_study_036_repo_log.png](./picture/hex_ts_study_036_repo_log.png)
 
 I/O系は Adapter の責任範囲なので、ここはログを置いてOK😊
 
@@ -297,6 +309,8 @@ export function buildApp() {
 ---
 
 ## 8. ログに何を入れる？おすすめ最小フィールド📌✨
+
+![hex_ts_study_036_log_structure.png](./picture/hex_ts_study_036_log_structure.png)
 
 迷ったらこれでOK😊
 

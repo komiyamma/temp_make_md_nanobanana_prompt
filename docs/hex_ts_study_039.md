@@ -33,6 +33,8 @@
 
 ## 2) このアンチパターン、何がダメなの？😵‍💫💥
 
+![hex_ts_study_039_contamination_alert.png](./picture/hex_ts_study_039_contamination_alert.png)
+
 ### 起きがちな症状あるある😇
 
 * domain/app の中に **`Request` / `Response`** が出てくる🌐😱
@@ -49,6 +51,8 @@
 ---
 
 ## 3) ダメ例①：中心がHTTP型を知っちゃう😱🌐
+
+![hex_ts_study_039_http_shackles.png](./picture/hex_ts_study_039_http_shackles.png)
 
 たとえばこんなの👇（**置き場所が中心側**だとアウト！）
 
@@ -70,6 +74,8 @@ export async function addTodo(req: Request, res: Response) {
 
 ## 4) ダメ例②：中心がDB/ORM型を知っちゃう😱💾
 
+![hex_ts_study_039_db_pollution.png](./picture/hex_ts_study_039_db_pollution.png)
+
 ```ts
 // ❌ src/domain/Todo.ts（中心側に置いちゃダメ！）
 import type { Todo as PrismaTodo } from "@prisma/client";
@@ -85,6 +91,8 @@ DBを変えたら、中心も巻き添えで大工事…🏗️💥
 ---
 
 ## 5) 正しい形：中心は「DTO」と「自分の型」だけ🛡️✨
+
+![hex_ts_study_039_clean_core_map.png](./picture/hex_ts_study_039_clean_core_map.png)
 
 ### まず “中心が知っていいもの” を固定しよ📌
 
@@ -159,6 +167,8 @@ export class AddTodoUseCase {
 
 ## 10) 実装例：HTTP Adapterで Request → DTO 変換する🌐🧩
 
+![hex_ts_study_039_http_translator.png](./picture/hex_ts_study_039_http_translator.png)
+
 ここが **翻訳係** だよ〜！📮🔁
 （バリデーションもここでやるとキレイ✨ Zod v4は安定版だよ✅ ([Zod][6])）
 
@@ -194,6 +204,8 @@ export function addTodoRoute(useCase: AddTodoUseCase) {
 
 ## 11) 実装例：DB Adapterで “中心のTodo ↔ DB行” を変換する💾🧩
 
+![hex_ts_study_039_db_mapper.png](./picture/hex_ts_study_039_db_mapper.png)
+
 ORMを使ってもOK！ただし **ORM型はAdapter内で完結**ね🙆‍♀️✨
 
 ```ts
@@ -223,6 +235,8 @@ export function toDomain(record: TodoRecord): Todo {
 ---
 
 ## 12) “二度と混ぜない”ためのガード🧱✨（超おすすめ）
+
+![hex_ts_study_039_eslint_guard.png](./picture/hex_ts_study_039_eslint_guard.png)
 
 ### ✅ ルール：中心から `adapters/` を import できないようにする
 
