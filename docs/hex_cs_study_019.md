@@ -39,6 +39,8 @@ flowchart LR
 
 ## 2) ValueObjectとの違い（次章の予告も兼ねて）💎👀
 
+![hex_cs_study_019_entity_vs_vo.png](./picture/hex_cs_study_019_entity_vs_vo.png)
+
 ざっくり比較するとこう👇
 
 * **Entity**：IDで同一性を判断する（同じ注文IDなら同じ注文）👤🪪
@@ -53,6 +55,8 @@ flowchart LR
 
 ## 3) 「同一性」ってどういうこと？🧠🔍
 
+![hex_cs_study_019_identity_concept.png](./picture/hex_cs_study_019_identity_concept.png)
+
 ### ✅ “同じ注文” って、どう決める？
 
 こういう2つのOrderがあったとして…
@@ -66,6 +70,8 @@ flowchart LR
 ---
 
 ## 4) Entity設計の超基本ルール3つ🧱✨
+
+![hex_cs_study_019_entity_rule_shield.png](./picture/hex_cs_study_019_entity_rule_shield.png)
 
 ### ルール①：Entityには「ID」がいる🪪
 
@@ -95,6 +101,8 @@ public readonly record struct OrderId(Guid Value);
 ---
 
 ## 6) Order Entity（最小の形）👤🧾
+
+![hex_cs_study_019_order_state_machine.png](./picture/hex_cs_study_019_order_state_machine.png)
 
 ```csharp
 public enum OrderStatus
@@ -165,6 +173,8 @@ public readonly record struct OrderItem(MenuItemId MenuItemId, int Quantity);
 
 ## 7) IDはどう作る？（2026の最新寄りTips）🆔✨
 
+![hex_cs_study_019_uuid_v7_composition.png](./picture/hex_cs_study_019_uuid_v7_composition.png)
+
 いまの最新 .NET / C#（.NET 10 / C# 14）では、**UUID v7（タイムスタンプを含む形式）**の `Guid.CreateVersion7()` が使えるよ🕒✨
 これは RFC 9562 に沿った v7 を作るメソッドとして案内されてるよ📘 ([Microsoft Learn][1])
 （C# 14 が .NET 10 でサポートされる、という公式ページもあるよ📌 ([Microsoft Learn][2])）
@@ -183,6 +193,8 @@ var order = Order.CreateNew(id);
 
 ## 8) 「IDはどこで生成するの？」問題🏭🧠
 
+![hex_cs_study_019_id_factory_stamp.png](./picture/hex_cs_study_019_id_factory_stamp.png)
+
 初心者さん向けの“まずはこれ”の答えは👇😊
 
 * **アプリの手順（UseCase）側で作って、Entityに渡す**
@@ -196,6 +208,8 @@ var order = Order.CreateNew(id);
 ---
 
 ## 9) Entityの “あるある事故” 🧯😭
+
+![hex_cs_study_019_entity_accident_signs.png](./picture/hex_cs_study_019_entity_accident_signs.png)
 
 ### 😭 事故①：Entity＝DBテーブルだと思っちゃう
 

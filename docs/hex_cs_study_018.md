@@ -13,6 +13,8 @@
 
 ## 1. Domainってなに？（一言で）🏠
 
+![hex_cs_study_018_domain_cloud.png](./picture/hex_cs_study_018_domain_cloud.png)
+
 **Domain（ドメイン）＝そのアプリが解決したい“現実世界のルール＆言葉”**だよ😊✨
 
 たとえばカフェ注文なら👇
@@ -27,6 +29,8 @@
 
 ## 2. Domainを“中心に置く”と何が嬉しいの？🛡️✨
 
+![hex_cs_study_018_domain_castle.png](./picture/hex_cs_study_018_domain_castle.png)
+
 Domainを中心にすると、外側（UI/DB/API）が変わっても耐えられる💪🔥
 
 * 画面が変わる（Web→スマホ）📱🔁🖥️
@@ -39,6 +43,8 @@ Domainを中心にすると、外側（UI/DB/API）が変わっても耐えら�
 ---
 
 ## 3. Domainに入れるもの／入れないもの✅🚫
+
+![hex_cs_study_018_domain_sorting_table.png](./picture/hex_cs_study_018_domain_sorting_table.png)
 
 超大事ポイントを、ざっくり仕分けするね😊👇
 
@@ -104,6 +110,8 @@ Domainの強さって、結局ここなの😊
 
 ### 5.1 Money（マイナス禁止💸）例
 
+![hex_cs_study_018_money_invariant_guard.png](./picture/hex_cs_study_018_money_invariant_guard.png)
+
 ```csharp
 namespace Cafe.Core.Domain;
 
@@ -138,6 +146,8 @@ public readonly record struct Money(decimal Value, string Currency)
 
 ### 5.2 Quantity（1以上🍰）例
 
+![hex_cs_study_018_quantity_container.png](./picture/hex_cs_study_018_quantity_container.png)
+
 ```csharp
 namespace Cafe.Core.Domain;
 
@@ -162,6 +172,8 @@ public readonly record struct Quantity(int Value)
 
 ## 6. DBの都合と混ぜない：IDを“型”にする🪪✨
 
+![hex_cs_study_018_typed_id_lock.png](./picture/hex_cs_study_018_typed_id_lock.png)
+
 DBだと `int` のIDになりがちだけど、Domainでは **「それは注文IDです」**って分かるのが大事😊
 
 ```csharp
@@ -182,6 +194,8 @@ public readonly record struct OrderId(Guid Value)
 ---
 
 ## 7. Domainは「時間」すら外から受け取る（混ぜない練習）⏰🧼
+
+![hex_cs_study_018_time_outside_window.png](./picture/hex_cs_study_018_time_outside_window.png)
 
 ありがちな事故👇
 

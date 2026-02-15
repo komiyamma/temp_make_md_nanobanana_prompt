@@ -8,6 +8,8 @@
 
 ## 15.1 今日のゴール 🎯✨
 
+![hex_cs_study_015_goal_compass.png](./picture/hex_cs_study_015_goal_compass.png)
+
 この章でやることは「作るアプリの仕様を、シンプルに決め切る」ことだよ🙂📌
 ヘキサゴナルは **“題材の決め方”で学びやすさがめっちゃ変わる** から、ここは丁寧にいこう〜！
 
@@ -40,6 +42,8 @@ flowchart LR
 
 ## 15.3 なぜ「カフェ注文」がヘキサに向いてるの？🥰🔷
 
+![hex_cs_study_015_hex_sandwich.png](./picture/hex_cs_study_015_hex_sandwich.png)
+
 この題材、ヘキサの“おいしい所”が全部入ってるの🍯✨
 
 * **UIは変えやすい**：Web APIでも、将来は画面アプリでもOK（入口が変わる）🚪🔁
@@ -49,6 +53,8 @@ flowchart LR
 ---
 
 ## 15.4 用語ミニ辞書（この題材の“言葉”）📖✨
+
+![hex_cs_study_015_mini_dictionary.png](./picture/hex_cs_study_015_mini_dictionary.png)
 
 ここが地味に超大事！😳
 “言葉が揃う”と、設計がスルスル進むよ〜！
@@ -77,6 +83,8 @@ flowchart LR
 ---
 
 ## 15.6 “業務ルール”を最小だけ入れる（Coreが主役になるコツ）🏠💖
+
+![hex_cs_study_015_rule_shield.png](./picture/hex_cs_study_015_rule_shield.png)
 
 ルールゼロだと「ただのCRUD」になって、ヘキサの良さが出にくいの😭
 だから、**軽めのルール**を入れて“Core感”を出そう！
@@ -136,6 +144,8 @@ flowchart LR
 
 ## 15.8 この題材をヘキサに落とすとこうなる 🔷🔌✨
 
+![hex_cs_study_015_inbound_outbound_map.png](./picture/hex_cs_study_015_inbound_outbound_map.png)
+
 「どれがPortでどれがAdapter？」を、ここで軽く当てておくよ〜！
 
 ### Inbound（外 → 中）⬅️
@@ -155,6 +165,8 @@ flowchart LR
 
 ## 15.9 “まずInMemoryで完成”が最強な理由 🧠🔥
 
+![hex_cs_study_015_memory_foundation.png](./picture/hex_cs_study_015_memory_foundation.png)
+
 * DBを先にやると、**設定・接続・移行・例外**が増えて初心者が溺れがち😵‍💫🌊
 * 先にInMemoryで完成すると、**設計の良さ（差し替え）**だけに集中できる😌✨
 * その後DBに変えると、**「え、Coreいじらないの？」**が体験できて感動する🥹🛡️
@@ -162,6 +174,8 @@ flowchart LR
 ---
 
 ## 15.10 AIの使いどころ（この章で使うと楽）🤖✨
+
+![hex_cs_study_015_ai_assistant.png](./picture/hex_cs_study_015_ai_assistant.png)
 
 AIはね、**仕様の言語化**と**例の生成**に使うのが超ラク！💖
 
