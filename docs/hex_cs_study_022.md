@@ -48,15 +48,21 @@ Inbound Portは一言でいうと…
 
 ### ✅ 理由A：入口が増えても中心が守れる🛡️
 
+![Multiple Inputs, One Interface](./picture/hex_cs_study_022_stable_core.png)
+
 今日はWeb、明日はCLI、来週はバッチ…って入口が増えても、
 **「呼び方（契約）」が1つに固定**されてると、中心が散らからない✨
 
 ### ✅ 理由B：Controllerが“薄く”なりやすい🌿
 
+![Thin vs Fat Controller](./picture/hex_cs_study_022_thin_controller.png)
+
 Controllerは「受け取って、呼ぶ」だけに寄せやすい😊
 （次の章で“薄いController最高✨”をやるよ！）
 
 ### ✅ 理由C：テストがラクになる🧪💖
+
+![Swappable Implementation](./picture/hex_cs_study_022_testing_lego.png)
 
 UseCaseをinterfaceで扱えると、外側のテストでも差し替えやすい！
 （Fake/Stubを作るときもキレイにハマる🎯）
@@ -83,6 +89,8 @@ UseCaseをinterfaceで扱えると、外側のテストでも差し替えやす�
 方針は **「ユースケース1つにつき、interface1つ + メソッド1つ」** が分かりやすい👍
 
 ### ✅ 4-1) 入力は「Command」、出力は「Result」📦✨
+
+![Command and Result objects](./picture/hex_cs_study_022_command_result_flow.png)
 
 この教材では（前の章の流れ的にも）こうするのがキレイ：
 
@@ -240,12 +248,16 @@ public class CreateOrderUseCaseTests
 
 ## 8) よくある落とし穴（超あるある）⚠️😂
 
+![External dependencies polluting the core](./picture/hex_cs_study_022_polluted_core.png)
+
 * ❌ `HttpContext` や `ControllerBase` がUseCaseに入ってくる
   → それは“外側の都合”だからダメ〜！🧼
 * ❌ UseCaseが `Request/Response DTO` を直接受け取る
   → DTOはAdapter側！次章でやるよ🔁
 * ❌ interfaceが巨大化（メソッド10個とか）
   → **「ユースケースごとにinterface分ける」** がスッキリ😊✨
+
+![Interface Segregation Principle violation](./picture/hex_cs_study_022_giant_interface.png)
 
 ---
 

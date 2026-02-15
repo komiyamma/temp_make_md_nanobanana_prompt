@@ -33,6 +33,8 @@ DTO（Data Transfer Object）は一言でいうと…
 
 ### なぜDomain型をそのまま外へ出さないの？🙅‍♀️🏠
 
+![Domain Isolation via DTO](./picture/hex_cs_study_023_domain_protection.png)
+
 理由はめちゃ大事！
 
 * **Domainが“外部都合”に汚染される**（JSON都合、画面都合、DB都合）🧼💦
@@ -44,6 +46,8 @@ DTO（Data Transfer Object）は一言でいうと…
 ---
 
 ## 2) Inbound DTOの設計ルール（超重要）✅✨
+
+![Input vs Output DTO characteristics](./picture/hex_cs_study_023_input_output_belt.png)
 
 ここ、設計の芯だよ❤️
 
@@ -62,6 +66,8 @@ DTO（Data Transfer Object）は一言でいうと…
 ---
 
 ## 3) どこにDTOを置くの？📁👀
+
+![Architectural Location of DTO](./picture/hex_cs_study_023_dto_location_map.png)
 
 おすすめはこのどちらか：
 
@@ -146,6 +152,8 @@ public interface ICreateOrderUseCase
 
 ## 7) 変換（DTO ↔ Domain）はどこでやる？🔁🧼
 
+![Data Conversion Flow](./picture/hex_cs_study_023_conversion_pipeline.png)
+
 結論：**Coreの中でも、UseCase側でDomainへ変換する**のが初心者に優しいよ😊
 （HTTP由来の変換は Controller 側に寄せるのが定石✨）
 
@@ -161,6 +169,8 @@ public interface ICreateOrderUseCase
 ---
 
 ## 8) バリデーションはどこでやる？✅🧯
+
+![Two-stage Validation](./picture/hex_cs_study_023_validation_checkpoints.png)
 
 「全部Controllerでチェックすべき？」って迷いがちだけど、分けると楽！
 
@@ -181,6 +191,8 @@ public interface ICreateOrderUseCase
 ---
 
 ## 9) DTO命名のおすすめ（迷ったらこれ）🧠✨
+
+![Consistent Naming Conventions](./picture/hex_cs_study_023_naming_tags.png)
 
 初心者だと命名で溺れやすいので、最初は固定でOK！
 

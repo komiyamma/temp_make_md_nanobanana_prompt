@@ -36,6 +36,8 @@ flowchart TD
 
 ## 1. “差し替え”の全体像を1枚で🧠📌
 
+![Choosing Implementation via DI](./picture/hex_cs_study_027_di_vending.png)
+
 イメージはこう👇
 
 * Core（UseCase）が欲しいのは「保存できること」「取得できること」だけ
@@ -66,6 +68,8 @@ flowchart TD
 
 ### Step B：DB用Adapterを“別プロジェクト/別フォルダ”に作る📦✨
 
+![Physical Separation of Concerns](./picture/hex_cs_study_027_separate_buildings.png)
+
 ここが超重要ポイント💡
 **DBの都合（EF Core、接続文字列、Entityクラス）をCoreに入れない**ために分けるよ！
 
@@ -87,6 +91,8 @@ DB Adapterはその interface を実装して、DBへつなぐ役目だけやる
 ---
 
 ### Step D：差し替えポイントは “DI登録（配線）” だけにする🔁🧩
+
+![Switching Implementations](./picture/hex_cs_study_027_railroad_switch.png)
 
 差し替えの本体はここ！
 「どの実装を IOrderRepository として使うか」を切り替えるのは **Composition Root（例：Program.cs）** だよ📍✨
@@ -115,6 +121,8 @@ else
 
 ### ❶ Domain型をそのままDBに保存しようとして詰む💥
 
+![Mixing Domain and Entity](./picture/hex_cs_study_027_entity_chimera.png)
+
 ありがち👇
 
 * DomainのクラスにEFの属性を貼る
@@ -127,6 +135,8 @@ else
 ---
 
 ### ❷ Portが“DBっぽい形”になる（Queryable地獄）🕳️😇
+
+![Leaking IQueryable](./picture/hex_cs_study_027_leaky_queryable.png)
 
 Portにこういうのを入れると、差し替え不能になりがち👇
 
@@ -151,6 +161,8 @@ DB Adapterが投げる例外（接続失敗、制約違反など）を、その�
 ---
 
 ## 4. “差し替えに強い”設計の合言葉3つ🧡✨
+
+![Three Pillars of Swappable Design](./picture/hex_cs_study_027_three_keys.png)
 
 ### 合言葉①：Portは「欲しいこと」だけ📝
 

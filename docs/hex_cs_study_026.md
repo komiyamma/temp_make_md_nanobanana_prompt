@@ -18,6 +18,8 @@ C# 14 は .NET 10 SDK / Visual Studio 2026 で試せるよ〜 🧠✨ ([Microsof
 
 ## 2) ざっくり図で確認🔷➡️🗄️
 
+![Interface in Core, Implementation in Adapter](./picture/hex_cs_study_026_core_vs_outer.png)
+
 Core（中）は「保存したい！」って“気持ち”だけ知ってて、
 実際の保存先（メモリ／DB）は外に置くよ〜😊
 
@@ -27,6 +29,8 @@ Core（中）は「保存したい！」って“気持ち”だけ知ってて�
 ---
 
 ## 3) “InMemoryから始める” の良さ😊💡
+
+![Speed and Simplicity of InMemory](./picture/hex_cs_study_026_rocket_start.png)
 
 * 最速で **動く**（KISS！）🚀
 * まだDBの細かい話がなくても **ユースケースの形が作れる** 🧭
@@ -90,6 +94,8 @@ classDiagram
 
 ### 方針はシンプルに😊
 
+![Thread-safe Storage](./picture/hex_cs_study_026_concurrent_locker.png)
+
 * まずは **ConcurrentDictionary** で持つ（Web APIだと並行アクセスあるからね）🔒
 * `SaveAsync` は「上書き保存」でOK
 * `ListAsync` は「今あるもの全部返す」でOK
@@ -141,6 +147,8 @@ public sealed class InMemoryOrderRepository : IOrderRepository
 
 ## 7) ここで “事故りやすいポイント” 3つ😵‍💫➡️😊
 
+![Common Implementation Pitfalls](./picture/hex_cs_study_026_pitfall_trio.png)
+
 ### ① Domainを外へ漏らしすぎ問題 🌊
 
 * InMemoryは内製だからまだマシだけど、**DTO変換が必要な外部（DB/HTTP）** では
@@ -157,6 +165,8 @@ public sealed class InMemoryOrderRepository : IOrderRepository
 ---
 
 ## 8) “とりあえず動かす配線” の最小例🧩✨
+
+![Dependency Injection Wiring](./picture/hex_cs_study_026_wiring_technician.png)
 
 本来は Composition Root（第32章）でやるけど、今は最小だけ紹介するね🙂
 （あとで「ここに集める！」って形に直す前提でOK）
@@ -182,6 +192,8 @@ app.Run();
 ---
 
 ## 9) 動作チェックのミニ手順☕🧾✅
+
+![Volatility of InMemory Data](./picture/hex_cs_study_026_vanishing_rabbit.png)
 
 * 注文作成APIを叩く（POST）📮
 * 注文一覧APIを叩く（GET）📬

@@ -9,6 +9,8 @@
 
 ## 今日のゴール 🎯✨
 
+![Swapping Implementation safely](./picture/hex_cs_study_028_engine_swap.png)
+
 * ✅ Outbound Port（IOrderRepository）を **DB実装Adapter** で満たす
 * ✅ **DB都合（テーブル、カラム、ORMの癖）をCoreに漏らさない**🧼
 * ✅ “差し替え”を体験して「ヘキサ強い…」ってなる😆🔁
@@ -24,6 +26,8 @@
 ---
 
 ## まずは絵（依存の向き）🔷➡️🗄️
+
+![Unidirectional Dependency Flow](./picture/hex_cs_study_028_dependency_flow.png)
 
 イメージはこれだけ覚えてね😊✨
 
@@ -100,6 +104,8 @@ public interface IOrderRepository
 
 ## 4) DB用のモデル（Persistence Model）を作る 🗄️📄
 
+![Domain Model vs Persistence Model](./picture/hex_cs_study_028_model_contrast.png)
+
 Adapter側に「DBに保存するための形」を作るよ！
 
 ```csharp
@@ -157,6 +163,8 @@ public class CafeDbContext : DbContext
 ここが本丸〜！😆🗃️
 
 ### 変換関数を Adapter に置く（重要）🧼
+
+![Mapping between layers](./picture/hex_cs_study_028_translator_booth.png)
 
 ```csharp
 public static class OrderMapper
@@ -248,6 +256,8 @@ app.Run();
 
 ## 8) マイグレーションでDBを作る 🧱➡️🗄️
 
+![Database Migrations](./picture/hex_cs_study_028_migration_crew.png)
+
 EF Core のマイグレーションで “テーブル作成” を自動化するよ😊
 仕組みは Microsoft のドキュメントでもこの流れだよ ([Microsoft Learn][5])
 
@@ -299,6 +309,8 @@ dotnet ef database update --project Cafe.Adapters --startup-project Cafe.WebApi
 ---
 
 ## 11) AI（Copilot/Codex）に頼るコツ 🤖✨
+
+![AI handling Infrastructure code](./picture/hex_cs_study_028_ai_db_team.png)
 
 AIにお願いするのはめちゃアリ！😆 ただし守るルールはこれ👇
 

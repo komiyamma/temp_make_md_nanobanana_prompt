@@ -40,6 +40,8 @@ flowchart TD
 
 ## 2) “薄いController”の合言葉🪄✨
 
+![The 6 Steps of a Thin Controller](./picture/hex_cs_study_024_controller_checklist.png)
+
 **Controllerは、これだけでOK**👇（テンプレ6手）😆
 
 1. DTOを受け取る📦
@@ -54,6 +56,8 @@ flowchart TD
 ---
 
 ## 3) バリデーションの置き場所ルール✅🧠
+
+![Form vs Business Validation](./picture/hex_cs_study_024_validation_gates.png)
 
 ここ、超大事だよ〜！📌✨
 
@@ -80,6 +84,8 @@ ASP.NET Coreの **`[ApiController]`** を付けると、モデル検証エラー
 ---
 
 ## 4) 変換（DTO ↔ Core）の置き場所🔁🧼
+
+![Data Mapping Responsibility](./picture/hex_cs_study_024_mapper_robot.png)
 
 **変換はAdapterの大事なお仕事**だよ〜！🧹✨
 外の都合（HTTP/JSON）を、Coreに持ち込まないための“フィルター”😤💕
@@ -211,6 +217,8 @@ Controllerの中に「業務ロジック」「DB」「謎の変換」が無い�
 
 ## 6) よくある“太る原因”と治し方🍔➡️🥗
 
+![Fat vs Thin Controller](./picture/hex_cs_study_024_fat_vs_thin.png)
+
 ### 🍔 太る原因①：Controllerで「ビジネス判断」しちゃう
 
 ✅ **治し方**：UseCaseへ移動（Coreへ）🛡️
@@ -230,6 +238,8 @@ Controllerの中に「業務ロジック」「DB」「謎の変換」が無い�
 ---
 
 ## 7) AI活用（Copilot/Codex）で爆速にするコツ🤖💨✨
+
+![Human-AI Collaboration in Architecture](./picture/hex_cs_study_024_ai_architect.png)
 
 ### ✅ おすすめプロンプト例（そのまま貼れる）📋✨
 

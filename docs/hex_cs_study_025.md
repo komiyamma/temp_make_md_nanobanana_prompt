@@ -18,6 +18,8 @@
 
 ## 2) Outbound Port（Repository）って何？🤔🔌
 
+![Repository as an Abstraction Layer](./picture/hex_cs_study_025_clerk_counter.png)
+
 ![Repository Interface](./picture/hex_cs_study_025_repo_promise.png)
 
 ```mermaid
@@ -52,6 +54,8 @@ Core（UseCase）がやりたいのは例えばこんな感じ👇
 
 ### ルール①：Coreが欲しい言葉で約束する（DB言葉は禁止）🚫🗃️
 
+![Ubiquitous Language in Repository](./picture/hex_cs_study_025_language_barrier.png)
+
 ✅ `OrderId` や `Order` を使う
 ❌ `DbContext` / `DbSet` / `IQueryable` / `Include` とかをPortに出さない🙅‍♀️
 
@@ -60,6 +64,8 @@ Core（UseCase）がやりたいのは例えばこんな感じ👇
 ---
 
 ### ルール②：「何でもCRUDできる汎用IRepository<T>」は最初は作らない🧯
+
+![Specific vs Generic Repository](./picture/hex_cs_study_025_custom_suit.png)
 
 汎用にすると一見キレイだけど、だいたい後でこうなる👇
 
@@ -72,6 +78,8 @@ Core（UseCase）がやりたいのは例えばこんな感じ👇
 ---
 
 ### ルール③：Aggregate RootごとにRepositoryを作る感覚🌳✨
+
+![Repository per Aggregate Root](./picture/hex_cs_study_025_aggregate_pot.png)
 
 DDD寄りの設計では **集約（Aggregate）ごとにRepository** を用意するのが基本の考え方だよ〜📚 ([Microsoft Learn][2])
 今回の題材なら「Order」が集約ルートって感じだね👑🧾
@@ -192,6 +200,8 @@ public sealed class CreateOrderUseCase
 
 ## 8) “やりがち事故” を先に潰すコーナー🚧😭➡️😊
 
+![Leaky Abstractions](./picture/hex_cs_study_025_leaky_pipe.png)
+
 ### ❌事故①：RepositoryがDTOを返し始める📦💥
 
 Repositoryは基本 **ドメイン（Order）を返す**のが自然！
@@ -209,6 +219,8 @@ DTOは **Inbound/Outbound（APIの入出力）側**で使うことが多いよ�
 ---
 
 ## 9) AI（Copilot/Codex等）に頼むときのコツ🤖✨
+
+![Supervising AI Code Generation](./picture/hex_cs_study_025_ai_supervisor.png)
 
 AIに雛形を作らせるのは超アリ！ただし **境界ルールは人間が守る**🚦✨
 
