@@ -7,6 +7,8 @@
 
 ---
 
+![hex_ts_study_010_env_check.png](./picture/hex_ts_study_010_env_check.png)
+
 ## 1) まずは環境チェック✅🔍
 
 VS Codeのターミナル（PowerShell）で、これを打って確認するよ👇
@@ -40,6 +42,8 @@ Node公式サイトから **LTS** を入れるのが一番ラクだよ（イン�
 
 ここからが本番！コピペでOK👌✨
 
+![hex_ts_study_010_init_project.png](./picture/hex_ts_study_010_init_project.png)
+
 ### 3-1. フォルダ作成 → npm初期化📁
 
 ```bash
@@ -47,6 +51,8 @@ mkdir todo-hex
 cd todo-hex
 npm init -y
 ```
+
+![hex_ts_study_010_ts_setup.png](./picture/hex_ts_study_010_ts_setup.png)
 
 ### 3-2. TypeScript実行の最短セットを入れる⚡
 
@@ -60,11 +66,15 @@ npm i -D typescript tsx @types/node
 * `tsx`：TypeScriptを気持ちよく実行するランタイム的なやつ⚡（開発体験が軽い） ([GitHub][4])
 * TypeScript自体は、2026/1時点でも公式リリースノートが更新され続けてる（今どきの型機能の前提にできる）🧠✨ ([TypeScript][5])
 
+![hex_ts_study_010_tsconfig.png](./picture/hex_ts_study_010_tsconfig.png)
+
 ### 3-3. tsconfig を作る🛡️
 
 ```bash
 npx tsc --init --rootDir src --outDir dist --module nodenext --target es2022 --strict
 ```
+
+![hex_ts_study_010_main_ts.png](./picture/hex_ts_study_010_main_ts.png)
 
 ### 3-4. `src/main.ts` を作る✍️
 
@@ -100,6 +110,8 @@ console.log("Now:", now.toISOString());
 
 ---
 
+![hex_ts_study_010_run_app.png](./picture/hex_ts_study_010_run_app.png)
+
 ## 4) 起動して「動いた！」を確認🎉✅
 
 ```bash
@@ -127,6 +139,8 @@ corepack enable pnpm
 プロジェクト側で使うpnpmのバージョンを揃えたいなら、Corepackで固定もできるよ📌 ([pnpm.io][7])
 
 ---
+
+![hex_ts_study_010_pitfalls.png](./picture/hex_ts_study_010_pitfalls.png)
 
 ## 6) よくある詰まりポイント集😵‍💫🧯
 

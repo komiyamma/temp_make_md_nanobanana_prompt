@@ -7,6 +7,8 @@
 
 ---
 
+![hex_ts_study_011_user_vs_workspace.png](./picture/hex_ts_study_011_user_vs_workspace.png)
+
 ### 11-1. 設定はどこに入れる？（User / Workspace の使い分け）🗂️✨
 
 VS Codeの設定には大きく2種類あるよ👇
@@ -31,6 +33,8 @@ VS Codeの設定には大きく2種類あるよ👇
 > 「この設定って何が入ってるの？」って迷ったら、まず Default Settings を見に行けばだいたい解決するよ😊🔍✨ ([Visual Studio Code][2])
 
 ---
+
+![hex_ts_study_011_format_on_save.png](./picture/hex_ts_study_011_format_on_save.png)
 
 ### 11-2. 保存時整形（Format on Save）をONにする ✨🧼
 
@@ -58,6 +62,8 @@ VS Codeは JavaScript / TypeScript などに **標準フォーマッター**も�
 
 ### 11-3. 自動import＆import整理（コードの見た目が一気に綺麗）🧹🔁
 
+![hex_ts_study_011_organize_imports.png](./picture/hex_ts_study_011_organize_imports.png)
+
 #### ① 保存時に import を整理する（Organize Imports）📦✨
 
 VS Codeは「保存した瞬間に import を整える」もできるよ！
@@ -81,6 +87,8 @@ VS Codeは「保存した瞬間に import を整える」もできるよ！
 
 > これで、使ってないimport消えたり、順番整ったりして気持ちいい〜〜🥰🧹✨
 
+![hex_ts_study_011_import_update.png](./picture/hex_ts_study_011_import_update.png)
+
 #### ② ファイル移動・リネームで import パスも追従させる 🧳➡️
 
 地味に神なのがこれ！！
@@ -97,6 +105,8 @@ VS Codeは「保存した瞬間に import を整える」もできるよ！
 ```
 
 ---
+
+![hex_ts_study_011_search_exclude.png](./picture/hex_ts_study_011_search_exclude.png)
 
 ### 11-4. 検索を“強くする”設定（大規模でも迷子にならない）🔎🧭✨
 
@@ -129,6 +139,8 @@ VS Codeの検索は超強いんだけど、`node_modules` とか `dist` とか�
 * globパターンの考え方はこれ（公式）([Visual Studio Code][5])
 
 ---
+
+![hex_ts_study_011_line_endings.png](./picture/hex_ts_study_011_line_endings.png)
 
 ### 11-5. よくある詰まり①：改行コード（CRLF/LF）🧷💥
 

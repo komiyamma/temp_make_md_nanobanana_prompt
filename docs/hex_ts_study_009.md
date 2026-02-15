@@ -6,6 +6,8 @@
 
 ---
 
+![hex_ts_study_009_why_todo.png](./picture/hex_ts_study_009_why_todo.png)
+
 ### 9.1 なんで “ToDoミニ” が題材にちょうどいいの？🎯💕
 
 ヘキサゴナル（Ports & Adapters）を体験するには、題材が **小さくて、あとから育てられる** のがいちばん良いのね🌱✨
@@ -25,6 +27,8 @@ ToDoはまさにそれ！
 
 まずは **機能を3つだけ** に絞るよ〜（ここ大事！）✂️✨
 
+![hex_ts_study_009_feature_set.png](./picture/hex_ts_study_009_feature_set.png)
+
 **機能（最小セット）✅**
 
 1. 追加（Add）➕📝
@@ -42,6 +46,8 @@ ToDoアプリって、ただのCRUDに見えるけど…
 
 今回のミニアプリのルールはこんな感じにしよう👇
 
+![hex_ts_study_009_domain_rules.png](./picture/hex_ts_study_009_domain_rules.png)
+
 **ルール案（ドメインの芯）🧠🧷**
 
 * タイトルは空文字ダメ🙅‍♀️（空白だけもダメ）
@@ -53,6 +59,8 @@ ToDoアプリって、ただのCRUDに見えるけど…
 > （のちの章で“APIの設計”にも効いてくるやつ！）
 
 ---
+
+![hex_ts_study_009_dictionary.png](./picture/hex_ts_study_009_dictionary.png)
 
 ### 9.4 まず “言葉” を揃えよう📚💕（地味に最重要！）
 
@@ -67,6 +75,8 @@ ToDoアプリって、ただのCRUDに見えるけど…
 * **completeする**：未完了 → 完了にする操作（2回目はエラー）
 
 ---
+
+![hex_ts_study_009_defer_io.png](./picture/hex_ts_study_009_defer_io.png)
 
 ### 9.5 ユースケースの “入口” をまだ決めない理由💖（I/O後回し！）
 
@@ -85,6 +95,8 @@ ToDoアプリって、ただのCRUDに見えるけど…
 * 仕様変更（たとえばWeb化）しても中心が壊れにくい🔧💕
 
 ---
+
+![hex_ts_study_009_spec_cards.png](./picture/hex_ts_study_009_spec_cards.png)
 
 ### 9.6 仕様を “3つのカード” にして固定しよう🃏✨
 
@@ -139,6 +151,8 @@ ToDoアプリって、ただのCRUDに見えるけど…
 ```
 
 ---
+
+![hex_ts_study_009_ai_safety.png](./picture/hex_ts_study_009_ai_safety.png)
 
 ### 9.8 AI拡張の “安全な使い方” だけ先に決めよ🤖🧠✨
 
