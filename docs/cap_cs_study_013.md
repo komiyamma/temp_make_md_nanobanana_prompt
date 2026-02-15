@@ -10,6 +10,8 @@
 
 ## まず超大事：ここで言う「同期/非同期」って何？🧠💡
 
+![cap_cs_study_013_phone_vs_mail](./picture/cap_cs_study_013_phone_vs_mail.png)
+
 ![cap_cs_study_013_sync_async_call](./picture/cap_cs_study_013_sync_async_call.png)
 
 この章の「非同期」は、C# の async/await（同じスレッドを待たずに進めるやつ）**だけの話じゃない**よ🙅‍♀️
@@ -81,6 +83,8 @@ flowchart TD
 
 ### ここでのおすすめ線引き（基本形）🎛️✨
 
+![cap_cs_study_013_sync_async_table](./picture/cap_cs_study_013_sync_async_table.png)
+
 | 処理           | 同期/非同期         | 理由            | 画面の見せ方（UX）   |
 | ------------ | -------------- | ------------- | ------------ |
 | 入力チェック       | 同期✅            | その場で直してほしい    | 「入力エラー」を即返す  |
@@ -96,6 +100,8 @@ flowchart TD
 
 ## APIの形：非同期を“ちゃんとAPIとして表現”する📮
 
+![cap_cs_study_013_accepted_ticket](./picture/cap_cs_study_013_accepted_ticket.png)
+
 非同期にしたいなら、HTTP的にはこの形が定番👇
 
 * **202 Accepted**：受け付けたけど、処理はまだ終わってないよ🙆‍♀️
@@ -106,6 +112,8 @@ MicrosoftのAPI設計ガイダンスでも、時間がかかる処理は 202 を
 ---
 
 ## ミニ演習①：注文APIの中で「同期/非同期」を線引きしよ🧩✍️
+
+![cap_cs_study_013_drag_drop_exercise](./picture/cap_cs_study_013_drag_drop_exercise.png)
 
 次の質問に答えて、線引きしてみてね😊
 
@@ -130,6 +138,8 @@ MicrosoftのAPI設計ガイダンスでも、時間がかかる処理は 202 を
 ---
 
 ## ハンズオン：最小の“同期受付＋非同期処理”を動かす🧪✨
+
+![cap_cs_study_013_architecture_flow](./picture/cap_cs_study_013_architecture_flow.png)
 
 ここでは、**本物のメッセージブローカーの代わりに**、.NETの Channel を使って「疑似キュー」を作るよ📬
 Channel は「生産者→消費者へ、非同期にデータを渡す」ための仕組みだよ📦✨ ([Microsoft Learn][3])
