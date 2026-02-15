@@ -62,21 +62,29 @@ flowchart TD
 
 ### 1) 監査ログが最初から強い🕵️‍♀️📜
 
+![Audit Log Benefit](./picture/es_ts_study_002_audit_log.png)
+
 「いつ・何が起きたか」が出来事として残るから、後から説明しやすい😊💬
 （会計の取引ログみたいな感じだよ💰）([martinfowler.com][3])
 
 ### 2) 過去の状態に“戻れる”🕰️🔁
+
+![Time Travel Slider](./picture/es_ts_study_002_time_travel_slider.png)
 
 イベントを途中まで再生すれば、**その時点の状態**が作れる✨
 「昨日の20:00の残高みたい！」って要求に強くなる😺💪([martinfowler.com][3])
 
 ### 3) “もしも”ができる🌙✨
 
+![What-If Scenario Timeline](./picture/es_ts_study_002_what_if_timeline.png)
+
 「もしこの入金が無かったら？」みたいな仮想のイベントを混ぜて、別の未来を試せる（デバッグ・検証に便利）🧪🔮([martinfowler.com][3])
 
 ---
 
 ## でも注意！しんどいところもあるよ⚠️😵
+
+![Challenges Juggling](./picture/es_ts_study_002_challenges_juggling.png)
 
 イベントソーシングは魔法じゃない🪄❌
 最初にここだけ知っておくと安心だよ😊
@@ -91,6 +99,8 @@ flowchart TD
 
 ### お題🎒
 
+![Bank Exercise Comparison](./picture/es_ts_study_002_bank_exercise.png)
+
 次の入出金があったよ👇
 
 1. 入金 +10,000
@@ -104,6 +114,8 @@ flowchart TD
 ---
 
 ## 手を動かす（TypeScriptで超ミニ再生）🧸🔁
+
+![Rehydration Funnel](./picture/es_ts_study_002_rehydration_funnel.png)
 
 「イベントを順に足して、残高を作る」だけの超ミニだよ😊
 （ここでは“イベント列から状態が作れる”感覚だけ掴もう！）
@@ -161,6 +173,8 @@ console.log(rehydrateBalance(events.slice(0, 2))); // 7000
 ---
 
 ## よくある勘違いベスト3（ここ超大事）🧯✨
+
+![Misconceptions](./picture/es_ts_study_002_misconceptions.png)
 
 1. **「イベント＝画面のクリックイベント？」**
    → ちがうよ🙅‍♀️

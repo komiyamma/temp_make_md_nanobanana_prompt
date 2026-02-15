@@ -55,6 +55,8 @@ graph TD
 
 ### ユースケース（最小）🧩
 
+![Cart Use Case Story](./picture/es_cs_study_036_use_case_story.png)
+
 * カートを作る🆕
 * 商品を追加する➕
 * 商品を減らす／削除する➖
@@ -80,6 +82,8 @@ ASP.NET Core 10 の変更点や改善は “何となく知っておく” 程�
 ## 4) SQLite テーブル（イベント + Projection）🗃️✨
 
 ### 4.1 Events テーブル（イベントストア本体）📼
+
+![Events Table Schema](./picture/es_cs_study_036_events_schema.png)
 
 要点はこれ👇
 
@@ -156,6 +160,8 @@ public sealed record ItemRemoved(
 
 ### 5.2 集約（Apply と Decide を分ける）🔁📮
 
+![Aggregate Roles: Apply vs Decide](./picture/es_cs_study_036_aggregate_roles.png)
+
 * `Apply`：イベントを状態に反映する（復元で使う）🔁
 * `Decide`：コマンドを受けて「新イベント」を作る（不変条件チェック）🛡️
 
@@ -231,6 +237,8 @@ public sealed class Cart
 
 ### 6.1 まず「読み出して復元」📼➡️🧠
 
+![Rehydration Timeline](./picture/es_cs_study_036_rehydration_timeline.png)
+
 流れは固定👇
 
 1. DBからイベント列を読む
@@ -249,6 +257,8 @@ public static Cart Rehydrate(IEnumerable<IEvent> events)
 ```
 
 ### 6.2 expectedVersion ってなに？🤔
+
+![Concurrency Lock Mechanism](./picture/es_cs_study_036_concurrency_lock.png)
 
 「保存するとき、最後に見た version と同じなら保存していいよ」っていう約束😊
 ズレてたら **誰かが先に更新してる** ので止める🛑
@@ -514,6 +524,8 @@ ASP.NET Core 10 の「何が新しいか」はここでは深追いしなくてO
 
 ### 10.2 “Load → Decide → Append → Project” の型（超重要）📌
 
+![API Rich Sequence](./picture/es_cs_study_036_api_sequence_rich.png)
+
 ```mermaid
 sequenceDiagram
     participant U as ユーザー 📱
@@ -696,6 +708,8 @@ public async Task When_expectedVersion_is_stale_Then_throw_ConcurrencyException(
 ---
 
 ## 13) Projection 再構築（リプレイ）🔁🧹（おすすめ）
+
+![Projection Rebuild Button](./picture/es_cs_study_036_projection_rebuild_button.png)
 
 「読みモデルは壊れても作り直せる」って感覚が超だいじ😊✨
 最小はこれ👇

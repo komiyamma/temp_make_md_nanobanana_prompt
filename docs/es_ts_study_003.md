@@ -14,6 +14,8 @@
 
 ## まず「題材ドメイン」ってなに？🤔🧠
 
+![Tiny Domain World](./picture/es_ts_study_003_tiny_world.png)
+
 ここでいう題材ドメインは、学習用に扱う **ミニ世界** のことだよ🌍✨
 例：ToDo、買い物カート、家計簿…みたいな「小さくて説明しやすい世界」😊
 
@@ -28,6 +30,8 @@
 ---
 
 ## おすすめ題材（迷ったらここから）🐣📚
+
+![Recommended Domains](./picture/es_ts_study_003_recommended_domains.png)
 
 どれも「イベントっぽい出来事」が作りやすいよ😊✨
 
@@ -51,6 +55,8 @@
 ---
 
 ## 「小さく！」の基準（これ超大事）🧊✨
+
+![Scope Trash Can](./picture/es_ts_study_003_scope_trash.png)
 
 学習用は、**わざと弱くてOK** です😊🌸
 次のものは今回“禁止”にしよ🙅‍♀️💦（難しくなるから！）
@@ -97,6 +103,8 @@ flowchart TD
 
 ## ステップ2：要件を5つだけ書く 🖐️📝
 
+![Five Finger Rule](./picture/es_ts_study_003_five_finger_rule.png)
+
 ## ルール：5つに固定（6つ目は“捨てる”）🗑️✨
 
 ここは筋トレ💪🔥
@@ -133,6 +141,8 @@ mindmap
 
 ## ステップ3：要件をCommand候補に変換する 📮✨
 
+![Requirement to Command Translation](./picture/es_ts_study_003_req_to_command.png)
+
 ## Commandって？🤔
 
 Commandは「やりたいこと（要求）」だよ😊
@@ -157,6 +167,8 @@ Commandは「やりたいこと（要求）」だよ😊
 ## ミニ演習（この章の手を動かすところ）✍️🌸
 
 ## 演習A：あなたの題材で「要件5つ」🖐️📝
+
+![Exercise Sheet Artifact](./picture/es_ts_study_003_exercise_sheet.png)
 
 1. 題材を1つ選ぶ（ToDo/カート/家計簿）🎯
 2. 要件を5つだけ書く🖐️

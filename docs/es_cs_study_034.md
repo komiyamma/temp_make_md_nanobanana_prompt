@@ -10,6 +10,8 @@
 
 # 34.1 なぜ「JSONと互換性」が超重要なの？😳💥
 
+![JSON Compatibility Accidents](./picture/es_cs_study_034_json_compatibility_accidents.png)
+
 イベントソーシングでは、イベントは「履歴」じゃなくて **真実そのもの** だよね📜✨
 だから一度保存したイベントは、基本 **ずっと読めないと困る** 😱
 
@@ -24,6 +26,8 @@
 ---
 
 # 34.2 今日つくる「保存の形」📦✨
+
+![Event Envelope Structure](./picture/es_cs_study_034_envelope_structure_details.png)
 
 SQLiteのEventsテーブル（前章）には、だいたいこう入ってる想定だったよね👇
 
@@ -54,6 +58,8 @@ SQLiteのEventsテーブル（前章）には、だいたいこう入ってる�
 ---
 
 # 34.3 JSON互換性の「最初の4ルール」🧷🛡️
+
+![4 JSON Rules](./picture/es_cs_study_034_json_rules_shield.png)
 
 ## ルール1：イベントtypeは契約📜（変えない）
 
@@ -103,6 +109,8 @@ SQLiteのEventsテーブル（前章）には、だいたいこう入ってる�
 ---
 
 # 34.5 実装：イベント用JSONオプションを用意しよう🧰✨
+
+![Strict Write vs Tolerant Read](./picture/es_cs_study_034_strict_vs_tolerant.png)
 
 ![JSON変換のイメージ](./picture/es_cs_study_034_json_transformer.png)
 
@@ -278,6 +286,8 @@ public sealed class EventSerializer
 
 # 34.8 メタデータ（meta）もJSONにしよう🏷️✨
 
+![Metadata Tags](./picture/es_cs_study_034_metadata_tags.png)
+
 イベント本体（data）とは別に、metaには「追跡したい情報」を入れると便利だよ📌
 
 例👇
@@ -328,6 +338,8 @@ string metaJson = JsonSerializer.Serialize(meta, EventJson.Write);
 ---
 
 ## 34.10 ミニ演習②：重複キーを弾く（.NET 10）🛡️💥
+
+![Duplicate Key Guard](./picture/es_cs_study_034_duplicate_key_guard.png)
 
 わざと「危ないJSON」を作ってみよう😈
 
