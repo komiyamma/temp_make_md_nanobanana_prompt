@@ -37,6 +37,7 @@
 ## 3) 進化の3戦略（やさしい順）🥚➡️🐥➡️🦅
 
 ![イベントの進化](./picture/es_ts_study_035_versioning.png)
+![Evolution Strategies](./picture/es_ts_study_035_evolution_strategies.png)
 
 ```mermaid
 graph TD
@@ -92,6 +93,8 @@ graph TD
 * 👎 型名が増えやすい（`v1` `v2`…）
 
 ## 方式2：メタデータに `schemaVersion` を入れる（おすすめ）🏷️✨
+
+![Schema Versioning](./picture/es_ts_study_035_schema_versioning.png)
 
 * 👍 `type` は変えず、`schemaVersion` で分岐できる
 * 👍 Upcast チェーンが作りやすい
@@ -178,6 +181,7 @@ const upcasters: Upcaster[] = [
 
 export function upcastToLatest(e: CartItemAddedEnvelope): CartItemAddedEnvelope {
   // 何回でも通して“最新”へ持ち上げる🔁
+  // ![Upcast Pipeline](./picture/es_ts_study_035_upcast_pipeline.png)
   return upcasters.reduce((acc, fn) => fn(acc), e);
 }
 ```
@@ -204,6 +208,8 @@ export function upcastToLatest(e: CartItemAddedEnvelope): CartItemAddedEnvelope 
 ---
 
 ## 8) 冪等性（Idempotency）ってなに？🧷🔁
+
+![Idempotency Concept](./picture/es_ts_study_035_idempotency_concept.png)
 
 **同じ操作が2回届いても、結果が1回分になる**性質だよ✨
 ネットワークは普通に失敗するし、クライアントもサーバも普通にリトライするから、冪等性は“ほぼ必須”になりがち😵‍💫
@@ -237,6 +243,8 @@ export function upcastToLatest(e: CartItemAddedEnvelope): CartItemAddedEnvelope 
 * すでに存在したら「前回の結果を返す」だけでOK✨
 
 ## テーブル例（最小）
+
+![Idempotency Table](./picture/es_ts_study_035_idempotency_table.png)
 
 ```sql
 -- すでに処理した “操作” の記録
@@ -292,6 +300,7 @@ export async function handleAddItem(
   const streamId = `cart-${cmd.payload.cartId}`;
 
   // ① 既処理チェック（最速で返す！）
+  // ![Command Flow with Idempotency](./picture/es_ts_study_035_command_flow_idempotency.png)
   const cached = deps.idempo.find(cmd.idempotencyKey);
   if (cached) {
     return JSON.parse(cached.resultJson) as CommandResult;

@@ -9,6 +9,8 @@
 
 ## 1) なんで“シリアライズ”が超重要なの？🧠💡
 
+![Future Self Reading](./picture/es_ts_study_034_serialization_importance.png)
+
 イベントソーシングでは、イベントは「履歴」＝将来ずっと残り続ける前提📜✨
 だからイベントのJSONは、いわば **未来の自分（or 別チーム）への手紙** 💌
 
@@ -22,6 +24,8 @@
 
 ## 2) まずは“イベント封筒（Envelope）”を決めよう📦🏷️
 
+![Event Envelope](./picture/es_ts_study_034_event_envelope.png)
+
 イベントは **dataだけ** じゃなく、周りに「メタ情報」を付けて保存するのが定番です✨
 
 ### ✅ 目標の形（おすすめ）
@@ -34,6 +38,8 @@
 ---
 
 ## 3) JSONに“入れてOK/NG”を知っておこう🧾🚦
+
+![JSON Safe Types](./picture/es_ts_study_034_json_safe_types.png)
 
 ### ✅ JSONに入れて安全なもの
 
@@ -118,6 +124,8 @@ export const createMeta = (): EventMeta => ({
 ---
 
 ### 4-3) バリデーション（Zod）で“壊れたJSON”をはじく🧪🛡️
+
+![Validation Gate](./picture/es_ts_study_034_validation_gate.png)
 
 イベントがDBから返ってきたとき、**型は保証されない**ので、入口でチェックします👀✨
 
@@ -341,6 +349,8 @@ export function applyCartEvent(state: CartState | null, event: CartDomainEvent):
 
 ## 8) 互換性の第一歩🧬🧷（この章のいちばん大事！）
 
+![Compatibility Rules](./picture/es_ts_study_034_compatibility_rules.png)
+
 “将来の変更”で壊さないために、ここだけは守ると強いよ💪✨
 
 ### ✅ ルール①：`type` は絶対に変えない（改名禁止）🚫
@@ -356,6 +366,7 @@ export function applyCartEvent(state: CartState | null, event: CartDomainEvent):
 ### ✅ ルール③：どうしても形が違うなら“Upcast（変換）”で救う🛟
 
 ![Upcasting：古いJSONを新しい型に変換する魔法の箱](./picture/es_ts_study_034_upcast_box.png)
+![Upcast Logic](./picture/es_ts_study_034_upcast_logic.png)
 
 ```mermaid
 graph LR
