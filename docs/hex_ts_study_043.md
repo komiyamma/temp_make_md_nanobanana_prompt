@@ -1,6 +1,6 @@
-﻿# 第43章：まとめ：今日の合言葉3つ（再掲）🎁💖
+# 第43章：まとめ：今日の合言葉3つ（再掲）🎁💖
 
-![hex_ts_study_043[(./picture/hex_ts_study_043_the_three_mottos_summary.png)
+![hex_ts_study_043](./picture/hex_ts_study_043_the_three_mottos_summary.png)
 
 ([Past chat][1])([Past chat][2])
 
@@ -22,6 +22,8 @@
 ---
 
 ## 43.2 合言葉①「中心を守る🛡️」＝ルールは“城の中心”に置く🏰
+
+![hex_ts_study_043](./picture/hex_ts_study_043_core_castle_map.png)
 
 ### ✅ 中心ってどこ？
 
@@ -51,6 +53,8 @@
 ---
 
 ## 43.3 合言葉②「約束はPort🔌」＝中心が欲しい“差し込み口”を決める
+
+![hex_ts_study_043](./picture/hex_ts_study_043_port_socket_minimal.png)
 
 ### ✅ Portってなに？
 
@@ -84,6 +88,8 @@ export interface TodoRepositoryPort {
 
 ## 43.4 合言葉③「変換はAdapter🧩」＝外の都合を吸収する翻訳係🔁
 
+![hex_ts_study_043](./picture/hex_ts_study_043_adapter_translator_booth.png)
+
 ### ✅ Adapterの役割（超シンプル）
 
 * **外の形式 → 中のDTO/型** に変換
@@ -103,6 +109,8 @@ export interface TodoRepositoryPort {
 ---
 
 ## 43.5 迷ったらこの「3問」だけで判定しよ🧭✨
+
+![hex_ts_study_043](./picture/hex_ts_study_043_decision_flowchart.png)
 
 何をどこに置くか迷ったら、これでOK😊💡
 
@@ -126,6 +134,8 @@ export interface TodoRepositoryPort {
 ---
 
 ## 43.6 30秒セルフチェック📝✅（Yesが多いほどキレイ！）
+
+![hex_ts_study_043](./picture/hex_ts_study_043_health_checklist.png)
 
 * 中心（domain/usecase）はHTTPを知らない🙅‍♀️
 * 中心はDBの型を知らない🙅‍♀️
