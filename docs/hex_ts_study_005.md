@@ -9,6 +9,8 @@ Ports & Adapters（ヘキサゴナル）は、**中心を外側（UI/DB/外部AP
 
 ## 1) まず結論：Portは「中心が決める、やってほしいことリスト」📜✨
 
+![hex_ts_study_005_wish_list](./picture/hex_ts_study_005_wish_list.png)
+
 Port はざっくり言うと、
 
 * **中心が外側に対して「こうやって呼んでね」「これを返してね」って決める“約束”**
@@ -37,6 +39,8 @@ TypeScriptだと Port はたいてい **interface**（または type）で表現
 
 ## 3) Portには2種類あるよ（超重要）🚪➡️⬅️
 
+![hex_ts_study_005_in_out_ports](./picture/hex_ts_study_005_in_out_ports.png)
+
 ### 🟦 Inbound Port（外→中）🚪🔌
 
 外側（CLI/HTTP/UI）が、中心のユースケースを呼ぶための入口。
@@ -57,6 +61,8 @@ Portって、作り方を間違えると一気にしんどくなるの…😵‍
 だから合言葉はこれ👇
 
 ### ✅ “最小の約束”にするコツ3つ🌱
+
+![hex_ts_study_005_minimal_port](./picture/hex_ts_study_005_minimal_port.png)
 
 1. **ユースケースが本当に必要な操作だけに絞る**
 2. **外側の事情が透ける名前/型にしない**（HTTPっぽい、DBっぽい、ファイルっぽいのNG🙅‍♀️）
@@ -88,6 +94,8 @@ export interface ListTodosPort {
 
 ### 5-2) Outbound Port（保存のお願い）💾🔌
 
+![hex_ts_study_005_code_viz](./picture/hex_ts_study_005_code_viz.png)
+
 ```ts
 // app/ports/outbound/TodoRepositoryPort.ts
 export interface TodoRepositoryPort {
@@ -108,6 +116,8 @@ export interface TodoRepositoryPort {
 ## 6) やりがち事故：「Portが太る」😱🐘
 
 ### ❌ ダメ寄り例：巨大Port（なんでも屋）🧹😵
+
+![hex_ts_study_005_fat_port](./picture/hex_ts_study_005_fat_port.png)
 
 ```ts
 export interface TodoRepositoryPort {
@@ -143,6 +153,8 @@ Wikiでも「ポートの数や粒度は固定じゃない（極端にユース�
 だからおすすめはこれ👇
 
 ### ✅ ちょうどいい粒度の目安📏✨
+
+![hex_ts_study_005_granularity](./picture/hex_ts_study_005_granularity.png)
 
 * Inbound Port：**1ユースケース = 1 Port** から始める（迷子にならない）🧭
 * Outbound Port：**外部の“種類”ごとに1 Port**（保存、通知、時間、外部API など）🧩

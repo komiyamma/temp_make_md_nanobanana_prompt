@@ -9,6 +9,8 @@
 
 ## 1) 合言葉その①「中心を守る🛡️」🏰💖
 
+![hex_ts_study_004_three_passwords](./picture/hex_ts_study_004_three_passwords.png)
+
 ### ✅ 意味（超ざっくり）
 
 **アプリの中心（ルール）に、外の都合を入れない**ってことだよ🙂✨
@@ -20,6 +22,8 @@
 だから **中心は静かに・強く**が正義✨🛡️
 
 ### ✅ すぐ使えるチェックリスト ✅
+
+![hex_ts_study_004_forbidden_imports](./picture/hex_ts_study_004_forbidden_imports.png)
 
 中心のコードを見て、これが出てきたら黄色信号🚥😳
 
@@ -34,6 +38,8 @@
 ---
 
 ## 2) 合言葉その②「約束はPort🔌」📌✨
+
+![hex_ts_study_004_port_concept](./picture/hex_ts_study_004_port_concept.png)
 
 ### ✅ 意味（超ざっくり）
 
@@ -64,6 +70,8 @@ export interface TodoRepositoryPort {
 
 ## 3) 合言葉その③「変換はAdapter🧩」🔁✨
 
+![hex_ts_study_004_adapter_impl](./picture/hex_ts_study_004_adapter_impl.png)
+
 ### ✅ 意味（超ざっくり）
 
 Adapterは、**外側の世界を“中心に合わせる”変換係**だよ🧩💕
@@ -93,6 +101,8 @@ export class InMemoryTodoRepositoryAdapter implements TodoRepositoryPort {
 ```
 
 ### 🥗 Adapterは「薄い」が正義！
+
+![hex_ts_study_004_thin_fat_adapter](./picture/hex_ts_study_004_thin_fat_adapter.png)
 
 Adapterが太り始めると、中心が汚れていくの😱💦
 
