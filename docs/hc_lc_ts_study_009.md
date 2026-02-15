@@ -31,6 +31,8 @@
 
 ### ルール①：名前は「やること」を1文で言えるように🎤
 
+![Naming Clarity Comparison](./picture/hc_lc_ts_study_009_naming_comparison.png)
+
 * `handle()` ❌（なにを？）
 * `saveUserProfile()` ✅（なにをするか一発）
 
@@ -68,6 +70,8 @@
 ---
 
 ## 9-3. `utils` が増える本当の理由🍲💥
+
+![Utils Trash Bin](./picture/hc_lc_ts_study_009_utils_explosion.png)
 
 `utils` は悪じゃないけど、増殖する時は理由がだいたい同じ👇
 
@@ -203,6 +207,8 @@ src/
 
 #### Step2️⃣ 案A（feature単位）に移動する🚚
 
+![Refactoring File Movement](./picture/hc_lc_ts_study_009_refactoring_movement.png)
+
 ```ts
 src/
   features/
@@ -218,6 +224,8 @@ src/
 ```
 
 #### Step3️⃣ `utils.ts` を分解する✂️✨
+
+![Utils Decomposition](./picture/hc_lc_ts_study_009_utils_decomposition.png)
 
 * `utils.ts` の中身が
 
@@ -237,6 +245,8 @@ src/
 ---
 
 ## 9-8. AIと一緒にやると爆速🤖💨（でも最後は自分でチェック🧠✅）
+
+![AI Folder Organizer](./picture/hc_lc_ts_study_009_ai_organizer.png)
 
 ### まず投げるプロンプト（章の指定どおり）🤖
 

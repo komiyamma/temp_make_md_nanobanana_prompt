@@ -20,6 +20,8 @@
 
 ### 6-1. この章の「ニオイ」って何？👃💦
 
+![Component Smell Anatomy](./picture/hc_lc_ts_study_006_component_smell.png)
+
 #### ニオイの正体🍲
 
 1つのコンポーネント（またはハンドラ）の中に…
@@ -120,6 +122,8 @@ export function UserList() {
 
 ### 6-4. 変更が来たらどう壊れる？（変更シミュレーション）🎮💥
 
+![Change Impact Chaos](./picture/hc_lc_ts_study_006_change_impact.png)
+
 たとえば仕様変更👇
 
 1. **表示名を “名 姓” にしたい**（整形の話）
@@ -177,6 +181,8 @@ flowchart LR
 ---
 
 ### 6-6. ハンズオン：箱分けリファクタ🛠️✨
+
+![Refactoring Steps Flow](./picture/hc_lc_ts_study_006_refactoring_steps.png)
 
 #### ステップ1：まず“色分け”する🎨
 
@@ -301,6 +307,8 @@ export function UserList() {
 
 ### 6-7. こうなると何が嬉しいの？🎁✨（変更が“1箇所”になる）
 
+![Single Point of Change](./picture/hc_lc_ts_study_006_single_point_change.png)
+
 さっきの変更がこうなる👇
 
 * 表示名の順番変えたい（名→姓）👉 **Mapperだけ**🔁
@@ -313,6 +321,8 @@ export function UserList() {
 ---
 
 ### 6-8. 自己チェックリスト✅👀
+
+![Checklist Warning](./picture/hc_lc_ts_study_006_checklist_warning.png)
 
 次の質問に「YES」が多いほど、ニオイが強いよ〜🚨
 
