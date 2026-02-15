@@ -1,4 +1,4 @@
-﻿# 第32章：テスト①：ユースケース単体テスト（最優先）🧪💪
+# 第32章：テスト①：ユースケース単体テスト（最優先）🧪💪
 
 ![hex_ts_study_032[(./picture/hex_ts_study_032_unit_testing_usecases.png)
 
@@ -29,6 +29,8 @@
 ---
 
 ## 3) 今日のテスト戦略（結論）🧩
+
+![Test Strategy](./picture/hex_ts_study_032_test_strategy.png)
 
 ユースケース単体テストの定番セットはこれ👇
 
@@ -104,6 +106,8 @@ export default defineConfig({
 
 ## 6) テスト用の“差し替え部品”を用意しよう🧰✨
 
+![Fake Components](./picture/hex_ts_study_032_fake_components.png)
+
 ### InMemoryTodoRepository（例）
 
 （すでに Chapter 26 のを持ってるならそれを使ってOKだよ😊）
@@ -155,6 +159,8 @@ export class FakeClock implements ClockPort {
 
 ### テストの型（Arrange → Act → Assert）🧁
 
+![AAA Pattern](./picture/hex_ts_study_032_aaa_pattern.png)
+
 * 🍳 Arrange：準備
 * ▶️ Act：実行
 * ✅ Assert：確認
@@ -193,6 +199,8 @@ describe('AddTodoUseCase', () => {
 
 ## 8) AddTodo の “失敗テスト” を足す（仕様を守る🛡️）🚫🧪
 
+![Failure Test](./picture/hex_ts_study_032_failure_test.png)
+
 「タイトル空は禁止」みたいなルールは、テストで固定しよ💪
 
 ```ts
@@ -224,6 +232,8 @@ describe('AddTodoUseCase', () => {
 ---
 
 ## 9) CompleteTodo のテスト（状態遷移の守り🧷✨）
+
+![State Transition Test](./picture/hex_ts_study_032_state_transition.png)
 
 やりたいのはこの3つ👇
 
@@ -310,6 +320,8 @@ describe('ListTodosUseCase', () => {
 
 ## 11) テストを“仕様書っぽくする”コツ集 📖✨
 
+![Readable Tests](./picture/hex_ts_study_032_readable_tests.png)
+
 テストって、読み物として強いとめちゃくちゃ価値が上がるよ😊💕
 
 * 🏷️ `it('〜できる')` を **日本語で仕様っぽく**
@@ -343,6 +355,8 @@ Vitest 4 系ではカバレッジ周りに変更もあるから、更新時は m
 ---
 
 ## 14) AI拡張の使い方（この章での正解🤖✨）
+
+![AI Test Assistant](./picture/hex_ts_study_032_ai_assistant.png)
 
 AIはここで超頼れるよ😆💕
 

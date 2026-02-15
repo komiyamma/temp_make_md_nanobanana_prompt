@@ -1,4 +1,4 @@
-﻿# 第30章：HTTP導入②：Request→DTO変換、Response整形 🔁📮
+# 第30章：HTTP導入②：Request→DTO変換、Response整形 🔁📮
 
 ![hex_ts_study_030[(./picture/hex_ts_study_030_request_processing_flow.png)
 ![hex_ts_study_030[(./picture/hex_ts_study_030_request_response_dtos.png)
@@ -33,6 +33,8 @@
 
 ## 2) まず“流れ”を1枚で理解しよ 🗺️🏃‍♀️💨
 
+![Request Processing Flow](./picture/hex_ts_study_030_flow_diagram.png)
+
 ```text
 HTTP Request
   ↓ (params/query/body を読む)
@@ -52,6 +54,8 @@ HTTP Response
 ---
 
 ## 3) 入口（HTTP Adapter）が「やること / やらないこと」🚪🧩
+
+![Adapter Duties](./picture/hex_ts_study_030_adapter_duties.png)
 
 ### やること ✅
 
@@ -93,6 +97,8 @@ TypeScriptの型だけだと、実行時に「変なJSON」が来たとき守れ
 
 ## 6) コード：スキーマ（入口の検問所）🧪🚧
 
+![Zod Schema Gate](./picture/hex_ts_study_030_zod_gate.png)
+
 ```ts
 // src/adapters/http/todo.schemas.ts
 import { z } from "zod";
@@ -128,6 +134,8 @@ export const ListTodosQuerySchema = z.object({
 ---
 
 ## 7) コード：Request → UseCase入力DTO へ変換 🔁📮
+
+![Mapper Translation](./picture/hex_ts_study_030_mapper_translation.png)
 
 UseCase側に、例えばこういうDTOがある想定ね👇（すでに前章までで作ってる感じ）
 
@@ -179,6 +187,8 @@ export function isZodError(err: unknown): err is ZodError {
 
 ## 8) レスポンス整形：成功時の“見せ方”📦✨
 
+![Presenter Formatting](./picture/hex_ts_study_030_presenter_format.png)
+
 成功時も「UseCaseの返り値」をそのまま返すんじゃなく、**HTTPの形**に整えると未来が楽😊💕
 
 ```ts
@@ -216,6 +226,8 @@ export function presentTodos(todos: Array<{ id: string; title: string; completed
 ---
 
 ## 9) エラー整形：RFC 9457（Problem Details）で統一 🧯📦
+
+![Problem Details Standard](./picture/hex_ts_study_030_problem_details.png)
 
 エラーの形が毎回バラバラだと、クライアント側が泣く😭
 そこで “標準の型” に寄せるのが強い✨（RFC 9457） ([RFCエディタ][4])
@@ -266,6 +278,8 @@ export function zodToProblem(err: ZodError, instance?: string): ProblemDetails {
 ---
 
 ## 11) “UseCaseのエラー”を HTTP に翻訳する 🧠➡️🌐
+
+![Error Mapping](./picture/hex_ts_study_030_error_mapping.png)
 
 ここがヘキサゴナルの気持ちよさポイント💖
 中心が投げるエラー（仕様）を、HTTP向けに **ここでだけ** 変換する！

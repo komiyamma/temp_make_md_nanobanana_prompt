@@ -1,4 +1,4 @@
-﻿# 第28章：Adapterが薄いかチェック（太ったら負け）🥗⚠️
+# 第28章：Adapterが薄いかチェック（太ったら負け）🥗⚠️
 
 ![hex_ts_study_028[(./picture/hex_ts_study_028_thin_adapter_principle.png)
 
@@ -20,6 +20,8 @@ Adapterは **「外の世界 ↔ 中心（Port）」の翻訳**をする係だ�
 
 ## 1. なぜ「太ったAdapter」は危険なの？😵‍💫💥
 
+![Fat Adapter Danger](./picture/hex_ts_study_028_fat_adapter_danger.png)
+
 ヘキサゴナルの大事な狙いは **中心（ドメイン/ユースケース）を外部から隔離**して、差し替え＆テストを楽にすること。([アリステア・コックバーン][1])
 依存の向きも「UI → domain ← data source」みたいに、外側が中心に寄るのがポイントだよね🧭([martinfowler.com][2])
 
@@ -34,6 +36,8 @@ Cockburnも「内側のコードが外に漏れる」ことが根本原因だっ
 ---
 
 ## 2. 「太ったAdapter」判定：3秒チェック⏱️👀
+
+![Adapter Check Checklist](./picture/hex_ts_study_028_adapter_checklist.png)
 
 Adapterの中に、こんなのが出てきたら黄色信号〜⚠️
 
@@ -58,6 +62,8 @@ Adapterの中に、こんなのが出てきたら黄色信号〜⚠️
 
 ## 3. Adapterに置いていいもの / ダメなもの ✅🚫
 
+![Adapter Do's and Don'ts](./picture/hex_ts_study_028_adapter_dos_donts.png)
+
 迷ったらこの仕分けでOKだよ〜🥳
 
 ### ✅ 置いていい（Adapterの本業）🧩
@@ -77,6 +83,8 @@ Adapterの中に、こんなのが出てきたら黄色信号〜⚠️
 ---
 
 ## 4. 実例：太ったFileRepository（やりがち！）📄💾😇
+
+![Fat Repository Example](./picture/hex_ts_study_028_fat_repository_code.png)
 
 「FileTodoRepositoryAdapter（JSON保存）」で、ついこうなりがち👇
 
@@ -154,6 +162,8 @@ export class FileTodoRepositoryAdapter {
 ---
 
 ## 5. 正しい分離：ルールは中心へ、Adapterは翻訳へ🛡️✨
+
+![Dieting the Adapter](./picture/hex_ts_study_028_diet_process.png)
 
 ここから「ダイエット」するよ〜🥗💪
 
@@ -331,6 +341,8 @@ export class FileTodoRepositoryAdapter implements TodoRepositoryPort {
 
 ## 7. どうやって「ダイエット」する？手順書🔧📌
 
+![Refactoring Steps](./picture/hex_ts_study_028_refactoring_steps.png)
+
 太ってても大丈夫！この順で痩せるよ〜🥳
 
 1. Adapterのif文を全部ハイライト🖍️
@@ -381,6 +393,8 @@ export class FileTodoRepositoryAdapter implements TodoRepositoryPort {
 ---
 
 ## 10. まとめ：今日の合言葉🥗🔌🧩
+
+![Summary Slogan](./picture/hex_ts_study_028_summary_slogan.png)
 
 * Adapterは **翻訳だけ**🧩✨
 * ルールは **中心へ集める**🧠❤️
