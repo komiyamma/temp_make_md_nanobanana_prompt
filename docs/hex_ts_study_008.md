@@ -16,6 +16,8 @@
 
 ---
 
+![hex_ts_study_008_dependency_def.png](./picture/hex_ts_study_008_dependency_def.png)
+
 ## 2) まず「依存」ってなに？🤔💭
 
 ここでいう依存は、超ざっくり言うと…
@@ -29,6 +31,8 @@
 ---
 
 ## 3) 依存の向き：いちばん大事なルール📌🔥
+
+![hex_ts_study_008_dependency_rule.png](./picture/hex_ts_study_008_dependency_rule.png)
 
 ### ✅ ルールはこれだけ（まず暗記でOK）🧠✨
 
@@ -46,6 +50,8 @@
 
 ---
 
+![hex_ts_study_008_flow_vs_dependency.png](./picture/hex_ts_study_008_flow_vs_dependency.png)
+
 ## 4) つまずきポイント⚠️：「実行の流れ」と「依存の向き」が逆っぽく見える😵
 
 ここ、初心者さんが混乱しがち〜！😣💦
@@ -60,6 +66,8 @@
 
 ---
 
+![hex_ts_study_008_inversion_benefits.png](./picture/hex_ts_study_008_inversion_benefits.png)
+
 ## 5) 「依存が逆転」すると何がうれしいの？🎁✨
 
 ### うれしいことランキング🏆💕
@@ -71,6 +79,8 @@
 この “中心が無傷” が、ヘキサゴナルの気持ちよさだよ〜😊💖
 
 ---
+
+![hex_ts_study_008_bad_dependency.png](./picture/hex_ts_study_008_bad_dependency.png)
 
 ## 6) ダメな例😱：中心が外側を知っちゃう
 
@@ -160,6 +170,8 @@ export class InMemoryTodoRepositoryAdapter implements TodoRepositoryPort {
 
 ---
 
+![hex_ts_study_008_composition_root.png](./picture/hex_ts_study_008_composition_root.png)
+
 ## 9) 依存の組み立て（Composition Root）で合体🧩🏗️
 
 「どのAdapterを使うか」は **外側の仕事** だよ😊
@@ -194,6 +206,8 @@ test("タイトル空はエラー🚫", async () => {
 ```
 
 ---
+
+![hex_ts_study_008_lint_guard.png](./picture/hex_ts_study_008_lint_guard.png)
 
 ## 11) “守り”のテク（事故を自動で止める）🧷✨
 

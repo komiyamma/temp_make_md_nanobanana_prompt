@@ -16,6 +16,8 @@
 
 ---
 
+![hex_ts_study_007_in_out_direction.png](./picture/hex_ts_study_007_in_out_direction.png)
+
 ## 2) いちばん大事な考え方：**“アプリの中心から見て”どっち向き？** 🏰🛡️
 
 Inbound / Outbound は、ネットワークとかHTTPの向きじゃなくてね…
@@ -31,12 +33,16 @@ Inbound / Outbound は、ネットワークとかHTTPの向きじゃなくてね
 
 ## 3) 超かんたん定義（暗記用）📌✨
 
+![hex_ts_study_007_inbound_examples.png](./picture/hex_ts_study_007_inbound_examples.png)
+
 ### Inbound（外→中）🚪➡️🧡
 
 * 例：画面ボタン、HTTPリクエスト、CLIコマンド、イベント受信
 * 役割：外の入力を受けて、中心（ユースケース）を呼ぶ
 * 別名：**Primary / Driving**（「アプリを動かしに来る側」）
   ※この呼び方は“Primary/Secondary adapters”の説明でよく出るよ🧩 ([Code With Arho][1])
+
+![hex_ts_study_007_outbound_examples.png](./picture/hex_ts_study_007_outbound_examples.png)
 
 ### Outbound（中→外）⬅️➡️💙
 
@@ -63,6 +69,8 @@ Inbound / Outbound は、ネットワークとかHTTPの向きじゃなくてね
 * Portの形に合わせて “翻訳” してくれる係
 
 ---
+
+![hex_ts_study_007_todo_flow.png](./picture/hex_ts_study_007_todo_flow.png)
 
 ## 5) 1枚でわかる：流れの図（ToDoミニのイメージ）📝✨
 
@@ -106,6 +114,8 @@ Inbound / Outbound は、ネットワークとかHTTPの向きじゃなくてね
 
 ---
 
+![hex_ts_study_007_core_owns_port.png](./picture/hex_ts_study_007_core_owns_port.png)
+
 ## 7) ここが超重要：**“中心がPortを持つ”** ルール 📌🛡️
 
 Inbound/Outboundの整理で、最終的に守りたいのはこれ👇
@@ -140,6 +150,8 @@ export interface TodoRepository {
 }
 ```
 
+![hex_ts_study_007_inbound_translation.png](./picture/hex_ts_study_007_inbound_translation.png)
+
 ### Inbound Adapter（外→中の翻訳係）⌨️🧩
 
 CLIが受けた文字列を、Portの形にして呼ぶ：
@@ -153,6 +165,8 @@ export async function cliAdd(title: string, addTodo: AddTodoUseCase) {
   console.log(`added! id=${result.id}`);
 }
 ```
+
+![hex_ts_study_007_outbound_impl.png](./picture/hex_ts_study_007_outbound_impl.png)
 
 ### Outbound Adapter（中→外の実装係）📄🧩
 

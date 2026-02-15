@@ -7,6 +7,8 @@
 
 ---
 
+![hex_ts_study_013_strict_concept.png](./picture/hex_ts_study_013_strict_concept.png)
+
 ## 1) まず strict って何？🧠💡
 
 `"strict": true` を入れると、TypeScript が **いろんな“厳しめチェック”をまとめて ON** にしてくれるよ✅
@@ -28,6 +30,8 @@ TypeScript 5.9 の release notes では、`tsc --init` が **より“推奨寄�
 そして公式 Download ページでも「最新は（当時点で）5.9」って案内されてるよ📦 ([typescriptlang.org][3])
 
 ---
+
+![hex_ts_study_013_strict_minimal.png](./picture/hex_ts_study_013_strict_minimal.png)
 
 ## 3) 今日作るのは「strict最小セット」✂️🛡️
 
@@ -79,10 +83,14 @@ TypeScript 5.9 の release notes では、`tsc --init` が **より“推奨寄�
 **型チェックを強化して、バグを未然に止める**。
 strict は“まとめON”で、必要なら個別OFFもできるよ🔧 ([typescriptlang.org][1])
 
+![hex_ts_study_013_case_sensitivity.png](./picture/hex_ts_study_013_case_sensitivity.png)
+
 ### ✅ forceConsistentCasingInFileNames 🔤
 
 `./FileManager` と `./fileManager` みたいな **大文字小文字ブレ**をエラーにしてくれる。
 人によって環境が違うと起こる事故を防ぐよ🧯 ([typescriptlang.org][4])
+
+![hex_ts_study_013_skip_lib_check.png](./picture/hex_ts_study_013_skip_lib_check.png)
 
 ### ✅ skipLibCheck 🧹
 
@@ -92,6 +100,8 @@ strict は“まとめON”で、必要なら個別OFFもできるよ🔧 ([type
 ---
 
 ## 6) strict で最初に出がちなエラー3兄弟 👀💥（怖くない！）
+
+![hex_ts_study_013_undefined_check.png](./picture/hex_ts_study_013_undefined_check.png)
 
 ### ① `Object is possibly 'undefined'.` 😵
 
@@ -113,6 +123,8 @@ strict は“まとめON”で、必要なら個別OFFもできるよ🔧 ([type
 **Port（interface）**から型が流れてくる設計にすると、この系の事故が激減するよ🔌✨ ([typescriptlang.org][7])
 
 ---
+
+![hex_ts_study_013_union_assignment.png](./picture/hex_ts_study_013_union_assignment.png)
 
 ### ③ `Type 'A | B' is not assignable to type 'A'.` 😭
 
@@ -143,6 +155,8 @@ npm run typecheck
 * エラーが出たら「入口で整える」「型を足す」で直せばOK😊
 
 ---
+
+![hex_ts_study_013_future_strict.png](./picture/hex_ts_study_013_future_strict.png)
 
 ## 8) “あとで強くする”候補（今日は入れない）🧊➡️🔥
 
