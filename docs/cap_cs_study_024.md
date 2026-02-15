@@ -11,6 +11,8 @@
 
 ## 1) まず“複製”ってなに？🪞
 
+![cap_cs_study_024_replication_painters](./picture/cap_cs_study_024_replication_painters.png)
+
 **複製（レプリケーション）**は、ざっくり言うと
 
 * **書き込みの本体（Primary / Writer）** がいて🖊️
@@ -64,6 +66,8 @@ sequenceDiagram
 
 ## 3) CampusCafeで起きる“あるある事故”☕📦😵‍💫
 
+![cap_cs_study_024_inventory_mismatch](./picture/cap_cs_study_024_inventory_mismatch.png)
+
 ### 例：ドーナツの在庫表示🍩
 
 * 画面の在庫表示（Replica）：「残り3」
@@ -78,6 +82,8 @@ sequenceDiagram
 ---
 
 ## 4) どれが“古くてOK”で、どれが“最新必須”？🎛️
+
+![cap_cs_study_024_stale_vs_fresh_sorting](./picture/cap_cs_study_024_stale_vs_fresh_sorting.png)
 
 CampusCafeだと、こんな切り分けが超実用的だよ〜😊✨
 
@@ -102,6 +108,8 @@ CampusCafeだと、こんな切り分けが超実用的だよ〜😊✨
 
 ### パターンB：「今だけ最新で読ませて」フラグ🕯️
 
+![cap_cs_study_024_fresh_flag_vip](./picture/cap_cs_study_024_fresh_flag_vip.png)
+
 たとえば、注文直後の画面だけは
 **「fresh=true のときは Primary を読む」** みたいにする✨
 
@@ -121,6 +129,8 @@ DBを本物のレプリカ構成にしなくても、**概念を体で覚える*
 （まず“古い読み”に慣れるのが勝ち！）
 
 ### 6.1 ざっくり設計🗺️
+
+![cap_cs_study_024_lag_simulation](./picture/cap_cs_study_024_lag_simulation.png)
 
 * Primary在庫：更新は即反映🖊️
 * Replica在庫：更新が **3秒遅れ** で反映🐢🕒
@@ -247,6 +257,8 @@ sealed class ReplicaReplicator : BackgroundService
 
 ## 7) 実務の接続イメージ：DBのRead Replicaに繋ぐには？🔌🗄️
 
+![cap_cs_study_024_db_routing](./picture/cap_cs_study_024_db_routing.png)
+
 ### 7.1 SQL Server / Azure SQL：ApplicationIntent=ReadOnly 🧭
 
 Azure SQL の **Read scale-out** は、読み取り専用レプリカへ **`ApplicationIntent=ReadOnly`** でルーティングできるよ。 ([Microsoft Learn][3])
@@ -270,6 +282,8 @@ PostgreSQLには、スタンバイで **read-only クエリ**を流せる “Hot
 ---
 
 ## 8) C#（EF Core）で Read/Write 分離の形（実務っぽい型）🧩✨
+
+![cap_cs_study_024_cqrs_dbcontext](./picture/cap_cs_study_024_cqrs_dbcontext.png)
 
 EF Core 10 は .NET 10 のLTSに合わせた世代だよ。 ([Microsoft Learn][7])
 

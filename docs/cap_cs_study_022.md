@@ -2,6 +2,8 @@
 
 ## 22.1 リトライって何のため？（CampusCafeで起きる“あるある”）☕📱
 
+![cap_cs_study_022_thundering_herd](./picture/cap_cs_study_022_thundering_herd.png)
+
 CampusCafeは「注文→在庫→決済→通知」で外部や別コンポーネントが絡むので、通信が一瞬コケるのは日常茶飯事です😇📡
 そこで **“もう一回だけ試す”** のがリトライ。でも、**やり方を間違えると事故ります**💥
 
@@ -31,6 +33,8 @@ CampusCafeは「注文→在庫→決済→通知」で外部や別コンポー�
 ---
 
 ## 22.3 “待ち方”が本体：バックオフ（Backoff）⏳📈
+
+![cap_cs_study_022_backoff_types](./picture/cap_cs_study_022_backoff_types.png)
 
 ```mermaid
 flowchart TD
@@ -64,6 +68,8 @@ flowchart TD
 
 ## 22.4 ジッター（Jitter）= “ゆらぎ”で同時突撃を防ぐ 🎲🧯
 
+![cap_cs_study_022_jitter_effect](./picture/cap_cs_study_022_jitter_effect.png)
+
 バックオフだけでも「みんなが同じ待ち→同時に再開」になりがちです😵‍💫
 そこで **待ち時間にランダム性（ジッター）を混ぜて、再試行の山（スパイク）を崩す**のがコツです✨
 
@@ -75,6 +81,8 @@ Pollyでも `UseJitter = true` で「待ち時間にランダム要素」を足�
 ---
 
 ## 22.5 キャンセル（Cancellation）= “やめたい”をちゃんと止める 🛑🙋‍♀️
+
+![cap_cs_study_022_cancellation_token](./picture/cap_cs_study_022_cancellation_token.png)
 
 ユーザーが「キャンセル」したのに、裏でリトライが走り続けたら怖いですよね😱
 そこで **CancellationToken を最後まで通す**のが大事です✨
@@ -108,6 +116,8 @@ Pollyでも `UseJitter = true` で「待ち時間にランダム要素」を足�
 
 ## 22.7 最大の地雷：POSTをリトライすると“二重課金”になりうる 💣💳
 
+![cap_cs_study_022_post_retry_danger](./picture/cap_cs_study_022_post_retry_danger.png)
+
 たとえば決済APIが `POST /payments` で「課金を作る」タイプだと、
 リトライ＝**同じ課金を2回作る**危険があります😇
 
@@ -123,6 +133,8 @@ Pollyでも `UseJitter = true` で「待ち時間にランダム要素」を足�
 ---
 
 ## 22.8 実装：HttpClientに“標準の回復性”を付ける（まずは簡単に）🧩🧰
+
+![cap_cs_study_022_resilience_wrapper](./picture/cap_cs_study_022_resilience_wrapper.png)
 
 ### ① 安全側：まずは危険メソッドのリトライを切る（初心者向け）✂️
 
@@ -209,6 +221,8 @@ app.Run();
 ---
 
 ## 22.11 ちょい上級：相手が「Retry-After」を返したら、その秒数だけ待ちたい 🕰️📩
+
+![cap_cs_study_022_retry_after_header](./picture/cap_cs_study_022_retry_after_header.png)
 
 Pollyのリトライは「結果から次の待ち時間を取り出す」パターンも紹介されています✨（DelayGeneratorで調整）([PollyDocs][3])
 → 決済/外部APIが `Retry-After` を返す設計なら、かなり賢くなれます😊

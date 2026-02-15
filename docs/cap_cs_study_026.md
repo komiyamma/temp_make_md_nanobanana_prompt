@@ -13,6 +13,8 @@
 
 ## 1) そもそも「衝突」って何？🤔💥
 
+![cap_cs_study_026_conflict_paint](./picture/cap_cs_study_026_conflict_paint.png)
+
 **同じデータ**に対して、**別々の場所・別々のタイミング**で更新が入って、
 「どっちが正しいの？」が決められなくなる（または勝手に決まって事故る）状態のことだよ😳💦
 
@@ -28,6 +30,8 @@
 ## 2) 衝突が起きる“3大パターン”🧨🧠
 
 ### パターンA：同時更新（並行更新）🧑‍🤝‍🧑⚡
+
+![cap_cs_study_026_simultaneous_doorway](./picture/cap_cs_study_026_simultaneous_doorway.png)
 
 ```mermaid
 sequenceDiagram
@@ -63,6 +67,8 @@ sequenceDiagram
 
 ### パターンB：オフライン更新（あとから合流）📴➡️🌐
 
+![cap_cs_study_026_offline_return](./picture/cap_cs_study_026_offline_return.png)
+
 スマホが電波悪い・地下・学内Wi-Fi死んでる…あるあるだよね🥲📶
 **オフラインで編集した内容が、あとからサーバに合流**するときに衝突する！
 
@@ -75,6 +81,8 @@ sequenceDiagram
 ---
 
 ### パターンC：順不同（順番がズレて届く）🔀📨
+
+![cap_cs_study_026_out_of_order_blocks](./picture/cap_cs_study_026_out_of_order_blocks.png)
 
 イベント駆動や非同期だと、**順番通りに届く保証がない**のが普通だったよね（第16章でもやったやつ！）🔀😵‍💫
 順番がズレると「結果的に矛盾」＝衝突っぽい状態になる。
@@ -117,6 +125,8 @@ sequenceDiagram
 
 ## 5) 「衝突が見えない」こともある👻🫥
 
+![cap_cs_study_026_silent_winner](./picture/cap_cs_study_026_silent_winner.png)
+
 分散DBによっては、衝突した瞬間に「はい衝突ね！」って表に出ず、
 内部のルールで**自動的に勝者を決めて終わり**、という場合もあるよ。
 
@@ -127,6 +137,8 @@ sequenceDiagram
 ---
 
 ## 6) 衝突が起きやすい“設計あるある”🧩💦
+
+![cap_cs_study_026_hotspot_contention](./picture/cap_cs_study_026_hotspot_contention.png)
 
 ### あるある①：1つのキーに更新が集中する🎯
 
@@ -152,6 +164,8 @@ sequenceDiagram
 第27章で本格的にやるけど、この章でも「どうやって気づくか」だけ先に肌感覚を付けよ〜✨
 
 ### 代表的な考え方：楽観的同時実行制御（Optimistic Concurrency）🕊️🔒
+
+![cap_cs_study_026_optimistic_lock](./picture/cap_cs_study_026_optimistic_lock.png)
 
 ざっくり言うと…
 

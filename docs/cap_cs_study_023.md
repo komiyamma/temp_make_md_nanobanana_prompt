@@ -2,6 +2,8 @@
 
 ## この章でできるようになること🎯✨
 
+![cap_cs_study_023_shield_concept](./picture/cap_cs_study_023_shield_concept.png)
+
 * 「壊れてる相手に突撃し続ける」をやめて、**自分のサービスを守る**考え方がわかる🛡️
 * **Closed / Open / Half-Open** の状態が「いま何をしてるのか」説明できるようになる🚦
 * CampusCafe の **決済サービスが不調**なときに、注文APIが巻き添えで死なない設計ができる☕💳😵‍💫→😌
@@ -19,6 +21,8 @@ Microsoft の Circuit Breaker Pattern でも「リモート呼び出しの失敗
 ---
 
 ## CampusCafe だと、どこで効く？☕📱
+
+![cap_cs_study_023_domino_effect](./picture/cap_cs_study_023_domino_effect.png)
 
 例：**注文API（Order）→ 決済API（Payment）** を呼ぶ
 
@@ -56,6 +60,8 @@ stateDiagram-v2
 
 ![cap_cs_study_023_circuit_breaker_states](./picture/cap_cs_study_023_circuit_breaker_states.png)
 
+![cap_cs_study_023_traffic_light_states](./picture/cap_cs_study_023_traffic_light_states.png)
+
 ざっくりこの3つが超大事！
 
 * **Closed（通常）**：普通に呼ぶ✅
@@ -67,6 +73,8 @@ stateDiagram-v2
 ---
 
 ## 何を見て「遮断する」って決めるの？📉
+
+![cap_cs_study_023_breaker_parameters](./picture/cap_cs_study_023_breaker_parameters.png)
 
 よく使うパラメータはこの4つ👇（ここが“設計ポイント”！）
 
@@ -81,6 +89,8 @@ stateDiagram-v2
 ---
 
 ## 「リトライ」との関係は？🔁🧠
+
+![cap_cs_study_023_retry_vs_breaker](./picture/cap_cs_study_023_retry_vs_breaker.png)
 
 * **リトライ**：たまたまの失敗なら、もう一回やってみる（優しい）💞
 * **サーキットブレーカ**：失敗が続くなら、もう突撃しない（守る）🛡️
@@ -150,6 +160,8 @@ record ChargeRequest(string OrderId, int Amount);
 ---
 
 ## 2) 注文API（OrderApi）側にサーキットブレーカを入れる🧯🚧
+
+![cap_cs_study_023_fail_fast](./picture/cap_cs_study_023_fail_fast.png)
 
 ここでは **HttpClientにレジリエンス（Circuit Breaker + Timeout）** を付けるよ。
 
@@ -263,6 +275,8 @@ record PlaceOrderRequest(string OrderId, int Amount);
 ---
 
 ## 3) 体験：Openになると“速く失敗する”のを見よう👀⚡
+
+![cap_cs_study_023_pipe_flow](./picture/cap_cs_study_023_pipe_flow.png)
 
 同じ注文を連打して、最初は「遅く失敗」→ しばらくすると「一瞬で503」になるのが見えたら成功🎉
 

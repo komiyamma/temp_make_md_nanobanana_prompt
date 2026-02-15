@@ -13,6 +13,8 @@
 
 ## 27.1 衝突解決って、結局なに？🤔💥
 
+![cap_cs_study_027_untangling_knot](./picture/cap_cs_study_027_untangling_knot.png)
+
 **衝突**はこういう状況で起きるよ👇
 
 * 同じデータに対して、**別々の場所で同時に更新**が走る
@@ -49,6 +51,8 @@ flowchart TD
 
 ### ① LWW（Last Write Wins）🕰️👑
 
+![cap_cs_study_027_lww_race](./picture/cap_cs_study_027_lww_race.png)
+
 「**最後に書いた人が勝ち**」
 
 * だいたい **タイムスタンプ**（または数値の優先度）で決める
@@ -67,6 +71,8 @@ flowchart TD
 ---
 
 ### ② マージ（自動合成）🧬🔀
+
+![cap_cs_study_027_merge_streams](./picture/cap_cs_study_027_merge_streams.png)
 
 「衝突した2つを、**ルールで合体**させる」
 
@@ -87,6 +93,8 @@ flowchart TD
 
 ### ③ 手動解決（人間 or 業務フロー）👩‍💼🧑‍💼🧾
 
+![cap_cs_study_027_manual_resolution_handoff](./picture/cap_cs_study_027_manual_resolution_handoff.png)
+
 「ルールだけじゃ決められないから、**保留して判断**する」
 
 * 片方を自動で負かすと炎上する系🔥
@@ -103,6 +111,8 @@ flowchart TD
 LWWはラク！でも落とし穴があるよ👇
 
 ### 落とし穴①：時計がズレると、負けるべき更新が勝つ🕰️💥
+
+![cap_cs_study_027_clock_skew_trap](./picture/cap_cs_study_027_clock_skew_trap.png)
 
 端末の時計がズレてたら…
 
@@ -124,6 +134,8 @@ Cosmos DB のLWWも「タイムスタンプ（または数値）で勝敗を決�
 ---
 
 ## 27.4 マージ（合体）を“安全に”やるコツ🧬🔧
+
+![cap_cs_study_027_commutativity_blocks](./picture/cap_cs_study_027_commutativity_blocks.png)
 
 マージで大事なのは、**順番が変わっても同じ結果になる**こと✨
 （分散では順番が信用できないからね🔀）
@@ -164,6 +176,8 @@ Cosmos DB のLWWも「タイムスタンプ（または数値）で勝敗を決�
 ---
 
 ## 27.7 ミニ演習：衝突を検出して、解決戦略を差し替える🧪🔧✨
+
+![cap_cs_study_027_version_gate](./picture/cap_cs_study_027_version_gate.png)
 
 ここでは **「衝突を検出する」**ところまでをまず固めて、
 その上で「LWW」「マージ」「手動解決」を差し替えるよ😊
