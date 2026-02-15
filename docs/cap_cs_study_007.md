@@ -2,6 +2,8 @@
 
 ## 7.0 まず超ざっくり結論✨
 
+![cap_cs_study_007_summary_cp_ap](./picture/cap_cs_study_007_summary_cp_ap.png)
+
 * **CP**＝「正しさ（最新であること）」を守るために、**止まる（エラー/待つ）**ことがある🧊🛑
 * **AP**＝「止まらない（応答する）」を守るために、**ズレ（古い/未反映）**が起きても進む🏃‍♀️💨
 * **CA**＝「そもそも分断（P）が起きない前提」か「1台/1拠点で完結」みたいな世界観（※“分散での保証”としては扱いづらい）🏠✅
@@ -11,6 +13,8 @@
 ---
 
 ## 7.1 CAPの「C/A/P」って、普段の言葉とズレる所があるよ⚠️🧠
+
+![cap_cs_study_007_cap_definitions](./picture/cap_cs_study_007_cap_definitions.png)
 
 ここ、誤解ポイントなので軽く押さえるね👇
 
@@ -45,6 +49,8 @@ CampusCafe（注文・在庫・決済・通知）って、CAPの練習にちょ�
 ---
 
 ## 7.3 CPの“肌感覚”＝「正しさのために、止まる」🧊🛑
+
+![cap_cs_study_007_cp_feeling](./picture/cap_cs_study_007_cp_feeling.png)
 
 **CP寄り**の場面は、こういう気持ち👇
 
@@ -84,6 +90,8 @@ flowchart LR
 
 ## 7.4 APの“肌感覚”＝「止まらないために、あとで揃える」🏃‍♀️💨🕰️
 
+![cap_cs_study_007_ap_feeling](./picture/cap_cs_study_007_ap_feeling.png)
+
 **AP寄り**の場面は、こういう気持ち👇
 
 * 「多少ズレてもいいから、**まず動いてほしい**」
@@ -103,6 +111,8 @@ flowchart LR
 
 ## 7.5 CAって何？「CAっぽい」と「CAPのCA」は分けて理解しよ🏠✅🧠
 
+![cap_cs_study_007_ca_illusion](./picture/cap_cs_study_007_ca_illusion.png)
+
 ネットでよく見る「CA/CP/AP」って分類、便利なんだけど…
 **“CAは分散システムでは現実的に保証しにくい”** って扱いをされがち🙈
 
@@ -121,6 +131,8 @@ CAPは「Pが起きたら C と A を同時には保証できないよ」って�
 ---
 
 ## 7.6 ミニ演習①：CampusCafeを分類してみよ🏷️😊
+
+![cap_cs_study_007_exercise_sort](./picture/cap_cs_study_007_exercise_sort.png)
 
 次の4つに、**CP寄り / AP寄り** のラベルを付けてみてね👇（まず直感でOK✨）
 

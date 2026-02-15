@@ -10,6 +10,8 @@
 
 # 11.1 CAPは“技術”じゃなく“仕様＋UX”で決まるよ🧩🌸
 
+![cap_cs_study_011_immediate_vs_delayed](./picture/cap_cs_study_011_immediate_vs_delayed.png)
+
 分散が入ると、どこかで「ズレ」が起きやすい📡💦
 でも、全部を“常に即時一致”にしようとすると、今度は**止まりやすい**・**遅くなりやすい**…みたいな別の苦しさが出るよね😵‍💫
 
@@ -23,6 +25,8 @@
 ---
 
 # 11.2 「即時必須 / 遅延OK」を決める5つの質問🎛️🤔
+
+![cap_cs_study_011_decision_tree](./picture/cap_cs_study_011_decision_tree.png)
 
 ```mermaid
 flowchart TD
@@ -91,6 +95,8 @@ SLO/SLIは“サービス品質を数値で測る”考え方で、SLIが測定�
 
 # 11.4 CampusCafeを“即時/遅延”でラベル付けしてみよう🏷️☕📱
 
+![cap_cs_study_011_table_visual](./picture/cap_cs_study_011_table_visual.png)
+
 題材（注文・在庫・決済・通知）で、ありがちな判定例を置くね😊✨
 ※「正解」は1つじゃないけど、**理由をUXで説明できる**のが大事だよ💬🌸
 
@@ -135,6 +141,8 @@ SLO/SLIは“サービス品質を数値で測る”考え方で、SLIが測定�
 （※確定したらGETで取りに行く、通知で知らせる、など）📩🔄
 
 ## パターンB：Idempotency-Keyで“押し直し”に強くする🔑🛡️
+
+![cap_cs_study_011_idempotency_key](./picture/cap_cs_study_011_idempotency_key.png)
 
 分散では「返事が来ないから、ユーザーがもう一回押す」って普通に起きるよね📡💦
 そこで **Idempotency-Key** を使うと、POSTみたいな操作でも「同じキーなら1回として扱う」設計にしやすい✨

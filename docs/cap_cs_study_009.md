@@ -10,6 +10,8 @@
 
 ## 9-1. 「最終的整合性」って、いちばん短い言い方だと？🧠💡
 
+![cap_cs_study_009_clocks_sync](./picture/cap_cs_study_009_clocks_sync.png)
+
 **最終的整合性（Eventual Consistency）**は、
 
 ✅ **今はズレてても、時間がたてば揃う**
@@ -22,6 +24,8 @@
 ---
 
 ## 9-2. まずは超身近な例で“ズレ許容”を感じる👍📦
+
+![cap_cs_study_009_examples](./picture/cap_cs_study_009_examples.png)
 
 ### 例①：いいね数👍✨（ズレてもだいたい困らない）
 
@@ -39,6 +43,8 @@
 ---
 
 ## 9-3. “揃うまでの時間”を仕様にするコツ⏱️📝✨
+
+![cap_cs_study_009_spec_time](./picture/cap_cs_study_009_spec_time.png)
 
 「最終的に揃うからOK〜」って言い方だけだと、実装も運用も事故りやすい😵‍💫💥
 だから、次の3点を決めると一気に現実的になるよ👇
@@ -83,6 +89,8 @@ CampusCafe（学食モバイルオーダー）だと、ざっくりこんな感�
 ---
 
 # 9-5. ミニ実験🧪：「表示用の在庫」が遅れて更新される世界を作る📦🐢
+
+![cap_cs_study_009_write_event_read](./picture/cap_cs_study_009_write_event_read.png)
 
 ここからは、最終的整合性を **わざと起こす** ミニAPIを作るよ😊
 イメージはこんな感じ👇
@@ -326,6 +334,8 @@ curl "http://localhost:5000/inventory/cake?fresh=true"
 ---
 
 # 9-6. ここが超大事💥「ズレてもOK」にする条件の作り方📝✨
+
+![cap_cs_study_009_rules_checklist](./picture/cap_cs_study_009_rules_checklist.png)
 
 最終的整合性を採用するなら、最低これを決めよう👇
 
