@@ -69,6 +69,9 @@ flowchart TD
 
 ## イベントソーシングで“測りどころ”マップ 🗺️🔎
 
+![測りどころマップ](./picture/es_cs_study_027_measurement_points_map.png)
+
+
 特に狙われやすいのはここ👇
 
 * **Rehydrate（復元）**：イベント列を `Apply` しまくる🔁
@@ -153,6 +156,9 @@ public static class PerfDemo
 
 # Step 2：Alloc（割り当て）も一緒に見よう 🧠🧹
 
+![AllocとGC](./picture/es_cs_study_027_alloc_gc_impact.png)
+
+
 時間が同じでも、**メモリを大量に確保してGCが走る**と、実際の体感が悪くなることがあるよ😵‍💫
 
 ## 例：割り当てbyteも測る（簡易）🧾
@@ -193,6 +199,9 @@ Stopwatchは便利だけど、**ブレやすい**のも事実。
 BenchmarkDotNetは **メソッドをベンチマーク化**して、再現性のある計測をしやすくしてくれる📏✨ ([benchmarkdotnet.org][1])
 
 ## 最小の流れ（イメージ）🚀
+
+![Stopwatch vs Benchmark](./picture/es_cs_study_027_stopwatch_vs_benchmark.png)
+
 
 * パッケージ追加して
 * `[Benchmark]` を付けて
@@ -242,6 +251,9 @@ public static class Program
 
 # Step 4：動いてるプロセスを“観測”する（dotnet-counters）📡👀
 
+![dotnet-counters](./picture/es_cs_study_027_dotnet_counters_dashboard.png)
+
+
 「今この瞬間、CPUやGCがどうなってる？」を軽く見るなら **dotnet-counters** が便利✨
 dotnet-counters は “最初のレベルの調査”向けの監視ツールで、CPU使用率や例外率などをサクッと眺められるよ📈 ([Microsoft Learn][4])
 
@@ -261,6 +273,9 @@ dotnet-counters monitor -p <PID> System.Runtime
 
 # Step 5：どこが重いか“犯人探し”（dotnet-trace / EventPipe）🕵️‍♀️🔥
 
+![犯人探し](./picture/es_cs_study_027_flame_graph_detective.png)
+
+
 「時間はかかってるのは分かった。でも **どのメソッドが重いの？**」となったら **トレース**！
 dotnet-trace は、ネイティブプロファイラなしで **実行中プロセスのトレースを収集**できて、内部的には .NET の **EventPipe** を使ってるよ📎 ([Microsoft Learn][5]) ([Microsoft Learn][6])
 
@@ -276,6 +291,9 @@ dotnet-trace collect -p <PID> --duration 00:00:10 -o trace.nettrace
 ---
 
 # Visual StudioのPerformance Profiler超ざっくりガイド 🪟🔬
+
+![Sampling vs Instrumentation](./picture/es_cs_study_027_sampling_vs_instrumentation.png)
+
 
 Visual StudioのPerformance Profilerは **Alt+F2** から開けるよ🧰 ([Microsoft Learn][8])
 
@@ -320,6 +338,9 @@ Visual StudioのPerformance Profilerは **Alt+F2** から開けるよ🧰 ([Micr
 ---
 
 ## AI活用（この章向け）：推理→実験案を出させる 🤖🕵️‍♀️
+
+![AI活用](./picture/es_cs_study_027_ai_analysis_robot.png)
+
 
 “お願いの型”を固定すると強いよ📌✨
 
