@@ -16,6 +16,8 @@
 
 ## 1) まず大事な考え方💡：「命名＝設計の表面」✨
 
+![Naming Traffic Light](./picture/hc_lc_cs_study_009_naming_traffic_light.png)
+
 命名ってただのラベルじゃなくて、設計の“答え合わせ”なんだよね😊
 特に **高凝集**の世界では、
 
@@ -27,6 +29,8 @@
 ---
 
 ## 2) “黄色信号ネーム”図鑑🚦（増えたら設計を疑う）
+
+![Yellow Signal Words](./picture/hc_lc_cs_study_009_yellow_signal_words.png)
 
 次の単語がクラス名に増え始めたら、だいたい設計がモヤってる合図⚠️
 
@@ -40,6 +44,8 @@
 ---
 
 ## 3) C#の命名の“基本ルール”だけは押さえる📚✨
+
+![C# Casing Rules](./picture/hc_lc_cs_study_009_casing_rules.png)
 
 ここは迷わないように **土台**として固定しちゃおう😊
 
@@ -72,6 +78,8 @@
 ---
 
 ### 4.2 メソッド名は「意図（保証）を言う」🗣️✨
+
+![Query vs Command](./picture/hc_lc_cs_study_009_query_vs_command.png)
 
 メソッド名でおすすめはこれ👇
 
@@ -242,6 +250,8 @@ classDiagram
 
 ## 6) リネームを“安全”にやるコツ🛡️🔁
 
+![Refactoring Safety](./picture/hc_lc_cs_study_009_refactoring_safety.png)
+
 ### 6.1 置換（Ctrl+F）じゃなくて「リネーム機能」を使う🙅‍♀️
 
 * 置換だと別の単語まで壊す💥（最悪😱）
@@ -264,6 +274,8 @@ VS Code：リネーム（例：`F2`）
 ---
 
 ## 7) 命名のブレを“自動で止める”🧰✨（お守り）
+
+![Naming Automation Robot](./picture/hc_lc_cs_study_009_automation_robot.png)
 
 チームや教材だと、命名がジワジワ崩れるのあるある😂
 そこで `.editorconfig` の命名ルール＋`dotnet format` が便利だよ〜🧹🤖 ([Microsoft Learn][1])

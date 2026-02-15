@@ -12,6 +12,8 @@
 
 ### 1. DIってなに？いちばん短い説明🧠✨
 
+![Manual DI (Pure DI)](./picture/hc_lc_cs_study_013_manual_plug.png)
+
 DI（依存性注入）は、
 
 > **「必要な部品（依存）を、外から渡してあげる」** ことだよ🎁
@@ -25,6 +27,8 @@ DI（依存性注入）は、
 ---
 
 ### 2. まず “DIしてない” 地獄コードを見よう😇➡️😱
+
+![Hardcoded Dependencies](./picture/hc_lc_cs_study_013_stone_statue.png)
 
 「注文を確定する」処理があるとして、ログと現在時刻が必要だとするね🧾⏰
 
@@ -62,6 +66,8 @@ public sealed class ConsoleLogger
 ---
 
 ### 3. “Poor Man’s DI（手作りDI）” の基本はコンストラクタ注入👶💉
+
+![Constructor Injection](./picture/hc_lc_cs_study_013_constructor_gift.png)
 
 まず「差し替えたい部品」を **インターフェース**にして、`OrderService` はそれにだけ依存するよ🔌✨
 
@@ -235,6 +241,8 @@ DIの快感ポイントはここ！😆✨
 
 #### ❌ 失敗1：注入してるのに、途中でまた `new` しちゃう
 
+![Hidden 'new' Weed](./picture/hc_lc_cs_study_013_new_weed.png)
+
 「せっかく差し替えたのに固定し直す」やつ😭
 → **“部品は最後まで外から来たものを使う”** を徹底しよ🔁
 
@@ -244,6 +252,8 @@ DIの快感ポイントはここ！😆✨
 ドメインの中心まで無理に抽象化しなくていいよ🙆‍♀️
 
 #### ❌ 失敗3：組み立てが散らばる
+
+![Scattered Assembly vs Root](./picture/hc_lc_cs_study_013_lego_scatter.png)
 
 `new` があちこちにいると、また変更が怖くなる😱
 → **Composition Root に寄せる**のが正解🏗️🧹 ([blog.ploeh.dk][2])

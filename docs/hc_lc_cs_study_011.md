@@ -7,6 +7,8 @@
 
 ## 1) ねらい🎯： “中で作らない”感覚を身につける
 
+![No New Sign](./picture/hc_lc_cs_study_011_no_new_sign.png)
+
 ![Injecting Dependencies](./picture/hc_lc_cs_study_011_injecting_dependencies.png)
 
 ### 今日できるようになること💪✨
@@ -18,6 +20,8 @@
 ---
 
 ## 2) まず敵を知る👾：「中で new」すると何が困るの？
+
+![Chained Code](./picture/hc_lc_cs_study_011_chained_code.png)
 
 たとえばクラスの中でこういうの作ってたら…👇
 
@@ -61,6 +65,8 @@
 ---
 
 ### Step 0：ダメな例（中で全部作ってる）😵‍💫
+
+![Black Box Factory](./picture/hc_lc_cs_study_011_black_box_factory.png)
 
 ```csharp
 using System;
@@ -125,6 +131,8 @@ public sealed class DailyReportJob
 ---
 
 ### Step 2：「組み立てる場所」を外に作る🏗️（Program側）
+
+![Assembly Site](./picture/hc_lc_cs_study_011_assembly_site.png)
 
 **作るのは外！渡すのが中！** これが合言葉🎀
 
@@ -191,6 +199,8 @@ classDiagram
 
 ### Step 3：テストが一気にラクになる🧪💖（ファイル不要！）
 
+![Test Lab Visualization](./picture/hc_lc_cs_study_011_test_lab.png)
+
 例：xUnit で確認（`StringWriter` を使うとメモリ上で完結するよ🥳）
 
 ```csharp
@@ -231,6 +241,8 @@ public sealed class DailyReportJobTests
 ## 6) ありがち落とし穴⚠️😵
 
 ### 落とし穴①：引数が増えすぎる（パラメータ地獄）🌋
+
+![Parameter Hell](./picture/hc_lc_cs_study_011_parameter_hell.png)
 
 * 「え、引数10個…？」ってなったら
   👉 **“まとめ役”のオブジェクト**を作る（設定クラスなど）か、そもそも責務が混ざってないか疑う🍲💥
