@@ -11,11 +11,19 @@
 
 ---
 
+
+
+![err_model_ts_study_023_normalization_funnel.png](./picture/err_model_ts_study_023_normalization_funnel.png)
+
 ## この章のゴール🎯💖
 
 最後にこうなるのがゴールだよ👇
 
 * 外部APIの失敗を **InfraError（インフラ系エラー）** にまとめる🧺
+
+![err_model_ts_study_023_goal_structure.png](./picture/err_model_ts_study_023_goal_structure.png)
+
+
 * **リトライできる？できない？** を機械的に判断できる🔁
 * ログやユーザー表示が **ブレない**（運用がラク）🧾✨
 * 外部API特有の事情を、ドメイン側に漏らさない（設計がきれい）🧼🧠
@@ -52,6 +60,10 @@
 ## 先に「正規化後のエラー型」を決める🧱✨
 
 ここがブレると全部ブレるので、まず **標準のInfraError** を作るよ💪🥰
+
+
+
+![err_model_ts_study_023_infra_error_schema.png](./picture/err_model_ts_study_023_infra_error_schema.png)
 
 ```ts
 // 章の主役：外部API向けの正規化エラー
@@ -96,6 +108,10 @@ export const Err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 
 外部APIの失敗は大きく2つ：
 
+
+
+![err_model_ts_study_023_fetch_behavior.png](./picture/err_model_ts_study_023_fetch_behavior.png)
+
 1. **通信や実行が失敗して例外になる**（ネットワーク/タイムアウト/SDK例外）🌩️
 2. **HTTP応答は返ったけど失敗ステータス**（401/429/503/500…）🚦
 
@@ -124,6 +140,10 @@ export type ExternalContext = {
 
 ## Retry-After を読めると“強い”🔁⏳
 
+![err_model_ts_study_023_retry_after_logic.png](./picture/err_model_ts_study_023_retry_after_logic.png)
+
+
+
 レート制限（429）や一時停止（503）で、サーバーが `Retry-After` を返すことがあるよ🧾
 これは「どれくらい待って再試行してね」を表すヘッダーだよ⏳ ([IETF Datatracker][3])
 
@@ -147,6 +167,10 @@ function parseRetryAfterMs(headers: Headers): number | undefined {
 ---
 
 ## 正規化関数：normalizeExternalApiError 🧼🧠
+
+![err_model_ts_study_023_normalization_flowchart.png](./picture/err_model_ts_study_023_normalization_flowchart.png)
+
+
 
 ここが本章のメインだよ〜！✨
 **「入力（thrown/http）」→「InfraError」**へ変換するだけの、なるべく純粋な関数にするのがコツ🧼
@@ -401,6 +425,10 @@ axios は **エラーオブジェクトの構造**（message/name/config/code…
 * 「外部APIが返しがちなエラー（429/503/401/5xx/timeout/network/invalid json）を列挙して、正規化ルールの穴を指摘して」
 
 ### 2) “相手のエラー形式”から正規化マップ生成🗺️
+
+![err_model_ts_study_023_ai_normalization_map.png](./picture/err_model_ts_study_023_ai_normalization_map.png)
+
+
 
 * 「このAPIドキュメント（貼り付け）を読んで、`providerCode`→`EXTERNAL_*` の対応表を作って」
 

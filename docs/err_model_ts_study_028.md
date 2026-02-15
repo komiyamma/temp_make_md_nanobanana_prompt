@@ -7,6 +7,10 @@
 
 ## 1) requestIdってなに？なんで“一本道”になるの？🛣️🔎
 
+![err_model_ts_study_028_scattered_logs.png](./picture/err_model_ts_study_028_scattered_logs.png)
+
+
+
 ### ✅ requestIdの正体
 
 * **1つのリクエストに付けるユニークな番号**だよ🆔✨
@@ -22,6 +26,10 @@
 ---
 
 ## 2) requestId / correlationId / traceId の違い（超やさしく）🧠🌸
+
+![err_model_ts_study_028_id_scope_hierarchy.png](./picture/err_model_ts_study_028_id_scope_hierarchy.png)
+
+
 
 ここ、ちょい用語が似てて混乱しがちなので、**最短で整理**するね😊
 
@@ -46,6 +54,10 @@
 ---
 
 ## 3) requestId設計の基本ルール（ここだけ守れば強い）🧱✨
+
+![err_model_ts_study_028_request_id_rules.png](./picture/err_model_ts_study_028_request_id_rules.png)
+
+
 
 ### ルールA：入口で作る🚪
 
@@ -75,6 +87,10 @@
 ---
 
 ## 4) TypeScriptで実装：最小で強いパターン🧪💪✨
+
+![err_model_ts_study_028_async_local_storage.png](./picture/err_model_ts_study_028_async_local_storage.png)
+
+
 
 ### AsyncLocalStorageで「どこでもrequestIdが取れる」ようにする🧵
 
@@ -141,6 +157,10 @@ export function log(level: Level, message: string, extra: Record<string, unknown
 
 ### 4-3) Expressで「入口で発行→ALSに入れる→レスポンスに返す」🚪📤✨
 
+![err_model_ts_study_028_express_middleware_flow.png](./picture/err_model_ts_study_028_express_middleware_flow.png)
+
+
+
 ```ts
 // src/server.ts
 import express from "express";
@@ -200,6 +220,10 @@ pino-http のREADME例でも `x-request-id` を拾って、なければUUIDを�
 
 ## 6) 外部APIを呼ぶとき：requestIdを“渡して続きの線”を作る📨🧵
 
+![err_model_ts_study_028_propagation_relay.png](./picture/err_model_ts_study_028_propagation_relay.png)
+
+
+
 ### fetchラッパーを作る（超おすすめ）🪄✨
 
 ```ts
@@ -222,6 +246,10 @@ export async function fetchWithRequestId(input: RequestInfo | URL, init: Request
 ---
 
 ## 7) “標準の世界”に寄せたい人へ：traceparent（W3C Trace Context）🧭✨
+
+![err_model_ts_study_028_w3c_trace_context.png](./picture/err_model_ts_study_028_w3c_trace_context.png)
+
+
 
 サービスが増えてくると、requestIdだけじゃなくて **分散トレース**も欲しくなるよね😊
 そのときの標準が **W3C Trace Context**で、`traceparent` / `tracestate` が定義されてるよ🌐 ([W3C][1])

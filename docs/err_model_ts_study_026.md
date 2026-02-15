@@ -7,6 +7,10 @@
 
 ## 1. UIがグチャる“あるある” 😵‍💫📱
 
+![err_model_ts_study_026_inconsistent_ui.png](./picture/err_model_ts_study_026_inconsistent_ui.png)
+
+
+
 こんな経験ない？💭
 
 * 同じ失敗なのに、画面Aはトースト、画面Bはダイアログ…🤯
@@ -19,6 +23,10 @@
 ---
 
 ## 2. UIの失敗表現は「4種類」だけ覚えよ🧠✨
+
+![err_model_ts_study_026_ui_error_types.png](./picture/err_model_ts_study_026_ui_error_types.png)
+
+
 
 UIの見せ方って、実はだいたいこの4つに整理できるよ〜😊🎨
 
@@ -33,6 +41,10 @@ UIの見せ方って、実はだいたいこの4つに整理できるよ〜😊�
 ---
 
 ## 3. UI例外境界ってなに？🚪🪄（超やさしく）
+
+![err_model_ts_study_026_ui_dispatcher.png](./picture/err_model_ts_study_026_ui_dispatcher.png)
+
+
 
 **UI例外境界 = UIが受け取った失敗を、統一した見せ方に変換して出す場所**だよ😊🎀
 
@@ -88,6 +100,10 @@ export type UiError =
 ---
 
 ## 5. “変換ルール”が本体だよ🗺️✨（AppError → UiError）
+
+![err_model_ts_study_026_mapping_matrix.png](./picture/err_model_ts_study_026_mapping_matrix.png)
+
+
 
 次に、あなたのアプリの標準エラー（例：`DomainError / InfraError / BugError`）を、UiErrorへ変換するよ😊
 
@@ -161,6 +177,10 @@ export function toUiError(err: AppError): UiError {
 
 ## 6. Reactの「Error Boundary」って何を守ってくれるの？🛡️⚛️
 
+![err_model_ts_study_026_react_boundary_scope.png](./picture/err_model_ts_study_026_react_boundary_scope.png)
+
+
+
 ReactのError Boundaryは、**レンダー中（render）やライフサイクル中の例外**をキャッチして、アプリが真っ白になるのを防ぐ仕組みだよ🧯✨ ([React][2])
 ただし注意！🚨
 
@@ -175,6 +195,10 @@ ReactのError Boundaryは、**レンダー中（render）やライフサイク�
 ---
 
 ## 7. Next.js（App Router）だと“境界”が標準装備🧱✨
+
+![err_model_ts_study_026_nextjs_error_hierarchy.png](./picture/err_model_ts_study_026_nextjs_error_hierarchy.png)
+
+
 
 Next.js（App Router）では、ルートセグメントに `error.tsx` を置いて、**その範囲のエラーを受け止めてフォールバックUIを出す**仕組みがあるよ😊 ([Next.js][3])
 さらに、ルート全体のエラーは `global-error.tsx` で扱える（ルートレイアウトを置き換えるので `<html><body>` が必要など注意点あり）って公式が説明してるよ🪄 ([Next.js][4])
@@ -276,6 +300,10 @@ export function presentUiError(err: UiError) {
 ---
 
 ## 11. UI文言の“トーン統一”テンプレ💬🎀
+
+![err_model_ts_study_026_tone_template.png](./picture/err_model_ts_study_026_tone_template.png)
+
+
 
 UIメッセージって、統一されてると安心感が爆上がりするよ🫶✨
 おすすめテンプレ👇

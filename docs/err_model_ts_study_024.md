@@ -18,6 +18,10 @@ TypeScriptはnpm上のlatestが **5.9.3**（本日時点の表示）で、次の
 
 ## 1) なんで「最後のcatch地点」を決めるの？😵‍💫💥
 
+![err_model_ts_study_024_inconsistent_routes.png](./picture/err_model_ts_study_024_inconsistent_routes.png)
+
+
+
 APIを作ってると、失敗の扱いがこうなりがち👇
 
 * ルートAは try/catch してる
@@ -33,11 +37,19 @@ APIを作ってると、失敗の扱いがこうなりがち👇
 
 > ✅ **「例外は最終的にAPIルート境界で受け止め、正規化して、統一形式で返す」**
 
+![err_model_ts_study_024_exception_boundary_goal.png](./picture/err_model_ts_study_024_exception_boundary_goal.png)
+
+
+
 この“最終受付”が **例外境界**（Exception Boundary）だよ🧱🚪
 
 ---
 
 ## 2) 例外境界の責務：やること／やらないこと🧠✨
+
+![err_model_ts_study_024_boundary_factory.png](./picture/err_model_ts_study_024_boundary_factory.png)
+
+
 
 ### ✅ やること（境界の仕事）🧱
 
@@ -59,6 +71,10 @@ APIを作ってると、失敗の扱いがこうなりがち👇
 ---
 
 ## 3) 統一フロー（これが完成形の流れ）🗺️✨
+
+![err_model_ts_study_024_unified_flow.png](./picture/err_model_ts_study_024_unified_flow.png)
+
+
 
 イメージはこう👇
 
@@ -104,6 +120,10 @@ Problem Detailsの仕様自体はRFCとして定義されているよ（status/t
 ---
 
 ## 5) まずは“標準エラー”の形を決めよう🏷️🎁
+
+![err_model_ts_study_024_public_vs_private_error.png](./picture/err_model_ts_study_024_public_vs_private_error.png)
+
+
 
 ポイントはこれ👇
 
@@ -216,6 +236,10 @@ export function toApiErrorResponse(err: AppError): { status: number; body: ApiEr
 ---
 
 ## 8) ルートを包む“境界ラッパー”を作る（ここが主役）🧱🚪✨
+
+![err_model_ts_study_024_route_wrapper.png](./picture/err_model_ts_study_024_route_wrapper.png)
+
+
 
 ### パターン：Route Handler を高階関数で包む🎁
 
@@ -358,6 +382,10 @@ const registerRoute = withApiBoundary(async (req) => {
 ---
 
 ## 10) よくある地雷💣（初心者がハマりやすいTOP7）😱
+
+![err_model_ts_study_024_error_handling_pitfalls.png](./picture/err_model_ts_study_024_error_handling_pitfalls.png)
+
+
 
 1. **catchして握りつぶす**（ログもレスポンスも無し）🙈
 2. **500なのに200で返す**（クライアントが成功扱いして事故）😇
