@@ -31,6 +31,8 @@
 
 ## 2) ぐちゃぐちゃが怖い理由（“壊れ方”が派手）💥😱
 
+![Collapse Accident](./picture/hex_cs_study_004_collapse_accident.png)
+
 よく起きる事故パターンはこれ👇
 
 ### 🔥 事故パターンA：小さな仕様追加で全部に波及
@@ -54,6 +56,8 @@
 ---
 
 ## 3) ぐちゃぐちゃの正体は「変更理由のミックス」🧩😵‍💫
+
+![Mixed Responsibilities](./picture/hex_cs_study_004_mixed_responsibilities.png)
 
 ポイントはこれ👇
 
@@ -180,6 +184,8 @@ public class OrdersController : ControllerBase
 
 ## 6) ぐちゃぐちゃ検知チェックリスト✅🍝
 
+![Warning Dashboard](./picture/hex_cs_study_004_warning_dashboard.png)
+
 見つけたら「黄色信号〜！」🚥😵‍💫
 
 * Controllerが **100行超え** てる📜
@@ -231,6 +237,8 @@ flowchart TD
 
 ## 8) ミニ演習：わざと壊して“痛み”を体感しよ😈🧪💥
 
+![Untangling Pain](./picture/hex_cs_study_004_untangling_pain.png)
+
 ### 演習A：仕様追加してみる🎫
 
 次の仕様を足してみて👇
@@ -260,6 +268,8 @@ flowchart TD
 ---
 
 ## 9) AI活用のコツ（ぐちゃぐちゃ脱出でめっちゃ効く🤖💞）
+
+![AI Uneven Bricks](./picture/hex_cs_study_004_ai_uneven_bricks.png)
 
 Copilot/Codexにお願いするときは、こう言うと強いよ👇✨
 

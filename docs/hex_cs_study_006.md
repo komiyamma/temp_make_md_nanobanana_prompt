@@ -7,6 +7,8 @@
 
 ## 1) Inboundってなに？いきなり結論🍀
 
+![Receptionist Funnel](./picture/hex_cs_study_006_receptionist_funnel.png)
+
 Inboundは、**外の世界（画面・API・CLI・バッチ・Webhook…）から、Core（中心）へ入ってくる“入口”**のことだよ〜！🚪✨
 ざっくり言うと、
 
@@ -23,6 +25,8 @@ Inboundは、**外の世界（画面・API・CLI・バッチ・Webhook…）か�
 ---
 
 ## 2) “外”ってなに？Inboundの入口いろいろ🚪🌍
+
+![Diverse Inputs](./picture/hex_cs_study_006_diverse_inputs.png)
 
 「外」って、要するに **Coreの外側の都合**ぜんぶ！
 
@@ -70,6 +74,8 @@ Inbound（だいたい「Inbound Adapter」って呼ぶよ🔌）は、次を担
 ---
 
 ## 4) “入口を薄くする”ってどういう意味？🧻✨
+
+![Thin Door](./picture/hex_cs_study_006_thin_door.png)
 
 合言葉はこれ！
 
@@ -172,6 +178,8 @@ public class FakeCreateOrderUseCase : ICreateOrderUseCase
 
 ## 7) どこまで入口でバリデーションするの？境界ライン📏🙂
 
+![Two Stage Security](./picture/hex_cs_study_006_two_stage_security.png)
+
 ### ✅ 入口でやる（形式の問題）
 
 * 必須項目が空（CustomerNameがnull/空）
@@ -190,6 +198,8 @@ public class FakeCreateOrderUseCase : ICreateOrderUseCase
 ---
 
 ## 8) よくあるミス集（超あるある）🍝😭
+
+![Bloated Doorman](./picture/hex_cs_study_006_bloated_doorman.png)
 
 ### ミス1：Controller/Endpointが太りすぎる🐷
 
