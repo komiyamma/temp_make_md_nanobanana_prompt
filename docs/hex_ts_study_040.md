@@ -27,6 +27,8 @@
 
 ## 2) 巨大Portってなに？（症状でわかる）🐘🔌
 
+![hex_ts_study_040_huge_port_monster.png](./picture/hex_ts_study_040_huge_port_monster.png)
+
 巨大Portはこういうやつ👇
 
 * `RepositoryPort` が **CRUD全部＋検索＋集計＋バッチ＋…** みたいに肥大化😇
@@ -44,6 +46,8 @@
 
 ## 3) 太いAdapterってなに？（こっちの方が致命傷）🍔🧩
 
+![hex_ts_study_040_fat_adapter_burger.png](./picture/hex_ts_study_040_fat_adapter_burger.png)
+
 Adapterが太ると、こうなる👇
 
 * Adapterの中に **業務ルール（禁止事項・状態遷移・分岐の山）** がいる🏔️😱
@@ -57,6 +61,8 @@ Adapterが太ると、こうなる👇
 ---
 
 ## 4) まずは「地雷チェックリスト」💣✅
+
+![hex_ts_study_040_danger_signs.png](./picture/hex_ts_study_040_danger_signs.png)
 
 ### 🔌 Portが巨大化してるサイン（5つ）
 
@@ -77,6 +83,8 @@ Adapterが太ると、こうなる👇
 ---
 
 ## 5) 悪い例（わざと太らせる）😈🍔
+
+![hex_ts_study_040_bad_code_example.png](./picture/hex_ts_study_040_bad_code_example.png)
 
 ToDoミニで、ありがちな悪例いくよ〜👇
 
@@ -136,6 +144,8 @@ export class FileTodoRepositoryAdapter implements TodoRepositoryPort {
 
 ## 6) 直し方テンプレ（この順でやると失敗しない）🔧📌✨
 
+![hex_ts_study_040_refactoring_flow.png](./picture/hex_ts_study_040_refactoring_flow.png)
+
 ### 手順①：Portを「ユースケースの言葉」に戻す🗣️🔌
 
 ポイントはこれ👇
@@ -162,6 +172,8 @@ Adapterに残していいのは基本これだけ👇
 ---
 
 ## 7) 良い例（スリムにする）🥗✨
+
+![hex_ts_study_040_thin_adapter_salad.png](./picture/hex_ts_study_040_thin_adapter_salad.png)
 
 ### ✅ Port：必要最小限にする🔌
 
@@ -221,6 +233,8 @@ export class FileTodoStoreAdapter implements TodoStorePort {
 ---
 
 ## 9) 便利テク：`satisfies` で「変換だけ」を安全にする🧩✅
+
+![hex_ts_study_040_satisfies_guard.png](./picture/hex_ts_study_040_satisfies_guard.png)
 
 Adapterは変換係だから、マッピングが増えるよね？
 そんな時 `satisfies` が便利✨（型のチェックだけして、値の型推論は壊さないやつ）

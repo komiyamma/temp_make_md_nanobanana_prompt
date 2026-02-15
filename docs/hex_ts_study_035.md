@@ -22,6 +22,8 @@
 
 ## 2) Composition Rootってなに？🧩
 
+![hex_ts_study_035_concept_diagram.png](./picture/hex_ts_study_035_concept_diagram.png)
+
 **アプリの入口（エントリポイント）に近い場所で、オブジェクトの依存関係を全部つなぐ“合体場所”** のことだよ🏗️
 DI（依存性注入）の考え方では「ここ以外で volatile な依存（DB/HTTP/FSなど）を new しない」が超重要ポイント！🔥
 “Poor Man’s DI（手動DI）でもOK”っていうのが有名な考え方だよ。([InfoQ][1])
@@ -32,6 +34,8 @@ DI（依存性注入）の考え方では「ここ以外で volatile な依存�
 ---
 
 ## 3) なぜ1か所に集めるの？（うれしさ）🥰✨
+
+![hex_ts_study_035_benefits.png](./picture/hex_ts_study_035_benefits.png)
 
 ### ✅ うれしさ①：修正が怖くなくなる 😌🛡️
 
@@ -52,6 +56,8 @@ File保存をDB保存にしたくなっても、中心はいじらず **合体�
 
 ### ❌ ダメ：ユースケースが勝手に外側を作る（中心が汚れる）
 
+![hex_ts_study_035_bad_new.png](./picture/hex_ts_study_035_bad_new.png)
+
 ```ts
 // app/usecases/AddTodo.ts（悪い例）
 import { JsonFileTodoRepository } from "../adapters/JsonFileTodoRepository"; // ←中心が外側を知ってる😱
@@ -70,6 +76,8 @@ export class AddTodo {
 ---
 
 ## 5) Composition Rootの“鉄のルール”🧱🔥
+
+![hex_ts_study_035_three_rules.png](./picture/hex_ts_study_035_three_rules.png)
 
 ### ルールA：外側の new は Composition Root に集める 🧩
 
@@ -121,6 +129,8 @@ export type AppConfig = Readonly<{
 ---
 
 ## 8) Composition Root 本体：依存をつないで “アプリ本体” を返す 🧩🏗️
+
+![hex_ts_study_035_build_flow.png](./picture/hex_ts_study_035_build_flow.png)
 
 ポイントはこれ👇
 
@@ -183,6 +193,8 @@ export function buildApp(config: AppConfig): App {
 ---
 
 ## 9) CLI起動側：合体場所を呼んで、入口は薄くする ⌨️✨
+
+![hex_ts_study_035_dual_entry.png](./picture/hex_ts_study_035_dual_entry.png)
 
 ```ts
 // src/cli/main.ts
@@ -275,6 +287,8 @@ HTTP側が増えても **中心は一切変更なし** ✅
 ---
 
 ## 12) テストで「気持ちよさ」を体験しよう 🧪💖
+
+![hex_ts_study_035_test_switch.png](./picture/hex_ts_study_035_test_switch.png)
 
 Vitest は v4 が出てるよ〜！([vitest.dev][2])
 （ユニットテスト用途なら相性いい✨）

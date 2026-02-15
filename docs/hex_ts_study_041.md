@@ -22,6 +22,8 @@ Node.js は **v24（LTS: Krypton）** がActive LTSで、2026-01にも更新が�
 
 ## 2) 何でも屋Repositoryって、どんな状態？ 🐘🍔💦
 
+![hex_ts_study_041_god_repo_monster.png](./picture/hex_ts_study_041_god_repo_monster.png)
+
 ### ありがちなストーリー📖💭
 
 最初はこうだったのに…
@@ -59,6 +61,8 @@ Repositoryが “何でも” やってると、テストで差し替えたい�
 ---
 
 ## 4) 症状チェックリスト✅（3つ当てはまったら黄色信号🚦）
+
+![hex_ts_study_041_symptoms_checklist.png](./picture/hex_ts_study_041_symptoms_checklist.png)
 
 * Repositoryのメソッド数が **10個超えてる**（しかも増え続ける）📈😇
 * メソッド名に **業務動詞** が入ってる
@@ -100,6 +104,8 @@ export interface TodoRepository {
 
 ## 6) 正しい感覚：Repositoryは「永続化の都合」を隠す係 💾🧩
 
+![hex_ts_study_041_repo_responsibility.png](./picture/hex_ts_study_041_repo_responsibility.png)
+
 Repository（＝Outbound Port🔌）の役割は、ざっくりこれ👇
 
 * ✅ **保存する**
@@ -129,6 +135,8 @@ Repositoryが何でも屋になったら、いったん
 
 ### コツ②：Portは “使う側（UseCase）” が欲しい最小だけ🔌✂️
 
+![hex_ts_study_041_reader_writer_split.png](./picture/hex_ts_study_041_reader_writer_split.png)
+
 たとえば、読みと書きを分けるだけでも一気にスッキリするよ😊
 
 ```ts
@@ -149,6 +157,8 @@ UseCaseは「必要な方だけ」受け取れるから、依存が細くなる�
 ---
 
 ### コツ③：画面向けの “盛り合わせ” は Query 用のPortに逃がす🍱➡️🧩
+
+![hex_ts_study_041_query_port_separation.png](./picture/hex_ts_study_041_query_port_separation.png)
 
 「一覧で、ユーザー名もタグもコメントも全部ほしい！」みたいなのは
 **Repositoryに押し込まない** のが大事💦
@@ -174,6 +184,8 @@ export interface TodoListQueryPort {
 ---
 
 ## 8) 「ルールはどこへ行くの？」→ 中心だよ🛡️❤️
+
+![hex_ts_study_041_rule_in_core.png](./picture/hex_ts_study_041_rule_in_core.png)
 
 たとえば「二重完了禁止」はRepositoryに入れたくなるけど…
 **それはドメイン or ユースケースが担当** だよ😊
@@ -214,6 +226,8 @@ Repositoryは「保存したり取り出したり」だけ。
 ---
 
 ## 10) Adapter側はどうなる？（実装は “薄い” まま）🥗✨
+
+![hex_ts_study_041_adapter_multi_port.png](./picture/hex_ts_study_041_adapter_multi_port.png)
 
 Adapterは、Portを実装するだけ🧩
 読み書き2つのPortを同じAdapterが実装しても全然OKだよ〜😊
