@@ -26,6 +26,8 @@
 
 ## 2) ハンズオン🛠️：1ファイル地獄のミニアプリを動かす💥
 
+![hc lc cs study 002 monster code](./picture/hc_lc_cs_study_002_monster_code.png)
+
 ### 2-1. プロジェクト作成🧁
 
 * **Console App（.NET 10）** を作ってね（新しめでOK）😄
@@ -243,6 +245,8 @@ flowchart TD
 
 ### 4-2. 何が起きる？（観察ポイント）👀💥
 
+![hc lc cs study 002 silent corruption](./picture/hc_lc_cs_study_002_silent_corruption.png)
+
 雑修正すると、だいたいこうなる：
 
 * コンソールの請求書だけ税が合ってる（気がする）
@@ -276,10 +280,16 @@ flowchart TD
 今回のコード、怖さの材料が山盛り🍲💥
 
 * **重複ロジック**：税計算・合計計算が複数箇所にある🔁
+
+![hc lc cs study 002 tax clones](./picture/hc_lc_cs_study_002_tax_clones.png)
   → 1個直しても他が残る＝矛盾が起きる😇
 * **責務の混在**：計算・表示・保存・分析が1メソッドに同居🏠💦
+
+![hc lc cs study 002 juggling act](./picture/hc_lc_cs_study_002_juggling_act.png)
   → 仕様変更のたびに全部触ることになる🧤
 * **隠れ依存**：`static`（`AppConfig`, `Logger`）でどこからでも触れる🕸️
+
+![hc lc cs study 002 global spiderweb](./picture/hc_lc_cs_study_002_global_spiderweb.png)
   → “どこが影響受けるか”が見えない😵
 * **データ構造にべったり**：JSONの形が変わると広範囲が壊れる📦💣
 

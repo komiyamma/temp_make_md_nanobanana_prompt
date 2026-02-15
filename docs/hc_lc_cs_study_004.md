@@ -70,6 +70,8 @@
 
 ## 4-4. 例：混ざるとどう怖い？😱➡️境界を引くとどう嬉しい？😄
 
+![hc lc cs study 004 shared method trap](./picture/hc_lc_cs_study_004_shared_method_trap.png)
+
 題材は「クーポン付きの注文合計」🍔🎟️（ありがちなやつ！）
 
 ### ❌ 悪い例：UIイベントの中に全部混ぜる（変更理由がぐちゃぐちゃ🍲💥）
@@ -132,6 +134,8 @@ flowchart TD
 
 ### ✅ 良い例：まず“境界線”だけ引く（超入門版）🚪✨
 
+![hc lc cs study 004 separation glass](./picture/hc_lc_cs_study_004_separation_glass.png)
+
 この章では、DIとかinterfaceとかは次で丁寧にやるので、いまは **「箱分け」だけ**でOK🙆‍♀️🎀
 
 ```csharp
@@ -188,6 +192,8 @@ private async void ConfirmButton_Click(object sender, EventArgs e)
 
 ### Step1️⃣：変更理由を5個くらい“妄想”する（予言🔮）
 
+![hc lc cs study 004 crystal ball](./picture/hc_lc_cs_study_004_crystal_ball.png)
+
 ポイント：**正解じゃなくてOK！**
 「変わりそう」を出すだけで、境界が見えてくるよ〜😄
 
@@ -200,6 +206,8 @@ private async void ConfirmButton_Click(object sender, EventArgs e)
 * 外部の決済APIが変わる💳🌐
 
 ### Step2️⃣：UI／業務／I/O に分類する📦
+
+![hc lc cs study 004 box sorting](./picture/hc_lc_cs_study_004_box_sorting.png)
 
 * UI：画面・入力・表示
 * 業務：ルール・計算・判断
@@ -275,6 +283,8 @@ private async void ConfirmButton_Click(object sender, EventArgs e)
 ---
 
 ## 4-9. まとめ🎉
+
+![hc lc cs study 004 ripple dam](./picture/hc_lc_cs_study_004_ripple_dam.png)
 
 * 設計の判断軸は **「変更理由」**🧠✨（好みで分けない！）
 * まずは **UI／業務／I/O** の3箱で境界線を引く📦📦📦

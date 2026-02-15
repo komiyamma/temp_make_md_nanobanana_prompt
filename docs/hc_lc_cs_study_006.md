@@ -37,6 +37,8 @@ Microsoftのアーキテクチャ資料でも、ざっくり言うと
 
 ## 2) まず覚える「3つの箱」📦📦📦（超・実戦ルール）
 
+![hc lc cs study 006 three boxes colored](./picture/hc_lc_cs_study_006_three_boxes_colored.png)
+
 この章では、難しい言葉より **箱分け**でいくよ〜😊🎀
 
 ### 箱① UI（見た目・入力・表示）🖥️✨
@@ -119,6 +121,8 @@ public class OrderFormLike
 ```
 
 ### どこがヤバい？😱（すぐ起きる事故）
+
+![hc lc cs study 006 internal ripple](./picture/hc_lc_cs_study_006_internal_ripple.png)
 
 * 割引ルール変更💰 → 画面コードを触る羽目 → UI担当も巻き込まれる🌀
 * DBが変わる💾 → 画面コード修正 → 画面改修と同じリリースに混ざる🧨
@@ -217,6 +221,8 @@ public class OrderRepository
 
 ### Step C：UIは「集めて渡して表示する」だけにする🖥️✨
 
+![hc lc cs study 006 relay runner](./picture/hc_lc_cs_study_006_relay_runner.png)
+
 ```csharp
 public class OrderFormLike
 {
@@ -266,6 +272,8 @@ public class OrderFormLike
 
 ## 6) “混在”を見抜くチェックリスト✅👀
 
+![hc lc cs study 006 traffic lights](./picture/hc_lc_cs_study_006_traffic_lights.png)
+
 ### UIにこれがあったら黄色信号🚦
 
 * `SELECT` / `INSERT` / `UPDATE` みたいなSQL文字列🧨
@@ -287,6 +295,8 @@ public class OrderFormLike
 ## 7) よくある質問コーナー🙋‍♀️💡
 
 ### Q1. 入力チェックはUIでやっちゃダメ？🥺
+
+![hc lc cs study 006 forbidden connection](./picture/hc_lc_cs_study_006_forbidden_connection.png)
 
 **A. “見た目/形式”はUIでOK👌、でも“業務上の正しさ”は業務へ🧠✨**
 
