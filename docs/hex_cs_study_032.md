@@ -40,6 +40,9 @@ flowchart TD
 
 ### ✅ もし配線が散らばると…🍝💥
 
+![hex_cs_study_032_messy_wiring.png](./picture/hex_cs_study_032_messy_wiring.png)
+
+
 * Controller の中で `new` しまくる😵‍💫
 * あちこちで `ServiceProvider.GetService()` し始める😇
 * 「この実装ってどこで使われてるの？」が追えなくなる🕵️‍♀️
@@ -56,6 +59,9 @@ flowchart TD
 
 ## 2. ASP.NET Core だと Composition Root はどこ？👑🌐
 
+![hex_cs_study_032_king_program.png](./picture/hex_cs_study_032_king_program.png)
+
+
 いまの ASP.NET Core だと、だいたい **`Program.cs` が Composition Root** になりやすいよ📍
 `builder.Services.AddScoped(...)` を並べる“あそこ”だね🧩✨ ([Microsoft Learn][2])
 
@@ -64,6 +70,9 @@ flowchart TD
 ---
 
 ## 3. ミニ題材（カフェ注文☕）で “配線” を体験しよ〜🧩😆
+
+![hex_cs_study_032_onion_pierce.png](./picture/hex_cs_study_032_onion_pierce.png)
+
 
 ここでは、登場人物をざっくりこうするね👇✨
 
@@ -85,6 +94,9 @@ flowchart TD
 ---
 
 ## 4. Core 側は「interface を受け取るだけ」🛡️✨
+
+![hex_cs_study_032_blindfold.png](./picture/hex_cs_study_032_blindfold.png)
+
 
 ### 4-1. Port（約束）📝🔌
 
@@ -129,6 +141,9 @@ public sealed class CreateOrderUseCase : ICreateOrderUseCase
 ---
 
 ## 5. Adapter 側は「Port を実装」して外の都合を吸収🔁🧽
+
+![hex_cs_study_032_plug_adapter.png](./picture/hex_cs_study_032_plug_adapter.png)
+
 
 ### 5-1. まずは InMemory（最速で動く）📦✨
 
@@ -190,6 +205,9 @@ app.Run();
 
 ## 7. Program.cs が太ってきたら… “配線を分割” しよ🍔➡️🥗✨
 
+![hex_cs_study_032_slicing.png](./picture/hex_cs_study_032_slicing.png)
+
+
 `Program.cs` に登録が増えると、すぐゴチャるよね😂
 そこで **拡張メソッドで “配線モジュール化”** すると気持ちいいよ〜🧘‍♀️✨
 
@@ -248,6 +266,9 @@ app.Run();
 ---
 
 ## 8. 差し替えポイントの作り方🔁✨（3パターン）
+
+![hex_cs_study_032_rail_switch.png](./picture/hex_cs_study_032_rail_switch.png)
+
 
 ### パターンA：設定（appsettings）で切り替え📄🔧
 
