@@ -22,6 +22,8 @@ Alistair Cockburn（提唱者）は「UIやDBがなくてもアプリが動い�
 
 ## 3-2. “1枚絵” の読み方（最短でわかる版）👀✨
 
+![hex_ts_study_003_hexagonal_diagram](./picture/hex_ts_study_003_hexagonal_diagram.png)
+
 まずはイメージ図（超ざっくり）👇
 
 ```text
@@ -34,6 +36,8 @@ Alistair Cockburn（提唱者）は「UIやDBがなくてもアプリが動い�
 
 ### ✅ ここで覚えるポイントは3つだけ！
 
+![hex_ts_study_003_port_definition](./picture/hex_ts_study_003_port_definition.png)
+
 1. **中心（🏰）がいちばん偉い**：ルールを置く場所
 2. **Port（🔌）は“約束（インターフェース）”**：中心が「こう呼んでね」って決める
 3. **Adapter（🧩）は“変換係”**：外側の都合（HTTP/DB/SDK…）を中心の約束に合わせる
@@ -43,6 +47,8 @@ Cockburnも「外から来たイベントは Port に入り、Adapter が技術�
 ---
 
 ## 3-3. “六角形”は形じゃなくて「比喩」だよ🙆‍♀️✨
+
+![hex_ts_study_003_hexagon_metaphor](./picture/hex_ts_study_003_hexagon_metaphor.png)
 
 「え、六角形ってことは Port が6個必要なの？」って思いがちだけど…
 
@@ -56,6 +62,8 @@ Cockburn本人も同じ趣旨で「6が重要なんじゃなくて、描きや�
 ---
 
 ## 3-4. “中心”って具体的に何が入るの？🏰🧠
+
+![hex_ts_study_003_core_components](./picture/hex_ts_study_003_core_components.png)
 
 中心はだいたいこの2階建て（イメージ）になることが多いよ😊
 
@@ -74,6 +82,8 @@ Cockburn本人も同じ趣旨で「6が重要なんじゃなくて、描きや�
 
 ## 3-5. 外側は何がいてもいい（UI/DB/外部API/テストも全部）🌐💾🧪✨
 
+![hex_ts_study_003_outside_world](./picture/hex_ts_study_003_outside_world.png)
+
 外側は “技術の世界” だから、何がいてもOK！
 
 * Web（HTTP）🌐
@@ -89,6 +99,8 @@ Cockburnも「同じ中心を、ユーザー/プログラム/自動テスト/バ
 ---
 
 ## 3-6. 依存の向き：この矢印が命🧭🔥
+
+![hex_ts_study_003_dependency_arrows](./picture/hex_ts_study_003_dependency_arrows.png)
 
 レイヤードでよくある依存はこう👇
 
@@ -109,6 +121,8 @@ Martin Fowler の記事でも「依存が UI→domain→data から、UI→domai
 ---
 
 ## 3-7. “城”たとえで超理解🏰🛡️🌸
+
+![hex_ts_study_003_castle_metaphor_detailed](./picture/hex_ts_study_003_castle_metaphor_detailed.png)
 
 * **城の本丸＝中心（ルール）**🏰
 * **城門＝Port（約束）**🚪🔌

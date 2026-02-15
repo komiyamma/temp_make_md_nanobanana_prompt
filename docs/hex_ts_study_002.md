@@ -19,6 +19,8 @@
 
 ### 2.2 直結コードってなに？（ざっくり）🧷
 
+![hex_ts_study_002_mixed_cocktail](./picture/hex_ts_study_002_mixed_cocktail.png)
+
 **直結コード**は、1つの場所にこういうのが全部混ざってる状態👇
 
 * 画面・HTTPの受け取り（入力）📮
@@ -37,6 +39,8 @@
 
 #### あるある①：ちょっと直しただけで別の場所が壊れる 😱🔧
 
+![hex_ts_study_002_ripple_effect](./picture/hex_ts_study_002_ripple_effect.png)
+
 * 仕様変更：タイトルの最大文字数が変わった
 * なのに、**入力チェックがあちこちに散ってて**、直し漏れが出る…🧨
 * しかも壊れるのは「実行してみないと分からない」タイプ💥
@@ -45,6 +49,8 @@
 
 #### あるある②：テストができない（or すっごい遅い）🐢🧪
 
+![hex_ts_study_002_testing_wall](./picture/hex_ts_study_002_testing_wall.png)
+
 * ちょっとしたルールを確認したいだけなのに
   DB起動・HTTP起動・環境変数…みたいな儀式が必要😵‍💫
 * その結果、「テスト書くのやめよ…」になって事故る😭
@@ -52,6 +58,8 @@
 ヘキサゴナルが狙うのは、中心（ルール）を外部から切り離して **中心だけテストできる**状態だよ🧠✨ ([AWS ドキュメント][1])
 
 #### あるある③：別の入口（CLI/バッチ/別画面）を作りたくなった瞬間に詰む 🚪💥
+
+![hex_ts_study_002_copy_paste_hell](./picture/hex_ts_study_002_copy_paste_hell.png)
 
 * Web画面で動くように作った
 * 後から「CLIでも同じ処理したい！」
@@ -73,6 +81,8 @@
 ---
 
 ### 2.4 “なぜ怖いのか”＝依存が散らばるから 🧨🧭
+
+![hex_ts_study_002_dependency_magnet](./picture/hex_ts_study_002_dependency_magnet.png)
 
 直結コードのいちばんの問題はこれ👇
 
@@ -126,6 +136,8 @@ app.listen(3000);
 
 #### これ、何がイヤ？😵‍💫
 
+![hex_ts_study_002_bad_code_analysis](./picture/hex_ts_study_002_bad_code_analysis.png)
+
 * 「タイトル空NG」を変えたいだけなのに、HTTPとファイル保存のことも触る羽目になる🧨
 * 後から保存先をDBにしたら、この関数まるごと大工事になりがち🏗️💥
 * ルールのテストをしたいのに、ファイルI/Oが絡んで遅い＆壊れやすい🐢
@@ -133,6 +145,8 @@ app.listen(3000);
 ---
 
 ### 2.6 ちょいワーク✍️：どれが「ルール」で、どれが「I/O」？
+
+![hex_ts_study_002_separation_exercise](./picture/hex_ts_study_002_separation_exercise.png)
 
 上のコードを見て、頭の中でいいから分けてみて〜😊✨
 
