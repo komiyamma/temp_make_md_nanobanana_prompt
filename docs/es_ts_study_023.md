@@ -11,6 +11,8 @@
 
 ## まずは感覚：なにが「楽観」なの？🙂🪄
 
+![Optimistic Logic](./picture/es_ts_study_023_optimistic_logic.png)
+
 ![競合検知](./picture/es_ts_study_023_concurrency.png)
 
 ```mermaid
@@ -38,6 +40,8 @@ flowchart TD
 
 ## expectedVersion ってなに？🔢🧩
 
+![Version Growth](./picture/es_ts_study_023_version_growth.png)
+
 イベントストリームは「出来事の列」📜で、だいたいこういう番号が付くよ👇
 
 * 1本のストリーム（例：`cart-123`）にイベントが 0個なら、最後の番号は **-1**（空っぽ）みたいに扱う
@@ -53,6 +57,8 @@ flowchart TD
 ---
 
 ## 競合のミニドラマ（超わかる版）🎬😵‍💫
+
+![Conflict Prevention](./picture/es_ts_study_023_conflict_prevention.png)
 
 同じカートを、2つの画面で同時に更新すると…👇
 
@@ -281,6 +287,8 @@ describe("Chapter23 optimistic concurrency", () => {
 
 ## 競合したときの最小UX（現場っぽい話）🧯🙂
 
+![UX Conflict Handling](./picture/es_ts_study_023_ux_conflict.png)
+
 `ConcurrencyError` が出たら、最小の現実的な対応はこれ👇
 
 1. いったん最新を読み直す（reload）📥🔁
@@ -301,6 +309,8 @@ describe("Chapter23 optimistic concurrency", () => {
 * この章の実装は **空 = -1（NO_STREAM）** で統一してるよ✅
 
 ## 落とし穴2：読み込み時点の version を使ってない😇
+
+![Common Pitfall (Any Version)](./picture/es_ts_study_023_pitfall_any.png)
 
 * `appendToStream(streamId, ANY_VERSION, ...)` ばっかりだと、競合は検知できない🙅‍♀️
 * 学習中は **必ず currentVersion を渡す** クセをつけよう💪✨
