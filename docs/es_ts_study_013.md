@@ -12,6 +12,8 @@
 
 ## 1) まずイメージしよう：EventStoreって何？🧠📦
 
+![Append Only Concept](./picture/es_ts_study_013_append_only_concept.png)
+
 イベントソーシングでは、**状態（いまの結果）**じゃなくて、**出来事（過去の履歴）**を積んでいくよね😊
 その「出来事の保管庫」が **EventStore** です📦✨
 
@@ -35,6 +37,8 @@ gitGraph
 ---
 
 ## 2) この章で作る“最小”の中身🧺✨
+
+![Map Structure](./picture/es_ts_study_013_map_structure.png)
 
 今回は「DB」なし！
 メモリ上にこういう箱を持つだけでOK😊
@@ -61,6 +65,8 @@ gitGraph
 ---
 
 ## 3-1) `src/domainEvent.ts`（イベント型の土台）📮📜
+
+![Event Envelope](./picture/es_ts_study_013_event_envelope.png)
 
 ```ts
 // src/domainEvent.ts
@@ -96,6 +102,8 @@ export type StoredEvent<E extends DomainEvent = DomainEvent> = Readonly<{
 
 ## 3-2) `src/eventStore.ts`（読み書きの約束＝インターフェース）🧾✅
 
+![Append and Read Flow](./picture/es_ts_study_013_append_read_flow.png)
+
 ```ts
 // src/eventStore.ts
 import type { DomainEvent, StoredEvent } from "./domainEvent.js";
@@ -116,6 +124,8 @@ export interface EventStore<E extends DomainEvent = DomainEvent> {
 ---
 
 ## 3-3) `src/inMemoryEventStore.ts`（本体：Mapに積むだけ）📦🚀
+
+![Immutable Read](./picture/es_ts_study_013_immutable_read.png)
 
 ```ts
 // src/inMemoryEventStore.ts
@@ -225,6 +235,8 @@ console.log("先頭のoccurredAt:", events[0]?.occurredAt);
 
 ## 5) ミニ演習💪🌸（手を動かすと一気に理解できる！）
 
+![Multiple Streams](./picture/es_ts_study_013_multiple_streams.png)
+
 ## 演習A：別ストリームも作ってみよう🧺🧺
 
 * `cart-002` を作って、イベントを2個だけAppendしてみてね😊
@@ -273,6 +285,8 @@ console.log("先頭のoccurredAt:", events[0]?.occurredAt);
   （この章ではすでに対策済み😺）
 
 ## つまずき③：イベント名が現在形になる😺→🙅‍♀️
+
+![Naming Pitfall](./picture/es_ts_study_013_naming_pitfall.png)
 
 * `AddItem` ❌（命令っぽい）
 * `ItemAdded` ✅（起きた出来事）

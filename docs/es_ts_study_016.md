@@ -12,8 +12,16 @@
 
 イベントソーシングのアプリは、ざっくりこう動くよ👇✨
 
+![Load Phase](./picture/es_ts_study_016_load_phase.png)
+
 1. **Load**：今までの出来事（イベント）を全部読む📚
+
+![Decide Phase](./picture/es_ts_study_016_decide_phase.png)
+
 2. **Decide**：ルールをチェックして「新しい出来事」を作る🧠💡
+
+![Append Phase](./picture/es_ts_study_016_append_phase.png)
+
 3. **Append**：その出来事をイベントストアに積む📦✅
 
 「状態を直接いじる」んじゃなくて、**出来事（イベント）を追加する**のが主役だよ🎬✨
@@ -21,6 +29,8 @@
 ---
 
 ## “型”が必要な理由（超たいせつ）🥺🧷
+
+![Direct State Modification Mess](./picture/es_ts_study_016_direct_state_mess.png)
 
 最初のうちは、コマンド処理って…
 
@@ -89,6 +99,8 @@ sequenceDiagram
 
 ## 1) 型づくりの準備：共通の型（Command / Event / Result）🧩✨
 
+![Result Pattern](./picture/es_ts_study_016_result_pattern.png)
+
 ```ts
 // 1) Command（入力）📮
 export type Command = {
@@ -122,6 +134,8 @@ export const err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 ---
 
 ## 2) EventStore（最小）📦✨：Read と Append だけ
+
+![Expected Version Check](./picture/es_ts_study_016_concurrency_check.png)
 
 この章の主役は「型」だから、まずは **インメモリ**でOK👌🌸
 
@@ -193,6 +207,8 @@ export class InMemoryEventStore implements EventStore {
 
 ## 3) Aggregate（状態）と Apply（復元）🔁🧠
 
+![Rehydrate Cycle](./picture/es_ts_study_016_rehydrate_cycle.png)
+
 ## カートの状態🛒
 
 ```ts
@@ -249,6 +265,8 @@ export const rehydrateCart = (events: CartEvent[]): CartState => {
 ---
 
 ## 4) Decide（判断）🧠💡：ルールチェック → 新イベントを作る
+
+![Decide Phase](./picture/es_ts_study_016_decide_phase.png)
 
 ここが「設計っぽさ」の入り口だよ🌸
 **Decide は “新イベントを返すだけ”** にすると、めっちゃ読みやすい✨
@@ -324,6 +342,8 @@ export const decideAddItemToCart = (
 ---
 
 ## 5) ここが本題！Handler（Load → Decide → Append）📮✅
+
+![Handler Steps](./picture/es_ts_study_016_handler_steps.png)
 
 この “型” を、まるごとテンプレとして覚えちゃおう🧰💞
 
