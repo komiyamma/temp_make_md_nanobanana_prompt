@@ -7,6 +7,8 @@
 
 ## この章のゴール🎯
 
+![Static Double-Edged Sword](./picture/hc_lc_cs_study_015_burning_sword.png)
+
 * static が「なぜテストと変更に弱いのか」を体感する🧪💦
 * static依存を **最小変更で弱める3段階** を覚える🪜✨
 * “直すべきstatic” と “そのままでOKなstatic” を見分ける👀✅
@@ -35,6 +37,8 @@ static はざっくり言うと…
 
 ## 「直すべきstatic」ランキング🏆💣（初心者はここから！）
 
+![Static Danger Ranking](./picture/hc_lc_cs_study_015_static_ranking.png)
+
 優先度高い順にいくよ〜📌
 
 1. **時間**：`DateTime.Now / UtcNow` ⏰（日付またぎで落ちる〜） ([Microsoft Learn][2])
@@ -46,6 +50,8 @@ static はざっくり言うと…
 ---
 
 ## 「そのままでOKなstatic」もあるよ🙆‍♀️✨
+
+![Safe Static Zone](./picture/hc_lc_cs_study_015_safe_zone.png)
 
 全部が悪ではない！ここは安心してOK👇
 
@@ -60,6 +66,8 @@ static はざっくり言うと…
 ---
 
 ## static依存を弱める「3段階」🪜✨（最小変更でいくよ！）
+
+![Refactoring Staircase](./picture/hc_lc_cs_study_015_refactoring_staircase.png)
 
 ### 段階1：呼び出しを「1か所に集める」📦
 
@@ -82,6 +90,8 @@ static はざっくり言うと…
 ---
 
 ## 1) まずは “変更が怖い” コード（static依存モリモリ）😱⚡
+
+![Tangled Static Wires](./picture/hc_lc_cs_study_015_tangled_wires.png)
 
 ```csharp
 using System;
@@ -243,6 +253,8 @@ classDiagram
 ---
 
 ## 4) 段階3：テストで “偽物” を渡して固定する🧪💖
+
+![Fake Test Setup](./picture/hc_lc_cs_study_015_test_setup.png)
 
 ```csharp
 using System;

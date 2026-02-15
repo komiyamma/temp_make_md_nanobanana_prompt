@@ -2,6 +2,8 @@
 
 ## 今日のゴール🎯
 
+![Cutting the Red Flag](./picture/hc_lc_cs_study_014_red_flag_cut.png)
+
 * 「`bool`引数で挙動が変わるコード」が **なぜ変更に弱いのか** 説明できる🗣️✨
 * フラグ引数を見つけたら、**3つの直し方**（別メソッド／enum化／方針オブジェクト）を選べるようになる🧩
 * 直したあとに、**責務が混ざってないか🍲／依存が増えてないか🔗** を自分でチェックできる✅
@@ -9,6 +11,8 @@
 ---
 
 ## 1) フラグ引数ってなに？👀🚩
+
+![Mystery Switch](./picture/hc_lc_cs_study_014_mystery_switch.png)
 
 **フラグ引数**は「引数の値（たとえば `true/false`）で、関数が**別の仕事**をするように切り替える」タイプの引数だよ〜🚩
 Martin Fowler も、まさにそういう意味で “Flag Argument” を説明してるよ。([martinfowler.com][1])
@@ -51,6 +55,8 @@ Martin Fowler も、まさにそういう意味で “Flag Argument” を説明
 
 ## 3) でも…`bool`引数が全部ダメってわけじゃないよ🙆‍♀️✨
 
+![State vs Switch](./picture/hc_lc_cs_study_014_state_vs_switch.png)
+
 ここ大事〜！💡
 「`bool`が“状態”を表してるだけ」で、**挙動切り替えのスイッチじゃない**なら、必ずしも悪ではない場合もあるよ。([ardalis.com][3])
 
@@ -90,6 +96,8 @@ Martin Fowler も、まさにそういう意味で “Flag Argument” を説明
 ## 5) ハンズオン🛠️：フラグ引数を「別メソッド」にする✂️🎀
 
 ## 5-1. まずは“あるあるNG例”🚩
+
+![Tangled Wire Logic](./picture/hc_lc_cs_study_014_tangled_wire.png)
 
 「至急ならSMSも送る、通常ならEmailだけ」みたいなやつ👇
 
@@ -151,6 +159,8 @@ service.Notify(user, "明日提出だよ", isUrgent: true);
 ---
 
 ## 5-3. 本命：別メソッドに分ける✂️✨
+
+![Distinct Buttons](./picture/hc_lc_cs_study_014_distinct_buttons.png)
 
 「呼び出し意図」を **メソッド名で固定**するよ🎯
 
@@ -219,6 +229,8 @@ flowchart TD
 ---
 
 ## 5-4. 最小テストで安心🧪✨（分岐があるなら特に！）
+
+![Test Tracks](./picture/hc_lc_cs_study_014_test_tracks.png)
 
 テスト用のフェイクを作って、「至急ならSMSも送る」を確認しよ〜🎀
 

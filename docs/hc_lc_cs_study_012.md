@@ -5,6 +5,8 @@
 
 ## 1) 今日のゴール🎯✨
 
+![Freezing Time](./picture/hc_lc_cs_study_012_freezing_time.png)
+
 この章が終わるころには…
 
 * ✅ `interface` が「契約（約束）📜」って感覚でわかる
@@ -53,6 +55,8 @@ OrderService → IClock ← SystemClock / FakeClock
 
 ## 4) 「interface にするべき依存」チェックリスト✅🧠
 
+![Interface Candidate Checklist](./picture/hc_lc_cs_study_012_interface_checklist.png)
+
 全部を interface にすると逆にゴチャゴチャするので🙅‍♀️
 まずはこの3つで判断しよ😊🎀
 
@@ -77,6 +81,8 @@ OrderService → IClock ← SystemClock / FakeClock
 
 ### 5-1) ダメな例（時刻を直呼び）😱
 
+![Flaky Test with Real Clock](./picture/hc_lc_cs_study_012_flaky_test.png)
+
 ```csharp
 public class CouponService
 {
@@ -94,6 +100,8 @@ public class CouponService
 ---
 
 ### 5-2) Step1：契約（interface）を作る📜✨
+
+![Interface Contract Scroll](./picture/hc_lc_cs_study_012_contract_scroll.png)
 
 「今のUTC時刻を返せること」だけ約束しよう😊
 **最小でOK！**（太らせない！）🍰❌
@@ -239,6 +247,8 @@ public class CouponServiceTests
 
 ### ❌ 失敗②：interface が太る（メソッド盛り盛り）🍰💥
 
+![Fat Interface Anti-Pattern](./picture/hc_lc_cs_study_012_fat_interface.png)
+
 `IClock` に `Parse()` とか `Format()` とか入れ始めると責務が混ざる🍲
 → **“その依存の核” だけ** を約束にしよう✨
 
@@ -250,6 +260,8 @@ public class CouponServiceTests
 ---
 
 ## 7) おまけ：実務寄りの「TimeProvider」って選択肢⏰🧰✨
+
+![TimeProvider Tool](./picture/hc_lc_cs_study_012_time_provider_tool.png)
 
 .NET には **時間を抽象化する公式機能 `TimeProvider`** があるよ😊
 「時間に依存するコードをテスト可能にする」ための仕組みとして紹介されてる。([Microsoft Learn][2])
