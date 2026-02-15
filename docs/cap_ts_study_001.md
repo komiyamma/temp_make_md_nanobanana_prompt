@@ -10,6 +10,9 @@
 
 # 1) まず「単体アプリの常識」を確認しよう🧠✅
 
+![cap_ts_study_001_local_vs_dist_metaphor.png](./picture/cap_ts_study_001_local_vs_dist_metaphor.png)
+
+
 単体アプリ（同じプロセス内）だと、だいたいこう思いがち👇
 
 * 呼んだらすぐ返ってくる（遅くても一定）🏃‍♀️💨
@@ -40,15 +43,24 @@ flowchart LR
 
 ## ① 遅延（Latency）⏳🐢
 
+![cap_ts_study_001_latency_wheel.png](./picture/cap_ts_study_001_latency_wheel.png)
+
+
 呼び出しが“遅い”だけで、画面も気持ちも不安になります😖
 しかも遅さは毎回違う（ブレる）ので、予測が当たりません🎲
 
 ## ② 部分故障（Partial Failure）💥🧩
 
+![cap_ts_study_001_partial_failure_robot.png](./picture/cap_ts_study_001_partial_failure_robot.png)
+
+
 「Aは生きてるけどBが死んでる」みたいな**中途半端な失敗**が起きます。
 単体アプリの“全部落ちるor全部OK”とは違う世界🌍
 
 ## ③ 二重送信（Duplicate）📨📨
+
+![cap_ts_study_001_elevator_duplicate.png](./picture/cap_ts_study_001_elevator_duplicate.png)
+
 
 タイムアウトしたら「もう1回送ろ！」ってやりたくなるけど…
 **最初の要求がサーバー側では処理されてた**、が普通に起きます😱
@@ -66,6 +78,9 @@ flowchart LR
 （TypeScriptは安定版として5.9系が配布されています。([typescriptlang.org][1])）
 
 ## 3-1) セットアップ（最小）🧰✨
+
+![cap_ts_study_001_setup_toolbox.png](./picture/cap_ts_study_001_setup_toolbox.png)
+
 
 作業フォルダで👇（PowerShellでもOK）
 
@@ -177,6 +192,9 @@ npx tsx client.ts
 # 4) 観察ポイント👀🔍（ここが“分散の入口”）
 
 ## ✅ タイムアウトしても、サーバー側は動いてるかも😱
+
+![cap_ts_study_001_timeout_reality.png](./picture/cap_ts_study_001_timeout_reality.png)
+
 
 クライアントが「待てない！」って諦めただけで、サーバーはのんびり処理してることがあります🐢
 ログで `[IN]` が出てるのに、クライアント側は失敗扱い…みたいなのが見えたら大成功🎉
