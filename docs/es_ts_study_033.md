@@ -49,6 +49,7 @@ npmの `sqlite3` は「最終更新がかなり前」になってきています
 ## 1. Eventsテーブル設計：最小で強い形にする 💪🗄️
 
 ![SQLiteへの永続化：ファイル1つに保存する軽量データベース](./picture/es_ts_study_033_sqlite.png)
+![SQLite Persistence](./picture/es_ts_study_033_sqlite_persistence.png)
 
 ```mermaid
 graph LR
@@ -65,6 +66,8 @@ end
 **「同じstreamIdの中で、versionが1,2,3…と絶対に並ぶ」** 🔢✨
 
 ## テーブル案（最小）🧾
+
+![Events Table Design](./picture/es_ts_study_033_events_table_design.png)
 
 * `stream_id`：どの集約のイベント列？（＝1集約 = 1ストリーム）🧺
 * `version`：そのストリーム内の連番（順番）📼
@@ -145,6 +148,8 @@ export class ConcurrencyError extends Error {
 ---
 
 ## 3.2 `node:sqlite` でDBを開いて、スキーマ作る 🗄️🛠️
+
+![SqliteEventStore Class](./picture/es_ts_study_033_sqlite_event_store_class.png)
 
 Node標準の `node:sqlite` は `DatabaseSync` が使えます。([Node.js][1])
 
@@ -273,6 +278,8 @@ export class SqliteEventStore {
 
 ### ここ、超重要ポイントだよ〜！🥺✨
 
+![Transaction Append](./picture/es_ts_study_033_transaction_append.png)
+
 * `BEGIN IMMEDIATE` にすることで「書き込み開始」を先に確保しやすくなる🧯
 * `expectedVersion` と `actualVersion` を比べて **競合を検知** する🔒
 * 保存は **必ずトランザクション** でまとめる（途中で落ちたら泣く😭）
@@ -302,6 +309,8 @@ const eventStore = new SqliteEventStore("./data/app.db");
 ---
 
 ## 5. ミニ演習：Append/Readが永続化できたか確認 ✅🧪
+
+![Concurrency Error via DB](./picture/es_ts_study_033_concurrency_error_db.png)
 
 ## 演習A：保存して、プロセス再起動して、読める？🔁🗄️
 
@@ -374,6 +383,8 @@ describe("SqliteEventStore", () => {
 * 後で必要なら「JSON関数」や「検索用Projection」で強化できるよ🔎
 
 ## 7.3 WALはだいたい嬉しい 📈
+
+![WAL Mode](./picture/es_ts_study_033_wal_mode.png)
 
 `PRAGMA journal_mode = WAL;` は、読み取りが多い構成だと体感よくなることが多いよ😊
 （もちろん、全部のケースで魔法ってわけじゃないけど🪄）

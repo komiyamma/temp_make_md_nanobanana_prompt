@@ -22,6 +22,7 @@ Projection（読みモデル）は、**画面表示・検索・一覧**をラク
 イベントを最初から流して、Projectionを **ゼロから再生成** するよ🔁🧹
 
 ![リプレイによる再構築](./picture/es_ts_study_032_replay.png)
+![Projection Rebuild Overview](./picture/es_ts_study_032_rebuild_overview.png)
 
 ```mermaid
 graph TD
@@ -39,6 +40,8 @@ graph TD
 ---
 
 ## 2. 「Rehydrate」との違い⚠️（ここ超大事！）🧠
+
+![Rehydrate vs Rebuild](./picture/es_ts_study_032_rehydrate_vs_rebuild.png)
 
 * **Rehydrate（復元）**：1つの集約（1ストリーム）をイベント数個〜数十個で復元🔁
 * **Projection再構築（リプレイ）**：**全ストリームの大量イベント**を流して読みモデルを作り直す🔁🔁🔁
@@ -60,6 +63,8 @@ graph TD
 **デメリット**：作り直し中、読めない/古い/不安定になりがち😵
 
 ### B) シャドーリビルド（別場所で作って切り替える）👻➡️✅
+
+![Shadow Rebuild](./picture/es_ts_study_032_shadow_rebuild.png)
 
 1. 新Projection（影）を別テーブル/別DB/別コレクションに作る🧪
 2. 影にイベントをリプレイ🔁
@@ -124,6 +129,8 @@ export type StoredEvent<E> = {
 ### 5.2 最小EventStore（全件読み＝readAllを追加）📚🔁
 
 再構築は **全イベントを読む** ので `readAll` が欲しい！
+
+![Paging Read](./picture/es_ts_study_032_paging_read.png)
 
 ```ts
 // src/es/inMemoryEventStore.ts
@@ -279,6 +286,8 @@ export function toSummary(s: CartWorking): CartSummary {
 
 ### 5.4 いよいよ再構築（リプレイ）本体！🔁🧹
 
+![Rebuild Function Structure](./picture/es_ts_study_032_rebuild_code_structure.png)
+
 再構築の手順はシンプル👇
 
 1. Projectionを初期化（Aなら削除、Bなら影ストアを新規）🧽
@@ -391,6 +400,8 @@ export class SwappableCartSummary {
 ---
 
 ## 8. テスト（Given-When-Thenっぽく）🧪🌸
+
+![Rebuild Test](./picture/es_ts_study_032_test_given_when_then.png)
 
 Projection再構築は「入力＝イベント列、出力＝読みモデル」だから、テストがめちゃやりやすい！✨
 Node.js のLTS状況はこまめに変わるけど、最近のラインではLTSの運用が前提になりやすいよ。([Node.js][4])

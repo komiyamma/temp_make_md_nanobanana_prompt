@@ -1,4 +1,4 @@
-﻿# 第36章：卒業制作（ミニプロダクト完成）🎓🎉
+# 第36章：卒業制作（ミニプロダクト完成）🎓🎉
 
 ## ねらい🎯✨
 
@@ -10,6 +10,7 @@
 ## 1. 今回作るミニプロダクト：Eventful Cart 🛒✨
 
 ![卒業制作のゴール：Eventful Cart完成！](./picture/es_ts_study_036_goal.png)
+![Eventful Cart Architecture](./picture/es_ts_study_036_architecture_overview.png)
 
 ```mermaid
 graph TD
@@ -29,6 +30,8 @@ graph TD
 小さくて分かりやすくて、イベントも作りやすいからです👍
 
 ## できること（ユーザー視点）👀🧡
+
+![Cart Features](./picture/es_ts_study_036_cart_features.png)
 
 * カートを作る🆕
 * 商品を追加する➕
@@ -121,12 +124,16 @@ es-cart/
 
 ## 冪等性キー（超大事）🔁🧷
 
+![API Idempotency Header](./picture/es_ts_study_036_api_idempotency.png)
+
 書き込み系リクエストは、ヘッダで **`Idempotency-Key`** を受け取ります✨
 同じキーで2回呼ばれても「イベントが二重に積まれない」ようにします😊
 
 ---
 
 ## 6. SQLite スキーマ（Events + Idempotency + Projection）🗄️✨
+
+![SQLite Schema Map](./picture/es_ts_study_036_sqlite_schema_map.png)
 
 `src/infra/sqlite/schema.sql` を用意します👇
 
@@ -200,6 +207,8 @@ export type Meta = {
 ---
 
 ## 8. Aggregate：復元（Rehydrate）と Decide（イベント生成）🔁✨
+
+![Aggregate Logic Flow](./picture/es_ts_study_036_aggregate_logic.png)
 
 `src/domain/cart.ts`
 
@@ -679,6 +688,8 @@ export function registerRoutes(app: FastifyInstance, store: EventStore) {
 ---
 
 ## 14. テスト（Given-When-Then）🧪🌸
+
+![Test Suite](./picture/es_ts_study_036_test_suite.png)
 
 Vitest v4系を使います🧪（4.0は2025-10-22リリース） ([vitest.dev][4])
 `test/cart.spec.ts`
