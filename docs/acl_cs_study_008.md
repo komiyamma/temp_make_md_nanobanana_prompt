@@ -53,6 +53,8 @@ flowchart LR
 
 ### 2. それぞれの責務（やること／やらないこと）📝🧠
 
+![ACL Responsibility Roles](./picture/acl_cs_study_008_responsibility_roles.png)
+
 #### 🛰️ Client（外の世界担当）
 
 **やること✅**
@@ -101,6 +103,8 @@ flowchart LR
 ---
 
 ### 3. 例題：クセあり決済API「KessaiX」をACLで包む💳🧱✨
+
+![Dirty Data vs Clean Model](./picture/acl_cs_study_008_dirty_vs_clean.png)
 
 外部からこんなレスポンスが来るとするね👇（例）
 
@@ -174,6 +178,8 @@ classDiagram
 
 ### 4-2. 外部DTO（外の形をそのまま受ける）📦🌍
 
+![DTO Catcher](./picture/acl_cs_study_008_dto_catcher.png)
+
 ```csharp
 using System.Text.Json.Serialization;
 
@@ -237,6 +243,8 @@ public sealed record PaymentReceipt(
 
 ### 4-4. Translator（翻訳だけ！I/O禁止！）🧑‍🏫🧡
 
+![Translator Magic](./picture/acl_cs_study_008_translator_magic.png)
+
 ```csharp
 using System.Globalization;
 using MyShop.Domain.Payments;
@@ -284,6 +292,8 @@ Translatorのいいところ😍✨
 ---
 
 ### 4-5. Client（まずは抽象＋FakeでOK）🛰️🎭
+
+![Client Fetching](./picture/acl_cs_study_008_client_fetch.png)
 
 ```csharp
 namespace MyShop.Infrastructure.Payments.KessaiX;
@@ -350,6 +360,8 @@ public sealed class HttpKessaiXClient : IKessaiXClient
 ---
 
 ### 4-6. Facade（内側に見せる窓口）🧱🚪✨
+
+![Facade Wrapper](./picture/acl_cs_study_008_facade_wrapper.png)
 
 内側が見る“窓口インターフェース”を用意（例：Application層）
 
@@ -419,6 +431,8 @@ Console.WriteLine($"PaidAt(UTC): {receipt.PaidAtUtc:O}");
 ---
 
 ## 5. よくある事故😇💥（これだけは避けて〜！）
+
+![ACL Accident Gallery](./picture/acl_cs_study_008_accident_gallery.png)
 
 ### 事故①：Facadeが巨大化する🧱🐘
 

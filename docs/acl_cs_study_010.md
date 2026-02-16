@@ -44,6 +44,8 @@ flowchart LR
 
 ### 2-1) 外部の都合が、そのまま内側に侵入する😵‍💫
 
+![DTO Leakage](./picture/acl_cs_study_010_dto_leakage.png)
+
 * `snake_case` で来る
 * `null` が混ざる
 * 文字列で `status: "paid"` とか来る
@@ -71,6 +73,8 @@ DTOって基本、**意味の保証が弱い**んだよね。
 ---
 
 ## 3) 正しい分け方のルール🧭🧱
+
+![Separation Rules](./picture/acl_cs_study_010_rules_visualization.png)
 
 ここからは、迷わないための **鉄板ルール** を置いておくね✨
 
@@ -248,6 +252,8 @@ public static class PaymentTranslator
 
 ## 5) “DTOフォルダを外側に置いて参照させない”を実現する🧱🚫
 
+![Project Isolation](./picture/acl_cs_study_010_project_isolation.png)
+
 いちばん確実なのは、**プロジェクト分割＋参照方向**で物理的に締め出す方法だよ🔒✨
 
 ### 5-1) 例：プロジェクト構成（超定番）🧩
@@ -268,6 +274,8 @@ public static class PaymentTranslator
 ---
 
 ## 6) 最新の “JSON厳格モード” を境界で使う（外側で気づく）🧯🔎
+
+![Strict JSON Gate](./picture/acl_cs_study_010_strict_json_gate.png)
 
 .NET 10 では `JsonSerializerOptions.Strict` っていう **“ベストプラクティス寄りの厳格プリセット”** が追加されてるよ✨
 未知のメンバーを許さない、重複プロパティを許さない、nullable/requiredの扱いを尊重…みたいな設定が入ってるの。 ([Microsoft Learn][2])
@@ -348,6 +356,8 @@ public static class PaymentDtoParser
 ---
 
 ## 9) テストのコツ🧪💡（Translatorはめちゃテストしやすい）
+
+![Translator Test Bench](./picture/acl_cs_study_010_translator_test_bench.png)
 
 Translatorは **純粋関数っぽく**できるから、ユニットテストが超相性いいよ💞
 

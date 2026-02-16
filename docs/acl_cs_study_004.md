@@ -43,6 +43,8 @@ graph LR
 
 ## 2) “腐敗”って、言葉から始まることが多い 🙃🌀
 
+![Ambiguity Chaos](./picture/acl_cs_study_004_ambiguity_chaos.png)
+
 たとえば「Order」って単語、日常だと軽く見えるけど…現場だとブレやすい代表選手👀
 
 * Order = 注文（購入の意思決定）？
@@ -62,6 +64,8 @@ graph LR
 ---
 
 ## 3) この教材の題材（ミニEC/フリマ）で使う「内側の言葉」候補 🛒💳👤
+
+![Shielding Internal Dictionary](./picture/acl_cs_study_004_shielding_terms.png)
 
 この教材の内側（ドメイン側）は、まずはこの3つ中心で行くよ😊
 
@@ -126,6 +130,8 @@ graph LR
 
 ## 5) 決めた言葉を「C#の型」にして、ブレを減らす 🧱💻（ハンズオン）
 
+![Code Bricks](./picture/acl_cs_study_004_code_bricks.png)
+
 言葉を辞書に書くだけでも効果あるけど、
 **コードを“言葉の辞書”にしちゃう**とさらに強いよ✨
 
@@ -187,6 +193,8 @@ public readonly record struct ExternalTransactionId(string Value)
 
 ## 6) “翻訳のための対応表”を作る（ACLの下準備）🗺️🧱
 
+![Translation Conveyor Belt](./picture/acl_cs_study_004_translation_conveyor.png)
+
 次章以降でACLを実装するとき、これがあると爆速⚡
 
 例：外部決済APIがこう返すとする👇
@@ -240,6 +248,8 @@ flowchart LR
 ---
 
 ## 7) AI活用（この章はめっちゃ相性いい）🤖💕
+
+![AI Brainstorming](./picture/acl_cs_study_004_ai_brainstorming.png)
 
 AIは “候補出し” が得意！でも **最終決定はあなた** がやるのが大事だよ🧠✨
 
