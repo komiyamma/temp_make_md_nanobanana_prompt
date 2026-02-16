@@ -45,6 +45,8 @@ mindmap
 
 # 2) ルールが散るとどうなる？（ifだらけ地獄🌀😵）
 
+![Scattered Checks Chaos](./picture/acl_ts_study_008_scattered_checks.png)
+
 ありがちな失敗👇
 
 * いろんな場所で `if (points < 0) ...` が出てくる
@@ -58,6 +60,8 @@ mindmap
 ---
 
 # 3) “入口で守る”ってどこ？🚪✨
+
+![Two Guard Gates](./picture/acl_ts_study_008_guard_gates.png)
 
 「入口」って、具体的にはここ👇
 
@@ -88,6 +92,8 @@ mindmap
 # 5) 実装例：Result型で「成功/失敗」を返す（例外地獄回避🧯✨）
 
 ## 5-1) Result型（ミニ）📦
+
+![Result Type Box](./picture/acl_ts_study_008_result_pattern.png)
 
 ```ts
 // Result 型（超ミニ）🌱
@@ -231,6 +237,8 @@ export function mapStudent(dto: StudentDto): Result<Student, DomainError> {
 
 # 7) “例外（throw）”はどうする？⚠️💥
 
+![Exception vs Result](./picture/acl_ts_study_008_exception_vs_result.png)
+
 入門では **Result型で返す** のが分かりやすいことが多いよ😊
 でもプロジェクトによっては
 「ドメイン生成で例外投げる」派もいる（その代わり境界で必ずcatchする）🧯
@@ -243,6 +251,8 @@ export function mapStudent(dto: StudentDto): Result<Student, DomainError> {
 ---
 
 # 8) テスト：不変条件は“テスト効率が最高”🧪🔥
+
+![Invariant Test Bench](./picture/acl_ts_study_008_test_bench.png)
 
 不変条件って、ユニットテストがめちゃ気持ちいいところ！✨
 理由は簡単👇

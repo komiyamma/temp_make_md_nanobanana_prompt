@@ -15,6 +15,8 @@
 
 ## 何をするアプリ？🤔
 
+![App Concept Flow](./picture/acl_ts_study_005_app_flow.png)
+
 「学生が学食を買うときに、ポイントを使ったり貯めたりできる」アプリだよ〜！🧡
 （小さく作るから安心してね☺️）
 
@@ -33,6 +35,8 @@
 **大事なのは、外側の都合を内側へ持ち込まないこと！**🧼🧱
 
 ## A) 学生情報API（Student Directory）🧑‍🎓📚
+
+![Two APIs Architecture](./picture/acl_ts_study_005_two_apis.png)
 
 * 学生の基本情報を取れる（所属、区分、表示名など）
 * でも古いシステムで、命名が独特…👻
@@ -93,6 +97,8 @@ mindmap
 
 ## A) 学生情報API：レスポンス例 🧑‍🎓📦
 
+![Student API Quirks](./picture/acl_ts_study_005_student_quirks.png)
+
 ```json
 {
   "stu_id": "A0123456",
@@ -120,6 +126,8 @@ mindmap
 ---
 
 ## B) 決済API：成功レスポンス例 💳✅
+
+![Payment API Quirks](./picture/acl_ts_study_005_payment_quirks.png)
 
 ```json
 {
@@ -195,6 +203,8 @@ flowchart LR
 
 ## クセ分類（おすすめの箱）📦📦📦
 
+![Quirk Classification Boxes](./picture/acl_ts_study_005_quirk_boxes.png)
+
 * **命名変換**：`stu_kbn → studentType` 🧾➡️📘
 * **コード変換**：`"2" → UNDERGRAD` 🔤✨
 * **パース（整形）**：`"2004/7/3" → Date` 🗓️🔧
@@ -232,6 +242,8 @@ export async function fetchStudentRaw(studentId: string): Promise<StudentDirecto
 # 5.8 AI拡張（Copilot/Codex）を使って“クセ台帳”作成を爆速にする🤖⚡
 
 ## ① 外部JSONから「クセ候補」を列挙させる📝
+
+![AI Quirk Scanner](./picture/acl_ts_study_005_ai_scanner.png)
 
 **プロンプト例**👇
 

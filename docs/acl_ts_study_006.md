@@ -32,6 +32,8 @@
 
 ## 外部APIのレスポンス（例）📦
 
+![Messy JSON Visualization](./picture/acl_ts_study_006_messy_json.png)
+
 外部が返すJSONは、こんな “外の都合” が詰まってる想定👇
 
 * 変な命名（stu_id / nm_kj / pt…）🌀
@@ -71,6 +73,8 @@ export async function fetchStudent(stuId: string): Promise<StudentDirectoryDto> 
 }
 ```
 
+![Type Assertion Mask](./picture/acl_ts_study_006_as_mask.png)
+
 ここ、TypeScriptだと「as で型付け」できちゃうから、**安心した気になりやすい**のが罠😵‍💫🪤
 （でも実際のJSONが違っても、コンパイルは通る…）
 
@@ -99,6 +103,8 @@ export function canBuyLunch(dto: StudentDirectoryDto, lunchPrice: number): boole
 
 ## この時点で起きてる“侵食”🧟‍♀️🧠
 
+![Logic Pollution](./picture/acl_ts_study_006_logic_pollution.png)
+
 * 内側が外側の言葉（stu_kbn / nm_kj / pt）で埋まる🌀
 * “コード値の意味”が内側に混ざる🔤➡️📘（翻訳なし）
 * null対応・文字列数値変換など、外部の後始末が内側に来る🧹💦
@@ -108,6 +114,8 @@ export function canBuyLunch(dto: StudentDirectoryDto, lunchPrice: number): boole
 # 5) 「変更に弱い」を一発で体感する💥📉
 
 ## パターンA：外部が pt を points に変更した（ありがち）🔁
+
+![Change Collapse](./picture/acl_ts_study_006_change_collapse.png)
 
 外部が仕様変更で JSON をこう変えたとする👇
 
@@ -186,6 +194,8 @@ describe("canBuyLunch", () => {
 
 ## 何がつらいの？😵‍💫
 
+![Test Data Burden](./picture/acl_ts_study_006_test_burden.png)
+
 * テストしたいのは「学食を買えるか」なのに、外部項目（stu_id, upd…）まで毎回書く羽目📝💦
 * DTOが肥大化すると、テストが「作業」になる🪨
 * しかも外部仕様が変わると、**内側のテストがまとめて壊れる**💥🧨
@@ -193,6 +203,8 @@ describe("canBuyLunch", () => {
 ---
 
 # 7) “侵食してるかどうか”の見分け方チェック✅👀
+
+![Contamination Warning Signs](./picture/acl_ts_study_006_warning_signs.png)
 
 内側のコードで、こういうのが見えたら黄色信号🚥💛
 
