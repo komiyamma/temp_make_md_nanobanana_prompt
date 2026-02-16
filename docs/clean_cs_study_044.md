@@ -34,6 +34,8 @@ UseCaseのテストは、気持ちとしては **“ほぼ単体テスト寄り�
 
 ## 2) 今日の主役：Fake / Stub / Spy を“ゆるく”覚える😆🧸
 
+![Test Doubles Characters](./picture/clean_cs_study_044_test_doubles.png)
+
 この章では難しい言葉をガチ暗記しなくてOK🙆‍♀️💕
 ざっくりこう使うよ👇
 
@@ -44,6 +46,8 @@ UseCaseのテストは、気持ちとしては **“ほぼ単体テスト寄り�
 ---
 
 ## 3) テストプロジェクトの作り方（迷子ゼロ版）🧰✨
+
+![Test Project References](./picture/clean_cs_study_044_test_project_rules.png)
 
 ### ✅ 依存のルール（ここ超だいじ💗）
 
@@ -64,6 +68,8 @@ UseCaseのテストは、気持ちとしては **“ほぼ単体テスト寄り�
 ---
 
 ## 4) 例題：CreateMemo UseCase を “外部なし”で叩く🎮🧪
+
+![Interactor Isolation](./picture/clean_cs_study_044_interactor_isolation.png)
 
 ここから **「Fake Repository」＋「Spy Presenter」**でやるよ🎭✨
 （最小構成のサンプルだから、自分の実コードに合わせて読み替えてね🫶）
@@ -181,6 +187,8 @@ public sealed class CreateMemoInteractor
 
 ## 5) テスト側：Fake Repository と Spy Presenter を用意🎭🕵️‍♀️
 
+![Spy Presenter](./picture/clean_cs_study_044_spy_presenter_action.png)
+
 ### ✅ Fake Repository（インメモリ）
 
 ```csharp
@@ -243,6 +251,8 @@ public sealed class FixedIdGenerator : IIdGenerator
 ---
 
 ## 6) Given-When-Then でテストを書く（超読みやすい💖）🧁✨
+
+![Given-When-Then Comic](./picture/clean_cs_study_044_given_when_then_comic.png)
 
 ### ✅ 成功ケース：タイトルOK → 保存されて、成功が出力される
 
@@ -313,6 +323,8 @@ public sealed partial class CreateMemoInteractorTests
 ---
 
 ## 7) UpdateMemo も同じノリでいけるよ✍️🧪（ミニ版）
+
+![Update Flow Test](./picture/clean_cs_study_044_update_flow_test.png)
 
 「既存メモを取得 → Rename → Update → 成功出力」って流れをテストするだけ🎯
 
@@ -418,6 +430,8 @@ public sealed class UpdateMemoInteractorTests
 ---
 
 ## 9) Copilot / Codex を使うなら（この章の“おいしい使い方”🤖🍰）
+
+![Copilot Generation](./picture/clean_cs_study_044_copilot_prompt.png)
 
 使いどころはここが最強💪✨
 

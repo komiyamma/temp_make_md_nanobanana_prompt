@@ -10,6 +10,8 @@ Entities（Entity / Value Object）は、アプリの“心臓”だよね🫀
 
 ## この章のゴール🎯✨
 
+![Invariant Shield](./picture/clean_cs_study_043_test_shield.png)
+
 次ができるようになろう〜😊💪
 
 * Value Object の **不変条件（Invariants）** をテストで守れる🚧💎
@@ -49,6 +51,8 @@ Visual Studioで気持ちよく回すなら **xUnit** が定番だよ〜😊
 ---
 
 ## まずは題材：MemoのEntitiesを“最小”で用意しよう📝✨
+
+![Memo Constraints Blueprint](./picture/clean_cs_study_043_memo_blueprint_constraints.png)
 
 ここでは「メモ管理」のEntitiesだけ作って、テストするよ〜😊
 （UseCaseとかAPIとかは一切いらない🙅‍♀️✨）
@@ -167,6 +171,8 @@ public sealed class Memo
 
 ## テスト例：Value Object のテスト💎🧪✨（一番おいしい所）
 
+![VO Microscope Inspection](./picture/clean_cs_study_043_vo_microscope.png)
+
 ### ✅ 何をテストする？
 
 * “作れない状態”がちゃんと作れないか🚧
@@ -225,6 +231,8 @@ public sealed class MemoTitleTests
 ---
 
 ## テスト例：Entity のふるまいテスト🪪🧪✨
+
+![Entity Behavior Sequence](./picture/clean_cs_study_043_behavior_sequence.png)
 
 ### ✅ 何をテストする？
 
@@ -297,6 +305,8 @@ public sealed class MemoTests
 
 ## テストの書き方テンプレ📐✨（迷子防止）
 
+![AAA Pattern Cooking](./picture/clean_cs_study_043_aaa_cooking.png)
+
 ### Arrange / Act / Assert（AAA）🧁
 
 * Arrange：準備🍳
@@ -313,6 +323,8 @@ public sealed class MemoTests
 
 ## “やっちゃダメ”集🙅‍♀️💥（でもみんな通る😂）
 
+![No DB Truck](./picture/clean_cs_study_043_no_db_truck.png)
+
 * ❌ DBやHTTPを混ぜる → Entitiesテストの強み（速さ）が死ぬ💀
 * ❌ privateメソッドを直接テストしたくなる → **公開されたふるまい**で検証しよ😊
 * ❌ テストが「実装に依存」しすぎ → “仕様”だけを見よう📘✨
@@ -321,6 +333,8 @@ public sealed class MemoTests
 ---
 
 ## AIの使いどころ🤖✨（Entitiesテストは相性よすぎ）
+
+![AI Boundary Checker](./picture/clean_cs_study_043_ai_boundary_check.png)
 
 ### 1) 境界値の洗い出し📏
 

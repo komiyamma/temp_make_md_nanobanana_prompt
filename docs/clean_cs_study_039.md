@@ -3,6 +3,8 @@
 この章はひとことで言うと――
 **「ASP.NET Core（Web）は“外側の着せ替え”で、中心（Core）はそれを一切知らない」**を体に入れる回です💪✨
 
+![Web Framework as Outer Shell](./picture/clean_cs_study_039_web_framework_layer.png)
+
 ---
 
 ## 1. この章のゴール🎯✨
@@ -33,11 +35,15 @@
 たとえば今どきは **.NET 10（LTS）** が中心で、パッチも定期的に出ます🧯 ([Microsoft][2])
 ASP.NET Core 10 も「バリデーション強化」「OpenAPIまわり」など、ちゃんと進化中です🚀 ([Microsoft Learn][3])
 
+![Dependency Rule](./picture/clean_cs_study_039_dependency_rule.png)
+
 だから、**変わりやすいもの（Web）を外に閉じ込めて、変えたくないルール（Core）を守る**のが勝ち筋💖
 
 ---
 
 ## 3. ありがちな事故パターン（最外周を守れないとこうなる）💥😇
+
+![Web Pollution Accident](./picture/clean_cs_study_039_pollution_accident.png)
 
 ### ❌事故1：UseCaseが `IActionResult` を返す
 
@@ -56,6 +62,8 @@ ASP.NET Core 10 も「バリデーション強化」「OpenAPIまわり」など
 
 ## 4. 正しい形のイメージ図🧠⭕（ざっくりでOK）
 
+![Core-Adapter-Web Structure](./picture/clean_cs_study_039_core_adapter_web.png)
+
 * **Core**：Entities / UseCases（純粋なルール）
 * **Adapters**：変換（HTTP⇄UseCase、UseCase⇄表示用モデル）
 * **Frameworks（Web）**：ASP.NET Core（ルーティング、DI、ミドルウェア、認証、OpenAPI等）
@@ -65,6 +73,8 @@ ASP.NET Core 10 も「バリデーション強化」「OpenAPIまわり」など
 ---
 
 ## 5. “最外周”にWebを閉じるための実装ルール7つ📌✨
+
+![Blocking Web Types](./picture/clean_cs_study_039_web_types_barrier.png)
 
 ### ルール1️⃣：CoreにWeb型を一切入れない🚫
 
@@ -100,6 +110,8 @@ ASP.NET Core 10 も「バリデーション強化」「OpenAPIまわり」など
 ---
 
 ## 6. ミニ実装例（Minimal APIで“外側に閉じる”）🧩✨
+
+![Minimal API Flow](./picture/clean_cs_study_039_minimal_api_flow.png)
 
 ここでは「CreateMemo」を例に、**Webは薄く**、変換は外側、UseCaseは純粋…の形を見せます👀💕
 
@@ -168,6 +180,8 @@ public sealed class CreateMemoPresenter : ICreateMemoPresenter
 ---
 
 ## 7. “Webを交換できる”と何が嬉しい？（超体感コーナー）😆🔁
+
+![Swappable Inputs](./picture/clean_cs_study_039_swappable_inputs.png)
 
 同じUseCaseを、**WebじゃなくてConsoleから呼べたら**勝ちです🏆
 
