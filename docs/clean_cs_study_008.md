@@ -19,6 +19,8 @@
 
 ## 1. Entityってなに？いちばん短い答え 💡
 
+![IDと状態](./picture/clean_cs_study_008_aging_identity.png)
+
 **Entity =「同じモノであり続ける」もの**だよ〜🪪✨
 中身（名前とか状態とか）が変わっても、「それでも同じ人だよね？」みたいなやつ！
 
@@ -51,6 +53,8 @@ Uncle Bobも「Entityはメソッドを持つオブジェクトでもいいし�
 
 ## 2. 「データ箱Entity」になりがちな危険パターン ⚠️😵‍💫
 
+![データ箱と金庫](./picture/clean_cs_study_008_open_box_vs_vault.png)
+
 たとえば、こういうの…つい作りがち！
 
 * public setter だらけで、どこからでも状態が変えられる 🫠
@@ -65,6 +69,8 @@ Uncle Bobも「Entityはメソッドを持つオブジェクトでもいいし�
 ---
 
 ## 3. 今回の題材：Memo Entity 📝✨
+
+![Memo Entityの設計図](./picture/clean_cs_study_008_memo_blueprint.png)
 
 この教材の題材はメモアプリだったよね！
 第8章では、まず **Entityの芯** を作るよ〜🌟
@@ -172,6 +178,8 @@ Entityの同一性は「安定していて」「衝突しにくい」ほうが�
 
 ## 6. Entityの“等価性”ってどう考える？⚖️✨
 
+![同一性と双子](./picture/clean_cs_study_008_identical_twins.png)
+
 Entityはふつう、こう考えるよ〜！
 
 * **同じEntityか？ → Idが同じか？**🪪
@@ -185,6 +193,8 @@ Entityはふつう、こう考えるよ〜！
 ## 7. よくある質問（つまずきポイント）🧸💬
 
 ### Q1. `record` でEntity作っちゃダメ？
+
+![ClassとRecord](./picture/clean_cs_study_008_class_vs_record.png)
 
 **ダメじゃないけど、初心者にはおすすめしにくい**かも！🥺
 recordは「値が同じなら同じ」になりやすくて、Entityの「IDで同一性」思想とぶつかりやすいの。
@@ -202,6 +212,8 @@ recordは「値が同じなら同じ」になりやすくて、Entityの「IDで
 ## 8. ミニ課題 🎮✨（手を動かすよ〜！）
 
 ### 課題A：振る舞いを追加しよう ✍️
+
+![Touchメソッド](./picture/clean_cs_study_008_touch_stamp.png)
 
 Memoに次を追加してみて！
 

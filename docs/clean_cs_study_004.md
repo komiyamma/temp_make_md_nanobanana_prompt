@@ -14,6 +14,8 @@
 
 ## 1) 境界ってなに？いちばんカンタンな説明🍩🚪
 
+![境界のゲート](./picture/clean_cs_study_004_gateway_metaphor.png)
+
 **境界（Boundary）**は、ざっくり言うと…
 
 > **“変わりやすいもの” と “変えたくないもの” の間に置く「仕切り（ゲート）」** 🚪✨
@@ -26,6 +28,8 @@
 ---
 
 ## 2) 境界がないと何がつらいの？😵‍💫💥（あるある）
+
+![スパゲッティコードの混乱](./picture/clean_cs_study_004_tangled_mess.png)
 
 例えば「メモ作成」機能で…
 
@@ -64,6 +68,8 @@ flowchart TD
 
 ### ルールA：境界をまたぐのは「データ」中心📦
 
+![データ選別の検問](./picture/clean_cs_study_004_data_filter.png)
+
 境界をまたぐものは、なるべく **シンプルなデータ**にするのが基本✨
 （DTO / RequestModel / ResponseModel みたいな “ただの入れ物”）
 
@@ -81,6 +87,8 @@ flowchart TD
 ---
 
 ## 4) 境界には“種類”があるよ🧰✨（まずは3つ覚えよ）
+
+![3つの境界ゲート](./picture/clean_cs_study_004_three_gates.png)
 
 この章では、よく使う境界候補をまず3つに絞って覚えよう〜😊💕
 
@@ -109,6 +117,8 @@ flowchart TD
 ---
 
 ## 5) “入力境界/出力境界”って何？（超やさしく）🔌⬅️➡️
+
+![入力と出力の窓口](./picture/clean_cs_study_004_input_output_windows.png)
 
 クリーンアーキでよく出る用語👇
 
@@ -179,6 +189,8 @@ public sealed record CreateMemoResponse(
 * 外部サービスの都合で変わる？ → 外部境界
 
 ### 質問②：それが変わったら、どこまで波及してほしい？🌊
+
+![防波堤による保護](./picture/clean_cs_study_004_ripple_protection.png)
 
 * **波及してほしくない** → 境界を置く（隔離する）🧯
 * **波及してOK** → 無理に境界を増やさない（やりすぎ注意）⚖️

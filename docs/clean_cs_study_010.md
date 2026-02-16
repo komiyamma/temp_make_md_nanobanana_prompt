@@ -18,6 +18,8 @@
 
 ## 2) 「入口で守る」ってどこのこと？🚪👀
 
+![2つの守られた入口](./picture/clean_cs_study_010_two_secure_entrances.png)
+
 入口はだいたいこの2つ！
 
 1. **生成時（Create / コンストラクタ / Factory）**
@@ -50,6 +52,8 @@
 ---
 
 ## 4) 実装パターンは2つあるよ✌️（初心者はAがラク✨）
+
+![例外とResultパターン](./picture/clean_cs_study_010_exception_vs_result.png)
 
 ### A. 例外（DomainException）で止める🧯⚠️
 
@@ -102,6 +106,8 @@ public readonly record struct Result<T>
 
 ## 6) コード：Value Object で「タイトルの不変条件」を封じ込める💎🔒
 
+![VOの型による防御](./picture/clean_cs_study_010_shape_sorter.png)
+
 タイトル（string）をそのまま使うと、どこでも空文字が入っちゃう😇
 だから **MemoTitle という型**にして、入口で止めるよ！
 
@@ -137,6 +143,8 @@ public readonly record struct MemoTitle
 ---
 
 ## 7) コード：Entity（Memo）側でも「状態変更の入口」を守る👑🚧
+
+![状態による操作ロック](./picture/clean_cs_study_010_locked_state.png)
 
 ```csharp
 namespace MyApp.Core;
@@ -217,6 +225,8 @@ public readonly record struct TagName
 
 ## 8) “外側のValidation”と“内側のInvariant”は役割が違うよ🧠🧼
 
+![バリデーションの層構造](./picture/clean_cs_study_010_validation_layers.png)
+
 * 外側（API/画面）👉 **形式チェック**（必須、数値、フォーマット…）
 * 内側（Domain）👉 **意味のルール**（ビジネスとして成り立つか）
 
@@ -241,6 +251,8 @@ ASP.NET Core側の検証は今どんどん良くなってるけど、**それで
 ---
 
 ## 10) よくある事故パターン集🚑💥（超あるある）
+
+![裏口入学事故](./picture/clean_cs_study_010_open_backdoor.png)
 
 * ✅ Controllerでだけチェックして、Domainはスルー
   → **別経路（バッチ/他API/テスト）から壊れる**😇

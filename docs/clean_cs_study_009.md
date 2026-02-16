@@ -45,6 +45,8 @@ recordがまさにこれをやりやすくしてくれるよ〜！([Microsoft Le
 
 ### string地獄の例🧵🔥
 
+![String地獄とVOの秩序](./picture/clean_cs_study_009_string_hell.png)
+
 `Title` も `TagName` も `Email` も `UserName` も全部 `string` だと…
 
 * 間違って入れ替えてもコンパイルが通る😇
@@ -61,6 +63,8 @@ recordがまさにこれをやりやすくしてくれるよ〜！([Microsoft Le
 
 ## VOの“3つのルール”🌟（ここ超重要！）
 
+![VOの3本柱](./picture/clean_cs_study_009_vo_three_pillars.png)
+
 VOは基本この3点セットで覚えると強い💪💖
 
 1. **意味のある名前**を持つ（ドメイン用語）🏷️
@@ -70,6 +74,8 @@ VOは基本この3点セットで覚えると強い💪💖
 ---
 
 ## EntityとVOの違い⚖️（迷いポイント潰すよ〜！）
+
+![EntityとVOの比較](./picture/clean_cs_study_009_entity_vs_vo_comparison.png)
 
 * **Entity**：同一性（ID）で区別する🪪
 
@@ -139,6 +145,8 @@ public sealed class DomainException(string message) : Exception(message);
 ---
 
 ## 2) Title：空禁止・長さ制限・trim📝✨
+
+![VOの製造プロセス](./picture/clean_cs_study_009_molding_press.png)
 
 「作れたなら正しい」を作るよ✅
 
@@ -252,6 +260,8 @@ public sealed record DateRange
 
 # 等価性（Value Equality）を体で理解しよ！⚖️💖
 
+![等価性の天秤](./picture/clean_cs_study_009_equality_scale.png)
+
 recordは「値が同じなら同じ」になりやすい✨
 公式も record の例で value equality を説明してるよ📝
 ([Microsoft Learn][2])
@@ -277,6 +287,8 @@ Console.WriteLine(a == b); // True になる（trimしてるから）✨
 ---
 
 # UseCaseやControllerにどうつなぐ？🔌✨
+
+![データの浄化ファンネル](./picture/clean_cs_study_009_purification_funnel.png)
 
 外側（API DTOとか）では `string` で受けて、
 内側に入るときにVOに変換するのがキレイ💖

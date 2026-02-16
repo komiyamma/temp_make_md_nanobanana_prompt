@@ -22,6 +22,8 @@
 
 ## 1) 題材選びって、なんでそんなに大事？😳💡
 
+![重すぎる題材と丁度いい題材](./picture/clean_cs_study_007_heavy_vs_light_theme.png)
+
 クリーンアーキの学習は、**題材が重すぎる**とほぼ確実に詰むの…🥺💦
 
 * 機能が増える → 層がぐちゃる → “クリーンっぽい何か”になる😵‍💫
@@ -33,6 +35,8 @@
 ---
 
 ## 2) “良い題材”の条件（これだけ守れば勝てる）🏆✨
+
+![良い題材のチェックリスト](./picture/clean_cs_study_007_theme_checklist.png)
 
 次の条件を満たす題材が、学習にちょうどいいよ〜😊
 
@@ -93,6 +97,8 @@ UIを頑張るほど、学びが薄まる🫥
 **仕様を決めるんじゃなくて、学習に必要な最小の仕様を固定する**よ〜😆
 
 ### 4-1) スコープ宣言（In scope / Out of scope）を作る✍️✨
+
+![スコープの番人](./picture/clean_cs_study_007_scope_bouncer.png)
 
 まず「やること」と「やらないこと」を紙に書いてロック🔒
 
@@ -180,6 +186,8 @@ flowchart TD
 
 ## 6) 優先順位を付ける（完走しやすい順）🏃‍♀️💨
 
+![ウォーキング・スケルトン](./picture/clean_cs_study_007_walking_skeleton.png)
+
 学習は「縦に1本通す（Walking Skeleton）」が最強だよ〜🦴✨
 
 おすすめ順（安全）👇
@@ -197,6 +205,8 @@ flowchart TD
 ---
 
 ## 7) 用語集（ドメイン用語）を作る📘✨
+
+![用語集](./picture/clean_cs_study_007_domain_dictionary.png)
 
 ここ、地味だけど超効く！😳
 **名前が揺れると設計が壊れる**からね…！
@@ -254,6 +264,8 @@ flowchart TD
 ---
 
 ## 10) ミニ課題（この章の宿題）🧸📝
+
+![封印された機能](./picture/clean_cs_study_007_sealed_feature_box.png)
 
 ### 課題1：ユースケース9個を、ID付きで書く
 

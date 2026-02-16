@@ -20,11 +20,15 @@ Clean Architecture では、**“処理の流れ（Flow of Control）”** と *
 
 ## 5.1 Ports & Adapters って結局なに？🧩🔌
 
+![ヘキサゴナル・プラグシステム](./picture/clean_cs_study_005_hexagonal_plugs.png)
+
 Ports & Adapters（別名：Hexagonal Architecture）は、外の世界（UI/DB/外部API）と中心（ユースケース/ドメイン）を **“差し替え可能”**にする考え方だよ〜ってやつです🔁✨
 名前が色々あるけど、同じ方向性の親戚だと思ってOKです🙆‍♀️
 （Hexagonal / Ports-and-Adapters / Onion / Clean Architecture…など） ([Microsoft Learn][1])
 
 ### たとえ話🍳✨
+
+![レストランのたとえ話](./picture/clean_cs_study_005_restaurant_metaphor.png)
 
 * **アプリの中心（UseCase/Domain）**：料理人👩‍🍳（料理の腕が本体）
 * **Controller（入力側のAdapter）**：注文を受ける店員さん🧾
@@ -68,6 +72,7 @@ Uncle Bob の図でも、ユースケースは presenter を直接呼べない�
 ## 5.3 登場人物まとめ（最短で迷子を防ぐ）🧭💡
 
 ![処理の流れ](./picture/clean_cs_study_005_ports_adapters.png)
+![ポートとアダプターの接続](./picture/clean_cs_study_005_port_adapter_closeup.png)
 
 この章で扱う役者は5人だけです👇✨
 
@@ -303,6 +308,8 @@ sequenceDiagram
 
 ## 5.6 “薄いController”が正義な理由🪶💖
 
+![太ったコントローラーと薄いコントローラー](./picture/clean_cs_study_005_fat_vs_thin_controller.png)
+
 Controller が太ると、だいたいこうなります👇💥
 
 * 例外処理や分岐が増える
@@ -323,6 +330,8 @@ Ports & Adapters にすると、Controller は「変換して呼ぶだけ」に�
 * Interactor は **ICreateMemoOutputPort** だけ見てね🧼
 
 ### つまずき②：Request/Response が HTTP DTO と混ざる🍱💥
+
+![DTOの汚染警告](./picture/clean_cs_study_005_dto_contamination.png)
 
 * Core の Request/Response は “アプリ都合”
 * Web の DTO は “HTTP都合”
