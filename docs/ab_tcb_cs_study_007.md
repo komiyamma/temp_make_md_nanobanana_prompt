@@ -10,6 +10,8 @@
 
 ## 1. ユースケースってなに？（めっちゃ短く）🧁
 
+![Use Case Actions vs Screen](./picture/ab_tcb_cs_study_007_usecase_actions.png)
+
 ユースケースは「ユーザーがやりたい1つの行動」のことだよ👆✨
 たとえばカフェアプリならこんな感じ👇☕️
 
@@ -36,6 +38,8 @@
 
 ## ✅ ルール：1ユースケース＝1トランザクション（基本形）💾✅
 
+![All or Nothing Transaction](./picture/ab_tcb_cs_study_007_commit_rollback_scale.png)
+
 * ユースケースが成功したら **全部コミット** ✅
 * 失敗したら **全部ロールバック** ❌
 * 途中状態を外に漏らさないのが大事🛡️✨
@@ -55,6 +59,8 @@ graph LR
 
 ## ❌ 誤解A：境界はDBテーブルで決める
 
+![Business Rules define Boundary](./picture/ab_tcb_cs_study_007_business_rule_vs_db.png)
+
 → **違うよ！** 境界は「業務ルール」で決める🧠📌
 テーブル構造は後から変えられるけど、業務ルールはそう簡単に変わらないことが多いの🥺
 
@@ -64,6 +70,8 @@ graph LR
 「保存」「確定」「支払い」みたいに、ボタンごとにユースケースが分かれることあるよ👆
 
 ## ❌ 誤解C：境界は“なるべく大きく”したほうが安全
+
+![Large Transaction Risk](./picture/ab_tcb_cs_study_007_large_transaction_block.png)
 
 → 大きすぎると逆に危ない😇💥
 
@@ -138,6 +146,8 @@ flowchart TD
 ---
 
 ## ユースケース例②：注文を確定する🧾✅
+
+![Cafe Order Boundary](./picture/ab_tcb_cs_study_007_cafe_boundary_example.png)
 
 **守りたい整合性（この1回で絶対）** ✅
 
@@ -316,6 +326,8 @@ public interface IOrderRepository
 
 ## ケース：注文確定の途中で別保存しちゃう😇
 
+![Partial Save Accident](./picture/ab_tcb_cs_study_007_partial_save_accident.png)
+
 * 明細追加を先に保存
 * その後、確定処理でコケる
   → 「明細は増えたのに注文は確定してない」みたいな中途半端状態が残る😵‍💫
@@ -338,6 +350,8 @@ public interface IOrderRepository
 ---
 
 ## 10. AI（Copilot/Codex）を使うときの型🤖✨
+
+![AI Boundary Check](./picture/ab_tcb_cs_study_007_ai_boundary_check.png)
 
 AIは速いけど、境界の設計は人間の責任だよ👑🔒
 なので「AIに任せる場所」を決めて使うのがコツ😊

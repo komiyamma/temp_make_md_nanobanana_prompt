@@ -34,6 +34,8 @@ graph TD
 
 ## 11.2 なぜ集約が必要なの？🛡️😵‍💫
 
+![Inconsistent State Nightmare](./picture/ab_tcb_cs_study_011_inconsistent_state_bug.png)
+
 設計に慣れてないと、こんな事故が起きがち👇💥
 
 ## ありがち整合性バグあるある😇💣
@@ -81,6 +83,8 @@ flowchart LR
 
 ## 11.4 「集約＝DBテーブル」じゃないよ！⚠️🗃️
 
+![Aggregate vs DB Table](./picture/ab_tcb_cs_study_011_aggregate_vs_table.png)
+
 初心者がやりがちな誤解トップ👇😇
 
 ## ❌ よくある誤解
@@ -97,6 +101,8 @@ flowchart LR
 ---
 
 ## 11.5 集約は“大きいほど良い”じゃない⚠️📏
+
+![Aggregate Size Goldilocks](./picture/ab_tcb_cs_study_011_aggregate_size_bowls.png)
 
 これ、めちゃ大事🫶✨
 
@@ -125,6 +131,8 @@ flowchart TD
 
 ## 11.6 例：カフェ注文で“集約”を作ってみよう☕️📦
 
+![Order Rules Shield](./picture/ab_tcb_cs_study_011_order_rules_shield.png)
+
 ここでは題材として「Order（注文）」を考えるよ😊
 
 ## 登場人物（ざっくり）👀
@@ -148,6 +156,8 @@ flowchart TD
 ---
 
 ## 11.7 C#で“最小の集約”を書いてみる🛠️🌸
+
+![Encapsulation Glass Box](./picture/ab_tcb_cs_study_011_encapsulation_glass_box.png)
 
 ポイントはこれ👇
 
@@ -284,6 +294,8 @@ public sealed class Order
 ---
 
 ## 11.9 AIに手伝わせるコツ🤖✨（丸投げ禁止だよ😇）
+
+![AI Weighing Pros and Cons](./picture/ab_tcb_cs_study_011_ai_pros_cons.png)
 
 AI拡張はめっちゃ便利！でも「設計の判断」を丸投げすると事故るので、使い方を型にしよ〜🧠✨
 
