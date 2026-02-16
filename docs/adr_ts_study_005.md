@@ -16,6 +16,8 @@ ADRって「結論（Decision）」が目立つんだけど、実は **Context�
 
 って “追体験” できるのが強いContextだよ💪🌸
 
+![](./picture/adr_ts_study_005_vr_experience.png)
+
 ---
 
 ## 5.2 良いContextの条件はこの3つだけ！✅✅✅
@@ -26,10 +28,14 @@ ADRって「結論（Decision）」が目立つんだけど、実は **Context�
 
 ### ✅ 条件2：優先順位が分かる
 
+![](./picture/adr_ts_study_005_priority_sliders.png)
+
 速度？品質？安全？運用？コスト？
 どれを大事にしてる判断なのかが見える✨
 
 ### ✅ 条件3：制約と範囲が分かる
+
+![](./picture/adr_ts_study_005_constraints_map.png)
 
 「できないこと」「やらないこと」が明確だと、読み手が迷子にならない🧭
 
@@ -95,6 +101,8 @@ Contextは **ぜんぶ書かない**のがコツ！
 
 ## 5.4 Contextに“入れないほうがいいもの”🙅‍♀️💦
 
+![](./picture/adr_ts_study_005_bloated_backpack.png)
+
 Contextが太りがちな原因トップ3！😵‍💫
 
 * **結論（Decision）を書いちゃう**
@@ -109,6 +117,8 @@ Contextが太りがちな原因トップ3！😵‍💫
 ## 5.5 TypeScriptだとContextに入りやすい“背景ネタ”あるある🧩✨
 
 ### ①「型で安心」vs「実行時は別世界」問題🌍
+
+![](./picture/adr_ts_study_005_ts_ghost.png)
 
 TypeScriptはコンパイル時の型。実行時には型が消えるので、**入力の検証（runtime validation）** が論点になりがちだよね🧪
 
@@ -125,6 +135,8 @@ ADRは未来まで残るから、**使ってるTSのバージョン**も背景�
 ---
 
 ## 5.6 Contextを書く「最短レシピ」🍳✨（迷ったらこれ）
+
+![](./picture/adr_ts_study_005_context_recipe_card.png)
 
 Contextはこの順で書くと、短くまとまりやすいよ✍️💕
 

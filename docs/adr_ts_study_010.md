@@ -13,6 +13,8 @@
 
 ## 10.1 ゴールと成果物 🎁✨
 
+![](./picture/adr_ts_study_010_five_goals.png)
+
 ### ゴール 🎯
 
 「なんとなく決めた」を卒業して、**“選んだ理由が説明できる状態”**を作るよ😊💕
@@ -31,6 +33,8 @@
 ---
 
 ## 10.2 テーマ選びのコツ（迷子防止）🧭💕
+
+![](./picture/adr_ts_study_010_theme_funnel.png)
 
 「何をADRにするか」で詰まりがちだから、ここはルール化しちゃおう！
 
@@ -103,6 +107,8 @@ flowchart TD
 
 ### ✅ 出し方テンプレ
 
+![](./picture/adr_ts_study_010_three_options.png)
+
 1. **本命案**（たぶんこれ）🌟
 2. **対抗案**（悩むやつ）🤔
 3. **保守案**（現状維持 or 自前）🧰
@@ -118,6 +124,8 @@ flowchart TD
 ---
 
 ## 10.6 比較軸（Criteria）を“5つ”作る 📏✨
+
+![](./picture/adr_ts_study_010_criteria_ruler.png)
 
 「何で比べるの？」が曖昧だと、最後は好みで決まっちゃう😢
 だから先に物差しを作るよ！
@@ -136,6 +144,8 @@ flowchart TD
 ---
 
 ## 10.7 制約（Constraints）を書く（現実の壁）⛓️😌
+
+![](./picture/adr_ts_study_010_constraints_wall.png)
 
 制約を書くと「理想論ADR」にならなくなるよ✨
 
@@ -230,6 +240,8 @@ flowchart TD
 ---
 
 ## 10.10 AI活用（Copilot/Codex）で爆速にする🤖💨✨
+
+![](./picture/adr_ts_study_010_ai_dealer.png)
 
 ### 使い方のコツ（超大事）💡
 

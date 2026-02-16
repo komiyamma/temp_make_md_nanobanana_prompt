@@ -39,6 +39,8 @@ sequenceDiagram
 
 ## 9-2 まずは最小ルール（これだけで回る）🧩✅
 
+![](./picture/adr_ts_study_009_three_rules.png)
+
 いきなりガチガチにしないでOK🙆‍♀️✨
 最初はこの3つだけで十分だよ〜🍀
 
@@ -96,6 +98,8 @@ GitHubにはPRテンプレ機能があるよ〜！
 
 ## 9-4 ADRレビューのチェックリスト（優しめ版）🧸💬
 
+![](./picture/adr_ts_study_009_review_lenses.png)
+
 レビューって「コードだけ」見がちだけど、ADRは**文章レビュー**だからコツがあるよ✨
 
 ### ✅ まず見る（3点セット）
@@ -120,6 +124,8 @@ GitHubにはPRテンプレ機能があるよ〜！
 
 ## 9-5 Status運用（Proposed→Accepted）を“PRと同期”させる🔁✅
 
+![](./picture/adr_ts_study_009_status_gears.png)
+
 ADRにはStatusを持たせるのが定番だよ📝
 PRとセットにすると、めちゃ自然に回る✨
 
@@ -137,6 +143,8 @@ PRとセットにすると、めちゃ自然に回る✨
 
 ### 9-6-1 CODEOWNERSで「ADRはこの人たちが見る」を作る👥🔒
 
+![](./picture/adr_ts_study_009_codeowners_crest.png)
+
 GitHubの **CODEOWNERS** を使うと、特定のパスの変更に対してレビュー担当を割り当てられるよ🧑‍🏫✨
 さらにブランチ保護で「Code Ownersの承認必須」にできる！ ([GitHub Docs][2])
 
@@ -150,6 +158,8 @@ GitHubのRulesetsで、**ファイル/フォルダごとに特定チームの承
 ---
 
 ### 9-6-3 GitHub Actionsで「判断があるのにADR無い」を検知する🤖🚨
+
+![](./picture/adr_ts_study_009_actions_camera.png)
 
 慣れてきたらここまでやると強い💪✨
 GitHub Actionsは`paths` / `paths-ignore`で、特定パス変更時だけ動かす設定ができるよ ([GitHub Docs][4])
@@ -188,6 +198,8 @@ GitHub Copilotには、PRの変更点・影響ファイル・注目ポイント�
 > サマリーは“入口”にして、ADRのDecisionと矛盾がないかを最後に人間がチェック✅✨
 
 ### 9-8-2 そのまま使えるAIプロンプト集（コピペ用）🪄💬
+
+![](./picture/adr_ts_study_009_ai_suggestion.png)
 
 ```text
 あなたは優しいレビュワーです。次のADRをレビューして、

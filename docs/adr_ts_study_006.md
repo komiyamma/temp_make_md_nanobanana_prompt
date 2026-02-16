@@ -3,6 +3,8 @@
 ADRって **「判断のログ」** だから、真ん中の **Decision（結論）** がブレると全体がフワッとしちゃうんだよね🥺💦
 定番の構成（Context / Decision / Consequences）でも、Decisionは“核”として扱われます。 ([Architectural Decision Records][1])
 
+![](./picture/adr_ts_study_006_atom_core.png)
+
 この章では、**Decisionを「一文でズバッと言い切る」書き方**を、TypeScriptの例でやさしく練習していくよ〜🫶✨
 
 ---
@@ -45,6 +47,8 @@ Decisionの一文は、だいたいこの形が最強💪💕
 
 ### 🧠 一文を強くする“動詞”リスト
 
+![](./picture/adr_ts_study_006_verb_list.png)
+
 * ✅ use / adopt / standardize / enforce / deprecate / forbid / require
 * ❌ consider / maybe / try / should / might（ぼんやりワード）
 
@@ -71,6 +75,8 @@ Decisionは一文でOKなんだけど、**その直下に3つだけ**添える�
 ---
 
 ## 4) “弱いDecision”→“強いDecision” 書き比べ💡✍️
+
+![](./picture/adr_ts_study_006_cloud_vs_stone.png)
 
 ### ❌ 弱い例（ふわふわ😵‍💫）
 
@@ -127,6 +133,8 @@ We will use Zod for runtime validation of external inputs at API boundaries.
 
 ## 7) AIでDecisionを“強くする”プロンプト集🤖✨
 
+![](./picture/adr_ts_study_006_ai_polisher.png)
+
 Decisionって、書いた本人は「伝わってるつもり」になりがち😂
 AIにチェックさせると超ラクだよ〜💕
 
@@ -179,6 +187,8 @@ Decision：<ここに一文>
 ---
 
 ## 9) Decisionセルフチェックリスト✅🧠
+
+![](./picture/adr_ts_study_006_checklist_flow.png)
 
 書いたら最後にこれだけ見てね👀✨
 
