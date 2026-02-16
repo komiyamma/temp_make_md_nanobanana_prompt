@@ -39,6 +39,8 @@ Eric Evans（DDD）でも「Entity/Value Objectの責務として自然じゃな
 
 ## 3秒でわかる！置き場所の判定フロー🧭✨
 
+![Placement Logic](./picture/clean_cs_study_013_placement_logic.png)
+
 ### ① まずEntityに置けない？👑
 
 * その処理が「そのEntityの自然な振る舞い」なら **Entity**
@@ -61,6 +63,8 @@ Eric Evans（DDD）でも「Entity/Value Objectの責務として自然じゃな
 
 ### ④ もし「DB保存」「メール送信」「外部API」みたいな“段取り”なら？📦
 
+![Domain Service vs UseCase](./picture/clean_cs_study_013_ds_vs_usecase.png)
+
 * それは **UseCase（Interactor）** の仕事🎮
 * Domain Serviceは“段取り屋”になっちゃダメ🙅‍♀️
 
@@ -69,6 +73,8 @@ Eric Evans（DDD）でも「Entity/Value Objectの責務として自然じゃな
 ---
 
 ## よくある事故パターン🧨😇
+
+![The "All-Service" Mistake](./picture/clean_cs_study_013_all_service_mistake.png)
 
 ### ❌ 事故1：CRUD Serviceになってる
 
@@ -90,6 +96,8 @@ Eric Evans（DDD）でも「Entity/Value Objectの責務として自然じゃな
 ---
 
 ## ハンズオン🎮：Domain Serviceが必要になる典型例「送金」💸🏦
+
+![Money Transfer Domain Service](./picture/clean_cs_study_013_money_transfer.png)
 
 （メモ題材と別だけど、Domain Serviceが一番わかりやすい王道例だよ✨）
 
@@ -239,6 +247,8 @@ public sealed class TransferMoneyInteractor
 ## ミニ課題💪✨（“Serviceに逃げない筋トレ”）
 
 ### 課題1：置き場所クイズ🧠🎯
+
+![Placement Quiz](./picture/clean_cs_study_013_placement_quiz.png)
 
 次の処理、どこに置く？（Entity / VO / Domain Service / UseCase）
 

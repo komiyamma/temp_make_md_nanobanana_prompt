@@ -10,6 +10,8 @@
 
 ## 1) なんで“非依存”がそんなに大事なの？🤔💭
 
+![The Core Shield](./picture/clean_cs_study_015_core_shield.png)
+
 ### ✅ ① 変更が怖くなくなる
 
 * DBをSQL Server→PostgreSQLに変えたい
@@ -30,6 +32,8 @@ Microsoftのガイドでも、EF Coreは設定（OnModelCreating等）を外側�
 ---
 
 ## 2) やっちゃダメ！Entitiesが汚れる典型パターン🧯💥
+
+![Pollution Warning](./picture/clean_cs_study_015_pollution_warning.png)
 
 ### 🚫 パターンA：EF Core属性が混ざる
 
@@ -64,6 +68,8 @@ Microsoftのガイドでも、EF Coreは設定（OnModelCreating等）を外側�
 * **string地獄を避けてValue Objectを使う**（Titleとか📝）
 
 ### ✅ 例：ピュアなEntity（Memo）✍️✨
+
+![Pure Entity](./picture/clean_cs_study_015_pure_entity.png)
 
 ```csharp
 namespace MyApp.Core.Entities;
@@ -120,6 +126,8 @@ public readonly record struct MemoTitle
 
 ## 4) じゃあDB保存はどうするの？➡️「外側でマッピング」する🗄️🔁
 
+![Persistence Mapping](./picture/clean_cs_study_015_persistence_mapping.png)
+
 クリーンアーキの定番はこれ👇
 
 * **Domain Entity（中心）**：ルールと振る舞い（ピュア）
@@ -172,6 +180,8 @@ public static class MemoMapper
 ---
 
 ## 5) すぐできる！ミニ課題（Chapter 15）🎮💪
+
+![Dependency Direction](./picture/clean_cs_study_015_dependency_direction.png)
 
 ### ✅ 課題A：Entitiesの“外側依存”を探せ！🔍
 

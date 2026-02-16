@@ -25,6 +25,8 @@
 
 ## 16.2 Entities層「完成」のDefinition of Done✅📝（これ全部YESなら合格！）
 
+![Definition of Done](./picture/clean_cs_study_016_dod_checklist.png)
+
 ### A. 依存の純度🧼
 
 * [ ] `Microsoft.*`（AspNetCore / EF Core / DI / Logging 等）を **参照してない**
@@ -52,6 +54,8 @@
 ---
 
 ## 16.3 依存ゼロチェック🔍✨（3分でできるやつ）
+
+![Zero Dependency Check](./picture/clean_cs_study_016_zero_dependency.png)
 
 ### ① 参照関係を目で見る👀
 
@@ -82,6 +86,8 @@ rg "EntityFrameworkCore|DbContext|AspNetCore|HttpClient|\[Key\]|\[Table\]" .
 
 ## 16.4 “データ箱”になってない？📦➡️🎭（よくある崩れ方）
 
+![Anemic vs Rich Model](./picture/clean_cs_study_016_anemic_vs_rich.png)
+
 ### ダメ寄り例🙅‍♀️（貧血っぽい）
 
 * `public set;` だらけ
@@ -98,6 +104,8 @@ rg "EntityFrameworkCore|DbContext|AspNetCore|HttpClient|\[Key\]|\[Table\]" .
 
 ## 16.5 不変条件は“入口で必ず”守る🚧💎（3つの入口だけ覚えよ）
 
+![Invariant Guards](./picture/clean_cs_study_016_invariant_guards.png)
+
 不変条件を守る場所はだいたいここ👇
 
 1. **生成時**：コンストラクタ or Factory（`Create`）
@@ -109,6 +117,8 @@ rg "EntityFrameworkCore|DbContext|AspNetCore|HttpClient|\[Key\]|\[Table\]" .
 ---
 
 ## 16.6 Entitiesだけで動く“超ミニ”実装例🧪✨（メモ題材）
+
+![Minimal Pure Domain](./picture/clean_cs_study_016_minimal_domain.png)
 
 「DBもHTTPも知らない」Entitiesの雰囲気を、1セット置くね〜💖
 
@@ -251,6 +261,8 @@ public sealed class Memo
 ---
 
 ## 16.7 Entitiesだけのテスト✅🧪（速くて気持ちいいやつ🍰）
+
+![Pure Testing](./picture/clean_cs_study_016_pure_testing.png)
 
 テストは別プロジェクトでOKだよ〜（Entitiesにテスト依存を入れない）✨
 
