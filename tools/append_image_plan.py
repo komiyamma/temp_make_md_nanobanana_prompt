@@ -1,6 +1,7 @@
 import argparse
 import os
 import re
+import json
 
 def get_next_id(filepath):
     if not os.path.exists(filepath):
@@ -38,8 +39,10 @@ def append_row(filepath, filename, proposed_filename, relative_link, prompt, ins
     # In python string literal, \| is just | unless escaped. But we want literal \| in the output.
     # So we need to write replace('|', r'\|')
 
-    prompt = prompt.replace('\n', '<br>').replace('|', r'\|')
-    insertion_point = insertion_point.replace('\n', ' ').replace('|', r'\|')
+    if prompt:
+        prompt = prompt.replace('\n', '<br>').replace('|', r'\|')
+    if insertion_point:
+        insertion_point = insertion_point.replace('\n', ' ').replace('|', r'\|')
 
     row = f"| {next_id} | {filename} | {proposed_filename} | {relative_link} | {prompt} | {insertion_point} |\n"
 
@@ -50,13 +53,28 @@ def append_row(filepath, filename, proposed_filename, relative_link, prompt, ins
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Append image plan row.')
-    parser.add_argument('--filename', required=True, help='Markdown filename')
-    parser.add_argument('--proposed_filename', required=True, help='Proposed image filename')
-    parser.add_argument('--relative_link', required=True, help='Relative link path')
-    parser.add_argument('--prompt', required=True, help='Image generation prompt')
-    parser.add_argument('--insertion_point', required=True, help='Insertion point text')
+    parser.add_argument('--filename', help='Markdown filename')
+    parser.add_argument('--proposed_filename', help='Proposed image filename')
+    parser.add_argument('--relative_link', help='Relative link path')
+    parser.add_argument('--prompt', help='Image generation prompt')
+    parser.add_argument('--insertion_point', help='Insertion point text')
+    parser.add_argument('--from-json', help='Load arguments from a JSON file')
 
     args = parser.parse_args()
 
     plan_file = 'docs/picture/image_generation_plan.md'
-    append_row(plan_file, args.filename, args.proposed_filename, args.relative_link, args.prompt, args.insertion_point)
+
+    if args.from_json:
+        with open(args.from_json, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            append_row(plan_file,
+                       data.get('filename', ''),
+                       data.get('proposed_filename', ''),
+                       data.get('relative_link', ''),
+                       data.get('prompt', ''),
+                       data.get('insertion_point', ''))
+    else:
+        if not all([args.filename, args.proposed_filename, args.relative_link, args.prompt, args.insertion_point]):
+             parser.error("All arguments are required unless --from-json is used.")
+
+        append_row(plan_file, args.filename, args.proposed_filename, args.relative_link, args.prompt, args.insertion_point)
