@@ -9,6 +9,8 @@ Entities（中心のルール）を、**外側の都合（Web/DB/ライブラリ
 
 ## 1) なんで「依存ゼロ」がそんなに大事なの？🤔💡
 
+![Dependency Rule Circles](./picture/clean_ts_study_012_dependency_rule_circles.png)
+
 Entitiesはアプリの**心臓❤️**だよ。
 心臓が「Express」「SQLite」「環境変数」「ログ」「UUIDライブラリ」みたいな外側に寄りかかると…
 
@@ -25,6 +27,8 @@ Entitiesはアプリの**心臓❤️**だよ。
 ---
 
 ## 2) Entities層「OK依存✅ / NG依存❌」早見表📋✨
+
+![OK vs NG Import Checklist](./picture/clean_ts_study_012_ok_ng_checklist.png)
 
 ### ✅ Entitiesが依存してOKなもの
 
@@ -87,6 +91,8 @@ flowchart TD
 
 #### 典型的にアウトな匂い💥
 
+![Polluted vs Clean Heart](./picture/clean_ts_study_012_polluted_heart.png)
+
 * `adapters/` や `frameworks/` をimportしてる
 * `express` / `sqlite` / `fs` が見える
 * `process.env` が出てくる
@@ -95,6 +101,8 @@ flowchart TD
 ---
 
 ## 5) 自動監査🤖✅：ESLintで「Entitiesから外側import禁止」を固定する
+
+![ESLint Robot Guard](./picture/clean_ts_study_012_eslint_robot_guard.png)
 
 ESLintは今ちょうど **v10のRC** も出てて、メジャー更新の流れが来てるよ🧹✨（2026年1月時点） ([ESLint][2])
 なので **“Flat Config” 前提**で、Entitiesの境界ルールをガチガチにするのがオススメ🧷💕
@@ -138,6 +146,8 @@ export default [
 ## 6) “依存ゼロ” を壊しやすいNG例と、直し方🔧💕
 
 ### NG例❌：Entitiesで「今の時刻」を取ってしまう
+
+![New Date Trap](./picture/clean_ts_study_012_date_trap.png)
 
 「完了日時を入れたいから `new Date()` しちゃえ〜」ってやりがち🥺
 

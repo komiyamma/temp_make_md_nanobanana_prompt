@@ -15,6 +15,8 @@
 
 ## 1. まず超大事：Entityのライフサイクルってなに？🧬
 
+![Entity Lifecycle Metaphor](./picture/clean_ts_study_011_lifecycle_concept.png)
+
 Entityって「ただのデータ箱」じゃなくて、
 **作られて → 状態が変わって → ずっとルールを守り続ける存在**だよ💡✨
 
@@ -29,6 +31,8 @@ Entityって「ただのデータ箱」じゃなくて、
 ---
 
 ## 2. いちばん迷うポイント：completeは誰の責務？🤔⚖️
+
+![UseCase vs Entity Responsibility](./picture/clean_ts_study_011_responsibility_balance.png)
 
 ここがクリーンアーキの気持ちいい所〜！✨
 結論から言うと👇
@@ -100,6 +104,8 @@ stateDiagram-v2
 ---
 
 ## 5. Entity実装例（Taskのライフサイクル）🧱✅
+
+![Guard Logic Detail](./picture/clean_ts_study_011_guard_logic_detail.png)
 
 ### 5-1. ドメインエラー（例）⚠️
 
@@ -229,6 +235,8 @@ UseCase側はこんな気持ち👇
 
 ## 8. テストで「禁止条件の漏れ」を潰す🧪💖
 
+![Minimal Test Coverage Map](./picture/clean_ts_study_011_test_coverage_map.png)
+
 Vitestは最近も更新が続いてて、移行ガイドも整備されてるよ〜（Vitest 4系）🧪✨ ([vitest.dev][1])
 なので Entityテストは Vitest でサクッといこう😊
 
@@ -291,6 +299,8 @@ describe("Task Entity lifecycle", () => {
 → 書き忘れが起きる（画面が増えるほど事故る）💥
 
 ### ❌ Entityを `interface Task { ... }` のただの型にしちゃう
+
+![Interface vs Rich Entity](./picture/clean_ts_study_011_pitfall_naked_interface.png)
 
 → ルールが散らばりやすい💦
 （Entityは “ふるまい” が主役だよ〜）

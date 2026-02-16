@@ -10,6 +10,8 @@ Node は **v24 が Active LTS**（安定運用のど真ん中）なので、動�
 
 ## 8.1 Entities層って、何を置く場所？🧠💡
 
+![Entity Independence](./picture/clean_ts_study_008_dependencies_blind.png)
+
 Entities は一言でいうと👇
 
 * **「アプリの中心のルール」と「状態」を持つ場所** ❤️
@@ -53,6 +55,8 @@ flowchart TD
 
 ## 8.2 まず「最小」を決める：Taskに必要な属性はこれだけ🗒️✨
 
+![Minimal Attributes Strategy](./picture/clean_ts_study_008_minimal_attributes.png)
+
 今回の超ミニ Task アプリ（Create / Complete / List）に必要な “中心の情報” は👇
 
 * `id`: 一意に区別するため🆔
@@ -70,6 +74,8 @@ flowchart TD
 * `src/entities/task/Task.ts`
 
 ### ✅ Task.ts（最小Entity）
+
+![Entity Implementation Structure](./picture/clean_ts_study_008_implementation_structure.png)
 
 ```ts
 // src/entities/task/Task.ts
@@ -139,6 +145,8 @@ export class Task {
 
 ### ここ、めっちゃ大事ポイント💘
 
+![Rehydration Flow](./picture/clean_ts_study_008_rehydration_flow.png)
+
 * `new Task(...)` を **外から禁止**（`private constructor`）🚫
 * 入口を `create()` / `rehydrate()` にまとめて、ルールを **閉じ込める** 🧯
 * フィールドを `#` で隠して、外側から雑に壊されないようにする🔒 ([MDNウェブドキュメント][3])
@@ -158,6 +166,8 @@ export class Task {
 ## 8.5 よくある事故💥（先に潰そ🛡️）
 
 ### ❌ 事故1：EntityがDBの形に引っ張られる
+
+![DB Driven Design Trap](./picture/clean_ts_study_008_pitfall_db_driven.png)
 
 * `task_table_name` とか `sqliteRow` とか入れちゃうやつ🥺
   → **DBの形は外側**！ Entity は “概念” の形だけ❤️
