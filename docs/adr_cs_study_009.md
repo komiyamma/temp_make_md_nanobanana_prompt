@@ -16,6 +16,8 @@ ADRが腐るのは、だいたいこのパターン👇
 なのでADR運用は、**“書き換え”より“置き換え（Supersede）”**が基本になるよ✨
 ADRは「当時の判断の証拠」だから、雑に上書きすると履歴が消えちゃうの🥲（代わりに、新しいADRを作って古いのをSupersededにする） ([GitHub][1])
 
+![Rotting ADRs](./picture/adr_cs_study_009_rotting_adr.png)
+
 ---
 
 ## 2) Status（状態）をちゃんと使うと、一気に迷子が減る🧭📌
@@ -30,6 +32,8 @@ ADRには**状態（Status）**を付けるのが定番！
 
 この「Superseded」が第9章の主役だよ〜！✨
 状態をはっきり書くのが大事、っていうのは各所で同じこと言われてるよ📚 ([テックターゲット][2])
+
+![ADR Status Tags](./picture/adr_cs_study_009_status_tags.png)
 
 ---
 
@@ -136,6 +140,8 @@ OpenTelemetry を標準とし、アプリ側のロギングは Serilog を採用
 
 「Statusで今どれが現役か一発で分かる」状態ができると超つよい💪✨
 
+![Linking Old and New ADRs](./picture/adr_cs_study_009_link_chain.png)
+
 ---
 
 ## 6) 置き方の流派：Status派 vs フォルダ分離派📁🧠
@@ -149,6 +155,8 @@ OpenTelemetry を標準とし、アプリ側のロギングは Serilog を採用
 
 * **まずはStatusだけで運用**（移動ルールが増えると破綻しやすい😂）
 * 慣れてきたら「現役だけ見たい」圧が出たらフォルダ分離を検討📁
+
+![Filing Strategies for ADRs](./picture/adr_cs_study_009_filing_cabinet.png)
 
 ---
 
@@ -208,6 +216,8 @@ MicrosoftのEngineering Playbookにも、**ADRの要約をまとめるログ（M
 * ID / タイトル / Status / 日付 / 関連リンク
   だけでも、棚卸しスピードが段違いになるよ⚡
 
+![Decision Log Dashboard](./picture/adr_cs_study_009_decision_log.png)
+
 ---
 
 ## 9) AI活用：棚卸し＆Supersedeの“雑さ”を減らす🤖✨
@@ -228,6 +238,8 @@ AIに頼むとめちゃラクなやつ👇
 
 * 「このDecisionに反対する人の意見を3つ出して」
 * 「運用で詰まりそうなポイントを予測して」
+
+![AI Inventory Assistant](./picture/adr_cs_study_009_ai_inventory.png)
 
 ---
 

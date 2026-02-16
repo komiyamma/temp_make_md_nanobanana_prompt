@@ -34,6 +34,8 @@ ADRって、よくある基本形だと **Context / Decision / Consequences**（
 
 **コツ：動詞で終わらせる**とブレにくいよ😊✍️
 
+![Defining the Theme](./picture/adr_cs_study_004_step1_compass.png)
+
 ```mermaid
 flowchart TD
   S1[1. テーマを1文にする🧭] --> S2[2. 制約を固定する📌]
@@ -79,6 +81,8 @@ flowchart TD
 * 📚 学習コスト（今の自分で扱える？）
 * 🔒 安全性（セキュリティ/ミスりにくさ）
 
+![Selecting Decision Drivers](./picture/adr_cs_study_004_step3_drivers.png)
+
 ---
 
 ### Step 4：選択肢を最低2〜3個出す（Options）🌱🌱🌱
@@ -91,6 +95,8 @@ flowchart TD
 * ✅ 「軽いけど制約あり案」も1個入れる
 
 > MicrosoftのADRガイドでも「Options considered」を入れるのが推奨だよ📝 ([Microsoft Learn][1])
+
+![Generating Options](./picture/adr_cs_study_004_step4_options.png)
 
 ---
 
@@ -134,6 +140,8 @@ Microsoftのガイドでも **confidence level** を記録する話が出てる�
 * 「トラフィックが◯倍になったら再検討」📈
 * 「障害対応で辛かったら別案に切り替え検討」🚑
 * 「半年後に棚卸し」🕰️
+
+![Revisit Conditions](./picture/adr_cs_study_004_step7_revisit.png)
 
 ---
 
@@ -255,6 +263,8 @@ DBまわりも **EF Core 10** が .NET 10 と同じくLTSとして出てる🗄�
 * ❌ **全部を一気に決めようとする**（判断を小さく切る✂️）
 * ❌ **デメリットを書かない**（後から爆発しやすい💥）
 
+![Common Pitfalls in Decision Making](./picture/adr_cs_study_004_pitfalls.png)
+
 ---
 
 ## 4-7. AI活用：この章で一番効く使い方🤖✨（そのままコピペOK）
@@ -293,6 +303,8 @@ Context / Options considered / Decision / Consequences / Confidence / Revisit co
 ```
 
 ADRって「書くのがしんどい」になりがちだけど、**比較表まで作ってあるとAI整形が超強い**よ〜！😊💨 ([Architectural Decision Records][5])
+
+![AI Assistant for ADR](./picture/adr_cs_study_004_ai_assistant.png)
 
 ---
 
