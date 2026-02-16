@@ -41,6 +41,8 @@ UseCase(CompleteTask)
 
 ## ステップ1：Portを定義する（内側の言葉で）🔌📘
 
+![Port Defined with Inner Words](./picture/clean_ts_study_042_inner_words_port.png)
+
 ポイントはこれ👇
 **「Slackに投稿する」じゃなくて「完了を通知する」**って表現にすること💡
 
@@ -63,6 +65,8 @@ export interface NotifierPort {
 ---
 
 ## ステップ2：UseCaseからPortを呼ぶ（外部APIは絶対に触らない）🚫🌐
+
+![UseCase Ignorance of External Service](./picture/clean_ts_study_042_usecase_ignorance.png)
 
 「CompleteTaskInteractor」の成功時に通知するイメージだよ😊
 
@@ -125,6 +129,8 @@ export class ConsoleNotifier implements NotifierPort {
 
 ## ステップ4：Slack Incoming Webhook で通知するAdapter（外側だけで完結）💬🔔
 
+![Adapter Translation Logic](./picture/clean_ts_study_042_adapter_translation.png)
+
 Slack の Incoming Webhooks は「Webhook URL に JSON をPOSTする」仕組みだよ📮 ([Slack開発者ドキュメント][3])
 なので Adapter は、Webhook URL を受け取って `fetch` で投げるだけ！
 
@@ -163,6 +169,8 @@ export class SlackWebhookNotifier implements NotifierPort {
 
 ## ステップ5：Composition Root で注入（差し替えスイッチはここだけ）🏗️🔁
 
+![Composition Root Switching](./picture/clean_ts_study_042_composition_switch.png)
+
 「どのNotifierを使うか」を決めるのは外側の役目だよ😊
 （環境変数の読み取りもここ側！）
 
@@ -192,6 +200,8 @@ export function buildCompleteTaskInteractor(deps: {
 
 ## 「通知失敗したら、タスク完了も失敗？」問題🤔⚖️
 
+![Notification Failure Policies](./picture/clean_ts_study_042_failure_policy.png)
+
 初心者がここでハマりがちなので、方針を2つだけ覚えよ〜！📝✨
 
 ### 方針A：通知は “ベストエフォート” にする（おすすめ）🌼
@@ -211,6 +221,8 @@ export function buildCompleteTaskInteractor(deps: {
 ---
 
 ## テストはどうする？（答え：Spy/FakeでOK）🧪🎭
+
+![Spy Notifier for Testing](./picture/clean_ts_study_042_spy_testing.png)
 
 外部サービスに本当に投げたらテストが遅い＆壊れやすいので、PortをFakeにするよ！
 

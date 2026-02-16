@@ -20,6 +20,8 @@
 
 ## 1) 今日のゴール（これができたら卒業🎓）🎯✨
 
+![Proof of Clean Core](./picture/clean_ts_study_045_proof_of_clean.png)
+
 ### ゴールA：差し替えで“中心が無傷”を証明する 🛡️
 
 * ✅ 差し替えるのは **Composition Root（組み立て）だけ**
@@ -36,6 +38,8 @@
 ---
 
 ## 2) 差し替えが成立するための“絶対条件”🚧
+
+![Port Contract Quality](./picture/clean_ts_study_045_port_contract_check.png)
 
 差し替えで詰まる原因って、だいたいこれ👇
 
@@ -55,6 +59,8 @@
 
 ## 3) 差し替えポイントはここだけ！🎯（Composition Root）
 
+![Composition Root Swap Point](./picture/clean_ts_study_045_swap_point.png)
+
 この章の主役は **「組み立て」**だよ🏗️✨
 Repository を **どれにするか**をここで決める！
 
@@ -70,6 +76,8 @@ Repository を **どれにするか**をここで決める！
 ---
 
 ## 4) “切り替えスイッチ”を1つ作る 🎛️✨
+
+![Environment Variable Switch](./picture/clean_ts_study_045_env_switch.png)
 
 環境変数で切り替えるのが分かりやすいよ〜！（デモ向き💡）
 
@@ -123,6 +131,8 @@ export function buildApp() {
 ---
 
 ## 6) SQLite Adapter（node:sqlite を使う最小の雰囲気）🗃️✨
+
+![SQLite Adapter Absorption](./picture/clean_ts_study_045_sqlite_adapter_absorb.png)
 
 「もう作ってある」前提でもいいんだけど、**差し替えの説得力**が上がるから “雰囲気だけ”載せるね☺️
 （Node 標準 `node:sqlite` の `DatabaseSync` / `prepare()` / `run()` / `get()` / `all()` を使う） ([Node.js][3])
@@ -226,6 +236,8 @@ flowchart TD
 
 ## 8) 最強の証拠：同じ UseCase テストを両方で回す 🧪🔥
 
+![Shared Test Suite](./picture/clean_ts_study_045_testing_evidence.png)
+
 ここが一番気持ちいいところ！！🥹✨
 Vitest は v4 系が現行メジャーだよ🧪 ([vitest.dev][4])
 
@@ -272,6 +284,8 @@ describe.each<Kind>(["memory", "sqlite"])("CreateTask (%s)", (kind) => {
 ---
 
 ## 9) うまく差し替えできない時の“漏れチェック”🕵️‍♀️⚠️
+
+![Troubleshooting Leaks](./picture/clean_ts_study_045_troubleshoot_leak.png)
 
 差し替えで失敗するときの典型👇
 
