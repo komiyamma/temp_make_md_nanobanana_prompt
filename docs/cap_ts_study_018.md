@@ -19,6 +19,10 @@
 
 ### 2.1 よくある悲劇ストーリー📖💥
 
+![Stale Cache Truck](./picture/cap_ts_study_018_stale_cache_truck.png)
+
+
+
 在庫APIがあるとするね👇
 
 * 画面「在庫：**10**」
@@ -57,6 +61,10 @@ sequenceDiagram
 
 ## 3. キャッシュの基本用語ミニ辞典📖🐣
 
+![Cache Terms](./picture/cap_ts_study_018_cache_terms_icons.png)
+
+
+
 * **Cache Hit**：キャッシュにあった！速い！🎯⚡
 * **Cache Miss**：なかった！DB/APIへ取りに行く！🏃‍♀️💨
 * **TTL**：キャッシュの賞味期限⌛（期限切れで捨てる）
@@ -81,6 +89,10 @@ sequenceDiagram
 ## 5. 実装：TTL付きインメモリキャッシュを作る🧊⌛
 
 ### 5.1 `cache.ts`（TTLキャッシュ本体）🧠🧊
+
+![TTL Shelf](./picture/cap_ts_study_018_ttl_shelf.png)
+
+
 
 ```ts
 // apps/api/src/cache.ts
@@ -168,6 +180,10 @@ function sleep(ms: number) {
 ---
 
 ## 7. 実装：API（キャッシュありGET、キャッシュ放置のPOST）😈🧊
+
+![Cache Aside](./picture/cap_ts_study_018_cache_aside_pattern.png)
+
+
 
 `express`を使う例だよ🚀（読みやすさ優先✨）
 
@@ -291,6 +307,10 @@ TypeScriptをNodeでサクッと動かす用途で `tsx` を使う流れがま�
 
 ## 9. 改善①：更新したら“そのキーだけ消す”🗑️✅
 
+![Invalidation Button](./picture/cap_ts_study_018_invalidation_button.png)
+
+
+
 更新系エンドポイントで、最後にこれを入れるだけで事故が激減するよ🧯✨
 （キャッシュ無効化の王道！）
 
@@ -326,6 +346,10 @@ TTLって、気合いで決めるとだいたい事故る😇
 ## 11. “キャッシュがある現実”での注意点あるある⚠️😵‍💫
 
 ### 11.1 キャッシュスタンピード（雪崩）❄️💥
+
+![Cache Stampede](./picture/cap_ts_study_018_cache_stampede.png)
+
+
 
 TTL切れの瞬間にアクセスが集中すると、**全員がDBに殺到**🏃‍♀️🏃‍♀️🏃‍♀️💨
 対策の方向性👇

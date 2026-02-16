@@ -6,6 +6,10 @@
 
 ## 17.1 「古い読み取り」ってなに？😵‍💫📖
 
+![Stale Read Concept](./picture/cap_ts_study_017_stale_read_concept.png)
+
+
+
 分散っぽい構成（Primary と Replica がある、キャッシュがある、非同期で反映する…）になると、
 
 * **書いた直後に読んだのに、古い値が返る**😱
@@ -40,6 +44,10 @@ sequenceDiagram
 
 ## 17.2 どうして起きるの？（超ざっくり）🧠🔍
 
+![Causes of Lag](./picture/cap_ts_study_017_causes_lag.png)
+
+
+
 原因はだいたいこのどれか：
 
 1. **レプリケーション遅延（replication lag）** 🪞⏳
@@ -59,6 +67,10 @@ sequenceDiagram
 
 ### ✅ テク1：更新直後だけ Primary を読む（いちばん効く）👑📌
 
+![Tech 1 Primary](./picture/cap_ts_study_017_tech_primary_after_update.png)
+
+
+
 * **狙い：**「自分が今した操作」だけは新しく見せる
 * **コスト：**小（ルール1個でいける）
 * **効果：**大（体感が激変）✨
@@ -72,6 +84,10 @@ sequenceDiagram
 ![Read-your-writesのイメージ](./picture/cap_ts_study_017_read_your_writes.png)
 
 ### ✅ テク3：Read Repair（読んだついでに古いReplicaを直す）🩹📚
+
+![Tech 3 Read Repair](./picture/cap_ts_study_017_tech_read_repair.png)
+
+
 
 * **狙い：**古い Replica を少しずつ減らして、全体を“じわじわ”良くする
 * **イメージ：**読んだ瞬間に「古っ！じゃあ更新しとくね」って修理する感じ🔧
@@ -92,6 +108,10 @@ sequenceDiagram
 ---
 
 ### 17.4.1 まずは“遅いReplica”を用意する🐢🪞
+
+![Lab Architecture](./picture/cap_ts_study_017_lab_architecture.png)
+
+
 
 今回の簡易ルール：
 
@@ -443,6 +463,10 @@ curl "http://localhost:3000/items/apple?read=replica"
 
 ### 17.5.2 次に改善を体験（autoにする）👑✨
 
+![Force Primary Map](./picture/cap_ts_study_017_force_primary_map.png)
+
+
+
 更新してすぐに `read=auto` で読む：
 
 ```bash
@@ -476,6 +500,10 @@ curl "http://localhost:3000/items/apple?read=auto&repair=1"
 ---
 
 ## 17.7 いつこの手を使う？（適用条件まとめ）🤖✅
+
+![Use Cases](./picture/cap_ts_study_017_use_cases.png)
+
+
 
 ### ✅ 「更新した本人が、すぐ結果を見る」系は超おすすめ👤✨
 

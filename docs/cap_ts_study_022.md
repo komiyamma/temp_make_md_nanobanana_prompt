@@ -50,6 +50,10 @@ Jepsen系の検証でも、LWWの自動解決が**新しい値を捨てたり、
 
 ## A. LWW（Last-Write-Wins）🕒👑
 
+![LWW Clock Skew](./picture/cap_ts_study_022_lww_clock_skew.png)
+
+
+
 **いちばん新しい更新（タイムスタンプが最大）を採用する**方式だよ。
 
 **いいところ** ✅
@@ -76,6 +80,10 @@ Jepsen系の検証でも、LWWの自動解決が**新しい値を捨てたり、
 
 ## B. ドメインルール（業務ルールで決める）📜🧱
 
+![Domain Rule Guard](./picture/cap_ts_study_022_domain_rule_guard.png)
+
+
+
 **「その業務だと何が正しいか」**で勝者を決める方式だよ。
 
 **いいところ** ✅
@@ -97,6 +105,10 @@ Jepsen系の検証でも、LWWの自動解決が**新しい値を捨てたり、
 
 ## C. マージ（複数の更新を“合成”する）🧩🧲
 
+![Merge Puzzle](./picture/cap_ts_study_022_merge_puzzle.png)
+
+
+
 **更新を捨てずに“両方取り込む”**方式だよ。
 CRDTみたいに「勝手に収束する」発想もここに入るよ〜（後の章で深掘り！）🌱✨([ウィキペディア][4])
 
@@ -114,6 +126,10 @@ CRDTみたいに「勝手に収束する」発想もここに入るよ〜（後�
 ---
 
 # 4) どれを選ぶ？判断チェックリスト ✅📋
+
+![Selection Checklist](./picture/cap_ts_study_022_selection_checklist.png)
+
+
 
 迷ったらこれで決めよ〜！🫶✨
 
@@ -140,6 +156,10 @@ CRDTみたいに「勝手に収束する」発想もここに入るよ〜（後�
 「キャンセルしたのに発送になった」事故を、LWWでわざと起こすよ🔥
 
 ## 5-1. まずは型を作る 🧱✨
+
+![LWW vs Rule](./picture/cap_ts_study_022_lww_vs_rule.png)
+
+
 
 `apps/worker/src/conflict/orderTypes.ts`
 
@@ -358,6 +378,10 @@ export function mergeSet<T>(a: ReadonlyArray<T>, b: ReadonlyArray<T>): T[] {
 ---
 
 # 7) よくある落とし穴ワースト5 😵‍💫⚠️
+
+![Discard Pitfall](./picture/cap_ts_study_022_discard_pitfall.png)
+
+
 
 1. **“壁時計”を信じすぎる**（LWWが事故る）🕰️💥([DZone][2])
 2. **勝った方だけ保存して、負けた方を捨ててしまう**（後から調査不能）🗑️🕵️‍♀️
