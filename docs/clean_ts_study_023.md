@@ -33,6 +33,8 @@ UseCases で **外側を 1回でも import したらアウト**にする💥
 
 ## 2) あるある破壊パターン集（超重要）🥲🧨
 
+![Destructive Dependency Patterns](./picture/clean_ts_study_023_destructive_patterns.png)
+
 ### ❌ 破壊パターンA：UseCaseがDBクライアントを直に呼ぶ
 
 * `import { db } from "...sqlite..."`
@@ -59,11 +61,15 @@ UseCases で **外側を 1回でも import したらアウト**にする💥
 
 ## 3) 依存監査は「目視→Lint→依存解析」の3段階が最強💪🧪✨
 
+![Three Steps of Audit](./picture/clean_ts_study_023_audit_steps.png)
+
 おすすめは **Lintで毎回自動チェック**（VS Codeで赤線が出るやつ）→ 仕上げに dependency-cruiser で全体監査、って流れ😊
 
 ---
 
 ## 4) まずはESLintで「UseCasesから外側import禁止」🚫📦✨
+
+![ESLint Guard](./picture/clean_ts_study_023_eslint_guard.png)
 
 ESLintのルールで「このフォルダから、あのフォルダを import したらダメ」を固定するよ〜！
 候補は2つ👇
@@ -143,6 +149,8 @@ export default [
 
 ## 4-3) VS Codeで“赤線即出し”にする👀🚨
 
+![VS Code Red Line](./picture/clean_ts_study_023_vscode_red_line.png)
+
 * `npm run lint` で止まる
 * エディタ上でも即エラー表示✨
 
@@ -168,6 +176,8 @@ package.json に追加しよ😊
 ---
 
 ## 6) 仕上げ：dependency-cruiserで“全体の依存”を監査＆可視化🗺️🧨✨
+
+![Dependency Cruiser Map](./picture/clean_ts_study_023_dep_cruiser_map.png)
 
 dependency-cruiser は「依存を解析して、ルール違反をレポート」できる道具だよ📣
 JS/TSの依存を **ルールで検証**できて、必要なら **グラフ出力**もできる🖼️ ([GitHub][7])
@@ -217,6 +227,8 @@ npx depcruise --config .dependency-cruiser.cjs src
 ---
 
 ## 7) “違反したとき”の直し方テンプレ🧯🧼
+
+![Fixing Violations with Port](./picture/clean_ts_study_023_fixing_violations.png)
 
 UseCasesで外側を触ってたら、だいたい直し方は3択だよ😊✨
 

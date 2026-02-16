@@ -52,6 +52,8 @@ const id = crypto.randomUUID();
 
 ## 3. Portの設計：Clock と IdGenerator を作る🧩✨
 
+![Minimal Ports](./picture/clean_ts_study_026_minimal_ports.png)
+
 ### 3.1 Clock Port ⏰
 
 「今の時刻ちょうだい」だけ言えればOK👍
@@ -85,6 +87,8 @@ export interface IdGenerator {
 ---
 
 ## 4. “外側” の実装例（Adapter/Driver側）⚙️✨
+
+![Driver Implementation](./picture/clean_ts_study_026_driver_impl.png)
 
 ### 4.1 SystemClock（本物の時間）🕰️
 
@@ -142,6 +146,8 @@ export class UuidGenerator implements IdGenerator {
 
 ## 5. UseCaseに注入して使う（ここがキモ！）💉✨
 
+![Dependency Injection of Ports](./picture/clean_ts_study_026_injection_diagram.png)
+
 例：CreateTask で「作成日時」と「ID」を使うケース🎀
 
 ```ts
@@ -174,6 +180,8 @@ UseCaseが **時計もUUIDも直接知らない** 状態になったね🥳🎉
 ---
 
 ## 6. テストがめっちゃ楽になる（FixedClock / FixedId）🧪🎭✨
+
+![Fixed Test Environment](./picture/clean_ts_study_026_fixed_test.png)
 
 ### 6.1 固定Clock ⏰🧊
 
@@ -237,10 +245,14 @@ test("CreateTask sets id and createdAt deterministically", async () => {
 
 ### 7.1 抽象化しすぎて “Port地獄” 🕳️
 
+![Port Hell](./picture/clean_ts_study_026_port_hell.png)
+
 「文字列整形Port」「配列ソートPort」…みたいに増やすと破綻しがち😂
 ✅ 目安：**環境依存／非決定（毎回変わる）／テストで困る** ならPort候補！
 
 ### 7.2 Clockが `Date` を返すとミューテーション事故😵
+
+![Date Mutation Accident](./picture/clean_ts_study_026_date_mutation.png)
 
 `Date` は変更可能だから、心配ならこういう設計もアリ👇
 

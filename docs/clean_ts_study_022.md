@@ -28,6 +28,8 @@
 
 ## 3) テストダブル（偽物）3兄弟👯‍♀️✨
 
+![Test Double Trio](./picture/clean_ts_study_022_test_double_trio.png)
+
 * **Stub**：決まった値を返すだけ（例：findByIdが必ずTaskを返す）📦
 * **Fake**：簡易だけど動く実装（例：Mapで保存できるRepository）🗃️
 * **Spy**：呼ばれた回数・引数を記録する（例：saveが呼ばれた？）👀
@@ -113,6 +115,8 @@ export interface Clock {
 
 ### 6-2) Fake Repository（Mapで保存できるやつ）🗃️✨
 
+![Fake Repository Map](./picture/clean_ts_study_022_fake_repo_map.png)
+
 ```ts
 // test/doubles/FakeTaskRepository.ts
 import { TaskRepository } from '../../src/ports/TaskRepository'
@@ -140,6 +144,8 @@ export class FakeTaskRepository implements TaskRepository {
 ```
 
 ### 6-3) 固定IdGenerator / 固定Clock（テストを安定させる）🆔⏰✨
+
+![Fixed Time and ID](./picture/clean_ts_study_022_fixed_time_id.png)
 
 ```ts
 // test/doubles/FixedIdGenerator.ts
@@ -212,6 +218,8 @@ export class CreateTaskInteractor {
 ```
 
 ### 7-3) テスト：成功ケース🎉
+
+![Success Test Flow](./picture/clean_ts_study_022_test_flow_success.png)
 
 ```ts
 // test/usecases/createTask.test.ts
@@ -298,6 +306,8 @@ Fake repoにタスクを詰めて、Responseの形だけ確認すれば十分強
 
 ## 10) Spy（vi.fn）で“呼ばれ方”も確認したい時👀✨
 
+![Spy vs State Verification](./picture/clean_ts_study_022_spy_vs_state.png)
+
 「saveが呼ばれたか？」みたいな確認はSpyが便利！
 Vitestの `vi.fn()` / `vi.spyOn()` を使うよ🕵️‍♀️ ([Vitest][1])
 
@@ -321,6 +331,8 @@ expect(repo.save).toHaveBeenCalledTimes(1)
 ---
 
 ## 11) よくある落とし穴あるある😇💥
+
+![Test Pitfalls](./picture/clean_ts_study_022_common_pitfalls.png)
 
 * **テストにSQLiteやHTTPが混ざる** → それ統合テスト側！この章は“中心だけ”🧼
 * **Date.now() を直接使ってテストが不安定** → Clock差し替えで固定⏰✅
