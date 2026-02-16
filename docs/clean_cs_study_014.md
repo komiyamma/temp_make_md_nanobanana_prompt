@@ -7,6 +7,8 @@
 
 ## 1) まず大前提：「失敗」はバグじゃなくて仕様かも😳🧩
 
+![Failure is Not a Bug](./picture/clean_cs_study_014_failure_is_spec.png)
+
 例：メモ作成📒
 
 * タイトル空っぽ → それは“よくある失敗”で、仕様として扱うべき
@@ -18,6 +20,8 @@
 ---
 
 ## 2) 「例外」っていつ使うの？🤔💥（超だいじ）
+
+![Exception vs Result](./picture/clean_cs_study_014_exception_vs_result.png)
 
 Microsoft の設計ガイドラインでは、ざっくりこう👇
 
@@ -81,6 +85,8 @@ public readonly struct Result<T>
 
 ## 4) Value Objectで「失敗＝仕様」を閉じ込める💎🔒
 
+![Value Object Guard](./picture/clean_cs_study_014_vo_guard.png)
+
 たとえば `MemoTitle`（タイトル）を VO にして、**作れない値は作れない**ようにするよ🚧
 
 ```csharp
@@ -127,6 +133,8 @@ public sealed record MemoTitle
 
 ## 5) Entity側の失敗も「仕様」として表現する👑⚙️
 
+![Entity Logic Error](./picture/clean_cs_study_014_entity_logic_error.png)
+
 Entityの操作（例：Rename）でも、仕様として失敗しうるよね👇
 
 * アーカイブ済みは名前変更禁止
@@ -170,6 +178,8 @@ public readonly struct Unit
 ---
 
 ## 6) UseCaseでの「流し方」🌊➡️（例外を内側に持ち込まない）
+
+![UseCase Error Handling Flow](./picture/clean_cs_study_014_usecase_flow.png)
 
 UseCase（Interactor）はこういう方針にすると安定するよ✨
 
@@ -230,6 +240,8 @@ public sealed class CreateMemoInteractor
 ---
 
 ## 7) 外側（Presenter/Controller）で “ユーザーに伝わる形” に変換する🎤🪄
+
+![Domain Error to User Error](./picture/clean_cs_study_014_error_translation.png)
 
 ここで初めて、HTTPとか画面の都合が出てくるよ🌐
 ASP.NET Core だと **ProblemDetails** が定番（Microsoft docsはRFC 7807ベースとして説明してるよ）([Microsoft Learn][3])

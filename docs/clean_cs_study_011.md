@@ -38,6 +38,8 @@ Entity と Value Object（VO）をちゃんと分けられるようになると�
 
 ## 2) 迷ったときの判断フローチャート🧭🤔
 
+![Entity vs VO Decision Flowchart](./picture/clean_cs_study_011_decision_flowchart.png)
+
 次の順で YES/NO していくと、ほぼ外さないよ〜！😊✨
 
 1. **追跡したい “個体” ですか？（履歴・参照・ライフサイクル）**
@@ -79,6 +81,8 @@ Entity と Value Object（VO）をちゃんと分けられるようになると�
 
 ## 4) いちばん迷うやつ：Tag は Entity？VO？🏷️😵‍💫
 
+![Tag Implementation Strategies](./picture/clean_cs_study_011_tag_strategies.png)
+
 ここ、めちゃ大事！🔥
 **「タグをどう扱いたいか」**で結論が変わるよ😊
 
@@ -101,6 +105,8 @@ Entity と Value Object（VO）をちゃんと分けられるようになると�
 ---
 
 ## 5) C#で VO を作る（いちばん実用的な形）🛠️💎
+
+![Value Object Guard](./picture/clean_cs_study_011_vo_guard.png)
 
 VO は「**不変 + 値で等価**」が命！
 C# なら `readonly record struct` が作りやすいよ😊✨（record は値ベースの等価を用意しやすい）
@@ -179,6 +185,8 @@ public readonly record struct TagName
 
 ## 6) Entity を「主役」にする（データ箱卒業🎓✨）🪪👑
 
+![Entity Rule Keeper](./picture/clean_cs_study_011_entity_rule_keeper.png)
+
 Memo（Entity）は、**振る舞い（メソッド）でルールを守る**のがポイント！
 （クリーンアーキ的にも、中心のルールを閉じ込めるイメージだよ🧠🔥 ([クリーンコーダーブログ][1])）
 
@@ -227,6 +235,8 @@ public sealed class Memo
 
 ## 7) 仕分け練習問題（ここで身体に入れる！）🏋️‍♀️✨
 
+![Entity vs VO Classification Examples](./picture/clean_cs_study_011_classification_examples.png)
+
 ### 問1：`EmailAddress` は？📧
 
 * だいたい **VO** 💎
@@ -257,6 +267,8 @@ public sealed class Memo
 ---
 
 ## 8) AI（Copilot / Codex）に手伝わせるやり方🤖✨
+
+![AI as Design Assistant](./picture/clean_cs_study_011_ai_assistant.png)
 
 AI は「答え」じゃなくて「判断材料づくり」に使うと強いよ💪🌸
 

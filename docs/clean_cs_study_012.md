@@ -12,6 +12,8 @@
 
 ## 1) 「貧血ドメイン」ってなに？🩸😵‍💫
 
+![Anemic Domain Symptoms](./picture/clean_cs_study_012_anemic_symptoms.png)
+
 超ざっくり言うと👇
 
 * **Entity が “ただの入れ物”**（get/setの袋）になってる
@@ -24,6 +26,8 @@ Martin Fowlerも「貧血ドメインは、getter/setterの袋で、振る舞い
 ---
 
 ## 2) なんで困るの？😇💥（“地味に死ぬ”ポイント）
+
+![The Chaos of Scattered Logic](./picture/clean_cs_study_012_scattered_logic.png)
 
 貧血ドメインが進むと、だいたいこうなります👇
 
@@ -52,6 +56,8 @@ Entityが何もしないから、**UseCaseやServiceのテスト**で全部確�
 
 ## 3) クリーンアーキ的「正しい分担」💡⭕
 
+![Correct Responsibility Division](./picture/clean_cs_study_012_clean_responsibilities.png)
+
 ここ、超大事ポイント👇
 
 * **Entity / Value Object**：その概念が守るべき**不変条件**・**状態遷移**・**計算**
@@ -64,6 +70,8 @@ Microsoftのアーキテクチャガイドでも、ビジネスロジックを�
 ---
 
 ## 4) ルールの置き場所：迷わない判断基準⚖️🧭
+
+![Rule Placement Decision Tree](./picture/clean_cs_study_012_rule_placement.png)
 
 「これ、Entity？UseCase？」って迷ったら、まずこの3問👇
 
@@ -135,6 +143,8 @@ public sealed class RenameMemoUseCase
 
 ### 5-2) Step1：Value Objectで「タイトル」を型にする💎
 
+![From String to Value Object](./picture/clean_cs_study_012_string_vs_vo.png)
+
 （9章の復習でもあるよ✨）
 
 ```csharp
@@ -165,6 +175,8 @@ public readonly record struct MemoTitle
 ---
 
 ### 5-3) Step2：Entityに“状態変更メソッド”を生やす🌿🪪
+
+![Encapsulation with Methods](./picture/clean_cs_study_012_method_encapsulation.png)
 
 ポイントはこれ👇
 
