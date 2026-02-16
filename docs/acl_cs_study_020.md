@@ -16,6 +16,8 @@ ACL（腐敗防止層）を **「作って終わり」じゃなく「壊れな�
 
 ## 20-1. まず「テストの地図」🗺️✅
 
+![Map of ACL Testing Strategies](./picture/acl_cs_study_020_test_map.png)
+
 ACLで現場がラクになるテストは、だいたいこの4つ🌸
 
 1. **Translator単体テスト（最重要🔥）**
@@ -40,6 +42,8 @@ ACLで現場がラクになるテストは、だいたいこの4つ🌸
 ---
 
 ## 20-2. Translator単体テストが「コスパ最強」な理由💰🔥
+
+![High ROI of Translator Tests](./picture/acl_cs_study_020_test_roi.png)
 
 Translatorは、基本的にこう👇
 
@@ -234,6 +238,8 @@ public class LegacyMemberTranslatorInvalidTests
 
 ## 20-4. ハンズオン②：超ライト契約テスト（まずは “サンプルJSON固定” ）📦🔒
 
+![JSON Snapshot Testing](./picture/acl_cs_study_020_json_snapshot.png)
+
 「Pactはまだ怖い…🥺」ってときは、まずこれが超おすすめ！
 
 ### やること💡
@@ -275,6 +281,8 @@ public class LegacyMemberContractLiteTests
 ---
 
 ## 20-5. 契約テスト入門（Pact）🤝🧪
+
+![Pact Contract Testing Flow](./picture/acl_cs_study_020_pact_flow.png)
 
 Pactは **契約テストの定番ツール** で、ざっくり言うと👇
 
@@ -387,6 +395,8 @@ OpenTelemetry（OTel）は、そのための標準です。([Microsoft Learn][3]
 
 ### (1) 相関ID（Correlation ID）を “通す” 🧵✨
 
+![Correlation ID Tracing](./picture/acl_cs_study_020_correlation_id.png)
+
 **ACLが絡むと**「外部API失敗」が “どの注文/どの処理のもの？” って追跡が大変😵‍💫
 だから **ログに相関IDを必ず混ぜる** のが超大事！
 
@@ -430,6 +440,8 @@ ACLの外部呼び出しを Activity にすると、あとで追いやすい〜�
 ---
 
 ## 20-7. 運用で詰まらないための「回復性」も最低限🛟🌊
+
+![Resilience Handler Wrapper](./picture/acl_cs_study_020_resilience_wrapper.png)
 
 外部APIは **落ちる・遅い・混む** が普通😇
 .NET には `Microsoft.Extensions.Http.Resilience` があって、HttpClient向けに回復性（リトライ/タイムアウト等）を入れられます。([Microsoft Learn][6])

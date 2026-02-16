@@ -12,6 +12,8 @@
 
 # 1. ACLってなに？超ざっくり一言で！🧼🧱
 
+![ACL Definition Visualization](./picture/acl_ts_study_001_definition.png)
+
 ACLはね、
 
 **「外部システムの言葉を、自分のアプリの言葉に翻訳してから渡す層」**だよ〜！🗣️➡️📘✨
@@ -26,6 +28,8 @@ microservices.ioでも「2つのドメインモデルの間を翻訳する」っ
 ---
 
 # 2. “翻訳係”のたとえでイメージしよう 🗣️🌍💬
+
+![Language Translation Analogy](./picture/acl_ts_study_001_dialect_analogy.png)
 
 たとえば、あなた（アプリの内側）が日本語で話したいのに、外部APIが英語＋方言＋略語で返してくる感じ！😵‍💫
 
@@ -51,6 +55,8 @@ flowchart LR
 
 # 3. 「外部のクセ」って具体的にどんなの？👻🧾
 
+![External Quirks Monster](./picture/acl_ts_study_001_quirks_monster.png)
+
 外部って、こういう“クセ”がめっちゃあるよ〜😇💦
 
 ## よくあるクセ一覧 🧨
@@ -67,6 +73,8 @@ ACLは、こういうのを**内側に入る前に整えて、意味のある形
 ---
 
 # 4. 外部のクセが内側に入ると起きる事故 😱💥
+
+![Code Pollution Accident](./picture/acl_ts_study_001_pollution.png)
 
 「別にそのまま使えば早くない？」って思いがちなんだけど…ここが落とし穴！🕳️😵
 
@@ -132,6 +140,8 @@ flowchart LR
 ---
 
 # 6. TypeScriptで“雰囲気”だけ先に見よう 🔍✨
+
+![Direct vs ACL Code Comparison](./picture/acl_ts_study_001_code_comparison.png)
 
 ## ❌ 例：外部DTOをそのまま内側で使う（危険）😇
 
@@ -204,6 +214,8 @@ Microsoftの説明でも「ファサード/アダプター層で変換して、�
 ---
 
 # 8. AI（Copilot/Codex）を使うときのコツ 🤖💡✨
+
+![AI as Supervised Helper](./picture/acl_ts_study_001_ai_helper.png)
 
 ACLのコードって「変換が多い」からAIと相性いいよ〜！🧠⚡
 

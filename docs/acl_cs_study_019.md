@@ -45,6 +45,8 @@ flowchart LR
 
 ### 19.1 レガシーAPIの「あるある地獄」😇🧨
 
+![Chaos of Legacy Data](./picture/acl_cs_study_019_legacy_hell.png)
+
 レガシーがACLの“ボーナスステージ”になる理由はこれ👇
 
 * 命名が古い：`member_no`, `sei`, `mei`, `tel1` みたいな謎ワード🌀
@@ -95,6 +97,8 @@ flowchart LR
 
 ### 19.4 ACLの置き場所（構成の型）🧰🧱
 
+![ACL Architecture Placement](./picture/acl_cs_study_019_project_structure.png)
+
 この章の“型”はこれ👇（いつもこの形にすると迷子にならない）
 
 ```text
@@ -115,6 +119,8 @@ MyShop.Infrastructure
 ---
 
 ### 19.5 ハンズオン①：内側の「窓口インターフェース」を作る🚪✨
+
+![Result Pattern Hierarchy](./picture/acl_cs_study_019_result_pattern.png)
 
 内側は外側の詳細を知らない。だからこう👇
 
@@ -155,6 +161,8 @@ public sealed record MemberProfile(
 ---
 
 ### 19.6 ハンズオン②：レガシーDTO（外部JSONの形そのまま）📦
+
+![DTO vs Domain Model Comparison](./picture/acl_cs_study_019_dto_vs_domain.png)
 
 DTOは **内側の都合に合わせない**。外の形を正直に受けるだけ🙆‍♀️
 
@@ -261,6 +269,8 @@ public sealed class LegacyMemberApiClient(HttpClient http)
 ---
 
 ### 19.8 ハンズオン④：Translator（ここがACLの主役）🧑‍🏫✨
+
+![Translator Processing Steps](./picture/acl_cs_study_019_translator_steps.png)
 
 Translatorはやることが3つだけ👇
 
@@ -407,6 +417,8 @@ public static class LegacyMemberTranslator
 ---
 
 ### 19.9 ハンズオン⑤：Gateway（内側に見せる“窓”）🚪🧼
+
+![Gateway Logic Sequence](./picture/acl_cs_study_019_gateway_sequence.png)
 
 Gatewayは「呼んで、翻訳して、結果を返す」だけにする🎯
 
