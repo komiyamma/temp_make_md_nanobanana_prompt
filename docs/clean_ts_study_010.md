@@ -18,6 +18,8 @@
 
 ## 🤔 “失敗”には2種類あるよ！⚠️🧯
 
+![Expected Failure vs Unexpected Bug](./picture/clean_ts_study_010_expected_vs_unexpected.png)
+
 ### 1) 期待できる失敗（＝ユーザーや入力が原因）🙂
 
 例：
@@ -85,6 +87,8 @@ export const err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 
 ## 🧾 次に “ドメインエラー” を定義しよう（内側の言葉だけ）📖✨
 
+![Domain Terms vs Technical Terms](./picture/clean_ts_study_010_domain_error_terms.png)
+
 今回のミニTaskなら、まずこのへんが自然かな😊
 
 ```ts
@@ -104,6 +108,8 @@ export type TaskError =
 ---
 
 ## 🧩 Task Entity に “失敗を返すAPI” を生やす🌱
+
+![Guard Clause Obstacle Course](./picture/clean_ts_study_010_guard_clause.png)
 
 ここでは、Entityが **ルールを守る門番** になるよ🛡️✨
 
@@ -149,6 +155,8 @@ export class Task {
 
 ## 🧠 “漏れ”を防ぐ！網羅チェック（assertNever）🧷✨
 
+![Exhaustive Switch Check](./picture/clean_ts_study_010_exhaustive_check.png)
+
 「エラー種類が増えたのに、変換処理を直し忘れた😇」を防ぐやつ！
 
 ```ts
@@ -162,6 +170,8 @@ export const assertNever = (x: never): never => {
 ---
 
 ## 🎨 エラーを表示用に変換するのは “外側” の仕事（でも例だけ見せるね）🖼️✨
+
+![Error Translation Flow](./picture/clean_ts_study_010_error_translation.png)
 
 Presenter / Controller 側で、こういう変換をする感じ！（第34章で本格的にやるやつだよ😊）
 

@@ -12,6 +12,8 @@ Entity（今回は `Task`）を、外側（UIやDBやテストコード）から
 
 ## 1) 「壊されるEntity」ってどんな状態？😱
 
+![Broken vs Safe Entity](./picture/clean_ts_study_009_broken_vs_safe.png)
+
 たとえば、こんな `Task` があるとするね👇
 
 ```ts
@@ -97,6 +99,8 @@ flowchart TD
 
 ### 4-1) Result型（成功/失敗）を用意 🎁
 
+![Result Pattern Container](./picture/clean_ts_study_009_result_pattern.png)
+
 ```ts
 export type Ok<T> = { ok: true; value: T };
 export type Err<E> = { ok: false; error: E };
@@ -115,6 +119,8 @@ export type TaskDomainError =
 ```
 
 ### 4-3) Task Entity本体（公開APIを絞る！）🔒
+
+![Factory Creation Flow](./picture/clean_ts_study_009_creation_flow.png)
 
 ```ts
 import { Result, ok, err } from "../shared/result";
@@ -200,6 +206,8 @@ export class Task {
 
 ポイントだよ〜👇😊✨
 
+![State Transition Guard](./picture/clean_ts_study_009_state_guard.png)
+
 * 外側は `task.title = "..."` ができない（壊しにくい！）🔒
 * `complete()` の中で「二重完了禁止」を守れる🛡️
 * `create()` にルールが集まるので、どこから作っても安全✨
@@ -236,6 +244,8 @@ if (!completed.ok) {
 ## 6) よくある設計ミスあるある（先に潰す）🧯😆
 
 ### ❌「setterを生やす」
+
+![Setter vs Method](./picture/clean_ts_study_009_setter_vs_method.png)
 
 ```ts
 set title(v: string) { this.#title = v; }
