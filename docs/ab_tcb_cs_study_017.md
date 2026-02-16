@@ -11,6 +11,9 @@
 
 ## 1. 不変条件ってなに？🤔🔐
 
+![ab_tcb_cs_study_017_guard_role](./picture/ab_tcb_cs_study_017_guard_role.png)
+
+
 ![ルールを守る盾](./picture/ab_tcb_cs_study_017_invariants.png)
 
 
@@ -47,6 +50,9 @@ DDDの考え方では、**集約（Aggregate）の主な責任は“不変条件
 
 ## 3. 不変条件と「入力チェック」の違い 🧁🧠
 
+![ab_tcb_cs_study_017_validation_vs_invariant](./picture/ab_tcb_cs_study_017_validation_vs_invariant.png)
+
+
 初心者が混ざりやすいので、分けるね✂️✨
 
 ## ✅ 不変条件（Invariant）
@@ -82,6 +88,9 @@ graph TD
 ---
 
 ## 5. 不変条件は“散らさない”のがコツ 🧠🧷
+
+![ab_tcb_cs_study_017_scattered_rules](./picture/ab_tcb_cs_study_017_scattered_rules.png)
+
 
 不変条件が散ると、だんだんこうなるよ👇😇
 
@@ -128,6 +137,9 @@ graph TD
 * 外から勝手に書き換えられない（`public set;` を避ける）🔐
 
 ## 7.2 変更はメソッドに閉じ込める ✋🔁
+
+![ab_tcb_cs_study_017_method_encapsulation](./picture/ab_tcb_cs_study_017_method_encapsulation.png)
+
 
 * `order.Status = Confirmed;` みたいな直書きは禁止 🙅‍♀️
 * `order.Confirm()` の中で、ルールを全部チェック ✅
@@ -210,6 +222,9 @@ public sealed class DomainException : Exception
 
 ## 9. ガード節（Guard Clauses）で読みやすくする 🛡️📖
 
+![ab_tcb_cs_study_017_guard_clause](./picture/ab_tcb_cs_study_017_guard_clause.png)
+
+
 `if` が増えると読みにくくなることがあるよね💦
 そこで「ガード節」＝ **先にダメな条件を弾いて、本筋をスッキリさせる** ✨
 
@@ -229,6 +244,9 @@ flowchart TD
 ---
 
 ## 10. 不変条件が「集約の境界」を教えてくれる 🧠🧭
+
+![ab_tcb_cs_study_017_boundary_indicator](./picture/ab_tcb_cs_study_017_boundary_indicator.png)
+
 
 ここ超重要だよ📌✨
 

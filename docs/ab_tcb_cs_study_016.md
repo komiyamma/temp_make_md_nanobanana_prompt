@@ -10,6 +10,9 @@
 
 ## 0. 境界を切るための“型”🧁🧠
 
+![ab_tcb_cs_study_016_5_steps](./picture/ab_tcb_cs_study_016_5_steps.png)
+
+
 境界を切るときは、だいたいこの順番でOKだよ👇✨
 
 1. **ユースケース（1回の操作）を1行で書く**✍️
@@ -46,6 +49,9 @@ flowchart TD
 * 採用案と理由：
 
 ## 比較の観点（迷ったらここを見る）👀⚖️
+
+![ab_tcb_cs_study_016_comparison_mindmap](./picture/ab_tcb_cs_study_016_comparison_mindmap.png)
+
 
 * **同時に守る必要があるルール**が同じ集約に収まってる？✅
 * その集約、**大きすぎない？**（変更しづらい/重い）📦💥
@@ -127,6 +133,9 @@ mindmap
   * 「レシート発行/通知」
 
 ## 3-4. 境界案A/B/C（比較練習）🌳⚖️
+
+![ab_tcb_cs_study_016_cafe_options](./picture/ab_tcb_cs_study_016_cafe_options.png)
+
 
 ### 案A：巨大案（Orderの中にPaymentまで入れる）📦💥
 
@@ -236,6 +245,9 @@ public sealed record OrderItem(string MenuItemCode, int Quantity);
 
 ### 案B：Subscription / Invoice / Payment を分ける（推し）🌿✨
 
+![ab_tcb_cs_study_016_subscription_time](./picture/ab_tcb_cs_study_016_subscription_time.png)
+
+
 * **Subscription集約**：契約状態（Active/Suspended/Cancelled）と次回請求日📆
 * **Invoice集約**：請求の事実（請求月、金額、ステータス）🧾
 * **Payment集約**：外部決済の結果（Succeeded/Failedなど）💳
@@ -286,6 +298,9 @@ public sealed record OrderItem(string MenuItemCode, int Quantity);
 * ❌境界崩壊コース（結合が強すぎ）🧷💥
 
 ### 案B：Inventory集約でReservation（引当）を管理（おすすめ）🌿✨
+
+![ab_tcb_cs_study_016_inventory_strategy](./picture/ab_tcb_cs_study_016_inventory_strategy.png)
+
 
 * **Inventory集約ルート**：InventoryItem（SKU単位）
 * **含める**：AvailableQty / ReservedQty / Reservations（OrderId単位）
@@ -339,6 +354,9 @@ public sealed record OrderItem(string MenuItemCode, int Quantity);
 ---
 
 ## 8. よくあるミス集（先に踏み抜き回避）🚧😅
+
+![ab_tcb_cs_study_016_common_mistakes](./picture/ab_tcb_cs_study_016_common_mistakes.png)
+
 
 * 「全部まとめたら安心」→ **巨大集約で詰む**📦💥
 * 「分ければ正義」→ **跨ぎ更新したくなって詰む**🧩😵

@@ -24,6 +24,9 @@
 
 ## 20.3 失敗は3種類に分ける（超重要）🧠⚖️
 
+![ab_tcb_cs_study_020_exception_vs_result](./picture/ab_tcb_cs_study_020_exception_vs_result.png)
+
+
 ![エラーの標識](./picture/ab_tcb_cs_study_020_errors.png)
 
 
@@ -86,6 +89,9 @@ graph TD
 
 ## 20.5 Result型ってなに？（超やさしく）🍬
 
+![ab_tcb_cs_study_020_result_box](./picture/ab_tcb_cs_study_020_result_box.png)
+
+
 Result型は、ざっくり言うと👇
 
 * 成功なら ✅「OK」
@@ -103,6 +109,9 @@ flowchart LR
 ---
 
 ## 20.6 “ユーザー向けメッセージ”と“ログの詳細”を分ける🧾🔐
+
+![ab_tcb_cs_study_020_user_vs_log](./picture/ab_tcb_cs_study_020_user_vs_log.png)
+
 
 ### ユーザー向け💬🌸
 
@@ -217,6 +226,9 @@ public sealed class Order
 
 ### 20.9.1 Web APIなら Problem Details が便利（標準フォーマット）📦🌐
 
+![ab_tcb_cs_study_020_problem_details](./picture/ab_tcb_cs_study_020_problem_details.png)
+
+
 ASP.NET Core には Problem Details（問題詳細）を扱う仕組みがあり、`AddProblemDetails` などで統一しやすいよ🧩✨ ([Microsoft Learn][1])
 なお、Problem Details の元仕様は RFC 7807 ベースとして説明されていて([Microsoft Learn][2])、新しい RFC 9457 が RFC 7807 を置き換えた（obsoletes）形だよ📜✨ ([RFC エディタ][3])
 
@@ -282,6 +294,9 @@ sequenceDiagram
 
 ## 20.10 “ドメインのエラーメッセージ”はどこまで書く？🤔🧾
 
+![ab_tcb_cs_study_020_error_dictionary](./picture/ab_tcb_cs_study_020_error_dictionary.png)
+
+
 おすすめの考え方👇✨
 
 * ドメインの `Message` は「開発者が理解できる情報」寄り🧑‍💻
@@ -303,6 +318,9 @@ sequenceDiagram
 ---
 
 ## 20.12 よくある設計ミスあるある（先に潰す）💥😇
+
+![ab_tcb_cs_study_020_mistakes](./picture/ab_tcb_cs_study_020_mistakes.png)
+
 
 * ❌ エラー文言で `if (message.Contains("確定済み"))` みたいな分岐
   → 文字が変わった瞬間に死ぬ😇

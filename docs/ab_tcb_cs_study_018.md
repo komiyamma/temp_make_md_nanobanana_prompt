@@ -45,6 +45,9 @@ graph TD
 
 ## 18.2 まず覚える3つの鉄則🧱✨
 
+![ab_tcb_cs_study_018_iron_rules](./picture/ab_tcb_cs_study_018_iron_rules.png)
+
+
 ## 鉄則①：無効な状態を「作れない」ようにする🏗️🚫
 
 * 生成時にチェックして、ダメなら弾く（例外 or エラー）
@@ -67,6 +70,9 @@ graph TD
 ガード節は「**変な入力なら即終了**」の早期リターン（or 例外）スタイルだよ✨
 
 ## 悪い例（奥の方で気づく）😵
+
+![ab_tcb_cs_study_018_bad_vs_good_check](./picture/ab_tcb_cs_study_018_bad_vs_good_check.png)
+
 
 * いろいろ処理したあとに null で落ちる
 * スタックトレースが遠くて原因が見えない😇
@@ -146,6 +152,9 @@ if (quantity <= 0)
 ---
 
 ## 18.6 小さな Guard ヘルパーを作る（書き味UP）🧰💖
+
+![ab_tcb_cs_study_018_guard_helper](./picture/ab_tcb_cs_study_018_guard_helper.png)
+
 
 毎回 `if (...) throw ...` を書くのもアリだけど、増えると見た目がゴチャつくよね😵‍💫
 そこで、**小さな Guard クラス**を作るとスッキリする✨
@@ -279,6 +288,9 @@ public sealed class Order
 
 ## 18.8 public setter を禁止する理由（超だいじ）🚫😇
 
+![ab_tcb_cs_study_018_public_setter_danger](./picture/ab_tcb_cs_study_018_public_setter_danger.png)
+
+
 たとえばこういうのがあると…👇
 
 ```csharp
@@ -319,6 +331,9 @@ graph TD
 
 ## ① EF Core は “コンストラクタ” を使って生成できる🏗️
 
+![ab_tcb_cs_study_018_ef_constructor](./picture/ab_tcb_cs_study_018_ef_constructor.png)
+
+
 EF Core は、マップされたプロパティに合う **パラメータ付きコンストラクタ**を呼べるよ📦 ([Microsoft Learn][4])
 
 ## ② バッキングフィールドで「外から触れない」を保てる🧱
@@ -331,6 +346,9 @@ EF Core は **フィールドに読み書き**する設定もできるから、�
 ---
 
 ## 18.10 ミニテスト：不変条件が守れてるか確認しよう✅🧪
+
+![ab_tcb_cs_study_018_test_verification](./picture/ab_tcb_cs_study_018_test_verification.png)
+
 
 「守ってるつもり」が一番危ない😇
 テストで “壊せない” を証明しよう✨
