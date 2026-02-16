@@ -38,6 +38,8 @@ flowchart TD
 
 ### A) 依存がぐちゃぐちゃ🕸️
 
+![Spaghetti Dependencies](./picture/clean_cs_study_001_spaghetti_code.png)
+
 「本来、関係なくていいはずのもの」が、直接つながっちゃってる状態。
 
 * 画面（UI）がDBの都合を知りすぎる
@@ -50,6 +52,8 @@ flowchart TD
 
 ### B) 境界がない（or 境界が破れてる）🚪💥
 
+![Broken Boundary Dam](./picture/clean_cs_study_001_broken_dam.png)
+
 「ここから先は外部の世界（DB/HTTP/外部API）ね！」っていう**境目**がないと、変更が漏れ出す😭
 
 * UI ↔ UseCase ↔ DB が“直結ホース”みたいになる🚿
@@ -58,6 +62,8 @@ flowchart TD
 ---
 
 ## 2. 依存ってなに？（C#で超わかる言い方）🧠💡
+
+![Compilation Dependency Chain](./picture/clean_cs_study_001_dependency_chain.png)
 
 ここでは超ざっくり、こう覚えよ☺️
 
@@ -92,6 +98,8 @@ graph LR
 
 ## 3. 境界ってなに？（“世界が変わる場所”）🌏🚪
 
+![Boundary Border Control](./picture/clean_cs_study_001_boundary_border.png)
+
 境界は、ひとことで言うと👇
 
 > **境界 = 「ここから先は別世界」って決める線**
@@ -111,6 +119,8 @@ graph LR
 ---
 
 ## 4. “つらい設計”のミニ例（なぜ地獄になるのか）😇🔥
+
+![The God Controller](./picture/clean_cs_study_001_god_controller.png)
 
 たとえば「メモ作成API」を雑に作ると、こうなりがち👇
 
@@ -143,6 +153,8 @@ app.MapPost("/memos", async (CreateMemoDto dto, AppDbContext db) =>
 
 ## 5. クリーンアーキが解決するコト（この章の答え）✅🎯
 
+![Inward Dependency Compass](./picture/clean_cs_study_001_compass_inward.png)
+
 クリーンアーキは、ざっくりこの2点で効くよ💪✨
 
 ### ① 依存の向きを“内側優先”に矯正する🧭
@@ -163,6 +175,8 @@ DBやUIが変わっても、**中心のルールが壊れにくくなる**。
 ---
 
 ## 6. ミニ課題：あなたの「つらい修正」を分類してみよう📝😵‍💫➡️😌
+
+![Pain Classification Sorting](./picture/clean_cs_study_001_pain_classification.png)
 
 過去の経験でOK！「つらかった修正」を3つ思い出して、下みたいに分類してね😊✨
 

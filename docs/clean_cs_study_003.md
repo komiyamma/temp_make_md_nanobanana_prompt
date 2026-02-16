@@ -10,6 +10,8 @@
 
 ## 1) まず「依存」ってなに？🧩
 
+![Dependency Definition](./picture/clean_cs_study_003_dependency_card.png)
+
 ざっくり言うと、
 
 * **AがBを使ってる（知ってる）状態** = AはBに依存してる
@@ -71,6 +73,8 @@ flowchart TD
 
 ## 3) なんでそこまで「内側ファースト」なの？🥺
 
+![Volatile Outer World](./picture/clean_cs_study_003_stormy_outside.png)
+
 理由はシンプルで、
 
 * **外側は変わりやすい**（DB、Web、ライブラリ、クラウド、UI、外部API…）🌪️
@@ -84,6 +88,8 @@ Microsoftのガイドでも、Clean/Onion/Hexagonal/Ports-and-Adapters が同系
 ---
 
 ## 4) どうやって守るの？（結論：interface を内側へ）🔌🪄
+
+![Dependency Inversion Plug](./picture/clean_cs_study_003_dip_socket.png)
 
 ```mermaid
 flowchart LR
@@ -116,6 +122,8 @@ Dependency Rule を守る王道はこれ！
 ---
 
 ## 5) 例：メモ作成（CreateMemo）で見る “NG→OK” 📝⚙️
+
+![Direct Access vs Interface](./picture/clean_cs_study_003_ng_ok_touch.png)
 
 ### 🚫NG例：UseCaseがDBを直で触る（外側に依存しちゃう）
 
@@ -207,6 +215,8 @@ public sealed class EfMemoRepository : IMemoRepository
 
 ## 6) “禁止参照リスト” を作ろう🧾🚫（ミニ課題つき）
 
+![Forbidden References](./picture/clean_cs_study_003_banned_poster.png)
+
 この章のミニ課題はコレ！💪😆
 **「内側が参照しちゃダメなもの」を文字にする**✍️✨
 
@@ -243,6 +253,8 @@ dotnet list path\to\YourProject.csproj package
 ---
 
 ## 8) クイズ：これは依存違反？どこがダメ？🎮😆
+
+![Attribute Pollution](./picture/clean_cs_study_003_attribute_sticker.png)
 
 ### Q1：Entities にこれがあったら？💥
 

@@ -6,6 +6,8 @@
 
 ## Part 0：クリーンアーキの芯（1〜7）⭕🧠
 
+![The 4 Layers of Clean Architecture](./picture/clean_cs_index_concentric_circles.png)
+
 ### 1章：クリーンアーキで何が解決できるの？😌
 
 * ねらい：変更が怖い原因を「依存」と「境界」で説明できる
@@ -21,6 +23,8 @@
 * AI：配置がズレてたらツッコミ役にする😆
 
 ### 3章：Dependency Rule（依存は内側へ）を体に入れる➡️
+
+![Dependency Rule](./picture/clean_cs_index_dependency_rule.png)
 
 * ねらい：設計判断の“憲法”を持つ
 * 中身：内側は外側を知らない（名前すら出さない）([blog.cleancoder.com][1])
@@ -58,6 +62,8 @@
 ---
 
 ## Part 1：Entities（Enterprise Business Rules）を厚く（8〜16）👑💎
+
+![Rich Entity vs Data Box](./picture/clean_cs_index_rich_entity.png)
 
 ### 8章：Entityとは？（同一性＋振る舞い）🪪
 
@@ -125,6 +131,8 @@
 ---
 
 ## Part 2：Use Cases（Application Business Rules）を厚く（17〜28）🎮📦
+
+![Use Case Conductor](./picture/clean_cs_index_usecase_conductor.png)
 
 ### 17章：Use Caseとは？（アプリの手順書）🧾
 
@@ -214,6 +222,8 @@
 
 ## Part 3：Interface Adapters（変換層）を厚く（29〜38）🔄🧩
 
+![Interface Adapter Bridge](./picture/clean_cs_index_adapter_bridge.png)
+
 ### 29章：Controllerの責務（“受け取って呼ぶだけ”）🚪
 
 * ねらい：Controller肥大化を防ぐ
@@ -288,6 +298,8 @@
 
 ## Part 4：Frameworks & Drivers（外側）を“外に閉じる”（39〜42）🧷🧱
 
+![Framework as Outer Shell](./picture/clean_cs_index_framework_shell.png)
+
 ### 39章：Webフレームワークは最外周（Coreは知らない）🌐
 
 * ねらい：フレームワーク交換に耐える発想
@@ -319,6 +331,8 @@
 ---
 
 ## Part 5：テストと“依存ルール強制”は中核の一部（43〜45）🧪🛡️
+
+![Testing Pyramid](./picture/clean_cs_index_test_pyramid.png)
 
 ### 43章：Entitiesのテスト（速い・堅い・気持ちいい）🍰
 

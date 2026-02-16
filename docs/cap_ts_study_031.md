@@ -25,6 +25,8 @@ graph LR
 
 # 1) まず大事な前提：分散っぽいバグは「再現できた瞬間に勝ち」🏆😆
 
+![The 5 Distributed Pains](./picture/cap_ts_study_031_five_monsters.png)
+
 分散のつらさは、だいたいこの5つに集約されるよ👇
 
 * 遅延する（しかも毎回違う）🐢⚡
@@ -53,6 +55,8 @@ graph LR
 ---
 
 # 3) 方針：アプリ本体を汚さず、テスト側から“故障スイッチ”を差し込む🎛️✨
+
+![Fault Injection Adapter](./picture/cap_ts_study_031_fault_adapter.png)
 
 おすすめはこの2レイヤーで作ること👇
 
@@ -111,6 +115,8 @@ export const defaultFaultConfig: FaultConfig = {
 ```
 
 ## 4-2. “seed付き疑似乱数”でテストを安定させる🍀🎯
+
+![Seeded PRNG](./picture/cap_ts_study_031_magic_dice.png)
 
 `Math.random()`のままだと「たまに落ちる」地獄になりがち😇
 なので、**簡単なseed付きPRNG**を自前で用意しよう！
@@ -186,6 +192,8 @@ export async function applyFaults<T>(
 ---
 
 # 5) ハンズオン②：キューに“故障注入版ラッパー”をかぶせる📮🎲
+
+![Faulty Queue Wrapper](./picture/cap_ts_study_031_prank_queue.png)
 
 API→Workerの境界はキューが多いので、ここに入れるとめちゃ効く！✨
 
@@ -296,6 +304,8 @@ Property-based testing をやるなら **fast-check** が定番で、JS/TSで使
 
 ## 8-2. 例：重複配達でも在庫が二重に減らないテスト📨🧪
 
+![Idempotency Check](./picture/cap_ts_study_031_idempotent_clerk.png)
+
 ```ts
 // test/order.duplicates.test.ts
 import { describe, it, expect } from "vitest";
@@ -368,6 +378,8 @@ export async function handleEvent(event: { eventId: string; type: string }, stor
 
 ## 9-2. 順序ズレで壊れる → **状態機械（State Machine）でガードする**🔀🧠
 
+![State Machine Guard](./picture/cap_ts_study_031_state_bouncer.png)
+
 「今そのイベントを適用していい状態？」をチェックして、ダメなら再試行へ🔁
 （例：OrderCreated前にPaymentConfirmedが来た）
 
@@ -388,6 +400,8 @@ export async function handleEvent(event: { eventId: string; type: string }, stor
 ---
 
 # 10) “ランダム”と仲良くしてテストをフレークにしないコツ🍀😆
+
+![Taming Flaky Tests](./picture/cap_ts_study_031_taming_randomness.png)
 
 * ランダムは **seed固定**（この章でやったPRNG方式が強い）🎯
 * 「確率」に頼らず、**確実に起こす（failRate=1.0など）** テストも作る💥
