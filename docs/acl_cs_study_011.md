@@ -194,6 +194,8 @@ public sealed record ShippingAddressSnapshot(
 
 ## 5) まず作る：マッピング対応表（超重要）🧾👀
 
+![Mapping Switchboard](./picture/acl_cs_study_011_mapping_switchboard.png)
+
 ```mermaid
 graph TD
     subgraph External ["外部 DTO (Input) 📦"]
@@ -233,6 +235,8 @@ Translator実装の前に、**対応表**を作ると迷子にならないよ�
 ---
 
 ## 6) ハンズオン：Translatorで“形だけ”変換する🛠️🔁
+
+![Translator Machine](./picture/acl_cs_study_011_translator_machine.png)
 
 ここからが本番！ACLのTranslatorはだいたいこういう形でOK🙆‍♀️
 
@@ -287,6 +291,8 @@ public sealed class OrderSnapshotTranslator : IOrderSnapshotTranslator
 
 ## 7) 命名（snake_case）の扱い：2つの作戦🐍🆚🏛️
 
+![Naming Strategy Comparison](./picture/acl_cs_study_011_naming_strategy_comparison.png)
+
 ### 作戦A：`JsonPropertyName` で「DTOに貼る」📌（おすすめ）
 
 もうやった方法だね！
@@ -327,6 +333,8 @@ var dto = await httpClient.GetFromJsonAsync<PaymentOrderDto>(
 ---
 
 ## 8) Translatorはテストしよう（コスパ最強）💪✅
+
+![Translator Test Bench](./picture/acl_cs_study_011_translator_test_bench.png)
 
 Translatorは **外部変更の影響が直撃する場所** だから、単体テストがめちゃ効くよ🔥
 
@@ -409,6 +417,8 @@ AIにこう頼むと早いよ👇
 ## 10) よくある事故ポイント（先に踏み抜き回避）🧯😵‍💫
 
 ### 事故① DTOを内側に直通させる🙅‍♀️📦➡️🏠
+
+![DTO Leakage Accident](./picture/acl_cs_study_011_dto_leakage_accident.png)
 
 「ちょっとだけ…」が一番危険⚠️
 DTOが内側に入った瞬間、外部の都合が内側の言葉を侵食するよ🧟‍♀️

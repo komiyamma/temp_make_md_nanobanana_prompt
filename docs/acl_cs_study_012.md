@@ -54,6 +54,8 @@ flowchart LR
 
 ## 12.2 まずは“意味ズレ”あるある3兄弟を覚える 👪⚠️
 
+![The Three Meaning Shifters](./picture/acl_cs_study_012_three_shifters.png)
+
 ### ① 単位（Unit）ズレ 📏🔁
 
 * 秒 ↔ ミリ秒 ↔ 分
@@ -79,6 +81,8 @@ flowchart LR
 ---
 
 ## 12.3 この章のゴール形：ACLで「正規化（Normalize）」する 🧼✨
+
+![Normalized Domain Garden](./picture/acl_cs_study_012_normalized_garden.png)
 
 ACLのTranslatorに、**“正規化関数”** を作るイメージでいこう👇
 
@@ -224,6 +228,8 @@ public readonly record struct UtcInstant(DateTimeOffset Value)
 
 ### Translator：DTO → 内側モデルに「意味変換」する 🧑‍🏫🔁✨
 
+![Payment Normalization Factory](./picture/acl_cs_study_012_payment_normalization.png)
+
 ```csharp
 public sealed record PaymentIntent(Money Amount, UtcInstant CreatedAt, UtcInstant ExpiresAt);
 
@@ -298,6 +304,8 @@ public static class MoneyRounding
 
 ## 12.6 時刻は “DateTimeOffset + UTC正規化” が安定しやすい ⏰🧊
 
+![Timezone Strategy](./picture/acl_cs_study_012_timezone_strategy.png)
+
 ### よくある事故 😭
 
 * `DateTime` で受けて `Kind=Unspecified` のまま
@@ -363,6 +371,8 @@ public class TimeTests
 ---
 
 ## 12.8 「今の時刻」に依存する処理は TimeProvider でテスト可能にする 🕰️🧪✨
+
+![Time Provider Switch](./picture/acl_cs_study_012_time_provider_switch.png)
 
 ```mermaid
 flowchart TD
@@ -431,6 +441,8 @@ public class ExpirationTranslatorTests
 ---
 
 ## 12.9 AI活用（Copilot/Codex）で爆速にするプロンプト例 🤖⚡💬
+
+![AI Test Case Generator](./picture/acl_cs_study_012_ai_test_generator.png)
 
 ### ① 意味変換ポイントを洗い出す 🔎
 

@@ -14,6 +14,8 @@
 
 ## 15.1 外部データの「よくある地雷」リスト 💣👀
 
+![External Data Minefield](./picture/acl_cs_study_015_data_minefield.png)
+
 外部APIって、ほんとにこういうの来る…🥲
 
 * **欠損**：そもそもキーが無い（`payment_id` が無い等）
@@ -61,6 +63,8 @@ flowchart LR
 
 ## 15.3 まず「欠損」と「知らないプロパティ」を序盤で止める ✋🧯
 
+![Early Warning Gates](./picture/acl_cs_study_015_early_warning_gates.png)
+
 ### ✅ 欠損は `required` で止められる（JSONデシリアライズ時）📦
 
 System.Text.Json は「必須プロパティ」を要求できるよ。必須が無いと **`JsonException`** を投げてくれる ✨
@@ -85,6 +89,8 @@ System.Text.Json には「DTOに無いプロパティが来たら落とす」設
 ---
 
 # 15.4.1 外部DTO（外側）を作る 📦🧱
+
+![Strict DTO Construction](./picture/acl_cs_study_015_dto_construction_site.png)
 
 * 外部JSONの形をそのまま受ける
 * ただし **必須**と **契約ズレ**は早めに止める
@@ -128,6 +134,8 @@ public sealed class PaymentApiResponseDto
 ---
 
 # 15.4.2 Result型（軽量）を用意する 🧾✨
+
+![The Result Pattern Box](./picture/acl_cs_study_015_result_box.png)
 
 外部データが変でも、**例外でぐちゃぐちゃ**にしたくないから、まずは “結果を返す箱” を作るよ📦
 （第16章でエラー設計はもっと本格化するけど、今章は練習用のミニ版！）
@@ -334,6 +342,8 @@ public sealed class PaymentTranslator
 
 ## 15.5 JSONデシリアライズ部分（例外→ACLエラーへ）🧯🔁
 
+![Exception Catcher](./picture/acl_cs_study_015_exception_catcher.png)
+
 DTO化の時点で落ちるケース（必須欠損、知らないキー）もあるよね。
 System.Text.Json は必須が無い/契約ズレがあると `JsonException` になり得るよ。([Microsoft Learn][1])
 
@@ -381,6 +391,8 @@ public sealed class PaymentApiParser
 ---
 
 ## 15.6 意地悪データを流して防御できるか確認 😈🧪
+
+![Stress Testing the ACL Wall](./picture/acl_cs_study_015_stress_testing_wall.png)
 
 ### 15.6.1 悪い入力10個セット（例）💥
 
@@ -479,6 +491,8 @@ public sealed class PaymentAclTests
 ---
 
 ## 15.8 AI活用（悪い入力づくりを爆速にする🤖⚡）
+
+![AI Villain Generator](./picture/acl_cs_study_015_ai_villain.png)
 
 Copilot/Codexに投げると便利なお願いテンプレ👇
 

@@ -2,6 +2,8 @@
 
 ## 17.1 なぜ「境界でエラーを変換」するの？😵‍💫
 
+![External Error Chaos](./picture/acl_cs_study_017_external_error_chaos.png)
+
 外部APIって、エラーの出し方がバラバラです。
 
 * 返ってくる **HTTPステータス** が意味不明なことがある（例：本当は入力ミスなのに 500 😇）
@@ -66,6 +68,8 @@ flowchart LR
 
 ## 17.4 内側のエラー型：まずは“最低限”でOK 🙆‍♀️✨
 
+![Internal Error Passport](./picture/acl_cs_study_017_internal_error_passport.png)
+
 外部エラーって全部細かく表現しようとすると地獄です😇
 初心者のうちは、まずこの3つだけで十分強いです💪
 
@@ -106,6 +110,8 @@ flowchart LR
 ---
 
 ## 17.6 内側の「統合エラー」型を作る（シンプル版）🧩
+
+![Integration Error Family Tree](./picture/acl_cs_study_017_integration_error_family.png)
 
 ここでは “外部統合に失敗した” ことを表す **IntegrationError** を作ります🧱
 
@@ -158,6 +164,8 @@ public sealed record IntegrationUnexpected(
 ---
 
 ## 17.7 外部エラーDTO → 内側エラーへ翻訳する（Translator）🧑‍🏫
+
+![Error Translator Machine](./picture/acl_cs_study_017_error_translator_machine.png)
 
 外部のレスポンス（HTTP + 外部DTO）を受け取って、内側エラーに変換します🔁🧱
 
@@ -293,6 +301,8 @@ public static class PaymentExceptionTranslator
 ---
 
 ## 17.9 “ログ用” と “ユーザー表示用” を分離する 🧾💬
+
+![Log vs User Message Split](./picture/acl_cs_study_017_log_vs_user_split.png)
 
 ここ、超大事です！！！🔥🔥🔥
 
@@ -441,6 +451,8 @@ Console.WriteLine(UserMessageMapper.ToUserMessage(e5));
 ---
 
 ## 17.13 AI活用（Copilot / Codex）🤖✨
+
+![AI Message Polisher](./picture/acl_cs_study_017_ai_message_polisher.png)
 
 ### 使いどころ（時短できるやつ）⚡
 

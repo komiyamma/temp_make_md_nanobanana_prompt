@@ -9,6 +9,8 @@
 
 ## 1) まず「欠損 / null / 不正値」って何が違うの？🤔🧩
 
+![Three Data Sins](./picture/acl_cs_study_014_three_data_sins.png)
+
 外部から来るデータの“困りごと”は、だいたいこの3つに分かれるよ👇
 
 ### A. 欠損（missing）📭
@@ -118,6 +120,8 @@ flowchart LR
 
 ## 4) 迷わないための「判断の軸」5本柱 🧭✨
 
+![Five Judgement Pillars](./picture/acl_cs_study_014_five_judgement_pillars.png)
+
 この5つを順に見れば、だいたい決まるよ👇
 
 ### 軸①：それってドメインの必須？（不変条件に関係ある？）👮‍♀️
@@ -148,6 +152,8 @@ flowchart LR
 ---
 
 ## 5) 方針フローチャート（これを1枚作ると勝ち）🗺️🏆
+
+![Policy Decision Machine](./picture/acl_cs_study_014_policy_decision_machine.png)
 
 紙でもメモでもOK！この順で判断👇
 
@@ -188,6 +194,8 @@ flowchart TD
 ---
 
 ## 6) 例で覚える：ミニEC/フリマの「決済API」編 🛒💳
+
+![Field Policy Map](./picture/acl_cs_study_014_field_policy_map.png)
 
 外部決済APIから、こんなのが来るとするね👇
 
@@ -259,6 +267,8 @@ flowchart TD
 
 ## 8) C#側のテク：外部DTOは“怪しい前提”で設計しよう 🧪🧯
 
+![Suspicious Nullable DTO](./picture/acl_cs_study_014_suspicious_dto.png)
+
 外部データは欠損もnullも起きるから、外部DTOはこうしがち👇
 （あえて Nullable 多めにする）
 
@@ -279,6 +289,8 @@ public sealed class ExternalPaymentDto
 ---
 
 ## 9) さらに強くする：JSON逆シリアル化で「必須」を表現する方法 📦🔒
+
+![JSON Required Lock](./picture/acl_cs_study_014_required_lock.png)
 
 System.Text.Json では、JSONに必須項目が無いときに **例外（JsonException）で落とす**設定ができるよ。必須の付け方は主に3つ（C#の required / JsonRequiredAttribute / コントラクト調整）と整理されてる。([Microsoft Learn][1])
 また、requiredメンバーのサポートが強化されている（少なくとも .NET 8 以降でのサポートが明示されてる）よ。([Microsoft for Developers][2])

@@ -69,6 +69,8 @@ graph TD
 
 ### 13.4 まずは“Unknown設計”の基本 🧱🧠
 
+![Unknown Value Safety Net](./picture/acl_cs_study_013_unknown_safety_net.png)
+
 **内側（ドメイン側）のenum** には、最初から `Unknown` を用意します👇
 （`0` に置くのが定番。理由：`default` で自然に Unknown になるから✨）
 
@@ -164,6 +166,8 @@ public static class PaymentStatusMapper
 
 ### 13.6 Unknown を“黙殺”しない！ログで検知しよう📣👀
 
+![Unknown Value Detector](./picture/acl_cs_study_013_unknown_detector.png)
+
 Unknown は安全だけど、**静かに増えると危ない**です⚠️
 だから Translator 側で「未知値を見つけたらログ」します🧯
 
@@ -202,6 +206,8 @@ public sealed class PaymentTranslator
 
 ### 13.7 “数値enum”が来るときの注意点（TryParseの罠）🔢🕳️
 
+![The TryParse Trap vs IsDefined Guard](./picture/acl_cs_study_013_tryparse_trap.png)
+
 外部が `status: 3` みたいに数値で返す場合もあります。
 
 ここでありがちな事故👇
@@ -239,6 +245,8 @@ public static class ShippingTypeMapper
 ---
 
 ### 13.8 System.Text.Json で enum を直接読むのは“外部統合では慎重に” ⚠️📦
+
+![Direct Enum Deserialization Explosion](./picture/acl_cs_study_013_deserialization_explosion.png)
 
 `System.Text.Json` の `JsonStringEnumConverter` は、enumを文字列として扱う定番コンバーターです🧰
 `allowIntegerValues`（整数値を許すか）も指定できます。 ([Microsoft Learn][2])
@@ -292,6 +300,8 @@ public class PaymentStatusMapperTests
 
 ### 13.10 仕様の穴チェックリスト（これ来たら要注意）🕳️👀
 
+![Specification Swiss Cheese](./picture/acl_cs_study_013_spec_swiss_cheese.png)
+
 外部仕様の“穴”あるあるリストです👇
 
 * enumの値が増えた 🆕
@@ -307,6 +317,8 @@ public class PaymentStatusMapperTests
 
 ### 13.11 ミニ課題 📝🎀
 
+![Enum Task Checklist](./picture/acl_cs_study_013_enum_task_list.png)
+
 1. あなたの題材システムで、外部APIのenumっぽい項目を3つ探す🔎
 2. それぞれについて、未知値の方針を文章で決める（例：Unknownにしてログ、処理は保留…など）🧾
 3. `Unknown` を含む変換関数を作って、テストを5ケース以上書く🧪✅
@@ -314,6 +326,8 @@ public class PaymentStatusMapperTests
 ---
 
 ### 13.12 AI活用（Unknownパターン洗い出し）🤖🧠✨
+
+![AI Edge Case Hunter](./picture/acl_cs_study_013_ai_edge_case_hunter.png)
 
 そのまま使える指示文例👇
 
