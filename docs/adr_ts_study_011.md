@@ -7,6 +7,8 @@
 
 ## 11.1 この章のゴール🎯✨
 
+![](./picture/adr_ts_study_011_goal_trophies.png)
+
 章が終わったら、これができてればOK！✅
 
 * ADR **0001** が完成している📄✨（Context / Decision / Consequences）
@@ -18,6 +20,8 @@
 
 ## 11.2 まずは超大事な合言葉💡💕
 
+![](./picture/adr_ts_study_011_accountability_relay.png)
+
 ### ADRは「未来の自分への説明責任」🕰️📒
 
 ADRは「メモ」じゃなくて、**判断の証拠と説明書**だよ〜！
@@ -26,6 +30,8 @@ ADRは「メモ」じゃなくて、**判断の証拠と説明書**だよ〜！
 ---
 
 ## 11.3 ADR 0001 の置き場所とファイル名📁🔢
+
+![](./picture/adr_ts_study_011_cli_creation.png)
 
 おすすめはこう👇
 
@@ -53,6 +59,8 @@ ADRテンプレはいろいろあるけど、**有名どころの型**はこれ�
 ---
 
 ## 11.5 ADR 0001 テンプレを貼って書く✍️💗
+
+![](./picture/adr_ts_study_011_filling_template.png)
 
 ![](./picture/adr_ts_study_011_pr_bundle_ts.png)
 
@@ -178,6 +186,8 @@ export async function fetchUser() {
 
 ## 11.8 ADRから Issue / PR にリンクする🔗🧷
 
+![](./picture/adr_ts_study_011_link_chain.png)
+
 ADRは「その判断がどこで決まって、どこに反映されたか」が辿れると強い💪✨
 ADRの末尾にこういうリンク欄を置いてね👇
 
@@ -228,6 +238,8 @@ gitGraph
 ---
 
 ## 11.10 AIの使い方🤖💗
+
+![](./picture/adr_ts_study_011_ai_refiner.png)
 
 （“自動で書かせる”より “一緒に整える” が相性いいよ〜！✨）
 

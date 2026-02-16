@@ -25,9 +25,13 @@ Michael Nygard の ADR 形式でも **Consequences は必須要素**として扱
 そして “Consequences” には、単なる感想じゃなくて、
 **効果 / 結果 / フォローアップ（次にやること）**まで含めるのが良いとされるよ。([GitHub][3])
 
+![](./picture/adr_ts_study_007_consequences_layers.png)
+
 ---
 
 ## 7.2 なんで「痛み（デメリット）」を書くの？😣➡️😌
+
+![](./picture/adr_ts_study_007_fire_prevention.png)
 
 「デメリット書くと、決定が弱く見える気がする…」って思いがちなんだけど、逆！🙅‍♀️💦
 
@@ -56,6 +60,8 @@ AWSのガイドでも、ADRは「決定・背景・結果」を書くものと�
 
 ### ✅ Consequences = 3 + 2 + 1 で書く✨
 
+![](./picture/adr_ts_study_007_recipe_formula.png)
+
 1. **良いこと（Pros）** 👍（3つ）
 2. **悪いこと（Cons）** 👎（3つ）
 3. **副作用（Neutral / Side effects）** 🌀（あれば）
@@ -83,6 +89,8 @@ mindmap
 ---
 
 ## 7.4 “強いConsequences”を書くコツ8つ💡✨
+
+![](./picture/adr_ts_study_007_toolbox_tips.png)
 
 ### ① 「何がラク/ツラくなる？」で書き始める📝
 
@@ -151,6 +159,8 @@ mindmap
 ---
 
 ## 7.6 例：Consequencesを「弱い→強い」にしてみる✍️✨
+
+![](./picture/adr_ts_study_007_shallow_vs_deep.png)
 
 ### テーマ：APIレスポンスの runtime validation を **zod** でやる（例）
 
@@ -235,6 +245,8 @@ flowchart LR
 ---
 
 ## 7.9 AI活用（Copilot/Codex向け）プロンプト例🤖💕
+
+![](./picture/adr_ts_study_007_ai_devil_advocate.png)
 
 そのままコピペして使ってOKだよ〜！
 

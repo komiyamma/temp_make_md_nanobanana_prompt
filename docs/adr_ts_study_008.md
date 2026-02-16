@@ -85,6 +85,8 @@ ADR運用で大事なのは、**書くこと**より **“後で探せること�
 
 ### ① Markdownプレビューで読みやすくする👀
 
+![](./picture/adr_ts_study_008_preview_split.png)
+
 * プレビュー切り替え：Ctrl + Shift + V
 * 横に並べてプレビュー：Ctrl + K → V
 
@@ -101,6 +103,8 @@ Markdownって編集とプレビューが連動スクロールするんだけど
 これはVS CodeのMarkdownドキュメントにちゃんと載ってる設定だよ🧷([Visual Studio Code][2])
 
 ### ③ “探す”を制する者がADRを制す🔎🔥
+
+![](./picture/adr_ts_study_008_future_search.png)
 
 ADRは「読むため」じゃなくて「**未来の自分が探すため**」にあるからね！😊💕
 
@@ -158,6 +162,8 @@ Status: Proposed / Accepted / Superseded
 
 ### ✅ ② VS Codeの「ユーザースニペット」で一瞬でテンプレ出す⚡
 
+![](./picture/adr_ts_study_008_snippet_magic.png)
+
 VS Codeは拡張なしでスニペット作れるよ！って公式に説明されてる✨([Visual Studio Code][3])
 
 #### 例：Markdown用スニペット（超ざっくり）
@@ -195,6 +201,8 @@ VS Codeは拡張なしでスニペット作れるよ！って公式に説明さ�
 ---
 
 ### ✅ ③ （任意）新規ADRファイルを自動で作る（Nodeスクリプト）🤖📄
+
+![](./picture/adr_ts_study_008_script_robot.png)
 
 連番って、地味にめんどいんだよね…😇
 だから「docs/adr/」の中身を見て、次の番号でファイル作るやつを用意すると超ラク💖
@@ -290,6 +298,8 @@ Copilotには、リポジトリの指示ファイルを置けるよ！
 
 ## 8-7. ADRは“育つ”📈✨（Statusと置き換えの考え方）
 
+![](./picture/adr_ts_study_008_lifecycle_plant.png)
+
 ADRは「書いたら終わり」じゃなくて、**状況が変わったら置き換える**のが自然だよ🔁✨
 
 ### ✅ Statusの最低ライン
@@ -325,6 +335,8 @@ stateDiagram-v2
 VS CodeはMarkdownを標準サポートしてて、プレビュー・アウトライン・補完なども育ってきてるよ✨([Visual Studio Code][2])
 
 ### ✅ 推奨拡張を“ワークスペースで共有”できる📦
+
+![](./picture/adr_ts_study_008_extensions_box.png)
 
 チームで揃えたい拡張があるなら、.vscode/extensions.json に「おすすめ拡張」を書けるよ（VS Code公式）([Visual Studio Code][6])
 
