@@ -2,6 +2,8 @@
 
 ## 第1章：ACLってなに？ “腐敗”ってなに？（最短でイメージ）🧼💡
 
+![Anti-Corruption Layer Wall](./picture/acl_cs_index_concept_wall.png)
+
 * **ねらい**：ACLの役割を「一言で言える」ようにする
 * **学ぶこと**
 
@@ -30,6 +32,8 @@
 
 ## 第3章：関心の分離（SoC）だけ先に押さえる（ACLの前提）🚪🧠
 
+![Separation of Concerns](./picture/acl_cs_index_separation_concerns.png)
+
 * **ねらい**：「混ぜない」感覚を先に作る
 * **学ぶこと**
 
@@ -54,6 +58,8 @@
 ---
 
 ## 第5章：ValueObject入門（住所・金額・期間を“型”で守る）🧱💰
+
+![Value Object Shield](./picture/acl_cs_index_value_object_shield.png)
 
 * **ねらい**：外部の変な値が入っても壊れにくい“型の盾”を作る
 * **学ぶこと**
@@ -131,6 +137,8 @@
 ---
 
 ## 第11章：変換① “形の変換”（命名・構造・ネスト）🧩🔁
+
+![Three Conversion Steps](./picture/acl_cs_index_conversion_layers.png)
 
 * **ねらい**：まず「形」を揃える（意味の前に）
 * **学ぶこと**
@@ -250,6 +258,8 @@
 ---
 
 ## 第20章：テスト＆運用まとめ（変換テスト・契約テスト・観測）＋最終チェックリスト🎁✅📈
+
+![Complete ACL Architecture](./picture/acl_cs_index_final_architecture.png)
 
 * **ねらい**：作って終わりじゃなく “壊れない仕組み” にする
 * **学ぶこと**

@@ -19,6 +19,8 @@ ACL（腐敗防止層 / Anti-Corruption Layer）を一言で言うと👇
 
 ## 2. “腐敗”ってなに？（設計がジワジワ壊れる現象）🧟‍♀️🦠
 
+![Code Corruption Signs](./picture/acl_cs_study_001_corruption_signs.png)
+
 ここでいう「腐敗」は、ざっくり言うと👇
 
 > 外部の都合（変な命名、値の意味、エラー形式、欠損だらけ…）が、
@@ -38,6 +40,8 @@ ACLは、こういう腐敗を **境界で止める** 役目なんだよ🧱🛑
 ---
 
 ## 3. たとえ話：海外のルールを“家の中”に持ち込まない🏡✈️
+
+![Home vs Outside Rules](./picture/acl_cs_study_001_home_rules.png)
 
 たとえば、海外の学校に通うとして…
 
@@ -110,6 +114,8 @@ public class OrderService
 
 ## 6. 腐敗ポイント探し（答え合わせ）✅🧼
 
+![Bad Code Review](./picture/acl_cs_study_001_bad_code_highlight.png)
+
 上のコード、腐敗ポイントはいっぱいあるよ〜！😵‍💫
 どれが気づけたかな？👀✨
 
@@ -147,6 +153,8 @@ public class OrderService
 
 ## 7. じゃあACLがあると、何が変わるの？（超ざっくり図）🧱✨
 
+![ACL Flowchart](./picture/acl_cs_study_001_acl_flow_diagram.png)
+
 イメージはこれ👇
 
 * 内側は「自分たちの言葉」だけで話す🏠🗣️
@@ -163,6 +171,8 @@ flowchart TD
 ```
 
 ACLの中には、だいたい👇みたいな部品が入ることが多いよ（今は名前だけでOK）🧰✨
+
+![ACL Components Toolbox](./picture/acl_cs_study_001_acl_components.png)
 
 * **Client**（外部を呼ぶ係）📡
 * **Translator**（外部DTO→内側モデルに変換する係）🈯
