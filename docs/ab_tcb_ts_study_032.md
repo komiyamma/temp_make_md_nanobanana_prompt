@@ -63,6 +63,8 @@ graph TD
 
 ### フロー（失敗😱 → 補償↩️）
 
+![Saga Failure and Compensation](./picture/ab_tcb_ts_study_032_saga_failure_flow.png)
+
 * 在庫引当に失敗 → **支払い返金↩️** → **注文キャンセル↩️**
 * 支払い確定に失敗 → **注文キャンセル↩️**（在庫は触ってないのでOK）
 
@@ -142,6 +144,8 @@ export const newCorrelationId = (): CorrelationId =>
 
 ## 6. 観測性：ログに traceId/spanId も混ぜる 🧵🪄
 
+![Distributed Tracing Thread](./picture/ab_tcb_ts_study_032_trace_id_thread.png)
+
 ### 6.1 OpenTelemetry 初期化（Console exporterでOK）🧪
 
 ```ts
@@ -198,6 +202,8 @@ export function log(
 ## 7. Sagaのインターフェース＆実行エンジン 🧵⚙️
 
 ### 7.1 ステップ定義（execute / compensate）🧩
+
+![Saga Step Anatomy](./picture/ab_tcb_ts_study_032_step_interface.png)
 
 ```ts
 // src/application/saga/sagaStep.ts
@@ -364,6 +370,8 @@ export function confirmOrderStep(): SagaStep<CheckoutContext> {
 
 ## 9. 実行：トレースの中でSagaを回す 🧵🏁
 
+![Observability Dashboard](./picture/ab_tcb_ts_study_032_observability_dashboard.png)
+
 ```ts
 // src/main.ts
 import { trace } from "@opentelemetry/api";
@@ -445,6 +453,8 @@ await sdk.shutdown();
 ---
 
 ## 11. ADR：意思決定を1枚で残す 🧾✨
+
+![Architecture Decision Record](./picture/ab_tcb_ts_study_032_adr_card.png)
 
 ### 11.1 ADRテンプレ（コピペOK）📋
 

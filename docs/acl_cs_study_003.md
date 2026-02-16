@@ -11,6 +11,8 @@
 
 ## 3-1. SoC（関心の分離）ってなに？🧼
 
+![Cooking Separation Steps](./picture/acl_cs_study_003_cooking_metaphor.png)
+
 SoC（Separation of Concerns）は一言でいうと…
 
 > **「役割の違うものを、同じ場所に混ぜない」**ルールです ✋🧩
@@ -29,6 +31,8 @@ SoC（Separation of Concerns）は一言でいうと…
 ## 3-2. 「混ぜる」と何が起きるの？😵‍💫⚡（最短で体感）
 
 ### よくある“混ぜ混ぜ地獄”の例 🔥
+
+![Mixing Responsibilities Chaos](./picture/acl_cs_study_003_mixing_hell.png)
 
 「注文を作る処理」の中に、こんなのが全部入ってると…👇
 
@@ -71,6 +75,8 @@ SoC（Separation of Concerns）は一言でいうと…
 
 ## 3-4. ACLはどこに立つの？🧱🌊（SoCとの関係）
 
+![ACL Position Diagram](./picture/acl_cs_study_003_acl_layer_position.png)
+
 ACL（Anti-Corruption Layer / 腐敗防止層）は、ざっくり言うと
 
 > **「外部の言葉・クセ」を「自分たちの言葉」に翻訳して、内側を守る壁**🧱✨
@@ -106,6 +112,8 @@ flowchart TD
 ---
 
 ## 3-6. “仕分けゲーム”👀🧾（内側に入れていい？ダメ？）
+
+![Sorting Code Responsibilities](./picture/acl_cs_study_003_sorting_game.png)
 
 次の要素を、どの部屋に置くべきか仕分けしてみてね👇✨
 
@@ -170,6 +178,8 @@ public sealed class OrderService
 ---
 
 ## 3-8. SoCっぽく分ける（ここがゴール）🏁✨
+
+![Clean Code Structure](./picture/acl_cs_study_003_separated_code_structure.png)
 
 ### 3-8-1. まずは“形”だけ分ける（この章ではここまででOK）👌
 

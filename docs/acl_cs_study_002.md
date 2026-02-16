@@ -56,6 +56,8 @@
 
 #### 例：決済APIが返す“クセ強めJSON”😵‍💫
 
+![Messy Legacy JSON](./picture/acl_cs_study_002_messy_json.png)
+
 * `snake_case`
 * 金額が **cents（最小単位）**
 * ステータスが増えたり名前が変わったりする
@@ -89,6 +91,8 @@
 ---
 
 ## 2.4 ACLはどこに置くの？（まだ作らないけど、地図だけ見る）🧱🌊
+
+![ACL Position in Architecture](./picture/acl_cs_study_002_acl_position.png)
 
 ACL（腐敗防止層）は一言でいうと…
 
@@ -124,6 +128,8 @@ flowchart TD
 
 ### 4プロジェクト構成（おすすめ）💡
 
+![Four Project Structure](./picture/acl_cs_study_002_project_structure.png)
+
 * `MiniECommerce.Api`
 
   * Web API（エンドポイント、DI設定、起動）🌐
@@ -138,6 +144,8 @@ flowchart TD
   * DBや外部API、ACL（外側との接続）🔌🌪️
 
 依存の向き（めちゃ大事！）👇
+
+![Dependency Direction Rules](./picture/acl_cs_study_002_dependency_arrows.png)
 
 ```mermaid
 flowchart LR
@@ -221,6 +229,8 @@ dotnet add .\MiniECommerce.Api\MiniECommerce.Api.csproj reference .\MiniECommerc
 ---
 
 ## 2.8 動作確認：最初の “Ping” を作って起動する ✅🚀
+
+![API Ping Pong](./picture/acl_cs_study_002_ping_pong.png)
 
 `MiniECommerce.Api` の `Program.cs` に、まずは生存確認エンドポイントを追加します🐣✨
 （Minimal APIの書き方はこの形が基本です）([Microsoft Learn][2])

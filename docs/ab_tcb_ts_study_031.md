@@ -11,6 +11,8 @@
 
 ## 1. まず “取りこぼし事故” を1分で理解 😱💥
 
+![The Lost Event Accident](./picture/ab_tcb_ts_study_031_lost_event_accident.png)
+
 ミニECでよくある流れ👇
 
 * 注文が支払い完了になる（DB更新）🧾✅
@@ -27,6 +29,8 @@
 ---
 
 ## 2. ドメインイベントってなに？📣🧠（超大事なイメージ）
+
+![Domain Event Post-it Note](./picture/ab_tcb_ts_study_031_domain_event_note.png)
 
 ### ✅ ドメインイベント = 「ドメイン上の事実」を表すメモ
 
@@ -224,6 +228,8 @@ Outboxを「どう拾うか」は **ポーリング** が基本で、複数ワ�
 
 ## 5-4. Application：保存とOutbox書き込みを “同じトランザクション” でやる ✅📮
 
+![Atomic Transaction Scope](./picture/ab_tcb_ts_study_031_transaction_scope.png)
+
 ここが第31章の核心だよ💥✨
 1ユースケースの中で👇
 
@@ -267,6 +273,8 @@ export async function payOrder(input: { orderId: string; paidAt: Date }, deps: {
 ---
 
 ## 5-5. Worker：Outbox Relay（拾って送る）🤖📤
+
+![Relay Worker Process](./picture/ab_tcb_ts_study_031_relay_worker.png)
 
 ## ✨コツ：トランザクションを短くする
 
@@ -315,6 +323,8 @@ export async function runOutboxRelayOnce(deps: {
 ---
 
 ## 6. LISTEN/NOTIFYって使える？🔔🐘（使いどころ注意）
+
+![LISTEN/NOTIFY Mechanism](./picture/ab_tcb_ts_study_031_listen_notify.png)
 
 PostgreSQLの `LISTEN/NOTIFY` は「すぐ気づける」ので遅延を減らせることがあるよ⚡
 でも、**それ単体を “取りこぼしゼロの保証” として使うのは危険** と言われがち。
