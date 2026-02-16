@@ -10,6 +10,8 @@
 
 ## 1. まず、事故のイメージをつかむ 😱🧨
 
+![Primitive Type Hell](./picture/ab_tcb_ts_study_006_primitive_hell.png)
+
 ### 1-1. string地獄：IDの取り違え🙃
 
 ![Study Image](./picture/ab_tcb_ts_study_006_brand.png)
@@ -32,6 +34,8 @@
 ---
 
 ## 2. 方針：TypeScriptで “薄いValue Object” を作る 💎🪶
+
+![Branding and Validation Guards](./picture/ab_tcb_ts_study_006_two_guards.png)
 
 ### 2-1. 2つの守り方（どっちも使う）🧠✨
 
@@ -60,6 +64,8 @@ graph TD
 ```
 
 ---
+
+![Branding Iron Metaphor](./picture/ab_tcb_ts_study_006_branding_iron.png)
 
 ## 3. 実装：まずは共通の Brand 型を作る 🧩🪪
 
@@ -116,12 +122,16 @@ export const OrderId = {
 } as const;
 ```
 
+![ID Shape Sorter](./picture/ab_tcb_ts_study_006_id_shapes.png)
+
 ### 4-1. これで何が嬉しいの？🎁✨
 
 * `OrderId` と `ProductId` を **同じ string として扱えなくなる**
 * 「引数を間違えた」だけで **コンパイル時に止まる**（理想）🛑💕
 
 ---
+
+![Money Factory Validation](./picture/ab_tcb_ts_study_006_money_factory.png)
 
 ## 5. 実装：Money（金額は “事故りやすい” 代表）💴💥
 
@@ -237,6 +247,8 @@ export const OrderItem = {
 } as const;
 ```
 
+![Safe vs Unsafe Calculation](./picture/ab_tcb_ts_study_006_safe_calc.png)
+
 ### 7-1. “間違った計算” を型で止めるイメージ🛑🧠
 
 * `Money.add(単価, 数量)` みたいな変な計算をしにくくなる🙅‍♀️
@@ -277,6 +289,8 @@ classDiagram
 ```
 
 ---
+
+![Satisfies Operator Check](./picture/ab_tcb_ts_study_006_satisfies_check.png)
 
 ## 8. `satisfies` で “表（テーブル）” を安全にする 📋✅
 

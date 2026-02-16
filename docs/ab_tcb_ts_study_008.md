@@ -1,5 +1,7 @@
 ﻿# 第08章：不変条件（Invariants）って結局なに？🔒🧠
 
+![Invariant Violation Chaos](./picture/ab_tcb_ts_study_008_broken_world.png)
+
 ## 8.1 不変条件って、ひとことで言うと？✨
 
 ![Study Image](./picture/ab_tcb_ts_study_008_shield.png)
@@ -11,6 +13,8 @@
 * だから **“守れる形”でコードを書く**のが目的だよ🧱🔒
 
 ---
+
+![Common Invariant Accidents](./picture/ab_tcb_ts_study_008_accidents.png)
 
 ## 8.2 不変条件が必要になる“事故”あるある😱🧨
 
@@ -26,6 +30,8 @@
 だから「変な状態を作らせない」が超大事💪🔒
 
 ---
+
+![Validation vs Invariant Defense](./picture/ab_tcb_ts_study_008_two_walls.png)
 
 ## 8.3 不変条件と“入力チェック”は別モノだよ🧼🆚🔒
 
@@ -59,6 +65,8 @@ graph LR
 
 ---
 
+![Invariant Discovery Steps](./picture/ab_tcb_ts_study_008_3_steps.png)
+
 ## 8.4 ミニEC「注文🛒」で不変条件を見つける3ステップ🧩✨
 
 不変条件って、センスじゃなくて手順で出せるよ😊📝
@@ -68,6 +76,8 @@ graph LR
 3. **「だから絶対に起きない」をルール化する**🔒
 
 ---
+
+![Order Invariants Checklist](./picture/ab_tcb_ts_study_008_rules_list.png)
 
 ## 8.5 注文（Order）の不変条件リスト例📝🔒
 
@@ -94,6 +104,8 @@ graph LR
 * 注文確定時点で明細が空はダメ（“何も買ってない注文”）🌀🚫
 
 ---
+
+![Three Code Guardians](./picture/ab_tcb_ts_study_008_guardians.png)
 
 ## 8.6 “無効状態を作らない”コードのコツ3つ🧱🔒
 
@@ -275,6 +287,8 @@ export class Order {
 ```
 
 ---
+
+![Test Anchor for Invariants](./picture/ab_tcb_ts_study_008_test_anchor.png)
 
 ## 8.7 テストで“不変条件が壊れない”を固定する🧪🔒
 

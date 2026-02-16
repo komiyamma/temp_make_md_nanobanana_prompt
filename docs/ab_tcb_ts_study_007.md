@@ -12,6 +12,8 @@
 
 ![Study Image](./picture/ab_tcb_ts_study_007_entity_vo.png)
 
+![Identity vs Value Equality](./picture/ab_tcb_ts_study_007_identity_vs_value.png)
+
 ## Entity（エンティティ）👤
 
 * **“同一性（ID）”が本体**
@@ -30,6 +32,8 @@
 
 ---
 
+![Primitive Obsession Accident](./picture/ab_tcb_ts_study_007_primitive_accident.png)
+
 ## 7.2 なんで分けるの？（分けると世界が平和になる）🌈🕊️
 
 分けないと、こんな事故が起きがち😱💥
@@ -45,6 +49,8 @@ Entity/VOを分けると…
 * ドメインの言葉がそのまま型になる（読みやすい）📘✨
 
 ---
+
+![Decision Flowchart](./picture/ab_tcb_ts_study_007_decision_tree.png)
 
 ## 7.3 迷ったらこの3問！EntityかVOか判定クイズ 🧩🎮
 
@@ -75,6 +81,8 @@ flowchart TD
 
 ---
 
+![Classification Shelves](./picture/ab_tcb_ts_study_007_classification_shelves.png)
+
 ## 7.4 ミニECでの分類（いったん王道パターン）🛒📦💳
 
 > ここは「絶対の正解」じゃなくて、**理由が説明できる**のが大事だよ〜😊✨
@@ -103,6 +111,8 @@ flowchart TD
   * ミニECではまず **VO扱い**が楽で学びやすいことが多い😊
 
 ---
+
+![Implementation Blueprint](./picture/ab_tcb_ts_study_007_impl_blueprint.png)
 
 ## 7.5 TypeScriptでの実装方針（“難しすぎないDDD”）🧱✨
 
@@ -205,6 +215,8 @@ export abstract class Entity<TId> {
 ```
 
 ---
+
+![Order Aggregate Composition](./picture/ab_tcb_ts_study_007_order_structure.png)
 
 ## ④ Order（Entity）＋ OrderLine（VO）を作る 🧾🛒
 
@@ -368,6 +380,8 @@ describe("Value Object / Entity", () => {
 ```
 
 ---
+
+![Mutable VO Danger](./picture/ab_tcb_ts_study_007_mutable_vo_danger.png)
 
 ## 7.8 よくあるミス集（ここ踏むと沼りがち）🕳️😵‍💫
 

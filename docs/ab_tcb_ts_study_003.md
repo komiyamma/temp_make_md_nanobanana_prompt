@@ -12,6 +12,8 @@
 
 ![Study Image](./picture/ab_tcb_ts_study_003_flow.png)
 
+![Three Pillars of Mini EC](./picture/ab_tcb_ts_study_003_three_pillars.png)
+
 ミニECは、ざっくり言うとこの3つの話だよ😊
 
 * 注文🧾：買う！を確定する（何を・いくつ・いくらで）
@@ -31,6 +33,8 @@
 だから、次の章以降で「どこまでを一気に成功/失敗にする？（境界）」を考えるよ🧱✨
 
 ---
+
+![Cast of Characters](./picture/ab_tcb_ts_study_003_cast.png)
 
 ## 3-2. 登場人物（アクター）を整理しよう👩‍💻🧑‍💼🏭
 
@@ -70,6 +74,8 @@
 * PaymentAttempt（試行）🔁：失敗→再試行、が起きるなら欲しくなる
 
 ---
+
+![Order State Subway Map](./picture/ab_tcb_ts_study_003_state_subway.png)
 
 ## 3-4. 注文の状態（OrderStatus）を決めよう🧾🚦
 
@@ -111,6 +117,8 @@ stateDiagram-v2
 
 ---
 
+![Inventory Equation Visualization](./picture/ab_tcb_ts_study_003_inventory_equation.png)
+
 ## 3-5. 在庫の状態（引当の考え方）📦🔒
 
 在庫は「数が合ってればOK」じゃなくて、注文の途中でこういう現象が起きる😇
@@ -143,6 +151,8 @@ graph TD
 ```
 
 ---
+
+![Payment Traffic Light](./picture/ab_tcb_ts_study_003_payment_traffic_light.png)
 
 ## 3-6. 支払いの状態（PaymentStatus）💳🚦
 
@@ -201,6 +211,8 @@ flowchart LR
 
 ---
 
+![Danger Zones Map](./picture/ab_tcb_ts_study_003_danger_zones.png)
+
 ## 3-8. 例外ケース（失敗ルート）を先に増やそう🧯💥
 
 「例外を洗い出す」＝あとで事故らない最強の準備💪✨
@@ -247,6 +259,8 @@ flowchart LR
 さっきの例外リストを、あなたのミニEC仕様に合わせて10個にしてみよう📋
 
 ---
+
+![AI Exception Generator](./picture/ab_tcb_ts_study_003_ai_exceptions.png)
 
 ## 3-10. AI活用（例外ケース増殖プロンプト）🤖💡
 

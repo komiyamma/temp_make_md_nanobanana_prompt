@@ -14,6 +14,8 @@
 
 ![Study Image](./picture/ab_tcb_ts_study_004_tools.png)
 
+![Modern Node/TS Foundation](./picture/ab_tcb_ts_study_004_foundation.png)
+
 ## Node.js は LTS を選ぶ🍀
 
 新規プロジェクトは **Active LTS** が無難です（2026-01 時点では **v24 が Active LTS** として案内されています）([nodejs.org][1])
@@ -38,6 +40,8 @@ npm init -y
 
 ---
 
+![Dev Starter Pack](./picture/ab_tcb_ts_study_004_starter_pack.png)
+
 ## 3) 依存関係を入れる（最低セット）⬇️📦
 
 ```powershell
@@ -52,6 +56,8 @@ npm i -D prettier eslint-config-prettier
 ---
 
 ## 4) 設定ファイルを置く⚙️🧷
+
+![NPM Scripts Controller](./picture/ab_tcb_ts_study_004_scripts_controller.png)
 
 ## 4-1) `package.json` を整える📜
 
@@ -78,6 +84,8 @@ npm i -D prettier eslint-config-prettier
 > ここで `"type": "module"` を入れるのは、2026 の Node まわりで ESM が基本になってきていて、ツール同士の噛み合わせがラクだからだよ〜🧩✨
 
 ---
+
+![TypeScript Strict Shield](./picture/ab_tcb_ts_study_004_strict_shield.png)
 
 ## 4-2) `tsconfig.json`（迷わない最新寄り）🛡️
 
@@ -119,6 +127,8 @@ export default defineConfig({
 ```
 
 ---
+
+![Flat Config Stack](./picture/ab_tcb_ts_study_004_flat_config.png)
 
 ## 4-4) `eslint.config.mjs`（flat config）🧹✨
 
@@ -178,6 +188,8 @@ trim_trailing_whitespace = false
 ```
 
 ---
+
+![Smoke Test Signal](./picture/ab_tcb_ts_study_004_smoke_test.png)
 
 ## 5) “動く確認” のための最小コードを書く✍️✨
 
@@ -240,6 +252,8 @@ sequenceDiagram
 
 ## 7) VS Code 側の “気持ちいい” 設定🧠💡
 
+![VS Code Workspace Version](./picture/ab_tcb_ts_study_004_vscode_version.png)
+
 ## 7-1) VS Code がプロジェクトの TypeScript を使うようにする🧩
 
 VS Code は TypeScript 言語サポートがあるけど、**プロジェクトに入れた TypeScript を IntelliSense で使うには選択が必要**なことがあるよ🛠️([Visual Studio Code][8])
@@ -269,6 +283,8 @@ VS Code は TypeScript 言語サポートがあるけど、**プロジェクト�
 ```
 
 ---
+
+![Troubleshooting First Aid Kit](./picture/ab_tcb_ts_study_004_troubleshooting.png)
 
 ## 8) つまずきやすい所だけ救急箱🧰😇
 
