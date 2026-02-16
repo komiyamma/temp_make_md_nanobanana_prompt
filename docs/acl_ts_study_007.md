@@ -81,6 +81,8 @@ graph TD
 
 **例：学食ポイント（内側の辞書）**
 
+![Domain Dictionary Cards](./picture/acl_ts_study_007_domain_dictionary.png)
+
 * Student（学生）🎓
 * StudentId（学生ID）🪪
 * Point（ポイント）🍱
@@ -109,6 +111,8 @@ mindmap
 # 7-3. TypeScriptで Value Object を作る（最小の型安全）🧩✨
 
 ## “作るときに守る”が基本ルール 🔒✅
+
+![Value Object Molding Machine](./picture/acl_ts_study_007_vo_mold.png)
 
 Value Objectは、作る瞬間にルールチェックしておくと強いよ💪
 （あとで `if` 地獄になりにくい🌀）
@@ -219,6 +223,8 @@ export class Point {
 
 ## Student（学生）🎓
 
+![Entity State Character](./picture/acl_ts_study_007_entity_state.png)
+
 Studentは「IDで同一」だからEntityだよ〜📌
 
 ```ts
@@ -283,6 +289,8 @@ export class Student {
 ---
 
 # 7-5. これがACLで効く理由（“入口で翻訳→内側は型で守る”）🧱🛡️✨
+
+![ACL Translation Flow](./picture/acl_ts_study_007_translation_flow.png)
 
 外部が例えばこう返してきたとするね👇😇
 
@@ -354,6 +362,8 @@ flowchart LR
 
 ## ① なんでも `string` / `number` のままにしちゃう（プリミティブ地獄）🫠
 
+![Primitive Obsession Warning](./picture/acl_ts_study_007_primitive_warning.png)
+
 * `studentId: string` とか `point: number` のままだと
   外部の変な値が **いつでも侵入できちゃう**😵‍💫
   → 「意味のある値」は Value Object にしよう💎✨
@@ -407,6 +417,8 @@ flowchart LR
 # 7-8. AI拡張での進め方（ラクしてOK、でも監督は人間！）🤖🛡️✨
 
 ## 使える指示（コピペOK）📋💖
+
+![AI Supervisor](./picture/acl_ts_study_007_ai_supervisor.png)
 
 * 「学食ポイントドメインでValue Object候補を10個出して。型と不変条件（0以上など）も添えて」
 * 「StudentIdのparse関数を、失敗理由が分かるResult型で作って」

@@ -33,6 +33,8 @@ Ports & Adapters（別名 Hexagonal Architecture）は、ざっくり言うと�
 
 ## 3) Ports（ポート）＝「内側が要求する“できること”」🔌✨
 
+![Port Definition](./picture/acl_ts_study_010_port_definition.png)
+
 ポートは **interface** で作るよ！
 ポイントはこれ👇
 
@@ -45,6 +47,8 @@ Ports & Adapters（別名 Hexagonal Architecture）は、ざっくり言うと�
 ---
 
 ## 4) Adapters（アダプター）＝「外部APIを“ポートの形”に合わせる」🧱🌍
+
+![Adapter Implementation](./picture/acl_ts_study_010_adapter_impl.png)
 
 アダプターは **外側に置く**よ（Infrastructureとか）📦
 やることはこの3点セットになりがち👇
@@ -63,6 +67,8 @@ Ports & Adapters（別名 Hexagonal Architecture）は、ざっくり言うと�
 * 決済：`PaymentPort`（支払いできる）💳
 
 ### フォルダ構成（最小）📁✨
+
+![Hexagonal Folder Map](./picture/acl_ts_study_010_folder_map.png)
 
 * `src/domain`：ドメイン型（VO/Entity）📘
 * `src/application`：ユースケース（内側の流れ）🎬
@@ -263,6 +269,8 @@ console.log(result);
 
 ## 10) ここが最高！テストがラクになる理由 🧪⚡
 
+![Testing Speed Comparison](./picture/acl_ts_study_010_test_speed.png)
+
 Ports & Adaptersのいちばんのご褒美はこれ👇
 
 * 外部APIが落ちててもテストできる 💪✨
@@ -336,6 +344,8 @@ describe("ChargeLunchPointsUseCase", () => {
 
 ## 11) TypeScript（2026）での“実務寄り”メモ 🧠🧰
 
+![TypeScript Stack 2026](./picture/acl_ts_study_010_ts_stack.png)
+
 ### 11-1) TypeScriptは「現時点の最新版」が 5.9 と案内されてるよ 🧷✨
 
 インストール案内ページで “currently 5.9” と書かれてる 📌 ([TypeScript][3])
@@ -366,6 +376,8 @@ Node.js のリリース一覧では、**v24 が Active LTS**、v22/v20 が Maint
 ---
 
 ## 13) AI拡張（Copilot / Codex等）を使うときのコツ 🤖✨
+
+![AI Fake Builder](./picture/acl_ts_study_010_ai_fake.png)
 
 ### 使いどころ（めっちゃ相性いい）💞
 

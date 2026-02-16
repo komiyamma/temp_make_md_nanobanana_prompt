@@ -14,6 +14,8 @@ ACLの仕事は、基本この2つにギュッと圧縮できるよ👇
 
 ## ✅ 仕事① 翻訳（Translation）🗣️➡️📘
 
+![Two Roles of ACL](./picture/acl_ts_study_009_acl_roles.png)
+
 外部APIの「クセつよDTO」を、内側で使いやすい言葉（ドメインの型）に変換する。
 
 * 変な命名 → まともな命名へ
@@ -33,6 +35,8 @@ ACLの仕事は、基本この2つにギュッと圧縮できるよ👇
 ---
 
 # 2) 置き場所を決める前に：境界ってどこ？🚪📦
+
+![System Boundary Map](./picture/acl_ts_study_009_boundary_map.png)
 
 この教材の世界観だと、ざっくりこんな箱のイメージだよ👇
 
@@ -153,6 +157,8 @@ ExternalApiClient / SDK
 
 ## パターンC：Integrationモジュールとして“外部ごと”に閉じる（統合モジュール型）📦🔗
 
+![Integration Module Pattern](./picture/acl_ts_study_009_pattern_c.png)
+
 「外部Aは外部Aの島」みたいに、フォルダで完全に分ける。
 
 ```text
@@ -185,6 +191,8 @@ adapters/
 ---
 
 ## 4) いちばん大事：ACLに「含める／含めない」線引き ✍️🧠🧱
+
+![ACL Sorting Decision](./picture/acl_ts_study_009_acl_sorting.png)
 
 ### ✅ ACLに含めていいもの（翻訳＆防御）🧼🛡️
 
@@ -238,6 +246,8 @@ mindmap
 ## 6) ミニ実装：フォルダ構成と最小コード 🧩✨
 
 ### 📁 フォルダ例（統合モジュール型 + Ports寄せ）
+
+![Folder Structure Tree](./picture/acl_ts_study_009_folder_tree.png)
 
 ```text
 src/
@@ -350,6 +360,8 @@ export class StudentDirectoryAdapter implements StudentDirectoryPort {
   → 外部仕様変更と内側ルールが絡まって地獄 🕳️
 
 ### 事故③ Adapterが全部盛りになって太る 🍱🍰🍜
+
+![Fat Adapter Warning](./picture/acl_ts_study_009_fat_adapter.png)
 
 * HTTP、リトライ、ログ、変換、判定…が1ファイルに
   → “変換だけACLへ分離”でスッキリするよ ✨

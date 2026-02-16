@@ -71,6 +71,8 @@ mindmap
 
 # 3) 「外側のクセ」が内側に入ると何が起きるの？😇🕳️
 
+![Corruption Spreading](./picture/acl_ts_study_004_corruption_spread.png)
+
 外側って、だいたいこんなクセがあるよね💦
 
 * 🧾 命名が独特（`stu_kbn`, `payFlg`, `s_id`）
@@ -90,6 +92,8 @@ mindmap
 ---
 
 # 4) だからACL！「通訳＋防波堤」🌊🛡️
+
+![ACL Translator and Shield](./picture/acl_ts_study_004_translator_shield.png)
 
 ACL（Anti-Corruption Layer）は、境界に置く **通訳さん** だよ〜🗣️✨
 外側の言葉（DTOやレスポンス）を、内側の言葉（ドメイン型）に翻訳する📘➡️📗
@@ -117,6 +121,8 @@ flowchart TD
 ---
 
 # 5) 「内側＝自分のルール」「外側＝相手の都合」ってどう見分ける？🔍✨
+
+![Essence Decision](./picture/acl_ts_study_004_essence_decision.png)
 
 迷ったらこの質問をしてみてね😊
 
@@ -149,6 +155,8 @@ flowchart TD
 ---
 
 # 6) TypeScriptだと「境界」を型で固定できるのが強い💪🧷
+
+![DTO vs Domain Type](./picture/acl_ts_study_004_dto_vs_domain.png)
 
 境界を守るコツは、**型で門番を作ること**🚪🔒
 
@@ -235,6 +243,8 @@ export type StudentType = "UNDERGRAD" | "GRAD";
 ---
 
 ## 9) AI（Copilot/Codex系）を使うときの“境界ガード”🧯🤖✨
+
+![AI Boundary Guard](./picture/acl_ts_study_004_ai_boundary.png)
 
 AIはめっちゃ便利だけど、油断すると **境界を越えて混ぜがち** 😇💦
 だから、AIに頼むときは「境界を守る指示」が超大事！
