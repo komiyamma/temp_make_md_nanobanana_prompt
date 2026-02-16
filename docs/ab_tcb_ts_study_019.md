@@ -11,6 +11,8 @@
 
 ## 1. CQSってなに？ ざっくり一言で 🥤✨
 
+![CQS Concept](./picture/ab_tcb_ts_study_019_cqs_concept.png)
+
 CQSはこういう約束だよ👇
 
 * **Query（読む）**：状態を変えない。情報を返す📖🔎
@@ -23,6 +25,8 @@ CQSはこういう約束だよ👇
 ---
 
 ## 2. なんで分けるの？ ありがちな地獄 😇🔥
+
+![Side Effect Trap](./picture/ab_tcb_ts_study_019_side_effect_trap.png)
 
 ### あるある①：getなのに更新してた 🤯
 
@@ -50,6 +54,8 @@ CQSはこういう約束だよ👇
 
 ## 4. 今回のミニECで「読み」と「書き」を分ける 🛒📦💳
 
+![Read Write Pipelines](./picture/ab_tcb_ts_study_019_read_write_pipelines.png)
+
 ### 目標🎯
 
 * Query：`getOrderDetails(orderId)` → 画面表示用DTOを返す👀📄
@@ -58,6 +64,8 @@ CQSはこういう約束だよ👇
 ---
 
 ## 5. フォルダ構成 迷子防止 🧭📁
+
+![Folder Separation](./picture/ab_tcb_ts_study_019_folder_separation.png)
 
 第18章の構成をそのまま活かして、application配下を分けるよ👇
 
@@ -87,6 +95,8 @@ CQSはこういう約束だよ👇
 ## 7. 手を動かす まず Query から作る 🔎✨
 
 ### 7-1. Queryの返り値は DTO にしよう 📦
+
+![Query DTO](./picture/ab_tcb_ts_study_019_query_dto.png)
 
 Queryは **集約そのものを返さない** のがコツだよ（返すと、外からいじれて事故りやすい😇）
 
@@ -155,6 +165,8 @@ export class GetOrderDetailsQueryService {
 ---
 
 ## 8. 次に Command  placeOrder を作る ✍️🔥
+
+![Command Flow](./picture/ab_tcb_ts_study_019_command_flow.png)
 
 `placeOrder` は「注文作成して、明細入れて、保存して、ID返す」みたいな **書く処理の入口** にするよ🛒💨
 
@@ -299,6 +311,8 @@ describe("CQS Query", () => {
 ## 11. よくあるミス集 ここだけは踏まないで😇🧨
 
 ### ミス①：Queryの中で集約をいじる🚫
+
+![Query Mutation Mistake](./picture/ab_tcb_ts_study_019_query_mutation_mistake.png)
 
 * `getOrderDetails()` の中で `order.addItem(...)` とかやっちゃう
   → **それ、Queryじゃない** 😭

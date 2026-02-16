@@ -44,6 +44,8 @@ graph TD
 
 ### ドメイン（集約）との役割分担🧱
 
+![Role Division](./picture/ab_tcb_ts_study_018_role_division.png)
+
 **ドメイン（集約）**がやること👑
 
 * 不変条件を守る🔒（例：合計金額はマイナス不可、支払い後は明細を変更できない等）
@@ -60,6 +62,8 @@ graph TD
 ---
 
 ## 2. 鉄板パターン「取得→変更→保存」🔁✨
+
+![Standard Flow](./picture/ab_tcb_ts_study_018_standard_flow.png)
 
 ```mermaid
 sequenceDiagram
@@ -109,6 +113,8 @@ sequenceDiagram
 ---
 
 ## 5. まずは型：Command / DTO / Result を用意しよう📦✨
+
+![Result Pattern](./picture/ab_tcb_ts_study_018_result_pattern.png)
 
 ### Result（成功/失敗を型で返す）🚦
 
@@ -267,6 +273,8 @@ export interface OrderRepository {
 
 ## 8-1. ユースケース①：注文作成（CreateOrder）🛒✨
 
+![Create Order Flow](./picture/ab_tcb_ts_study_018_create_order_flow.png)
+
 「注文を新規作成して保存する」だけでも、**ユースケースとして層に置く**のが大事です😊
 （UIやAPIがどうであれ、仕様はユースケースとして残るから📘）
 
@@ -409,6 +417,8 @@ export class AddItemToOrderUseCase {
 
 ## 9. 「ユースケースが太る」あるある😇🧨（避け方つき）
 
+![Fat Use Case](./picture/ab_tcb_ts_study_018_fat_usecase.png)
+
 ### あるある①：ユースケースにビジネスルールを書き始める🫠
 
 例：`if (order.totalAmount > 10000) discount...` みたいなやつをユースケースに直書き
@@ -547,6 +557,8 @@ describe("CreateOrderUseCase", () => {
 ---
 
 ## 13. まとめ🧾✨
+
+![App Service Script](./picture/ab_tcb_ts_study_018_script_metaphor.png)
 
 * アプリケーションサービスは **集約を動かす“手順の台本”** 🎬
 * 基本は **取得→変更→保存** 🔁

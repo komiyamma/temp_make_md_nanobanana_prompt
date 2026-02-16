@@ -30,6 +30,8 @@ Repositoryは、**ドメイン（集約）にDBの存在を知らせない**た�
 
 ### 2.1 ドメインが“汚れない”🧼✨
 
+![Clean Domain Protection](./picture/ab_tcb_ts_study_016_clean_domain.png)
+
 もしドメインモデルがDBの型やSQLを知ってると…
 
 * `Order` の中に `SELECT ...` とか出てきて地獄😇🔥
@@ -47,6 +49,8 @@ Repositoryを挟むと…
 ---
 
 ## 3. 置き場所（フォルダ）と依存の向き🧱➡️
+
+![Dependency Rule](./picture/ab_tcb_ts_study_016_dependency_rule.png)
 
 Repositoryは「インターフェース（約束）」と「実装（現実）」に分けるよ✂️✨
 
@@ -94,6 +98,8 @@ graph TD
 
 ## 4. Repositoryが扱う範囲🧺（集約ルール）
 
+![Repository Scope](./picture/ab_tcb_ts_study_016_aggregate_root_only.png)
+
 Repositoryが扱うのは原則これ👇
 
 * ✅ **集約ルート（Aggregate Root）だけ**
@@ -108,6 +114,8 @@ Repositoryが扱うのは原則これ👇
 ## 5. インターフェース設計のコツ🧩✨（迷ったらこれ）
 
 ### 5.1 メソッドは“ユースケース基準”で最小に🧠🎮
+
+![Repository Methods](./picture/ab_tcb_ts_study_016_repository_methods.png)
 
 最初に持つのはだいたいこれでOK👇
 
@@ -191,6 +199,8 @@ export interface OrderRepository {
 
 ## 7. Repositoryの使い方（ユースケース側）🎮🧩
 
+![UseCase Flow](./picture/ab_tcb_ts_study_016_usecase_flow.png)
+
 Repositoryは **アプリケーションサービス（ユースケース）** から使うのが基本だよ🔁✨
 よくある流れはこれ👇
 
@@ -239,6 +249,8 @@ sequenceDiagram
 ---
 
 ## 8. テストで差し替える（Repositoryの真価）🧪✨
+
+![Fake Repository](./picture/ab_tcb_ts_study_016_fake_repository.png)
 
 インターフェースにしてると、テストで「偽物Repository」を差し込めるよ🧸💕
 
@@ -313,6 +325,8 @@ AIにこう投げると便利だよ👇
 ---
 
 ## 10. よくある落とし穴集⚠️😇
+
+![Repository Pitfalls](./picture/ab_tcb_ts_study_016_pitfall_dto.png)
 
 * **落とし穴①：Repositoryが“検索なんでも屋”になる** 🔎🍔
   → まずは最小（`findById` / `save`）から！必要になってから増やす🧠✨
