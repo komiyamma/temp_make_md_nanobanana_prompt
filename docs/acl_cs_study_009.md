@@ -46,6 +46,8 @@ flowchart TD
 
 ### DIってなに？🧰
 
+![Dependency Injection](./picture/acl_cs_study_009_di_injection.png)
+
 **DI（依存性注入）**は、DIPを実現するための代表的なやり方の1つだよ🔧✨
 
 * クラスの中で `new` しないで
@@ -67,6 +69,8 @@ flowchart TD
 
 ## 2) ACLとDIP/DIの関係🧼🧱✨（ここ超大事！）
 
+![ACL Protection via DIP](./picture/acl_cs_study_009_acl_dip_protection.png)
+
 外部APIって、こんな“クセ”あるよね😇
 
 * 命名が変（`user_nm` とか）
@@ -87,6 +91,8 @@ flowchart TD
 ---
 
 ## 3) 完成イメージ図（これが気持ちいい形😌🧱）
+
+![Clean Architecture Map](./picture/acl_cs_study_009_clean_structure_map.png)
 
 ```mermaid
 flowchart TD
@@ -136,6 +142,8 @@ flowchart TD
 
 ### 4-2) Domain：抽象（インターフェース）を置く🧱✨
 
+![Interface Contract](./picture/acl_cs_study_009_interface_contract.png)
+
 **IPaymentGateway** を Domain に置こう💡
 「外部決済ってこういう機能が欲しいよね」っていう **内側の都合** を契約にする🤝
 
@@ -184,6 +192,8 @@ public interface IPaymentGateway
 ---
 
 ### 4-3) Application：ユースケースは “抽象だけ” を使う🧠✨
+
+![UseCase Blindfold](./picture/acl_cs_study_009_usecase_blindfold.png)
 
 ユースケース（注文→決済）は **IPaymentGateway にだけ依存** するよ🔁
 
@@ -238,6 +248,8 @@ public sealed record PlaceOrderResult(
 ---
 
 ### 4-4) Infrastructure（ACL実装）：外部APIを包んで翻訳する🧼🧱
+
+![WeirdPay Wrapper](./picture/acl_cs_study_009_weirdpay_wrapper.png)
 
 ここが **腐敗防止層の本体** だよ〜🔥
 
@@ -336,6 +348,8 @@ public sealed class WeirdPayPaymentGateway : IPaymentGateway
 
 ### 4-5) DI登録：差し替えスイッチを作る🔌✨
 
+![DI Wiring Panel](./picture/acl_cs_study_009_di_wiring_panel.png)
+
 DIの登録は「配線」だよ🔧
 内側（UseCase）に、どの実装（WeirdPay）を繋ぐか決めるだけ🎛️
 
@@ -392,6 +406,8 @@ app.Run();
 ---
 
 ## 5) テストが一気にラクになる（外部通信ゼロ）🧪💖
+
+![Fake Test Swap](./picture/acl_cs_study_009_fake_test_swap.png)
 
 DIP/DIの最大のご褒美はこれ😍
 「外部APIに繋がずにテストできる」

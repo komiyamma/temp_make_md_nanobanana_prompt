@@ -36,6 +36,8 @@ flowchart TD
 
 ### 6-2. “無効状態” が怖い理由😱🧨
 
+![Invalid State Bomb](./picture/acl_cs_study_006_invalid_state_bomb.png)
+
 外部APIや古いDB、レガシー仕様って、平気で変な値を投げてくることがあるよね😇📨
 
 * null が来る
@@ -50,6 +52,8 @@ ACL（腐敗防止層）は「外→内を翻訳して整える壁」なんだ�
 ---
 
 ### 6-3. どこでチェックするのが正解？📍🧭
+
+![Two Gates of Invariants](./picture/acl_cs_study_006_two_gates.png)
 
 不変条件は基本、次のタイミングで守るよ👇✨
 
@@ -67,6 +71,8 @@ ACL（腐敗防止層）は「外→内を翻訳して整える壁」なんだ�
 
 ### 6-4. 実装パターン：コンストラクタ封印＋Factoryで守る🧱🔐
 
+![Factory Seal](./picture/acl_cs_study_006_factory_seal.png)
+
 おすすめの形はこれ👇
 
 * コンストラクタは `private`（外から勝手に作れない）🔒
@@ -79,6 +85,8 @@ ACL（腐敗防止層）は「外→内を翻訳して整える壁」なんだ�
 ---
 
 ### 6-5. ハンズオン①：`Money`（マイナス禁止）💰🚫
+
+![Money Negative Block](./picture/acl_cs_study_006_money_negative_block.png)
 
 まずは超ミニからいこう💪✨
 「金額は0以上」「通貨が違うものは足せない」を守るよ🪙🧱
@@ -128,6 +136,8 @@ public readonly record struct Money
 ---
 
 ### 6-6. ハンズオン②：`OrderLine`（数量・単価ルール）📦🧾
+
+![OrderLine Rules Visualization](./picture/acl_cs_study_006_orderline_rules.png)
 
 次は注文の明細だよ🛒✨
 
@@ -276,6 +286,8 @@ public sealed class Order
 
 ### 6-8. よくある質問：例外で止めていいの？😳💥
 
+![Exception Stop](./picture/acl_cs_study_006_exception_stop.png)
+
 この章ではわかりやすく **例外**で止めたよ🙆‍♀️✨
 ドメインのルール違反って「そこで生成/更新を失敗させたい」ことが多いからね🛑
 
@@ -287,6 +299,8 @@ public sealed class Order
 ---
 
 ### 6-9. テストで“不変条件が守られてる”を固定する✅🧪
+
+![Test Anchor](./picture/acl_cs_study_006_test_anchor.png)
 
 不変条件は **テストと相性が最高**だよ💘
 「作れないはずのものが作れない」をテストで釘打ちする🔨✨

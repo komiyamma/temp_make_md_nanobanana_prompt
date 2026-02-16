@@ -13,6 +13,8 @@
 
 ### 7.2 まず「境界」ってなに？🧃🧱
 
+![Boundary Storm](./picture/acl_cs_study_007_boundary_storm.png)
+
 境界（Boundary）は、ざっくり言うと…
 
 > **「ここから内側は“自分たちの言葉・ルール”で生きる！」って線引き**💃🧠
@@ -53,6 +55,8 @@
 ---
 
 ### 7.4 “内側/外側” の4レイヤー地図🗺️✨（超よくある形）
+
+![Four Layer Architecture Map](./picture/acl_cs_study_007_four_layer_map.png)
 
 迷ったら、いったんこの分け方に寄せると楽です😊🍀
 
@@ -104,6 +108,8 @@ Microsoftのガイドでも「永続化などの関心事をドメインの外�
 
 ### 7.5 ハンズオン：プロジェクト境界を“参照”で固定しよう🧩🔒
 
+![Project Reference Structure](./picture/acl_cs_study_007_project_structure.png)
+
 ここが超重要ポイント！
 **フォルダ分けだけだと破られやすい**ので、**プロジェクト参照（Project Reference）**でガチガチにします💪😺
 
@@ -145,6 +151,8 @@ flowchart RL
 
 ### 7.6 “禁止依存リスト”を作ろう📝🚫
 
+![Forbidden Dependencies](./picture/acl_cs_study_007_forbidden_items.png)
+
 ここはチームで揉めやすいので、先に決めると強いです😊✨
 例として、こんな「禁止」を置くと迷子が減ります👇
 
@@ -168,6 +176,8 @@ flowchart RL
 ---
 
 ### 7.7 仕組みで守る①：コンパイルで“逆流”を止める🧱🚧
+
+![Compiler Gate](./picture/acl_cs_study_007_compiler_gate.png)
 
 プロジェクト参照が正しいと、**間違った参照はビルドが通らない**ので最強です💪😆
 
@@ -259,6 +269,8 @@ public sealed class AssemblyMarker { }
 ---
 
 ### 7.9 “どこに置くか迷うもの”あるある判定🔎😺
+
+![Code Placement Sorter](./picture/acl_cs_study_007_placement_sorter.png)
 
 迷ったらこの質問を自分にしてみてね👇
 
