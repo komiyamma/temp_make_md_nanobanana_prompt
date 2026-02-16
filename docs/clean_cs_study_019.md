@@ -10,6 +10,10 @@
 
 ## 1) Request Modelってなに？🤔📦
 
+![Request Model Definition](./picture/clean_cs_study_019_request_model_definition.png)
+
+
+
 ![Request Modelのフィルタリング](./picture/clean_cs_study_019_request_model.png)
 
 Request Model（入力モデル）は、**UseCaseに渡すための“入力専用の箱”**だよ📨✨
@@ -20,6 +24,10 @@ Uncle Bobも「境界をまたいでデータを渡すなら、**内側にとっ
 ---
 
 ## 2) なんでAPI DTOと分けるの？🍱➡️🧠
+
+![Independence from Frameworks](./picture/clean_cs_study_019_independence.png)
+
+
 
 API DTOは「外側（HTTP/JSON）」の都合が強いよね📡
 
@@ -40,6 +48,10 @@ DTOはネットワーク越しに運ぶための形（Data Transfer Object）と
 ---
 
 ## 3) “いいRequest Model” 7つのルール🌟✅
+
+![Contents of Request Model](./picture/clean_cs_study_019_model_contents.png)
+
+
 
 ### ルール1：UseCaseが本当に必要なものだけ🎯
 
@@ -86,6 +98,10 @@ DTO→Request変換が散らばると地獄👹
 ## 4) 例：メモ作成（CreateMemo）で作ってみよう📝✨
 
 ### 4-1. Entities側（すでにある想定のVO）💎
+
+![Value Objects in Request Model](./picture/clean_cs_study_019_vo_in_request.png)
+
+
 
 （第9〜10章で作ったイメージね！）
 
@@ -173,6 +189,10 @@ public sealed class CreateMemoDto
 
 ### 5-2. Endpointで変換（ここが“境界”🚪）
 
+![Conversion Boundary](./picture/clean_cs_study_019_conversion_boundary.png)
+
+
+
 ```csharp
 using MyApp.Core.Entities;
 using MyApp.Core.UseCases.Memos.Create;
@@ -210,6 +230,10 @@ app.MapPost("/memos", async (
 ---
 
 ## 6) バリデーション、どこでやるの？🛑🧠
+
+![Validation vs Invariant](./picture/clean_cs_study_019_validation_placement.png)
+
+
 
 よく混乱するから、シンプルに分けよう😊
 

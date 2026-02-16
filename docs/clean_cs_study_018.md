@@ -8,6 +8,10 @@
 
 ## 1) Input Portってなに？（一言で）🚪✨
 
+![Input Port Interface Contract](./picture/clean_cs_study_018_input_port_contract.png)
+
+
+
 ![Input Portの構造](./picture/clean_cs_study_018_input_port.png)
 
 **Input Port = ユースケースを呼ぶための“契約（interface）”**だよ😊🔌
@@ -23,6 +27,10 @@ Controller（外側）は、その契約だけを知っていればOK。
 ---
 
 ## 2) なんでInput Portが必要なの？🤔💡
+
+![Benefits of Input Port Interface](./picture/clean_cs_study_018_interface_benefits.png)
+
+
 
 Input Portを「interface」にしておくと、いいことが2つ大きいよ〜！🌟
 
@@ -40,6 +48,10 @@ Input Portを「interface」にしておくと、いいことが2つ大きいよ
 
 ### コツA：**“1ユースケース＝1 Input Port”**に寄せる🎯
 
+![One Port Per Use Case](./picture/clean_cs_study_018_one_port_per_usecase.png)
+
+
+
 例：CreateMemo / UpdateMemo / DeleteMemo …
 「何でも屋UseCase」にしないのが大事🙅‍♀️💦
 
@@ -51,9 +63,17 @@ Input Portを「interface」にしておくと、いいことが2つ大きいよ
 
 ### コツC：引数は **RequestModel 1個**にするのが扱いやすい📨
 
+![Single Request Model Argument](./picture/clean_cs_study_018_request_model_envelope.png)
+
+
+
 引数が増えると呼び出し側が壊れやすいし、拡張もしにくいよ〜💦
 
 ### コツD：**外側の型を持ち込まない**（超重要🔥）
+
+![Forbidden External Types](./picture/clean_cs_study_018_forbidden_types.png)
+
+
 
 Input Port（UseCases側）に入れちゃダメな例👇
 
@@ -114,6 +134,10 @@ public interface ICreateMemoInputPort
 
 ### 4-3) Interactor が Input Port を実装する🧱✨
 
+![Interactor Implementation](./picture/clean_cs_study_018_interactor_implementation.png)
+
+
+
 Interactorは「手順書」だから、ここでドメインを呼び出して、保存して、結果を外へ渡す…ってやる😊
 （クリーンアーキでは Interactor が RequestModel を受け取って処理して、ResponseModel を Output Port に渡す流れが典型だよ🎤） ([Plainionist][2])
 
@@ -154,6 +178,10 @@ public sealed class CreateMemoInteractor : ICreateMemoInputPort
 ---
 
 ### 4-4) Controller（外側）が Input Port を呼ぶ🚪➡️🔌
+
+![Controller as Converter](./picture/clean_cs_study_018_controller_converter.png)
+
+
 
 ここがこの章のゴール！
 Controllerは「受け取って、変換して、呼ぶだけ」😆👍

@@ -12,6 +12,10 @@
 
 ## 1) Output Portってなに？🤔
 
+![Output Port Role](./picture/clean_cs_study_021_output_port_role.png)
+
+
+
 ![Output Portの役割](./picture/clean_cs_study_021_output_port.png)
 
 クリーンアーキでは、ユースケース（Use Case / Interactor）は **“内側”** にいて、UIやWeb、DBみたいな **“外側”** を知らないようにするのが大事だよね⭕️
@@ -34,6 +38,10 @@
 
 ## 2) 「UseCaseの戻り値」はどうするの？（超大事）🧠💥
 
+![Output Port vs Return](./picture/clean_cs_study_021_why_output_port.png)
+
+
+
 初心者が一番やりがちな事故はこれ👇💦
 
 * ✅やりたい：`return Ok(...)` とか `ActionResult` を返す
@@ -52,6 +60,10 @@
 
 ## 3) ResponseModel（出力データ）ってなに？📦✨
 
+![Response Model Content](./picture/clean_cs_study_021_response_model.png)
+
+
+
 Output Port には、だいたい **ResponseModel** を渡すよ！
 
 ResponseModel は「ユースケースが外へ伝えたい結果」を表す、**ユースケース用の“出力DTO”** みたいなもの😊
@@ -67,6 +79,10 @@ ResponseModel は「ユースケースが外へ伝えたい結果」を表す、
 ---
 
 ## 4) 具体例：メモ作成（CreateMemo）の Output Port を作る✍️📝
+
+![Presenter Implementation](./picture/clean_cs_study_021_presenter_impl.png)
+
+
 
 ### 4-1. ResponseModel を作る（UseCases 層）📦
 
@@ -179,6 +195,10 @@ public sealed class CreateMemoInteractor : ICreateMemoInputPort
 
 ## 5) なぜ Output Port が効くの？（1番のご褒美）🎁✨
 
+![Controller and Presenter](./picture/clean_cs_study_021_controller_presenter.png)
+
+
+
 ### ✅UIが増えてもユースケースが無傷💪
 
 たとえば同じ `CreateMemo` を、
@@ -195,6 +215,10 @@ Presenter を差し替えるだけでOK🎤✨
 ---
 
 ## 6) よくあるミス集（ここ踏むと崩れる）💣😇
+
+![Output Port Mistakes](./picture/clean_cs_study_021_common_mistakes.png)
+
+
 
 * ❌ Output Port が `ActionResult` を返す（UseCaseがWeb依存）
 * ❌ ResponseModel に HTTP ステータスやエラーレスポンス形を入れる（外側都合）

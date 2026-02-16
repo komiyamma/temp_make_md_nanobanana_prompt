@@ -17,6 +17,10 @@
 
 ## 1) Interactorってなに？🧩
 
+![Interactor as Conductor](./picture/clean_cs_study_020_interactor_role.png)
+
+
+
 Interactorはひとことで言うと…
 
 ![Interactorは指揮者](./picture/clean_cs_study_020_interactor.png)
@@ -45,6 +49,10 @@ InteractorがやってOKなのはこのへん👇
 
 ## 3) Interactorが「やっちゃダメ」❌🙈
 
+![Interactor Do's and Don'ts](./picture/clean_cs_study_020_dos_and_donts.png)
+
+
+
 ここをやると一気に崩れます…🥲
 
 * HTTPのこと（ステータスコード、ヘッダー、Controllerの都合）🌐❌
@@ -62,6 +70,10 @@ InteractorがやってOKなのはこのへん👇
 ---
 
 ## 4-1. ファイル構成イメージ📁✨
+
+![CreateMemo File Structure](./picture/clean_cs_study_020_file_structure.png)
+
+
 
 * Core（中心）
 
@@ -183,6 +195,10 @@ public interface IMemoRepository
 
 # 5) いよいよ本体：CreateMemoInteractor🧱🔥
 
+![Interactor Execution Flow](./picture/clean_cs_study_020_interactor_flow.png)
+
+
+
 ポイントはこれだけです👇
 
 * Requestを受け取る
@@ -235,6 +251,10 @@ public sealed class CreateMemoInteractor : ICreateMemoInputPort
 
 # 6) 外側：インメモリRepo（Adapters側）🗄️✨
 
+![InMemory Repository](./picture/clean_cs_study_020_inmemory_repo.png)
+
+
+
 ```csharp
 using MyApp.Core.Entities;
 using MyApp.Core.UseCases;
@@ -256,6 +276,10 @@ public sealed class InMemoryMemoRepository : IMemoRepository
 ---
 
 # 7) 外側：Presenter（OutputPort実装）🎤✨
+
+![Presenter Handling](./picture/clean_cs_study_020_presenter_handling.png)
+
+
 
 ここでは「画面用モデル」を作る担当にします（いまは簡易版）😊
 
