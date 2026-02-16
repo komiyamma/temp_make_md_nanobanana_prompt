@@ -12,6 +12,8 @@
 
 ## 30.1 まず結論：跨ぎ更新は“気持ちいい”けど、地獄の入口💥😇
 
+![The Giant Transaction Monster](./picture/ab_tcb_cs_study_030_giant_transaction.png)
+
 ![ジャグリングの失敗](./picture/ab_tcb_cs_study_030_cross_agg.png)
 
 
@@ -47,6 +49,8 @@ graph TD
 
 ## 症状1：ロックが長くなって詰まる🔒🚧
 
+![Database Lock Traffic Jam](./picture/ab_tcb_cs_study_030_lock_traffic_jam.png)
+
 トランザクションが大きいほど、DBのロック保持時間が伸びます。
 すると、別ユーザーの操作が待たされて **体感がモッサリ**…🐢💦
 
@@ -69,6 +73,8 @@ graph TD
 ---
 
 ## 30.3 そもそも“集約”って、何を守る単位だっけ？🌳🔒
+
+![Aggregate Fortress](./picture/ab_tcb_cs_study_030_aggregate_fortress.png)
 
 集約（Aggregate）はざっくり言うと👇
 
@@ -97,6 +103,8 @@ graph TD
 
 ## 🚨 パターンB：集約が他集約の“中身”を直接参照してる🧷
 
+![Breaking Encapsulation Violation](./picture/ab_tcb_cs_study_030_direct_reference_violation.png)
+
 * `Order.Customer.Name` みたいに、他集約をオブジェクト参照して更新しがち
   → 密結合で壊れやすい🧨
 
@@ -112,6 +120,8 @@ graph TD
 ---
 
 ## 30.5 悪い例（気持ちはわかる）😇💥
+
+![External I/O Trap](./picture/ab_tcb_cs_study_030_io_trap.png)
 
 「注文確定」ユースケースで、全部いっぺんにやろうとすると…
 
@@ -146,6 +156,8 @@ public async Task ConfirmOrderAsync(Guid orderId)
 ---
 
 ## 30.6 じゃあどうするの？✅ “守るものだけ守って、残りは後でやる”戦略🌈
+
+![Separation Strategy](./picture/ab_tcb_cs_study_030_split_strategy.png)
 
 ポイントはこれ👇
 
@@ -236,6 +248,8 @@ public async Task PlaceOrderAsync(Guid orderId)
 ---
 
 ## 30.8 「でも支払い失敗したら？」→ だから状態が必要！🚦🥺
+
+![UI Status Feedback](./picture/ab_tcb_cs_study_030_status_flow_ui.png)
 
 ユーザー体験はこう作れます👇
 

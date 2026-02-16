@@ -13,6 +13,8 @@
 
 ### 取りこぼし（送れてないのに、DBは確定してる）🕳️💔
 
+![Lost Event Data](./picture/ab_tcb_cs_study_032_lost_event.png)
+
 たとえば「注文確定 → ‘支払い依頼イベント’ を送る」って流れで…
 
 1. DBに注文は保存できた ✅
@@ -22,6 +24,8 @@
 👉 すると「支払い依頼が飛ばないのに注文だけある」みたいな、地味にヤバい状態になります…😇
 
 ### 二重送信（二回送っちゃった）👯‍♀️📨
+
+![Double Submission Problem](./picture/ab_tcb_cs_study_032_double_trouble.png)
 
 逆に…
 
@@ -39,6 +43,8 @@
 
 
 **ポイントはこれだけ👇**
+
+![Atomic Transaction Bundle](./picture/ab_tcb_cs_study_032_transaction_bundle.png)
 
 * **業務データを保存するのと同じタイミングで**
 * **「あとで送るイベント」もDBに一緒に保存する**
@@ -158,6 +164,8 @@ public sealed class OutboxMessage
 
 ### ③ SaveChangesInterceptorで「イベント→Outbox」を自動追加 🪄📮
 
+![Interceptor Automation](./picture/ab_tcb_cs_study_032_interceptor_magic.png)
+
 ```csharp
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
@@ -207,6 +215,8 @@ Interceptorは DbContext 設定で登録できます（`AddInterceptors`）([Mic
 ---
 
 ## 32.8 OutboxDispatcher：DBから拾って送る係 🚚📨（超ミニ）
+
+![Dispatcher Process](./picture/ab_tcb_cs_study_032_dispatcher_truck.png)
 
 やることはこの3つだけ👇
 
@@ -280,6 +290,8 @@ sequenceDiagram
 
 ## 32.9 冪等性（Idempotency）：Outboxの相棒 🧡🔁
 
+![Idempotency Shield](./picture/ab_tcb_cs_study_032_idempotency_shield.png)
+
 ### 結論：イベント処理は「少なくとも1回」前提で考える 🧠
 
 イベント駆動は **at-least-once（重複があり得る）** を前提にするのが責任ある設計だよ、ってMicrosoftのガイダンスでも明言されています([Microsoft Learn][3])
@@ -295,6 +307,8 @@ flowchart LR
 ---
 
 ## 32.10 受け手を冪等にする：Inboxテーブル（最小）📥✅
+
+![Inbox Gatekeeper](./picture/ab_tcb_cs_study_032_inbox_gatekeeper.png)
 
 ### 仕組み（超シンプル）📌
 

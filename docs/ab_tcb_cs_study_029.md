@@ -10,6 +10,8 @@
 
 ## 29.1 まず、どんな事故が起きるの？🚑😵
 
+![Lost Update Scenario](./picture/ab_tcb_cs_study_029_lost_update_flow.png)
+
 たとえば「注文 Order」を、AさんとBさんが同時に編集したとするね👇
 
 1. Aさんが Order を開く（Status = Draft）👀
@@ -51,6 +53,8 @@ graph TD
 
 ## 29.3 RowVersion（rowversion）を使う理由🧱✨
 
+![RowVersion Auto-Update](./picture/ab_tcb_cs_study_029_rowversion_column.png)
+
 SQL Server の `rowversion` は、行が更新されるたびにDB側で自動的に変わる「版（バージョン）」みたいなもの📌
 EF Core では `byte[]` で扱うよ😊 ([Microsoft Learn][2])
 
@@ -66,6 +70,8 @@ EF Core では `byte[]` で扱うよ😊 ([Microsoft Learn][2])
 ここでは「カフェ注文ドメイン☕️🍰」の `Order`（集約ルート🌳）に追加するよ！
 
 ## ① エンティティ（集約ルート）に RowVersion を足す🧩
+
+![Order Entity with RowVersion](./picture/ab_tcb_cs_study_029_entity_structure.png)
 
 `Order` に `RowVersion` プロパティを追加するよ👇
 （**Domainを属性まみれにしたくない派**も多いので、ここでは “属性なし” で行くね😊）
@@ -148,6 +154,8 @@ Update-Database
 
 ## Console で最短実験（イメージ）🧪
 
+![DbContext Collision Experiment](./picture/ab_tcb_cs_study_029_collision_experiment.png)
+
 ```csharp
 using Microsoft.EntityFrameworkCore;
 
@@ -218,6 +226,8 @@ sequenceDiagram
 
 ## パターンA：ユーザーに “やり直し” してもらう（初心者に一番おすすめ）😊👍
 
+![User Retry Workflow](./picture/ab_tcb_cs_study_029_retry_pattern.png)
+
 * 競合したら保存をやめる✋
 * 最新を読み直して、もう一回入力してもらう🔄
 * UIメッセージをやさしくする💬🌸（後述！）
@@ -238,6 +248,8 @@ catch (DbUpdateConcurrencyException)
 ---
 
 ## パターンB：自動リトライ（条件つき）🔁⚠️
+
+![Data Merge Strategy](./picture/ab_tcb_cs_study_029_merge_logic.png)
 
 「同じ操作をもう一回やっても安全」なときだけね！
 
@@ -308,6 +320,8 @@ catch (DbUpdateConcurrencyException ex)
 ## 29.8 よくある落とし穴⚠️😵
 
 ## 落とし穴1：RowVersion を “集約ルート以外” に付けちゃう🙅‍♀️
+
+![Aggregate Root Placement](./picture/ab_tcb_cs_study_029_root_vs_child.png)
 
 基本は **集約ルート（Order）** につけるのがわかりやすいよ🌳
 （OrderItem に付けると、境界がぐちゃぐちゃになりがち😵）
