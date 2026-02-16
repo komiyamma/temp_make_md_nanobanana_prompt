@@ -64,7 +64,9 @@ CREATE INDEX IF NOT EXISTS idx_tasks_created_at ON tasks(created_at);
 
 ---
 
-## 3) ファイル配置（おすすめ）📁✨
+## 3) ファイル配置（おすすめ）
+
+![clean_ts_study_036_file_structure.png](./picture/clean_ts_study_036_file_structure.png)📁✨
 
 「SQLiteの詳細は外側に」って意識で、こんな感じがわかりやすいよ〜！
 
@@ -86,7 +88,9 @@ CREATE INDEX IF NOT EXISTS idx_tasks_created_at ON tasks(created_at);
 
 ---
 
-## 4) 実装：schema の適用（起動時に1回）🧾
+## 4) 実装：schema の適用（起動時に1回）
+
+![clean_ts_study_036_schema_application.png](./picture/clean_ts_study_036_schema_application.png)🧾
 
 まず schema.ts を作って「テーブルがなければ作る」だけやるよ〜！
 
@@ -118,7 +122,9 @@ export function applySchema(db: Database) {
 
 ---
 
-## 5) 実装：SQLiteTaskRepository（Portを満たす）🔌🧩
+## 5) 実装：SQLiteTaskRepository（Portを満たす）
+
+![clean_ts_study_036_row_conversion.png](./picture/clean_ts_study_036_row_conversion.png)🔌🧩
 
 ここが本丸だよ！🗡️✨
 ポイントは👇
@@ -239,7 +245,9 @@ export class SQLiteTaskRepository implements TaskRepository {
 
 ---
 
-## 6) トランザクションっていつ要るの？💳🔒
+## 6) トランザクションっていつ要るの？
+
+![clean_ts_study_036_transaction.png](./picture/clean_ts_study_036_transaction.png)💳🔒
 
 **1SQLだけなら基本いらない**ことが多いよ🙂
 でも👇みたいに「複数SQLをまとめて成功させたい」なら使う！
@@ -273,7 +281,9 @@ tx(taskParams, logParams);
 
 ---
 
-## 8) 簡単な結線（差し替えの瞬間）🏗️✨
+## 8) 簡単な結線（差し替えの瞬間）
+
+![clean_ts_study_036_repo_swap.png](./picture/clean_ts_study_036_repo_swap.png)🏗️✨
 
 InMemory から SQLite に変えるのは、理想はここだけ👇
 

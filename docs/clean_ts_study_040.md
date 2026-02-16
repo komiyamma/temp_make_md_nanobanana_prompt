@@ -16,7 +16,9 @@
 
 ---
 
-## “やりがちな事故”例💥（アンチパターン）
+## “やりがちな事故”例
+
+![clean_ts_study_040_hardcoded_connection.png](./picture/clean_ts_study_040_hardcoded_connection.png)💥（アンチパターン）
 
 ![DB Driver isolation (Driver/Config separation)](./picture/clean_ts_study_040_db_driver.png)
 
@@ -73,7 +75,9 @@ export class SqliteTaskRepository {
 
 ---
 
-## 正しい分離の形🏗️✨（登場人物を整理）
+## 正しい分離の形
+
+![clean_ts_study_040_factory_separation.png](./picture/clean_ts_study_040_factory_separation.png)🏗️✨（登場人物を整理）
 
 ### 置き場所のイメージ📁
 
@@ -83,7 +87,9 @@ export class SqliteTaskRepository {
 
 ---
 
-## ステップ1：外側に「DBを作るだけ」の工房を作る🛠️🗄️
+## ステップ1：外側に「DBを作るだけ」の工房を作る
+
+![clean_ts_study_040_db_factory.png](./picture/clean_ts_study_040_db_factory.png)🛠️🗄️
 
 ここは **Frameworks & Drivers 側**の責務ね😊
 
@@ -111,7 +117,9 @@ export function createSqliteDb(options?: { file?: string }): SqliteDb {
 
 ---
 
-## ステップ2：Repositoryは「接続済みDB」を受け取るだけにする🎁✨
+## ステップ2：Repositoryは「接続済みDB」を受け取るだけにする
+
+![clean_ts_study_040_repo_injection.png](./picture/clean_ts_study_040_repo_injection.png)🎁✨
 
 ```ts
 // adapters/outbound/SqliteTaskRepository.ts
@@ -167,7 +175,9 @@ const taskRepo = new SqliteTaskRepository(db);
 
 ---
 
-## テストが気持ちよくなる例🧪✨（`:memory:` 最高！）
+## テストが気持ちよくなる例
+
+![clean_ts_study_040_memory_test.png](./picture/clean_ts_study_040_memory_test.png)🧪✨（`:memory:` 最高！）
 
 ```ts
 import { createSqliteDb } from "../src/frameworks/db/sqliteClient";

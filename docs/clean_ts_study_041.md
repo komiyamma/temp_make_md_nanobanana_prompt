@@ -12,7 +12,9 @@
 
 ---
 
-## まず結論：Configの鉄則3つ🧠📌
+## まず結論：Configの鉄則3つ
+
+![clean_ts_study_041_config_rules.png](./picture/clean_ts_study_041_config_rules.png)🧠📌
 
 1. **Configは外側で読む**（起動時・Composition Root）🚪
 2. **内側はConfigを知らない**（`process.env`禁止！）🙅‍♀️
@@ -22,7 +24,9 @@
 
 ---
 
-## なんで危ないの？よくある事故集😇💥
+## なんで危ないの？よくある事故集
+
+![clean_ts_study_041_env_accident.png](./picture/clean_ts_study_041_env_accident.png)😇💥
 
 ### 事故①：UseCaseが `process.env` を直読みする
 
@@ -108,7 +112,9 @@ NODE_ENV=development
 
 ---
 
-## 3) 外側でConfigを“型チェック”する（Zodで安心）🧪✨
+## 3) 外側でConfigを“型チェック”する（Zodで安心）
+
+![clean_ts_study_041_zod_validation.png](./picture/clean_ts_study_041_zod_validation.png)🧪✨
 
 ```ts
 // src/main/config/env.ts
@@ -137,7 +143,9 @@ Zodは「スキーマ定義して検証する」ライブラリで、`parse/safe
 
 ---
 
-## 4) どこへ渡す？“必要最小限”注入の例💉🍱
+## 4) どこへ渡す？“必要最小限”注入の例
+
+![clean_ts_study_041_minimal_injection.png](./picture/clean_ts_study_041_minimal_injection.png)💉🍱
 
 ```ts
 // src/main/di/makeApp.ts（イメージ）
@@ -168,7 +176,9 @@ export function makeApp(config: AppConfig) {
 
 ---
 
-## テストが楽になる理由🧪🎉
+## テストが楽になる理由
+
+![clean_ts_study_041_easy_testing.png](./picture/clean_ts_study_041_easy_testing.png)🧪🎉
 
 UseCaseがConfig直読みだと、テスト前に `process.env` を整える儀式が必要になるけど…
 この形なら **ただの引数**で済むよ😊
