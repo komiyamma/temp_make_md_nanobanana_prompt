@@ -7,6 +7,8 @@
 
 ## 1) ViewModelってなに？Responseと何が違うの？🤔💡
 
+![Response vs ViewModel](./picture/clean_ts_study_033_response_vs_viewmodel.png)
+
 * **UseCaseのResponse**：アプリの中心が返す「内側基準の結果」📤
 
   * 例：`completed: boolean`、`createdAt: Date` みたいな“意味”中心
@@ -20,6 +22,8 @@
 ---
 
 ## 2) ViewModel設計のコツ（これ守ると強い）💪✨
+
+![4 Rules of ViewModel](./picture/clean_ts_study_033_four_rules.png)
 
 ### ✅ ルール1：ViewModelは“画面の契約”📜
 
@@ -35,6 +39,8 @@ UI側は ViewModel だけ見れば描画できるのが理想！
 → UIに散らすと、画面が増えた瞬間に同じロジックが増殖するよ〜🌀
 
 ### ✅ ルール3：画面の“判断”に必要なフラグを入れる🚦
+
+![Flag Logic vs UI If-Hell](./picture/clean_ts_study_033_flag_logic.png)
 
 例：
 
@@ -72,6 +78,8 @@ CSSクラス名とか、UI用の区分値とか、入れてOK！
 
 ## 4) ViewModelの型を定義しよう（Task一覧）🧱✨
 
+![TaskListViewModel Structure](./picture/clean_ts_study_033_viewmodel_structure.png)
+
 ```ts
 // src/interface-adapters/view-models/taskListViewModel.ts
 
@@ -105,6 +113,8 @@ export type TaskListViewModel = Readonly<{
 ---
 
 ## 5) Presenterで Response → ViewModel に変換する🎨➡️📦
+
+![Presenter Factory](./picture/clean_ts_study_033_presenter_factory.png)
 
 ここでは例として `ListTasksResponse` を受け取って変換するよ〜！
 
@@ -160,6 +170,8 @@ export function presentTaskList(response: ListTasksResponse): TaskListViewModel 
 
 ## 6) Presenterのテストを書こう（画面が変わっても安心）🧪✨
 
+![Presenter Test Lab](./picture/clean_ts_study_033_presenter_test_lab.png)
+
 「表示用の変換」は壊れやすいから、ここはテスト相性よすぎる😳💕
 
 ```ts
@@ -195,6 +207,8 @@ describe("presentTaskList", () => {
 ---
 
 ## 7) ありがちな事故集（先に潰そ〜）🚑💦
+
+![Entity Leak Accident](./picture/clean_ts_study_033_entity_leak_accident.png)
 
 * ❌ **EntityをそのままViewに渡す**
   → UI都合が中心に逆流して、変更が地獄に😱

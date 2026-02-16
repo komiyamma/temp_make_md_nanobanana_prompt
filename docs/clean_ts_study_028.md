@@ -15,12 +15,16 @@
 
 ## 2) まず大事な前提：Portは“契約”📜🤝
 
+![Port as a Contract](./picture/clean_ts_study_028_contract_handshake.png)
+
 Hexagonal（Ports & Adapters）では、Portは「アプリ中心が外界に求める契約」で、外側はそれを満たす（実装する）側だよ〜って考え方が基本😊🔌
 この発想があるから、DBやフレームワークを差し替えやすくなるんだ✨ ([AWS Documentation][1])
 
 ---
 
 ## 3) Portが汚れてると起きる“あるある”😇🧨
+
+![Dirty Port Symptoms](./picture/clean_ts_study_028_dirty_symptoms.png)
 
 Portが境界として微妙になると、こんな症状が出るよ👇
 
@@ -57,6 +61,8 @@ Portの名前は **技術じゃなくて、アプリが欲しい能力** を表�
 
 ### 判定の超かんたんルール✨
 
+![Naming Judgment Scale](./picture/clean_ts_study_028_naming_scale.png)
+
 Port名を見て、こう言える？👇
 
 * 「DBのことは忘れて説明できる」→ ✅内側っぽい
@@ -65,6 +71,8 @@ Port名を見て、こう言える？👇
 ---
 
 ## 5) 責務チェック：Portのメソッドは“UseCaseから逆算”✂️🎬
+
+![Fat vs Focused Port](./picture/clean_ts_study_028_fat_vs_focused.png)
 
 Portは **UseCaseが必要な分だけ** を持つのが基本だよ😊
 （巨大な“万能Repository”は、境界を溶かしがち…🫠）
@@ -97,6 +105,8 @@ export interface SqlTaskRepository {
 
 ## 6) “Portの入出力”チェック：DBの型を入れない📦🚫
 
+![Port Input/Output Patterns](./picture/clean_ts_study_028_input_patterns.png)
+
 Portの入出力は、基本こう考えると事故りにくいよ👇😊
 
 ### パターンA：Entityをそのまま使う（今回のミニアプリ向け）🧱✨
@@ -112,6 +122,8 @@ Portの入出力は、基本こう考えると事故りにくいよ👇😊
 ---
 
 ## 7) エラー表現チェック：Portのエラーが“技術語”になってない？⚠️🧯
+
+![Error Translation Mask](./picture/clean_ts_study_028_error_mask.png)
 
 Portが返す失敗が `SqlError` とか `AxiosError` とかだと、中心が外側に引っ張られるよ😵‍💫
 
@@ -134,6 +146,8 @@ export interface TaskStore {
 ---
 
 ## 8) 実戦：いまあるPortを“境界線チェック”して直す🧼🔧✨
+
+![Audit Process Steps](./picture/clean_ts_study_028_audit_process.png)
 
 ここから手を動かすよ〜！🖐️💕
 

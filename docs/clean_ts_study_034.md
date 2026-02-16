@@ -7,6 +7,8 @@
 
 ## 1) まず最重要：失敗は“2種類”に分ける🧠✨
 
+![Error Translation Booth](./picture/clean_ts_study_034_translation_booth.png)
+
 ![Failure types classification (Domain vs Technical)](./picture/clean_ts_study_034_error_transform.png)
 
 ```mermaid
@@ -41,6 +43,8 @@ HTTPのステータスコード自体の意味は、HTTP仕様（RFC 9110）で�
 
 ## 2) 外側の“標準の形”を決める：Problem Details（RFC 9457）🧾✨
 
+![Problem Details Card](./picture/clean_ts_study_034_problem_details_card.png)
+
 ここで最新寄りの鉄板が **RFC 9457 “Problem Details for HTTP APIs”** だよ！
 これ、昔よく使われたRFC 7807を置き換える（obsoletes）仕様ね📌([RFCエディタ][2])
 
@@ -57,6 +61,8 @@ HTTPのステータスコード自体の意味は、HTTP仕様（RFC 9110）で�
 ---
 
 ## 3) 変換テーブルを作ろう（これが“境界の翻訳辞書”）📚➡️🌐
+
+![Error Mapping Table](./picture/clean_ts_study_034_mapping_table.png)
 
 ミニTaskアプリなら、内側のエラーは例えばこんな想定になるよね😊
 
@@ -75,6 +81,8 @@ HTTPステータスの一覧や意味はMDNが最新更新されてて見やす�
 ---
 
 ## 4) 実装：内側のエラー（DomainError）を“判別しやすい形”で持つ🧩
+
+![Discriminated Union Tags](./picture/clean_ts_study_034_union_tags.png)
 
 ここ、TypeScriptの得意技🔥
 **判別可能なUnion（discriminated union）**で作ると、翻訳が超ラクになるよ😊✨
@@ -115,6 +123,8 @@ RFC 9457 は「新しい独自フォーマット乱立」を避けたい思想�
 ---
 
 ## 6) 実装：翻訳関数（DomainError → HTTP + ProblemDetails）🔁✨
+
+![Translator Machine](./picture/clean_ts_study_034_translator_machine.png)
 
 ここがこの章の“主役”！🎬
 
@@ -228,6 +238,8 @@ export async function createTaskController(req: any, res: any) {
 
 ## 8) 想定外エラー（技術失敗）はどう返す？🧯💥
 
+![Security Mask for 500 Errors](./picture/clean_ts_study_034_security_mask.png)
+
 基本はこう👇
 
 * クライアントには **500**（または一時障害なら503）
@@ -239,6 +251,8 @@ HTTPのステータスコードの意味を守るのが大事だよ〜📚([RFC�
 ---
 
 ## 9) エラーの“原因”を残す：`Error.cause` が便利🧠🧵
+
+![Error Cause Chain](./picture/clean_ts_study_034_error_chain.png)
 
 境界をまたぐ時、原因を握りつぶすとデバッグ地獄😇
 JS/TSの `Error.cause` が超使えるよ！（MDNで仕様＆サポート状況まとまってる）📚✨([MDNウェブドキュメント][5])
