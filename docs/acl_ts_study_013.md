@@ -9,6 +9,8 @@
 
 # 1. そもそも「コード値」ってなに？なんで危険？😵‍💫💥
 
+![Mystery Code Chaos](./picture/acl_ts_study_013_mystery_code.png)
+
 外部APIあるある👇
 
 * `stu_kbn: "1"` ← これ、見ても意味わからん😂
@@ -34,6 +36,8 @@ flowchart LR
 ---
 
 # 2. 2026のTypeScript的に「enum」はどう扱う？🤔🧩
+
+![Const Object Strategy](./picture/acl_ts_study_013_const_object.png)
 
 TypeScriptの`enum`は、TypeScriptの中でも珍しく **実行時（JavaScript）に残る機能** です📦（＝型だけじゃない）([TypeScript][1])
 その結果、バンドルが増えたり、ツリーシェイクされにくかったりする話が出がちです🌲✂️（実例解説も多い）([LINE ENGINEERING][2])
@@ -86,6 +90,8 @@ export function isExternalStudentTypeCode(v: string): v is ExternalStudentTypeCo
 ```
 
 ## 4.2 変換テーブル（対応表）を作る📋✨
+
+![Translation Map Structure](./picture/acl_ts_study_013_translation_map.png)
 
 ```ts
 // acl/studentDirectory/codes/studentTypeMap.ts
@@ -180,6 +186,8 @@ if (student.type === StudentType.Grad) {
 
 # 7. “表示名”はドメインに入れない（UI用マップで分離）🧼🧱
 
+![UI Label Separation](./picture/acl_ts_study_013_ui_separation.png)
+
 ドメインは **意味（概念）** だけ持てばOK🙆‍♀️
 「日本語ラベル」はUIの都合なので別に持つのが安全です✨
 
@@ -212,6 +220,8 @@ export const StudentTypeLabel: Record<StudentTypeUnion, string> = {
 ---
 
 # 8. 変換テーブルの管理術（増えても地獄にならない）🗃️🧯
+
+![Translation Table Filing](./picture/acl_ts_study_013_table_filing.png)
 
 コード値変換は増えやすいので、ルールを作るのが勝ちです🏆
 
@@ -258,6 +268,8 @@ export const StudentTypeLabel: Record<StudentTypeUnion, string> = {
 
 # 11. テストの超ミニ例（変換はテスト効率が最強）🧪✨
 
+![Simple Translation Test](./picture/acl_ts_study_013_simple_test.png)
+
 ※テスト環境の話は後の章で本格化するけど、雰囲気だけ先に🌸
 
 ```ts
@@ -282,6 +294,8 @@ describe("toStudentType", () => {
 ---
 
 # 12. AI（Copilot/Codex）に頼むと速いところ🤖⚡
+
+![AI Map Generator](./picture/acl_ts_study_013_ai_generator.png)
 
 やってほしいことがハッキリしてるので、AIが得意です✨
 たとえばこんな依頼が強い👇

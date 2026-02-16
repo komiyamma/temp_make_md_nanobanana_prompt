@@ -10,6 +10,8 @@
 
 # 14.1 「パース（整形）」ってなに？バリデーションと何が違うの？🤔🧩
 
+![Dirty Data Visualization](./picture/acl_ts_study_014_dirty_laundry.png)
+
 外部から来る値って、だいたいこんな感じで“汚れて”ます👇💦
 
 * `"  １２３  "`（空白＋全角）
@@ -28,6 +30,8 @@
 ---
 
 # 14.2 なんで「整形」はACLに置くの？（内側を汚さないため）🧱🌊
+
+![Logic Pollution Warning](./picture/acl_ts_study_014_pollution_signs.png)
 
 外部のクセ（全角、謎フォーマット、null地獄…）を、内側（ドメイン）に持ち込むと…
 
@@ -77,6 +81,8 @@ flowchart TD
 
 # 14.4 パース設計のおすすめ型：3段ロケット 🚀🚀🚀
 
+![3-Stage Rocket](./picture/acl_ts_study_014_three_stage_rocket.png)
+
 外部入力を受け取ったら、ACLでこう流すのがめちゃ安定するよ👇
 
 1. **Raw（生）**：外部から来たまま（`unknown`）🪨
@@ -122,6 +128,8 @@ flowchart LR
 # 14.6 TypeScriptで「整形専用関数セット」を作る 🧰🧼
 
 ## 14.6.1 まずはResult型（失敗を安全に返す）📦
+
+![Result Pattern Box](./picture/acl_ts_study_014_result_pattern.png)
 
 「throwしまくり」でもいいけど、初心者ほど追いにくいので、まずは **Result** でやると迷子になりにくいよ 🧭✨
 
@@ -180,6 +188,8 @@ export function parseIsoDateStrict(input: string): Result<Date, string> {
 ---
 
 # 14.7 「DTO → Parsed DTO」：ACL内に“整形済みモデル”を作る 📦🧼
+
+![Shapeless Raw vs Rigid Parsed](./picture/acl_ts_study_014_shapeless_vs_rigid.png)
 
 外部DTOは信用しないので、入力は `unknown` から始めるのが安全 ✅
 （外部クライアントの戻り型があっても、実体が崩れることは普通にある😇）
@@ -295,6 +305,8 @@ flowchart TD
 
 # 14.8 もう一段ラクする：Zodで「整形＋型チェック」をまとめる（選択肢）🧩✨
 
+![Zod Washing Station](./picture/acl_ts_study_014_zod_wash.png)
+
 「手書きパース、ちょい長い〜🥺」ってなるよね。
 そこで有名なのが **Zod**。スキーマで型チェックして、前処理（preprocess）や変換もできるよ 🧪🛠️ ([GitHub][2])
 
@@ -349,6 +361,8 @@ export function parseStudentByZod(dto: unknown): Result<ParsedByZod, string> {
 ---
 
 ## 14.9 日時はとくに注意：Dateの“曖昧解釈”を避ける ⏰😵‍💫
+
+![Date Ambiguity](./picture/acl_ts_study_014_date_confusion.png)
 
 * `"2026/01/29"` と `"01/02/2026"` とか、地域で意味が変わるよね 🌍💥
 * だからACLでは **「仕様で確定した形式だけOK」** にしよ！✅

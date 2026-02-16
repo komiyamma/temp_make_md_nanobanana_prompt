@@ -54,6 +54,8 @@ flowchart TD
 
 # 2) なぜ分けるの？（分けないと起きる事故😇）
 
+![Generic Error Chaos](./picture/acl_ts_study_016_generic_error_chaos.png)
+
 「全部 throw Error でいいじゃん😗」ってやると、後でこうなる👇
 
 * 画面側が「残高不足」も「タイムアウト」も同じ扱いになって、メッセージが雑になる😵
@@ -66,6 +68,8 @@ flowchart TD
 ---
 
 # 3) ざっくり分類表（まずはこれだけ覚える）🧾✨
+
+![Sorting Errors](./picture/acl_ts_study_016_sorting_errors.png)
 
 | 起きたこと      | これは何？     | 内側に持ち込む？        | 典型対応      |
 | ---------- | --------- | --------------- | --------- |
@@ -101,6 +105,8 @@ mindmap
 ---
 
 # 4) TypeScriptで「分離」を作る（discriminated union）🧩✨
+
+![Discriminated Union Tag](./picture/acl_ts_study_016_kind_tag.png)
 
 ここからは **型でガードする** よ💪😺
 コツは、全部に `kind` を付けること！（判定が超ラクになる🪄）
@@ -156,6 +162,8 @@ export type ExternalError =
 
 # 5) 「結果の型」をそろえる（Result型）📦✨
 
+![Result Container](./picture/acl_ts_study_016_result_container.png)
+
 throw でもいいけど、初心者には **Result型** が超わかりやすいよ😺
 （成功/失敗が型で見える👀）
 
@@ -172,6 +180,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 ---
 
 # 6) 実例：外部APIクライアントは「外部エラー」だけ返す🌩️➡️📦
+
+![External Client Outpost](./picture/acl_ts_study_016_client_outpost.png)
 
 例として「学生情報API」を叩くクライアントを作るよ📡
 
@@ -236,6 +246,8 @@ export async function fetchStudentDto(studentId: string): Promise<Result<Student
 
 # 7) ドメイン側は「ドメインエラー」だけを返す📘✨
 
+![Domain Scholar Isolation](./picture/acl_ts_study_016_domain_scholar.png)
+
 ドメインの処理（例：決済できるか判定）は、外部の事情を知らないのが理想🧼🛡️
 
 ```ts
@@ -266,6 +278,8 @@ export function ensureEnoughBalance(
 ---
 
 # 8) “同じ失敗っぽい”クイズ（分類トレーニング）🧠📝
+
+![Error Quiz Cards](./picture/acl_ts_study_016_quiz_cards.png)
 
 次の「失敗」はどっち？👇（ドメイン📘 / 外部🌩️ / 予期しない🧨）
 

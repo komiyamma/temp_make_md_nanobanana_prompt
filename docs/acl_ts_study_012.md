@@ -15,6 +15,8 @@ ACLで一番おいしいのはここ🍰💕
 
 ## 外側の言葉が入るとどうなる？😵‍💫
 
+![Language Filter](./picture/acl_ts_study_012_language_filter.png)
+
 * コードが読めない（`stu_kbn`って何…？）👻
 * 仕様変更で内側まで巻き添え💥
 * 新しい人が参加すると詰む🧩💦
@@ -48,6 +50,8 @@ graph TD
 ---
 
 # 12-2. 命名変換は「翻訳辞書」を作るのが最強🗂️📝✨
+
+![Translation Dictionary](./picture/acl_ts_study_012_translation_dictionary.png)
 
 命名変換って、気合でやるとブレます😇
 そこで **翻訳辞書（マッピング表）** を作ります📘➡️📗
@@ -188,6 +192,8 @@ export const translateStudentProfile = (dto: StudentDirectoryDto) => {
 
 # 12-4. 構造変換②：配列を “扱いやすい辞書” にする📚➡️🗃️✨
 
+![Array to Map Transformation](./picture/acl_ts_study_012_array_to_map.png)
+
 外部が配列で返してきても、内側は **検索しやすい形** にしてOKです🔎💕
 
 例：外側がこう👇
@@ -230,6 +236,8 @@ export const translateDepartmentMap = (dto: DepartmentListDto) => {
 
 # 12-5. 構造変換③：“分かれている/くっついている” を整える🧩➡️🧼✨
 
+![Field Merge](./picture/acl_ts_study_012_field_merge.png)
+
 外部APIあるある😇
 
 * `first_name` と `last_name` が別れてる
@@ -251,6 +259,8 @@ export const makeDisplayName = (kanji: string, kana?: string) => {
 ---
 
 # 12-6. 「どこまで変換する？」の線引きルール✍️🧠
+
+![Transformation Scope Zones](./picture/acl_ts_study_012_scope_zones.png)
 
 ## やっていい変換✅✨（この章のメイン）
 
@@ -298,6 +308,8 @@ src/
 
 # 12-8. テストで「翻訳が壊れた」を秒速で検知する🧪🚨✨
 
+![Transformation Test Alarm](./picture/acl_ts_study_012_test_alarm.png)
+
 命名・構造変換は **テストがめちゃ効きます**🔥
 （外部が勝手に仕様変えても、ここで止まる🛑）
 
@@ -344,6 +356,8 @@ describe("translateStudentProfile", () => {
 ---
 
 # 12-9. AI拡張で爆速にするコツ🤖⚡（でも主導権はこっち🛡️）
+
+![AI Drafter](./picture/acl_ts_study_012_ai_drafter.png)
 
 AIに投げるときは「外側→内側の変換仕様」を具体的に渡すと強いです💪✨
 
