@@ -73,6 +73,8 @@ flowchart TD
 
 ## 16-3. 4分類を“やさしく”定義するよ 📘😊
 
+![The Four Error Realms](./picture/acl_cs_study_016_four_error_realms.png)
+
 ### ① ドメインエラー（業務ルール違反）🧼📛
 
 **例**
@@ -155,6 +157,8 @@ flowchart TD
 
 ## 16-4. 一時的（Transient） vs 恒久的（Permanent）を見分けるコツ 🔁🧱
 
+![Transient vs Permanent Errors](./picture/acl_cs_study_016_transient_vs_permanent.png)
+
 ### 一時的（リトライ候補）になりやすい例 🔁⏳
 
 * タイムアウト⏰
@@ -172,6 +176,8 @@ flowchart TD
 ---
 
 ## 16-5. “分類フローチャート”を頭に入れる 🗺️✨
+
+![Error Sorting Machine](./picture/acl_cs_study_016_error_sorting_machine.png)
 
 困ったらこの順番👇
 
@@ -210,6 +216,8 @@ flowchart TD
 * “一時的か？”を **プロパティで持つ**（毎回悩まない）✅
 
 ### 16-6-1. エラーの共通インターフェース（または基底record）を作る 🧱
+
+![Error Class Hierarchy](./picture/acl_cs_study_016_error_hierarchy.png)
 
 ```csharp
 namespace Acme.Shop.Errors;
@@ -281,6 +289,8 @@ public readonly record struct Result<T>(T? Value, AppError? Error)
 ---
 
 ## 16-7. ハンズオン：HttpClientの失敗を「分類」してエラー型にする 🌐🧱
+
+![Http Exception Mapper](./picture/acl_cs_study_016_http_exception_mapper.png)
 
 HttpClientの世界では、タイムアウト等で `TaskCanceledException` が出ることがあるよ⏰
 （タイムアウト時の例外の出方は実装やバージョンで差があるので、ここは公式仕様を踏まえて扱うのが安全）([Microsoft Learn][2])
@@ -390,6 +400,8 @@ public static class HttpFailureMapper
 ---
 
 ## 16-9. エラー分類表（手で作ると強くなる）🧾💪
+
+![Error Taxonomy Board](./picture/acl_cs_study_016_error_taxonomy_board.png)
 
 教材の題材（ミニEC/フリマ）を想像して、こんな表を作ってみよう👇
 
