@@ -26,6 +26,8 @@ Visual Studio 2026 は AI 統合が強めになってる、って公式にも書
 
 ## 2) ADRを書いた方がいい判断の特徴👑✅（まずはコレだけ覚えて！）
 
+![ADR判断の警告サイン](./picture/adr_cs_study_003_warning_signs.png)
+
 ![](./picture/adr_cs_study_003_when_to_write.png)
 
 「ADR向き」かどうかは、だいたいこの3つで当たるよ🎯
@@ -65,6 +67,8 @@ ADRは「便利」だけど、何でもかんでも書くと疲れちゃう😂�
 
 ## 4) 迷ったらコレ！「書きどき5チェック」✅✅✅✅✅
 
+![書きどき判定フローチャート](./picture/adr_cs_study_003_decision_flowchart.png)
+
 YESが多いほど、ADRを書こう！📝✨
 
 1. その判断、あとで変えると痛い？（移行コスト・互換性・作り直し）💥
@@ -89,6 +93,8 @@ flowchart TD
 ---
 
 ## 5) さらに実戦的！「ADR向き度スコア」📊✨
+
+![ADR向き度温度計](./picture/adr_cs_study_003_thermometer.png)
 
 ![](./picture/adr_cs_study_003_scorecard.png)
 
@@ -144,6 +150,8 @@ Spotify の記事でも「大きい変更が終わったらADRで決定を残す
 
 ## 7) 「判断がデカすぎる😵‍💫」を分割するコツ✂️🧩
 
+![判断のケーキカット](./picture/adr_cs_study_003_cake_cutting.png)
+
 初心者が一番ハマるやつ！ここ大事！📌✨
 
 ### 分割の基本ルール👇
@@ -187,6 +195,8 @@ mindmap
 ---
 
 ## 8) 迷ったときの救済策✨「15分ADR」📝⏱️
+
+![15分ADR](./picture/adr_cs_study_003_stopwatch_draft.png)
 
 グレーな判断は、まずこれでOK！
 Microsoft も「ADRは追記型（append-only）で維持する」って考え方を紹介してるよ📌([Microsoft Learn][5])

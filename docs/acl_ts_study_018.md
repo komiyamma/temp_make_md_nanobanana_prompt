@@ -10,6 +10,8 @@
 
 # 1) なんで「マッピングのユニットテスト」が最強なの？🤔💥
 
+![マッピング関数の厳格なテスト](./picture/acl_ts_study_018_unit_test_shield.png)
+
 ACLの仕事って、ざっくり言うとこれ👇
 
 * 外の言葉（DTO）を、内側の言葉（ドメイン）に翻訳する🗣️➡️📘
@@ -74,6 +76,8 @@ DTO→ドメインの変換は、だいたいこの観点を押さえると強�
 
 # 4) ハンズオン：DTO→ドメイン変換を「純粋関数」にしてテストする🧪✨
 
+![純粋関数フロー](./picture/acl_ts_study_018_pure_function_flow.png)
+
 ここから、**小さくて強い形**を作るよ🎮🧱
 ポイントはこれ👇
 
@@ -113,6 +117,8 @@ flowchart TD
 ---
 
 # 6) 実装：最小のResult型＆ValueObject（超シンプル版）🧩✨
+
+![Value Object生成](./picture/acl_ts_study_018_vo_creation.png)
 
 ## Result型（成功/失敗を型で表す）📦
 
@@ -221,6 +227,8 @@ export const mapStudentDtoToStudent = (dto: StudentDto): Result<Student, Mapping
 # 8) テスト：Vitestで「変換が壊れてない」ことを証明する🧪🔥
 
 ## (A) テストデータビルダー（超おすすめ）🧁✨
+
+![Test Data Builder](./picture/acl_ts_study_018_test_data_builder.png)
 
 「毎回DTOを手書き」すると、テストが読みにくくなるよ😵‍💫
 なので、**正しいDTOを1個作る関数**を用意して、必要なところだけ上書きするのがラク👍💕
@@ -334,6 +342,8 @@ describe("mapStudentDtoToStudent - code mapping", () => {
 
 # 10) 「パラメータ化テスト」でスッキリ書く✨🧪
 
+![パラメータ化テスト](./picture/acl_ts_study_018_parameterized_test.png)
+
 似たテストを増やすときは `test.each` が便利だよ📚💕
 
 ```ts
@@ -363,6 +373,8 @@ describe("mapStudentDtoToStudent - invalid updated_at", () => {
 
 # 11) テストが弱くなる「やりがち」集😵‍💫⚠️
 
+![脆いテストと強いテスト](./picture/acl_ts_study_018_brittle_vs_robust.png)
+
 * DTOのフィールドを全部assertして、変更に弱い💥
   → **意味ある変換だけ**を押さえる（代表値）✅
 * 例外投げっぱなしで、失敗理由が曖昧😇
@@ -373,6 +385,8 @@ describe("mapStudentDtoToStudent - invalid updated_at", () => {
 ---
 
 # 12) 生成AIの使い方（この章で効くやつ）🤖✨
+
+![AIテスト生成](./picture/acl_ts_study_018_ai_test_gen.png)
 
 ## 使いどころ①：観点の洗い出し📝💡
 
