@@ -9,6 +9,8 @@
 
 ## 1) どうして分けるの？🤔💭（超ざっくり結論）
 
+![Dirty DTO vs Clean UseCase](./picture/clean_cs_study_030_muddy_boot_dto.png)
+
 ![API DTO vs Request Model](./picture/clean_cs_study_030_api_dto.png)
 
 分けないと、こんな事故が起きがちです💥
@@ -23,6 +25,8 @@
 ---
 
 ## 2) 今日の主役3人🍙（この3つを分ける！）
+
+![The Trio of Data](./picture/clean_cs_study_030_trio_characters.png)
 
 ここ、覚えたら勝ちです😊✨
 
@@ -50,6 +54,8 @@ Microsoftの参照アプリ（eShopOnWeb）も、Clean Architectureの構成で�
 
 ## 3) “分けない”とどう壊れる？🥲（NG例）
 
+![Puppet UseCase](./picture/clean_cs_study_030_puppet_usecase.png)
+
 たとえば、UseCaseがAPI DTOを直接受け取ると…
 
 ```csharp
@@ -69,6 +75,8 @@ public sealed class CreateMemoUseCase
 ---
 
 ## 4) OKの形✅（今日のゴール）
+
+![Data Relay Race](./picture/clean_cs_study_030_relay_race.png)
 
 流れはこれだけ💡
 
@@ -124,6 +132,8 @@ public sealed record CreateMemoRequest(
 ```
 
 ### 5-3. 変換（Web側に置くのが基本）🔁
+
+![Converter Workshop](./picture/clean_cs_study_030_converter_workshop.png)
 
 DTOとRequest、**両方の型が登場する場所**が変換の家です🏠
 （＝Webプロジェクトの Adapter）
@@ -190,6 +200,8 @@ app.MapPost("/api/memos", async (
 ---
 
 ## 6) バリデーションはどこでやるの？🛑✨（超大事）
+
+![Two Checkpoints](./picture/clean_cs_study_030_validation_checkpoints.png)
 
 ここで迷子になりがちなので、ルールを固定します📌
 

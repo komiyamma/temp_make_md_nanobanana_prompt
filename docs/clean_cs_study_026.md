@@ -15,6 +15,8 @@
 
 ## まず大前提：内側は外側を知らない 🧠⭕
 
+![Inner doesn't know Outer](./picture/clean_cs_study_026_clean_room_guard.png)
+
 クリーンアーキの鉄則として、**内側（Core）は外側（Web/DB/UI）の名前を出しちゃダメ**だよ〜🚫
 だから **「HTTP 404」とか「ActionResult」とかをCoreに持ち込むのはNG**🙅‍♀️
 （Output Portを使って、外側が実装するのが定石） ([blog.cleancoder.com][2])
@@ -22,6 +24,8 @@
 ---
 
 ## 失敗には2種類あるよ ⚠️🌸
+
+![Failure Sorting](./picture/clean_cs_study_026_failure_sorting.png)
 
 ここ、めっちゃ大事！✨
 
@@ -103,6 +107,8 @@ public sealed record Error(string Code, string Message, ErrorType Type)
 
 ### 2) Result（成功/失敗）を作る（Coreに置く）🎁
 
+![Result<T> Box](./picture/clean_cs_study_026_result_box.png)
+
 ```csharp
 namespace MyApp.Core;
 
@@ -131,6 +137,8 @@ public readonly struct Result<T>
 ---
 
 ## UseCaseでの流し方：OutputPortに「成功」と「失敗」を渡す 🎤➡️
+
+![Output Port Fork](./picture/clean_cs_study_026_output_port_fork.png)
 
 たとえば「メモ作成」UseCaseでいくね📝💕
 
@@ -249,6 +257,8 @@ ASP.NET Core では **ProblemDetails を統一フォーマットとして使え�
 
 ### Presenter例（外側）：Error → HTTP/ProblemDetails（ここでやる！）
 
+![Presenter Translation Booth](./picture/clean_cs_study_026_presenter_translation_booth.png)
+
 ```csharp
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -318,6 +328,8 @@ public sealed class CreateMemoPresenter : ICreateMemoOutputPort
 ---
 
 ## よくある事故パターン（あるある😭）🩺
+
+![ActionResult Leak](./picture/clean_cs_study_026_actionresult_leak.png)
 
 * **UseCaseが `ActionResult` を返す** → 外側依存が侵食😵（アウト）
 * **Coreで `HttpRequestException` や `DbUpdateException` をそのまま返す/投げる** → 外部詳細が漏れる💦

@@ -7,6 +7,8 @@
 
 ## この章のゴール 🎯✨
 
+![Controller Diet](./picture/clean_cs_study_029_controller_diet.png)
+
 できるようになったら勝ち〜！😆🎉
 
 * Controllerの **やること／やらないこと** を説明できる📣
@@ -16,6 +18,8 @@
 ---
 
 ## まず結論：Controllerの仕事はコレだけ！🫶✨
+
+![Controller Relay Baton](./picture/clean_cs_study_029_relay_baton.png)
 
 ![薄いControllerの仕事](./picture/clean_cs_study_029_thin_controller.png)
 
@@ -42,6 +46,8 @@
 
 ## なんでControllerを薄くするの？🥺👉💡
 
+![Controller Collapse](./picture/clean_cs_study_029_controller_collapse.png)
+
 Controllerが太ると、こうなるよ…😇💦
 
 * 画面（HTTP）変更のたびにロジックが壊れる😵‍💫
@@ -55,6 +61,8 @@ Controllerが太ると、こうなるよ…😇💦
 ---
 
 ## “薄いController”の黄金テンプレ 🏆✨
+
+![Minimal API Actors Lineup](./picture/clean_cs_study_029_actors_lineup.png)
 
 ### 🌟 パターンA：Minimal APIでのController（Endpoint）版（おすすめ）
 
@@ -171,6 +179,8 @@ app.MapPost("/memos", async (
 
 ## Validationはどこでやる？🛑🤔（Controllerが太る最大原因！）
 
+![Validation Gates](./picture/clean_cs_study_029_validation_gates.png)
+
 ここ超大事〜！💘
 
 ### ✅ ルール：Validationを2種類に分ける ✂️✨
@@ -198,6 +208,8 @@ Controller内でこれが出たら黄色信号だよ〜🚥💦
 ---
 
 ## “共通処理”はControllerに置かない：Filtersへ逃がす 🏃‍♀️💨✨
+
+![Pipeline Filters](./picture/clean_cs_study_029_pipeline_filters.png)
 
 たとえば👇みたいなやつ
 

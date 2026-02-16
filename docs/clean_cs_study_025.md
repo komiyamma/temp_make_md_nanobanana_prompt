@@ -30,6 +30,8 @@
 
 ## 2) まず安心ポイント：EF Coreは `SaveChanges` が自動でトランザクションだよ😌🫶
 
+![SaveChanges Bubble](./picture/clean_cs_study_025_savechanges_bubble.png)
+
 EF Core（リレーショナルDBの場合）は基本的に、
 
 * `SaveChanges()` / `SaveChangesAsync()` **1回** の中は
@@ -53,6 +55,8 @@ EF Coreの自動トランザクションで足りないのは、例えばこん�
 
 ### (A) `SaveChanges` を2回以上したい時
 
+![Partial Commit Accident](./picture/clean_cs_study_025_partial_commit_accident.png)
+
 例：途中でDB採番IDが必要で、一回保存してから続きやりたい…など
 
 → そのままやると、**1回目だけ確定して2回目で失敗**みたいな事故が起きる😱
@@ -70,6 +74,8 @@ EF Coreの自動トランザクションで足りないのは、例えばこん�
 
 ## 4) 置き場所ルール：UseCaseが「境界」を決め、外側が「実行」する🧼🔌
 
+![Transaction Boundary Decision](./picture/clean_cs_study_025_boundary_decision.png)
+
 ここがクリーンアーキのキモ🧠✨
 
 * ✅ UseCase：**「この処理は原子的にやる」**を決める（境界の宣言）
@@ -80,6 +86,8 @@ UseCaseがEF Coreの `DbContext` を直接触り始めると、だんだん外�
 ---
 
 ## 5) 実装パターン①：UseCaseは `IUnitOfWork.SaveChanges()` を最後に1回だけ🧁✨
+
+![UnitOfWork Funnel](./picture/clean_cs_study_025_uow_funnel.png)
 
 「自動トランザクション（SaveChanges単位）」を活かす、いちばん素直な形だよ〜😊
 
@@ -151,6 +159,8 @@ public sealed class EfUnitOfWork : IUnitOfWork
 ---
 
 ## 6) 実装パターン②：どうしても複数 `SaveChanges` が必要なら「トランザクション実行役」を外側に置く🎁🧱
+
+![Transaction Decorator](./picture/clean_cs_study_025_transaction_decorator.png)
 
 UseCaseが「複数段階の保存」をしたい時に、UseCaseへ `BeginTransaction` を直書きしたくない…！ってなるよね🥺
 
@@ -233,6 +243,8 @@ Microsoft Learnでも、
 ---
 
 ## 8) `TransactionScope` は強いけど、まずは“使わない”寄りでOK🙅‍♀️💦
+
+![TransactionScope Warning](./picture/clean_cs_study_025_scope_warning.png)
 
 `TransactionScope`（アンビエントトランザクション）は便利だけど…
 

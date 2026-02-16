@@ -7,6 +7,8 @@
 
 ## この章のゴール 🎯💖
 
+![UseCase Blindfold](./picture/clean_cs_study_028_blindfolded_usecase.png)
+
 * UseCases層が **UI/DB/Framework を知らない**状態になってるか確認できる✅
 * 「依存が漏れたときの直し方」が分かる🧯✨
 * “増やしても崩れない型”のまま、次の層（Adapters）へ進める🚀🎉
@@ -14,6 +16,8 @@
 ---
 
 ## まずは合言葉🪄：UseCaseは「手順書」📜✨
+
+![Procedure Manual](./picture/clean_cs_study_028_procedure_manual.png)
 
 UseCase（Interactor）がやるのはだいたいこの3つだけだよ〜👇😊
 
@@ -30,6 +34,8 @@ UseCase（Interactor）がやるのはだいたいこの3つだけだよ〜👇�
 ![UseCase層の不純物チェック](./picture/clean_cs_study_028_usecase_check.png)
 
 ### ① 参照方向チェック（プロジェクト参照）🧭📌
+
+![Inward Dependency Check](./picture/clean_cs_study_028_inward_arrows.png)
 
 **UseCasesプロジェクトが参照していい相手**は基本これだけ💡
 
@@ -70,6 +76,8 @@ dotnet list .\src\MyApp.UseCases\MyApp.UseCases.csproj package --include-transit
 
 ### ③ “禁句”スキャン（名前で見つける）🔎🧹
 
+![Forbidden Word Radar](./picture/clean_cs_study_028_forbidden_radar.png)
+
 UseCases層のコードで、こういう単語が出てきたら黄色信号〜！🚥💛
 
 * `Controller` / `IActionResult` / `HttpContext` / `FromBody` など（HTTP）🌐
@@ -98,6 +106,8 @@ dotnet build .\src\MyApp.UseCases\MyApp.UseCases.csproj -c Release
 ---
 
 ### ⑤ “Fake差し替え”でUseCaseが動く？（動く完成チェック）🎭🧪
+
+![Fake Plug Testing](./picture/clean_cs_study_028_fake_plug.png)
 
 UseCases層の完成チェックでいちばん気持ちいいのがコレ！🥳✨
 
@@ -144,6 +154,8 @@ public sealed class CapturingPresenter : ICreateMemoOutputPort
 ![腐敗した設計 (Rotting Design)](./picture/clean_cs_study_028_zombie.png)
 
 ### あるある①：RequestModelにAPI DTOをそのまま入れちゃう🍱➡️📨
+
+![Request DTO Contamination](./picture/clean_cs_study_028_contamination_dto.png)
 
 **症状**：`[Required]` とか `JsonPropertyName` とか、外の都合が混入😵‍💫
 **直し方**：
