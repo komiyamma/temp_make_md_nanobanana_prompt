@@ -16,6 +16,8 @@
 
 ## 2) “手動DI”ってなに？💉
 
+![Manual DI Concept](./picture/clean_ts_study_044_manual_di_concept.png)
+
 DI（Dependency Injection）は超ざっくり言うと、
 
 * ❌ UseCase の中で `new SQLiteTaskRepository()` とか作らない
@@ -29,6 +31,8 @@ DI（Dependency Injection）は超ざっくり言うと、
 ---
 
 ## 3) まず “組み立て対象” を整理しよ🧠📝
+
+![Assembly Parts List](./picture/clean_ts_study_044_assembly_parts.png)
 
 今回のミニTaskアプリだと、だいたいこうなるよ👇
 
@@ -48,6 +52,8 @@ DI（Dependency Injection）は超ざっくり言うと、
 ---
 
 ## 4) きれいに保つための “鉄の掟” 3つ🛡️✨
+
+![Three Rules of Manual DI](./picture/clean_ts_study_044_three_rules.png)
 
 ### 掟①：UseCaseの中で「外側の実装」を作らない❌
 
@@ -197,6 +203,8 @@ export function composeApp() {
 
 ## 8) `src/main.ts` は “起動するだけ” にする🚀✨
 
+![Main Entry Point](./picture/clean_ts_study_044_main_entry.png)
+
 ```ts
 // src/main.ts
 import { composeApp } from "./composition/composeApp";
@@ -216,10 +224,14 @@ main は薄いほど正義🥰✨
 
 ### 事故①：Controller が Repository を new しちゃう
 
+![Controller Creating Repository Accident](./picture/clean_ts_study_044_controller_accident.png)
+
 Controller は薄く！🚪
 **UseCase 以外を勝手に作らない**でね🙅‍♀️
 
 ### 事故②：どこでも使えるように singleton（グローバル）にする
+
+![Global Singleton Trap](./picture/clean_ts_study_044_singleton_trap.png)
 
 一見便利だけど、依存が見えなくなってテストが死ぬ😇
 **注入で渡す**のが勝ち！

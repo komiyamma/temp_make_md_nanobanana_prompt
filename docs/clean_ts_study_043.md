@@ -13,6 +13,8 @@
 
 ## 2) Composition Rootってなに？🤔🧩
 
+![Composition Root Concept](./picture/clean_ts_study_043_composition_root_concept.png)
+
 超ざっくり言うと…
 
 > **アプリの部品（UseCase/Adapter/Driver…）を、最後に“組み立てる場所”**だよ🏗️✨
@@ -28,6 +30,8 @@ Mark Seemann（DIの有名な人）が「Composition Rootは、モジュール�
 ---
 
 ## 3) なんで「1か所」に閉じ込めるの？💡😆
+
+![Benefits of Single Assembly Point](./picture/clean_ts_study_043_one_place_benefits.png)
 
 理由はシンプルに、**設計の事故が激減する**から！🚑💥
 
@@ -53,6 +57,8 @@ UseCaseやEntityが「DBの作り方」「フレームワークの初期化」�
 ---
 
 ## 4) Composition Rootに「置くもの／置かないもの」📦🚫
+
+![Composition Root Sorting](./picture/clean_ts_study_043_dos_and_donts.png)
 
 ### ✅ 置くもの（やっていい）🧩
 
@@ -122,6 +128,8 @@ UseCaseやEntityが「DBの作り方」「フレームワークの初期化」�
 * Driver：Webサーバ、DBドライバ ⚙️🗄️
 
 ### ステップB：ライフタイム（寿命）を決める🧬
+
+![Dependency Lifetimes](./picture/clean_ts_study_043_lifetime_scopes.png)
 
 ここ、地味に大事！😳
 
@@ -257,6 +265,8 @@ startWebServer({ controllers: app.controllers });
 
 ### 地雷②：どこでも `container.resolve()` し始める📦💀
 
+![Service Locator Trap](./picture/clean_ts_study_043_service_locator_trap.png)
+
 DIコンテナを“便利なグローバル辞書”にすると、実質 **Service Locator** になりやすい⚠️
 「コンテナはComposition Rootだけ」ルールで守るのが安全だよ🔒 ([Stack Overflow][2])
 
@@ -270,6 +280,8 @@ DIコンテナを“便利なグローバル辞書”にすると、実質 **Ser
 ---
 
 ## 10) 依存が崩れてないか“見える化”する方法👀🕵️‍♀️
+
+![Architecture Visualization Tools](./picture/clean_ts_study_043_visual_tools.png)
 
 ### ✅ 依存グラフをチェック（ルール検証もできる）🛡️
 
