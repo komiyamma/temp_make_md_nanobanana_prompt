@@ -8,6 +8,8 @@
 
 ### 第1章：この教材のゴール（まず安心する回）😊🎯
 
+![Course Roadmap Journey](./picture/ab_tcb_ts_index_roadmap.png)
+
 * ねらい：集約とトランザクション境界が「何を守る道具か」だけ掴む
 * キーワード：一貫性✅／不変条件🔒／境界🧱
 * 手を動かす：事故例（在庫マイナス、二重決済）を「あるあるメモ」化📝
@@ -36,12 +38,16 @@
 
 ### 第5章：フォルダ構成と“依存の向き”ルール🧱➡️
 
+![Clean Architecture Layers](./picture/ab_tcb_ts_index_layers.png)
+
 * ねらい：ドメインが外部都合に汚染されない形を先に作る
 * キーワード：依存関係ルール🧭／SoC✂️
 * 手を動かす：domain / application / infrastructure / tests の骨組み作成📁
 * AI活用🤖：「このファイルはどの層？」仕分けクイズを作らせる🎮
 
 ### 第6章：型で守る①（ID・金額・数量）🧱🔒
+
+![Type Safety Shield](./picture/ab_tcb_ts_index_types_shield.png)
 
 * ねらい：stringのまま事故らない感覚を作る
 * キーワード：Value Object💎／型安全🛡️
@@ -63,6 +69,8 @@
 * AI活用🤖：「不変条件が破れると何が困る？」を具体例で出させる
 
 ### 第9章：集約（Aggregate）とは？“まとまり”の正体🧺✨
+
+![Aggregate Cluster Concept](./picture/ab_tcb_ts_index_aggregate_cluster.png)
 
 * ねらい：集約＝不変条件を守る単位、を腑に落とす
 * キーワード：一貫性✅／境界🧱
@@ -92,6 +100,8 @@
 
 ### 第13章：トランザクション境界 超入門（1回で整合する範囲）🧪📦
 
+![Atomic Transaction Box](./picture/ab_tcb_ts_index_transaction_box.png)
+
 * ねらい：「まとめて成功/全部やめる」の感覚をつかむ
 * キーワード：ACIDの肌感覚🧪／原子性⚛️
 * 手を動かす：成功/失敗のシナリオを文章で書く✍️
@@ -112,6 +122,8 @@
 * AI活用🤖：「これは集約に入れてOK？」クイズ形式で学習🎮
 
 ### 第16章：Repository入門（集約の出し入れ係）📥📤
+
+![Repository Gateway](./picture/ab_tcb_ts_index_repository_gate.png)
 
 * ねらい：ドメインがDBを知らない形を作れる
 * キーワード：DIP🧲／interface🧩
@@ -210,6 +222,8 @@
 * AI活用🤖：危険ポイントの指摘（責務・整合性・テスト困難）を列挙させる
 
 ### 第30章：集約をまたぐ更新が危ない②（逃がし方：最終的整合性）⏳🧩
+
+![Eventual Consistency Relay](./picture/ab_tcb_ts_index_eventual_relay.png)
 
 * ねらい：跨ぐときの“設計の逃げ道”を知る
 * キーワード：最終的整合性⏳／非同期📨

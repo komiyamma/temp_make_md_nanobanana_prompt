@@ -22,15 +22,21 @@
 
 ### 事故パターンA：上書き（Lost Update）🫠
 
+![Lost Update](./picture/ab_tcb_cs_study_028_lost_update.png)
+
 後から保存した人の内容が勝って、**先に保存した人の変更が消える**ことがある💥
 例：「ミルク多め🥛」が消えて、ケーキだけ残る…みたいな😱
 
 ### 事故パターンB：二重処理（Double Submit / Duplicate）🔁
 
+![Double Submit](./picture/ab_tcb_cs_study_028_double_submit.png)
+
 「保存」が2回走ったり（連打、通信リトライ、二重クリック）、
 同じ明細が2回追加されて**二重計上**になることがある💸💸
 
 ### 事故パターンC：禁止状態への更新（状態のねじれ）🚦💥
+
+![Inconsistent State](./picture/ab_tcb_cs_study_028_inconsistent_state.png)
 
 * 注文が「確定済み✅」なのに、別の人が古い画面のまま「明細追加」を保存してしまう
   → 本当は **確定後は編集禁止** のはずなのに、すり抜ける😵‍💫
@@ -50,6 +56,8 @@ sequenceDiagram
 ---
 
 ## 3. なんでこうなるの？（超ざっくり仕組み）🧠🔍
+
+![Think Gap](./picture/ab_tcb_cs_study_028_think_gap.png)
 
 多くの更新は、ざっくりこう進むよ👇
 
@@ -81,6 +89,8 @@ graph TD
 
 ## 4. 「検出できるだけでも価値」ってどういうこと？✨🛡️
 
+![Optimistic Lock](./picture/ab_tcb_cs_study_028_optimistic_lock.png)
+
 同時更新の対策には大きく2つあるよ👇
 
 * **衝突を“起こさない”**（ロックして順番待ち）🔒
@@ -106,6 +116,8 @@ flowchart LR
 ---
 
 ## 5. 集約（Aggregate）視点だと、同時更新はどこが痛い？🌳💥
+
+![Invariant Break](./picture/ab_tcb_cs_study_028_invariant_break.png)
 
 集約は「一貫性（不変条件）を守るまとまり」だったよね🔐
 同時更新が起きると、集約の中でこういう破壊が起きがち👇
@@ -177,6 +189,8 @@ public sealed class OrderItem
 ```
 
 ### 6.2 “2人が同時に編集”をコードで再現👩‍💻👨‍💻
+
+![Context Isolation](./picture/ab_tcb_cs_study_028_context_isolation.png)
 
 ポイントは **DbContextを2つ作って、同じOrderを別々に読む**ことだよ🔁
 
