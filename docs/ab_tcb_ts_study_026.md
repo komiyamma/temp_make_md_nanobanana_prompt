@@ -27,6 +27,8 @@
 
 ## 2. 楽観ロックってなに？🙂🔢（超やさしく）
 
+![Optimistic Locking Guard](./picture/ab_tcb_ts_study_026_optimistic_guard.png)
+
 ![Study Image](./picture/ab_tcb_ts_study_026_optimistic_locking.png)
 
 ```mermaid
@@ -50,6 +52,8 @@ graph TD
 ---
 ## 2.1 発想は「ノートの版数」📓✨
 
+![Notebook Edition](./picture/ab_tcb_ts_study_026_notebook_edition.png)
+
 注文データをノートだと思ってください🙂
 
 * ノートに「version=3」って書いてある📓🔢
@@ -64,6 +68,8 @@ graph TD
 ## 3. 今回のミニECでの設計方針🧱🛒
 
 ## 3.1 versionはどこに置く？🤔
+
+![Order Version Badge](./picture/ab_tcb_ts_study_026_order_version_badge.png)
 
 基本は **Aggregate Root（Order）に持たせる**のがシンプルです🙂
 理由：保存時に比較するのは結局「注文」だし、Orderが“いま自分が持ってる版”を知ってる必要があるからです🔢
@@ -175,6 +181,8 @@ export interface OrderRepository {
 
 ## 4.4 インメモリ実装（ここが本丸！）🧠🔥
 
+![Atomic Check and Save](./picture/ab_tcb_ts_study_026_atomic_gears.png)
+
 「保存するときに version を比べる」だけです🙂
 
 ```ts
@@ -241,6 +249,8 @@ export class InMemoryOrderRepository implements OrderRepository {
 
 ## 5. 事故を再現するテスト🧪😈（そして守る）
 
+![Race Condition Gate](./picture/ab_tcb_ts_study_026_race_gate.png)
+
 「同じ注文を2つ取り出して、先に保存した方だけ通る」ことを確認します✅
 
 ```ts
@@ -286,6 +296,8 @@ describe("Optimistic Lock (version)", () => {
 
 ## 6. 競合が起きたらどうする？😵‍💫➡️🙂（基本の3択）
 
+![Conflict Resolution Options](./picture/ab_tcb_ts_study_026_conflict_menu.png)
+
 楽観ロックは「拒否」まではしてくれるけど、**その後の対応**を決める必要があります📌
 
 ## 6.1 いちばん多い：ユーザーに“更新してね”🔄🙂
@@ -308,6 +320,8 @@ describe("Optimistic Lock (version)", () => {
 ## 7. 実務メモ：DBでの実装はこうする🗄️🔢（超大事）
 
 ## 7.1 “1発UPDATE”が基本（WHERE version）⚡
+
+![One-Shot SQL Update](./picture/ab_tcb_ts_study_026_one_shot_sql.png)
 
 DBで正しくやるコツはコレ👇
 **UPDATEをするときに「id AND version」で絞る**✅

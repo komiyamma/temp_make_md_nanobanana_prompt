@@ -23,6 +23,8 @@
 
 ## よくある事故パターン4つ🚨（ミニEC版）
 
+![Concurrency Accident Gallery](./picture/ab_tcb_ts_study_025_accident_gallery.png)
+
 ### 1) ロストアップデート（上書き事故）🫠
 
 * Aさん：商品を追加🛒
@@ -48,6 +50,8 @@
 ---
 
 ## 事故が起きる典型形：Read → Modify → Write の罠🔁🧨
+
+![Photo Overwrite Metaphor](./picture/ab_tcb_ts_study_025_photo_overwrite.png)
 
 ![Study Image](./picture/ab_tcb_ts_study_025_lost_update.png)
 
@@ -93,6 +97,8 @@ sequenceDiagram
 テストで再現できると、めっちゃ腹落ちする😊🧪
 
 ### 作るもの🧩
+
+![Experiment Setup](./picture/ab_tcb_ts_study_025_experiment_setup.png)
 
 * Order（集約ルート）🧺
 * InMemoryOrderRepository（スナップショット保存）📦
@@ -225,6 +231,8 @@ export class OrderCommandService {
 
 ## テスト：同時に投げて壊す🧪💥
 
+![Collision Explosion](./picture/ab_tcb_ts_study_025_collision_bang.png)
+
 ここが本番😈
 「クーポンが消える」事故を確定で起こすために、わざと遅延時間をずらすよ⏱️
 
@@ -279,6 +287,8 @@ describe("同時更新：ロストアップデート😱", () => {
 
 ## じゃあ集約（Aggregate）って意味ないの？🧱🥺
 
+![Aggregate Limitation](./picture/ab_tcb_ts_study_025_aggregate_limit.png)
+
 意味あるよ〜！！めっちゃある😊✨
 
 集約が守るのは主にこれ👇
@@ -294,6 +304,8 @@ describe("同時更新：ロストアップデート😱", () => {
 
 ## 現場での「事故のサイン」👀🚨
 
+![Signs of Trouble](./picture/ab_tcb_ts_study_025_trouble_signs.png)
+
 ログや問い合わせでこういうのが出たら、同時更新を疑ってね👇
 
 * 「さっき入れたクーポンが消えました」🏷️💨
@@ -304,6 +316,8 @@ describe("同時更新：ロストアップデート😱", () => {
 ---
 
 ## この章の範囲での“応急処置”🧯（まだ完全解決はしない）
+
+![Lock Solutions Preview](./picture/ab_tcb_ts_study_025_lock_preview.png)
 
 完全に直すのは次章でやるけど、ここで方向だけ掴もう🙂
 
