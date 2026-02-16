@@ -75,16 +75,23 @@ description: Generate an image generation plan for a range of Markdown files bas
                 - If a similar entry exists for this file, **SKIP** appending.
             - **Safe Append**:
                 - If no duplicate concept is found:
-                - **Generate ID**: Determine the next available ID for the plan table. Read the last line of `docs/picture/image_generation_plan.md` to get the last ID, then increment it. (Do NOT use `<current_id>` from the loop as the table ID).
-                - **Format Prompt**: Replace all newline characters (`\n`) in your `<prompt>` with HTML `<br>` tags to keep the table row on a single line.
-                - **Append**: Use `run_in_bash_session` to create and run a temporary Python script. Use a heredoc with quoted delimiter (`<<'EOF'`) to prevent shell expansion of backticks.
+                - **Append**: Use `run_in_bash_session` to create a temporary JSON payload and run the helper script.
                     - Command:
                       ```bash
-                      python3 -c "import sys; open('docs/picture/image_generation_plan.md', 'a', encoding='utf-8').write(sys.stdin.read().lstrip())" <<'EOF'
-                      | <next_plan_id> | <filename> | <proposed_image_filename> | <relative_link> | <formatted_prompt> | <insertion_point> |
+                      cat <<'EOF' > payload.json
+                      {
+                        "filename": "<filename>",
+                        "proposed_filename": "<proposed_image_filename>",
+                        "relative_link": "<relative_link>",
+                        "prompt": "<prompt>",
+                        "insertion_point": "<insertion_point>"
+                      }
                       EOF
+                      python3 tools/append_image_plan.py --from-json payload.json
+                      rm payload.json
                       ```
-                - **Note**: Ensure the column count matches the existing table in `docs/picture/image_generation_plan.md` (6 columns: ID, File Name, Proposed Image Filename, Relative Link Path, Prompt, Insertion Point).
+                    - **IMPORTANT**: Ensure strictly valid JSON format. Escape double quotes `"` as `\"` and newlines as `\n` within the JSON values.
+                - **Note**: The script automatically handles ID generation and newline formatting (converts `\n` to `<br>` for the table).
 
         e.  **Modify Markdown File**:
             - **Action**: Insert the image tag into the source Markdown file.
