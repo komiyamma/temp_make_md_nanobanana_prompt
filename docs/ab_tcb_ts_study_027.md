@@ -11,6 +11,8 @@
 
 ## まずは現実：二重送信って「バグ」じゃなくて「日常」😇📡
 
+![Double Submit Trap](./picture/ab_tcb_ts_study_027_double_submit_trap.png)
+
 二重送信が起きる理由は、だいたいこのへん👇（ぜんぶ“あるある”）
 
 * 通信が不安定でタイムアウト → クライアントがリトライ🔁📶
@@ -24,6 +26,8 @@
 ---
 
 ## 冪等性（Idempotency）ってなに？🔂🧠
+
+![Idempotency Button](./picture/ab_tcb_ts_study_027_idempotency_button.png)
 
 ![Study Image](./picture/ab_tcb_ts_study_027_idempotency.png)
 
@@ -55,6 +59,8 @@ HTTPの世界でもちゃんと定義があって、
 （しかも運が悪いと、注文も2つ作られたり、メールが2通飛んだり…📧📧）
 
 ### タイムラインで見るとこんな感じ🕒
+
+![Double Payment Timeline](./picture/ab_tcb_ts_study_027_double_payment_timeline.png)
 
 * T0: クライアント → サーバー「支払い確定して！」(1回目)
 * T1: サーバー → 決済サービス「課金して！」→ 成功✅
@@ -90,6 +96,8 @@ HTTPの世界でもちゃんと定義があって、
 でも **“外部副作用”**（決済・メール送信・ポイント付与など）が絡むと穴が出る💥
 
 ### 最悪パターン：同時に2発来たら？💥💥
+
+![Optimistic Lock Leak](./picture/ab_tcb_ts_study_027_optimistic_leak.png)
 
 2つのリクエストがほぼ同時に来ると…👇
 
@@ -128,6 +136,8 @@ sequenceDiagram
 
 ## 冪等性が特に必要な操作リスト📝🔂（ミニEC版）
 
+![Idempotency Required Ops](./picture/ab_tcb_ts_study_027_critical_ops.png)
+
 次のどれかに当てはまったら、だいたい冪等性が必要✨👇
 
 ### チェックリスト✅
@@ -153,6 +163,8 @@ sequenceDiagram
 ## “冪等にする”ための代表アイデア（この章は概念まで）🔑🧠
 
 ### 1) 冪等キー（Idempotency Key / Token）を使う🔑✨
+
+![Idempotency Key Concept](./picture/ab_tcb_ts_study_027_key_concept.png)
 
 「この操作は同じキーなら1回とみなす！」っていう方式だよ🔂
 AWSのガイドでも、**トークンを見て重複なら保存済みの応答を返す**、みたいな考え方が紹介されてる📦✅ ([AWS ドキュメント][3])
@@ -255,6 +267,8 @@ export class ConfirmPaymentUseCase {
 ---
 
 ## ステップ2：テストで「二重送信すると二重課金っぽくなる」を再現😱💳💥
+
+![Failing Double Charge Test](./picture/ab_tcb_ts_study_027_fail_test.png)
 
 `FakePaymentGateway` が呼ばれた回数を数えて、2回課金されちゃう雰囲気を作るよ🧪🔁
 

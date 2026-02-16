@@ -41,6 +41,8 @@
 
 ## 2) まず結論：集約またぎ更新が危ない理由💣
 
+![Partial Failure Metaphor](./picture/ab_tcb_ts_study_029_partial_failure_bridge.png)
+
 ![Study Image](./picture/ab_tcb_ts_study_029_bad_transaction.png)
 
 ```mermaid
@@ -81,6 +83,8 @@ MicrosoftのDDD解説でも「集約＝トランザクション整合性の境�
 ---
 
 ## 3) 悪い例を作ろう⚠️🧨（わざと越境する）
+
+![Overloaded UseCase](./picture/ab_tcb_ts_study_029_clumsy_robot.png)
 
 ここでは **「注文作る → 在庫減らす」** を、1ユースケースでまとめてやっちゃう（危険）例を書くよ💥
 さらに、**在庫保存だけ失敗** するようにして「片方だけ成功」を再現する😈🧪
@@ -178,6 +182,8 @@ export class InMemoryInventoryRepo {
 
 ## 3-3) 悪いユースケース（集約をまたいで更新）💥
 
+![Dangerous Update Sequence](./picture/ab_tcb_ts_study_029_dangerous_sequence.png)
+
 ここが主役の “悪い例” 😇🔥
 
 ```ts
@@ -216,6 +222,8 @@ export class PlaceOrderBad {
 ---
 
 ## 4) 実験：本当に壊れるの？🧪💥（テストで体験）
+
+![State Desynchronization](./picture/ab_tcb_ts_study_029_state_desync.png)
 
 「在庫保存が落ちる」ようにして、矛盾を確定させるよ😈🧨
 
@@ -257,6 +265,8 @@ describe("PlaceOrderBad", () => {
 
 ## 5) 赤ペン添削🟥：この実装の「危険ポイント」チェック✅😇
 
+![Five Dangers of Cross-Aggregate Update](./picture/ab_tcb_ts_study_029_five_dangers.png)
+
 さっきの `PlaceOrderBad` を、赤ペンでぶった切るよ🟥✂️
 
 ## 🟥危険①：「成功/失敗を一緒にできない」問題
@@ -290,6 +300,8 @@ describe("PlaceOrderBad", () => {
 
 ## 6) ミニまとめ：この章で覚える“合言葉”🧠🔑
 
+![Consistency Boundary Walls](./picture/ab_tcb_ts_study_029_consistency_walls.png)
+
 * **集約は “整合性の境界”** 🧱 ([Microsoft Learn][2])
 * **集約をまたいで1発で更新しようとすると、失敗・競合・テストで爆発しやすい** 💥😱
 * 悪い例を見分けるサイン🚨
@@ -317,6 +329,8 @@ describe("PlaceOrderBad", () => {
 ---
 
 ## 8) 練習問題🎮📝（5分）
+
+![Architecture Traffic Light](./picture/ab_tcb_ts_study_029_traffic_light_quiz.png)
 
 次のうち「赤信号🚨」はどれ？（複数OK🙆‍♀️）
 

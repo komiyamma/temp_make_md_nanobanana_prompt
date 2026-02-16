@@ -13,6 +13,8 @@
 
 ## 1) 冪等キーってなに？（最新の仕様動向も含めて）🧠🔑
 
+![Idempotency Key Interaction](./picture/ab_tcb_ts_study_028_key_concept.png)
+
 ![Study Image](./picture/ab_tcb_ts_study_028_idempotency_key.png)
 
 ### 1-1. ざっくり意味 ✨
@@ -37,6 +39,8 @@ IETF（インターネット標準を作ってるところ）で **`Idempotency-
 ---
 
 ## 2) どこで冪等キーを持つ？設計3案 🧩📦
+
+![Key Storage Options](./picture/ab_tcb_ts_study_028_storage_plans.png)
 
 ここ、めっちゃ大事です🥹✨
 「キーをどこに保存するか」で、事故りやすさが変わります。
@@ -83,6 +87,8 @@ IETF（インターネット標準を作ってるところ）で **`Idempotency-
 ---
 
 ## 3) 先に決める！冪等キー設計のチェックリスト ✅🔍
+
+![Anatomy of an Idempotency Key](./picture/ab_tcb_ts_study_028_key_anatomy.png)
 
 ### 3-1. スコープ（“どこまで同一扱い？”）🧭
 
@@ -140,6 +146,8 @@ IETF Draft では「同じキーが処理中なら **409 Conflict**（resource c
 ---
 
 ## 5) TypeScript実装（まずはインメモリ版）🧪🚀
+
+![Idempotency State Machine](./picture/ab_tcb_ts_study_028_state_machine.png)
 
 > まず動く形を作って理解するよ😊
 > そのあと「DBならこうする」で現実版に寄せる✨
@@ -289,6 +297,8 @@ export class InMemoryIdempotencyStore<T> implements IdempotencyStore<T> {
 
 ### 6-1. コマンドとfingerprint 🧾🔏
 
+![Fingerprint Hashing](./picture/ab_tcb_ts_study_028_fingerprint_hash.png)
+
 fingerprintは「同じ操作か」を判定できればOK。
 まずは **JSONを安定化してハッシュ** するのが手軽です😊
 
@@ -399,6 +409,8 @@ export class ConfirmPaymentService {
 
 ## 7) “現実版”の実装方針（DBにするなら）🏗️🗃️
 
+![DB Unique Constraint Guard](./picture/ab_tcb_ts_study_028_db_unique_guard.png)
+
 インメモリは学習用🧪
 本番はだいたい **DB＋ユニーク制約** で守ります🔒✨
 
@@ -448,6 +460,8 @@ export class ConfirmPaymentService {
 ---
 
 ## 9) よくある落とし穴（ここで差がつく）⚠️😇
+
+![Idempotency Pitfalls](./picture/ab_tcb_ts_study_028_pitfalls.png)
 
 * ❌ リトライのたびに新しいキーを作っちゃう
   → 冪等にならない（ただの別リクエスト）😵‍💫

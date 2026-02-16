@@ -10,6 +10,8 @@
 
 ## 1) 集約ユニットテストってなに？🤔🧺
 
+![Isolated Test Environment](./picture/ab_tcb_ts_study_023_isolation_lab.png)
+
 ![Study Image](./picture/ab_tcb_ts_study_023_unit_test.png)
 
 ```mermaid
@@ -46,6 +48,8 @@ graph TD
 
 ## 2) テストが「速い・安定」になるコツ🏎️✨
 
+![Speedy Unit Test](./picture/ab_tcb_ts_study_023_speedy_test.png)
+
 集約ユニットテストは、ここを守ると強いよ💪
 
 * 🚫 DBに保存しない
@@ -65,6 +69,8 @@ graph TD
 ---
 
 ## 4) まずは Vitest を使えるようにする🔧🧪
+
+![Vitest Tool Installation](./picture/ab_tcb_ts_study_023_vitest_install.png)
 
 ## インストール📦
 
@@ -92,6 +98,8 @@ npm i -D vitest
 ---
 
 ## 5) 例題：Order集約（最小モデル）🛒📦💳
+
+![Order Aggregate Invariants](./picture/ab_tcb_ts_study_023_order_invariants.png)
 
 ここからは「集約ユニットテスト」を書くための、超ミニの Order 集約を用意するね😊
 ポイントは **“集約の入口メソッドだけをテストする”** ことだよ🚪👑
@@ -270,6 +278,8 @@ export class Order {
 
 ## 6) いよいよ本題：不変条件テストを3本書く🧪🧷
 
+![Three Test Scenarios](./picture/ab_tcb_ts_study_023_test_scenarios.png)
+
 テストは「集約ルートの操作 → 結果（Result/状態）を見る」だけに集中するよ😊
 
 ## テストファイル🧫
@@ -355,6 +365,8 @@ describe("Order（集約）🧺", () => {
 
 ## 7) 境界値テスト（強くなるやつ💪）🔢✨
 
+![Boundary Value Walk](./picture/ab_tcb_ts_study_023_boundary_walk.png)
+
 「不変条件」は **境界（0、1、ちょうど、1つ超え）** が弱点になりがち😇
 たとえば Quantity はこういうのが怖いよね👇
 
@@ -376,6 +388,8 @@ describe("Order（集約）🧺", () => {
 ---
 
 ## 9) AI活用：テストケースの抜けを列挙させる🤖🧪
+
+![AI Test Helper](./picture/ab_tcb_ts_study_023_ai_helper.png)
 
 AIは「テスト観点の洗い出し」がめちゃ得意だよ✨（ただし採用は人間が判断ね✅）
 

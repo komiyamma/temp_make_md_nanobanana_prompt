@@ -25,6 +25,8 @@
 
 ## 24.3 ユースケースのテストってなに？🤔🎮
 
+![UseCase as Conductor](./picture/ab_tcb_ts_study_024_usecase_conductor.png)
+
 ![Study Image](./picture/ab_tcb_ts_study_024_mock.png)
 
 **ユースケース（アプリケーションサービス）**は、だいたいこの形でしたよね👇✨
@@ -44,6 +46,8 @@
 ---
 
 ## 24.4 どこまでテストする？（第23章との分担）🧩🧪
+
+![Test Scope Comparison](./picture/ab_tcb_ts_study_024_test_scope_comparison.png)
 
 ここめっちゃ大事〜！😊💖
 テストがダブると、つらくなるからね…🥲
@@ -72,6 +76,8 @@
 ---
 
 ## 24.6 Repository差し替えの2パターン🧸🔁
+
+![Repository Test Doubles](./picture/ab_tcb_ts_study_024_repo_doubles.png)
 
 ### パターンA：インメモリRepository（スタブ寄り）🧺✨
 
@@ -232,6 +238,8 @@ export class InMemoryOrderRepository implements OrderRepository {
 
 ### 24.7.6 ユースケース（注文作成→保存）🎮🛒
 
+![UseCase Execution Flow](./picture/ab_tcb_ts_study_024_usecase_flow.png)
+
 ここがテスト対象だよ〜😊🧡
 
 ```ts
@@ -272,6 +280,8 @@ export class PlaceOrderService {
 ---
 
 ### 24.7.7 ユースケーステスト（Vitest）🧪🎉
+
+![Success vs Failure Test](./picture/ab_tcb_ts_study_024_success_vs_fail.png)
 
 #### ✅ テスト1：成功したら保存される
 
@@ -352,6 +362,8 @@ describe("PlaceOrderService（失敗パターン）", () => {
 
 ## 24.8 Given/When/Then をもっと読みやすくするコツ📖✨
 
+![Given-When-Then Structure](./picture/ab_tcb_ts_study_024_given_when_then.png)
+
 テストって「将来の自分」への手紙💌だから、読みやすさが大事〜🥰
 
 ### 🧁 コツ1：変数名に気持ちを込める
@@ -371,6 +383,8 @@ describe("PlaceOrderService（失敗パターン）", () => {
 ---
 
 ## 24.9 よくある事故😱💥（あるある救急箱🚑✨）
+
+![UseCase Test Accidents](./picture/ab_tcb_ts_study_024_test_accidents.png)
 
 ### 😵 事故1：ユースケーステストで集約の中身を全部検証し始める
 
