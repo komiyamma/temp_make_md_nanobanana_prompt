@@ -2,6 +2,8 @@
 
 ## 1章：ACLってなに？“翻訳係”のイメージをつかもう 🗣️🌍
 
+![ACL Concept](./picture/acl_ts_index_concept.png)
+
 * ACL（Anti-Corruption Layer）とは何か（超やさしく）
 * 「外部のクセ」が内側に入ると起きる事故例😱
 * 今日のゴール：ACLの役割を言葉で説明できるようにする🎯
@@ -9,6 +11,8 @@
 ---
 
 ## 2章：この教材のゴールと“全体の地図”を先に見よう 🗺️✨
+
+![Course Learning Map](./picture/acl_ts_index_course_map.png)
 
 * 何を作る？：外部APIを2つ使う小さなアプリ題材🎓
 * どこにACLが入る？（内側／外側／境界の図）📦🚪
@@ -44,6 +48,8 @@
 ---
 
 ## 6章：まず失敗例を見る（外部DTOが侵食する地獄）🕳️😵
+
+![DTO Leakage (The Anti-Pattern)](./picture/acl_ts_index_bad_pattern.png)
 
 * 外部DTOをそのまま内部で使う例（あえてやる）
 * 起きる問題：
@@ -92,6 +98,8 @@
 
 ## 11章：ACLの核① マッピングの基本（DTO→ドメイン）🔁📦
 
+![Three Core Mapping Tasks](./picture/acl_ts_index_mapping_tasks.png)
+
 * DTOは外の都合、ドメイン型は内の都合✨
 * 変換の基本形：
 
@@ -139,6 +147,8 @@
 ---
 
 ## 16章：エラーモデリング① 外部エラーとドメインエラーの分離 🧊🔥
+
+![Separation of Error Realms](./picture/acl_ts_index_error_separation.png)
 
 * 外部：HTTP、タイムアウト、レート制限、500…🌩️
 * ドメイン：学生がいない、残高不足、期限切れ…📘

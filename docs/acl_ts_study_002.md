@@ -12,6 +12,8 @@
 
 # 1) 何を作るの？：外部APIを2つ使う“学内ミニアプリ” 🎓📲✨
 
+![School Cafeteria Point App Concept](./picture/acl_ts_study_002_app_concept.png)
+
 題材は **「学食ポイント」アプリ（小さなバックエンドAPI）」** にします🍱💳
 やることはシンプル！
 
@@ -22,6 +24,8 @@
 ---
 
 # 2) 外部APIは2つ：それぞれ“クセが強い”想定 😇🌀
+
+![Visualizing API Quirks](./picture/acl_ts_study_002_api_quirks.png)
 
 ## 外部API①：学生情報API（Student Directory）🧑‍🎓📘
 
@@ -59,6 +63,8 @@
 ---
 
 # 3) いちばん大事な最終ゴール：**外部DTOが内側に漏れない** ✅🧼🧱
+
+![Leakage Prevention Goal](./picture/acl_ts_study_002_leak_check.png)
 
 この教材の“卒業条件”はこれ！🎓✨
 
@@ -123,6 +129,8 @@ flowchart TD
 
 # 5) 最終成果物の“完成形”はこれ！📦✨
 
+![Project Layered Architecture](./picture/acl_ts_study_002_folder_structure.png)
+
 出来上がるプロジェクトは、ざっくりこういう分かれ方になります👇🧩
 
 * **domain/**：ポイントや学生の「ルールと言葉」だけ💎
@@ -157,6 +165,8 @@ flowchart TD
 
 # 6) 20章の“地図”を、先にざっくり4つの旅に分けるよ 🧳✨
 
+![4-Step Learning Journey](./picture/acl_ts_study_002_learning_steps.png)
+
 細かい章立てはあるけど、進み方はこの4ステップが超わかりやすいです😊🌈
 
 1. **土台づくり**（環境・題材・境界の考え方）🧰🚪
@@ -167,6 +177,8 @@ flowchart TD
 ---
 
 # 7) 生成AIの使い方も、最初に“役割分担”しておく 🤖🧠✨
+
+![AI Roles in Development](./picture/acl_ts_study_002_ai_roles.png)
 
 VS CodeのCopilot Chatは「質問する」「編集させる」みたいに使い分けできるよ💬✍️
 （VS Codeのチャット機能や、会話しながら編集するEditモードの説明は公式にもあるよ） ([Visual Studio Code][1])

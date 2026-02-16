@@ -12,6 +12,8 @@
 
 ### まず大事な前提：`HttpClient` の“正しい持ち方” 🧠💡
 
+![Socket Exhaustion Problem](./picture/acl_cs_study_018_socket_exhaustion.png)
+
 `HttpClient` を **毎回 `new` して捨てる**のは、地味に事故りやすいです（接続枯渇やDNS更新の問題など）😵‍💫
 定番は次のどちらか👇
 
@@ -34,6 +36,8 @@
 ---
 
 ## 18-2. ハンズオン：モック外部APIを作る（最小の別プロジェクト）🛠️🌐
+
+![Mock API Behaviors](./picture/acl_cs_study_018_mock_modes.png)
 
 ### ① プロジェクトを1つ追加する ➕
 
@@ -163,6 +167,8 @@ public sealed class PaymentApiErrorResponseDto
 
 ### ② Typed client（HTTP呼び出し担当）📞🌐
 
+![Typed Client Pattern](./picture/acl_cs_study_018_typed_client.png)
+
 ポイント👇
 
 * `HttpClient` は DI から受け取る（`IHttpClientFactory` 経由） ([Microsoft Learn][1])
@@ -250,6 +256,8 @@ public sealed record PaymentApiCallResult(
 ```
 
 ### ③ Translator（外部→内側の翻訳）🔁🧱
+
+![Data Translation Logic](./picture/acl_cs_study_018_data_translation.png)
 
 ここで「cents→円」「status→内側enum」みたいな“意味変換”を入れるよ💡
 
@@ -389,6 +397,8 @@ builder.Services.AddHttpClient<PaymentApiClient>(http =>
 ---
 
 ## 18-7. Visual Studio デバッグ：ここを見ると一気に楽になる 🔍🪲
+
+![Debugging Flowpoints](./picture/acl_cs_study_018_debug_flow.png)
 
 ### ブレークポイントおすすめ位置 📍
 

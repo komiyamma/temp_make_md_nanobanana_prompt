@@ -13,6 +13,8 @@
 
 # 1) まずはターミナルを整える（あると快適）⌨️✨
 
+![Modern Terminal Interface](./picture/acl_ts_study_003_terminal_setup.png)
+
 Windows Terminalがあると、PowerShellもGitも見やすくなって楽ちんです🫶
 （すでにあるなら飛ばしてOK！）
 
@@ -47,6 +49,8 @@ npm -v
 ---
 
 # 3) パッケージマネージャ（pnpm）を使えるようにする 📦✨
+
+![Node.js Corepack Ecosystem](./picture/acl_ts_study_003_node_corepack.png)
 
 Node.js には **Corepack** が付いていて、pnpm/yarn を安全に使えます👍
 （Node 25 からはCorepackが同梱されない流れもあるので、LTSで進めるのが安定です） ([Node.js][3])
@@ -97,6 +101,8 @@ pnpm add -D typescript tsx @types/node
 ---
 
 # 6) tsconfig を用意する ⚙️🧠
+
+![tsconfig.json as the Brain](./picture/acl_ts_study_003_tsconfig_brain.png)
 
 TypeScript 5.9 では Node向けに `--module node20` が用意されていて、**Node 20の挙動に合わせた“安定モード”**として紹介されています。 ([Microsoft for Developers][6])
 （`nodenext` は“最新Node仕様に追従”なので、最初は node20 がわかりやすい✨）
@@ -163,6 +169,8 @@ export default defineConfig(
 
 # 8) Prettier（自動整形）を入れる 💅✨
 
+![Linting and Formatting Crew](./picture/acl_ts_study_003_lint_format_crew.png)
+
 Prettierは「コード整形担当」🫧
 ESLintと一緒に使うときは、整形系の衝突を避けるための構成が推奨されています。 ([Prettier][9])
 
@@ -199,6 +207,8 @@ export default defineConfig(
 
 # 9) テスト（Vitest）を入れる 🧪🔥
 
+![Vitest Runner Speed](./picture/acl_ts_study_003_vitest_runner.png)
+
 ユニットテストはACLの“変換ロジック”を守る最強の武器になります🛡️
 VitestのGetting Startedも公式がまとまってます。 ([Vitest][10])
 
@@ -228,6 +238,8 @@ pnpm exec vitest
 ---
 
 # 10) package.json に “よく使うコマンド” を登録する 🧾✨
+
+![NPM Scripts Dashboard](./picture/acl_ts_study_003_scripts_dashboard.png)
 
 毎回 `pnpm exec ...` って打つの面倒なので、スクリプト化します💡
 `package.json` の `"scripts"` をこうしてね👇
@@ -307,6 +319,8 @@ VS Code設定で👇をONにすると気持ちいいです🫶
 ---
 
 # 12) Copilot / Codex など“AI導入済み”前提の進め方 🤖🧠✨
+
+![Human-AI Collaboration Tandem](./picture/acl_ts_study_003_ai_human_tandem.png)
 
 ```mermaid
 flowchart LR
