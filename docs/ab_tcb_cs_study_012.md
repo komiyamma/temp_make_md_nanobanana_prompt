@@ -87,6 +87,8 @@ flowchart TD
 
 ## 12.4 ルール3つだけ覚えよう📌（集約ルートの鉄板）
 
+![Three Root Rules](./picture/ab_tcb_cs_study_012_three_root_rules.png)
+
 ### ルールA：外からの更新は “必ずルート経由” 🚪✅
 
 * 外部コードが `OrderItem` を直接 `set` したり `List.Add` したりしない🙅‍♀️
@@ -110,6 +112,8 @@ flowchart TD
 
 ## 12.5 例題ドメイン（カフェ注文）☕️🍰
 
+![Aggregate Root Checklist](./picture/ab_tcb_cs_study_012_root_checklist.png)
+
 ### 登場人物🧑‍🍳
 
 * **Order**（注文）👑 ← 集約ルート
@@ -130,6 +134,8 @@ flowchart TD
 ## 12.6 C#で実装してみよう🛠️✨（安全な集約ルート）
 
 ### 12.6.1 ValueObject（Money）💰
+
+![Value Object Guard](./picture/ab_tcb_cs_study_012_money_guard.png)
 
 「金額」を `decimal` で直置きすると事故りやすいので、まず包みます📦✨
 
@@ -281,6 +287,8 @@ public sealed class Order
 
 ## 12.7 “やっちゃダメ”な例（事故るやつ）🚑💥
 
+![Public List Danger](./picture/ab_tcb_cs_study_012_public_list_danger.png)
+
 ### ダメ例①：Items を public List にする🙅‍♀️
 
 ```csharp
@@ -315,6 +323,8 @@ public int Quantity { get; set; }
 ---
 
 ## 12.8 “集約ルート経由”でアプリ層がどう書ける？🎬✨
+
+![Application Service Relay](./picture/ab_tcb_cs_study_012_app_service_relay.png)
 
 アプリ層（ユースケース）から見ると、理想はこう👇
 
@@ -375,6 +385,8 @@ public interface IOrderRepository
 ---
 
 ## 12.9 Copilot / Codex 活用メモ🤖✨（この章で効く使い方）
+
+![Copilot Prompting for Root](./picture/ab_tcb_cs_study_012_copilot_prompt.png)
 
 ### ✅ 目的：ルートのメソッド設計を“会話で固める”
 

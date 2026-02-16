@@ -9,6 +9,8 @@
 
 ## 8.2 題材の舞台：カフェの注文って、実はイベントだらけ☕️🎬
 
+![Cafe Ordering Events Timeline](./picture/ab_tcb_cs_study_008_cafe_events_filmstrip.png)
+
 カフェ注文って、日常っぽいのに **業務ルールがぎゅっと詰まってる**から教材にぴったり🍀
 
 たとえばこんな「起きること」があるよ👇
@@ -56,6 +58,8 @@ graph TD
 
 ## 8.4 注文の流れ（まずは素直に1本）📈✨
 
+![Order State Subway Map](./picture/ab_tcb_cs_study_008_order_flow_map.png)
+
 教材の基本フローはこれ👇（最小でやるよ！）
 
 1. 注文を作る（Draft）📝
@@ -81,6 +85,8 @@ flowchart LR
 ---
 
 ## 8.5 “ありがちな業務ルール” を先に並べよう📋✨（ここが超大事！）
+
+![Business Rule Pillars](./picture/ab_tcb_cs_study_008_business_rule_pillars.png)
 
 ### ルールA：注文の編集できるタイミング🧾🚫
 
@@ -111,6 +117,8 @@ flowchart LR
 
 ## 8.6 “状態（ステータス）” を決めると一気にラク🚦✨
 
+![Status vs Complexity Scale](./picture/ab_tcb_cs_study_008_status_complexity_scale.png)
+
 ここではシンプルにこの5つでいくよ👇
 
 * `Draft`：作成中📝
@@ -126,6 +134,8 @@ flowchart LR
 ---
 
 ## 8.7 “起きた事実（イベント）” っぽく言う練習📣✨
+
+![Domain Event Stamp Rally](./picture/ab_tcb_cs_study_008_event_stamp_rally.png)
 
 DDDでは「起きたこと」を過去形で言うクセがあるよ〜😊（あとでイベントに繋がる！）
 
@@ -252,6 +262,8 @@ public sealed class OrderItem
 ---
 
 ## 8.10 AIに「ありそうなルール」を出させる🤖✨（でも丸呑み禁止！）
+
+![AI Rule Extraction (Gold Panning)](./picture/ab_tcb_cs_study_008_ai_gold_panning.png)
 
 AIは “叩き台づくり” が得意だよ〜！
 この章では **ルールの洗い出し** に使うのが最高に相性いい😊🌸

@@ -48,6 +48,8 @@ graph TD
 
 ## 3) まずは“名詞”を箱にする📦🖊️
 
+![Extracting Nouns from Sentences](./picture/ab_tcb_cs_study_010_noun_extraction.png)
+
 ### 3-1. 名詞リストを作る（最短ルート）📝
 
 ユビキタス言語（第9章）から、**名詞だけ**拾ってみよう✨
@@ -109,6 +111,8 @@ graph TD
 ---
 
 ## 5) 今日の主役：「更新される単位」を探す👀🔒
+
+![Synchronous Update Unit](./picture/ab_tcb_cs_study_010_update_unit_gears.png)
 
 ここからがこの章のいちばんおいしいところ🍰✨
 モデル図を「集約候補の地図」に変える質問はこれ👇
@@ -192,6 +196,8 @@ graph TD
 
 ## 7) “ざっくりモデル図”の例（文字で表現）🖼️✨
 
+![Simple ID Reference Diagram](./picture/ab_tcb_cs_study_010_simple_model_diagram.png)
+
 紙でもホワイトボードでも同じ！まずはこの粒度を目指そう😊
 
 ```text
@@ -213,6 +219,8 @@ graph TD
 ---
 
 ## 8) C#の“骨組み”にしてみる（まだ薄くてOK）🦴✨
+
+![Model to Code Skeleton](./picture/ab_tcb_cs_study_010_diagram_to_code.png)
 
 この章は「モデル図」なので、コードは薄味でOK！
 でも、**箱→クラス**に一回変換すると理解が固定されるよ🧠
@@ -269,6 +277,8 @@ public enum OrderStatus
 
 ## 9) AIに手伝ってもらう（丸投げ禁止の型）🤖✨
 
+![AI Proposing Options](./picture/ab_tcb_cs_study_010_ai_options.png)
+
 AIはめっちゃ便利だけど、設計は「理由」が命！🔥
 おすすめは **出力を“比較用の案”として使う**ことだよ😊
 
@@ -299,6 +309,8 @@ AIはめっちゃ便利だけど、設計は「理由」が命！🔥
 ---
 
 ## 10) よくある失敗あるある😅💥（先に潰す！）
+
+![DB Schema Trap](./picture/ab_tcb_cs_study_010_db_trap.png)
 
 * **DBのテーブル図**になっちゃう（正規化の話に吸われる）🌀
   → まずは「業務の言葉」「更新単位」だよ👀

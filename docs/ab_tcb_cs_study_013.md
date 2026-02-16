@@ -10,6 +10,8 @@
 
 ## まず結論（超だいじ）📌💡
 
+![Immediate vs Eventual Consistency Fork](./picture/ab_tcb_cs_study_013_consistency_fork.png)
+
 **集約（Aggregate）＝「同時に守る必要があるルール（不変条件）を、1回の更新で必ず守るためのまとまり」**🌳🔐
 
 つまり境界を決めるときの最重要質問はこれ👇
@@ -105,6 +107,8 @@ flowchart TD
 
 ## 3) 例でやってみよう：カフェ注文ドメイン☕️🍰
 
+![Cafe Rule Classification Board](./picture/ab_tcb_cs_study_013_cafe_rule_board.png)
+
 ## 登場人物（最低限）👀
 
 * `Order`（注文）🌳
@@ -134,6 +138,8 @@ flowchart TD
 
 ## 4) 「同時に守る」＝ 集約の中に閉じ込める🌳🔐
 
+![Rules inside Aggregate Chest](./picture/ab_tcb_cs_study_013_aggregate_chest.png)
+
 ## 集約のコツ（この章のゴール）🎯
 
 * **同時に守るルール**は、**集約ルートのメソッド**で守る✨
@@ -143,6 +149,8 @@ flowchart TD
 ---
 
 ## 5) C#での実装イメージ（最小）🛠️✨
+
+![Method Guard Panel](./picture/ab_tcb_cs_study_013_method_guard_panel.png)
 
 ## Order集約：不変条件を“ここだけで”守る🌳🔐
 
@@ -260,11 +268,15 @@ graph TD
 
 ## 落とし穴1：ルールをDBトリガーやアプリのあちこちに散らす😱
 
+![Scattered Rules Nightmare](./picture/ab_tcb_cs_study_013_scattered_rules_puzzle.png)
+
 * 「UIでもチェック、APIでもチェック、DBでもチェック…」
   → だんだん “どれが正しいか分からない” 事故が起きる💥
   → **集約ルートに寄せる**のが基本だよ🌳👑
 
 ## 落とし穴2：「念のため全部同時に守ろう」で巨大集約にする🐘💦
+
+![Huge Aggregate Elephant](./picture/ab_tcb_cs_study_013_huge_aggregate_elephant.png)
 
 * なんでも1トランザクションにすると、遅い・壊れやすい・変更しにくい😵
   → “即時に守るべき🔴だけ” を同時にするのがコツ⚖️✨
@@ -277,6 +289,8 @@ graph TD
 ---
 
 ## 8) ミニ演習（3問）✍️🎀
+
+![Rule Sorting Quiz](./picture/ab_tcb_cs_study_013_sorting_quiz.png)
 
 ## 問1：注文確定と「サンクスメール送信」は同じトランザクション？📧🤔
 
