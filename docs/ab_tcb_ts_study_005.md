@@ -9,6 +9,8 @@
 
 ---
 
+![Messy vs Clean Code Organization](./picture/ab_tcb_ts_study_005_messy_vs_clean.png)
+
 ## 1. なんでフォルダ構成を先に決めるの？🤔📁
 
 最初にフォルダ構成を決めるのは、「未来の自分が泣かない」ためです😭➡️😂
@@ -24,6 +26,8 @@
 
 ---
 
+![The Four Architecture Boxes](./picture/ab_tcb_ts_study_005_four_boxes.png)
+
 ## 2. まずは結論：この4つに分ける📦📦📦📦
 
 この教材では、最初は迷わないように **4分割** でいきます😊
@@ -38,6 +42,8 @@
 ## 3. フォルダの中身（住所表）📘🗺️
 
 ![Study Image](./picture/ab_tcb_ts_study_005_layers.png)
+
+![Dependency Direction Arrows](./picture/ab_tcb_ts_study_005_dependency_arrows.png)
 
 ### 3.1 ざっくり全体図🧱
 
@@ -104,6 +110,8 @@ src/
 
 ---
 
+![One-Way Dependency Rule](./picture/ab_tcb_ts_study_005_oneway_rule.png)
+
 ## 4. “依存の向き”ルール（超だいじ）🧭🚦
 
 ### 4.1 ルールはこれだけ覚えてOK✅
@@ -124,6 +132,8 @@ src/
 | **infrastructure** |      ✅ |           ✅ |              ✅ |
 
 ---
+
+![Interface Plug and Socket](./picture/ab_tcb_ts_study_005_plug_socket.png)
 
 ## 5. “契約は内側、実装は外側”テクニック🪄📦
 
@@ -242,6 +252,8 @@ mkdir tests\domain, tests\application
 
 ---
 
+![ESLint Gatekeeper](./picture/ab_tcb_ts_study_005_eslint_gatekeeper.png)
+
 ## 8. 依存ルールを“機械で止める”🚦🤖（ESLint）
 
 目視チェックは疲れるし漏れます😵‍💫
@@ -287,6 +299,8 @@ export default [
 大きくなってきたらこっちが便利になりやすいです😊
 
 ---
+
+![Layer Sorting Game](./picture/ab_tcb_ts_study_005_sorting_quiz.png)
 
 ## 9. 小テスト：このimport、どこに置く？クイズ🎮🧠
 
