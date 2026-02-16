@@ -9,6 +9,8 @@
 
 ## 1) Presenterって何をする人？🧑‍🍳🍽️
 
+![Presenter as Plating Chef](./picture/clean_ts_study_032_plating_chef.png)
+
 イメージは「盛り付け担当」🍱✨
 
 * UseCase：栄養バランスの良い料理（ビジネスルール）を作る🥦
@@ -52,6 +54,8 @@ Presenterがやることはだいたいこれ👇
 
 ### 3-1. UseCase側：OutputBoundary（インターフェース）を用意🧩
 
+![Output Interface Dependency](./picture/clean_ts_study_032_output_interface.png)
+
 例：ListTasks の出力境界を作るよ📤
 
 ```ts
@@ -92,6 +96,8 @@ export type TaskListViewModel = {
 ---
 
 ### 3-3. Presenter実装：Response → ViewModel に変換🎨🔁
+
+![Data Conversion Factory](./picture/clean_ts_study_032_conversion_factory.png)
 
 ```ts
 // src/interfaceAdapters/presenters/ListTasksPresenter.ts
@@ -138,6 +144,8 @@ export class ListTasksPresenter implements ListTasksOutputBoundary {
 
 ## 4) TypeScriptの最新寄りテク：`satisfies`で“型の安心”を盛る🧁🛡️
 
+![Satisfies Mold](./picture/clean_ts_study_032_satisfies_mold.png)
+
 Presenterって「変換ミス（プロパティ名間違い）」が起きやすいのね🥺
 そこで `satisfies` を使うと、**オブジェクトの形が合ってるかチェック**しつつ、推論も保てるよ✨（TS公式でも説明されてるよ）([TypeScript][5])
 
@@ -157,6 +165,8 @@ this._viewModel = vm;
 ---
 
 ## 5) Controllerからどう使うの？（超ミニ例）🚪➡️🎨➡️🖥️
+
+![Controller Wiring Diagram](./picture/clean_ts_study_032_controller_wiring.png)
 
 Controllerは「受け取る→呼ぶ→返す」だけに薄くするよ🧻✨
 
@@ -180,6 +190,8 @@ export async function listTasksController(req: unknown) {
 
 ### ❌ UseCaseで `statusText: "完了✅"` を作り始める
 
+![UI Logic Leaking In](./picture/clean_ts_study_032_logic_leak.png)
+
 → UI都合が内側に侵入してジワジワ腐る🥲
 ✅ 文字や表示用ラベルはPresenterへ！
 
@@ -189,6 +201,8 @@ export async function listTasksController(req: unknown) {
 ✅ UseCase側に寄せた方が安全（Presenterは“見せ方の都合”だけ）
 
 ### ❌ Presenterが外部I/Oし始める（DB/HTTP/ファイル）
+
+![Presenter Purity](./picture/clean_ts_study_032_pure_function.png)
 
 ✅ Presenterは基本“純粋関数”っぽく保つ（変換だけ）🎀
 

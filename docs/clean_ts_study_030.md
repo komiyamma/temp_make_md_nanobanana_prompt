@@ -17,6 +17,8 @@
 
 ## 1. Controllerって何する人？👀💡
 
+![Thin Controller Door](./picture/clean_ts_study_030_thin_door.png)
+
 Controllerは、クリーンアーキの「Interface Adapters」側にある **“入口の変換係”**だよ🚪🔁
 
 外側（HTTPとかUIとか）から来たものを、内側（UseCase）が食べられる形にして渡す🥪✨
@@ -52,6 +54,8 @@ Controllerがやっていいのは、基本これだけ！🧻✨
 
 ## 3. Controllerが「やっちゃダメ」なこと一覧🙅‍♀️🔥
 
+![Forbidden Controller Actions](./picture/clean_ts_study_030_forbidden_actions.png)
+
 ここが混ざると、あとで泣く😭（マジで）
 
 * DBを触る（Repositoryを直呼び）🗄️❌
@@ -65,6 +69,8 @@ Controllerがやっていいのは、基本これだけ！🧻✨
 ---
 
 ## 4. “薄いController”にするための型を決めよう📐✨
+
+![Minimal Request Type](./picture/clean_ts_study_030_minimal_request_type.png)
 
 ここではフレームワーク（Express等）の型をControllerに入れないために、**自前の最小HTTP型**を用意するよ🧼
 （ルーティングは外側、Controllerは内側寄りに保つ作戦💪）
@@ -103,6 +109,8 @@ export interface Controller {
 ---
 
 ## 5. 3ユースケース分のController骨格を作るよ🚪🚪🚪✨
+
+![3 Distinct Controllers](./picture/clean_ts_study_030_three_controllers.png)
 
 ここからが本題！
 「受け取る→変換→呼ぶ」だけにして、**中身スカスカ**を目指す😆🧻
@@ -246,6 +254,8 @@ export class ListTasksController implements Controller {
 
 ## 6. Controllerが薄いかチェックする「5秒ルール」⏱️🧼
 
+![5 Second Rule Stopwatch](./picture/clean_ts_study_030_five_second_rule.png)
+
 Controllerのファイルを見て、これが満たせたら勝ち🎉
 
 * `new` が少ない（基本DIで注入）💉
@@ -257,6 +267,8 @@ Controllerのファイルを見て、これが満たせたら勝ち🎉
 ---
 
 ## 7. 入口（ルーティング）からControllerを呼ぶ例（イメージだけ）🧩
+
+![Routing Plug](./picture/clean_ts_study_030_routing_plug.png)
 
 ここは本格的には後半（外側）でやるけど、雰囲気だけ🎈
 ※Controllerは自前型なので、外側が変換して渡すだけ〜
@@ -282,6 +294,8 @@ function toHttpRequest(req: any): HttpRequest {
 ## 8. ありがち事故と直し方🚑💦
 
 ### 事故1：Controllerにバリデーションが増殖🌱➡️🌳
+
+![Validation Weed](./picture/clean_ts_study_030_validation_weed.png)
 
 **症状**：正規表現、細かい条件、エラーメッセージが増える
 **対処**：

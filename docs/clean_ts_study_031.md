@@ -7,6 +7,8 @@ UseCaseに入るころには、データは**きれいで型が決まってて�
 
 ### 1) まず結論：UseCaseに“生のHTTP”を渡しちゃダメ🙅‍♀️🌩️
 
+![HTTP Input Minefield](./picture/clean_ts_study_031_http_mines.png)
+
 HTTP入力って、だいたいこういう地雷があるの👇💥
 
 * `req.body.title` が **undefined** とか **number** とか **空文字** とか😵
@@ -22,6 +24,8 @@ HTTP入力って、だいたいこういう地雷があるの👇💥
 ---
 
 ### 2) “入力変換”の置き場：Request Builder（または Request Mapper）🏗️💗
+
+![4 Steps of Request Builder](./picture/clean_ts_study_031_request_builder_steps.png)
 
 Controller（第30章）は「薄くする」方針だったよね？🧻✨
 なので、Controllerの外にこういう子を作るのが超おすすめ！
@@ -80,6 +84,8 @@ flowchart TD
 
 ### 4) 2026の実務感：スキーマバリデーションを使うのが楽🥰📚
 
+![Schema Validation Tools](./picture/clean_ts_study_031_schema_tools.png)
+
 「自前if地獄」より、**スキーマライブラリ**がめちゃ楽！✨
 最近の定番だとこんな感じ👇
 
@@ -108,6 +114,8 @@ export type CreateTaskRequest = Readonly<{
 
 ### 5-2. HTTP入力用のスキーマ（Zod）🧪✨
 
+![Zod Schema Filter](./picture/clean_ts_study_031_zod_filter.png)
+
 **ポイント**：UseCaseのRequestを直接parseするんじゃなくて、
 まず “HTTP入力っぽい形” を受け止めてから、最後にRequestへ整形すると事故が減るよ〜😊
 
@@ -129,6 +137,8 @@ Zod v4は安定版としてリリースノートがまとまってるよ📌 ([Z
 ---
 
 ### 5-3. Request Builder（HTTP → Request）を作る🏗️📥➡️📦
+
+![Builder Result Pattern](./picture/clean_ts_study_031_builder_result.png)
 
 「失敗したらどう返すの？」問題があるから、まずは小さなResult型を作っちゃうのが楽だよ💕
 
@@ -179,6 +189,8 @@ export function buildCreateTaskRequest(input: unknown): Result<CreateTaskRequest
 
 ### 5-4. Controller側（薄く！薄く！🧻✨）
 
+![Controller Thinning Process](./picture/clean_ts_study_031_controller_thinning.png)
+
 ```ts
 // src/interface-adapters/web/controllers/createTaskController.ts
 import type { Request, Response } from "express";
@@ -207,6 +219,8 @@ Express v5系の情報は公式でも更新されてるよ📌 ([expressjs.com][
 ---
 
 ## 6) よくあるミス集（ここ踏みがち！）😵‍💫🧨
+
+![HTTP Leakage into UseCase](./picture/clean_ts_study_031_leaking_http.png)
 
 * **Controller内で if地獄**：入力の検証・整形が散らばる🌀
   → ✅ Builderへ隔離🏠✨
