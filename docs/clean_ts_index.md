@@ -9,7 +9,13 @@
 
 ## Part 1：核をつかむ（1〜7）🧭
 
+![clean_ts_index_roadmap_journey](./picture/clean_ts_index_roadmap_journey.png)
+
+
 ### 第1章：なぜクリーンアーキ？（ゴールを固定）🎯
+
+![clean_ts_index_part1_core](./picture/clean_ts_index_part1_core.png)
+
 
 * ねらい：この講座の「勝ち筋」を最初に決める😊
 * 学ぶ：変更に強い＝どこが強くなる？／テストが楽になる理由
@@ -62,6 +68,9 @@
 
 ## Part 2：Entities（中心のルール）を作る（8〜13）❤️
 
+![clean_ts_index_part2_entities](./picture/clean_ts_index_part2_entities.png)
+
+
 ### 第8章：Entities層の作り方（最小から）🌱
 
 * ねらい：中心を作る、でも作り込みすぎない
@@ -107,6 +116,9 @@
 ---
 
 ## Part 3：Use Cases（アプリの方針）を作る（14〜23）🎬
+
+![clean_ts_index_part3_usecases](./picture/clean_ts_index_part3_usecases.png)
+
 
 ### 第14章：Use Case Interactorの型を決める📐
 
@@ -182,6 +194,9 @@
 
 ## Part 4：Ports（差し替え口）を最小で設計（24〜29）🔌
 
+![clean_ts_index_part4_ports](./picture/clean_ts_index_part4_ports.png)
+
+
 ### 第24章：Portって何？（内側が欲しい“能力”）🎯
 
 * ねらい：外側都合じゃなく内側都合で決める
@@ -227,6 +242,9 @@
 ---
 
 ## Part 5：Interface Adapters（変換して繋ぐ）を作る（30〜38）🔁🌐
+
+![clean_ts_index_part5_adapters](./picture/clean_ts_index_part5_adapters.png)
+
 
 ### 第30章：Inbound Adapter（Controller）は責務3つだけ🧻
 
@@ -294,6 +312,9 @@
 ---
 
 ## Part 6：Frameworks & Drivers（外側に押し出す）39〜42 ⚙️🌍
+
+![clean_ts_index_part6_frameworks](./picture/clean_ts_index_part6_frameworks.png)
+
 
 ### 第39章：Webフレームワークは“外側”として置くだけ🧱
 

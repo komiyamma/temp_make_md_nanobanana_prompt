@@ -13,6 +13,9 @@
 
 ## 1) なんで“言葉”を分けるの？🤔💭
 
+![clean_ts_study_006_vocabulary_separation](./picture/clean_ts_study_006_vocabulary_separation.png)
+
+
 クリーンアーキの超大事ルールに「依存は内側へ」ってあるよね⬅️💘
 つまり **内側（Entities / UseCases）が、外側（HTTP/DB/フレームワーク）を知らない**のが理想。
 そして **“外側の名前（用語）を内側で言っちゃう”だけで、依存が始まる**んだよ…！😱
@@ -94,6 +97,9 @@ flowchart LR
 
 ## 4) 今日のメイン武器：命名ルール6つ🔪✨（これでだいぶ勝てる）
 
+![clean_ts_study_006_naming_rules_shield](./picture/clean_ts_study_006_naming_rules_shield.png)
+
+
 ### ルール①：内側に「HTTP / DB / Framework名」を入れない🙅‍♀️
 
 内側のファイル名・型名・関数名にこれが出たら危険信号⚠️
@@ -117,6 +123,9 @@ flowchart LR
 
 ### ルール④：DBの1行は “Row/Record” で外側に隔離する🧼
 
+![clean_ts_study_006_row_isolation](./picture/clean_ts_study_006_row_isolation.png)
+
+
 * `TaskRecord` / `TaskRow` は **Adapters/DB側**に置く✨
 * Entityは `Task` のまま❤️
 
@@ -134,6 +143,9 @@ flowchart LR
 ---
 
 ## 5) ミニ辞書（内側語彙）を作ろう📝💕（提出物その1）
+
+![clean_ts_study_006_mini_dictionary_book](./picture/clean_ts_study_006_mini_dictionary_book.png)
+
 
 このミニTaskアプリなら、まずはこれで十分！🌱✨
 
@@ -157,6 +169,9 @@ flowchart LR
 
 ### ❌ 悪い例：UseCaseにExpressが侵入😇
 
+![clean_ts_study_006_bad_naming_example](./picture/clean_ts_study_006_bad_naming_example.png)
+
+
 ```ts
 // usecases/CreateTaskUseCase.ts（これはダメな例）
 import type { Request, Response } from "express";
@@ -176,6 +191,9 @@ export async function createTask(req: Request, res: Response) {
 ---
 
 ### ✅ 良い例：内側は“内側の言葉”だけで完結😍
+
+![clean_ts_study_006_good_naming_example](./picture/clean_ts_study_006_good_naming_example.png)
+
 
 ```ts
 // usecases/create-task/CreateTaskModels.ts
@@ -242,6 +260,9 @@ export class CreateTaskInteractor {
 ## 8) 今日のハンズオン課題🛠️💕
 
 ### ✅ Step 1：名前の仕分けゲーム🎮✨
+
+![clean_ts_study_006_sorting_game_bins](./picture/clean_ts_study_006_sorting_game_bins.png)
+
 
 次の単語を「内側」「外側」に分類してみて〜！🥳
 
