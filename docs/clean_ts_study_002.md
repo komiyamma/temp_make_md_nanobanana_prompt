@@ -22,21 +22,33 @@
 
 ### 🟡 Entities（中心のルール❤️）
 
+![clean_ts_study_002_entities_layer](./picture/clean_ts_study_002_entities_layer.png)
+
+
 **「アプリが変わっても残る“本質のルール”を持つ層」**
 例：Taskの「完了にしていい条件」「タイトルの制約」みたいなやつ😊
 
 ### 🟠 Use Cases（アプリの目的🎬）
+
+![clean_ts_study_002_usecases_layer](./picture/clean_ts_study_002_usecases_layer.png)
+
 
 **「“何をしたいか”を実現する手順（流れ）を組み立てる層」**
 例：Create / Complete / List を“どう進めるか”を決める✨
 
 ### 🔵 Interface Adapters（変換してつなぐ🔁）
 
+![clean_ts_study_002_adapters_layer](./picture/clean_ts_study_002_adapters_layer.png)
+
+
 **「内側と外側の“言葉の違い”を変換してつなぐ層」**
 例：HTTPの入力 → UseCase入力へ変換、UseCase結果 → 画面用に整形、みたいな変換係🧼
 （ここがPresenter/Controller/ViewModelの居場所になりやすいよ） ([blog.cleancoder.com][1])
 
 ### ⚫ Frameworks & Drivers（道具箱⚙️🌍）
+
+![clean_ts_study_002_frameworks_layer](./picture/clean_ts_study_002_frameworks_layer.png)
+
 
 **「DB・Webフレームワーク・外部APIなど"具体的な道具"の層」**
 例：Express/Fastify/Next、SQLite、外部通知サービス…などなど📦
@@ -128,6 +140,9 @@ flowchart TD
 
 ## Taskアプリで“具体的にどこに何置く？”🗂️✨
 
+![clean_ts_study_002_folder_structure](./picture/clean_ts_study_002_folder_structure.png)
+
+
 たとえば、こんな配置だと迷いが減るよ😊
 
 ```txt
@@ -174,6 +189,9 @@ src/
 
 ## 迷ったときの“3秒判定”🧭⚡
 
+![clean_ts_study_002_decision_flow](./picture/clean_ts_study_002_decision_flow.png)
+
+
 次の質問にYESなら、その層！って覚えるとラク😊
 
 1. **それは“業務ルール”？（アプリが変わっても残る？）** → 🟡Entities
@@ -186,6 +204,9 @@ src/
 ## ミニ演習✍️💞（ちゃんと身につくやつ）
 
 ### 演習1：仕分けゲーム🎲
+
+![clean_ts_study_002_sorting_game_visual](./picture/clean_ts_study_002_sorting_game_visual.png)
+
 
 次の“モノ”はどの層？（直感でOK！）
 

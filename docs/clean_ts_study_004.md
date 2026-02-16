@@ -51,6 +51,9 @@ flowchart LR
 
 ## 2) なんで境界が大事なの？🧸💡
 
+![clean_ts_study_004_chaos_vs_order](./picture/clean_ts_study_004_chaos_vs_order.png)
+
+
 境界を引かないと、こうなるよ👇😵‍💫
 
 * UIの都合（HTTP、画面表示）が中心に入り込む
@@ -69,19 +72,31 @@ flowchart LR
 
 ## 3) このミニTaskアプリだと、境界はどこ？🗺️🗒️
 
+![clean_ts_study_004_three_boundaries_map](./picture/clean_ts_study_004_three_boundaries_map.png)
+
+
 今回の題材（Create / Complete / List）なら、最低でもここに境界があるよ👇🚧
 
 ### ✅ 境界A：UI ↔ UseCase（入口の境界）🚪
+
+![clean_ts_study_004_input_conversion](./picture/clean_ts_study_004_input_conversion.png)
+
 
 * UIの入力（HTTP body とか）をそのままUseCaseに渡さない🙅‍♀️
 * **UseCase用のRequest**に変換して渡す📦
 
 ### ✅ 境界B：UseCase ↔ DB（出口の境界）🔌
 
+![clean_ts_study_004_repository_boundary](./picture/clean_ts_study_004_repository_boundary.png)
+
+
 * UseCaseはSQLを直に触らない🙅‍♀️
 * **Repository Port（インターフェース）**越しに話す📞
 
 ### ✅ 境界C：UseCase ↔ UI（出力の境界）🎁
+
+![clean_ts_study_004_output_conversion](./picture/clean_ts_study_004_output_conversion.png)
+
 
 * UseCaseの結果は “中心の言葉” で返す
 * UIで表示用に整形（ViewModel化など）🎨
@@ -169,6 +184,9 @@ export type DomainError =
 
 ## 7) ワーク：今回の境界を「宣言」しよう📍📝💖
 
+![clean_ts_study_004_declaration_scroll](./picture/clean_ts_study_004_declaration_scroll.png)
+
+
 以下をそのまま埋めるだけでOK（テンプレ）👇✨
 （ノートでもMarkdownでもどっちでもOKだよ😊）
 
@@ -190,6 +208,9 @@ export type DomainError =
 ---
 
 ## 8) 「境界っぽい匂い」チェックリスト👃🧠✨
+
+![clean_ts_study_004_smell_detector](./picture/clean_ts_study_004_smell_detector.png)
+
 
 境界を見つけるコツは “匂い” だよ😊（超大事！）
 

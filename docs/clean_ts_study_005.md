@@ -10,6 +10,9 @@
 
 ## まず超重要：依存の向き と データの向き は別モノ⬅️➡️💞
 
+![clean_ts_study_005_dependency_vs_data](./picture/clean_ts_study_005_dependency_vs_data.png)
+
+
 クリーンアーキって、よく「依存は内向き！」って言うよね🌀
 でも、実際の処理って **データは外→内→外** に流れるの✨
 
@@ -94,6 +97,9 @@ flowchart TD
 
 ### ✅ Requestは「内側が欲しい情報だけ」
 
+![clean_ts_study_005_request_clean_box](./picture/clean_ts_study_005_request_clean_box.png)
+
+
 * HTTPの `req` とか `headers` とか入れない🙅‍♀️
 * “目的に必要な最小”だけにする🧠✨
 
@@ -102,6 +108,9 @@ flowchart TD
 * `title` だけで足りるならそれだけ🎯
 
 ### ✅ Responseは「内側の結果」だけ（表示都合は後で）
+
+![clean_ts_study_005_response_result_only](./picture/clean_ts_study_005_response_result_only.png)
+
 
 * `statusCode` とか `toast表示用メッセージ` を入れない🙅‍♀️
 * 「作れたよ」「IDはこれだよ」みたいな結果を返す📦
@@ -151,6 +160,9 @@ export interface CreateTaskUseCase {
 
 ### Controller（入口）は “受け取って整えるだけ” 🧾➡️📦
 
+![clean_ts_study_005_controller_entrance](./picture/clean_ts_study_005_controller_entrance.png)
+
+
 ```ts
 // 例：HTTPやフォーム入力を受け取る場所のイメージ
 function toCreateTaskRequest(input: any): CreateTaskRequest {
@@ -159,6 +171,9 @@ function toCreateTaskRequest(input: any): CreateTaskRequest {
 ```
 
 ### Presenter（出口）は “内側結果を表示用に整える” 📦➡️🎨
+
+![clean_ts_study_005_presenter_decorator](./picture/clean_ts_study_005_presenter_decorator.png)
+
 
 ```ts
 export type TaskViewModel = {
@@ -192,6 +207,9 @@ async function execute(req: any, res: any) { /* ... */ }
 
 ### ❌ ResponseにHTTPステータスが混ざる
 
+![clean_ts_study_005_http_leak_alert](./picture/clean_ts_study_005_http_leak_alert.png)
+
+
 ```ts
 // これもNG寄り：HTTPの都合が内側に侵入😵
 type CreateTaskResponse = { statusCode: number; body: any };
@@ -202,6 +220,9 @@ type CreateTaskResponse = { statusCode: number; body: any };
 ---
 
 ## ミニ演習（5分）⏱️🐣
+
+![clean_ts_study_005_data_journey_map](./picture/clean_ts_study_005_data_journey_map.png)
+
 
 ### お題：`CreateTask` のデータの流れを、自分の言葉＋矢印で書いてみよう✍️➡️
 

@@ -47,6 +47,9 @@
 
 ### ❌ パターンA：UseCase が DB ライブラリを直接 import 🗃️
 
+![clean_ts_study_003_violation_db](./picture/clean_ts_study_003_violation_db.png)
+
+
 「早く作りたい！」でやりがち😭
 
 ```ts
@@ -68,6 +71,9 @@ export async function createTask(title: string) {
 
 ### ❌ パターンB：UseCase が HTTP の型を知ってる🌐
 
+![clean_ts_study_003_violation_http](./picture/clean_ts_study_003_violation_http.png)
+
+
 ```ts
 // usecases/completeTask.ts（NG例）
 import type { Request } from "express"; // ❌ フレームワーク依存！
@@ -88,6 +94,9 @@ export async function completeTask(req: Request) {
 ## 4) 直し方は1つだけ（超重要）🔧✨
 
 ### ✅「内側に interface（Port）を置く」→ 外側が実装する
+
+![clean_ts_study_003_port_solution](./picture/clean_ts_study_003_port_solution.png)
+
 
 UseCase が欲しいのは「DBそのもの」じゃなくて、**能力**だよね？👀
 例：
@@ -149,6 +158,9 @@ export class SqliteTaskRepository implements TaskRepository {
 
 ```ts
 // main.ts（つなぐだけ）
+
+![clean_ts_study_003_assembly_injection](./picture/clean_ts_study_003_assembly_injection.png)
+
 const repo = new SqliteTaskRepository();
 const createTask = new CreateTask(repo);
 ```
@@ -156,6 +168,9 @@ const createTask = new CreateTask(repo);
 ---
 
 ## 5) “呼び出し方向” と “依存方向” は別モノだよ🌀💡
+
+![clean_ts_study_003_dip_concept](./picture/clean_ts_study_003_dip_concept.png)
+
 
 「え、でも UseCase から repo.save() 呼んでるじゃん？外向きじゃないの？😳」
 ってなるんだけど…
@@ -204,12 +219,18 @@ flowchart LR
 
 ### ✅ “名前が出たら負け”チェック😇
 
+![clean_ts_study_003_name_check_alert](./picture/clean_ts_study_003_name_check_alert.png)
+
+
 * UseCases に `express`, `sqlite`, `prisma`, `fetch`, `React` などの名前が出た
   → **だいたい境界違反**の合図🚨
 
 ---
 
 ## 7) 仕組みで守る（人はミスる😇）🛡️✨
+
+![clean_ts_study_003_eslint_shield](./picture/clean_ts_study_003_eslint_shield.png)
+
 
 「気をつけます！」は、3日で負ける😂
 だから **ESLint で止める**のが強いよ💪💕
