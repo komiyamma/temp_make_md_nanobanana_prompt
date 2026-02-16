@@ -8,6 +8,8 @@ Repository Port（＝「保存・取得ができる能力」を表すインタ�
 
 ## 1) Repository Portって、そもそも何？🔌
 
+![Repository as Collection](./picture/clean_ts_study_025_repository_collection.png)
+
 RepositoryはDDDでよく「**メモリ上のコレクションみたいに扱える**（でも実体はDBなど）」って説明されるやつだよ〜📦✨
 Eric Evansの定義もまさにそのニュアンスで、「ある種類のオブジェクト全部の集合を、コレクションっぽく扱えるようにする」って感じ💡 ([Hi!][1])
 
@@ -18,6 +20,8 @@ Microsoftのアーキテクチャガイドでも「Repositoryは永続化の関�
 ---
 
 ## 2) 最小メソッド主義ってなに？🍱✨
+
+![Fat vs Lean Repository](./picture/clean_ts_study_025_fat_vs_lean.png)
 
 一言でいうと…
 
@@ -34,6 +38,8 @@ Portは**差し替え口**だから、太ると差し替えが地獄になるの
 ---
 
 ## 3) 設計手順：UseCaseから逆算する 🧭✨
+
+![Reverse Design from UseCase](./picture/clean_ts_study_025_reverse_design.png)
 
 Repository Portは、**DBから逆算しない**で、**UseCaseから逆算**しよ〜💕
 
@@ -113,6 +119,8 @@ export interface TaskRepositoryBad {
 
 #### 方向性②：読み書きを分ける（ミニCQRS）👀✍️
 
+![CQRS Split](./picture/clean_ts_study_025_cqrs_split.png)
+
 「一覧の都合」が強くなってきたら、Portを分けるとスッキリしやすいよ✨
 
 ```ts
@@ -130,6 +138,8 @@ export interface TaskReadRepository {
 
 ## 6) “UseCaseの責務”をRepositoryに入れないでね⚠️
 
+![Logic Leak Warning](./picture/clean_ts_study_025_logic_leak.png)
+
 たとえば…
 
 * `completeTask(id)` をRepositoryに置くのは基本おすすめしない🙅‍♀️
@@ -141,6 +151,8 @@ Repositoryは「永続化の都合を隠す」ためのもの、って感覚が�
 ---
 
 ## 7) Fakeが一瞬で作れるか？を最終チェックにしよ 🧪🎭
+
+![Easy Fake Check](./picture/clean_ts_study_025_easy_fake.png)
 
 Port設計が良いと、テスト用のFakeが超簡単になるよ😊✨
 

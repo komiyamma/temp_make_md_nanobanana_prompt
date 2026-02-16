@@ -17,6 +17,8 @@
 
 ## 1. まず結論：Portの入出力は「内側の言葉」で固定する🧡🔒
 
+![Port Data Model Filter](./picture/clean_ts_study_027_port_filter.png)
+
 Portの型は、こういう方針が正解だよ👇
 
 ✅ **内側の都合（業務の言葉）で決める**
@@ -31,6 +33,8 @@ Portの型は、こういう方針が正解だよ👇
 ---
 
 ## 2. 事故りがちな例（わざと悪い例）💥😇
+
+![DB Leakage into UseCase](./picture/clean_ts_study_027_db_leak.png)
 
 たとえば、DB都合が混ざるとこうなる👇
 
@@ -60,6 +64,8 @@ interface BadTaskRepository {
 ---
 
 ## 3. じゃあどう決める？3ステップでいこ！🧭✨
+
+![3 Steps to Decide Model](./picture/clean_ts_study_027_model_steps.png)
 
 ### Step 1：境界をまたぐ“意味”を言葉にする🗣️
 
@@ -122,6 +128,8 @@ Portは増やすほど複雑になるから、**今のUseCaseに必要な分だ�
 
 ### 5-1. `TaskId`（意味付きID）を作る🆔✨
 
+![TaskId Branding](./picture/clean_ts_study_027_taskid_brand.png)
+
 ```ts
 declare const taskIdBrand: unique symbol;
 
@@ -159,6 +167,8 @@ export type TaskSnapshot = Readonly<{
 ---
 
 ### 5-3. Entityは“ルール担当”、Snapshotは“持ち運び担当”🎒
+
+![Entity Rehydrate Cycle](./picture/clean_ts_study_027_rehydrate_cycle.png)
 
 ```ts
 import { TaskId, TaskSnapshot } from "./task-types";
@@ -214,6 +224,8 @@ export class Task {
 ---
 
 ### 5-4. Port（Repository）の入出力をSnapshotで固定する🔌📦
+
+![Port Fixed with Snapshot](./picture/clean_ts_study_027_snapshot_fixed.png)
 
 ```ts
 import { TaskId, TaskSnapshot } from "../entities/task-types";

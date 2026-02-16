@@ -17,6 +17,8 @@
 
 ### ❌ よくある事故
 
+![Polluted UseCase](./picture/clean_ts_study_021_usecase_pollution.png)
+
 UseCaseがこういうのを返し始める👇
 
 * `return { status: 400, message: "タイトル短すぎ" }`
@@ -79,6 +81,8 @@ UseCase内では **握りつぶさず**、境界でログ・リトライ・500�
 
 ## 4) おすすめの形：Result型（判別可能ユニオン）🧩✨
 
+![Result Pattern Box](./picture/clean_ts_study_021_result_pattern_box.png)
+
 TypeScriptは **ユニオン型**と**絞り込み（narrowing）**が強いから、`Result`にするとめっちゃ気持ちいいよ🫶
 （判別可能ユニオンは「タグ付き」で安全に分岐できるやつだよ〜） ([TypeScript][2])
 
@@ -97,6 +101,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 export const assertNever = (x: never): never => {
   throw new Error(`Unexpected object: ${String(x)}`);
 };
+
+![Switch Exhaustiveness Safety Net](./picture/clean_ts_study_021_switch_exhaustiveness.png)
 ```
 
 ---
@@ -104,6 +110,8 @@ export const assertNever = (x: never): never => {
 ## 5) Taskアプリに当てはめる：UseCaseエラー設計💡🗒️
 
 ### ✅ エラーは “タグ付き” にする（判別が楽！）🏷️
+
+![Tagged Union Errors](./picture/clean_ts_study_021_tagged_errors.png)
 
 ```ts
 // usecases/errors/taskUseCaseError.ts
@@ -182,6 +190,8 @@ export class CreateTaskInteractor {
 
 ## 7) 境界（Controller/Presenter）で “外側表現” に変換する🎨🚪
 
+![Boundary Translator](./picture/clean_ts_study_021_boundary_translator.png)
+
 「第34章：エラー変換」で本格的にやるんだけど、**この章のミニ版**を見せるね😉✨
 
 ```ts
@@ -208,6 +218,8 @@ export const mapCreateTaskErrorToHttp = (e: CreateTaskError) => {
 ---
 
 ## 8) テストが超ラクになる🧪🎀（境界を作らずに検証OK）
+
+![Isolated Testing](./picture/clean_ts_study_021_test_isolation.png)
 
 ```ts
 // usecases/createTask/createTask.test.ts（例：Vitest想定の雰囲気）

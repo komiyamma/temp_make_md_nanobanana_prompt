@@ -21,6 +21,8 @@
 
 ## 2) Portがないと、何がつらいの？😵‍💫🧨
 
+![Life without Ports](./picture/clean_ts_study_024_no_port_trap.png)
+
 たとえば、UseCaseの中でいきなりDBライブラリを触り始めたら…👇
 
 * UseCaseがDB都合（SQL/テーブル/接続/例外）に引っ張られる🗄️💥
@@ -34,6 +36,8 @@
 
 ## 3) PortとAdapterの関係を、ミニ図でつかむ🧩🔁
 
+![Port and Adapter Relationship](./picture/clean_ts_study_024_port_adapter_mini.png)
+
 * **Port**：内側が欲しい能力（インターフェース）
 * **Adapter**：外側の具体実装（SQLite版、InMemory版…）
 
@@ -45,6 +49,8 @@
 ---
 
 ## 4) このミニTaskアプリで、Portは何になる？🗒️🔌✨
+
+![Port Extraction from UseCases](./picture/clean_ts_study_024_port_extraction.png)
 
 題材のユースケースは **Create / Complete / List** だったよね？😊
 この3つをやるとき、UseCaseが外側にお願いしたいことを抜き出すと…👇
@@ -75,6 +81,8 @@
 ---
 
 ## 5) Port設計のコツ：外側都合じゃなく「内側都合」💘
+
+![Naming Ports Correctly](./picture/clean_ts_study_024_naming_ports.png)
 
 Portで超大事なのはこれ👇
 
@@ -152,6 +160,8 @@ export class CreateTaskInteractor {
 
 ## 7) Portを作る手順（迷子にならない3ステップ）🧭✨
 
+![3 Steps to Create Port](./picture/clean_ts_study_024_port_steps.png)
+
 ### ステップ①：UseCaseを「手順」に分解する🧩
 
 例：CompleteTask
@@ -178,6 +188,8 @@ export class CreateTaskInteractor {
 ## 8) よくある失敗あるある（先に潰そっ）💣😇
 
 ### ❌ 失敗1：Portがデカすぎる（巨大Repository）🐘
+
+![Giant Repository Failure](./picture/clean_ts_study_024_giant_repo.png)
 
 最初から「なんでもできるRepository」にしがち…
 → 次章（第25章）で **最小メソッド主義** をやるから、ここでは「膨らませない意識」を持っておけばOK😉✨
