@@ -18,6 +18,8 @@ ADRは、**重要な設計判断**を **Context（背景）/ Decision（結論�
 
 ## 2-1 なんでテンプレが必要なの？🧠💭
 
+![Context Missing](./picture/adr_ts_study_002_context_missing.png)
+
 テンプレがないと起きがちなのがコレ👇😵‍💫
 
 * 背景を書き忘れて「なんでこうしたの？」が未来で謎になる🕰️💦
@@ -91,6 +93,8 @@ Cognitect（Michael Nygardの有名記事）でも「**良いことだけじゃ�
 
 ## 2-3 “軽量ADR（5点セット）”がいちばん使いやすい🪶📄
 
+![5-Set ADR](./picture/adr_ts_study_002_five_cards.png)
+
 最小3点に、実務で便利な2つを足したのがこの形👇
 
 * Title（タイトル）
@@ -133,6 +137,8 @@ graph LR
 ---
 
 ## 2-5 “短くて強いADR”にするコツ✍️✨
+
+![Short vs Long ADR](./picture/adr_ts_study_002_short_vs_long.png)
 
 初心者が一番ハマりやすい罠は「全部書こうとして長文」😵‍💫
 ADRは**未来の自分が読み返せる長さ**が正義だよ👑✨
@@ -186,6 +192,8 @@ ADRは**未来の自分が読み返せる長さ**が正義だよ👑✨
 ---
 
 ## 2-7 サンプルADR（TypeScriptっぽいテーマ）🍪🧠
+
+![Validation Gate](./picture/adr_ts_study_002_validation_gate.png)
 
 例として「実行時バリデーションどうする？」をADRにするとこんな感じ👇
 （“型があるのに実行時に壊れる”問題、ありがちだよねぇ…😇）
@@ -251,6 +259,8 @@ ADRは**未来の自分が読み返せる長さ**が正義だよ👑✨
 ---
 
 ## 2-9 AI活用：テンプレに“整形”してもらう魔法🪄🤖✨
+
+![AI Template Wizard](./picture/adr_ts_study_002_ai_wizard.png)
 
 ### そのまま使えるプロンプト例💬
 

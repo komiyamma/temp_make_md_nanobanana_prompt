@@ -11,6 +11,8 @@ ADRってそもそも「**重要な設計判断を、背景（Context）と結�
 
 ## 3-1. まず結論：ADRを書くのは「あとで困る」判断だけ😵‍💫🧠
 
+![Future Self Explaining](./picture/adr_ts_study_003_future_self.png)
+
 ADRの価値って、超ざっくり言うとこれ👇
 
 * **未来の自分／未来の誰か**が「なんでそうしたの？」って聞いたときに答えられる🙋‍♀️
@@ -56,6 +58,8 @@ ADRの価値って、超ざっくり言うとこれ👇
 ---
 
 ## 3-3. さらに精度UP！“ADR向き度”5問チェック🧪📊
+
+![5-Question Checklist](./picture/adr_ts_study_003_five_questions.png)
 
 次は「ちゃんと判断する」ための質問セット✨
 YESが多いほどADR向きだよ✅
@@ -122,6 +126,8 @@ ADRにしたいテーマが巨大すぎると、だいたい失敗する💦
 
 ## 3-6. “早すぎ問題”と“遅すぎ問題”⏱️💦
 
+![Timing Zone](./picture/adr_ts_study_003_timing_zone.png)
+
 ### 😭 遅すぎ：実装してから「あ、書くの忘れた」
 
 → だいたい理由が抜け落ちて「結論だけ」になりがち💀
@@ -157,6 +163,8 @@ PRテンプレ（または自分のチェック）にこれを追加👇
 
 ### ✅ 小ワザ2：Node系のADR CLIを使って“書くハードル”を下げる🤖✨
 
+![ADR CLI Tool](./picture/adr_ts_study_003_adr_cli.png)
+
 TypeScript界隈なら、たとえば **@meza/adr-tools** みたいにnpmで入るADRツールがあるよ📦
 `adr new ...` で番号付け＆テンプレでファイル生成してくれるやつ💡 ([GitHub][4])
 
@@ -165,6 +173,8 @@ TypeScript界隈なら、たとえば **@meza/adr-tools** みたいにnpmで入�
 ---
 
 ## 3-8. ワーク🗂️✨：「ADR必要/不要」仕分け10連発🔥
+
+![Sorting Bins](./picture/adr_ts_study_003_sorting_bins.png)
 
 次の10個を、直感で3つに分けてみてね👇
 
@@ -194,6 +204,8 @@ TypeScript界隈なら、たとえば **@meza/adr-tools** みたいにnpmで入�
 ---
 
 ## 3-9. AI活用🤖💕：ADR向き度を“採点”させるプロンプト
+
+![AI Scoreboard](./picture/adr_ts_study_003_ai_score.png)
 
 コピペで使えるやつ置いとくね🪄✨（短くて強い）
 

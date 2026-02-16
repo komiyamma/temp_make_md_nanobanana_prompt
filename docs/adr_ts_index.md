@@ -6,6 +6,8 @@
 
 ## 第1章：ADRってなに？「設計の理由」を未来に残すノート📒🌸
 
+![Future Note](./picture/adr_ts_index_future_note.png)
+
 * 🎯 ねらい：ADRが「メモ」じゃなくて「判断の証拠＆説明書」だと理解する
 * 📌 学ぶこと：
 
@@ -17,6 +19,8 @@
 ---
 
 ## 第2章：ADRの基本テンプレ（型）を手に入れよう🧩📝
+
+![ADR Template Puzzle](./picture/adr_ts_index_template_puzzle.png)
 
 * 🎯 ねらい：書ける形（テンプレ）を覚えて、迷いを減らす
 * 📌 学ぶこと：
@@ -44,6 +48,8 @@
 
 ## 第4章：TypeScript向け「判断の作り方」— 比較軸と選択肢の出し方⚖️✨
 
+![Comparison Matrix](./picture/adr_ts_index_comparison_matrix.png)
+
 * 🎯 ねらい：「なんとなく決めた」を卒業して、筋の良い決め方を身につける
 * 📌 学ぶこと：
 
@@ -69,6 +75,8 @@
 
 ## 第6章：書き方② Decision（結論）は“一文で言い切る”✨🧠
 
+![Strong Decision Stamp](./picture/adr_ts_index_decision_stamp.png)
+
 * 🎯 ねらい：Decisionがブレない書き方を身につける
 * 📌 学ぶこと：
 
@@ -81,6 +89,8 @@
 ---
 
 ## 第7章：書き方③ Consequences（結果）— “痛み”もちゃんと書く💦💎
+
+![Consequences Balance](./picture/adr_ts_index_consequences_balance.png)
 
 * 🎯 ねらい：メリットだけの作文を卒業して、判断の価値を上げる
 * 📌 学ぶこと：
@@ -95,6 +105,8 @@
 
 ## 第8章：置き場所と管理（VS Codeで迷子にならないADR運用）📁🧭
 
+![Repository Folder Structure](./picture/adr_ts_index_repo_folder.png)
+
 * 🎯 ねらい：ADRを“探せる・育てられる”形でリポジトリに置ける
 * 📌 学ぶこと：
 
@@ -108,6 +120,8 @@
 ---
 
 ## 第9章：開発フローに組み込む（PRとレビューで文化にする）🔁✅
+
+![PR Bundle](./picture/adr_ts_index_pr_bundle.png)
 
 * 🎯 ねらい：「あとで書く」を防いで、ADRが“自然に増える”状態にする
 * 📌 学ぶこと：

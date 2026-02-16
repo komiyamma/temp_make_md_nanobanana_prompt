@@ -27,9 +27,13 @@
 
 ## 4.2 判断の“型”はこれだけでOK！6ステップ🧩✨
 
+![6-Step Decision Flow](./picture/adr_ts_study_004_six_steps_flow.png)
+
 迷ったら、毎回これで進めてね👇（ほんとに強い💪💞）
 
 ### Step1：判断の問いを1行にする✍️
+
+![Question Key](./picture/adr_ts_study_004_question_key.png)
 
 * 悪い例：
   「APIまわりどうしよう…」😵
@@ -78,6 +82,8 @@
 
 ### Step5：証拠をちょびっと作る🔎（ミニPoCでOK）
 
+![Mini PoC Experiment](./picture/adr_ts_study_004_mini_poc.png)
+
 * 30分だけ試す
 * 既存コードに当ててみる
 * 型が崩れないか確認
@@ -110,6 +116,8 @@ flowchart TD
 ---
 
 ## 4.3 TypeScript開発でよく使う比較軸カタログ📚✨
+
+![Comparison Axis Catalog](./picture/adr_ts_study_004_axis_catalog.png)
 
 ここから選べばOK！迷ったらまずこれ👇
 
@@ -199,6 +207,8 @@ DX / 型安全 / Runtime安全 / 学習コスト / 運用
 
 ## 4.6 例題②：API呼び出し層をどう切る？🔌✨
 
+![API Layer Options](./picture/adr_ts_study_004_api_layer_options.png)
+
 ### 問い✍️
 
 「API呼び出しを **直書き**にする？ **ラッパ関数**に寄せる？ **専用層**を作る？」
@@ -234,6 +244,8 @@ DX / 型安全 / 運用 / 変更耐性（API変更に強い？） / 学習コス
 ---
 
 ## 4.8 AI活用：比較を“雑に強く”するコツ🤖💞
+
+![AI Devil's Advocate](./picture/adr_ts_study_004_ai_devil.png)
 
 CopilotやCodex系は、**比較の材料づくり**が得意だよ〜！✨
 （チャットで質問して、表にしてもらうのが最強🧾）
