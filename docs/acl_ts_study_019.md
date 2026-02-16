@@ -21,6 +21,8 @@
 
 # 19-2. 異常データあるある図鑑 📚👻（まずは敵を知る）
 
+![異常データあるある図鑑](./picture/acl_ts_study_019_abnormal_data_monsters.png)
+
 外部APIから来がちな“罠”はだいたいこのへん👇
 
 ```mermaid
@@ -76,6 +78,8 @@ mindmap
 
 # 19-3. 今日の方針：ACLは「境界で落とす」🧼🚧
 
+![ACLセキュリティチェックポイント](./picture/acl_ts_study_019_acl_checkpoint.png)
+
 この教材では、基本方針をこう置くよ👇
 
 * **外部データは信用しない**（パース＆検証でチェック）🔍
@@ -103,6 +107,8 @@ export type StudentDto = {
 ---
 
 # 19-5. 異常系テストの土台：DTOの「形」をZodで検証する🧱🔍
+
+![Zod型抜き](./picture/acl_ts_study_019_zod_schema_filter.png)
 
 外部のJSONは実行時には **型が無い** ので、テストで強くするならスキーマ検証がめちゃ効くよ🔥
 Zodは「TypeScript-firstのバリデーションライブラリ」って公式でも言ってるやつだよ✅ ([Zod][1])
@@ -178,6 +184,8 @@ export function mapStudent(dto: unknown) {
 
 # 19-7. 異常系テスト：テーブル駆動で“サクサク大量”にする🍣🧪
 
+![テーブル駆動テスト](./picture/acl_ts_study_019_table_driven_sushi.png)
+
 Vitestは v4 系が出ていて、Migration Guideも v4.0向けに整備されてるよ📌 ([Vitest][3])
 （テストランナーとしての定番ルートのひとつだね✨）
 
@@ -226,6 +234,8 @@ describe("mapStudent - 異常系🧨", () => {
 
 # 19-8. 境界値テスト：ここが一番バグるゾーン🎯😇
 
+![境界値の崖](./picture/acl_ts_study_019_boundary_cliff.png)
+
 境界値は **“0/1/MAX/MAX+1”** が鉄板だよ🍞✨
 
 ## ✅ 例：ポイントの境界値
@@ -256,6 +266,8 @@ describe("parsePoints - 境界値🎯", () => {
 ---
 
 # 19-9. 外部変更検知：フィクスチャ（外部レスポンスの標本）を残す📦🚨
+
+![外部変更検知のカナリア](./picture/acl_ts_study_019_canary_test.png)
 
 ここが「壊れない設計へ」の核心💎
 

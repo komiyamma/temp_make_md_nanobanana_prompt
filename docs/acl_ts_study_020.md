@@ -12,6 +12,8 @@
 
 ## 20.1 観測ってなに？ACLに入れると何が嬉しいの？📈🧱
 
+![観測の霧](./picture/acl_ts_study_020_observability_fog.png)
+
 ACLは「外部のクセ」を吸収する場所だから、トラブルも集まりやすいです😇
 だからこそ **“境界で見える化”** が超効きます✨
 
@@ -55,6 +57,8 @@ ACLは「外部のクセ」を吸収する場所だから、トラブルも集�
 
 ## 20.3 相関ID（Correlation ID）で“1件のリクエスト”を追跡する🔗🪪
 
+![相関IDリレー](./picture/acl_ts_study_020_correlation_id_relay.png)
+
 **相関ID = 「このリクエストの背番号」** です🏃‍♀️✨
 これがあるだけで、ログの追跡が神になります🙏🌈
 
@@ -81,6 +85,8 @@ sequenceDiagram
 ---
 
 ## 20.4 実装：AsyncLocalStorageで“どこからでもrequestIdを参照”🧵✨
+
+![AsyncLocalStorageリュックサック](./picture/acl_ts_study_020_async_local_storage_backpack.png)
 
 Nodeでは **AsyncLocalStorage を使うのが推奨** されています（高速で安全に最適化されてるよ、という立ち位置です）🧠⚡。 ([nodejs.org][2])
 
@@ -256,6 +262,8 @@ export async function startOtel() {
 
 ## 20.7 ACLに“観測ポイント”をどこへ入れる？📍🧱
 
+![観測ポイント](./picture/acl_ts_study_020_observation_points.png)
+
 ### 入れる場所はここ！おすすめ5点セット🖐️✨
 
 5. **結果の要約**：成功/失敗、扱った件数など📊✅
@@ -303,6 +311,8 @@ VS CodeのGitHub Copilotは、コード補完だけじゃなく説明や生成�
 ---
 
 ## 20.9 ミニプロジェクト：外部API 2つをACLで包んで完成させる🎓🏁
+
+![最終構成図](./picture/acl_ts_study_020_final_architecture.png)
 
 題材はこの教材の流れに合わせて、例として「学生情報API」と「決済API」を統合する想定で進めます🎓🏦✨
 ゴールはこれ👇
@@ -427,6 +437,8 @@ export class StudentDirectoryAclAdapter implements StudentDirectoryPort {
 ---
 
 ## 20.10 卒業チェックリスト（これ全部YESなら勝ち🏆✨）✅🎉
+
+![卒業証書](./picture/acl_ts_study_020_graduation_certificate.png)
 
 * [ ] 内側（ドメイン/アプリ層）に外部DTO型が出てこない🧱
 * [ ] 変換は「整形→検証→ドメイン生成」の形が守れてる🧼✅
