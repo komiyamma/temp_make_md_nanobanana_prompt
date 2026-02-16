@@ -12,6 +12,8 @@
 
 ## DTO（Data Transfer Object）＝外の都合 🧳
 
+![DTO vs Domain](./picture/acl_ts_study_011_dto_vs_domain.png)
+
 * 外部APIのレスポンスそのまま
 * 命名が変・コード値が謎・null多め・単位が不思議…みたいな “クセ” が混ざる😇
 * 変更されやすい（相手が仕様変えたら即しんどい）💥
@@ -55,6 +57,8 @@ flowchart LR
 
 ## おすすめの置き場所（例）📁
 
+![ACL Folder Structure](./picture/acl_ts_study_011_folder_structure.png)
+
 * `src/acl/...` の下にまとめる
 
   * `src/acl/dto/` … 外部DTOの型
@@ -75,6 +79,8 @@ mindmap
 ```
 
 ## 命名ルール（迷ったらこれ）📝
+
+![Naming Labels Strategy](./picture/acl_ts_study_011_naming_labels.png)
 
 * DTO型：`StudentDto` / `PaymentResponseDto` みたいに **Dtoを末尾**
 * 変換関数：
@@ -147,6 +153,8 @@ export type Student = {
 
 ## 11-4-3. いよいよ変換（mapper）を書くよ 🔁🔥
 
+![Grade Code Transformation](./picture/acl_ts_study_011_grade_transformation.png)
+
 ```ts
 // src/acl/mappers/student.mapper.ts
 import { Student, StudentId, StudentType } from "../../domain/student";
@@ -203,6 +211,8 @@ flowchart TD
 
 # 11-5. “変換の責任”を太らせすぎないコツ 🍔➡️🥗
 
+![Fat Mapper Warning](./picture/acl_ts_study_011_fat_mapper_warning.png)
+
 mapperは便利だから、油断するとこうなる👇😇
 
 * 変換しながらHTTP叩く
@@ -218,6 +228,8 @@ mapperは便利だから、油断するとこうなる👇😇
 
 # 11-6. ランタイム検証（ちょい最新トレンド）🧪✨（※軽く触れるだけ）
 
+![Zod Runtime Scanner](./picture/acl_ts_study_011_zod_scanner.png)
+
 TypeScriptは「型」は強いけど、外部から来たデータが本当に型どおりかは保証できないよね😵‍💫
 そこで最近は **Zodみたいなスキーマ検証**をACLで使う人が多いよ🧼✨
 
@@ -229,6 +241,8 @@ TypeScriptは「型」は強いけど、外部から来たデータが本当に�
 ---
 
 # 11-7. AI拡張（Copilot / Codex）を使うと爆速になる場面 🤖💨
+
+![AI Mapping Partner](./picture/acl_ts_study_011_ai_mapping_partner.png)
 
 GitHub Copilot は VS Code の中で、コード提案・説明・実装の補助をしてくれるよ。([Visual Studio Code][4])
 

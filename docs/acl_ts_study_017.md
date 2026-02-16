@@ -10,6 +10,8 @@
 
 ## 17.1 「失敗」を翻訳しないと何が困るの？😵‍💫
 
+![Need for Translation](./picture/acl_ts_study_017_translator_need.png)
+
 外部APIの失敗って、だいたいこんな感じでバラバラです👇
 
 * `429 Too Many Requests`（レート制限）🚦
@@ -29,6 +31,8 @@
 ---
 
 ## 17.2 まず「外部の失敗」を型で整理しよう🧺✨（ExternalError）
+
+![External Error Types](./picture/acl_ts_study_017_external_error_types.png)
 
 外部の失敗をそのまま投げると、呼び出し元が毎回つらいです😇
 だからまずACL内で、外部失敗を **4種類くらいに整形**します👇
@@ -56,6 +60,8 @@ export type ExternalError =
 ---
 
 ## 17.3 次に「内側の失敗」を型で作ろう🧠📘（DomainError）
+
+![Domain Error Cards](./picture/acl_ts_study_017_domain_error_cards.png)
 
 内側は「意味」で扱いたいので、**意図が伝わる名前**にします✨
 
@@ -168,6 +174,8 @@ flowchart TD
 
 ## 17.6 バックオフ（待ち時間）の王道は「指数 + ジッター」📈🎲
 
+![Backoff with Jitter](./picture/acl_ts_study_017_backoff_jitter.png)
+
 同時に失敗したクライアントが、同時にリトライすると…
 **リトライ嵐（thundering herd）**でまた落ちます😇🌪️
 
@@ -224,6 +232,8 @@ export const err = <E>(error: E): Result<never, E> => ({ ok: false, error });
 ---
 
 ## 17.8 実装パーツ① Retry-After を読み取る⏱️📩
+
+![Retry-After Priority](./picture/acl_ts_study_017_retry_after_priority.png)
 
 `Retry-After` は「何秒待ってね」または「日時」で来ることがあります（HTTP標準・MDN参照）([datatracker.ietf.org][1])
 
@@ -395,6 +405,8 @@ export async function withRetry<T>(
 
 ## 17.11 ミニ題材で考える🎓🍱（GETとPOSTで扱いを変える）
 
+![GET vs POST Safety](./picture/acl_ts_study_017_get_vs_post_safety.png)
+
 ### ケースA：学生情報の取得（GET）🎓📄
 
 * 失敗：`503` / ネットワーク断
@@ -424,6 +436,8 @@ export async function withRetry<T>(
 ---
 
 ## 17.13 よくある事故パターン集😇🧨
+
+![Thundering Herd Problem](./picture/acl_ts_study_017_thundering_herd.png)
 
 * 何でもかんでもリトライして **レート制限を悪化**🚦💥
 * ジッターなしで同時リトライ → **再崩壊**🌪️（SREでも注意されています📘）([sre.google][4])

@@ -45,6 +45,8 @@ mindmap
       ステータス遷移
 ```
 
+![Validation Categories](./picture/acl_ts_study_015_validation_categories.png)
+
 ### A) 必須チェック（存在する？）🧱
 
 * 必須フィールドが **あるか**
@@ -112,6 +114,8 @@ flowchart TD
 
 ## 15-3. 「パース」と「バリデーション」を分けると超ラク🧼➡️✅
 
+![Parse vs Validate Flow](./picture/acl_ts_study_015_parse_validate_flow.png)
+
 第14章の“整形（パース）”と、第15章の“検証（バリデーション）”は、分けると頭が整理しやすいです🧠✨
 
 * **パース**：型変換・トリム・全角半角・文字→数値 など（整える）🧽
@@ -132,6 +136,8 @@ flowchart LR
 
 ## 15-4. 2026年の定番：スキーマバリデーションで入口を固める🧱✨
 
+![Zod Guard](./picture/acl_ts_study_015_zod_guard.png)
+
 TypeScript界隈で「unknownなJSONを型安全にする」用途だと、スキーマバリデーションが超定番です📦✅
 2026年1月時点でも、Zodは利用者が多く、最新版はv4系です（npmの最新表示）([npm][1])
 （TypeScript自体も 5.9.x が最新リリースとして案内されています）([GitHub][2])
@@ -142,6 +148,8 @@ TypeScript界隈で「unknownなJSONを型安全にする」用途だと、ス�
 ---
 
 ## 15-5. 実装の基本形（safeParseで“失敗を値として扱う”）🧪✨
+
+![safeParse Result Split](./picture/acl_ts_study_015_safeparse_split.png)
 
 Zodの基本はこれです👇
 
@@ -189,6 +197,8 @@ export function validateStudentDto(input: unknown) {
 ---
 
 ## 15-6. “境界で落とす”が効く理由（内側が平和になる）🕊️✨
+
+![Inner Peace](./picture/acl_ts_study_015_inner_peace.png)
 
 バリデーションをACLでやらないと、内側がこうなります👇😵‍💫
 
@@ -243,6 +253,8 @@ if (!v.ok) {
 
 ## 15-8. ありがちな“検証の落とし穴”5選 😇🪤
 
+![Partial Check Pitfall](./picture/acl_ts_study_015_pitfall_partial.png)
+
 1. **「必須だけ」チェックして安心する**（範囲/許可値が抜けがち）
 2. **代替値でごまかしすぎる**（サイレント事故の元🔥）
 3. **ログが無い**（外部変更に気づけない🚨）
@@ -266,6 +278,8 @@ if (!v.ok) {
 ---
 
 ## 15-10. AI活用コーナー：バリデーションは“下書き生成”が相性最高🤖🧡
+
+![AI Rule Generator](./picture/acl_ts_study_015_ai_rule_gen.png)
 
 バリデーションは「型・範囲・形式」の列挙が多いので、AIが得意です✍️✨
 ただし **最終判断は人間が監督** ね🛡️
