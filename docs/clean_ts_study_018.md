@@ -25,6 +25,8 @@ UseCase は **「段取り係」** 🧑‍🍳✨
 
 ## 2) 今回のゴール（完成イメージ）🧠✨
 
+![Data Flow Pipeline](./picture/clean_ts_study_018_data_flow.png)
+
 データの流れはこうなるよ👇
 
 **Controller(UI) → CreateTaskRequest → CreateTaskInteractor → TaskRepository.save → CreateTaskResponse → Controller(UI)**
@@ -40,6 +42,8 @@ UseCaseは **DBもHTTPも知らない** 🙅‍♀️
 （フォルダ例：`src/usecases/createTask/`）
 
 ### 3-1. Result 型（成功/失敗を統一）🎭
+
+![Result Type Visualization](./picture/clean_ts_study_018_result_types.png)
 
 ```ts
 // src/shared/result.ts
@@ -71,6 +75,8 @@ export type CreateTaskResponse = {
 ---
 
 ### 3-3. エラー型（内側の言葉で）⚠️
+
+![Error Classification](./picture/clean_ts_study_018_error_types.png)
 
 「失敗」を雑に `throw` しないで、**型で表現**していくよ💪✨
 
@@ -121,6 +127,8 @@ export interface Clock {
 
 ## 5) Entity（Task）側：中心ルールで作る ❤️🧱
 
+![Entity Guard (Factory)](./picture/clean_ts_study_018_entity_guard.png)
+
 UseCase が Task を雑に作らず、**Entity の入口で守る**🔒
 
 ```ts
@@ -157,6 +165,8 @@ Entity の `create()` が **中心ルールの門番**だよ🛡️✨
 ---
 
 ## 6) いよいよ本体：CreateTaskInteractor を実装 ✅🧩
+
+![Interactor Execution Steps](./picture/clean_ts_study_018_interactor_steps.png)
 
 UseCase は Port を注入して動く！💉
 
@@ -211,6 +221,8 @@ export class CreateTaskInteractor {
 ---
 
 ## 7) テストで「差し替え可能」を体感しよ🧪🎭
+
+![Testing with Fakes](./picture/clean_ts_study_018_test_fakes.png)
 
 最近は **Vitest 4** が大きくアップデートされてるよ〜（2025年後半に v4 リリース）🧪✨ ([Vitest][1])
 （TypeScript 5.9 が “最新” として案内されてるのもここで確認できるよ） ([TypeScript][2])

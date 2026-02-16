@@ -30,6 +30,8 @@ CompleteTask を「中心を汚さず」に実装できるようになること�
 
 ## 更新系UseCaseの“あるある落とし穴”先に言うね⚠️😇
 
+![Update UseCase Pitfalls](./picture/clean_ts_study_019_common_pitfalls.png)
+
 * 「完了済みをもう一回完了」ってどう扱う？（二重クリック問題）🖱️🖱️
 * 「IDが存在しない」時に、どこで何を返す？🫥
 * 「保存失敗（DB落ちた等）」をドメインエラーと混ぜない？🌩️
@@ -40,6 +42,8 @@ CompleteTask を「中心を汚さず」に実装できるようになること�
 ---
 
 ## 1) Request / Response を用意する📥📤
+
+![Request and Response Structure](./picture/clean_ts_study_019_request_response.png)
 
 更新系は入力がシンプルになりがち！今回は「完了したいTaskのID」だけでOK🙆‍♀️✨
 
@@ -95,6 +99,8 @@ export interface Clock {
 
 ## 3) Entity 側に「完了する」ルールがある前提にする🧠✅
 
+![Entity State Transition (Complete)](./picture/clean_ts_study_019_entity_state_transition.png)
+
 Task エンティティは「外から直接 completed を書き換えさせない」スタイルが理想だよ🔒✨
 ここでは最小イメージだけ置くね（すでに作ってるなら読み替えてOK！）
 
@@ -117,6 +123,8 @@ export class Task {
 ---
 
 ## 4) いよいよ CompleteTaskInteractor を実装する！🔁✅✨
+
+![CompleteTask Interactor Logic](./picture/clean_ts_study_019_interactor_logic.png)
 
 ここが本番〜！💪😊
 更新系は「取得→更新→保存」の順番を崩さないのが超大事だよ🧡
@@ -165,6 +173,8 @@ export class CompleteTaskInteractor {
 
 ## 5) “二重完了”はどうするのが良いの？🖱️🖱️🤔
 
+![Idempotency Strategy (Strict vs Idempotent)](./picture/clean_ts_study_019_idempotency_strategy.png)
+
 ここ、実務でもめっちゃ出るやつ！😆
 
 ### 方針A：AlreadyCompleted を「失敗」として返す⚠️
@@ -191,6 +201,8 @@ if (!completed.ok) {
 ---
 
 ## 6) テスト：Port差し替えで秒速で検証🧪🎭✨
+
+![Test Setup with Fakes](./picture/clean_ts_study_019_test_setup.png)
 
 Vitest 4 系で書く例だよ〜（最近の主流の一角）🧪✨ ([Vitest][3])
 

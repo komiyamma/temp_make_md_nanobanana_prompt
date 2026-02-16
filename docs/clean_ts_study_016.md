@@ -15,6 +15,8 @@
 
 ## まず結論：Responseって何？🤔📦
 
+![Response Concept](./picture/clean_ts_study_016_response_concept.png)
+
 **Response = UseCaseの“処理結果のレポート”** だよ📝✨
 ポイントはこれ👇
 
@@ -26,6 +28,8 @@
 ---
 
 ## “やっちゃダメResponse”あるある😇💥
+
+![Bad Response Examples](./picture/clean_ts_study_016_bad_response.png)
 
 ### ❶ HTTPレスポンスそのものを返しちゃう
 
@@ -93,6 +97,8 @@ Response設計のコツは **「UIが欲しい最小の素材」** を返すこ�
 
 ## Response用のDTO（出力用データ）を作ろう📦✨
 
+![Thin DTO vs Rich Entity](./picture/clean_ts_study_016_dto_layer.png)
+
 「EntityのTask」をそのまま返すより、**Response専用の薄いDTO** を作ると安全だよ🛡️
 （外側に “Entityのメソッド” とか “内部構造” を漏らしにくい）
 
@@ -112,6 +118,8 @@ export type TaskDto = Readonly<{
 ---
 
 ## CreateTaskResponse 設計例➕📝
+
+![Response Examples (Create/Complete/List)](./picture/clean_ts_study_016_response_examples.png)
 
 UseCaseがやったことは「タスクを作った」だよね😊
 だから Response はこう👇
@@ -174,6 +182,8 @@ export type ListTasksResponse = Readonly<{
 
 ## UseCase実装側は「Responseを組み立てるだけ」🍳📦
 
+![Interactor Assembling Response](./picture/clean_ts_study_016_interactor_assembly.png)
+
 例：CreateTaskInteractor（ざっくりイメージ）
 
 ```ts
@@ -207,6 +217,8 @@ UseCaseは **「表示どうする？」を考えない** のが勝ち！🎉�
 ---
 
 ## Response設計の“境界”チェックリスト🧼🛡️
+
+![Boundary Guard Checklist](./picture/clean_ts_study_016_boundary_guard.png)
 
 Response作ったら、これでセルフ監査してね👀✅
 

@@ -102,6 +102,8 @@ flowchart LR
 
 ### Create / Complete / List の3つで考える🗒️
 
+![Examples of Ports](./picture/clean_ts_study_017_port_examples.png)
+
 * Create：保存（save）＋ID＋現在時刻
 * Complete：取得（find）＋保存（save）
 * List：一覧取得（list）
@@ -113,6 +115,8 @@ flowchart LR
 ## Port定義を書こう✍️（UseCaseから見たインターフェース）
 
 ### 1) TaskRepository Port🗄️
+
+![TaskRepository Interface](./picture/clean_ts_study_017_repo_interface.png)
 
 ```ts
 // src/ports/taskRepository.ts
@@ -138,6 +142,8 @@ export interface IdGenerator {
 ```
 
 ### 3) Clock Port⏰
+
+![Side-Effect Ports (ID & Clock)](./picture/clean_ts_study_017_side_effect_ports.png)
 
 ```ts
 // src/ports/clock.ts
@@ -193,6 +199,8 @@ export class CreateTaskInteractor {
 
 ## 「でもTypeScriptのinterfaceって実体ないよね？」🤔➡️OK！
 
+![Dependency Injection Mechanism](./picture/clean_ts_study_017_dependency_injection.png)
+
 そう！`interface` は実行時には消えるよ😊
 でもDI（注入）は「実体（class/obj）を渡す」だけでOK✨
 
@@ -208,6 +216,8 @@ const usecase = new CreateTaskInteractor(repo, ids, clock);
 ---
 
 ## 依存が守れてるか？チェックリスト✅🧼
+
+![Dependency Scanner](./picture/clean_ts_study_017_checklist_scanner.png)
 
 UseCases層のファイルを開いて、これが守れてたら勝ち🎉
 
@@ -229,6 +239,8 @@ TypeScript 5.8/5.9 では、Node向けの安定した設定として `--module n
 ## ミニ演習（手を動かすと理解が爆速）🏃‍♀️💨
 
 ### 演習1：悪い例をPort化して救出🧯
+
+![Refactoring Story (Port Extraction)](./picture/clean_ts_study_017_refactoring_story.png)
 
 * UseCaseからDB import を消す
 * `TaskRepository` を作って注入する

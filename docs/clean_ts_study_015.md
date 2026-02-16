@@ -46,6 +46,8 @@ Requestモデルは、UseCaseに渡す入力を **“UseCase都合の形”に�
 
 ## 3) 絶対ルール：Requestに入れちゃダメなもの🚫🧨
 
+![Forbidden Items in Request](./picture/clean_ts_study_015_forbidden_items.png)
+
 Requestは **UseCase層のもの**だから、外側の匂いを入れると崩れやすいよ🥲
 
 入れないでね👇
@@ -76,6 +78,8 @@ TypeScriptなら“ブランド型”で事故を減らせるよ🚑✨
 
 ### コツ4：**Requestは基本 immutable（readonly）に寄せる**🧊
 
+![Immutable Request Object](./picture/clean_ts_study_015_immutable_request.png)
+
 「あとから書き換えOK」にすると、原因不明バグが増える😵‍💫
 
 ### コツ5：**“型(コンパイル時)”と“実行時チェック”を混同しない**⚠️
@@ -89,6 +93,8 @@ Zodみたいなライブラリは「parseしたら型安全」って発想がで
 ## 5) 実装してみよう💻✨（Requestモデル3つ）
 
 ### 5-1. 型の土台：Brand型を用意🧷✨
+
+![Brand Type Safety](./picture/clean_ts_study_015_brand_type.png)
 
 `src/usecases/_shared/brand.ts`
 
@@ -118,6 +124,8 @@ export const TaskId = {
 ---
 
 ### 5-2. CreateTaskRequest📥🗒️
+
+![Request Model Examples](./picture/clean_ts_study_015_request_examples.png)
 
 `src/usecases/create-task/create-task-request.ts`
 
@@ -171,11 +179,15 @@ export type ListTasksRequest = Readonly<{
 
 ## 6) Requestを作る側（外側）での“詰め替え”ルール🧃✨
 
+![Controller Refilling Process](./picture/clean_ts_study_015_controller_refill.png)
+
 ここ超大事〜！
 Requestモデル自体はUseCase側に置くけど、**Requestを作るのは外側（Controller/Inbound Adapter）** だよ🚪✨
 （本格的な変換は第31章でやるけど、この章でも“ルール”だけ固めちゃおう）
 
 ### ルール✅
+
+![satisfies Operator Check](./picture/clean_ts_study_015_satisfies_check.png)
 
 * 外側の生データは `unknown` として受ける（信用しない😇）
 * 変換した結果が Request
