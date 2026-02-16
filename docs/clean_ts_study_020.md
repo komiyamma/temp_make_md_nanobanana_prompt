@@ -58,6 +58,8 @@ sequenceDiagram
 
 ### 3.1 Request（入力）📥
 
+![Request Criteria Box](./picture/clean_ts_study_020_request_criteria.png)
+
 「UIでどう入力されたか」は気にしないで、**内側に都合のいい形**にするよ😊
 
 ```ts
@@ -70,6 +72,8 @@ export type ListTasksRequest = Readonly<{
 ```
 
 ### 3.2 Response（出力）📤
+
+![List Response DTO](./picture/clean_ts_study_020_dto_list.png)
 
 ここで悩みがちポイント👇
 Entity（Task）をそのまま返してもいいけど、**一覧はDTOで返す**ほうが後で困りにくいよ🧁
@@ -92,6 +96,8 @@ export type ListTasksResponse = Readonly<{
 ---
 
 ## 4) Port（TaskRepository）に “list能力” を足す🔌✨
+
+![Repository Criteria Interface](./picture/clean_ts_study_020_repo_criteria.png)
 
 UseCaseが欲しいのは「保存」じゃなくて「一覧を取る能力」だよ〜📋
 
@@ -119,6 +125,8 @@ export interface TaskRepository {
 ---
 
 ## 5) ListTasksInteractor を実装する🎬✨（本体）
+
+![Read-Only Implementation](./picture/clean_ts_study_020_interactor_read_only.png)
 
 やることは超シンプルだよ〜😊
 **repo.list → DTOに変換 → Responseで返す** だけ！
@@ -182,12 +190,16 @@ Repositoryの中で **Record→Entity** にしてから返そう（MapperはAdap
 
 ### ❌ 3) “ついでに” 完了期限チェックして更新する
 
+![Side Effect Pitfall](./picture/clean_ts_study_020_pitfall_side_effect.png)
+
 Listは「読むだけ」！
 参照のついで更新は、あとで地獄を見るやつ😇（キャッシュや整合性が壊れる）
 
 ---
 
 ## 7) ちょい拡張（できたら強い）💪✨
+
+![Paging Extension](./picture/clean_ts_study_020_extension_paging.png)
 
 次の章に進む前に、Listを “現実寄り” にしておくと楽しいよ🍰
 

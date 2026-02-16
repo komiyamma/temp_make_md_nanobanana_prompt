@@ -35,6 +35,8 @@
 
 ## 3) Result型を1つ決めよう🧯✨（失敗の戻し方を統一）
 
+![Result Pattern (Ok/Err) Container](./picture/clean_ts_study_014_result_pattern.png)
+
 第21章で「失敗の扱い」を本格的にやるけど、ここでは“器”だけ作るよ🍱✨
 
 ```ts
@@ -58,6 +60,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 
 ### 4-1. 「UseCaseインターフェース」を統一する🎛️
 
+![UseCase Interface Contract](./picture/clean_ts_study_014_usecase_interface.png)
+
 ```ts
 // usecases/_shared/UseCase.ts
 import type { Result } from "./Result";
@@ -78,6 +82,8 @@ export interface UseCase<Request, Response, Failure> {
 （中身の実装は第18章でガッツリやる想定🧩）
 
 ### 5-1. Request / Response / Failure を分けて置く📦📌
+
+![Separation of Models](./picture/clean_ts_study_014_model_separation.png)
 
 ```ts
 // usecases/create-task/CreateTaskModels.ts
@@ -123,6 +129,8 @@ export interface TaskRepository {
 
 ### 5-3. Interactor（実行役）の型を完成させる🎬✅
 
+![Anatomy of Interactor Class](./picture/clean_ts_study_014_interactor_anatomy.png)
+
 ```ts
 // usecases/create-task/CreateTaskInteractor.ts
 import type { UseCase } from "../_shared/UseCase";
@@ -161,6 +169,8 @@ export class CreateTaskInteractor
 
 ## 6) クラス？関数？どっちがいいの？🤔✨
 
+![Class vs Function Interactor](./picture/clean_ts_study_014_class_vs_func.png)
+
 この講座のおすすめは👇
 
 * **基本：クラスInteractor**（依存をconstructorで見せられて分かりやすい）🏗️✨
@@ -171,6 +181,8 @@ export class CreateTaskInteractor
 ---
 
 ## 7) 命名と配置ルール（迷子ゼロのため）🗺️🧭
+
+![Organized Folder Structure](./picture/clean_ts_study_014_folder_structure.png)
 
 おすすめルール📌✨
 
