@@ -6,6 +6,8 @@
 
 ## 1) この章のゴール🎯💖
 
+![Core Unaware of DB](./picture/clean_cs_study_042_blindfolded_core.png)
+
 この章を終えると、次ができるようになります☺️✨
 
 * **Core（Entities/UseCases）がDBやEF Coreを一切知らない**状態にできる🧼
@@ -32,6 +34,8 @@
 
 ## 3) 置き場所の鉄板パターン🏠✨（ざっくり図）
 
+![Three Project Boxes](./picture/clean_cs_study_042_three_boxes_architecture.png)
+
 イメージはこう👇
 
 * **Core**：純粋なC#（Entity/VO/UseCase/Port）🧼
@@ -49,6 +53,8 @@
 ---
 
 ## 4) 実装でやること（最短ルート）🏃‍♀️💨
+
+![Interface Baton Relay](./picture/clean_cs_study_042_interface_baton.png)
 
 ### 4-1. Core側：インターフェイスだけ置く🔌✨
 
@@ -130,6 +136,8 @@ public sealed class EfMemoRepository : IMemoRepository
 
 ### 4-3. Web（Composition Root）：DIと設定値はここで配線🧵✨
 
+![Connection String Safe](./picture/clean_cs_study_042_connection_string_safe.png)
+
 `Program.cs` 側で **接続文字列 → DbContext → Repository** を組み立てます🪄
 （EF Core は ASP.NET Core のDIに `AddDbContext` で追加するのが基本です） ([Microsoft Learn][2])
 
@@ -157,6 +165,8 @@ app.Run();
 ---
 
 ## 5) マイグレーションは“外側の都合”そのもの🚚🧱
+
+![External Migrations](./picture/clean_cs_study_042_migration_truck.png)
 
 マイグレーションは **DBスキーマ運用の話**なので、Coreに近づけないのが吉です☺️
 
@@ -186,6 +196,8 @@ dotnet ef database update --project MyApp.Migrations --startup-project MyApp.Web
 
 ## 6) DbContextの寿命問題も“外側で吸収”できる🧯✨
 
+![DbContext Lifetime Battery](./picture/clean_cs_study_042_lifetime_battery.png)
+
 通常のWebアプリは `AddDbContext`（scoped）が素直でOK👍 ([Microsoft Learn][2])
 でも、UIが長寿命になりやすい種類（例：Blazor Serverなど）では **DbContextの使い回しが事故りやすい**ため、`AddDbContextFactory` を使うケースもあります🧪 ([Microsoft Learn][6])
 
@@ -195,6 +207,8 @@ dotnet ef database update --project MyApp.Migrations --startup-project MyApp.Web
 ---
 
 ## 7) よくある事故パターン🚨（秒で診断できる）
+
+![Entity Contamination](./picture/clean_cs_study_042_contamination_stickers.png)
 
 ### ❌事故1：CoreがEF Core参照してる
 

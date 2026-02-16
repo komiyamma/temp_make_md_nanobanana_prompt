@@ -30,6 +30,8 @@ ASP.NET Coreには **組み込みのDIコンテナ（IServiceProvider）** が�
 
 ## 2) “DIの型” はこれだけ覚えればOK👌💕
 
+![The 4 Elements of DI](./picture/clean_cs_study_040_di_elements.png)
+
 DIをクリーンアーキ的に言うと、基本はこの4点セットだよ📦✨
 
 1. **Coreに interface（ポート）を置く**🧼
@@ -40,6 +42,8 @@ DIをクリーンアーキ的に言うと、基本はこの4点セットだよ�
 ---
 
 ## 3) ハンズオン：Repository差し替えをDIでやってみよ〜！🧪🎮
+
+![Repository Swap](./picture/clean_cs_study_040_repo_swap.png)
 
 題材：`IMemoRepository` を **InMemory版** と **DB版** で差し替えできるようにする💡✨
 （ポイント：**Core側はどっちでも動く**こと！）
@@ -75,6 +79,8 @@ DBとかEF Coreとか、そういう単語すら出てこないのが勝ち🏆�
 ---
 
 ### 3-2) UseCaseは「interface」をコンストラクタで受け取る🎁✨
+
+![Constructor Injection](./picture/clean_cs_study_040_constructor_injection.png)
 
 ```csharp
 // Core/UseCases/CreateMemo/CreateMemoInteractor.cs
@@ -159,6 +165,8 @@ DIが勝手に `IMemoRepository` まで芋づる式に解決してくれるよ�
 
 ## 4) ライフタイム（Singleton / Scoped / Transient）で事故らないコツ🧯😵‍💫
 
+![DI Lifetimes](./picture/clean_cs_study_040_lifetimes.png)
+
 DIには寿命（ライフタイム）があって、ここでミスると爆発する💥
 Microsoftのガイドでも **スコープ検証（ValidateScopes）** や **Singletonの扱い** に注意が書かれてるよ📌 ([Microsoft Learn][3])
 
@@ -185,6 +193,8 @@ builder.Host.UseDefaultServiceProvider(options =>
 
 ## 5) 実装の差し替え：開発はInMemory、本番はDB🪄🏗️
 
+![Dev vs Prod Switch](./picture/clean_cs_study_040_dev_prod_switch.png)
+
 「差し替えたい」のがDIの一番おいしい所だよね🍰💕
 
 ```csharp
@@ -204,6 +214,8 @@ else
 ---
 
 ## 6) “複数実装” を同時に使いたい時：Keyed Services🔑✨
+
+![Keyed Services](./picture/clean_cs_study_040_keyed_services.png)
 
 最近のASP.NET Coreでは **Keyed services** が使えるよ！
 `AddKeyedSingleton/AddKeyedScoped/AddKeyedTransient` で「キー付き登録」して、
@@ -245,6 +257,8 @@ app.MapGet("/memos/{id:guid}", async (
 ---
 
 ## 8) よくあるDIエラーと即死回避💥➡️🧯
+
+![Circular Dependency](./picture/clean_cs_study_040_circular_dependency.png)
 
 ### ✅「登録してないよ」系
 

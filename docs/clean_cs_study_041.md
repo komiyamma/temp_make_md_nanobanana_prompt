@@ -23,6 +23,8 @@
 
 ## 2) なんで「1箇所」にこだわるの？🥺🧯
 
+![Centralized vs Scattered Wiring](./picture/clean_cs_study_041_centralized_vs_scattered.png)
+
 ### ✅ 散らばると起きがちな地獄 😇🔥
 
 * どこでDI登録してるか分からない → **追加/修正が怖い**😱
@@ -41,6 +43,8 @@
 
 ## 3) ASP.NET Core（最新）だとComposition Rootはどこ？🌐🧵
 
+![Program.cs Hub](./picture/clean_cs_study_041_program_cs_hub.png)
+
 いまのASP.NET Core（Minimal hosting model）だと、基本は **`Program.cs`** が入口だよ🚪✨
 `WebApplicationBuilder` を作って、`builder.Services` に登録して…って流れね😊
 この形は公式ドキュメントでも中心の書き方になってるよ ([Microsoft Learn][3])
@@ -48,6 +52,8 @@
 ---
 
 ## 4) クリーンアーキ的に「第41章」が超重要な理由 🏛️💘
+
+![Composition Root Matchmaker](./picture/clean_cs_study_041_matchmaker.png)
 
 クリーンアーキは **内側（Core）ほど純粋**、外側ほど**詳細（DB/HTTP/Framework）**だよね🧼✨
 
@@ -62,6 +68,8 @@
 ---
 
 ## 5) 実装の基本形（Program.csに集約）🧵✅
+
+![DI Registration Flow](./picture/clean_cs_study_041_registration_flow.png)
 
 まずは一番わかりやすい形からいこ〜😊✨
 （後で“長くなったら分割”する！）
@@ -104,6 +112,8 @@ app.Run();
 ---
 
 ## 6) でもProgram.csが太る…！どうする？😵‍💫➡️スッキリ術✨
+
+![Organizing with Extension Methods](./picture/clean_cs_study_041_extension_method_boxes.png)
 
 現実はユースケース増えると登録が増えるよね🥺
 そこでよくやるのが **“拡張メソッドで整理”** だよ📦✨
@@ -177,6 +187,8 @@ ASP.NET CoreのDIには主に3つの寿命があるよ（公式）👇 ([Microso
 
 ## 8) “やっちゃダメ”集（Composition Root違反）🚫😱
 
+![Service Locator Trap](./picture/clean_cs_study_041_service_locator_trap.png)
+
 ### ❌ 1) UseCaseの中で `new EfMemoRepository()` する
 
 * 依存が固定されて差し替え不能 😭
@@ -195,6 +207,8 @@ ASP.NET CoreのDIには主に3つの寿命があるよ（公式）👇 ([Microso
 ---
 
 ## 9) ミニ課題：DI登録を「1ファイルに集約」して事故を消す🧹✨
+
+![One File Checklist](./picture/clean_cs_study_041_one_file_checklist.png)
 
 ### 🎯お題
 
