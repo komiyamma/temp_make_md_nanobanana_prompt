@@ -8,6 +8,8 @@
 
 ## 27.1 リトライは“薬にも毒にもなる”💊☠️
 
+![Thundering Herd](./picture/cap_ts_study_027_thundering_herd.png) <!-- ref: 370 -->
+
 分散っぽい世界では、ネットワークや相手サーバーは普通に失敗します🔌💥
 だから「もう1回やる（リトライ）」は自然な対策です😊
 
@@ -61,6 +63,8 @@ graph LR
 
 ## 27.3 何をリトライしていい？ダメ？✅❌（超重要）
 
+![Retry OK vs NG](./picture/cap_ts_study_027_retry_ok_ng.png) <!-- ref: 369 -->
+
 ### リトライしてOK寄り（例）✅
 
 * ネットワーク系の一時失敗（接続失敗、タイムアウトなど）🌧️
@@ -81,6 +85,8 @@ graph LR
 ---
 
 ## 27.4 設計の型（これを守ると事故が激減）🧩✨
+
+![Retry Design Patterns](./picture/cap_ts_study_027_design_patterns.png) <!-- ref: 371 -->
 
 ### 型A：1回の通信は短く切る（attempt timeout）⏱️
 
@@ -105,6 +111,8 @@ AWSも「リトライはスタック内の一点でやる」系の考え方を�
 ---
 
 ## 27.5 ハンズオン：失敗率を上げても“安定する”リトライを作る🧪🔁
+
+![Retry Implementation Architecture](./picture/cap_ts_study_027_impl_arch.png) <!-- ref: 372 -->
 
 この章では、Worker（`apps/worker`）側に「fetch＋リトライ」ユーティリティを作ります🧰✨
 ポイントはこれ👇
@@ -340,6 +348,8 @@ export async function runAuthorize() {
 
 ## 27.6 よくあるミス集（AIにも出してもらおう）🤖❄️
 
+![Retry Anti-Patterns](./picture/cap_ts_study_027_anti_patterns.png) <!-- ref: 373 -->
+
 ### ミス1：即リトライ（待たない）🏃‍♀️💨
 
 落ちてる相手に、0秒で何回も殴り込み → さらに落ちます😇
@@ -361,6 +371,8 @@ export async function runAuthorize() {
 ---
 
 ## 27.7 AIに頼むと速いところ（プロンプト例）🤖📝
+
+![AI Retry Review](./picture/cap_ts_study_027_ai_review.png) <!-- ref: 374 -->
 
 ### ✅ よくあるミス（雪崩リトライ）を言語化してもらう
 

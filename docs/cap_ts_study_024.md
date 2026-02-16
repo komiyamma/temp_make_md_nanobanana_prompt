@@ -10,6 +10,8 @@
 
 ## 1) まず1分で体感：順番がズレると何が壊れる？😵‍💫📨🔀
 
+![Reverse Order Damage](./picture/cap_ts_study_024_reverse_order_damage.png) <!-- ref: 349 -->
+
 たとえば「注文ステータス」がこう変わるとするね👇
 
 * v1: `PENDING`（受付）
@@ -41,6 +43,8 @@
 ---
 
 ## 3) 物理時計（時刻）より、versionで順番を作る⏰❌➡️🔢✅
+
+![Version vs Timestamp](./picture/cap_ts_study_024_version_vs_time.png)
 
 時刻（timestamp）で「新しい方を採用！」ってやりたくなるけど…
 分散だと**時計ズレ**があるから危ない⚠️（A機は未来、B機は過去…みたいになる）
@@ -196,6 +200,8 @@ console.log("final:", current);
 
 ## 6) 「再取得（リシンク）」ってどうやるの？📥🔁
 
+![Gap Resync Mechanism](./picture/cap_ts_study_024_gap_resync.png) <!-- ref: 350 -->
+
 `gap` を見つけたら、いったんこうするのが現実的👇
 
 * **GETで最新の状態を取り直す**（例：`GET /orders/o-1`）📡
@@ -207,6 +213,8 @@ console.log("final:", current);
 ---
 
 ## 7) もう1つの定番：HTTPでもversionチェックできる（If-Match / ETag）🏷️🛡️
+
+![If-Match Header Guard](./picture/cap_ts_study_024_if_match_header.png) <!-- ref: 351 -->
 
 APIで「編集の競合」を防ぐなら、HTTPの**条件付きリクエスト**が便利だよ📨✨
 `If-Match` は ETag が一致するときだけ更新し、ズレたら `412 Precondition Failed` を返すのが基本🧠✅ ([MDN Web Docs][2])
@@ -232,6 +240,8 @@ APIで「編集の競合」を防ぐなら、HTTPの**条件付きリクエス�
 
 ## 9) よくある落とし穴（ここで事故が減る）⚠️🧯
 
+![Atomic Version Update](./picture/cap_ts_study_024_atomic_update.png) <!-- ref: 353 -->
+
 * **versionの更新は原子的に**（DB更新は「version一致で更新」みたいにする）🔒
 * **versionは“対象ごと”に持つ**（注文ごと、在庫アイテムごと）🧩
 * **timestampの大小でLWWに逃げない**（時計ズレで負ける）⏰💥
@@ -247,6 +257,8 @@ APIで「編集の競合」を防ぐなら、HTTPの**条件付きリクエス�
 * versionチェックがあるとどう防げる？
 
 ### 演習2：保留キューを作る📦🧵
+
+![Pending Queue](./picture/cap_ts_study_024_pending_queue.png) <!-- ref: 354 -->
 
 `gap` のとき、イベントを捨てずに一旦 `pending[orderId]` に入れて、
 再取得後に「入ってる分を順番に適用」してみよう🔄✨

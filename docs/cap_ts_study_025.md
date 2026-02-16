@@ -44,6 +44,8 @@ graph TD
 
 ## 収束＝「最後にみんな同じになる」🌍✅
 
+![Convergence Concept](./picture/cap_ts_study_025_convergence_concept.png) <!-- ref: 355 -->
+
 分散（=複数のノード/端末/サーバー）だと、同じデータが各所にコピー（レプリカ）されるよね📦📦📦
 このとき…
 
@@ -63,6 +65,8 @@ graph TD
 CRDTにはいろいろ種類があるんだけど、初心者がまず掴むべきはここ👇
 
 ## ✅ マージ（merge）が「順番」と「重複」に強いこと💪📨
+
+![CRDT Properties Icons](./picture/cap_ts_study_025_crdt_properties.png) <!-- ref: 356 -->
 
 特に **状態（state）を送り合ってマージするタイプ**（state-based / CvRDT）では、マージ関数がだいたい次を満たすのが基本✨
 
@@ -84,6 +88,8 @@ CRDTにはいろいろ種類があるんだけど、初心者がまず掴むべ�
 
 ## ありがちな地雷💣
 
+![Naive Sum Explosion](./picture/cap_ts_study_025_naive_sum_explosion.png) <!-- ref: 357 -->
+
 「各ノードが持ってるカウンタ値を、同期したら足せばよくない？」って思いがちなんだけど…
 
 * ノードAが `1`
@@ -100,6 +106,8 @@ CRDTにはいろいろ種類があるんだけど、初心者がまず掴むべ�
 # 4) 収束する例：Grow-only Set（追加だけの集合）📚✨
 
 ## “追加だけ”は強い💪🌱
+
+![G-Set Union](./picture/cap_ts_study_025_gset_union.png) <!-- ref: 358 -->
 
 たとえば「タグ」みたいに **増やすだけ**の集合なら、
 
@@ -127,6 +135,8 @@ npm i -D tsx typescript
 ---
 
 ## 5.2 実験コード（コピペOK）📄✨
+
+![Experiment Race Setup](./picture/cap_ts_study_025_experiment_setup.png) <!-- ref: 359 -->
 
 `apps/worker/src/ch25-crdt-lab.ts` みたいな場所に保存してね🗂️💕
 
@@ -312,6 +322,8 @@ npx tsx apps/worker/src/ch25-crdt-lab.ts
 
 # 6) 現場の「CRDTどこで出る？」👩‍💻📱✨
 
+![Real World CRDT Usage](./picture/cap_ts_study_025_real_world_crdt.png) <!-- ref: 360 -->
+
 いちばん有名なのは **共同編集**（Google Docs みたいなやつ）や、**オフラインでも書けて後で同期**する“local-first”系📝📶✨
 CRDTは、こういう「切れても作業を続けたい」系の体験を支える土台になりがちだよ🌈
 
@@ -322,6 +334,8 @@ CRDTは、こういう「切れても作業を続けたい」系の体験を支�
 ---
 
 # 7) AI（Copilot / Codex）に聞くと理解が爆速になる質問集🤖💬✨
+
+![AI CRDT Explainer](./picture/cap_ts_study_025_ai_explainer.png) <!-- ref: 361 -->
 
 そのままコピペでOKだよ🫶
 
