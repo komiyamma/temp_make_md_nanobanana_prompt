@@ -20,6 +20,8 @@ Microsoft 公式の手順はこの流れ（Installer → ワークロード選�
 
 ## 2.1.2 まず入れるワークロード（迷ったらこの2つ）🎁
 
+![Visual Studio Workload Selection](./picture/ab_tcb_cs_study_002_vs_workloads.png)
+
 学習用に、最初は“欲張りすぎない”のがコツ😊🌸
 
 * **.NET デスクトップ開発**（Consoleアプリやライブラリなど、基礎練習でよく使う）🧱
@@ -53,6 +55,8 @@ flowchart TD
 題材はカフェ注文（後で出てくる）っぽい名前でOK☕️🍰
 
 ## 2.2.1 Visual Studioで作る（いちばん簡単）🪄
+
+![Creating Console App Project](./picture/ab_tcb_cs_study_002_create_project.png)
 
 1. Visual Studio を起動
 2. **「新しいプロジェクトの作成」** を選ぶ
@@ -94,6 +98,8 @@ Visual Studio は Git 操作をかなり GUI でできるよ😊
 * GitHub に置くなら **Push**（最初は“公開/非公開”は自分で選ぶ）🐙
 
 ## 2.3.3 コミット粒度のコツ（超重要）📌✨
+
+![Git Commit Granularity](./picture/ab_tcb_cs_study_002_commit_granularity.png)
 
 “でっかい1コミット”は、後で泣きがち😭
 なので、粒度はこの3つで切ると安定するよ🌷
@@ -157,6 +163,8 @@ Copilot の状態（有効/無効/未導入など）は IDE 上で確認・管�
 
 ## 2.5.1 “AIに投げる前”に書く3点セット🧾✨
 
+![AI Prompt Structure](./picture/ab_tcb_cs_study_002_ai_prompt_structure.png)
+
 AIに質問するとき、これを先に書くと精度が上がるよ👇
 
 1. **目的**：何をしたい？（例：注文を確定したい）🎯
@@ -213,6 +221,8 @@ flowchart LR
 
 ## 2.5.3 AIの回答を“そのまま採用しない”チェックリスト✅🔍
 
+![AI Code Verification Checklist](./picture/ab_tcb_cs_study_002_ai_safety_check.png)
+
 AIが出したコードは、かわいく見えても🐣、たまに危ない😇
 この5個だけチェックすると安全度が上がるよ✨
 
@@ -225,6 +235,8 @@ AIが出したコードは、かわいく見えても🐣、たまに危ない�
 ---
 
 ## 2.6 ミニ演習：環境が完成したか最終チェック🎓🌸
+
+![Final Environment Check](./picture/ab_tcb_cs_study_002_env_check.png)
 
 ## 演習1：動作確認（30秒）⏱️
 
@@ -248,6 +260,8 @@ Copilot Chat にこれを聞く💬
 ---
 
 ## 2.7 よくあるつまずき（ここだけ見ればOK）🚑💦
+
+![Common Troubleshooting](./picture/ab_tcb_cs_study_002_troubleshooting.png)
 
 ## ✅ ビルドできない（SDKが足りない気がする）
 

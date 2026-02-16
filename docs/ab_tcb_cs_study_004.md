@@ -11,6 +11,7 @@
 ## 1. トランザクションは“レシート1枚分”の約束🧾🔒
 
 ![All or Nothingの天秤](./picture/ab_tcb_cs_study_004_transaction.png)
+![Transaction as a Single Receipt](./picture/ab_tcb_cs_study_004_receipt_metaphor.png)
 
 
 トランザクションって、超ざっくり言うとこう👇
@@ -87,6 +88,8 @@ flowchart TD
 
 ## 4.1 境界＝「この線の内側は、運命共同体」🧷
 
+![Inside vs Outside Transaction Boundary](./picture/ab_tcb_cs_study_004_boundary_definition.png)
+
 トランザクション境界って、イメージはこれ👇
 
 * **境界の内側**：一緒に成功してほしいもの✅
@@ -119,6 +122,8 @@ flowchart LR
 ---
 
 ## 5. まずは「1ユースケース＝1トランザクション」から😊🔒
+
+![1 UseCase = 1 Transaction](./picture/ab_tcb_cs_study_004_uc_tx_mapping.png)
 
 初心者が最初に迷子にならないための型がこれ👇
 
@@ -174,6 +179,8 @@ EF Coreは設定によって細部はあるけど、基本は
 
 ## 6.2 でも「SaveChangesを2回以上」すると危険が増える⚠️
 
+![Danger of Multiple SaveChanges](./picture/ab_tcb_cs_study_004_savechanges_danger.png)
+
 例えば👇
 
 * 1回目 SaveChanges ✅（ここでDBに確定しちゃう）
@@ -221,6 +228,8 @@ await db.SaveChangesAsync();
 
 ## パターンB：明示トランザクションで包む🔒✨
 
+![Explicit Transaction Wrapper](./picture/ab_tcb_cs_study_004_explicit_tx.png)
+
 「途中で落ちたら、まとめてRollback」しやすい👍
 （BeginTransactionAsync の使い方はMicrosoft Learnにも例があるよ）([Microsoft Learn][3])
 
@@ -249,6 +258,8 @@ catch
 
 ## 8. 境界を決める“ミニチェックリスト”✅🧠
 
+![Transaction Boundary Checklist](./picture/ab_tcb_cs_study_004_boundary_checklist.png)
+
 トランザクション境界で迷ったら、これを順に考えるとラクだよ✨
 
 1. **同時に守らないと困るルールはどれ？**🔒
@@ -266,6 +277,8 @@ catch
 ## 9. よくある勘違いあるある😅💡
 
 ## Q1. 「トランザクションを大きくすれば安全では？」🤔
+
+![Risks of Long Transactions](./picture/ab_tcb_cs_study_004_long_tx_risk.png)
 
 安全そうに見えるけど、やりすぎると
 

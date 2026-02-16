@@ -19,6 +19,8 @@
 
 ### 第3章：DDDってなに？こわくない版🧁
 
+![DDD Bridging Business and Code](./picture/ab_tcb_cs_index_ddd_concept.png)
+
 * DDD＝業務の言葉をコードにする📖
 * “難しいやつ全部”は後回しでOK🙆‍♀️
 * 今日の主役「集約」だけ先に理解しよう🌟
@@ -71,17 +73,23 @@
 
 ### 第11章：集約（Aggregate）ってなに？🌳
 
+![Aggregate Consistency Boundary](./picture/ab_tcb_cs_index_aggregate.png)
+
 * 集約＝一貫性を守る“まとまり”😊
 * 目的＝整合性バグを激減させる🛡️
 * 集約は「大きいほど良い」じゃない⚠️
 
 ### 第12章：集約ルート（入口は1つ）👑🚪
 
+![Aggregate Root Access](./picture/ab_tcb_cs_index_aggregate_root.png)
+
 * 外からはルート経由でしか更新できない🙅‍♀️
 * ルートが不変条件を守る責任者✨
 * “直接いじれない”が安全の鍵🔐
 
 ### 第13章：境界の判断軸①「同時に守る必要がある？」🧠⚖️
+
+![Consistency Boundary Decision](./picture/ab_tcb_cs_index_consistency_boundary.png)
 
 * 1回の更新で必ず守りたいルールはどれ？✅
 * 「同じトランザクションで守りたいもの」を探す🔍
@@ -116,6 +124,8 @@
 
 ### 第18章：C#で不変条件を守る①（生成とガード節）🛠️
 
+![Guard Clauses for Invariants](./picture/ab_tcb_cs_index_invariants.png)
+
 * コンストラクタ/ファクトリで無効状態を作らない🏗️
 * ガード節（早めに弾く）で安全に✨
 * public setter禁止の理由（勝手に壊される）😇
@@ -135,6 +145,8 @@
 ---
 
 ### 第21章：レイヤード構成（置き場所で迷子にならない）🗂️
+
+![Layered Architecture](./picture/ab_tcb_cs_index_layered_architecture.png)
 
 * Domain / Application / Infrastructure の役割ざっくり📚
 * “ドメインはインフラを参照しない”ルール🧱
@@ -201,6 +213,8 @@
 * 代わりの手段へ橋渡し（イベント／後処理）🌉
 
 ### 第31章：ドメインイベントと最終的整合性（入門）📣⏳
+
+![Domain Events for Eventual Consistency](./picture/ab_tcb_cs_index_domain_events.png)
 
 * イベント＝「起きた事実」（過去形）✅
 * 集約内で発行 → 外で処理（疎結合）🧠

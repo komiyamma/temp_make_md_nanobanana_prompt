@@ -31,6 +31,8 @@
 
 ## 3. そもそも「整合性バグ」ってなに？😵‍💫🧠
 
+![Consistency Bug Examples](./picture/ab_tcb_cs_study_001_consistency_bug.png)
+
 整合性バグって、要するに **「データのつじつまが合ってない状態」** のことです💥
 
 たとえば…カフェでよくある（？）事故👇
@@ -75,6 +77,8 @@ graph TD
 
 ### 4.2 集約ルート（Aggregate Root）👑🚪
 
+![Aggregate Root as Gatekeeper](./picture/ab_tcb_cs_study_001_aggregate_root_role.png)
+
 集約には「入口」が必要です✨
 外部からの更新は **入口（ルート）経由だけ**にします。
 
@@ -82,6 +86,8 @@ graph TD
 * Orderが責任もってルールを守る👑✨
 
 ### 4.3 トランザクション境界🔒
+
+![All or Nothing Transaction](./picture/ab_tcb_cs_study_001_transaction_boundary.png)
 
 **「ここからここまでを1回で成功させる！」**という境界です🎬✨
 
@@ -110,6 +116,8 @@ sequenceDiagram
 
 ## 5. ミニアプリのイメージ（カフェ注文）☕️📦
 
+![Cafe Ordering App Flow](./picture/ab_tcb_cs_study_001_mini_app_flow.png)
+
 この教材の題材は、こういう流れを想像してね👇✨
 
 1. お客さんが商品を選ぶ🧁
@@ -126,6 +134,8 @@ sequenceDiagram
 
 ## 6. この教材で使う“今どきのC#”ってどれ？🆕✨
 
+![Modern C# Tech Stack](./picture/ab_tcb_cs_study_001_modern_csharp.png)
+
 この教材では、いまのC#/.NETの標準的な組み合わせで進めます😊
 
 * **.NET 10 は LTS（長期サポート）**で、安定運用向きだよ🛡️✨ ([Microsoft for Developers][1])
@@ -137,6 +147,8 @@ sequenceDiagram
 ---
 
 ## 7. AI拡張（Copilot / Codex）との付き合い方🤖✨
+
+![AI as Design Partner](./picture/ab_tcb_cs_study_001_ai_assistant.png)
 
 AIは“丸投げ”すると事故りやすいけど、**設計学習とは相性がいい**です😊✨
 この教材では、AIをこんな風に使います👇
@@ -167,6 +179,8 @@ AIは“丸投げ”すると事故りやすいけど、**設計学習とは相�
 ---
 
 ## 8. ここでミニ練習✍️🌸（3分でOK）
+
+![Impossible States Quiz](./picture/ab_tcb_cs_study_001_impossible_states.png)
 
 次の「おかしな状態」を見て、直感で答えてみてね😊✨
 
