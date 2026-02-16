@@ -8,6 +8,8 @@
 
 ## 12-1 まず知っておく大事ルール「ADRは履歴が価値」📜✨
 
+![ADR History Value](./picture/adr_ts_study_012_history_value.png)
+
 ADRは「今の結論」だけじゃなくて、**その結論に至った理由**が価値だよね🧠💡
 だから、前提が変わったときは…
 
@@ -22,6 +24,8 @@ AWSのガイドでも「履歴を残す」「古いADRのStatusをSupersededに�
 ---
 
 ## 12-2 レビューで見るポイント👀🧾✨
+
+![ADR Review Points](./picture/adr_ts_study_012_review_points.png)
 
 ADRレビューって、コードレビューより「文章のツッコミ」が多めになりがち🙋‍♀️💬
 よくあるレビュー観点はこのへん👇
@@ -60,6 +64,8 @@ ADRレビューって、コードレビューより「文章のツッコミ」�
 ---
 
 ## 12-4 最終課題 置き換えシナリオを作ろう🎭✨
+
+![Change Scenarios (Validation, API, Error)](./picture/adr_ts_study_012_change_scenarios.png)
 
 ここでは例として、よくあるTS案件の“変化”を使うよ🧩
 
@@ -149,6 +155,8 @@ flowchart LR
 
 ## 12-6 便利ツール派向け adr-tools で置き換えもできる🛠️✨
 
+![ADR Tools Automation](./picture/adr_ts_study_012_adr_tools.png)
+
 手動でも全然OKなんだけど、もしCLI管理したいなら **adr-tools** って定番があるよ〜🔧
 `-s` オプションで「旧ADRをSupersededにして、新ADRを作る」動きができるのが特徴だよ✨ ([GitHub][6])
 
@@ -163,6 +171,8 @@ adr new -s 1 ここに新ADRのタイトル
 ---
 
 ## 12-7 PRでレビューを回すと「文化」になる🧑‍💻🔁💕
+
+![PR Checklist for ADR](./picture/adr_ts_study_012_pr_checklist.png)
 
 ADRを“運用”にする一番かんたんな方法は、**PRテンプレにADRチェックを入れちゃう**こと！📎
 GitHub公式でも、PRテンプレを置くとPR本文に自動で出せるよって説明があるよ🧾 ([GitHub Docs][7])

@@ -26,6 +26,8 @@
 
 ## 21.3 置き場所の結論（最短で覚える）🏁✨
 
+![Three Defense Layers (VO, Aggregate, Gateway)](./picture/ab_tcb_ts_study_021_defense_layers.png)
+
 不変条件は、基本この順で置くよ📦🔒
 
 1. **Value Objectで守れるものはVOで守る** 💎
@@ -45,6 +47,8 @@
 ---
 
 ## 21.4 「入力チェック」と「不変条件」は別物だよ 🧼🆚🔒
+
+![Input Check vs Invariant](./picture/ab_tcb_ts_study_021_check_vs_invariant.png)
 
 ここ、めっちゃ混ざりがち！😵‍💫
 
@@ -154,6 +158,8 @@ export const err = <E>(error: E): Err<E> => ({ ok: false, error });
 
 ### 21.6.2 Value Object：Quantity（値そのものの不変条件）💎📦
 
+![Value Object Self-Defense](./picture/ab_tcb_ts_study_021_vo_guard.png)
+
 ```ts
 // src/domain/order/Quantity.ts
 import { Result, ok, err } from "../shared/Result";
@@ -180,6 +186,8 @@ export class Quantity {
 ---
 
 ### 21.6.3 集約：Order（状態の不変条件はここで守る）👑🔒
+
+![State Protection by Aggregate](./picture/ab_tcb_ts_study_021_state_protection.png)
 
 ```ts
 // src/domain/order/OrderError.ts
@@ -319,6 +327,8 @@ export class Order {
 ---
 
 ## 21.7 「不変条件が散らばってる」あるある事故 😱💥
+
+![Scattered Logic vs Centralized Logic](./picture/ab_tcb_ts_study_021_scattered_logic.png)
 
 次の匂いがしたら要注意だよ👃⚠️
 

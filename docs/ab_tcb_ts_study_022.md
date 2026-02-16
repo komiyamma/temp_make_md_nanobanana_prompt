@@ -35,6 +35,8 @@
 
 ## 2. “分担”の見分け方：チェックを4種類に分ける🔍🧠
 
+![Validation Sorting (4 types)](./picture/ab_tcb_ts_study_022_validation_sorting.png)
+
 チェックって、実は性格が違うんだよね😊
 ミニEC（注文🛒・在庫📦・支払い💳）で分類するとこう👇
 
@@ -52,6 +54,8 @@
 ---
 
 ## 3. 入口パターン：アプリ層で「コマンド」を型安全にする🚪🧾
+
+![Zod Filter at Entry](./picture/ab_tcb_ts_study_022_zod_filter.png)
 
 ```mermaid
 graph LR
@@ -104,6 +108,8 @@ export type PlaceOrderCommand = z.infer<typeof placeOrderSchema>;
 
 ## 4. ドメイン側：不変条件は“メソッドの中で”守る👑🔒
 
+![Domain Method Guard](./picture/ab_tcb_ts_study_022_domain_method_guard.png)
+
 ここが第21章の続きの本番ポイント！
 「正しい状態しか作れない」ようにする😊✨
 
@@ -152,6 +158,8 @@ export class Order {
 ---
 
 ## 5. アプリ層の役割：ドメインエラーを「見せ方」に変換する🔁💬
+
+![Error Translation (Robot to Human)](./picture/ab_tcb_ts_study_022_error_translator.png)
 
 ドメインのエラーは「仕様」だけど、ユーザーにそのまま出すと冷たい/分かりにくいこともあるよね🥺
 だから **変換（マッピング）**するのはアプリ層が得意✨
@@ -204,6 +212,8 @@ export function toUiError(err: DomainError): UiError {
 ---
 
 ## 7. よくある間違い集（ここ超大事😇⚠️）
+
+![UI Bypass Danger](./picture/ab_tcb_ts_study_022_ui_bypass.png)
 
 1. **「UIでチェックしたからOK」**
    → 改ざんで突破されるよ😱 → アプリ層でも入口チェックは必須🧼
