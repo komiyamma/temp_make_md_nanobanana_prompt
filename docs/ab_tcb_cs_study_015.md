@@ -46,6 +46,9 @@ graph LR
 
 ## 15.2 大きすぎ集約の地獄💥😵（やりがち…！）
 
+![ab_tcb_cs_study_015_huge_aggregate_hell](./picture/ab_tcb_cs_study_015_huge_aggregate_hell.png)
+
+
 ![Lock Conflict Diagram](./picture/ab_tcb_cs_study_015_lock_conflict.png)
 
 
@@ -78,6 +81,9 @@ graph TD
 ---
 
 ## 15.3 小さすぎ集約の地獄😵‍💫🪡（これもある…！）
+
+![ab_tcb_cs_study_015_tiny_aggregate_hell](./picture/ab_tcb_cs_study_015_tiny_aggregate_hell.png)
+
 
 ## 症状①：跨ぎ更新したくなる病🙅‍♀️
 
@@ -120,6 +126,9 @@ graph TD
 
 ## 観点C：同時更新の衝突（競合）は増えてない？⚔️
 
+![ab_tcb_cs_study_015_optimal_size](./picture/ab_tcb_cs_study_015_optimal_size.png)
+
+
 * 多人数・多処理が同じ集約を更新するなら、**小さくした方が衝突が減る**ことが多いよ🚦
 
 ## 観点D：1ユースケースで “必要なもの” だけ触れてる？🪶
@@ -137,6 +146,9 @@ flowchart TD
 ---
 
 ## 15.5 カフェ注文ドメインでサイズ調整してみる☕️🍰
+
+![ab_tcb_cs_study_015_cafe_aggregates](./picture/ab_tcb_cs_study_015_cafe_aggregates.png)
+
 
 ここでは題材の登場人物を思い出そう〜👀✨
 
@@ -167,6 +179,9 @@ flowchart TD
 ## 15.6 C#で “サイズ調整後” の形をコードで見る👀✨
 
 ## 15.6.1 Order 集約（Order + OrderItem を内包）🌳
+
+![ab_tcb_cs_study_015_order_item_encapsulation](./picture/ab_tcb_cs_study_015_order_item_encapsulation.png)
+
 
 * 外からは Order だけ触る（ルート）👑
 * OrderItem は外に直接Repositoryを作らない🙅‍♀️
@@ -297,6 +312,9 @@ public enum PaymentStatus
 ---
 
 ## 15.7 “サイズ診断” チェックリスト✅🧠
+
+![ab_tcb_cs_study_015_size_diagnosis](./picture/ab_tcb_cs_study_015_size_diagnosis.png)
+
 
 次の質問に YES が多いほど、その集約は「肥大化」してるかも⚠️
 

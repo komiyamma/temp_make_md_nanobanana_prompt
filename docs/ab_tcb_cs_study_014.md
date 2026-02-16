@@ -47,6 +47,9 @@ graph LR
 
 ### 事故①：境界が溶けて “ついで更新” が始まる🫠
 
+![ab_tcb_cs_study_014_melting_boundaries](./picture/ab_tcb_cs_study_014_melting_boundaries.png)
+
+
 「注文確定のついでに顧客ランク更新もしよ〜」
 「注文のついでに在庫も引いとこ〜」
 
@@ -77,12 +80,18 @@ graph TD
 
 ### 事故③：取りに行くたび “巨大なグラフ” をロードしがち🧱
 
+![ab_tcb_cs_study_014_giant_graph_load](./picture/ab_tcb_cs_study_014_giant_graph_load.png)
+
+
 `Order` 取ったら `Customer` も `Payment` も…みたいに
 DBアクセスやメモリ負荷が増え、パフォーマンスの話が急に難しくなる😵‍💫
 
 ---
 
 ## イメージ図でつかもう📦➡️📦
+
+![ab_tcb_cs_study_014_obj_vs_id_ref](./picture/ab_tcb_cs_study_014_obj_vs_id_ref.png)
+
 
 ```text
 【Order集約】🌳                 【Customer集約】🌳
@@ -133,6 +142,9 @@ public readonly record struct OrderId(Guid Value);
 ```
 
 #### 2) Order集約は CustomerId だけ持つ✅
+
+![ab_tcb_cs_study_014_snapshot_argument](./picture/ab_tcb_cs_study_014_snapshot_argument.png)
+
 
 ```csharp
 public class Order
@@ -313,6 +325,9 @@ A. 弱くしないために
 ---
 
 ### ワーク3：境界チェッククイズ⚖️
+
+![ab_tcb_cs_study_014_boundary_quiz](./picture/ab_tcb_cs_study_014_boundary_quiz.png)
+
 
 次の参照はどれがOK？（理由も書こう）🧠✨
 
