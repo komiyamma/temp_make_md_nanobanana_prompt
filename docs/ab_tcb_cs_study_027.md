@@ -34,6 +34,8 @@ graph TD
 
 ## EF Coreの「暗黙トランザクション」って何？🧠🔍
 
+![Implicit Transaction Flow](./picture/ab_tcb_cs_study_027_implicit_flow.png)
+
 * DBプロバイダーがトランザクション対応なら、**`SaveChanges()` 1回の変更はトランザクションで適用**されます✅
 * 途中で失敗したら **ロールバックされて反映されない**（＝半端な状態を残しにくい）🧹✨
 * なので「ほとんどのアプリでは既定で十分」で、**必要なときだけ手動制御**しようね、というスタンスです。([Microsoft Learn][1])
@@ -43,6 +45,8 @@ graph TD
 ## 明示トランザクションが必要になる典型パターン5つ🧩🔒
 
 ## パターン1：`SaveChanges` を2回以上やる必要があり、まとめて原子的にしたい📦✅
+
+![Explicit Transaction for Multiple Saves](./picture/ab_tcb_cs_study_027_multi_save.png)
 
 たとえば👇
 
@@ -67,12 +71,16 @@ EF Core は **外部 `DbTransaction` を共有**する例も公式にありま�
 
 ## パターン3：DbContextが2つ（例：Outbox用など）で、同じDBの同じTxに参加させたい🧷🧠
 
+![Cross-Context Transaction Sharing](./picture/ab_tcb_cs_study_027_cross_context.png)
+
 「同じ接続＋同じトランザクションを共有」して、両方の `DbContext` を同じTxに参加させるやつです。
 EF Core には `UseTransaction(DbTransaction)` があり、**クロスコンテキストのトランザクション共有**ができます。([Microsoft Learn][1])
 
 ---
 
 ## パターン4：接続回復（リトライ）を有効にしているのに、明示Txが要る🔥🔁
+
+![Execution Strategy Retry Logic](./picture/ab_tcb_cs_study_027_retry_strategy.png)
 
 SQL Server で `EnableRetryOnFailure()` みたいな “自動リトライ” を有効にしていると、**ユーザー開始トランザクションがそのままだと例外**になりがちです。([Microsoft Learn][3])
 
@@ -98,6 +106,8 @@ flowchart TD
 
 ## パターン5：`TransactionScope` が必要（複数接続/複数リソースをまたぐ）🧨🧷
 
+![TransactionScope Ambient Flow](./picture/ab_tcb_cs_study_027_transaction_scope.png)
+
 これは “強めの武器” です⚔️
 `TransactionScope` を `async/await` と一緒に使うなら、**非同期フローを有効化**しないと事故りやすいです（`TransactionScopeAsyncFlowOption.Enabled`）。([Microsoft Learn][5])
 
@@ -108,6 +118,8 @@ flowchart TD
 ## 逆に「明示Txを貼らない方がいい」代表例🙅‍♀️💥
 
 ## 1) 外部I/O（決済API・メール・メッセージ送信）をTxの中に入れる📡💳✉️
+
+![I/O Blocking Transaction](./picture/ab_tcb_cs_study_027_io_block.png)
 
 * トランザクションが長引く
 * ロックが伸びる
@@ -246,6 +258,8 @@ scope.Complete();
 ---
 
 ## 「明示Txいる？」判定チェックリスト✅✨
+
+![Explicit Transaction Decision Tree](./picture/ab_tcb_cs_study_027_decision_tree.png)
 
 ## まずこれにYESなら、だいたい要らない🙂
 
