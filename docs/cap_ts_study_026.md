@@ -20,6 +20,8 @@
 
 ## 2) G-Counterってなに？（超やさしく）🧸🔢
 
+![G-Counter Concept](./picture/cap_ts_study_026_gcounter_concept.png) <!-- ref: 362 -->
+
 G-Counterはこういう作戦👇
 
 * ノードA/B/C…みたいに複数の場所がある🌍
@@ -35,6 +37,9 @@ G-Counterはこういう作戦👇
   ➡ 合計は 3+5+2 = 10
 
 マージで `max` を取る理由は超重要💡
+
+![Merge Max Logic](./picture/cap_ts_study_026_merge_max_logic.png) <!-- ref: 363 -->
+
 「カウントは増えるだけ」だから、**より大きい値＝より新しい情報**って見なせるんだよね👑
 なので **maxを取れば、増やした分を取りこぼさない**✨ ([Ian Duncan][1])
 
@@ -289,6 +294,8 @@ npm run dev
 
 ## 6) いったん“壊す”😈🔨：なぜ「単一の数字をmax」はダメ？
 
+![Single Number Max Failure](./picture/cap_ts_study_026_single_number_fail.png) <!-- ref: 364 -->
+
 もし状態が「ただの数字」1個で、mergeが `max` だったら…👇
 
 * A: 0 → 1（Aで+1）
@@ -302,6 +309,8 @@ G-Counterは **状態を “replicaId → カウント” のMap** にするこ�
 
 ## 7) “収束する設計”のチェックリスト✅🧲
 
+![Convergence Checklist](./picture/cap_ts_study_026_convergence_checklist.png) <!-- ref: 365 -->
+
 G-Counterを見ながら、CRDTの大事ポイントを言えるようにしよう💖
 
 * **単調に増える**（減らない）📈
@@ -314,6 +323,8 @@ G-Counterを見ながら、CRDTの大事ポイントを言えるようにしよ�
 ---
 
 ## 8) よくあるハマりポイント集😵‍💫🧯
+
+![G-Counter Pitfalls](./picture/cap_ts_study_026_pitfalls.png) <!-- ref: 366 -->
 
 * **replicaIdを使い回す**（別ノードなのに同じID）→ 合計が壊れる⚠️
 * mergeで **足し算しちゃう** → 重複配達で二重計上📨📨😱
@@ -330,6 +341,8 @@ G-Counterを見ながら、CRDTの大事ポイントを言えるようにしよ�
 
 2. **PN-Counter（増減）を作る**➕➖
 
+![PN-Counter Concept](./picture/cap_ts_study_026_pn_counter.png) <!-- ref: 367 -->
+
 * `P（増える）` と `N（増える）` の2つのG-Counterを持って、`value = P - N` にする🧠💡 ([Medium][7])
 
 3. **メッセージの順番をもっと地獄にする**👹
@@ -341,6 +354,8 @@ G-Counterを見ながら、CRDTの大事ポイントを言えるようにしよ�
 ---
 
 ## 10) AI活用（Copilot / Codex向け）🤖📝
+
+![AI Test Generator](./picture/cap_ts_study_026_ai_test_gen.png) <!-- ref: 368 -->
 
 この章はAIがめちゃ相性いいよ💖（生成→レビューで使うと強い）👀✨
 
