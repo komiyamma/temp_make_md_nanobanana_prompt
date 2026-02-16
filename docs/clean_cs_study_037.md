@@ -23,6 +23,8 @@ Microsoftの .NET アーキテクチャガイドも「中心（Application Core�
 
 ## 2) Adapter層で起きがちな「変換の散乱」あるある 😵‍💫💥
 
+![Scattered Mapping Accident](./picture/clean_cs_study_037_mapping_scattered.png)
+
 散乱が起きると、こうなる👇
 
 * いろんな場所に `ToDto()` が生えて **仕様がズレる** 😭
@@ -35,6 +37,8 @@ Microsoftの .NET アーキテクチャガイドも「中心（Application Core�
 ---
 
 ## 3) 変換を3種類に分けると一気に整理できるよ 🧠🔍
+
+![Three Types of Mapping](./picture/clean_cs_study_037_three_baskets.png)
 
 Adapter層の変換って、だいたいこの3つに分かれる👇
 
@@ -60,6 +64,8 @@ Adapter層の変換って、だいたいこの3つに分かれる👇
 ## 4) Adapter層 完成チェックリスト ✅✅✅（ここが本体！）
 
 ### 4-1. 依存の向きチェック（最重要）➡️⭕
+
+![Dependency Direction (One-Way Mirror)](./picture/clean_cs_study_037_one_way_mirror.png)
 
 * [ ] **Core（Entities/UseCases）が、外側の型名を1ミリも知らない** ([クリーンコーダーブログ][1])
   例：Coreが `Controller` / `DbContext` / `HttpRequest` / `IActionResult` / EF属性 を参照してない
@@ -88,6 +94,8 @@ Adapter層の変換って、だいたいこの3つに分かれる👇
 ---
 
 ## 5) “変換の台帳（だいちょう）”を作ると勝ちやすいよ 📒💖
+
+![Mapping Ledger](./picture/clean_cs_study_037_mapping_ledger.png)
 
 Adapter層が荒れてるとき、最強の立て直しはこれ👇
 
@@ -133,6 +141,8 @@ Visual Studio の “検索（ソリューション全体）” で👇を探す
 ---
 
 ## 7) コード例：変換は「拡張メソッド」でまとめるのがラクだよ 🧩✨
+
+![Extension Method Tool](./picture/clean_cs_study_037_extension_tool.png)
 
 ### 7-1. 入力変換（API DTO → UseCase Request）
 
@@ -184,6 +194,8 @@ public sealed class CreateMemoPresenter : ICreateMemoOutputPort
 ---
 
 ## 8) “薄いEndpoint”を保つ小ワザ：Filterで横断関心を外に出す 🧼🪄
+
+![Filter for Cross-Cutting Concerns](./picture/clean_cs_study_037_filter_net.png)
 
 「ログ」「例外整形」「入力の軽い共通チェック」みたいな横断処理は、Minimal API の Filter で外に逃がせるよ〜😊
 （Endpointが太るのを予防できる！）

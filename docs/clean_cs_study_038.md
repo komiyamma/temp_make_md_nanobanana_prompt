@@ -33,6 +33,8 @@
 
 ## 3) まず最初にやる「60秒健康診断」⏱️🩺
 
+![60-Second Health Check](./picture/clean_cs_study_038_health_check.png)
+
 ### ✅ ① “using” を見て一瞬で匂いを嗅ぐ 👃💨
 
 * Core（Entities/UseCases）内にこんなのが出たら黄色信号🚥
@@ -64,6 +66,8 @@ dotnet list .\src\YourApp.UseCases\YourApp.UseCases.csproj reference
 ---
 
 ### ① Controller が DbContext 直叩き 🗡️🗄️（最頻出）
+
+![Controller Bypassing Layers](./picture/clean_cs_study_038_controller_bypass.png)
 
 **症状**：Controllerに `DbContext` が注入されてる／SQLっぽい処理がある
 **原因**：境界を飛び越えて「最外周→DB」に直結してる
@@ -113,6 +117,8 @@ public class MemoController : ControllerBase
 
 ### ② UseCase が `IActionResult` / `HttpContext` を返す 🌐❌
 
+![Web Pollution in UseCase](./picture/clean_cs_study_038_web_pollution.png)
+
 **症状**：Interactorの戻り値が `IActionResult` とかになってる
 **原因**：UseCaseが「Webの都合」を知っちゃってる
 **直し方**：UseCaseは **OutputPortへ結果を渡す**（表現は外側）🎤
@@ -120,6 +126,8 @@ public class MemoController : ControllerBase
 ---
 
 ### ③ Domain Entity に `[Key]` / `[Table]` / EFの属性が付く 🧼❌
+
+![Attribute Scars on Domain](./picture/clean_cs_study_038_attribute_scars.png)
 
 **症状**：Domainに永続化都合が混ざる（DB変更でドメインも揺れる）
 **原因**：DBモデルとドメインモデルが同一になってる
@@ -215,6 +223,8 @@ public sealed class SystemClock : IClock
 ---
 
 ## 6) “違反を自動で見つける” をちょい味見 🍭🤖
+
+![ArchUnitNET Turret](./picture/clean_cs_study_038_arch_unit_turret.png)
 
 ここから先は次の「自動で守る」章につながるんだけど、入口だけ触っておくね✨
 アーキテクチャテスト用ライブラリとして **ArchUnitNET** や **NetArchTest系** が定番だよ（NuGetでも活発に更新されてる）🧪✨ ([NuGet][1])

@@ -21,6 +21,8 @@ Validation をざっくり2種類に分けると、迷わなくなるよ😊✨
 
 ### A. Adapterで止める（形式・プロトコルのチェック）🚧📮
 
+![Adapter Validation Gate](./picture/clean_cs_study_032_adapter_gate.png)
+
 「HTTPで受け取った入力が、最低限まともか？」を止めるイメージ！
 
 * 必須項目がない（null / 空）
@@ -32,6 +34,8 @@ Validation をざっくり2種類に分けると、迷わなくなるよ😊✨
 （Controller でも `[ApiController]` が同じ感じで、モデル検証エラーは自動で 400 になるよ）([Microsoft Learn][2])
 
 ### B. Domainで守る（不変条件＝壊れた状態を作れない）🛡️👑
+
+![Domain Protection Shield](./picture/clean_cs_study_032_domain_shield.png)
 
 「外側がどう来ようが、Domainは絶対に壊れない」っていう守護神ポジション！
 
@@ -53,6 +57,8 @@ Minimal API で Validation を有効にすると、**Query / Header / Body** に
 
 ## 4) ルール表：どこで止める？どこで守る？🧠📋✨
 
+![Rule Sorting System](./picture/clean_cs_study_032_rule_sorting.png)
+
 「CreateMemo」を例に、置き場所を決めるとこうなるよ👇
 
 | ルール例           | 置き場所                               | 理由              |
@@ -73,6 +79,8 @@ Minimal API で Validation を有効にすると、**Query / Header / Body** に
 ---
 
 ## 5) 実装例（Minimal API）：Adapterで止める 🛑🌷
+
+![Minimal API Validation Pipeline](./picture/clean_cs_study_032_minimal_api_pipeline.png)
 
 ### 5-1) DTOに DataAnnotations（Adapter側）🧾✨
 
@@ -149,6 +157,8 @@ public sealed class Title
 ---
 
 ## 7) 「じゃあ重複しない？」問題：同じルールを2回書いてOK？🤔💭
+
+![Double Check Strategy](./picture/clean_cs_study_032_double_check.png)
 
 結論：**OK！ただし “正” はDomain** 😊✨
 
@@ -230,6 +240,8 @@ app.MapPost("/memos", async (
 ---
 
 ## 10) AI（Copilot/Codex）に頼るコツ🤖💞
+
+![AI Mistake - Annotation Pollution](./picture/clean_cs_study_032_ai_mistake.png)
 
 使いどころ、めっちゃあるよ〜！
 
