@@ -6,6 +6,10 @@
 
 ## 16.1 クォーラムってなに？（超ざっくり）🧠💡
 
+![Voting Box](./picture/cap_ts_study_016_voting_box.png)
+
+
+
 分散では、同じデータを複数のノードにコピー（レプリケーション）します📦📦📦
 でもコピーは“同時ピッタリ”には揃わないことがあるんだったね…⏳😵‍💫
 
@@ -19,6 +23,10 @@
 ---
 
 ## 16.2 N / W / R って何？🔤📌
+
+![N/W/R Definitions](./picture/cap_ts_study_016_nwr_definitions.png)
+
+
 
 クォーラムはだいたいこの3つで話します👇
 
@@ -64,6 +72,10 @@ graph LR
 ---
 
 ## 16.4 3ノードでイメージしよう（N=3）🧑‍🤝‍🧑🧑‍🤝‍🧑🧑‍🤝‍🧑
+
+![Overlap Nodes](./picture/cap_ts_study_016_overlap_nodes.png)
+
+
 
 ```text
 ノード A / B / C の3台にコピー（N=3）
@@ -259,11 +271,19 @@ npx tsx apps/sim/quorum.ts
 
 ### ✅ Case A（W=2, R=2）＝「多数決で一致を取りに行く」🗳️✅
 
+![Case A Majority](./picture/cap_ts_study_016_case_a_majority.png)
+
+
+
 * 書き込みは **2台のOK**が必要 → ちょい遅くなる🐢
 * 読み取りも **2台の回答**が必要 → ちょい遅くなる🐢
 * でも、**読み書き集合が重なる**ので、最新に当たりやすい🤝✨ ([System Overflow][2])
 
 ### ⚡ Case B（W=1, R=1）＝「速さ優先」⚡😆
+
+![Case B Speed](./picture/cap_ts_study_016_case_b_speed.png)
+
+
 
 * 書き込みが **1台OK**で成功 → めちゃ速い⚡
 * 読み取りも **1台だけ**で決める → めちゃ速い⚡
@@ -271,6 +291,10 @@ npx tsx apps/sim/quorum.ts
   （Cassandraでも “ONEは古い読み取りの確率が高いが可用性が高い” という趣旨で説明されるよ）([DataStax Documentation][3])
 
 ### 💥 Case C（W=3）＝「全員一致」🧱😇
+
+![Case C Strict](./picture/cap_ts_study_016_case_c_strict.png)
+
+
 
 * 1台でも落ちたら **書き込み失敗**しやすい😱
 * 強いけど **可用性が落ちやすい**（CAPの肌感覚ポイント！）⚖️💥
@@ -295,6 +319,10 @@ MongoDBの read concern `"majority"` は、**過半数で確認済みのデー�
 ## 16.8 ありがちな勘違い＆注意点⚠️😵
 
 ### 勘違い①：クォーラム＝「必ず最新が見える魔法」ではない🪄❌
+
+![Misconception Magic](./picture/cap_ts_study_016_misconception_magic.png)
+
+
 
 `R + W > N` は “直感の強い道具” だけど、現実には
 
