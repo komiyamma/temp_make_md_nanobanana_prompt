@@ -16,6 +16,10 @@
 
 ## 2) Gateway と Repository って何が違うの？🤔🔌
 
+![Gateway vs Repository](./picture/clean_cs_study_023_gateway_vs_repository.png)
+
+
+
 ざっくりこう！👇
 
 * **Gateway**：外部世界への“出口”ぜんぶ（DB・外部API・ファイル・メール送信など）🌍
@@ -26,6 +30,10 @@
 ---
 
 ## 3) なんでわざわざ interface を挟むの？😵‍💫➡️😆
+
+![Why Interface?](./picture/clean_cs_study_023_why_interface.png)
+
+
 
 もしUseCaseがDBを直叩きすると…
 
@@ -43,6 +51,10 @@ Microsoftのクリーンアーキ解説でも「UIはApplication Coreのイン�
 
 ## 4) 置き場所ルール（迷子防止マップ）🗺️✨
 
+![Repository Placement Map](./picture/clean_cs_study_023_placement_map.png)
+
+
+
 ![Repositoryのインターフェースと実装](./picture/clean_cs_study_023_repository_interface.png)
 
 ### ✅ Core（UseCases / Application Core）
@@ -59,6 +71,10 @@ Microsoftのクリーンアーキ解説でも「UIはApplication Coreのイン�
 ---
 
 ## 5) 図で一発！データの流れ（超だいじ）🧠💡
+
+![Data Flow with DIP](./picture/clean_cs_study_023_data_flow_dip.png)
+
+
 
 ```text
 [Controller / API] 
@@ -177,6 +193,10 @@ EF Core 10（.NET 10向けLTS）を使うなら、重要なのはこれ👇 ([Mi
 ---
 
 ## 9) 「Repositoryを汎用化しすぎ」問題あるある😇💥
+
+![Generic Repository Trap](./picture/clean_cs_study_023_generic_repo_trap.png)
+
+
 
 ### ❌ ダメになりがち
 

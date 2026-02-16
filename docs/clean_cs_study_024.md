@@ -15,6 +15,10 @@
 
 ## 2) まず結論💡：読み📚と書き✍️は“目的が別”だから分けて考える😍
 
+![Command vs Query](./picture/clean_cs_study_024_command_vs_query.png)
+
+
+
 ![Command vs Query](./picture/clean_cs_study_024_command_query.png)
 
 ### ✅ 書き込み（Command）✍️
@@ -67,6 +71,10 @@
 
 # 4-A) まずは “Read（GetMemo）” 📚✨
 
+![Read Model Projection](./picture/clean_cs_study_024_read_model_projection.png)
+
+
+
 ## ✅ 設計のコツ（Read）
 
 * **見せたい形（ReadModel）で返す**のが気持ちいい😍
@@ -98,6 +106,10 @@ public interface IMemoQueryService
 ---
 
 # 4-B) 次に “Write（UpdateMemo）” ✍️🔥
+
+![Entity Guard in Write](./picture/clean_cs_study_024_write_entity_guard.png)
+
+
 
 ## ✅ 設計のコツ（Write）
 
@@ -138,6 +150,10 @@ public interface IMemoRepository
 ---
 
 ## 6) 中級に一歩：Read と Write を分ける版（UseCaseが育ちやすい🌱💖）
+
+![CQS Evolution](./picture/clean_cs_study_024_cqs_evolution.png)
+
+
 
 ### ✅ Write用（Entityが戻る）
 
@@ -306,6 +322,10 @@ public sealed class UpdateMemoInteractor : IUpdateMemoInputPort
 ---
 
 ## 8) AI（Copilot / Codex）に頼むと捗るポイント🤖✨
+
+![Interactor I/O Audit](./picture/clean_cs_study_024_io_review.png)
+
+
 
 ### ✅ 使いどころ①：「ReadModelの設計」📦
 

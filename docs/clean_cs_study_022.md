@@ -8,6 +8,10 @@
 
 ## 1) Presenterが必要になる“あるある”😇💥
 
+![Presenter Role](./picture/clean_cs_study_022_presenter_role.png)
+
+
+
 ![Presenterの変換イメージ](./picture/clean_cs_study_022_presenter.png)
 
 Presenterがいない/弱いと、こうなりがち👇
@@ -29,6 +33,10 @@ Presenterがいると👇
 
 ## 2) 位置関係を1枚でイメージ🗺️✨
 
+![Clean Architecture Flow Map](./picture/clean_cs_study_022_flow_map.png)
+
+
+
 流れはこう👇（第20〜22章のつながり！）
 
 * Controller：受け取ってUseCase呼ぶだけ🚪
@@ -42,6 +50,10 @@ Presenterがいると👇
 ---
 
 ## 3) 似てる言葉の整理（ここ超大事）🧠💡
+
+![Response Model vs ViewModel](./picture/clean_cs_study_022_terminology.png)
+
+
 
 ### ✅ ResponseModel（UseCaseの出力）
 
@@ -179,6 +191,10 @@ public sealed class CreateMemoPresenter : ICreateMemoOutputPort
 
 ## 4-3) Controller（or Minimal API）：Presenterの結果を返すだけ🚪✨
 
+![Controller Implementation](./picture/clean_cs_study_022_controller_implementation.png)
+
+
+
 ```csharp
 // Frameworks/Web（Controller）
 
@@ -218,6 +234,10 @@ Controllerは「受け取って渡して返す」だけ！薄い！えらい！�
 
 ### ① “Entityをそのまま返さない”🙅‍♀️💣
 
+![Entity Leakage Danger](./picture/clean_cs_study_022_entity_leak.png)
+
+
+
 内部構造が漏れるし、将来の変更が怖い…！
 PresenterでDTOへ変換して守ろう🛡️✨
 
@@ -227,6 +247,10 @@ ResponseModelは**業務の言葉**で、UI/HTTPの都合を入れないのが�
 （UseCaseがOutput Portを呼び、Presenterが外側で変換する流れが狙いそのもの） ([クリーンコーダーブログ][1])
 
 ### ③ “画面が増える未来に強くなる”📱💻🖥️
+
+![Multi-Device Presenters](./picture/clean_cs_study_022_multi_device.png)
+
+
 
 同じUseCaseでも、
 
