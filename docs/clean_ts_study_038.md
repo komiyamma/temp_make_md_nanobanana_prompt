@@ -6,7 +6,9 @@ Adapters（Controller/Presenter/Repository/Mapper）が“便利だから”で�
 
 ---
 
-## 1) まず超ざっくり：Adaptersって何する場所？🧩
+## 1) まず超ざっくり：Adaptersって何する場所？
+
+![clean_ts_study_038_adapters_translator.png](./picture/clean_ts_study_038_adapters_translator.png)🧩
 
 Adaptersは「翻訳係」だよ📚✨
 
@@ -71,7 +73,9 @@ Adaptersは「翻訳係」だよ📚✨
 
 ---
 
-## 4-1) ESLintで「禁止import」をガチガチにする 🧱
+## 4-1) ESLintで「禁止import」をガチガチにする
+
+![clean_ts_study_038_eslint_guard.png](./picture/clean_ts_study_038_eslint_guard.png) 🧱
 
 ESLintは今どき **Flat Config（eslint.config.*）** が基本だよ🧹
 TypeScript向けの推奨セットも公式で案内されてる（typescript-eslintのGetting Started）📘✨ ([TypeScript ESLint][1])
@@ -142,7 +146,9 @@ export default defineConfig(
 
 ---
 
-## 4-2) dependency-cruiserで「アーキ違反」をテスト化する 🧪🚨
+## 4-2) dependency-cruiserで「アーキ違反」をテスト化する
+
+![clean_ts_study_038_dep_cruiser.png](./picture/clean_ts_study_038_dep_cruiser.png) 🧪🚨
 
 dependency-cruiserは **依存ルールを自分で書いて違反を検出**できるやつだよ🛡️
 
@@ -200,7 +206,9 @@ npx depcruise src
 
 ---
 
-## 4-3) madgeで「循環依存」をあぶり出す 🌀👻
+## 4-3) madgeで「循環依存」をあぶり出す
+
+![clean_ts_study_038_madge_cycle.png](./picture/clean_ts_study_038_madge_cycle.png) 🌀👻
 
 循環依存って、設計がにごると増えがち😇
 madgeは **循環依存を探す**のが得意だよ💡（npm公式にも説明あり） ([npm][5])
@@ -211,7 +219,9 @@ npx madge --circular --extensions ts,tsx src
 
 ---
 
-## 5) “Adapters層”の監査ポイントをもっと具体化 💎
+## 5) “Adapters層”の監査ポイントをもっと具体化
+
+![clean_ts_study_038_logic_sorting.png](./picture/clean_ts_study_038_logic_sorting.png) 💎
 
 ここ、超大事だからもう一段かみくだくね🫶✨
 

@@ -7,7 +7,9 @@ DBなしで動くから、まずはここで “クリーンアーキの型” �
 
 ---
 
-## 1) InMemory Repositoryってなに？🧺💡
+## 1) InMemory Repositoryってなに？
+
+![clean_ts_study_035_inmemory_concept.png](./picture/clean_ts_study_035_inmemory_concept.png)🧺💡
 
 **Repository Port（内側が欲しい能力）**を、**メモリ上のMap**で実現する “外側の実装（Adapter）” だよ😊
 
@@ -24,7 +26,9 @@ DBなしで動くから、まずはここで “クリーンアーキの型” �
 
 ---
 
-## 2) まず“Port”を確認しよう🔌👀
+## 2) まず“Port”を確認しよう
+
+![clean_ts_study_035_port_implementation.png](./picture/clean_ts_study_035_port_implementation.png)🔌👀
 
 すでに作ってある想定だけど、章が単体で読めるように最小例を置くね😊
 （メソッド名はあなたのPortに合わせて読み替えてOKだよ！）
@@ -114,7 +118,9 @@ export class InMemoryTaskRepository implements TaskRepository {
 
 ---
 
-## 6) 安全寄りの改良：Snapshotを保存して“復元”する📸🔁
+## 6) 安全寄りの改良：Snapshotを保存して“復元”する
+
+![clean_ts_study_035_snapshot_strategy.png](./picture/clean_ts_study_035_snapshot_strategy.png)📸🔁
 
 「共有参照がイヤ！」ってときは、**プリミティブのSnapshotを保存**して、取り出すときに復元するのが安定だよ😊✨
 
@@ -195,7 +201,9 @@ export class InMemoryTaskRepository implements TaskRepository {
 
 ---
 
-## 7) 使い方（Composition Rootで注入）💉🏗️
+## 7) 使い方（Composition Rootで注入）
+
+![clean_ts_study_035_composition_root.png](./picture/clean_ts_study_035_composition_root.png)💉🏗️
 
 「UseCaseはPortしか知らない」ので、組み立て側で注入するよ✨
 
@@ -213,7 +221,9 @@ const createTask = new CreateTaskInteractor(taskRepo /*, 他のPort */);
 
 ---
 
-## 8) テスト（Vitestでサクッと）🧪✨
+## 8) テスト（Vitestでサクッと）
+
+![clean_ts_study_035_testing.png](./picture/clean_ts_study_035_testing.png)🧪✨
 
 Vitestは 2025/10 に v4 が出ていて、移行ガイドも整ってるよ。([Vitest][3])
 （もちろんJestでもOKだけど、速くて気軽なのが嬉しいやつ😊）
@@ -261,7 +271,9 @@ describe("InMemoryTaskRepository", () => {
 
 ---
 
-## 9) この章の“設計のコツ”まとめ🧠✨
+## 9) この章の“設計のコツ”まとめ
+
+![clean_ts_study_035_design_rules.png](./picture/clean_ts_study_035_design_rules.png)🧠✨
 
 ### ✅守れてたら勝ち🎉
 

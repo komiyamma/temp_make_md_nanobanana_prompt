@@ -15,7 +15,9 @@
 
 ---
 
-## 1. ここで言う「Webフレームワークは外側」ってどういう意味？🤔💡
+## 1. ここで言う「Webフレームワークは外側」ってどういう意味？
+
+![clean_ts_study_039_web_layer.png](./picture/clean_ts_study_039_web_layer.png)🤔💡
 
 ### ✅ 外側に置く＝こうする
 
@@ -68,7 +70,9 @@
 
 ここからは「Taskミニアプリ」を想定して、**外側にExpressを置く**形を見せるね😊
 
-### 4-1. まずは内側に寄せたHTTP共通型（Framework非依存）を作る📦
+### 4-1. まずは内側に寄せたHTTP共通型（Framework非依存）を作る
+
+![clean_ts_study_039_http_types.png](./picture/clean_ts_study_039_http_types.png)📦
 
 置き場：`src/interface-adapters/http/`
 
@@ -97,7 +101,9 @@ export type HttpResponse = {
 
 ---
 
-### 4-2. Controllerは「受け取って→UseCase呼んで→返す」だけ🚪🎬
+### 4-2. Controllerは「受け取って→UseCase呼んで→返す」だけ
+
+![clean_ts_study_039_controller_flow.png](./picture/clean_ts_study_039_controller_flow.png)🚪🎬
 
 置き場：`src/interface-adapters/controllers/`
 
@@ -137,7 +143,9 @@ Controllerの責務は“薄い”ほど勝ち🏆✨
 
 ---
 
-### 4-3. ExpressはFrameworks & Driversに隔離して、Controllerを呼ぶだけ🧱🌍
+### 4-3. ExpressはFrameworks & Driversに隔離して、Controllerを呼ぶだけ
+
+![clean_ts_study_039_express_adapter.png](./picture/clean_ts_study_039_express_adapter.png)🧱🌍
 
 置き場：`src/frameworks/web/express/`
 
@@ -193,7 +201,9 @@ Express v5は、Promise/async系の扱いがより現代的になってるよ（
 
 ---
 
-## 5. よくある事故と、秒速で治すコツ🧯💨
+## 5. よくある事故と、秒速で治すコツ
+
+![clean_ts_study_039_pollution.png](./picture/clean_ts_study_039_pollution.png)🧯💨
 
 ### 事故①：UseCaseが `req.body` を直接読む
 
