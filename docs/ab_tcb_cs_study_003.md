@@ -10,6 +10,8 @@
 
 ## 1. DDDって結局なに？🧠💭
 
+![DDD Core Concept](./picture/ab_tcb_cs_study_003_ddd_summary.png)
+
 DDD（Domain-Driven Design）は、めちゃくちゃ雑に言うと👇
 
 * **業務で使ってる言葉を、そのままコードにする**📖➡️💻
@@ -29,6 +31,8 @@ flowchart LR
 ---
 
 ## 2. なんでDDDをやるの？🎁✨
+
+![Benefits of DDD](./picture/ab_tcb_cs_study_003_why_ddd.png)
 
 DDDをやる理由は、主にこの3つが強いよ💪🌸
 
@@ -69,6 +73,8 @@ DDDをやる理由は、主にこの3つが強いよ💪🌸
 
 ## 4. ミニ題材 カフェ注文の世界☕️🍰
 
+![Cafe Domain Objects](./picture/ab_tcb_cs_study_003_cafe_terms.png)
+
 まずは、カフェの注文でありがちな言葉を並べてみよう👀✨
 
 ## 登場しそうな言葉たち🧾
@@ -88,6 +94,8 @@ DDDをやる理由は、主にこの3つが強いよ💪🌸
 ---
 
 ## 5. 業務の言葉をコードにする手順 4ステップ🪜✨
+
+![4 Steps Process](./picture/ab_tcb_cs_study_003_4_steps.png)
 
 ## ステップ1 まず言葉を拾う🔎📝
 
@@ -129,6 +137,8 @@ flowchart TD
 ---
 
 ## 6. ちょいコードで雰囲気だけ C#で業務の言葉を置く💻✨
+
+![Business Words in Code](./picture/ab_tcb_cs_study_003_code_words.png)
 
 「DDD＝難しい設計」ってより、まずは
 **“名前を業務に寄せる”**だけで一気に変わるよ🌸
@@ -200,6 +210,8 @@ public sealed class Order
 
 ## 8. 演習2 ルールを “if文” に変換してみる🔁🧠
 
+![Translating Rules to Logic](./picture/ab_tcb_cs_study_003_rule_to_if.png)
+
 文章ルールを “機械っぽい形” にすると、漏れが見えやすいよ👀✨
 
 例👇
@@ -215,6 +227,8 @@ public sealed class Order
 ---
 
 ## 9. AI拡張の使いどころ こわくない使い方🤖✨
+
+![AI as Brainstorming Partner](./picture/ab_tcb_cs_study_003_ai_usage.png)
 
 AIは「答え」じゃなくて、**案を出す相棒**にすると超強いよ💪🌸
 （そのまま採用はせず、必ず意味チェック✅）

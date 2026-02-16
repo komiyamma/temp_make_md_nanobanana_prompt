@@ -43,6 +43,8 @@ graph LR
 
 ## 6.2 いちばん大事な違い（表でサクッと）📋✨
 
+![Entity vs Value Object Characteristics](./picture/ab_tcb_cs_study_006_entity_vo_table.png)
+
 | 観点     | Entity👤         | ValueObject💎 |
 | ------ | ---------------- | ------------- |
 | 同一性の基準 | ID（識別子）🆔        | 値（中身）🧾       |
@@ -98,6 +100,8 @@ C# なら「record」が相性よすぎる💘
 ---
 
 ## 6.5 例①：Money（お金）💰✨ 〜バグを減らす最強VO〜
+
+![Money Value Object](./picture/ab_tcb_cs_study_006_money_vo.png)
 
 ### 💥 ありがちなバグ
 
@@ -163,6 +167,8 @@ public readonly record struct Money
 
 ## 6.6 例②：DateRange（期間）📅✨ 〜逆転バグを根絶〜
 
+![DateRange Logic](./picture/ab_tcb_cs_study_006_daterange_vo.png)
+
 ```csharp
 using System;
 
@@ -188,6 +194,8 @@ public readonly record struct DateRange
 ---
 
 ## 6.7 例③：Address（住所）🏠✨ 〜文字列1本を卒業〜
+
+![Address Structure](./picture/ab_tcb_cs_study_006_address_vo.png)
 
 住所を string 1本にすると、だいたい地獄になる😇
 なので “部品に分ける” が基本だよ🌸
@@ -232,6 +240,8 @@ public sealed record Address
 ---
 
 ## 6.8 Entity の作り方：最小でOK👤✨（まずは「IDがある」だけ）
+
+![Order Entity Blueprint](./picture/ab_tcb_cs_study_006_order_entity.png)
 
 Entity は「IDで追う」だけ覚えたら勝ち🏆
 
@@ -297,6 +307,8 @@ public readonly record struct OrderItem(string ProductName, Money UnitPrice, int
 
 ## 6.9 集約の中で ValueObject が効く理由🌳✨（超重要！）
 
+![Value Objects protecting Aggregate](./picture/ab_tcb_cs_study_006_vo_in_aggregate.png)
+
 集約って「整合性を守るまとまり」だったよね🔒
 その “守るべきルール” は、だいたい **値に宿る** の🥺✨
 
@@ -321,6 +333,8 @@ graph TD
 ---
 
 ## 6.10 先取り：DBに保存するときどうする？（EF Core 10 の今どき事情）🗄️✨
+
+![EF Core Complex Types Mapping](./picture/ab_tcb_cs_study_006_efcore_complex_types.png)
 
 ValueObject をDBに入れるとき、昔は「Owned Types」が多かったけど、今は **Complex types** がかなり推しになってるよ📣✨
 EF Core 10 では Complex types が「中に入る・IDを持たない型」を表現する仕組みとして説明されていて、値の比較も “中身で比較” できる（＝ValueObject と相性がいい）って流れになってるよ🧠💎 ([Microsoft Learn][2])

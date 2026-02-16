@@ -10,6 +10,8 @@
 
 ## 1. そもそも「整合性」ってなに？🧩
 
+![Consistency Definitions](./picture/ab_tcb_cs_study_005_consistency_definition.png)
+
 「整合性」はざっくり言うと、
 
 > **“ルール的におかしくない状態が保たれてること”** ✅
@@ -31,6 +33,8 @@
 
 ## 2-1. 即時整合（Strong / ACID寄り）⚡️🔒
 
+![Immediate Consistency Constraint](./picture/ab_tcb_cs_study_005_immediate_example.png)
+
 **「この操作が終わった直後に、絶対にルールを満たしてないとダメ」** なやつ！
 
 * 例：
@@ -45,6 +49,8 @@
 ---
 
 ## 2-2. 最終的整合（Eventual Consistency）⏳📣
+
+![Eventual Consistency Flow](./picture/ab_tcb_cs_study_005_eventual_example.png)
 
 **「いまはズレてても、しばらくしたら正しい状態に収束すればOK」** なやつ！
 
@@ -163,6 +169,8 @@ timeline
 
 ## 5-1. ユーザーを安心させる3点セット🧸✨
 
+![UX for Delay](./picture/ab_tcb_cs_study_005_ux_message.png)
+
 1. **状態を見せる**：「処理中」「確認中」「反映待ち」
 2. **次に起こることを言う**：「数分以内に反映されます」
 3. **やってほしくないことを言う**：「連打しないでね」「画面を閉じても大丈夫」
@@ -178,6 +186,8 @@ timeline
 ## 6. C#ミニ実装： “処理中” を状態で表現してみよう🛠️✨
 
 ## 6-1. ステータス設計（最小）🚦
+
+![Payment Status Lifecycle](./picture/ab_tcb_cs_study_005_status_design.png)
 
 ```csharp
 public enum PaymentStatus
@@ -270,6 +280,8 @@ public sealed record OrderItem(string Name, int UnitPrice, int Quantity);
 
 ## 7. ありがちな事故と、その回避法🚑😅
 
+![Double Click Accident](./picture/ab_tcb_cs_study_005_double_click_accident.png)
+
 ## 事故①：反映が遅い → ユーザーが連打 → 二重処理💥
 
 * 回避：ボタンを連打できないUI＋「処理中」表示＋冪等性（これは第32章で登場🗝️）
@@ -285,6 +297,8 @@ public sealed record OrderItem(string Name, int UnitPrice, int Quantity);
 ---
 
 ## 8. ワーク✍️🎀：「即時」or「あとでOK」を仕分けしよう
+
+![Sorting Rules (Immediate vs Eventual)](./picture/ab_tcb_cs_study_005_rule_sorting.png)
 
 次のルール、どっちにする？🤔
 （正解は1つじゃないよ。**理由が言えたら勝ち**🏆✨）
