@@ -11,6 +11,8 @@
 
 ## 🧠 まず1分で整理：集約とトランザクションって何？⏱️✨
 
+![Study Image](./picture/ab_tcb_ts_study_014_knight_shield_sword.png)
+
 ### 🧺 集約（Aggregate）
 
 * ざっくり言うと、**「このルール（不変条件🔒）は絶対壊さない！」を守るための“まとまり”**
@@ -47,6 +49,8 @@ graph LR
 
 ## 🤔 なんで「1集約＝1トランザクション」が強いの？（理由5つ）💡
 
+![Study Image](./picture/ab_tcb_ts_study_014_five_superpowers.png)
+
 1. **不変条件が守りやすい🔒**
    集約は“不変条件の最後の砦”🏰
    1つのトランザクション内で集約を完結させると、ルール違反が入りにくい✅
@@ -71,6 +75,8 @@ graph LR
 ---
 
 ## 🛒 ミニECで見る：「1集約＝1トランザクション」だと何が嬉しい？😊
+
+![Study Image](./picture/ab_tcb_ts_study_014_safe_vs_danger_lanes.png)
 
 ここでは（例）注文🛒を **Order集約** として考えるよ✨
 
@@ -120,6 +126,8 @@ graph TD
 
 ### ② 操作を仕分けする表を作る📋
 
+![Study Image](./picture/ab_tcb_ts_study_014_sorting_room.png)
+
 次の表をノートかMarkdownで作って埋めてみてね😊
 
 | 操作                  | 触る集約      | 1回で確定？ | 理由（不変条件はどれ？） |
@@ -134,6 +142,8 @@ graph TD
 ---
 
 ## 💻 TypeScript例：1集約を1トランザクションで確定する形🧱✅
+
+![Study Image](./picture/ab_tcb_ts_study_014_assembly_line.png)
 
 ポイントはこれだけ😊
 
@@ -237,6 +247,8 @@ export class PlaceOrder {
 
 ## ⚠️ ダメな例：集約またぎを“ついで”でやると壊れやすい😱🧨
 
+![Study Image](./picture/ab_tcb_ts_study_014_snowball_effect.png)
+
 例えばユースケースがこうなりがち👇
 
 * Order更新
@@ -252,6 +264,8 @@ export class PlaceOrder {
 ---
 
 ## ✅ じゃあ跨ぐ必要が出たらどうするの？（今日の結論）🧩✨
+
+![Study Image](./picture/ab_tcb_ts_study_014_consistency_fork.png)
 
 ここは“全部を今やらない”でOK😊
 ただし、判断の軸だけ持って帰ろう🛍️

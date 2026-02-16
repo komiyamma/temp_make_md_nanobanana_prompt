@@ -2,6 +2,8 @@
 
 ## 15.1 まず結論：集約は「純粋にドメインのルール担当」🧠✨
 
+![Study Image](./picture/ab_tcb_ts_study_015_pure_thinker.png)
+
 集約（Aggregate）は **不変条件（壊れちゃダメなルール）を守るための“砦”** でしたよね🔒🏰
 だから集約の中身は、できるだけ **「決める」「計算する」「状態を遷移させる」** みたいな “思考系” に寄せます🧩
 
@@ -32,10 +34,14 @@ graph TD
 
 ### ❌ 理由1：テストが地獄になる🧪💔
 
+![Study Image](./picture/ab_tcb_ts_study_015_testing_chains.png)
+
 集約がDBやHTTPを呼ぶと、ユニットテストが **「ネットワーク・DB・時刻」** に振り回されます🌪️
 本当は集約のテストって「入力→判定→状態変化」をサクッと見たいだけなのにね…🥲
 
 ### ❌ 理由2：集約が“汚れた依存”で太る🐷📦
+
+![Study Image](./picture/ab_tcb_ts_study_015_bloated_knife.png)
 
 集約が `fetch()` や DB クエリを知った瞬間、
 「ドメインの中心」だったはずが「なんでも屋」になって肥大化します🍔🍟
@@ -54,6 +60,8 @@ graph TD
 ---
 
 ## 15.3 ここ超重要！「集約に入れてOK / ダメ」早見表📋✨
+
+![Study Image](./picture/ab_tcb_ts_study_015_security_scanner.png)
 
 | たぶんやりたいこと            | 集約の中に入れてOK？ | 置き場所のおすすめ            | 理由           |
 | -------------------- | ----------: | -------------------- | ------------ |
@@ -107,6 +115,8 @@ interface StockRepository {
 ---
 
 ### ✅ 正しい形（王道）：アプリケーションサービスがI/Oして、集約は判断だけ👑
+
+![Study Image](./picture/ab_tcb_ts_study_015_chef_orchestration.png)
 
 ```mermaid
 sequenceDiagram
@@ -168,6 +178,8 @@ interface OrderRepository {
 
 ## 15.6 「でも現在時刻が必要なんだけど？」の扱い🕒🧠
 
+![Study Image](./picture/ab_tcb_ts_study_015_clock_injection.png)
+
 たとえば「注文は30分以内に支払いしないと期限切れ」みたいなルール、時刻が欲しいよね⏳
 
 ### ❌ 集約の中で `new Date()` しちゃうと…
@@ -218,6 +230,8 @@ class Order {
 ## 15.8 すぐできる！ミニ演習✍️🧪
 
 ### 演習A：I/O追い出しリファクタリング🏃‍♀️💨
+
+![Study Image](./picture/ab_tcb_ts_study_015_sweeping_io.png)
 
 次の要素が「集約の中」にいたら、外へ追い出してね👇
 

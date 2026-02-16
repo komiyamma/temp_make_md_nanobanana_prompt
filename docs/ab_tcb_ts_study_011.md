@@ -11,6 +11,8 @@
 
 ## 1. いちばん大事な結論💎
 
+![Study Image](./picture/ab_tcb_ts_study_011_transaction_handcuffs.png)
+
 集約の境界は、だいたいこれで決まります👇
 
 **「同じトランザクション（同時に成功/失敗）で守りたい不変条件🔒」が何か？**
@@ -47,6 +49,8 @@ graph TD
 
 ## 観点②：同じコマンドで一緒に変更される？✍️🔁
 
+![Study Image](./picture/ab_tcb_ts_study_011_set_menu.png)
+
 * 例）「注文に商品を追加する🛒」とき、更新するのは
 
   * 注文ヘッダ🧾
@@ -59,6 +63,8 @@ graph TD
 
 ## 観点③：ライフサイクルは同じ？🌱➡️🌳➡️🍂
 
+![Study Image](./picture/ab_tcb_ts_study_011_lifecycle_kangaroo.png)
+
 * いつ作られ、いつ消える？いつ“独立”する？
 * 例）注文🧾が消えたら、明細📦も消える（=同じ運命）
 * 例）支払い💳は、外部決済や返金などで、注文と別の運命になりがち
@@ -68,6 +74,8 @@ graph TD
 ---
 
 ## 観点④：同時更新されやすい？（競合しやすい？）😱💥
+
+![Study Image](./picture/ab_tcb_ts_study_011_parking_conflict.png)
 
 * もし「注文」と「在庫」が同じ集約だと、
   注文操作🛒 と 在庫補充📦 が同時に来たときに **衝突** しやすいかも。
@@ -89,6 +97,8 @@ graph TD
 ---
 
 ## 観点⑥：外部I/O（決済API・メール送信等）を中に入れてない？🔌🚫
+
+![Study Image](./picture/ab_tcb_ts_study_011_io_muddy_pipe.png)
 
 集約は「不変条件を守る箱」だから、基本は **純粋にドメインルールだけ** に寄せたい🧼✨
 外部I/Oは遅いし失敗するし、集約の中に混ぜると境界が壊れやすいよ😇
@@ -162,6 +172,8 @@ mindmap
 ---
 
 ## 5. 手を動かす🛠️：チェックリストをTypeScriptで“道具化”する🧩✨
+
+![Study Image](./picture/ab_tcb_ts_study_011_calculator_tool.png)
 
 「境界議論」をするとき、ふんわり会話だけだと疲れるから😵
 簡単なスコアツールにして、議論の土台を作ろう📌
@@ -274,6 +286,8 @@ export function evaluate(answers: Answers) {
 ## 7. ありがちな失敗あるある😇⚠️
 
 ## 失敗①：「一緒にしたほうが安全そう」だけで巨大集約にする🐘💥
+
+![Study Image](./picture/ab_tcb_ts_study_011_giant_tank.png)
 
 * 安全そうに見えて、競合・性能・実装が死ぬやつ😵‍💫
 * まず #1（不変条件）を言語化してから判断しよう🔒
