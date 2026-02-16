@@ -37,6 +37,8 @@
 * 「DBアクセスは EF Core を基本とし、性能が厳しい箇所のみ Dapper を許可する」
 * 「例外は境界（API/外部I/O）で握り、内部は例外を投げてよい」
 
+![Strong Decision Clarity](./picture/adr_cs_study_006_strong_decision_stamp.png)
+
 ### 👎 よくある“弱い Decision”あるある ☁️😵‍💫
 
 * 「〜した方がよさそう」
@@ -45,6 +47,8 @@
 * 「基本はAだけどBもCも…（結局何？）」
 
 こういうの、読んだ人が **“で、結局どうするの？”** ってなるの😭
+
+![Weak Decision Ambiguity](./picture/adr_cs_study_006_weak_decision_fog.png)
 
 ---
 
@@ -99,6 +103,8 @@ mindmap
 * 「××が発生した場合、□□に時間がかかる可能性」
 * 「（ただし）代替案として〜で緩和する」
 
+![visualizing Negative Consequences](./picture/adr_cs_study_006_bad_points_shadow.png)
+
 ---
 
 ## 6.4 例で学ぶ：Decision & Consequences の “弱い→強い” 改造🛠️✨
@@ -116,6 +122,8 @@ mindmap
 ## Decision
 アプリ内ログは ILogger を入口に統一し、実装は Serilog を採用する（JSON形式で出力）。
 ```
+
+![Transforming Weak to Strong](./picture/adr_cs_study_006_weak_to_strong_transform.png)
 
 ---
 
@@ -192,6 +200,8 @@ Decision と Consequences だけ抜き出したミニテンプレだよ😊（�
 
 ポイントは「Bad をちゃんと書く」だよ〜！ここが書けたら勝ち🏆✨
 
+![Balancing Good and Bad](./picture/adr_cs_study_006_balance_exercise.png)
+
 ---
 
 ## 6.7 AI活用（Copilot / Codex など）🤖💬✨
@@ -205,6 +215,8 @@ Visual Studio 側も AI 機能がどんどん統合されてるので、「文�
 * 🤖「“Bad” を具体化したい。運用・テスト・学習コスト・将来変更の観点で追加して」
 * 🤖「この Decision を“一文で言い切り”に直して。曖昧語（たぶん/とりあえず）禁止で」
 * 🤖「見直し条件（Revisit）を3案出して。計測できる条件にして」
+
+![AI Copilot for Consequences](./picture/adr_cs_study_006_ai_copilot.png)
 
 ### ⚠️ AIの注意（超カンタンに）🫶
 

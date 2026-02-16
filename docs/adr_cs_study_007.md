@@ -17,6 +17,8 @@ ADRは、だいたい **Markdownのテキスト1枚**でOKな軽いドキュメ�
 
 ADRの定番フォーマット（Context / Decision / Consequences）は昔から広く使われていて、テンプレも整っています📄✨ ([Cognitect.com][1])
 
+![Benefits of Storing ADRs in Repo](./picture/adr_cs_study_007_repo_benefits.png)
+
 ---
 
 ## 7-2. まずは結論：おすすめの置き方（迷子にならないやつ）✅📁
@@ -130,6 +132,8 @@ MADRは「構造がスッキリしたテンプレ」で、意思決定を取り�
 
 > Status に「Proposed/Accepted/Deprecated/Superseded」みたいな区分を入れるのは、テンプレ側でもよく整理されてます📌 ([GitHub][5])
 
+![Using a Template](./picture/adr_cs_study_007_template_cookie_cutter.png)
+
 ---
 
 ## 7-6. 索引（README）がないと、ADRは100%迷子になる🧭💥
@@ -198,6 +202,8 @@ adr-toolsでも最初に似たADR（`0001-record-architecture-decisions`）を�
 - ADRが増えすぎて探しづらくなったら、索引ルールや分類を追加する
 ```
 
+![The First ADR (0001)](./picture/adr_cs_study_007_first_adr_flag.png)
+
 ---
 
 ## 7-8. Visual Studioで「フォルダ作成→コミット」まで（超実務）🧑‍💻✅
@@ -209,6 +215,8 @@ adr-toolsでも最初に似たADR（`0001-record-architecture-decisions`）を�
 3. **Git Changes** でコミットする✅
 
 Visual StudioのGit操作（コミット）は公式ドキュメントでも案内されています📌 ([Microsoft Learn][7])
+
+![ADR Creation Workflow](./picture/adr_cs_study_007_workflow_steps.png)
 
 ---
 
@@ -241,6 +249,8 @@ git commit -m "Add ADR directory and first ADR"
 
 * 「この判断を、Context/Decision/Consequencesに分けて短くまとめて」
 
+![AI Automating ADR Tasks](./picture/adr_cs_study_007_ai_automation.png)
+
 ---
 
 ## 7-11. ミニ演習（15〜30分）⏱️🎯✨
@@ -269,6 +279,8 @@ git commit -m "Add ADR directory and first ADR"
 
 * 😵 **Statusが書かれてない**
   → ✅ Proposed/Accepted/Deprecated/Superseded をテンプレ固定にする ([GitHub][5])
+
+![Preventing ADR Chaos](./picture/adr_cs_study_007_accidents_vs_organized.png)
 
 ---
 

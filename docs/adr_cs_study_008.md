@@ -58,6 +58,8 @@ sequenceDiagram
 * **mainブランチは保護**して、レビュー必須＋CI必須にする🔒✅
   （GitHubのブランチ保護で「承認レビュー必須」「ステータスチェック必須」などが設定できるよ）([GitHub Docs][1])
 
+![Levels of ADR Rules](./picture/adr_cs_study_008_rule_ladder.png)
+
 ---
 
 ## 8-3. PRテンプレで「ADR添付」を習慣にする📎📝✨
@@ -128,6 +130,8 @@ GitHubはリポジトリに **pull request template** を置けます([GitHub Do
 * 比較軸が妥当？（速度/保守/運用/性能/テスト…）⚖️
 * “いつ見直す？”の条件がある？（期限・状況変化など）🕰️
 
+![ADR Review Checklist](./picture/adr_cs_study_008_review_checklist.png)
+
 ---
 
 ## 8-5. GitHub側で「レビュー必須」を作る🔒✅
@@ -142,6 +146,8 @@ GitHubはブランチ保護ルールで、例えば👇を要求できます：
 * **ステータスチェック必須**（CIが通るまでマージ不可）([GitHub Docs][4])
 
 さらに最近は **Rulesets（ルールセット）**でも、ブランチ/タグに対して「ステータスチェック必須」などのルールを適用できます([GitHub Docs][5])
+
+![Branch Protection](./picture/adr_cs_study_008_branch_protection_gate.png)
 
 ---
 
@@ -168,6 +174,8 @@ GitHubの **CODEOWNERS** を使うと、ファイルパスごとにレビュワ�
 🥈 **ラベル運用**：「decision-needed」「needs-adr」みたいなラベルを使う🏷️
 🥉 **チェック（CI）で弾く**：大きい判断がある変更にADRが無ければ失敗にする💥
 
+![Reminders for ADR](./picture/adr_cs_study_008_tricks_label.png)
+
 ---
 
 ## 8-8. “合意の取り方”ミニ型（コメント→修正→Accepted）🗳️✨
@@ -183,6 +191,8 @@ ADRをPRで回すときの、いちばん平和な流れはこれ😊🌸
 💡ポイント：
 
 * 「会議しないと決まらない」じゃなくて、**PR上で合意が進む**のが強いよ✨
+
+![Consensus Flow in PR](./picture/adr_cs_study_008_consensus_handshake.png)
 
 ```mermaid
 sequenceDiagram
@@ -225,6 +235,8 @@ CodexのVS Code拡張は「IDEで並走」or「タスク委任」みたいな使
 * ADRの文章をテンプレに当てはめる📄
 * デメリット（Consequencesの痛み）を洗い出す💦
 * レビューコメント案を“やわらかい言い方”にする💬🌷
+
+![AI Assistant for PRs](./picture/adr_cs_study_008_ai_pr_assistant.png)
 
 ---
 

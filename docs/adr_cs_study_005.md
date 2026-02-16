@@ -29,6 +29,8 @@ Contextは一言でいうと、
 
 だからContextは、ADRの“説得力の土台”だよ🏗️✨
 
+![Weak Context Consequences](./picture/adr_cs_study_005_weak_context_accident.png)
+
 ---
 
 ## 3) 良いContextに必ず入ってる6点セット✅🧩
@@ -89,6 +91,8 @@ mindmap
 Contextは「読む人が迷子にならない地図」🗺️✨
 地図に“お気持ちの詩”が書いてあっても、道は分からないよね…😂
 
+![What NOT to Include in Context](./picture/adr_cs_study_005_bad_context_items.png)
+
 ---
 
 ## 5) Contextの“強い書き方”テンプレ（そのまま使ってOK）🧩📝
@@ -117,6 +121,8 @@ Contextは「読む人が迷子にならない地図」🗺️✨
 ```
 
 > ADRの定番テンプレとして「Title / Status / Context / Decision / Consequences」型もよく使われるよ〜📄✨ ([Architectural Decision Records][3])
+
+![Context Template Structure](./picture/adr_cs_study_005_context_template.png)
 
 ---
 
@@ -168,6 +174,8 @@ Contextは「読む人が迷子にならない地図」🗺️✨
 4. **比較軸は3〜5個に絞る**（多すぎるとブレる）🎛️
 5. **数字が1つあるだけで強くなる**（件数、時間、頻度…なんでもOK）📊✨
 
+![Tips for Strong Context](./picture/adr_cs_study_005_5_tips.png)
+
 ---
 
 ## 8) ミニ演習：Context改善ゲーム🎮🖍️
@@ -186,6 +194,8 @@ Contextは「読む人が迷子にならない地図」🗺️✨
 * 影響範囲は？（ユーザーに500が出る、運用が詰む等）👥
 * 制約ある？（既存API仕様、既存クライアント等）📌
 * 優先順位は？（安全性、原因特定、互換性…）🎛️
+
+![Context Puzzle](./picture/adr_cs_study_005_mini_exercise.png)
 
 ---
 
@@ -227,6 +237,8 @@ Contextは「読む人が迷子にならない地図」🗺️✨
 あなたは反対派のレビュアーです。
 このContextだと「まだ決める必要ない」と言える点を3つ挙げて。
 ```
+
+![AI Reviewer for Context](./picture/adr_cs_study_005_ai_reviewer.png)
 
 ---
 
