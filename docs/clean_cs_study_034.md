@@ -54,6 +54,8 @@ Microsoftのガイドでも「EF Coreは永続化層でマッピングして、D
 
 ## 4) いつ「分ける」べき？分けないでもOK？🤔✨
 
+![When to Separate Models](./picture/clean_cs_study_034_separation_criteria.png)
+
 ### ✅ 分けると強いケース💪
 
 * Domainに **VOや不変条件が多い**（ちゃんと設計したい）💎
@@ -207,6 +209,8 @@ internal sealed class AppDbContext : DbContext
 
 ### 6-5) Mapper（ここが本章の主役）🔁🌟
 
+![The Mapper Bridge](./picture/clean_cs_study_034_mapper_bridge.png)
+
 ```csharp
 using Adapters.Persistence.Ef.Models;
 using Core.Entities;
@@ -289,6 +293,8 @@ internal sealed class EfMemoRepository : IMemoRepository
 
 ## 7) マッピングの地雷💣あるある集（超大事）😱➡️😌
 
+![Mapping Minefield](./picture/clean_cs_study_034_mapping_mines.png)
+
 ### 💣 地雷1：IDの生成場所がブレる
 
 * Domainで作る？DBで作る？が混ざると地獄👹
@@ -315,6 +321,8 @@ internal sealed class EfMemoRepository : IMemoRepository
 
 ## 8) さらに上級：VOは「値変換」でも扱えるよ🪄（分けないルート）
 
+![EF Core Value Converter](./picture/clean_cs_study_034_value_converter.png)
+
 「DomainをそのままEFでマップ」したい場合は、**Value Converter** が便利✨
 EFの公式でも「DBとの読み書き時に値を変換できる」って説明されてるよ📚([Microsoft Learn][3])
 
@@ -334,6 +342,8 @@ builder.Property(x => x.Title)
 ---
 
 ## 9) テストで守ると安心🧪💖（マッピングテスト）
+
+![Round Trip Mapping Test](./picture/clean_cs_study_034_round_trip_test.png)
 
 「変換が壊れてない？」を自動で見れると最強✨
 

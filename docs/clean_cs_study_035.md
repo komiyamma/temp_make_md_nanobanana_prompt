@@ -22,6 +22,8 @@
 
 ### 🔥 一覧/検索（Query）は、Domain Entityを無理に通さなくていい場面が多い
 
+![Fast Lane for Reads](./picture/clean_cs_study_035_fast_lane.png)
+
 一覧画面ってだいたい **「表示用の軽い形」**が欲しいだけだよね？
 だから、Queryはこんな方針が超強い💎
 
@@ -41,6 +43,8 @@
 ---
 
 ## 3) よくある事故あるある🧨😂
+
+![Bloated Repository Accident](./picture/clean_cs_study_035_bloated_repo.png)
 
 ### 事故A：Repositoryが「検索API全部入り」になる🍱
 
@@ -62,6 +66,8 @@
 ## 4) Queryの置き場所：おすすめパターン3つ🧩✨
 
 ### パターン①：**Query UseCase + Query Gateway（おすすめ💯）**
+
+![Query Gateway Pattern](./picture/clean_cs_study_035_query_gateway.png)
 
 * UseCaseに「検索仕様」を置く
 * Core側に `IMemoSearchQuery` みたいな **Query用インターフェース**を置く
@@ -97,6 +103,8 @@
 ---
 
 ## 6) 実装：Core側（UseCases）に置くもの🧠📦
+
+![Clean Request/Response](./picture/clean_cs_study_035_clean_request_response.png)
 
 ### ✅ Request / Response（UseCase用）
 
@@ -174,6 +182,8 @@ public sealed class SearchMemosInteractor
 ---
 
 ## 7) 実装：Adapter側（EF Core）に置くもの🗄️⚙️
+
+![Read Model Projection](./picture/clean_cs_study_035_read_model_projection.png)
 
 ここは **最適化OKゾーン**🚀
 ただし、Core側へ漏らさないでね🫶
@@ -310,6 +320,8 @@ AIが出したコードは、最後にあなたが **“境界（依存）”チ
 ---
 
 ## 11) 章末チェックリスト✅🔍
+
+![Final Checklist](./picture/clean_cs_study_035_checklist.png)
 
 * [ ] Core側（Entities/UseCases）に **EF Coreの型が1つも出てない**
 * [ ] Queryは **Read Model（DTO/Projection）**を返してる（Entity丸ごとじゃない）

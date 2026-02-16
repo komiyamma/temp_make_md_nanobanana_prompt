@@ -18,6 +18,8 @@
 
 ## 2) なんで「DBは詳細」なの？🤔🧩
 
+![DB Noise vs Core Silence](./picture/clean_cs_study_033_db_noise.png)
+
 DBは便利だけど、こんな“外側都合”が山ほどあるよね👇
 
 * テーブル設計、カラム追加、インデックス…📚
@@ -55,6 +57,8 @@ Microsoft のアーキテクチャガイドでも「UIはCoreのinterfaceを見�
 
 ### 4-1. Core側：Repository “口” を定義する（interface）🔌
 
+![The Interface Contract](./picture/clean_cs_study_033_interface_contract.png)
+
 > 置き場所の例：`Core/UseCases/Ports/IMemoRepository.cs`
 > ※ここに **EF Coreの型（DbContext / DbSet / IQueryable）を絶対に入れない** 🙅‍♀️
 
@@ -78,6 +82,8 @@ public interface IMemoRepository
 ---
 
 ### 4-2. Adapter側：まず InMemory 実装で動かす 🧸✅
+
+![InMemory Implementation](./picture/clean_cs_study_033_inmemory_box.png)
 
 > 置き場所の例：`Adapters.Persistence/InMemory/InMemoryMemoRepository.cs`
 
@@ -122,6 +128,8 @@ public sealed class InMemoryMemoRepository : IMemoRepository
 ---
 
 ## 5) いよいよEF Core実装（本命のPersistence Adapter）🧱🗄️
+
+![EF Core Implementation](./picture/clean_cs_study_033_efcore_vault.png)
 
 2026年1月時点では .NET 10 がLTSで、EF Coreも 10 系が提供されてるよ（例：10.0.2） ([Microsoft for Developers][3])
 
@@ -247,6 +255,8 @@ public sealed class EfMemoRepository : IMemoRepository
 
 ## 6) DIで“差し替え”を完成させる 🧷✨
 
+![Dependency Injection Switch](./picture/clean_cs_study_033_di_switch.png)
+
 Web側（Composition Root）で登録するよ👇
 
 ```csharp
@@ -280,6 +290,8 @@ app.Run();
 ---
 
 ## 7) よくある事故パターン集 🚑💥（ここ超大事！）
+
+![Leaking Abstractions](./picture/clean_cs_study_033_toxic_leak.png)
 
 ### ❌事故1：CoreがEF Coreを参照しちゃう
 

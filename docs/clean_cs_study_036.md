@@ -29,6 +29,8 @@
 
 ## HTTP呼び出しの“安全な基本セット”🧰💪
 
+![IHttpClientFactory Connection Pool](./picture/clean_cs_study_036_http_client_factory.png)
+
 ここは最新の公式ガイドに寄せるね📘✨
 
 * HttpClientを雑に new しまくると **ソケット枯渇**しやすい😇
@@ -48,6 +50,8 @@
 ---
 
 # 1) Core側：Port（インターフェイス）とモデルを定義する🧠✨
+
+![Core Isolation from HTTP](./picture/clean_cs_study_036_core_isolation.png)
 
 ポイントはこれ👇
 ✅ **HttpClient / HttpResponseMessage / JSON DTO をCoreに入れない**
@@ -101,6 +105,8 @@ public enum ExternalServiceErrorKind
 ---
 
 # 2) Adapter側：HTTP実装（変換・例外整理・ログ）を書く📡🛠️
+
+![Adapter as Translator (ACL)](./picture/clean_cs_study_036_adapter_translator.png)
 
 Adapterの役割はこの3つに絞るとキレイ😍
 
@@ -219,6 +225,8 @@ public sealed class TagSuggestionHttpGateway : ITagSuggestionGateway
 
 # 3) DIで配線：AddHttpClient（typed client）を使う🧵✨
 
+![Resilience Armor](./picture/clean_cs_study_036_resilience_armor.png)
+
 IHttpClientFactory は、DI/ログ/設定、さらにハンドラ寿命管理などに強いよ💪 ([Microsoft Learn][1])
 
 さらに最近は、HTTPの回復性（リトライ等）を “素で” 組みやすい公式パッケージもあるよ📦✨
@@ -250,6 +258,8 @@ app.Run();
 ---
 
 ## ありがちな事故あるある😇⚠️（超だいじ）
+
+![HTTP Pollution Accident](./picture/clean_cs_study_036_http_pollution.png)
 
 ### ❌ 事故1：UseCaseの中でHttpClientを直接叩く
 
