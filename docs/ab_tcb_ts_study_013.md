@@ -45,6 +45,8 @@ graph TD
 
 ### 事故る世界（トランザクション境界がない）😱
 
+![Study Image](./picture/ab_tcb_ts_study_013_partial_failure.png)
+
 * 注文は作れた✅
 * でも在庫更新でエラー💥
 * 結果：**注文だけ残る**（在庫は減ってない/明細が欠けてる など）🧟‍♀️
@@ -53,6 +55,8 @@ graph TD
 「注文あるのに明細ないんだけど？」「出荷できないんだけど？」みたいな…😇
 
 ### 守られた世界（境界がある）🛡️✨
+
+![Study Image](./picture/ab_tcb_ts_study_013_rollback_rewind.png)
 
 * 途中で失敗したら **全部ロールバック↩️**
 * 「注文も明細も在庫も、最初から無かったこと」になる
@@ -63,6 +67,8 @@ SQLiteも「トランザクション＝ACID（原子性など）を満たす」�
 ---
 
 ## 13.3 ACIDを“肌感覚”で覚える🧪（特にAが超大事！）⚛️
+
+![Study Image](./picture/ab_tcb_ts_study_013_acid_pillars.png)
 
 ACIDはよく出るけど、まずはこのノリでOKだよ😊✨
 
@@ -80,6 +86,8 @@ SQLiteは「Atomic / Consistent / Isolated / Durable」を満たす説明を公�
 ---
 
 ## 13.4 DBのトランザクションはこの3つで覚える🔁
+
+![Study Image](./picture/ab_tcb_ts_study_013_director_cut.png)
 
 SQLの基本はこれ👇
 
@@ -143,6 +151,8 @@ AIにこうお願いしてみて👇
 ---
 
 ## 13.7 ハンズオン：失敗したら全部戻る、をTypeScriptで体験🧪🔥
+
+![Study Image](./picture/ab_tcb_ts_study_013_lab_experiment.png)
 
 今回は “体験” が目的だから、SQLiteを超小さく使うよ😊
 （SQLiteがACIDなトランザクションを提供するのは公式に説明されてるよ。([sqlite.org][1])）
@@ -262,6 +272,8 @@ dump();
 ## 13.8 よくある勘違いトップ3😇⚠️
 
 ### ① 「try/catchすればトランザクションみたいなもんでしょ？」🙅‍♀️
+
+![Study Image](./picture/ab_tcb_ts_study_013_catch_vs_rollback.png)
 
 try/catch は “エラー処理” であって、**DBの更新を巻き戻す力**はないよ〜！
 巻き戻しは **BEGIN/ROLLBACK の世界**。([sqlite.org][2])

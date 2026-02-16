@@ -15,6 +15,8 @@
 
 ## 1-1. すぐ守りたい（強い一貫性がほしい）✅⚡
 
+![Study Image](./picture/ab_tcb_ts_study_012_immediate_consistency.png)
+
 * 注文の合計金額がマイナスにならない💰🚫
 * 注文の状態遷移が変（例：未払い→出荷済み）にならない🧾🚫
 * 注文内の明細（アイテム）と合計が一致する🧾🧮✅
@@ -31,6 +33,8 @@
 ---
 
 ## 2. 境界案を3つ出すよ 🧺🧺🧺
+
+![Study Image](./picture/ab_tcb_ts_study_012_three_house_designs.png)
 
 この章では「案A / 案B / 案C」を並べて、同じシナリオで比べます📊✨
 
@@ -72,6 +76,8 @@ graph TD
 
 ## 3. 案A：大きめ集約（注文＋支払い＋在庫を同居）🧺💳📦
 
+![Study Image](./picture/ab_tcb_ts_study_012_sumo_aggregate.png)
+
 ## 形（イメージ）🗂️
 
 * 1つの集約に全部が入る
@@ -91,6 +97,8 @@ graph TD
 ---
 
 ## 4. 案B：分離（注文／支払い／在庫を別集約）🧺🧺🧺
+
+![Study Image](./picture/ab_tcb_ts_study_012_relay_runners.png)
 
 ## 形（イメージ）🗂️
 
@@ -113,6 +121,8 @@ graph TD
 ---
 
 ## 5. 案C：さらに分離＋イベントでつなぐ（最終的整合性寄り）📣📮⏳
+
+![Study Image](./picture/ab_tcb_ts_study_012_postal_system.png)
 
 ## 形（イメージ）🗂️
 
@@ -152,6 +162,8 @@ graph TD
 
 ## シナリオ①：注文確定（在庫引当→支払い→注文確定）🛒📦💳
 
+![Study Image](./picture/ab_tcb_ts_study_012_confirmation_stamp.png)
+
 **やりたいこと**：ユーザーに「注文確定しました！」って言う瞬間、何が保証されてるべき？😊
 
 * 案A：1回でまとめやすい✅
@@ -184,6 +196,8 @@ graph TD
 ---
 
 ## シナリオ③：同時注文で在庫がギリギリ（最後の1個）📦😱
+
+![Study Image](./picture/ab_tcb_ts_study_012_cookie_race.png)
 
 **事故**：2人が同時に買って在庫がマイナス🧨
 

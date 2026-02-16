@@ -43,6 +43,8 @@ graph TD
 
 ## 9.2 なんで集約が必要なの？😱（集約がない世界）
 
+![Study Image](./picture/ab_tcb_ts_study_009_chaos.png)
+
 集約がない（境界がゆるい）と、コードのあちこちから自由に触られて…
 
 * 注文合計が、明細合計とズレる💥
@@ -57,6 +59,8 @@ graph TD
 ---
 
 ## 9.3 集約＝一貫性の境界🧱（ここが超だいじ！）
+
+![Study Image](./picture/ab_tcb_ts_study_009_consistency_boundary.png)
 
 集約は **consistency boundary（一貫性の境界）** を作ります。
 MicrosoftのDDD解説でも「集約は一貫性の境界で、集約内には1つのルート（root）がある」と説明されています。 ([Microsoft Learn][2])
@@ -86,6 +90,8 @@ MicrosoftのDDD解説でも「集約は一貫性の境界で、集約内には1�
 ---
 
 ### 9.4.2 Order集約が守りたい“不変条件”の例🔒✨
+
+![Study Image](./picture/ab_tcb_ts_study_009_invariants_shield.png)
 
 Order集約の不変条件（壊れたらダメなルール）を、まずは言葉で✨
 
@@ -141,6 +147,8 @@ graph LR
 集約は「Listの集合」じゃなくて、**ドメイン上のまとまり（注文、診察、予約…）**です。 ([martinfowler.com][1])
 
 ### 勘違い②：関係があるものは全部同じ集約に入れる🤝
+
+![Study Image](./picture/ab_tcb_ts_study_009_huge_aggregate_monster.png)
 
 関係があっても、**即時に一貫性を守りたいか？**が大事。
 全部入れると “巨大集約🦣” になって、性能も同時更新もつらくなります💦
@@ -199,6 +207,8 @@ graph LR
 ---
 
 ## 9.8 TypeScriptで“集約っぽさ”を出す最小コード🧩💻
+
+![Study Image](./picture/ab_tcb_ts_study_009_encapsulation_shell.png)
 
 ポイントはこれだけ👇
 
