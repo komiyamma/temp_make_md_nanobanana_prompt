@@ -61,6 +61,8 @@ sequenceDiagram
 
 ## 2. この卒業制作の「合格ライン」✅🎓
 
+![Graduation Checklist](./picture/cap_ts_study_032_graduation_checklist.png)
+
 最低限クリアしたい要件はこれ👇
 
 1. **注文は受付（A寄り）** → 返すのは `PENDING` ⏳
@@ -85,6 +87,8 @@ sequenceDiagram
 ---
 
 ## 4. フォルダ構成（4プロセス）📁✨
+
+![Project Folder Structure](./picture/cap_ts_study_032_folder_structure.png)
 
 ```text
 mini-ec/
@@ -135,6 +139,8 @@ export function nowIso() {
 ```
 
 ### 5.3 `packages/shared/src/hash.ts`（リクエスト同一性チェック用）🔐
+
+![Request Fingerprint](./picture/cap_ts_study_032_request_fingerprint.png)
 
 ```ts
 import { createHash } from "node:crypto";
@@ -269,6 +275,8 @@ function migrate(db: DatabaseSync) {
 
 ### 6.1 注文APIの仕様（超シンプル）🧾
 
+![API Reception Desk](./picture/cap_ts_study_032_api_reception.png)
+
 * `POST /orders`
 
   * ヘッダ：
@@ -388,6 +396,8 @@ app.listen(3000, () => {
 ---
 
 ## 7. Inventory Service（apps/inventory）📦✨：在庫確保は冪等にする🧷
+
+![Idempotent Inventory Robot](./picture/cap_ts_study_032_inventory_robot.png)
 
 ここが超大事！
 Workerがリトライしても **「在庫が二重に減らない」**ようにします💪
@@ -561,6 +571,8 @@ app.listen(3002, () => logger.info("Payment listening on http://localhost:3002")
 ## 9. Worker（apps/worker）🧰🔁：Outboxを処理して収束させる
 
 ### 9.1 Workerの処理ルール（超重要）📌✨
+
+![Worker Bee Process](./picture/cap_ts_study_032_worker_bee.png)
 
 * outboxを読む（`processed_at IS NULL`）📨
 * `OrderPlaced` を処理する
@@ -760,6 +772,8 @@ curl http://localhost:3000/orders/ord_（返ってきたIDをここに）
 ---
 
 ## 11. 故障注入で「分散っぽさ」を出す🧪🎲
+
+![Chaos Monkey Fault Injection](./picture/cap_ts_study_032_chaos_monkey.png)
 
 Inventory/Paymentに環境変数を入れて、落としたり遅くしたりします💥
 

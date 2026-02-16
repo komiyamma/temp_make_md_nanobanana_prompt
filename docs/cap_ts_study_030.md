@@ -10,6 +10,8 @@
 
 # 1) 観測がないと、分散は“手品”になる 🎩😵‍💫
 
+![Distributed Systems Observation](./picture/cap_ts_study_030_magic_trick.png)
+
 最終的整合性の世界って、ユーザー画面は「処理中」なのに裏では進んでたり、遅れて確定したりしますよね⏳
 このとき観測が弱いと…
 
@@ -80,6 +82,8 @@ sequenceDiagram
 
 # 4) 実装：AsyncLocalStorageで“勝手に”引き回す 🪄🧠
 
+![AsyncLocalStorage Context](./picture/cap_ts_study_030_async_storage_backpack.png)
+
 `correlationId` を毎回関数引数で渡すの、しんどいです😵‍💫
 そこで **AsyncLocalStorage** を使うと、非同期の中でも “今のリクエストの文脈” を取り出せます✨
 Node.js公式でも、非同期文脈追跡は AsyncLocalStorage が安定した選択肢として案内されています📌 ([nodejs.org][2])
@@ -113,6 +117,8 @@ export function getCtx(): ObsContext | undefined {
 ```
 
 ## 5-3. traceparent を雑に読む（最小パーサ）📨🔍
+
+![Traceparent Parsing](./picture/cap_ts_study_030_traceparent_decoder.png)
 
 W3C Trace Context の `traceparent` は
 `version-traceId-parentId-flags` の形です（例は後で出すね） ([W3C][3])
@@ -163,6 +169,8 @@ export function observabilityMiddleware(req: Request, res: Response, next: NextF
 
 # 6) ログ：JSONにすると“検索が神”になる 🔎✨
 
+![JSON Logs vs Text Logs](./picture/cap_ts_study_030_json_library.png)
+
 ## 6-1. logger.ts（例：pinoでJSONログ）📒⚡
 
 ```ts
@@ -207,6 +215,8 @@ export function requestLogging(req: Request, res: Response, next: NextFunction) 
 ---
 
 # 7) Workerへ“相関IDを持ち越す” 🧵➡️⚙️
+
+![Correlation ID Baton Pass](./picture/cap_ts_study_030_worker_baton.png)
 
 HTTPの次はキュー（またはジョブ）です📨
 ここで **correlationId をメッセージ本文に入れて渡す**のがコツ✨
@@ -262,6 +272,8 @@ export async function handleOrderAccepted(msg: OrderAccepted) {
 ---
 
 # 8) 主要メトリクス：最低これだけ押さえよう 📈✅
+
+![Key Metrics Dashboard](./picture/cap_ts_study_030_metrics_dashboard.png)
 
 メトリクスは「平均」より **増減と分布** が大事です📊✨
 Prometheus の考え方は「アプリが HTTP endpoint に数値を出して、外から scrape する」方式が基本です🧲 ([prometheus.io][4])
@@ -374,6 +386,8 @@ Select-String -Path .\logs\worker.log -Pattern "YOUR_CORRELATION_ID"
 # 11) 事故りやすいポイント（初心者あるある）😵‍💫🧯
 
 ## 11-1. メトリクスの“ラベル爆発”💣
+
+![Metrics Label Explosion](./picture/cap_ts_study_030_label_explosion.png)
 
 * メトリクスの label に **userId / orderId を入れない**でね⚠️
   → ログに入れるのが正解 🙆‍♀️✨
