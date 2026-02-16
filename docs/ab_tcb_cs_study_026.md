@@ -46,6 +46,8 @@
 
 ## 26.5 まずは完成図（ざっくり）を見よう👀📦
 
+![PlaceOrder UseCase Orchestration](./picture/ab_tcb_cs_study_026_orchestration.png)
+
 「PlaceOrder」ユースケースの流れはこう👇
 
 ```text
@@ -90,6 +92,8 @@ flowchart TD
 ## 26.7 コード：Domain（集約側）🌳✨
 
 ## 26.7.1 Value Object（例：お金）💰
+
+![Value Object Operations (Money)](./picture/ab_tcb_cs_study_026_vo_math.png)
 
 ```csharp
 public readonly record struct Money(decimal Amount, string Currency)
@@ -136,6 +140,8 @@ public sealed class OrderItem
 ```
 
 ## 26.7.3 Aggregate Root（Order）👑🌳
+
+![Domain Integrity (Aggregate Root)](./picture/ab_tcb_cs_study_026_domain_integrity.png)
 
 ```csharp
 public enum OrderStatus
@@ -204,6 +210,8 @@ public sealed class Order
 ## 26.8 コード：Infrastructure（EF Core）🧪💾
 
 ## 26.8.1 DbContext（Unit of Work）🧠
+
+![EF Core Infrastructure Mapping](./picture/ab_tcb_cs_study_026_infra_mapping.png)
 
 DbContext は **“1まとまりの作業”向けに短命で使う設計**だよ🪄 ([Microsoft Learn][5])
 
@@ -297,6 +305,8 @@ public sealed record PlaceOrderItem(
 
 ## 26.9.2 Application Service（境界はここ！）🎯
 
+![Application Service Boundary](./picture/ab_tcb_cs_study_026_app_boundary.png)
+
 ```csharp
 public sealed class PlaceOrderService
 {
@@ -351,6 +361,8 @@ public sealed class PlaceOrderService
 ---
 
 ## 26.10 「途中で外部I/Oしない」ってどういうこと？🧷⚠️
+
+![External I/O Danger in Transaction](./picture/ab_tcb_cs_study_026_io_danger.png)
 
 ### 26.10.1 なぜダメになりやすいの？😵‍💫
 

@@ -12,6 +12,8 @@
 
 ## 2. まず超ざっくり：トランザクション境界って何？🧱
 
+![Transaction Boundary (All or Nothing)](./picture/ab_tcb_cs_study_025_all_or_nothing.png)
+
 **トランザクション境界**は、ひとことで言うと👇
 
 * 「このユースケース（1回の操作）で、**全部成功か全部失敗か**を保証する線」🔒✨
@@ -28,6 +30,8 @@
 ## 3. 結論：境界は “アプリ層（ユースケース）” に置く🎬🔒
 
 ![映画監督とシーン](./picture/ab_tcb_cs_study_025_boundary_loc.png)
+
+![App Layer as Director](./picture/ab_tcb_cs_study_025_app_director.png)
 
 ```mermaid
 graph TD
@@ -63,6 +67,8 @@ graph LR
 ---
 
 ## 4. 最新の前提（超大事な事実だけ）🧠✨
+
+![Implicit Transaction in SaveChanges](./picture/ab_tcb_cs_study_025_implicit_tx.png)
 
 ここだけは「今の最新事情」として押さえると設計がラクになります👇
 
@@ -198,6 +204,8 @@ EF Core 公式でも「複数の SaveChanges を同一トランザクション�
 
 ### 7-1. 明示トランザクション例（複数 SaveChanges をまとめる）🔒
 
+![Explicit Transaction Block](./picture/ab_tcb_cs_study_025_explicit_tx.png)
+
 ```csharp
 public async Task<Guid> HandleWithExplicitTxAsync(string itemName, int quantity, CancellationToken ct = default)
 {
@@ -246,6 +254,8 @@ sequenceDiagram
 
 ### 🚫 事故①：Domain の中で SaveChanges しはじめる
 
+![Domain Pollution by DB Concerns](./picture/ab_tcb_cs_study_025_domain_pollution.png)
+
 * 「Domainメソッド内で DbContext を触る」みたいな状態は、設計が崩れやすいです🧨
 * 理由：Domain がインフラ依存になって、保守もテストもキツくなる😇💦
 
@@ -260,6 +270,8 @@ sequenceDiagram
 * SaveChanges：UseCase の最後に1回💾✅
 
 ### 🚫 事故③：トランザクション中に外部I/O（API呼び出し）をする
+
+![I/O inside Transaction (Bottleneck)](./picture/ab_tcb_cs_study_025_io_in_tx.png)
 
 * 決済API、メール送信、外部HTTP…をトランザクションの中でやると
   **遅い／詰まる／リトライで二重実行** など地獄になりがち😱🌪️
@@ -295,6 +307,8 @@ TransactionScope（アンビエントトランザクション）は便利だけ�
 ## 11. ミニ演習（10分）⏱️🎀
 
 ### 演習A：SaveChanges を “最後に1回” に直そう💾✅
+
+![Refactoring to Single SaveChanges](./picture/ab_tcb_cs_study_025_refactor_save.png)
 
 次の “ダメ例” を、UseCaseの最後に1回へ直してみてね👇
 

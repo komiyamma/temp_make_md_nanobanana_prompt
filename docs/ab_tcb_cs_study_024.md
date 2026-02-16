@@ -34,6 +34,8 @@ graph LR
 
 ## 2) 最小3点セットを覚えよう📦✨
 
+![EF Core Minimal Kit](./picture/ab_tcb_cs_study_024_minimal_kit.png)
+
 ## 2-1. DbContext（DBへの入口）🚪
 
 * DB接続＋変更追跡＋保存（SaveChanges）をまとめて面倒みる子👩‍🏫
@@ -45,6 +47,8 @@ graph LR
 * **注意⚠️：DbSetは“Repositoryそのもの”ではない**（でも見た目が似てるから勘違いしやすい）
 
 ## 2-3. マイグレーション（スキーマ変更の履歴）🧾
+
+![Migration Workflow](./picture/ab_tcb_cs_study_024_migration_flow.png)
 
 * クラス設計の変化を、DBの変更として **履歴化** する仕組み📌
 * `dotnet ef migrations add ...` → `dotnet ef database update` が基本の流れ🔁 ([Microsoft Learn][2])
@@ -111,6 +115,8 @@ public sealed class Order
 
 ## 6) Infrastructure：DbContextを作る🧪🧠
 
+![Project Layers for DbContext](./picture/ab_tcb_cs_study_024_project_layers.png)
+
 ## 6-1. DbContext（最小）🧫
 
 ```csharp
@@ -146,6 +152,8 @@ public sealed class CafeDbContext : DbContext
 
 ## 7-1. いちばん単純な接続文字列（まずこれ）🔌
 
+![DI Wiring for DbContext](./picture/ab_tcb_cs_study_024_di_wiring.png)
+
 SQLiteは “ファイル1個” でDBになるから、学習にピッタリ🥰
 EF Core側は `UseSqlite("Data Source=...")` を使うよ✨ ([Microsoft Learn][3])
 
@@ -169,6 +177,8 @@ var provider = services.BuildServiceProvider();
 > **よくある罠⚠️**
 > `cafe-dev.db` は “実行時のカレントフォルダ” に作られるよ！
 > だいたい `bin\Debug\net10.0\` とかに出るので、「どこにできた!?😵」ってなりやすい💥
+
+![SQLite File Location Trap](./picture/ab_tcb_cs_study_024_sqlite_file_trap.png)
 
 ---
 
@@ -221,6 +231,8 @@ Console.WriteLine(loaded is null ? "見つからない😢" : $"見つけた🎉
 ---
 
 ## 10) マッピング入門：Value Objectの入口だけ触る🧩🚪
+
+![Owned Entity Mapping (Flattening)](./picture/ab_tcb_cs_study_024_owned_mapping.png)
 
 ここからは「VOをDBにどう入れるの？」の入口🌸
 一番やりやすいのは **Owned Entity Types**（所有型）だよ✨

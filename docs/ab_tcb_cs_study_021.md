@@ -62,6 +62,8 @@ EF Core 10 は .NET 10 向けのリリースだよ（LTS・2025年11月リリー
 
 ## 3) いちばん大事：依存関係ルール（矢印は内側へ）🧱➡️💖
 
+![Layered Architecture Dependency Rules](./picture/ab_tcb_cs_study_021_dependency_rule.png)
+
 レイヤードの最重要ルールはこれ👇
 
 * **Domain は誰にも依存しない（外側を参照しない）**👑
@@ -82,6 +84,8 @@ graph LR
 ---
 
 ## 4) Visual Studio の “プロジェクト分割” で強制する📁🔒✨
+
+![Visual Studio Project Structure & References](./picture/ab_tcb_cs_study_021_project_structure.png)
 
 フォルダ分けだけだと、うっかり参照できちゃう😇
 **プロジェクトを分ける**と、参照ミスをコンパイルで止められるよ💪✨
@@ -109,6 +113,8 @@ Visual Studio 2026 は .NET 10 SDK を含むよ。([Microsoft Learn][2])
 
 ## 5) 「どこに置く？」早見表 🗺️✨
 
+![Code Placement Guide](./picture/ab_tcb_cs_study_021_placement_guide.png)
+
 | 置きたいもの                                       | 置き場所                      | 理由（超短く）      |
 | -------------------------------------------- | ------------------------- | ------------ |
 | 集約ルート（Order など）🌳                            | Domain                    | ルールの本体だから    |
@@ -127,9 +133,13 @@ Visual Studio 2026 は .NET 10 SDK を含むよ。([Microsoft Learn][2])
 
 ## 6) ミニ実例：注文確定ユースケースの “置き場所” を見る 👀☕️
 
+![PlaceOrder UseCase Flow](./picture/ab_tcb_cs_study_021_flow_sequence.png)
+
 ここは「コードの完成」より、**配置感**を掴むのが目的だよ🌸
 
 ## 🟩 Domain：集約ルート（Order）🌳
+
+![Aggregate Root Encapsulation](./picture/ab_tcb_cs_study_021_aggregate_root.png)
 
 ```csharp
 namespace Cafe.Domain.Orders;
@@ -269,6 +279,8 @@ public sealed class EfOrderRepository : Cafe.Application.Orders.IOrderRepository
 ---
 
 ## 7) 迷子になりがちなパターン集 🧟‍♀️📌（あるある救急箱🚑）
+
+![Layer Dependency Anti-Pattern](./picture/ab_tcb_cs_study_021_anti_pattern.png)
 
 ## ❌ Domain に DbContext が出てくる
 

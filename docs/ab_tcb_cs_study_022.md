@@ -12,6 +12,8 @@
 
 ![倉庫番（Repository）](./picture/ab_tcb_cs_study_022_repository.png)
 
+![Repository vs DAO](./picture/ab_tcb_cs_study_022_repo_vs_dao.png)
+
 
 Repositoryは、**集約（Aggregate）を出し入れするための“入り口”**だよ🏪🚪
 DBのテーブルを触る道具というより、**ドメイン（業務）を壊さずに保存するための窓口**って感じ🌸
@@ -52,6 +54,8 @@ graph LR
 ---
 
 ## 3. 典型NG：OrderItemRepository を作っちゃう💥🙅‍♀️
+
+![Direct Child Access Danger](./picture/ab_tcb_cs_study_022_bad_repo_access.png)
 
 たとえばカフェ注文で…
 
@@ -95,6 +99,8 @@ graph TD
 ## 5. 実装例：Order集約（超ミニ）☕️🧩
 
 ### 5-1. ドメイン側（集約ルート＋子）🌳
+
+![Aggregate Root as Gatekeeper](./picture/ab_tcb_cs_study_022_gatekeeper.png)
 
 ポイントはこれ👇
 
@@ -217,6 +223,8 @@ public sealed class CafeDbContext : DbContext
 
 ### 7-2. Repository実装（EF版）🏪
 
+![EF Core Aggregate Ownership](./picture/ab_tcb_cs_study_022_ef_ownership.png)
+
 ```csharp
 using Microsoft.EntityFrameworkCore;
 
@@ -242,6 +250,8 @@ public sealed class EfOrderRepository : IOrderRepository
 ---
 
 ## 8. 保存（コミット）はどこでやる？🔒🎬
+
+![Transaction Scope of SaveChanges](./picture/ab_tcb_cs_study_022_savechanges_scope.png)
 
 ここがめちゃ大事！
 Repositoryの中で毎回 `SaveChanges()` しちゃうと、境界がグチャッとなりやすい😵‍💫
@@ -275,6 +285,8 @@ Owned は「オーナー（持ち主）の一部」って扱いで、**概念的
 ---
 
 ## 10. よくある設計ミス集（先に潰す）🧯😅
+
+![Repository Design Mistakes](./picture/ab_tcb_cs_study_022_design_mistakes.png)
 
 ### ミス①：Repositoryが“なんでも屋”になる🧹
 

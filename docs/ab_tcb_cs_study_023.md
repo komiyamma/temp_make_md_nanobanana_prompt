@@ -42,6 +42,8 @@ graph LR
 
 ## 2) DbContextは “Unit of Workそのもの” 🧠🏷️
 
+![DbContext Lifecycle](./picture/ab_tcb_cs_study_023_dbcontext_lifecycle.png)
+
 EF Coreでは、**DbContextが「1つのUnit of Workのために使う想定」**で設計されてるよ。([Microsoft Learn][1])
 
 つまり…
@@ -64,6 +66,8 @@ flowchart TD
 
 ## 3) SaveChangesは「確定ボタン」🎯✅（しかも基本はトランザクション付き）
 
+![SaveChanges Atomicity](./picture/ab_tcb_cs_study_023_atomicity.png)
+
 超重要ポイント💡
 
 ✅ **SaveChanges 1回の中の変更は、基本的に“1つのトランザクション”で適用される**（DBが対応していれば）([Microsoft Learn][2])
@@ -79,6 +83,8 @@ flowchart TD
 ---
 
 ## 4) 図でつかむ：DbContextの立ち位置🗺️✨
+
+![Layered Responsibility for SaveChanges](./picture/ab_tcb_cs_study_023_layered_responsibility.png)
 
 ```text
 [Application Service（ユースケース）]
@@ -239,6 +245,8 @@ public sealed class PlaceOrderService
 
 ## 7) 「同じDbContextで取って、同じDbContextで保存」が強い理由💪✨
 
+![Ideal Unit of Work Flow](./picture/ab_tcb_cs_study_023_ideal_flow.png)
+
 EF Coreは、基本的に **DbContextがエンティティの変更を追跡（Change Tracking）**して、SaveChangesのときに差分を反映するのが得意だよ。([Microsoft Learn][3])
 
 だから初心者のうちは、まずこの型でOK👇
@@ -249,6 +257,8 @@ EF Coreは、基本的に **DbContextがエンティティの変更を追跡（C
 ## 8) よくある事故あるある🚑💥（そして回避法）
 
 ## 事故①：SaveChangesを何回も呼ぶ（境界がグチャる）😵
+
+![Fragmented SaveChanges (Anti-Pattern)](./picture/ab_tcb_cs_study_023_fragmented_save.png)
 
 * 明細追加ごとにSaveChanges
 * ステータス変更ごとにSaveChanges
@@ -261,6 +271,8 @@ EF Coreは、基本的に **DbContextがエンティティの変更を追跡（C
 
 ## 事故②：Repositoryの中でSaveChangesしちゃう🙅‍♀️
 
+![Repository Committing (Anti-Pattern)](./picture/ab_tcb_cs_study_023_repo_commit.png)
+
 * Repositoryが勝手に確定する
   → アプリ層が境界をコントロールできない
 
@@ -270,6 +282,8 @@ EF Coreは、基本的に **DbContextがエンティティの変更を追跡（C
 ---
 
 ## 事故③：同じユースケースでDbContextを作り直す（追跡が切れる）✂️
+
+![Multiple DbContexts (Anti-Pattern)](./picture/ab_tcb_cs_study_023_multiple_contexts.png)
 
 * AのDbContextで取ったOrderを
 * BのDbContextで更新しようとして混乱
