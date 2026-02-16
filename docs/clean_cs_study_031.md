@@ -12,6 +12,8 @@
 
 ## 1) まずは超ざっくり：3つの“モデル”を分ける理由 🧠💡
 
+![Three Models Separation](./picture/clean_cs_study_031_three_models.png)
+
 Presenterの仕事は、ひとことで言うと👇
 **「UseCaseの出力を、表示/APIに最適な形へ“翻訳”する」** です🎤✨
 
@@ -60,6 +62,8 @@ Microsoftの.NETアーキテクチャガイドでも、中心（Application Core
 * 変わりやすいDomain/UseCaseの都合をDTOへ持ち込まない✨
 
 ### ルール7：Presenterは“翻訳専門”🔄
+
+![Presenter as Translator](./picture/clean_cs_study_031_presenter_translator.png)
 
 * PresenterにDBアクセス、UseCase呼び出し、ビジネス判断が入ったらアウト🧯
 * **変換に徹する**のが美しい😍
@@ -113,6 +117,8 @@ public interface ICreateMemoOutputPort
 ---
 
 ### 3-2) Presenter：ViewModel と “統一された結果” を作る 🎤✨
+
+![Unified Presenter Result](./picture/clean_cs_study_031_unified_result_box.png)
 
 まずViewModel（UI/APIが欲しい形）を作る👇
 
@@ -216,6 +222,8 @@ app.MapPost("/memos", async (CreateMemoRequestDto dto, ICreateMemoInputPort inpu
 
 ## 4) “最新の推し”エラー形式：ProblemDetails 🧯✨
 
+![ProblemDetails Form](./picture/clean_cs_study_031_problemdetails_form.png)
+
 今のASP.NET Coreでは **ProblemDetails** を標準化して扱いやすくする流れが強いよ〜😊
 
 * `AddProblemDetails()` でProblemDetails生成をミドルウェアと一緒に扱える
@@ -238,6 +246,8 @@ ProblemDetails自体はRFCで標準化されていて（RFC 9457）、APIエラ�
 * ✅ UseCasesは **ResponseModel + OutputPort** だけにする
 
 ### 事故2：PresenterがDomain Entityをそのまま返す🧟‍♀️
+
+![Entity Leak Accident](./picture/clean_cs_study_031_entity_leak.png)
 
 * ❌ API契約がDomainに引っ張られる
 * ✅ ViewModel/DTOに投影（必要な項目だけ）
