@@ -3,6 +3,28 @@ import os
 import re
 import json
 
+def check_image_exists_in_markdown(md_filepath, proposed_filename):
+    if not os.path.exists(md_filepath):
+        return False
+
+    with open(md_filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Markdown pattern: ![alt](path)
+    md_matches = re.findall(r'!\[.*?\]\((.*?)\)', content)
+
+    # HTML pattern: <img ... src="path" ... >
+    html_matches = re.findall(r'<img.*?src=["\'](.*?)["\']', content)
+
+    all_paths = md_matches + html_matches
+
+    for path in all_paths:
+        filename = os.path.basename(path)
+        if filename == proposed_filename:
+            return True
+
+    return False
+
 def get_next_id_and_check_duplicate(filepath, proposed_filename):
     if not os.path.exists(filepath):
         return 1, False
@@ -42,6 +64,10 @@ def get_next_id_and_check_duplicate(filepath, proposed_filename):
     return last_id + 1, duplicate_found
 
 def append_row(filepath, filename, proposed_filename, relative_link, prompt, insertion_point):
+    if check_image_exists_in_markdown(filename, proposed_filename):
+        print(f"Image already exists in markdown: {proposed_filename}. Skipping append.")
+        return
+
     next_id, duplicate_found = get_next_id_and_check_duplicate(filepath, proposed_filename)
 
     if duplicate_found:
