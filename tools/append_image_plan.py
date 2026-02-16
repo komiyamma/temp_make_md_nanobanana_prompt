@@ -3,11 +3,16 @@ import os
 import re
 import json
 
-def get_next_id(filepath):
+def get_next_id_and_check_duplicate(filepath, proposed_filename):
     if not os.path.exists(filepath):
-        return 1
+        return 1, False
 
     last_id = 0
+    duplicate_found = False
+
+    # Sanitize proposed_filename for comparison with file content which is sanitized
+    sanitized_filename = proposed_filename.replace('|', r'\|') if proposed_filename else ''
+
     with open(filepath, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         for line in lines:
@@ -29,15 +34,27 @@ def get_next_id(filepath):
                 except ValueError:
                     continue
 
-    return last_id + 1
+            if len(parts) > 3:
+                existing_filename = parts[3].strip()
+                if existing_filename == sanitized_filename:
+                    duplicate_found = True
+
+    return last_id + 1, duplicate_found
 
 def append_row(filepath, filename, proposed_filename, relative_link, prompt, insertion_point):
-    next_id = get_next_id(filepath)
+    next_id, duplicate_found = get_next_id_and_check_duplicate(filepath, proposed_filename)
+
+    if duplicate_found:
+        print(f"Duplicate found: {proposed_filename}. Skipping append.")
+        return
 
     # Sanitize inputs for markdown table
-    # Use double backslash to escape pipe char in replacement string for regex, but here we are using string replace
-    # In python string literal, \| is just | unless escaped. But we want literal \| in the output.
-    # So we need to write replace('|', r'\|')
+    if filename:
+        filename = filename.replace('|', r'\|')
+    if proposed_filename:
+        proposed_filename = proposed_filename.replace('|', r'\|')
+    if relative_link:
+        relative_link = relative_link.replace('|', r'\|')
 
     if prompt:
         prompt = prompt.replace('\n', '<br>').replace('|', r'\|')
@@ -59,10 +76,11 @@ if __name__ == "__main__":
     parser.add_argument('--prompt', help='Image generation prompt')
     parser.add_argument('--insertion_point', help='Insertion point text')
     parser.add_argument('--from-json', help='Load arguments from a JSON file')
+    parser.add_argument('--plan-file', help='Path to plan file', default='docs/picture/image_generation_plan.md')
 
     args = parser.parse_args()
 
-    plan_file = 'docs/picture/image_generation_plan.md'
+    plan_file = args.plan_file
 
     if args.from_json:
         with open(args.from_json, 'r', encoding='utf-8') as f:
