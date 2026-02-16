@@ -42,7 +42,7 @@ def split_image_generation_plan_by_family(source: Path) -> list[tuple[str, int]]
 
 
 def main() -> None:
-    source = Path("docs/picture/image_generation_plan.md")
+    source = Path("image_generation_plan.md")
     written = split_image_generation_plan_by_family(source)
 
     total = 0
