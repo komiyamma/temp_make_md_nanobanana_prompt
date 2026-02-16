@@ -56,6 +56,8 @@ TypeScriptの世界だと、`try/catch` は「何が起きるか型で追えな�
 
 ## 20.2 エラーの分類：まずは3つに分けよう🧺🧠
 
+![Error Categories](./picture/ab_tcb_ts_study_020_error_categories.png)
+
 ミニECで起きる失敗を、こんな感じで分けるとスッキリするよ👇
 
 ## A) ドメインエラー（業務ルール違反）👑🔒
@@ -83,6 +85,8 @@ TypeScriptの世界だと、`try/catch` は「何が起きるか型で追えな�
 ---
 
 ## 20.3 Result型を自作してみよう（超ミニ）🧪📦
+
+![Result Box](./picture/ab_tcb_ts_study_020_result_box.png)
 
 まずは最小構成でいくよ💨
 「成功 or 失敗」を **判別可能（discriminated union）** にするのがコツ✅
@@ -133,6 +137,8 @@ export type DomainError =
 ---
 
 ## 20.5 集約（Order）で「不正状態」をResultで返す👑🚪
+
+![Return vs Throw](./picture/ab_tcb_ts_study_020_throw_vs_return.png)
 
 例：支払い（pay）をするとき、状態が `Draft` じゃないとダメ！みたいなルールを守るよ🔒
 
@@ -215,6 +221,8 @@ export class PayOrderUseCase {
 
 ## 20.7 例外（throw）はどこで使う？👉「境界」だけ🧱🚧
 
+![Exception Boundary](./picture/ab_tcb_ts_study_020_exception_boundary.png)
+
 Result型で扱うのは **想定内の失敗**。
 でもインフラ障害みたいな “想定外” は例外が起きうるよね🌩️
 
@@ -237,6 +245,8 @@ try {
 ---
 
 ## 20.8 境界で「エラー → ユーザー向け表示」に変換する🪄🙂
+
+![Error Translation](./picture/ab_tcb_ts_study_020_error_translation.png)
 
 ドメインエラーのまま画面に出すと、ちょっと冷たい＆危険なことがあるよね😅
 そこで、境界で **表示用メッセージ** に変換するよ🧱✨
@@ -277,6 +287,8 @@ export const toUiError = (e: { type: string } & Record<string, unknown>): UiErro
 ---
 
 ## 20.10 よくある事故パターン集 😱🧯
+
+![Try Catch Hell](./picture/ab_tcb_ts_study_020_try_catch_hell.png)
 
 ## ① なんでも例外にしてしまう
 

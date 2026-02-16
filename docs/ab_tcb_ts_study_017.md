@@ -49,6 +49,8 @@ DBが入ると、学ぶことが一気に増えちゃうのね😵‍💫💦
 
 ## ✅対策：Snapshot（プレーンデータ）で保管する📸
 
+![Snapshot Pattern](./picture/ab_tcb_ts_study_017_snapshot_pattern.png)
+
 * Repository内部では **プレーンなデータ（Snapshot）**を持つ
 * 取り出す時に **Orderを作り直す（rehydrate）**
 
@@ -77,6 +79,8 @@ graph LR
 
 ## 17.4.1 フォルダの置き場所（目安）🗂️
 
+![Project Structure](./picture/ab_tcb_ts_study_017_folder_structure.png)
+
 * `src/domain/order/...`（ドメイン）🧠
 * `src/infrastructure/repository/...`（インフラ：インメモリ実装）🧰
 * `src/application/...`（ユースケース）🎮
@@ -90,6 +94,8 @@ graph LR
 > （第6〜第16章で作ったVOたちがあるなら、そこに置き換えてOKだよ💎）
 
 ## `src/domain/order/Order.ts` 🧾
+
+![Object vs Snapshot](./picture/ab_tcb_ts_study_017_object_vs_snapshot.png)
 
 ```ts
 export type OrderStatus = "Draft" | "Placed";
@@ -184,6 +190,8 @@ export interface OrderRepository {
 
 ## 17.7 インフラ：InMemoryOrderRepository（Mapで保存）🗃️✨
 
+![In-Memory Map Store](./picture/ab_tcb_ts_study_017_memory_map.png)
+
 ## `src/infrastructure/repository/InMemoryOrderRepository.ts` 🧠
 
 ```ts
@@ -227,6 +235,8 @@ export class InMemoryOrderRepository implements OrderRepository {
 * 最後に取り出して確認する👀✨
 
 ## `src/application/PlaceOrderService.ts` 🧩
+
+![PlaceOrder Flow](./picture/ab_tcb_ts_study_017_place_order_flow.png)
 
 ```ts
 import { Order } from "../domain/order/Order";
@@ -375,6 +385,8 @@ describe("PlaceOrderService", () => {
 ## 17.12 よくあるハマりどころ😵‍💫🧯
 
 ## ハマり①：findByIdが“保存されてない変更”まで反映しちゃう😇
+
+![Reference Sharing Bug](./picture/ab_tcb_ts_study_017_reference_bug.png)
 
 * 原因：Orderオブジェクト参照をMapにそのまま保存してる
 * 対策：**Snapshot保存 → 復元**（この章の方式）📸✅
