@@ -17,6 +17,8 @@
 
 ## ✅ “脳内ルーティング”が簡単になる🧠✨
 
+![_01_mental_routing](./picture/docker_local_exposure_ts_study_007_01_mental_routing.png)
+
 `localhost:5173` とか `localhost:8787` って **数字で覚えるゲーム**になりがち😇
 でも `api.localhost` なら、見ただけで役割がわかる！
 
@@ -33,6 +35,8 @@
 ---
 
 ## 2) `.localhost` の強さ（サブドメインが“勝手に”ループバックへ）💪🏠
+
+![_02_wildcard_resolution](./picture/docker_local_exposure_ts_study_007_02_wildcard_resolution.png)
 
 最近の主要ブラウザでは、`xxx.localhost` のような **localhost配下のサブドメイン**が、ループバック（127.0.0.1 / ::1）へ解決される挙動が一般的になってるよ〜🧲✨ ([GitHub][1])
 
@@ -52,6 +56,8 @@
 サブドメイン運用を始めると、ここが一気に現実味を帯びるよ😇
 
 ## 3-1) “同一オリジン”の判定：ざっくりこれだけ🧠
+
+![_03_same_origin](./picture/docker_local_exposure_ts_study_007_03_same_origin.png)
 
 ブラウザが「同じ場所？」を判断する材料は、基本これ👇
 
@@ -81,6 +87,8 @@
 ---
 
 ## 4) ハンズオン：`front.localhost` と `api.localhost` を“今すぐ体験”する🚀🧪
+
+![_04_handson_setup](./picture/docker_local_exposure_ts_study_007_04_handson_setup.png)
 
 「おお、こういう感じか！」って掴むだけのミニ実験だよ🎮✨
 （リバプロはまだ無し。**サブドメイン＋ポート**で雰囲気を掴む）
@@ -133,6 +141,8 @@ npm run dev -- --host 0.0.0.0 --port 5173
 
 ## もし Vite に怒られたら（Blocked request系）😇
 
+![_05_vite_shield](./picture/docker_local_exposure_ts_study_007_05_vite_shield.png)
+
 最近のViteは **devサーバーを守るために“許可ホスト制”**が入ってるよ🛡️
 ただ `.localhost` 配下はデフォルト許可、という扱いも明記されてる（＝基本は通るはず）📘 ([vitejs][9])
 
@@ -166,6 +176,8 @@ export default defineConfig({
 ---
 
 ## 5) サブドメイン運用の“命名”コツ（ここが設計っぽい所）📏✨
+
+![_06_naming_convention](./picture/docker_local_exposure_ts_study_007_06_naming_convention.png)
 
 ## ✅ コツ1：役割が一撃でわかる名前にする🎯
 

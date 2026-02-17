@@ -8,6 +8,8 @@
 
 ## 8.1 命名ルールがないと何が起きる？😵‍💫
 
+![_01_naming_chaos](./picture/docker_local_exposure_ts_study_008_01_naming_chaos.png)
+
 よくある地獄👇💥
 
 * 「frontってどれ？ apiってどれ？ localhost:5173ってどのプロジェクト？」って毎回迷う🌀
@@ -20,6 +22,8 @@
 
 ## 8.2 まず決めるのはこの3点だけ🧩
 
+![_02_three_components](./picture/docker_local_exposure_ts_study_008_02_three_components.png)
+
 命名って難しそうに見えるけど、決めるのはこの3つだけです👇
 
 1. **プロジェクト名（project）**：例 `sengoku` / `shop`
@@ -29,6 +33,8 @@
 ---
 
 ## 8.3 迷ったらコレ！おすすめ命名フォーマット2つ🍱
+
+![_03_format_structure](./picture/docker_local_exposure_ts_study_008_03_format_structure.png)
 
 どっちか1つに統一すれば勝ちです✅
 
@@ -59,6 +65,8 @@ IANA の「Special-Use Domain Names」レジストリにも載っています。
 
 ## 8.5 逆に避けたい名前（罠を踏まない）⚠️
 
+![_04_avoid_names](./picture/docker_local_exposure_ts_study_008_04_avoid_names.png)
+
 **避けたい：`.local`**
 `.local` は mDNS（Bonjourとか）向けに予約されていて、ネットワーク環境で名前解決がややこしくなりがちです😇([IETF Datatracker][5])
 （実際に `.local` を避ける注意喚起もあります）([Appleサポート][6])
@@ -71,6 +79,8 @@ IANA の「Special-Use Domain Names」レジストリにも載っています。
 ---
 
 ## 8.6 “とりあえず動く”命名ルール（このままコピペでOK）📏✨
+
+![_05_rule_checklist](./picture/docker_local_exposure_ts_study_008_05_rule_checklist.png)
 
 ここからは実際のルールセットです。これを固定しましょう✅
 
@@ -118,6 +128,8 @@ A案（役割.プロジェクト.localhost）で例を作るとこう👇
 ---
 
 ## 8.8 ここ重要：URLの名前と、Docker内の名前は別世界🌐🐳
+
+![_06_external_vs_internal](./picture/docker_local_exposure_ts_study_008_06_external_vs_internal.png)
 
 混乱しやすいポイントを先に潰します🧯
 

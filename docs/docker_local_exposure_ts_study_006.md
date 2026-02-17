@@ -7,6 +7,8 @@
 
 ## 1) .localhostって何者？👀🔍
 
+![_01_localhost_zone](./picture/docker_local_exposure_ts_study_006_01_localhost_zone.png)
+
 `.localhost` は、**ローカル開発で使うために“特別扱い”される予約ドメイン**だよ🧠✨
 RFCでは **「localhost. と、その配下（`.localhost` にぶら下がる名前全部）」**が特別で、
 
@@ -19,6 +21,8 @@ RFCでは **「localhost. と、その配下（`.localhost` にぶら下がる�
 ---
 
 ## 2) .localhostが「最強」な理由 3つ💪✨
+
+![_02_three_strengths](./picture/docker_local_exposure_ts_study_006_02_three_strengths.png)
 
 ## 理由A：hosts編集なしで “それっぽいURL” が作れる🪄📝
 
@@ -40,6 +44,8 @@ MDN側でも、`http://localhost` / `http://*.localhost` が開発に便利な�
 ---
 
 ## 3) まず体感しよう：名前解決チェック🪟🧪
+
+![_03_resolution_check](./picture/docker_local_exposure_ts_study_006_03_resolution_check.png)
 
 ## 実験1：PowerShellで「どこに解決されてる？」を見る👀
 
@@ -65,6 +71,8 @@ ping app1.localhost
 ---
 
 ## 4) 5分で「.localhostにアクセスできた！」を作る🐳🚀
+
+![_04_access_flow](./picture/docker_local_exposure_ts_study_006_04_access_flow.png)
 
 ここでは **Dockerで“80番にHello”を出して、`http://○○.localhost` で開ける**ところまで一気に行くよ🎉
 （まだリバプロは使わない、超ミニ成功体験！）
@@ -99,6 +107,8 @@ docker run --rm -p 80:80 traefik/whoami
 
 ## 5) 設計が超入門でも分かる「効き目」🧠✨
 
+![_05_mental_model](./picture/docker_local_exposure_ts_study_006_05_mental_model.png)
+
 `.localhost` を使うと、頭の中がこう整理されるよ👇
 
 * **入口の見た目（URL）**：`front.localhost` / `api.localhost` …👀
@@ -110,6 +120,8 @@ docker run --rm -p 80:80 traefik/whoami
 ---
 
 ## 6) よくある落とし穴と回避ワザ🕳️🛟
+
+![_06_pitfalls](./picture/docker_local_exposure_ts_study_006_06_pitfalls.png)
 
 ## 落とし穴A：ポート80が埋まってる😇🔒
 
