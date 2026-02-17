@@ -10,6 +10,8 @@
 
 ## ② 図（1枚）🖼️（イメージを先に掴む）
 
+![Duration Measurement Flow](./picture/docker_observability_ts_study_017_01_duration_measurement_flow.png)
+
 ```text
 リクエスト
    │
@@ -30,6 +32,8 @@ prom-client Histogram に observe()
 ---
 
 ## ③ 平均がダメな理由（超ざっくり）😵‍💫
+
+![Average Masking Outliers](./picture/docker_observability_ts_study_017_02_average_masking_outliers.png)
 
 平均って「全員の平均点」みたいなもので、**一部の“めちゃ遅い”**が隠れがちなんだよね…🫠
 
@@ -61,6 +65,8 @@ npm i -D @types/express
 ---
 
 ### 1) `src/metrics.ts` を作る（ヒストグラム定義）🧱
+
+![Histogram Buckets](./picture/docker_observability_ts_study_017_03_histogram_buckets.png)
 
 ポイントは2つ👇
 
@@ -100,6 +106,8 @@ export async function metricsHandler(_req: Request, res: Response) {
 ---
 
 ### 2) `src/metricsMiddleware.ts` を作る（計測の本体）⏱️
+
+![Route Normalization](./picture/docker_observability_ts_study_017_04_route_normalization.png)
 
 ここがキモ！
 
@@ -198,6 +206,8 @@ http://localhost:3000/metrics
 
 ## ⑥ 期待する出力（ここが見えたら勝ち！🏆）
 
+![Histogram Output Structure](./picture/docker_observability_ts_study_017_05_histogram_structure.png)
+
 /metrics の中に、だいたいこんなのが出てくるよ👇（一部だけ例）
 
 ```text
@@ -222,6 +232,8 @@ http_request_duration_seconds_count{method="GET",route="/slow",status_code="200"
 ---
 
 ## ⑦ バケット（buckets）の“いい感じ”入門 🪣✨
+
+![Bucket Strategy](./picture/docker_observability_ts_study_017_06_bucket_strategy.png)
 
 バケットは「秒の区切り」だよ〜⏱️
 コツはざっくり3つ👇

@@ -10,6 +10,8 @@
 
 ## ② 図（1枚）🖼️（イメージ）
 
+![Log Hell vs Log Pruning](./picture/docker_observability_ts_study_013_01_log_hell_vs_pruning.png)
+
 * ログは放置するとこうなる👇
   **アプリ** 📣（大量出力）→ **Dockerログ保存** 💽（肥大化）→ **見る人** 👀（迷子）
 * “削る設計”を入れるとこう👇
@@ -27,6 +29,8 @@
 ## A. まず「ログ地獄」を作る 😇🔥
 
 ### 1) /spamlog を追加する（まずは最悪版）💥
+
+![Spam Log Attack](./picture/docker_observability_ts_study_013_02_spam_log_attack.png)
 
 **ファイル構成（例）📁**
 
@@ -95,6 +99,8 @@ docker compose logs api --tail 20 --follow
 
 ### 4) まず「巨大payloadをログに出さない」🙈⛔
 
+![Log Summarization](./picture/docker_observability_ts_study_013_03_log_summary.png)
+
 /spamlog を “救出版” に差し替えます👇
 
 ```ts
@@ -115,6 +121,8 @@ app.get("/spamlog", (req, res) => {
 ---
 
 ### 5) 次に「成功ログをサンプリングする」🎲📉
+
+![Log Sampling Logic](./picture/docker_observability_ts_study_013_04_sampling_logic.png)
 
 **全部の成功ログを残す必要はありません**（特に /ping や健康診断系）
 サンプリングは「割合で残す」発想です🧠✨
@@ -163,6 +171,8 @@ app.use((req, res, next) => {
 
 ### 6) 「同じ警告を秒1回まで」みたいに抑える（レート制限）🚦⏱️
 
+![Rate Limiting Logs](./picture/docker_observability_ts_study_013_05_rate_limit_log.png)
+
 “同じエラー”が連打されると、ログが埋まって本当に大事な1行が消えます 😭
 
 **/src/rateLimitLog.ts**
@@ -196,6 +206,8 @@ if (allowLog("db-conn-fail", 1000)) {
 アプリ側で削った上で、最後の保険として **Docker側の“ログ保持上限”** を入れます。
 
 ## 7) Composeでログローテーション（localドライバ）🧰
+
+![Log Rotation Mechanism](./picture/docker_observability_ts_study_013_06_log_rotation.png)
 
 Dockerの `local` ログドライバは、stdout/stderrを**パフォーマンスとディスク効率に配慮した形式**で保存し、既定で **コンテナあたり100MB** を保持しつつ **圧縮**もします。さらに `max-size` / `max-file` / `compress` が設定できます。([Docker Documentation][2])
 

@@ -11,6 +11,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Prometheus Pull Model](./picture/docker_observability_ts_study_016_01_prometheus_pull_model.png)
+
 ```text
       (ブラウザ / curl)                (後でPrometheusがやること)
            │  GET /metrics                    │  定期的にGET /metrics
@@ -50,6 +52,8 @@ npm i prom-client
 ---
 
 ### ステップ2：メトリクス専用ファイルを作る（分けるのがコツ）🧩
+
+![Metrics File Separation](./picture/docker_observability_ts_study_016_02_metrics_file_structure.png)
 
 ファイル構成イメージ：
 
@@ -150,6 +154,8 @@ curl.exe http://localhost:3000/metrics
 
 ### ステップ5：カウンタが増えるのを確認する 🔢⬆️
 
+![Counter Increment Verification](./picture/docker_observability_ts_study_016_03_counter_increment_verification.png)
+
 まず `/ping` を何回か叩く：
 
 ```bash
@@ -186,6 +192,8 @@ http_requests_total{method="GET",route="/slow",status="200"} 1
 * `snake_case` + 型っぽい接尾辞（counterなら `_total`）が無難です。命名ルールは公式に寄せるのが吉。([prometheus.io][6])
 
 3. **ラベルで自爆（時系列が爆増）💥**
+
+![Label Explosion (High Cardinality)](./picture/docker_observability_ts_study_016_04_label_explosion.png)
 
 * `userId`、`email`、`uuid`、クエリ文字列…みたいな「無限に増える値」をラベルに入れると、Prometheusがつらいです。([prometheus.io][6])
   まずは `method/route/status` くらいで十分！🙆‍♂️
