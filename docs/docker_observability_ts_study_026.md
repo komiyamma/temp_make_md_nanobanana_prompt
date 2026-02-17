@@ -16,6 +16,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Readiness Check Flow](./picture/docker_observability_ts_study_026_01_readiness_check_flow.png)
+
 ```text
       ブラウザ / LB / 監視ツール
                  |
@@ -92,6 +94,8 @@ npm i -D @types/pg
 
 ### 3) Readinessチェック本体を作る（キャッシュ＋タイムアウト付き）⏱️🧠
 
+![Readiness Cache Logic](./picture/docker_observability_ts_study_026_02_readiness_cache_logic.png)
+
 `src/readiness.ts` を作ります👇
 
 ```ts
@@ -147,6 +151,8 @@ export function createReadinessChecker(pool: Pool) {
 ---
 
 ### 4) `/ready` エンドポイントを生やす 🌱
+
+![Response Switch](./picture/docker_observability_ts_study_026_03_response_switch.png)
 
 たとえば `src/server.ts`（あなたのExpress起動ファイル）に追加👇
 
@@ -219,6 +225,8 @@ curl -i http://localhost:3000/ready
 
 ### 6) 依存を止める → /ready が失敗に変わる 😈➡️💥
 
+![Failure State](./picture/docker_observability_ts_study_026_04_failure_state.png)
+
 ```powershell
 docker compose stop db
 curl -i http://localhost:3000/ready
@@ -240,6 +248,8 @@ curl -i http://localhost:3000/ready
 
 ## ④ つまづきポイント（3つ）🪤
 
+![Localhost Trap](./picture/docker_observability_ts_study_026_05_localhost_trap.png)
+
 1. **DBホストを `localhost` にしてしまう** 🥲
    コンテナ内から見た `localhost` は「APIコンテナ自身」です。DBは `db`（サービス名）にします 👍
 
@@ -254,6 +264,8 @@ curl -i http://localhost:3000/ready
 ---
 
 ## ⑤ ミニ課題（15分）⏳
+
+![Since Field](./picture/docker_observability_ts_study_026_06_since_field.png)
 
 できそうなのを1つやってみてね 😊
 

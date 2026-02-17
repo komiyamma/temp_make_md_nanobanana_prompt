@@ -16,6 +16,8 @@ Prometheus と Grafana Labs を使って「3分で健康診断」できる形に
 
 ## ② 図（1枚）🖼️
 
+![Seeing Culture Flowchart](./picture/docker_observability_ts_study_023_01_seeing_culture_flow.png)
+
 「見る文化」ってつまりこれ👇
 
 * 🟢 **健康**：いつも通り → そのまま作業へ
@@ -27,6 +29,8 @@ Prometheus と Grafana Labs を使って「3分で健康診断」できる形に
 ## ③ 手を動かす（手順）🛠️✨
 
 ## STEP 0：まず“固定”する（バージョンをピン留め）📌
+
+![Version Pinning](./picture/docker_observability_ts_study_023_02_version_pinning.png)
 
 運用ルーチンって、**道具が毎回違うと崩壊**します😂
 なので Compose では `latest` を避けて、バージョンを固定しておくのが強いです💪
@@ -64,6 +68,8 @@ services:
 
 ### 2-1. Row を作る（見出し枠）🧱
 
+![Dashboard Row Layout](./picture/docker_observability_ts_study_023_03_dashboard_row_layout.png)
+
 1. Grafana を開く → **Dashboards** → **New dashboard**
 2. **Add** → **Row**
 3. Row のタイトルを `今日の健康状態` にする 🏷️
@@ -75,6 +81,8 @@ services:
 ---
 
 ## パネルA：Up ✅（落ちてない？）
+
+![Four Key Panels](./picture/docker_observability_ts_study_023_04_four_key_panels.png)
 
 **PromQL（例）**
 
@@ -153,6 +161,8 @@ sum(rate(http_requests_total{job="api"}[5m]))
 
 ## STEP 4：深掘り順（迷わないための“次の一手”）🧭🛟
 
+![Investigation Flow](./picture/docker_observability_ts_study_023_05_investigation_flow.png)
+
 「どれが黄色/赤か」で、次に見る順番を固定しちゃいます👇
 
 * 🔴 Up が 0
@@ -167,6 +177,8 @@ sum(rate(http_requests_total{job="api"}[5m]))
 ---
 
 ## STEP 5：“共有できる形”にする（文化ポイント）🤝📌
+
+![Sharing Culture](./picture/docker_observability_ts_study_023_06_sharing_culture.png)
 
 ### 5-1. スクショ共有をルーチンにする 🖼️📣
 
@@ -184,6 +196,8 @@ Grafana は provisioning（YAMLでダッシュボード読み込み）に対応�
 ---
 
 ## STEP 6：週次・月次のルーチン（見る文化の完成）📅✨
+
+![Routine Calendar](./picture/docker_observability_ts_study_023_07_routine_calendar.png)
 
 ### 毎日（3分）☀️
 

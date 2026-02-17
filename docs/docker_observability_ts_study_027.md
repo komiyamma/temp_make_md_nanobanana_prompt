@@ -15,6 +15,8 @@ Dockerの「プロセスは動いてるけど、実はもう応答してない�
 
 ## ② 図（1枚）🖼️（脳内イメージでOK）
 
+![Healthcheck Process](./picture/docker_observability_ts_study_027_01_healthcheck_process.png)
+
 ```text
 Docker Engine
    │  (一定間隔で)
@@ -35,6 +37,8 @@ http://127.0.0.1:3000/health  にアクセス
 以下は「第25章で `/health` がある」前提で進めます（もし無ければ、最後に最小の `/health` 例も置いておきます🧯）。
 
 ### 手順1：healthcheck 用スクリプトを作る 🧾
+
+![Script Logic](./picture/docker_observability_ts_study_027_02_script_logic.png)
 
 **`scripts/healthcheck.mjs`** を追加します。
 
@@ -73,6 +77,8 @@ try {
 ---
 
 ### 手順2：Dockerfile に `HEALTHCHECK` を足す 🧩
+
+![Instruction Anatomy](./picture/docker_observability_ts_study_027_03_instruction_anatomy.png)
 
 （例：Nodeの実行イメージに `scripts/` をコピーして使う）
 
@@ -127,6 +133,8 @@ docker run -d --name obs-api -p 3000:3000 obs-mini-api:hc
 
 ### 手順5：`docker ps` で health 表示を見る 👀✨
 
+![Docker PS States](./picture/docker_observability_ts_study_027_04_docker_ps_states.png)
+
 ```bash
 docker ps
 ```
@@ -142,6 +150,8 @@ docker ps
 ---
 
 ### 手順6：`docker inspect` で “なぜ失敗したか” を見る 🔎🧠
+
+![Inspect Health Logs](./picture/docker_observability_ts_study_027_05_inspect_health_logs.png)
 
 まずはステータスだけ👇
 
@@ -203,6 +213,8 @@ docker rm -f obs-api
 
 ## ④ つまづきポイント（3つ）🪤😵‍💫
 
+![Curl Missing Trap](./picture/docker_observability_ts_study_027_06_curl_missing_trap.png)
+
 1. **“curl が無い問題”**
    公式例は `curl -f http://localhost/ || exit 1` が多いけど、イメージによっては curl が入ってません。([Docker Documentation][1])
    → 今回は **Node の `fetch`** で回避（依存を増やさない👍）
@@ -218,6 +230,8 @@ docker rm -f obs-api
 ---
 
 ## ⑤ ミニ課題（15分）⏳🎮
+
+![Start Period Shield](./picture/docker_observability_ts_study_027_07_start_period_shield.png)
 
 **A. チューニング遊び 🎚️**
 
