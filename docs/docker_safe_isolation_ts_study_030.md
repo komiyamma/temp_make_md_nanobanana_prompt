@@ -10,7 +10,11 @@
 
 ## 30.1 完成イメージ（“被害半径”が小さい構造）🗺️🔒
 
+![Safe Template Goal](./picture/docker_safe_isolation_ts_study_030_01_safe_template_goal.png)
+
 ざっくり、こういう形に固定します👇
+
+![Architecture Overview](./picture/docker_safe_isolation_ts_study_030_02_architecture_overview.png)
 
 * 公開するのは **入口（app）だけ**🚪
 * DB/Redisは **内部ネットワークに閉じ込め**🍱
@@ -24,6 +28,8 @@
 
 ## 30.2 テンプレのフォルダ構成📁✨
 
+![Folder Structure Template](./picture/docker_safe_isolation_ts_study_030_03_folder_structure_template.png)
+
 こんな構成で固定しちゃうのがラクです👇
 
 * `compose.yaml`（本命テンプレ）
@@ -36,6 +42,8 @@
 ---
 
 ## 30.3 安全デフォルトの `compose.yaml`（コピペして育てる🌱📦）
+
+![Compose Highlights](./picture/docker_safe_isolation_ts_study_030_04_compose_highlights.png)
 
 ポイントは **「公開・共有・権限・秘密・AI」** が最小になってること！✂️🔐🤖
 
@@ -163,6 +171,8 @@ volumes:
 
 ## 30.4 `Dockerfile`（BuildKit secretsで“ビルド中だけ見える”🏗️🤫）
 
+![Build Secret Flow](./picture/docker_safe_isolation_ts_study_030_05_build_secret_flow.png)
+
 BuildKitのsecret mountは「ビルド命令の間だけ一時的に見える」設計。private依存を取る時に便利！([Docker Documentation][3])
 
 ```dockerfile
@@ -262,6 +272,8 @@ docker compose logs -f app
 
 ## 30.7 5分セルフ監査（毎回これだけ✅🕔）
 
+![Audit Checklist](./picture/docker_safe_isolation_ts_study_030_06_audit_checklist.png)
+
 チェックは **Yesが並んだら勝ち**🏆✨
 
 ## A. 権限（Privilege）🧤✂️
@@ -316,6 +328,8 @@ docker compose logs -f app
 * 逆に渡しちゃうと「被害半径が増える」感覚を掴む🗺️
 
 ## 演習3：AI用避難所（tools）を使ってみる🤖🧯
+
+![AI Sandbox Tool](./picture/docker_safe_isolation_ts_study_030_07_ai_sandbox.png)
 
 * `tools` はネット無し＆読取専用なので、AIが提案したコマンドを“安全寄り”に試せる
 

@@ -7,6 +7,8 @@ AIは便利だけど、**悪意ある文章（READMEやIssue、コメント）�
 
 ## 1) 今日のゴール（到達点）🎯
 
+![Limiting AI Scope](./picture/docker_safe_isolation_ts_study_029_01_ai_scope.png)
+
 この章を終えると、次ができるようになります👇
 
 * **プロンプト注入（間接プロンプト注入）**が何で、何が危ないか説明できる🧠
@@ -22,6 +24,8 @@ AIは便利だけど、**悪意ある文章（READMEやIssue、コメント）�
 
 ## 2) まず敵を知る：プロンプト注入って何？🧨📝
 
+![Indirect Prompt Injection](./picture/docker_safe_isolation_ts_study_029_02_prompt_injection.png)
+
 プロンプト注入（特に**間接プロンプト注入**）は、ざっくり言うと👇
 
 * **AIに読ませた文章の中に「危険な指示」が混ざる**
@@ -36,6 +40,8 @@ AIは便利だけど、**悪意ある文章（READMEやIssue、コメント）�
 
 ## 3) 安全設計の全体図：3レイヤで守る🧅🛡️
 
+![Three Layers Defense](./picture/docker_safe_isolation_ts_study_029_03_three_layers_defense.png)
+
 守りは“1つの機能”に頼らず、重ねます👇
 
 1. **IDEレイヤ（VS Code側）**：未確認コードはRestricted Modeで開く🔒
@@ -45,6 +51,8 @@ AIは便利だけど、**悪意ある文章（READMEやIssue、コメント）�
 ---
 
 ## 4) レイヤ1：未確認のコードはRestricted Modeで開く🔒🧯
+
+![Restricted Mode Shield](./picture/docker_safe_isolation_ts_study_029_04_restricted_mode.png)
 
 **Workspace Trust**は「知らないコードを開いたときの安全弁」です。
 Restricted Modeは、**自動コード実行を防ぐために、AI agents / tasks / debugging / workspace settings / extensions**などを制限します。([Visual Studio Code][2])
@@ -63,6 +71,8 @@ VS Code公式のAIセキュリティ説明でも、未確認コードはRestrict
 ---
 
 ## 5) レイヤ2：AIに渡す文脈（コンテキスト）を“手動化”する🧩✋
+
+![Context Control](./picture/docker_safe_isolation_ts_study_029_05_context_control.png)
 
 AIチャットは、**渡した文脈が増えるほど便利**だけど、**漏れたら痛い情報**も混ざりやすいです😵‍💫
 
@@ -107,6 +117,8 @@ AIが便利でも、**秘密がワークスペースにあるだけで危険**�
 
 ### 7-1. 「秘密が混ざりやすい場所」あるある😇💥
 
+![Secret Leak Points](./picture/docker_safe_isolation_ts_study_029_06_secret_leak_points.png)
+
 * `.env` / `*.pem` / `id_rsa` / `*.pfx` / `credentials.json`
 * ログ（例外スタック、接続文字列、ヘッダ）📜
 * 設定ファイル（本番URL、管理画面のURL、S3バケット名など）🗂️
@@ -145,6 +157,8 @@ GitHubのドキュメントによると、Copilot Chatは任意で `.github/copi
 ---
 
 ## 9) Docker絡みの“AI事故”を止める：危険コマンド見抜き方🐳🧨
+
+![Dangerous AI Commands](./picture/docker_safe_isolation_ts_study_029_07_dangerous_commands.png)
 
 AIは時々、平気でこういう方向に行きます👇😇
 
