@@ -15,6 +15,8 @@
 
 ## 2) そもそもCORSって何がつらいの？😵‍💫🍝
 
+![CORS Nightmare](./picture/docker_local_exposure_ts_study_016_02_cors_nightmare.png)
+
 ### ✅ “同一オリジン”の定義（超重要）🧠
 
 ブラウザ的には、オリジンが同じかどうかは **scheme/host/port のセット**で決まるよ。([MDN Web Docs][1])
@@ -27,6 +29,8 @@
 
 ### ✅ プリフライト（`OPTIONS`）が増える理由🧨
 
+![Preflight OPTIONS Request](./picture/docker_local_exposure_ts_study_016_04_preflight_check.png)
+
 CORSが絡むと、ブラウザは「いきなり送っていい？」って **事前確認（プリフライト）**を飛ばすことがあるよ。
 このプリフライトは **`OPTIONS`** で、`Access-Control-Request-Method` などのヘッダーが付くやつ。([MDN Web Docs][2])
 
@@ -35,6 +39,8 @@ CORSが絡むと、ブラウザは「いきなり送っていい？」って **�
 ---
 
 ## 3) 解決のアイデア：同じドメイン（同じオリジン）に寄せる🏠✨
+
+![Same Origin Solution](./picture/docker_local_exposure_ts_study_016_01_same_origin.png)
 
 ポイントはこれ👇
 
@@ -63,6 +69,8 @@ CORSが絡むと、ブラウザは「いきなり送っていい？」って **�
 
 ### 4-1. Caddyfile（基本形：`/api` を剥がしてAPIへ）🧩
 
+![API Path Stripping](./picture/docker_local_exposure_ts_study_016_03_api_strip.png)
+
 Caddyには **`handle_path`** っていう「**パスプレフィックスを剥がして処理する**」便利機能があるよ。([Caddy Web Server][4])
 
 ```caddyfile
@@ -84,6 +92,8 @@ dev.localhost {
 * `reverse_proxy` は基本、Hostをそのまま渡しつつ `X-Forwarded-*` を良い感じに付けてくれる（自分でヘッダー盛り盛りにしなくてOK寄り）🙆‍♂️([Caddy Web Server][5])
 
 ### 4-2. フロント側のfetchを「相対パス」に直す🎯
+
+![Relative Fetch](./picture/docker_local_exposure_ts_study_016_05_relative_fetch.png)
 
 ここが気持ちいいポイント！✨
 

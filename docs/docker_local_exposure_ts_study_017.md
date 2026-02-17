@@ -39,6 +39,8 @@ Front App     API App
 
 ## 2) Cookie属性の “超ざっくり地図” 🧭🍪
 
+![Cookie Attributes Shield](./picture/docker_local_exposure_ts_study_017_01_cookie_attributes.png)
+
 Cookieの事故率が高い属性はこの4つ👇（まずここだけ覚えればOK）
 
 ## 🍪 SameSite（送り先の制限）
@@ -82,6 +84,8 @@ Cookieの事故率が高い属性はこの4つ👇（まずここだけ覚えれ
 
 ## 地雷③：Domain を付けて “共有しすぎ” 🌐💥
 
+![Domain Attribute Risk](./picture/docker_local_exposure_ts_study_017_02_domain_risk.png)
+
 * 別アプリが同名Cookieを上書き→ログインが飛ぶ🌀
 * 対策：基本は **Domainを付けずホスト限定**にするのが安全
 
@@ -90,10 +94,14 @@ Cookieの事故率が高い属性はこの4つ👇（まずここだけ覚えれ
 
 ## 地雷④：Path=/ にして “全部のアプリに送ってる” 🧩💥
 
+![Path Attribute Isolation](./picture/docker_local_exposure_ts_study_017_03_path_isolation.png)
+
 * パス方式（/app1 /app2）で特に起きる
 * 対策：パス方式なら **CookieもPathで分ける**（or Cookie名を絶対衝突させない）
 
 ## 地雷⑤：リバプロ越しで “HTTPSだと認識されてない” 😇
+
+![HTTPS Misunderstanding](./picture/docker_local_exposure_ts_study_017_04_https_misunderstanding.png)
 
 * 入口はHTTPSなのに、アプリ側が「HTTPだよね？」と思ってしまう
 * 結果：Secure cookieの発行・検証・リダイレクトがズレてログインが死ぬ
@@ -134,6 +142,8 @@ Cookieの事故率が高い属性はこの4つ👇（まずここだけ覚えれ
 ---
 
 ## 5) パターン別 “安全レシピ” 🍳✨
+
+![Subdomain vs Path Strategy](./picture/docker_local_exposure_ts_study_017_05_strategy_comparison.png)
 
 ## 🅰 サブドメイン方式（例：front.localhost / api.localhost）
 

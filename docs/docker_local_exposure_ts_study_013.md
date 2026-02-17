@@ -10,6 +10,8 @@
 
 ## 0) 今日の完成図（超ざっくり）🗺️✨
 
+![Architecture Diagram](./picture/docker_local_exposure_ts_study_013_01_architecture.png)
+
 ```
 ブラウザ
   |
@@ -30,6 +32,8 @@
 Node 24 は Active LTS 扱いで、いまの教材としても使いやすい立ち位置です。([Node.js][1])
 
 ## フォルダ構成📁
+
+![Folder Structure](./picture/docker_local_exposure_ts_study_013_03_folder_structure.png)
 
 ```
 chapter13-caddy/
@@ -102,6 +106,8 @@ http
 
 ## 2) Caddyfileを書いて「パスで振り分け」する🔀🍞
 
+![Handle Path Stripping](./picture/docker_local_exposure_ts_study_013_02_handle_path_strip.png)
+
 ここが本章の主役！✨
 Caddyの `handle_path` は **マッチしたプレフィックスを自動で取り除いて** 中のサービスへ流してくれる便利機能だよ（例：`/app1/hello` → アプリ側には `/hello` として届く）🧠✨ ([Caddy Web Server][2])
 
@@ -132,6 +138,8 @@ Caddyの `handle_path` は **マッチしたプレフィックスを自動で取
 ---
 
 ## 3) compose.yaml（Caddy＋2アプリを一気に起動）🐳🧩
+
+![Caddy Volume Mounts](./picture/docker_local_exposure_ts_study_013_04_volume_mount.png)
 
 Compose の推奨ファイル名は `compose.yaml`（または `compose.yml`）で、両方あれば `compose.yaml` を優先する仕様です。([Docker ドキュメント][4])
 
@@ -220,6 +228,8 @@ docker compose exec -w /etc/caddy caddy caddy reload
 * **ブラウザは `/app1/`（末尾スラッシュあり）で試す**のが無難✨
 
 ## ② 502（Bad Gateway）になる💥
+
+![Troubleshoot 502](./picture/docker_local_exposure_ts_study_013_05_troubleshoot_502.png)
 
 だいたいこれ👇
 
