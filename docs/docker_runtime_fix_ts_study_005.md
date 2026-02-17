@@ -8,6 +8,8 @@
 
 ## 1) まず“固定”の世界での「動く」を決めよう🔒🧠
 
+![It Works Definition](./picture/docker_runtime_fix_ts_study_005_01_it_works_definition.png)
+
 ランタイム固定（Node/TSを閉じ込める）での「動く」は、**あなたのPCでたまたま動く**じゃなくて、こういう意味になります👇
 
 * ✅ **誰のPCでも（未来の自分でも）同じ結果になる**
@@ -27,6 +29,8 @@ TypeScriptは **5.9系が “latest” 扱い**（npmでも5.9.3がLatest表示�
 
 ## ✅ DoD（Definition of Done：完成の定義）
 
+![Definition of Done Checklist](./picture/docker_runtime_fix_ts_study_005_02_dod_checklist.png)
+
 * ✅ `docker build` が通る🐳
 * ✅ `docker run` でアプリ（または検証用コンテナ）が起動する🚀
 * ✅ Node/TSの版が **毎回同じ** になる🔁🔒
@@ -36,6 +40,8 @@ TypeScriptは **5.9系が “latest” 扱い**（npmでも5.9.3がLatest表示�
 ---
 
 ## 3) “できた判定”を強くする追加ルール（おすすめ）💪✨
+
+![Evidence of Fixing](./picture/docker_runtime_fix_ts_study_005_03_version_evidence.png)
 
 上の3つに、初心者ほど効く「事故防止ルール」を足します👇
 
@@ -49,6 +55,8 @@ TypeScriptは **5.9系が “latest” 扱い**（npmでも5.9.3がLatest表示�
 ---
 
 ## 4) ミニ実習：まずは“動く”を最小で証明しよう🧪✨（1分でOK）
+
+![Minimal Verification Container](./picture/docker_runtime_fix_ts_study_005_04_minimal_check.png)
 
 アプリ本体がまだ無くてもいいです。
 **「毎回同じNodeが出る」**を、まず目で見て成功体験しよう😆
@@ -101,6 +109,8 @@ docker run --rm runtime-check
 
 ## 😵 パターンA：buildは通るのにrunで落ちる
 
+![Build Success vs Run Fail](./picture/docker_runtime_fix_ts_study_005_05_build_vs_run_fail.png)
+
 原因あるある👇
 
 * CMD/ENTRYPOINTの指定ミス（ファイルパス違い）📄💥
@@ -115,6 +125,8 @@ docker run --rm runtime-check
 ---
 
 ## 😵 パターンB：“毎回同じ”のつもりが、いつのまにか変わる
+
+![Version Drift](./picture/docker_runtime_fix_ts_study_005_06_version_drift.png)
 
 原因あるある👇
 
