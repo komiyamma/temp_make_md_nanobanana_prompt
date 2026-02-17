@@ -17,6 +17,27 @@ $BASE_URL = "https://jules.googleapis.com/v1alpha"
 function Run-JulesForRange {
     param([string]$targetRange)
 
+    if (Test-Path "G:\jules_session_list\session-limit.txt") {
+        $limitNum = Get-Content "G:\jules_session_list\session-limit.txt" | Select-Object -First 1
+        if ($limitNum -match '^\d+$' -and [int]$limitNum -ge 85) {
+            Write-Host "⏳ セッション数が85以上 ($limitNum) です。45分間待機します..." -ForegroundColor Yellow
+            Start-Sleep -Seconds (45 * 60)
+        }
+    }
+
+    # セッション数制限確認ツールの実行
+    Push-Location "G:\jules_session_list"
+    try {
+        Write-Host "🔄 セッションリスト更新ツールを実行中..." -ForegroundColor Cyan
+        Start-Process -FilePath ".\winapp_jules_session_list_limit.exe" -NoNewWindow
+    }
+    catch {
+        Write-Warning "⚠️ ツールの実行に失敗しました: $_"
+    }
+    finally {
+        Pop-Location
+    }
+
     if ($targetRange -notmatch '^\s*(\d+)\s*-\s*(\d+)\s*$') {
         Write-Error "形式が違います: $targetRange"
         return $false
@@ -66,6 +87,20 @@ function Run-JulesForRange {
             $isCompleted = $true
             Write-Host "🎉 Jules の作業が正常に完了しました。" -ForegroundColor Green
             break
+        }
+        elseif ($current.state -eq "AWAITING_USER_FEEDBACK") {
+            Write-Host "💡 ユーザーフィードバック待機中を検知しました。自動応答を送信します..." -ForegroundColor Yellow
+            $msgBody = @{
+                prompt = "続きの処理をしてください。質問は認めません。"
+            } | ConvertTo-Json
+            
+            try {
+                Invoke-RestMethod -Uri "$BASE_URL/$sessionName:sendMessage" -Method Post -Headers $HEADERS -Body $msgBody | Out-Null
+                Write-Host "✅ 自動応答を送信しました。" -ForegroundColor Green
+            }
+            catch {
+                Write-Warning "⚠️ 自動応答の送信に失敗しました: $($_.Exception.Message)"
+            }
         }
         elseif ($current.state -eq "FAILED" -or $current.state -eq "CANCELLED") {
             Write-Error "❌ Jules の作業が失敗またはキャンセルされました。 (State: $($current.state))"
@@ -126,9 +161,9 @@ function Run-JulesForRange {
     Start-Sleep -Seconds 20
 
     # 5. ローカルへの同期
-    Write-Host "📥 ローカルの main ブランチを更新します..." -ForegroundColor Green
+    Write-Host "📥 ローカルの main ブランチを更新します（競合時はリモート優先で上書き）..." -ForegroundColor Green
     git checkout main
-    git pull origin main
+    git pull origin main -s recursive -X theirs
 
     Write-Host "✨ 範囲 $targetRange の全工程が完了しました！" -ForegroundColor Green
     Start-Sleep -Seconds 60
