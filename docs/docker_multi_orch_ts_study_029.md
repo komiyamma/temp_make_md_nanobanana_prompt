@@ -18,6 +18,8 @@
 
 ## 2) まずは超ざっくり：Helm vs Kustomize🤔
 
+![Kustomize vs Helm Concept](./picture/docker_multi_orch_ts_study_029_01_kustomize_vs_helm_concept.png)
+
 ## Kustomize（カスタマイズ）🧩
 
 * **元になるYAML（base）**を置いて、環境ごとの差分を**overlay**として重ねます🎂
@@ -41,6 +43,8 @@
 ## 3) ハンズオンA：Kustomizeで “base + overlays” を作る🧩🔥
 
 ## 3-1. ディレクトリ構成（まず形から）📁
+
+![Kustomize Directory Tree](./picture/docker_multi_orch_ts_study_029_02_kustomize_directory_structure.png)
 
 こんな感じにします👇
 
@@ -130,6 +134,8 @@ images:
 
 ## 3-4. overlay（prod）🏭
 
+![Kustomize Patch Logic](./picture/docker_multi_orch_ts_study_029_03_kustomize_patch_logic.png)
+
 `k8s/overlays/prod/kustomization.yaml`
 
 ```yaml
@@ -188,6 +194,8 @@ helm create todo-api
 
 ## 4-2. Chartの構造（超重要）🧠
 
+![Helm Chart Structure](./picture/docker_multi_orch_ts_study_029_04_helm_chart_structure.png)
+
 Helm Chartは、だいたいこういう構造になります👇
 （`values.yaml` や `templates/`、そして任意で `values.schema.json` が置けます）([Helm][2])
 
@@ -219,6 +227,8 @@ service:
 ```
 
 ## 4-4. templates側で values を使う🪄
+
+![Helm Template Engine](./picture/docker_multi_orch_ts_study_029_05_helm_template_engine.png)
 
 `templates/deployment.yaml` のイメージ（超ミニ例）
 
@@ -308,6 +318,8 @@ helm upgrade --install dev ./todo-api -f values-dev.yaml --set replicaCount=2
 ---
 
 ## 6) じゃあ結局どっち？判断のコツ⚖️😺
+
+![Decision Flowchart](./picture/docker_multi_orch_ts_study_029_06_decision_flowchart.png)
 
 迷ったらこのルールでOKです👇
 

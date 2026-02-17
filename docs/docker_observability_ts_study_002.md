@@ -10,6 +10,8 @@
 
 ## ② 図（1枚）🖼️📦
 
+![Three Failure Sources](./picture/docker_observability_ts_study_002_01_three_failure_sources.png)
+
 障害の原因って、だいたいここに落ちます👇
 
 ```text
@@ -37,6 +39,8 @@
 
 ### A. アプリ起因 🧑‍💻💣
 
+![App Failure Characteristics](./picture/docker_observability_ts_study_002_02_app_failure_characteristics.png)
+
 **特徴**
 
 * あるURL（ある操作）で **毎回** だいたい同じ感じで落ちる
@@ -51,6 +55,8 @@
 ---
 
 ### B. 依存起因 🔌💥
+
+![Dependency Failure Characteristics](./picture/docker_observability_ts_study_002_03_dependency_failure_characteristics.png)
 
 **特徴**
 
@@ -67,6 +73,8 @@
 
 ### C. 環境起因 📦🧨
 
+![Environment Failure Characteristics](./picture/docker_observability_ts_study_002_04_environment_failure_characteristics.png)
+
 **特徴**
 
 * そもそも起動しない／起動してもすぐ落ちる
@@ -77,6 +85,8 @@
 ---
 
 ## ④ “短いリスト”にする癖 ✍️🪄（これ超大事）
+
+![Short List Strategy](./picture/docker_observability_ts_study_002_05_short_list_strategy.png)
 
 障害対応でありがちなのが「可能性が無限にあって脳が死ぬ」やつ…😵‍💫
 そこで、**まず候補を5個以内**に潰していきます。

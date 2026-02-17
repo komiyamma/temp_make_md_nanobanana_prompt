@@ -12,6 +12,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Observability Concept Map](./picture/docker_observability_ts_study_001_01_observability_concept_map.png)
+
 “観測性”は、ざっくりこの流れで覚えるのが最強です👇
 
 ```text
@@ -41,6 +43,8 @@
 
 ## ④ ログ・メトリクス・ヘルスを一言で言う 🧾📈💚
 
+![Logs vs Metrics Analogy](./picture/docker_observability_ts_study_001_02_logs_story_metrics_weather.png)
+
 ここ、暗記じゃなくて“納得”でいきましょう😊✨
 
 ### ログ🧾：出来事の記録（ストーリー）
@@ -64,6 +68,8 @@
 ---
 
 ## ⑤ 3つが「原因」「影響」「復旧判断」に効くイメージ 🔁🧭
+
+![Troubleshooting 3 Steps](./picture/docker_observability_ts_study_001_03_troubleshooting_steps.png)
 
 トラブル対応で一番ありがちな失敗はこれ👇
 
