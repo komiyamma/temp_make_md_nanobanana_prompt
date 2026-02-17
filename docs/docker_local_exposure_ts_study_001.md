@@ -7,6 +7,8 @@
 
 ## 1) いま起きがちな “地獄” を、ちゃんと名前で呼ぶ😇🔥
 
+![Localhost Port Hell](./picture/docker_local_exposure_ts_study_001_01_hell.png)
+
 ローカル開発って、気づくとこうなりません？👇
 
 * フロント：`http://localhost:5173`
@@ -28,11 +30,15 @@
 
 ## 2) ゴールはこれ：「URLが人間の脳にやさしい」🧠💕
 
+![Meaningful URLs Goal](./picture/docker_local_exposure_ts_study_001_02_goal.png)
+
 この教材のゴール（ローカル公開の整理）を、まず一言で言うと👇
 
 ✅ **入口を整理して、URLを“意味がわかる形”にすること**
 
 イメージはこれです👇
+
+![Before vs After Entry Points](./picture/docker_local_exposure_ts_study_001_03_before_after.png)
 
 **Before（入口がバラバラ）**
 
@@ -60,6 +66,8 @@
 
 ## 3) “リバースプロキシ” を超ざっくり一言で言うと🚪➡️🏠
 
+![Reverse Proxy Traffic Cop](./picture/docker_local_exposure_ts_study_001_04_traffic_cop.png)
+
 リバースプロキシは、こういう人です👇
 
 > **「来たリクエストを受け取って、適切なアプリに振り分ける交通整理係」**🚥🙂
@@ -80,6 +88,8 @@
 ---
 
 ## 4) まず作る成果物：「公開マップ」🗺️✨（これが設計の第一歩！）
+
+![The Public Map Blueprint](./picture/docker_local_exposure_ts_study_001_05_public_map.png)
 
 “設計が初めて”の人でも大丈夫🙆‍♂️
 ここでは難しい言葉は捨てて、**表にして見える化**します📄✨
@@ -103,6 +113,8 @@
 ---
 
 ## 5) “勝ち”の定義を決める🏁✨（ふわっとした努力を卒業）
+
+![Win Conditions](./picture/docker_local_exposure_ts_study_001_06_win_condition.png)
 
 ここ、めちゃ大事です💡
 ゴールが曖昧だと、設定をいじってるうちに迷子になります😵‍💫
@@ -133,6 +145,8 @@
 ---
 
 ## 6) よくあるミス集😇（先に踏んでおくと強い）
+
+![Common Pitfalls](./picture/docker_local_exposure_ts_study_001_07_pitfalls.png)
 
 * **ミス①：いきなりツール選定しちゃう**（Nginx？Caddy？Traefik？）🧰💥
   → 先に「公開マップ」と「勝ちの定義」！それが先！🗺️🏁

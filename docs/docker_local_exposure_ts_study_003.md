@@ -11,6 +11,8 @@
 
 ## 0) まず“URLの部品”だけ超ざっくり理解しよ🧩✨
 
+![URL Anatomy](./picture/docker_local_exposure_ts_study_003_01_url_anatomy.png)
+
 URLって「住所」なんだけど、分解するとこう👇
 
 ```text
@@ -27,6 +29,8 @@ http://app1.localhost:8080/api/users?page=1
 ---
 
 ## 1) ① ポートで分ける（いちばん簡単😆）🔌
+
+![Port Splitting Pattern](./picture/docker_local_exposure_ts_study_003_02_port_split.png)
 
 ## イメージ図🗺️
 
@@ -50,6 +54,8 @@ http://app1.localhost:8080/api/users?page=1
 ---
 
 ## 1分ハンズオン：同じTypeScriptアプリを2つ起動して“ポートで分ける”🧪🐳
+
+![Hands-on Compose Setup](./picture/docker_local_exposure_ts_study_003_03_compose_setup.png)
 
 ## フォルダ構成📁
 
@@ -173,6 +179,8 @@ docker compose up --build
 
 ## 2) ② パスで分ける（“入口1個＋中で振り分け”🚪➡️🏠）🍰
 
+![Path Splitting Pattern](./picture/docker_local_exposure_ts_study_003_04_path_split.png)
+
 ## イメージ図🗺️
 
 ```text
@@ -200,6 +208,8 @@ docker compose up --build
 
 ## 例：Caddyだと“パスの先頭を外して渡す”がやりやすい🍞
 
+![Path Stripping Mechanism](./picture/docker_local_exposure_ts_study_003_05_path_strip.png)
+
 `handle_path` は “マッチしたパスを strip してくれる” 仕組みとして用意されてるよ。 ([Caddy Web Server][4])
 
 ```text
@@ -211,6 +221,8 @@ app1 コンテナには /hello で届く
 ---
 
 ## 3) ③ サブドメインで分ける（本番っぽくて強い💪）🏷️
+
+![Subdomain Splitting Pattern](./picture/docker_local_exposure_ts_study_003_06_subdomain_split.png)
 
 ## イメージ図🗺️
 
@@ -239,6 +251,8 @@ DockerのTraefikガイドでも `nginx.localhost` の例で “そのままブ�
 ---
 
 ## 4) 3パターン比較まとめ（迷ったらここを見る😺）📌
+
+![Pattern Comparison](./picture/docker_local_exposure_ts_study_003_07_comparison.png)
 
 | パターン   | URL例             | 難易度 | 向いてる       | つらいポイント        |
 | ------ | ---------------- | --: | ---------- | -------------- |

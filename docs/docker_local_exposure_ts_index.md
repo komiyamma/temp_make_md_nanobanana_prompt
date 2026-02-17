@@ -6,6 +6,8 @@
 
 ## 01. まずは困りごとを言語化しよう😵‍💫🔌
 
+![Chaos vs Order in Localhost](./picture/docker_local_exposure_ts_index_01_chaos_vs_order.png)
+
 * 「localhost:3000 / 5173 / 8787 …」が増えて地獄になる理由
 * ゴールは「URLが人間の脳にやさしい」こと🧠💕
 
@@ -15,6 +17,8 @@
 * 例：app1.localhost / app2.localhost / api.localhost 🎯
 
 ## 03. “公開の整理”の3大パターンを知る🧠🔀
+
+![Three Patterns of Exposure](./picture/docker_local_exposure_ts_index_03_three_patterns.png)
 
 * ポートで分ける（簡単だけど増える）
 * パスで分ける（/app1 みたいに）
@@ -33,6 +37,8 @@
 
 ## 06. .localhostの最強さを知る💪🏠
 
+![The Safety of .localhost](./picture/docker_local_exposure_ts_index_06_localhost_shield.png)
+
 * .localhost は特殊用途として予約されてる（外DNSに出にくい）
 * “ローカル用の名前”として扱いやすい理由✨([rfc-editor.org][3])
 
@@ -48,6 +54,8 @@
 
 ## 09. Dockerネットワークの超復習🌐🐳
 
+![Docker Network Communication](./picture/docker_local_exposure_ts_index_09_docker_network.png)
+
 * “コンテナ同士は名前で通信できる”の感覚
 * ここが分かるとリバプロが急に楽になる✨
 
@@ -57,6 +65,8 @@
 * “外から入る入口”と“中の通信”を分けて考える🧠
 
 ## 11. リバースプロキシって結局なに？🚪➡️🏠
+
+![Reverse Proxy Role](./picture/docker_local_exposure_ts_index_11_reverse_proxy.png)
 
 * 入口で受けて、中に振り分ける人
 * 「開発環境の交通整理係」だと思えばOK🚥
@@ -69,6 +79,8 @@
   （Traefikはv3系が主流ルートの一つになってるよ）([Traefik Labs][4])
 
 ## 13. 最短ルート：Caddyで“入口1個”を作る🚀🍞
+
+![Caddy Single Entry](./picture/docker_local_exposure_ts_index_13_caddy_entry.png)
 
 * まずは1ファイルで動く成功体験
 * パス振り分けで2アプリ共存を達成🎉
@@ -104,6 +116,8 @@
 * CookieやOAuthがあるときのメリットも👀
 
 ## 20. ここから自動化ルート：Traefik入門🚦🤖
+
+![Traefik Automation](./picture/docker_local_exposure_ts_index_20_traefik_auto.png)
 
 * “ラベルでルーティングが増える”感覚
 * Composeに書いていくだけで勝手に増える嬉しさ✨([Traefik Labs Docs][5])

@@ -15,6 +15,8 @@
 
 ## 1) まずは“名前解決”のイメージを掴もう🧩
 
+![Name Resolution Flow](./picture/docker_local_exposure_ts_study_005_01_resolution_flow.png)
+
 ざっくり言うと、ブラウザやcurlはこう動くよ👇
 
 ```text
@@ -37,6 +39,8 @@ api.localhost にアクセス
 
 ## 2) hostsファイルって何？🍞🧠
 
+![Hosts File Concept](./picture/docker_local_exposure_ts_study_005_02_hosts_concept.png)
+
 hostsは、Windowsが読む「手動の住所録」みたいなテキストファイル📒✨
 1行がこういう形👇（左がIP、右が名前）
 
@@ -50,6 +54,8 @@ Microsoftの説明でも、hostsは「ホスト名をIPに対応付けるため�
 
 ## 3) Windowsでhostsはどこにあるの？📍
 
+![Hosts File Location](./picture/docker_local_exposure_ts_study_005_03_file_location.png)
+
 場所はここ👇
 
 * 「C:\Windows\System32\Drivers\Etc\hosts」
@@ -59,6 +65,8 @@ Windowsのホスト名解決の説明でも、hostsの場所として「%Systemr
 ---
 
 ## 4) hosts編集：安全で失敗しにくい手順🛠️✨
+
+![Safe Editing Workflow](./picture/docker_local_exposure_ts_study_005_04_safe_edit.png)
 
 Windowsはここがシビアで、**普通に編集しようとすると保存でコケる**ことが多いよ😂
 なので、失敗しにくい“王道ルート”でいこう！
@@ -94,6 +102,8 @@ Windowsはここがシビアで、**普通に編集しようとすると保存�
 
 ## 🧠 できればIPv6（::1）も一緒に足す
 
+![IPv4 and IPv6 Support](./picture/docker_local_exposure_ts_study_005_05_ipv4_ipv6.png)
+
 最近の環境だと、アプリやブラウザがIPv6を優先することがあって、**127.0.0.1だけだと「あれ？つながらん」**が起きがち🥲
 なので、同じ名前に対して::1も書くのが安全✨
 
@@ -111,6 +121,8 @@ Windowsはここがシビアで、**普通に編集しようとすると保存�
 ---
 
 ## 6) 反映されたか確認しよう🔍✅
+
+![Troubleshooting Tools](./picture/docker_local_exposure_ts_study_005_06_tools.png)
 
 ## ① DNSキャッシュを流す（効かない時の必殺技）🧹
 
@@ -142,6 +154,8 @@ nslookup api.localhost
 ---
 
 ## 7) やりがちミスあるある集😇💣（ここ超大事）
+
+![Hosts Pitfalls](./picture/docker_local_exposure_ts_study_005_07_pitfalls.png)
 
 ## ❌ ミス1：hosts.txt にしちゃう
 
