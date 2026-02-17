@@ -7,11 +7,15 @@
 * `http://dev.localhost/app2/` → アプリ2 🧩
 * `http://dev.localhost/api/...` → API 🔌
 
+![Path-based Routing Overview](./picture/docker_local_exposure_ts_study_018_01_concept_map.png)
+
 `.localhost` 配下の名前は “ローカルのループバックに向く想定で使ってOK” という扱いになってるので、`dev.localhost` みたいな名前が作りやすいよ〜🏠✨ ([IETF Datatracker][1])
 
 ---
 
 ## 1) まずは設計のコア感覚：「入口は同じ、最初の1段で振り分け」🚪➡️🚥
+
+![Request Flow Diagram](./picture/docker_local_exposure_ts_study_018_02_path_split_flow.png)
 
 イメージはこれ👇
 
@@ -32,6 +36,9 @@
 * 中のAPIが期待：`/hello`
 
 この “差” を埋めるのが **prefix を剥がす（strip prefix）** ってやつだよ🪄
+
+![Strip Prefix Mechanism](./picture/docker_local_exposure_ts_study_018_03_strip_prefix.png)
+
 Caddy だと `handle_path` が「パス一致＋prefix剥がし」を勝手にやってくれるので、パス方式の練習にめちゃ向く👍 ([Caddy Web Server][2])
 （同じことは `uri strip_prefix` でもできるよ〜） ([Caddy Web Server][3])
 
@@ -41,6 +48,8 @@ Caddy だと `handle_path` が「パス一致＋prefix剥がし」を勝手に�
 
 1. **先頭の区切りは必ず固定（`/api/` みたいに）**
    `api` と `api-v2` を混ぜるより、`/api/` `/api-v2/` で明確に🧠
+
+   ![Trailing Slash Rule](./picture/docker_local_exposure_ts_study_018_04_trailing_slash.png)
 
 2. **末尾スラッシュを揃える（`/app1/` 推奨）**
    `/app1` と `/app1/` が混ざると、相対パス参照で事故りがち😇
@@ -62,6 +71,8 @@ Caddy だと `handle_path` が「パス一致＋prefix剥がし」を勝手に�
 （フロントを Vite にする時の注意は後半でやる！）
 
 ### 3-1. フォルダ構成（これを作る）📁
+
+![Project Directory Structure](./picture/docker_local_exposure_ts_study_018_05_folder_structure.png)
 
 ```text
 path-routing-lab/
@@ -179,6 +190,8 @@ CMD ["npm", "run", "dev"]
 
 ### 3-4. Caddyfile（ここが本題💡）🧠
 
+![Caddyfile Logic Visualization](./picture/docker_local_exposure_ts_study_018_06_caddyfile_logic.png)
+
 `Caddyfile`
 
 ```caddyfile
@@ -280,6 +293,8 @@ Caddy には “SPAのよくある型” があって、`try_files {path} /index
 ---
 
 ## 5) Vite/SPA を `/app1/` 配下で動かす時の注意（ここ大事🔥）⚡
+
+![SPA Base Path Issue](./picture/docker_local_exposure_ts_study_018_07_spa_base_path.png)
 
 パス方式はSPAで事故りやすいポイントが2つあるよ👇
 

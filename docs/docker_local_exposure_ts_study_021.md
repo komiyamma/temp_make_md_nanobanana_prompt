@@ -20,6 +20,9 @@ TraefikのAPI/ダッシュボードは、ルーター・サービス・ミドル
 つまり、**構成やルールが全部バレる**＝攻撃者にとって地図みたいなもの🗺️💀
 
 ドキュメントでも、**本番で有効化は推奨されない**・有効にするなら**認証などで保護してね**と明確に言ってます。([doc.traefik.io][1])
+
+![Dashboard Exposure Risk](./picture/docker_local_exposure_ts_study_021_01_dashboard_risk.png)
+
 さらに「APIのポートを公開しない（内部に閉じる）」のが推奨です。([doc.traefik.io][1])
 
 ---
@@ -30,6 +33,8 @@ TraefikのAPI/ダッシュボードは、ルーター・サービス・ミドル
 
 `api.insecure` は、`traefik` という entryPoint 上でAPI/ダッシュボードを有効にする設定です。([doc.traefik.io][1])
 これを使って **ポートを外に公開**すると、うっかり誰でも見れる状態になりがち😇💣
+
+![Insecure Mode Trap](./picture/docker_local_exposure_ts_study_021_02_insecure_trap.png)
 
 なのでこの章では、**insecureは使わない**でいきます🙅‍♂️
 
@@ -54,6 +59,8 @@ TraefikのAPI/ダッシュボードは、ルーター・サービス・ミドル
 
 Traefik公式の例でも、`api@internal` にルーターを当てて **BasicAuth をミドルウェアで付ける**形が紹介されています。([doc.traefik.io][1])
 
+![Three Security Layers](./picture/docker_local_exposure_ts_study_021_03_security_layers.png)
+
 ---
 
 ## 4) 実装：ダッシュボードを「安全に」公開する設定🧩🐳
@@ -74,6 +81,8 @@ docker run --rm httpd:2.4-alpine htpasswd -nb admin "SuperStrongPassword"
 
 この **`$` は compose の中だと特別扱い**なので、**`$$` に置き換える必要**があります（公式例でも `$$apr1$$...` になってるやつ）([doc.traefik.io][1])
 ここでミスると「認証が通らない」地獄になります😇🔥
+
+![Dollar Sign Escape Rule](./picture/docker_local_exposure_ts_study_021_04_dollar_escape.png)
 
 ---
 
@@ -118,6 +127,8 @@ services:
 * `removeheader=true` で認証ヘッダを下流に渡さない（地味に大事）([doc.traefik.io][1])
 * `ports` を `127.0.0.1` に縛ってるので、**LANからは基本入れません**（それが狙い）🧱✨
 
+![Authentication Request Flow](./picture/docker_local_exposure_ts_study_021_05_auth_flow.png)
+
 ---
 
 ## 4-3. アクセスして確認する✅🌐
@@ -126,6 +137,8 @@ services:
 
 重要⚠️：`/dashboard/` の **末尾スラッシュは必須**です。([doc.traefik.io][1])
 （ドキュメントにも「必須」「RedirectRegexで軽減できる」って書いてあるやつ）([doc.traefik.io][1])
+
+![Trailing Slash Trap](./picture/docker_local_exposure_ts_study_021_06_trailing_slash_trap.png)
 
 ---
 
@@ -144,6 +157,8 @@ services:
 ## (3) Middlewares：何が挟まってる？🧩
 
 auth / stripPrefix / headers など、**思った通りの順番になってるか**確認できる👍
+
+![Dashboard Value (Cockpit)](./picture/docker_local_exposure_ts_study_021_07_cockpit_view.png)
 
 ---
 

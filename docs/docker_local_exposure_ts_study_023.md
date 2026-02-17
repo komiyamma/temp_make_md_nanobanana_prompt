@@ -16,6 +16,8 @@ Dockerネットワークは超ざっくり言うと「**コンテナ用のLAN（
 * `internal(B)`：Bプロジェクトの中だけで完結するLAN
 * `edge(shared)`：入口（リバプロ）と、外に見せたいサービスだけが繋がる共有LAN
 
+![Network Topology (Edge vs Internal)](./picture/docker_local_exposure_ts_study_023_01_network_topology.png)
+
 ```text
           (ブラウザ) 🧑‍💻🌐
                 |
@@ -44,6 +46,8 @@ db  redis  etc    db  redis  etc
 * Composeはデフォルトでプロジェクトごとにネットワークを作るけど、その名前は “プロジェクト名” に依存します📛
 * プロジェクト名はディレクトリ名ベースだったり、`-p` / `COMPOSE_PROJECT_NAME` / さらにトップレベル `name:` でも変えられます🧩 ([Docker Documentation][2])
 
+![Network Name Conflict](./picture/docker_local_exposure_ts_study_023_02_network_conflict.png)
+
 2. **externalにするべき共有ネットワークを、各プロジェクトが作ろうとして揉める**
 
 * 「共有したいのに、それぞれ別物を作ってる」状態になりがち😇
@@ -67,6 +71,9 @@ db  redis  etc    db  redis  etc
 4. プロジェクト内部は `internal` で閉じる
 
 ポイント：Composeの `networks:` には **`name:`** があって、これを使うと「プロジェクト名でスコープされない固定名」にできます📌
+
+![Setup Process Flowchart](./picture/docker_local_exposure_ts_study_023_03_setup_process.png)
+
 しかも `external` と一緒に使うのが定番！✨ ([Docker Documentation][1])
 
 ---
@@ -122,6 +129,8 @@ networks:
 * `name: proxy` は “プロジェクト名” を明示するためのやつ（複数同居で効く）🧷 ([Docker Documentation][4])
 * `networks.edge.name: dev-edge` は **固定名**（プロジェクト名で変化しない）📌 ([Docker Documentation][1])
 * `external: true` で **既存 dev-edge を使う**🧵 ([docs.docker.jp][3])
+
+![Proxy Connection to Edge](./picture/docker_local_exposure_ts_study_023_04_proxy_edge.png)
 
 起動：
 
@@ -186,6 +195,9 @@ networks:
 
 * `db` は **internalだけ**（外から見せない）🧊
 * `front/api` は **internal + edge**（内部連携もしつつ、入口にも出す）🚪✨
+
+  ![App Service Isolation](./picture/docker_local_exposure_ts_study_023_05_app_isolation.png)
+
 * “同じネットワーク上だとサービス名で見つけられる” のがComposeの基本感覚です👍 ([Docker Documentation][1])
 
 起動：
@@ -220,6 +232,8 @@ docker network inspect dev-edge
 
 みたいに並んでたら勝ちです🏆✨
 
+![Network Inspect Visualization](./picture/docker_local_exposure_ts_study_023_06_network_inspect.png)
+
 ---
 
 ## 23.6 よくあるミス集（ここ超大事）📕🧯
@@ -242,6 +256,8 @@ docker network create dev-edge
 症状：Aとproxyが同じ “edge” って書いてるのに通信できない
 原因：内部的には `project-a_edge` と `proxy_edge` みたいに別物になってるパターン
 対処：共有したい方は **`name:` で固定名** にする📌 ([Docker Documentation][1])
+
+![Network Name Scoping](./picture/docker_local_exposure_ts_study_023_07_name_scope.png)
 
 ---
 
