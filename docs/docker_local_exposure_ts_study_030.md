@@ -5,6 +5,8 @@
 
 ---
 
+![Graduation State](./picture/docker_local_exposure_ts_study_030_01_graduation_state.png)
+
 ## 1) “卒業”って何を指すの？🎓👀
 
 卒業できてる状態は、だいたいこれ👇
@@ -19,6 +21,8 @@
 ## 2) AIテンプレ化の基本戦略🧩🧠
 
 ポイントは「AIに全部丸投げ」じゃなくて、**“型”を固定して、毎回その型に沿って生成させる**ことだよ😺✨
+
+![Three Template Boxes](./picture/docker_local_exposure_ts_study_030_02_ai_template_strategy.png)
 
 ### 型（テンプレ）を3つに分ける📦📦📦
 
@@ -65,6 +69,8 @@ AIの出力精度は「コンテキスト」で決まることが多いよ！
 
 ここが本体！この型を固定すると、毎回の品質が安定するよ✅✨
 
+![AI Building Proxy Stack](./picture/docker_local_exposure_ts_study_030_03_proxy_stack_prompt.png)
+
 ## 5-1) “入口スタック（proxy）”を作らせるプロンプト🚪🤖
 
 * **Caddy版**は「設定が短い」「ローカルHTTPSがラク」寄り
@@ -96,6 +102,8 @@ Caddyはローカル/内部ホストも含めてHTTPSを自動で扱える（無
 
 ---
 
+![AI Building App Stack](./picture/docker_local_exposure_ts_study_030_04_app_stack_prompt.png)
+
 ## 5-2) “アプリスタック（各PJ）”を作らせるプロンプト🧱🤖
 
 TraefikはDocker providerで **コンテナのlabels** を見てルーティングするのが基本だよ🏷️✨
@@ -120,6 +128,8 @@ TraefikはDocker providerで **コンテナのlabels** を見てルーティン�
 
 ---
 
+![Review Scanner](./picture/docker_local_exposure_ts_study_030_05_review_scanner.png)
+
 ## 5-3) “差分レビュー前提”にして事故を減らす🧯🔍
 
 AI生成は便利だけど、**レビュー観点が固定されてないと事故る**💥
@@ -142,6 +152,8 @@ AI生成は便利だけど、**レビュー観点が固定されてないと事�
 
 ---
 
+![Ideal Folder Structure](./picture/docker_local_exposure_ts_study_030_06_folder_structure.png)
+
 ## 6) “テンプレの完成形”はこう置くと強い📁✨
 
 おすすめ構成（このまま真似でOK）👇
@@ -159,6 +171,8 @@ AI生成は便利だけど、**レビュー観点が固定されてないと事�
   * `TROUBLESHOOTING.md`
 
 ---
+
+![Fixed Checklist](./picture/docker_local_exposure_ts_study_030_07_checklist_board.png)
 
 ## 7) 最終兵器：固定チェックリスト✅✨（これで毎回勝つ）
 

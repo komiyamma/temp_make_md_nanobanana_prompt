@@ -32,6 +32,8 @@
 
 ---
 
+![Kubectl Remote](./picture/docker_multi_orch_ts_study_004_01_kubectl_remote.png)
+
 ## 0️⃣ まずは“詰まった時の型”を覚える🧠🥋
 
 Kubernetesで困ったら、だいたいこの順番でOK👇
@@ -77,6 +79,8 @@ kubectl config get-contexts
 
 ---
 
+![Get Command](./picture/docker_multi_orch_ts_study_004_02_get_command.png)
+
 ## 3️⃣ `kubectl get`：まずは一覧📋✨
 
 K8sの基本動作は「とりあえず get」😄
@@ -106,6 +110,8 @@ kubectl get pods -l app=hello
 
 ---
 
+![Describe Command](./picture/docker_multi_orch_ts_study_004_03_describe_command.png)
+
 ## 4️⃣ `kubectl describe`：詳細＋イベントで“犯人探し”🔍⚡
 
 **困ったらこれ！**
@@ -127,6 +133,8 @@ kubectl describe deploy <deploy-name>
 
 ---
 
+![Logs Command](./picture/docker_multi_orch_ts_study_004_04_logs_command.png)
+
 ## 5️⃣ `kubectl logs`：アプリの本音を聞く📜🔥
 
 ```bash
@@ -144,6 +152,8 @@ kubectl logs <pod-name> -c <container-name>
 
 ---
 
+![Exec Command](./picture/docker_multi_orch_ts_study_004_05_exec_command.png)
+
 ## 6️⃣ `kubectl exec`：Podの中に入って調べる🧑‍🔧🧰
 
 「環境変数どうなってる？」「ファイルある？」みたいな確認に便利✨
@@ -157,6 +167,8 @@ kubectl exec -it <pod-name> -- sh
 その場合は `exec -- <実在するコマンド>` で調べる感じ！
 
 ---
+
+![Port Forward](./picture/docker_multi_orch_ts_study_004_06_port_forward.png)
 
 ## 7️⃣ `kubectl port-forward`：ローカルから動作確認🔌🧪
 
@@ -176,6 +188,8 @@ curl.exe http://localhost:8080/
 ```
 
 ---
+
+![Apply Command](./picture/docker_multi_orch_ts_study_004_07_apply_command.png)
 
 ## 8️⃣ `kubectl apply`：宣言型の入口📄✅
 
