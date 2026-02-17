@@ -10,6 +10,8 @@
 
 ## 1) まずは“3つの世界”を分けよう🌍🧠
 
+![_01_three_localhosts](./picture/docker_local_exposure_ts_study_009_01_three_localhosts.png)
+
 Dockerで混乱する最大の原因はこれ👇
 **「localhost が誰の localhost なのか」**が毎回変わること😵‍💫
 
@@ -26,6 +28,8 @@ Dockerで混乱する最大の原因はこれ👇
 
 ## 2) “ネットワーク”は「同じ部屋」だと思おう🏠🧵
 
+![_02_network_rooms](./picture/docker_local_exposure_ts_study_009_02_network_rooms.png)
+
 Dockerネットワークは、ざっくり言うと👇
 
 * 同じネットワーク＝同じ部屋にいる🧑‍🤝‍🧑
@@ -38,6 +42,8 @@ Dockerネットワークは、ざっくり言うと👇
 ---
 
 ## 3) Composeの“デフォルトネットワーク”超重要ポイント✅
+
+![_03_compose_default](./picture/docker_local_exposure_ts_study_009_03_compose_default.png)
 
 Compose は基本こう動きます👇
 
@@ -79,6 +85,8 @@ docker compose up -d
 
 ## ✅ “名前でアクセス”してみる
 
+![_04_name_resolution](./picture/docker_local_exposure_ts_study_009_04_name_resolution.png)
+
 ```bash
 docker compose exec tester curl -I http://web
 ```
@@ -99,6 +107,8 @@ docker compose exec tester curl -I http://localhost
 
 ## 5) “つながらないのが正しい”を作れると設計っぽくなる🧠🧱
 
+![_05_isolation_arch](./picture/docker_local_exposure_ts_study_009_05_isolation_arch.png)
+
 ネットワークを分ける＝**安全な壁を作る**ってことです🧱✨
 Composeはネットワークを複数作って、サービスを分離できるよ([Docker Documentation][2])
 
@@ -114,6 +124,8 @@ Composeはネットワークを複数作って、サービスを分離できる�
 ---
 
 ## 6) リバプロ視点での“合言葉”🚪➡️🏠
+
+![_06_proxy_bridge](./picture/docker_local_exposure_ts_study_009_06_proxy_bridge.png)
 
 リバプロがやることは、結局これ👇
 

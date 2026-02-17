@@ -7,6 +7,8 @@
 
 ## 1) まずは“2つの世界”を分けて考えよう🌍🧠
 
+![_01_two_worlds](./picture/docker_local_exposure_ts_study_010_01_two_worlds.png)
+
 Docker/Composeには、大きく **2種類の通信** があるよ👇
 
 **A. 外の世界（ホストPC＝Windows）から入る通信**🪟➡️🐳
@@ -27,6 +29,8 @@ Docker/Composeには、大きく **2種類の通信** があるよ👇
 
 ## 2) 超重要：Host Port と Container Port は別物だよ🚦🔌
 
+![_02_port_mapping](./picture/docker_local_exposure_ts_study_010_02_port_mapping.png)
+
 ここ、いちばん事故るポイント😂💥
 
 * `ports: "8080:3000"` のとき
@@ -40,6 +44,8 @@ Compose公式も「**サービス間通信は CONTAINER_PORT を使う**」っ�
 ---
 
 ## 3) まずは“動く最小構成”を作ろう🚀🍞
+
+![_03_single_entry_arch](./picture/docker_local_exposure_ts_study_010_03_single_entry_arch.png)
 
 例：`front`（Web）→ `api`（API）→ `db`（DB）でつなぐよ！
 ポイントは **front が api を `http://api:3000` で呼ぶ**こと👀✨
@@ -90,6 +96,8 @@ DBや内部APIまでホストに出すと、ポートが増えて管理が破綻
 
 ## 4) つながってるか確認するコマンド🔍🧪（VS CodeターミナルでOK）
 
+![_04_verification_cmd](./picture/docker_local_exposure_ts_study_010_04_verification_cmd.png)
+
 **(1) 起動して状態を見る**👀
 
 ```bash
@@ -117,6 +125,8 @@ docker compose exec front sh -lc "wget -qO- http://api:3000/health || true"
 
 ## 5) “localhost病”に注意！💊😵‍💫（あるある最強）
 
+![_05_localhost_trap](./picture/docker_local_exposure_ts_study_010_05_localhost_trap.png)
+
 コンテナの中で `localhost` って書くと…
 
 * それは **“自分自身のコンテナ”** を指すんだよね😂
@@ -129,6 +139,8 @@ docker compose exec front sh -lc "wget -qO- http://api:3000/health || true"
 ---
 
 ## 6) 起動順のワナ：depends_on は“準備完了”までは待たない⚠️⏳
+
+![_06_startup_wait](./picture/docker_local_exposure_ts_study_010_06_startup_wait.png)
 
 ここも大事！
 
