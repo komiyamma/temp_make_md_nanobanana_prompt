@@ -16,6 +16,8 @@
 
 ## ② 図（1枚）🖼️：エラーの“逃げ道マップ” 🗺️
 
+![Error Escape Map Building](./picture/docker_observability_ts_study_011_01_error_escape_map.png)
+
 ざっくりこの3階建てで守ります🏰✨
 
 * **1F：ルート内のエラー**（Express が拾える）
@@ -90,6 +92,8 @@ export function createApp() {
 
 ### 手順2：終了手順（graceful shutdown）を1つにまとめる 🚪🧹
 
+![Graceful Shutdown Sequence](./picture/docker_observability_ts_study_011_03_graceful_shutdown.png)
+
 ポイントはこれ👇
 
 * **2回目以降の shutdown を無視**（多重実行防止）🧯
@@ -144,6 +148,8 @@ export function createShutdown({ server, logger }: ShutdownOptions) {
 ---
 
 ### 手順3：プロセス最終防衛線を仕込む 🧯🕸️
+
+![Process Hooks Shield](./picture/docker_observability_ts_study_011_05_process_hooks_shield.png)
 
 `process.on('uncaughtException')` と `process.on('unhandledRejection')` は「最後の砦」です🏰
 Node はデフォルトだと未捕捉例外で **stderrに出して exit(1)** しますが、ハンドラを付けると挙動が変わるので **“ログ→shutdown” を自分でやる** のが大事です。([Node.js][4])
@@ -250,6 +256,8 @@ server.listen(port, () => logger("info", `listening on :${port}`));
 
 ### 手順6：Docker停止で「最後のログ」を残せるか確認 🐳🛑🧾
 
+![Signal Flow (Docker to Node)](./picture/docker_observability_ts_study_011_06_signal_flow.png)
+
 Docker は停止時に、コンテナのメインプロセスへ **SIGTERM を送り**、猶予後に **SIGKILL** します。([Docker Documentation][5])
 Compose でも同様に、`docker compose stop` は **SIGTERM → デフォルト10秒待つ → SIGKILL** です。([Docker Documentation][6])
 
@@ -266,6 +274,9 @@ Compose でも同様に、`docker compose stop` は **SIGTERM → デフォル�
 ## ④ つまづきポイント（3つ）🪤😵‍💫
 
 1. **「try/catch したのに落ちるんだけど！？」**
+
+   ![Route vs Async Error](./picture/docker_observability_ts_study_011_02_route_vs_async_error.png)
+
    `setTimeout` やイベントのコールバックの中で `throw` すると、ルートの try/catch の外に飛びます💥
    → 対策：**その場で try/catch** するか、最終防衛線（`uncaughtException`）で拾う 🧯
 
@@ -274,6 +285,9 @@ Compose でも同様に、`docker compose stop` は **SIGTERM → デフォル�
    → 対策：必ず `shutdown()` で server close して、終わるところまで責任を持つ 🚪
 
 3. **`process.exit()` を即呼びするとログが欠ける**
+
+   ![Shutdown Timer Race](./picture/docker_observability_ts_study_011_04_shutdown_timer_race.png)
+
    `process.exit()` は “強制終了” なので、最後の出力が間に合わないことがあります😇
    → 対策：まず `process.exitCode = 1`、**close して自然終了**、締切だけ `setTimeout(() => process.exit(1))` ⏳
 

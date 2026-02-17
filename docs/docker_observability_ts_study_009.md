@@ -13,6 +13,8 @@
 
 ## ② 図（1枚）🖼️
 
+![String vs JSON Log Comparison](./picture/docker_observability_ts_study_009_01_string_vs_json.png)
+
 ```text
 (今まで) ただの文字列ログ
   "GET /slow 200 512ms"
@@ -100,6 +102,8 @@ export const logger = pino(
 
 ### 3) HTTPアクセスログを “1行JSON” にする 🚪🧾⏱️
 
+![JSON Log Structure Anatomy](./picture/docker_observability_ts_study_009_02_json_structure.png)
+
 Expressを想定して「全リクエストを最後に1行で出す」ミドルウェアを追加します。
 
 `src/index.ts`（または `src/app.ts`）で、`app` を作った直後あたりに👇
@@ -185,6 +189,8 @@ docker compose logs -f api
 
 ### 6) “JSONとして扱える” ことを体験する（超おもしろい）🪄🔎
 
+![Log Prefix Trap](./picture/docker_observability_ts_study_009_03_log_prefix_trap.png)
+
 `docker compose logs` は通常「サービス名のプレフィックス」を付けがちで、それがあると **JSONパースが壊れます**💥
 なので **`--no-log-prefix`** を付けます。 ([Docker Documentation][5])
 
@@ -195,6 +201,9 @@ docker compose logs -f api --no-log-prefix --since 5m
 ```
 
 その出力をPowerShellで “JSONとして” 触る👇✨
+
+![PowerShell Pipeline Flow](./picture/docker_observability_ts_study_009_04_powershell_pipeline.png)
+
 （※ログがJSON1行なら、1行ずつ `ConvertFrom-Json` できます）
 
 ```powershell
@@ -231,6 +240,9 @@ docker compose logs api --no-log-prefix --since 5m |
    対策：`--no-log-prefix` を付ける。 ([Docker Documentation][5])
 
 2. **ログが読みにくい！でもJSONは崩したくない！** 😫
+
+   ![Dev vs Prod Logging](./picture/docker_observability_ts_study_009_05_dev_vs_prod.png)
+
    対策：開発中だけ `LOG_PRETTY=1` にして pino-pretty を使う（本番はOFF）。
    pino-pretty自体が「開発向けフォーマッタ」と明言されています。 ([GitHub][1])
 
@@ -287,6 +299,8 @@ docker compose logs のJSONログをPowerShellで解析したい。
 ---
 
 ## 今日のまとめ 🌈📌
+
+![Search and Filter Action](./picture/docker_observability_ts_study_009_06_search_filter.png)
 
 * **構造化ログ（JSON）**にすると「読む」だけじゃなく「検索・抽出・集計」できるようになる 🧱🔎
 * `--no-log-prefix` は **JSONパースの生命線**（ログ行を純粋なJSONにする） ([Docker Documentation][5])

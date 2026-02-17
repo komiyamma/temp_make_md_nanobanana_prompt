@@ -16,6 +16,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Request ID Thread Analogy](./picture/docker_observability_ts_study_010_01_request_id_thread.png)
+
 ```text
 Client
   |  (X-Request-Id: abc...  あれば渡す / なければ空)
@@ -73,6 +75,8 @@ export const logger = pino({
 
 ### 手順4：HTTPロガー + reqId 生成（ここが主役！）🧵🪪
 
+![Request ID Generation Flow](./picture/docker_observability_ts_study_010_02_id_generation_flow.png)
+
 `src/httpLogger.ts`
 
 ```ts
@@ -117,6 +121,8 @@ declare module "express-serve-static-core" {
 ```
 
 ### 手順6：アプリに組み込む（middlewareとして app.use）🔌
+
+![Pino Middleware Magic](./picture/docker_observability_ts_study_010_05_pino_middleware.png)
 
 `src/app.ts`
 
@@ -220,6 +226,8 @@ curl.exe -i http://localhost:3000/slow
 
 **ポイント**：同じ `reqId` の行だけ追えば、その1回の流れが読める！🧵✨
 
+![Log Grouping by ID](./picture/docker_observability_ts_study_010_03_log_grouping.png)
+
 ---
 
 ## ④ つまづきポイント（3つ）🪤
@@ -244,6 +252,8 @@ curl.exe -i http://localhost:3000/boom
 ```
 
 **課題B（10分）**：クライアントから reqId を“持ち込み”してみる 🧳
+
+![Bring Your Own ID](./picture/docker_observability_ts_study_010_04_bring_your_own_id.png)
 
 ```bash
 curl.exe -i -H "X-Request-Id: my-test-123" http://localhost:3000/slow
@@ -281,6 +291,8 @@ pino のログを JSON 構造化して、必ず
 ---
 
 ## おまけ：さらに設計っぽくしたい人向け（任意）🎁🧠
+
+![Async Local Storage Concept](./picture/docker_observability_ts_study_010_06_async_local_storage.png)
 
 「深い関数まで `req` を渡したくない…😵‍💫」ってなったら、`AsyncLocalStorage` で **“今のreqId” をスレッドローカルみたいに扱う** という手もあります🧵🧠
 （手軽だけど、非同期の扱いでハマりどころもあるので、まずはこの章の “req.log を渡す” 方式が安全👍）([dash0.com][5])
