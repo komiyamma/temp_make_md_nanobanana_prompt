@@ -5,6 +5,8 @@
 
 ---
 
+![WSL2 Standard Route](./picture/docker_runtime_fix_ts_study_028_01_wsl2_route.png)
+
 #### 1) まず結論：WSL2が“標準ルート”です✅🐳
 
 Docker Desktop は、Windows上で Linux コンテナを動かすときに **WSL2 バックエンド**を使うのが基本になっています。([Docker Documentation][1])
@@ -18,6 +20,8 @@ Docker Desktop は、Windows上で Linux コンテナを動かすときに **WSL
 ここを満たしてるだけで「なんか不安定…😇」が激減します👍
 
 ---
+
+![File System Speed Comparison](./picture/docker_runtime_fix_ts_study_028_02_speed_comparison.png)
 
 #### 2) WSL2って何がうれしいの？🤔💡（超ざっくり）
 
@@ -34,6 +38,8 @@ DockerはLinuxコンテナなので、**Linuxに近い場所で開発するほ�
 つまり、**置き場所が9割**です😎📦
 
 ---
+
+![WSL Health Check](./picture/docker_runtime_fix_ts_study_028_03_health_check.png)
 
 #### 3) 3分でできる「WSL2 健康診断」🩺✨
 
@@ -63,6 +69,8 @@ PowerShell（通常でOK、必要なら管理者）で、順に叩くだけで�
 
 ---
 
+![WSL Integration Setting](./picture/docker_runtime_fix_ts_study_028_04_wsl_integration.png)
+
 #### 4) Docker Desktop 側の「WSL連携」チェック✅🔧
 
 ここが外れてると「WSLの中で docker コマンド打ったら動かない😇」が起きます。
@@ -76,6 +84,8 @@ Docker Desktop を開いて、設定の
 という考え方です。([Docker Documentation][1])
 
 ---
+
+![Project Location Strategy](./picture/docker_runtime_fix_ts_study_028_05_project_location.png)
 
 #### 5) いちばん大事：「プロジェクトはWSL側に置く」📁🐧（これで勝つ）
 
@@ -97,6 +107,8 @@ Docker公式の推奨はズバリ👇
 **編集はVS CodeをWSL側で開く**のが安定しやすいです🧑‍💻✨（ファイル監視も速度も）
 
 ---
+
+![Troubleshooting First Aid](./picture/docker_runtime_fix_ts_study_028_06_troubleshooting.png)
 
 #### 6) よくある症状と“即効薬”💊😆
 
@@ -138,6 +150,8 @@ WSLのターミナルで、まずはこれが通ると安心です👇
 ここまでOKなら、以降の章で作った `compose.yml` / `Dockerfile` が **“WindowsでもほぼLinuxと同じ感覚”**で動きやすくなります😆🔥
 
 ---
+
+![Daily Operation Checklist](./picture/docker_runtime_fix_ts_study_028_07_operation_checklist.png)
 
 #### 8) 今日からの運用ルール（超かんたん）📏✨
 
