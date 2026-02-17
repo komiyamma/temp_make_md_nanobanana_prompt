@@ -27,6 +27,8 @@
 
 ## 1) まず結論：「本番クラスタは自作しない」寄りが主流😇➡️🏢
 
+![Managed K8s Responsibility](./picture/docker_multi_orch_ts_study_030_02_managed_k8s_concept.png)
+
 本番で一番コワいのは、アプリが落ちることだけじゃなくて…
 **クラスタ側（制御プレーン）が壊れて復旧できない**とか、**アップグレードで詰む**とか、そういう「土台崩壊」なんだよね🫠💥
 
@@ -43,6 +45,8 @@ Microsoft のAKS / Amazon Web Services のEKS / Google のGKE みたいな “�
 
 ## 2) 本番ロードマップの全体像（ざっくり地図）🗺️
 
+![Three Pillars of Production](./picture/docker_multi_orch_ts_study_030_01_production_pillars.png)
+
 「やること多すぎ！」って見えるけど、実は **3本柱** に分解するとスッキリ😋🧩
 
 1. **環境を分ける**（最低でも staging / prod）🏗️🏭
@@ -52,6 +56,8 @@ Microsoft のAKS / Amazon Web Services のEKS / Google のGKE みたいな “�
 ---
 
 ## 3) 環境分け：最小は「staging / prod」＋「分け方のルール」🏗️🧠
+
+![Environment Separation Strategies](./picture/docker_multi_orch_ts_study_030_03_env_separation_strategies.png)
 
 まず現実的な最小形👇
 
@@ -75,6 +81,8 @@ Microsoft のAKS / Amazon Web Services のEKS / Google のGKE みたいな “�
 ---
 
 ## 4) 入口（外部公開）戦略：Ingressは“今後の選択”が重要⚠️🚪
+
+![Ingress vs Gateway API](./picture/docker_multi_orch_ts_study_030_04_ingress_vs_gateway.png)
 
 2026年はここが超大事👇
 
@@ -125,6 +133,8 @@ GKEもコントロールプレーン/ノードのアップグレード（自動/
 
 ## 6-1) GitOpsって何？（超ざっくり）😋
 
+![GitOps Workflow](./picture/docker_multi_orch_ts_study_030_05_gitops_flow.png)
+
 * **Gitに書かれてる状態が正解（Source of Truth）**📌
 * クラスタ側のツールが **Gitを見に行って（Pull）** 差分を同期する🔁
 * 手でkubectl applyしまくるより、事故りにくい🧯✨
@@ -148,6 +158,8 @@ GKEもコントロールプレーン/ノードのアップグレード（自動/
 （クラウドに行く前に、ローカルで体験しておくと一気に理解が進むよ🔥）
 
 ## 7-1) リポジトリ構成（最小）📁
+
+![GitOps Repo Structure](./picture/docker_multi_orch_ts_study_030_06_gitops_repo_structure.png)
 
 「base（共通）」＋「overlays（環境差分）」が鉄板🍱✨
 

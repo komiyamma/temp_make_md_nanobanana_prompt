@@ -4,12 +4,16 @@
 
 ## 1. 観測性の全体像をつかむ 🗺️👀
 
+![Three Pillars of Observability](./picture/docker_observability_ts_index_01_three_pillars_venn.png)
+
 * ゴール：ログ🧾／メトリクス📈／ヘルスチェック💚の役割を一言で説明できる
 * 触る：3つがそれぞれ「原因」「影響」「復旧判断」に効くイメージ
 * ミニ課題：例）「遅い」「落ちる」「繋がらない」を3つに分類してみる
 * AI活用🤖：症状から「まず見るべき観測データ」を箇条書きで出させる
 
 ## 2. “よくある障害”を3パターンに分ける 🧩😵‍💫
+
+![Cause Impact Recovery Flow](./picture/docker_observability_ts_index_02_cause_impact_recovery.png)
 
 * ゴール：①アプリ起因 ②依存起因 ③環境起因 をざっくり判定できる
 * 触る：原因候補を“短いリスト”にする癖
@@ -56,6 +60,8 @@
 * チェック：「遅いルート」がログで当てられる
 
 ## 8. ログレベル入門：DEBUG/INFO/WARN/ERROR 🎚️🟢🟡🔴
+
+![Log Levels Pyramid](./picture/docker_observability_ts_index_03_log_levels_pyramid.png)
 
 * ゴール：どれをどこで使うか説明できる
 * 触る：本番でDEBUGを垂れ流さない理由（量・コスト）💸
@@ -109,6 +115,8 @@
 ## メトリクス編 📈🧠
 
 ## 15. メトリクスの基本：数で見る世界 🧮📊
+
+![Metrics Types](./picture/docker_observability_ts_index_04_metrics_types.png)
 
 * ゴール：カウンタ/ゲージ/ヒストグラムを例で言える
 * 触る：ログは“点”、メトリクスは“面”（傾向）
@@ -176,6 +184,8 @@
 ## ヘルスチェック編 💚🩺
 
 ## 24. ヘルスの考え方：生存/準備/起動の違い 👶➡️🏃‍♂️
+
+![Health Probes Traffic Light](./picture/docker_observability_ts_index_05_health_probes_traffic_light.png)
 
 * ゴール：liveness/readiness/startupの役割を言える
 * 触る：生きてる＝OKじゃない（依存が死んでるとダメ）
