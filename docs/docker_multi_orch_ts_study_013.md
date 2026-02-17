@@ -16,6 +16,8 @@ Probe（プローブ）は、超ざっくり言うと **Kubernetesがアプリ�
 
 ## 1) まず“3つの体温計”の違いをつかむ 🌡️🧠
 
+![Three Probes Comparison](./picture/docker_multi_orch_ts_study_013_01_three_probes.png)
+
 Kubernetes公式の定義はこういう感じです👇（要点だけ噛み砕きます）
 
 * **liveness probe**：ダメなら **再起動**（「固まってる」「進んでない」を疑う）🔁 ([Kubernetes][2])
@@ -130,6 +132,8 @@ containers:
 
 ## 3-2) “数値の意味”をざっくり理解 🧠🔢
 
+![Probe Configuration](./picture/docker_multi_orch_ts_study_013_05_probe_config.png)
+
 * `periodSeconds`：何秒ごとに測る？⏱️（デフォルト10秒）([Kubernetes][3])
 * `timeoutSeconds`：何秒でタイムアウト？⌛（デフォルト1秒）([Kubernetes][3])
 * `failureThreshold`：何回連続で失敗したらアウト？💥（デフォルト3回）([Kubernetes][3])
@@ -155,6 +159,8 @@ kubectl get endpoints <service-name>
 
 ## 5) 実験①：readiness で「起動直後の事故」を防ぐ 🚦🛡️
 
+![Readiness Probe Action](./picture/docker_multi_orch_ts_study_013_03_readiness_action.png)
+
 ## やること 😈➡️😇
 
 * `READY_DELAY_MS=30000`（30秒）で起動を遅くする
@@ -178,6 +184,8 @@ env:
 
 ## 6) 実験②：liveness で「固まった/死んだ」を再起動させる 🔁🧯
 
+![Liveness Probe Action](./picture/docker_multi_orch_ts_study_013_02_liveness_action.png)
+
 ## やること 😈
 
 * `POST /__kill_livez` を叩いて `/livez` を 500 にする
@@ -198,6 +206,8 @@ curl.exe -X POST http://localhost:<forwarded-port>/__kill_livez
 
 ## 7) 実験③：startupProbe で「起動が遅いせいで殺される」を防ぐ 🐢🛡️
 
+![Startup Probe Action](./picture/docker_multi_orch_ts_study_013_04_startup_action.png)
+
 これ、地味に一番ありがち事故です😇💦
 
 * 起動に時間がかかる（DBマイグレーション、キャッシュ温め、初回コンパイル…）
@@ -209,6 +219,8 @@ startupProbe を入れると、**成功するまで liveness/readiness を無効
 ---
 
 ## 8) ⚠️ 2026の注意点：exec probe と timeoutSeconds（特にGKE 1.35+）⌛💥
+
+![Exec Probe Timeout Trap](./picture/docker_multi_orch_ts_study_013_06_exec_probe_trap.png)
 
 Probe には `httpGet` / `tcpSocket` / `exec` があるんですが、初心者には基本こうおすすめします👇
 
@@ -228,6 +240,8 @@ Probe には `httpGet` / `tcpSocket` / `exec` があるんですが、初心者�
 ## 9) ありがち設計ミス集（先に潰す）🧯✨
 
 ## ❌ liveness に「DB疎通」とか重い確認を入れる
+
+![Liveness Deadlock Loop](./picture/docker_multi_orch_ts_study_013_07_deadlock_loop.png)
 
 → DB一瞬遅いだけで **再起動ループ**になりがち😱
 ✅ DB等は **readiness** に寄せるのが無難🚦

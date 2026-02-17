@@ -22,6 +22,8 @@
 
 ## 2) まず「Kubernetesの席決め」って何？🪑🗺️
 
+![Scheduling Flow](./picture/docker_multi_orch_ts_study_016_01_scheduling_flow.png)
+
 KubernetesはPodを配置するとき、ざっくりこう動きます👇
 
 1. **候補ノードを絞る（フィルタ）** 🔍
@@ -56,6 +58,8 @@ kubectl get nodes -o wide
 
 ## 3-2. ノードにラベルを貼る 🏷️✨
 
+![Node Labels](./picture/docker_multi_orch_ts_study_016_02_node_labels.png)
+
 例：片方のworkerを「api専用席」にしてみます🍔
 
 ```bash
@@ -69,6 +73,8 @@ kubectl get nodes --show-labels
 ---
 
 ## 3-3. nodeSelectorで「この付箋の席に座って！」🧷🪑
+
+![nodeSelector Magnet](./picture/docker_multi_orch_ts_study_016_03_nodeselector_magnet.png)
 
 DeploymentのPodテンプレートに nodeSelector を足すだけでOKです。
 
@@ -114,6 +120,8 @@ kubectl get pods -o wide
 ---
 
 ## 4) Node Affinity：nodeSelectorの上位互換っぽいやつ🎛️✨
+
+![Node Affinity Hard vs Soft](./picture/docker_multi_orch_ts_study_016_04_affinity_hard_soft.png)
 
 nodeSelectorは「完全一致」だけですが、Node Affinityは
 
@@ -168,6 +176,8 @@ spec:
 ---
 
 ## 5) Taints & Tolerations：「関係者以外立入禁止」を作る🚧🛡️
+
+![Taints and Tolerations](./picture/docker_multi_orch_ts_study_016_05_taints_tolerations.png)
 
 ## 5-1. ノードに taint を付ける（追い返し機能）🚫
 
@@ -228,6 +238,8 @@ kubectl taint nodes <worker-node-name> dedicated=api:NoSchedule-
 
 ## 6) Pending地獄の「ありがち原因」Top5 🫠📛
 
+![Pending Hell](./picture/docker_multi_orch_ts_study_016_06_pending_hell.png)
+
 1. **条件を絞りすぎ**（nodeSelector/required affinity が強すぎ）🧱
 2. **taint付けたのに toleration 付け忘れ** 🪪忘れ
 3. **ラベルのキー/値のタイプミス**（api と API とか）🔤
@@ -245,6 +257,8 @@ kubectl get nodes -o wide
 ---
 
 ## 7) “設計の超入門”としての使い分けメモ 🧠📝
+
+![Scheduling Methods Summary](./picture/docker_multi_orch_ts_study_016_07_scheduling_summary.png)
 
 * まずは **何も指定しない**：Kubernetesの自動配置を信じてみる🤖✨
 * 次に **nodeSelector**：単純な「専用ノード」程度ならこれで十分🧷

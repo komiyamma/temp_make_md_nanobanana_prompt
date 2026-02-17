@@ -17,6 +17,8 @@ Kubernetes の **Deployment** は「止めずに更新する（Rolling Update）
 
 ## まず超ざっくり：Rolling Updateって何？🤔🔄
 
+![Rolling Update Concept](./picture/docker_multi_orch_ts_study_014_01_rolling_update_concept.png)
+
 Deploymentを更新すると、裏側ではこうなります👇
 
 * 新しい設定（主に「Podテンプレ」）で **新しいReplicaSet** が作られる📦
@@ -30,6 +32,8 @@ Kubernetes公式でも、DeploymentはReplicaSet / Podに対して **宣言型�
 ## 重要パラメータ3兄弟👪✨（ここだけで事故が減る！）
 
 ## 1) maxSurge / maxUnavailable（更新の“混み具合”）🚦
+
+![MaxSurge vs MaxUnavailable](./picture/docker_multi_orch_ts_study_014_02_max_surge_unavailable.png)
 
 RollingUpdate戦略はこの2つで「安全さ」と「速さ」を調整します🎛️
 
@@ -46,6 +50,8 @@ RollingUpdate戦略はこの2つで「安全さ」と「速さ」を調整しま
 ---
 
 ## 2) revisionHistoryLimit（“戻れる回数”）🕰️🛟
+
+![Revision History](./picture/docker_multi_orch_ts_study_014_05_revision_history.png)
 
 過去のReplicaSetをどれだけ保持するかです。
 
@@ -64,6 +70,8 @@ RollingUpdate戦略はこの2つで「安全さ」と「速さ」を調整しま
 ---
 
 ## ロールアウト観測の“神コマンド”セット👀⌨️✨
+
+![Rollout Status Command](./picture/docker_multi_orch_ts_study_014_03_rollout_status_cmd.png)
 
 困ったらこの順で見ると強いです👇
 
@@ -163,6 +171,8 @@ kubectl get rs
 
 ## STEP 2：わざと壊す😈💥（ImagePullBackOffを起こす）
 
+![Broken Update](./picture/docker_multi_orch_ts_study_014_07_broken_update.png)
+
 存在しないタグにして、確実に失敗させます👇
 
 ```bash
@@ -183,6 +193,8 @@ kubectl rollout history deployment/web-demo
 ---
 
 ## STEP 3：ロールバック🛟✨（“前の動いてた版”に戻す）
+
+![Rollback Action](./picture/docker_multi_orch_ts_study_014_04_rollback_action.png)
 
 ```bash
 kubectl rollout undo deployment/web-demo
@@ -225,6 +237,8 @@ Rolling Update中、**古いPodが終了待ち（graceful shutdown）**だった
 ## もう一段安全にする小技3つ🥷✨
 
 ## 1) 一旦止める（pause）🧊
+
+![Pause and Resume](./picture/docker_multi_orch_ts_study_014_06_pause_resume.png)
 
 「ちょっと待って！設定を見直したい！」の時に便利👇
 
