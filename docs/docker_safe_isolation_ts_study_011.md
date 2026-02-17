@@ -30,6 +30,8 @@ Docker公式も「コンテナはデフォルトroot（UID 0）で動くから�
 
 ## 図でイメージ：root回避は“被害半径”を縮める🗺️✂️
 
+![Blast Radius Comparison](./picture/docker_safe_isolation_ts_study_011_01_blast_radius.png)
+
 ```
 [攻撃者がアプリを乗っ取った…] 😈
         |
@@ -43,6 +45,8 @@ rootで実行： できること多い😱  → 事故がデカくなりがち
 ---
 
 ## 実践1：まず「今rootで動いてる」を確認しよう👀🔍
+
+![ID Command Check](./picture/docker_safe_isolation_ts_study_011_02_id_check.png)
 
 コンテナに入って、これを打ちます👇
 
@@ -61,6 +65,8 @@ Docker公式のNodeガイド（最近更新）でも、**専用ユーザーを�
 ここでは「超よく使う形」にギュッとまとめます✂️😄
 
 ## 例：最小構成（まずは理解用）📦
+
+![Non-Root Dockerfile Steps](./picture/docker_safe_isolation_ts_study_011_03_dockerfile_steps.png)
 
 ```dockerfile
 FROM node:24-alpine
@@ -97,6 +103,8 @@ CMD ["npm", "run", "dev"]
 ---
 
 ## 実践3：本番寄り（マルチステージ）で “最後だけ非root” を徹底🏗️🔒
+
+![Multi-Stage Build User Flow](./picture/docker_safe_isolation_ts_study_011_04_multistage_user.png)
 
 本番は「ビルドは重い・実行は軽い」に分けたいので、こうなりがちです😊
 （Docker公式Nodeガイドでも、ステージごとにユーザー作成→ `USER` 切り替え例があります）([Docker Documentation][3])
@@ -162,6 +170,8 @@ services:
 
 ## 1) `EACCES: permission denied` が出る😵
 
+![Permission Denied Error](./picture/docker_safe_isolation_ts_study_011_05_permission_denied.png)
+
 だいたいこれ👇
 
 * `/app` や `node_modules` や `.cache` に書こうとしてるのに、所有者がrootのまま
@@ -190,6 +200,8 @@ services:
 
 ## 3) 80番ポートで待ち受けしたい（でも非rootだと無理）🤔
 
+![Port 80 vs 3000](./picture/docker_safe_isolation_ts_study_011_06_port_mapping.png)
+
 Linuxでは **1024未満のポートは基本rootが必要**になりがちです。
 
 でも安心🙂
@@ -213,6 +225,8 @@ Linuxでは **1024未満のポートは基本rootが必要**になりがちで�
 ---
 
 ## AI拡張（GitHub Copilot / OpenAI Codex）を使う時の「レビュー観点」🤖🧠✅
+
+![AI Dockerfile Review](./picture/docker_safe_isolation_ts_study_011_07_ai_review.png)
 
 AIにDockerfileを書かせると、**`USER` が抜ける**ことが結構あります😂
 なので、生成物を見たらここだけは必ずチェック！👀

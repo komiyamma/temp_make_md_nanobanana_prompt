@@ -7,6 +7,8 @@
 
 ## 1) まず超ざっくり理解しよう🧠💡
 
+![Root FS Layers](./picture/docker_safe_isolation_ts_study_013_01_layers.png)
+
 ## ✅ root filesystem ってどこ？
 
 コンテナには大きく2種類の“置き場所”があります。
@@ -21,6 +23,8 @@
 
 ## 2) 何が嬉しいの？（効き方をイメージ）🛡️😈➡️😇
 
+![Read-Only Protection](./picture/docker_safe_isolation_ts_study_013_02_protection.png)
+
 ## ✅ よくある事故の被害を減らす
 
 * 攻撃者やマルウェアが **勝手にバイナリや設定を書き換えにくい** 🧨➡️🧊
@@ -33,6 +37,8 @@
 ---
 
 ## 3) どうやって有効化するの？（Docker / Compose）⚙️✨
+
+![Compose Read-Only Config](./picture/docker_safe_isolation_ts_study_013_03_compose_syntax.png)
 
 ## A. docker run の場合
 
@@ -54,6 +60,8 @@ Compose の `tmpfs` は `<path>` や `<path>:<options>` 形式で書けます。
 ---
 
 ## 4) “ありがちに詰まる”ポイント先読み👀💥
+
+![Write Pitfalls](./picture/docker_safe_isolation_ts_study_013_04_pitfall_map.png)
 
 read-only を有効化すると、こういうエラーに出会います👇
 
@@ -86,6 +94,8 @@ read-only を有効化すると、こういうエラーに出会います👇
 ---
 
 ## ステップ1：最小アプリ（/data に書く & /tmp を使う）🗂️🧊
+
+![Hands-on Architecture](./picture/docker_safe_isolation_ts_study_013_05_handson_arch.png)
 
 ```ts
 // src/index.ts
@@ -195,6 +205,8 @@ volumes:
 
 ## 課題A：/app に書こうとして落ちるのを体験💥
 
+![EROFS Error](./picture/docker_safe_isolation_ts_study_013_06_erofs_error.png)
+
 さっきのコードにこれを追加👇
 
 ```ts
@@ -214,6 +226,8 @@ Composeから `tmpfs:` を消すと、環境によっては `/tmp` に書けな�
 ---
 
 ## 7) 実務での“設計テンプレ”（最短で強くなるやつ）📦✨
+
+![3-Part Design Template](./picture/docker_safe_isolation_ts_study_013_07_design_template.png)
 
 ## 🥇鉄板の分け方
 
