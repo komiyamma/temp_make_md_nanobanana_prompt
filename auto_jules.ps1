@@ -36,7 +36,7 @@ function Run-JulesForRange {
     # 1. セッションの開始
     Write-Host "🚀 Jules セッションを開始します..." -ForegroundColor Cyan
     $body = @{
-        prompt              = "gemini_command.md $startLine-$endLine"
+        prompt              = "gemini_command.md $startLine-$endLine 質問は一切不要。最後まで実行せよ。"
         sourceContext       = @{
             source            = "sources/github/komiyamma/temp_make_md_nanobanana_prompt"
             githubRepoContext = @{ startingBranch = "main" }
