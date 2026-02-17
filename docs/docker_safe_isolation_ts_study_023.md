@@ -13,6 +13,8 @@
 
 ## 1) まず“何がダメか”を体感しよう🙅‍♂️💥
 
+![Layer Persistence vs Secret Mount](./picture/docker_safe_isolation_ts_study_023_01_layer_vs_mount.png)
+
 **ダメな考え方**：Dockerfile に秘密を置く／コマンドに埋める
 
 * ファイルを COPY すると、そのファイルがレイヤに入る📦
@@ -25,6 +27,8 @@ BuildKit では、秘密をビルドコンテナに **その RUN の間だけ** 
 ---
 
 ## 2) BuildKit secrets の基本ルール（超重要）🔑📏
+
+![BuildKit Secret Rules](./picture/docker_safe_isolation_ts_study_023_02_three_rules.png)
 
 **ルールA：秘密は RUN の中でだけ使う**
 
@@ -59,6 +63,8 @@ BuildKit では、秘密をビルドコンテナに **その RUN の間だけ** 
 ```
 
 ### 手順 2：Dockerfile（秘密を一時マウントして npm ci）🧪
+
+![Npmrc Secret Mount](./picture/docker_safe_isolation_ts_study_023_03_npmrc_mount.png)
 
 ポイントは「npm ci を実行する RUN にだけ secret を付ける」です💡
 
@@ -103,6 +109,8 @@ CMD ["node", "dist/index.js"]
 
 ### 手順 3：PowerShell でビルド（秘密を渡す）🪟⚡
 
+![CLI Secret Command](./picture/docker_safe_isolation_ts_study_023_04_cli_secret_flow.png)
+
 ```powershell
 docker build --secret id=npmrc,src=.secrets\.npmrc -t myapp:secure .
 ```
@@ -122,6 +130,8 @@ docker run --rm myapp:secure sh -lc "find / -maxdepth 4 -name .npmrc 2>/dev/null
 ---
 
 ## 4) ハンズオン②：環境変数から secret を渡す（ファイルを作りたくない時）🌱🤫
+
+![Environment Variable Secret](./picture/docker_safe_isolation_ts_study_023_05_env_secret.png)
 
 BuildKit は secret の“元”を環境変数にもできます。([Docker Documentation][1])
 例：API_TOKEN を secret として渡す（ビルド中は /run/secrets/API_TOKEN に見える）🧪
@@ -145,6 +155,8 @@ RUN --mount=type=secret,id=API_TOKEN \
 ---
 
 ## 5) Compose から “ビルド用 secret” を渡す（チーム運用しやすい）🐳🧩
+
+![Compose Build Secrets](./picture/docker_safe_isolation_ts_study_023_06_compose_build.png)
 
 Compose には **build.secrets** という「このサービスのビルドにだけ秘密を許可する」仕組みがあります。([Docker Documentation][3])
 短い書き方ならこんな感じ👇
@@ -179,6 +191,8 @@ Docker の GitHub Actions 向けドキュメントでは、workflow から `secr
 ---
 
 ## 7) よくある落とし穴（ここ踏む人多い）🕳️😵‍💫
+
+![Build Secret Pitfalls](./picture/docker_safe_isolation_ts_study_023_07_pitfalls.png)
 
 * **秘密を COPY しちゃう** → レイヤに入って終わり📦💀
 * **RUN の中で秘密をファイルに書き出して残す** → “残る”ので意味が薄い🧨

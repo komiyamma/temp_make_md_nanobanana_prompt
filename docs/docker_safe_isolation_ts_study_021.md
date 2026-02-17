@@ -8,6 +8,8 @@ secretsは **コンテナ内で `/run/secrets/<secret_name>` の“読み取り�
 
 ## 1) まず“何が嬉しいの？”を一言で💡🫶
 
+![Environment Variable vs Secret File](./picture/docker_safe_isolation_ts_study_021_01_env_vs_file.png)
+
 * 環境変数で秘密を渡すと、**意図せず露出しやすい**（デバッグログに出たり、追跡が難しかったり）😇💥
 * secretsなら **「そのサービスにだけ見せる」** をComposeで明示できます✅
   （サービス単位で許可しない限りアクセスできない）([Docker Documentation][1])
@@ -15,6 +17,8 @@ secretsは **コンテナ内で `/run/secrets/<secret_name>` の“読み取り�
 ---
 
 ## 2) Compose secretsの“基本ルール”3つ📚🔒
+
+![Three Rules of Secrets](./picture/docker_safe_isolation_ts_study_021_02_three_rules.png)
 
 1. **top-level `secrets:` で“秘密の中身の作り方”を定義**
 
@@ -28,6 +32,8 @@ secretsは **コンテナ内で `/run/secrets/<secret_name>` の“読み取り�
 ## 3) ハンズオン：Node/TypeScriptが `/run/secrets` を読む🧑‍💻✨
 
 ### 3-1) こんな構成で作るよ📁
+
+![Secrets Folder Structure](./picture/docker_safe_isolation_ts_study_021_03_folder_structure.png)
 
 * `compose.yaml`
 * `app/`（Node/TSアプリ）
@@ -58,6 +64,8 @@ secrets/
 
 ### 3-3) compose.yaml（最小形）🧩🔐
 
+![Secret Flow Mechanism](./picture/docker_safe_isolation_ts_study_021_04_secret_flow.png)
+
 `myapp` だけが `db_password` を読める設定にします✅
 
 ```yaml
@@ -84,6 +92,8 @@ secrets:
 ---
 
 ### 3-4) TypeScript側：secretファイルを読む📖✨
+
+![TypeScript Reading Secret](./picture/docker_safe_isolation_ts_study_021_05_ts_read.png)
 
 例：`app/src/secret.ts`
 
@@ -147,6 +157,8 @@ docker compose exec myapp sh -lc "ls -l /run/secrets"
 
 ## 4) ちょい応用：long syntaxでファイル名を変える🪄📄
 
+![Long Syntax Renaming](./picture/docker_safe_isolation_ts_study_021_06_long_syntax.png)
+
 「コンテナ内では `server.cert` って名前がいい」みたいな時に `target` を使います✅ ([Docker Documentation][3])
 
 ```yaml
@@ -176,6 +188,8 @@ secrets:
 ---
 
 ## 6) AI拡張（Copilot/Codex）時代の“秘密の守り方”🤖🧱🔐
+
+![AI Content Exclusion](./picture/docker_safe_isolation_ts_study_021_07_ai_exclusion.png)
 
 AIが悪いというより、**うっかり流れ**が一番怖いです😇💥
 

@@ -7,6 +7,8 @@
 
 ## 25.1 まず用語をそろえる（ここがブレると事故る）🧠🔤
 
+![Rotation and Revocation](./picture/docker_safe_isolation_ts_study_025_01_rotate_revoke.png)
+
 * **ローテーション（rotation）**：秘密を“新しい値に入れ替える”こと🔁
   例）DBパスワードを新しくして、アプリ側もそれに切り替える
 * **失効（revoke / invalidate）**：古い秘密を“使えない状態にする”こと🛑
@@ -32,6 +34,8 @@
 ---
 
 ## 25.3 いちばん強い基本技：「バージョン付き secret」＋「中のパス固定」📌🔐
+
+![Versioned Secret Mapping](./picture/docker_safe_isolation_ts_study_025_02_versioned_secret.png)
 
 ## なにが嬉しい？😊
 
@@ -70,6 +74,8 @@ secrets:
 
 ## 25.4 “止めないローテ”の王道：二段階（A/B）切替 🟦🟩🔁
 
+![A/B Rotation Flow](./picture/docker_safe_isolation_ts_study_025_03_ab_switch.png)
+
 ## 手順（テンプレ）🧾
 
 1. **新しい秘密を発行**（New）🆕
@@ -83,6 +89,8 @@ secrets:
 ---
 
 ## 25.5 Compose でのローテ実務（Windowsでもこの流れでOK）🪟🐳
+
+![Compose Source Target](./picture/docker_safe_isolation_ts_study_025_04_compose_mapping.png)
 
 ## ① 新しい secret ファイルを作る🆕
 
@@ -104,6 +112,8 @@ docker compose up -d --force-recreate
 ---
 
 ## 25.6 DB系は「_FILE 文化」に乗る（自作より安全）🧠📦
+
+![DB _FILE Convention](./picture/docker_safe_isolation_ts_study_025_05_db_file_env.png)
 
 公式イメージ（MySQL/Postgres など）には、環境変数の代わりに `*_FILE` で **“ファイルから読む”**流儀があります💡
 Compose secrets の例でも `_FILE` が紹介されています ([Docker Documentation][1])
@@ -149,6 +159,8 @@ GitHub の Actions は **OIDC を使って、長期シークレットを減ら�
 
 ## 25.9 事故対応Runbook（これをコピペして“自分用”に埋めて完成）🧾🚑
 
+![Leak Response Runbook](./picture/docker_safe_isolation_ts_study_025_06_incident_runbook.png)
+
 ここが本章のゴールです🎯✨
 「漏れたかも」で手が震えても、この順でやればOK😌🫶
 
@@ -193,6 +205,8 @@ GitHub の Actions は **OIDC を使って、長期シークレットを減ら�
 狙い：**「差し替えが怖くない」状態を体に入れる**💪✨
 
 ## 演習1：secret をファイルで読む（/run/secrets）📄🔐
+
+![TS Read and Mask](./picture/docker_safe_isolation_ts_study_025_07_ts_read_mask.png)
 
 * Compose secret は `/run/secrets/<name>` に載る ([Docker Documentation][1])
 * TS側は「ファイルを読んで使う」だけにする
