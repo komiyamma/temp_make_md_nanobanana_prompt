@@ -13,6 +13,8 @@
 * ポートが競合 → **どれかが起動しない**
 * “入口”の設定が散らばる → **直す場所が分からない**
 
+![Monolith vs Separated Architecture](./picture/docker_local_exposure_ts_study_022_01_chaos_vs_hub.png)
+
 そこで…✅
 **入口だけを1つのCompose（=別スタック）にして固定化**すると、
 
@@ -25,6 +27,8 @@
 ## 2) 完成イメージ図🗺️🚦
 
 別スタック化すると、こうなるよ👇
+
+![External Network Architecture](./picture/docker_local_exposure_ts_study_022_02_architecture_diagram.png)
 
 ```text
 (ブラウザ)
@@ -55,6 +59,8 @@ Composeには **external: true** って仕組みがあって、
 「そのネットワークは“このComposeの外”で管理されてるよ（だから勝手に作らないよ）」って指定できるよ。([Docker Documentation][1])
 （ネットワークが存在しないとエラーになるのも大事ポイント！）([Docker Documentation][1])
 
+![External Network Logic](./picture/docker_local_exposure_ts_study_022_03_external_network.png)
+
 ---
 
 ## 4) ハンズオン：proxyスタックを切り出して、appスタックを接続する🚀🐳
@@ -74,6 +80,8 @@ docker network ls
 ```
 
 ✅ これで `rp` という共有ネットワークが“土台”として存在する状態！
+
+![Creating Shared Network](./picture/docker_local_exposure_ts_study_022_04_create_network.png)
 
 ---
 
@@ -116,6 +124,8 @@ networks:
 * `providers.docker.network=rp` → 「基本はrpネットワークで繋ぎに行く」指定だよ。([doc.traefik.io][2])
 * `docker.sock` をマウント → TraefikがDockerのコンテナ情報（ラベル）を読めるようにするやつ。([doc.traefik.io][2])
 * `external: true` + `name: rp` → さっき作った共有ネットワークに参加。([Docker Documentation][1])
+
+![Proxy Stack Connection](./picture/docker_local_exposure_ts_study_022_05_proxy_connection.png)
 
 起動！
 
@@ -179,6 +189,8 @@ networks:
   * rp：入口（proxy）から到達させるため🚪
 * `traefik.docker.network=rp` を書くと「どのネットワークのIPに向かう？」が安定するよ。([doc.traefik.io][2])
 
+![Dual Network Interfaces](./picture/docker_local_exposure_ts_study_022_06_dual_network.png)
+
 起動！
 
 ```powershell
@@ -199,6 +211,8 @@ docker compose ps
 👉 共有ネットワークを作り忘れ！
 → Step A を実行（`docker network create rp`）
 external network は「存在してないとダメ」って仕様だよ。([Docker Documentation][1])
+
+![Network Not Found Error](./picture/docker_local_exposure_ts_study_022_07_network_missing_error.png)
 
 ---
 

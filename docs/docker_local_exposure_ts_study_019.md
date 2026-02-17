@@ -18,6 +18,8 @@
 
 「ブラウザが見てるのは Host（ドメイン名）で、リバプロがそれで振り分ける」って絵です🎨
 
+![Subdomain Routing Diagram](./picture/docker_local_exposure_ts_study_019_01_subdomain_routing.png)
+
 ```text
           ブラウザ🌐
      ┌────────────────┐
@@ -57,6 +59,8 @@
 * `api.localhost`：API
 * `admin.localhost`：管理画面
 
+![Naming Convention](./picture/docker_local_exposure_ts_study_019_02_naming_convention.png)
+
 コツ👇
 
 * “役割名” をそのまま使う（`app1`より強い）💡
@@ -71,6 +75,9 @@
 
 基本ルール：**外に公開するのはリバプロだけ**
 （front/api/admin は “内部” に隠す）🫥✨
+
+![Single Entry Point](./picture/docker_local_exposure_ts_study_019_03_proxy_entry.png)
+
 これができると、ポート競合が激減するよ🎉
 
 ---
@@ -79,6 +86,8 @@
 
 `.localhost` は “特別扱いされる名前” 側のカテゴリで、IANAの「Special-Use Domain Names」では **サブドメインも含めて** special-use の対象だよ、って明記されてるよ📌([iana.org][3])
 背景として `localhost` は special-use ドメイン名として RFC 6761 に紐づいてるよ📚([RFCエディタ][4])
+
+![Localhost Special Status](./picture/docker_local_exposure_ts_study_019_04_localhost_badge.png)
 
 なので実務では、`front.localhost` みたいな形が「ローカル用途の定番」になりやすいです👍
 
@@ -133,6 +142,8 @@ services:
 
 Caddyの `reverse_proxy` は公式で案内されてる基本ディレクティブだよ📘([Caddy Web Server][5])
 
+![Caddy Subdomain Config](./picture/docker_local_exposure_ts_study_019_05_caddy_config.png)
+
 ```caddyfile
 front.localhost {
   reverse_proxy front:5173
@@ -158,6 +169,9 @@ admin.localhost {
 ## 6-B) Traefikでサブドメイン振り分け🚦🤖
 
 Traefikは「ラベルでルーティングを作れる」のが売りで、Docker連携も公式ドキュメントでこう書かれてるよ📌([doc.traefik.io][6])
+
+![Traefik Label Routing](./picture/docker_local_exposure_ts_study_019_06_traefik_labels.png)
+
 最近だと Docker公式ガイドでも、URL（host/path）でルーティングする流れが分かりやすくまとまってるよ🧭([Docker Documentation][7])
 
 ## B-1. ざっくり構成（例）🧩
@@ -204,6 +218,9 @@ services:
 ### 7-1. ブラウザで開くと404😵‍💫
 
 * Host名が一致してない（例：`front.localhost` を `localhost` で開いてる）
+
+![Host Mismatch Error](./picture/docker_local_exposure_ts_study_019_07_host_mismatch.png)
+
 * ルールは “Hostが一致” しないと発火しないよ⚠️
 
 対策✅

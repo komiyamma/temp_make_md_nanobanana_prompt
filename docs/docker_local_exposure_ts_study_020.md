@@ -23,6 +23,8 @@ Traefikは基本、これだけ覚えれば回り始めるよ👇
 * **Service**：実際の転送先（＝コンテナの内部ポート）📦
 * **Middleware**：途中でちょい加工（後で使う：/apiを剥がす等）🧴
 
+![Traefik Core Concepts](./picture/docker_local_exposure_ts_study_020_01_traefik_core_concepts.png)
+
 Traefikはコンテナを見つけると、**containerごとにrouter/serviceを自動で作ったり**できる（labelsで上書きする）ってイメージね🙂([doc.traefik.io][2])
 
 ---
@@ -30,6 +32,8 @@ Traefikはコンテナを見つけると、**containerごとにrouter/serviceを
 ## 3) 最小構成を作る📦🐳（Traefik + 2アプリ）
 
 ### フォルダ構成🗂️
+
+![Project Directory Structure](./picture/docker_local_exposure_ts_study_020_02_folder_structure.png)
 
 こんな感じで作るよ〜👇
 
@@ -108,6 +112,9 @@ networks:
 
 * Traefikの「Docker provider有効化」「80と8080」「`--api.insecure=true`」の超基本は公式のQuick Startの流れそのまま👌（8080はダッシュボード用。後章で安全に扱うよ）([doc.traefik.io][3])
 * `providers.docker.exposedByDefault` は「デフォで公開するか」の設定。**trueがデフォ**だから、学習段階からfalseにしとくと事故りにくい✨([doc.traefik.io][1])
+
+  ![Exposed By Default Logic](./picture/docker_local_exposure_ts_study_020_03_exposed_by_default.png)
+
 * この章の時点（2026-02-12）でTraefikは **v3.6.8** が出てるよ🆕([GitHub][4])
 * `whoami` のタグは `v1.11.x` がまとまって使われてるやつ（Docker Hubにtag一覧ある）([hub.docker.com][5])
 
@@ -129,6 +136,8 @@ docker compose ps
 * `http://app.localhost` ✅
 * `http://localhost:8080/dashboard/` ✅（Traefikダッシュボード）([doc.traefik.io][3])
 
+![Access Verification](./picture/docker_local_exposure_ts_study_020_04_access_verification.png)
+
 💡補足：`*.localhost` は環境によっては追加設定なしでローカル解決してくれる（特にChromium系でそういう挙動が案内されてる）よ〜🧠✨
 もし開けなかったら、前章のhosts設定（`whoami.localhost` / `app.localhost` を 127.0.0.1 に向ける）を入れるとOK🙆‍♂️([Docker Documentation][6])
 
@@ -138,6 +147,8 @@ docker compose ps
 
 ここからが本番😺
 **Traefik側の設定はいじらず**、サービスを追加してlabels書くだけで入口が増えるのが気持ちいいやつ✨
+
+![Plug and Play Service Addition](./picture/docker_local_exposure_ts_study_020_05_plug_and_play.png)
 
 ### 例：ポートが80じゃないサービスを追加（= 502対策も覚える）🧯
 
@@ -175,6 +186,8 @@ docker compose up -d
 ---
 
 ## 6) labelsの“読み方”チートシート🏷️📌
+
+![Traefik Label Anatomy](./picture/docker_local_exposure_ts_study_020_06_label_anatomy.png)
 
 labelsは長いけど、分解すると一瞬で読めるよ😇
 
@@ -223,6 +236,9 @@ docker compose logs traefik --tail 100
 これが王道👇
 
 * Traefikが **違うポートへ転送**してる
+
+  ![502 Error due to Wrong Port](./picture/docker_local_exposure_ts_study_020_07_502_error_port.png)
+
   → `traefik.http.services.<name>.loadbalancer.server.port=XXXX` を正しく書く！([doc.traefik.io][2])
 
 ### C) 80番がすでに埋まってる🚧
