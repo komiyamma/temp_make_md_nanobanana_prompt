@@ -7,6 +7,8 @@ Requests/Limits がないと、**席取りゲーム（リソース奪い合い�
 
 ## まず超ざっくり理解しよう🧠✨
 
+![Requests vs Limits](./picture/docker_multi_orch_ts_study_015_01_requests_vs_limits.png)
+
 * **requests（要求）**＝「最低これだけ使わせてね」🪑（席の予約）
 * **limits（上限）**＝「これ以上は使いすぎ禁止ね」🚧（天井）
 
@@ -19,6 +21,8 @@ Kubernetesはこの情報をこう使います👇
 ---
 
 ## CPU とメモリは“止まり方”が違う⚠️（ここ超重要）
+
+![CPU vs Memory Throttling](./picture/docker_multi_orch_ts_study_015_02_cpu_vs_memory_throttling.png)
 
 ## CPU limit：遅くなる（スロットリング）🐢
 
@@ -46,6 +50,8 @@ CPU の limit は **上限を超えないように絞られる**ので、アプ�
 
 ## 単位チートシート📌（これだけ覚えればOK）
 
+![Resource Units](./picture/docker_multi_orch_ts_study_015_06_resource_units.png)
+
 * CPU
 
   * `100m` = 0.1 core（ミリコア）⚙️
@@ -61,6 +67,8 @@ CPU の limit は **上限を超えないように絞られる**ので、アプ�
 ---
 
 ## QoS（優先度クラス）もセットで理解しよう🎚️
+
+![QoS Classes](./picture/docker_multi_orch_ts_study_015_04_qos_classes.png)
 
 requests/limits の書き方で、Podは **QoSクラス**に分類されます：
 
@@ -107,6 +115,8 @@ kubectl top pods
 ---
 
 ## 1) まず “Burstable の基本形” を作る🧩
+
+![Scheduler vs Kubelet Role](./picture/docker_multi_orch_ts_study_015_07_scheduler_role.png)
 
 名前空間を作って、実験用に隔離します🧼
 
@@ -184,6 +194,8 @@ CPU limit の「上限はカーネルにより絞られる」という性質は�
 
 ## 2) “request 高すぎ”で Pending を作ってみる🧊
 
+![Pending State](./picture/docker_multi_orch_ts_study_015_05_pending_state.png)
+
 次は「置き場所がない」を体験します。
 同じファイルで、requests だけ極端に上げた版を作って apply（例：`2000m`）👇
 
@@ -213,6 +225,8 @@ kubectl describe pod -n res-lab -l app=cpu-demo
 ---
 
 ## 3) “メモリ limit 低すぎ”で OOMKilled を起こす💀🧨
+
+![OOM Kill Scene](./picture/docker_multi_orch_ts_study_015_03_oom_kill_scene.png)
 
 `res-mem.yaml` を作ります👇（増え続けるメモリ確保）
 

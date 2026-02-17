@@ -7,6 +7,8 @@
 
 ## 1) まず大事な現実チェック👀💥
 
+![Secret is NOT Encrypted](./picture/docker_multi_orch_ts_study_012_01_secret_not_encrypted.png)
+
 **Secretは“魔法の金庫”ではない**です😇➡️😈
 Secretの値は **base64でエンコードされているだけ**で、**デフォルトでは暗号化されずに保存**されます。([Kubernetes][1])
 なので「Secretに入れた＝安全」ではなく、**置き方・渡し方・権限**がセットで大事になります🔐
@@ -18,6 +20,8 @@ Secretの値は **base64でエンコードされているだけ**で、**デフ�
 
 ## 2) SecretとConfigMapの違いを1分で🧠⚡
 
+![ConfigMap vs Secret](./picture/docker_multi_orch_ts_study_012_02_config_vs_secret.png)
+
 * ConfigMap：**秘密じゃない設定**（例：ログレベル、機能フラグ）🧩
 * Secret：**秘密の設定**（例：DBパスワード、APIキー）🔑
 
@@ -26,6 +30,8 @@ Secretの値は **base64でエンコードされているだけ**で、**デフ�
 ---
 
 ## 3) “やりすぎない安全”のルール8️⃣📏🔐
+
+![Secret Injection Methods](./picture/docker_multi_orch_ts_study_012_03_secret_injection.png)
 
 1. **Gitに生のSecretを置かない**（base64でも同じ😇）([Kubernetes][1])
 2. Secretを使っても、**アプリ側でログに出したら終わり**（絶対出さない！）🪦([Kubernetes][1])
@@ -142,6 +148,8 @@ kubectl -n demo create secret generic app-secrets --from-literal=DB_PASSWORD="ro
 
 ## 5-2) env版の挙動：**自動では変わらない**😵‍💫
 
+![Env Secret Update](./picture/docker_multi_orch_ts_study_012_04_env_update_restart.png)
+
 環境変数に入ったSecretは、**Podを再起動しないと反映されません**。([Kubernetes][3])
 なので運用では、Secret更新したら **rollout restart** とセットにするのが分かりやすいです🔁
 
@@ -151,6 +159,8 @@ kubectl -n demo rollout status deploy/<あなたのDeployment名>
 ```
 
 ## 5-3) file版の挙動：**遅れて反映されうる**⏳
+
+![Volume Secret Update](./picture/docker_multi_orch_ts_study_012_05_volume_update_sync.png)
 
 volumeのSecretは、Secret更新後に **eventually-consistent** で中身が更新されます。([Kubernetes][4])
 ただし **subPath** を使ってると自動更新されません⚠️([Kubernetes][4])
@@ -174,6 +184,8 @@ APIデータ（Secret含む）を etcd に保存する時点で暗号化する�
 ---
 
 ## 7) よくある事故あるある（先に潰す）💣🧯
+
+![Git Secret Trap](./picture/docker_multi_orch_ts_study_012_06_git_secret_trap.png)
 
 * `console.log(process.env.DB_PASSWORD)` しちゃった📣 → ログから漏れる（最悪）([Kubernetes][1])
 * Secretをbase64にしてGitに置いた📦 → **誰でも復元できる**（暗号化じゃない）([Kubernetes][1])

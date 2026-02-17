@@ -16,6 +16,8 @@
 
 ## 1) ConfigMapってなに？📦（一言で）
 
+![ConfigMap Concept](./picture/docker_multi_orch_ts_study_011_01_configmap_concept.png)
+
 ConfigMapは、**「秘密じゃない設定」をキーと値で持つ入れ物**です 🧺
 Podはそれを **環境変数**・**コマンド引数**・**設定ファイル（Volume）** として使えます。([Kubernetes][1])
 
@@ -29,6 +31,8 @@ Podはそれを **環境変数**・**コマンド引数**・**設定ファイル
 ---
 
 ## 2) 「設定を外出し」すると何が嬉しい？🌱
+
+![Externalizing Configuration](./picture/docker_multi_orch_ts_study_011_02_external_config.png)
 
 たとえばこんな設定、コードにベタ書きしてると詰みやすいです 😇💥
 
@@ -46,6 +50,8 @@ ConfigMapにすると、
 ---
 
 ## 3) ハンズオン🧪：Node/TS APIにConfigMapを刺す🔌
+
+![Injection Methods](./picture/docker_multi_orch_ts_study_011_03_injection_methods.png)
 
 ここでは、次の2つを同時にやります👇
 
@@ -229,6 +235,8 @@ Invoke-RestMethod http://localhost:8080/hello
 
 ## 4-1) env（環境変数）で読んでる場合🌿
 
+![Env Update Trap](./picture/docker_multi_orch_ts_study_011_04_env_update_trap.png)
+
 **ConfigMapを更新しても、環境変数は自動で更新されません。Pod再起動が必要です。**([Kubernetes][1])
 
 つまり👇
@@ -245,6 +253,8 @@ kubectl rollout restart deploy/demo-api
 
 ## 4-2) ファイル（Volumeマウント）で読んでる場合📄
 
+![Volume Update Lag](./picture/docker_multi_orch_ts_study_011_05_volume_update_lag.png)
+
 ConfigMapをVolumeで使ってると、**反映は「いずれ」されます**（即時じゃない）⏳
 kubeletが周期的に同期して、遅延は最大で「同期周期＋キャッシュ遅延」みたいな世界です。([Kubernetes][1])
 
@@ -260,6 +270,8 @@ kubectl annotate pod $pod config-refresh=(Get-Date -Format o) --overwrite
 ---
 
 ## 4-3) 罠⚠️：subPathを使うと更新されない😇💥
+
+![SubPath Trap](./picture/docker_multi_orch_ts_study_011_06_subpath_trap.png)
 
 ConfigMapを **subPath** でマウントしてると、**更新が届きません**。([Kubernetes][1])
 「設定を差し替えたい！」目的なら subPath は避けるのが無難です 🙅‍♂️
@@ -285,6 +297,8 @@ ConfigMapは **1MiB制限**があるので([Kubernetes][1])、巨大JSONをド�
 ---
 
 ## 6) 便利機能：immutable ConfigMap（固める）🧊
+
+![Immutable ConfigMap](./picture/docker_multi_orch_ts_study_011_07_immutable_config.png)
 
 ConfigMapには `immutable` を付けて「**作ったら変更禁止**」にできます（v1.19〜）🧊🔒([Kubernetes][1])
 
