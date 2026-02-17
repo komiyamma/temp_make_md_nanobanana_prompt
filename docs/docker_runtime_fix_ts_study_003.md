@@ -9,6 +9,8 @@
 
 ## 1) TypeScriptは“型”だけじゃない🧠⚙️
 
+![TS Converter Machine](./picture/docker_runtime_fix_ts_study_003_01_ts_converter_machine.png)
+
 TypeScriptって、ざっくり言うとこう👇
 
 * **TypeScript（.ts）を読んで**
@@ -28,6 +30,8 @@ TypeScriptって、ざっくり言うとこう👇
 
 ## A. ✅ 出力されるJavaScriptが変わる（＝実行結果に影響しうる）💣
 
+![Output JS Differences](./picture/docker_runtime_fix_ts_study_003_02_output_difference.png)
+
 例：モジュール周りの扱い（ESM/CJS）や、ターゲット（どのJS文法に落とすか）が変わると、吐かれるJSが変わる⚡
 
 TypeScript 5.9 では **Node.jsの挙動に合わせた安定オプション `--module node20`** が入ってて、`nodenext` みたいに将来の挙動が“浮く”設定より安定しやすい設計になってるんだ🧷
@@ -39,6 +43,8 @@ TypeScript 5.9 では **Node.jsの挙動に合わせた安定オプション `--
 ---
 
 ## B. ✅ “同じコード”が通ったり落ちたりする（＝ビルドが止まる）🚧
+
+![Strictness Bar](./picture/docker_runtime_fix_ts_study_003_03_strictness_bar.png)
 
 TypeScriptは毎リリースで、
 
@@ -54,6 +60,8 @@ TypeScriptは毎リリースで、
 
 ## C. ✅ import の“見に行く先”が変わる（＝実行時に別ファイルを見る）👀
 
+![Import Resolution Map](./picture/docker_runtime_fix_ts_study_003_04_import_resolution_map.png)
+
 これは地味に怖いタイプ💀
 TSの **moduleResolution（import解決ルール）** の改善や Node 寄せの変更で、
 
@@ -66,6 +74,8 @@ TSの **moduleResolution（import解決ルール）** の改善や Node 寄せ�
 ---
 
 ## 3) 結論：TSも「プロジェクト内に固定」しよう🔒📌
+
+![Local Project Locking](./picture/docker_runtime_fix_ts_study_003_05_local_locking.png)
 
 TypeScript公式でも、長期運用のコードベースは **グローバルではなくプロジェクト単位の導入**を推してるよ（＝再現性のため）🧠✨ ([typescriptlang.org][1])
 
@@ -126,6 +136,8 @@ TypeScript公式の導入ページでも `npx tsc` が案内されてるよ📌 
 ---
 
 ## 5) ありがちな事故例（イメージできたら勝ち🏆）💥
+
+![Developer Discrepancy](./picture/docker_runtime_fix_ts_study_003_06_dev_discrepancy.png)
 
 ## 😇 事故1：AさんのPCだけビルド通る
 

@@ -7,6 +7,8 @@
 
 ## 1) まず結論：これだけで閉じ込め体験できる✅
 
+![No Install Node Experience](./picture/docker_runtime_fix_ts_study_006_01_no_install_node.png)
+
 VS Code のターミナル（PowerShellでOK）で、これ👇を叩くだけです💥
 
 ```powershell
@@ -21,6 +23,8 @@ docker run --rm node:24 node -v
 
 ## 2) ここで何が起きてるの？（超ざっくり理解）🧠✨
 
+![docker run Command Anatomy](./picture/docker_runtime_fix_ts_study_006_02_command_anatomy.png)
+
 `docker run` はだいたいこういう意味です👇
 
 * `node:24` 👉 **Node入りの箱（イメージ）** を使う📦
@@ -32,6 +36,8 @@ docker run --rm node:24 node -v
 ---
 
 ## 3) 「ほんとにPCのNode使ってない？」を確かめる🔎😏
+
+![Host vs Container Version](./picture/docker_runtime_fix_ts_study_006_03_host_vs_container.png)
 
 まず、ホスト側（Windows）に Node が入ってる人はこう👇
 
@@ -68,6 +74,8 @@ docker run --rm node:24 node -p "process.versions"
 
 ## 5) “箱の中に入って操作する” 体験（-it）🧑‍💻🐳
 
+![Entering the Container](./picture/docker_runtime_fix_ts_study_006_04_entering_container.png)
+
 今度は「箱の中に入る」モードです✨
 （Debian系の `bookworm-slim` を使うと、学習が安定しやすいです👍 タグも公式で用意されています）([Docker Hub][2])
 
@@ -90,6 +98,8 @@ exit
 
 ## 6) 便利ワザ：実行中のコンテナを “別ターミナル” で覗く👀
 
+![docker ps Peek](./picture/docker_runtime_fix_ts_study_006_05_docker_ps_peek.png)
+
 さっき `bash` で入った状態のまま、別ターミナルを開いて👇
 
 ```powershell
@@ -104,6 +114,8 @@ docker ps
 ## 7) よくある詰まりポイント集（ここだけ見れば復帰できる）🧯🔥
 
 ## A. `Cannot connect to the Docker daemon` 系🥶
+
+![Sleeping Docker Daemon](./picture/docker_runtime_fix_ts_study_006_06_sleeping_daemon.png)
 
 だいたい **Docker Desktop が起動してない** だけです💡
 起動してもう一回やればOKなことが多いです✅

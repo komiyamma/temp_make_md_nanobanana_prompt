@@ -8,6 +8,8 @@
 
 ## 1) まずはNodeの状態を3つだけ覚える🧠✨
 
+![Node.js Version Phases](./picture/docker_runtime_fix_ts_study_002_01_node_phases.png)
+
 Nodeには「同じNodeでも、今どのフェーズか？」があって、使い分けが超大事です👇
 （※公式のRelease Working Groupが、この3フェーズを定義してます）([GitHub][1])
 
@@ -33,6 +35,8 @@ Nodeには「同じNodeでも、今どのフェーズか？」があって、使
 
 ## 2) 本日（2026-02-09）時点の“最新版の答え”📅✨
 
+![Version Menu of the Day](./picture/docker_runtime_fix_ts_study_002_02_version_menu.png)
+
 公式の “Releases” ページだと、いまはこうなってます👇([Node.js][2])
 
 * **v25：Current**（最終更新 2026-02-02）🟣
@@ -41,6 +45,8 @@ Nodeには「同じNodeでも、今どのフェーズか？」があって、使
 * **v20：Maintenance LTS**（最終更新 2026-01-12）🟡([Node.js][2])
 
 さらに「いつまで使えるの？」の目安（EOL）も、Release WGのスケジュールに載ってます👇([GitHub][1])
+
+![EOL Expiration Dates](./picture/docker_runtime_fix_ts_study_002_03_eol_timeline.png)
 
 * v25（Current）→ **EOL: 2026-06-01** 🧨
 * v24（Active LTS）→ **EOL: 2028-04-30** 🎉
@@ -55,6 +61,8 @@ Nodeには「同じNodeでも、今どのフェーズか？」があって、使
 ---
 
 ## 3) “なぜLTSが正義になりやすいか”🤔🔒
+
+![LTS as Foundation](./picture/docker_runtime_fix_ts_study_002_04_lts_foundation.png)
 
 ## ✅ 理由A：依存ライブラリがLTS基準で動くことが多い📦
 
@@ -74,6 +82,8 @@ EOLになると **セキュリティパッチも止まる** ので、普通に�
 
 ## 4) 迷わない“Node選びルール”3行で🧭✨
 
+![Node Selection Flowchart](./picture/docker_runtime_fix_ts_study_002_05_selection_flow.png)
+
 1. **基本：Active LTS（= v24）** を使う🟢([Node.js][2])
 2. **Current（= v25）は実験用**（検証・新機能試す用）🟣([Node.js][2])
 3. **Maintenance（v22/v20）は延命用**（移行までのつなぎ）🟡([GitHub][1])
@@ -86,6 +96,8 @@ Node公式イメージにはタグがいっぱいありますが、初心者が�
 
 ## 🥇おすすめ（迷ったらこれ）：`node:24-bookworm-slim` 🟢📦
 
+![Docker Tag Anatomy](./picture/docker_runtime_fix_ts_study_002_06_tag_breakdown.png)
+
 * **24 = メジャー固定**（Active LTSを使う）
 * **bookworm = Debianの世代固定**（OS側の変化で壊れにくい）
 * **slim = 余計なもの少なめで軽い**
@@ -93,6 +105,8 @@ Node公式イメージにはタグがいっぱいありますが、初心者が�
 Docker Hubでも「Debianのコードネーム（bookworm等）を明示すると、新しいDebianが出た時の破壊を減らせる」と説明しています。([Docker Hub][4])
 
 ## 🎯 “完全に同じ”を求めるなら：`node:24.13.0-bookworm-slim` みたいにパッチまで固定🧷
+
+![Locking Strategy Comparison](./picture/docker_runtime_fix_ts_study_002_07_locking_comparison.png)
 
 * Docker Hubには `24.13.0-...` のように **パッチ番号まで含むタグ** もあります([Docker Hub][4])
 * ただし、固定しすぎると「自分で更新する意識」も必要になるので、最初は **メジャー固定（node:24-…）** でOK👌
