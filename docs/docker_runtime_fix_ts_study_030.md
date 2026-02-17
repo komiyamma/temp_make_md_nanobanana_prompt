@@ -12,6 +12,8 @@ TypeScriptは npm 上の “Latest” が **5.9.3** 表示になっています�
 
 ---
 
+![Template Copy Strategy](./picture/docker_runtime_fix_ts_study_030_01_template_copy.png)
+
 ## 30章テンプレの「設計ルール」📐🧠
 
 テンプレは盛りすぎると死にます💀（改造が怖くなる）
@@ -26,6 +28,8 @@ TS 5.9 では `--module node20` / `--moduleResolution node20` みたいに、挙
 テンプレ化にめちゃ向いてます💪✨
 
 ---
+
+![Final Folder Structure](./picture/docker_runtime_fix_ts_study_030_02_final_folder_structure.png)
 
 ## 完成形：フォルダ構成（これを丸ごとコピペ）📁✨
 
@@ -48,6 +52,8 @@ Composeファイルは **Compose Specification が推奨**、最近は `compose.
 ---
 
 ## テンプレ本体（コピペOK）🧩📦
+
+![Dockerfile Multi-stage Flow](./picture/docker_runtime_fix_ts_study_030_03_multistage_flow.png)
 
 ### 1) Dockerfile（固定の核）🧱🟢
 
@@ -89,6 +95,8 @@ CMD ["node", "--enable-source-maps", "dist/index.js"]
 ```
 
 ---
+
+![Compose Development Loop](./picture/docker_runtime_fix_ts_study_030_04_compose_loop.png)
 
 ### 2) compose.yml（開発ループ最強化）🐳🌀
 
@@ -132,6 +140,8 @@ compose*.yml
 ```
 
 ---
+
+![Package Scripts Buttons](./picture/docker_runtime_fix_ts_study_030_05_scripts_buttons.png)
 
 ### 4) package.json（迷子にならない scripts 設計）📦🧭
 
@@ -233,6 +243,8 @@ Dev Containers は、フォルダを“コンテナとして開く”開発を�
 
 ---
 
+![Usage Steps](./picture/docker_runtime_fix_ts_study_030_06_usage_steps.png)
+
 ## 使い方（新規PJで毎回これ）🚀🪄
 
 1. テンプレフォルダをコピーして名前変更📁✂️
@@ -281,6 +293,8 @@ Windows + Docker だとファイル更新通知が届きにくい時がありま
 * ✅ （任意）VS Codeごと環境固定まで到達🧰🐳([Visual Studio Code][5])
 
 ---
+
+![GitHub Template Button](./picture/docker_runtime_fix_ts_study_030_07_github_template.png)
 
 次の一歩（おすすめ）😆🔥
 このテンプレを **GitHubのTemplate Repository** にして、ボタン1発で新規PJ生成できるようにすると、さらに“勝ち”が加速します🏁✨

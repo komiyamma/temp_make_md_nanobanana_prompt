@@ -5,6 +5,8 @@ Docker GitHub OpenAI Microsoft
 
 ---
 
+![Blast Radius Map](./picture/docker_safe_isolation_ts_index_01_blast_radius.png)
+
 ## 第1部：まず“被害半径”の地図を作る🗺️💥（1〜5）
 
 ### 1. なぜ隔離が必要？「個人開発で起きがちな事故」あるある😇💣
@@ -12,10 +14,14 @@ Docker GitHub OpenAI Microsoft
 * どんな事故が起きるか（秘密漏れ・削除・踏み台）をざっくり
 * この教材で守る“最低ライン”を決める🛡️
 
+![Docker Boundaries Layers](./picture/docker_safe_isolation_ts_index_02_boundaries.png)
+
 ### 2. Dockerの境界線：ホスト／デーモン／コンテナ／ネット🌍🚧
 
 * どこで何が起きる？を図で理解
 * “守る場所”を間違えないための地図作り🧠
+
+![3 Principles of Isolation](./picture/docker_safe_isolation_ts_index_03_three_principles.png)
 
 ### 3. 3原則：最小権限・最小共有・最小公開✂️🔐📤
 
@@ -53,6 +59,8 @@ Docker GitHub OpenAI Microsoft
 * どんな制約がある？（できないこともある）
   ([Docker Documentation][2])
 
+![User Namespace Concept](./picture/docker_safe_isolation_ts_index_04_user_namespace.png)
+
 ### 9. ユーザー名前空間（userns）の考え方だけ押さえる🧠🧷
 
 * “中のroot≠外のroot”を理解する
@@ -64,6 +72,8 @@ Docker GitHub OpenAI Microsoft
 * “強い操作”は手順を固定して誤爆を防ぐ🧯
 
 ---
+
+![Container User Isolation](./picture/docker_safe_isolation_ts_index_05_container_user.png)
 
 ## 第3部：コンテナの権限を絞る（中の世界の最小権限）👤🔧（11〜15）
 
@@ -94,6 +104,8 @@ Docker GitHub OpenAI Microsoft
 
 ---
 
+![Mount Danger Zones](./picture/docker_safe_isolation_ts_index_06_mount_danger.png)
+
 ## 第4部：ファイル共有（マウント）とデータの被害半径📦🧷（16〜20）
 
 ### 16. bind mountの危険ポイント：“ホストの大事な場所”を渡さない🙅‍♂️💽
@@ -122,6 +134,8 @@ Docker GitHub OpenAI Microsoft
 * チームで揉めない置き場所ルールを作る📌
 
 ---
+
+![Secrets Tunnel](./picture/docker_safe_isolation_ts_index_07_secrets_tunnel.png)
 
 ## 第5部：Secrets（秘密情報）を安全に扱う🔑🧪（21〜25）
 

@@ -5,6 +5,8 @@
 
 ---
 
+![One-Click Environment Setup](./picture/docker_runtime_fix_ts_study_027_01_one_click_setup.png)
+
 #### 1) ゴール🎯✨
 
 * VS Codeでフォルダを開いて
@@ -13,6 +15,8 @@
   （`devcontainer.json` はプロジェクト配下の `.devcontainer/devcontainer.json` か、ルート直下の `.devcontainer.json` に置けます）([Visual Studio Code][1])
 
 ---
+
+![Project File Structure](./picture/docker_runtime_fix_ts_study_027_02_file_structure.png)
 
 #### 2) まず「最低限の配置」を作る🧱📁
 
@@ -30,6 +34,8 @@ myapp/
 ```
 
 ---
+
+![Config Anatomy (Context)](./picture/docker_runtime_fix_ts_study_027_03_config_anatomy.png)
 
 #### 3) **最小 devcontainer.json（Dockerfile を使う版）**✅✨
 
@@ -57,6 +63,8 @@ myapp/
 
 ---
 
+![VS Code Launch Action](./picture/docker_runtime_fix_ts_study_027_04_vscode_launch.png)
+
 #### 4) VS Code で起動する手順（最短ルート）🏃‍♂️💨
 
 1. プロジェクトを VS Code で開く📂
@@ -73,6 +81,8 @@ myapp/
 #### 5) 「最小」から1歩だけ便利にする👣✨（おすすめ）
 
 最小で動いたら、次はこれを足すと幸せになりやすいです😊💡
+
+![Auto Extensions Installation](./picture/docker_runtime_fix_ts_study_027_05_auto_extensions.png)
 
 ##### A. ESLint など “拡張” を自動インストール🧩⬇️
 
@@ -92,6 +102,8 @@ myapp/
 
 VS Code の公式ドキュメントにもこの形で例が載ってます。([Visual Studio Code][1])
 
+![Post Create Command](./picture/docker_runtime_fix_ts_study_027_06_post_create_command.png)
+
 ##### B. 初回だけ `npm ci` まで自動で走らせる📦⚡
 
 ```json
@@ -106,6 +118,8 @@ VS Code の公式ドキュメントにもこの形で例が載ってます。([V
 * `postCreateCommand` は「**コンテナ作成後に1回だけ**」走るので、依存インストールと相性がいいです👍（`npm install` みたいな用途が想定されています）([Visual Studio Code][1])
 
 ---
+
+![Context Pitfall](./picture/docker_runtime_fix_ts_study_027_07_context_pitfall.png)
 
 #### 6) よくある詰まりポイント🧯💥（最短で直す）
 
