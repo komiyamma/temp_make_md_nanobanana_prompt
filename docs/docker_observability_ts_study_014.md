@@ -15,6 +15,8 @@
 
 ## ② 全体図（1枚）🖼️
 
+![Log Collection Architecture](./picture/docker_observability_ts_study_014_01_log_collection_flow.png)
+
 「アプリが吐いたログ」を「ためて」「検索する」までの道のり👇
 
 ```text
@@ -38,6 +40,8 @@
 **Grafanaがポート3000を使う**ので、あなたのAPIが `3000` を使ってたら **API側を 3001 にずらす**のが安全 👍
 
 ### Step 0) フォルダ構成を作る 📁
+
+![Project Directory Structure](./picture/docker_observability_ts_study_014_02_folder_structure.png)
 
 こんな感じにする（シンプル命）🧹
 
@@ -179,6 +183,8 @@ pattern_ingester:
 
 ### Step 3) Alloy設定 `alloy/config.alloy` を書く 🚚
 
+![Alloy Relabeling Process](./picture/docker_observability_ts_study_014_03_alloy_relabeling.png)
+
 ここがこの章のキモ！🧠✨
 Alloyは **Dockerソケット**からコンテナを発見して、ログを読んで、Lokiへ送るよ。
 
@@ -297,6 +303,8 @@ curl.exe http://localhost:3001/boom
 
 ### 2) Grafanaで見る（Explore）🧭
 
+![Grafana Explore UI](./picture/docker_observability_ts_study_014_04_grafana_explore.png)
+
 Grafanaにログ探索UIがあるよ（最近のGrafanaはログ探索まわりも強化されがち）🧠 ([Grafana Labs][9])
 
 * 左メニュー → **Explore** 🔭
@@ -312,6 +320,8 @@ Grafanaにログ探索UIがあるよ（最近のGrafanaはログ探索まわり�
 ---
 
 ## ⑤ “reqIdで検索” と “status=500で絞る” をやってみる 🧵🪪
+
+![JSON Log Filtering](./picture/docker_observability_ts_study_014_05_json_filtering.png)
 
 ここからが「集めて検索」の気持ちよさ😆✨
 
@@ -338,6 +348,8 @@ Grafanaにログ探索UIがあるよ（最近のGrafanaはログ探索まわり�
 ---
 
 ## ⑥ ラベル設計のコツ（超入門）🏷️🧠
+
+![Label Cardinality (Good vs Bad)](./picture/docker_observability_ts_study_014_06_label_cardinality.png)
 
 Lokiは特にここが大事！
 
