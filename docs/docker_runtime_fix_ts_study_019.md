@@ -15,6 +15,8 @@
 
 ## 1) `node --watch` ってなに？🤔
 
+![Node Watch Concept](./picture/docker_runtime_fix_ts_study_019_01_watch_concept.png)
+
 `node --watch` は、**監視対象のファイルが変わったら Nodeプロセスを再起動**してくれる機能です🔁
 開発中の「保存 → 自分で止めて起動し直す」を消せます🧹✨
 
@@ -27,6 +29,8 @@
 ---
 
 ## 2) よくある勘違い⚠️（ここ大事）
+
+![Restart vs HMR](./picture/docker_runtime_fix_ts_study_019_02_restart_vs_hmr.png)
 
 * ❌ **ホットリロード(HMR)** ではない
   → つまり「状態を保ったまま差分だけ反映」ではなく、**プロセス丸ごと再起動**です🔁😇
@@ -61,6 +65,8 @@ node --watch src/index.js
 
 ### 実験B：ログが消えるのが嫌なら `--watch-preserve-output` 🧾✨
 
+![Preserve Output Flag](./picture/docker_runtime_fix_ts_study_019_03_preserve_output.png)
+
 ```bash
 node --watch --watch-preserve-output src/index.js
 ```
@@ -70,6 +76,8 @@ node --watch --watch-preserve-output src/index.js
 ---
 
 ## 4) Composeに組み込む（開発コマンドの型）🐳🧩
+
+![Compose Command Override](./picture/docker_runtime_fix_ts_study_019_04_compose_command.png)
 
 「保存したら勝手に再起動」を Compose でやる例です👇
 
@@ -101,6 +109,8 @@ volumes:
 原因はだいたいこれ👇
 
 ### あるある原因😵
+
+![Windows Event Loss](./picture/docker_runtime_fix_ts_study_019_05_windows_event_loss.png)
 
 * Windows側のフォルダを Linuxコンテナへ bind mount したとき、
   **ファイル変更イベント（inotify）がコンテナに届かない / 遅い**ことがある📉
@@ -140,6 +150,8 @@ watchが動かない / 遅い / 二重に反応する…時は👇
 ---
 
 ## 8) （次章につながる）TSと合わせる時の発想🧩✨
+
+![TSC and Node Duo](./picture/docker_runtime_fix_ts_study_019_06_tsc_node_duo.png)
 
 TypeScriptはそのままだと Node が実行できないことが多いので、王道はこう👇
 

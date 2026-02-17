@@ -10,6 +10,8 @@
 
 ## 1) まず結論（合言葉）📌🗣️
 
+![Architecture Diagram - Code vs Deps](./picture/docker_runtime_fix_ts_study_017_01_conclusion_arch.png)
+
 ✅ **コードは bind mount（共有）**
 ✅ **node_modules は volume（コンテナ側で管理）**
 
@@ -22,6 +24,8 @@
 
 ### 症状A：`node_modules` が消える（あるいは空っぽ）🫥
 
+![Bind Mount Masking Effect](./picture/docker_runtime_fix_ts_study_017_02_masking_effect.png)
+
 * Dockerfileで `npm ci` したはずなのに、起動すると
 
   * `Error: Cannot find module ...`
@@ -33,6 +37,8 @@
 この「見えなくなる」挙動が、node_modules事故の元凶です💥
 
 ### 症状B：Windowsの `node_modules` をコンテナで使って爆死💥🪟🐧
+
+![OS Binary Mismatch](./picture/docker_runtime_fix_ts_study_017_03_os_mismatch.png)
 
 * ホスト（Windows）で作られた `node_modules` を、Linuxコンテナが読もうとして…
 
@@ -65,6 +71,8 @@ Docker公式の入門でも、bind mount と named volume の違いが整理さ�
 ---
 
 ## 4) 正解の“型”①：Compose（いちばん王道）👑📄
+
+![Volume Override Mechanism](./picture/docker_runtime_fix_ts_study_017_04_compose_override.png)
 
 ### ✅ これが基本形（node_modulesをvolumeに逃がす）🛟
 
@@ -112,6 +120,8 @@ docker run --rm -it ^
 
 ## 6) “依存を入れ直したい”とき、どうする？🔁📦
 
+![Volume Reset Command](./picture/docker_runtime_fix_ts_study_017_05_reset_volume.png)
+
 ### ありがちな罠😇
 
 * `package.json` を更新したのに、コンテナ側のnode_modulesが古いまま
@@ -133,6 +143,8 @@ docker compose up --build
 ---
 
 ## 7) `.dockerignore` もセットで効く🧹🚀
+
+![.dockerignore Bouncer](./picture/docker_runtime_fix_ts_study_017_06_ignore_bouncer.png)
 
 ホスト側の `node_modules` がコンテナビルドに混ざると、重いし事故るしで最悪です😵‍💫
 なので `.dockerignore` に入れておくのが基本。

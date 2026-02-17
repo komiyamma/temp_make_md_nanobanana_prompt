@@ -18,6 +18,8 @@
 
 ## 1) Composeって何がうれしいの？🤔🧩
 
+![Docker Run vs Compose](./picture/docker_runtime_fix_ts_study_018_01_compose_benefit.png)
+
 `docker run` で開発環境を作ると、こうなりがち👇
 
 * ポート指定、マウント、コマンド…が**長い**😵‍💫
@@ -31,6 +33,8 @@ Composeにすると👇
 ---
 
 ## 2) まずは“開発用の最小compose”を書こう✍️🐳
+
+![Compose YAML Anatomy](./picture/docker_runtime_fix_ts_study_018_02_yaml_anatomy.png)
 
 ファイル名は **`compose.yaml`**（推奨）でいきます（`compose.yml` でもOK）📄✨
 ※最近のComposeでは、トップレベルの `version:` は **obsolete（書くと警告）** です。([Docker Documentation][2])
@@ -87,6 +91,8 @@ docker compose logs -f
 
 ## 4) なぜ node_modules を volume にするの？💣📦➡️😇
 
+![Volume Strategy - The Donut Hole](./picture/docker_runtime_fix_ts_study_018_03_volume_strategy.png)
+
 ここ、初心者がほぼ100%踏みます😂
 
 ### 🔥 事故パターン
@@ -102,6 +108,8 @@ docker compose logs -f
 ---
 
 ## 5) Windowsで詰まりやすいポイント🪟⚠️（ここ超重要）
+
+![WSL Project Location](./picture/docker_runtime_fix_ts_study_018_04_wsl_location.png)
 
 ### ① マウントが遅い／監視が効かない😢
 
@@ -134,6 +142,8 @@ Windows環境だと、置き場所によっては
 ---
 
 ## 6) 2026っぽい強化：Compose Watch も知っておく👁️✨
+
+![Compose Watch Sync](./picture/docker_runtime_fix_ts_study_018_05_compose_watch.png)
 
 最近のComposeには **ファイル変更を見て、同期や再起動をしてくれる watch 機能**があります。
 使い方は、`compose.yaml` に `develop: watch:` を書いて、**`docker compose up --watch`** です。([Docker Documentation][4])
@@ -177,6 +187,8 @@ services:
 3. 元に戻して、**安定する理由を言語化**🧠✨
 
 ### 演習C：依存を入れ直したい時🧽
+
+![Reset Command (down -v)](./picture/docker_runtime_fix_ts_study_018_06_reset_command.png)
 
 「node_modules（volume）を捨てて入れ直す」👇
 

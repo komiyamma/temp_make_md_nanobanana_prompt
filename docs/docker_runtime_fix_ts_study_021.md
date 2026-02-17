@@ -16,6 +16,8 @@
 
 ## tsxって何者？🤔🧩
 
+![tsx Speed Concept](./picture/docker_runtime_fix_ts_study_021_01_tsx_rocket.png)
+
 `tsx` は **Node.js を拡張して**、TypeScript/ESM を **手間少なく実行**するためのツールです。内部的には esbuild を使って高速に動かします⚡（開発向け）([npm][1])
 公式サイトでも **Watch mode（変更で自動再実行）** を強く推してます👀✨([tsx][2])
 
@@ -80,6 +82,8 @@ tsx も npm で配布され、最近まで更新されています([npm][1])
 
 ### ここが“設計の超入門”ポイント🧠✨
 
+![Scripts Architecture](./picture/docker_runtime_fix_ts_study_021_02_scripts_design.png)
+
 「実行」と「検査」を分けるのがコツです👇
 
 * 実行（速さ優先）🚀 → `npm run dev`
@@ -90,6 +94,8 @@ tsx も npm で配布され、最近まで更新されています([npm][1])
 ---
 
 ## 3) `tsconfig.json` は “薄くてOK”🧊📝
+
+![Minimal tsconfig](./picture/docker_runtime_fix_ts_study_021_03_minimal_tsconfig.png)
 
 TypeScript 5.9 では `tsc --init` の生成が **よりミニマル寄り**になった流れがあります([TypeScript][4])
 ここでは最小の実用ラインだけ置きます👇
@@ -135,6 +141,8 @@ server.listen(3000, "0.0.0.0", () => {
 
 ## 5) 起動して成功体験🎉🔥
 
+![Success Output](./picture/docker_runtime_fix_ts_study_021_04_hello_tsx.png)
+
 ```bash
 npm run dev
 ```
@@ -159,6 +167,8 @@ WSL2 が Windows ドライブ上のファイル（9P 経由）を扱うとき、
 
 ### 対処B（いったん進む）🚶‍♂️
 
+![Manual Restart Fallback](./picture/docker_runtime_fix_ts_study_021_05_manual_restart.png)
+
 tsx watch には「**Enter（Return）で手動再実行**」があります⌨️🔁([tsx][5])
 監視が死んでも、最悪これで前に進めます（教材的に大事！）
 
@@ -169,6 +179,8 @@ tsx watch には「**Enter（Return）で手動再実行**」があります⌨�
 ---
 
 ## 7) VS Codeでデバッグしたい（tsx + inspector）🕵️‍♂️✨
+
+![VS Code Debugger Attach](./picture/docker_runtime_fix_ts_study_021_06_vscode_attach.png)
 
 tsx公式に **VS Codeでのアタッチ手順**があります👍([tsx][8])
 やることはシンプル👇
