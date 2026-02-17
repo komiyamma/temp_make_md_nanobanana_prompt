@@ -16,7 +16,11 @@
 
 ## ✅ 結論：TS開発はこの2択！
 
+![Two Development Roads](./picture/docker_runtime_fix_ts_study_020_01_two_roads.png)
+
 ### ルートA：`tsc -w` で `dist/` を作って Nodeで実行 🧱➡️🏃
+
+![Route A Architecture (tsc + node)](./picture/docker_runtime_fix_ts_study_020_02_route_a_flow.png)
 
 * TS → JS に **ちゃんとビルド**してから動かす
 * 開発中は `tsc -w`（watch）で **自動ビルド**
@@ -29,6 +33,8 @@ Node 側にも `--watch` があり、変更で再起動できます👀([Node.js
 ---
 
 ### ルートB：`tsx` などで TS を直接実行 🏃‍♂️💨
+
+![Route B Architecture (tsx)](./picture/docker_runtime_fix_ts_study_020_03_route_b_flow.png)
 
 * TS を **そのまま実行**して最速ループ
 * さらに `tsx watch ...` で **保存→即再実行**
@@ -142,6 +148,8 @@ volumes:
 
 ## 1) scripts：開発は tsx、型チェックは tsc に任せる🧩🧷
 
+![TSX No Type Check](./picture/docker_runtime_fix_ts_study_020_04_tsx_no_check.png)
+
 `tsx` は便利だけど **型チェックはしない**ので、役割分担が王道です✅([tsx][6])
 
 ```jsonc
@@ -180,6 +188,8 @@ volumes:
 ## 🧯 ありがち事故と対処（Docker + watch 編）🐳👀
 
 ### ① 「保存しても watch が反応しない／遅い」🫠
+
+![Windows Watch Fix (WSL2)](./picture/docker_runtime_fix_ts_study_020_05_windows_watch_fix.png)
 
 watch は OS のファイル通知に依存するので、環境によって差が出ます📎
 TypeScript 側も `fs.watch` を使うため、その挙動差や制限が公式に説明されています([typescriptlang.org][8])
