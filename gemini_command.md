@@ -27,8 +27,9 @@ description: Generate an image generation plan for a range of Markdown files bas
             - **Loop**: Perform the following steps (c to f) for EACH identified image location (up to 7):
                 - **Filename Construction**:
                     - Use the target Markdown filename (without extension) as the base (e.g., `react_study_001.md` -> `react_study_001`).
+                    - Append a 2-digit sequential number indicating the order in the file (e.g., `_01`, `_02`).
                     - Append a detailed description with at least 2 English words: e.g., `_split_number`.
-                    - Final: `<md_filename>_<description>.png`.
+                    - Final: `<md_filename>_<sequence>_<description>.png` (e.g., `react_study_001_01_split_number.png`).
                 - **Global Uniqueness Check (ABSOLUTE RULE)**:
                     - **Step 1: Check Existing Images in Current Markdown**:
                         - Parse the Markdown content to find ALL `![](...)` or `<img src="...">` tags.
