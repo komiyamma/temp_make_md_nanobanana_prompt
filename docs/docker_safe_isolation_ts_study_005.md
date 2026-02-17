@@ -18,6 +18,8 @@
 
 ## 0. まず“危険カード3兄弟”を覚える🃏⚠️
 
+![Three Dangerous Cards](./picture/docker_safe_isolation_ts_study_005_01_three_dangerous_cards.png)
+
 - 🟥 `privileged: true`（または `docker run --privileged`）
 - 🟥 `- /var/run/docker.sock:/var/run/docker.sock`（Docker APIソケット共有）
 - 🟥 秘密を直書き（Composeの`environment:`、Dockerfile、コード、ログ、AIへの貼り付け…）
@@ -27,6 +29,8 @@
 ---
 
 ## 1) 危険カード①：`privileged` は“全開放スイッチ”🔓💪
+
+![Privileged Switch](./picture/docker_safe_isolation_ts_study_005_02_privileged_switch.png)
 
 ## 何が起きるの？😱
 `--privileged` は、コンテナに強い権限を与えて制限を大幅にゆるめます（全部許可に近づく感じ）:contentReference[oaicite:2]{index=2}  
@@ -43,6 +47,9 @@
 ## 代替案（優先度順）🥇🥈🥉
 
 ## 🥇A. まず“全部禁止”→必要な分だけ足す（capabilities方式）🧤✂️
+
+![Cap Drop and Add](./picture/docker_safe_isolation_ts_study_005_03_cap_drop_add.png)
+
 Composeには `cap_drop` / `cap_add` があって、できることを絞れます。:contentReference[oaicite:4]{index=4}  
 **安全側の定番**はこれ👇
 
@@ -92,6 +99,8 @@ services:
 
 ## 2) 危険カード②：`docker.sock` は“ほぼホスト権限”🐙🔥
 
+![Docker Sock Control](./picture/docker_safe_isolation_ts_study_005_04_docker_sock_danger.png)
+
 ## 何が起きるの？😱
 
 `/var/run/docker.sock` は **Docker CLIがデーモンに指示を出す入口**です。
@@ -114,6 +123,8 @@ services:
 ## 代替案（優先度順）🥇🥈🥉
 
 ## 🥇A. 「dockerコマンドはホストで打つ」🖥️✅
+
+![Host Side Command](./picture/docker_safe_isolation_ts_study_005_05_host_command.png)
 
 VS Codeのターミナルはホスト側です。
 **“dockerをコンテナから叩く”発想を捨てる**だけで事故が激減します🙂✨
@@ -141,6 +152,8 @@ Docker Desktopの隔離強化（ECI）の制限/推奨の中でも、ビルド�
 
 ## 何が起きるの？😱
 
+![Plaintext Secret Leak](./picture/docker_safe_isolation_ts_study_005_06_secret_leak.png)
+
 Docker公式は「秘密はDockerfileやソースに平文で置くな」「環境変数で注入すると露出リスクがある（ログに出たり追跡が難しい）」と明記しています。([Docker Documentation][6])
 
 ありがちな漏れポイント👇
@@ -156,6 +169,8 @@ Docker公式は「秘密はDockerfileやソースに平文で置くな」「環�
 ## 代替案（優先度順）🥇🥈🥉
 
 ## 🥇A. 実行時は Compose secrets（/run/secrets）📄🔐
+
+![Compose Secrets Delivery](./picture/docker_safe_isolation_ts_study_005_07_compose_secrets.png)
 
 Compose secrets は **`/run/secrets/<secret_name>` にファイルとしてマウント**され、サービスごとにアクセス付与できます。([Docker Documentation][6])
 

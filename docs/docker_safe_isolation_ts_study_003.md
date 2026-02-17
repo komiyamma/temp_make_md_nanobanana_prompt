@@ -7,6 +7,8 @@ Dockerを使うとき、設定の選択肢が多すぎて「え、結局どれ�
 
 ## この章のゴール🎯
 
+![Three Isolation Goals](./picture/docker_safe_isolation_ts_study_003_01_three_goals.png)
+
 次の3つを、**自分の言葉で説明できて**、さらに **Compose/Dockerfileの設定に落とせる**ようになることです💪😊
 
 1. **最小権限**：そのコンテナ（プロセス）に「できること」を最小にする👤✂️
@@ -16,6 +18,8 @@ Dockerを使うとき、設定の選択肢が多すぎて「え、結局どれ�
 ---
 
 ## まずは“3つの質問”に変換しよう🧠🔁
+
+![Three Security Questions](./picture/docker_safe_isolation_ts_study_003_02_three_questions.png)
 
 設定を見たら、全部この3つに翻訳します👇
 
@@ -67,6 +71,8 @@ Dockerを使うとき、設定の選択肢が多すぎて「え、結局どれ�
 
 ## 1) まず“rootで動かさない”🙂🚫
 
+![Root vs Node User](./picture/docker_safe_isolation_ts_study_003_03_min_privilege_user.png)
+
 コンテナは放っておくとroot（UID 0）で動きがちです。
 公式のセキュリティ説明でも「非特権ユーザーで動かすと安全性が上がる」趣旨が書かれています。([Docker Documentation][3])
 
@@ -102,6 +108,8 @@ services:
 ---
 
 ## 2) “できること”を追加で削る：capabilities / no-new-privileges🧤🧯
+
+![Capabilities Drop](./picture/docker_safe_isolation_ts_study_003_04_capabilities_drop.png)
 
 「rootじゃないなら安心でしょ？」…**まだ半分**です😇
 コンテナにはデフォルトで色々な“できること（capability）”が付くので、削ると攻撃面が減ります🎯
@@ -141,6 +149,8 @@ services:
 
 ## 2) 共有するなら読み取り専用（ro）で“壊せない”にする🔒🧊
 
+![Read-Only Mount](./picture/docker_safe_isolation_ts_study_003_05_readonly_mount.png)
+
 コード共有などは **原則ro** が強いです💪
 Composeの例でも、bind mountに `read_only: true` を付ける例が載っています。([Docker Documentation][4])
 
@@ -177,6 +187,8 @@ Dockerの強化機能（ECI）でも、**docker.sockのbind mountは「Docker En
 
 ## 1) `ports:` は“公開”、`expose:` は“内部向け”📌
 
+![Ports vs Expose](./picture/docker_safe_isolation_ts_study_003_06_ports_vs_expose.png)
+
 Composeでは次のイメージでOKです👇
 
 * `ports:` → **ホスト側に公開する**（外から来れる入口になる）🚪
@@ -209,6 +221,8 @@ services:
 ---
 
 ## まとめ：3原則を“1分レビュー”にする✅⏱️🤖
+
+![Security Review Checklist](./picture/docker_safe_isolation_ts_study_003_07_review_checklist.png)
 
 AI拡張（コード提案）を使うと爆速で進む反面、**危険な設定も平気で混ざる**ことがあります😇💥
 そこで、提案をコピペする前にこの“1分レビュー”を挟みます👇

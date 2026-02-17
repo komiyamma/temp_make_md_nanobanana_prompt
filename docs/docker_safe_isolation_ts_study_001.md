@@ -10,6 +10,8 @@ Dockerはまさにその代表で、**境界（ホスト／デーモン／コン
 
 ## まず“被害半径”ってなに？🗺️💥
 
+![Blast Radius Levels](./picture/docker_safe_isolation_ts_study_001_01_blast_radius_levels.png)
+
 被害半径＝「やらかした時に、どこまで巻き添えになるか」だよ😇
 
 ざっくり3段階で考えるとラク👇
@@ -30,6 +32,8 @@ Dockerは、設定次第で**「コンテナだけ」→「ホストまで」へ
 
 ## あるある1：`.env` をコミットして秘密が公開😇🔑➡️🌍
 
+![Env File Leak Flow](./picture/docker_safe_isolation_ts_study_001_02_env_leak_flow.png)
+
 **よくある流れ**
 
 1. 動いた！うれしい！🎉
@@ -49,6 +53,8 @@ Dockerは、設定次第で**「コンテナだけ」→「ホストまで」へ
 ---
 
 ## あるある2：ログやエラーに秘密を出してしまう🫣🧯
+
+![Secret Leak in Logs](./picture/docker_safe_isolation_ts_study_001_03_log_leak.png)
 
 **例：一瞬だけデバッグのつもりが永遠に残るやつ**
 
@@ -83,6 +89,8 @@ Dockerは、設定次第で**「コンテナだけ」→「ホストまで」へ
 
 ## あるある4：フォルダ共有（bind mount）しすぎてホストが燃える🔥💽
 
+![Bind Mount Fire Spread](./picture/docker_safe_isolation_ts_study_001_04_bind_mount_fire.png)
+
 **よくある流れ**
 
 * 便利だから `.:/app`
@@ -98,6 +106,8 @@ Dockerは、設定次第で**「コンテナだけ」→「ホストまで」へ
 ---
 
 ## あるある5：`docker.sock` を渡して“ほぼホスト権限”🐙🔥
+
+![Docker Sock Trap](./picture/docker_safe_isolation_ts_study_001_05_docker_sock_trap.png)
 
 `/var/run/docker.sock` をコンテナに渡すと、
 **コンテナがDockerデーモンを操作できる**＝結果的にホスト級の操作ができることがある😱
@@ -120,6 +130,8 @@ Dockerは **rootless mode** で「デーモンもコンテナも非root寄り」
 ---
 
 ## あるある7：AI拡張に“見せたくない物”まで見せる🤖🧨
+
+![Indirect Prompt Injection](./picture/docker_safe_isolation_ts_study_001_06_ai_injection.png)
 
 ここ、2026っぽい新しい事故ゾーン😇
 
@@ -151,6 +163,8 @@ AI拡張（Copilot系、Codex系、エージェント系）は、
 細かい設定の前に、**判断基準（3原則）**を置いとくね👇
 
 ## ✅ 3原則：最小権限・最小共有・最小公開✂️🔐📤
+
+![Three Security Principles](./picture/docker_safe_isolation_ts_study_001_07_three_principles.png)
 
 * **最小権限**：できることを減らす（root/privilegedを避ける）
 * **最小共有**：ホストのフォルダを渡しすぎない
