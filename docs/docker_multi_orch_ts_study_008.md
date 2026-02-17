@@ -34,6 +34,8 @@ Pod を直接動かすだけだと「落ちたら終わり」になりがち。�
 
 ## ざっくり関係図👪
 
+![deployment_hierarchy](./picture/docker_multi_orch_ts_study_008_deployment_hierarchy.png)
+
 Deployment は裏で **ReplicaSet** を作り、ReplicaSet が **Pod の数を維持**します🧩
 （だから Pod を消しても戻る！）
 
@@ -99,6 +101,8 @@ kubectl get pods -l app=my-api -o wide
 
 ## ハンズオン②：Podをわざと消して“復活”を観察😈➡️😇
 
+![self_healing_mechanism](./picture/docker_multi_orch_ts_study_008_self_healing_mechanism.png)
+
 ## 1) Podを監視しながら消す🕵️‍♂️
 
 まず監視：
@@ -127,6 +131,8 @@ kubectl delete pod <消したいPod名>
 
 ## ハンズオン③：replicas を増減して “強さ” を変える💪📈
 
+![replicas_resilience](./picture/docker_multi_orch_ts_study_008_replicas_resilience.png)
+
 ```bash
 kubectl scale deployment/my-api --replicas=3
 kubectl get pods -l app=my-api
@@ -147,6 +153,8 @@ kubectl get pods -l app=my-api
 ---
 
 ## ハンズオン④：ロールアウト（安全に更新）を体験🔄🧪
+
+![rolling_update_flow](./picture/docker_multi_orch_ts_study_008_rolling_update_flow.png)
 
 Deployment の “うまみ” は **更新の自動運転**にもあります🚗💨
 （止めずに、少しずつ入れ替える）
@@ -183,6 +191,8 @@ kubectl get pods -l app=my-api
 
 ## ハンズオン⑤：やらかした！を“戻す”（Rollback）🧯⏪
 
+![rollback_undo](./picture/docker_multi_orch_ts_study_008_rollback_undo.png)
+
 ## 1) 履歴を見る📜
 
 ```bash
@@ -216,6 +226,8 @@ kubectl rollout status deployment/my-api
 ## よくある事故ポイント集😇💥（そして直し方）
 
 ## 1) Pod が増えない / 0 のまま😵
+
+![label_selector_match](./picture/docker_multi_orch_ts_study_008_label_selector_match.png)
 
 * `selector` と `template.labels` がズレてる可能性大🧷
   → YAML を見直す（この章の最重要罠⚠️）

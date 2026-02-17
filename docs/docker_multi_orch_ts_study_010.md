@@ -22,6 +22,8 @@ Kubernetesのリソースって、慣れてくると **あっという間に数�
 
 ## 10.2 まず超ざっくり理解🧠✨（3行でOK）
 
+![three_organization_tools](./picture/docker_multi_orch_ts_study_010_three_organization_tools.png)
+
 * **Label**は「同じ種類のものに共通で付ける目印」🏷️（例：`app=api`）
 * **Selector**は「その目印でグループを選ぶ仕組み」🔎（ServiceもこれでPodを選びます） ([Kubernetes][2])
 * **Namespace**は「そもそも置き場所を分ける仕切り」📦（dev/prodを混ぜない）
@@ -29,6 +31,8 @@ Kubernetesのリソースって、慣れてくると **あっという間に数�
 ---
 
 ## 10.3 ハンズオン①：Namespaceで“箱”を作る📦🧪
+
+![namespace_isolation](./picture/docker_multi_orch_ts_study_010_namespace_isolation.png)
 
 まず、環境別に2つ作ります（dev / prod）🌱🔥
 
@@ -57,6 +61,8 @@ kubectl config view --minify | findstr namespace
 ---
 
 ## 10.4 ハンズオン②：Labelを付ける（タグ付け）🏷️🧩
+
+![label_tagging_visual](./picture/docker_multi_orch_ts_study_010_label_tagging_visual.png)
 
 Labelは「整理整頓の主役」です🏷️✨
 そしてKubernetes公式が推奨してる“共通ラベル”がこれ👇（`app.kubernetes.io/*` 系） ([Kubernetes][3])
@@ -127,6 +133,8 @@ kubectl get pods -n demo-dev --show-labels
 
 ## 10.6 ハンズオン④：Selectorで“絞り込み検索”🔎✨（一気に気持ちよくなるやつ）
 
+![selector_filtering_mechanism](./picture/docker_multi_orch_ts_study_010_selector_filtering_mechanism.png)
+
 Labelが付いたら、Selectorで取り放題です😋
 
 **等価ベース（シンプル）**👇
@@ -147,6 +155,8 @@ SelectorはKubernetesの“グルーピングの核”です（ドキュメン�
 ---
 
 ## 10.7 ハンズオン⑤：ServiceはSelectorで“接続先Pod”を決める🚰➡️📦
+
+![service_selector_connection](./picture/docker_multi_orch_ts_study_010_service_selector_connection.png)
 
 ここが今日の一番おいしいところです😆🍖
 Serviceは「このラベルのPodに流してね〜」ってSelectorで決めます。
@@ -191,6 +201,8 @@ kubectl get endpointslices -n demo-dev
 
 ## 10.8 “整理整頓ミニ設計”の型📁✨（初心者が迷わないやつ）
 
+![standard_labels_recommendation](./picture/docker_multi_orch_ts_study_010_standard_labels_recommendation.png)
+
 まずはこの2段構えがラクです👇
 
 ## ① Namespace：大きな境界（環境・チーム）📦
@@ -215,6 +227,9 @@ kubectl get endpointslices -n demo-dev
    → `-n demo-dev` or `kubectl config set-context --current --namespace=...` を固定💪
 
 2. **Serviceが繋がらない（Endpointなし）**
+
+   ![selector_mismatch_error](./picture/docker_multi_orch_ts_study_010_selector_mismatch_error.png)
+
    → selectorとlabelのズレ。`pods --show-labels` で照合🔎
 
 3. **labelキー/値のルール違反**（地味に怒られる）

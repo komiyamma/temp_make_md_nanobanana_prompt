@@ -17,6 +17,8 @@
 
 ## まず「宣言型」ってなに？🤔🧾
 
+![imperative_vs_declarative](./picture/docker_multi_orch_ts_study_005_imperative_vs_declarative.png)
+
 Kubernetesはざっくりこういう世界観です👇
 
 * **命令型**：「今すぐこれをやって！」（手順を指示）🗣️
@@ -34,6 +36,8 @@ Kubernetesはざっくりこういう世界観です👇
 
 ## 1) インデントが命（基本はスペース）🫠
 
+![yaml_indentation_rule](./picture/docker_multi_orch_ts_study_005_yaml_indentation_rule.png)
+
 * YAMLは **インデントで構造が決まる**
 * 同じ階層はインデントを揃える（タブは避けるのが安全）⚠️
 
@@ -48,6 +52,8 @@ Kubernetesはざっくりこういう世界観です👇
 ---
 
 ## Kubernetesマニフェストの“4大パーツ”🧩
+
+![manifest_4_parts](./picture/docker_multi_orch_ts_study_005_manifest_4_parts.png)
 
 マニフェストを見たら、まずこれを探す！👇
 
@@ -64,6 +70,8 @@ Kubernetesはざっくりこういう世界観です👇
 ---
 
 ## 重要：`status` は基本 “書かない” 🙅‍♂️📛
+
+![spec_vs_status](./picture/docker_multi_orch_ts_study_005_spec_vs_status.png)
 
 `kubectl get -o yaml` で出したYAMLには `status` が出てきたりします。
 でも `status` は **クラスタ側が記録する“結果”** なので、基本は触りません✋
@@ -105,6 +113,8 @@ spec:
 ---
 
 ## 2) “事故らない”チェック（dry-run）🧯✅
+
+![kubectl_dry_run_safety](./picture/docker_multi_orch_ts_study_005_kubectl_dry_run_safety.png)
 
 いきなり適用せず、まず **クライアント側でdry-run** します。
 
@@ -164,6 +174,8 @@ curl http://localhost:3000
 ---
 
 ## 5) “宣言型っぽさ” を体験しよう（更新してapply）🔁✨
+
+![kubectl_diff_apply_loop](./picture/docker_multi_orch_ts_study_005_kubectl_diff_apply_loop.png)
 
 `hello k8s` の文字を変えてみて👇
 
