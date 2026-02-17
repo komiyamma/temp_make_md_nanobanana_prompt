@@ -2,6 +2,8 @@
 
 ## 28.1 この章でできるようになること🎯
 
+![Zone Design](./picture/docker_safe_isolation_ts_study_028_01_zone_design.png)
+
 * DB/Redisを **ホスト（Windows）や外部ネットから触れない** 状態にする🙅‍♂️🌐
 * 「Webは公開OK / DBは内部だけ」みたいな **境界線（ゾーン）設計** ができる🗺️
 * それでも必要になる「DBを覗く作業」を **安全にやる逃げ道** を持てる🧰✨
@@ -9,6 +11,8 @@
 ---
 
 ## 28.2 まず結論：やることは3つだけ✅✅✅
+
+![Three Actions for Safety](./picture/docker_safe_isolation_ts_study_028_02_three_actions.png)
 
 1. **DB/Redisに `ports:` を書かない**
    → `ports` は “ホストに穴を開ける” 行為。DB/Redisは穴を開けないのが基本🕳️🚫
@@ -31,6 +35,8 @@
 
 ## 28.3 イメージ図：入口（public）と裏側（private）を分ける🚪🍱
 
+![Architecture Map](./picture/docker_safe_isolation_ts_study_028_03_architecture_map.png)
+
 * 👀 外から来るのは **Web/API** まで
 * 🔒 **DB/Redisは private だけ**（publicに繋がない・portsも開けない）
 
@@ -42,6 +48,8 @@
 ---
 
 ## 28.4 ハンズオン：API + DB + Redis を「内側専用」にする🛠️🔥
+
+![Hands-on Setup](./picture/docker_safe_isolation_ts_study_028_04_handson_setup.png)
 
 ここでは例として
 
@@ -197,6 +205,8 @@ docker compose exec api node -e "fetch('http://localhost:3000').catch(console.er
 
 ## 28.5 「DBを覗きたい…」デバッグの安全な逃げ道3選🧰🧡
 
+![Escape Routes](./picture/docker_safe_isolation_ts_study_028_05_escape_routes.png)
+
 ### 逃げ道1：`exec` で中から触る（基本これ）🧑‍🔧✨
 
 ```powershell
@@ -208,6 +218,8 @@ docker compose exec redis redis-cli ping
 * ✅ チーム開発でも事故りにくい
 
 ### 逃げ道2：デバッグ用ツールは **profiles** で必要時だけ起動🧪🎛️
+
+![Profile Switch](./picture/docker_safe_isolation_ts_study_028_06_profile_switch.png)
 
 例：`adminer` や `pgadmin` を “普段は起動しない” にする。profilesの公式解説はこちら([Docker Documentation][3])
 
@@ -257,6 +269,8 @@ ports:
 ---
 
 ## 28.6 ありがちな事故パターン（そして直し方）😇💥
+
+![Accident Patterns](./picture/docker_safe_isolation_ts_study_028_07_accident_patterns.png)
 
 ### 事故1：DBに `ports: "5432:5432"` を書いてしまった🫠
 

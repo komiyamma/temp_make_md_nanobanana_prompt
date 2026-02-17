@@ -18,6 +18,8 @@ Docker Compose のネットワークは、ざっくり言うと **コンテナ�
 
 ## 1) Compose はデフォで「全部つながる」😺
 
+![Network Rooms](./picture/docker_safe_isolation_ts_study_027_01_network_rooms.png)
+
 Compose は、何も書かないと **アプリ用のネットワークを1つ作って**、各サービスをそこに参加させます。
 だからサービス同士は基本「届く」し、**サービス名で名前解決**できます📡✨ ([Docker Documentation][1])
 
@@ -27,6 +29,8 @@ Compose は、何も書かないと **アプリ用のネットワークを1つ�
 ---
 
 ## 2) 「ports」は“外へのドア”、ネットワークは“部屋の中の通路”🚪🕸️
+
+![Ports vs Network](./picture/docker_safe_isolation_ts_study_027_02_ports_vs_network.png)
 
 * **ネットワーク**：コンテナ同士が話すための通路
 * **ports**：ホスト（＝あなたのPC）や外部から入るためのドア
@@ -40,6 +44,8 @@ Compose は、何も書かないと **アプリ用のネットワークを1つ�
 
 ## 3) 「internal: true」で“外部と切れたネットワーク”が作れる🔒
 
+![Internal True Isolation](./picture/docker_safe_isolation_ts_study_027_03_internal_true.png)
+
 Compose は通常、ネットワークに外部接続性を持たせます。
 `internal: true` にすると **externally isolated network（外部から隔離されたネットワーク）** を作れます🧊 ([Docker Documentation][4])
 
@@ -48,6 +54,8 @@ Compose は通常、ネットワークに外部接続性を持たせます。
 ---
 
 ## ネットワーク設計の型：3層に分ける🍰✨
+
+![Three Layer Network Design](./picture/docker_safe_isolation_ts_study_027_04_three_layers.png)
 
 ここからは“よくある個人開発の型”でいきます👇
 
@@ -64,6 +72,8 @@ Docker Docs でも「proxy は db とネットワークを共有しないから�
 ## ハンズオン：閉じ込めネットワークを作って“壁”を体感しよう🧪🧱
 
 ## 0) 構成イメージ🗺️
+
+![Hands-on Network Map](./picture/docker_safe_isolation_ts_study_027_05_handson_map.png)
 
 * ブラウザ → `proxy`（入口）
 * `proxy` → `api`（中）
@@ -178,6 +188,8 @@ curl http://127.0.0.1:8080/
 
 ## “壁”を確認するデバッグ実験🧱🧪
 
+![Debugging the Wall](./picture/docker_safe_isolation_ts_study_027_06_debug_wall.png)
+
 ## 実験A：`app_net` から `redis` を見ようとして失敗する（壁がある）❌
 
 デバッグ用コンテナを起動して中へ👇
@@ -232,6 +244,8 @@ Redis はHTTPじゃないのでレスポンスは期待どおりじゃないけ�
 ---
 
 ## 事故2：全部同じネットワークに入れちゃう🙈
+
+![One Network Accident](./picture/docker_safe_isolation_ts_study_027_07_accident_one_net.png)
 
 便利なんだけど、隔離が消えます。
 “壁”が欲しいところは **ネットワークを分けて、共有しない**が基本🧱✨ ([Docker Documentation][4])

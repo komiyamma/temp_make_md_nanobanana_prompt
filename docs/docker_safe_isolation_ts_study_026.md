@@ -7,6 +7,8 @@
 
 ## 1) まずイメージ：ポート公開＝“外に穴を開ける”🕳️😱
 
+![Open Entrance Only](./picture/docker_safe_isolation_ts_study_026_01_entrance_only.png)
+
 コンテナの中でアプリが `3000` 番で待ち受けていても、それだけでは外（PCの外）からは基本来れません。
 でも `ports:`（または `-p`）で公開すると、**ホスト側に穴が開いて外から到達できる**状態になります🌍💥
 
@@ -21,6 +23,8 @@
 
 ## ルール1：公開していいのは基本「Web/API」だけ🧑‍💻➡️🌐
 
+![Web vs DB Exposure](./picture/docker_safe_isolation_ts_study_026_02_web_vs_db.png)
+
 * ブラウザやアプリがアクセスする入口（例：APIサーバー）だけ公開✅
 * 入口が1つなら、守る場所も1つで済む🎯✨
 
@@ -30,6 +34,8 @@
 * **アプリからだけDBに行ける**のが正解🙆‍♀️🍱
 
 ## ルール3：開発中は “localhost バインド” が基本🔥
+
+![Localhost Shield](./picture/docker_safe_isolation_ts_study_026_03_localhost_shield.png)
 
 `127.0.0.1` で縛ると **自分のPCからしか触れない**ので、事故が激減します🧯✨
 ([Docker Documentation][1])
@@ -47,6 +53,8 @@ Docker Desktop には、ポートバインドを **デフォルトで localhost 
 
 ## ルール6：`EXPOSE` は「公開」じゃない📌
 
+![EXPOSE vs Ports](./picture/docker_safe_isolation_ts_study_026_04_expose_vs_ports.png)
+
 Dockerfile の `EXPOSE` は「このアプリはこのポート使うよ」という**目印**で、**ホストに公開はしません**👀
 ([Docker Documentation][4])
 
@@ -58,6 +66,8 @@ Dockerfile の `EXPOSE` は「このアプリはこのポート使うよ」と�
 ---
 
 ## 3) Composeで“安全な公開”を作る（ここ超重要）💥🧠
+
+![Binding Comparison](./picture/docker_safe_isolation_ts_study_026_05_binding_comparison.png)
 
 ## A. 一番よくある危険パターン😇
 
@@ -109,6 +119,8 @@ services:
 ---
 
 ## 4) ハンズオン：APIだけ公開、DBは完全に内部専用🍱🔐
+
+![Hands-on Architecture](./picture/docker_safe_isolation_ts_study_026_06_handson_arch.png)
 
 ## 例：api + db の compose（DBは公開しない）
 
@@ -176,6 +188,8 @@ Test-NetConnection 127.0.0.1 -Port 5432
 ---
 
 ## 6) “いま何が公開されてる？”確認するコマンド🔍👀
+
+![Check Command](./picture/docker_safe_isolation_ts_study_026_07_check_command.png)
 
 ## Docker側で見る🐳
 
