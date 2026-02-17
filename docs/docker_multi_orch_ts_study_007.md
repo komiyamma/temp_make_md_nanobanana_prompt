@@ -16,6 +16,8 @@
 
 ## まずは超重要な前提（この章の地雷だけ回避💣）
 
+![localhost_vs_0000_trap](./picture/docker_multi_orch_ts_study_007_localhost_vs_0000_trap.png)
+
 Podで動かすWebサーバーは、**コンテナ内で `0.0.0.0` にバインド**してないと外から繋がりません🙅‍♂️
 「ローカルでは動くのに、K8sだと繋がらない」No.1原因です🥲
 
@@ -116,6 +118,8 @@ minikube image load ts-api:0.1.0
 
 ## 3) Podマニフェストを書く📄✍️（この章の主役）
 
+![pod_anatomy_simple](./picture/docker_multi_orch_ts_study_007_pod_anatomy_simple.png)
+
 ファイル名：`pod-ts-api.yaml`
 
 ```yaml
@@ -157,6 +161,8 @@ kubectl apply -f pod-ts-api.yaml
 
 ## 4-2) 状態を見る（まず get）👀
 
+![kubectl_get_vs_describe](./picture/docker_multi_orch_ts_study_007_kubectl_get_vs_describe.png)
+
 ```bash
 kubectl get pod -w
 ```
@@ -176,6 +182,8 @@ kubectl describe pod ts-api-pod
 
 ## 5) ログを見る📜（Podの心の声）
 
+![kubectl_logs_concept](./picture/docker_multi_orch_ts_study_007_kubectl_logs_concept.png)
+
 ```bash
 kubectl logs ts-api-pod
 ```
@@ -190,6 +198,8 @@ kubectl logs -f ts-api-pod
 ---
 
 ## 6) Podの中に入って確認する🕵️‍♂️（exec）
+
+![kubectl_exec_teleport](./picture/docker_multi_orch_ts_study_007_kubectl_exec_teleport.png)
 
 ```bash
 kubectl exec -it ts-api-pod -- sh
@@ -208,6 +218,8 @@ wget -qO- http://localhost:3000/health
 ---
 
 ## 7) 手元PCからアクセスする🌐（port-forward）
+
+![kubectl_port_forward_tunnel](./picture/docker_multi_orch_ts_study_007_kubectl_port_forward_tunnel.png)
 
 Pod に対してポート転送します🚪
 コマンド仕様は公式の `kubectl port-forward` に載っています ([Kubernetes][1])
@@ -258,6 +270,8 @@ kubectl logs -f ts-api-pod
 * まず `kubectl describe pod ...` の Events を見る👀
 
 ## B) `CrashLoopBackOff` 🔁💀
+
+![crash_loop_back_off](./picture/docker_multi_orch_ts_study_007_crash_loop_back_off.png)
 
 対処：
 

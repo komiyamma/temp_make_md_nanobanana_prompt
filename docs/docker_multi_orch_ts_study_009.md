@@ -10,6 +10,8 @@ Kubernetesの世界だと、**“つなぎ先はIPじゃなくて名前で呼ぶ
 
 ## 9.1 まず結論：Serviceは「固定の入り口（住所＆電話番号）」📞🏠
 
+![service_stable_entrypoint](./picture/docker_multi_orch_ts_study_009_service_stable_entrypoint.png)
+
 Podは落ちたり増えたりして、**IPが変わるのが通常運転**です😇💥
 だから **PodのIPに直打ち**すると、すぐ壊れます🫠
 
@@ -24,6 +26,8 @@ Kubernetes公式の「Serviceの概念ページ」でも、この思想がど真
 ---
 
 ## 9.2 Serviceディスカバリって何？🤔➡️😎
+
+![dns_service_discovery](./picture/docker_multi_orch_ts_study_009_dns_service_discovery.png)
 
 **Serviceディスカバリ = “サービスを見つける仕組み”**です🧭✨
 Kubernetesでは主に **DNS** で見つけます📡
@@ -44,6 +48,8 @@ DNS名のルール（ざっくり）👇
 
 ## 9.3 Serviceの種類（超ざっくり使い分け）🧰✨
 
+![service_types_comparison](./picture/docker_multi_orch_ts_study_009_service_types_comparison.png)
+
 よく使うのはこのへんです👇（名前だけでも覚えれば勝ち🏆）
 
 * **ClusterIP（基本これ）**：クラスタ内部だけの入口🏠
@@ -58,6 +64,8 @@ Serviceの公式ドキュメントにまとまっています。([Kubernetes][2]
 ---
 
 ## 9.4 Serviceの裏側：EndpointSliceが“実体の名簿”📇🧠
+
+![endpoint_slice_roster](./picture/docker_multi_orch_ts_study_009_endpoint_slice_roster.png)
 
 Serviceは「入口」です。
 でも実際にどのPodへ流すかは、**EndpointSlice** が持っています📇✨
@@ -162,6 +170,8 @@ kubectl -n demo get pods,svc
 ---
 
 ## 手順C：API（Node/TS）＋ Service `api` を作る🍔🧷
+
+![connection_flow_diagram](./picture/docker_multi_orch_ts_study_009_connection_flow_diagram.png)
 
 Nodeは本日（2026-02-13）時点で **v24がActive LTS** です。([nodejs.org][6])
 なのでサンプルは Node 24 を基準にします🚀
@@ -395,12 +405,16 @@ curl http://localhost:3000/health/db
 
 ## 9.6 つながらない時の“型”🧯🥋（ここが超重要）
 
+![troubleshooting_checklist_visual](./picture/docker_multi_orch_ts_study_009_troubleshooting_checklist_visual.png)
+
 Service周りは、だいたい事故パターンが決まってます😎✨
 順番に潰せばOK！
 
 ---
 
 ## パターン1：ServiceのselectorがPodのlabelとズレてる🏷️❌
+
+![selector_mismatch_trap](./picture/docker_multi_orch_ts_study_009_selector_mismatch_trap.png)
 
 確認👇
 

@@ -23,6 +23,8 @@
 
 ## 1) そもそも：なぜ「クラスタに届ける」必要があるの？🧠🗺️
 
+![why_registry_needed](./picture/docker_multi_orch_ts_study_006_why_registry_needed.png)
+
 Kubernetesは、Podを起動するときに
 **「じゃあこのPod、どのノードで動かす？」**を毎回判断します🎲
 
@@ -36,6 +38,8 @@ Kubernetesは、Podを起動するときに
 ---
 
 ## 2) レジストリ超入門：レジストリは“配達センター”📦🏬
+
+![registry_delivery_center](./picture/docker_multi_orch_ts_study_006_registry_delivery_center.png)
 
 レジストリはざっくり言うと：
 
@@ -56,6 +60,8 @@ Kubernetesは、Podを起動するときに
 
 ## ✅ まず覚える“事故パターン”
 
+![latest_tag_trap](./picture/docker_multi_orch_ts_study_006_latest_tag_trap.png)
+
 * `latest` を使う
 * いつの間にか中身が変わる
 * でもPod側は「同じ名前だし…」で**古いのを掴む/違うノードで違う中身**になる
@@ -65,6 +71,8 @@ Kubernetesは、Podを起動するときに
 ローカル学習で `latest` を雑に使うと「pullしに行って失敗」しがちです😇
 
 ## ✅ おすすめのタグ方針（学習用でも強い）
+
+![tagging_strategies](./picture/docker_multi_orch_ts_study_006_tagging_strategies.png)
 
 * まずは **SemVer**：`0.1.0`, `0.1.1` みたいに積む📈
 * もしくは **Gitの短いSHA**：`sha-1a2b3c4` みたいに一意にする🧬
@@ -126,6 +134,8 @@ docker run --rm -p 3000:3000 todo-api:0.1.0
 ---
 
 ## 5) 3つの“届け方”🚚✨（本番⇄ローカルを行き来できるように）
+
+![delivery_methods_3_ways](./picture/docker_multi_orch_ts_study_006_delivery_methods_3_ways.png)
 
 ## A) いちばん正攻法：レジストリにpushして、K8sがpullする🌍📦
 
@@ -221,6 +231,8 @@ docker build -t todo-api:0.1.0 .
   👉 **タグを上げる**（`0.1.1`）か、digest固定を検討🔒
 
 ## 😭「ローカルで作ったのにpull失敗する」
+
+![image_pull_policy_logic](./picture/docker_multi_orch_ts_study_006_image_pull_policy_logic.png)
 
 * `imagePullPolicy: Always` になってる可能性高い
   👉 ローカル検証では `IfNotPresent` / `Never` を意識する（特にminikube docker-env）([Kubernetes][4])
