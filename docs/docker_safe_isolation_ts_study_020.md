@@ -7,6 +7,8 @@
 
 ## 0. まず結論：迷ったらこの3箱📦📦📦
 
+![Three Boxes Classification](./picture/docker_safe_isolation_ts_study_020_01_three_boxes_classification.png)
+
 設定っぽいものは、最終的にこの3種類に分類できるよ👇
 
 1. **env（環境変数）**：
@@ -32,6 +34,8 @@
 
 ## 1. ありがちな事故：全部envに押し込んで爆発💥
 
+![Env Explosion Mess](./picture/docker_safe_isolation_ts_study_020_02_env_explosion_mess.png)
+
 envって便利だから、こうなりがち👇
 
 * `.env` に **DBパスワード**も **APIキー**も **設定JSON**も詰め込む
@@ -51,6 +55,8 @@ Composeは、Composeファイル内の `${VAR}` を埋める（**変数補間**�
 
 ## 2-2. コンテナに入るenvは別（`environment` と `env_file`）📦
 
+![Env Precedence Ladder](./picture/docker_safe_isolation_ts_study_020_03_env_precedence_ladder.png)
+
 コンテナへ渡すenvは、主にこの2つ👇
 
 * `environment:` … Composeファイルに直書き（or 変数補間で差し込み）
@@ -65,6 +71,8 @@ Composeは、Composeファイル内の `${VAR}` を埋める（**変数補間**�
 ---
 
 ## 3. configsって何がうれしいの？📄✨
+
+![Config File Injection](./picture/docker_safe_isolation_ts_study_020_04_config_file_injection.png)
 
 Composeの `configs` は、サービスの挙動を変える設定を**イメージ再ビルドなしで差し替え**たい時に便利。
 しかも「ファイルとして」コンテナに入る。([Docker Documentation][1])
@@ -88,6 +96,8 @@ Composeの `configs` は、サービスの挙動を変える設定を**イメー
 
 ## 4-1. リポジトリ構成（例）📁
 
+![Ideal Repository Structure](./picture/docker_safe_isolation_ts_study_020_05_ideal_repo_structure.png)
+
 * `compose.yaml`
 * `.env` … **公開OKなデフォルト値**（例：ポート、機能フラグ）
 * `.env.local` … **個人PCだけの値**（Git管理しない）
@@ -97,6 +107,8 @@ Composeの `configs` は、サービスの挙動を変える設定を**イメー
 * `scripts/` … 運用補助（初期化など）
 
 ## 4-2. 仕分けの判定フロー（秒速で決まる）⚡
+
+![Decision Flowchart](./picture/docker_safe_isolation_ts_study_020_06_decision_flowchart.png)
 
 1. **漏れたらヤバい？**（パスワード/鍵/トークン）
    → **secret（ファイル）**へ（envに置かない）🔑
@@ -163,6 +175,8 @@ configs:
 * 「接続文字列」や「ヘッダ」も危険（トークン混ざりがち）⚠️
 
 ## 6-2. “設定の入口”を1か所にする（超大事）🚪
+
+![Single Config Entry Point](./picture/docker_safe_isolation_ts_study_020_07_single_config_entry_point.png)
 
 * env と config file をアプリのあちこちで読まない
 * `config.ts` みたいな **1ファイル**に集約する
