@@ -10,6 +10,8 @@
 
 ## ② 図（1枚）🖼️：ログが拾われる道すじ
 
+![Log Pickup Flow](./picture/docker_observability_ts_study_005_01_log_pickup_flow.png)
+
 ```text
 (アプリ) console.log / console.error
         │
@@ -51,6 +53,8 @@ observability-lab/
 ---
 
 ### ステップ2：logger.ts を作る（stdout / stderr を分ける）🎚️🟢🔴
+
+![Logger Split Logic](./picture/docker_observability_ts_study_005_02_logger_split.png)
 
 ポイントは超シンプル👇
 
@@ -96,6 +100,8 @@ Node.js の console は stdout/stderr を使い分ける設計で説明されて
 ---
 
 ### ステップ3：server.ts に「起動ログ」「リクエストログ」「エラーログ」を入れる 🧾🔥
+
+![Logging Checkpoints](./picture/docker_observability_ts_study_005_03_logging_checkpoints.png)
 
 * 起動時：boot ログ
 * リクエスト：1リクエストにつき1行（今は“超入門版”）
@@ -283,6 +289,8 @@ api-1  | time=2026-02-13T04:12:25.101Z level=INFO msg="request" method=GET path=
 
 ## ⑤ チェック：コンテナ再起動しても見える？🔁👀
 
+![Restart vs Down](./picture/docker_observability_ts_study_005_04_restart_vs_down.png)
+
 「ログって消えるの？」を体験します😊
 
 ```bash
@@ -299,6 +307,8 @@ docker compose logs api --tail=20
 ---
 
 ## ⑥ つまづきポイント（3つ）🪤😵‍💫
+
+![Common Log Mistakes](./picture/docker_observability_ts_study_005_05_common_mistakes.png)
 
 1. **ログをファイルに書いてしまう** 📄➡️💥
    コンテナ内のファイルは「いつでも捨てられる」ので、まずは stdout/stderr に出すのが正解です📣（あとで必要なら“集める仕組み”を足す）

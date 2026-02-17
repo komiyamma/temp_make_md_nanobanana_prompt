@@ -16,6 +16,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Mini API Architecture](./picture/docker_observability_ts_study_004_01_mini_api_arch.png)
+
 （ざっくりこういう関係になります👇）
 
 ```text
@@ -50,6 +52,8 @@ VS Codeで新規フォルダを作って開きます。
 ---
 
 ### 手順2）最低限のファイル構成を作る 🧱
+
+![Project File Structure](./picture/docker_observability_ts_study_004_02_file_structure.png)
 
 最終的にこうなります👇
 
@@ -119,6 +123,8 @@ obs-mini-api/
 
 ### 手順5）ミニAPI本体（/ping と /slow）を書く 🧪
 
+![/ping vs /slow Logic](./picture/docker_observability_ts_study_004_03_ping_vs_slow.png)
+
 `src/server.ts` を作成：
 
 ```ts
@@ -162,6 +168,8 @@ process.on("SIGTERM", () => {
 });
 ```
 
+![Input Guard Logic](./picture/docker_observability_ts_study_004_04_input_guard.png)
+
 ここ、地味に大事😎
 
 * `/slow` は **「遅い」症状を確実に作れる**ので、後のログ・メトリクスでめちゃ便利！
@@ -191,6 +199,8 @@ CMD ["npm", "run", "dev"]
 ---
 
 ### 手順7）compose.yaml を作る 🧩
+
+![Volume Mount Strategy](./picture/docker_observability_ts_study_004_05_volume_strategy.png)
 
 ```yaml
 services:
@@ -276,6 +286,8 @@ api-1  | [boot] api listening on http://localhost:3000
 ---
 
 ## ⑤ つまづきポイント（3つ）🪤
+
+![Common Traps](./picture/docker_observability_ts_study_004_06_common_traps.png)
 
 1. **3000番がすでに埋まってる** 🔥
 

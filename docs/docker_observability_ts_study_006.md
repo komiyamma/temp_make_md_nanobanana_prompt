@@ -15,6 +15,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Log Filtering Funnel](./picture/docker_observability_ts_study_006_01_log_filtering_funnel.png)
+
 ```text
 （大量ログ）🧾🧾🧾🧾🧾🧾🧾🧾
    │
@@ -50,6 +52,8 @@ docker ps
 
 ### 1) “最後の10行だけ”見る（最速で状況把握）🔟👀
 
+![Tail Concept](./picture/docker_observability_ts_study_006_02_tail_concept.png)
+
 まずはこれが基本形です🧠✨
 
 ```bash
@@ -66,6 +70,8 @@ docker compose logs --tail=10 api
 
 ### 2) “追いかける”（リアルタイム監視）👀🏃‍♂️
 
+![Follow Action](./picture/docker_observability_ts_study_006_03_follow_action.png)
+
 いま発生してる問題を追うならこれ🔥
 
 ```bash
@@ -78,6 +84,8 @@ docker compose logs --follow api
 ---
 
 ### 3) “時間で絞る”（直近だけ見る）⏱️🎯
+
+![Since Filter](./picture/docker_observability_ts_study_006_04_since_filter.png)
 
 「さっきの操作のログだけ見たい！」を一発でやります👍
 
@@ -122,6 +130,8 @@ docker compose logs --no-log-prefix --tail=20 api
 ---
 
 ### 6) “文字で絞る”（ERRORだけ拾う）🔎🧯
+
+![Grep Error Filter](./picture/docker_observability_ts_study_006_05_grep_error.png)
 
 **PowerShellなら**👇
 
@@ -178,6 +188,8 @@ docker logs --since=10m --tail=200 --follow <container_name_or_id>
 ---
 
 ### 9) “保存して共有する”（相談・比較がラク）💾🤝
+
+![Save to File](./picture/docker_observability_ts_study_006_06_save_to_file.png)
 
 「直近10分のapiログ」をファイルに保存👇
 
