@@ -15,6 +15,8 @@
 
 ## 🧠 まずは完成形の“結論”を1枚にする（超重要）
 
+![The Final Architecture Map](./picture/docker_local_exposure_ts_study_002_01_final_map.png)
+
 完成形はこう👇
 
 * ブラウザは **80/443**（HTTP/HTTPS）だけ見てる🌐
@@ -24,6 +26,8 @@
 ---
 
 ## 🗺️ 図（外から見た図）：「入口は1個」だけ覚える🚪✨
+
+![External View - Single Entry](./picture/docker_local_exposure_ts_study_002_02_external_view.png)
 
 ```text
 あなたのブラウザ
@@ -49,6 +53,8 @@
 ---
 
 ## 🐳 図（Dockerの中の図）：「中は名前でつながる」感覚を作る🌐
+
+![Internal Docker Network](./picture/docker_local_exposure_ts_study_002_03_internal_view.png)
 
 Docker Compose で動かすと、コンテナ同士は同じネットワーク内でサービス名（≒名前）で見つけ合える感じになるよ👀✨
 （Compose はデフォルトでネットワークを作って、その中でサービス名で到達できる、という整理） ([Docker Documentation][2])
@@ -80,6 +86,8 @@ Docker Compose で動かすと、コンテナ同士は同じネットワーク�
 
 ## ✅ 手順（“図を作る手順”）— 5分でできるテンプレ📝✨
 
+![5 Steps to Design](./picture/docker_local_exposure_ts_study_002_04_5_steps.png)
+
 ここからは「設計っぽいことを、難しい言葉なしで」やるよ😌🌱
 順番どおりに埋めるだけでOK！
 
@@ -104,6 +112,8 @@ Docker Compose で動かすと、コンテナ同士は同じネットワーク�
 
 ### ③ ルールを書く（どれで振り分ける？）🎯
 
+![Host vs Path Routing](./picture/docker_local_exposure_ts_study_002_05_host_vs_path.png)
+
 * ルールA：ホスト名で分ける（`app1.localhost` → app1）🏷️
 * ルールB：パスで分ける（`localhost/app1` → app1）📁
 
@@ -111,6 +121,8 @@ Docker Compose で動かすと、コンテナ同士は同じネットワーク�
 ただし “完成形” がイメージしやすいのは **ホスト名方式**だよ（本番っぽさが出る）😊✨
 
 ### ④ “公開ポート”と“内部ポート”を分けて書く🔌
+
+![Public vs Private Ports](./picture/docker_local_exposure_ts_study_002_06_public_private.png)
 
 * 公開するのは **proxy の 80/443**だけ🚪
 * app1/app2/api は **外に出さない**（中だけでOK）🫥
@@ -143,6 +155,8 @@ Docker Compose で動かすと、コンテナ同士は同じネットワーク�
 ---
 
 ## 🤖 AIに聞く例（コピペで使えるプロンプト集）
+
+![AI Architect](./picture/docker_local_exposure_ts_study_002_07_ai_architect.png)
 
 AIは「図を作る」「抜けを見つける」が超得意だよ🧠✨
 （Copilot/Codex系にそのまま投げてOK）

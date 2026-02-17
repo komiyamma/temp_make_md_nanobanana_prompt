@@ -15,6 +15,8 @@
 
 ## 1) まずURLを分解しよう🍰🔪
 
+![URL Parts Dissection](./picture/docker_local_exposure_ts_study_004_01_url_parts.png)
+
 例：
 `https://app1.localhost/api/users?limit=10#debug`
 
@@ -31,6 +33,8 @@
 ---
 
 ## 2) サーバー（＝リバプロ）が見れる場所 / 見れない場所👀🚪
+
+![Server Visibility & Fragment](./picture/docker_local_exposure_ts_study_004_02_server_visibility.png)
 
 ここ超重要‼️
 
@@ -52,9 +56,13 @@
 
 ## 3) “振り分けレバー”は基本2つ🎛️✨
 
+![Routing Levers](./picture/docker_local_exposure_ts_study_004_03_routing_levers.png)
+
 リバースプロキシが交通整理🚦するとき、主に見るのはこれ👇
 
 ## A. ホスト名で分ける（サブドメイン方式）🏷️🌈
+
+![Host Routing Flow](./picture/docker_local_exposure_ts_study_004_04_host_routing.png)
 
 例：
 
@@ -72,6 +80,8 @@
 
 ## B. パスで分ける（Path方式）🧩🍜
 
+![Path Routing Flow](./picture/docker_local_exposure_ts_study_004_05_path_routing.png)
+
 例：
 
 * `localhost/` → フロント
@@ -85,6 +95,8 @@
 ---
 
 ## 4) どっちを選ぶと幸せ？判断軸🌱✨
+
+![Decision Scale](./picture/docker_local_exposure_ts_study_004_06_decision_scale.png)
 
 ここは「正解は1つ」じゃなくて、**事故りにくさ**で選ぶのがコツだよ😌🍀
 
@@ -130,6 +142,8 @@
 ---
 
 ## 6) ルーティング表（設計の芯）を作ろう📋✨
+
+![Routing Table Artifact](./picture/docker_local_exposure_ts_study_004_07_routing_table.png)
 
 設定を書く前に、まず **人間が読めるルート表** を作ると超強いよ💪😺
 （これがあるとAIにも一発で伝わる！）
