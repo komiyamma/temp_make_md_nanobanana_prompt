@@ -11,6 +11,8 @@
 
 ## この章でできるようになること🎯✨
 
+![Build Secret Concept](./picture/docker_safe_isolation_ts_study_024_01_pass_not_pack.png)
+
 * private repo を **SSH鍵をイメージへコピーせず**にビルドできる🔐
 * private npm レジストリのトークンを **レイヤ・ログ・履歴に残さず**に依存導入できる🫥
 * 「どの認証を使うべき？」が選べるようになる（Deploy key / fine-grained PAT / CI用トークン）🧠
@@ -19,6 +21,8 @@
 ---
 
 ## 1) まず知っておく“事故り方”あるある😇💣
+
+![Build Leak Accidents](./picture/docker_safe_isolation_ts_study_024_02_accident_patterns.png)
 
 ## 事故パターンA：Dockerfile にトークンを `ARG`/`ENV` で入れる
 
@@ -38,6 +42,8 @@
 
 ## 2) 正攻法マップ🗺️✨「これを使えば“残らない”】【本命】
 
+![SSH vs Secret Mount](./picture/docker_safe_isolation_ts_study_024_03_auth_methods.png)
+
 ## 本命①：SSHエージェント転送（BuildKitの `RUN --mount=type=ssh`）🧑‍🚀🔐
 
 * **秘密鍵ファイルをコンテナに入れない**
@@ -55,6 +61,8 @@
 ---
 
 ## 3) 認証の選び方（どれが一番安全？）🥇🔍
+
+![Authentication Choice Guide](./picture/docker_safe_isolation_ts_study_024_04_auth_choice.png)
 
 ここ、迷いがちなので “ざっくり優先順位” を置きます👇
 
@@ -79,6 +87,8 @@
 ---
 
 ## 4) ハンズオン①：private repo を SSHで取ってきてビルドする🧪🐙
+
+![SSH Mount Visualization](./picture/docker_safe_isolation_ts_study_024_05_ssh_mount.png)
 
 > ゴール：`npm ci` が `git+ssh` 依存を含んでいても、**鍵をイメージに入れずに**ビルドできる✨
 
@@ -146,6 +156,8 @@ docker build --ssh default -t myapp:dev .
 
 ## 5) ハンズオン②：private npm レジストリのトークンを“残さず”使う🧪🕵️‍♂️
 
+![NPM Secret Mount](./picture/docker_safe_isolation_ts_study_024_06_npm_secret_mount.png)
+
 > ゴール：`.npmrc` をイメージに残さず、トークンも残さずに `npm ci` する✨
 
 ## (A) BuildKit secret で `.npmrc` を “そのRUNだけ” 読ませる（おすすめ）🥇
@@ -191,6 +203,8 @@ npm公式は CI/CD で「トークンを環境変数に置き、プロジェク�
 ---
 
 ## 6) Compose でやる場合（`build.ssh`）🧩🐳
+
+![Compose SSH Config](./picture/docker_safe_isolation_ts_study_024_07_compose_ssh.png)
 
 Compose の build には `ssh` という指定ができます（例：default エージェントをマウント）🧷([docs.docker.jp][10])
 

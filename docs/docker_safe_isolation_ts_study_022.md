@@ -7,6 +7,8 @@
 
 ## 1) まず結論：漏れる場所トップ3 🥇🥈🥉
 
+![Top 3 Secret Leaks](./picture/docker_safe_isolation_ts_study_022_01_three_leaks.png)
+
 1. **console.log / logger に “うっかり” 出す**（env全部、headers全部、例外オブジェクト全部…）🫠
 2. **エラー応答にスタックトレースや内部情報を返す**（開発のノリのまま本番へ）💥
 3. **デバッグ用に出したログが、永遠に残って共有される**（チケット、チャット、AI相談）📎🤖
@@ -17,6 +19,8 @@
 ---
 
 ## 2) 「秘密っぽいもの」一覧：これが1文字でもログに出たら負け😇🔒
+
+![Forbidden Log Items](./picture/docker_safe_isolation_ts_study_022_02_forbidden_words.png)
 
 最低限これらは **絶対にログに出さない** ルールにします👇
 
@@ -33,6 +37,8 @@
 ---
 
 ## 3) 今日からの作戦：3段ロックで守る🔐🔐🔐
+
+![Three Layer Defense](./picture/docker_safe_isolation_ts_study_022_03_three_locks.png)
 
 ## ロックA：**“出すログ”を最小化**（そもそも入れない）✂️
 
@@ -58,6 +64,8 @@
 ここからは「テンプレ化」して、以後ずっと使い回すやつです😄
 
 ## 4-1. logger.ts：pino + redact で “危険キー” を自動マスク🧤🪓
+
+![Pino Redact Mechanism](./picture/docker_safe_isolation_ts_study_022_04_pino_redact.png)
 
 ```ts
 // src/lib/logger.ts
@@ -106,6 +114,8 @@ export const logger = pino({
 
 ## 4-2. リクエストログ：必要最小だけ書く（bodyは捨てる）🧾🚫
 
+![Request Log Filtering](./picture/docker_safe_isolation_ts_study_022_05_request_filter.png)
+
 ```ts
 // src/middleware/requestLog.ts
 import type { Request, Response, NextFunction } from "express";
@@ -144,6 +154,8 @@ export function requestLog(req: Request, res: Response, next: NextFunction) {
 ---
 
 ## 4-3. エラーハンドリング：返すメッセージは “控えめ”、ログは “十分” 🧯📦
+
+![Production Error Shield](./picture/docker_safe_isolation_ts_study_022_06_error_shield.png)
 
 Express は **本番環境だとスタックトレースをレスポンスに含めない**挙動が明記されています ([expressjs.com][6])
 （ただし、自分の実装次第で簡単に漏れるので、ここで固定します）
@@ -266,6 +278,8 @@ logger.info(
 ---
 
 ## 7) AI拡張にログを貼る前の「3秒ルール」🤖⏱️🧼
+
+![AI Log Sanitizer](./picture/docker_safe_isolation_ts_study_022_07_ai_sanitizer.png)
 
 AI相談は便利だけど、ログは貼りがち！📎
 **貼る前にこれだけ確認**👇
