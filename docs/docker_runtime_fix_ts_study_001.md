@@ -7,7 +7,11 @@
 
 ## 1) まずは超ざっくり定義🧠✨
 
+![Concept of Runtime Locking](./picture/docker_runtime_fix_ts_study_001_01_runtime_locking.png)
+
 ## ✅ ランタイム固定 = 「Node（＋周辺）をプロジェクト側に持たせる」こと
+
+![PC Dependency Gacha](./picture/docker_runtime_fix_ts_study_001_02_dependency_gacha.png)
 
 * 今日はNode v25で動いた
 * 明日、別PCのNode v24で動かない
@@ -27,6 +31,8 @@
 
 ## 事故A：Nodeの版が違って動かない🟢↔️🟥
 
+![Version Mismatch Accident](./picture/docker_runtime_fix_ts_study_001_03_version_mismatch.png)
+
 例えばこんなの👇
 
 * 新しめのNodeだと動くけど、古いNodeだと構文や挙動が合わなくて落ちる
@@ -43,6 +49,8 @@
 
 ## 事故C：「自分のPCでは動く」が発生する（最悪）💀💬
 
+![Works on My Machine](./picture/docker_runtime_fix_ts_study_001_04_works_on_my_machine.png)
+
 いわゆる “Works on my machine” 問題😇
 
 * チームメンバーやCIで落ちる
@@ -56,6 +64,8 @@
 固定のゴールはシンプル！
 
 ## ✅ 再現性（Reproducibility）🔁✅
+
+![Reproducibility Stamp](./picture/docker_runtime_fix_ts_study_001_05_reproducibility.png)
 
 * **同じ手順**で
 * **同じ結果**になる
@@ -105,6 +115,8 @@ Nodeにはフェーズがあって、ざっくりこう👇
 ---
 
 ## 6) 30秒ミニ体験：「PCのNodeなし」でNodeが動く🐳💨
+
+![Docker Run Experience](./picture/docker_runtime_fix_ts_study_001_06_docker_run.png)
 
 もしDockerが入ってたら、これだけで“閉じ込め”の感覚がつかめるよ😆✨
 （入ってなかったらスルーでOK！次章以降でちゃんと整える）
