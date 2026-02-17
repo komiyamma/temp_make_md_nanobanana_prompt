@@ -21,6 +21,8 @@ Docker/Composeは **基本「1台のマシン（または1台として扱える�
 
 イメージしやすい「あるある」を先に並べるね👇
 
+![Human Loop Problem](./picture/docker_multi_orch_ts_study_001_01_human_loop.png)
+
 ## あるある①：落ちたら人が直す（夜中に起きる）🌙📟
 
 * アプリが落ちた
@@ -28,6 +30,8 @@ Docker/Composeは **基本「1台のマシン（または1台として扱える�
 * ついでにログ見る
 * また落ちる
   → **人間が運用ループに組み込まれる** 😭
+
+![Wiring Hell](./picture/docker_multi_orch_ts_study_001_02_wiring_hell.png)
 
 ## あるある②：台数を増やした瞬間に “配線” が地獄 🧵🕸️
 
@@ -48,6 +52,8 @@ Docker/Composeは **基本「1台のマシン（または1台として扱える�
 
 ## 2) Kubernetesが解決する「3つの大きな問題」🛠️☸️
 
+![Self Healing](./picture/docker_multi_orch_ts_study_001_03_self_healing.png)
+
 ## ✅ (1) 自動回復（Self-Healing）🛟✨
 
 「落ちたら起きる」を **仕組みでやる**
@@ -56,6 +62,8 @@ Docker/Composeは **基本「1台のマシン（または1台として扱える�
 * 望む数（replicas）を保つ
   → “夜中に起きる率”が減る😴💤
 
+![Rolling Update Mechanism](./picture/docker_multi_orch_ts_study_001_04_rolling_update.png)
+
 ## ✅ (2) 安全な更新（Rolling Update & Rollback）🔄🧯
 
 いきなり全部入れ替えずに、少しずつ更新
@@ -63,6 +71,8 @@ Docker/Composeは **基本「1台のマシン（または1台として扱える�
 * 少しずつ新しいPodを増やす
 * ダメなら戻す
   → “更新＝事故”になりにくい🚧➡️✅
+
+![Declarative vs Imperative](./picture/docker_multi_orch_ts_study_001_05_declarative_vs_imperative.png)
 
 ## ✅ (3) 宣言型（Declarative）📄🧠
 
@@ -74,6 +84,8 @@ Docker/Composeは **基本「1台のマシン（または1台として扱える�
 ---
 
 ## 3) たった1つだけ覚える “Kubernetesの心臓” ❤️‍🔥
+
+![Control Loop](./picture/docker_multi_orch_ts_study_001_06_control_loop.png)
 
 ## 「現在の状態」→「望む状態」へ寄せ続ける（調整ループ）🔁⚙️
 
@@ -91,6 +103,8 @@ Kubernetesは、ざっくり言うとこれをずっとやってる👇
   …が成立するよ！
 
 ---
+
+![Cluster Concept](./picture/docker_multi_orch_ts_study_001_07_cluster_concept.png)
 
 ## 4) “クラスタの世界”を3行でつかむ 🗺️👥
 

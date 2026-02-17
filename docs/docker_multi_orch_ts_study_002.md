@@ -5,6 +5,8 @@
 
 ---
 
+![Control Plane vs Node](./picture/docker_multi_orch_ts_study_002_01_cp_vs_node.png)
+
 ## 0. まずは“全体地図”だけ暗記でOK🗺️📌
 
 Kubernetesクラスタは、ざっくりこの2階建てです👇
@@ -15,6 +17,8 @@ Kubernetesクラスタは、ざっくりこの2階建てです👇
 公式ドキュメントでもこの切り分けで説明されています。([Kubernetes][1])
 
 ---
+
+![Control Plane Components](./picture/docker_multi_orch_ts_study_002_02_cp_components.png)
 
 ## 1. Control Plane って何してるの？🧠📣
 
@@ -41,6 +45,8 @@ Control Plane は「クラスタの脳みそ🧠」です。
 
 ---
 
+![Node Components](./picture/docker_multi_orch_ts_study_002_03_node_components.png)
+
 ## 2. Node（ワーカーノード）って何してるの？🖥️🏃‍♂️
 
 Node は「Podを走らせるマシン（またはその概念）」です🏃‍♂️💨
@@ -54,10 +60,14 @@ Node上には、だいたい次の部品がいます👇
 
 ---
 
+![Pod Concept](./picture/docker_multi_orch_ts_study_002_04_pod_concept.png)
+
 ## 3. Pod（ポッド）って何？なぜ“最小の実行単位”なの？🧩🐣
 
 Podは「Kubernetesが管理する“最小の実行単位”」です🐣
 ここ、Dockerの感覚だとズレやすいので丁寧にいきます🙂
+
+![Pod Networking](./picture/docker_multi_orch_ts_study_002_05_pod_networking.png)
 
 ## Podのポイント3つ✅✅✅
 
@@ -77,6 +87,8 @@ Podは「Kubernetesが管理する“最小の実行単位”」です🐣
 この「Control Plane / Node / Pod」の整理は、公式の“Components / Architecture”の軸そのものです。([Kubernetes][1])
 
 ---
+
+![Architecture Diagram](./picture/docker_multi_orch_ts_study_002_07_architecture_diagram.png)
 
 ## 4. いったんこのASCII図を頭に貼ろう🧠📌
 
@@ -147,6 +159,8 @@ kubectl describe node <node-name>
 ---
 
 ## 6. “初心者あるある”誤解を先に潰す😈➡️😇
+
+![Disposable Pod](./picture/docker_multi_orch_ts_study_002_06_disposable_pod.png)
 
 ## 誤解1：Pod = コンテナ でしょ？🤔
 

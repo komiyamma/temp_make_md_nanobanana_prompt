@@ -18,7 +18,11 @@
 
 ---
 
+![Kind vs Minikube](./picture/docker_multi_orch_ts_study_003_04_kind_vs_minikube.png)
+
 ## まず選ぶ：kind と minikube どっち？🤔🧭
+
+![Kind Architecture](./picture/docker_multi_orch_ts_study_003_01_kind_architecture.png)
 
 ## kind（おすすめ）🐳⚡
 
@@ -35,6 +39,8 @@
 迷ったら：**とりあえず kind** → 余裕が出たら minikube も触る、が楽です😄👍
 
 ---
+
+![Kubectl Connection](./picture/docker_multi_orch_ts_study_003_05_kubectl_connection.png)
 
 ## kubectl だけ先に入れておく🧪⌨️
 
@@ -67,6 +73,8 @@ kubectl version --client
 
 ---
 
+![3-Node Cluster](./picture/docker_multi_orch_ts_study_003_02_3_node_cluster.png)
+
 ## A-2) 3ノード構成の設定ファイルを作る🧾✨
 
 `kind` は設定ファイルでノード構成を書けます（公式ドキュメントに設定例あり）([kind.sigs.k8s.io][7])
@@ -84,6 +92,8 @@ nodes:
 
 ---
 
+![Scale Action](./picture/docker_multi_orch_ts_study_003_06_scale_action.png)
+
 ## A-3) クラスタ作成！🚀
 
 ```powershell
@@ -99,6 +109,8 @@ kubectl get nodes -o wide
 ここで「おぉ…ノードが複数ある…」を味わってください😆✨
 
 ---
+
+![Pod Dispersion](./picture/docker_multi_orch_ts_study_003_03_pod_dispersion.png)
 
 ## A-4) Podをばら撒いて“分散”を確認👀📦
 
@@ -177,6 +189,8 @@ minikube delete -p mk3
 ```
 
 ---
+
+![Context Switch](./picture/docker_multi_orch_ts_study_003_07_context_switch.png)
 
 ## つまづきポイント集🆘😵‍💫（最短で復帰するやつ）
 
