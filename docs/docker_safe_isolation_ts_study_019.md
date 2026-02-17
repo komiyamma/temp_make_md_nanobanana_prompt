@@ -7,6 +7,8 @@
 
 ## 1) まず結論：DBデータは“基本 named volume”で守るのが最強💪🧱
 
+![DB Data Treasure Box](./picture/docker_safe_isolation_ts_study_019_01_db_data_treasure_box.png)
+
 Docker公式でも、**コンテナが生成・利用する永続データは volume を推奨**しています（ホストOS依存が減って、Dockerが管理できるから）([Docker Documentation][1])
 Composeでも、**top-level `volumes` に named volume を定義して使い回す**のが王道です([Docker Documentation][2])
 
@@ -18,6 +20,8 @@ Composeでも、**top-level `volumes` に named volume を定義して使い回�
 ---
 
 ## 2) UID/GIDってなに？（超ざっくり）🪪👤
+
+![UID/GID Mismatch Disaster](./picture/docker_safe_isolation_ts_study_019_02_uid_gid_mismatch.png)
 
 Linuxではファイルに「持ち主」がいて、持ち主は **UID（ユーザーID）/ GID（グループID）**で決まります👀
 DBコンテナは、データフォルダに **書き込み**できないと起動できません（初期化で詰む）😇💥
@@ -31,6 +35,8 @@ DBコンテナは、データフォルダに **書き込み**できないと起�
 
 ## 3) Windows + Docker Desktopでハマりやすいポイント🪤🪟
 
+![Windows vs WSL Storage](./picture/docker_safe_isolation_ts_study_019_03_windows_vs_wsl_storage.png)
+
 bind mount で **Windows側のフォルダ（例: C:\〜）**をDBデータ置き場にすると、速度だけじゃなく権限・ファイルシステム特性でも事故りやすいです💣
 
 Docker公式のWSLベストプラクティスでも、**bind mountするデータはLinuxファイルシステム側（WSL内）に置くのが推奨**されています([Docker Documentation][3])
@@ -41,6 +47,8 @@ MicrosoftのWSL公式ドキュメントも、**性能面ではWSL側のファイ
 ---
 
 ## 4) 「消していいデータ／ダメなデータ」仕分け🧠📦
+
+![Data Classification Bins](./picture/docker_safe_isolation_ts_study_019_04_data_classification_bins.png)
 
 ここ、設計初心者ほど“いきなり全部同じ場所”に置きがちです😂
 
@@ -57,6 +65,8 @@ MicrosoftのWSL公式ドキュメントも、**性能面ではWSL側のファイ
 ---
 
 ## 5) DB別：正しい“マウント先”を間違えない📌（ここ超重要）
+
+![Postgres Version Mount Path](./picture/docker_safe_isolation_ts_study_019_05_postgres_version_mount_path.png)
 
 ## PostgreSQL：Postgres 18+ でマウント先が変わった⚠️
 
@@ -150,6 +160,8 @@ docker compose exec db sh -lc "ls -ldn /var/lib/postgresql /var/lib/postgresql/*
 
 ## 8) bind mountしたい場合の“安全なやり方”🧰🧷
 
+![Bind Mount Safety Checklist](./picture/docker_safe_isolation_ts_study_019_06_bind_mount_safety_checklist.png)
+
 「DBの実データをホスト側ツールで直接触りたい」みたいな理由で bind mount したくなる時、あります😅
 その場合の鉄則👇
 
@@ -207,6 +219,8 @@ Docker HubのPostgres公式説明でも、**数値UIDだけだと `initdb` が�
    ```
 
 ## 演習2：うっかり消し事故を防ぐ🧨→🧯
+
+![Volume Deletion Warning](./picture/docker_safe_isolation_ts_study_019_07_volume_deletion_warning.png)
 
 * ✅ `docker compose down` は **ボリュームは消さない**
 * ⚠️ `docker compose down -v` は **ボリュームを消す（＝DB全消し）** 😱

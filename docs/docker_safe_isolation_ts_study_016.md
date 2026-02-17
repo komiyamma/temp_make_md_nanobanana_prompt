@@ -7,9 +7,13 @@ bind mount は便利だけど、便利さの正体は「強い権限」になり
 
 ## 1) bind mount が危ない理由（めちゃ大事）⚠️🔌
 
+![Bind Mount High Risk](./picture/docker_safe_isolation_ts_study_016_01_bind_mount_risk.png)
+
 bind mount は、**ホスト（Windows）のフォルダを、コンテナの中に“直結”**します📁➡️📦
 そして基本的に **書き込み可能（rw）** なので、コンテナ内のプロセスは **ホスト側のファイルを作成・改変・削除**できちゃいます😱
 これ、公式ドキュメントでも「重要ファイルを壊せるからセキュリティ影響があるよ」って明確に書いてあります。([Docker Documentation][1])
+
+![Host Container Read-Write Link](./picture/docker_safe_isolation_ts_study_016_02_host_container_rw.png)
 
 さらに **Docker Desktop** だと、Docker デーモン自体は Linux VM（WSL2側）で動きますが、**仕組みとしては“ホストのパスをコンテナに共有できる”**ように作られてます。
 つまり「VMだから安心だよね！」ではなく、**共有した瞬間に“その共有範囲”はコンテナから触れる**、が現実です🧨([Docker Documentation][1])
@@ -17,6 +21,8 @@ bind mount は、**ホスト（Windows）のフォルダを、コンテナの中
 ---
 
 ## 2) Windows + WSL2 だと被害半径はこう考える🪟🐧📦
+
+![Windows WSL Container Map](./picture/docker_safe_isolation_ts_study_016_03_windows_wsl_map.png)
 
 イメージはこんな感じです👇
 
@@ -33,6 +39,8 @@ WSLは設計上、Windows 側から **`\\wsl$`** で中身を読めたりしま�
 ---
 
 ## 3) “絶対に渡さない”フォルダ例（NG集）🚫📂
+
+![Forbidden Folders](./picture/docker_safe_isolation_ts_study_016_04_forbidden_folders.png)
 
 「ここをマウントしたら負け」になりやすい代表例です😇💥
 
@@ -59,6 +67,8 @@ AI拡張やテスト用スクリプト、依存パッケージ事故で **想定
 
 ## 4) “共有していいフォルダ”の基準📏✅
 
+![Safe Sharing Rules](./picture/docker_safe_isolation_ts_study_016_05_safe_sharing_rules.png)
+
 迷ったらこの4ルールだけでOKです😊✨
 
 1. ✅ **プロジェクト専用フォルダだけ**（例：`C:\work\myapp\`）
@@ -81,6 +91,8 @@ Compose の短い書き方（`./path:/container/path`）は、**ホスト側パ�
 なので **“安全テンプレ”は long syntax 前提**がオススメです🧱✨
 
 ### 5-2) 「コードはro」「書き込みは専用rw」に分離する🙂📎
+
+![Read-Only vs Read-Write Separation](./picture/docker_safe_isolation_ts_study_016_06_ro_rw_separation.png)
 
 例：TypeScriptアプリ（コードは読めればOK、ログや一時ファイルだけ書きたい）
 
@@ -109,6 +121,8 @@ services:
 これだけで **「コンテナがホストのコードを削除する」事故**は激減します💪😄
 
 ### 5-3) 「共有しない」選択肢：volumeを使う🗃️✨
+
+![Volume Escape Strategy](./picture/docker_safe_isolation_ts_study_016_07_volume_escape.png)
 
 `node_modules` やDBデータみたいなものは、**ホストと直結しない方が安全**なことが多いです。
 ボリュームは Docker が管理して、ホストの中枢からは切り離される設計（さらに推奨の永続化手段）と説明されています。([Docker Documentation][4])

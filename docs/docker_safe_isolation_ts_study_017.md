@@ -8,6 +8,8 @@
 
 ## 1) まず結論：コード共有は “ro”、書き込みは“専用箱”へ📦✅
 
+![Read-Only Shield Concept](./picture/docker_safe_isolation_ts_study_017_01_ro_shield_concept.png)
+
 バインドマウントはデフォルトだと**ホスト側のファイルをコンテナから書き換えられます**😱（削除もできる）
 なので **`ro` / `readonly` を付けて読み取り専用にする**のが基本です。([Docker Documentation][1])
 
@@ -16,11 +18,15 @@
 * **コード（srcや設定）**：基本 **read-only**（壊せない）🔒
 * **書き込みが必要なもの**（node_modules / キャッシュ / 生成物 / 一時ファイル）：**別のrw領域**に逃がす🧺
 
+![Code RO Data RW Split](./picture/docker_safe_isolation_ts_study_017_02_code_ro_data_rw_split.png)
+
 > “共有するけど壊せない”＝事故の確率も、事故ったときの被害も減ります💪✨
 
 ---
 
 ## 2) read-onlyマウントって何が起きるの？🤔
+
+![Read-Only Mechanism](./picture/docker_safe_isolation_ts_study_017_03_ro_mechanism_allow_deny.png)
 
 ## ✅ できること
 
@@ -57,6 +63,8 @@ touch /app/NOPE.txt   # ← これは失敗するはず😄🔒
 ---
 
 ## 4) Composeでやる：短い書き方と、事故りにくい長い書き方🧩
+
+![Compose Syntax Short vs Long](./picture/docker_safe_isolation_ts_study_017_04_compose_syntax_short_vs_long.png)
 
 ## A. 短い書き方（まずこれでOK）✍️
 
@@ -103,6 +111,8 @@ Node/TypeScriptだと、すぐ詰まります👇
 
 ## パターン1：`node_modules`だけ“名前付きボリューム”に逃がす📦
 
+![Nested Mount Override](./picture/docker_safe_isolation_ts_study_017_05_nested_mount_override.png)
+
 `/app` は ro、でも `/app/node_modules` だけ別マウントで rw にできます。
 
 ここでポイント👇
@@ -131,6 +141,8 @@ volumes:
 ```
 
 ## パターン2：一時ファイルは `tmpfs`（メモリ上）へ🧻⚡
+
+![Tmpfs Memory Mount](./picture/docker_safe_isolation_ts_study_017_06_tmpfs_memory_mount.png)
 
 Compose仕様に `tmpfs` があります。([docs.docker.jp][2])
 
@@ -180,6 +192,8 @@ npm install
 ## 7) よくある詰まりポイント集😵‍💫➡️😄
 
 ## 詰まり1：`npm install` がコケる
+
+![Npm Install RO Fail](./picture/docker_safe_isolation_ts_study_017_07_npm_install_ro_fail.png)
 
 原因：`/app` が ro のまま `node_modules` へ書こうとする
 対策：**`/app/node_modules` を volume に分離**（上のパターン1）✅
