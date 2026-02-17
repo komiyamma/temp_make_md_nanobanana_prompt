@@ -16,7 +16,11 @@
 
 ## 1) 最小設計の“結論”はこれ🧩
 
+![Package.json Control Panel](./picture/docker_runtime_fix_ts_study_022_01_control_panel.png)
+
 最小で強いのは **この3本柱**です👇
+
+![The Three Pillars](./picture/docker_runtime_fix_ts_study_022_02_three_pillars.png)
 
 * `dev`：開発用（監視して即リロード👀🔁）
 * `build`：配布・本番用にビルド（`dist/` を作る🏗️）
@@ -28,6 +32,8 @@
 ---
 
 ## 2) “TSをラクに動かす”前提の最小 `package.json` 例🧪✨
+
+![Dev Workflow Loop](./picture/docker_runtime_fix_ts_study_022_03_dev_workflow.png)
 
 第21章で触れた **tsxルート（開発が速い🥳）** をベースにすると、こうなります👇
 （tsx の Watch mode は `tsx watch ./file.ts` で再実行してくれます👀🔁 ([tsx][2])）
@@ -55,6 +61,9 @@
   （tsx公式ドキュメントの Watch mode 解説。([tsx][2])）
 * **`build`**：`tsc` で `dist/` を作る（`outDir: "dist"` は次章で整えればOK👌）
 * **`start`**：`node dist/...` で “ビルド済み” を動かす（本番の形）🚀
+
+  ![Production Workflow](./picture/docker_runtime_fix_ts_study_022_04_prod_workflow.png)
+
   さらに `--enable-source-maps` を付けると、TSの行番号で追いやすくなります🕵️‍♂️✨（Nodeの起動フラグ例として広く案内されています。([Stack Overflow][3])）
 
 > `typescript` の “Latest” が 5.9.3 として案内されているのも確認済みです。([npm][4])
@@ -85,6 +94,8 @@ Windowsだと死にがちです💀
 ---
 
 ### 罠③：`tsx` は “型チェックしない” ので不安になる😰
+
+![Typecheck Shield](./picture/docker_runtime_fix_ts_study_022_05_trap_shield.png)
 
 大丈夫です😆✨
 `tsx` は開発体験を速くする方向で、型チェックは IDE や別コマンドに任せる設計です（tsx公式ドキュメントでも「型エラーにブロックされず実行できる」趣旨が説明されています。([tsx][6])）
@@ -122,6 +133,8 @@ Windowsだと死にがちです💀
 ---
 
 ## 5) “自動で前後に挟む”小技：`pre` / `post` 🪄
+
+![Pre/Post Hook Flow](./picture/docker_runtime_fix_ts_study_022_06_hook_flow.png)
 
 npm scripts は、`preX` / `postX` を置くと **自動で前後に走る**仕組みがあります🔁✨ ([docs.npmjs.com][1])
 

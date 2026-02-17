@@ -10,16 +10,22 @@
 
 ### ✅ ルール1：Nodeには「2つの読み込み方式」がある
 
+![CJS vs ESM Worlds](./picture/docker_runtime_fix_ts_study_024_01_dual_system.png)
+
 * **CJS**（古参）：`require()` / `module.exports`
 * **ESM**（標準）：`import` / `export`
   Nodeはこの2つを持ってて、**どっちとして解釈するか**が問題の根っこです。([Node.js][3])
 
 ### ✅ ルール2：NodeがESM/CJSを決める“スイッチ”はこれ
 
+![Node Interpretation Switch](./picture/docker_runtime_fix_ts_study_024_02_switch_panel.png)
+
 * **拡張子**：`.mjs`（ESM） / `.cjs`（CJS）
 * **package.json の `"type"`**：`"module"`（基本ESM） or `"commonjs"`（基本CJS）([Node.js][3])
 
 ### ✅ ルール3：TSは「Nodeのルールに合わせる設定」にする
+
+![TS and Node Alignment](./picture/docker_runtime_fix_ts_study_024_03_ts_node_alignment.png)
 
 Nodeで動かす前提なら、TS側は基本これで迷子になりにくいです👇
 
@@ -66,6 +72,8 @@ Nodeで動かす前提なら、TS側は基本これで迷子になりにくい�
 
 ### 💥 B) `ReferenceError: require is not defined in ES module scope`
 
+![Error Cause Map](./picture/docker_runtime_fix_ts_study_024_04_error_map.png)
+
 **原因あるある**
 
 * 逆です！あなたのプロジェクトが **ESM扱い**になってるのに、CJSの `require()` を呼んでる
@@ -92,6 +100,8 @@ Nodeで動かす前提なら、TS側は基本これで迷子になりにくい�
 ---
 
 ### 💥 D) `Error [ERR_MODULE_NOT_FOUND]: Cannot find module ...`
+
+![Missing Extension Trap](./picture/docker_runtime_fix_ts_study_024_05_extension_trap.png)
 
 **原因あるある（ESMで多い）**
 
@@ -225,6 +235,8 @@ CJSファイルでこう👇
 ---
 
 ## 5) ミニ診断：あなたはいまどの沼？🧠🧭
+
+![Diagnosis Flowchart](./picture/docker_runtime_fix_ts_study_024_06_diagnosis_flow.png)
 
 次の3問で、原因がほぼ確定します👇
 
