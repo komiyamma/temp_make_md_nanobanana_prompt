@@ -15,6 +15,8 @@
 
 ## 10-1. まず結論：Dockerデーモンは“最強の受付”🏢🦾
 
+![Daemon Receptionist](./picture/docker_safe_isolation_ts_study_010_01_daemon_reception.png)
+
 Dockerを動かす中心には **Dockerデーモン（dockerd / Docker Engine）**がいます。
 こいつが強い理由はシンプルで、**「コンテナを作る＝ホストの重要リソースを操作する」**を代行してるからです💪
 
@@ -31,6 +33,8 @@ Docker公式も、デーモンは基本的に強い権限（root相当）で動�
 
 ## 10-2. 「攻撃面（attack surface）」ってなに？👀🔍
 
+![Attack Surface Fortress](./picture/docker_safe_isolation_ts_study_010_02_attack_surface_map.png)
+
 **攻撃面**＝「悪いことが起きうる入口の集合」🚪🧨
 セキュリティの話でよく出る言葉だけど、Dockerでは特にこう考えると分かりやすいです👇
 
@@ -44,6 +48,8 @@ Docker公式も、デーモンは基本的に強い権限（root相当）で動�
 ---
 
 ## 10-3. Windowsの全体図：どこが強い？どこが入口？🪟🗺️
+
+![Windows Docker Architecture](./picture/docker_safe_isolation_ts_study_010_03_windows_flow.png)
 
 Docker Desktopは、Windows上で「ちょっと複雑な役割分担」をしています。
 Docker公式の “Windows permission requirements” には、**特権ヘルパーがWindowsサービスとして SYSTEM 権限で動く**こと、**特定の名前付きパイプでやり取りする**こと、そして **`docker-users` グループが特権操作へのアクセス制御に使われる**ことが書かれています🔒 ([Docker Documentation][3])
@@ -79,6 +85,8 @@ Containers
 ---
 
 ## 10-4. 「強い操作」カードを分類しよう🃏⚠️（誤爆防止）
+
+![Danger Cards](./picture/docker_safe_isolation_ts_study_010_04_danger_cards.png)
 
 ここからが超重要！
 Dockerのコマンドは便利だけど、便利なものほど“強い”です😇✨
@@ -117,6 +125,8 @@ Dockerのコマンドは便利だけど、便利なものほど“強い”で�
 
 ## 10-5. 今日から使える！「強い操作」は手順で固定🧱✅
 
+![Safety Pillars](./picture/docker_safe_isolation_ts_study_010_05_safety_pillars.png)
+
 ここがこの章のゴールです🎉
 **強い操作を “気合い” で避けるのはムリ**なので、ルールと手順で潰します🧯
 
@@ -154,6 +164,8 @@ Docker Desktopの特権ヘルパーは Windowsサービス（SYSTEM権限）で�
 
 ## ① Dockerのバージョンと接続先（context）を見る👀
 
+![Context Check Terminal](./picture/docker_safe_isolation_ts_study_010_06_context_check.png)
+
 ```powershell
 docker version
 docker context ls
@@ -180,6 +192,8 @@ net localgroup docker-users
 ---
 
 ## 10-7. ハンズオン②：危険コマンド分類ゲーム🎮🃏（答え付き）
+
+![Command Quiz Board](./picture/docker_safe_isolation_ts_study_010_07_quiz_board.png)
 
 次のコマンド、危険度で分類してみてください👇
 A: わりと安全 / B: 注意 / C: 強い（手順固定推奨）

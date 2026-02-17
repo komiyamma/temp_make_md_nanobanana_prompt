@@ -1,5 +1,7 @@
 ﻿# 第08章：Rootless mode入門：デーモンも非rootで動かす発想🧑‍🚀🔒
 
+![Rootless Daemon Concept](./picture/docker_safe_isolation_ts_study_008_01_rootless_concept.png)
+
 この章はひとことで言うと、**「Docker を動かす“中心（デーモン）”を、root じゃなく“自分ユーザー”で動かして、事故の被害半径を小さくする」**回です🧯✨
 （第7章の「docker group＝強い権限😱」の続きとして、めちゃ相性いいやつ！）
 
@@ -22,6 +24,8 @@ Docker はふつう、裏側で **Docker デーモン**が動いていて、こ�
 
 ## 8-2. 図でイメージ：Rootful と Rootless🗺️
 
+![Rootful vs Rootless Architecture](./picture/docker_safe_isolation_ts_study_008_02_architecture_comparison.png)
+
 ```text
 【Rootful（いつもの）】
 あなた ─docker CLI─▶ Dockerデーモン（強い/root） ─▶ コンテナ
@@ -40,6 +44,8 @@ Docker はふつう、裏側で **Docker デーモン**が動いていて、こ�
 ---
 
 ## 8-3. どこまで守れる？どこは守れない？🥋🧩
+
+![Protection Scope Shield](./picture/docker_safe_isolation_ts_study_008_03_shield_scope.png)
 
 ## 守れる（軽減できる）方向のもの✅
 
@@ -67,6 +73,8 @@ Rootless は、インストール時点から root を必須にしない（前�
 ---
 
 ## 8-5. Windows での現実：Rootless をどう扱う？🪟🐧
+
+![Windows Docker Routes](./picture/docker_safe_isolation_ts_study_008_04_windows_routes.png)
 
 Windows で Docker を使うとき、だいたい **Docker Desktop + WSL2** ですよね🙂
 Docker Desktop は WSL2 上で Linux ワークスペースを使える、という公式説明があります🐧 ([Docker Documentation][4])
@@ -98,6 +106,8 @@ Docker Desktop 側の公式ドキュメントに **「Docker Desktop を入れ�
 > 目的：**rootless デーモンに接続できてる**のを `docker info` で確認する✅
 
 ## Step 1：Rootless セットアップ（公式手順）🛠️
+
+![Rootless Setup Script](./picture/docker_safe_isolation_ts_study_008_05_setup_script.png)
 
 Rootless の公式ページに、`dockerd-rootless-setuptool.sh install` の実行例が載ってます📌
 このスクリプトが **systemd の user service** を作って、CLI context “rootless” まで作ってくれる流れです✨ ([Docker Documentation][3])
@@ -133,6 +143,8 @@ sudo loginctl enable-linger $(whoami)
 ---
 
 ## 8-7. Rootless の「できない/ハマる」代表例（超重要）🧯
+
+![Rootless Pitfalls](./picture/docker_safe_isolation_ts_study_008_06_common_pitfalls.png)
 
 ## ① 80番ポートが開かない！？（<1024問題）🚪😵
 
@@ -170,6 +182,8 @@ Rootless はデータディレクトリが `~/.local/share/docker`、ソケッ�
 ---
 
 ## 8-8. Compose はどうなる？🧩🐳
+
+![Docker Context Switch](./picture/docker_safe_isolation_ts_study_008_07_compose_context.png)
 
 Rootless セットアップは **CLI context “rootless” を作って切り替える**のが基本になっていて（自動で rootless context にする説明もあり）([Docker Documentation][3])、
 その状態なら `docker compose` も **そのコンテキストのデーモンへ**普通に繋がります👍

@@ -7,6 +7,8 @@
 
 ## 6-1. まず結論：Windows + Docker Desktop は“3つの世界”が同居してる🌍🌍🌍
 
+![Three Worlds Hierarchy](./picture/docker_safe_isolation_ts_study_006_01_three_worlds.png)
+
 ざっくり、こういう階層です👇
 
 * **世界A：Windows（あなたのPC本体）**🪟
@@ -27,6 +29,8 @@
 
 ## WSL 2 の“分布（ディストリ）”って何？📦🐧
 
+![WSL 2 Distros Layout](./picture/docker_safe_isolation_ts_study_006_02_wsl_distros.png)
+
 WSL 2 は、Windowsの上で Linux を動かす仕組みで、Linux は“ディストリビューション単位”で存在します。([Microsoft Learn][1])
 
 そして、Docker Desktop の WSLバックエンドでは👇
@@ -45,6 +49,8 @@ Docker Desktop（WSLエンジン）のデータ保存場所は、既定で
 ---
 
 ## 6-3. “権限”はどこで決まる？3段階で理解する🔐🪜
+
+![Permission Levels Ladder](./picture/docker_safe_isolation_ts_study_006_03_permission_levels.png)
 
 ここ、初心者が一番混乱しやすいので、3段階で割ります👇
 
@@ -72,6 +78,8 @@ WSL 2 の中では Linux としての root / user がいます。
 
 ## 6-4. 「ホストに影響する操作」を見分けるコツ👀⚠️
 
+![Safety Checklist 5 Points](./picture/docker_safe_isolation_ts_study_006_04_safety_checklist.png)
+
 迷ったら、次の5問を自分に聞いてください✅
 
 1. **ホストのフォルダをマウントしてる？**（bind mount）📎💽
@@ -88,6 +96,8 @@ WSL 2 の中では Linux としての root / user がいます。
 ## 6-5. 演習：自分のPCの“地図”を作る🗺️✍️（10分）
 
 ## 演習A：WSLの一覧を見て「どれが何か」言えるようにする📋🐧
+
+![Terminal Check Visualization](./picture/docker_safe_isolation_ts_study_006_05_terminal_check.png)
 
 Windows のターミナル（PowerShell）で👇
 
@@ -173,6 +183,8 @@ ls -la /work
 
 ## 6-6. VS Codeで迷子にならない開発配置🏠🧠
 
+![File Location Strategy](./picture/docker_safe_isolation_ts_study_006_06_vscode_location.png)
+
 **結論：ファイルをどこに置くかが、速度と権限トラブルに直結**します⚡🧯
 
 * bind mount（ホスト→コンテナ）で大量ファイルを扱うなら、**WSL 2 のファイルシステム側に置く**のが推奨されます（パフォーマンスと権限の相性が良い）。([Visual Studio Code][5])
@@ -186,6 +198,8 @@ ls -la /work
 ---
 
 ## 6-7. よくある事故あるある😇💣（そして回避）
+
+![Accident Prevention Signs](./picture/docker_safe_isolation_ts_study_006_07_accident_prevention.png)
 
 ## あるある1：どこで作ったファイルか分からなくなる🌀
 

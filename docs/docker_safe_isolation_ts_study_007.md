@@ -1,5 +1,7 @@
 ﻿# 第07章：docker groupは実質つよい（＝root相当）って話💪😱
 
+![Docker Group Power Balance](./picture/docker_safe_isolation_ts_study_007_01_power_balance.png)
+
 この章、いきなり結論からいきます👇
 **「docker コマンドを自由に叩ける人」＝「実質、ホストを好きにできる人」**になりやすいです😱
 Docker公式ドキュメントも、`docker` グループは **rootレベルの権限**を与えるとハッキリ警告しています。([Docker Documentation][1])
@@ -15,6 +17,8 @@ Docker公式ドキュメントも、`docker` グループは **rootレベルの�
 ---
 
 ## まずは脳内モデルを1枚に🗺️🧩
+
+![Docker Command Architecture](./picture/docker_safe_isolation_ts_study_007_02_architecture_flow.png)
 
 Dockerって、ざっくりこうです👇
 
@@ -43,6 +47,8 @@ Linuxではこういう仕組みです👇
 
 ## Windowsだと “どこが強い入口” になる？🪟🚪
 
+![Windows Docker Permissions](./picture/docker_safe_isolation_ts_study_007_03_windows_gate.png)
+
 Windows（Docker Desktop）では、Linuxの `docker group` と同じ発想で👇
 
 * **「Docker Engine / Desktop の制御に繋がる権限」**が強い入口になります💪
@@ -51,12 +57,16 @@ Windows（Docker Desktop）では、Linuxの `docker group` と同じ発想で�
 * つまり、Windowsでは `docker-users` が “強い操作へのパスポート🎫” になりやすいです。
 
 さらに、WSL2バックエンドの話も重要で👇
+
+![WSL2 ECI Bypass](./picture/docker_safe_isolation_ts_study_007_04_wsl_bypass.png)
 ECI（Enhanced Container Isolation）には限界があり、**WSL2だと `wsl -d docker-desktop` でVMに直接入れて root で設定を触れてしまい、Desktop側のセキュリティ設定を迂回できる**と明記されています。([Docker Documentation][4])
 （速度は良いけど、隔離強度は落ちるよ〜って感じです😇）
 
 ---
 
 ## “事故” が起きる典型パターン 3つ💥😇
+
+![3 Accident Patterns](./picture/docker_safe_isolation_ts_study_007_05_accident_patterns.png)
 
 ## 1) 「便利だから」で権限を配りすぎる👥🎁
 
@@ -76,6 +86,8 @@ Docker Desktopでは過去に、**コンテナが docker.sock をマウントし
 ---
 
 ## 安全運用ルール（まずこれだけ）📏✅✨
+
+![Safety Rules Scroll](./picture/docker_safe_isolation_ts_study_007_06_safety_rules.png)
 
 ## ルールA：`docker group` / `docker-users` は “管理者権限” と同格扱い👑
 
@@ -97,6 +109,8 @@ DockerはデフォルトでUnix socketですが、ネットワーク越しに出
 ## ハンズオン🔎：いまのPC、“強い入口”が誰に開いてるか確認しよう🧪🪟🐧
 
 ## ① Windows：`docker-users` を棚卸し🧾
+
+![Hands-on Command Check](./picture/docker_safe_isolation_ts_study_007_07_hands_on_check.png)
 
 PowerShell（管理者）で確認だけ👇
 
