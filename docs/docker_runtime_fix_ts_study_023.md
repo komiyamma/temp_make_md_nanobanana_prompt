@@ -18,6 +18,9 @@
 だから方針はこれです👇
 
 ✅ **“まず薄く” = 必要最低限だけ置く**
+
+![Heavy vs Light Config](./picture/docker_runtime_fix_ts_study_023_01_complexity_trap.png)
+
 ✅ 増やすのは「困ってから」でOK🙆‍♂️✨
 
 ---
@@ -50,6 +53,8 @@
 * `dist/` にビルド結果
 
 おすすめの **薄い `tsconfig.json`** はこれです👇（まずこれでOK！）
+
+![Minimal tsconfig Structure](./picture/docker_runtime_fix_ts_study_023_02_minimal_structure.png)
 
 ```json
 {
@@ -85,6 +90,8 @@
 
 ## 5) 依存も “最小で” 揃える📦✨
 
+![Types Node Adapter](./picture/docker_runtime_fix_ts_study_023_03_types_adapter.png)
+
 最低限これだけ入れればOK👇
 
 ```bash
@@ -96,6 +103,8 @@ npm i -D typescript @types/node
 ---
 
 ## 6) “このtsconfig読んでる？”を一発で確認する✅👀
+
+![Config Truth Reveal](./picture/docker_runtime_fix_ts_study_023_04_truth_reveal.png)
 
 設定が効いてるか怪しい時はこれが最強です👇
 
@@ -147,6 +156,8 @@ Nodeでそのまま動かす前提だと、**“Nodeが嫌がるimport”** を�
 
 ## 8) デバッグを “気持ちよく” する小ワザ🕵️‍♂️✨
 
+![Source Map Lens](./picture/docker_runtime_fix_ts_study_023_05_source_map_lens.png)
+
 `sourceMap: true` を付けたら、実行側でも source map を使うと幸せです😊
 
 Nodeは `--enable-source-maps` で **スタックトレースを元ソース寄りにしてくれます**✨
@@ -161,6 +172,8 @@ node --enable-source-maps dist/index.js
 ---
 
 ## 9) VS Code側の “効いてる感” チェック✅🧠
+
+![VS Code Version Alignment](./picture/docker_runtime_fix_ts_study_023_06_vscode_alignment.png)
 
 VS Codeで「なんか型が変…🤔」って時はこれ👇
 

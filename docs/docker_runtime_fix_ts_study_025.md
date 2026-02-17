@@ -16,6 +16,8 @@
 
 ## 1) そもそも「ソースマップ」って何？🗺️💡
 
+![Source Map Metaphor](./picture/docker_runtime_fix_ts_study_025_01_map_metaphor.png)
+
 TypeScriptって、実行する前にだいたいこうなるよね👇
 
 * `src/index.ts`（人間が読む用🧠）
@@ -57,6 +59,8 @@ boom();
 
 ### 2-2. `tsconfig.json` を“ソースマップON”で用意🧩
 
+![TSConfig Setting](./picture/docker_runtime_fix_ts_study_025_03_config_snippet.png)
+
 ```json
 {
   "compilerOptions": {
@@ -82,6 +86,8 @@ npx tsc
 ---
 
 ## 3) 「ソースマップ無し」と「有り」で差を見る👀✨
+
+![Stack Trace Clarity](./picture/docker_runtime_fix_ts_study_025_02_blurry_vs_clear.png)
 
 ### 3-1. ソースマップ無し（普通に実行）😇
 
@@ -128,6 +134,8 @@ npm run start
 
 ## 5) ちょい応用：ソースマップの種類（外出し / インライン）🧠🗺️
 
+![Map Types](./picture/docker_runtime_fix_ts_study_025_04_inline_vs_external.png)
+
 ### A. ふつう（おすすめ）✅：`sourceMap: true`
 
 * `dist/index.js.map` が別ファイルで出る
@@ -142,6 +150,8 @@ npm run start
 ---
 
 ## 6) Docker/Composeで使うときのコツ🐳✨
+
+![Docker Command Flag](./picture/docker_runtime_fix_ts_study_025_05_docker_flag.png)
 
 ### 6-1. Dockerfile の起動コマンドで付ける（わかりやすい）✅
 
@@ -162,6 +172,8 @@ services:
 ---
 
 ## 7) VS Codeで“TSの行にブレークポイント”を刺す🧷🕹️
+
+![VS Code Breakpoint](./picture/docker_runtime_fix_ts_study_025_06_vscode_breakpoint.png)
 
 VS Codeのデバッグは **ソースマップ対応**してるよ！([Visual Studio Code][2])
 まずはシンプルに「ビルドしてから dist をデバッグ」がおすすめ👍
