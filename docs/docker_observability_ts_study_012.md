@@ -11,6 +11,8 @@
 
 ## ② 図（1枚）🖼️：ログに出す前に“洗う”🚿
 
+![Sanitization Layer Flow](./picture/docker_observability_ts_study_012_01_sanitization_layer.png)
+
 ```
 (入力) HTTPリクエスト
    ├─ headers: Authorization / Cookie / ...
@@ -33,6 +35,8 @@
 集約先（ログ基盤）や共有範囲が広がるほど、漏えいリスクは上がります📈
 
 OWASP では「ログに直接記録すべきでないもの」として、たとえば👇を挙げています（**消す/マスク/ハッシュ/暗号化**などを推奨）([OWASP Cheat Sheet Series][1])
+
+![Sensitive Data Icons](./picture/docker_observability_ts_study_012_02_sensitive_data_icons.png)
 
 * **セッションID**（必要ならハッシュ化）
 * **アクセストークン**
@@ -68,6 +72,8 @@ OWASP では「ログに直接記録すべきでないもの」として、た�
 ## ⑤ ハンズオン：マスキング関数を作る 🛠️🧤
 
 今回の作戦は **二重ロック**です🔒🔒
+
+![Double Lock Strategy](./picture/docker_observability_ts_study_012_04_double_lock.png)
 
 * **(A) 自前のマスキング**：ログに載せる前に “洗う”🚿
 * **(B) ロガー側の redaction**：万が一混ざっても “最後に削る”🧯
@@ -140,6 +146,8 @@ export function pickBodyAllowlist<T extends Record<string, unknown>>(
 
 ポイント🧠✨
 
+![Allowlist vs Denylist](./picture/docker_observability_ts_study_012_03_allowlist_vs_denylist.png)
+
 * **denylist（危険っぽいものを消す）**は漏れがち
 * **allowlist（出して良いものだけ出す）**は強い💪
 * Cookie/Authorization は **値じゃなくキーごと消す**のが安全寄り🙈
@@ -147,6 +155,8 @@ export function pickBodyAllowlist<T extends Record<string, unknown>>(
 ---
 
 ### 2) “ログの入口”を1つに寄せる 🚪🧱
+
+![Safe Log Funnel](./picture/docker_observability_ts_study_012_05_safe_log_funnel.png)
 
 「誰かが `console.log(req.headers)` しちゃった…」を防ぐため、**ログはこの関数を通す**作戦です😇
 
@@ -251,6 +261,8 @@ export const logger = pino({
 ---
 
 ## ⑧ ミニ課題（15分）⏳🧪
+
+![Leak Check Detective](./picture/docker_observability_ts_study_012_06_leak_check.png)
 
 1. `/login` に対して、ヘッダに `Authorization: Bearer SECRET123` を付けて叩く🧨
 2. `docker compose logs` を見て、**Bearerがログに出てない**ことを確認✅
