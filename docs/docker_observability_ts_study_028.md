@@ -2,6 +2,8 @@
 
 ## ① 今日のゴール 🎯✨
 
+![Healthy Start Concept](./picture/docker_observability_ts_study_028_01_healthy_start_concept.png)
+
 この章が終わると、次ができるようになります👇😊
 
 * 「DBが起動した **“だけ”** じゃダメで、**使える状態(healthy)** になってからAPIを起動」できる ✅
@@ -12,6 +14,8 @@
 ---
 
 ## ② 図（1枚）🖼️🧠
+
+![Started vs Ready Gap](./picture/docker_observability_ts_study_028_02_started_vs_ready.png)
 
 DBは「起動中…」の時間があるので、そこを待つのがポイントです👇
 
@@ -51,6 +55,8 @@ project/
 
 ### Step 1️⃣：まず“ダメな起動順”を体験する 😇💥
 
+![The depends_on Trap](./picture/docker_observability_ts_study_028_03_depends_on_trap.png)
+
 **compose.yaml（ダメ版）**：depends_on はあるけど「healthy待ち」じゃない
 
 ```yaml
@@ -84,6 +90,8 @@ docker compose up --build
 ---
 
 ### Step 2️⃣：DBに healthcheck を付ける 💚🩺
+
+![Healthcheck Doctor](./picture/docker_observability_ts_study_028_04_healthcheck_doctor.png)
 
 次はDB側に `healthcheck` を付けます。Composeの `healthcheck` は DockerfileのHEALTHCHECKと同様の仕組みで、Compose側で値を上書きもできます。([Docker Documentation][3])
 
@@ -122,6 +130,8 @@ services:
 ---
 
 ### Step 3️⃣：depends_on を“条件付き”にする ⏳✅
+
+![Service Healthy Gate](./picture/docker_observability_ts_study_028_05_service_healthy_gate.png)
 
 ここが本命です🔥
 `depends_on` の **long syntax** を使って、`condition: service_healthy` を指定します。([Docker Documentation][3])
@@ -204,6 +214,7 @@ docker compose up -d --wait --wait-timeout 120
    → `start_period` を増やす / `retries` を増やす / `timeout` を伸ばす、が効きます。`healthcheck` の各項目はComposeの正式オプションです。([Docker Documentation][3])
 
 3. **`$${POSTGRES_USER}` を `$POSTGRES_USER` にして死ぬ** 💀
+   ![Variable Expansion Trap](./picture/docker_observability_ts_study_028_06_variable_trap.png)
    → Composeの変数展開と混ざって、意図通りに実行されないことがあります。
    → 対策：コンテナ内の環境変数を参照したいときは `$` をエスケープする癖をつける 🙆‍♂️
 
