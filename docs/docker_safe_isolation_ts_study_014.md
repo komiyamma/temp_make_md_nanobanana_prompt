@@ -7,6 +7,8 @@
 
 ## 1) capabilitiesって何？ざっくり理解🧠💡
 
+![Root vs Capabilities](./picture/docker_safe_isolation_ts_study_014_01_remote_control.png)
+
 Linuxの `root権限` って、実は「超強い権限の寄せ集め」なんです。
 その“権限のボタン”を小分けにしたのが **capabilities**（ケーパビリティ）🎛️
 
@@ -19,6 +21,8 @@ Linuxの `root権限` って、実は「超強い権限の寄せ集め」なん�
 ---
 
 ## 2) Dockerのデフォルト権限、実はけっこう強い😱
+
+![Docker Default Capabilities](./picture/docker_safe_isolation_ts_study_014_02_default_risk.png)
 
 Dockerはデフォルトで、たとえばこんなcapabilityを「付けた状態」で起動します👇
 （例：`CHOWN`, `DAC_OVERRIDE`, `NET_RAW`, `NET_BIND_SERVICE` など）([Docker Documentation][1])
@@ -35,6 +39,8 @@ Dockerはデフォルトで、たとえばこんなcapabilityを「付けた状�
 
 ## 3) まず覚える必勝パターン：**全部落として、必要分だけ戻す**🧹➡️🔧
 
+![Drop All Strategy](./picture/docker_safe_isolation_ts_study_014_03_drop_strategy.png)
+
 * まず `cap_drop: [ALL]` で全部落とす🧹
 * 動かしてみて、必要なcapabilityだけ `cap_add` で戻す🔧
 
@@ -49,6 +55,8 @@ Composeでも `cap_add` / `cap_drop` が使えます。([Docker Documentation][2
 （※ 80番待ち受けだけは例外で、あとで `NET_BIND_SERVICE` を戻します）
 
 ## 4-1) ファイル用意📁✍️
+
+![Project File Structure](./picture/docker_safe_isolation_ts_study_014_04_project_files.png)
 
 プロジェクト直下にこんな構成を作ります：
 
@@ -157,6 +165,8 @@ curl http://localhost:3000/
 
 ## 4-3) 次に「cap全部落とし」で起動🧹✨
 
+![Node No-Caps Run](./picture/docker_safe_isolation_ts_study_014_05_node_light.png)
+
 `compose.yaml` をこう変えます👇（これが本題！）
 
 ```yaml
@@ -189,6 +199,8 @@ curl http://localhost:3000/
 ---
 
 ## 4-4) 80番で待ち受けたい時だけ：`NET_BIND_SERVICE` を戻す📮🔧
+
+![NET_BIND_SERVICE Key](./picture/docker_safe_isolation_ts_study_014_06_port_80_key.png)
 
 Linuxでは **1024未満のポート**でlistenするのに `NET_BIND_SERVICE` が必要です。([Docker Documentation][1])
 （`NET_BIND_SERVICE` の説明はLinuxのcapabilitiesの定義にもあります。([man7.org][3])）
@@ -234,6 +246,8 @@ capabilityを落とすと、エラーがこうなりがち👇
 ---
 
 ## 6) “足しちゃダメ寄り”代表：`SYS_ADMIN` 😱🚫
+
+![SYS_ADMIN Danger](./picture/docker_safe_isolation_ts_study_014_07_sys_admin_danger.png)
 
 `CAP_SYS_ADMIN` は Linux側でも「過剰に詰め込まれた（overloaded）危険枠」って扱いです。([man7.org][3])
 つまり、**雑に付けると“ほぼ何でもあり”に近づく**と思ってOKです💥

@@ -15,6 +15,8 @@
 
 ## 1) まず“書き込み地図”を作ろう🗺️✍️
 
+![3 Allowed Baskets](./picture/docker_safe_isolation_ts_study_012_01_writing_map.png)
+
 コンテナの中の書き込み先は、基本この3つで足ります👇😊
 
 1. **一時作業**：`/tmp`（消えてOK）🧊
@@ -27,6 +29,8 @@ Compose だと `read_only: true` で **コンテナのファイルシステム�
 ---
 
 ## 2) “3つのカゴ”設計（おすすめパス）🧺✨
+
+![Persistence Comparison](./picture/docker_safe_isolation_ts_study_012_02_persistence_comparison.png)
 
 ## A. 一時作業カゴ：`/tmp` 🧊
 
@@ -65,6 +69,8 @@ Docker の logging driver はコンテナの **stdout/stderr を集める**前�
 
 ## 3) 図で一発：安全な“書き込み地図”🧠✨
 
+![Read-Only Filesystem Map](./picture/docker_safe_isolation_ts_study_012_03_readonly_fs.png)
+
 ```
 [イメージ(読取り専用)]  ← read_only: true
   ├─ /app            (コード・依存)    ✋基本書かない
@@ -77,6 +83,8 @@ Docker の logging driver はコンテナの **stdout/stderr を集める**前�
 ---
 
 ## 4) 実装：Compose で“3つのカゴ”を作る🧩🐳
+
+![Compose Configuration](./picture/docker_safe_isolation_ts_study_012_04_compose_setup.png)
 
 ここでは **Node/TS アプリ**を例に、最小構成で作ります🙂✨
 ポイントはこれ👇
@@ -111,6 +119,8 @@ volumes:
 
 ## 5) 実装：Dockerfile 側で“書ける場所だけ”所有権を渡す🧤🛠️
 
+![Dockerfile Basket Prep](./picture/docker_safe_isolation_ts_study_012_05_dockerfile_prep.png)
+
 やることはシンプル😄
 **書く場所だけ `mkdir` して `chown`** しておきます。
 
@@ -135,6 +145,8 @@ CMD ["node", "dist/index.js"]
 ---
 
 ## 6) アプリ側（TypeScript）：書く場所を“定数で固定”する📌🧠
+
+![Environment Variable Path](./picture/docker_safe_isolation_ts_study_012_06_env_path.png)
 
 アプリが迷子になりがちな原因はだいたいコレ👇
 
@@ -164,6 +176,8 @@ Docker は stdout/stderr を logging driver で扱う前提なので、観測し
 ---
 
 ## 7) 動作確認：VS Code で“書ける/書けない”を体で覚える💻🧪
+
+![Verification Touch](./picture/docker_safe_isolation_ts_study_012_07_verification.png)
 
 起動👇
 

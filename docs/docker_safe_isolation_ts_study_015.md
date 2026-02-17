@@ -7,6 +7,8 @@
 
 ## 15.1 そもそも `privileged` って何が起きるの？😱💥
 
+![Privileged Switch Effect](./picture/docker_safe_isolation_ts_study_015_01_privileged_unlock.png)
+
 `docker run --privileged`（や Compose の `privileged: true`）は、ざっくり言うと **“コンテナをほぼホスト級にするスイッチ”** です。
 公式の説明でも、`--privileged` にすると **全capability付与・既定のseccomp無効・既定のAppArmor無効・ホストデバイス全部アクセス** など、いろいろ解除されると明記されています。([Docker Documentation][1])
 
@@ -17,6 +19,8 @@ Compose 側でも `privileged` は **“サービスを昇格権限で動かす�
 ---
 
 ## 15.2 Windows（Docker Desktop）だと「安全」になる？🪟🤔
+
+![Windows VM Privilege Risk](./picture/docker_safe_isolation_ts_study_015_02_windows_vm_risk.png)
 
 ならないです😇💣
 Docker Desktop は内部に Linux VM を持っていて、`--privileged` などは **VM 内で権限が強くなります**。ただし **VM 内部や Docker Engine 側に深く触れたり**、Docker Desktop のファイル共有で渡しているフォルダには当然触れます。
@@ -34,6 +38,8 @@ Docker 側の FAQ でも、`--privileged`（や `--pid=host`, `--cap-add`）は 
 
 ## 15.3 「privileged を付けたくなる瞬間」あるある😵‍💫
 
+![Why Privileged?](./picture/docker_safe_isolation_ts_study_015_03_common_triggers.png)
+
 だいたいこの3つが多いです👇
 
 1. **デバイス触りたい**（USB、GPU、/dev/net/tun、シリアル等）🔌
@@ -47,6 +53,8 @@ Docker 側の FAQ でも、`--privileged`（や `--pid=host`, `--cap-add`）は 
 ---
 
 ## 15.4 まずこれを試す！privileged の代替トップ3🥇🥈🥉
+
+![Privileged vs Alternatives](./picture/docker_safe_isolation_ts_study_015_04_alternatives.png)
 
 ### 代替①：デバイスだけ渡す（`devices`）🔌✅
 
@@ -66,6 +74,8 @@ Compose には `cap_add` / `cap_drop` が用意されています。([Docker Doc
 ---
 
 ## 15.5 privileged を使う前のチェックリスト🧾🛑（これだけ守れば事故激減）
+
+![Safety Checklist](./picture/docker_safe_isolation_ts_study_015_05_checklist.png)
 
 **チェック0：困ってるのは何？（1行）**✍️
 
@@ -105,6 +115,8 @@ Compose には `cap_add` / `cap_drop` が用意されています。([Docker Doc
 
 ## 15.6 ハンズオン：`--privileged` が“どれだけ強いか”を目で見る👀💥
 
+![CapEff Output Comparison](./picture/docker_safe_isolation_ts_study_015_06_capeff_comparison.png)
+
 Windows + Docker Desktop でもOK！
 PowerShell or VS Code のターミナルでやれます💻✨
 
@@ -131,6 +143,8 @@ exit
 ---
 
 ## 15.7 Composeでの “悪い例→良い例” 改造🛠️✨
+
+![Compose Bad vs Good](./picture/docker_safe_isolation_ts_study_015_07_compose_comparison.png)
 
 **悪い例（困ったから全部ON）**😵
 
