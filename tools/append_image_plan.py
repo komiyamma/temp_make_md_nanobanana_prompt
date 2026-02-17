@@ -16,7 +16,27 @@ def check_image_exists_in_markdown(md_filepath, proposed_filename):
     # HTML pattern: <img ... src="path" ... >
     html_matches = re.findall(r'<img.*?src=["\'](.*?)["\']', content)
 
-    all_paths = md_matches + html_matches
+    processed_md_paths = []
+    for match in md_matches:
+        match = match.strip()
+        # Handle angle brackets for spaces in path
+        if match.startswith('<'):
+            end_bracket = match.find('>')
+            if end_bracket != -1:
+                processed_md_paths.append(match[1:end_bracket])
+            else:
+                # Malformed or unclosed bracket, just take as is or split
+                parts = match.split(None, 1)
+                if parts:
+                    processed_md_paths.append(parts[0])
+        else:
+            # Split by whitespace to separate path from title
+            # e.g. "path/to/image.png 'title'" -> "path/to/image.png"
+            parts = match.split(None, 1)
+            if parts:
+                processed_md_paths.append(parts[0])
+
+    all_paths = processed_md_paths + html_matches
 
     for path in all_paths:
         filename = os.path.basename(path)
