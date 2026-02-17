@@ -5,9 +5,12 @@
 
 ---
 
+![Build Speed Comparison](./picture/docker_runtime_fix_ts_study_012_01_slow_vs_fast.png)
+
 ## 1) まず結論：速いDockerfileには“型”がある🧩✨
 
 Dockerのビルドは、ざっくり言うと **Dockerfileの1行ずつが「積み木（レイヤー）」** です🧱
+![Dockerfile Layer Stacking](./picture/docker_runtime_fix_ts_study_012_02_layer_stack_concept.png)
 そして **前回と同じ積み木は再利用（キャッシュ）** されます♻️
 
 でも逆に言うと…
@@ -20,6 +23,8 @@ Dockerのビルドは、ざっくり言うと **Dockerfileの1行ずつが「積
 ---
 
 ## 2) キャッシュが死ぬ“ありがちなDockerfile”😱
+
+![Bad Cache Pattern](./picture/docker_runtime_fix_ts_study_012_03_bad_pattern_topple.png)
 
 悪い例（よく見るやつ）👇
 ソースを先に `COPY . .` しちゃうと、**ソースを1行変えただけで依存インストールまで巻き込まれます**💣
@@ -37,6 +42,8 @@ CMD ["npm", "run", "start"]
 ---
 
 ## 3) キャッシュが効く“基本の型”✅⚡
+
+![Good Cache Pattern](./picture/docker_runtime_fix_ts_study_012_04_good_pattern_stable.png)
 
 ポイントはこれだけ👇
 
@@ -90,6 +97,8 @@ docker build --progress=plain -t myapp:dev .
 
 ### 4-3) もう1回ビルド（ここが本番）⚡
 
+![Log Cached Highlight](./picture/docker_runtime_fix_ts_study_012_05_log_cached_highlight.png)
+
 ```powershell
 docker build --progress=plain -t myapp:dev .
 ```
@@ -114,6 +123,8 @@ Dockerの公式ドキュメントでも、`npm install` / `npm` のキャッシ�
 しかもBuildKit自体、**Docker Desktopではデフォルト**、Docker Engineでも **23.0以降はデフォルト**です🧰✨ ([Docker Documentation][4])
 
 ### 5-1) こう書く（npmのダウンロードを再利用しやすくする）📦⚡
+
+![BuildKit Cache Mount](./picture/docker_runtime_fix_ts_study_012_06_buildkit_mount.png)
 
 ```dockerfile
 FROM node:24-bookworm-slim

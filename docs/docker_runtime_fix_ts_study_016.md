@@ -8,6 +8,8 @@
 
 ## 1) “マウント”って何がうれしいの？🎁✨
 
+![Development Loop](./picture/docker_runtime_fix_ts_study_016_01_dev_loop.png)
+
 Dockerfileの `COPY . .` は「**イメージの中にコードをコピー**」するやつ📦
 一方、バインドマウントは「**ホストのフォルダをコンテナに直結**」するやつ🔌
 
@@ -19,6 +21,8 @@ Docker公式の説明でも、bind mount は「ホストのディレクトリを
 ---
 
 ## 2) Windowsで最速にする“置き場所”のコツ🪟🐧⚡
+
+![Copy vs Bind Mount](./picture/docker_runtime_fix_ts_study_016_02_copy_vs_mount.png)
 
 ここが超重要ポイントです📌💥
 Docker Desktop（WSL2バックエンド）では、**ソースコードは“Linux側（WSLのファイルシステム）”に置く方が速い**です🚀
@@ -36,10 +40,14 @@ Docker公式のWSL2ベストプラクティスでも、**Windows側(`/mnt/c/...`
 
 ## 3) まずは体験：`docker run` でソースをマウントする🐳💨
 
+![Windows vs WSL Speed](./picture/docker_runtime_fix_ts_study_016_03_wsl_speed_track.png)
+
 ここでは「編集→即反映」を体験するために、**srcだけをマウント**します🧠✨
 （プロジェクト全体を丸ごとマウントすると、`node_modules` が絡んでハマりやすいので、そこは次章で爆破解決します💣➡️第17章へ）
 
 ### ✅ 3-1. コンテナ側の作業ディレクトリを `/app` にする📁
+
+![Source Only Mount](./picture/docker_runtime_fix_ts_study_016_04_src_only_mount.png)
 
 （Dockerfileで `WORKDIR /app` を使っている想定と相性が良いです👍）
 
@@ -72,6 +80,8 @@ docker run --rm -it -p 3000:3000 \
 
 ## 4) watch の動きも“今どき仕様”でいこう👀🔁
 
+![Node Watch Mode](./picture/docker_runtime_fix_ts_study_016_05_watch_eye.png)
+
 Nodeには `--watch` があって、ファイル変更で自動再起動できます♻️✨
 しかも **v22.0.0 / v20.13.0 以降で stable 扱い**になっています（もちろん v24 でもOK）([Node.js][5])
 
@@ -90,6 +100,8 @@ Nodeには `--watch` があって、ファイル変更で自動再起動でき�
 
 ## 5) “マウントできてるか”一瞬で確認する✅👀
 
+![Verification Peek](./picture/docker_runtime_fix_ts_study_016_06_verify_peek.png)
+
 「反映されない…😢」って時は、まず **中身が見えてるか**を確認します💡
 
 ```powershell
@@ -104,6 +116,8 @@ docker run --rm -it `
 ---
 
 ## 6) ありがちトラブル集（ここだけ見ればだいたい勝てる）🧯🔥
+
+![Broken Mount Link](./picture/docker_runtime_fix_ts_study_016_07_trouble_broken_link.png)
 
 ### ❌ 変更しても自動反映しない／watchが鈍い👀💦
 
