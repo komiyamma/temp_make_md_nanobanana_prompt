@@ -7,6 +7,8 @@
 
 ## 9.1 まず一言で：userns ってなに？🤔
 
+![User Namespace Concept](./picture/docker_safe_isolation_ts_study_009_01_userns_concept.png)
+
 **ユーザー名前空間（user namespace / userns）**は、超ざっくり言うと…
 
 > コンテナの中の「UID=0（root）」を、ホスト側では「ただの一般ユーザーのUID」に見せる仕組み
@@ -18,6 +20,8 @@ Dockerだと代表的に **`userns-remap`** という機能名で出てきます
 ---
 
 ## 9.2 「中のroot ≠ 外のroot」って、どういうこと？🧠💡
+
+![UID Mapping Table](./picture/docker_safe_isolation_ts_study_009_02_uid_mapping.png)
 
 Linuxではユーザーは数字（UID）で管理されます👤
 普通はこうです👇
@@ -46,6 +50,8 @@ app  (UID 1)   ───────▶      UID 231073
 ---
 
 ## 9.3 userns-remap と rootless の関係（ここ超重要）🔑
+
+![userns-remap vs Rootless](./picture/docker_safe_isolation_ts_study_009_03_remap_vs_rootless.png)
 
 混ざりやすいので、ここだけスッキリ整理します🧹✨
 
@@ -91,6 +97,8 @@ docker info | Select-String -Pattern "userns" -CaseSensitive:$false
 
 ### ラボ2：コンテナの中から `uid_map / gid_map` を見る🧩
 
+![Terminal UID Map Output](./picture/docker_safe_isolation_ts_study_009_04_terminal_uid_map.png)
+
 ```powershell
 docker run --rm alpine sh -lc "id; echo '--- uid_map'; cat /proc/self/uid_map; echo '--- gid_map'; cat /proc/self/gid_map"
 ```
@@ -121,6 +129,8 @@ docker run --rm --userns=host alpine sh -lc "cat /proc/self/uid_map; cat /proc/s
 
 ## 9.6 ありがちな詰まり：マウントの権限が地獄になる😇💥
 
+![Mount Permission Hell](./picture/docker_safe_isolation_ts_study_009_05_mount_permission_hell.png)
+
 userns-remap を入れると、**バインドマウント**（ホストのフォルダ共有）でハマりやすいです💣
 
 なぜかというと…
@@ -142,6 +152,8 @@ userns-remap を入れると、**バインドマウント**（ホストのフォ
 
 ## 9.7 Compose だとどう書くの？🧩🐳
 
+![Compose userns_mode](./picture/docker_safe_isolation_ts_study_009_06_compose_userns_mode.png)
+
 Composeには `userns_mode` があります。
 これは「そのサービスの user namespace をどうする？」を指定する項目です。([Docker Documentation][5])
 
@@ -160,6 +172,8 @@ services:
 ---
 
 ## 9.8 AI拡張時代の事故ポイント（プロンプト注入以前に起きがち）🤖⚠️
+
+![AI Accident Warning](./picture/docker_safe_isolation_ts_study_009_07_ai_warning.png)
 
 AIが出しがちな “手っ取り早い解決” は、隔離の思想と逆走しやすいです🚨
 
