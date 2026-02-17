@@ -12,6 +12,8 @@
 
 ## 1) まず全体像を1分で理解しよう🧠✨
 
+![Dockerfile Layer Stacking](./picture/docker_runtime_fix_ts_study_010_01_dockerfile_layers.png)
+
 Dockerfileは「**アプリが動く箱（イメージ）を作るレシピ**」です🍳📄
 
 * `FROM`：どの土台（Node入りOS）から始める？
@@ -31,6 +33,8 @@ Dockerfileは「**アプリが動く箱（イメージ）を作るレシピ**」
 `npm init` や `npm i` も **DockerのNodeで実行**して、最初から揺れを減らします🔒
 
 ## フォルダ構成（完成形）🧩
+
+![Project Folder Structure](./picture/docker_runtime_fix_ts_study_010_02_folder_structure.png)
 
 ```text
 runtime-fixed-js/
@@ -53,6 +57,8 @@ console.log("Now:", dayjs().format("YYYY-MM-DD HH:mm:ss"));
 ```
 
 ## 2-2) `package.json` と lockfile を“コンテナのnpm”で作る📦🔧（PowerShell想定）
+
+![Container Generating Files](./picture/docker_runtime_fix_ts_study_010_03_container_npm_init.png)
 
 VS Codeのターミナルで、フォルダ直下で実行👇
 
@@ -92,6 +98,7 @@ CMD ["node", "src/index.js"]
   これ以降の作業場所を `/app` に固定。迷子防止🧭
 
 * `COPY package.json package-lock.json ./` → `RUN npm ci`
+  ![Docker Cache Strategy](./picture/docker_runtime_fix_ts_study_010_04_cache_layers.png)
   **ここが型**です⚡
   依存定義だけ先に入れて `npm ci` することで、ソースをちょっと変えたくらいでは依存の層がキャッシュされやすい（速くなりやすい）
   そして `npm ci` は **lockfile前提のクリーンインストール**で、ズレたら止めてくれるのが強い ([docs.npmjs.com][3])
@@ -105,6 +112,8 @@ CMD ["node", "src/index.js"]
 ---
 
 ## 4) ビルドして動かす🐳💨
+
+![Build and Run Flow](./picture/docker_runtime_fix_ts_study_010_05_build_run_flow.png)
 
 プロジェクト直下で👇
 
@@ -141,6 +150,8 @@ docker run --rm runtime-fixed-js:dev node -v
 `npm ci` は lockfile 前提で、クリーンに入れるコマンドです ([docs.npmjs.com][3])
 
 ## ❌ `npm ci` が「package.json と lock の内容が違う」って怒る
+
+![npm ci Lockfile Mismatch](./picture/docker_runtime_fix_ts_study_010_06_npm_ci_error.png)
 
 **原因**：`package.json` を編集したのに lockfile を更新してない
 **対処**：コンテナで `npm i` を実行して lock を更新 → その後 `npm ci` に戻す

@@ -7,6 +7,8 @@
 
 ## ゴール🎯
 
+![Routine Check Goals](./picture/docker_runtime_fix_ts_study_009_01_goal_checklist.png)
+
 * コンテナ起動時に **Node / npm /（必要ならtsc）** の版が **毎回ログに出る** ✅
 * もし“固定”がズレたら **起動前に止まる**（＝即発見）✅
 * さらに **ワンコマンドで確認できる** ようにする✅
@@ -14,6 +16,8 @@
 ---
 
 ## まず結論：チェックすべき3点セット✅✅✅
+
+![The Three Check Points](./picture/docker_runtime_fix_ts_study_009_02_three_points.png)
 
 1. **Nodeのメジャー版**（例：v24系か？）
    → 2026年時点の「安定ど真ん中」は **v24がActive LTS**、v25はCurrent、v22はMaintenance LTS です。([Node.js][1])
@@ -24,6 +28,8 @@
 ---
 
 ## レベル1：最速チェック（公式イメージで確認）🐳💨
+
+![Quick Official Image Check](./picture/docker_runtime_fix_ts_study_009_03_quick_check.png)
 
 「そもそも今使うベースが正しい？」を秒速で確認します⚡
 
@@ -38,6 +44,8 @@ docker run --rm node:24-bookworm-slim npm -v
 ---
 
 ## レベル2：自分のイメージが固定できてるか確認🧱🔍
+
+![Custom Image Verification](./picture/docker_runtime_fix_ts_study_009_04_own_image_check.png)
 
 ビルドした“自分のアプリ用イメージ”に対して、**CMDを上書きして版だけ確認**します（これ超便利）✨
 
@@ -54,6 +62,8 @@ docker run --rm myapp:dev npm -v
 ## レベル3：起動ログに「必ず」出す（習慣化の最強手）🧠✅
 
 ## 方式：エントリーポイント（起動前チェック）を1枚かませる🍞
+
+![Entrypoint Script Flow](./picture/docker_runtime_fix_ts_study_009_05_entrypoint_flow.png)
 
 `docker-entrypoint.sh` を作ります👇
 
@@ -103,6 +113,8 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["npm", "start"]
 ```
 
+![Version Mismatch Safety Stop](./picture/docker_runtime_fix_ts_study_009_06_safety_stop.png)
+
 ポイントはここ👇
 
 * 起動時に **node/npm/tsc が必ずログに出る**✅
@@ -113,6 +125,8 @@ CMD ["npm", "start"]
 ---
 
 ## レベル4：更新漏れを防ぐ“チェック用コマンド”を固定🧷
+
+![Docker Build Pull](./picture/docker_runtime_fix_ts_study_009_07_pull_update.png)
 
 「毎回同じコマンドで確認」が一番強いです💪✨
 

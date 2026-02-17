@@ -7,6 +7,8 @@
 
 ## 1) タグは「住所（OS）」と「荷物の量（中身）」が混ざってる📦🧭
 
+![Node Image Tag Anatomy](./picture/docker_runtime_fix_ts_study_007_01_tag_anatomy.png)
+
 Node公式イメージのタグはだいたいこういう情報を持ってます👇
 
 * **Nodeのバージョン**：`24` / `24.13.0` / `lts` など
@@ -18,6 +20,8 @@ Node公式イメージのタグはだいたいこういう情報を持ってま�
 ## 2) まず覚えるべき“4大タグ”🧠✨
 
 ## A. `node:24`（いちばん雑に書けるやつ）
+
+![Moving Tag (node:24)](./picture/docker_runtime_fix_ts_study_007_02_moving_tag.png)
 
 * **「Node 24系の最新パッチ」へ自動で寄っていく** “動くタグ” です🔁
 * そして **今は Debian系（bookworm）側に紐づく**のが基本です（タグ定義上も同居しています）📌
@@ -39,6 +43,8 @@ Node公式イメージのタグはだいたいこういう情報を持ってま�
 
 ## C. `node:24-bookworm-slim`（小さめ＆安定寄りの鉄板）
 
+![Normal vs Slim Image](./picture/docker_runtime_fix_ts_study_007_03_slim_comparison.png)
+
 * `slim` は **“よくある便利パッケージ”を削って、Node実行に必要な最小限だけ**に寄せた版です📦✂️
   公式説明：デフォルト版に入ってる共通パッケージが無いよ、という立ち位置。([Docker Hub][3])
 
@@ -47,6 +53,8 @@ Node公式イメージのタグはだいたいこういう情報を持ってま�
 ---
 
 ## D. `node:24-alpine`（めちゃ小さい、でもクセあり）
+
+![Alpine Compatibility Trap](./picture/docker_runtime_fix_ts_study_007_04_alpine_warning.png)
 
 * Alpineは超軽量（~5MB級）でイメージが小さくなりがち🧊✨([Docker Hub][3])
 * ただし **musl libc** を使うので、**ネイティブ系依存（`process.dlopen` など）でハマることがある**⚠️
@@ -58,6 +66,8 @@ Node公式イメージのタグはだいたいこういう情報を持ってま�
 ---
 
 ## 3) 「動くタグ」vs「固定タグ」🔒🔁
+
+![Fixed vs Moving Tags](./picture/docker_runtime_fix_ts_study_007_05_fixed_vs_moving.png)
 
 ここ、超大事です💡
 
@@ -139,6 +149,8 @@ docker images node:24 node:24-bookworm-slim node:24-alpine
 ---
 
 ## 7) この章の結論：タグ選びの“最短ルール”🏁✨
+
+![Tag Selection Flowchart](./picture/docker_runtime_fix_ts_study_007_06_selection_flow.png)
 
 * 迷ったら：**`node:24-bookworm-slim`** 👍
   （OS明示 + ほどよく軽量、扱いやすい）
