@@ -7,6 +7,8 @@
 
 ## 1) まずは全体の地図 🗺️👀
 
+![Docker Architecture Map](./picture/docker_safe_isolation_ts_study_002_01_overall_map.png)
+
 Dockerはざっくり「命令する人（クライアント）」「実行する親玉（デーモン）」「動く箱（コンテナ）」に分かれます。Docker公式の説明もこのクライアント↔デーモンの形を前提にしています。([Docker Documentation][1])
 
 イメージ図（超重要）👇
@@ -27,6 +29,8 @@ Dockerはざっくり「命令する人（クライアント）」「実行す�
 
 ## 2) 境界線①：ホスト（Windows）🪟🧱
 
+![Host Boundary (WSL2)](./picture/docker_safe_isolation_ts_study_002_02_host_boundary.png)
+
 ## ホストってどこ？🤔
 
 * いま使ってるPC本体（Windows）が“ホスト”の中心です🪟
@@ -42,6 +46,8 @@ Dockerはざっくり「命令する人（クライアント）」「実行す�
 ---
 
 ## 3) 境界線②：デーモン（dockerd）👑🔥
+
+![Daemon King](./picture/docker_safe_isolation_ts_study_002_03_daemon_king.png)
 
 ## デーモンは何者？🧠
 
@@ -63,6 +69,8 @@ Dockerはざっくり「命令する人（クライアント）」「実行す�
 
 ## 4) 境界線③：コンテナ（箱の中）📦🐣
 
+![Container Isolation](./picture/docker_safe_isolation_ts_study_002_04_container_isolation.png)
+
 ## コンテナはVMじゃない（ここ大事）⚠️
 
 * コンテナは“別OS”というより、Linuxの仕組み（namespaces / cgroups 等）でプロセスを分けてる感じです。Docker公式もカーネル機能（namespaces/cgroups）や設定ミス等をセキュリティの主要ポイントとして挙げています。([Docker Documentation][4])
@@ -78,12 +86,16 @@ Dockerはざっくり「命令する人（クライアント）」「実行す�
 
 ## 5) 境界線④：ネットワーク（道）🕸️🚦
 
+![Network Gates](./picture/docker_safe_isolation_ts_study_002_05_network_gates.png)
+
 ## 「コンテナ同士の道」と「外への出口」は別物 🚪🌐
 
 * Composeはデフォルトで**アプリ用のネットワークを1個作り**、同じCompose内のサービスはそこで相互に通信できます（サービス名で見つかる）。([Docker Documentation][7])
 * 一方で、`ports:` を使うと **ホスト側に“入口”が開きます**（外から入れる道ができる）🚪😈
 
 ## もう1個ポイント：デフォルトbridgeは“古い仕組み扱い”👴
+
+![Legacy Bridge vs User Network](./picture/docker_safe_isolation_ts_study_002_06_legacy_bridge.png)
 
 Docker公式は、デフォルト `bridge` ネットワークを「レガシーで、本番用途には推奨しない」と明言しています。([Docker Documentation][8])
 → 「ユーザー定義ネットワークを使う」が基本の考え方になってます🧠✨（Composeはそれを自動でやってくれるイメージ）
@@ -161,6 +173,8 @@ docker network inspect <network-name>
 ---
 
 ## まとめ：この章の持ち帰り🎒✨
+
+![Four Boundaries Summary](./picture/docker_safe_isolation_ts_study_002_07_summary_map.png)
 
 * **ホスト**：ファイル共有した瞬間、壁が薄くなる🧱→🧻
 * **デーモン**：ここが権限の王様👑（触れる入口は最重要で守る）([Docker Documentation][5])
