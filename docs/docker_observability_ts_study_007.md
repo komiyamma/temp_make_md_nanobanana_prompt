@@ -12,6 +12,8 @@
 
 ## ② まず結論：アクセスログは “短く・揃える” が正義 🧠✨
 
+![Basic Access Log Fields](./picture/docker_observability_ts_study_007_01_access_log_fields.png)
+
 アクセスログの目的は超シンプル👇
 **「何が起きたか」を、あとから最短で説明できること** 🏃‍♂️💨
 
@@ -30,6 +32,8 @@
 
 ## ③ 図（1枚）🖼️📦
 
+![Middleware Lifecycle](./picture/docker_observability_ts_study_007_02_middleware_lifecycle.png)
+
 ```text
 リクエスト → Express middleware（開始）→ handler → レスポンス
                       ↓（finishイベント）
@@ -46,6 +50,8 @@ Dockerはコンテナの **stdout / stderr** を標準で取り込んでログ�
 ここでは **Express用のアクセスログ middleware** を作って、`/ping` と `/slow` で動きを見ます👀
 
 ### Step 1) middleware を1ファイル作る 📄✨
+
+![Access Log Logic Details](./picture/docker_observability_ts_study_007_03_access_log_logic.png)
 
 `src/middleware/accessLog.ts`
 
@@ -95,6 +101,8 @@ export function accessLog(req: Request, res: Response, next: NextFunction) {
 ---
 
 ### Step 2) サーバーに middleware を挿す 🧩🚪
+
+![Middleware Gate Placement](./picture/docker_observability_ts_study_007_04_middleware_gate.png)
 
 `src/server.ts`（例）
 
@@ -191,6 +199,8 @@ access ts=2026-02-13T04:12:38.901Z method=GET path=/slow status=200 ms=803.6
 ---
 
 ## ⑥ つまづきポイント（3つ）🪤😵‍💫
+
+![Access Log Traps](./picture/docker_observability_ts_study_007_05_access_log_traps.png)
 
 1. **ログが出ない**
 

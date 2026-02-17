@@ -10,6 +10,8 @@
 
 ## ② まずは絵でつかむ 🖼️
 
+![The Flow of Logs in Containers](./picture/docker_observability_ts_study_003_01_log_flow.png)
+
 コンテナ時代の基本ルートはこれ👇
 
 アプリ（Node/TS）
@@ -24,6 +26,8 @@
 ---
 
 ## ③ コンテナで見えにくい「3つの正体」🧩
+
+![Three Container Log Challenges](./picture/docker_observability_ts_study_003_02_three_challenges.png)
 
 ### A) 「入るのが面倒」🚪😮‍💨
 
@@ -45,6 +49,8 @@
 ---
 
 ## ④ 今日の最重要ルール 🧠📌
+
+![The Stdout Rule](./picture/docker_observability_ts_study_003_03_stdout_rule.png)
 
 ### ✅ 「コンテナの中に“手がかり”を置かない」＝ログは `stdout/stderr` に出す 📣🖥️
 
@@ -75,6 +81,8 @@
 ---
 
 ## 1) `src/log.ts`（ログの出口を1本化）🔌
+
+![Log Splitting Code Logic](./picture/docker_observability_ts_study_003_04_log_split.png)
 
 ```ts
 type Level = "INFO" | "ERROR";
@@ -272,6 +280,8 @@ docker compose logs api --tail 50 --follow --timestamps
 ---
 
 ## ⑦ “落としても logs で追える” を体験する 💥➡️🔍
+
+![Post-Mortem Log Analysis](./picture/docker_observability_ts_study_003_05_post_mortem.png)
 
 ## 1) プロセスを落とす 💀
 
