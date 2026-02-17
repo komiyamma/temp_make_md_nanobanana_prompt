@@ -7,6 +7,8 @@
 
 ## 1) まず結論：`.dockerignore` は“引っ越しの荷造りリスト”📦📝
 
+![Luggage Filter](./picture/docker_runtime_fix_ts_study_013_01_luggage_filter.png)
+
 `docker build` するとき、Docker は「ビルドに使う材料一式（＝ビルドコンテキスト）」をビルダーに渡します。
 このとき `.dockerignore` があると、**マッチしたファイル・フォルダをコンテキストから外してから**渡してくれます🚚💨 ([Docker Documentation][1])
 
@@ -22,6 +24,8 @@ Docker 公式も「関係ないファイルは `.dockerignore` で除外しよ�
 
 ## 2) “速くなるポイント”はここ⚡（地味だけど効く）
 
+![Context Transfer Size](./picture/docker_runtime_fix_ts_study_013_02_context_transfer.png)
+
 ビルドログに、こんな行を見たことない？👀
 
 * `transferring context: xxxMB`
@@ -32,6 +36,8 @@ Docker 公式も「関係ないファイルは `.dockerignore` で除外しよ�
 ---
 
 ## 3) 最小テンプレ：Node/TSで“とりあえず勝つ” `.dockerignore` 🏆
+
+![The Ignore List](./picture/docker_runtime_fix_ts_study_013_03_ignore_list.png)
 
 まずはこれでOKです（あとで増減できる🙆‍♂️）
 
@@ -72,6 +78,8 @@ coverage
 
 ## 4) `.dockerignore` の“基本ルール”だけ覚えよう🧠✨
 
+![Ignore Rules](./picture/docker_runtime_fix_ts_study_013_04_rule_book.png)
+
 ### ルールA：置き場所は「ビルドコンテキストのルート」📁
 
 `docker build .` の **`.`（ドット）** がコンテキストです。
@@ -94,6 +102,8 @@ Docker は `.dockerignore` で `Dockerfile` や `.dockerignore` を除外して�
 
 ## 5) 体感してみよう：ビルド前後で“搬入サイズ”を見る👀⚡
 
+![Weighing the Context](./picture/docker_runtime_fix_ts_study_013_05_context_weighing.png)
+
 ### 手順1：まずはログをよく見える形でビルド
 
 ```powershell
@@ -112,6 +122,8 @@ docker build --progress=plain -t runtime-fixed-demo .
 ## 6) つまずきポイント集（ここで詰まる人が多い）💣
 
 ### つまずき①：「無視されてる気がする…」→ だいたい **マウント（volumes）** です🌀
+
+![The Volume Trap](./picture/docker_runtime_fix_ts_study_013_06_volume_trap.png)
 
 `.dockerignore` は **ビルド時の話**。
 でも `volumes: - .:/app` みたいにフォルダをマウントすると、**ホストのファイルが実行時に見えます**👻

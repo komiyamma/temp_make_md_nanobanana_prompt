@@ -10,6 +10,8 @@
 
 #### 1) まず結論：開発＝速さ🏎️ / 本番＝安定🪨
 
+![Dev vs Prod Modes](./picture/docker_runtime_fix_ts_study_014_01_dev_vs_prod_vehicles.png)
+
 * **開発モード（dev）** 🧑‍💻
   目的：変更をすぐ反映して、爆速で試す
   例：ファイル監視で自動再起動、エラー表示が親切、デバッグしやすい
@@ -24,6 +26,8 @@
 
 #### 2) “分ける”って、具体的に何を分けるの？🧠🪓
 
+![The Three Separations](./picture/docker_runtime_fix_ts_study_014_02_three_separation_points.png)
+
 最低限はこの3つだけでOKです👌✨
 
 1. **起動コマンド（scripts）**
@@ -33,6 +37,8 @@
 ---
 
 #### 3) scripts を「dev / build / start」に揃える📦📝
+
+![Script Control Panel](./picture/docker_runtime_fix_ts_study_014_03_script_buttons.png)
 
 ここが“設計の入口”です🚪✨
 **コマンド名が揃うと、迷子が消えます**🧭
@@ -62,6 +68,8 @@
 
 #### 4) NODE_ENV の使い方：雑に “staging” とか入れない😅⚠️
 
+![NODE_ENV Trap](./picture/docker_runtime_fix_ts_study_014_04_env_trap.png)
+
 ありがちな罠がこれ👇
 
 * `NODE_ENV=development` で動くのに
@@ -78,6 +86,8 @@ Node公式も、**環境名によって最適化や挙動を変えすぎると�
 
 #### 5) 依存関係：本番は “devDependencies を入れない” が基本📦🧊
 
+![Dependency Filter](./picture/docker_runtime_fix_ts_study_014_05_dependency_filter.png)
+
 開発には必要だけど、本番には不要なものって多いです😌
 例：TypeScript本体、ts-node/tsx系、eslint、テスト系…など
 
@@ -89,6 +99,8 @@ npm 側の基本ルールとして、**`NODE_ENV=production` だと devDependenc
 ---
 
 #### 6) Dockerでの “開発” と “本番” の違い🐳🎭
+
+![Mount vs Copy](./picture/docker_runtime_fix_ts_study_014_06_docker_mount_vs_copy.png)
 
 ここが一番大事かもです👇
 
@@ -105,6 +117,8 @@ npm 側の基本ルールとして、**`NODE_ENV=production` だと devDependenc
 ---
 
 #### 7) “本番用Dockerfile”の型（まずは雰囲気でOK）🧱✨
+
+![Multi-stage Build Factory](./picture/docker_runtime_fix_ts_study_014_07_multistage_factory.png)
 
 「今すぐ完全理解」じゃなくて大丈夫🙆‍♂️
 **“ビルド用ステージ” と “実行用ステージ” を分ける**だけ覚えればOKです🧠
