@@ -14,6 +14,8 @@
 
 ## ② まずは超ざっくりイメージで掴む 🧠💡
 
+![Three Probes Characters](./picture/docker_observability_ts_study_024_01_three_probes_characters.png)
+
 ### 🫀 liveness（生存）＝「心臓が動いてる？」
 
 * 目的：**固まってたら再起動して復活させる**
@@ -34,6 +36,8 @@
 ---
 
 ## ③ 図で理解する 🖼️✨
+
+![Probe Lifecycle Flow](./picture/docker_observability_ts_study_024_02_probe_lifecycle_flow.png)
 
 ```text
 [コンテナ起動] 
@@ -58,6 +62,8 @@
 
 ## ④ 「Dockerだけの世界」だとどう考える？🐳🧩
 
+![Docker Healthcheck Params](./picture/docker_observability_ts_study_024_03_docker_healthcheck_params.png)
+
 ここが混乱ポイントです😵‍💫
 Docker（単体）には **“liveness/readiness/startup” の3種類がそのまま存在するわけじゃなくて**、基本は **HEALTHCHECK（健康チェック）1本**です。
 
@@ -79,6 +85,8 @@ Composeは、ただの起動順だけだと「動いてるけど準備できて�
 ---
 
 ## ⑤ じゃあ結局、どう設計すると事故らない？🧯✨
+
+![Probe Design Rules](./picture/docker_observability_ts_study_024_04_probe_design_rules.png)
 
 ここは“現場で効く型”として覚えましょう👇
 
@@ -107,6 +115,8 @@ Kubernetesでもlivenessは「固まり検知→再起動」に使う、と明�
 
 ## ⑥ ミニ課題：「DBが落ちてる時、/healthはどう返す？」🤔🧠
 
+![DB Down Scenario](./picture/docker_observability_ts_study_024_05_db_down_scenario.png)
+
 あなたがAPI作者だとして、次を決めてください👇
 
 * **ケースA：DBが落ちてる**（ただしAPIプロセス自体は元気）
@@ -129,6 +139,8 @@ Kubernetesでもlivenessは「固まり検知→再起動」に使う、と明�
 
 ## ⑦ つまづきポイント（あるある3つ）🪤😵‍💫
 
+![Restart Loop Trap](./picture/docker_observability_ts_study_024_06_restart_loop_trap.png)
+
 1. **ヘルスでDBを見に行って再起動ループ**👹🔁
    → livenessは軽く。依存はreadiness側へ。
 
@@ -141,6 +153,8 @@ Kubernetesでもlivenessは「固まり検知→再起動」に使う、と明�
 ---
 
 ## ⑧ 15分ハンズオン（設計だけやる）📝✨
+
+![API Health Endpoints](./picture/docker_observability_ts_study_024_07_api_health_endpoints.png)
 
 次章で実装に入る前に、まず「仕様」を固めます👇
 

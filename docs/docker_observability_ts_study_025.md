@@ -15,6 +15,8 @@
 
 ## ② 図（1枚）🖼️
 
+![Liveness Check Flow](./picture/docker_observability_ts_study_025_01_liveness_check_flow.png)
+
 ```text
 (外) 監視/基盤   --->  GET /health  --->  (中) Nodeプロセス
      「返る？」                     「返すだけ！(200)」
@@ -34,6 +36,8 @@
 
 ## 1) ファイル構成 📁
 
+![File Structure](./picture/docker_observability_ts_study_025_02_file_structure.png)
+
 こうしておくと、あとで /ready（第26章）を足すのがラクです 😆
 
 ```text
@@ -49,6 +53,8 @@
 ---
 
 ## 2) /health のルートを作る 🩺💚（200固定✅）
+
+![Lightweight Logic](./picture/docker_observability_ts_study_025_03_lightweight_logic.png)
 
 `src/routes/health.ts`
 
@@ -100,6 +106,8 @@ app.listen(port, () => {
 ---
 
 ## 4) Dockerfile（シンプル版）🐳📦
+
+![Docker Build](./picture/docker_observability_ts_study_025_04_docker_build.png)
 
 ※すでに Dockerfile がある場合はスキップして、/health だけ追加でもOKです 🙆‍♂️
 （ここでは “動く最小” を置きます）
@@ -162,6 +170,8 @@ docker compose logs -f api
 
 ## 7) /health を叩いて確認する 🔍✅
 
+![Curl Verification](./picture/docker_observability_ts_study_025_05_curl_verification.png)
+
 PowerShell でOKです（Windowsの curl でいけます）💪
 
 ```text
@@ -178,6 +188,8 @@ curl http://localhost:3000/health
 
 ## 8) 「落ちてたら返らない」を体験する 💥👻
 
+![Connection Refused](./picture/docker_observability_ts_study_025_06_connection_refused.png)
+
 ```text
 docker compose stop api
 curl http://localhost:3000/health
@@ -189,6 +201,8 @@ curl http://localhost:3000/health
 ---
 
 ## ④ つまづきポイント（3つ）🪤😵‍💫
+
+![Log Spam Trap](./picture/docker_observability_ts_study_025_07_log_spam_trap.png)
 
 ## 1) /health をログに出しすぎてログ地獄 🧾🌋
 
