@@ -8,6 +8,8 @@
 
 ## 結論：まずはこれでOK✅
 
+![Best Base Image Choice](./picture/docker_runtime_fix_ts_study_008_01_best_choice.png)
+
 **おすすめベース：`node:24-bookworm-slim`** 🐳✨
 理由は「安定」と「事故りにくさ」のバランスが最強だからです。
 
@@ -19,6 +21,8 @@
 ---
 
 ## まず “LTS” が強い理由🛡️
+
+![Node Release Phases](./picture/docker_runtime_fix_ts_study_008_02_lts_vs_current.png)
 
 Nodeは「同じメジャーでも時期で性格が違う」んですよね😵‍💫
 そこで最初は迷わず **LTS** を選ぶと勝ちやすいです。
@@ -32,6 +36,8 @@ Nodeは「同じメジャーでも時期で性格が違う」んですよね😵
 ---
 
 ## “bookworm” と “slim” は何？👀🏷️
+
+![Bookworm Slim Transformation](./picture/docker_runtime_fix_ts_study_008_03_slim_diet.png)
 
 Dockerのイメージタグは、ざっくりこういう構造です👇
 
@@ -53,6 +59,8 @@ Docker公式も「タグに bookworm / bullseye みたいな単語が入って�
 
 ## 1) ネイティブ依存（C/C++ビルド系）で事故りにくい🧯
 
+![Native Dependencies Compatibility](./picture/docker_runtime_fix_ts_study_008_04_native_deps.png)
+
 Nodeの世界は、たまに `bcrypt` とか画像処理系とか、**ネイティブ依存**が混ざります。
 Debian系だと情報も多く、`apt-get` で揃えやすいので、初心者が詰まりにくいです👍
 
@@ -63,6 +71,8 @@ Debian系だと情報も多く、`apt-get` で揃えやすいので、初心者�
 ---
 
 ## `node:24-bookworm-slim` が本当に存在するか確認しよう✅（超かんたん実験）
+
+![Version Verification](./picture/docker_runtime_fix_ts_study_008_05_version_check.png)
 
 まずは「自分のPCのNodeを一切使わずに」動かします🐳✨
 
@@ -82,6 +92,8 @@ docker run --rm node:24-bookworm-slim cat /etc/os-release
 ---
 
 ## “固定”の強さをもう一段上げる小技🔒（ピン留めの考え方）
+
+![Pinning Levels Strategy](./picture/docker_runtime_fix_ts_study_008_06_pinning_levels.png)
 
 ## A. まずは「メジャー固定」でOK（学習に最適）🟩
 
@@ -108,6 +120,8 @@ Docker Hub上でも `24-bookworm-slim` や `24.13.0-bookworm-slim` みたいな�
 まず **Debian slimで成功体験 → 慣れたらalpine検討** が安全ルートです🛣️
 
 ## ❌「`node:latest` でいいでしょ？」
+
+![The Latest Tag Trap](./picture/docker_runtime_fix_ts_study_008_07_latest_trap.png)
 
 `latest` は“いつの間にか変わる”ので、教材・チーム・未来の自分に優しくないです🙅‍♂️
 最低でも `node:24-...` のように“意図”が見える固定にしましょう✅

@@ -15,6 +15,8 @@
 
 ## 1) まずイメージ🧠💡「ロックファイル＝レシピの確定版」
 
+![Recipe Metaphor](./picture/docker_runtime_fix_ts_study_011_01_recipe_metaphor.png)
+
 * `package.json`：**だいたいこの材料でOK**（範囲指定が入ることが多い）
 * `package-lock.json`：**今回これで作りました！の確定版レシピ**（具体的な材料の型番まで）📌
 
@@ -24,6 +26,8 @@
 ---
 
 ## 2) `npm install` と `npm ci` の違い（ここだけ覚えればOK）🧩✨
+
+![npm ci vs install](./picture/docker_runtime_fix_ts_study_011_02_ci_vs_install.png)
 
 `npm ci` の特徴はこれ👇（重要順）
 
@@ -38,6 +42,8 @@
 ---
 
 ## 3) まずは体験しよう😆🧪（5分で腹落ち）
+
+![Clean Install Process](./picture/docker_runtime_fix_ts_study_011_03_clean_slate.png)
 
 プロジェクト直下でやるだけでOKです👇
 
@@ -64,6 +70,8 @@ npm ci
 
 ## 4) いちばん大事な運用ルール📏✨（これだけで勝てる）
 
+![Dev vs CI Workflow](./picture/docker_runtime_fix_ts_study_011_04_workflow_cycle.png)
+
 ## ルールA：ロックファイルは必ずコミット🧷📌
 
 * `package-lock.json` が無いと、`npm ci` はそもそも動けません🙅‍♂️ ([docs.npmjs.com][1])
@@ -83,10 +91,14 @@ npm ci
 
 ## 5) つまずき王👑「lockとpackage.jsonがズレてる」→直し方
 
+![Sync Error Visualization](./picture/docker_runtime_fix_ts_study_011_05_sync_error.png)
+
 典型エラー（イメージ）💣
 「`npm ci` can only install packages when your package.json and package-lock.json ... are in sync」みたいなやつです😇
 
 ## 直し方（最短）🛠️
+
+![Fixing the Mismatch](./picture/docker_runtime_fix_ts_study_011_06_fix_flow.png)
 
 ```bash
 ## ① まずロックを正しい状態に更新
@@ -107,6 +119,8 @@ npm ci
 ---
 
 ## 6) Dockerfileでの“勝ちパターン”🐳🏆（復習＋理由）
+
+![Dockerfile Winning Pattern](./picture/docker_runtime_fix_ts_study_011_07_winning_pattern.png)
 
 Dockerビルドでよく使う並びがこれ👇（キャッシュも効く）
 
