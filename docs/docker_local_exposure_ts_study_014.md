@@ -36,6 +36,8 @@ Caddy公式の“概念ページ”でも、Caddyfileは **site blockが基本�
 
 ## 3-1. site block（箱）📦
 
+![Site Block Structure](./picture/docker_local_exposure_ts_study_014_01_site_block.png)
+
 **1行目 = どこ宛のリクエストを扱う箱か**
 その下に `{ ... }` の中身を書く（中身がルール）🧩
 
@@ -81,6 +83,8 @@ matcherの代表3つ👇
 
 ## 4) ルールの核：`handle` は「当たったらここだけ」🔀🧠
 
+![Handle Logic](./picture/docker_local_exposure_ts_study_014_02_handle_logic.png)
+
 `handle` は **複数並べたとき“最初にマッチした1個だけ”が動く** 仕組み！
 つまり「if / else if / else」っぽいノリになる👍
 
@@ -105,6 +109,8 @@ app.localhost {
 ---
 
 ## 5) 超便利：`handle_path` は「/api を剥がして渡す」🪄🧹
+
+![Handle vs Handle Path](./picture/docker_local_exposure_ts_study_014_03_handle_path_vs_handle.png)
 
 たとえばAPI側が `/health` を期待してるのに、入口で `/api/health` で受けてる…みたいな時あるよね？😇
 
@@ -147,6 +153,8 @@ reverse_proxy api:3000
 
 ## 7) ちょい重要：HTTPSの挙動でビビらないために🔐😳
 
+![Automatic HTTPS](./picture/docker_local_exposure_ts_study_014_04_https_lock.png)
+
 Caddyは **デフォでHTTPS** が基本思想。([Caddy Web Server][6])
 さらに `localhost` みたいな **ローカル/内部ホスト名でもHTTPS（自己署名）** を使うことがあるし、初回は“信頼ストアに入れる”系でパスワードを求めることもあるよ。([Caddy Web Server][6])
 
@@ -173,6 +181,8 @@ http://app.localhost {
 ---
 
 ## 8) 手順：Caddyfileを編集→整形→リロード🛠️✨
+
+![Caddy Reload](./picture/docker_local_exposure_ts_study_014_05_caddy_reload.png)
 
 「変更したのに反映されない😡」を防ぐために、流れを固定しよ〜！
 

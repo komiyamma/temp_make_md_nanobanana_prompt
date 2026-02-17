@@ -35,6 +35,8 @@ Vite 公式も「Vite の前にいるリバプロは WebSocket をプロキシ�
 
 ## 15.3 まずは図で理解🗺️✨
 
+![WebSocket Flow](./picture/docker_local_exposure_ts_study_015_01_websocket_flow.png)
+
 イメージはこれ👇（“入口”は Caddy だけ）
 
 * ブラウザ → `front.localhost:80`
@@ -57,6 +59,8 @@ Browser
 
 ## 15.4 “一番ラクに動く”構成（サブドメイン方式）🚀🏷️
 
+![Subdomain vs Path for Vite](./picture/docker_local_exposure_ts_study_015_05_subdomain_vs_path.png)
+
 dev サーバー（Vite）を **パス配下**（例：`/app`）に押し込むと、HTML/アセット/WS のパスが絡んで難しくなりがち😵‍💫
 ここはまず **サブドメイン方式（`front.localhost`）**で勝ちにいくよ🎯✨
 
@@ -73,6 +77,8 @@ reverse-proxy-lab/
 ```
 
 ### 15.4.2 `compose.yml`（Caddy + Vite）🐳🧩
+
+![Vite Host Binding](./picture/docker_local_exposure_ts_study_015_02_vite_bind.png)
 
 ポイントはこれ👇
 
@@ -164,6 +170,8 @@ export default defineConfig({
 
 ## 15.6 よくある詰まり辞典📕🧯（症状→原因→直し方）
 
+![HMR Fallback Warning](./picture/docker_local_exposure_ts_study_015_03_hmr_fallback.png)
+
 ### ① 画面は出るけど、HMR が効かない（更新されない）😿
 
 * 原因候補A：**WebSocket がプロキシされてない**
@@ -210,6 +218,8 @@ export default defineConfig({
 ---
 
 ## 15.7 デバッグ最短ルート🕵️‍♂️⚡
+
+![WebSocket Debugging](./picture/docker_local_exposure_ts_study_015_04_ws_debug.png)
 
 ### ブラウザで確認（いちばん早い）🧠
 

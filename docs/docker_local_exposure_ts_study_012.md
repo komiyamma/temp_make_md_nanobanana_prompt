@@ -54,17 +54,23 @@
 
 ## 🧱 Nginx：職人気質のベテラン
 
+![Nginx Concept](./picture/docker_local_exposure_ts_study_012_04_nginx_concept.png)
+
 * ちゃんと書けば強い
 * でも設定は“お堅め”で、最初は疲れやすい😵
 * mainline/stable の考え方もある（mainline推奨寄りの説明もある）([F5 NGINX Documentation][5])
 
 ## 🍞 Caddy：読みやすさ重視の優等生
 
+![Caddy Concept](./picture/docker_local_exposure_ts_study_012_02_caddy_concept.png)
+
 * ルールが素直で、設定が短い
 * ローカルHTTPSが得意（ローカル/内部名に対してHTTPSを扱う説明あり）([Caddy Web Server][6])
 * `reverse_proxy` が強力で、まず困らない([Caddy Web Server][7])
 
 ## 🤖 Traefik：Docker自動化の天才
+
+![Traefik Concept](./picture/docker_local_exposure_ts_study_012_03_traefik_concept.png)
 
 * Docker連携が“思想レベル”で強い
 * **コンテナのラベル**からルーティングを作る([Traefik Labs Documentation][8])
@@ -73,6 +79,8 @@
 ---
 
 ## 12-5. 比較表（ローカル公開整理の観点）🆚📋
+
+![Comparison Matrix](./picture/docker_local_exposure_ts_study_012_05_comparison_matrix.png)
 
 | 観点            | Nginx 🧱       | Caddy 🍞                                     | Traefik 🤖                                              |
 | ------------- | -------------- | -------------------------------------------- | ------------------------------------------------------- |
@@ -87,6 +95,8 @@
 ---
 
 ## 12-6. 選び方：3問で決める🧠💡
+
+![Decision Funnel](./picture/docker_local_exposure_ts_study_012_01_decision_funnel.png)
 
 ## Q1：まず「2〜3個のアプリを共存」させたい？
 
