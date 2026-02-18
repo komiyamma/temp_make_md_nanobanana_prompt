@@ -25,6 +25,8 @@ Dockerでよくある地獄はこれ👇
 * Bプロジェクトも `localhost:3000` を使う
 * すると **どっちかが起動できない**（先に掴んだ者勝ち）⚔️
 
+![Port Conflict Chaos](./picture/docker_local_exposure_ts_study_024_port_conflict.png)
+
 ここで大事なのは：
 
 * **衝突するのは「ホスト側のポート」**（Windowsの `localhost:3000` の方）
@@ -40,6 +42,8 @@ Dockerでよくある地獄はこれ👇
 それ以外は、原則 `ports:` を消す！✂️
 
 > なお、ポート公開（publish）は「やると危険が増える」前提で注意書きが公式にもあります。ホストIPを `127.0.0.1` に縛ると「自分のPCからだけアクセス」にできます。([Docker Documentation][1])
+
+![Safe Fortress Design](./picture/docker_local_exposure_ts_study_024_safe_design_rules.png)
 
 ## ルールB：DB/Redis/Queueは “外に出さない” が標準🧊🧱
 
@@ -62,6 +66,8 @@ Dockerでよくある地獄はこれ👇
    ↓
 [app1]  [api]  [admin]  [db]  [redis]
 （ここから下は “外に出さない世界”）
+
+![Architecture Flow Diagram](./picture/docker_local_exposure_ts_study_024_architecture_diagram.png)
 ```
 
 * 外に見せるのは「入口の80/443」だけ
@@ -72,6 +78,8 @@ Dockerでよくある地獄はこれ👇
 ---
 
 ## 4) “ダメな例” → “勝ち構成”に直す🛠️✨
+
+![Bad vs Good Configuration](./picture/docker_local_exposure_ts_study_024_bad_vs_good.png)
 
 ## ❌ ダメな例：全部 `ports:` で外に出す（競合・事故の元）
 
@@ -154,6 +162,8 @@ docker compose exec db psql -U postgres
 * **外部公開ゼロ**
 * 慣れるとこれが一番ラク😋
 
+![Direct Access via Exec](./picture/docker_local_exposure_ts_study_024_db_access_exec.png)
+
 ---
 
 ## パターン②：公開するけど “127.0.0.1 限定” に縛る🔒
@@ -167,6 +177,8 @@ db:
 
 * `127.0.0.1` に縛ると、**自分のPCからだけアクセス**
   （「公開は危険」「localhost縛りで限定可能」は公式の説明あり）([Docker Documentation][1])
+
+![Localhost Binding Shield](./picture/docker_local_exposure_ts_study_024_localhost_binding.png)
 
 ⚠️ただし：
 
@@ -196,6 +208,8 @@ docker compose port db 5432
 
 * これで **ポート競合しにくい** 🙌
 * ただし毎回変わるので、ツール設定は“都度確認”になる 🥹
+
+![Random Port Assignment](./picture/docker_local_exposure_ts_study_024_random_port.png)
 
 ---
 

@@ -26,6 +26,8 @@ Caddyは、**公開DNS名**ならACME（例：Let’s Encrypt等）で証明書�
 Caddyは最初にCAを作ったとき、OSの信頼ストアへ入れようとします（入ると証明書発行者が “Caddy Local Authority” みたいな名前で見える）([Caddy Web Server][1])
 ただし **Dockerコンテナ内で動かしてると、Windows側の信頼ストアには自動で入れられない**ことが多いので、**手動でroot証明書をコピーしてWindowsにインポート**します🪄([Caddy Web Server][2])
 
+![Caddy Local CA Mechanism](./picture/docker_local_exposure_ts_study_026_caddy_local_ca.png)
+
 ---
 
 ## 3) まずは最小構成で「HTTPSできた！」を作る🚀🍞
@@ -68,6 +70,8 @@ hello.localhost {
 ```
 
 `tls internal` は「公開CAじゃなく、ローカルCAで出してね👍」の合図です🔒([Caddy Web Server][2])
+
+![Minimum Config for Caddy](./picture/docker_local_exposure_ts_study_026_min_config.png)
 
 ---
 
@@ -125,6 +129,8 @@ certutil -addstore -f "ROOT" .\caddy-local-root.crt
 
 ※管理者権限の有無やポリシーで弾かれることがあるので、その場合はA（GUI）が安定です🙂
 
+![Trusting the Root Certificate](./picture/docker_local_exposure_ts_study_026_trust_root.png)
+
 ---
 
 ## 6) もう一回アクセスして🔒を確認🎉🔒
@@ -135,6 +141,8 @@ certutil -addstore -f "ROOT" .\caddy-local-root.crt
 
 これで警告が消えて🔒になれば勝ち！🏆
 ブラウザは証明書状態をキャッシュしてハマることがあるので、再起動が効きます😺([Caddy Community][6])
+
+![Browser Lock Icon Success](./picture/docker_local_exposure_ts_study_026_browser_lock.png)
 
 ---
 
@@ -163,6 +171,8 @@ Firefoxは独自の証明書ストア運用になりがちで、OS側を見な�
 * Firefoxに「OSのルート証明書を信頼させる」設定をON
   （`security.enterprise_roots.enabled` / `ImportEnterpriseRoots` など）([Mozilla サポート][8])
 * もしくは Firefox の証明書管理画面に root.crt を直接インポート
+
+![Common Troubleshooting Patterns](./picture/docker_local_exposure_ts_study_026_troubleshooting.png)
 
 ---
 
@@ -195,12 +205,16 @@ api.localhost {
 * `tls internal` でローカルCAに統一
 * 80→443の誘導はCaddyが自動でやってくれます([Caddy Web Server][1])
 
+![Adapting Proxy for HTTPS](./picture/docker_local_exposure_ts_study_026_proxy_adaptation.png)
+
 ---
 
 ## 9) “信頼”の注意点（怖がらなくてOK、でも知っておく）🧯🙂
 
 ルートCAを信頼する＝「このCAがサインした証明書は全部信頼する」なので、**自分の開発PCで自分が管理できる範囲**で使うのが基本です。
 CaddyのローカルCAは信頼ストアから外すこともできます（Caddyは信頼ストアへ入れる/外すコマンドも用意してます）([Caddy Web Server][9])
+
+![Local Trust Scope](./picture/docker_local_exposure_ts_study_026_trust_scope.png)
 
 ---
 
