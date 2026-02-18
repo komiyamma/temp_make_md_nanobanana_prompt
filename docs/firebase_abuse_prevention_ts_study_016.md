@@ -14,10 +14,14 @@
 
 ## 1) 「強制ON」するとどうなる？
 
+![Enforcement Switch](./picture/firebase_abuse_prevention_ts_study_016_01_enforcement_switch.png)
+
 Firebase コンソールの App Check で、対象サービス（Firestore/Storage/AI Logic など）を **Enforce（強制）** にすると、**App Checkトークンが正しく付いてないリクエストは拒否**されます🧿🚫 ([Firebase][3])
 そして、反映には最大15分かかることがあります⏱️ ([Firebase][3])
 
 ## 2) 強制ONの前に見るべき「メトリクス4分類」📊
+
+![Metrics Buckets](./picture/firebase_abuse_prevention_ts_study_016_02_metrics_buckets.png)
 
 App Checkのメトリクスは大きく4つに分かれます👇 ([Firebase][1])
 
@@ -35,6 +39,8 @@ App Checkのメトリクスは大きく4つに分かれます👇 ([Firebase][1]
 ---
 
 ## 手を動かす🛠️：段階的に強制ONする“事故らない手順”🧯
+
+![Phased Rollout](./picture/firebase_abuse_prevention_ts_study_016_03_phased_rollout.png)
 
 ここからは **「Firestore → Storage → AI Logic →（必要なら）Functions」** の順で、段階的に強制していく想定でいきます🎛️
 
@@ -63,6 +69,8 @@ App Check を組み込んだら、強制ONの前にメトリクスで現状把�
 ---
 
 ## Step 2：Firestore を強制ON（1つ目の本番スイッチ）🗃️🧿
+
+![Firestore Switch](./picture/firebase_abuse_prevention_ts_study_016_04_firestore_switch.png)
 
 やることはシンプル👇（公式の手順そのまま）
 
@@ -98,6 +106,8 @@ Firestoreで問題がなければ、次はStorage。
 ---
 
 ## Step 4：Firebase AI Logic を強制ON（コスト防衛ライン🤖💸）
+
+![AI Logic Gate](./picture/firebase_abuse_prevention_ts_study_016_05_ai_logic_gate.png)
 
 AIは「呼ばれる＝課金や負荷が増える」ので、App Checkで守るのがかなり大事🧿
 Firebase AI Logic は **App Checkと連携するプロキシ（ゲートウェイ）**として動き、**強制ONすると未検証は拒否**されます🚪🧱 ([Firebase][2])
@@ -146,6 +156,8 @@ Enterprise側で「リスク許容度（しきい値）」を上げ下げする�
 
 4. **緊急ロールバック**🧯
 
+![Rollback Action](./picture/firebase_abuse_prevention_ts_study_016_06_rollback.png)
+
 * 影響が大きい場合は **一時的に unenforce**（強制を外す）→ 落ち着かせる
   ※ Enterprise の公式手順でも「一時的に unenforce を検討」と明記されています ([Firebase][5])
 * 原因調査 → 再度段階導入
@@ -153,6 +165,8 @@ Enterprise側で「リスク許容度（しきい値）」を上げ下げする�
 ---
 
 ## AI活用🤖：Antigravity / Gemini CLI で“手順書作り”を爆速にする🚀
+
+![MCP Architecture](./picture/firebase_abuse_prevention_ts_study_016_07_mcp_arch.png)
 
 ここ、2026年はかなり熱いです🔥
 Firebaseは **Gemini CLI拡張（Firebase extension）**を公式で用意していて、入れると **Firebase MCP server が自動で設定**され、Firebase用の事前プロンプトや「Firebaseプロジェクトを操作するツール」まで使えるようになります🧠🧰 ([Firebase][6])
