@@ -7,6 +7,8 @@
 
 ## 1) まず理解：Enterprise って何が “移行向き” なの？🧠
 
+![Migration Path](./picture/firebase_abuse_prevention_ts_study_006_01_migration.png)
+
 ## ✅ reCAPTCHA v3 から Enterprise に寄せる流れが公式のおすすめ
 
 Firebase の Web 向け App Check（reCAPTCHA v3）ページでは、**新規の統合は Enterprise を強く推奨**し、既存 v3 も **Enterprise へのアップグレード推奨**が明記されています。([Firebase][1])
@@ -23,6 +25,8 @@ Enterprise は **月 10,000 assessments まで無料**で、それを超える�
 ---
 
 ## 2) 今日のゴール（できたら勝ち🏁）🎯
+
+![Provider Factory](./picture/firebase_abuse_prevention_ts_study_006_02_factory.png)
 
 * `initializeAppCheck()` を **1ファイルに封印**する📦
 * provider を **Factory（生成関数）**にする🧰
@@ -61,6 +65,8 @@ Enterprise の導入は、Firebase のドキュメントに沿って進めるの
 * `src/main.tsx`（起動時に一回だけ呼ぶ）
 
 ## 5-1) App Check 初期化を1ファイルに封印する📦
+
+![Encapsulation](./picture/firebase_abuse_prevention_ts_study_006_03_encapsulation.png)
 
 ```ts
 // src/firebase/appCheck.ts
@@ -115,6 +121,8 @@ export function initAppCheck(app: FirebaseApp, args: {
 
 ## 6) 切替スイッチの作り方（おすすめ順）🎛️
 
+![Feature Switch](./picture/firebase_abuse_prevention_ts_study_006_04_switch.png)
+
 「v3/Enterprise どっちを使う？」の決め方は、代表的に3つあります👇
 （どれも “第6章の目的＝差し替え可能” を満たします✨）
 
@@ -156,6 +164,8 @@ Remote Config は便利だけど、**「いつ・どこで読み込むか」**�
 
 ## 7) 手を動かす：Enterprise に差し替えて動作確認する🧪✨
 
+![Secure API Call](./picture/firebase_abuse_prevention_ts_study_006_05_api_token.png)
+
 「差し替えたつもりだけど本当に効いてる？」を確かめるには、**自前APIに App Check トークンを付けて呼ぶ**のが手っ取り早いです👍
 （公式も `getToken(appCheck, false)` → `X-Firebase-AppCheck` ヘッダーで送る例を出しています）([Firebase][4])
 
@@ -190,6 +200,8 @@ export async function callAiFormatApi(appCheck: AppCheck, text: string) {
 
 ## 8) つまずきポイント（ここだけ注意⚠️）😵‍💫
 
+![Auto Refresh Trap](./picture/firebase_abuse_prevention_ts_study_006_06_refresh_trap.png)
+
 * **`isTokenAutoRefreshEnabled: true` を忘れる** → 時限爆弾💣（公式が明確に注意）([Firebase][3])
 * **スコアのしきい値を上げすぎる** → 正常ユーザーが弾かれて UX 崩壊🙂‍↕️
 * **課金の感覚がないまま Enterprise を全開放** → 更新・利用増でコスト増の可能性💸([Firebase][2])
@@ -197,6 +209,8 @@ export async function callAiFormatApi(appCheck: AppCheck, text: string) {
 ---
 
 ## 9) AI活用：移行の“事故ポイント”を先に潰す🤖🛡️
+
+![AI Code Audit](./picture/firebase_abuse_prevention_ts_study_006_07_ai_audit.png)
 
 ## 🛰️ Googleの「Antigravity」でやると速い🚀
 

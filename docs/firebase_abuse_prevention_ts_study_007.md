@@ -8,6 +8,8 @@
 
 ## 1) まず超重要な前提：メトリクスは「強制ONの事故防止装置」🧯✨
 
+![Safety Net](./picture/firebase_abuse_prevention_ts_study_007_01_safety_net.png)
+
 App Check は、SDK を入れるだけなら“多くの場合”は動き続けます。
 でも **強制（enforcement）をONにした瞬間**、そのプロダクトへの **未検証リクエストは拒否**されます😇([Firebase][2])
 
@@ -21,6 +23,8 @@ App Check は、SDK を入れるだけなら“多くの場合”は動き続け
 
 ## 2) どこを見る？Firebase コンソールの App Check メトリクス画面👀
 
+![Console Navigation](./picture/firebase_abuse_prevention_ts_study_007_02_console_nav.png)
+
 見る場所はシンプルです👇
 **Firebase コンソール → App Check →（守りたいプロダクトを展開）→ メトリクスを見る**([Firebase][1])
 
@@ -30,6 +34,8 @@ App Check は、SDK を入れるだけなら“多くの場合”は動き続け
 ---
 
 ## 3) メトリクスの「4分類」を覚えよう（ここが心臓）🫀🧠
+
+![Four Metric Types](./picture/firebase_abuse_prevention_ts_study_007_03_4_categories.png)
 
 メトリクスは、リクエストを次の4つに分類します👇([Firebase][1])
 
@@ -57,6 +63,8 @@ APIキー盗用や、SDKを使わない偽造リクエストの可能性があ�
 
 ## 4) 「いつ強制ONできる？」判断の目安（公式のガイドライン）🧭
 
+![Decision Guide](./picture/firebase_abuse_prevention_ts_study_007_04_decision_guide.png)
+
 公式がそのまま指針を出してます👇([Firebase][1])
 
 * **最近のリクエストのほとんどが Verified** → 強制ONを検討してOK✅([Firebase][1])
@@ -66,6 +74,8 @@ APIキー盗用や、SDKを使わない偽造リクエストの可能性があ�
 ---
 
 ## 5) 手を動かす：まずは“観察用リクエスト”を作る🧪👀
+
+![Generating Traffic](./picture/firebase_abuse_prevention_ts_study_007_05_observation.png)
 
 この教材のミニアプリ（メモ＋画像＋AI整形）なら、観察ポイントは超わかりやすいです👇
 
@@ -118,6 +128,8 @@ APIキー盗用や、SDKを使わない偽造リクエストの可能性があ�
 
 ## 8) ここだけ先に知っておく：強制ONは“あとで”コンソールから3クリック🎛️
 
+![The Big Button](./picture/firebase_abuse_prevention_ts_study_007_06_enforce_button.png)
+
 まだこの章ではやりません🙅‍♂️（事故防止のため）
 ただ、仕組みだけ知っておくと安心です🙂
 
@@ -127,6 +139,8 @@ APIキー盗用や、SDKを使わない偽造リクエストの可能性があ�
 ---
 
 ## 9) AIで爆速：メトリクス監視を“作業化”しよう🤖🚀
+
+![Mission Control](./picture/firebase_abuse_prevention_ts_study_007_07_antigravity.png)
 
 ## 🛰️ Antigravity（ミッション化のイメージ）
 
