@@ -13,6 +13,8 @@ App Checkの強制は **Cloud Storage も対象**で、強制すると **未検�
 
 ## 0) まず「なぜStorageが狙われるの？」😱💸
 
+![Storage Threats](./picture/firebase_abuse_prevention_ts_study_009_01_storage_threats.png)
+
 Storageがやられると、被害が“わかりやすく高い”から狙われがち👇
 
 * 📦 **巨大ファイル**を投げ込まれて保管料が増える
@@ -26,6 +28,8 @@ Storageがやられると、被害が“わかりやすく高い”から狙わ�
 ---
 
 ## 1) 読む📖：守りのレイヤーを1枚絵で理解しよう🧠🗺️
+
+![Storage Defense](./picture/firebase_abuse_prevention_ts_study_009_02_defense_layers.png)
 
 イメージはこう👇
 
@@ -44,6 +48,8 @@ App Check のメトリクス画面では、**Verified / Unverified / Error / Rat
 Web/React 側は `firebase` パッケージを使うよ。最新版は `12.9.0` が出てる（2026-02-05時点）([npm][3])
 
 ## 2-2) React（TS）でアップロード + 進捗バー🚀
+
+![Upload UI](./picture/firebase_abuse_prevention_ts_study_009_03_upload_ui.png)
 
 `ProfileImageUploader.tsx` の例👇（**サイズ/タイプを先に弾く**のが超大事！）
 
@@ -174,6 +180,8 @@ export function ProfileImageUploader() {
 
 ## 3) ここが本丸🧾：Storage Rules で “最低限の防波堤” を作る🛡️
 
+![Rules Logic](./picture/firebase_abuse_prevention_ts_study_009_04_rules.png)
+
 Rules は「誰が」「どのパスに」「何を」できるかを決めるよ🙂✨
 画像アップロードは **サイズ制限**と **contentType制限**が基本セット！
 
@@ -202,6 +210,8 @@ service firebase.storage {
 ---
 
 ## 4) App Check を Cloud Storage に効かせる🧿📦
+
+![Storage Enforcement](./picture/firebase_abuse_prevention_ts_study_009_05_enforcement.png)
 
 ## 4-1) 先にメトリクスで観察👀📈
 
@@ -254,6 +264,8 @@ export function initAppCheck(app: FirebaseApp) {
 
 ## 落とし穴A：`getDownloadURL()` を “アクセス制御” だと思う😇
 
+![Secure Download](./picture/firebase_abuse_prevention_ts_study_009_06_secure_download.png)
+
 `getDownloadURL()` で出たURLは **シェアできちゃう**ので、扱いは「秘密のURL（ベアラートークンっぽい）」として慎重にね🙂🔒
 
 もし「毎回ルールでガチ判定したい」なら、**SDKで直接ダウンロード**（例：`getBlob()` / `getBytes()`）の方が **細かい制御をしやすい**、という案内が公式にもあるよ。([Firebase][5])
@@ -280,6 +292,8 @@ UIでも弾こう！
 この教材の題材は「メモ＋画像＋AI整形」だから、Storageの章でもAIをちょい足しするよ🙂
 
 ## 7-1) 画像アップロード後に「説明文（alt）」をAIに作らせる📝🤖
+
+![AI Alt Text Generation](./picture/firebase_abuse_prevention_ts_study_009_07_ai_alt.png)
 
 * ユーザーが入力したメモ（例：「長崎で撮った夕焼け」）を元に
 * AIに「短くて良い alt テキスト」を作らせて Firestore に保存✨

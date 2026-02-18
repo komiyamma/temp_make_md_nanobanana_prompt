@@ -15,6 +15,8 @@
 
 ## ざっくり図解っぽく 🧠🖼️
 
+![App Check Pass](./picture/firebase_abuse_prevention_ts_study_005_01_concept.png)
+
 App Check は「アプリが正規っぽいか」を証明する **通行証** です🎫
 
 * ✅ 正規アプリ（React + App Check） → 通行証つきで Firebase にアクセス
@@ -37,6 +39,8 @@ Rules は「誰が何できるか」、App Check は「正規アプリ経由か�
 ---
 
 ## 手を動かす その1 依存関係を入れる 📦🖱️
+
+![Setup Dependencies](./picture/firebase_abuse_prevention_ts_study_005_02_setup.png)
 
 React + Vite だとして（今いちばん自然な構成）、プロジェクト内で：
 
@@ -61,6 +65,8 @@ site key は公開されても致命傷ではないけど、**コードに直書
 ---
 
 ## 手を動かす その3 Firebase 初期化を 1か所に集約する 📦🧠
+
+![Centralized Initialization](./picture/firebase_abuse_prevention_ts_study_005_03_structure.png)
 
 React で App Check を踏むときの事故で多いのがこれ👇
 
@@ -130,6 +136,8 @@ export async function debugLogAppCheckToken() {
 
 ## 手を動かす その4 React 側で “最初に” 読み込ませる 🚀⚛️
 
+![Startup Sequence](./picture/firebase_abuse_prevention_ts_study_005_04_init_flow.png)
+
 `src/main.tsx`（または `src/main.jsx`）のかなり上のほうで import します👇
 
 ```ts
@@ -163,6 +171,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 ## 2) Firebase Console の App Check メトリクスを見る 📈
 
+![Metrics Overview](./picture/firebase_abuse_prevention_ts_study_005_05_metrics.png)
+
 App Check SDK を入れたら、**強制を ON にする前に**メトリクスで様子見するのが公式の流れです👀([Firebase][2])
 
 メトリクスにはだいたいこんな分類が出ます👇
@@ -175,6 +185,8 @@ App Check SDK を入れたら、**強制を ON にする前に**メトリクス�
 ---
 
 ## よくある詰まりポイント集 😵‍💫🧯
+
+![Troubleshooting](./picture/firebase_abuse_prevention_ts_study_005_06_pitfalls.png)
 
 ## 1) `initializeAppCheck` を2回呼んで落ちる
 
@@ -199,6 +211,8 @@ App Check SDK を入れたら、**強制を ON にする前に**メトリクス�
 ---
 
 ## AI 機能と App Check を最初から結びつける 🤖🧿💸
+
+![Protecting AI](./picture/firebase_abuse_prevention_ts_study_005_07_ai_shield.png)
 
 この教材の題材は「メモ＋画像＋AI整形」なので、AI が特に狙われやすいです（= お金が燃えやすい🔥）
 
