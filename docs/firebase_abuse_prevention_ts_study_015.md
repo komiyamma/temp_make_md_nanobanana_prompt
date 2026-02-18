@@ -18,6 +18,8 @@ App Check を **強制（enforcement）ON** にすると、未検証リクエス
 
 ## 2) “通らない”は3種類に分けると勝てる🥊🧠
 
+![Three Failure Types](./picture/firebase_abuse_prevention_ts_study_015_01_failure_types.png)
+
 UX を作るコツは「原因別に、出す案内を変える」ことです👇
 
 ## A. App Check のトークン取得が失敗🧿💥
@@ -41,6 +43,8 @@ Firebase AI Logic には「アプリの per-user 的な制限として使える 
 
 ## 3) UXの鉄則：エラーは「次の一手」までセット🧭🙂
 
+![UX Essentials](./picture/firebase_abuse_prevention_ts_study_015_02_ux_essentials.png)
+
 エラー表示で最低限入れるのはこの3点です👇
 
 1. **何が起きたか**（短く）
@@ -61,6 +65,8 @@ Firebase AI Logic には「アプリの per-user 的な制限として使える 
 （Firestore / Storage / Functions / AI を横断して同じ UX に寄せられます）
 
 ## 4-1. エラー分類（normalize）を作る🗂️
+
+![Error Normalization Flow](./picture/firebase_abuse_prevention_ts_study_015_03_normalize_flow.png)
 
 ```ts
 // src/lib/normalizeError.ts
@@ -154,6 +160,8 @@ export function normalizeError(e: unknown): AppErrorUI {
 
 ## 4-2. “守られたアクション”ラッパを作る🛡️🔁
 
+![Guarded Action Wrapper](./picture/firebase_abuse_prevention_ts_study_015_04_guarded_wrapper.png)
+
 ```ts
 // src/lib/guardedAction.ts
 import { normalizeError, type AppErrorUI } from "./normalizeError";
@@ -226,6 +234,8 @@ App Check は「Firebaseの各サービスを触る前」に初期化するの�
 
 ## 6) AI機能は「App Check失敗」と「回数制限」を別扱いにする🤖🧿⏳
 
+![AI Error Distinction](./picture/firebase_abuse_prevention_ts_study_015_05_ai_error_distinction.png)
+
 AI整形ボタンでありがちな UX の地獄👇
 
 * App Check 失敗 → そもそも拒否🧿🚫 ([Firebase][4])
@@ -265,6 +275,8 @@ AI整形ボタンでありがちな UX の地獄👇
 ---
 
 ## 8) 手を動かす：失敗を“わざと起こして”UXを確認👀🧪
+
+![Testing Scenarios](./picture/firebase_abuse_prevention_ts_study_015_06_testing_scenarios.png)
 
 おすすめの確認シナリオ👇
 

@@ -16,6 +16,8 @@ Google と Firebase の公式情報ベースで、2026-02-17時点で“いま�
 
 ## まず“AIの使い分け”だけ覚える 🧠🧰
 
+![AI Tools Triad](./picture/firebase_abuse_prevention_ts_study_019_01_ai_tools.png)
+
 * **Antigravity**：AIが「計画→実装→検証」まで走れる“エージェント型IDE”。Mission Controlで複数エージェントを動かせて、必要ならWeb調査もできる📋🤖🌐 ([Google Codelabs][1])
 * **Gemini CLI**：ターミナルで動くオープンソースAIエージェント。雑に言うと「速攻でリポジトリを読ませて指摘させる係」💻⚡ ([GitHub][3])
 * **Firebase Studio**：ブラウザ上の開発環境。`.idx/dev.nix` で環境が宣言できて、再現性が高い☁️🧬 ([Firebase][4])
@@ -30,14 +32,20 @@ Firebase AI Logicは、生成AIモデルAPIを「正規アプリ以外」から�
 
 ## 2) 生成AIは“回数制限”が超重要 💸
 
+![AI Logic Protection](./picture/firebase_abuse_prevention_ts_study_019_02_ai_protection.png)
+
 Firebase AI Logicは **ユーザーごとのレート制限** を持っていて、デフォルトは **1ユーザーあたり100 RPM**。ただし、裏側のGemini APIプロバイダ側の制限も優先されるから、両方見るのが大事。([Firebase][5])
 
 ## 3) モデルのretireに注意（これ超やりがち）⚠️
+
+![Model Retirement](./picture/firebase_abuse_prevention_ts_study_019_03_model_retire.png)
 
 AI Logicのドキュメント上で、**Gemini 2.0 Flash / Flash-Lite が 2026-03-31 にretire**予定、代替として `gemini-2.5-flash-lite` などへの更新が案内されてるよ。
 → つまり「AIに実装を任せる」なら、**モデル名の棚卸しもAIにやらせる**のがコスパ最強😆🧾 ([Firebase][2])
 
 ## 4) Functionsのランタイムの現実（地味に詰まる）🧱
+
+![Runtime Compatibility](./picture/firebase_abuse_prevention_ts_study_019_04_runtime_compat.png)
 
 * Cloud Functions for Firebase は **Node.js 20/22 を完全サポート**（18は2025初頭にdeprecated）。([Firebase][6])
 * Pythonは **3.10〜3.13** がサポートされ、**3.13がデフォルト**。([Firebase][6])
@@ -48,6 +56,8 @@ AI Logicのドキュメント上で、**Gemini 2.0 Flash / Flash-Lite が 2026-0
 ## 手を動かす 🔥🛠️（3本立て）
 
 ## Step 1：Gemini CLIで“守り監査”を秒速で回す 💻🔎
+
+![Gemini CLI Audit](./picture/firebase_abuse_prevention_ts_study_019_05_gemini_audit.png)
 
 Gemini CLIは **Node.js 20+** が前提で、Windows向けの手順もまとまってる。インストールはnpmでOK。([Gemini CLI][8])
 
@@ -88,6 +98,8 @@ Gemini CLIに貼る文章はこんな感じが強いよ👇（あなたのリポ
 
 ## Step 2：Antigravityで“守り実装ミッション”を組む 📋🤖🌐
 
+![Antigravity Mission](./picture/firebase_abuse_prevention_ts_study_019_06_antigravity_mission.png)
+
 Antigravityは「Mission Controlで自律エージェントを管理でき、計画・実装・Web調査までできる」って公式に書かれてる。([Google Codelabs][1])
 なのでこの章は、こういう“ミッション文章”を作って流し込むのが勝ち筋🏁
 
@@ -108,6 +120,8 @@ Antigravity側がWeb調査もできるから、**「その提案の根拠URLも�
 ---
 
 ## Step 3：Firebase Studioで“再現できる作業場”を固定する ☁️🧬
+
+![Studio Env Config](./picture/firebase_abuse_prevention_ts_study_019_07_studio_env.png)
 
 Firebase Studioは **Nixで環境定義**できて、`.idx/dev.nix` がその設定ファイル。環境を共有・複製しやすいのが強み。([Firebase][4])
 

@@ -7,6 +7,8 @@ App Check を“ちゃんと効かせる”前提だと、**言語選び＝守�
 
 ## 1) まず結論：初心者が迷ったらこう！🧭
 
+![Language Decision Tree](./picture/firebase_abuse_prevention_ts_study_017_01_language_tree.png)
+
 * **王道（おすすめ）**：**Node.js + TypeScript** ✅
   App Check 強制（`enforceAppCheck`）も手堅いし、最新の Firebase 周辺エコシステムが一番揃ってます☎️🔒 ([Firebase][1])
 * **Python**：できるけど、現状は「できること/できないこと」を知って選ぶ ⚠️
@@ -26,15 +28,21 @@ App Check を“ちゃんと効かせる”前提だと、**言語選び＝守�
 
 ## 「Node 20 って今から選んでいいの？」問題😇
 
+![Node Version Timeline](./picture/firebase_abuse_prevention_ts_study_017_02_node_timeline.png)
+
 Cloud Run functions 側のランタイム表だと、**Node 20 は 2026-04-30 に deprecate**予定（= もうすぐ）です📅💦
 新規で今から作るなら **22（または状況により 24）**に寄せるのが安全です🛡️ ([Google Cloud Documentation][2])
 
 ## Python（Firebase Functions）
 
+![Python Limitations](./picture/firebase_abuse_prevention_ts_study_017_03_python_limits.png)
+
 * 公式入門ページに **Python 3.10〜3.13 がサポート、デフォルトは 3.13** と書かれています🐍✨
 * ただし App Check 強制は **Python preview**扱いなので、守りの主戦場にするなら「制限も理解して使う」感じです⚠️ ([Firebase][1])
 
 ## “AI系（Genkit）を Functions に載せたい”なら…
+
+![Genkit Ecosystem](./picture/firebase_abuse_prevention_ts_study_017_04_genkit_ecosystem.png)
 
 * Genkit を Firebase でデプロイする導線は **JavaScript（Node）中心**で、**Genkit Python は Firebase へのデプロイが未対応**と明記があります🤖📦 ([Firebase][4])
   → **AI を Functions 側で育てたいなら Node/TS が強い**です💪
@@ -47,6 +55,8 @@ Cloud Run functions 側のランタイム表だと、**Node 20 は 2026-04-30 �
 ---
 
 ## 3) “読む”パート：バージョン迷子の正体🧠🌀
+
+![Runtime vs SDK](./picture/firebase_abuse_prevention_ts_study_017_05_runtime_vs_sdk.png)
 
 迷うポイントはだいたいこの2つです👇
 
@@ -63,6 +73,8 @@ Python は preview で書けるけど、リプレイ対策は Node だけ…み�
 ## 4) “手を動かす”パート：自分のプロジェクトを「今どのランタイム？」って確認しよう🔍🧪
 
 ## ステップA：Node/TS（王道）で runtime を固定する✅
+
+![JSON Config Check](./picture/firebase_abuse_prevention_ts_study_017_06_json_check.png)
 
 `functions/package.json` に Node の指定があるかチェックして、なければ入れます👇
 
@@ -104,6 +116,8 @@ Python は preview で書けるけど、リプレイ対策は Node だけ…み�
 ---
 
 ## 5) 「AI導入済み」前提の時短ルート：Antigravity / Gemini CLI で“バージョン確認”を自動化🤖⚡
+
+![MCP Scanner](./picture/firebase_abuse_prevention_ts_study_017_07_mcp_scanner.png)
 
 ここ、2026年の強い武器です🧰✨
 **Firebase MCP server** を使うと、AI ツールが Firebase プロジェクトやコードベースを扱えるようになります（Antigravity / Gemini CLI など対応）🤝 ([Firebase][6])
