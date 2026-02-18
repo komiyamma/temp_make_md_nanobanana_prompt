@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_abuse_prevention_ts_study_020.md",
+  "proposed_filename": "firebase_abuse_prevention_ts_study_020_03_functions_gate.png",
+  "relative_link": "./picture/firebase_abuse_prevention_ts_study_020_03_functions_gate.png",
+  "prompt": "**Theme**: Functions Gate\n\n**Labels to Render**:\n- Request: \"No Token\"\n- Gate: \"enforceAppCheck: true\"\n- Result: \"Reject (401)\"\n\n**Visual Details**:\n1. Core Concept: The enforcement setting blocks unverified requests.\n2. Metaphor: A security gate that stays closed for anyone without a badge.\n3. Action: Blocking entry.\n4. Layout: Gate interaction.",
+  "insertion_point": "## Step 2：Functions を“確実に落ちる場所”として用意する☎️💥"
+}

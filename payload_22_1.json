@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_001.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_001_01_concept.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_001_01_concept.png",
+  "prompt": "**Theme**: Firestore Core Concept\n\n**Labels to Render**:\n- Feature: \"Document DB\"\n- Feature: \"Auto Sync\"\n- Feature: \"Offline Ready\"\n\n**Visual Details**:\n1. Core Concept: The key features of Firestore.\n2. Metaphor: A glowing document icon with a sync symbol and a signal strength icon.\n3. Action: Syncing.\n4. Layout: Icon cluster.",
+  "insertion_point": "## 1) Firestoreを一言でいうと？🗣️🗃️"
+}

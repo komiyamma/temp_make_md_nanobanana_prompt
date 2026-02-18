@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_003.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_003_06_rules.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_003_06_rules.png",
+  "prompt": "**Theme**: Rules Tab Glance\n\n**Labels to Render**:\n- Tab: \"Rules\"\n- Icon: \"Lock\"\n- Code: \"allow read, write\"\n\n**Visual Details**:\n1. Core Concept: Security rules location.\n2. Metaphor: Peeking through a door labeled 'Rules' with a lock on it.\n3. Action: Peeking.\n4. Layout: Tab focus.",
+  "insertion_point": "## 5) ちょい怖ポイント：Rules（ルール）を“眺めるだけ”🔒👀"
+}

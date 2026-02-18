@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_003.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_003_05_nav.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_003_05_nav.png",
+  "prompt": "**Theme**: Console 3-Pane View\n\n**Labels to Render**:\n- Col 1: \"Collection (todos)\"\n- Col 2: \"Document (ID)\"\n- Col 3: \"Fields (Data)\"\n\n**Visual Details**:\n1. Core Concept: Understanding the 3-column layout.\n2. Metaphor: A tri-fold brochure or 3 distinct columns.\n3. Action: Navigation.\n4. Layout: 3-column layout.",
+  "insertion_point": "## 4) チェック：Consoleで迷子にならないか確認🧭👀"
+}

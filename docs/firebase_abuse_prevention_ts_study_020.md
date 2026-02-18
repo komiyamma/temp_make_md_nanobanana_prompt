@@ -46,6 +46,8 @@ Firebase AI Logic は **App Check 連携で AI API を守るゲートウェイ**
 
 ## Step 0：切り替えスイッチを作る🎛️（これが最終章の核）
 
+![App Check Mode Switch](./picture/firebase_abuse_prevention_ts_study_020_01_switch.png)
+
 「本番」「ローカル」「わざとOFFで壊す」を **コード1箇所で切り替え** できるようにします。
 
 ## 例：`src/services/firebase.ts` に集約📦
@@ -113,6 +115,8 @@ export function initAppCheck() {
 
 ## Step 1：Debug token を登録して「ローカル救済ルート」を作る🧪🔐
 
+![Debug Token Flow](./picture/firebase_abuse_prevention_ts_study_020_02_debug_token.png)
+
 1. ローカルで `VITE_APPCHECK_MODE=debug` で起動
 2. コンソールに **AppCheck debug token** が出る
 3. Firebase Console → App Check → **Manage debug tokens** で登録（safelist）
@@ -122,6 +126,8 @@ export function initAppCheck() {
 ---
 
 ## Step 2：Functions を“確実に落ちる場所”として用意する☎️💥
+
+![Functions Gate](./picture/firebase_abuse_prevention_ts_study_020_03_functions_gate.png)
 
 最終章は、**落ち方が分かりやすい** Callable Function を1個置くのが最高です😆
 
@@ -157,6 +163,8 @@ export const adminOnlyCleanup = onCall(
 
 ## Step 3：AI Logic の “コスト事故防止” を仕上げる🤖💸
 
+![AI Cost Defense](./picture/firebase_abuse_prevention_ts_study_020_04_ai_protection.png)
+
 AI は「守れないと破産する」タイプなので、最後にここを締めます😇
 
 ## ✅ App Check（AI Logic）
@@ -186,6 +194,8 @@ AI Logic は App Check 連携で AI API を守れます。enforcement をONに�
 ---
 
 ## ここが本番：テストシナリオ表（3モード×4サービス）👀✅
+
+![Test Scenarios Matrix](./picture/firebase_abuse_prevention_ts_study_020_05_test_matrix.png)
 
 あなたは今から、同じ操作を **3つのモード** で試します。
 
@@ -235,6 +245,8 @@ AI Logic は App Check 連携で AI API を守れます。enforcement をONに�
 
 ## 最終成果物：運用手順書（Runbook）テンプレ🧾✅
 
+![Operational Runbook](./picture/firebase_abuse_prevention_ts_study_020_06_runbook.png)
+
 この章のゴールはここです。**これがある人が勝ちます**🏆✨
 
 ## ✅ 運用チェックリスト（例：12項目）
@@ -255,6 +267,8 @@ AI Logic は App Check 連携で AI API を守れます。enforcement をONに�
 ---
 
 ## AIで“最終章”を爆速に仕上げる🚀🤖
+
+![AI Agent Team](./picture/firebase_abuse_prevention_ts_study_020_07_ai_agents.png)
 
 ## Antigravity：ミッション化して、抜け漏れ0へ🧩
 

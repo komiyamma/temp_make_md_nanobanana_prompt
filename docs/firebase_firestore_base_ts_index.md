@@ -20,6 +20,8 @@
 
 ## 全体アウトライン（ユニット構成）🧭
 
+![Course Structure Map](./picture/firebase_firestore_base_ts_index_01_outline_map.png)
+
 * **Unit A（1〜4）**：Firestoreの地図・Console・SDK準備
 * **Unit B（5〜10）**：CRUDを“手が勝手に動く”まで反復 ✋
 * **Unit C（11〜16）**：リアルタイム購読＆クエリ基礎 🔎⚡
@@ -29,7 +31,11 @@
 
 ## 20章の教材アウトライン（各章：読む→手を動かす→ミニ課題→チェック）📚✨
 
+![Learning Loop](./picture/firebase_firestore_base_ts_index_02_course_flow.png)
+
 ### 第01章：Firestoreって何者？（まず怖さを消す）😌🗃️
+
+![Firestore Concept](./picture/firebase_firestore_base_ts_index_03_concept.png)
 
 * 📖 読む：Firestoreは「ドキュメント型DB」「リアルタイム同期」が得意
 * 🛠️ 手を動かす：完成イメージ（ToDo/メモ）を先に眺める
@@ -66,6 +72,8 @@
 ---
 
 ### 第05章：Create① 追加する（addDoc / setDoc の気持ち）➕📄
+
+![CRUD Cycle](./picture/firebase_firestore_base_ts_index_04_crud_cycle.png)
 
 * 📖 読む：自動IDと固定IDの違い、どっちを使う？
 * 🛠️ 手を動かす：フォームからToDoを追加できるようにする
@@ -130,6 +138,8 @@
 
 ### 第12章：リアルタイム購読①（onSnapshotで“勝手に更新”）⚡👀
 
+![Realtime Sync](./picture/firebase_firestore_base_ts_index_05_realtime.png)
+
 * 📖 読む：リアルタイム購読の気持ちよさ（ポーリング不要）
 * 🛠️ 手を動かす：一覧を `onSnapshot` に切り替える
 * 🧩 ミニ課題：別タブで追加→一覧が自動で増えるのを確認🪄
@@ -175,6 +185,8 @@
 
 ### 第17章：ページング入門①（カーソルって何？）📜🧭
 
+![Cursor Pagination](./picture/firebase_firestore_base_ts_index_06_paging.png)
+
 * 📖 読む：Firestoreのページングは“カーソル”でやる([Firebase][9])
 * 🛠️ 手を動かす：`limit(10)` + `startAfter(lastDoc)` の形を作る
 * 🧩 ミニ課題：「次へ」ボタンで次の10件を取る
@@ -206,6 +218,8 @@
 ---
 
 ### 第20章：総合ミニ課題（ToDo/メモ完成）＋AIで“実用っぽさ”を足す🎯🤖✨
+
+![AI Enhanced ToDo](./picture/firebase_firestore_base_ts_index_07_ai_app.png)
 
 * 📖 読む：AIを「文章を整える」「タグ抽出する」「入力補助する」に使う発想
 * 🛠️ 手を動かす：最終アプリ要件（例）

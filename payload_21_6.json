@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_index.md",
+  "proposed_filename": "firebase_firestore_base_ts_index_06_paging.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_index_06_paging.png",
+  "prompt": "**Theme**: Cursor Pagination\n\n**Labels to Render**:\n- Page 1: \"1-10\"\n- Cursor: \"Bookmark\"\n- Page 2: \"11-20\"\n\n**Visual Details**:\n1. Core Concept: Using a cursor to fetch the next set.\n2. Metaphor: Reading a scroll or book and placing a bookmark to know where to start next.\n3. Action: Marking position.\n4. Layout: Sequence.",
+  "insertion_point": "### 第17章：ページング入門①（カーソルって何？）📜🧭"
+}
