@@ -11,6 +11,8 @@
 
 ## 1) まず腹落ち：AIは “お金が燃えやすいAPI” 🔥💸
 
+![AI Cost Risk](./picture/firebase_abuse_prevention_ts_study_012_01_ai_risk.png)
+
 FirestoreやStorageも狙われるけど、AIは特にヤバいです😇
 理由はシンプル👇
 
@@ -24,6 +26,8 @@ FirestoreやStorageも狙われるけど、AIは特にヤバいです😇
 
 ## 2) Firebase AI Logic で “守れるAI呼び出し” にする🛡️🤖
 
+![AI Proxy Gate](./picture/firebase_abuse_prevention_ts_study_012_02_proxy_verification.png)
+
 Firebase AI Logic の大事ポイントはここ👇
 
 * アプリ → Firebase AI Logic の **プロキシ（中継）** を通って Gemini / Imagen に行く🚪
@@ -36,6 +40,8 @@ Firebase AI Logic の大事ポイントはここ👇
 ---
 
 ## 3) 守りの基本セットは3つ🧰🧿
+
+![Three Tools](./picture/firebase_abuse_prevention_ts_study_012_03_defense_tools.png)
 
 ## A. App Check（必須）🧿
 
@@ -57,6 +63,8 @@ Firebase AI Logic API には **“1ユーザーあたり/1分あたり” の上
 ## 4) 手を動かす：AI整形ボタンを作る🧩⚛️🤖
 
 ## 4-1. まずは最小で “AI整形” 関数を作る🛠️
+
+![Secure Client Code](./picture/firebase_abuse_prevention_ts_study_012_04_client_code.png)
 
 ポイントは👇
 
@@ -161,6 +169,8 @@ export function MemoPolishButton(props: {
 
 ## 5) ON/OFF比較で “守れてる感” を体感👀🧿
 
+![Verification Process](./picture/firebase_abuse_prevention_ts_study_012_05_verification.png)
+
 ここ、めちゃ大事です🔥
 **守りは「効いてるか確認」しないと、ただの気分**になりがち😇
 
@@ -178,6 +188,8 @@ AI Logic は App Check 統合がサポートされていて、プロキシが Ap
 ---
 
 ## 6) レート制限（Quota）で “破産しない” を作る💸🚦
+
+![Rate Limiting](./picture/firebase_abuse_prevention_ts_study_012_06_quota.png)
 
 Firebase AI Logic API の quota は、ざっくりこう考えるとラク👇
 
@@ -200,6 +212,8 @@ Firebase AI Logic API の quota は、ざっくりこう考えるとラク👇
 ---
 
 ## 7) “構造化出力(JSON)” を使うと事故が減る🧾🤖
+
+![Structured JSON](./picture/firebase_abuse_prevention_ts_study_012_07_structured_output.png)
 
 AIの戻りがただの文章だと👇が起きがち😵‍💫
 

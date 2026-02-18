@@ -7,6 +7,8 @@
 
 ## 1) まず全体像を1枚で🧠🗺️
 
+![Debug Provider Flow](./picture/firebase_abuse_prevention_ts_study_013_01_debug_workflow.png)
+
 * 本番：`reCAPTCHA v3 / Enterprise` で **正規クライアント証明**🧿
 * ローカル：`Debug Provider` で **例外的に通す**🧪
 
@@ -19,6 +21,8 @@
 ## 2) 手を動かす：ローカルで Debug Provider を有効化🧪🛠️
 
 ## 2-1. App Check 初期化コードに「ローカル時だけ」デバッグONを足す🧿
+
+![Conditional Logic](./picture/firebase_abuse_prevention_ts_study_013_02_code_setup.png)
 
 ポイントはこれ👇
 **`initializeAppCheck()` より前に** `self.FIREBASE_APPCHECK_DEBUG_TOKEN` をセットすること！ ([Firebase][1])
@@ -55,6 +59,8 @@ export const appCheck = initializeAppCheck(app, {
 
 ## 2-2. ローカル起動して、ブラウザのConsoleで「デバッグトークン」を拾う👀🧪
 
+![Token Extraction](./picture/firebase_abuse_prevention_ts_study_013_03_browser_console.png)
+
 1. `npm run dev` で起動（例：`http://localhost:5173`）
 2. Chrome/Edge で DevTools を開く（Windows：`F12` or `Ctrl + Shift + I`）🪟
 3. Console にこれが出る👇
@@ -65,6 +71,8 @@ export const appCheck = initializeAppCheck(app, {
 
 ## 2-3. Firebase Console に登録（allowlist）する🔐🧿
 
+![Whitelisting](./picture/firebase_abuse_prevention_ts_study_013_04_console_registration.png)
+
 Firebase Console → App Check → 対象アプリ（Web）→ メニュー → **Manage debug tokens** → さっきのトークンを登録✅ ([Firebase][1])
 
 登録できたら、**Firebase 側がそのトークンを有効扱い**してくれます。 ([Firebase][1])
@@ -72,6 +80,8 @@ Firebase Console → App Check → 対象アプリ（Web）→ メニュー → 
 ---
 
 ## 3) ここまで出来たら動作チェック🎯（Firestore/Storage/Functions/AI）
+
+![Service Check](./picture/firebase_abuse_prevention_ts_study_013_05_verification.png)
 
 ローカルで次を順に押してみて、全部通れば勝ちです🏆✨
 
@@ -86,6 +96,8 @@ Firebase Console → App Check → 対象アプリ（Web）→ メニュー → 
 ---
 
 ## 4) Debug Provider の“運用ルール”🔐（ミスると事故るやつ）
+
+![Security Rules](./picture/firebase_abuse_prevention_ts_study_013_06_best_practices.png)
 
 Debug Provider は便利だけど、**「本人確認なしで通れる鍵」**みたいなものです🔑😱
 公式も「本番で使うな」「漏れたら即 revoke」と強く言ってます。 ([Firebase][1])
@@ -123,6 +135,8 @@ App Check を通しても、Rules で止まったら普通に落ちます🙂
 ---
 
 ## 6) もっとラクする：Antigravity / Gemini CLI で“詰まり潰し”🤖🧰
+
+![AI Debugging](./picture/firebase_abuse_prevention_ts_study_013_07_ai_troubleshooting.png)
 
 最近は **Firebase MCP server** があって、いろんなAIツールから Firebase を触れる/調べられる世界になってます。
 しかも対応クライアントに **Antigravity** や **Gemini CLI** が明記されています✅ ([Firebase][3])

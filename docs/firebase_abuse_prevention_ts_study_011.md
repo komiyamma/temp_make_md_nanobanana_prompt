@@ -7,6 +7,8 @@
 
 ## 0) まず「リプレイ」って何？😈📼
 
+![Replay Attack](./picture/firebase_abuse_prevention_ts_study_011_01_replay_concept.png)
+
 App Check を入れて **enforcement（強制）** までONにすると、雑に `curl` で叩く“未検証リクエスト”は落ちます👍
 でも…もし攻撃者が何らかの方法で **「正規ユーザーのトークン（App Checkトークン）」を1回ぶん入手**できたら？
 
@@ -20,6 +22,8 @@ App Check を入れて **enforcement（強制）** までONにすると、雑に
 ---
 
 ## 1) Replay protection（β）の全体像🧠🧩
+
+![Token Consumption](./picture/firebase_abuse_prevention_ts_study_011_02_consume_mechanism.png)
 
 Replay protection は、やることが2つだけです👇
 
@@ -49,11 +53,15 @@ Callable を呼ぶときに、`limitedUseAppCheckTokens: true` を付けます�
 
 ## ✅ ③ 速度コストがある（追加の往復が増える）🐢
 
+![Security vs Speed](./picture/firebase_abuse_prevention_ts_study_011_03_latency_tradeoff.png)
+
 Replay protection をONにすると **App Checkバックエンドへの追加通信が発生して遅延が増える**ので、普通は **重要なエンドポイントだけ**に使います。([Firebase][1])
 
 ---
 
 ## 3) このミニアプリだと「どこに入れる？」🎯🤖
+
+![Selecting Targets](./picture/firebase_abuse_prevention_ts_study_011_04_target_selection.png)
 
 題材アプリ「メモ＋画像＋AI整形」だと、Replay protection はここが鉄板です👇
 
@@ -73,6 +81,8 @@ Replay protection をONにすると **App Checkバックエンドへの追加通
 第10章で `enforceAppCheck: true` を入れている前提で、そこに **`consumeAppCheckToken: true` を追加**します。
 
 ## ✅ 4-1. Functions側：`consumeAppCheckToken: true` を付ける
+
+![Server Configuration](./picture/firebase_abuse_prevention_ts_study_011_05_server_code.png)
 
 ```ts
 // functions/src/index.ts
@@ -118,6 +128,8 @@ Replay protection を使うには、**トークンを検証するサービスア
 
 ## ✅ 4-3. React側：Callable呼び出しで “limited-use” を要求する⚛️🧾
 
+![Client Request](./picture/firebase_abuse_prevention_ts_study_011_06_client_code.png)
+
 Web（React）から呼ぶときは、`httpsCallable` のオプションに
 **`{ limitedUseAppCheckTokens: true }`** を付けます。([Firebase][1])
 
@@ -161,6 +173,8 @@ export async function callAiFormatMemo() {
 ---
 
 ## 6) “AI機能”と絡めた現実の防御線🤖🛡️
+
+![Complete Defense](./picture/firebase_abuse_prevention_ts_study_011_07_full_defense.png)
 
 Replay protection は強いけど、万能ではないです🙂
 **「同じトークンの使い回し」を止める**だけなので、
