@@ -9,6 +9,8 @@ CPUが燃えてる🔥／メモリが増え続ける💧／イベントループ
 
 ## ① 今日のゴール 🎯
 
+![Engine Health Monitoring Dashboard](./picture/docker_observability_ts_study_019_engine_room.png)
+
 * **CPU**・**メモリ**・**イベントループ**の3つを「いまヤバいのどれ？」って判断できる 👀
 * `/metrics` に **システム系メトリクス**を増やして、負荷をかけたら数値が動くのを体験する 🧪
 * 「CPUが高い」と「イベントループが詰まってる」を**別物**として説明できるようになる ✨
@@ -18,6 +20,8 @@ CPUが燃えてる🔥／メモリが増え続ける💧／イベントループ
 ## ② 図（1枚）🖼️
 
 アプリの外に出すのは “観測用の蛇口” 🚰 だけ。中を覗かないで判断するのがポイント！
+
+![The Observability Faucet](./picture/docker_observability_ts_study_019_observability_faucet.png)
 
 ```text
 [Client] ──HTTP──▶ [Node/TS API in Docker]
@@ -163,6 +167,10 @@ app.get("/block", (req, res) => {
   while (Date.now() < end) {}
   res.json({ ok: true, blockedMs: ms });
 });
+
+![CPU Burn Loop Visualization](./picture/docker_observability_ts_study_019_cpu_burn_loop.png)
+![Memory Leak Array Visualization](./picture/docker_observability_ts_study_019_memory_leak_array.png)
+![Event Loop Blocking Visualization](./picture/docker_observability_ts_study_019_event_loop_block.png)
 ```
 
 ---
@@ -222,6 +230,8 @@ curl.exe -s http://localhost:3000/metrics | Select-String -Pattern "nodejs_event
 
 ### 💧 メモリ（増え続けてる？）
 
+![Node.js Memory Types Structure](./picture/docker_observability_ts_study_019_memory_types.png)
+
 * まず “ざっくり” は `process_resident_memory_bytes`（RSS）を見るのが分かりやすい！([テスル][3])
 * `heap` と `external` は性質が違う：
 
@@ -229,6 +239,8 @@ curl.exe -s http://localhost:3000/metrics | Select-String -Pattern "nodejs_event
   * Buffer を溜める系は **external** が伸びやすい（だから “heapだけ見て安心” が危険😈）
 
 ### 🚧 イベントループ（詰まってる？）
+
+![Event Loop Lag vs Utilization](./picture/docker_observability_ts_study_019_lag_vs_utilization.png)
 
 * prom-clientのデフォルトで `nodejs_eventloop_lag_p99_seconds` みたいな **分位点**が取れるよ（p99が上がると体感遅延が出やすい）([テスル][3])
 * Nodeの `monitorEventLoopDelay()` はイベントループ遅延をサンプリングして、min/max/mean/p99 などを取れる（遅延はナノ秒単位）([Node.js][5])

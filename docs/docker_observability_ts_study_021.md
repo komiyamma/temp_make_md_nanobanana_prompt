@@ -14,6 +14,8 @@
 
 ## ② 図（1枚）🖼️（頭の中の地図）
 
+![Observability Pipeline Art](./picture/docker_observability_ts_study_021_pipeline_art.png)
+
 ```text
 ブラウザ
   │  http://localhost:3000
@@ -32,6 +34,8 @@ Node/TS API（/metrics を公開）
 ## ③ 手を動かす（手順 5〜10個）🛠️✨
 
 ### 0) まず “ぶつかりがち” なのがポート問題 😇🧨
+
+![Port 3000 Conflict](./picture/docker_observability_ts_study_021_port_conflict_3000.png)
 
 Grafana はデフォルトで `http://localhost:3000` を使います。([Grafana Labs][3])
 もし **あなたのAPIがすでに 3000 をホスト側で使ってる**なら、先にどちらかをズラしましょう👇（おすすめは「APIのホスト側ポートだけ変更」）
@@ -113,13 +117,20 @@ Grafana の画面から（UIの文言はバージョンで多少変わるけど�
   * もしくはホスト参照なら `http://host.docker.internal:9090` も候補
 
 ⚠️超大事：**Grafanaコンテナ内での `localhost` は “Grafana自身”** を指します。Prometheus ではありません。
+
+![External vs Internal Access Paths](./picture/docker_observability_ts_study_021_network_access.png)
+
 公式ドキュメントでも「Docker Compose ならホスト名（サービス名）を使ってね」と注意されています。([Grafana Labs][5])
 
 * 最後に **Save & test**（テストが緑になったら勝ち🎉）
 
+![Data Source Success UI](./picture/docker_observability_ts_study_021_datasource_success.png)
+
 ---
 
 ### 5) ダッシュボードを作る（4パネル）📊✨
+
+![4-Panel Dashboard Layout](./picture/docker_observability_ts_study_021_dashboard_layout.png)
 
 Grafana の **Dashboards → New → New dashboard** → **Add visualization** で作っていきます。
 
@@ -129,6 +140,8 @@ Grafana の **Dashboards → New → New dashboard** → **Add visualization** �
 ---
 
 ## ✅ パネル1：RPS（秒あたりリクエスト数）🏃‍♂️💨
+
+![Panel Editor Interface](./picture/docker_observability_ts_study_021_panel_editor.png)
 
 **Query（PromQL）**：
 
@@ -211,6 +224,8 @@ Grafana の時間範囲を **Last 15 minutes** とかにして、右上の Refre
 ---
 
 ## ④ 期待する見た目（チェック項目）✅👀
+
+![Traffic Impact Visualization](./picture/docker_observability_ts_study_021_traffic_spikes.png)
 
 * RPS：連打した瞬間に **山ができる** 🏔️
 * エラー率：`/boom` 叩いた直後に **%が上がる** 📛
