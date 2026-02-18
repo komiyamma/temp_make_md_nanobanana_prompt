@@ -6,6 +6,8 @@
 
 ## 1) まずイメージ：スコアとしきい値って何？🎛️
 
+![reCAPTCHA Score Scale](./picture/firebase_abuse_prevention_ts_study_003_01_score_scale.png)
+
 reCAPTCHA v3 は、アクセス（操作）が **人っぽいか／ボットっぽいか**を 0.0〜1.0 のスコアで返す仕組みだよ🤖
 
 * **1.0 に近いほど人っぽい**
@@ -17,9 +19,13 @@ reCAPTCHA v3 は、アクセス（操作）が **人っぽいか／ボットっ�
 
 Firebase App Check は、設定した **しきい値を“最低合格点”**として扱い、**それ未満のスコアは拒否**する（＝正規として認めない）よ、という仕様になってる🛡️ ([Firebase][1])
 
+![Threshold Filter](./picture/firebase_abuse_prevention_ts_study_003_02_filtering.png)
+
 ---
 
 ## 2) しきい値は “上げるほど安全” だけど “痛い”😇
+
+![Threshold Trade-off](./picture/firebase_abuse_prevention_ts_study_003_03_tradeoff.png)
 
 しきい値を **高く**すると（例：0.7→0.9）
 
@@ -40,6 +46,8 @@ Firebase App Check は、設定した **しきい値を“最低合格点”**�
 
 ## 3) まずは 0.5 で始めるのが基本線👍（理由つき）
 
+![Starting Point](./picture/firebase_abuse_prevention_ts_study_003_04_default_setting.png)
+
 FirebaseのreCAPTCHA v3（Web）手順では、**デフォルトの 0.5 を推奨**してるよ🎯 ([Firebase][1])
 Google側の reCAPTCHA v3 ドキュメントでも、まずは **0.5 を“デフォルト”として始め、実トラフィック見て調整**が推奨されてる🧠 ([Google for Developers][2])
 
@@ -53,6 +61,8 @@ reCAPTCHA v3 は **実際のトラフィックを見て学習**するので、**
 この章の実作業は「コード」じゃなくて **コンソール操作**が中心だよ🙆‍♂️✨
 
 ## 4-1. しきい値の場所（Firebase Console）🔎
+
+![Firebase Console Setting](./picture/firebase_abuse_prevention_ts_study_003_05_console_ui.png)
 
 Firebase Console → **App Check** → 対象の **Webアプリ** → reCAPTCHA v3 の設定の中に
 **App risk threshold（しきい値）**のスライダーがある🎛️ ([Firebase][1])
@@ -88,6 +98,8 @@ Firebase公式の注意として、**しきい値を上げる前**は一度立�
 
 ## 6) 図解っぽく：あなたがやってること（超重要）🧩
 
+![Verification Logic](./picture/firebase_abuse_prevention_ts_study_003_06_flow_diagram.png)
+
 ```
 ユーザー操作
    ↓
@@ -105,6 +117,8 @@ App Check の「しきい値」と比較
 ---
 
 ## 7) AI活用（Antigravity / Gemini）で“しきい値調整”をラクにする🤖🧠
+
+![AI Operations Assistant](./picture/firebase_abuse_prevention_ts_study_003_07_ai_assistance.png)
 
 ここ、AIがめちゃくちゃ効くところ🔥
 たとえば👇

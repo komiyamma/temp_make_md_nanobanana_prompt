@@ -16,6 +16,8 @@
 
 ## 2) v3 と Enterprise の違い（超ざっくり）🔎✨
 
+![v3 vs Enterprise](./picture/firebase_abuse_prevention_ts_study_004_01_v3_vs_enterprise.png)
+
 イメージで掴むと早いです👇
 
 * **v3**：まずはこれでOKなことが多い。しきい値0.5推奨。TTLのデフォルトは **1日**。([Firebase][2])
@@ -31,6 +33,8 @@
 ---
 
 ## 3) 「いつEnterpriseにする？」判断基準🧭🧿
+
+![Decision Compass](./picture/firebase_abuse_prevention_ts_study_004_02_decision_compass.png)
 
 ### ✅ Enterpriseが“向いてる”サイン
 
@@ -53,6 +57,8 @@
 
 ## 4) 超重要：Billingをつける前の「しきい値の制限」🧯
 
+![Billing Unlock](./picture/firebase_abuse_prevention_ts_study_004_03_billing_gate.png)
+
 Enterpriseは、**請求アカウントを紐付ける前**だと、使えるスコア段階が限定されます（例：0.1/0.3/0.7/0.9 など）＆App Check側で設定できるしきい値も制限されます。([Firebase][1])
 
 さらに、Billing追加後には **自動のセキュリティレビューが走る**とも書かれています。([Firebase][1])
@@ -72,6 +78,8 @@ Enterpriseは、**請求アカウントを紐付ける前**だと、使えるス
 
 ## A. Console側（設定）🧰
 
+![Console Setup Steps](./picture/firebase_abuse_prevention_ts_study_004_04_setup_checklist.png)
+
 1. reCAPTCHA Enterprise API を有効化（促されたらON）✅([Firebase][1])
 2. **Website-type key** を作成し、ドメインを登録🌐
 3. **「Use checkbox challenge」を選ばない**（ここハマりがち！）🚫☑️([Firebase][1])
@@ -80,6 +88,8 @@ Enterpriseは、**請求アカウントを紐付ける前**だと、使えるス
 6. （任意）しきい値：まずは **0.5**で開始🎛️([Firebase][1])
 
 ## B. アプリ側（コード）⚛️
+
+![Code Structure](./picture/firebase_abuse_prevention_ts_study_004_05_code_structure.png)
 
 `services/firebase.ts` みたいな“1箇所”に寄せるのがコツです📦✨
 
@@ -142,6 +152,8 @@ export const appCheck = initializeAppCheck(app, {
 ---
 
 ## おまけ：AIで判断と実装を速くする🚀🤖
+
+![AI & Remote Config](./picture/firebase_abuse_prevention_ts_study_004_06_ai_integration.png)
 
 * 「Enterpriseにするか」迷ったら、AIに **判断材料の洗い出し**をさせるのが強いです🧠✨
 * さらにAI機能側は、**Remote Configで“モデル名などをアプリ更新なしで変えられる”**のが推奨されていて、運用と相性が良いです🎛️([Firebase][4])
