@@ -7,6 +7,8 @@
 
 ## ① 今日のゴール 🎯
 
+![Alert Fatigue](./picture/docker_observability_ts_study_022_alert_fatigue.png)
+
 * **アラート疲れ**が起きる理由を説明できる😵‍💫
 * **閾値 + 持続時間（for）**で「ノイズを減らす」感覚を掴む⏳
 * **Prometheus のルール** → **Alertmanager の通知**まで通す🚨
@@ -15,6 +17,8 @@
 ---
 
 ## ② 図（1枚）🖼️
+
+![Alerting Pipeline Flow](./picture/docker_observability_ts_study_022_alert_pipeline.png)
 
 （超ざっくりでOKです😊）
 
@@ -42,12 +46,16 @@
 
 ## (A) Prometheus側：`for` で「続いたら鳴らす」⏳
 
+![for Clause Logic](./picture/docker_observability_ts_study_022_for_clause_logic.png)
+
 Prometheus のアラートルールは、条件が成立しても **即通知じゃなく**
 「何分続いたら確定にする？」を `for` で指定できます。([prometheus.io][1])
 
 さらに最近の設定では `keep_firing_for` という「条件が解けても少し鳴らし続ける」オプションもあります（フラップ対策🌀）。([prometheus.io][1])
 
 ## (B) Alertmanager側：まとめる＆間引く（group_wait / group_interval / repeat_interval）🧺
+
+![Alertmanager Grouping](./picture/docker_observability_ts_study_022_grouping_mechanism.png)
 
 Alertmanager は「通知の出し方」を制御します👇
 
@@ -75,6 +83,8 @@ Alertmanager は「通知の出し方」を制御します👇
 ---
 
 ## 1) ファイル構成 📁
+
+![Configuration File Map](./picture/docker_observability_ts_study_022_config_relations.png)
 
 こんな感じに置きます（最小セット）👇
 
@@ -248,6 +258,9 @@ inhibit_rules:
 ```
 
 * `inhibit_rules` は「**落ちてるなら**、遅延や5xxの通知は黙らせる」みたいな **雪崩防止**です🌨️🧯 ([prometheus.io][2])
+
+  ![Inhibition Logic](./picture/docker_observability_ts_study_022_inhibition_logic.png)
+
 * 古い記事にある `match` / `match_re` より、今は `matchers`（または **_matchers*）が推奨です📌 ([prometheus.io][2])
 
 ---
@@ -308,6 +321,8 @@ Alertmanager の画面では、**発火・解決・サイレンス**が見られ
 ---
 
 ## ⑦ わざと壊して、鳴らす 😈💥
+
+![Chaos Testing Scenarios](./picture/docker_observability_ts_study_022_chaos_testing.png)
 
 ## ケース1：APIを止める（InstanceDown）💀
 

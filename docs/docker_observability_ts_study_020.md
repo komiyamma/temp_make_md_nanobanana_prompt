@@ -2,6 +2,8 @@
 
 ## ① 今日のゴール 🎯
 
+![Prometheus Pull Mechanism](./picture/docker_observability_ts_study_020_pull_mechanism.png)
+
 * Prometheusが **pull型（取りに来る）**でメトリクスを集めるのが分かる 💪
 * **targets（監視対象）**が「UP」になるのを確認できる ✅
 * `scrape_interval`（取りに来る頻度）の意味がざっくり分かる ⏱️
@@ -16,6 +18,8 @@
 * （次章）**Grafana** が Prometheus にクエリして可視化する 🖥️✨
 
 イメージ（超ざっくり）👇
+
+![Prometheus Architecture Flow](./picture/docker_observability_ts_study_020_architecture_flow.png)
 
 ```text
 [Browser]       [Prometheus] ----scrape----> [API /metrics]
@@ -33,11 +37,16 @@
 * **target**：取りに行く相手（URL）🎯
 * **job**：targetのグルーピング名（例：`api`）🧩
 * **scrape_interval**：取りに行く間隔（例：5秒、15秒、1分）⏱️
+
+  ![Scrape Interval Timeline](./picture/docker_observability_ts_study_020_scrape_interval_timeline.png)
+
   ちなみにデフォルトは **1分**（`1m`）です（設定で変えられるよ）([prometheus.io][1])
 
 ---
 
 ## ④ バージョンの話（めっちゃ大事）📌
+
+![Version Pinning Safety](./picture/docker_observability_ts_study_020_version_pinning.png)
 
 DockerでPrometheusを動かすとき、**`:latest` を使うと「いつの間にか中身が変わる」**ことがあります 😇💥
 なので教材でも **「バージョン固定」**がおすすめです。
@@ -66,6 +75,8 @@ DockerでPrometheusを動かすとき、**`:latest` を使うと「いつの間�
 
 ## Step 1. `prometheus/prometheus.yml` を作る 📝
 
+![prometheus.yml Structure](./picture/docker_observability_ts_study_020_config_tree.png)
+
 ポイントは3つだけ👇
 
 1. `scrape_interval`（取りに行く頻度）
@@ -88,6 +99,9 @@ scrape_configs:
 ```
 
 ✅ ここ超重要：`api:3000` は **Composeのサービス名**です！
+
+![Docker Localhost Trap](./picture/docker_observability_ts_study_020_localhost_trap.png)
+
 Prometheusコンテナの中から見ると、`localhost:3000` は “Prometheus自身” になっちゃうので注意😵‍💫
 
 設定項目の全体像は公式ドキュメントにもあります（`scrape_configs` や `static_configs` など）([prometheus.io][5])
@@ -144,6 +158,8 @@ docker compose ps
 `http://localhost:9090`
 
 ## 2) Targets を開く ✅
+
+![Targets Page Mockup](./picture/docker_observability_ts_study_020_targets_ui_mock.png)
 
 メニューから **Status → Targets** を開きます。
 ここで `job="api"` が **UP** になってたら勝ち🏆✨

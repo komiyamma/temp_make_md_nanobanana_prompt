@@ -20,6 +20,8 @@
 
 エラー率は「失敗の数」÷「全部の数」ってだけ！超シンプル😆
 
+![Error Rate Formula Visualization](./picture/docker_observability_ts_study_018_error_rate_formula.png)
+
 ```text
           ┌──────────────┐
 request → │  API (Express) │ → response(status)
@@ -45,6 +47,8 @@ request → │  API (Express) │ → response(status)
 ### A. まずは“設計の型”を1つ決める 🧠📌
 
 **エラー率に使う“失敗”は何？** を先に決めるのが超大事！
+
+![5xx vs 4xx Policy](./picture/docker_observability_ts_study_018_5xx_vs_4xx.png)
 
 * **5xx**：だいたい「サーバ側の失敗」＝アラート対象になりやすい 🔥
 * **4xx**：ユーザー操作ミスや入力ミスも多い（全部を障害扱いにすると疲れる😵‍💫）
@@ -75,6 +79,8 @@ export const httpRequestsTotal = new client.Counter({
 ### C. middlewareで「レスポンスの結果」を数える 🧩🔢
 
 Expressは **処理の最後に statusCode が決まる**から、`finish` イベントで数えるのがコツだよ😊
+
+![Middleware Counting Flow](./picture/docker_observability_ts_study_018_middleware_flow.png)
 
 **ファイル例：`src/middlewares/metricsCounter.ts`**
 
@@ -201,6 +207,9 @@ http_requests_total{method="GET",route="/boom",status="500",status_class="5xx"} 
 ### H. （予告）Prometheusでの計算はこうなる 🕸️📥
 
 Counters（カウンタ）は基本「増えるだけ」なので、Prometheus側では **rate()**（増え方）で見るのが王道だよ📈
+
+![Rate Function Logic](./picture/docker_observability_ts_study_018_rate_function.png)
+
 `rate()` は **カウンタに適用する**のが前提として説明されています。([prometheus.io][4])
 
 * 全体のRPS（1秒あたりリクエスト数）
@@ -217,6 +226,8 @@ sum(rate(http_requests_total{status_class="5xx"}[5m]))
 
 * **5xxエラー率（割合）**
 
+![PromQL Error Rate Calculation](./picture/docker_observability_ts_study_018_promql_query.png)
+
 ```text
 sum(rate(http_requests_total{status_class="5xx"}[5m]))
 /
@@ -231,6 +242,9 @@ sum(rate(http_requests_total[5m]))
 
 1. **routeラベルが爆発する問題** 💣
    `/users/1` `/users/2` みたいに“値入りパス”をそのまま入れると、時系列が無限に増えます😇
+
+   ![Label Cardinality Explosion](./picture/docker_observability_ts_study_018_cardinality_explosion.png)
+
    ➡️ `req.route.path`（`/users/:id` みたいな形）を優先して使うのが安全寄り！
 
 2. **コンテナ再起動でカウンタが0に戻る** 🔁
