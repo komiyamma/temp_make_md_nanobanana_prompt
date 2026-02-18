@@ -10,6 +10,8 @@
 
 ## 1) なんで今 “Gateway API” なの？🧭⚡
 
+![Ingress vs Gateway API Structure](./picture/docker_multi_orch_ts_study_022_ingress_vs_gateway_api.png)
+
 前の章（Ingressの話）で触れた通り、**Ingress NGINX は 2026年3月までベストエフォート保守 → 以後はリリース/修正/脆弱性対応なし**、という公式方針が出ています。つまり「今動いてるからOK」ではなく、**中長期の入口として別ルートを持っておく**のが現実的です。([Kubernetes][1])
 
 そしてその“別ルート”の本命が、**Gateway API（v1.4.0がGAとして発表）**です。([Kubernetes][2])
@@ -22,6 +24,8 @@
 ---
 
 ## 2) Gateway APIの“登場人物”を人に例えると…👥🎭
+
+![Persona-based Resource Management](./picture/docker_multi_orch_ts_study_022_role_separation.png)
 
 Gateway APIは「役割分担」がキモです 🧠✨
 Ingress は1枚の設定に色々詰め込みがちですが、Gateway API は分けます。
@@ -44,12 +48,16 @@ Ingress は1枚の設定に色々詰め込みがちですが、Gateway API は�
 
 ## ✅ 重要：実装（コントローラ）がいないと何も起きない🤖❌
 
+![Gateway API Architecture](./picture/docker_multi_orch_ts_study_022_components_diagram.png)
+
 Gateway APIのYAMLを書くだけではルーティングされません。
 **“そのAPIを解釈してプロキシやLBを動かす実装”**が必要です。([Kubernetes][3])
 
 ---
 
 ## 3) まず動かす！最短ハンズオン（Envoy Gatewayで体験）🏃💨🧪
+
+![Envoy Gateway Quickstart Flow](./picture/docker_multi_orch_ts_study_022_envoy_gateway_setup.png)
 
 ここでは例として **Envoy Gateway の公式Quickstart**を使います（手順がまとまってて迷子になりにくい✨）。([Envoy Gateway][6])
 
@@ -107,6 +115,8 @@ kubectl get httproute
 
 ## 4-2) status/conditions を見る（詰まったらココ）🧯
 
+![Debugging via Status](./picture/docker_multi_orch_ts_study_022_status_debugging.png)
+
 ```bash
 kubectl describe gateway eg
 kubectl describe httproute <route名>
@@ -143,6 +153,8 @@ Gateway APIは **status.conditions に理由が出る**ことが多いです。
 
 ## 6) ありがち事故あるある😇➡️😺
 
+![Common Gateway API Pitfalls](./picture/docker_multi_orch_ts_study_022_common_accidents.png)
+
 ## 事故1：Gateway/HTTPRoute作ったのに何も起きない🙃
 
 ✅ だいたいこれ
@@ -169,6 +181,8 @@ Gateway APIは「CRD＋実装」がセットです。([Kubernetes][3])
 ---
 
 ## 7) 設計超入門のコツ：まずは“分業の線引き”だけ決める✍️🧠
+
+![Team-based Responsibility](./picture/docker_multi_orch_ts_study_022_design_separation.png)
 
 Gateway APIの美味しさはこれ👇
 

@@ -6,6 +6,8 @@
 
 ## 1) HPAってなに？🤔（超ざっくり）
 
+![HPA Basic Concept](./picture/docker_multi_orch_ts_study_017_hpa_basic_concept.png)
+
 **HPA（HorizontalPodAutoscaler）**は、Deploymentなどの「Podの数」を、**メトリクス（例：CPU使用率）**を見て自動で増減してくれる仕組みだよ📈📉
 コントローラは定期的にメトリクスを見て、必要なら `.spec.replicas` を書き換える感じ（デフォは **15秒周期**）。([Kubernetes][1])
 
@@ -15,9 +17,13 @@
 
 ## ✅ 条件A：Metrics API が必要（だいたい metrics-server）
 
+![Metrics Server Necessity](./picture/docker_multi_orch_ts_study_017_metrics_server_role.png)
+
 HPAがCPU/メモリなどのリソースメトリクスを見るには、クラスタに **Metrics API（`metrics.k8s.io`）** が必要で、一般的には **metrics-server** を入れるよ。([Kubernetes][2])
 
 ## ✅ 条件B：CPUの「requests」を書かないと、CPU%でスケールできない
+
+![CPU Utilization Math](./picture/docker_multi_orch_ts_study_017_cpu_requests_math.png)
 
 CPU使用率（%）は **requests に対する比率**で計算されるから、**requests未設定だとHPAは動けない**（メトリクスが取れない/計算できない）ことがあるよ。([Kubernetes][1])
 
@@ -94,6 +100,8 @@ kubectl get hpa php-apache --watch
 
 ## 3-3) 負荷をかける🔥（別ターミナル推奨）
 
+![Load Triggered Scaling](./picture/docker_multi_orch_ts_study_017_load_scaling_flow.png)
+
 公式の負荷生成コマンド（busyboxで無限アクセス）だよ。([Kubernetes][3])
 
 ```bash
@@ -109,6 +117,8 @@ kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never --
 
 ## 3-4) 負荷を止めて、スケールインを見る😴
 
+![Scale Down Cooling](./picture/docker_multi_orch_ts_study_017_scale_down_cooling.png)
+
 負荷生成ターミナルで **Ctrl + C** で止める → しばらくすると **REPLICAS が減って戻る**よ。([Kubernetes][3])
 
 ---
@@ -121,6 +131,8 @@ kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never --
 ---
 
 ## 5) autoscaling/v2 で「暴れないHPA」にする🧘‍♀️（フラッピング対策）
+
+![Flapping Protection](./picture/docker_multi_orch_ts_study_017_flapping_protection.png)
 
 負荷が細かく上下すると、Podが増えたり減ったりして落ち着かないことがある（フラッピング）😵
 `autoscaling/v2` の `behavior` で、

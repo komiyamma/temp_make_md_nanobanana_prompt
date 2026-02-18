@@ -7,6 +7,8 @@
 
 ## 1) まず結論：Ingressは「ルール表」📄、実際に捌くのは「Ingress Controller」🚦
 
+![Ingress Resource vs Controller](./picture/docker_multi_orch_ts_study_021_ingress_vs_controller.png)
+
 * **Ingress**：
   「`example.com/api` は `api-service`、`example.com/` は `web-service` に流す」みたいな **HTTPルーティングのルール** を書くKubernetesのAPIオブジェクト📄✨ ([Kubernetes][1])
 * **Ingress Controller**：
@@ -20,6 +22,8 @@
 ---
 
 ## 2) Serviceだけじゃダメ？Ingressを使う理由💡
+
+![LoadBalancer vs Ingress Architecture](./picture/docker_multi_orch_ts_study_021_service_vs_ingress.png)
 
 Serviceにも公開方法があるよね？って話、めっちゃ大事です🙂
 
@@ -38,6 +42,8 @@ Serviceにも公開方法があるよね？って話、めっちゃ大事です�
 
 ## 3) 2026年の超重要注意点⚠️：Ingress自体は安定だけど“凍結”🍧
 
+![Ingress API Status vs Future](./picture/docker_multi_orch_ts_study_021_ingress_2026_status.png)
+
 Kubernetes公式ドキュメントでは、Ingressについてこういう立ち位置になっています👇
 
 * ✅ Ingress APIは **GA（安定）** で、Kubernetesから消す予定はない
@@ -50,6 +56,8 @@ Kubernetes公式ドキュメントでは、Ingressについてこういう立ち
 ---
 
 ## 4) 2026年の超重要注意点⚠️：Ingress NGINXが“引退”🪦
+
+![Ingress NGINX End of Life](./picture/docker_multi_orch_ts_study_021_nginx_retirement.png)
 
 多くの学習記事で出てくる **Ingress NGINX** は、公式に「引退」が明言されています⚠️
 
@@ -186,6 +194,8 @@ kubectl -n ingress-nginx get pod,svc
 
 ## 3) Ingress（ルール表）を書く📄🧭
 
+![Path-based Routing Visualization](./picture/docker_multi_orch_ts_study_021_echo_ab_routing.png)
+
 Hostが `demo.local` のときに👇
 
 * `/a` → `echo-a`
@@ -252,6 +262,8 @@ curl -H "Host: demo.local" http://localhost:8080/b
 ---
 
 ## “詰まったらここ”🧯：Ingressトラブルシュートの型🧠
+
+![Ingress Troubleshooting Steps](./picture/docker_multi_orch_ts_study_021_troubleshoot_flow.png)
 
 ## A) Ingressは作れた？📄
 
