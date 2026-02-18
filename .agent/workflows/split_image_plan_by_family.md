@@ -1,3 +1,7 @@
+---
+description: Split image_generation_plan.md by family key (CT-PFS)
+---
+// turbo-all
 # CS/TS Prefix Family Split Workflow
 
 ## Name
