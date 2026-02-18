@@ -7,6 +7,8 @@ Callable は **Auth / FCM / App Check トークンが（あれば）自動で付
 
 ## 0) まずイメージを作ろう🧠🗺️
 
+![Three Defense Layers](./picture/firebase_abuse_prevention_ts_study_010_01_defense_layers.png)
+
 守りのレイヤーはこんな感じです👇
 
 * **Auth**：誰が操作してる？（ログインしてる？管理者？）👤🔑
@@ -19,6 +21,8 @@ Firebase 公式でも、Callable に対して **App Check 強制を有効化す�
 ---
 
 ## 1) “守るべき処理”を Callable に寄せるコツ🧲✨
+
+![Moving Logic to Server](./picture/firebase_abuse_prevention_ts_study_010_02_migration.png)
 
 「これ、クライアント（React）から直接やらせたら危ないやつだ…😱」っていう処理は、Callable 側へ引っ越し対象です🏃‍♂️💨
 
@@ -42,6 +46,8 @@ Firebase 公式でも、Callable に対して **App Check 強制を有効化す�
 ---
 
 ## 3) 実装（Node/TypeScript）：管理者用 Callable を1本作る🧑‍💼☎️
+
+![Enforcement Gate](./picture/firebase_abuse_prevention_ts_study_010_03_enforcement_mechanism.png)
 
 ここでは「管理者だけができる **メモ削除**」を例にします📝❌
 やることはシンプル👇
@@ -111,6 +117,8 @@ export const adminDeleteMemo = onCall(
 
 ## 4) React 側：呼び出すだけ（App Check は裏で勝手に付く）⚛️☎️
 
+![Automatic Token Attachment](./picture/firebase_abuse_prevention_ts_study_010_04_client_auto_token.png)
+
 ```ts
 import { getFunctions, httpsCallable } from "firebase/functions";
 
@@ -143,6 +151,8 @@ try {
 
 ## 5) “AI整形”も Callable に寄せると強い🤖🧱
 
+![AI Fortress](./picture/firebase_abuse_prevention_ts_study_010_05_ai_protection.png)
+
 AI をクライアントから直接叩く設計もできますが、
 **管理者だけが使うAI**や、**重いAI処理**は Callable に寄せると運用が楽になります💪
 
@@ -153,6 +163,8 @@ AI をクライアントから直接叩く設計もできますが、
 ---
 
 ## 6) 予告：もっと強くするなら「リプレイ対策」♻️🚫
+
+![Anti-Replay Token](./picture/firebase_abuse_prevention_ts_study_010_06_replay_teaser.png)
 
 「同じトークンを盗まれて使い回されたら困る😱」みたいな超重要APIは、**トークンを“使い捨て”にする**手があります。
 
@@ -165,6 +177,8 @@ AI をクライアントから直接叩く設計もできますが、
 ---
 
 ## 7) Antigravity / Gemini で、この章を“爆速”に終わらせる🚀🤖
+
+![AI Developer Assist](./picture/firebase_abuse_prevention_ts_study_010_07_ai_assist.png)
 
 Antigravity は「エージェントが計画してコード書いて、必要ならWeb調査もできる」系の開発プラットフォームです🛰️ ([Google Codelabs][6])
 Firebase Studio でも Gemini をワークスペースに統合して、コード変更やコマンド実行まで流れでやれます（設定やルールファイルも用意できます）🧰🧠 ([Firebase][7])

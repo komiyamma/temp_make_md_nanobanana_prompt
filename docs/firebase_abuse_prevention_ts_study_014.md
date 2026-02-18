@@ -7,6 +7,8 @@ CI（自動テスト）を回し始めると、App Check の“強制ON”が急
 
 ## まず結論：CIでは“Debug Provider + デバッグトークン”で通す🧪🧿
 
+![CI vs App Check](./picture/firebase_abuse_prevention_ts_study_014_01_ci_failure.png)
+
 CIのE2Eテストは **実機でも本番ブラウザでもない**ので、通常の reCAPTCHA 経由の App Check をそのまま通すのが難しい場面が出ます。
 そこで公式が案内しているのが **Debug Provider（= デバッグトークンで正規扱いにする）** です。([Firebase][1])
 
@@ -60,6 +62,8 @@ CIはまさに「証明がない側」になりがち。だから **CI用のデ�
 
 ## 2) GitHub Secrets に入れる🔐（絶対にリポジトリへコミットしない）
 
+![GitHub Secrets](./picture/firebase_abuse_prevention_ts_study_014_02_secrets.png)
+
 GitHubのリポジトリ設定から、Actions用の Secrets を作ります。([GitHub Docs][2])
 
 * 例：Secret名 `APP_CHECK_DEBUG_TOKEN`
@@ -68,6 +72,8 @@ GitHubのリポジトリ設定から、Actions用の Secrets を作ります。(
 ---
 
 ## 3) フロント側：CIだけ Debug Provider をONにする（重要：読み込み順）⚛️🧿
+
+![Order of Operations](./picture/firebase_abuse_prevention_ts_study_014_03_dynamic_import.png)
 
 公式が強調してる大事ポイント👇
 
@@ -111,6 +117,8 @@ export async function initAppCheck() {
 ---
 
 ## 4) CIワークフロー：Node 24 LTSでビルド→プレビュー→E2E🧪
+
+![CI Pipeline](./picture/firebase_abuse_prevention_ts_study_014_04_workflow.png)
 
 2026年2月時点で Node 24 系が LTS で安定運用の対象になっています。([nodejs.org][3])
 GitHub Actions では `actions/setup-node` がよく使われます。([GitHub][4])
@@ -169,6 +177,8 @@ jobs:
 
 ## 5) Playwright側：App Checkが効いてる最低限の1本を作る🧪🧿🤖
 
+![Smoke Test](./picture/firebase_abuse_prevention_ts_study_014_05_e2e_scenario.png)
+
 「AI整形ボタン」を押して、結果が画面に出たらOK、みたいな **超スモーク**にします🧯
 （毎PRで重たいAI呼び出しを連打すると財布が燃えるので、後で抑える仕組みも入れます🔥）
 
@@ -198,6 +208,8 @@ test("App Checkありで、AI整形まで動く", async ({ page }) => {
 
 ## おすすめ方針：PRでは“軽い確認”、重いのは夜間 or mainだけ🌙
 
+![PR vs Nightly](./picture/firebase_abuse_prevention_ts_study_014_06_ai_strategy.png)
+
 Firebase AI Logic にはレート制限（デフォルト 100 RPM/user など）があり、運用では守りと制御がセットで語られます。([itnext.io][7])
 なのでCIは👇みたいにすると平和です🙂✨
 
@@ -225,6 +237,8 @@ Firebase AI Logic にはレート制限（デフォルト 100 RPM/user など）
 ---
 
 ## 落とし穴まとめ（ここだけ読んでも価値あるやつ）🕳️😇
+
+![Security Leaks](./picture/firebase_abuse_prevention_ts_study_014_07_pitfalls.png)
 
 * ✅ **Secretsがfork PRに渡らない** → forkからのPRではE2Eをスキップする設計が必要になりがち
 * ✅ Debug Token を **成果物としてアップロード**すると漏れる可能性（Artifacts注意⚠️）
