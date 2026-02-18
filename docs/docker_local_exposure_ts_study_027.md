@@ -13,6 +13,8 @@
 * Service Worker / 一部ブラウザ機能が “安全な接続” 前提🧠🔐
 * そして何より… **「保護されていません」警告が邪魔**😇⚡
 
+![Local HTTPS Pain Points](./picture/docker_local_exposure_ts_study_027_https_pain.png)
+
 **mkcert**は、これを「ほぼコマンド数回」で解決する道具です。
 ローカル専用の認証局（CA）を作って、PCに信頼させ、**そのCAでサーバー証明書を発行**してくれます。([GitHub][1])
 
@@ -27,6 +29,8 @@
 こういうのを開いても、**証明書警告なしで鍵マーク🔒が付く**状態にします。
 
 しかも `.localhost` は「localhost扱いの特別枠」なので、（環境次第だけど）サブドメインもローカルとして扱われやすいです。([IETF Datatracker][2])
+
+![mkcert Success Goal](./picture/docker_local_exposure_ts_study_027_mkcert_goal.png)
 
 ---
 
@@ -45,6 +49,8 @@ winget install -e --id FiloSottile.mkcert
 * Scoop（extras にある）([bjansen.github.io][4])
 * Chocolatey（コミュニティパッケージあり）([Chocolatey Software][5])
 
+![mkcert Installation Options](./picture/docker_local_exposure_ts_study_027_install_options.png)
+
 ---
 
 ## 27.4 最重要：ローカルCAを作って「信頼」させる🔑🧙‍♂️
@@ -62,6 +68,8 @@ mkcert -install
 
 mkcertは `rootCA-key.pem`（ローカルCAの秘密鍵）を作ります。
 これが漏れると“そのPC上のHTTPS通信を偽装できる力”があるので、**絶対に共有しない**でね。([GitHub][1])
+
+![Local CA Trust Flow](./picture/docker_local_exposure_ts_study_027_local_ca_trust.png)
 
 ---
 
@@ -93,6 +101,8 @@ mkcert -cert-file localhost-wildcard.pem -key-file localhost-wildcard-key.pem lo
 * `localhost-wildcard-key.pem`（秘密鍵）
 
 ができます🔒✨
+
+![Wildcard Certificate Power](./picture/docker_local_exposure_ts_study_027_wildcard_cert.png)
 
 ---
 
@@ -149,6 +159,8 @@ server {
     proxy_pass http://app1:3000;
   }
 }
+
+![Mounting Certs to Proxy](./picture/docker_local_exposure_ts_study_027_mount_certs.png)
 ```
 
 ---
@@ -189,6 +201,8 @@ Firefoxは設定で「OSのルート証明書を自動的に信頼する」を�
 
 これは“ブラウザ”じゃなくて **NodeがHTTPSクライアントになる時**に起こるやつ。
 NodeはOSの証明書ストアを使わないので、`NODE_EXTRA_CA_CERTS` が必要になる場合があります。([GitHub][1])
+
+![mkcert Common Pitfalls](./picture/docker_local_exposure_ts_study_027_common_pitfalls.png)
 
 ---
 

@@ -25,11 +25,15 @@
 だから **`http://localhost` でも動く機能がある**んだけど……
 「本番（HTTPS）では壊れるのに、ローカルだと気づけない😇」が起きやすいんです。
 
+![Two Types of HTTPS Requirements](./picture/docker_local_exposure_ts_study_025_https_needs.png)
+
 ---
 
 ## 25-2 HTTPSが欲しくなる代表シーン集📦✨（あるある順）
 
 「自分に関係あるか」をここで見極めればOKです✅
+
+![Scenes Requiring HTTPS](./picture/docker_local_exposure_ts_study_025_https_scenes.png)
 
 ### ① PWA / オフライン / プッシュ通知を触る📱⚡
 
@@ -57,6 +61,8 @@ Clipboard API も **Secure Context 前提**。([MDN Web Docs][7])
 * そもそも `Secure` なCookieは **http では基本セットできない**（ただし `localhost` は特別扱いがある、と明記あり）([MDN Web Docs][9])
 
 👉 ここが超ややこしいポイントで、**ローカルの例外に甘えると本番でズレる**ことがあります😵‍💫
+
+![The Localhost Exception Trap](./picture/docker_local_exposure_ts_study_025_localhost_trap.png)
 
 ### ⑥ 外部ログイン（OAuth/OIDC）🔁🔐
 
@@ -86,6 +92,8 @@ Mixed Content はブラウザがガッツリ防御します。([MDN Web Docs][11
 `localhost` には例外があるので、ローカルで「動いてるじゃん！」が成立しやすい。([MDN Web Docs][9])
 でも本番は例外なしで、突然ログインが飛びます😇
 
+![Typical Production Failures](./picture/docker_local_exposure_ts_study_025_prod_failures.png)
+
 ---
 
 ## 25-4 今すぐHTTPSにするべき？判断チェック✅✨
@@ -103,6 +111,8 @@ Mixed Content はブラウザがガッツリ防御します。([MDN Web Docs][11
 
 * 🔸 「フロント表示＋簡単APIだけ」「外部ログインもPWAも無し」
   → いったんHTTPで進めて、必要になったらHTTPSでもOK👌（ただし後で移行は確実に発生しがち😆）
+
+![HTTPS Decision Checklist](./picture/docker_local_exposure_ts_study_025_decision_checklist.png)
 
 ---
 
@@ -126,6 +136,8 @@ location.protocol
 * `"https:"` なら URL的にもHTTPS
 * `"http:"` なら URL的にはHTTP（外部サービスの一致判定で落ちる系の罠が残る）([OpenIDファウンデーション][2])
 
+![DevTools Secure Context Check](./picture/docker_local_exposure_ts_study_025_secure_context_check.png)
+
 ---
 
 ## 25-6 “ローカルHTTPS” はどこでやるのが自然？🚪🔒
@@ -139,6 +151,8 @@ location.protocol
 
 * コンテナの中まで全部TLSにしなくてOK（入口で受けて、中はHTTPで十分なことが多い）👍
 * “入口1個＋中に複数アプリ” の構成と相性バツグン💯
+
+![Proxy HTTPS Termination](./picture/docker_local_exposure_ts_study_025_proxy_termination.png)
 
 ---
 

@@ -34,11 +34,15 @@
 
 この順番、ほんと強いよ🧠✨
 
+![3-Minute Triage Workflow](./picture/docker_local_exposure_ts_study_028_triage_flow.png)
+
 ---
 
 ## 1) 404 の正体：だいたい「ルールが合ってない」🪧❌
 
 404 は大きく2種類あるよ👇
+
+![Two Types of 404](./picture/docker_local_exposure_ts_study_028_404_types.png)
 
 ## A. リバプロが返してる 404（入口で迷子）🚥😵
 
@@ -81,6 +85,8 @@
 * SPAを `/app1/` 配下に置いたのに、アプリ側が `/` 前提でリンクを吐く（base path 問題）🔁
 * APIの prefix が変わったのにフロントが古いURLを叩いてる📦
 
+![SPA Base Path Mismatch](./picture/docker_local_exposure_ts_study_028_spa_base_path.png)
+
 **確認のしかた（気持ちいい）😆**
 
 * proxyコンテナ内から upstream を直叩き：
@@ -94,6 +100,8 @@
 ## 2) 502 の正体：だいたい「中のサービスに繋げてない」🔌💥
 
 502（Bad Gateway）は、入口が「中に繋ごうとしたけど無理だった😭」の合図。
+
+![502 Connection Failure](./picture/docker_local_exposure_ts_study_028_502_connection.png)
 
 ## Caddyの 502 は“接続エラー起点”が多い🧯
 
@@ -113,6 +121,8 @@ Caddy の `reverse_proxy` は upstream へ繋げない状況などで 502 を返
 
 * proxyコンテナから見た `localhost:3000` は「proxy自身」だよ😇
 * だいたい `api:3000` みたいに **サービス名** を使うのが正解✅
+
+![The Localhost Trap in Containers](./picture/docker_local_exposure_ts_study_028_localhost_trap.png)
 
 3. **同じネットワークにいない** 🧵
 
@@ -147,6 +157,8 @@ Caddy の `reverse_proxy` は upstream へ繋げない状況などで 502 を返
 * proxyコンテナの中に入って確認
 * そこで `curl` が通らないなら、ルーティング以前に“接続”が死んでる💀
 
+![Direct Hit Troubleshooting](./picture/docker_local_exposure_ts_study_028_direct_hit.png)
+
 ---
 
 ## 3) 「つながらない」の正体：入口まで届いてない🚪🙅‍♀️
@@ -156,6 +168,8 @@ Caddy の `reverse_proxy` は upstream へ繋げない状況などで 502 を返
 * 画面が真っ白 / タイムアウト⌛
 * `ERR_NAME_NOT_RESOLVED`（名前解決できない）🧩
 * `ERR_CONNECTION_REFUSED`（ポートが閉じてる）🔒
+
+![Connection Refused](./picture/docker_local_exposure_ts_study_028_connection_refused.png)
 
 ## つながらない原因あるある🧊
 

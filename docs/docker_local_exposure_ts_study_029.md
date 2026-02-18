@@ -15,6 +15,8 @@
 
 この3点が揃うと、9割のトラブルは「犯人まで一直線」です😺✨
 
+![Minimum Log Toolset](./picture/docker_local_exposure_ts_study_029_min_log_set.png)
+
 ---
 
 ## 2) 入口ログ（リバプロ）を見る👀🚪
@@ -48,6 +50,8 @@ Caddy は `log` ディレクティブでアクセスログを有効化できま�
 * JSON にしておくと、あとで検索・加工がしやすいです🔎✨
 * ファイルに出す場合、Caddy は**ログローテーション（肥大化対策）**も標準で入ってます🧯（ファイル出力の説明に「ロールされる」と明記）([Caddy Web Server][1])
 
+![Caddy JSON Log Config](./picture/docker_local_exposure_ts_study_029_caddy_log_config.png)
+
 ---
 
 ## 2-2) Traefik のアクセスログ（例）🚦📜
@@ -75,6 +79,8 @@ services:
 * **出す項目やヘッダ**も「keep/drop/redact」で制御できます（ヘッダは既定 drop）🔐([Traefik Docs][2])
 * タイムスタンプは **既定 UTC**（ローカル時間に寄せたいときは設定で調整）⏰([Traefik Docs][2])
 
+![Traefik Log Filtering](./picture/docker_local_exposure_ts_study_029_traefik_log_filter.png)
+
 ---
 
 ## 3) “中身ログ”を見る：docker compose logs が主役🐳👂
@@ -87,6 +93,8 @@ services:
 * `--since` 直近だけ
 * `-t` タイムスタンプ付き
   …が公式オプションとしてあります。([Docker Documentation][3])
+
+![Watching Docker Compose Logs](./picture/docker_local_exposure_ts_study_029_compose_logs.png)
 
 ## よく使うコマンド集（PowerShell）🪟✨
 
@@ -128,6 +136,8 @@ docker compose logs --since=10m api | Select-String -Pattern "error|exception" -
 
 トラブル時は、**この順番**で見ると迷子になりにくいです🧭✨
 
+![3-Minute Troubleshooting Flow](./picture/docker_local_exposure_ts_study_029_troubleshoot_flow.png)
+
 ## Step A：入口ログに“そのアクセス”は出てる？🚪📜
 
 * **出てない**
@@ -142,6 +152,8 @@ docker compose logs --since=10m api | Select-String -Pattern "error|exception" -
 * **401/403**：認証・Cookie・ヘッダ周り（別章の地雷ゾーン🍪💣）
 * **502/504**：中のサービスに届いてない（死んでる/ポート違い/起動遅い）
 * **500**：中のアプリが落ちてる（例外・DB接続失敗など）
+
+![Status Code Diagnosis Guide](./picture/docker_local_exposure_ts_study_029_status_diagnosis.png)
 
 ## Step C：502/504 のときの“鉄板チェック”🥊
 
@@ -168,6 +180,8 @@ Compose では **標準出力＝集約の中心**になりやすいので、
 
   * Caddy は危険ヘッダを既定で `REDACTED` にします([Caddy Web Server][1])
   * Traefik はヘッダ既定 drop、必要なら keep/redact で調整できます([Traefik Docs][2])
+
+![Log Security Redaction](./picture/docker_local_exposure_ts_study_029_log_redaction.png)
 
 ## 5-3) （余裕が出たら）ログとトレースを“紐づける”🧵✨
 
