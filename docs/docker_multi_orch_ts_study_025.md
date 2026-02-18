@@ -16,6 +16,8 @@ RBACはKubernetes運用の“免許制度”みたいなもの。うっかり強
 
 ## 2) RBACの超ざっくり地図🗺️（ここだけ覚えればOK）
 
+![RBAC Four Pillars](./picture/docker_multi_orch_ts_study_025_rbac_components.png)
+
 RBACの登場人物は4つだけです👇 ([Kubernetes][2])
 
 * **Role**：あるNamespaceの中だけの「許可リスト」📄
@@ -30,6 +32,8 @@ RBACの登場人物は4つだけです👇 ([Kubernetes][2])
 ---
 
 ## 3) 最初に“安全の鉄則”だけ👮‍♂️⚠️（ここで事故が減る）
+
+![Least Privilege Principle](./picture/docker_multi_orch_ts_study_025_least_privilege.png)
 
 Kubernetes公式のRBAC推奨に沿って、超重要ポイントだけ先に置きます🧯 ([Kubernetes][3])
 
@@ -63,6 +67,8 @@ kubectl -n demo-rbac get pod
 ---
 
 ## 4-2) ServiceAccountを作る（まずは“何もできない”が正義）🧑‍🔧🔒
+
+![kubectl auth can-i](./picture/docker_multi_orch_ts_study_025_auth_can_i.png)
 
 ```bash
 kubectl -n demo-rbac create sa app-sa
@@ -145,6 +151,8 @@ kubectl -n demo-rbac auth can-i delete pods \
 
 ## 4-4) “ログを見る権限”と“execする権限”は分けよう🪓🧯
 
+![Role Separation](./picture/docker_multi_orch_ts_study_025_role_separation.png)
+
 現場あるある：
 
 * 「ログだけ見たい」人に exec まで渡すと事故りやすい😇💥
@@ -220,6 +228,8 @@ rules:
 
 ## 5) よくある事故パターン3つ💥😇（ここ踏む人多い）
 
+![Scope Comparison (Namespace vs Cluster)](./picture/docker_multi_orch_ts_study_025_scope_comparison.png)
+
 ## 事故1：うっかりClusterRoleBindingを作って全クラスタ権限😱🌍
 
 * Namespace内だけでいいのに、**ClusterRoleBinding** を作ると影響範囲が広がる
@@ -275,6 +285,8 @@ RBACはAIが**盛りがち**なので、使い方はこれが安全👇
 ---
 
 ## 8) まとめ🎉
+
+![How Binding Works](./picture/docker_multi_orch_ts_study_025_binding_mechanism.png)
 
 * RBACは **Role（許可）＋Binding（配布）** のセット🎁
 * まずは **Namespace内で閉じる**、次に **最小権限**、最後に **can-iで検証**✅ ([Kubernetes][3])

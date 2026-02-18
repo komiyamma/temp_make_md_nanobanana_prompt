@@ -15,6 +15,8 @@ Kubernetesのクラスタ内って、何もしないと **「基本ぜんぶ通�
 
 ## まず超大事なこと3つ🥇🥈🥉
 
+![Ingress vs Egress](./picture/docker_multi_orch_ts_study_024_ingress_egress.png)
+
 1. **NetworkPolicyは L3/L4（IP/ポート）レベルの「許可ルール」** だよ🧱
    → HTTPのパス単位とかは「標準」ではやらない（別の仕組みや拡張が必要）📦
    しかも **ネットワークプラグイン（CNI）が対応してないと、書いても効かない** 🫠
@@ -32,6 +34,8 @@ Kubernetesのクラスタ内って、何もしないと **「基本ぜんぶ通�
 
 ## イメージで理解🏢🔑（オフィスの入館管理）
 
+![NetworkPolicy Office Analogy](./picture/docker_multi_orch_ts_study_024_office_analogy.png)
+
 * **Pod**：部屋👤
 * **Service**：内線番号☎️（中の部屋が入れ替わっても番号は同じ）
 * **NetworkPolicy**：入退室ルール🛂
@@ -46,6 +50,8 @@ Kubernetesのクラスタ内って、何もしないと **「基本ぜんぶ通�
 > ここは “小さく壊して→直す” が最強です💪😆
 
 ## 1) サンプルをデプロイ🎬
+
+![Hands-on Demo Topology](./picture/docker_multi_orch_ts_study_024_demo_topology.png)
 
 まず `np-demo` 名前空間に、3人配置します👇
 
@@ -155,6 +161,8 @@ kubectl -n np-demo exec deploy/attacker -- curl -sS -m 2 http://db | head
 
 ## 2) DBへのIngressを「いったん全拒否」🚧
 
+![Default Allow vs Default Deny](./picture/docker_multi_orch_ts_study_024_allow_vs_deny.png)
+
 DB（app=db）に対して **Ingressを空にする** と、DBは「隔離」されます🧊
 （これが “default deny（まず閉じる）” の基本）
 ([Calico ドキュメント][2])
@@ -192,6 +200,8 @@ kubectl -n np-demo exec deploy/attacker -- curl -sS -m 2 http://db || echo "bloc
 ---
 
 ## 3) 「APIからだけ」DBへのIngressを許可🟢
+
+![Rule Addition (Union)](./picture/docker_multi_orch_ts_study_024_rule_union.png)
 
 ```yaml
 ## 11-db-allow-from-api.yaml
@@ -236,6 +246,8 @@ kubectl -n np-demo exec deploy/attacker -- curl -sS -m 2 http://db || echo "bloc
 Ingressだけでも守りは強くなるけど、より堅くするなら **API側のEgress** も閉じます🔒
 
 ## 4) APIのEgressをいったん全拒否🚫
+
+![The DNS Trap](./picture/docker_multi_orch_ts_study_024_dns_trap.png)
 
 ```yaml
 ## 20-api-default-deny-egress.yaml

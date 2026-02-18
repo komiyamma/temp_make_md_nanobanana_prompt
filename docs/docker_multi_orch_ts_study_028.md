@@ -9,7 +9,11 @@ Kubernetesは“落ちたら勝手に立ち上げ直す”のが得意。でも�
 
 ## 0) 道場の“型” 🥷（困ったらこれだけ）
 
+![The 3 Major K8s Troubles](./picture/docker_multi_orch_ts_study_028_three_troubles.png)
+
 ## まずは30秒ルーティン⏱️
+
+![30-Second Diagnosis Routine](./picture/docker_multi_orch_ts_study_028_diagnosis_routine.png)
 
 1. **現象確認**：Podが何状態？（CrashLoop？Pending？RunningだけどReady=0？）
 2. **証拠採取**：`describe` と `logs` と `events`
@@ -37,6 +41,8 @@ kubectl config set-context --current --namespace=dojo
 ---
 
 ## 2) CrashLoopBackOff 道場 💥🔁（“落ちて→起きて→また落ちる”）
+
+![Exponential BackOff](./picture/docker_multi_orch_ts_study_028_exponential_backoff.png)
 
 ## 2-1) わざと壊す（最小のCrashLoop）😈
 
@@ -130,6 +136,8 @@ v1.35系のPod Lifecycleドキュメントでは、CrashLoopBackOffの仕組み�
 
 ## 3) Pending 道場 ⏳🚧（“スケジュールできない”）
 
+![Pending (No Seat)](./picture/docker_multi_orch_ts_study_028_pending_noseat.png)
+
 Pendingは一言でいうと👇
 **「実行する席（ノード）が決まらない／座れない」**状態です🪑💦
 
@@ -210,6 +218,8 @@ tolerationが無いPodは `NoSchedule` で弾かれます🚫([Kubernetes][4])
 
 ## 4) NotReady 道場 🚑🧱（“ノードが病んでる”）
 
+![NotReady (Node Disconnect)](./picture/docker_multi_orch_ts_study_028_notready_disconnect.png)
+
 NotReadyは、ざっくり言うと👇
 **「そのノードのkubeletがControl Planeに健康報告できてない」**状態です📡💥
 GKEのトラブルシュートでも、NotReadyは「kubeletが正しく報告できてない状態」で、新しいPodを載せられなくなって容量が減る＝障害につながる、と整理されています([Google Cloud Documentation][5])
@@ -260,6 +270,8 @@ kubectl get nodes -w
 ---
 
 ## 5) “最後の切り札” kubectl debug（エフェメラルコンテナ）🪄🕵️‍♂️
+
+![kubectl debug Ephemeral Container](./picture/docker_multi_orch_ts_study_028_kubectl_debug.png)
 
 アプリのコンテナが **distroless** とかで「シェル無い！curl無い！」って時、普通に中に入れなくて詰みます😂
 そんな時に `kubectl debug` で **デバッグ用コンテナを横付け**できます🚀

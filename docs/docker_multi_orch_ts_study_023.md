@@ -28,6 +28,8 @@
 
 ## 3) TLSって結局なに？（超ざっくり）🧸🔒
 
+![Three pillars of TLS security](./picture/docker_multi_orch_ts_study_023_tls_functions.png)
+
 HTTPS = **HTTP + TLS** です📦
 TLSがやってくれるのは主に3つ👇
 
@@ -41,6 +43,8 @@ TLSがやってくれるのは主に3つ👇
 ---
 
 ## 4) どこでHTTPSにする？（設計の超基本）🧠🚪
+
+![TLS Termination Patterns](./picture/docker_multi_orch_ts_study_023_tls_termination_types.png)
 
 よくあるパターンはこの2つ👇
 
@@ -60,6 +64,8 @@ TLSがやってくれるのは主に3つ👇
 
 ## 5) 証明書の自動化って何が嬉しいの？🤔🔁
 
+![Manual vs Automated Renewal](./picture/docker_multi_orch_ts_study_023_renewal_comparison.png)
+
 手動更新はこうなりがち👇
 
 * 「更新日、忘れてた」→ 期限切れ💀
@@ -71,6 +77,8 @@ TLSがやってくれるのは主に3つ👇
 ---
 
 ## 6) cert-manager の“登場人物”🧩📦
+
+![cert-manager Resource Relationships](./picture/docker_multi_orch_ts_study_023_cert_manager_actors.png)
 
 cert-manager は Kubernetes 上で証明書を自動管理する定番OSSで、だいたいこう動きます👇
 
@@ -198,6 +206,8 @@ kubectl describe certificaterequest -n tls-demo
 ---
 
 ## ハンズオン②：Gateway API で HTTPS を終端する（入口に刺す）🚪🔒
+
+![Gateway API HTTPS Termination Flow](./picture/docker_multi_orch_ts_study_023_gateway_https_flow.png)
 
 ここからは「第22章の Gateway API 入門」と合体です🤝✨
 Gateway API のTLSガイドには、**HTTPS Listener は TLS Terminate で HTTPRoute を使う**と整理されています。([Kubernetes Gateway API][3])

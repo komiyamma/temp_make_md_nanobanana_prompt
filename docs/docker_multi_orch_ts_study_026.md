@@ -7,6 +7,8 @@
 
 ## 1) まず結論：最低限の“守りセット”🧰🔒
 
+![5 Security Context Flags](./picture/docker_multi_orch_ts_study_026_security_pillars.png)
+
 「とりあえずこれ入れとけば事故りにくい」基本セットはコレです👇
 （公式ドキュメントと、PSSの考え方に沿ったやつ）([Kubernetes][1])
 
@@ -24,6 +26,8 @@
 
 ## 2) “rootで動く”と何がマズいの？😇➡️😈
 
+![Root vs Non-Root Blast Radius](./picture/docker_multi_orch_ts_study_026_root_vs_nonroot.png)
+
 コンテナって、放っておくと **root（UID 0）で動く**ことが多いです。
 もしアプリが侵入されたとき、rootだと「できること」が増えすぎて、被害がデカくなりがちです💣
 なので **最小権限**（Least Privilege）が基本方針になります。([Docker][4])
@@ -31,6 +35,8 @@
 ---
 
 ## 3) SecurityContextって何者？（超ざっくり）🧠🗺️
+
+![Pod vs Container Context Scope](./picture/docker_multi_orch_ts_study_026_context_scope.png)
 
 SecurityContextは **Pod / Container がOSに対してどう振る舞うか**を決める設定です。
 ユーザーID、特権、ファイル権限、ケーパビリティ、読み取り専用…などを縛れます。([Kubernetes][1])
@@ -186,6 +192,8 @@ rootじゃないUIDになってたら勝ちです🎉
 
 ## 7) ハンズオン④：readOnlyRootFilesystem を入れて“改ざん耐性”📚🔒
 
+![Read-Only Root + Writable /tmp](./picture/docker_multi_orch_ts_study_026_readonly_fs.png)
+
 次は「**コンテナのルート領域を書き換え不可**」にします。
 攻撃者が侵入しても、ファイル落としたり改変したりしにくくなります🧱([Kubernetes][1])
 
@@ -249,6 +257,8 @@ spec:
 
 ## 8) 仕上げ：さらに“勝ち筋”に寄せる（推奨セット）🏆🛡️
 
+![Privilege Escalation Prevention](./picture/docker_multi_orch_ts_study_026_escalation_prevention.png)
+
 ここまで来たら、同時に入れちゃうと強いです💪
 （PSS Restricted の“考え方”に寄せる感じ）([Kubernetes][3])
 
@@ -268,6 +278,8 @@ securityContext:
 ---
 
 ## 9) “動かなくなった！”ときの切り分けテンプレ🥋🧯
+
+![The Hardening Troubleshooting Loop](./picture/docker_multi_orch_ts_study_026_troubleshooting_loop.png)
 
 困ったらこの順で見ればOKです（ほぼ勝てます）😎✨
 

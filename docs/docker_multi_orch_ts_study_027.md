@@ -16,6 +16,8 @@
 
 ## 1) まずは超ざっくり理解🧠💡（3点セットの役割）
 
+![The Observability Triad](./picture/docker_multi_orch_ts_study_027_observability_triad.png)
+
 ## ✅ Events（イベント）＝「外側の実況」🎙️
 
 * スケジューラやkubeletが「**Pullできない**」「**置けない**」みたいな“出来事”を残すよ📝
@@ -38,6 +40,8 @@
 
 ## 2) 困ったらこの順番！「切り分けの型」🧭🧯
 
+![5-Step Troubleshooting Workflow](./picture/docker_multi_orch_ts_study_027_troubleshooting_steps.png)
+
 まずはこの“型”を丸暗記でOK！😺👍
 
 1. `kubectl get pods` で状態を見る👀
@@ -50,6 +54,8 @@
 
 ## 3) Events編：イベントを“狙って見る”🕵️‍♂️🔎
 
+![Event TTL (Time To Live)](./picture/docker_multi_orch_ts_study_027_event_lifespan.png)
+
 ## イベントを見るコマンド（よく使うやつ）🧰✨
 
 * `kubectl describe pod <pod>`（まずこれ！）📝 ([Kubernetes][4])
@@ -59,6 +65,8 @@
 ---
 
 ## 4) Logs編：kubectl logsの“使える技”🔥📜
+
+![Logs --previous Technique](./picture/docker_multi_orch_ts_study_027_logs_previous.png)
 
 ## 「まず見る」ログの取り方🧪
 
@@ -73,6 +81,8 @@
 ---
 
 ## 5) Metrics編：kubectl topで“リソース不足”を疑う📈😵
+
+![Metrics Server Architecture](./picture/docker_multi_orch_ts_study_027_metrics_architecture.png)
 
 ## まず大事な前提👀
 
@@ -150,6 +160,8 @@ kubectl delete pod bad-image
 ---
 
 ## ハンズオンB：CrashLoopBackOffをLogsで倒す💥📣
+
+![CrashLoopBackOff Cycle](./picture/docker_multi_orch_ts_study_027_crashloop_cycle.png)
 
 ## 1) すぐ落ちるPodを作る😈
 
