@@ -17,6 +17,8 @@
 
 ## 1. StatefulSetって何者？（超ざっくり）🤔🧠
 
+![StatefulSet Identity Components](./picture/docker_multi_orch_ts_study_020_identity_trio.png)
+
 一言でいうと👇
 **「名札付きで、引っ越しても住所と倉庫が変わらないPodたち」** を扱う仕組みです🏷️🚚
 
@@ -33,6 +35,8 @@ Kubernetes公式も「StatefulSet Podは ordinal + stable network identity + sta
 
 ## 2. Deployment と StatefulSet の使い分け ⚖️🙂
 
+![Stateless vs Stateful Comparison](./picture/docker_multi_orch_ts_study_020_deployment_vs_statefulset.png)
+
 * **Deployment**：どのPodでも同じ。入れ替えてもOK。スケールも雑に増減OK🍔🍟
 * **StatefulSet**：**“あのPod（0番）であること”**に意味がある。順序や名前やディスクが大事🧱🗃️
 
@@ -44,6 +48,8 @@ Kubernetes公式も「StatefulSet Podは ordinal + stable network identity + sta
 ---
 
 ## 3. StatefulSetで絶対セットになりがちなやつ 👇🧩
+
+![Essential Components for StatefulSet](./picture/docker_multi_orch_ts_study_020_headless_and_templates.png)
 
 ## ✅ Headless Service（超重要）📡
 
@@ -199,6 +205,8 @@ kubectl port-forward pod/mini-0 8080:80
 
 ## 4-5. ここが本番：Podを消しても“同じ名前＆同じデータ”が戻る 😈➡️😇
 
+![Persistence across Pod Recreation](./picture/docker_multi_orch_ts_study_020_sticky_identity.png)
+
 Podを1個消します👇
 
 ```bash
@@ -221,6 +229,8 @@ kubectl get pod -l app=mini
 
 ## 5. 更新（アップデート）の考え方：StatefulSetは“慎重派”🔄🧠
 
+![Ordered Rolling Update](./picture/docker_multi_orch_ts_study_020_rolling_update.png)
+
 StatefulSetのRollingUpdateは、基本 **大きい番号→小さい番号**の順に、1個ずつ更新します。([Kubernetes][6])
 さらに **partition** を使うと「カナリア（試し更新）」もできます🐤([Kubernetes][6])
 
@@ -240,6 +250,8 @@ Kubernetes v1.35 では、StatefulSetの更新中に **同時に落ちていいP
 ---
 
 ## 6. “DBをStatefulSetで扱う”ときの設計メモ（超入門）🧠🗒️
+
+![DB Cluster Architecture](./picture/docker_multi_orch_ts_study_020_db_design_memo.png)
 
 DB系で大事になりがちな観点を、やさしくまとめます👇
 

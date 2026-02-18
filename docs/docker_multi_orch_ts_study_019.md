@@ -16,6 +16,8 @@
 
 ## 1) まず“超ざっくり世界観”🗺️✨（駐車場たとえ🚗）
 
+![PV/PVC Parking Metaphor](./picture/docker_multi_orch_ts_study_019_parking_metaphor.png)
+
 * **PV**：クラスタに存在する“駐車場（実体）”🚗🅿️
   → 管理者が作るか、仕組みで自動作成される ([Kubernetes][1])
 * **PVC**：ユーザーが出す“駐車券（この条件の場所ほしい）”🎫
@@ -32,7 +34,12 @@
 
 ## 2) 2026ストレージ事情の“ここだけ”メモ 🧠⚠️
 
+![Dynamic Provisioning Magic](./picture/docker_multi_orch_ts_study_019_dynamic_provisioning.png)
+
 * **Dynamic Provisioning** は「PVCを作ったらストレージが自動で用意される」仕組み。手でPVを量産しなくてOK👌 ([Kubernetes][2])
+
+![WaitForFirstConsumer Logic](./picture/docker_multi_orch_ts_study_019_wait_for_first_consumer.png)
+
 * **StorageClassの`volumeBindingMode: WaitForFirstConsumer`** は超重要！
   PVの確保/バインドを“Podがどこに置かれるか”が決まるまで待てる（ゾーン/トポロジ系の事故が減る）⏳🧭 ([Kubernetes][3])
 * “ローカル（ノードのディスク）”系は便利だけど、**マルチノードでは置き場所（ノード）が大事**。
@@ -129,6 +136,8 @@ kubectl exec -it chapter19-writer -- cat /data/hello.txt
 
 ## 3-4. Podを消して作り直す（データ残ってる？）🫣➡️😇
 
+![Data Persistence across Restarts](./picture/docker_multi_orch_ts_study_019_pod_restart_data.png)
+
 まず消す👇
 
 ```bash
@@ -149,6 +158,8 @@ kubectl exec -it chapter19-writer -- cat /data/hello.txt
 ---
 
 ## 4) “アクセスモード”でハマらないための最低限🧠🧷
+
+![Access Modes Explained](./picture/docker_multi_orch_ts_study_019_access_modes.png)
 
 PVCでよく使うやつ👇（雰囲気だけでOK！）
 
@@ -172,6 +183,8 @@ kubectl get pv
 ```
 
 ## 5-2. ありがち原因トップ3 😇
+
+![Pending PVC Diagnosis](./picture/docker_multi_orch_ts_study_019_pvc_pending_reasons.png)
 
 1. **StorageClassが無い / defaultが無い**
    → PVCが「どこに作っていいか分からん…」で止まる🫠

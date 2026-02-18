@@ -12,6 +12,8 @@
 
 ## 1) Job と CronJob のざっくり違い 🧠✨
 
+![Job vs CronJob Distinction](./picture/docker_multi_orch_ts_study_018_job_vs_cronjob.png)
+
 * **Job**：1回きりの “バッチ実行” 🏃‍♂️💨 → ✅終わったら終了
 * **CronJob**：スケジュールに従って “Jobを定期的に作る” ⏱️ → Jobを量産する係
 
@@ -21,6 +23,8 @@ CronJobは「繰り返しスケジュールでJobを起動する」仕組みで�
 ---
 
 ## 2) まずは “1回だけ” 動く Job を作る 🧪✅
+
+![Job Execution Lifecycle](./picture/docker_multi_orch_ts_study_018_job_lifecycle.png)
 
 ## ✅ ゴール
 
@@ -60,6 +64,8 @@ kubectl logs -l job-name=hello-job
 ---
 
 ## 3) “失敗したらどうなる？” をわざと体験する 😈➡️😇
+
+![Job Retry Mechanism (Backoff)](./picture/docker_multi_orch_ts_study_018_backoff_retry.png)
 
 Jobは失敗すると、**リトライ**します。
 その回数の上限が `backoffLimit` で、デフォルトは **6** です。([Kubernetes][1])
@@ -125,6 +131,8 @@ spec:
 
 ## 4) 後片付け（超重要）🧹✨：TTL で Job を自動削除する
 
+![TTL Controller Cleanup](./picture/docker_multi_orch_ts_study_018_ttl_cleanup.png)
+
 Jobは放置すると溜まります 😇💦
 そこで `ttlSecondsAfterFinished`！
 
@@ -156,6 +164,8 @@ CronJobの重要フィールドはこれ👇（覚える順に並べたよ🧠�
 
 ## (2) timeZone：タイムゾーン地獄を回避 🌏⚠️
 
+![TimeZone Configuration Trap](./picture/docker_multi_orch_ts_study_018_timezone_trap.png)
+
 * **v1.27で stable**
 * 指定しないと `kube-controller-manager` のローカルTZで解釈されます ([Kubernetes][2])
   → 管理環境だとUTCだったりして「思ってた時間と違う😇」が起きがち
@@ -170,6 +180,8 @@ spec:
 ⚠️ `TZ=` や `CRON_TZ=` を schedule に埋め込むのは **非サポート**で、バリデーションエラーになります（公式が明言）。([Kubernetes][2])
 
 ## (3) concurrencyPolicy：重なったらどうする？🧯
+
+![Concurrency Policies](./picture/docker_multi_orch_ts_study_018_concurrency_policy.png)
 
 * `Allow`（デフォルト）: 重なっても両方走る
 * `Forbid` : 前のJobが走ってたら次をスキップ
@@ -261,6 +273,8 @@ kubectl logs -l job-name=manual-cleanup
 ---
 
 ## 8) トラブルシュート（よくある事故TOP7）🥋💥
+
+![CronJob Troubleshooting](./picture/docker_multi_orch_ts_study_018_troubleshoot_tips.png)
 
 1. ⏰ **時間がズレる**
    → `timeZone` を明示しよう（v1.27 stable）。([Kubernetes][2])
