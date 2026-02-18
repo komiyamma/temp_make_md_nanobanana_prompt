@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_003.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_003_01_enable.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_003_01_enable.png",
+  "prompt": "**Theme**: Enable Firestore UI\n\n**Labels to Render**:\n- Menu: \"Build\"\n- Item: \"Firestore Database\"\n- Button: \"Create database\"\n\n**Visual Details**:\n1. Core Concept: Starting the database creation process.\n2. Metaphor: Simplified UI mockup of the Firebase Console.\n3. Action: Clicking the button.\n4. Layout: UI Focus.",
+  "insertion_point": "## 1) Firestore を有効化する（DBを作る）🛠️🗃️"
+}

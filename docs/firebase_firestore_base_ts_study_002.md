@@ -16,6 +16,8 @@ CRUDの前にここがふわっとしてると、あとでずっと迷子にな�
 
 ## まずは超イメージ：Firestoreは「住所でたどる」📮🏠
 
+![Firestore Path Address](./picture/firebase_firestore_base_ts_study_002_01_path.png)
+
 Firestoreは **テーブル**じゃなくて、基本はこういう“住所”で見にいく感じ！👀✨
 （これが腹落ちすると一気にラクになる）
 
@@ -29,6 +31,8 @@ Firestoreでは、データは **ドキュメント（＝1件）**として保�
 ---
 
 ## ① 用語を“手触り”で覚える🧠✨
+
+![Terminology Visualization](./picture/firebase_firestore_base_ts_study_002_02_terms.png)
 
 ## コレクション（collection）＝箱📦
 
@@ -49,6 +53,8 @@ Firestoreでは、データは **ドキュメント（＝1件）**として保�
 
 ## ② ToDoの「データの形」を決めよう🛠️🧩
 
+![ToDo Data Shape](./picture/firebase_firestore_base_ts_study_002_03_data_shape.png)
+
 ここで決めるのは「ToDo 1件って、どんな項目が必要？」ってやつ😊
 あとでCRUDするとき、ここがそのまま効いてくるよ〜⚡
 
@@ -66,6 +72,8 @@ Firestoreでは、データは **ドキュメント（＝1件）**として保�
 ---
 
 ## ③ TypeScriptで「型」を作って頭を整理しよう🧠⚛️
+
+![TypeScript Type Definition](./picture/firebase_firestore_base_ts_study_002_04_type.png)
 
 「DB設計」って聞くと身構えるけど、**型にすると一気にラク**😆✨
 
@@ -86,6 +94,8 @@ export type TodoDoc = {
 ---
 
 ## ④ 「ToDoを5件」JSONっぽく書いてみよう🧾✍️
+
+![Seed Data JSON](./picture/firebase_firestore_base_ts_study_002_05_json.png)
 
 ここが今日のメイン練習！✊😤
 **実データを先に作る**と、次章でConsole触るときに迷子にならないよ🧭✨
@@ -163,6 +173,8 @@ export const seedTodos: Array<{
 ---
 
 ## ⑤ AIで「フィールド案」と「サンプルデータ」を秒速で作る🤖⚡
+
+![AI Data Generation](./picture/firebase_firestore_base_ts_study_002_06_ai_gen.png)
 
 ここからが2026っぽいやつ！😎✨
 AIは“答えを出す係”というより、**たたき台製造機**として使うのが最強👍

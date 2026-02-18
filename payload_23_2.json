@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_002.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_002_02_terms.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_002_02_terms.png",
+  "prompt": "**Theme**: Terminology Visualization\n\n**Labels to Render**:\n- Container: \"Collection\"\n- Item: \"Document\"\n- Data: \"Field\"\n\n**Visual Details**:\n1. Core Concept: The hierarchy of Collection, Document, Field.\n2. Metaphor: A filing cabinet (Collection), a folder (Document), and a paper inside (Field).\n3. Action: Opening.\n4. Layout: Hierarchy.",
+  "insertion_point": "## ① 用語を“手触り”で覚える🧠✨"
+}

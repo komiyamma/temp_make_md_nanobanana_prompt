@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_001.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_001_05_cost.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_001_05_cost.png",
+  "prompt": "**Theme**: Cost Model\n\n**Labels to Render**:\n- Operation: \"Read / Write\"\n- Cost: \"Money\"\n- Realtime: \"Count as Read\"\n\n**Visual Details**:\n1. Core Concept: Operations incur costs.\n2. Metaphor: A coin slot or turnstile. Every time data passes, a coin drops.\n3. Action: Payment.\n4. Layout: Concept illustration.",
+  "insertion_point": "## 5) “怖さ”の正体＝だいたい課金と設計😇💸"
+}

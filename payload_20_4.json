@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_abuse_prevention_ts_study_020.md",
+  "proposed_filename": "firebase_abuse_prevention_ts_study_020_04_ai_protection.png",
+  "relative_link": "./picture/firebase_abuse_prevention_ts_study_020_04_ai_protection.png",
+  "prompt": "**Theme**: AI Cost Defense\n\n**Labels to Render**:\n- Threat: \"Excessive Calls\"\n- Layer 1: \"App Check\"\n- Layer 2: \"Rate Limit (100 RPM)\"\n- Asset: \"AI Logic\"\n\n**Visual Details**:\n1. Core Concept: Protecting expensive AI resources.\n2. Metaphor: A vault (AI) protected by a biometric scanner (App Check) and a turnstile (Rate Limit).\n3. Action: Defense.\n4. Layout: Layered security.",
+  "insertion_point": "## Step 3：AI Logic の “コスト事故防止” を仕上げる🤖💸"
+}

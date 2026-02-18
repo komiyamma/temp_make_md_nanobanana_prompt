@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_abuse_prevention_ts_study_020.md",
+  "proposed_filename": "firebase_abuse_prevention_ts_study_020_06_runbook.png",
+  "relative_link": "./picture/firebase_abuse_prevention_ts_study_020_06_runbook.png",
+  "prompt": "**Theme**: Operational Runbook\n\n**Labels to Render**:\n- Title: \"Runbook\"\n- Item 1: \"Metrics Check\"\n- Item 2: \"Debug Token Safelist\"\n- Item 3: \"Rollback Plan\"\n\n**Visual Details**:\n1. Core Concept: A finalized checklist for safe operation.\n2. Metaphor: A clipboard with a ticked checklist and a pen.\n3. Action: Checking off items.\n4. Layout: List view.",
+  "insertion_point": "## 最終成果物：運用手順書（Runbook）テンプレ🧾✅"
+}

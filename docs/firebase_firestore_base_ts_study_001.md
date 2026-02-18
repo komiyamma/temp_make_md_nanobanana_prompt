@@ -23,6 +23,8 @@
 
 ## 1) Firestoreを一言でいうと？🗣️🗃️
 
+![Firestore Core Concept](./picture/firebase_firestore_base_ts_study_001_01_concept.png)
+
 **「アプリのデータを“ドキュメント”として保存して、しかも“勝手に同期してくれる”データベース」**です✨
 リアルタイムで更新が飛んでくるのが強みで、オフラインにもある程度強いのが嬉しいポイント！📶➡️📱 ([Firebase][7])
 
@@ -34,6 +36,8 @@
 ---
 
 ## 2) “箱とノート”の超ざっくり図解📦📝
+
+![Box and Note Metaphor](./picture/firebase_firestore_base_ts_study_001_02_box_note.png)
 
 ToDoアプリを作るなら、例えば👇
 
@@ -61,6 +65,8 @@ SQLの行（row）っぽいけど、気持ちは「ノート」です📒✨
 
 ## 3) Firestoreの最大の気持ちよさ：リアルタイム⚡👀
 
+![Realtime Snapshot](./picture/firebase_firestore_base_ts_study_001_03_realtime.png)
+
 Firestoreは、**データが変わったら画面が勝手に更新できる**のが超強いです。
 その代表が `onSnapshot()`（購読）✨
 
@@ -77,6 +83,8 @@ Firestoreは、**データが変わったら画面が勝手に更新できる**�
 
 ## 4) じゃあ、Firestoreは何が得意？何が苦手？🎯🧩
 
+![Strengths and Weaknesses](./picture/firebase_firestore_base_ts_study_001_04_strengths.png)
+
 ## 得意💪✨
 
 * **リアルタイムでUIを更新したい**（チャット、ToDo、共同編集っぽい画面）⚡
@@ -91,6 +99,8 @@ Firestoreは、**データが変わったら画面が勝手に更新できる**�
 ---
 
 ## 5) “怖さ”の正体＝だいたい課金と設計😇💸
+
+![Cost Model](./picture/firebase_firestore_base_ts_study_001_05_cost.png)
 
 Firestoreは、基本的に **読み取り/書き込み/削除**などの操作回数がコストになりがちです。
 そしてリアルタイム購読も、更新が届く＝実質「読み取り」扱いになりやすいです📩
@@ -109,6 +119,8 @@ Firestoreは、基本的に **読み取り/書き込み/削除**などの操作�
 
 ## 6) この20章で作る完成イメージ（今日見たいゴール）🎯✨
 
+![App Goal Wireframe](./picture/firebase_firestore_base_ts_study_001_06_goal.png)
+
 完成形は **ToDo/メモ**のミニアプリです📝
 最低限こんな画面があるイメージ👇
 
@@ -122,6 +134,8 @@ Firestoreは、基本的に **読み取り/書き込み/削除**などの操作�
 ---
 
 ## 7) AIで“理解と作業”を加速するコツ🤖💨
+
+![AI Assistance](./picture/firebase_firestore_base_ts_study_001_07_ai_assist.png)
 
 ## A) FirebaseのAIサービス側（アプリ機能としてAIを入れる）🧠🔥
 

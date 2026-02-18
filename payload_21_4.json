@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_index.md",
+  "proposed_filename": "firebase_firestore_base_ts_index_04_crud_cycle.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_index_04_crud_cycle.png",
+  "prompt": "**Theme**: CRUD Cycle\n\n**Labels to Render**:\n- Create: \"Add\"\n- Read: \"Get\"\n- Update: \"Set/Update\"\n- Delete: \"Remove\"\n\n**Visual Details**:\n1. Core Concept: The 4 basic database operations.\n2. Metaphor: A cycle or 4 quadrants.\n3. Action: Interaction with a document icon.\n4. Layout: Cycle.",
+  "insertion_point": "### 第05章：Create① 追加する（addDoc / setDoc の気持ち）➕📄"
+}

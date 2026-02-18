@@ -26,6 +26,8 @@ Consoleで **Firestoreを有効化 → `todos` コレクションを作る → T
 
 ## 1) Firestore を有効化する（DBを作る）🛠️🗃️
 
+![Enable Firestore UI](./picture/firebase_firestore_base_ts_study_003_01_enable.png)
+
 1. ブラウザで Firebase Console を開く🌐
 2. 対象プロジェクトを選ぶ🎯
 3. 左メニューで **Build → Firestore Database** を開く🧭
@@ -41,6 +43,8 @@ Consoleで **Firestoreを有効化 → `todos` コレクションを作る → T
 
 ## B. “ロケーション（リージョン）”の選択（ここは慎重に！）🗾
 
+![Region Selection Map](./picture/firebase_firestore_base_ts_study_003_02_location.png)
+
 * **近い場所ほど速い**（だいたい）⚡
 * **一度作るとロケーションは変更できない** ので、ここだけは丁寧に🧠
 * 日本向けなら、代表例として **Tokyo（asia-northeast1）** が選択肢になることが多いよ🗼（他にも選択肢あり）([Google Cloud Documentation][2])
@@ -52,6 +56,8 @@ Consoleで **Firestoreを有効化 → `todos` コレクションを作る → T
 ---
 
 ## 2) Consoleで `todos` を作って、ToDoを1件入れる➕📄
+
+![Add Data UI](./picture/firebase_firestore_base_ts_study_003_03_add_data.png)
 
 Firestore Database が作れたら、次はデータ投入だよ〜💪😆
 
@@ -76,6 +82,8 @@ Firestore Database が作れたら、次はデータ投入だよ〜💪😆
 
 ## 3) ミニ課題：`done:false` を3件入れてみよう🧩✅✅✅
 
+![Three ToDo Items](./picture/firebase_firestore_base_ts_study_003_04_add_3.png)
+
 やることはシンプル！
 
 * `todos` に **合計3件** になるまで追加
@@ -90,6 +98,8 @@ Firestore Database が作れたら、次はデータ投入だよ〜💪😆
 
 ## 4) チェック：Consoleで迷子にならないか確認🧭👀
 
+![Console 3-Pane View](./picture/firebase_firestore_base_ts_study_003_05_nav.png)
+
 次の質問にスッと答えられたら勝ち🏆✨
 
 * 「コレクション名は？」→ `todos` 📦
@@ -101,6 +111,8 @@ Firestore Database が作れたら、次はデータ投入だよ〜💪😆
 
 ## 5) ちょい怖ポイント：Rules（ルール）を“眺めるだけ”🔒👀
 
+![Rules Tab Glance](./picture/firebase_firestore_base_ts_study_003_06_rules.png)
+
 この章では **設定で詰まらないために**、Rulesは「存在だけ把握」でOK！
 
 * Firestore の **Rules** タブを開いてみる🔒
@@ -111,6 +123,8 @@ Firestore Database が作れたら、次はデータ投入だよ〜💪😆
 ---
 
 ## 6) AIで時短コーナー🤖💨（Antigravity / Gemini CLI を“下調べ係”にする）
+
+![AI Console Helper](./picture/firebase_firestore_base_ts_study_003_07_ai_agent.png)
 
 ここ、ちゃんと最新を追ってるよ！✅
 いまは **MCP** という仕組みで、AIエージェント（Antigravity や Gemini CLI）から Firebase/Firestore を触れる方向が公式で整備されてきてます。([Firebase][4])

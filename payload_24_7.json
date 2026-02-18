@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_003.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_003_07_ai_agent.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_003_07_ai_agent.png",
+  "prompt": "**Theme**: AI Console Helper\n\n**Labels to Render**:\n- Human: \"Where is Tokyo?\"\n- AI: \"Select asia-northeast1\"\n- Tool: \"Antigravity\"\n\n**Visual Details**:\n1. Core Concept: AI guiding the console setup.\n2. Metaphor: An AI avatar pointing to the correct dropdown menu on a screen.\n3. Action: Guiding.\n4. Layout: Over-the-shoulder view.",
+  "insertion_point": "## 6) AIで時短コーナー🤖💨（Antigravity / Gemini CLI を“下調べ係”にする）"
+}

@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_abuse_prevention_ts_study_020.md",
+  "proposed_filename": "firebase_abuse_prevention_ts_study_020_05_test_matrix.png",
+  "relative_link": "./picture/firebase_abuse_prevention_ts_study_020_05_test_matrix.png",
+  "prompt": "**Theme**: Test Scenarios Matrix\n\n**Labels to Render**:\n- Col 1: \"OFF (Broken)\"\n- Col 2: \"Recaptcha (OK)\"\n- Col 3: \"Debug (OK)\"\n- Rows: \"Firestore / Storage / AI\"\n\n**Visual Details**:\n1. Core Concept: Testing different modes against services.\n2. Metaphor: A matrix or grid with checkmarks and red crosses indicating expected behavior.\n3. Action: Verification.\n4. Layout: Grid view.",
+  "insertion_point": "## ここが本番：テストシナリオ表（3モード×4サービス）👀✅"
+}

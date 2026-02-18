@@ -1,0 +1,7 @@
+{
+  "filename": "docs/firebase_firestore_base_ts_study_002.md",
+  "proposed_filename": "firebase_firestore_base_ts_study_002_01_path.png",
+  "relative_link": "./picture/firebase_firestore_base_ts_study_002_01_path.png",
+  "prompt": "**Theme**: Firestore Path Address\n\n**Labels to Render**:\n- Collection: \"todos\"\n- Document: \"todo_123\"\n- Path: \"todos/todo_123\"\n\n**Visual Details**:\n1. Core Concept: Accessing data via a path.\n2. Metaphor: A street sign pointing to 'todos' and a house number 'todo_123'.\n3. Action: Navigation.\n4. Layout: Signpost.",
+  "insertion_point": "## まずは超イメージ：Firestoreは「住所でたどる」📮🏠"
+}
