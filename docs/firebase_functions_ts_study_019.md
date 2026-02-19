@@ -16,6 +16,8 @@
 
 ## 1) まず理解：Incoming Webhooksって何？🤔
 
+![Incoming Webhook Mechanism](./picture/firebase_functions_ts_study_019_01_webhook_concept.png)
+
 Slackの **Incoming Webhooks** は、「専用URLにJSONをPOSTすると、そのまま指定チャンネルへ投稿できる仕組み」だよ📮
 メッセージ本文だけじゃなく、レイアウト（Blocks）も使えるので、通知を見やすくできる✨ ([Slack開発者ドキュメント][1])
 
@@ -25,6 +27,8 @@ Slackの **Incoming Webhooks** は、「専用URLにJSONをPOSTすると、そ�
 ---
 
 ## 2) Slack側：Webhook URL を作る手順 🧩
+
+![Slack Setup Steps](./picture/firebase_functions_ts_study_019_02_slack_setup.png)
 
 やることはシンプル👇（Slack管理画面でポチポチ）
 
@@ -50,6 +54,8 @@ Slackの **Incoming Webhooks** は、「専用URLにJSONをPOSTすると、そ�
 
 ## 3-1. Secret を作成（Firebase CLI）🧰
 
+![Secret Set Command](./picture/firebase_functions_ts_study_019_03_secret_command.png)
+
 プロジェクトのルートで👇（Secret名は例：`SLACK_WEBHOOK_URL`）
 
 ```bash
@@ -74,6 +80,8 @@ Secret Managerは無料枠があるけど、アクセス回数などで課金が
 ## 4) Functions側：Secretを「関数に紐づけて」使う 🔗
 
 ## 4-1. TypeScript：defineSecret + secrets オプション（2nd gen）🧱
+
+![Accessing Secret in Code](./picture/firebase_functions_ts_study_019_04_define_secret.png)
 
 2nd genの基本形はこれ👇
 Secretを `defineSecret()` で宣言して、関数のオプション `secrets: [...]` で **その関数にだけ渡す** イメージだよ。 ([Firebase][3])
@@ -127,6 +135,8 @@ export const slackTest = onRequest(
 
 ## 5) デプロイして、Slackに投稿テストする 🚀📩
 
+![Test Flight](./picture/firebase_functions_ts_study_019_05_test_flight.png)
+
 ## 5-1. デプロイ
 
 ```bash
@@ -145,6 +155,8 @@ firebase deploy --only functions:slackTest
 
 ## 6) ローカル検証（Emulator）で詰まったら 🧪😵‍💫
 
+![Local Secret Override](./picture/firebase_functions_ts_study_019_06_local_override.png)
+
 エミュレータは、既定だとSecretを取りに行こうとする（権限がなくて失敗することもある）という挙動が公式にあるよ。 ([Firebase][2])
 その場合は `functions/.secret.local` で **ローカル用にSecretを上書き**できる👌 ([Firebase][2])
 
@@ -153,6 +165,8 @@ firebase deploy --only functions:slackTest
 ---
 
 ## 7) よくある事故と対策 🧯
+
+![Secret Leak Accident](./picture/firebase_functions_ts_study_019_07_leak_accident.png)
 
 ## 事故A：Slackに何も出ない😇
 

@@ -7,6 +7,8 @@ Functions と Firestore をローカルで動かして、**イベント → 関�
 
 ## 1) まずは全体像：Emulatorって何がうれしいの？🧠🧯
 
+![Local Emulator vs Production](./picture/firebase_functions_ts_study_016_01_emulator_vs_prod.png)
+
 ローカルの **Firebase Local Emulator Suite** を使うと、手元で **Firestore** や **Functions** の“ニセ本番”を動かせます💻🧪
 これがあると…
 
@@ -19,6 +21,8 @@ Functions と Firestore をローカルで動かして、**イベント → 関�
 ---
 
 ## 2) 最小構成の考え方（今日は “Functions + Firestore + UI” だけ）🧩
+
+![Three Essential Emulators](./picture/firebase_functions_ts_study_016_02_three_essentials.png)
 
 最低限はこの3つでOK👇
 
@@ -51,6 +55,8 @@ Functions emulator は HTTP / Callable / Firestoreトリガーなど色々エミ
 
 ## 4) 起動コマンド：まずは “必要なものだけ” 起動する🚀
 
+![Import/Export Cycle](./picture/firebase_functions_ts_study_016_03_import_export.png)
+
 PowerShell ならこんな感じでOK👇
 
 ```powershell
@@ -71,6 +77,8 @@ firebase emulators:start --only firestore,functions --import=./emulator-data --e
 ---
 
 ## 5) アプリ（React）を emulator に接続する🔌🧪
+
+![Connection Switch](./picture/firebase_functions_ts_study_016_04_connection_switch.png)
 
 ローカルで動かすときは、**SDKに「エミュレータ使ってね」**って教えます🙂
 Firestore と Functions はそれぞれ接続します。
@@ -100,6 +108,8 @@ if (location.hostname === "localhost") {
 ---
 
 ## 6) “イベント → 関数実行” をローカルで確認する⚡➡️⚙️➡️🧾
+
+![Event Trigger Loop](./picture/firebase_functions_ts_study_016_05_event_loop.png)
 
 ここが本日のメインイベント！🎉
 
@@ -140,6 +150,8 @@ Firestore トリガーの基本はこの公式ページが核です📚 ([Fireba
 
 ### 6-2) 動作確認の手順（超シンプル）✅
 
+![Verification Feedback](./picture/firebase_functions_ts_study_016_06_feedback_loop.png)
+
 1. `firebase emulators:start --only firestore,functions` で起動🚀
 2. Emulator UI（だいたい `localhost:4000`）を開く🖥️
 3. Firestore の画面で `messages` コレクションにドキュメント追加📝
@@ -151,6 +163,8 @@ Firestore トリガーの基本はこの公式ページが核です📚 ([Fireba
 ---
 
 ## 7) ローカルでも「秘密」を雑に扱わない🗝️🧯
+
+![Secrets Management](./picture/firebase_functions_ts_study_016_07_secrets_management.png)
 
 ローカル検証でありがちな事故👇
 「Webhook URL とか APIキーを、とりあえずコードに直書き」
