@@ -10,6 +10,8 @@
 
 ## 0) 先に知っておく“最重要”ポイント💡
 
+![Blaze Plan Requirement](./picture/firebase_functions_ts_study_004_01_blaze_warning.png)
+
 * **デプロイには Blaze（従量課金）プランが必要**です（無料枠だけだとデプロイ自体が進みません）💸🧯 ([Firebase][1])
 * Firebase Functions の Node.js ランタイムは **20 / 22 が現役**で、**18 は非推奨**の扱いです（なので迷ったら22寄りが安心）🟩 ([Firebase][1])
 * 2nd gen でデプロイされるかどうかは、コード側の import が **`firebase-functions/v2/...`** かどうかで決まります（ここ大事！）🧠✨ ([Firebase][2])
@@ -17,6 +19,8 @@
 ---
 
 ## 1) 準備：Node.js と Firebase CLI を入れる🧰（Windows）
+
+![CLI Setup Steps](./picture/firebase_functions_ts_study_004_02_cli_setup.png)
 
 ## 1-1. Node.js の確認✅
 
@@ -64,6 +68,8 @@ cd my-firebase-functions
 
 ## 2-2. 初期化コマンド🛠️
 
+![Firebase Init Wizard](./picture/firebase_functions_ts_study_004_03_init_flow.png)
+
 ```bash
 firebase init functions
 ```
@@ -81,6 +87,8 @@ firebase init functions
 
 初期化が終わると、だいたい👇みたいな構成になります（超ざっくり）📦
 
+![Functions Folder Structure](./picture/firebase_functions_ts_study_004_04_folder_structure.png)
+
 * `firebase.json`
 * `functions/`（ここがサーバー側コード）
 * `functions/src/index.ts`（メイン入口） ([Firebase][3])
@@ -88,6 +96,8 @@ firebase init functions
 ---
 
 ## 3) Hello HTTP 関数を書く👋🌐（2nd gen）
+
+![Hello World Function](./picture/firebase_functions_ts_study_004_05_hello_code.png)
 
 `functions/src/index.ts` を開いて、まずは最小の1個だけ書きます✍️
 （**v2 import** を使うので 2nd gen になります🔥） ([Firebase][2])
@@ -116,6 +126,8 @@ export const hello = onRequest({ region: "asia-northeast1" }, (req, res) => {
 
 ## 4) デプロイする🚀（最初の1回を通す）
 
+![Deploy Process](./picture/firebase_functions_ts_study_004_06_deploy_process.png)
+
 ## 4-1. まず Functions だけ deploy
 
 ```bash
@@ -136,6 +148,8 @@ firebase deploy --only functions
 ---
 
 ## 5) つまずきポイント集🧯（ここだけ見れば復帰できる）
+
+![Common Errors](./picture/firebase_functions_ts_study_004_07_troubleshooting.png)
 
 ## A) 「Blazeにして」系のエラー💸
 

@@ -7,6 +7,8 @@
 
 ## 1) Functionsって一言でいうと？🧠
 
+![Functions Overview Map](./picture/firebase_functions_ts_study_001_01_overview_map.png)
+
 **Functions = アプリの“裏側（サーバー側）”に置く小さなプログラム**です🧩
 ブラウザ（フロント）からは見えない場所で動いて、必要な時だけ呼び出されます。
 
@@ -18,6 +20,8 @@
 ## 2) フロントだけで頑張ると、どこで詰む？😵‍💫🧱
 
 ここが超大事！フロントは便利だけど、**向いてない仕事**が明確にあります👇
+
+![Frontend Limitations Warning](./picture/firebase_functions_ts_study_001_02_frontend_limits.png)
 
 ### ✅ フロントに置いちゃダメ（または危険）な代表例
 
@@ -35,6 +39,8 @@
 ---
 
 ## 3) Functionsの“3つの起動ボタン”🎛️✨
+
+![Three Trigger Types](./picture/firebase_functions_ts_study_001_03_trigger_types.png)
 
 Functionsは「いつ動くか？」が超シンプルです。基本はこの3つだけ！
 
@@ -60,6 +66,8 @@ Firestoreの更新など、**何かが起きたら勝手に動く**やつです�
 ---
 
 ## 4) ここでミニ演習✍️「どこに置く？」仕分けゲーム🎮
+
+![Sorting Game Visual](./picture/firebase_functions_ts_study_001_04_sorting_game.png)
 
 次の処理を、直感で **A:フロント / B:Functions / C:Firebaseの別機能（ルール等）** に仕分けてみてください🙂✨
 （この章の“手を動かす”はコレです！）
@@ -117,6 +125,8 @@ Firestoreの更新など、**何かが起きたら勝手に動く**やつです�
 
 ## 6) AI時代のFunctionsは“ガードレール役”がめちゃ重要🤖🛡️
 
+![AI Guardrail](./picture/firebase_functions_ts_study_001_05_ai_guardrail.png)
+
 AIをアプリに入れるとき、ありがちな事故はこれ👇
 
 * 無制限に呼ばれて **請求が爆発**💸
@@ -145,6 +155,8 @@ Firebaseには **Firebase AI Logic** があり、Gemini/Imagen系のモデルを
 
 ## 7) AIで学習・設計を爆速にするコツ🛸💻✨
 
+![AI Development Tools](./picture/firebase_functions_ts_study_001_06_ai_tools.png)
+
 このシリーズでは「AI導入済み」が前提なので、最初から“良い使い方”で行きましょう🙂
 
 ### ✅ まずはAIに「仕分け」を手伝わせる（超おすすめ）
@@ -169,6 +181,8 @@ AIがターミナル操作できる時は、**削除・上書き・移動系**�
 ---
 
 ## 8) ちょいメモ：ランタイムの空気感だけ👀
+
+![Node Runtime Status](./picture/firebase_functions_ts_study_001_07_runtime_status.png)
 
 この教材はTypeScript中心ですが、現時点でのNodeランタイムは **20 / 22 がフルサポート**で、**18は2025年初頭にdeprecate**された扱いです ([Firebase][9])
 （ここは3章でちゃんと整理します🙂）

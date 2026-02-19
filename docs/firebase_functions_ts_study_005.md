@@ -7,6 +7,8 @@ HTTP / Firestore / スケジュールが混ざっても、**迷子にならな�
 
 ## 0) 先に結論：迷子にならない “3ルール” 🧭
 
+![Three Architecture Rules](./picture/firebase_functions_ts_study_005_01_three_rules.png)
+
 1. **`src/index.ts` は「公開口」だけ**（中身は別ファイルへ）🚪
 2. **種類ごとにフォルダ分け**（http / firestore / schedule）🧩
 3. **共通処理は `lib/` に隔離**（初期化・ログ・バリデーション）🧰
@@ -25,6 +27,8 @@ Firebase の TypeScript Functions は基本的に、**TS → JS にビルドし�
 ## 2) まず作るべきフォルダ構成（最小で強い）🏗️
 
 Functions の中（`functions/`）は、こんな感じがおすすめです👇
+
+![Recommended Folder Structure](./picture/firebase_functions_ts_study_005_02_folder_structure.png)
 
 ```text
 functions/
@@ -59,6 +63,8 @@ functions/
 
 ## 3) `src/index.ts` は “薄く” する（最重要）🚪✨
 
+![Index.ts as Interface](./picture/firebase_functions_ts_study_005_03_index_role.png)
+
 `index.ts` に全部書くと、すぐカオス化します😇
 ここは **「どの関数を公開するか」だけ**にしましょう！
 
@@ -75,6 +81,8 @@ export { dailyReport } from "./schedule/dailyReport";
 ---
 
 ## 4) “共通の初期化” を 1か所にまとめる（Admin SDK）🧰
+
+![Singleton Initialization](./picture/firebase_functions_ts_study_005_04_singleton_init.png)
 
 Firestore を触るトリガーや HTTP API が増えると、初期化をあちこちでやりがちです🙃
 **初期化は 1ファイルに固定**が安全です✅
@@ -94,6 +102,8 @@ export function getDb() {
 ---
 
 ## 5) ログは “後で助かる形” に揃える 🧯👀
+
+![Structured JSON Logging](./picture/firebase_functions_ts_study_005_05_logging_json.png)
 
 運用すると「どこで失敗した？」が命になります。
 いまのうちに “ログの出し方” を統一しておくと未来の自分が喜びます🥹✨
@@ -170,6 +180,8 @@ export const dailyReport = onSchedule("every day 09:00", async () => {
 
 ### 7-1) Node ランタイム（超重要）⚙️
 
+![Node Runtime Selection](./picture/firebase_functions_ts_study_005_06_runtime_choice.png)
+
 2nd gen の Node は **22 / 20** が選べて、**18 は非推奨**です。迷ったらまず **Node 22** で OK🙆‍♂️ ([Firebase][3])
 （※ 1st gen だと Node 22 が使えないケースがあるので、2nd gen中心の方が安全です⚠️ ([Stack Overflow][4])）
 
@@ -185,6 +197,8 @@ Python は **3.10〜3.13 がサポート**で、**デフォルトは 3.13**で�
 ## 8) AI（Genkit / Gemini CLI / MCP）を “混ぜても崩れない” 置き場所🤖🧩
 
 ### 8-1) AI用フォルダ `src/ai/` を最初に作っておく🔥
+
+![AI Folder Strategy](./picture/firebase_functions_ts_study_005_07_ai_folder.png)
 
 「とりあえず index.ts に AI を直書き」すると、後で絶対ぐちゃります😂
 なのでこの章で **置き場所だけ確保**します（中身は第17章で育てる）🌱

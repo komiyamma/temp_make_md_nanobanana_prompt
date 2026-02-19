@@ -7,6 +7,8 @@
 
 ## 1) そもそも「ランタイム」って何？🤔
 
+![Runtime Concept](./picture/firebase_functions_ts_study_003_01_runtime_concept.png)
+
 ざっくり言うと、
 
 * **クラウド上で関数が動く“実行環境のバージョン”** のことです⚙️
@@ -18,6 +20,8 @@
 ---
 
 ## 2) 迷わない結論：まずは Node.js（TypeScript）でOK ✅🟦
+
+![Node Version Status](./picture/firebase_functions_ts_study_003_02_node_status.png)
 
 Cloud Functions（FirebaseのFunctions）は、現時点で **Node.js 20 と 22 をフルサポート**していて、**Node.js 18 は 2025年初頭に deprecated** になっています📌([Firebase][1])
 さらに公式の管理ドキュメントでも、サポート対象は **22 / 20 /（18はdeprecated）** と明記されています。([Firebase][2])
@@ -31,6 +35,8 @@ Cloud Functions（FirebaseのFunctions）は、現時点で **Node.js 20 と 22 
 ---
 
 ## 3) Node.js（TypeScript）を選ぶと何が嬉しい？🎁
+
+![Benefits of Node.js](./picture/firebase_functions_ts_study_003_03_why_node.png)
 
 ### ✅ 情報量が圧倒的に多い（詰まりにくい）📚
 
@@ -47,6 +53,8 @@ Firebase側でもAI支援（Gemini）を有効化できる導線が案内され�
 ---
 
 ## 4) Node.js のランタイム指定（超重要）🔧
+
+![Configuration Locations](./picture/firebase_functions_ts_study_003_04_config_location.png)
 
 Functions（Node）のランタイム指定は、主に2つのやり方があります👇
 
@@ -75,6 +83,8 @@ Functions（Node）のランタイム指定は、主に2つのやり方があり
 ---
 
 ## 5) Python を選ぶのはどんな時？🐍✨
+
+![Python Support](./picture/firebase_functions_ts_study_003_05_python_support.png)
 
 Pythonもちゃんと使えます！
 公式に **Python 3.10〜3.13 がサポート**されていて、**デフォルトは 3.13** と書かれています。([Firebase][1])
@@ -106,6 +116,8 @@ Pythonが向くのは例えば👇
 
 ## 6) 「それ以外の言語」…C#/.NET はどうする？🟪
 
+![C#/.NET Strategy](./picture/firebase_functions_ts_study_003_06_dotnet_strategy.png)
+
 ここが超大事ポイントです👇
 
 * FirebaseのFunctions（Cloud Functions for Firebase）では **Node/TS が主軸**（＋Python対応）です([Firebase][1])
@@ -129,6 +141,8 @@ Cloud Run functions 側だと、.NETランタイムとして例えば👇が選�
 ---
 
 ## 7) AIを使って“ランタイム選び”を秒速で終わらせる🤖⚡
+
+![AI Configuration Helper](./picture/firebase_functions_ts_study_003_07_ai_config.png)
 
 ここからが2026っぽいところ😎
 
