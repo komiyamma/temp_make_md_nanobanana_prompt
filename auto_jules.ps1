@@ -99,7 +99,7 @@ function Run-JulesForRange {
             } | ConvertTo-Json
             
             try {
-                Invoke-RestMethod -Uri "$BASE_URL/$sessionName:sendMessage" -Method Post -Headers $HEADERS -Body $msgBody | Out-Null
+                Invoke-RestMethod -Uri "$BASE_URL/${sessionName}:sendMessage" -Method Post -Headers $HEADERS -Body $msgBody | Out-Null
                 Write-Host "✅ 自動応答を送信しました。" -ForegroundColor Green
             }
             catch {
@@ -170,7 +170,7 @@ function Run-JulesForRange {
     git pull origin main -s recursive -X theirs
 
     Write-Host "✨ 範囲 $targetRange の全工程が完了しました！" -ForegroundColor Green
-    Start-Sleep -Seconds 60
+    Start-Sleep -Seconds 20
     return $true
 }
 
