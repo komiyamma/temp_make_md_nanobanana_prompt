@@ -16,6 +16,8 @@ Firebase Hostingは、`firebase.json` の **redirects / rewrites** を上手に�
 
 ## まずは超ざっくり：redirect と rewrite の違い🧠✨
 
+![Redirect vs Rewrite](./picture/firebase_hosting_ts_study_013_01_redirect_vs_rewrite.png)
+
 ## redirect（リダイレクト）🔀
 
 * **ブラウザに「別のURLへ行ってね」**と指示する
@@ -31,6 +33,8 @@ Firebase Hostingは、`firebase.json` の **redirects / rewrites** を上手に�
 ---
 
 ## 最重要：Hostingの「優先順位」🚦（ここだけ暗記でOK）
+
+![Hosting Priority Logic](./picture/firebase_hosting_ts_study_013_02_priority_order.png)
 
 Firebase Hostingは、だいたいこの順で処理するよ👇 ([Firebase][1])
 
@@ -50,6 +54,8 @@ Firebase Hostingは、だいたいこの順で処理するよ👇 ([Firebase][1]
 ---
 
 ## ルール設計のコツ：事故らない並べ方テンプレ🧰✨
+
+![Safe Configuration Template](./picture/firebase_hosting_ts_study_013_03_recommended_order.png)
 
 おすすめの並び（超実務っぽいやつ）👇
 
@@ -80,6 +86,8 @@ Firebase Hostingは、だいたいこの順で処理するよ👇 ([Firebase][1]
 ---
 
 ## 1) redirect を追加：`/old` → `/new`（移転）🔀
+
+![301 Redirect](./picture/firebase_hosting_ts_study_013_04_redirect_301.png)
 
 `firebase.json` の `hosting.redirects` に追加👇
 
@@ -120,6 +128,8 @@ Firebase Hostingは glob を強く推してるので、こういう書き方も�
 ---
 
 ## 2) rewrite を追加：`/api/**` は SPA に飲ませない🧯
+
+![API Bypass Strategy](./picture/firebase_hosting_ts_study_013_05_api_rewrite.png)
 
 React SPAをHostingで出すと、最後に `** → /index.html` を置きがち。
 でもそのままだと `/api/hello` まで index.html が返って「え？」ってなる😵‍💫
@@ -175,6 +185,8 @@ Cloud Run rewrite は対応メソッドに制限がある（一般的なHTTPメ�
 
 ## 3) SPAの最終キャッチ：最後に `** → /index.html` 🧹✨
 
+![The SPA Catch-All](./picture/firebase_hosting_ts_study_013_06_spa_catch_all.png)
+
 React SPAなら、最後にこれを置くのが王道！ ([Firebase][1])
 
 ```json
@@ -205,6 +217,8 @@ Hosting は「そのURLに**実ファイルが存在する**」とき、rewrite�
 ---
 
 ## ローカルで確認する（いきなり本番に出さない）🧪
+
+![Local Verification](./picture/firebase_hosting_ts_study_013_07_verification.png)
 
 ## Hosting Emulator でテスト🧪🏠
 

@@ -6,6 +6,8 @@
 
 ## 1) キャッシュって何が起きてるの？（2階建てで考える）🏢🏢
 
+![Two Layers of Cache](./picture/firebase_hosting_ts_study_012_01_cache_layers.png)
+
 キャッシュはざっくり **2か所**にあります👇
 
 * **ブラウザキャッシュ**（あなたのPCのChromeが持つ）🧠
@@ -19,6 +21,8 @@
 ---
 
 ## 2) Cache-Control をざっくり理解しよう📦
+
+![Cache-Control Cheatsheet](./picture/firebase_hosting_ts_study_012_02_header_values.png)
 
 キャッシュの挙動は、基本 **`Cache-Control` ヘッダー**で決まります📌 ([Firebase][1])
 
@@ -36,6 +40,8 @@
 ---
 
 ## 3) React + Hosting の「壊れない定番」ルール🍣✨
+
+![The Stale HTML Problem](./picture/firebase_hosting_ts_study_012_03_broken_cache_flow.png)
 
 ここが最重要！💥
 React(Viteなど)のビルドは、JS/CSSがだいたい **ファイル名にハッシュ**（例: `app.a1b2c3.js`）が付きます。
@@ -58,6 +64,8 @@ React(Viteなど)のビルドは、JS/CSSがだいたい **ファイル名にハ
 
 ## 4) `firebase.json` でキャッシュを設定する🧾🛠️
 
+![Safe Caching Strategy](./picture/firebase_hosting_ts_study_012_04_safe_strategy.png)
+
 Firebase Hosting は `firebase.json` の **`hosting.headers`** でレスポンスヘッダーを付けられます✍️ ([Firebase][2])
 しかも **ルールは上から順に評価される**（順番が大事）📌 ([Firebase][2])
 さらに重要：**ヘッダーのマッチングは rewrites より先に行われます**（SPAの /about などは “/about でマッチ” する）🧠 ([Firebase][2])
@@ -65,6 +73,8 @@ Firebase Hosting は `firebase.json` の **`hosting.headers`** でレスポン�
 ---
 
 ## 4-1) まずはコピペでOKな“鉄板セット”🥇
+
+![Configuration Cascade](./picture/firebase_hosting_ts_study_012_05_json_cascade.png)
 
 > 目的：SPAのどのURLでもHTMLは更新確認、資産は長期キャッシュ✅
 
@@ -111,6 +121,8 @@ Firebase Hosting は `firebase.json` の **`hosting.headers`** でレスポン�
 ## 5) 手を動かす：キャッシュを“見える化”して安全確認🔎👀
 
 ## 手順①：いまのヘッダーを確認する（変更前）🧪
+
+![Verifying with DevTools](./picture/firebase_hosting_ts_study_012_06_verify_headers.png)
 
 1. 公開URLを Chrome で開く🌐
 2. DevTools（F12）→ **Network** タブ📡
@@ -180,6 +192,8 @@ firebase hosting:channel:deploy cache-lab
 → HTMLは `no-cache`（再検証）にするのが安全🛡️
 
 ## 事故②：404 がしばらく直らない😵
+
+![The 404 Cache Trap](./picture/firebase_hosting_ts_study_012_07_404_trap.png)
 
 Firebase Hosting は **存在しないURLの 404 をCDNが最大10分キャッシュ**することがあります🕙 ([Firebase][1])
 → 404作った/直した直後は「最大10分待つ」か「URL変えて確認」もあり
