@@ -208,6 +208,8 @@ API key restrictions（許可リスト）の設定ミスで起こることがあ
 
 ## Antigravity / Gemini CLI 活用（この章で効くやつ）🤖⚡
 
+![AI Generating Type Definitions](./picture/firebase_frontend_foundation_ts_study_010_antigravity_env.png)
+
 ## ✅ 1発で “envの型定義” を作らせる
 
 * やりたいこと：`.env.local` のキーから `vite-env.d.ts` を自動生成

@@ -140,6 +140,8 @@ export function Button({
 * **loading**：UIが固まったように見えない（スピナー＋押せない）
 
 > 🔥 Firebase AIを入れる時、**AI生成中**がいちばんユーザー不安になります
+
+![AI Loading State UI](./picture/firebase_frontend_foundation_ts_study_009_ai_loading_state.png)
 > だから「AI中は必ずloading表示する」ルールをここで決めると勝ちです🤖✨
 > クライアントからGemini/Imagenを呼ぶ場合は、FirebaseのクライアントSDKでAI機能を組み込みつつ、App Checkやレート制限で守る設計が前提になります🛡️ ([Firebase][2])
 
