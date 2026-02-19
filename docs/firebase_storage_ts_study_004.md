@@ -7,6 +7,8 @@
 
 ## 1) refってなに？超ざっくり言うと「住所札」🏷️📍
 
+![Reference Concept](./picture/firebase_storage_ts_study_004_01_ref_concept.png)
+
 Cloud Storage は「バケット（大きな箱）」の中に、`/` で区切った**階層っぽい見た目**でファイルが並びます。
 その中の「この場所に置く／この場所を触る」を指定するのが **参照（ref）** です🧭
 
@@ -22,6 +24,8 @@ Cloud Storage は「バケット（大きな箱）」の中に、`/` で区切�
 ---
 
 ## 2) まずは「パス設計」を決めよう📁🧠（ここが実務力！）
+
+![Path Design Tree](./picture/firebase_storage_ts_study_004_02_path_design.png)
 
 このあと **Rules（守り）** は “パスに対して” 書きます。
 つまり、パス設計が良いほど Rules が簡単・安全・事故りにくい！🛡️
@@ -44,6 +48,8 @@ Cloud Storage は「バケット（大きな箱）」の中に、`/` で区切�
 
 ## 3) ファイル名（fileId）を“衝突しない”ようにする💥🚫
 
+![UUID vs Filename](./picture/firebase_storage_ts_study_004_03_uuid.png)
+
 ### ✅ 正解に近いルール（おすすめ）
 
 * `fileId = UUID`（ランダムID）
@@ -55,6 +61,8 @@ Cloud Storage は「バケット（大きな箱）」の中に、`/` で区切�
 ---
 
 ## 4) パスに入れてOK/避けたい文字の話🧨🧯（地味に重要）
+
+![Path Constraints](./picture/firebase_storage_ts_study_004_04_path_constraints.png)
 
 Storage の参照パスは柔軟ですが、制限があります👇
 
@@ -70,6 +78,8 @@ Storage の参照パスは柔軟ですが、制限があります👇
 ---
 
 ## 5) 手を動かす：パス生成＆ref作成ユーティリティを作る🛠️✨
+
+![Ref Creation Code](./picture/firebase_storage_ts_study_004_05_ref_code_flow.png)
 
 ここでは「住所（文字列）」と「参照（ref）」を毎回手書きしないために、関数化しちゃいます🙌
 
@@ -157,6 +167,8 @@ Rules はパスベースで強く書けます。さらに `contentType` や `siz
 ---
 
 ## 8) AIサービスにもつながる話：画像×AIの“鍵”になるのが path 🗝️🤖🖼️
+
+![AI Path Key](./picture/firebase_storage_ts_study_004_06_ai_path_context.png)
 
 後で **Firebase AI Logic** を使って「画像の説明文（alt）生成」や「タグ付け」をやるとき、
 **どの画像に対する結果か？** を紐づける必要があります。

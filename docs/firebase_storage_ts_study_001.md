@@ -14,6 +14,8 @@ FirebaseのStorage（正確には *Cloud Storage for Firebase*）は、写真・
 
 ## 2) 画像は「バケット→パス→ファイル」で置かれる🪣🗂️
 
+![Storage Hierarchy](./picture/firebase_storage_ts_study_001_02_hierarchy.png)
+
 Storageの世界は、ざっくりこの3点セットです👇
 
 * **バケット（bucket）**🪣
@@ -30,6 +32,8 @@ Storageの世界は、ざっくりこの3点セットです👇
 ---
 
 ## 3) Firestoreとの役割分担が“現実アプリ感”の正体😎✨
+
+![Storage vs Firestore](./picture/firebase_storage_ts_study_001_01_role_separation.png)
 
 ここ、めちゃ大事です🧠
 
@@ -69,6 +73,8 @@ Web SDKは `getBlob()` / `getBytes()` みたいに **URLを経由せずSDKで取
 
 ## 5) Rulesは「サーバー側の門番」🛡️🚪
 
+![Rules Gatekeeper](./picture/firebase_storage_ts_study_001_03_rules_gate.png)
+
 Storageは、**Rules（ルール）**で守ります🛡️
 Rulesはサーバー側で動くので、クライアント側でズルしても通しません😤
 
@@ -85,6 +91,8 @@ Rulesはサーバー側で動くので、クライアント側でズルしても
 
 ## 6) 2026年の最新注意：Storageを触るならプラン周りも知っておく💸🧯
 
+![2026 Plan Warning](./picture/firebase_storage_ts_study_001_04_plan_warning.png)
+
 ここは“章2”で本格的にやるけど、**第1章でも地雷だけ先に回避**します😇
 
 * 2024-10-30以降：新しくデフォルトバケットを用意するには **Blaze必須**💳([Firebase][5])
@@ -97,6 +105,8 @@ Rulesはサーバー側で動くので、クライアント側でズルしても
 ---
 
 ## 7) AIを最初から絡める：画像アップロードは“AIの入口”🤖🖼️
+
+![AI Vision](./picture/firebase_storage_ts_study_001_05_ai_vision.png)
 
 画像が置けると、次の一手が一気に増えます🔥
 

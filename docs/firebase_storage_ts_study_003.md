@@ -7,11 +7,15 @@
 
 ## 1) 読む：この章のキモ🧠🔑
 
+![Image Picker UI](./picture/firebase_storage_ts_study_003_01_ui_mockup.png)
+
 ### ✅ 画像ファイルは `File` として取れる📄
 
 `<input type="file">` で選ばれたものはブラウザの `File` で受け取れるよ👀（後の章で **そのまま Storage の upload に渡せる**のが強い！） ([Firebase][1])
 
 ### ✅ プレビューは `URL.createObjectURL(file)` が速い⚡
+
+![createObjectURL Flow](./picture/firebase_storage_ts_study_003_02_preview_logic.png)
 
 画像を base64 に変換しなくても、**一時URL**を作って `img src` に置けるよ🧠✨
 使い終わったら `URL.revokeObjectURL()` で片付けるのが大事！（メモリリーク回避） ([MDN Web Docs][2])
@@ -35,6 +39,8 @@
 ---
 
 ### 実装：`ProfileImagePicker.tsx` を作る🧩
+
+![Component Logic](./picture/firebase_storage_ts_study_003_03_component_structure.png)
 
 ```tsx
 import React, { useEffect, useRef, useState } from "react";
@@ -277,6 +283,8 @@ export default function ProfilePage() {
 
 ## 3) ミニ課題：UIを“それっぽく”分岐させよう🎨✨
 
+![UI States](./picture/firebase_storage_ts_study_003_04_ui_states.png)
+
 どれも小さいけど、効きます😎
 
 * ✅ 未選択のときは「ここをクリックして選ぶ📷」を強調
@@ -303,6 +311,8 @@ export default function ProfilePage() {
 
 ### 🧠 プレビューでメモリが増えていく
 
+![Memory Leak Prevention](./picture/firebase_storage_ts_study_003_05_memory_leak.png)
+
 `createObjectURL()` は作りっぱなしだと残りやすいので、必ず `revokeObjectURL()` を cleanup で呼ぶのが安心✨ ([MDN Web Docs][2])
 
 ---
@@ -323,6 +333,8 @@ export default function ProfilePage() {
 ---
 
 ### B) おまけ：選んだ画像から “altテキスト” をAIで作る📝🤖
+
+![Client-side AI Analysis](./picture/firebase_storage_ts_study_003_06_ai_analysis.png)
 
 「アップロード前」でも、ローカル `File` を base64 にして **画像解析**できるよ（Firebase AI Logic の公式サンプルがまさにこの形） ([Firebase][6])
 
