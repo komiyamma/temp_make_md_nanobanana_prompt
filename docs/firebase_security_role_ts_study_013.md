@@ -4,6 +4,8 @@
 **「Rulesのコピペ地獄😵」を卒業して、読みやすく・直しやすく・事故りにくい🛡️ルールにする**ことです✨
 Rulesは条件（true/false）で守る世界なので、**読みやすさ＝安全性**に直結します✅ ([Firebase][1])
 
+![Comparison of messy vs clean code structure.](./picture/firebase_security_role_ts_study_013_01_messy_vs_clean.png)
+
 ---
 
 ## 1) 読む📖：なんで“関数化”が安全につながるの？🤔🔐
@@ -13,6 +15,7 @@ Rulesは条件（true/false）で守る世界なので、**読みやすさ＝安
 たとえば「ログイン必須」の条件を10か所にコピペすると…
 
 * 1か所だけ修正漏れ → **そこが穴になる**😱
+![Security risk from copy-paste errors.](./picture/firebase_security_role_ts_study_013_02_copy_paste_leak.png)
 * 似てるけど微妙に違う条件が混ざる → **挙動が読めなくなる**🌀
 * 後から見返して怖い → **触れなくなる（最悪）**🧟‍♂️
 
@@ -32,6 +35,8 @@ Rulesファイルは先頭で **`rules_version = '2';`** を使うのが基本�
 * **呼び出しの深さ（スタック）は最大20**🧱 ([Firebase][3])
 
 つまり、関数は「小さく」「浅く」「質問っぽい名前（is～ / can～）」が安全です🙂✨
+
+![Constraints of Firestore Rules functions.](./picture/firebase_security_role_ts_study_013_03_function_constraints.png)
 
 ---
 
@@ -111,6 +116,7 @@ service cloud.firestore {
 ```
 
 * `isSignedIn()` / `uid()` / `isOwner()` があるだけで、Rulesの可読性が一気に上がります📈✨
+![Building a strong foundation with common functions.](./picture/firebase_security_role_ts_study_013_04_function_building_blocks.png)
 * `hasOnly()` で「触っていいフィールドだけ」を縛れるのが超強いです🛡️（禁止リストより安全になりがち） ([Google Cloud Documentation][4])
 * `let` を使いたくなったら「式が長すぎる時だけ」にすると読みやすいです🙂（制限もあるので） ([Firebase][3])
 
@@ -170,6 +176,7 @@ service cloud.firestore {
 ✅ ここが気持ちいいポイント😍
 
 * `allow read: if isOwner(...)` みたいに **一瞬で意味が読める**
+![Code that reads like natural language.](./picture/firebase_security_role_ts_study_013_05_readable_rules.png)
 * 条件を直すとき、**直す場所が少ない**（＝穴が減る）🛡️✨
 * AIが生成したRulesも、関数があるとレビューしやすい👀✅
 
@@ -181,6 +188,8 @@ service cloud.firestore {
 ## 4) AIで加速🤖⚡（でも“最終責任”は人間🧑‍⚖️✅）
 
 ## 4-1. Gemini CLI / Firebase拡張で「叩き台」を作る🧰
+
+![AI assisting with security rules.](./picture/firebase_security_role_ts_study_013_06_ai_assistant.png)
 
 Firebaseの **AI prompt（Write security rules）** は、Gemini CLI の Firebase拡張から **Rulesとテストの下書き**を作る用途で提供されています。
 コードを解析してスキーマやアクセスを推測し、最小権限ベースで草案を作り、攻撃っぽい試行で弱点を探す設計になっています🧠🛡️ ([Firebase][5])

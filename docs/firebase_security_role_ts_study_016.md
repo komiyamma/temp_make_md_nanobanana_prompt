@@ -19,6 +19,8 @@
 ✅ これで「クライアント改造されたら終わり😱」を潰せる！
 （サーバー側で“役割”を確定させるからね）
 
+![RBAC Concept with Royalty Metaphor.](./picture/firebase_security_role_ts_study_016_01_rbac_royal.png)
+
 ---
 
 ## 1) 読む📖：Custom Claimsの超重要ポイント3つ⚠️
@@ -28,6 +30,7 @@
 * **サイズ上限は1000 bytes**、しかも **JSON化できる値だけ**（boolean / string / number / array / object など）([Firebase][5])
 * 予約語（OIDC / Firebase reserved names）もあるので、変なキー名は避ける([Firebase][5])
 * 「プロフィール」みたいな頻繁に変わる情報は **DBに置く**のが正解🧺（claimsは“権限”専用）
+![Appropriate data for Claims.](./picture/firebase_security_role_ts_study_016_02_claims_weight.png)
 
 ## 1-2. 付与は“特権サーバー環境”だけでやる🧨
 
@@ -51,6 +54,7 @@ claims は **次に新しいIDトークンが発行**されたタイミングで
 3. Firestore Rules で **admin / 一般ユーザーを分岐** 🛡️
 4. React側で **admin UI を出し分け** 🖥️✨
 5. Emulatorで **admin/user/未ログインをテスト** 🧪
+![Implementation Roadmap.](./picture/firebase_security_role_ts_study_016_03_roadmap.png)
 
 ---
 
@@ -119,6 +123,7 @@ export const setAdmin = onCall(async (req) => {
 
 > ✅ Custom claims は **特権サーバー環境のAdmin SDKからのみ設定すべき**([Firebase][5])
 > なので、こういうFunctions経由が王道だよ🙂✨
+![Flowchart of setAdmin function.](./picture/firebase_security_role_ts_study_016_04_set_admin_flow.png)
 
 ---
 
@@ -177,6 +182,7 @@ service cloud.firestore {
 
 🎉 これで完成！
 クライアントでURLを書き換えて他人の `{uid}` を読もうとしても、**Rulesが門番して落とす**🚪🛡️
+![Rules Logic Gate.](./picture/firebase_security_role_ts_study_016_05_rules_gate.png)
 
 ---
 
@@ -247,6 +253,7 @@ test("RBAC: adminだけadminOnlyLogsに書ける", async () => {
   await assertSucceeds(setDoc(doc(admin.firestore(), "adminOnlyLogs/log1"), { x: 1 }));
 });
 ```
+![Testing RBAC scenarios.](./picture/firebase_security_role_ts_study_016_06_testing_tubes.png)
 
 ---
 
