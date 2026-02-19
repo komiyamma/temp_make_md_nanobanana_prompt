@@ -22,6 +22,8 @@ Firestoreの制約は、ざっくり言うと **「インデックスで高速�
 
 ## 2) 2026の激アツ変更：複数フィールドで範囲ができるようになった🔥
 
+![Multiple Range Query](./picture/firebase_firestore_struncture_ts_study_017_01_multi_range_query.png)
+
 昔は「範囲（不等号）は1フィールドだけ」って縛りが強かったけど、今は **複数フィールドに対して範囲/不等号を組み合わせられる** ように整理されてるよ📈
 公式の “複数範囲” ガイドも更新されていて、例としてこんな形が載ってる👇（`salary` と `experience` の両方で範囲）([Firebase][1])
 
@@ -30,6 +32,8 @@ Firestoreの制約は、ざっくり言うと **「インデックスで高速�
 ---
 
 ## 3) ただし重要：`orderBy` の順番が “コスト” を左右する💸
+
+![OrderBy Cost](./picture/firebase_firestore_struncture_ts_study_017_02_orderby_cost.png)
 
 複数範囲クエリでは、どの複合インデックスが使われるかが超重要で、`orderBy` の並べ方で **スキャンするインデックス件数** が増減するよ😵‍💫
 公式でも「より絞れる（＝選択性が高い）条件のフィールドを先に `orderBy` に置く」と効率が良い、って説明されてる([Firebase][1])
@@ -40,6 +44,8 @@ Firestoreの制約は、ざっくり言うと **「インデックスで高速�
 ---
 
 ## 4) “複数範囲” とは別に、昔からの制約も普通に残ってる⚠️
+
+![Constraint Map](./picture/firebase_firestore_struncture_ts_study_017_03_constraint_map.png)
 
 ここ、検索UIを作る時にめちゃ踏みがち🥹
 
@@ -74,6 +80,8 @@ Firestoreの制約は、ざっくり言うと **「インデックスで高速�
 
 ## ステップ2：分類する（これができると勝ち🏆）
 
+![Filter Classification](./picture/firebase_firestore_struncture_ts_study_017_04_filter_classification.png)
+
 * 等価：`==`
 * 範囲/不等号：`> >= < <= != not-in`
 * OR系：`or / in / array-contains-any`
@@ -84,6 +92,8 @@ Firestoreの制約は、ざっくり言うと **「インデックスで高速�
 ---
 
 ## ステップ3：複数範囲クエリを “正しい型” で書く✍️（TypeScript）
+
+![Query Execution](./picture/firebase_firestore_struncture_ts_study_017_05_query_execution.png)
 
 例として「作成日レンジ」＋「いいね数レンジ」の2軸フィルタをやるよ📅❤️
 
@@ -135,6 +145,8 @@ const posts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 
 ## ステップ4：インデックス最適化の考え方（地味に差が出る）🧠⚙️
 
+![Query Explain](./picture/firebase_firestore_struncture_ts_study_017_06_query_explain.png)
+
 複数範囲クエリは **複合インデックス**が絡みやすい。
 しかも `orderBy` の順が悪いと、結果は同じでも **大量のインデックスを読んで捨てる** みたいなことが起きる😇
 
@@ -183,6 +195,8 @@ const posts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 ---
 
 ## AIで設計レビュー＆実装を爆速にする🤖⚡
+
+![AI Query Validator](./picture/firebase_firestore_struncture_ts_study_017_07_ai_validator.png)
 
 「検索の組み合わせで詰まる前に、AIに“ルールチェック”させる」のが強いよ🧠✨
 （エージェント型の開発環境やCLIエージェントが、設計レビューと相性良い）([Google Codelabs][5])
