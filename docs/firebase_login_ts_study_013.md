@@ -8,6 +8,8 @@ Firebase公式も「本番で全ブラウザ対応したいなら、必ず“ど
 
 ## 0) まず何が起きるの？🍪😵‍💫
 
+![Broken Redirect Flow](./picture/firebase_login_ts_study_013_01_broken_redirect.png)
+
 `signInWithRedirect()` は内部的に **クロスオリジン iframe** を使って「リダイレクト前後の状態」を受け渡しします。ところが最近は、ブラウザ側が **第三者ストレージ（≒3rd party cookies/ストレージ）をブロック**することが増えて、ここが壊れやすいです。([Firebase][1])
 
 しかもこれは「Chromeだけの話」じゃなくて、**Safari系**や「プライバシー強め設定のユーザー」でも普通に起きます🥲
@@ -24,6 +26,8 @@ Firebase公式も「本番で全ブラウザ対応したいなら、必ず“ど
 ---
 
 ## 2) 方針決め：あなたのアプリはどの“Option”を使う？🧭✨
+
+![Option Selection Compass](./picture/firebase_login_ts_study_013_02_option_compass.png)
 
 Firebase公式の推奨は「状況別に Option を選んでね」です。([Firebase][1])
 ここでは初心者がハマりにくい順に並べます👇
@@ -54,6 +58,8 @@ Firebase公式の推奨は「状況別に Option を選んでね」です。([Fi
 
 ## 3-1) クリック時：redirect開始フラグを立てる🚩
 
+![Redirect Flag Logic](./picture/firebase_login_ts_study_013_03_redirect_flag.png)
+
 **ポイント**：
 
 * redirect はページ遷移するので、**「今redirect中だよ」**を `sessionStorage` に持たせると、
@@ -76,6 +82,8 @@ export async function startGoogleRedirect() {
 ---
 
 ## 3-2) アプリ起動時：`getRedirectResult()` を「1回だけ」実行する🧩
+
+![Result Check Logic](./picture/firebase_login_ts_study_013_04_result_check.png)
 
 **ポイント**：
 
@@ -168,6 +176,8 @@ Firebase公式の Option を“自分の状況”に当てはめるチェック�
 
 ## 4-1) Option 1 を採るときのチェック✅
 
+![Option 1 Checklist](./picture/firebase_login_ts_study_013_05_option1_check.png)
+
 やることは概ねこの3つ👇（公式に書いてある要点です）([Firebase][1])
 
 1. **Firebase初期化の `authDomain` を、今使うドメインに合わせる**
@@ -194,6 +204,8 @@ Firebase公式の Option を“自分の状況”に当てはめるチェック�
 
 ## 5-1) Chrome / Edge で “3rd party cookieブロック” を再現する🧪
 
+![Cookie Block Testing](./picture/firebase_login_ts_study_013_06_cookie_test.png)
+
 Chrome系は、**ブロック状態をテストするための案内**が用意されています。([Privacy Sandbox][3])
 （設定場所はUIが変わることがあるので、迷ったら “third-party cookies / tracking protection” で検索すると早いです🔎）
 
@@ -214,6 +226,8 @@ redirect失敗時って、ユーザーに
 Firebase AI Logic は **WebからGeminiを安全寄りに呼ぶためのSDK**が用意されています。([Firebase][5])
 
 ## 6-1) Firebase AI Logic（Web）の最小呼び出し例🤖✨
+
+![AI Fix Guide](./picture/firebase_login_ts_study_013_07_ai_fix_guide.png)
 
 公式のWeb例はこんな感じです（`firebase/ai` から使う）([Firebase][6])
 

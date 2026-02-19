@@ -22,6 +22,8 @@
 
 ## まず大事な考え方3つ🧠🧯
 
+![AI vs Code Roles](./picture/firebase_login_ts_study_010_01_role_separation.png)
+
 1. **AIに“正解判定”をさせない**🙅‍♂️
    認証の成否、UI遷移、エラー分岐は**コードで決め打ち**。
    AIは「説明の文章」を作るだけ✍️✨
@@ -32,9 +34,12 @@
 * 送っちゃダメ：パスワード、確認コード、個人情報ドバドバ（メール全文など）🙅‍♀️
 
 3. **本番はApp Checkもセット**🛡️
+   ![App Check Defense](./picture/firebase_login_ts_study_010_03_app_check_defense.png)
    Firebase AI Logic は **App Check で不正クライアント対策**ができるし、**ユーザー単位のレート制限**もある（調整可能）ので、“ちゃんと運用する前提”が作りやすい👍 ([Firebase][1])
 
 ---
+
+![Data Filtering for AI](./picture/firebase_login_ts_study_010_02_data_filtering.png)
 
 ## 手順①：Firebase AI Logic をプロジェクトで有効化🔧🤖
 
@@ -48,6 +53,8 @@
 ---
 
 ## 手順②：Web(React/TS)で Firebase AI Logic を初期化する🧩✨
+
+![Firebase Initialization with AI](./picture/firebase_login_ts_study_010_04_ai_init.png)
 
 > 既に `firebase/app` と `firebase/auth` を初期化している前提で、**AIの分だけ追加**していくよ👍
 
@@ -88,6 +95,8 @@ export const geminiModel = getGenerativeModel(ai, { model: "gemini-2.5-flash" })
 ---
 
 ## 手順③：AIに「やさしい説明文」を作らせる関数を作る💬✨
+
+![AI Explanation Logic](./picture/firebase_login_ts_study_010_05_error_logic.png)
 
 `src/lib/ai/geminiUx.ts` みたいなのを作るイメージでいくね🧱
 
@@ -155,6 +164,8 @@ export async function aiExplainAuthError(params: {
 ---
 
 ## 手順④：UIに「AIで説明」ボタンを付ける🧷✨
+
+![UI Interaction Flow](./picture/firebase_login_ts_study_010_06_ui_state.png)
 
 例として、ログイン画面で `error` があるときに出すコンポーネント👇
 
@@ -237,6 +248,8 @@ export function AuthErrorHelp(props: {
 ---
 
 ## Antigravity / Gemini CLI で“楽して強くする”🚀🧠
+
+![AI Tool Roles](./picture/firebase_login_ts_study_010_07_ai_roles.png)
 
 ## Antigravity の使いどころ（超相性いい）🛰️
 
