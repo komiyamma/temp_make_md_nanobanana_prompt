@@ -10,6 +10,8 @@
 
 ## 1) まず覚える「3つの観測窓」🪟🪟🪟
 
+![Three Observation Windows](./picture/firebase_functions_ts_study_015_01_three_windows.png)
+
 ## ① ログ（何が起きた？）🧾
 
 * **Cloud Logging** に集まる（Functionsはここが中心）([Firebase][1])
@@ -26,6 +28,8 @@
 ---
 
 ## 2) ログは「console.log」でもいいけど、できれば“logger”🧰✨
+
+![Structured Logging](./picture/firebase_functions_ts_study_015_02_structured_log.png)
 
 Cloud Functions は **logger SDK（Node / Python）** が用意されてて、**構造化ログ（structured data）** を出せます。これが超強いです💪([Firebase][1])
 
@@ -60,6 +64,8 @@ export function sampleLog(uid: string) {
 ---
 
 ## 3) “良いログ”の型：START / OK / NG 🧯✨
+
+![Log Pattern Flow](./picture/firebase_functions_ts_study_015_03_log_pattern.png)
 
 初心者が最速で強くなるログ設計はこれです👇
 
@@ -115,6 +121,8 @@ firebase functions:log --only <FUNCTION_NAME>
 
 ## 6) Error Reporting：エラーを「一覧」で見れるようにする💥📌
 
+![Error Reporting Grouping](./picture/firebase_functions_ts_study_015_04_error_grouping.png)
+
 ## 自動で入るケース
 
 * **未処理例外** などは自動で Error Reporting に出る([Firebase][2])
@@ -126,6 +134,8 @@ firebase functions:log --only <FUNCTION_NAME>
 ---
 
 ## 7) アラートの入口：2種類だけ覚えよう🔔✨
+
+![Alert Types Comparison](./picture/firebase_functions_ts_study_015_05_alert_types.png)
 
 ## A) メトリクスでアラート（王道）📈
 
@@ -148,6 +158,8 @@ Cloud Monitoring のアラートは、**条件→インシデント→通知**�
 
 ## 8) 通知先：Slack に飛ばすのが便利📣💬
 
+![Slack Alert Flow](./picture/firebase_functions_ts_study_015_06_slack_flow.png)
+
 Cloud Monitoring は **Slack 通知チャンネル**を作れます（手順も公式にある）([Google Cloud Documentation][8])
 
 > ✅「アラートが来た→Slackで気づく→すぐ直す」
@@ -156,6 +168,8 @@ Cloud Monitoring は **Slack 通知チャンネル**を作れます（手順も�
 ---
 
 ## 9) AIで運用を楽にする（Gemini CLI / Firebase拡張）🤖🧰
+
+![AI Ops Assistant](./picture/firebase_functions_ts_study_015_07_ai_ops.png)
 
 Firebase の **Gemini CLI 拡張**を入れると、Firebase向けの能力が増えます。
 

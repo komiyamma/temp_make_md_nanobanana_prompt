@@ -7,6 +7,8 @@
 
 ## まず結論：スケジュール関数って何？🧠
 
+![Scheduled Function Concept](./picture/firebase_functions_ts_study_014_01_alarm_clock.png)
+
 `onSchedule` を使うと、決めた時刻や間隔で関数が自動実行されます⏰
 中では **Google Cloud の Cloud Scheduler が呼び出し役**になって、指定タイミングで関数を起動します。([Firebase][1])
 
@@ -24,6 +26,8 @@
 
 ## 仕組みのイメージ（ここ大事）🧩
 
+![Scheduler Architecture](./picture/firebase_functions_ts_study_014_02_scheduler_arch.png)
+
 デプロイすると自動で👇が作られます：
 
 * Cloud Scheduler の **ジョブ**
@@ -35,6 +39,8 @@
 ---
 
 ## お金の感覚（ビビりポイントを先に潰す）💸🧯
+
+![Cost Model Visualization](./picture/firebase_functions_ts_study_014_03_cost_model.png)
 
 スケジュール関数は「Cloud Schedulerのジョブ課金」が基本です。
 
@@ -66,6 +72,8 @@ Cloud Scheduler は
 
 ## タイムゾーン（日本はここをミスりがち）🌏🇯🇵
 
+![Timezone Setting](./picture/firebase_functions_ts_study_014_04_timezone_map.png)
+
 スケジュールは **タイムゾーン指定**できます。
 `ScheduleOptions.timeZone` を使うと、そのタイムゾーン基準で実行されます。([Firebase][3])
 
@@ -74,6 +82,8 @@ Cloud Scheduler は
 ---
 
 ## ハンズオン：毎朝レポートを Firestore に書く📝🔥
+
+![Idempotent Report Logic](./picture/firebase_functions_ts_study_014_05_idempotent_report.png)
 
 ここでは「毎朝7:00に、`dailyReports/YYYY-MM-DD` を作る」をやります☀️
 さらに **二重実行でも壊れない**ように“ガード”も入れます🛡️
@@ -195,6 +205,8 @@ Cloud Scheduler の画面から「今すぐ実行」できます（公式にも�
 
 ## ✅ 2) 「たまに2回動いてる気がする」😱
 
+![Execution Overlap](./picture/firebase_functions_ts_study_014_06_overlap_execution.png)
+
 それ、仕様として起き得ます（次が前の実行中に走る可能性）。([Firebase][1])
 ➡️ 対策は **冪等（同じ処理が複数回動いてもOK）**
 今回みたいに `docId` 固定＋ `create()` でガードはかなり強い🛡️✨
@@ -207,6 +219,8 @@ Cloud Scheduler の画面から「今すぐ実行」できます（公式にも�
 ---
 
 ## AIを絡めて“朝レポ”を気持ちよくする🤖🌅
+
+![AI Morning Routine](./picture/firebase_functions_ts_study_014_07_ai_morning.png)
 
 ここ、2026っぽく行こう✨
 

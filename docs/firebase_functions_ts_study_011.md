@@ -15,6 +15,8 @@
 
 ## まずは用語を超かんたんに👶📚
 
+![Firestore Trigger Concept](./picture/firebase_functions_ts_study_011_01_trigger_concept.png)
+
 Firestoreのイベントトリガーは「**ドキュメントが変わった瞬間に起動する関数**」です⚡
 ポイントは3つだけ覚えればOK👇
 
@@ -26,6 +28,8 @@ Firestoreのイベントトリガーは「**ドキュメントが変わった瞬
 ---
 
 ## 今日の主役：Firestoreトリガー4兄弟👨‍👩‍👧‍👦⚡
+
+![Four Trigger Types](./picture/firebase_functions_ts_study_011_02_trigger_types.png)
 
 Functions v2（2nd gen）では、Firestore向けにだいたいこの4つを使います👇 ([Firebase][1])
 
@@ -39,6 +43,8 @@ Functions v2（2nd gen）では、Firestore向けにだいたいこの4つを使
 ## ハンズオン：`messages/{id}` 作成→自動で整形して保存✍️⚙️✨
 
 ## 1) つくるFirestoreの形（イメージ）🧾
+
+![Message Document Structure](./picture/firebase_functions_ts_study_011_03_data_structure.png)
 
 `messages/{id}` に、こういう感じのドキュメントが入る想定👇
 
@@ -119,6 +125,8 @@ Firestoreコンソールで `messages` コレクションにドキュメント�
 
 ## つまずきポイント：更新ループ（無限発火）って何？🌀😇
 
+![Infinite Loop Trap](./picture/firebase_functions_ts_study_011_04_infinite_loop.png)
+
 たとえば `onDocumentWritten` は「作成/更新/削除ぜんぶ」で動くので、こういう事故が起きがち👇
 
 1. ドキュメント作成
@@ -132,6 +140,8 @@ Firestoreトリガーはこういう落とし穴があるよ、というのが�
 ---
 
 ## ループ回避の“鉄板3パターン”🛡️✨
+
+![Loop Avoidance Strategy](./picture/firebase_functions_ts_study_011_05_loop_avoidance.png)
 
 初心者はまずこれだけでOKです🙂
 
@@ -176,6 +186,8 @@ export const onMessageWritten = onDocumentWritten("messages/{id}", async (event)
 
 ## “二重に動くかも”対策：冪等（idempotent）ってこう考える🧠🔁
 
+![Idempotency Check](./picture/firebase_functions_ts_study_011_06_idempotency_check.png)
+
 Firestoreイベントは **at-least-once** なので、「同じイベントが2回来てもOK」設計が安心です💪 ([Firebase][2])
 今日の例なら、以下のどれかを入れるだけで強くなります👇
 
@@ -188,6 +200,8 @@ Firestoreイベントは **at-least-once** なので、「同じイベントが2
 ---
 
 ## AIで開発を加速する🤖🛸（Antigravity / Gemini CLI）
+
+![AI Code Review](./picture/firebase_functions_ts_study_011_07_ai_review.png)
 
 ここ、ちゃんと最新に追従しておきます💡
 **Gemini CLI の Firebase拡張**は、Firebase MCP server を自動で入れてくれて、Firebase向けのプロンプトやツール連携が強化されます🔧✨ ([Firebase][4])
