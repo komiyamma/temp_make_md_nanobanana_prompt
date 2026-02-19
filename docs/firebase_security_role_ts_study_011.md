@@ -15,7 +15,11 @@
 
 ## 1) なぜ文字数とパターンが“地雷”なの？💣😇
 
+![firebase_security_role_ts_study_011_01_string_bomb.png](./picture/firebase_security_role_ts_study_011_01_string_bomb.png)
+
 たとえば👇
+
+![firebase_security_role_ts_study_011_02_risk_scenarios.png](./picture/firebase_security_role_ts_study_011_02_risk_scenarios.png)
 
 * **超長文**を入れられて、画面が崩壊😱📱💥
 * **空文字や空白だけ**で、ランキングや一覧が汚染🤢🧻
@@ -26,6 +30,8 @@
 ---
 
 ## 2) Rulesで使う“武器”🗡️（今日の主役）
+
+![firebase_security_role_ts_study_011_03_rules_weapons.png](./picture/firebase_security_role_ts_study_011_03_rules_weapons.png)
 
 Rulesの文字列チェックは、まずこの3つで戦えます🙂✨
 
@@ -41,6 +47,8 @@ Rulesの文字列チェックは、まずこの3つで戦えます🙂✨
 
 ## 3) 例題：プロフィール更新を安全にする🧑‍💻✨
 
+![firebase_security_role_ts_study_011_04_profile_fields.png](./picture/firebase_security_role_ts_study_011_04_profile_fields.png)
+
 ここでは、`users/{uid}` のプロフィールを想定します🙂
 フィールド例👇
 
@@ -53,6 +61,8 @@ Rulesの文字列チェックは、まずこの3つで戦えます🙂✨
 ## 4) 手を動かす🧑‍💻🔥：Rulesで「文字数・パターン」を実装する
 
 ## ステップA：検証用の関数を作る（読みやすさUP✨）
+
+![firebase_security_role_ts_study_011_05_validation_logic.png](./picture/firebase_security_role_ts_study_011_05_validation_logic.png)
 
 ```rules
 rules_version = '2';
@@ -111,6 +121,8 @@ service cloud.firestore {
 ---
 
 ## ステップB：通る例✅ / 弾かれる例❌ をイメージする🧠
+
+![firebase_security_role_ts_study_011_06_good_bad_examples.png](./picture/firebase_security_role_ts_study_011_06_good_bad_examples.png)
 
 **displayName**
 
@@ -187,6 +199,8 @@ AIに出させるのは「形」まで。**安全の責任は人間**です🙂�
 ---
 
 ## 8) Firebase AI Logic と組み合わせる（“追加の安全装置”）🧠🧯
+
+![firebase_security_role_ts_study_011_07_defense_layers.png](./picture/firebase_security_role_ts_study_011_07_defense_layers.png)
 
 Rulesは「門番🚪」として最高なんだけど、
 **NGワード判定**とか **文脈での荒らし検知**みたいな“頭を使う判定”は苦手です🙂
