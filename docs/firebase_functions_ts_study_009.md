@@ -8,6 +8,8 @@ Callable（onCall）は、ふつうのHTTP API（onRequest）より“アプリ�
 
 ## 0) まずイメージ図🧠✨
 
+![Callable Overview](./picture/firebase_functions_ts_study_009_01_callable_overview.png)
+
 * React（Web）🖥️ → `httpsCallable()` 📦
 * 自動で添付されるもの✅
 
@@ -34,6 +36,8 @@ Callable（onCall）は、ふつうのHTTP API（onRequest）より“アプリ�
 
 ## 2) Callableは「AuthつきAPI」を作る最短ルート💡
 
+![Server-Side Checks](./picture/firebase_functions_ts_study_009_02_server_check.png)
+
 Callableは「Firebaseアプリ（SDK）」から呼ばれる前提のAPIです。なので……
 
 * 認証チェックがラク（`request.auth` を見るだけ）🙂
@@ -49,6 +53,8 @@ Callableは「Firebaseアプリ（SDK）」から呼ばれる前提のAPIです�
 （この章では“認証・防御の枠”を完成させるのが主役。AI本体は後で差し込める形にします👌）
 
 ### 3-1) Functions側（TypeScript）⚙️
+
+![Callable Logic Flow](./picture/firebase_functions_ts_study_009_03_logic_flow.png)
 
 * ポイント🧠
 
@@ -107,6 +113,8 @@ export const formatNote = onCall(
 ---
 
 ## 4) React側：`httpsCallable()` で呼ぶ📞✨
+
+![HttpsError Handling](./picture/firebase_functions_ts_study_009_04_error_handling.png)
 
 Callableは `fetch()` じゃなくて、**SDKの `httpsCallable()`** で呼ぶのが基本です🙂
 
@@ -168,6 +176,8 @@ Authだけでも大事だけど、現実の運用だと👇が起きがちです
 
 ### 6-1) Functions側：`enforceAppCheck: true` を付ける（v2）✅
 
+![App Check Enforcement](./picture/firebase_functions_ts_study_009_05_enforce_app_check.png)
+
 ```ts
 import { onCall, HttpsError } from "firebase-functions/v2/https";
 
@@ -221,6 +231,8 @@ export const appCheck = initializeAppCheck(app, {
 
 ### 6-3) 開発中は「Debug token」で詰まりを回避🧯🧪
 
+![Debug Token Usage](./picture/firebase_functions_ts_study_009_06_debug_token.png)
+
 ローカル開発・CIだと、App Check がうまく通らないことがあります。そんなときは **debug provider** を使います🙂
 ブラウザのコンソールに出る debug token を Firebase コンソールで登録してOK、という流れです🧪
 ([Firebase][4])
@@ -241,6 +253,8 @@ Callableは基本「SDKから呼ぶ」前提なので、CORSも“Callable流”
 ---
 
 ## 8) AI開発（Antigravity / Gemini CLI）でここを爆速にする🤖🛸
+
+![AI Acceleration](./picture/firebase_functions_ts_study_009_07_ai_acceleration.png)
 
 Callable周りは「雛形生成」「エラー原因の切り分け」「設定チェック」が地味に時間を食います😇
 そこで **Firebase MCP server** を使うと、AI側が Firebase CLI と同じ認証で情報を見に行けて、作業がかなりスムーズになります🧰✨

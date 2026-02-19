@@ -26,6 +26,8 @@
 
 ## 1) まず結論：CORSって何？🤔
 
+![CORS Traffic Controller](./picture/firebase_functions_ts_study_008_01_cors_traffic.png)
+
 CORSは、ざっくり言うと——
 **ブラウザが「そのWebページは、そのAPIを呼んでいい？」をチェックする仕組み**です🌐✅
 
@@ -37,6 +39,8 @@ Firebase公式のHTTP関数ドキュメントにも、HTTP関数は**デフォ�
 ---
 
 ## 2) つまずきポイント：Preflight（OPTIONS）って何👀？
+
+![Preflight (OPTIONS) Flow](./picture/firebase_functions_ts_study_008_02_preflight_flow.png)
 
 「GETなら動くのに、POSTしたら死ぬ😇」みたいな時、だいたいこれです。
 
@@ -97,6 +101,8 @@ export const apiEcho = onRequest(
 
 ## ⚠️ あるある注意：Originは「スキーム＋ドメイン＋ポート」🎯
 
+![Origin Components](./picture/firebase_functions_ts_study_008_03_origin_components.png)
+
 * `http://localhost:5173` と `http://localhost:3000` は**別Origin**です😵‍💫
 * `https://` と `http://` も別です
 * “プレビューURL”も別Originになります（プレビュー運用するなら、そこも許可リストに入れる）🧪
@@ -104,6 +110,8 @@ export const apiEcho = onRequest(
 ---
 
 ## 4) 超重要：CORSは“セキュリティ”ではない🙅‍♂️🔐
+
+![CORS is Not Security](./picture/firebase_functions_ts_study_008_04_cors_not_security.png)
 
 ここ、テストに出ます（マジで）📣
 
@@ -119,6 +127,8 @@ export const apiEcho = onRequest(
 ---
 
 ## 5) “本当の守り”の基本セット：Auth + App Check 🛡️✨
+
+![Three Layers of Defense](./picture/firebase_functions_ts_study_008_05_defense_layers.png)
 
 AI（Genkit / Firebase AI Logic）を裏側で呼ぶなら、ここ超大事💸🔥
 **守らないと、勝手に叩かれて課金が溶ける**系の事故が起きます。
@@ -145,6 +155,8 @@ Callable（onCall）なら `enforceAppCheck: true` が公式手順としてあ�
 ---
 
 ## 7) ハンズオン：HTTP関数で「CORS + Auth + App Check」を最低限いれる🧰🛡️
+
+![Manual Token Verification](./picture/firebase_functions_ts_study_008_06_manual_verification.png)
 
 ## 守りの設計（この章のゴール形）🏁
 
@@ -227,6 +239,8 @@ export const apiSecureEcho = onRequest(
 ---
 
 ## 9) AIでデバッグを爆速にする（Antigravity / Gemini CLI）🛸🤖
+
+![AI Debugging CORS](./picture/firebase_functions_ts_study_008_07_ai_debugging.png)
 
 CORSって、正直「1文字違い」で沼ります😇
 そんな時は **Gemini CLI + Firebase拡張**に“症状から原因を当てさせる”のが強いです💪
