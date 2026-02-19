@@ -15,6 +15,8 @@
 
 ## 落とし穴①：親ドキュメントを消しても、サブコレは消えない😇
 
+![Orphan Documents on Parent Delete](./picture/firebase_firestore_struncture_ts_study_005_01_orphan_documents.png)
+
 アプリのコードで `deleteDoc(postRef)` しても、**サブコレのドキュメントは自動で消えません**。
 つまり「記事は消えたのにコメントだけ残る（孤児化）」が起きます。([Google Cloud Documentation][1])
 
@@ -24,6 +26,8 @@
 ---
 
 ## 落とし穴②：削除は「一撃で全部」にならない（途中で止まることもある）🫠
+
+![Recursive Delete Failure](./picture/firebase_firestore_struncture_ts_study_005_02_recursive_delete_fail.png)
 
 サブコレ含む “ツリー削除” は、裏では大量のドキュメントを順番に消す処理になりがちで、**途中で失敗して半分だけ消える**こともあります。([Google Cloud Documentation][1])
 
@@ -36,6 +40,8 @@
 ---
 
 ## 落とし穴③：移動（＝構造変更）は“コピー＆切替”が基本🚚📦
+
+![Data Migration Strategy](./picture/firebase_firestore_struncture_ts_study_005_03_migration_strategy.png)
 
 Firestoreの構造を後で変えたくなったら、基本は👇
 **新しい場所へコピー → 読み取りを並行運用 → 切替 → 古い方を削除**。([Firebase][3])
@@ -62,6 +68,8 @@ Firestoreの構造を後で変えたくなったら、基本は👇
 ## Step B：削除方針を3択から選ぶ🎛️🗑️
 
 ## 方針1：論理削除（ゴミ箱）🗑️（いちばん事故りにくい）
+
+![Logical Deletion Flag](./picture/firebase_firestore_struncture_ts_study_005_04_logical_delete.png)
 
 記事を物理削除せず、`isDeleted: true` と `deletedAt` を付けて隠します。
 **コメントも同じ方針**にしておくと、親が消えた/残ったに振り回されにくいです😄

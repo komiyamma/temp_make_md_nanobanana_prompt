@@ -7,6 +7,8 @@ FirestoreのIDは“検索”じゃなくて“参照”を強くする道具…
 
 ## まず超重要：IDは“検索キー”じゃないよ🔎🙅‍♂️
 
+![ID as Reference vs Search Key](./picture/firebase_firestore_struncture_ts_study_003_01_id_search_vs_ref.png)
+
 Firestoreで「このデータ欲しい！」ってなる場面は大きく2種類👇
 
 * **(A) 参照で1件ピンポイント**：`doc(db, "posts", postId)` みたいに **IDで直に取りに行く** 💨
@@ -19,6 +21,8 @@ Firestoreで「このデータ欲しい！」ってなる場面は大きく2種�
 
 ## 自動ID（Auto ID）って何がうれしいの？🎲✨
 
+![Auto ID Load Balancing](./picture/firebase_firestore_struncture_ts_study_003_02_auto_id_load_balance.png)
+
 Firestoreは「意味のあるIDが無いなら、自動でID作っていいよ」って公式でも言ってます。([Firebase][1])
 しかも自動IDは、書き込みが偏って遅くなるのを避けやすい（散らす仕組み）ので、**高頻度で増えるデータに強い**です💪([Firebase][2])
 
@@ -30,6 +34,8 @@ Firestoreは「意味のあるIDが無いなら、自動でID作っていいよ�
 ---
 
 ## 意味のあるID（Custom ID）はいつ使う？🧩
+
+![Custom ID Use Cases](./picture/firebase_firestore_struncture_ts_study_003_03_custom_id_cases.png)
 
 「このIDに意味があると、運用がラク！」って場面もあります😊
 
@@ -61,6 +67,8 @@ Firestoreは「意味のあるIDが無いなら、自動でID作っていいよ�
 ---
 
 ## この教材の題材（User / Report / Post / Comment）でのおすすめID案🧠✨
+
+![Recommended ID Patterns](./picture/firebase_firestore_struncture_ts_study_003_04_recommended_ids.png)
 
 ここは“勝ちパターン”でいきます👇
 
@@ -177,6 +185,8 @@ export async function upsertDailyReport(input: {
 ---
 
 ## セキュリティルール（ID設計と相性がいい最小形）🛡️✨
+
+![Security Rules Matching](./picture/firebase_firestore_struncture_ts_study_003_05_security_rules_match.png)
 
 `users/{uid}` にすると、**「自分のuidだけアクセスOK」**が超書きやすいです😊
 （ルールの条件式の考え方は公式でも解説されています）([Firebase][5])
