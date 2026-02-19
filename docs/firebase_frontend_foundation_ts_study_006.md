@@ -11,6 +11,8 @@
 * Tailwindのクラスが長くなりがちな **ボタン・入力・カード** を “共通部品化” してスッキリさせる✨🎽
 * 後の章で **Firestore / Storage / AI（Firebase AI Logic）** を足していくときに、迷子にならない構造にする🧭
 
+![react_study_006_01_folder_struct](./picture/react_study_006_01_folder_struct.png)
+
 ---
 
 ## 6-1 まず決める「4つの箱」ルール 🧺🧠
@@ -40,6 +42,8 @@
 * Firebase / AI / 外部API など “外の世界” とやり取りする場所
 * **Reactを使わない**（`useState`とかを書かない）
 * ここにまとめると、UI側がスッキリして事故が減ります💥
+
+![react_study_006_02_four_boxes](./picture/react_study_006_02_four_boxes.png)
 
 > FirebaseのWeb SDKも「バージョン混在で壊れる」みたいな落とし穴があるので、外部系をまとめるのはかなり効きます🧯([Firebase][2])
 
@@ -173,6 +177,8 @@ export function Button({
 
 * `children` と `props` の受け渡しが基本動作です（Reactの基本）🙂([React][1])
 
+![react_study_006_03_button_variants](./picture/react_study_006_03_button_variants.png)
+
 ## Step 4：Input（共通部品）⌨️✨
 
 `src/components/ui/Input.tsx`
@@ -205,6 +211,8 @@ export function Input({ label, error, className, ...rest }: Props) {
 }
 ```
 
+![react_study_006_04_input_states](./picture/react_study_006_04_input_states.png)
+
 ## Step 5：Card（共通部品）🪪✨
 
 `src/components/ui/Card.tsx`
@@ -229,6 +237,8 @@ export function CardBody({ children }: { children: ReactNode }) {
   return <div className="text-sm text-slate-700">{children}</div>;
 }
 ```
+
+![react_study_006_05_card_structure](./picture/react_study_006_05_card_structure.png)
 
 ## Step 6：まとめてexport（使う側が楽になる）📦
 
@@ -321,6 +331,8 @@ export default defineConfig({
 ```
 
 これで `@/components/ui` みたいに書けます🎉
+
+![react_study_006_06_path_alias](./picture/react_study_006_06_path_alias.png)
 ※ tsconfig の `paths` を Vite が解釈する機能もありますが、パフォーマンスコストの注意があるので、最初は alias 方式が無難です🙂([vitejs][6])
 
 ---

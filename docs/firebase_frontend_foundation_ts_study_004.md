@@ -18,6 +18,8 @@ ReactのSPAは基本 **1枚のHTML（index.html）** で動きます。
 これがルーティングです🧭✨
 つまり **URL＝アプリの状態** です（どの画面を見てるか、どのユーザーを開いてるか、など）📌
 
+![react_study_004_01_routing_concept](./picture/react_study_004_01_routing_concept.png)
+
 ---
 
 ## 2) 今日の推奨：React Router v7 の入れ方 🧰✨
@@ -133,6 +135,8 @@ export function NotFoundPage() {
 ここでは“ミニ版の共通枠”だけ作ります（本格レイアウトは次章でガッツリ！）💪
 React Routerは **親（枠）＋子（ページ）** を **`Outlet`** で合成できます。([reactrouter.com][2])
 
+![react_study_004_02_layout_outlet](./picture/react_study_004_02_layout_outlet.png)
+
 **`src/layouts/AppShell.tsx`**
 
 ```tsx
@@ -187,6 +191,8 @@ export function AppShell() {
 React Router v7（Data Mode）では `createBrowserRouter` でルートをオブジェクトとして定義できます。([reactrouter.com][3])
 さらに、**pathなしの親ルート**を使うと「URLを増やさずに枠だけ作る（Layout Route）」ができます。([reactrouter.com][3])
 
+![react_study_004_03_router_tree](./picture/react_study_004_03_router_tree.png)
+
 **`src/router.tsx`**
 
 ```tsx
@@ -215,6 +221,8 @@ export const router = createBrowserRouter([
 ```
 
 > `:userId` のような **動的セグメント**は、URLから値を取り出す王道パターンです🧩（後でFirestoreの「詳細ページ」と相性バツグン！）([reactrouter.com][3])
+
+![react_study_004_04_dynamic_route](./picture/react_study_004_04_dynamic_route.png)
 
 ---
 
@@ -303,6 +311,8 @@ npm run dev
 
 これは**静的ホスティングあるある**です。
 解決は「どのURLで来ても index.html を返す」設定にします。
+
+![react_study_004_05_hosting_rewrite](./picture/react_study_004_05_hosting_rewrite.png)
 
 Firebase Hostingなら、`firebase.json` に **rewrite** を入れるのが王道です👇([Firebase][5])
 
