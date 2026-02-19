@@ -7,6 +7,8 @@
 
 ## 1) まず“何が起きる？”を超ざっくり理解🙂🧠
 
+![Install, Init, Verify Flow](./picture/firebase_startdash_ts_study_013_01_flow_overview.png)
+
 Firebaseは、あなたのReactアプリの中で
 
 * **Firebaseの設定（config）を読み込み** 🏷️
@@ -21,6 +23,8 @@ Firebaseは、あなたのReactアプリの中で
 
 ### 2-0. Nodeの確認（ここだけ最初に）🔎
 
+![Node Version Check](./picture/firebase_startdash_ts_study_013_02_node_version.png)
+
 PowerShell（またはターミナル）で👇
 
 ```bash
@@ -33,6 +37,8 @@ npm -v
 ---
 
 ### 2-1. Firebase JS SDK を入れる📦✨
+
+![npm install firebase](./picture/firebase_startdash_ts_study_013_03_npm_install.png)
 
 プロジェクト直下で👇
 
@@ -51,6 +57,8 @@ npm上の `firebase` は本日時点で **12.x 系**が配布されています�
 ---
 
 ### 2-2. `firebase.ts` を作って初期化する🌱⚡
+
+![firebase.ts Structure](./picture/firebase_startdash_ts_study_013_04_firebase_ts.png)
 
 おすすめ配置：`src/lib/firebase.ts`（迷子防止に“住所”を固定📍）
 
@@ -81,6 +89,8 @@ export const app: FirebaseApp =
 ---
 
 ### 2-3. 画面に「Firebase初期化OK」を出す✅🖥️
+
+![Success Message UI](./picture/firebase_startdash_ts_study_013_05_app_tsx_success.png)
 
 `src/App.tsx` を最小でこうします👇（成功/失敗で表示を変える✨）
 
@@ -135,6 +145,8 @@ npm run dev
 
 ### B. `Firebase App named '[DEFAULT]' already exists` 系💥
 
+![Duplicate Init Error](./picture/firebase_startdash_ts_study_013_06_duplicate_init_error.png)
+
 原因：**`initializeApp()` が複数回**呼ばれてる。
 対策：この章の `getApps().length === 0 ? initializeApp(...) : ...` 方式にしておくとラクです🙂（HMRでも起きがち⚡）([Stack Overflow][5])
 
@@ -159,6 +171,8 @@ Viteでは **`import.meta.env`** を使います。`process.env` じゃないで
 ---
 
 ## 5) 🤖FirebaseのAIサービスも“ここから繋がる”✨（AI Logicの入口案内）
+
+![AI Logic Foundation](./picture/firebase_startdash_ts_study_013_07_ai_logic_prep.png)
 
 いま作った `app`（FirebaseApp）が、**Firebase AI Logic** を使う時の“土台”にもなります🧱
 AI Logic のWeb手順でも **「npm install firebase → initializeApp」** が最初のステップです。([Firebase][7])

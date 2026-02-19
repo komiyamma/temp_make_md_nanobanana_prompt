@@ -15,6 +15,8 @@
 
 ## 1) まず読む：MCPってなに？（超ざっくり）🧩
 
+![MCP Concept](./picture/firebase_startdash_ts_study_015_01_mcp_concept.png)
+
 ## MCPは「AIと外部ツールの共通プラグ」🔌
 
 * **MCPサーバー**：できること（ツール）を提供する側
@@ -29,6 +31,8 @@
     …みたいな作業を“ツールとして”扱えるようになります🧰✨ ([Firebase][1])
 
 ## 重要：権限は「Firebase CLIのログイン権限」が使われる🪪
+
+![MCP Authentication](./picture/firebase_startdash_ts_study_015_02_cli_auth.png)
 
 Firebase MCPサーバーがツール実行するときは、**その環境の Firebase CLI を認可している資格情報**（ログイン済みユーザー or ADC）で動きます。
 つまり **あなたの権限で動く**ので、安全に扱うのが超大事です⚠️ ([Firebase][1])
@@ -50,6 +54,8 @@ Firebase公式の説明だと、MCPサーバーでAIは例えばこんなこと�
 ---
 
 ## 3) 手を動かす：Antigravityで入れる（いちばん簡単）🛸✨
+
+![Antigravity MCP Install](./picture/firebase_startdash_ts_study_015_03_antigravity_install.png)
 
 ## ✅ 手順（UIでOK）
 
@@ -77,6 +83,8 @@ Firebase公式の説明だと、MCPサーバーでAIは例えばこんなこと�
 ---
 
 ## 4) 手を動かす：WindowsでGemini CLIに入れる（おすすめは拡張）💻🤖
+
+![Gemini CLI Extension](./picture/firebase_startdash_ts_study_015_04_gemini_extension.png)
 
 ## ✅ いちばん楽：Firebase拡張を入れる
 
@@ -119,12 +127,16 @@ Firebase拡張は👇をまとめてやってくれます🧠✨ ([Firebase][3])
 
 ## ✅ Gemini CLIなら：スラッシュコマンドで導線が速い⚡
 
+![Slash Commands](./picture/firebase_startdash_ts_study_015_05_slash_commands.png)
+
 * `/firebase:init`（Firebaseサービスの初期セットアップ）([Firebase][1])
 * `/firebase:deploy`（デプロイの案内＆実行プラン）([Firebase][3])
 
 ---
 
 ## 6) 安全運転のコツ：許可の出し方（ここ超重要）🧯🔐
+
+![MCP Safety Rules](./picture/firebase_startdash_ts_study_015_06_safety_rules.png)
 
 Firebase MCPは「ツール実行」ができる分、**許可の出し方**で事故が減ります🙆‍♂️
 
@@ -172,6 +184,8 @@ npx -y firebase-tools@latest login
 ---
 
 ## 8) ミニ課題（5分）🎯✨
+
+![AI Project Navigation](./picture/firebase_startdash_ts_study_015_07_ai_navigation.png)
 
 ## ✅ お題：AIに「迷子防止ナビ」を作らせる🧭🤖
 
