@@ -12,6 +12,8 @@
 
 ## 1) まず “Firestoreの形” をイメージしよう 🧠🧩
 
+![Users Collection Structure](./picture/firebase_frontend_foundation_ts_study_012_01_structure.png)
+
 Firestoreは **ドキュメント** が **コレクション** に入ってる感じです📦
 （SQLのテーブル/行とは考え方が違うよ〜）🗂️ ([Firebase][1])
 
@@ -33,6 +35,8 @@ Firestoreは **ドキュメント** が **コレクション** に入ってる�
 ---
 
 ## 2) Consoleでサンプルデータを入れる 🧪🧑‍💼
+
+![Console Data Entry](./picture/firebase_frontend_foundation_ts_study_012_02_console_entry.png)
 
 最初はUIづくりが目的なので、Consoleで手で数件作るのが早いです⚡
 
@@ -90,6 +94,8 @@ export type UserRow = {
 
 ## 4-2) 取得サービスを書く（servicesに寄せる）🧰
 
+![Fetch Logic Flow](./picture/firebase_frontend_foundation_ts_study_012_03_fetch_logic.png)
+
 `src/services/users.ts`
 
 ```ts
@@ -135,6 +141,8 @@ export async function fetchUsersNewestFirst(pageSize = 20): Promise<UserRow[]> {
 
 ## 5) React側：useUsersフックで “3点セット” を回す 🔁😵‍💫✨
 
+![useUsers Hook Flow](./picture/firebase_frontend_foundation_ts_study_012_04_hook_flow.png)
+
 `src/hooks/useUsers.ts`
 
 ```ts
@@ -173,6 +181,8 @@ export function useUsers(pageSize = 20) {
 ---
 
 ## 6) UI：管理画面っぽいテーブルを作る 🧱📊✨
+
+![Users Table UI](./picture/firebase_frontend_foundation_ts_study_012_05_table_ui.png)
 
 `src/components/UsersTable.tsx`
 
@@ -287,6 +297,8 @@ export function UsersPage() {
 
 ## ✅ orderBy したフィールドが無いと “出てこない”
 
+![Missing Field Trap](./picture/firebase_frontend_foundation_ts_study_012_06_missing_field.png)
+
 さっき触れた通り、`orderBy("updatedAt")` は `updatedAt` を持たないドキュメントが結果に入らないことがあります😇 ([Firebase][2])
 だから **`updatedAt` を必須運用**にしちゃうのが一番ラクです👍
 
@@ -295,6 +307,8 @@ export function UsersPage() {
 ## 9) よくある詰まりポイント（ここ超大事）🧱💥
 
 ## 9-1) 「The query requires an index」って怒られた😵
+
+![Index Required Error](./picture/firebase_frontend_foundation_ts_study_012_07_index_error.png)
 
 複数条件（例：`where + orderBy`）を組むと **複合インデックス** が必要になることがあります📌
 その時はエラーに「作成リンク」が出るので、それを踏んで作るのが基本です🛠️ ([Firebase][6])

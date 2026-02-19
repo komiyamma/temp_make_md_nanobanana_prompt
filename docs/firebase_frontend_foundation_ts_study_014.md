@@ -7,6 +7,8 @@ Firestoreのリアルタイムは「スナップショットリスナー（snaps
 
 ## 1) まずイメージ：購読（subscribe）ってなに？📡
 
+![Fetch vs Realtime Comparison](./picture/firebase_frontend_foundation_ts_study_014_01_fetch_vs_stream.png)
+
 * **1回だけ取得**：必要な時に取りに行って終わり（例：設定画面の初期表示）
 * **購読（onSnapshot）**：最初に現在のデータが届いて、その後も更新があるたびに届く📬✨
   最初のコールで、すぐ現在のスナップショットが来て、変更のたびに呼ばれます。([Google Cloud Documentation][2])
@@ -25,6 +27,8 @@ Firestoreのリアルタイムは「スナップショットリスナー（snaps
 ---
 
 ## 3) いちばん大事：Reactでの正しい型 🧠🧹
+
+![React Effect Lifecycle](./picture/firebase_frontend_foundation_ts_study_014_02_lifecycle_pattern.png)
 
 ## ✅ 基本パターン（useEffectで購読→returnで解除）
 
@@ -53,6 +57,8 @@ export type UserRow = {
 ```
 
 ## 4-2. 「購読をまとめるhook」を作る（おすすめ）🪝✨
+
+![Realtime Hook Structure](./picture/firebase_frontend_foundation_ts_study_014_03_hook_structure.png)
 
 `useUsersRealtime.ts`（例）
 
@@ -169,6 +175,8 @@ export function UsersPage() {
 
 ## 5) ミニ課題：別タブ更新で「勝手に変わる」を体験 🎯⚡
 
+![Multi-tab Synchronization](./picture/firebase_frontend_foundation_ts_study_014_04_multitab_sync.png)
+
 1. ブラウザで **同じアプリを2タブ**開く🪟🪟
 2. 片方でユーザーを更新（またはFirebaseコンソールで編集）✍️
 3. もう片方が **自動で更新される**のを確認👀✨
@@ -178,6 +186,8 @@ export function UsersPage() {
 ---
 
 ## 6) さらに気持ちよく：差分（docChanges）で“追加/変更/削除”を演出 🎉
+
+![docChanges Events](./picture/firebase_frontend_foundation_ts_study_014_05_doc_changes.png)
 
 Firestoreの例では、`snapshot.docChanges()` で **added / modified / removed** が取れます。([Firebase][3])
 
@@ -195,6 +205,8 @@ Firestoreの例では、`snapshot.docChanges()` で **added / modified / removed
 ## 7) つまずきポイント集 🧨（ここ超大事）
 
 ## ❌ 1) 購読解除し忘れ（メモリリーク）😱
+
+![Memory Leak Ghost](./picture/firebase_frontend_foundation_ts_study_014_06_memory_leak.png)
 
 リアルタイム接続は長く維持されるので、解除しないと裏で生き続けがちです。([Firebase][1])
 → `useEffect` の `return () => unsubscribe()` を必ず書く🧹 ([Firebase][3])
@@ -222,6 +234,8 @@ Firestoreの課金は **読み書き・インデックス読み・保存容量�
 ---
 
 ## 9) AIとのつながり（この章の裏テーマ）🤖✨
+
+![AI Realtime Update Flow](./picture/firebase_frontend_foundation_ts_study_014_07_ai_realtime.png)
 
 これ、めちゃ相性いいです👇
 

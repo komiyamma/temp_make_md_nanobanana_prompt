@@ -19,6 +19,8 @@ Firestore のページングは、公式的にも **“カーソル（cursor）�
 
 ## 1) offset じゃなく cursor（カーソル）を使う理由 🧾➡️🎯
 
+![Offset vs Cursor Cost](./picture/firebase_frontend_foundation_ts_study_015_01_offset_vs_cursor.png)
+
 * SQLの `OFFSET 100` みたいに “100件飛ばして次” は、Firestore だとコスト面で不利になりがち😵‍💫
 * **カーソル方式**は「前回の最後のドキュメント（`DocumentSnapshot`）を覚えて、次はそこから先を取る」感じ✨
 
@@ -33,6 +35,8 @@ Firestore のページングは、公式的にも **“カーソル（cursor）�
 
 ## 0) 先に“並び順”を決めよう（超重要）🧭
 
+![Missing Field Trap](./picture/firebase_frontend_foundation_ts_study_015_02_missing_field.png)
+
 ページングは **順番が命**です⚠️
 
 * 例：`updatedAt`（更新日時）で新しい順
@@ -44,9 +48,13 @@ Firestore のページングは、公式的にも **“カーソル（cursor）�
 * **全ドキュメントに `updatedAt` を必ず入れる**（作成時・更新時にセット）
 * “同点”（同じ `updatedAt`）で順序がブレないように、**第2キーに `documentId()`** を足す（安定する）✨
 
+![Tie Breaker](./picture/firebase_frontend_foundation_ts_study_015_03_tie_breaker.png)
+
 ---
 
 ## 1) ページング用の hook を作る 🪝✨
+
+![Paging Function Flow](./picture/firebase_frontend_foundation_ts_study_015_04_paging_flow.png)
 
 ポイントは3つ👇
 
@@ -150,6 +158,8 @@ export function useUsersPaging() {
 }
 ```
 
+![Infinite Scroll State Machine](./picture/firebase_frontend_foundation_ts_study_015_05_hook_state.png)
+
 🔥ここで使っているページングの考え方は公式と同じで、**「最初は `limit`、次は `startAfter(lastVisible)`」**です。([Firebase][1])
 
 ---
@@ -236,6 +246,8 @@ export default function UsersPage() {
 ---
 
 ## 3) 無限スクロール版（入口だけ）🌊✨
+
+![Sentinel Trigger](./picture/firebase_frontend_foundation_ts_study_015_06_sentinel_trigger.png)
 
 「一番下に見えない“当たり判定”を置いて、見えたら loadMore」方式だよ👀
 IntersectionObserver はブラウザ標準なので追加ライブラリいらない👍
@@ -330,6 +342,8 @@ useInfiniteScroll({
 * 変更したら `reset()` → `loadMore()` で読み直し！
 
 ## 課題B：一覧は軽く、詳細でAIを呼ぶ 🤖🧠
+
+![AI Rate Limit Guard](./picture/firebase_frontend_foundation_ts_study_015_07_ai_guard.png)
 
 一覧で全件にAI処理をかけるとコスト爆発しがち💥
 
