@@ -15,6 +15,8 @@ Gemini CLIに**Firebase拡張（Extension）**を入れると、Firebase向け�
 
 ## 1) まずは導入　Gemini CLI と Firebase拡張を入れる🧩🔧
 
+![Firebase Extension Toolbox](./picture/firebase_startdash_ts_study_016_01_toolbox.png)
+
 ## 1-1. Gemini CLI を最新にする⬆️
 
 Gemini CLIはnpmで入れます。まずは**最新版に更新**しちゃうのが安全です✅
@@ -70,6 +72,8 @@ Firebase拡張を入れると、Gemini CLI内でこういうのが使えます�
 
 ## /firebase:init　最強の出発点🚀
 
+![Slash Command Menu](./picture/firebase_startdash_ts_study_016_02_slash_menu.png)
+
 ```text
 /firebase:init
 ```
@@ -90,6 +94,8 @@ Firebase拡張を入れると、Gemini CLI内でこういうのが使えます�
 ---
 
 ## 3) “詰まった瞬間”の黄金ムーブ🥇💥
+
+![Error Fix Cycle](./picture/firebase_startdash_ts_study_016_03_error_fix_cycle.png)
 
 ここからが本題！
 **何か変なエラーが出たら、順番はこれだけ**👇😄
@@ -122,6 +128,8 @@ Viteの環境変数も前提にして、直し方を案内して。
 ---
 
 ## 4) よくある詰まり3連発　ここで8割勝てる🥊😆
+
+![Common Error Trio](./picture/firebase_startdash_ts_study_016_04_common_errors.png)
 
 ## パターンA　Firebase App が作られてない系🧨
 
@@ -210,6 +218,8 @@ gemini
 
 ## 6) ついでに触れる　Firebase AI Logic を最速で入口まで🚪🤖
 
+![AI Logic Setup](./picture/firebase_startdash_ts_study_016_05_ai_logic_setup.png)
+
 Firebase拡張の `/firebase:init` には **AI Logic をセットアップする導線**があります([Firebase][1])
 
 ## 手を動かす🖐️
@@ -269,6 +279,8 @@ gemini extensions config <extension-name>
 ```
 
 ## Antigravity と Gemini CLI どっちで作業すべき❓
+
+![Antigravity vs Gemini CLI](./picture/firebase_startdash_ts_study_016_06_tool_choice.png)
 
 * 画面・エージェント管理込みで進めたい → Antigravity寄り🕹️
 * ターミナルで軽く相談しながら進めたい → Gemini CLI寄り💻

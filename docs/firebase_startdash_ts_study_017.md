@@ -17,6 +17,8 @@ Firebase公式も、**開発フローでは環境ごとに別プロジェクト�
 
 ## 1) なんで分けるの？（ここが一番大事）💥🧯
 
+![Dev vs Prod Worlds](./picture/firebase_startdash_ts_study_017_01_dev_prod_worlds.png)
+
 分けないと、初心者ほどこうなりがち👇
 
 * **データ事故**：テストのつもりで本番DBを消す/汚す😱
@@ -57,6 +59,8 @@ App Hostingなど“環境”の考え方が出てくる機能では、**product
 ---
 
 ## 4) 手を動かす③：Viteの.envで “dev/prod config差し替え” を作る🔁⚛️
+
+![Vite Mode Switch](./picture/firebase_startdash_ts_study_017_02_vite_switch.png)
 
 Viteは `.env` と `.env.[mode]` を読み分けできます。
 たとえば `.env.production` は `.env` より優先されます。([vitejs][5])
@@ -111,6 +115,8 @@ export const firebaseProjectId = firebaseConfig.projectId;
 
 ## 4-3. 画面に「今どっち？」を出す（事故防止の最強お守り🧿）
 
+![Environment Indicator](./picture/firebase_startdash_ts_study_017_03_safety_display.png)
+
 ```tsx
 // src/App.tsx
 import { firebaseProjectId } from "./firebase";
@@ -137,6 +143,8 @@ export default function App() {
 ---
 
 ## 5) 手を動かす④：Firebase CLIで dev/prod を切り替える🧰🔁
+
+![CLI Alias Manager](./picture/firebase_startdash_ts_study_017_04_cli_alias.png)
 
 Firebase CLIは **同じコードフォルダ**に対して、**複数Firebaseプロジェクトをエイリアス登録**できます。
 `firebase use --add` で追加し、`.firebaserc` に書かれます。([Firebase][2])
@@ -173,6 +181,8 @@ firebase deploy --project=prod
 
 ## 6) AI時代の「分け方」ポイント（Functions / App Hosting / AI Logic）🤖🧠
 
+![Backend Environment Scope](./picture/firebase_startdash_ts_study_017_05_backend_scope.png)
+
 ここは“予告”だけど、**第17章の分離がそのまま効く**ので先に触れます👀✨
 
 ## Functions：環境変数も dev/prod で分けられる🌿
@@ -206,6 +216,8 @@ Firebase MCP Serverは、AIツールが **プロジェクト作成や、クラ�
 ---
 
 ## 7) よくある事故トップ5🧨 → 即死回避チェック✅
+
+![Accident Prevention Shield](./picture/firebase_startdash_ts_study_017_06_prevention_shield.png)
 
 1. **envファイルを間違えて本番でビルド** → 画面に `projectId` 表示で防ぐ🧿
 2. **Firebase Consoleでプロジェクト切替し忘れ** → 右上のプロジェクト名、毎回見る👀

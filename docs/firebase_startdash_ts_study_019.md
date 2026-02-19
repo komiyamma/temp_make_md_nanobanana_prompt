@@ -15,6 +15,8 @@
 
 ## 1) まず全体地図：Reactの“外側”で何が起きる？🗺️🔌
 
+![Frontend Backend Map](./picture/firebase_startdash_ts_study_019_01_architecture_map.png)
+
 いま作ってるのはフロント中心（React）だけど、アプリって途中からこうなりがち👇
 
 * **フロント（React）**：画面・入力・表示を担当⚛️🖥️
@@ -30,6 +32,8 @@
 ---
 
 ## 2) Cloud Functions for Firebase：まずは“2nd gen＋ランタイム”だけ押さえる🔧👀
+
+![Functions Runtime Version](./picture/firebase_startdash_ts_study_019_02_functions_runtimes.png)
 
 ## Functionsって何するの？🧰
 
@@ -50,6 +54,8 @@
 ---
 
 ## 3) Cloud Run functions：選べる言語が増える＆サポート期限が見える📅🚦
+
+![Cloud Run Functions Options](./picture/firebase_startdash_ts_study_019_03_cloud_run_runtimes.png)
 
 Functions（Firebase）の裏側は Cloud Run ベースの仕組みと相性が良くて、
 **より多言語でやりたい時**や、**ランタイムの選択肢を増やしたい時**に候補になるよ🙂
@@ -83,6 +89,8 @@ Functions（Firebase）の裏側は Cloud Run ベースの仕組みと相性が�
 ---
 
 ## 5) 手を動かす②：Windowsで“今の自分のバージョン”を確認🔍💻
+
+![Local Version Check](./picture/firebase_startdash_ts_study_019_04_version_check.png)
 
 ここでズレると後で詰まるので、1回だけ確認しよ〜🙌
 
@@ -131,6 +139,8 @@ dotnet --version
 
 ## 7) AIの予告：クライアント直叩き（AI Logic） vs サーバー側（Genkit）🤖🧠
 
+![AI Implementation Choice](./picture/firebase_startdash_ts_study_019_05_ai_fork.png)
+
 ここが2026っぽい超重要分岐！🌈
 
 ## A) フロントから直接AIを呼ぶ：Firebase AI Logic（ラク側）😄✨
@@ -154,6 +164,8 @@ dotnet --version
 ---
 
 ## 8) Antigravity / Gemini CLI：Firebaseを“シームレスに扱う”導線🛸🤖
+
+![AI Tool Suite](./picture/firebase_startdash_ts_study_019_06_ai_tools_ecosystem.png)
 
 ここはちゃんと最新を確認しておくね✅
 
