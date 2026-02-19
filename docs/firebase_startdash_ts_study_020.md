@@ -29,6 +29,8 @@ npm -v
 
 ## 1) 今日作るトップ画面の“型”🧱✨
 
+![Landing Page Wireframe](./picture/firebase_startdash_ts_study_020_01_wireframe.png)
+
 最低限、これが入ってれば強い！
 
 * **Header**：アプリ名 + 右上にボタン（例：はじめる）🧭
@@ -43,6 +45,8 @@ npm -v
 
 ## Step A：ファイルを3つに分けて“迷子防止”🧭📁
 
+![File Structure Strategy](./picture/firebase_startdash_ts_study_020_02_file_structure.png)
+
 `src` の中をこう分ける（超おすすめ）
 
 * `src/pages/TopPage.tsx`
@@ -52,6 +56,8 @@ npm -v
 ---
 
 ## Step B：Firebase 初期化を「失敗しても画面が死なない」形にする🌱🧯
+
+![Vite Env Prefix](./picture/firebase_startdash_ts_study_020_03_vite_env_rule.png)
 
 Viteの環境変数は **`VITE_` 接頭辞のものだけが `import.meta.env` で読める**（漏洩防止のため）だよ。([vitejs][2])
 Firebase公式のWebセットアップも “npmで入れて `initializeApp`” の流れ。([Firebase][3])
@@ -70,6 +76,8 @@ VITE_FIREBASE_APP_ID=1:xxxx:web:xxxx
 > ここを変えたら、開発サーバーは再起動するのが確実😺
 
 ### 2) `src/lib/firebase.ts` を作る🧩
+
+![Initialization Logic](./picture/firebase_startdash_ts_study_020_05_init_logic.png)
 
 「設定が足りない」も「初期化失敗」も、**文字列で返す**形にしておくと強い💪
 
@@ -120,6 +128,8 @@ export function initFirebase(): FirebaseInitResult {
 ---
 
 ## Step C：トップ画面（ページ）を作る⚛️🎨
+
+![Simple UI Layout](./picture/firebase_startdash_ts_study_020_04_ui_mockup.png)
 
 `TopPage.tsx` で、Firebase状態を **小さく表示**しよう🌱
 
@@ -351,6 +361,8 @@ Viteのルール上、`VITE_` 以外は `import.meta.env` に出ないよ。([vi
 ---
 
 ## 5) AIを“実務の相棒”にする使い方（今日の範囲）🤖🧠
+
+![AI Copy Assist](./picture/firebase_startdash_ts_study_020_06_ai_copy.png)
 
 ## Gemini CLI / Agent に投げると強い質問テンプレ💬
 
