@@ -15,6 +15,8 @@
 
 ## 1) まず読む：`getDoc()` の考え方（超ざっくり）🧠✨
 
+![Single Document Fetch Flow](./picture/firebase_firestore_base_ts_study_006_01_getdoc_flow.png)
+
 Firestoreで「1件読む」はこの4ステップです👇
 
 1. **doc参照を作る**（どのコレクションの、どのID？）
@@ -66,6 +68,8 @@ export async function getTodoById(todoId: string): Promise<Todo | null> {
   const snap = await getDoc(ref);
 
   // ✅ 存在チェック（ここが第6章の主役！）
+
+![Existence Check Logic](./picture/firebase_firestore_base_ts_study_006_02_exists_check.png)
   if (!snap.exists()) return null;
 
   const data = snap.data() as { title?: unknown; done?: unknown };
@@ -97,6 +101,8 @@ import type { Todo } from "@/types/todo";
 import { getTodoById } from "@/features/todos/api/getTodoById";
 
 type LoadState =
+
+![Detail Page States](./picture/firebase_firestore_base_ts_study_006_04_detail_states.png)
   | { type: "loading" }
   | { type: "not-found" }
   | { type: "error"; message: string }
@@ -190,6 +196,8 @@ export function TodoDetailPage() {
 ---
 
 ## 2-4. ルーティングに追加する 🧭
+
+![Routing to Detail Page](./picture/firebase_firestore_base_ts_study_006_03_routing.png)
 
 `/todos/:todoId` に入ったら詳細ページが出るようにします。
 

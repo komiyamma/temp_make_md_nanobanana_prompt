@@ -20,6 +20,8 @@ Firestoreのデータ取得は「一回だけ取得」か「リアルタイム�
 
 ## ✅ getDocsは「今この瞬間の一覧を、1回だけ取る」📸
 
+![Snapshot Concept](./picture/firebase_firestore_base_ts_study_007_01_snapshot_concept.png)
+
 `getDocs()` は、クエリ（またはコレクション）を実行して **結果を `QuerySnapshot` として返す**イメージです。
 そしてこれは **“そのときの結果”** なので、あとでDBが変わっても **勝手には変わりません**（次章以降で `onSnapshot` に進むと“勝手に更新”になります⚡）。
 
@@ -77,6 +79,8 @@ type TodoDoc = Omit<Todo, "id">;
 export async function readTodos(): Promise<Todo[]> {
   const snap = await getDocs(collection(db, "todos"));
   return snap.docs.map((d) => {
+
+![Data Mapping Process](./picture/firebase_firestore_base_ts_study_007_02_data_mapping.png)
     const data = d.data() as TodoDoc;
     return {
       id: d.id,
@@ -92,6 +96,8 @@ Firestoreの「一回取得」はこの形が基本になります。 ([Firebase
 ---
 
 ## 2-3) Reactで一覧ページを作る（読み込み中/エラー/0件も）🧯📋
+
+![List Rendering Flow](./picture/firebase_firestore_base_ts_study_007_03_list_render.png)
 
 ```tsx
 // src/features/todos/pages/TodoListPage.tsx
@@ -182,6 +188,8 @@ export function TodoListPage() {
 ## 5) よくある詰まりポイント集 💥🧰
 
 ## ❌ ① 一覧が0件のまま（でもConsoleにはある）
+
+![Empty State Debugging](./picture/firebase_firestore_base_ts_study_007_04_empty_state.png)
 
 * コレクション名が違う：`todo` と `todos` とかあるある😇
 * 参照してるプロジェクトが違う（Firebaseの設定取り違え）🔀

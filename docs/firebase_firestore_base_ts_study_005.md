@@ -25,6 +25,8 @@ Firestoreの **“追加” は2系統**あります：
 
 ## 1) addDoc と setDoc の違いを“感覚”でつかむ 🧠✨
 
+![Add vs Set Comparison](./picture/firebase_firestore_base_ts_study_005_01_add_vs_set.png)
+
 ## ✅ addDoc（自動ID）
 
 イメージ：**「伝票番号は店が付けるから、とにかく登録して！」** 🧾➡️🗃️
@@ -47,6 +49,8 @@ ToDoの追加は基本これでOKです。
 ---
 
 ## 2) 今回作るToDoデータの形（最小セット）🧩
+
+![Todo Data Structure](./picture/firebase_firestore_base_ts_study_005_02_data_structure.png)
 
 まずは型で迷子防止！🧭✨
 
@@ -92,6 +96,8 @@ export async function addTodo(input: TodoCreateInput) {
 ## 4) React：フォームから追加する ✍️➡️🗃️
 
 ## 4-1) 最小の追加フォーム（バリデーション込み）🧩
+
+![Form Validation Logic](./picture/firebase_firestore_base_ts_study_005_03_form_validation.png)
 
 ポイントはこれ👇
 
@@ -197,6 +203,8 @@ export async function setTodoWithId(todoId: string, input: TodoCreateInput) {
 
 ## 6) “自動IDが欲しいけど、先にIDを知りたい”問題の解決 🧠🪄
 
+![Pre-generating ID Flow](./picture/firebase_firestore_base_ts_study_005_04_pre_gen_id.png)
+
 たとえば「画像を `todos/{id}/...` に保存したい」みたいな時、
 **先にIDだけ生成**して、あとから `setDoc` で保存する手があります。
 
@@ -230,6 +238,8 @@ export async function addTodoButKnowIdFirst(data: any) {
 ---
 
 ## 8) 🤖AIで“入力”を楽にする（Firebase AI Logic ちょい足し）✨
+
+![AI Suggestion Flow](./picture/firebase_firestore_base_ts_study_005_05_ai_suggest.png)
 
 ここ、かなり美味しいです 😋
 **「ToDoタイトルをAIが提案」→ 気に入ったらそのまま addDoc** みたいにすると、アプリが一気に“現代”っぽくなります⚡
