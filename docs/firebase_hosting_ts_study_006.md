@@ -76,6 +76,9 @@ firebase hosting:channel:deploy pr-123 --expires 7d
 
 ## 3) すぐブラウザで開く👀🧭
 
+![Open Channel](./picture/firebase_hosting_ts_study_006_08_open.png)
+
+
 ```powershell
 firebase hosting:channel:open pr-123
 ```
@@ -189,6 +192,9 @@ AI機能（文章生成/要約など）を入れてる場合、まず preview UR
 
 ## ミニ課題（10〜15分）🧩📝
 
+![Mini Assignment](./picture/firebase_hosting_ts_study_006_09_assignment.png)
+
+
 1. preview チャンネルを2つ作る
 
 * `pr-1`（期限 1日）
@@ -205,6 +211,9 @@ firebase hosting:channel:deploy try-cache --expires 12h
 ---
 
 ## チェック✅（言えたら勝ち🏆）
+
+![Final Check](./picture/firebase_hosting_ts_study_006_10_check.png)
+
 
 * preview チャンネルは **一時的な共有URL**を作る仕組みだと言える🌐([Firebase][2])
 * preview URL は **推測されにくいが公開URL**だと言える⚠️([Firebase][2])

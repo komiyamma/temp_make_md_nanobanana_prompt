@@ -251,6 +251,9 @@ firebase hosting:channel:deploy chapter13 --expires 2d
 
 ## 1) コンソールのAIに「なぜ効かない？」を聞く🧯
 
+![AI Debugging](./picture/firebase_hosting_ts_study_013_08_ai_debug.png)
+
+
 Firebase側のAI支援（コンソール内）で「このURLがどのルールに当たってる？」を言語化すると、バグ取りが速いよ🚀 ([Firebase][4])
 
 例：聞き方（コピペ用）📝
@@ -271,6 +274,9 @@ Firebase MCP server を入れると、AIツールがFirebaseプロジェクト�
 
 ## ミニ課題🎒✨（10〜15分）
 
+![URL Design Note](./picture/firebase_hosting_ts_study_013_09_assignment.png)
+
+
 あなたのアプリの将来を想像して、URL設計メモを書こう📝
 
 1. いずれ変わりそうなURLを **3つ**挙げる（例：`/news`、`/profile`、`/help`）
@@ -283,6 +289,9 @@ Firebase MCP server を入れると、AIツールがFirebaseプロジェクト�
 ---
 
 ## チェック✅（ここまでできたら合格！）
+
+![Final Check](./picture/firebase_hosting_ts_study_013_10_check.png)
+
 
 * Hostingの優先順位を言える（redirects が rewrites より先、など）🚦 ([Firebase][1])
 * `redirects` / `rewrites` は **上から順で最初に当たったやつが勝ち**って理解してる🧠 ([Firebase][1])

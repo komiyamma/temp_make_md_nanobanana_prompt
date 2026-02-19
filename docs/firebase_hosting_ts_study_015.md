@@ -117,6 +117,9 @@ App Hosting は **他の Firebase 製品（Auth/Firestore/AI Logicなど）と�
 
 ## やること：自分のアプリを“仕分け”する🗂️
 
+![Sorting Sheet](./picture/firebase_hosting_ts_study_015_08_sorting_sheet.png)
+
+
 1. 自分のアプリ（or 作りたいアプリ）を思い浮かべる🧠
 2. 下の「仕分けシート」を埋める✍️
 3. 結論を1行で書く（Hosting or App Hosting）✅
@@ -133,6 +136,9 @@ App Hosting は **他の Firebase 製品（Auth/Firestore/AI Logicなど）と�
 
 ## 8) ミニ課題🎯✍️
 
+![Assignment](./picture/firebase_hosting_ts_study_015_09_assignment.png)
+
+
 **「自分のアプリは Hosting / App Hosting どっちにする？」を、理由つきで3行で書く**😆
 
 例：
@@ -146,6 +152,9 @@ App Hosting は **他の Firebase 製品（Auth/Firestore/AI Logicなど）と�
 ---
 
 ## 9) チェック（理解できた？）✅🧠
+
+![Final Check](./picture/firebase_hosting_ts_study_015_10_check.png)
+
 
 * ✅ Hosting と App Hosting の違いを **自分の言葉で**説明できる
 * ✅ 「SSRが要るなら App Hosting」を **判断基準として持てた**

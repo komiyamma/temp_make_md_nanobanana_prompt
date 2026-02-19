@@ -135,6 +135,8 @@ GitHub連携は、CLIがいろいろ自動で作ってくれます👇([Firebase
 
 ## エラー2：`Resource not accessible by integration`（PRコメントできない等）🧷❌
 
+![Permission Fix](./picture/firebase_hosting_ts_study_010_08_permission_fix.png)
+
 **症状**
 
 * 途中まで動くのに、PRへのコメントや更新で落ちる
@@ -191,6 +193,9 @@ GitHub連携は、CLIがいろいろ自動で作ってくれます👇([Firebase
 
 ## エラー5：Node/依存関係が合わずビルドが死ぬ🏗️💥
 
+![Node Mismatch](./picture/firebase_hosting_ts_study_010_09_node_mismatch.png)
+
+
 **症状**
 
 * `npm ci` が失敗（lockfile不一致など）
@@ -211,6 +216,9 @@ GitHub連携は、CLIがいろいろ自動で作ってくれます👇([Firebase
 目的は「失敗しても大丈夫」を体に入れること💪✨
 
 ## お題：TypeScriptエラーを1個入れて、CIを落として、直して復旧する😈
+
+![Break and Fix Assignment](./picture/firebase_hosting_ts_study_010_10_assignment.png)
+
 
 1. 新しいブランチ作る🌿
 2. Reactのどこかで、わざと型エラーを作る（例：numberに文字列）

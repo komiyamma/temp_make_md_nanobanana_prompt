@@ -168,6 +168,9 @@ firebase hosting:channel:deploy cache-lab
 
 ## 6) ミニ課題✍️🎯（10分）
 
+![Assignment Questions](./picture/firebase_hosting_ts_study_012_08_assignment.png)
+
+
 次の3つを、**自分の言葉で1行ずつ**説明してね🙂
 
 1. HTMLを長期キャッシュすると何が起きる？😇
@@ -177,6 +180,9 @@ firebase hosting:channel:deploy cache-lab
 ---
 
 ## 7) チェック✅（できたら勝ち！）
+
+![Final Check](./picture/firebase_hosting_ts_study_012_09_check.png)
+
 
 * [ ] `/about` みたいな直叩きでも `Cache-Control: no-cache` が効いてる🔁
 * [ ] JS/CSS/画像が `max-age=31536000` になってる🚀
@@ -208,6 +214,9 @@ Firebase Hosting は **存在しないURLの 404 をCDNが最大10分キャッ�
 ## 9) AI活用コーナー🤖✨（キャッシュ事故を“AIレビュー”で減らす）
 
 ## 9-1) Gemini CLI で「firebase.json のキャッシュ設計」をレビューしてもらう🧠
+
+![AI Config Review](./picture/firebase_hosting_ts_study_012_10_ai_review.png)
+
 
 Firebase は **Gemini CLI 向けの拡張**も用意しています（Firebase専用の知識を足しやすい）([Firebase][3])
 たとえばこう聞く👇

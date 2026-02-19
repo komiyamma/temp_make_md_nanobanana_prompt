@@ -219,6 +219,9 @@
 
 ## 章の流れのイメージ（超ざっくり）🗺️
 
+![Chapter Flow Map](./picture/firebase_hosting_ts_index_08_chapter_flow.png)
+
+
 * **前半（1〜5）**：まず公開できる
 * **中盤（6〜10）**：PRプレビュー＆自動デプロイでチーム開発っぽく
 * **後半（11〜18）**：品質（ドメイン・HTTPS・キャッシュ）＋App Hosting運用

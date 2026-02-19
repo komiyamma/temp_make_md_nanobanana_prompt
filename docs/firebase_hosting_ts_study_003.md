@@ -134,6 +134,9 @@ firebase deploy --only hosting
 
 ## 3) ミニ課題📝：公開URLを“自分の資産”にする💎
 
+![Deploy Log](./picture/firebase_hosting_ts_study_003_08_log.png)
+
+
 1. 公開URLをメモ（Notionでもメモ帳でもOK）🗒️
 2. **「何を変えたか」→「ビルドしたか」→「デプロイしたか」** を1行ログに残す✍️
 
@@ -208,6 +211,9 @@ Firebase MCP server を使うと、AI支援ツール側からFirebase関連の�
 ---
 
 ## C) Gemini CLI と Google Antigravityの使い分け🧠✨
+
+![AI Tools](./picture/firebase_hosting_ts_study_003_09_ai_tools.png)
+
 
 **2026-02-04のGoogle Cloud公式ブログ**だと、ざっくりこう整理されています👇
 

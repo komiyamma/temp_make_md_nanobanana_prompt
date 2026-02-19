@@ -192,6 +192,9 @@ firebase deploy --only functions:slackTest
 
 ## 8) AI活用：Gemini CLI / Antigravityで爆速にする 🤖🛸
 
+![Gemini CLI Helper](./picture/firebase_functions_ts_study_019_08_gemini_cli.png)
+
+
 ここ、ちゃんと“効く”やつだけ紹介するね👍
 
 ## 8-1. Gemini CLI の Firebase拡張：何が嬉しい？🧰
@@ -221,6 +224,9 @@ AIに作らせて、**公式ドキュメントと突き合わせてレビュー*
 
 ## 9) ミニ課題（この章のゴール確認）📝🏁
 
+![Assignment Goal](./picture/firebase_functions_ts_study_019_09_assignment.png)
+
+
 ## 必須 ✅
 
 * `slackTest` をデプロイして、Slackに **1通** 送る📩✨
@@ -233,6 +239,9 @@ AIに作らせて、**公式ドキュメントと突き合わせてレビュー*
 ---
 
 ## 10) チェックリスト ✅✅✅
+
+![Final Checklist](./picture/firebase_functions_ts_study_019_10_checklist.png)
+
 
 * [ ] Webhook URL を作れた（Slack側）🔗
 * [ ] `firebase functions:secrets:set SLACK_WEBHOOK_URL` でSecretに入れた🗝️ ([Firebase][2])
