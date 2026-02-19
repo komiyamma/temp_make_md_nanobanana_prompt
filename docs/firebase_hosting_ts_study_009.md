@@ -16,6 +16,8 @@ CI/CDは便利だけど、**鍵（Secrets）**と**権限（IAM）**を雑にす
 
 ## まず全体像🗺️（CI/CDの“鍵”は2種類ある）
 
+![Two Types of Keys](./picture/firebase_hosting_ts_study_009_01_two_keys.png)
+
 CI/CDの安全は、だいたいこの2つで決まります👇
 
 1. **GitHub側の鍵**：Secrets（暗号化保管）
@@ -38,6 +40,8 @@ CI/CDの安全は、だいたいこの2つで決まります👇
 
 ## 読むパート📚：今回の「秘密の箱」は何が入ってる？
 
+![Secret Storage Flow](./picture/firebase_hosting_ts_study_009_02_secret_flow.png)
+
 HostingのGitHub連携は、セットアップ時に **サービスアカウントを作って、そのJSON鍵をGitHubのSecretsに入れる**流れになります🔐
 Firebase CLIのセットアップでは、サービスアカウント作成 → GitHubに暗号化して保存（Secrets）→ workflowファイル作成、まで面倒を見てくれます🤖🧰 ([Firebase][1])
 
@@ -48,6 +52,8 @@ Firebase CLIのセットアップでは、サービスアカウント作成 → 
 ## 手を動かすパート🛠️：Secretsの場所と使われ方を確認しよう（WindowsでOK💻）
 
 ## 1) GitHubのSecretsが“存在するか”確認👀
+
+![GitHub Secrets UI](./picture/firebase_hosting_ts_study_009_03_github_ui_mock.png)
 
 GitHub のあなたのリポジトリで👇へ移動します🏃‍♂️💨
 
@@ -99,6 +105,8 @@ Actionの基本形はこんな感じ（例）👇
 
 ## 3) サービスアカウントの権限（IAM）を“必要最小限”に寄せる✂️
 
+![Least Privilege Principle](./picture/firebase_hosting_ts_study_009_04_least_privilege.png)
+
 セキュリティの基本は **最小権限（Least Privilege）** です🛡️
 Firebase公式でも「必要最低限だけ付けようね」がベストプラクティスとして書かれています📌 ([GitHub][2])
 
@@ -118,6 +126,8 @@ Hosting GitHub Actionの手動設定ガイドでは、サービスアカウン�
 ## 事故防止パート🧯：よくある“やらかし”と対策
 
 ## 事故①：PR（特にfork）からSecretsが漏れる😱
+
+![PR Target Risk](./picture/firebase_hosting_ts_study_009_05_pr_target_risk.png)
 
 基本的に、**forkから来たPRのワークフローにはSecretsが渡らない**ので、そこは守られています🔒 ([GitHub Docs][4])
 でも！例外的に危険パターンがあります👇
@@ -174,6 +184,8 @@ Secretsは**値を表示しない**のが鉄則です🙅‍♂️
 
 ## 漏れた時の回復手順🧯（これだけ覚えとけば勝てる）
 
+![Key Rotation Cycle](./picture/firebase_hosting_ts_study_009_06_key_rotation.png)
+
 もし「やば、鍵貼っちゃった😨」となったら、順番はこれ👇
 
 1. **GitHubのSecretを差し替える（新しい鍵にする）**🔁
@@ -193,6 +205,8 @@ Gemini in Firebase は、利用に必要な権限（ロール）があり、プ�
 「このサービスアカウントに何のロールが付いてる？」「最小権限にするとしたらどれ？」みたいな質問が相性いいです🙂
 
 ## 2) Antigravity / Gemini CLI × Firebase MCP server で“点検を自動化”🧩
+
+![AI Security Audit](./picture/firebase_hosting_ts_study_009_07_ai_audit.png)
 
 Firebase MCP server は **Antigravity や Gemini CLI** などのMCPクライアントと一緒に使えます🤝 ([Firebase][7])
 さらに、Antigravity側にFirebase MCP serverを追加する手順も公式で案内されています🧰 ([Firebase][8])
