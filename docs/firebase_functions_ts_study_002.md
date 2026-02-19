@@ -18,6 +18,8 @@
 
 ## 2nd genって何者？🧠
 
+![2nd Gen Architecture](./picture/firebase_functions_ts_study_002_01_concept.png)
+
 ざっくり言うと、
 
 * **実行の土台がCloud Run**（コンテナ実行の世界）📦
@@ -29,6 +31,8 @@
 ## 2nd genが嬉しいポイント（ここだけ覚えればOK）🎁✨
 
 ### 1) 1台で“同時にさばける”＝混んだとき強い💪🍜
+
+![Concurrency Metaphor](./picture/firebase_functions_ts_study_002_02_concurrency.png)
 
 1st genは基本「**1インスタンス＝1リクエスト**」みたいなノリになりがち。
 2nd genは **concurrency（同時処理）** が使えて、**1インスタンスで複数リクエストを並行処理**できるよ🚀 ([Firebase][1])
@@ -46,6 +50,8 @@
 
 ### 2) パワーが出る＆長く動ける🏋️⏱️
 
+![Power and Duration](./picture/firebase_functions_ts_study_002_03_power_duration.png)
+
 AI系とか、ちょい重め処理って「少し時間がほしい」ことあるよね🙂
 2nd genは **インスタンスサイズが大きめまで選べる**＆**タイムアウト上限が伸びる**ので助かる💡 ([Firebase][1])
 
@@ -58,6 +64,8 @@ AI系とか、ちょい重め処理って「少し時間がほしい」ことあ
 ---
 
 ### 3) “運用がラク”寄りの機能が揃う🧯👀
+
+![Operational Features](./picture/firebase_functions_ts_study_002_04_ops_features.png)
 
 2nd genはCloud Runの世界なので、デプロイが「サービス運用っぽく」なる✨
 
@@ -78,6 +86,8 @@ AI系とか、ちょい重め処理って「少し時間がほしい」ことあ
 
 ## でも！2nd gen万能じゃない（ここ超大事）⚠️
 
+![1st vs 2nd Gen Scope](./picture/firebase_functions_ts_study_002_05_gen_comparison.png)
+
 「基本は2nd gen」でOKなんだけど、**一部は1st genにしか無い/差がある**ところがあるよ👀
 
 * **Analyticsイベントのトリガーは1st genのみ**📊 ([Firebase][1])
@@ -95,6 +105,8 @@ AI系とか、ちょい重め処理って「少し時間がほしい」ことあ
 ---
 
 ## コストで事故らない小ワザ🧯💸（軽くでOK）
+
+![Min Instances Cost Warning](./picture/firebase_functions_ts_study_002_06_cost_warning.png)
 
 2nd genは「**min instances（常駐）**」が設定できて、冷スタートを減らせる反面、**置いておくだけで課金が出る**ことがあるよ⚠️ ([Firebase][3])
 
