@@ -35,6 +35,8 @@
 
 ## 使い分け早見表👀✨
 
+![Storage vs Firestore Metadata](./picture/firebase_storage_ts_study_010_01_metadata_separation.png)
+
 | 置き場所             | 何を置く？              | 例                                                                             |
 | ---------------- | ------------------ | ----------------------------------------------------------------------------- |
 | Storage（メタデータ）📦 | “配信・ブラウザ挙動”に効くもの中心 | `contentType`, `cacheControl`, （最小限の）`customMetadata`                         |
@@ -47,6 +49,8 @@
 ## 今日のハンズオン🛠️：Firestoreに「画像レコード」を作ろう📷🗃️
 
 ### 作るデータ構造（おすすめ）🧱
+
+![Profile Image Data Structure](./picture/firebase_storage_ts_study_010_02_data_structure.png)
 
 * `users/{uid}`（ユーザー本体）
 
@@ -93,6 +97,8 @@ export type ProfileImageRecord = {
 ```
 
 #### 2) アップロード→Firestore反映（本体）⬆️🗃️
+
+![Upload Sync Flow](./picture/firebase_storage_ts_study_010_03_upload_flow.png)
 
 ```ts
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -168,6 +174,8 @@ export async function uploadProfileImageAndRecord(params: {
 
 ## 「customMetadata を入れるなら」この程度でOK👌（入れすぎ注意⚠️）
 
+![Custom Metadata Limit](./picture/firebase_storage_ts_study_010_04_metadata_limit.png)
+
 カスタムメタデータは、**検索や説明文の置き場じゃない**です🙅‍♂️
 なぜなら **サイズ制限（8 KiB）**があり、さらに**ストレージコストもかかる**からです([Google Cloud Documentation][2])
 
@@ -190,6 +198,8 @@ await uploadBytes(fileRef, file, {
 ---
 
 ## AIを絡める🤖✨：説明文（alt）とタグはFirestoreへ🗃️🏷️
+
+![AI Alt Text Generation](./picture/firebase_storage_ts_study_010_05_ai_integration.png)
 
 ここが「現実アプリ感」爆上がりポイントです🔥
 アップロード後に、Firebase AI Logicで **“短い説明文”** を作って、Firestoreに保存します📝
@@ -236,6 +246,8 @@ await updateDoc(recRef, {
 
 ## Antigravity / Gemini CLI を「設計レビュー役」にする🧑‍🏫⚡
 
+![MCP Design Review](./picture/firebase_storage_ts_study_010_06_mcp_review.png)
+
 ここ、超ラクできます😆
 Firebase MCP server を使うと、Antigravity や Gemini CLI などから **Firestore / Rules / プロジェクト操作**まで支援できるようになります([Firebase][5])
 
@@ -265,6 +277,8 @@ Firebase MCP server を使うと、Antigravity や Gemini CLI などから **Fir
 ---
 
 ## ミニ課題🎒✨
+
+![Implementation Checklist](./picture/firebase_storage_ts_study_010_07_checklist.png)
 
 1. アップロード時に `profileImages/{imageId}` を `uploading` で作る🗃️
 2. 成功したら `ready`、失敗したら `failed` に更新🔁

@@ -21,6 +21,8 @@
 
 ### ✅ Firestoreのおすすめ構造（シンプル＆強い）💪
 
+![Profile Image History Schema](./picture/firebase_storage_ts_study_012_01_history_structure.png)
+
 * `users/{uid}`（ユーザーの本体）
 
   * `currentImageId`: 今の画像のID（履歴ドキュメントのID）
@@ -44,6 +46,8 @@
 ---
 
 ## なぜトランザクション？🤔💥
+
+![Atomic Update Transaction](./picture/firebase_storage_ts_study_012_02_transaction_flow.png)
 
 プロフィール画像の切り替えって、実は「複数の更新」がセットです👇
 
@@ -167,6 +171,8 @@ export async function uploadAndCommitProfileImage(params: {
 
 ## 実装②：「元に戻す」ボタン用の巻き戻し関数↩️🖲️
 
+![Revert Image Logic](./picture/firebase_storage_ts_study_012_03_rollback_logic.png)
+
 やることはシンプル👇
 
 * 対象の `imageId` を “active” にする
@@ -235,6 +241,8 @@ export async function revertProfileImage(params: {
 ---
 
 ## 実装③：React UI（履歴一覧＋戻すボタン）🖼️📜↩️
+
+![Profile History UI](./picture/firebase_storage_ts_study_012_04_ui_layout.png)
 
 UIはこんな感じが鉄板です👇
 
@@ -321,6 +329,8 @@ export function ProfileImageHistoryPanel({ firebaseApp, uid }: { firebaseApp: an
 
 ## AIを絡めて“現実アプリ感”を爆上げする🤖✨
 
+![AI Enhanced History](./picture/firebase_storage_ts_study_012_05_ai_integration.png)
+
 履歴ドキュメントに、AIで作った情報を足すと一気に実務っぽくなります🔥
 
 ### 例1：altテキスト自動生成 📝🤖
@@ -338,6 +348,8 @@ Genkit を使うと、AI処理を“フロー”として整理しやすくな�
 
 ## Antigravity / Gemini CLI / MCP を“この章”でどう使う？🧑‍💻🚀
 
+![MCP Transaction Audit](./picture/firebase_storage_ts_study_012_06_mcp_review.png)
+
 「今の設計、穴ない？😇」をAIレビューさせるのが超効きます。
 
 * Firebase MCP server は Antigravity や Gemini CLI などのツールからFirebaseを扱う“橋”になります🧩 ([Firebase][5])
@@ -350,6 +362,8 @@ Genkit を使うと、AI処理を“フロー”として整理しやすくな�
 ---
 
 ## ミニ課題 🧪🏁
+
+![Chapter 12 Mini Tasks](./picture/firebase_storage_ts_study_012_07_checklist.png)
 
 ### ミニ課題1：履歴を“10件まで”にする（表示だけでOK）🔟
 

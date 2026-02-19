@@ -16,6 +16,8 @@
 
 ## 1) なぜ「削除」は事故りやすいの？😱
 
+![Accidental Deletion Risk](./picture/firebase_storage_ts_study_013_01_deletion_risk.png)
+
 プロフィール画像って、だいたいこういう流れで参照されるよね👇
 
 * UIは「現在の画像（photoPath）」を見て表示👀
@@ -33,6 +35,8 @@
 ---
 
 ## 2) 削除ポリシー3択（どれが正解？）🤔🧩
+
+![Deletion Strategy Comparison](./picture/firebase_storage_ts_study_013_02_deletion_policies.png)
 
 ### A. すぐ消す（即削除）⚡
 
@@ -56,6 +60,8 @@
 ---
 
 ## 3) まず「削除できる状態」をFirestoreに持たせよう🧠🗃️
+
+![Image Status State Machine](./picture/firebase_storage_ts_study_013_03_firestore_status.png)
 
 この章は **「Storageのファイル削除」だけじゃなく、Firestore側の状態設計が主役**だよ💪
 
@@ -147,6 +153,8 @@ export async function deleteHistoryImageNow(uid: string, imageId: string): Promi
 
 ## 6) 手を動かす③：猶予期間つき削除（おすすめ）⏳🌟
 
+![Grace Period Deletion Flow](./picture/firebase_storage_ts_study_013_04_grace_period_flow.png)
+
 即削除はラクだけど、**“現実アプリ感”** は猶予つきが強い😎✨
 やることはシンプルで、
 
@@ -205,6 +213,8 @@ export async function cancelPendingDelete(uid: string, imageId: string) {
 ---
 
 ## 7) 自動掃除（期限が来たら消す）🧹🤖
+
+![Scheduled Cleanup Function](./picture/firebase_storage_ts_study_013_05_scheduled_cleanup.png)
 
 ここからが「現実アプリ感」ゾーン🔥
 期限が来た `pending_delete` を毎日まとめて掃除するのが定番！
@@ -297,6 +307,8 @@ TTL は「指定した期限フィールドでドキュメントを自動削除�
 
 ## 9) AIを絡めると“現実アプリ感”が一気に増える🤖✨
 
+![AI Deletion Assistant](./picture/firebase_storage_ts_study_013_06_ai_usage.png)
+
 ここは「削除そのもの」より「削除の判断材料」をAIで整えるイメージ👍
 
 * 履歴一覧に **AI生成の短い説明（alt）** を添える📝🤖
@@ -311,6 +323,8 @@ TTL は「指定した期限フィールドでドキュメントを自動削除�
 ---
 
 ## 10) ミニ課題🧩🏁
+
+![Chapter 13 Tasks](./picture/firebase_storage_ts_study_013_07_checklist.png)
 
 1. 履歴UIで「使用中」バッジ＋削除無効化を実装🏷️🚫
 2. 「削除」押下で確認ダイアログを必ず出す✅

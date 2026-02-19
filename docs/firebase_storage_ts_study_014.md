@@ -17,6 +17,8 @@
 
 ## まず知っておく話🧠：「ダウンロードURL」は“秘密の合言葉付きURL”になりがち🤫
 
+![Download URL Risks](./picture/firebase_storage_ts_study_014_01_url_risk.png)
+
 `getDownloadURL()` は、画像を `<img src="...">` で表示できるURLを返してくれる、超便利な関数です🔗✨ ([Firebase][1])
 でもこのURL、多くの場合 **長く生きます**（＝実質ずっと使えることが多い）と言われています。([Stack Overflow][3])
 
@@ -49,6 +51,8 @@
 ---
 
 ## 安全寄りの結論✅：「Firestoreは path 主、URLは“その場で再取得”」🧭
+
+![Path vs URL Storage](./picture/firebase_storage_ts_study_014_02_path_first.png)
 
 **おすすめの保存方針（超シンプル版）**👇
 
@@ -128,6 +132,8 @@ export async function loadProfilePhotoUrl(uid: string): Promise<string | null> {
 ---
 
 ## 3) React：フォールバック込みの表示コンポーネント🖼️🧯
+
+![Image Loading Fallback](./picture/firebase_storage_ts_study_014_03_fallback_ui.png)
 
 「URLが取れない＝即終了」にならないように、必ず逃げ道を作ります🏃‍♂️💨
 
@@ -210,6 +216,8 @@ export function ProfileAvatar({ uid }: { uid: string }) {
 
 # 発展：URLを使わない表示（getBlob → objectURL）🧊🖼️
 
+![Direct SDK Fetch](./picture/firebase_storage_ts_study_014_04_blob_fetch.png)
+
 「秘密URLを `<img>` に直で入れたくない」派におすすめ。
 SDKでBlob取得できるのは公式に案内されています。([Firebase][1])
 
@@ -230,6 +238,8 @@ export async function loadProfilePhotoObjectUrl(path: string): Promise<string> {
 
 # トラブルシュート最短ルート🧯（詰まりがちな症状→原因）
 
+![Image Error Troubleshooting](./picture/firebase_storage_ts_study_014_05_troubleshooting.png)
+
 * **真っ白🙂** → URLがnull / `<img>` がerror → フォールバックUIを出す
 * **`storage/object-not-found`** → pathが古い / 削除済み → Firestoreの `photoPath` を更新 or nullに戻す
 * **`storage/unauthorized`** → Rulesで弾かれてる → まずRulesを確認（読めるのか？）
@@ -238,6 +248,8 @@ export async function loadProfilePhotoObjectUrl(path: string): Promise<string> {
 ---
 
 # AIで爆速にする🤖🚀（ここが2026の勝ち筋）
+
+![AI Error Analysis](./picture/firebase_storage_ts_study_014_06_ai_assistant.png)
 
 ## 1) Gemini in Firebase：エラー文を“人間語”にしてもらう🧯
 
@@ -268,6 +280,8 @@ Firebase AI LogicはWeb SDKから安全寄りにGemini/Imagenを呼べる仕組�
 ---
 
 # ミニ課題✍️🎒
+
+![Chapter 14 Mini Tasks](./picture/firebase_storage_ts_study_014_07_checklist.png)
 
 1. Firestoreの `users/{uid}` に `photoPath` を保存する設計で、**「URLを保存しない理由」**を3つ書く📝
 2. `loadProfilePhotoUrl()` が `null` を返した時、UIで

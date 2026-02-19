@@ -7,6 +7,8 @@
 
 ## 1) まず結論：この章の“勝ちパターン”🏆
 
+![Storage vs Firestore Role](./picture/firebase_storage_ts_study_011_01_golden_pattern.png)
+
 * 画像ファイル本体は Storage に置く📦
 * Firestore の users/{uid} に「今のプロフィール画像の参照」を置く🧭
 * **更新順序は必ずコレ**👇
@@ -23,6 +25,8 @@
 ## 2) Firestoreのデータ設計：何を保存する？🧠🗃️
 
 ### ✅ users/{uid} に置くと強いフィールド例（“今の画像”だけ）🧩
+
+![User Document Schema](./picture/firebase_storage_ts_study_011_02_data_structure.png)
 
 * photo.path（必須）: Storageのパス（例：users/{uid}/profile/{fileId}）📁
 * photo.updatedAt（推奨）: 更新時刻（サーバー時刻）⏱️
@@ -65,6 +69,8 @@
 ---
 
 ### 4-1) 1本で完結する関数：アップロード→URL→Firestoreコミット🧩
+
+![Safe Update Sequence](./picture/firebase_storage_ts_study_011_03_update_sequence.png)
 
 ```ts
 import { getAuth } from "firebase/auth";
@@ -135,6 +141,8 @@ export async function updateMyProfileImage(file: File, onProgress?: ProgressFn) 
 
 ### 4-2) UIを“現実アプリ感”にするコツ：Firestoreを購読して自動反映🔁👀
 
+![Realtime UI Update](./picture/firebase_storage_ts_study_011_04_ui_update.png)
+
 「アップロードが終わったら setState で頑張る」より、**users/{uid} を購読**して、変化が来たらUIが勝手に更新される形が強いです💪✨（別タブでも同期されて気持ちいい）
 
 ```ts
@@ -175,6 +183,8 @@ onSnapshotでドキュメントをリアルタイム購読できます🔁([Fire
 ---
 
 ## 5) 失敗しても壊れないための“実務メモ”🧯
+
+![Failure Scenarios](./picture/firebase_storage_ts_study_011_05_failure_handling.png)
 
 ### ✅ 失敗時の振る舞いテンプレ🙂
 
@@ -224,6 +234,8 @@ Firebase AI Logicはテキストだけじゃなく **画像などのマルチモ
 
 ## 8) Antigravity / Gemini CLIで設計レビューを爆速にする🚀🧩
 
+![MCP Tools](./picture/firebase_storage_ts_study_011_06_mcp_integration.png)
+
 ここ、**本当に強い**です💥
 Firebase MCP server を使うと、AIツールが Firebase プロジェクトや Firestore/Rules を扱えるようになります🧩([Firebase][9])
 
@@ -271,6 +283,8 @@ Firebase MCP server はプロンプト集があって、Gemini CLI だとスラ�
 ---
 
 ## 9) ミニ課題🧪🎯
+
+![Mini Task Checklist](./picture/firebase_storage_ts_study_011_07_mini_task.png)
 
 1. users/{uid} の photo に、最低でも photo.path と photo.updatedAt を保存する設計にする🧱
 2. “更新順序”を守る（Storage成功 → Firestore更新）🔁
