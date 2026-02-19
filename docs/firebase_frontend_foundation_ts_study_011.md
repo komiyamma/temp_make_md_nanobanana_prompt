@@ -20,6 +20,8 @@ Nodeは `v24` が Active LTS（2026-02-09更新）になっています🟢 ([no
 
 ## まず超重要：認証は“最初の数瞬”だけ不確定 😵‍💫
 
+![Auth State Timeline](./picture/firebase_frontend_foundation_ts_study_011_auth_state_timeline.png)
+
 Firebase Authは、ページ読み込み直後に `currentUser` がすぐ取れない瞬間があります。
 だから「**最初に1回、Authの状態確定イベントを待つ**」のが正解です✅
 
@@ -40,6 +42,8 @@ Firebase Authは、ページ読み込み直後に `currentUser` がすぐ取れ�
 ---
 
 ## Step 1：AuthProvider を作る（“配給所”）📦👑
+
+![AuthProvider Architecture](./picture/firebase_frontend_foundation_ts_study_011_auth_provider.png)
 
 📁 `src/auth/AuthProvider.tsx`
 
@@ -92,6 +96,8 @@ export function useAuth() {
 ---
 
 ## Step 2：ルートガード（ProtectedRoute）を作る 🚧🛡️
+
+![Protected Route Logic](./picture/firebase_frontend_foundation_ts_study_011_protected_route_logic.png)
 
 📁 `src/routes/ProtectedRoute.tsx`
 
@@ -168,6 +174,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 ---
 
 ## Step 4：LoginPage を作る（ログイン後に元のページへ戻す）🔐↩️
+
+![Login Page Process](./picture/firebase_frontend_foundation_ts_study_011_login_flow.png)
 
 ここは“最低限の形”でOKです🙂✨
 Firebaseのメール/パスワードログインは `signInWithEmailAndPassword` でできます📌 ([Firebase][3])
@@ -246,6 +254,8 @@ export function LoginPage() {
 
 ## 「保持（Persistence）」の超ざっくり 🧠
 
+![Persistence Types](./picture/firebase_frontend_foundation_ts_study_011_persistence_types.png)
+
 * `local`：ブラウザ閉じても残る（共有PCだと危険な場合あり⚠️）
 * `session`：そのタブ/ウィンドウだけ（閉じたら消える）
 * `none`：リロードでも消える（ほぼデバッグ用）
@@ -254,6 +264,8 @@ export function LoginPage() {
 ---
 
 ## Step 5：ヘッダーにログアウトボタンを付ける 🚪✨
+
+![Logout Mechanism](./picture/firebase_frontend_foundation_ts_study_011_logout_action.png)
 
 📁 `src/components/AppHeader.tsx`
 
@@ -311,6 +323,8 @@ React Router v7 には `redirect()` があり、loader内で `throw redirect("/l
 ## AIも絡める（軽くでOK！）🤖✨
 
 ## 1) UI実装を一気に作る（Antigravity / Gemini CLI）🛸💻
+
+![Antigravity UI](./picture/firebase_frontend_foundation_ts_study_011_antigravity_ui.png)
 
 * Antigravityは「エージェントが計画→実装→検証」まで進めるIDE系の仕組みとして整理されています📌 ([Google Codelabs][7])
 * 例えば、こう依頼すると速いです👇

@@ -3,6 +3,8 @@
 この章のゴールはコレです👇✨
 **「入力 → 検証 → エラー表示 → 保存」**が、気持ちよく一通りできるフォームを完成させます😆
 
+![Form Validation Flow](./picture/firebase_frontend_foundation_ts_study_008_form_validation_flow.png)
+
 ---
 
 ## 今日作る完成物 🧩✨
@@ -38,6 +40,8 @@
 
 ## 今回のおすすめ構成（2026の王道）🏆
 
+![Tech Stack](./picture/firebase_frontend_foundation_ts_study_008_tech_stack.png)
+
 * フォーム管理：**React Hook Form**（v7系が安定）📦 ([npm][1])
 * ルール定義：**Zod**（最新 4.3.6）🧩 ([npm][2])
 * 橋渡し：**@hookform/resolvers**（最新 5.2.2 / Zod v4対応）🌉 ([npm][3])
@@ -57,6 +61,8 @@ npm i react-hook-form zod @hookform/resolvers
 `src/features/profile/profileSchema.ts` を作るイメージです👇
 
 ```ts
+// src/features/profile/profileSchema.ts
+![Zod Schema](./picture/firebase_frontend_foundation_ts_study_008_zod_schema.png)
 import { z } from "zod";
 
 export const profileSchema = z.object({
@@ -91,6 +97,8 @@ export type ProfileForm = z.infer<typeof profileSchema>;
 ---
 
 ## 手を動かす 3️⃣：React Hook FormにZodをつなぐ 🔌
+
+![Form UI State](./picture/firebase_frontend_foundation_ts_study_008_form_ui_state.png)
 
 `src/features/profile/ProfileEditPage.tsx` みたいな感じ👇
 （UIはTailwindで最低限それっぽくしてます🎽）
@@ -245,6 +253,8 @@ function Field({
 }
 ```
 
+![Button Logic](./picture/firebase_frontend_foundation_ts_study_008_button_logic.png)
+
 ここで覚えることは少なくてOKです🙂✨
 
 * `resolver: zodResolver(profileSchema)` ← **Zodのルールをフォームに接続**
@@ -254,6 +264,8 @@ function Field({
 ---
 
 ## つまづきポイント集 😵‍💫➡️😆
+
+![Validation Modes](./picture/firebase_frontend_foundation_ts_study_008_validation_modes.png)
 
 ## ① エラーが出ないんだけど？
 
@@ -303,6 +315,8 @@ function Field({
 そこで **“AIで読みやすく”ボタン** を付けると、一気に管理画面っぽくなります📊✨
 
 ## 例：AIで自己紹介を整形して、入力欄に反映する🪄
+
+![AI Bio Rewrite](./picture/firebase_frontend_foundation_ts_study_008_ai_bio_rewrite.png)
 
 Firebase AI Logic（Web）だとこんな感じで呼べます👇 ([Firebase][5])
 

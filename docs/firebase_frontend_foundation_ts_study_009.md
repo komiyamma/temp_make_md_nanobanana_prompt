@@ -8,6 +8,8 @@
 
 ## 0) まず結論：一貫性は “3点セット” で作る 🧰✨
 
+![Design Pillars](./picture/firebase_frontend_foundation_ts_study_009_design_pillars.png)
+
 1. **デザイントークン**（色/余白/角丸/影/文字）を固定する🎯
 2. **共通コンポーネント**（Button/Input/Card…）に寄せる🧱
 3. **状態の見た目**（hover/focus/disabled/loading/error）を統一する🚦
@@ -33,6 +35,8 @@ Tailwind v4 は、デザイントークンを **`@theme` でCSS変数として�
 ---
 
 ## 2) Tailwind v4 の `@theme` で “色と角丸と影” を1か所に集約 🧩✨
+
+![Tailwind Theme](./picture/firebase_frontend_foundation_ts_study_009_tailwind_theme.png)
 
 Tailwind v4 では、`@theme` の **namespace**（`--color-*`, `--radius-*`, `--shadow-*` など）を使うと、それに対応したクラスが使えるようになります💡 ([Tailwind CSS][1])
 
@@ -77,6 +81,8 @@ Tailwind v4 では、`@theme` の **namespace**（`--color-*`, `--radius-*`, `--
 ---
 
 ## 3) “ボタン3兄弟” を共通コンポーネントで固定する 🔘🔘🔘
+
+![Button Variants](./picture/firebase_frontend_foundation_ts_study_009_button_variants.png)
 
 この章のミニ課題にも直結します🎯
 「主（Primary）/ 副（Secondary）/ 危険（Danger）」の3種だけを、**Buttonコンポーネントに閉じ込めます**📦✨
@@ -124,6 +130,8 @@ export function Button({
 
 ## 4) “状態の見た目” を統一する（ここがUIの格を上げる）🚦✨
 
+![UI States](./picture/firebase_frontend_foundation_ts_study_009_ui_states.png)
+
 最低限この4つは **全コンポーネントで統一**しましょ👇
 
 * **hover**：色がちょい変わる
@@ -140,6 +148,8 @@ export function Button({
 ## 5) AIで “UIのブレ探し” を一気にやる 🛸🔍（Antigravity / Gemini CLI）
 
 ## Antigravity（エージェントIDE）でできること 🧠✨
+
+![Antigravity Check](./picture/firebase_frontend_foundation_ts_study_009_antigravity_check.png)
 
 Antigravityは、複数エージェントを“Mission Control”で動かして、調査→修正→検証まで寄せられる設計です🛰️ ([Google Codelabs][3])
 この章だと、例えばこんな依頼が強いです👇
@@ -160,6 +170,8 @@ Gemini CLIは、ターミナル上で“考えて→実行する（ReAct）”�
 ---
 
 ## ミニ課題 🎯：UIガイドページを作って、3種ボタンを並べる 📚✨
+
+![UI Guide Page](./picture/firebase_frontend_foundation_ts_study_009_ui_guide_page.png)
 
 1. `/ui-guide` ページを作る🧭
 2. 背景＝`bg-background`、カード＝`bg-surface rounded-card shadow-card` に固定📌

@@ -16,6 +16,8 @@
 
 なので、画面はこの4状態を最低限持つのが強いです💪
 
+![Three States Concept](./picture/firebase_frontend_foundation_ts_study_007_three_states_concept.png)
+
 1. **loading**：待ってね⏳
 2. **error**：ごめん、失敗した🙏（＋リトライ🔁）
 3. **data**：表示できた🎉
@@ -32,6 +34,7 @@ Firestoreのリアルタイム購読でも、**エラーコールバックを渡
 
 ```ts
 // src/types/asyncState.ts
+![AsyncState Union Type](./picture/firebase_frontend_foundation_ts_study_007_async_state_type.png)
 export type AsyncStatus = "idle" | "loading" | "success" | "error";
 
 export type AsyncState<T> =
@@ -51,6 +54,7 @@ export type AsyncState<T> =
 
 ```ts
 // src/hooks/useAsync.ts
+![useAsync Hook Flow](./picture/firebase_frontend_foundation_ts_study_007_use_async_flow.png)
 import { useCallback, useRef, useState } from "react";
 import type { AsyncState } from "../types/asyncState";
 
@@ -88,6 +92,8 @@ export function useAsync<T>() {
 ---
 
 ## 手を動かす🛠️：表示部品を3つ作る（Spinner / Error / Empty）🧩
+
+![Three UI Components](./picture/firebase_frontend_foundation_ts_study_007_ui_components.png)
 
 ## 3) `Spinner`（読み込み中⏳）
 
@@ -162,6 +168,7 @@ export function EmptyState({
 
 ```tsx
 // src/pages/UsersPage.tsx
+![UsersPage Demo UI](./picture/firebase_frontend_foundation_ts_study_007_users_page_demo.png)
 import { useEffect, useMemo, useState } from "react";
 import { useAsync } from "../hooks/useAsync";
 import { Spinner } from "../components/Spinner";
@@ -278,6 +285,8 @@ export function UsersPage() {
 
 ## 追加で強くなる📌：保存ボタンの “pending” をReact 19で気持ちよくする🧠✨
 
+![useTransition Pending State](./picture/firebase_frontend_foundation_ts_study_007_react_transition.png)
+
 「保存」みたいな操作は、`useTransition` で **ボタンdisabled + pending表示**がきれいに作れます🔁
 React 19では、**Transitionの中でasyncを扱う**方向が強化されています ([react.dev][2])
 
@@ -324,6 +333,8 @@ export function SaveButtonDemo() {
 ---
 
 ## AIも同じ3点セットで扱う🤖✨（エラー文を“人間語”にする）
+
+![AI Error Explanation Flow](./picture/firebase_frontend_foundation_ts_study_007_ai_error_explain.png)
 
 AI呼び出しって、やることは結局これです👇
 **loading（生成中） / error（生成失敗） / data（生成結果）** ✅

@@ -5,6 +5,8 @@
 「Firebaseを使うための入口」を **1つのファイル（例：`firebase.ts`）に集約**して、どこからでも同じインスタンスを使える状態にします🙂✨
 これができると、Auth/Firestore/Storage/Functions/AI などを **安全にスッキリ追加**していけます！🚀
 
+![Centralized Config](./picture/firebase_frontend_foundation_ts_study_010_centralized_config.png)
+
 ---
 
 ## まず理解：なんで1ファイルにするの？🧠
@@ -15,6 +17,8 @@ Firebaseは `initializeApp()` を **何回も呼ばない**のが基本です。
 入口が散らばると「どこで初期化したっけ？😵」になりがちです。
 
 ## ✅ 理由2：必要なものだけ import して軽くできる（Tree Shaking）🌲
+
+![Tree Shaking](./picture/firebase_frontend_foundation_ts_study_010_tree_shaking.png)
 
 Firebase Web SDK は “モジュール式（v9以降）” が、バンドラ最適化（Tree Shaking）に向いてます。必要な関数だけ import するほど、最終ビルドが軽くなります🏃‍♂️💨 ([Firebase][1])
 
@@ -40,6 +44,8 @@ Firebase AI Logic（Webだと `firebase/ai`）も **同じ `firebaseApp` を元�
 
 ## 1) env を用意する（Vite流）🌱
 
+![Env Flow](./picture/firebase_frontend_foundation_ts_study_010_env_flow.png)
+
 ## ✅ `.env.local` を作る（Gitには入れないのが定番🙈）
 
 プロジェクト直下に `.env.local` を作って、Firebaseコンソールの「Webアプリ設定」の値を入れます✍️
@@ -62,6 +68,8 @@ VITE_FIREBASE_APP_ID=1:1234567890:web:xxxxxxxxxxxx
 ---
 
 ## 2) envをTypeScriptで補完する（地味に神）✨
+
+![Env Type Safety](./picture/firebase_frontend_foundation_ts_study_010_env_type_safety.png)
 
 Viteは `import.meta.env` の型定義を持っていますが、**自分で追加した `VITE_...` の補完は自前で足す**のがラクです🧠 ([vitejs][2])
 
@@ -124,6 +132,7 @@ const firebaseConfig = {
 };
 
 // ✅ 初期化は1回だけ（ViteのHMRでも二重初期化を避ける）
+![Init Check](./picture/firebase_frontend_foundation_ts_study_010_init_check.png)
 export const firebaseApp: FirebaseApp =
   getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
@@ -214,6 +223,8 @@ API key restrictions（許可リスト）の設定ミスで起こることがあ
     みたいなチェックリストを作らせると強いです💪✨
 
 ## ✅ AI Logic を“後で足す”前提の設計にする
+
+![AI Integration](./picture/firebase_frontend_foundation_ts_study_010_ai_integration.png)
 
 この章の `firebase.ts` を整えておくと、AI Logic はこの形で **入口に追加できる**イメージです👇
 （`firebase/ai` を使う例が公式にあります）([Firebase][3])
