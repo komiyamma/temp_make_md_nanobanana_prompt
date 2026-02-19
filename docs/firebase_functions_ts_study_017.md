@@ -16,6 +16,8 @@
 
 ## 1) なぜ「AIを裏側」に置くの？🤔
 
+![Frontend vs Backend AI Safety](./picture/firebase_functions_ts_study_017_01_backend_ai_safety.png)
+
 フロント直呼びAIは、すぐ試せて便利なんだけど…👇
 
 * 🔑 **APIキーを守りやすい**（漏れにくい）
@@ -28,6 +30,8 @@
 ---
 
 ## 2) Genkit / onCallGenkit を超ざっくり理解🧠
+
+![Genkit Components](./picture/firebase_functions_ts_study_017_02_genkit_structure.png)
 
 * **Genkit**：JS/TS向けの “AIワークフロー枠” みたいなやつ（Flow・スキーマ・ストリーミング等）🧰
 * **Flow**：入力/出力の形（スキーマ）を決めて、AI呼び出しを1本の処理にする📦
@@ -57,6 +61,8 @@ npm i genkit @genkit-ai/google-genai
 
 ## Step 2：Gemini APIキーをSecretに入れる🔐
 
+![Secret Manager](./picture/firebase_functions_ts_study_017_03_secret_manager.png)
+
 コードに直書き❌。Secret Managerへ✅（Firebase推奨の流れ） ([Firebase][1])
 
 ```powershell
@@ -85,6 +91,8 @@ export const ai = genkit({
 ---
 
 ## Step 4：Flow（入力/出力スキーマ付き）を作る🧩
+
+![Structured Input/Output](./picture/firebase_functions_ts_study_017_04_structured_io.png)
 
 `functions/src/flows/formatNote.ts`
 
@@ -155,6 +163,8 @@ ${input.text}
 
 ## Step 5：`onCallGenkit` でCallableとして公開する📞
 
+![Callable Wrapper Security](./picture/firebase_functions_ts_study_017_05_callable_wrapper.png)
+
 `functions/src/index.ts`
 
 ```ts
@@ -213,6 +223,8 @@ export async function format(text: string) {
 ---
 
 ## 4) ハンズオンB：ストリーミング（“打ってる感”）🌊✨
+
+![Streaming Data Flow](./picture/firebase_functions_ts_study_017_06_streaming_flow.png)
 
 ## 仕組み（超重要）🧠
 
@@ -300,6 +312,8 @@ export async function formatWithStreaming(text: string, onChunk: (s: string) => 
 ---
 
 ## 5) 「AIは間違う」前提のガード 3点セット🛡️🧠
+
+![Three Guard Rails](./picture/firebase_functions_ts_study_017_07_three_guards.png)
 
 最低限ここだけ押さえると、かなり“実務っぽく”なります✨
 
