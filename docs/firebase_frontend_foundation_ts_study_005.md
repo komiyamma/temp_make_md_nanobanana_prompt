@@ -89,6 +89,8 @@ export function AppShell() {
 
 * `h-screen` で“画面全体”を固定✨
 * `main` にだけ `overflow-y-auto` → スクロールが迷子にならない🌀
+
+![react_study_005_01_appshell_struct](./picture/react_study_005_01_appshell_struct.png)
 * `Outlet` が「ページ差し替え口」🔁
 
 ---
@@ -143,6 +145,8 @@ export function Sidebar({ onNavigate }: Props) {
 **ここが管理画面っぽくなるツボ**😆✨
 
 * `NavLink` の `isActive` で「今どこ？」が一発で分かる🚩
+
+![react_study_005_02_sidebar_visual](./picture/react_study_005_02_sidebar_visual.png)
 * `w-64`（=16rem）くらいが“それっぽい”📐
 
 > React Router の最新版（7.13.0）系でOKです🧭✨ ([NPM][3])
@@ -187,6 +191,8 @@ export function Topbar({ onOpenMenu }: Props) {
 ```
 
 **sticky + blur** で「上に張り付く管理画面感」が出ます🧊✨
+
+![react_study_005_03_topbar_visual](./picture/react_study_005_03_topbar_visual.png)
 ここに後で👇を“足すだけ”で強くなります🔥
 
 * ログアウト🔐
@@ -198,6 +204,8 @@ export function Topbar({ onOpenMenu }: Props) {
 ## 5-4 ルーティング側を「枠＋中身」にする 🔁🧭
 
 第4章で Router を作っている前提で、**AppShell を親にして children にページ**を入れます。
+
+![react_study_005_04_nested_route](./picture/react_study_005_04_nested_route.png)
 
 例：`src/router.tsx`（名前は何でもOK）
 
@@ -263,6 +271,8 @@ export function AppRouter() {
 
 ✅ `min-w-0` を “右側の列” と `main` に入れると直ることが多いです📏✨
 （この章のコードはそれを入れてます😺）
+
+![react_study_005_05_layout_bugs](./picture/react_study_005_05_layout_bugs.png)
 
 ## 🧨「リロードで404（Hosting時）」
 
