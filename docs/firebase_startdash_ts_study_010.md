@@ -7,6 +7,8 @@
 
 ## 1) まずは設計：ログイン前トップに必要な4点セット🧭
 
+![Four Design Elements](./picture/firebase_startdash_ts_study_010_01_design_four_elements.png)
+
 「最低限きれい」は、だいたいこの4つで決まります👇
 
 * **Header**：アプリ名＋（あれば）メニュー🧢
@@ -21,6 +23,8 @@
 
 ## 2) “最低限きれい”のコツ3つ（これだけ守れば勝ち）🏆✨
 
+![Design Tips](./picture/firebase_startdash_ts_study_010_02_design_tips.png)
+
 * **幅を制限する**：横に伸びすぎると読みにくい → `max-w-*` を使う📏
 * **余白を揃える**：`px` / `py` を一定にして “整列感” を出す🧼
 * **文字サイズの段差**：見出し＞本文＞補足 の順に小さくする🔠
@@ -28,6 +32,8 @@
 ---
 
 ## 3) 実装：Tailwind v4で“秒でそれっぽく”する⚡（おすすめ）
+
+![Tailwind v4 Setup](./picture/firebase_startdash_ts_study_010_03_tailwind_v4_setup.png)
 
 Tailwind v4 は **Viteプラグイン（@tailwindcss/vite）** が公式で用意されていて、Vite + React と相性よしです👍 ([Tailwind CSS][1])
 （v4はCSS側で `@import "tailwindcss";` に変わっているのもポイント！）([Tailwind CSS][2])
@@ -102,6 +108,8 @@ export function Header({ appName = "MyApp" }: HeaderProps) {
 ```
 
 ### 4-2) `src/components/Hero.tsx`
+
+![Hero Implementation](./picture/firebase_startdash_ts_study_010_04_hero_implementation.png)
 
 ```tsx
 type HeroProps = {
@@ -267,6 +275,8 @@ export default function App() {
 
 ## 5) 🤖AIと一緒に“文章と見た目”を整える（Gemini CLI / Antigravity）✨
 
+![AI Polishing](./picture/firebase_startdash_ts_study_010_05_ai_polishing.png)
+
 ### 5-1) Gemini CLIで「コピー案」を量産する💬
 
 Gemini CLI は npm で入れて、`gemini` コマンドで使えます。([Gemini CLI][3])
@@ -302,6 +312,8 @@ Antigravityは**エージェント中心の開発環境**として「計画→�
 ---
 
 ## 6) FirebaseのAI機能はどう絡むの？（この章の“伏線”）🧵🤖
+
+![Future AI Logic](./picture/firebase_startdash_ts_study_010_06_future_ai_logic.png)
 
 Firebaseには **Firebase AI Logic（Gemini APIをFirebase経由で扱う）** があり、アプリにAI体験（チャット・文章生成・パーソナライズ等）を入れられます。([Firebase][6])
 また、よりサーバー寄りで組むなら **Genkit**（FirebaseのOSSフレームワーク）で、複数モデルを扱う高度な構成もできます。([Firebase][6])

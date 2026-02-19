@@ -16,6 +16,8 @@
 
 ## 1) Node.js と npmって何者？🧠
 
+![Node.js and npm Concept](./picture/firebase_startdash_ts_study_007_01_node_npm_concept.png)
+
 * **Node.js**：ブラウザじゃなくてもJavaScriptを動かせる実行環境💻
   → React開発では「開発サーバー」「ビルド」「CLIツール」を動かすエンジン役になるよ⚙️
 * **npm**：Nodeの世界の“アプリストア”みたいなもの📦
@@ -26,6 +28,8 @@
 ---
 
 ## 2) 2026年の「安全なNodeバージョン」🧯
+
+![Node Version Safety](./picture/firebase_startdash_ts_study_007_02_node_versions.png)
 
 React+Vite周りは、**Nodeが古いと容赦なく動かない** です😇
 
@@ -64,6 +68,8 @@ npm -v
 
 ## 4) npm の基本操作（これだけで当面OK）📦✨
 
+![Basic npm Commands](./picture/firebase_startdash_ts_study_007_03_npm_commands.png)
+
 ## 4-1. 依存を入れる
 
 * ふつうに入れる：
@@ -79,12 +85,16 @@ npm -v
 
 ## 4-3. lockファイルは“守る”
 
+![package-lock.json Purpose](./picture/firebase_startdash_ts_study_007_04_lock_file.png)
+
 `package-lock.json` は **npmが自動生成**して、同じ依存ツリーを再現するためのもの🔒
 基本 **Gitにコミットする前提** だよ（チームでも未来の自分でも助かる）🫶 ([npm ドキュメント][4])
 
 ---
 
 ## 5) `package.json` の読み方（最低ライン）👀
+
+![package.json Anatomy](./picture/firebase_startdash_ts_study_007_05_package_json.png)
 
 見る場所はここだけでOK👇
 
@@ -96,6 +106,8 @@ npm -v
 ---
 
 ## 6) 5分で体験：Nodeで動かして、npmで1個入れる🧪✨
+
+![Node Hands-on](./picture/firebase_startdash_ts_study_007_06_handson.png)
 
 ## 6-1. 新しい作業フォルダを作る📁
 
@@ -149,6 +161,8 @@ node index.mjs
 ---
 
 ## 7) Antigravity / Firebase Studio 側で詰まったとき🛸🧰
+
+![Nix Environment](./picture/firebase_startdash_ts_study_007_07_nix_env.png)
 
 クラウドIDE側は **Nixで環境を固定**できるタイプ。
 つまり「Nodeのバージョンをプロジェクトに同梱して、全員同じ環境にする」発想が強いよ📌 ([Firebase][5])

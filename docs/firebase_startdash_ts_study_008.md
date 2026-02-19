@@ -38,6 +38,8 @@ where node
 
 ## 2) Vite で React+TS プロジェクトを作る⚡📦
 
+![Vite Project Creation](./picture/firebase_startdash_ts_study_008_01_create_vite.png)
+
 いきます！コマンドはこれだけ👇（公式の作り方）([vitejs][5])
 
 ```powershell
@@ -53,6 +55,8 @@ npm run dev
 ---
 
 ## 3) “動いた！”を画面に出す🎉📸
+
+![Hello World Screen](./picture/firebase_startdash_ts_study_008_02_hello_world.png)
 
 `src/App.tsx` を開いて、いったんこれに置き換えちゃおう👇（最小の「動いた！」表示）
 
@@ -74,6 +78,8 @@ export default function App() {
 ---
 
 ## 4) “迷子にならない”超ミニ構造理解🧭📁
+
+![Entry Point Flow](./picture/firebase_startdash_ts_study_008_03_file_structure.png)
 
 この章では、最低これだけ覚えればOK🙂
 
@@ -117,6 +123,8 @@ WindowsのPowerShellです。
 ---
 
 ## 6) 🌟 Firebase AI を“後でラクする形”で仕込む（30秒）🧠🧩
+
+![AI Placeholder Logic](./picture/firebase_startdash_ts_study_008_04_ai_placeholder.png)
 
 まだ Firebase を繋いでないけど、**将来 Firebase AI Logic に差し替える前提の“置き場所”だけ作る**と気持ちいいです😄
 
@@ -181,6 +189,8 @@ Antigravity は “エージェント前提の開発環境”として案内さ�
 ---
 
 ## よくある詰まり🐛🧯（ここだけ見ればOK）
+
+![Troubleshooting Common Issues](./picture/firebase_startdash_ts_study_008_05_troubleshooting.png)
 
 * **`Vite requires Node.js 20.19+ or 22.12+`**
   → Node を新しめの LTS にする（まずここ）([vitejs][1])
