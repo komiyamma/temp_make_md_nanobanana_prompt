@@ -5,6 +5,8 @@
 
 ---
 
+![Strategy Map](./picture/firebase_storage_ts_study_019_01_strategy_map.png)
+
 ## 1) まずサムネって何が嬉しいの？🤔📷
 
 プロフィール画像って、元画像がスマホ写真だと **数MB** になることも普通だよね📱💦
@@ -24,7 +26,11 @@
 
 ---
 
+![Performance Comparison](./picture/firebase_storage_ts_study_019_02_performance_comparison.png)
+
 ## 2) サムネを作る場所は3択だよ🧩
+
+![Three Generation Methods](./picture/firebase_storage_ts_study_019_03_three_methods.png)
 
 ### ① クライアント（ブラウザ）で縮小して「1枚だけ」置く🖥️➡️🗜️
 
@@ -58,6 +64,8 @@
 > Resize Images は **Blaze（従量課金）** が必要だよ。([extensions.dev][2])
 
 ---
+
+![Design Triangle](./picture/firebase_storage_ts_study_019_04_design_triangle.png)
 
 ## 3) ここを決めれば勝ち🏆（サムネ設計の3点セット）
 
@@ -93,6 +101,8 @@ UIルールを決めると、画面実装が一気にラクになる😆
 * 拡大表示：`original`
 
 ---
+
+![Firestore Schema](./picture/firebase_storage_ts_study_019_05_data_schema.png)
 
 ## 4) Firestore側の持ち方（超おすすめ形）🧠🗃️
 
@@ -162,6 +172,8 @@ return (
 
 ## 6) 自動生成の選び方（おすすめルート）🚦
 
+![Extension Install](./picture/firebase_storage_ts_study_019_06_extension_install.png)
+
 ### ルートA：Resize Images拡張（最短で“それっぽい”）🧩🚀
 
 やることは超シンプル👇
@@ -186,6 +198,8 @@ ESM（`"type":"module"`）もOK。([Firebase][3])
 > 「どっち使う？」は、最初は **Node.js 20 or 22** でOK👍（新しめを選べばOK）
 
 ---
+
+![AI Enrichment](./picture/firebase_storage_ts_study_019_07_ai_enrichment.png)
 
 ## 7) AIも絡める🤖🖼️✨（サムネ設計が“次の章”に繋がる！）
 
