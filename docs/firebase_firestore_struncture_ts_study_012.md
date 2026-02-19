@@ -20,6 +20,8 @@ Firestoreは「単一ドキュメントをどれくらいの速度で更新で�
 
 さらに、限界を超えると `RESOURCE_EXHAUSTED` みたいなエラー（クォータ/書き込みランプアップ制限など）が出ることがあります😵‍💫([Google Cloud Documentation][2])
 
+![Bottleneck Funnel](./picture/firebase_firestore_struncture_ts_study_012_01_bottleneck_funnel.png)
+
 ---
 
 ## 分散カウンタの発想（1個をN個に割る）🧩✨
@@ -33,6 +35,8 @@ Firestoreは「単一ドキュメントをどれくらいの速度で更新で�
 * 合計値は「N個の合計」にする
 
 公式ドキュメントでも「shard数に比例して書き込み耐性が増える」ことが説明されています([Firebase][3])
+
+![Shard Shattering Concept](./picture/firebase_firestore_struncture_ts_study_012_02_shard_shattering.png)
 
 **設計イメージ🧠**
 
@@ -99,6 +103,8 @@ export async function incrementLike(db: Firestore, postId: string, numShards = 1
 }
 ```
 
+![Random Shard Selection](./picture/firebase_firestore_struncture_ts_study_012_03_roulette_selection.png)
+
 ---
 
 ## 手を動かす④：合計値を読む（全 shard を読んで合計）📚➕📚
@@ -122,6 +128,8 @@ export async function getLikesCount(db: Firestore, postId: string) {
   return total;
 }
 ```
+
+![Read Cost Trade-off](./picture/firebase_firestore_struncture_ts_study_012_04_read_cost_effort.png)
 
 ---
 
@@ -167,6 +175,8 @@ export async function getLikesCount(db: Firestore, postId: string) {
 1. クライアントは `likes/{uid}` みたいな「1ユーザー1いいね」の証拠ドキュメントだけ作る
 2. サーバー側（後の章の Functions など）が、その作成/削除をトリガーにして分散カウンタを更新する
    → これで「ズル」と「衝突」を両方ケアできます🛡️✨
+
+![Tamper Prevention Strategy](./picture/firebase_firestore_struncture_ts_study_012_05_tamper_prevention.png)
 
 ---
 

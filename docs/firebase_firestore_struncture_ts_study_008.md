@@ -16,6 +16,8 @@ Firestoreは「JOINしない」ぶん、**一覧の出し方（orderBy/limit）�
 
 Firestore公式でも、一覧は **orderBy + limit** を基本にして組み立てる流れが示されてるよ。([Firebase][1])
 
+![Query components diagram](./picture/firebase_firestore_struncture_ts_study_008_01_query_components.png)
+
 ---
 
 ## 2) まず決める「記事一覧」の仕様（例）📰✨
@@ -28,6 +30,8 @@ Firestore公式でも、一覧は **orderBy + limit** を基本にして組み�
 
 この3つを満たすように、フィールドを逆算しよう💡
 
+![Three types of list views](./picture/firebase_firestore_struncture_ts_study_008_02_list_types.png)
+
 ---
 
 ## 3) ソートキー設計の鉄板ルール 🧱🔑
@@ -36,6 +40,8 @@ Firestore公式でも、一覧は **orderBy + limit** を基本にして組み�
 
 Firestoreの注意点として、**orderBy に使ったフィールドが存在しないドキュメントは、結果から外れる**んだ😱
 （つまり、createdAt が無い記事は一覧に出てこない）([Firebase][1])
+
+![Missing field exclusion concept](./picture/firebase_firestore_struncture_ts_study_008_03_missing_field_exclusion.png)
 
 なので posts には最低これを“必須”にするのが安定👇
 
@@ -48,6 +54,8 @@ createdAt だけで並べると、**同じ時刻**が出ることがある（特
 このとき「ページング（次のページ）」が**重複したり、抜けたり**しやすい。
 
 Firestore公式のカーソル説明でも、**カーソルに使うフィールド値が同じだと期待した挙動にならないことがある**って明言されてるよ。([Firebase][2])
+
+![Sort instability diagram](./picture/firebase_firestore_struncture_ts_study_008_04_sort_instability.png)
 
 👉 対策は2択！
 
@@ -63,6 +71,8 @@ Firestoreの推奨パターンはこれ👇
 * まず limit で1ページ
 * 次ページは startAfter（or startAt）で続き
 * カーソルは **DocumentSnapshot** を渡せる（値を手で並べなくていい）([Firebase][2])
+
+![Snapshot cursor concept](./picture/firebase_firestore_struncture_ts_study_008_05_snapshot_cursor.png)
 
 ## ✅おすすめ：Snapshotカーソル方式（簡単で事故りにくい）📸
 
@@ -193,6 +203,8 @@ orderBy に使うフィールドが無いと、結果から外れることがあ
 ## 事故2：ページングが重複／抜ける 📄💫
 
 同じ createdAt が続くと、カーソルが曖昧になりやすい⚠️([Firebase][2])
+
+![Pagination duplication/gap error](./picture/firebase_firestore_struncture_ts_study_008_06_pagination_errors.png)
 ✅ 対策：Snapshotカーソル or 第二キー
 
 ---
@@ -235,6 +247,8 @@ orderBy に使うフィールドが無いと、結果から外れることがあ
 
 AI機能を入れると「生成履歴」「監査ログ」「レビュー履歴」みたいな**ログ一覧**がすぐ欲しくなるよね👀
 そのときも第8章の考え方がそのまま効く！
+
+![AI Log Schema Diagram](./picture/firebase_firestore_struncture_ts_study_008_07_ai_log_schema.png)
 
 例：aiLogs コレクション
 
