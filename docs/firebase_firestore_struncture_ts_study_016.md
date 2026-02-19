@@ -11,6 +11,8 @@
 
 ## 1) まず読む：`orderBy` は「並べ替え」だけじゃない⚠️
 
+![Missing Field Exclusion](./picture/firebase_firestore_struncture_ts_study_016_01_missing_field_exclusion.png)
+
 Firestore の `orderBy()` は、ただ並べ替えるだけ…に見えるけど、実は**そのフィールドが存在するドキュメントしか返さない**という性質があるよ😵‍💫
 つまり「`createdAt` が無い投稿」は、他の条件に合っていても**検索結果から消える**！ ([Firebase][1])
 
@@ -40,6 +42,8 @@ Firestore の `orderBy()` は、ただ並べ替えるだけ…に見えるけど
 ---
 
 ## パターンC：同点が出て順番がフワる🌀
+
+![Stable Sort](./picture/firebase_firestore_struncture_ts_study_016_02_stable_sort.png)
 
 `createdAt` が同じ投稿が並んだ時、順序が不安定だと「次ページに同じの出た」「抜けた」が起きる。
 
@@ -74,6 +78,8 @@ await addDoc(collection(db, "posts"), {
 
 ## 3-2. `orderBy` なし → ありで件数比較
 
+![Experiment Result](./picture/firebase_firestore_struncture_ts_study_016_03_experiment_result.png)
+
 ```ts
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
@@ -104,6 +110,8 @@ console.log("orderByあり:", b.size);
 * 型は Timestamp で統一（文字列にしない）🧠
 
 ## 解決策②：作成時に “自動で埋める” を標準化する🛠️
+
+![Standard Create Flow](./picture/firebase_firestore_struncture_ts_study_016_04_standard_create.png)
 
 クライアント実装のブレで `createdAt` が抜けるのが事故の原因なので、**投稿作成関数を1個に固定**しよう（「どこからでも同じ道」🚪）
 
@@ -148,6 +156,8 @@ const q = query(
 
 ## 6) 既に欠けてるデータはどうする？（埋め戻し戦略）🩹🧹
 
+![Backfill Strategy](./picture/firebase_firestore_struncture_ts_study_016_05_backfill_strategy.png)
+
 ## 現実あるある😇
 
 昔作った投稿に `createdAt` が無い！
@@ -172,6 +182,8 @@ const q = query(
 ## 7) AIでこの章が爆速になる🤖⚡（Firebase AI Logic / Genkit / Antigravity / Gemini CLI）
 
 ## 7-1. “設計レビュー” をAIに投げる（Firebase AI Logic）🧠
+
+![AI Design Review](./picture/firebase_firestore_struncture_ts_study_016_06_ai_review.png)
 
 Firebase AI Logic はアプリから Gemini/Imagen を使える導線で、モデルや運用の更新も速い領域だよ🚀 ([Firebase][3])
 だからこそ、**データ設計のレビュー**にAIを使うと相性がいい✅
@@ -204,6 +216,8 @@ Gemini CLI はターミナルで動く AI エージェントとして公式に�
 ---
 
 ## 7-4. Genkit で “AI処理→保存” を作る時こそ createdAt 必須🧾🤖
+
+![Genkit Logging](./picture/firebase_firestore_struncture_ts_study_016_07_genkit_log.png)
 
 Genkit は Firebase チーム側の OSS フレームワークとして案内されてて、Functions から呼び出す導線も用意されてるよ。 ([Firebase][6])
 AI出力を Firestore に保存するなら、
