@@ -16,6 +16,8 @@
 
 ## 0) 全体の流れ（設計図）🗺️
 
+![Automated Pipeline](./picture/firebase_storage_ts_study_020_01_automated_pipeline.png)
+
 **①ユーザーが画像を選ぶ**（React）
 → **②AIで“説明/タグ/判定”を作る**（Firebase AI Logic）
 → **③Storageへアップロード**（Cloud Storage for Firebase）
@@ -36,6 +38,8 @@ Resize Images拡張は、Cloud Storageへのアップロードをトリガーに
 
 #### 推奨パス設計📁
 
+![Bucket Path Structure](./picture/firebase_storage_ts_study_020_02_bucket_path_structure.png)
+
 * オリジナル：`users/{uid}/profile/original/{imageId}`
 * サムネ：`users/{uid}/profile/thumbs/{imageId}_128` / `{imageId}_512` など
 
@@ -55,6 +59,8 @@ Resize Images拡張は、設定によって**完了イベントを飛ばす**（
 
 ### 2-1. Firestoreのドキュメント例🗃️
 
+![Firestore Document Schema](./picture/firebase_storage_ts_study_020_03_firestore_schema.png)
+
 `users/{uid}/profileImages/{imageId}` を作る想定で、こんな感じにします👇
 
 * `originalPath`: `users/.../original/...`
@@ -69,6 +75,8 @@ Resize Images拡張は、設定によって**完了イベントを飛ばす**（
 ---
 
 ### 2-2. Storageにオリジナルが来たら「processing」にする📥➡️⚙️
+
+![Processing State Flow](./picture/firebase_storage_ts_study_020_04_processing_state.png)
 
 ポイント：
 
@@ -125,6 +133,8 @@ export const onProfileOriginalUploaded = onObjectFinalized(
 ---
 
 ### 2-3. サムネが生成されたら「ready」にする🖼️✅
+
+![Ready State Flow](./picture/firebase_storage_ts_study_020_05_ready_state.png)
 
 Resize Images拡張が作るサムネは “別オブジェクト” としてStorageに出てきます。
 だから `thumbs/` の `onObjectFinalized` を拾えばOKです👌
@@ -197,6 +207,8 @@ const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 
 ### 3-2. 画像を解析してテキストを出す📷➡️📝
 
+![AI Image Analysis](./picture/firebase_storage_ts_study_020_06_ai_analysis.png)
+
 Firebase AI Logicは、画像＋テキストのマルチモーダル入力で `generateContent()` ができます。([Firebase][4])
 
 **やりたいこと（例）**👇
@@ -239,6 +251,8 @@ const json = JSON.parse(text);
 ---
 
 ## 5) Antigravity / Gemini CLI / MCPで“調査→修正→検証”を短距離化🚀🧩
+
+![AI Development Cycle](./picture/firebase_storage_ts_study_020_07_ai_dev_cycle.png)
 
 ここは作業速度が爆上がりします😇
 Firebase MCP server は、AIクライアントからFirebase操作をつなぐための仕組みとして案内されています。([Firebase][6])
