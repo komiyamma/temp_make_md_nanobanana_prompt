@@ -17,6 +17,8 @@
 
 ## 1) まず結論：UIから呼ぶなら「Callable」が最強 🥇✨
 
+![Callable vs HTTP Functions](./picture/firebase_frontend_foundation_ts_study_017_01_callable_vs_http.png)
+
 Functionsの呼び方は大きく2つあります👇
 
 ## A. Callable Functions（おすすめ）☎️✨
@@ -47,6 +49,8 @@ UIから呼ぶには、呼び先の関数が必要なので、まず“超ミニ
 > ※UI側は「Callableを呼ぶ」だけなので、サーバーがNodeでもPythonでも基本同じ気持ちです🙂
 
 ## 2-2) 関数例：テキスト整形（formatText）🧽✨
+
+![Callable Function Structure](./picture/firebase_frontend_foundation_ts_study_017_02_function_structure.png)
 
 ```ts
 // functions/src/index.ts
@@ -101,6 +105,8 @@ Functionsの公式ガイド例では `firebase@12.9.0` が示されています�
 
 ## 3-2) `src/services/functions.ts` を作る 🔌
 
+![Service Pattern Architecture](./picture/firebase_frontend_foundation_ts_study_017_03_service_pattern.png)
+
 ```ts
 // src/services/functions.ts
 import { app } from "../firebase"; // 第10章で作った初期化ファイル想定
@@ -131,6 +137,8 @@ export async function callFormatText(input: FormatTextInput): Promise<FormatText
 ---
 
 ## 4) UI：ボタン → 実行中 → 成功 → 失敗 を気持ちよく作る 🎮✨
+
+![UI State Machine](./picture/firebase_frontend_foundation_ts_study_017_04_ui_states.png)
 
 例として「文章を貼って整形ボタンを押す」と、整形結果が返ってくる画面を作ります📝✨
 
@@ -218,6 +226,8 @@ export default function TextTools() {
 
 ## 5) Emulatorでローカル検証する 🧪✨（超重要！）
 
+![Emulator Connection Switch](./picture/firebase_frontend_foundation_ts_study_017_05_emulator_connection.png)
+
 本番デプロイ前にローカルで叩けると、安心感が段違いです😆
 
 * フロント側は `connectFunctionsEmulator(functions, "127.0.0.1", 5001)` を使います🔌 ([Firebase][2])
@@ -228,6 +238,8 @@ export default function TextTools() {
 ---
 
 ## 6) つまづきポイント集（ここで詰まりやすい）🧯
+
+![User-Friendly Error Handling](./picture/firebase_frontend_foundation_ts_study_017_06_error_handling.png)
 
 ## ① 「CORSで死ぬ」😵‍💫
 
@@ -247,6 +259,8 @@ export default function TextTools() {
 ---
 
 ## 7) AIへ繋げる布石：次章（AIボタン🤖）が超ラクになる話 🚀
+
+![AI Integration Preview](./picture/firebase_frontend_foundation_ts_study_017_07_ai_preview.png)
 
 この章で作った「ボタン→Functions→結果表示」の器は、AIにもそのまま使えます✨
 

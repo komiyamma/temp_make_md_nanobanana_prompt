@@ -7,6 +7,8 @@ HTTPリクエスト（GET/POSTなど）で関数を呼べるので、**Web API�
 
 ## 0) まずイメージをつかもう🧠✨
 
+![HTTP Trigger Concept](./picture/firebase_functions_ts_study_006_01_http_trigger_concept.png)
+
 HTTPトリガーは超ざっくり言うと👇
 
 * ブラウザやアプリ（React）から **URLを叩く**
@@ -20,6 +22,8 @@ HTTPトリガーは超ざっくり言うと👇
 
 ## 1) 今日作るもの：`GET /health` ✅🩺
 
+![Health Check API](./picture/firebase_functions_ts_study_006_02_health_check.png)
+
 運用でめちゃ使うやつです😎
 **「生きてる？」を返すだけのAPI**を1本作ります。
 
@@ -30,6 +34,8 @@ HTTPトリガーは超ざっくり言うと👇
 ---
 
 ## 2) HTTP関数の基本：`onRequest` 🌐
+
+![onRequest Options](./picture/firebase_functions_ts_study_006_03_onrequest_options.png)
 
 2nd genのHTTP関数は `onRequest` で作るのが基本です。
 さらに **オプション（region / timeout / cors）** を付けられます。([Firebase][1])
@@ -48,6 +54,8 @@ HTTPトリガーは超ざっくり言うと👇
 （第5章の分割方針があるなら `src/http/health.ts` に置くのがキレイ👍）
 
 ## ✅ `functions/src/http/health.ts`
+
+![Health Function Logic](./picture/firebase_functions_ts_study_006_04_code_flow.png)
 
 ```ts
 import { onRequest } from "firebase-functions/v2/https";
@@ -86,6 +94,8 @@ export { health } from "./http/health";
 ---
 
 ## 4) ついでに“全関数にregion統一”する小ワザ🗾✨（おすすめ）
+
+![Global Options Scope](./picture/firebase_functions_ts_study_006_05_global_options.png)
 
 関数が増えると毎回 `region:` 書くのダルいよね😂
 2nd genでは **グローバル設定** でまとめられます。
@@ -133,6 +143,8 @@ Invoke-RestMethod https://<あなたのhealthのURL>
 
 ## 6) 2nd genの“地味に大事”ポイント：同時処理（concurrency）⚡
 
+![Concurrency 2nd Gen](./picture/firebase_functions_ts_study_006_06_concurrency.png)
+
 2nd genは **1つのインスタンスが同時に複数リクエスト**を処理できるのが強み💪
 デフォルト `concurrency: 80`、最大 `1000` まで設定できます。([Firebase][2])
 
@@ -156,6 +168,8 @@ Reactから呼ぶのは第8章で勝ちに行こう🔥
 ---
 
 ## 8) AIで爆速にする🤖🛸（Gemini CLI × Firebase）
+
+![AI Development Cycle](./picture/firebase_functions_ts_study_006_07_ai_dev_cycle.png)
 
 ここ、ちゃんと最新を押さえるよ〜😆
 **Gemini CLIにFirebase拡張**が用意されていて、導入やコマンド補助ができます。([Firebase][4])
