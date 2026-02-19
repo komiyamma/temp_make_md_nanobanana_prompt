@@ -15,6 +15,7 @@
 
 Rules側での参照はこんな感じ👇
 `request.auth.token.admin`（adminというクレームを見に行く） ([Firebase][1])
+![Concept of Custom Claims.](./picture/firebase_security_role_ts_study_015_01_custom_claims_concept.png)
 
 ---
 
@@ -24,16 +25,19 @@ Rules側での参照はこんな感じ👇
 
 Custom Claims を付与できるのは **Admin SDK（サーバー側の特権環境）だけ**です。
 つまり、**Reactアプリ（ブラウザ）にAdmin SDKを入れて付与**みたいなのはNG🙅‍♂️（危険すぎ） ([Firebase][2])
+![Where to apply Custom Claims.](./picture/firebase_security_role_ts_study_015_02_client_vs_server.png)
 
 ## ✅ 付与しても、すぐ反映されない（トークン更新が必要）🔄
 
 Custom Claimsは **次に発行されるIDトークン**に入ります。
 なので付与直後は、ユーザー側で **トークンの強制更新**が必要になることが多いです（後で手を動かします） ([Firebase][2])
+![The necessity of Token Refresh.](./picture/firebase_security_role_ts_study_015_03_token_refresh.png)
 
 ## ✅ 入れられるサイズに上限がある（1000バイト）📦
 
 Custom Claimsは **最大1000バイト**。大きいデータやプロフィール全部を入れる場所じゃないです🙅‍♀️
 「admin: true」みたいな **小さいフラグ**向き！ ([Firebase][2])
+![1000 Byte Limit on Claims.](./picture/firebase_security_role_ts_study_015_04_size_limit.png)
 
 ## ✅ 予約語っぽいクレーム名は使えない🧨
 
@@ -125,6 +129,7 @@ console.log("✅ admin=true を付与しました:", uid);
 > `setCustomUserClaims(uid, null)` で「そのユーザーのCustom Claimsを全消し」できます🧹 ([Firebase][2])
 
 ※ `firebase-admin` のセットアップや「認証情報ファイルが必要」という話は Admin SDKの公式手順にあります ([Firebase][3])
+![Executing Admin SDK script.](./picture/firebase_security_role_ts_study_015_05_admin_sdk_script.png)
 
 ---
 
@@ -170,6 +175,8 @@ service cloud.firestore {
 ---
 
 ## 5) よくある事故パターン集😂💥（先に踏んでおこう）
+
+![Common pitfalls with Custom Claims.](./picture/firebase_security_role_ts_study_015_06_common_accidents.png)
 
 ## 事故①：付与したのに admin が見えない😱
 

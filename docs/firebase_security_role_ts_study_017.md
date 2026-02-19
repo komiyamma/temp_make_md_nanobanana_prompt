@@ -14,6 +14,7 @@ Firestore内ロール管理が刺さるのは、だいたいこの2パターン�
 * **「プロジェクト別」「グループ別」**のように、権限が“リソース単位”で違う🏷️
 
 一方で、**「管理者 / 一般ユーザー」みたいな“全体ロール”**は、Custom Claimsの方が堅くて軽いことが多いです🎫🔐 ([Firebase][1])
+![Comparison of Firestore Roles vs Custom Claims.](./picture/firebase_security_role_ts_study_017_01_firestore_vs_claims.png)
 
 ---
 
@@ -25,6 +26,7 @@ Firestore内ロール管理が刺さるのは、だいたいこの2パターン�
 
 * 👍 直感的で分かりやすい
 * 👎 Rulesの中で `get()` / `exists()` 参照が増えがち（＝コスト＆制限に影響）([Firebase][2])
+![Pattern A: Roles Document.](./picture/firebase_security_role_ts_study_017_02_pattern_a.png)
 
 ## パターンB：`projects/{projectId}/members/{uid}`（“所属”をドキュメントで表現）
 
@@ -33,6 +35,7 @@ Firestore内ロール管理が刺さるのは、だいたいこの2パターン�
 * 👍 “プロジェクト単位”権限に強い
 * 👍 ユーザー全体ロールより自然
 * 👎 設計を雑にすると「membersを書き換えて昇格😱」が起きる
+![Pattern B: Project Membership.](./picture/firebase_security_role_ts_study_017_03_pattern_b.png)
 
 ## パターンC：`groups/{groupId}` に `members: [uid...]`（配列で持つ）
 
@@ -48,10 +51,12 @@ Firestore内ロール管理が刺さるのは、だいたいこの2パターン�
 
 ロールをFirestoreに置くなら、**ロールを更新する権限は超・限定**しないと詰みます😇
 Rulesで「rolesは誰も書けない」または「管理者だけ」みたいに固定します。
+![Danger of Client-side Role Writing.](./picture/firebase_security_role_ts_study_017_04_landmine_client.png)
 
 ## 地雷②：`get()` / `exists()` は“追加の読み取り課金”になる💸
 
 Rules内で `get()` / `exists()` / `getAfter()` を使うと、**Rules評価のための追加Read**が発生します（拒否されても発生し得る）😱 ([Firebase][2])
+![Cost of Rules Read Operations.](./picture/firebase_security_role_ts_study_017_05_landmine_cost.png)
 
 ## 地雷③：`get()` / `exists()` の呼び出し回数には上限がある🚧
 
@@ -128,6 +133,7 @@ service cloud.firestore {
 ```
 
 `exists()` / `get()` は追加Readになり得る＆回数制限もあるので、**「isAdmin() を1回で済む形」に寄せる**のが大事です💡 ([Firebase][2])
+![Logic of isAdmin function.](./picture/firebase_security_role_ts_study_017_06_rules_logic.png)
 
 ---
 
