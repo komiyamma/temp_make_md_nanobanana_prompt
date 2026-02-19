@@ -13,12 +13,16 @@
 
 ---
 
+![Rules Gatekeeper](./picture/firebase_storage_ts_study_015_01_gatekeeper.png)
+
 ## 1) Rulesって何者？ざっくり理解🧠✨
 
 ### ✅ Rulesは「入口の門番」🚧🧑‍✈️
 
 Cloud Storage for Firebase のRulesは、**どのパスのファイルに、誰が、何をしていいか**を決める“門番”です🛡️
 しかも **アプリの中じゃなく、サーバー側で強制**されます（クライアントがズルしても止まる）💪([Firebase][1])
+
+![OR Logic Warning](./picture/firebase_storage_ts_study_015_02_or_logic_warning.png)
 
 ### ✅ ルールは AND じゃなくて OR になりやすい⚠️
 
@@ -27,6 +31,8 @@ Cloud Storage for Firebase のRulesは、**どのパスのファイルに、誰�
 だから「広く許可するルール」を置くと、後から細かい禁止を書いても止められない…が起きます😇🔥([Firebase][1])
 
 → なのでこの章は **“まず全部閉じる”**から入ります🚪💥
+
+![Flat Namespace](./picture/firebase_storage_ts_study_015_03_flat_namespace.png)
 
 ### ✅ Storageは「フォルダがあるように見えて、実体はファイル名」📁（地味に大事）
 
@@ -46,6 +52,8 @@ Cloud Storage for Firebase のRulesは、**どのパスのファイルに、誰�
 ### `match`：どのパスの話？🧭
 
 Rulesは **パスにマッチしたブロック**の `allow` を見ます。
+
+![Read/Write Granularity](./picture/firebase_storage_ts_study_015_04_read_write_breakdown.png)
 
 ### `allow`：何を許可？（read/write だけじゃない）📌
 
@@ -67,6 +75,8 @@ Firebase Console → **Storage** → **Rules** を開く📌([Firebase][2])
 > （Consoleには“直近デプロイされたRules”が表示されます）([Firebase][2])
 
 ---
+
+![Full Lockdown](./picture/firebase_storage_ts_study_015_05_full_lockdown.png)
 
 ## 4) 手を動かす②：いったん「全閉じ」ルールを入れる🚪🔒
 
@@ -97,6 +107,8 @@ service firebase.storage {
 
 ここからが本番✨
 あなたの設計は `users/{uid}/profile/**` なので、そこだけ許可します📁
+
+![Private vs Public Read](./picture/firebase_storage_ts_study_015_06_private_vs_public.png)
 
 ### パターンA：読み取りも「本人だけ」🫥（まずは安全寄り）
 
@@ -149,6 +161,8 @@ service firebase.storage {
 ```
 
 ---
+
+![Playground Testing](./picture/firebase_storage_ts_study_015_07_playground_testing.png)
 
 ## 6) 手を動かす④：Rules Playground で即テスト🧪⚡
 

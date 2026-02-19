@@ -6,7 +6,11 @@
 
 ---
 
+![Bouncer Metaphor](./picture/firebase_storage_ts_study_017_01_bouncer_metaphor.png)
+
 ## 1) まず腹落ち：App Check で何が変わるの？🤔
+
+![Chaos vs Order](./picture/firebase_storage_ts_study_017_02_chaos_vs_order.png)
 
 ### App Check なしだと…😇
 
@@ -61,6 +65,8 @@ Firebase JS SDK は npm / GitHub の最新を入れればOK（例：firebase@12.
 npm i firebase@latest
 ```
 
+![Initialization Sequence](./picture/firebase_storage_ts_study_017_03_init_sequence.png)
+
 #### 2) `firebase.ts`（最小セット）
 
 * **ポイント：App Check 初期化は「Firebaseサービスを触る前」に置く**✨([Firebase][3])
@@ -105,6 +111,8 @@ export const storage = getStorage(app);
 
 ---
 
+![Debug Token Key](./picture/firebase_storage_ts_study_017_04_debug_token_key.png)
+
 ### Step D：ローカル開発（localhost）は debug token でやる🧪🔐
 
 ここが超重要ポイントです⚠️
@@ -120,6 +128,8 @@ export const storage = getStorage(app);
 > debug token は「強力な通行証」なので、**公開リポジトリに絶対入れない**でね🧨（漏れたら revoke！）([Firebase][6])
 
 ---
+
+![Monitor to Enforce](./picture/firebase_storage_ts_study_017_05_monitor_to_enforce.png)
 
 ### Step E：まずは“監視”してから、強制（Enforce）へ📈➡️🚨
 
@@ -150,6 +160,8 @@ App Check → Cloud Storage のメトリクスを開いて **Enforce** を押す
 
 ---
 
+![Pitfall Warning](./picture/firebase_storage_ts_study_017_06_pitfall_warning.png)
+
 ## 5) よくある詰まりポイント集🧯😵‍💫
 
 * **App Check 初期化が遅い**：Storage を触った後に `initializeAppCheck()` してる → トークンが乗らない
@@ -159,6 +171,8 @@ App Check → Cloud Storage のメトリクスを開いて **Enforce** を押す
 * **しきい値を上げすぎ**：正規ユーザーまで落ちる → いったんデフォルト運用がおすすめ🎛️([Firebase][3])
 
 ---
+
+![AI Assistant](./picture/firebase_storage_ts_study_017_07_ai_assistant.png)
 
 ## 6) AIで爆速にする（Antigravity / Gemini CLI / Console AI）🤖⚡
 

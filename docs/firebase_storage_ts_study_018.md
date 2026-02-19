@@ -14,6 +14,8 @@ Storage って、Rules・App Check・認証が絡むとバグりやすいので�
 
 ---
 
+![Sandbox Metaphor](./picture/firebase_storage_ts_study_018_01_sandbox_metaphor.png)
+
 ## 読む：エミュレーターが“最強の保険”な理由 🧠🛟
 
 ### 1) ローカル実行のメリットがでかすぎる 😭✨
@@ -39,6 +41,8 @@ Storage って、Rules・App Check・認証が絡むとバグりやすいので�
 * Java（エミュレーター実行に **Java JDK 11+**）([Firebase][1])
 
 ---
+
+![Port Mapping](./picture/firebase_storage_ts_study_018_02_emulator_ports.png)
 
 ### Step 1：エミュレーターを初期化＆起動 🔥
 
@@ -68,6 +72,8 @@ firebase emulators:start
 
 ---
 
+![Wiring Blueprint](./picture/firebase_storage_ts_study_018_03_wiring_blueprint.png)
+
 ### Step 2：`firebase.json` の例（雰囲気）🧩
 
 `firebase init emulators` が作る形に近い例です👇（細部はあなたの生成物が正）
@@ -92,6 +98,8 @@ firebase emulators:start
 
 ---
 
+![Limbo Bar Limit](./picture/firebase_storage_ts_study_018_04_limbo_limit.png)
+
 ### Step 3：Storage Rules を“わざと厳しく”して失敗を作る🛡️💥
 
 ここは「失敗ケースを起こす」ため、あえて上限を小さくします（例：200KB）📉
@@ -114,6 +122,8 @@ service firebase.storage {
 `request.resource.size` と `request.resource.contentType` で制限できるのがキモです🧠🛡️ ([Firebase][3])
 
 ---
+
+![Connection Switch](./picture/firebase_storage_ts_study_018_05_connection_switch.png)
 
 ### Step 4：React 側を「本番 / エミュ」切り替えにする🔁✨
 
@@ -168,6 +178,8 @@ if (USE_EMULATORS && !g.__emuConnected) {
 
 ---
 
+![Failure Testing](./picture/firebase_storage_ts_study_018_06_failure_test_tubes.png)
+
 ### Step 5：アップロードして、成功→失敗を観察する👀📷
 
 前章までの `uploadBytesResumable` / `getDownloadURL` がそのまま使えます。
@@ -202,6 +214,8 @@ Web では **Debug Provider** を使うのが定番です🧩（デバッグト�
 起動オプションで扱えるので便利です✨ ([Firebase][1])
 
 ---
+
+![AI Verification](./picture/firebase_storage_ts_study_018_07_ai_verification.png)
 
 ## AI活用：Antigravity / Gemini CLI で“検証の質”を上げる🤖🚀
 

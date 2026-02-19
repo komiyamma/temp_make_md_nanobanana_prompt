@@ -5,7 +5,11 @@
 
 ---
 
+![Final Gatekeeper](./picture/firebase_storage_ts_study_016_01_final_gatekeeper.png)
+
 ## 1) まず“腹落ち”させたいこと🍞🧠
+
+![Metadata Scanner](./picture/firebase_storage_ts_study_016_02_metadata_scanner.png)
 
 ### ✅ Rulesができること（この章の主役）
 
@@ -15,6 +19,8 @@ Storage Rulesは、ファイルの**メタデータ**を見てチェックでき
 * `request.resource.contentType`：MIMEタイプ（例：`image/jpeg`）🏷️
   そして `matches()` を使って「`image/.*` だけ」みたいな制限が書ける✨ ([Firebase][1])
 
+![Resource vs Request](./picture/firebase_storage_ts_study_016_03_resource_vs_request.png)
+
 ### ✅ “request.resource” と “resource” の違い🔍
 
 超重要！ここで事故が減るよ🔥
@@ -22,6 +28,8 @@ Storage Rulesは、ファイルの**メタデータ**を見てチェックでき
 * `resource`：**すでに存在してる**ファイルのメタデータ（既存）📦
 * `request.resource`：**これから書き込まれる**メタデータ（新規/更新）🆕📦
   「書き込み時は両方使える」って公式でも説明されてるよ。 ([Firebase][2])
+
+![Granular Write](./picture/firebase_storage_ts_study_016_04_granular_write.png)
 
 ### ⚠️ つまずきポイント（先に潰す）💥
 
@@ -41,6 +49,8 @@ Storage Rulesは、ファイルの**メタデータ**を見てチェックでき
 * 許可：**JPEG / PNG / WebP**のみ✅
 
 ---
+
+![Operation Logic Flow](./picture/firebase_storage_ts_study_016_05_operation_flow.png)
 
 ### 手順A：まず“運用版”のRulesを用意する🧩
 
@@ -136,6 +146,8 @@ firebase deploy --only storage
 
 ---
 
+![AI Rule Architect](./picture/firebase_storage_ts_study_016_06_ai_rule_architect.png)
+
 ## 3) AIを絡めて“強いRules”を最速で作る🤖⚡
 
 ### ✅ Gemini in Firebase：相談・原因究明に強い🧯
@@ -185,6 +197,8 @@ Firebaseの **MCP server** は、**Antigravity / Gemini CLI / Firebase Studio** 
   「なぜその数値か」を一言で言えるようにしよ🗣️✨
 
 ---
+
+![Concept Checklist](./picture/firebase_storage_ts_study_016_07_checklist_summary.png)
 
 ## 5) チェック✅✅✅
 
