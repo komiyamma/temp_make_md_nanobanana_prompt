@@ -11,6 +11,8 @@
 
 ## 1) まず “ロールアウト” って何？🤔🚀
 
+![Rollout Process](./picture/firebase_hosting_ts_study_018_01_rollout_flow.png)
+
 App Hosting は、GitHub の **liveブランチ**に変更が入ると、アプリをビルドして新しいバージョンを出す「ロールアウト」を走らせられます。自動ロールアウトがONなら、基本は **push/merge → 自動でロールアウト開始** になります。([Firebase][1])
 
 ロールアウトの進み具合は、**Firebase コンソール**でも見れるし、GitHub 側のチェック（Check）でも追えます。([Firebase][1])
@@ -18,6 +20,8 @@ App Hosting は、GitHub の **liveブランチ**に変更が入ると、アプ�
 ---
 
 ## 2) “自動ロールアウトを止めたい” のはどんな時？🧠🛑
+
+![Automatic Rollout Switch](./picture/firebase_hosting_ts_study_018_02_auto_switch.png)
 
 CI/CDは強いけど、運用してると「今日は勝手に出てほしくない😇」って日が来ます。よくあるのは👇
 
@@ -47,6 +51,8 @@ CI/CDは強いけど、運用してると「今日は勝手に出てほしくな
 ## 4) 手を動かす：自動ロールアウトを止める／再開する🛠️🧯
 
 ## 4-1. いまの設定を確認する👀
+
+![Deployment Settings UI](./picture/firebase_hosting_ts_study_018_03_settings_ui.png)
 
 1. ブラウザで Firebase コンソールを開く🌐
 2. App Hosting のバックエンドを選んで「View」👆
@@ -80,6 +86,8 @@ CI/CDは強いけど、運用してると「今日は勝手に出てほしくな
 
 ## 5-1. コンソールから手動ロールアウト（いちばん簡単）🖱️
 
+![Manual Rollout Creation](./picture/firebase_hosting_ts_study_018_04_manual_ui.png)
+
 1. コンソール → 対象バックエンド → ダッシュボードへ👣
 2. **Create rollout** を押す➕([Firebase][1])
 3. 出したい **ブランチ** を選ぶ🌿
@@ -108,6 +116,8 @@ firebase apphosting:rollouts:create BACKEND_ID --git_branch main
 
 ## 6) ロールアウトの見張り方👀🧭（不安を減らすコツ）
 
+![Rollout Dashboard](./picture/firebase_hosting_ts_study_018_05_dashboard.png)
+
 Rollouts の各行には、だいたい👇が並びます：
 
 * ロールアウトの状態（進行中/成功/失敗）🚦
@@ -127,6 +137,8 @@ Rollouts の各行には、だいたい👇が並びます：
 「出したら壊れた😱」はゼロにできないので、**戻し方**を先に持っておくのが大事です。
 
 ## 7-1. Instant rollback（ビルドし直さずに即戻す）⚡
+
+![Instant Rollback](./picture/firebase_hosting_ts_study_018_06_rollback.png)
 
 App Hosting には、**過去のコンテナイメージをそのまま live に戻す** “instant rollback” があります。ビルドをスキップできるので復旧が速いです。([Firebase][1])
 
@@ -160,6 +172,8 @@ gemini extensions install https://github.com/gemini-cli-extensions/firebase/
 ```
 
 ## 8-4. AIに投げると強い “運用系プロンプト” 例📝🤖
+
+![AI Operations Assistant](./picture/firebase_hosting_ts_study_018_07_ai_ops.png)
 
 * 「自動ロールアウトをOFFにしたい。戻し忘れ防止のチェックリスト作って」✅
 * 「今回の変更内容（PR差分）から、リリース前に確認すべき項目を箇条書きで」🔎

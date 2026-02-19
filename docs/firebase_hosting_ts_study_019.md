@@ -16,6 +16,8 @@
 
 ## 1) そもそも「サーバー処理」って何？🤔💡
 
+![Backend Tasks](./picture/firebase_hosting_ts_study_019_01_server_tasks.png)
+
 Hosting は基本「静的ファイル配信（HTML/JS/CSS）」が得意です⚡
 でも、こういうのはサーバーが必要になりがち👇
 
@@ -30,6 +32,8 @@ Hosting は基本「静的ファイル配信（HTML/JS/CSS）」が得意です�
 ---
 
 ## 2) 結論：どう選ぶ？（3秒で決める）⚡🧩
+
+![Functions vs Cloud Run Decision](./picture/firebase_hosting_ts_study_019_02_decision_tree.png)
 
 ## A. Cloud Functions for Firebase を選ぶ👍
 
@@ -72,6 +76,8 @@ Cloud Run functions のランタイム例（ページ更新: **2026-02-12**）�
 
 ## 3) Hosting から “同じドメインで” Functions に繋げる（超重要）🔁🌐
 
+![Hosting Rewrites](./picture/firebase_hosting_ts_study_019_03_rewrite_arch.png)
+
 これができると何が嬉しい？😆
 
 * フロントから `/api/...` を叩ける（別ドメインじゃない）
@@ -93,6 +99,8 @@ Firebase Hosting の `rewrites` は、リクエストを **Functions** や **Clo
 ---
 
 ## 4-1. Functions を追加する（初期化）🧱
+
+![Functions Initialization](./picture/firebase_hosting_ts_study_019_04_functions_init.png)
 
 プロジェクトのルートで👇
 
@@ -140,6 +148,8 @@ export const apiHello = onRequest((req, res) => {
 ---
 
 ## 4-4. Hosting の `/api/**` を Functions に rewrite する🔁
+
+![Rewrite JSON Config](./picture/firebase_hosting_ts_study_019_05_rewrite_config.png)
 
 `firebase.json` の `hosting.rewrites` に追加します👇
 （**rewrite は上から順に効く**ので、`** -> index.html` より上に！）
@@ -191,6 +201,8 @@ firebase deploy --only functions,hosting
 
 ## 5) じゃあ Cloud Run はいつ使う？（わかりやすい例）🟦🔥
 
+![Cloud Run Flexibility](./picture/firebase_hosting_ts_study_019_06_cloud_run_runtimes.png)
+
 ## 「Functions だと辛い」代表例💦
 
 * **.NET（C#）で書きたい**（既存資産がある）🟦
@@ -204,6 +216,8 @@ Cloud Run functions なら、**.NET 8** や **Python 3.13** がランタイム�
 ---
 
 ## 6) AI を絡めると “サーバー置き場” が一気に決まる🤖🧠
+
+![AI Tools Ecosystem](./picture/firebase_hosting_ts_study_019_07_ai_tools_map.png)
 
 ## 6-1. 「AIをクライアントから直接呼ぶ」なら AI Logic が強い📱🌐🤖
 
