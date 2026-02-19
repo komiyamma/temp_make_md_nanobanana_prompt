@@ -14,6 +14,8 @@
 
 ---
 
+![Polling vs Realtime](./picture/firebase_firestore_base_ts_study_012_01_polling_vs_listen.png)
+
 ## 1) リアルタイム購読って何？🤔⚡
 
 Firestoreのリアルタイムは、ざっくり言うとこう👇
@@ -56,6 +58,8 @@ export type Todo = {
 ```
 
 ---
+
+![React Lifecycle & Subscription](./picture/firebase_firestore_base_ts_study_012_03_lifecycle.png)
 
 ## 3-2. `onSnapshot()` で購読して state に入れる 🔁📥
 
@@ -123,6 +127,8 @@ export function TodoList() {
 
 ---
 
+![Multi-Tab Sync](./picture/firebase_firestore_base_ts_study_012_04_sync_demo.png)
+
 ## 4) ミニ課題：別タブで「増える」体験しよう 🪄🧪
 
 ## やること（3分）⏱️
@@ -134,6 +140,8 @@ export function TodoList() {
 **見えたら勝ち！**😆⚡
 
 ---
+
+![Subscription Leak](./picture/firebase_firestore_base_ts_study_012_05_memory_leak.png)
 
 ## 5) ここが落とし穴：解除しないと何が起きる？💥🧠
 
@@ -153,6 +161,8 @@ export function TodoList() {
 （第13章で「hooks化＆安全運用」をやるよ！）
 
 ---
+
+![Latency Compensation](./picture/firebase_firestore_base_ts_study_012_02_latency_compensation.png)
 
 ## 6) “即反映”の正体：ローカル変更イベント 🏎️💨
 
@@ -201,6 +211,8 @@ Firestoreは基本的に **返ってきたドキュメント分が読み取り**
 ---
 
 ## 9) AIで“デバッグ”を早くする（おまけ）🤖🔧✨
+
+![AI Change Explanation](./picture/firebase_firestore_base_ts_study_012_06_ai_changelog.png)
 
 ## 9-1) Firebase AI Logicで「変更内容ログ」を日本語で要約させる 📝🤖
 

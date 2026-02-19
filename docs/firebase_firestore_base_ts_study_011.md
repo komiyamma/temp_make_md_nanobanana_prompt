@@ -8,6 +8,8 @@
 
 ---
 
+![Server vs Client Time](./picture/firebase_firestore_base_ts_study_011_01_server_vs_client.png)
+
 ## 1) まず結論：時刻は「サーバー時刻」を使うのが安定⏱️🌍
 
 端末の時計って、意外とズレます😇（PCの時刻がズレてる、スマホは自動補正、など）
@@ -19,6 +21,8 @@
 Firestoreの公式的な入れ方は **`serverTimestamp()`** を使う方法です。([Firebase][2])
 
 ---
+
+![Timestamp Object](./picture/firebase_firestore_base_ts_study_011_02_timestamp_obj.png)
 
 ## 2) 「Timestamp」って何？🤔🧾
 
@@ -55,6 +59,8 @@ export type Todo = {
 ```
 
 ---
+
+![CreatedAt vs UpdatedAt](./picture/firebase_firestore_base_ts_study_011_03_timeline.png)
 
 ## 4) 実装②：追加時に createdAt / updatedAt を入れる➕⏱️
 
@@ -114,6 +120,8 @@ export async function toggleTodoDone(todoId: string, done: boolean) {
 
 ## 6) 実装④：画面に「作成日時」を表示する📅👀
 
+![Null Safety](./picture/firebase_firestore_base_ts_study_011_04_null_safety.png)
+
 ## 6-1) まず：`null` を安全にさばく🧯
 
 `createdAt` が `null` の間は、UIで「—」とか「作成中…」を出すのがラクです😌
@@ -135,6 +143,8 @@ export function formatTimestamp(ts: Timestamp | null): string {
 `Timestamp.toDate()` は公式に書かれている変換です。([Firebase][3])
 
 ---
+
+![Latency Compensation (Estimate)](./picture/firebase_firestore_base_ts_study_011_05_estimate.png)
 
 ## 6-2) さらに快適に：サーバー確定前でも「推定値」で表示する🪄
 
@@ -222,6 +232,8 @@ Gemini CLI はターミナル上のAIエージェントで、検索・修正・�
 おすすめの頼み方（例）👇
 
 * 「`createdAt` と `updatedAt` を Firestore に追加する作業をやりたい。該当箇所を検索して、必要な修正パッチを提案して」
+
+![AI Natural Language Date](./picture/firebase_firestore_base_ts_study_011_06_ai_date_parser.png)
 
 ## 9-3) Firebase AI Logicで「自然言語の日時→Timestamp」を作る📆➡️⏱️（超それっぽくなる）
 

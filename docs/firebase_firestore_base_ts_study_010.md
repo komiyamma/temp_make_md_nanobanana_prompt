@@ -6,6 +6,8 @@ Firestore側は `deleteDoc()` でOKです（公式の削除方法）([Firebase][
 
 ---
 
+![Safety Mechanisms](./picture/firebase_firestore_base_ts_study_010_02_safety_mechanism.png)
+
 ## 0) まず大事：削除は「一番取り返しがつかない」⚠️😱
 
 追加・更新はミスっても直せるけど、削除は「データが消える」ので怖いです💥
@@ -28,6 +30,8 @@ import { doc, deleteDoc } from "firebase/firestore";
 ```
 
 ---
+
+![Safe Delete Flow](./picture/firebase_firestore_base_ts_study_010_01_delete_flow.png)
 
 ## 2) 実装の全体像（今日やること）🧩🧰
 
@@ -64,6 +68,8 @@ export async function deleteTodo(todoId: string) {
 ## 4) 手を動かす：一覧に削除ボタン＋確認ダイアログ🗑️✅
 
 ここでは一番ラクで強い **`window.confirm()`** を使います（後でオシャレModalにも置き換えられるよ😉）
+
+![Delete Button States](./picture/firebase_firestore_base_ts_study_010_04_ui_feedback.png)
 
 ## 4-1) 状態（削除中ID）を持つ🔒
 
@@ -146,6 +152,8 @@ export function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 * `doc(db, "todos", todoId)` の `"todos"` が違う
 * ルールで `delete` が許可されてない（後のRules章で本格的にやるやつ）🔐
 
+![Subcollection Ghost](./picture/firebase_firestore_base_ts_study_010_03_subcollection_trap.png)
+
 ## B) 「親を消したのにサブコレが残る…」👻
 
 **重要⚠️：ドキュメント削除しても、サブコレの中身は自動で消えません！**
@@ -178,6 +186,8 @@ export function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 * 「サブコレは自動で消えない」を説明できる([Firebase][1])
 
 ---
+
+![AI Warning Message](./picture/firebase_firestore_base_ts_study_010_05_ai_confirm.png)
 
 ## 8) 🔥AIで“削除事故”を減らす（オプション）🤖🧠
 

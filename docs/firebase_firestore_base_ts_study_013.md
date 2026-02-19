@@ -12,6 +12,8 @@
 Firestoreは `onSnapshot()` で変更を監視できます。**最初に即スナップショットが届いて**、その後も変更のたびに届きます⚡👀 ([Firebase][1])
 そして大事なのが、`onSnapshot()` が **購読解除用の関数（unsubscribe）を返す**こと。これを呼ぶと監視が止まります🧯 ([modularfirebase.web.app][2])
 
+![Cleanup Action](./picture/firebase_firestore_base_ts_study_013_02_cleanup.png)
+
 ## ✅ Reactは「画面が消える」「条件が変わる」たびに後片付けが必要
 
 Reactの `useEffect()` は、**依存が変わる前や、コンポーネントが消えるときに cleanup（後片付け）を呼べる**仕組みです🧹 ([react.dev][3])
@@ -49,6 +51,8 @@ export type Todo = {
 > `Timestamp` は Firestoreの時刻型です⏱️（第11章の流れでOK👍）
 
 ---
+
+![useTodos Hook Anatomy](./picture/firebase_firestore_base_ts_study_013_01_hook_anatomy.png)
 
 ## 2-2. `useTodos()`（購読＋解除＋状態管理）を作る⚡🧯
 
@@ -127,6 +131,8 @@ export function useTodos(options?: { onlyUndone?: boolean }) {
 
 ---
 
+![Hook State Machine](./picture/firebase_firestore_base_ts_study_013_05_state_machine.png)
+
 ## 3) 手を動かす：画面で “loading / error / empty” を綺麗に出す✨🎛️
 
 ```tsx
@@ -176,10 +182,14 @@ export function TodosPage() {
 * 最終的に「なんか重い」「二重に増える」になる🫠
   → **`return () => unsub()` が正解**🧯 ([react.dev][3])
 
+![Strict Mode Cycle](./picture/firebase_firestore_base_ts_study_013_03_strict_mode.png)
+
 ## 💥 事故2：Strict Modeで「二重購読してるように見える」
 
 開発中は **わざと** setup→cleanup→setup を1回余分に回します🧪
 cleanupが正しければ「問題なし」👍（本番は通常どおり） ([react.dev][3])
+
+![Query Stability (useMemo)](./picture/firebase_firestore_base_ts_study_013_04_query_memo.png)
 
 ## 💥 事故3：依存配列が毎回変わって再購読ループ
 
@@ -234,6 +244,8 @@ Gemini CLI はターミナルで使えるAI支援、Antigravityはエージェ�
 “人間が見落としやすいポイント”を先に潰せるのがうまいです🧯✨
 
 ---
+
+![AI Realtime Loop](./picture/firebase_firestore_base_ts_study_013_06_ai_loop.png)
 
 ## 7-2) Firebase AI Logicで「AIがToDo案を出す」→リアルタイム反映を体験🪄🗃️
 
