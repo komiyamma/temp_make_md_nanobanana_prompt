@@ -16,6 +16,8 @@
 
 ## 1) まず“無限スクロールの正体”を理解しよう 👀♾️
 
+![Infinite Scroll Concept](./picture/firebase_firestore_base_ts_study_018_01_infinite_scroll.png)
+
 無限スクロールって名前だけど、正体は **ページング（ページを小分けに読む）** です📜
 違いは「次ページを取りに行くタイミング」が **ボタン** か **スクロール** か、だけ👍
 
@@ -28,6 +30,8 @@ Firestore側は前章と同じで、基本はこれ👇
 ---
 
 ## 2) 設計：無限スクロールで死ぬポイント3つ 💥（先に潰す）
+
+![Infinite Scroll Pitfalls](./picture/firebase_firestore_base_ts_study_018_02_crash_points.png)
 
 無限スクロールは実装自体は簡単なんだけど、事故るのはここ👇
 
@@ -44,6 +48,8 @@ Firestore側は前章と同じで、基本はこれ👇
 ---
 
 ## 3) 実装①：Firestore「1ページ取得」関数を作る 📦🔎
+
+![Query with Cursor](./picture/firebase_firestore_base_ts_study_018_03_query_structure.png)
 
 前章の「次へボタン」でも使える形にしておくと超ラクです😋
 
@@ -112,6 +118,8 @@ Firestoreのカーソルは **ドキュメントスナップショットをそ�
 ---
 
 ## 4) 実装②：IntersectionObserverで「下に来たら loadMore」👀⬇️
+
+![Intersection Observer Logic](./picture/firebase_firestore_base_ts_study_018_04_intersection_observer.png)
 
 IntersectionObserverは「ある要素が画面内に入ったら教えてくれる」APIです📡
 無限スクロールでは、リストの最後に **“見張り役のdiv（sentinel）”** を置いて、見えたら次ページ読みに行きます♾️✨
@@ -225,6 +233,8 @@ export function useInfiniteTodos(db: Firestore) {
 
 ## 5) 実装③：画面に組み込む（sentinelを一番下に置く）🧩🧱
 
+![Sentinel Placement](./picture/firebase_firestore_base_ts_study_018_05_ui_sentinel.png)
+
 ```tsx
 import React from "react";
 import { db } from "./firebase"; // 既存
@@ -266,6 +276,8 @@ export function TodoListInfinite() {
 
 ## 6) 事故回避メモ（ここ大事）🧠🧯
 
+![Safety Guards](./picture/firebase_firestore_base_ts_study_018_06_guards.png)
+
 ## ✅ 二重読み込み（多重発火）対策
 
 * `inFlightRef` で **通信中は無視**🧱
@@ -289,6 +301,8 @@ export function TodoListInfinite() {
 ---
 
 ## 7) 🤖 AIで“テストデータ作り”を爆速にする（無限スクロールのために）
+
+![AI Data Seeding](./picture/firebase_firestore_base_ts_study_018_07_ai_seed.png)
 
 無限スクロールは **データが少ないと気持ちよさが分からない** んですよね😂
 そこで、Firebaseの **Firebase AI Logic** を使って「ToDoタイトルを30個作れ！」→ Firestoreに流し込み、をやります✨
