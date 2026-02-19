@@ -33,6 +33,20 @@
 
 ## 2) ルーティング（React Router）を“完成形”にする🧭✨
 
+![Route Structure Map
+
+**Labels to Render**:
+- Public: "/login, /signup"
+- Guard: "RequireAuth 🚧"
+- Private: "/mypage 🔐"
+
+**Visual Details**:
+1. Core Concept: The final routing structure.
+2. Metaphor: A map of the app. Public area is open. Private area is fenced off with a guard station.
+3. Action: Guarding.
+4. Layout: Map view.](./picture/firebase_login_ts_study_020_01_route_structure.png)
+
+
 まずはルートを3つに固定しよう👍
 （すでに第16章でやってたら「最終形に整える」感じでOK！）
 
@@ -78,6 +92,20 @@ export default function App() {
 
 ## 3) RequireAuth（ガード）を“事故らない形”にする🚧🛡️
 
+![RequireAuth Logic Flow
+
+**Labels to Render**:
+- Check 1: "Loading? -> Spinner ⏳"
+- Check 2: "User? -> Content ✅"
+- Else: "Redirect -> Login 🔁"
+
+**Visual Details**:
+1. Core Concept: The decision logic of the auth guard.
+2. Metaphor: A traffic control point. Stop for loading. Pass for user. Detour for guest.
+3. Action: Directing traffic.
+4. Layout: Flowchart.](./picture/firebase_login_ts_study_020_02_require_auth_logic.png)
+
+
 ガードの鉄板はこれ👇
 
 * `loading` の間はスピナー（ここ超大事！）⏳
@@ -109,6 +137,21 @@ export function RequireAuth({ children }: { children: React.ReactNode }) {
 
 ## 4) Googleログイン：Popupメイン＋Redirectを“逃げ道”として用意🌈🚪
 
+![Google Login Fallback
+
+**Labels to Render**:
+- Attempt: "Popup"
+- Fail: "Blocked 🚫"
+- Fallback: "Redirect 🚪"
+- Success: "Login"
+
+**Visual Details**:
+1. Core Concept: Popup failing and falling back to Redirect.
+2. Metaphor: A user trying a revolving door (Popup). It's stuck. They use the side door (Redirect) instead.
+3. Action: Switching paths.
+4. Layout: Process flow.](./picture/firebase_login_ts_study_020_03_google_login_flow.png)
+
+
 ## なぜPopupだけじゃダメ？🤔
 
 PopupはPCで体験が良いけど、**環境によってはブロック**されることがある😵‍💫
@@ -125,6 +168,21 @@ PopupはPCで体験が良いけど、**環境によってはブロック**され
 ---
 
 ## 5) Loginページ（メール＋Google＋エラー表示）を完成させる🔑🌈😇
+
+![Login Page Wireframe
+
+**Labels to Render**:
+- Title: "Login"
+- Input: "Email/Pass"
+- Button: "Google (Popup)"
+- Link: "Use Redirect"
+
+**Visual Details**:
+1. Core Concept: The layout of the login page with fallback options.
+2. Metaphor: A clean UI wireframe showing the hierarchy of buttons.
+3. Action: Displaying UI.
+4. Layout: Wireframe.](./picture/firebase_login_ts_study_020_04_login_page_ui.png)
+
 
 ポイントはこの3つ！
 
@@ -239,6 +297,21 @@ export function LoginPage() {
 
 ## 6) Redirectで戻ってきた結果を“必ず回収”する🔁✅
 
+![Redirect Result Retrieval
+
+**Labels to Render**:
+- App Start: "Init"
+- Check: "getRedirectResult()"
+- Result: "User Found"
+- Action: "Set User"
+
+**Visual Details**:
+1. Core Concept: Retrieving the user after a redirect.
+2. Metaphor: A baggage claim. The user arrives (App Start) and picks up their luggage (User Data) from the carousel (Redirect Result).
+3. Action: Retrieving.
+4. Layout: Timeline.](./picture/firebase_login_ts_study_020_05_redirect_result.png)
+
+
 Redirectログインは、戻ってきたあとに **`getRedirectResult()` で結果を受け取る**のがセットだよね😊
 Firebase公式のベストプラクティスでも `signInWithRedirect()` と `getRedirectResult()` の組み合わせが例示されてるよ。([Firebase][1])
 
@@ -352,6 +425,21 @@ export function toFriendlyAuthMessage(e: any): string {
 ---
 
 ## 8) 伸ばし（AI）：失敗理由の説明をGeminiに作らせる💬🤖✨
+
+![AI Error Explanation Flow
+
+**Labels to Render**:
+- Error: "Login Failed ❌"
+- Click: "Ask AI 🤖"
+- AI: "Gemini"
+- Explanation: "Check your caps lock! 💡"
+
+**Visual Details**:
+1. Core Concept: User requesting help from AI for an error.
+2. Metaphor: A user showing a broken part to a robot mechanic, who gives a clear diagnosis.
+3. Action: Diagnosing.
+4. Layout: Interaction sequence.](./picture/firebase_login_ts_study_020_06_ai_error_flow.png)
+
 
 ここからが“今っぽい強化”🔥
 ログインに失敗したとき、ただエラーを出すだけじゃなくて、
@@ -470,6 +558,21 @@ Gemini CLI はターミナルで使えるオープンソースのAIエージェ�
 ---
 
 ## 10) 最終チェックリスト（この章の合格ライン）✅✅✅
+
+![Chapter Completion Checklist
+
+**Labels to Render**:
+- Item 1: "Routes OK 🧭"
+- Item 2: "Guard OK 🚧"
+- Item 3: "Redirect OK 🔁"
+- Item 4: "AI OK 🤖"
+
+**Visual Details**:
+1. Core Concept: Verifying all completed tasks.
+2. Metaphor: A golden clipboard with all items checked off.
+3. Action: Verification.
+4. Layout: Checklist view.](./picture/firebase_login_ts_study_020_07_checklist.png)
+
 
 ここ、チェックが全部つけば勝ち！🎉
 

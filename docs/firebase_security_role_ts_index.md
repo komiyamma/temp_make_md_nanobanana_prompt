@@ -25,6 +25,21 @@
 
 ## 第1章：なぜRulesが必要？「公開しちゃった😱」事故の構造を知る💥
 
+![Rules as Gatekeeper
+
+**Labels to Render**:
+- User: "Request"
+- Gate: "Security Rules 🛡️"
+- Castle: "Firestore 🏰"
+- Action: "Allow / Deny"
+
+**Visual Details**:
+1. Core Concept: Rules acting as the entry guard.
+2. Metaphor: A medieval castle gate with a guard checking a scroll (Request).
+3. Action: Guarding.
+4. Layout: Gatekeeper scene.](./picture/firebase_security_role_ts_index_01_rules_concept.png)
+
+
 * 読む📖：DBは“置き場”で、Rulesは“入口の審査”🚪
 * 手を動かす🧑‍💻：わざと危ないルール例を見て「何がヤバいか」言語化
 * ミニ課題🎯：「このルールだと誰が何できちゃう？」を3つ書く
@@ -33,6 +48,20 @@
 ---
 
 ## 第2章：Firestoreのアクセス経路を整理（Rulesが効く/効かない）🧭
+
+![Access Path Logic
+
+**Labels to Render**:
+- Client: "Rules Apply ✅"
+- Server: "Rules Bypass ⚠️"
+- Admin SDK: "God Mode 👑"
+
+**Visual Details**:
+1. Core Concept: Different rules for different paths.
+2. Metaphor: A secure front door (Client) vs a VIP back entrance (Server).
+3. Action: Entering.
+4. Layout: Comparison.](./picture/firebase_security_role_ts_index_02_access_path.png)
+
 
 * 読む📖：Web/モバイルSDKのリクエストはRulesで判定される
 * 注意⚠️：**サーバー用ライブラリ（Admin/Server SDK等）はRulesをバイパス**する（別でIAM等が必要） ([Firebase][3])
@@ -43,6 +72,21 @@
 ---
 
 ## 第3章：Rulesの管理とデプロイの基本（Console vs CLI）🧰
+
+![Rules Deployment Flow
+
+**Labels to Render**:
+- Local: "firestore.rules 📄"
+- Tool: "Firebase CLI ⚙️"
+- Cloud: "Deploy (Overwrite) ☁️"
+- Console: "Old Rules 🗑️"
+
+**Visual Details**:
+1. Core Concept: Local file overwriting cloud settings.
+2. Metaphor: Uploading a new blueprint that replaces the old one instantly.
+3. Action: Overwriting.
+4. Layout: Left-to-right flow.](./picture/firebase_security_role_ts_index_03_deployment_flow.png)
+
 
 * 読む📖：Rulesは「ローカルで管理→デプロイ」が安全
 * 超重要⚠️：CLIデプロイは **Consoleの既存ルールを上書き**する（運用事故ポイント） ([Firebase][4])
@@ -81,6 +125,20 @@
 
 ## 第7章：ユーザー別データ設計（uid基準の王道）👤📁
 
+![User Data Isolation
+
+**Labels to Render**:
+- User A: "See A Only 👀"
+- User B: "See B Only 👀"
+- Pattern: "users/{uid}"
+
+**Visual Details**:
+1. Core Concept: Each user can only access their own data.
+2. Metaphor: Private lockers. User A's key only opens Locker A. Locker B is locked.
+3. Action: Isolating.
+4. Layout: Side-by-side lockers.](./picture/firebase_security_role_ts_index_04_user_isolation.png)
+
+
 * 読む📖：王道は「users/{uid}/…」構造
 * 手を動かす🧑‍💻：自分専用ドキュメントだけ読める/書けるルール
 * ミニ課題🎯：プロフィールを「本人だけ更新OK」にする
@@ -99,6 +157,20 @@
 
 ## 第9章：最小権限② “書く”の制御（create/update/deleteを分ける）✍️🧯
 
+![Granular Write Control
+
+**Labels to Render**:
+- Create: "Allow ✅"
+- Update: "Deny 🚫"
+- Delete: "Admin Only 👑"
+
+**Visual Details**:
+1. Core Concept: Splitting write permissions.
+2. Metaphor: A control panel with separate switches for 'Create', 'Update', and 'Delete'.
+3. Action: Controlling.
+4. Layout: Control panel.](./picture/firebase_security_role_ts_index_05_write_control.png)
+
+
 * 読む📖：書き込みは危険度が高いので分解がコツ
 * 手を動かす🧑‍💻：createだけOK / updateは禁止 などを作る
 * ミニ課題🎯：「削除だけは管理者のみ」ルールにする
@@ -116,6 +188,20 @@
 ---
 
 ## 第11章：入力検証② 文字数・パターン（ユーザー入力の地雷💣）🔤
+
+![Input Validation
+
+**Labels to Render**:
+- Input: "Title (Empty)"
+- Rule: "title.size() > 0"
+- Result: "Reject 🛑"
+
+**Visual Details**:
+1. Core Concept: Validating data before saving.
+2. Metaphor: A shape sorter. A square block (Bad Data) trying to fit in a round hole (Rule). It doesn't fit.
+3. Action: Rejecting.
+4. Layout: Input check.](./picture/firebase_security_role_ts_index_06_input_validation.png)
+
 
 * 読む📖：長すぎ・短すぎ・怪しい文字列への備え
 * 手を動かす🧑‍💻：文字数上限をRulesで固定
@@ -193,6 +279,21 @@
 ---
 
 ## 第19章：テストが本体！EmulatorでRules単体テスト🧪🧯
+
+![Emulator Testing
+
+**Labels to Render**:
+- Test 1: "Admin (Pass) ✅"
+- Test 2: "User (Pass) ✅"
+- Test 3: "Guest (Fail) 🛑"
+- Tool: "Emulator 🧪"
+
+**Visual Details**:
+1. Core Concept: Testing different scenarios locally.
+2. Metaphor: A crash test dummy running through three different walls.
+3. Action: Testing.
+4. Layout: Three tracks.](./picture/firebase_security_role_ts_index_07_emulator_testing.png)
+
 
 * 読む📖：Emulator SuiteでRulesをローカル検証できる ([Firebase][1])
 * 手を動かす🧑‍💻：

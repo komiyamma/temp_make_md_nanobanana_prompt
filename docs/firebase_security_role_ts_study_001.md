@@ -16,6 +16,21 @@
 
 ## 1) まず結論：Firestoreは“誰でも叩ける入口”がある🔓🌍
 
+![Firestore Direct Access
+
+**Labels to Render**:
+- Client: "Web App 🌍"
+- Path: "Direct SDK"
+- Guard: "Rules 🛡️"
+- DB: "Firestore"
+
+**Visual Details**:
+1. Core Concept: Clients connect directly to the DB, protected only by Rules.
+2. Metaphor: A house with a door opening directly to the street. The lock (Rules) is the only protection.
+3. Action: Connecting.
+4. Layout: Direct line.](./picture/firebase_security_role_ts_study_001_01_direct_access.png)
+
+
 Firestoreは、Web/モバイルのクライアントSDKから **直接アクセス**できます。
 そして、そのリクエストは **毎回Security Rulesで判定**されます。([Firebase][1])
 
@@ -28,6 +43,20 @@ Firestoreは、Web/モバイルのクライアントSDKから **直接アクセ�
 ---
 
 ## 2) 「公開事故😱」が起きる典型パターン（構造で理解）🧠💥
+
+![Accident Mechanism Flow
+
+**Labels to Render**:
+- Step 1: "Loosen Rules (Debug) 🛠️"
+- Step 2: "Deploy (Forget) 📤"
+- Step 3: "Leak (Public) 😱"
+
+**Visual Details**:
+1. Core Concept: How accidents happen.
+2. Metaphor: Unlocking a door for a friend, forgetting to lock it, and then a thief enters.
+3. Action: Leaking.
+4. Layout: Timeline.](./picture/firebase_security_role_ts_study_001_02_accident_mechanism.png)
+
 
 事故はだいたい次の流れで起きます👇
 
@@ -45,6 +74,20 @@ Firebase公式も「よくある脆弱な設定と直し方」をガイド化し
 ここからは **わざと危ない例** を見ます（本番で使わないでね！）⚠️🙅‍♂️
 
 ## 危険例A：全公開（最悪）☠️
+
+![Dangerous Rule: All Public
+
+**Labels to Render**:
+- Rule: "allow read, write: if true"
+- Effect: "Open to World 🌏"
+- Risk: "Data Loss / Leak 💥"
+
+**Visual Details**:
+1. Core Concept: The danger of `if true`.
+2. Metaphor: A vault with the door wide open and a "Free Money" sign.
+3. Action: Leaking.
+4. Layout: Warning sign.](./picture/firebase_security_role_ts_study_001_03_dangerous_rule_a.png)
+
 
 ```js
 rules_version = '2';
@@ -65,6 +108,20 @@ service cloud.firestore {
 
 ## 危険例B：期限付き公開（“忘れる”やつ）⏳😇→😱
 
+![Dangerous Rule: Time Bomb
+
+**Labels to Render**:
+- Rule: "if request.time < ..."
+- Clock: "Expired ⏰"
+- Effect: "Open -> Closed? (Uncertain)"
+
+**Visual Details**:
+1. Core Concept: Rules expiring without notice.
+2. Metaphor: A time bomb ticking. Or a door that was supposed to lock automatically but got stuck.
+3. Action: Ticking.
+4. Layout: Timer focus.](./picture/firebase_security_role_ts_study_001_04_dangerous_rule_b.png)
+
+
 ```js
 match /{document=**} {
   allow read, write: if request.time < timestamp.date(2026, 4, 1);
@@ -79,6 +136,21 @@ match /{document=**} {
   こういう「危険なルール」パターンも公式で注意喚起されています。([Firebase][2])
 
 ## 危険例C：「ログインしてれば何でもOK」も実は危ない🔓👤
+
+![Dangerous Rule: Login Only
+
+**Labels to Render**:
+- Rule: "if auth != null"
+- User A: "Logged In"
+- Data B: "User B's Data"
+- Access: "Allowed (Bad) 😱"
+
+**Visual Details**:
+1. Core Concept: Login doesn't mean you can see everything.
+2. Metaphor: A building badge allows entry to the lobby, but shouldn't open every office door.
+3. Action: Accessing unauthorized area.
+4. Layout: Scenario.](./picture/firebase_security_role_ts_study_001_05_dangerous_rule_c.png)
+
 
 ```js
 match /{document=**} {
@@ -96,6 +168,20 @@ match /{document=**} {
 
 ## 4) 超重要な勘違い：Admin SDKはRulesの対象外⚠️🧱
 
+![Admin SDK Bypass
+
+**Labels to Render**:
+- Wall: "Rules 🧱"
+- Client: "Blocked 🛑"
+- Server (Admin): "Bypass (Fly over) ✈️"
+
+**Visual Details**:
+1. Core Concept: Admin SDK ignores rules.
+2. Metaphor: A wall blocking pedestrians (Client). A plane (Admin) flying over the wall.
+3. Action: Bypassing.
+4. Layout: Comparison.](./picture/firebase_security_role_ts_study_001_06_admin_bypass.png)
+
+
 ここ、初心者がハマりがちです😵‍💫
 
 * **クライアントSDK（Web/モバイル）** → Rulesで守れる✅
@@ -111,6 +197,20 @@ Firebase公式ブログでも「Admin SDKのリクエストはRulesでゲート�
 ---
 
 ## 5) 手を動かす🧑‍💻：Rules Playgroundで“事故を再現”してみよう🧪🔥
+
+![Rules Playground UI
+
+**Labels to Render**:
+- UI: "Rules Playground"
+- Input: "Simulation Type (get/create)"
+- Result: "Request Denied 🛑"
+
+**Visual Details**:
+1. Core Concept: Simulating rules in the console.
+2. Metaphor: A flight simulator or a sandbox environment.
+3. Action: Simulating.
+4. Layout: UI Mockup.](./picture/firebase_security_role_ts_study_001_07_playground.png)
+
 
 この章では「安全に体験」したいので、まずは **FirebaseコンソールのRules Playground** を使います🙂
 （ローカルの自動テストは後半章でEmulatorを使います🧪）
