@@ -9,6 +9,8 @@ Security Rulesって、内容そのものも大事だけど……**管理とデ�
 
 ## 1) Console（Web画面）で編集するメリット / 罠 🖥️🧨
 
+![Console vs CLI Conflict (Data Overwrite Risk)](./picture/firebase_security_role_ts_study_003_01_console_cli_conflict.png)
+
 **メリット**
 
 * ブラウザでサッと直せる🙆‍♀️
@@ -21,6 +23,8 @@ Security Rulesって、内容そのものも大事だけど……**管理とデ�
 * Consoleは（少なくとも現時点では）**FirestoreのデフォルトDBへのデプロイが中心**で、複数DB運用だとCLIが必要になるケースがあるよ🧩 ([Firebase][1])
 
 ## 2) CLI（ローカルファイル）で管理するメリット / 注意点 💻🧯
+
+![CLI & Git as Source of Truth](./picture/firebase_security_role_ts_study_003_02_cli_source_of_truth.png)
 
 **メリット（こっちが“守りの中心”）**
 
@@ -68,6 +72,8 @@ firebase init
 
 初期化が済むと、だいたいこのへんが増えるよ👇
 
+![Firebase Init Generated Files](./picture/firebase_security_role_ts_study_003_03_firebase_init_files.png)
+
 * `firebase.json`（何をデプロイするかの設計図🗺️）
 * `firestore.rules`（ルール本体🛡️）
 * `firestore.indexes.json`（インデックス設定📌：今回は脇役） ([Firebase][2])
@@ -75,6 +81,8 @@ firebase init
 ---
 
 ## 3) `firebase.json` を理解する（ここが事故防止の心臓❤️）
+
+![Firebase JSON Mapping to Rules](./picture/firebase_security_role_ts_study_003_04_firebase_json_mapping.png)
 
 `firebase.json` は「デプロイ対象を決める」ファイル。Firestoreだと最低限こうなる👇 ([Firebase][2])
 
@@ -95,6 +103,8 @@ firebase init
 ---
 
 ## 4) まず覚えるべき“安全デプロイ”コマンド3つ🧯
+
+![Deployment Command Scope](./picture/firebase_security_role_ts_study_003_05_deploy_command_scope.png)
 
 ## A. Firestore Rulesだけデプロイ（基本これ）🛡️
 
@@ -124,6 +134,8 @@ firebase deploy --only firestore:<databaseId>
 
 ## 5) 複数DBを使うときの `firebase.json`（超ざっくり最重要形）🧩
 
+![Multiple Database Configuration](./picture/firebase_security_role_ts_study_003_06_multi_db_config.png)
+
 Firestoreが複数DBのときは、`firestore` を **配列**にしてDBごとにrules/indexesを紐づける👇 ([Firebase][2])
 
 ```json
@@ -150,6 +162,8 @@ Firestoreが複数DBのときは、`firestore` を **配列**にしてDBごと�
 ## 事故を防ぐ“運用ルール”✅（ここだけ守ればかなり堅い）
 
 ## ✅ ルール運用の鉄則3つ🛡️
+
+![Safe Rules Workflow](./picture/firebase_security_role_ts_study_003_07_safe_workflow.png)
 
 1. **ソース・オブ・トゥルースはローカル（Git）**に寄せる📌
 2. Consoleで一時修正したら、**必ずローカルへ同期（コピペでもOK）**してから次のデプロイ

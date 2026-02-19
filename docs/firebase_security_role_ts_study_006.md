@@ -8,6 +8,8 @@
 
 ## 6-0. まず“脳内モデル”を1枚で🧠🗺️
 
+![Authentication Check Flow](./picture/firebase_security_role_ts_study_006_01_auth_check_flow.png)
+
 * アプリ（Reactなど）から Firestore にアクセスするとき、**最終的に判定するのは Firestore Security Rules** です🛡️
 * Rules では「このアクセスはログイン済み？」を **request.auth** で見ます👀
 
@@ -18,9 +20,13 @@
 ⚠️ 大事：**サーバー用ライブラリ（Admin SDK / Server client libraries）は Rules をバイパス**します（別の守り＝IAM等の世界）🧯
 「サーバーで呼ぶから安全」は別の話なので、ここで混ぜないのがコツです🙂([Firebase][3])
 
+![Admin SDK Bypasses Rules](./picture/firebase_security_role_ts_study_006_02_server_bypass.png)
+
 ---
 
 ## 6-1. ルールの最小形：ログイン必須チェック✅🔐
+
+![Basic Auth Rule Syntax](./picture/firebase_security_role_ts_study_006_03_basic_auth_rule.png)
 
 Rulesの“ログイン必須”は、まずこれだけ覚えればOKです👇
 
@@ -31,6 +37,8 @@ Rulesの“ログイン必須”は、まずこれだけ覚えればOKです👇
 ---
 
 ## 6-2. 手を動かす：privateNotes を“ログイン必須”にする🧑‍💻🧯
+
+![Specific Collection Locking](./picture/firebase_security_role_ts_study_006_04_collection_lock.png)
 
 例として、こういうコレクションを作ったことにします👇
 
@@ -54,6 +62,8 @@ service cloud.firestore {
 }
 ```
 
+![Default Deny Security](./picture/firebase_security_role_ts_study_006_05_default_deny.png)
+
 ポイント🙂✨
 
 * Rules は **allow が1個も成立しなければ拒否** です（つまり “書かない＝拒否” が基本で安全）([Firebase][4])
@@ -66,6 +76,8 @@ service cloud.firestore {
 ここでは「認証の状態に応じて UI を分ける」＋「未ログイン時は Firestore が弾く」を体験します✨
 
 ### ① React側：ログイン状態で画面を切り替える（最小）🪟✨
+
+![UI State based on Auth](./picture/firebase_security_role_ts_study_006_06_ui_state_transition.png)
 
 やりたいことはこれ👇
 
@@ -185,6 +197,8 @@ export default function PrivateNotesDemo() {
 ---
 
 ## 6-4. 未ログイン時のUXを1行で決めよう🙂📝
+
+![Authentication UX Patterns](./picture/firebase_security_role_ts_study_006_07_ux_patterns.png)
 
 Rulesで弾いても、ユーザー体験はあなたが作れます✨
 おすすめはこの3つのどれか👇
