@@ -7,6 +7,8 @@
 
 ## 1) まず大前提：フロントに入れた時点で「公開される」🌍👀
 
+![Frontend Public Exposure](./picture/firebase_startdash_ts_study_014_01_public_exposure.png)
+
 Vite + React のフロントコードは、最終的に **ブラウザに配られるJavaScript** になるよね⚛️📦
 つまり…
 
@@ -18,6 +20,8 @@ Vite + React のフロントコードは、最終的に **ブラウザに配ら�
 ---
 
 ## 2) 「公開していいもの / ダメなもの」仕分け一覧🧠🗂️
+
+![OK vs NG Config Items](./picture/firebase_startdash_ts_study_014_02_ok_ng_list.png)
 
 ### ✅ 公開してOK（フロントに置いてOK）🟢
 
@@ -43,6 +47,8 @@ Vite + React のフロントコードは、最終的に **ブラウザに配ら�
 
 ## 3) じゃあ、なぜ `.env` に移すの？🤔💡
 
+![Benefits of .env](./picture/firebase_startdash_ts_study_014_03_env_benefits.png)
+
 秘密にするためじゃなくて、主にこれ👇
 
 * ✅ **dev/prod 切り替えがラク**（あとで環境分けする時に効く）🔁
@@ -52,6 +58,8 @@ Vite + React のフロントコードは、最終的に **ブラウザに配ら�
 ---
 
 ## 4) Viteの環境変数ルール（ここだけ覚えればOK）⚡
+
+![Vite Environment Variable Rule](./picture/firebase_startdash_ts_study_014_04_vite_env_rule.png)
 
 Viteは `.env` を読み込んで、フロントからは `import.meta.env` で参照するよ📦
 そして超重要ポイント👇
@@ -66,6 +74,8 @@ Viteは `.env` を読み込んで、フロントからは `import.meta.env` で�
 ## 5) 手を動かす：firebaseConfig を `.env.local` に移す🛠️🧪
 
 ## Step 1：プロジェクト直下に `.env.local` を作る📄✨
+
+![.env.local Setup](./picture/firebase_startdash_ts_study_014_05_env_local_setup.png)
 
 `package.json` と同じ階層に `.env.local` を作って、こう書く👇
 
@@ -86,6 +96,8 @@ VITE_FIREBASE_APP_ID=1:1234567890:web:abcdef123456
 ---
 
 ## Step 2：`.gitignore` に追加して、Gitに入らないようにする🙈🧯
+
+![gitignore Protection](./picture/firebase_startdash_ts_study_014_06_gitignore.png)
 
 プロジェクト直下の `.gitignore` に追記👇
 
@@ -178,6 +190,8 @@ Viteは起動時に `.env` を読むから、再起動しないと反映され�
 ---
 
 ## 8) ミニ課題🎯✨（10分）
+
+![.env.example Template](./picture/firebase_startdash_ts_study_014_07_env_example.png)
 
 ## お題：`.env.example` を作って “共有できる形” にする📄🤝
 

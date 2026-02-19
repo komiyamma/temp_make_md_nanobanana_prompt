@@ -19,6 +19,8 @@ Firebaseに「このWebアプリ、うちのプロジェクトの子ですよ〜
 
 ## 1) まずイメージをつかもう🧠🗺️
 
+![Web App Registration Metaphor](./picture/firebase_startdash_ts_study_012_01_room_nametag.png)
+
 * **Firebaseプロジェクト**＝“建物”🏢
 * **Webアプリ登録**＝“部屋の名札を作る”🏷️
 * **firebaseConfig**＝“その名札に書かれた情報”🪪
@@ -29,6 +31,8 @@ Firebaseに「このWebアプリ、うちのプロジェクトの子ですよ〜
 ---
 
 ## 2) 手を動かす：Firebase ConsoleでWebアプリを追加🏗️🌐
+
+![Web App Registration Flow](./picture/firebase_startdash_ts_study_012_02_register_flow.png)
 
 ## 手順（迷わない版）🧭
 
@@ -51,6 +55,8 @@ Firebaseに「このWebアプリ、うちのプロジェクトの子ですよ〜
 
 ## 3) configを“なくさない”保管ルール🗃️🧯
 
+![Config Safekeeping](./picture/firebase_startdash_ts_study_012_03_config_safekeeping.png)
+
 最低限、これだけやればOK👌
 
 * ① **コピペしたfirebaseConfigをメモ帳に保存**（まず最優先）📝
@@ -64,6 +70,8 @@ Firebase公式も「登録するとconfigオブジェクトが手に入る」前
 
 ## 4) いつでも取り直せる：config再取得の最短ルート🧭🔁
 
+![Config Retrieval Path](./picture/firebase_startdash_ts_study_012_04_config_retrieval.png)
+
 「どこに置いたか忘れた😇」は、あるあるです。大丈夫！
 
 **Firebase Console → 歯車（Project settings）→ General → Your apps → 対象のWebアプリ → Firebase SDK snippet → Config**
@@ -72,6 +80,8 @@ Firebase公式も「登録するとconfigオブジェクトが手に入る」前
 ---
 
 ## 5) firebaseConfigの中身を“超ざっくり”理解しよう🧩✨
+
+![Anatomy of firebaseConfig](./picture/firebase_startdash_ts_study_012_05_config_anatomy.png)
 
 コンソールで出てくるのは、だいたいこんな形👇（値はダミーです）
 
@@ -112,6 +122,8 @@ export const firebaseConfig = {
 ---
 
 ## 6) 🤖AIと一緒に爆速理解：Gemini CLI / Antigravity の使いどころ💬⚡
+
+![AI Explaining Config](./picture/firebase_startdash_ts_study_012_06_ai_explanation.png)
 
 この章は「理解」と「迷子回避」が勝ちなので、AIがめちゃ役立ちます✨
 
@@ -162,6 +174,8 @@ export const firebaseConfig = {
 わからなければAIに聞いてOK🤖💡（**“1行で！”**って指定すると読みやすい）
 
 ## ミニ課題B（余力があれば）🧪
+
+![Multiple Apps in Project](./picture/firebase_startdash_ts_study_012_07_multiple_apps.png)
 
 同じプロジェクトに、もう1つWebアプリを登録してみて👇
 

@@ -18,6 +18,8 @@
 
 ## ✅ プロジェクト名 / プロジェクトID / プロジェクト番号の違い
 
+![Project Name vs ID vs Number](./picture/firebase_startdash_ts_study_011_01_id_types.png)
+
 * **プロジェクト名**：人間向けの表示名（あとで変えてもOKなことが多い）🙂
 * **プロジェクトID**：世界で一意のID。**あとから変更できない**ので、ここが一番大事🔥 ([Firebase][1])
 * **プロジェクト番号**：自動採番（主に裏側で使う）🔢
@@ -25,6 +27,8 @@
 > 迷ったら：**プロジェクトIDは“ドメイン名”みたいなもの**だと思ってOKです🌐✨（後で変えられないやつ）
 
 ## ✅ Google Analyticsは「最初にON」か「後でON」か
+
+![Analytics Decision](./picture/firebase_startdash_ts_study_011_02_analytics_decision.png)
 
 作成フローで **Google Analytics を有効化**できるし、あとで **Project settings → Integrations**から有効化もできます📈 ([Firebase][2])
 （ただし、後でONにするより、最初からONのほうが迷いが少ないことが多いです🙂）
@@ -40,6 +44,8 @@
 
 ## Step 1：新規作成に入る🧭
 
+![Add Project Button UI](./picture/firebase_startdash_ts_study_011_03_create_project_ui.png)
+
 1. Firebase Console を開く
 2. **「プロジェクトを追加（Add project）」** を押す➕
 
@@ -49,6 +55,8 @@
 * 例：`myapp-dev` / `myapp-prod` みたいに “環境が分かる” と後で幸せ🧠✨
 
 ## Step 3：プロジェクトIDを（できれば）整える🧨
+
+![Project ID Constraints](./picture/firebase_startdash_ts_study_011_04_id_constraints.png)
 
 作成途中で **プロジェクトIDを編集できる画面**が出ます。ここが最重要🔥
 **プロジェクトIDは後から変更できません** ([Firebase][1])
@@ -88,6 +96,8 @@
 
 ## ✅ 1分：プロジェクトIDを控える
 
+![Project Settings Navigation](./picture/firebase_startdash_ts_study_011_05_project_settings.png)
+
 1. ⚙️（歯車）→ **Project settings**
 2. **Project ID** をコピーしてメモ📝
 
@@ -124,6 +134,8 @@ Firestore など一部サービスは **ロケーションが後から変更で�
 
 ## A) Console内の「Gemini in Firebase」をONにする⚡
 
+![Gemini Assistance for Naming](./picture/firebase_startdash_ts_study_011_06_gemini_help.png)
+
 Firebase Consoleには **Gemini in Firebase（AIアシスタント）**があります🤖
 有効化や利用には権限（Owner/Editorなど）条件があります。 ([Firebase][6])
 
@@ -134,6 +146,8 @@ Firebase Consoleには **Gemini in Firebase（AIアシスタント）**があり
 * 「このプロジェクトで最初に触るべきメニューはどこ？」
 
 ## B) Gemini CLI × Firebase Extension（ターミナル派の味方💻🤖）
+
+![Gemini CLI Extension Install](./picture/firebase_startdash_ts_study_011_07_cli_extension.png)
 
 Gemini CLI 側に **Firebase Extension** を入れると、Firebase向けの支援が入りやすくなります。 ([Firebase][7])
 
