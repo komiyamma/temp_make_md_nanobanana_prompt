@@ -8,6 +8,8 @@ Firebase公式でも、Webはまず **`GoogleAuthProvider`＋`signInWithPopup()`
 
 ## ゴール🎯
 
+![Google Login Popup Flow](./picture/firebase_login_ts_study_011_01_popup_flow.png)
+
 * Googleボタンでログインできる✅
 * 失敗時に「次に何をすればいいか」が分かるエラー表示ができる✅
 * （おまけ）AIで「やさしい説明文」に言い換えできる✅🤖
@@ -25,12 +27,16 @@ Firebase公式でも、Webはまず **`GoogleAuthProvider`＋`signInWithPopup()`
 
 ## 2-1. Console側の確認🔧（1分）
 
+![Firebase Console Setup](./picture/firebase_login_ts_study_011_02_console_setup.png)
+
 やることは1つだけ：**Authentication → Sign-in method → Google を有効化**。
 ここがOFFだと、アプリ側が完璧でも `operation-not-allowed` で止まります😇（後で「つまずき救急箱」に出てきます）
 
 ---
 
 ## 2-2. Googleログイン関数を作る🧩（まずは“動く最短”）
+
+![Google Auth Code Concept](./picture/firebase_login_ts_study_011_03_code_concept.png)
 
 例：`src/features/auth/signInWithGoogle.ts`
 
@@ -54,6 +60,8 @@ export async function signInWithGooglePopup() {
 ---
 
 ## 2-3. ログイン画面に「Googleでログイン」ボタンを付ける🧼🖱️
+
+![Friendly Error UI](./picture/firebase_login_ts_study_011_04_friendly_error.png)
 
 例：`src/pages/LoginPage.tsx`（構成は自由）
 
@@ -134,6 +142,8 @@ export default function LoginPage() {
 
 ## 3) つまずき救急箱🚑🧠（ここ超大事）
 
+![Troubleshooting Trio](./picture/firebase_login_ts_study_011_05_troubleshooting.png)
+
 ## ✅ 1) ポップアップが出ない（`auth/popup-blocked`）
 
 * ブラウザがポップアップをブロックしてる可能性大
@@ -179,6 +189,8 @@ Firebase公式でも **モバイルはRedirectが推奨**と書かれていま�
 
 ## 6) AIでUX強化🤖📝（Firebase AI Logic：やさしい文言に言い換え）
 
+![AI Logic Integration](./picture/firebase_login_ts_study_011_06_ai_logic.png)
+
 「エラー表示はできた。でももっと優しくしたい…」ってときに、**Firebase AI Logic** で“言い換え文”を作らせるのが便利です✨
 Web向けSDKは `firebase/ai` を使って `getAI()` → `getGenerativeModel()` → `generateContent()` という流れが公式の手順です。([Firebase][3])
 
@@ -222,6 +234,8 @@ export async function explainAuthErrorWithAI(code: string) {
 ---
 
 ## 8) 補足：Googleログイン周辺は“仕様の波”がある🌊（知っておくだけでOK）
+
+![Browser Spec Wave](./picture/firebase_login_ts_study_011_07_browser_wave.png)
 
 Google側のサインイン（特に「Google Sign-In platform library」系）では **FedCM** への移行が進んでいて、ガイドにはタイムラインや影響点が整理されています。([Google for Developers][6])
 Firebase Authのこの章のやり方（Provider＋Popup）は別ルートだけど、**ブラウザの制限や挙動変化は今後も起きやすい**ので、動作確認は“たまに”でいいからやっておくと安心です🙂👍

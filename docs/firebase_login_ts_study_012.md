@@ -15,6 +15,8 @@
 
 ## 1) Popup と Redirect、なにが違うの？🤔🪟➡️
 
+![Popup vs Redirect](./picture/firebase_login_ts_study_012_01_popup_vs_redirect.png)
+
 ## Popup（signInWithPopup）🪟
 
 * 画面はそのまま、別ウィンドウでログイン → 戻ってくる✨
@@ -31,6 +33,8 @@
 ---
 
 ## 2) 迷ったらこの方針でOK🙆‍♂️🧭
+
+![Fallback Strategy](./picture/firebase_login_ts_study_012_02_fallback_strategy.png)
 
 * **基本はPopup**（PCならこれが一番ラク）🪟✨
 * **Popupが無理なときだけRedirectへ**（逃げ道として用意）➡️🛟
@@ -66,6 +70,8 @@ export const googleProvider = new GoogleAuthProvider();
 ---
 
 ## 3-2) “賢いGoogleログイン”関数を作る🪄
+
+![Smart Login Logic](./picture/firebase_login_ts_study_012_03_smart_login.png)
 
 ```ts
 // src/features/auth/signInWithGoogleSmart.ts
@@ -150,6 +156,8 @@ export function GoogleSignInButton() {
 
 ## 4) 手を動かす②：Redirectの“戻り処理”を入れる🔁✅
 
+![Redirect Return Handling](./picture/firebase_login_ts_study_012_04_redirect_return.png)
+
 Redirectは **戻ってきたあと** に結果を拾わないと「なんか起きたけど分からん😇」になりがちです。
 
 ## 4-1) AuthProvider（または起動時のどこか）で getRedirectResult を呼ぶ🧠
@@ -207,6 +215,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 ## 5) Redirectが動かない系の“現代の罠”🕳️🧨
 
+![Redirect Cookie Trap](./picture/firebase_login_ts_study_012_05_cookie_trap.png)
+
 ## 5-1) ブラウザのストレージ制限でRedirectが詰まることがある🍪🚫
 
 Firebase公式が「redirect sign-in をスムーズにするため cross-origin iframe を使うが、第三者ストレージをブロックするブラウザでは動かない」と明記しています⚠️ ([Firebase][5])
@@ -232,6 +242,8 @@ Firebase AI LogicのWeb例では、`firebase/ai` から `getAI` / `getGenerative
 あと、**Gemini 2.0 Flash/Flash-Lite が 2026-03-31 に廃止予定**なので、モデル名は新しめに寄せるのが安全です🧯 ([Firebase][7])
 
 ## 6-1) “エラー説明をAIに作らせる”関数（例）📝
+
+![AI Trouble Explainer](./picture/firebase_login_ts_study_012_06_ai_explainer.png)
 
 ```ts
 // src/features/ai/explainAuthTrouble.ts
@@ -267,6 +279,8 @@ export async function explainAuthTrouble(params: {
 ---
 
 ## 7) Antigravity / Gemini CLI で“詰まりどころ”を潰す🧑‍💻🧠🚀
+
+![Antigravity Smart Login Mission](./picture/firebase_login_ts_study_012_07_antigravity_mission.png)
 
 * **Google Antigravity**は「agentic IDE」として、調査→実装→テスト生成まで流れで支援する、という説明があります🤖🛠️ ([Google Codelabs][8])
 
