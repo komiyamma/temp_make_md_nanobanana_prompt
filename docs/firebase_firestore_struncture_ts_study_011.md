@@ -16,6 +16,8 @@ Firebase の Cloud Firestore には、次の“読み取り時集計（read-time
 ポイントはこれ👇
 **「集計をサーバー側で計算して、結果だけ返す」** ので、転送量も読み取りコストも節約しやすい、ということです📉✨ ([Firebase][1])
 
+![Three Aggregation Functions](./picture/firebase_firestore_struncture_ts_study_011_01_aggregation_functions.png)
+
 ---
 
 ## 2) “使いどころ”はここ！✅（日報/記事/コメントの例つき）
@@ -37,6 +39,8 @@ Firebase の Cloud Firestore には、次の“読み取り時集計（read-time
 集計結果を `onSnapshot` みたいに **購読してリアルタイム更新**…は **できません**。
 リアルタイムに数字が動いてほしいなら、次章の「書き込み時集計（Write-time）」系（分散カウンタ等）に寄せます💡 ([Firebase][2])
 
+![No Realtime Stream Concept](./picture/firebase_firestore_struncture_ts_study_011_02_no_realtime_stream.png)
+
 ## B. “キャッシュ前提”にも向かない 🧊
 
 集計クエリは **クライアント側キャッシュに載せたい** みたいな用途とも相性がよくないです。
@@ -49,6 +53,8 @@ Firebase の Cloud Firestore には、次の“読み取り時集計（read-time
 
 なので、**`count()` と `average()` を同時に出すと「母数が違う」** みたいなズレが起きがちです😇
 対策は簡単で、**集計したいフィールドは必ず数値で入れる（初期値0）** に寄せるのが安全です✅ ([Firebase][3])
+
+![Data Type Filtering in Sum/Avg](./picture/firebase_firestore_struncture_ts_study_011_03_data_type_filtering.png)
 
 ## D. 複数フィールドの集計を同時にすると“対象ドキュメントが絞られる”ことがある🧩
 
@@ -67,6 +73,8 @@ Aggregation Queries は、ざっくり言うと **スキャンした“インデ
 * 条件に一致するのが約 12,000 件 → **だいたい 12 read 相当**（※インデックス読みの話）
   みたいな感覚になります。
   「全部ドキュメントを読むより、かなり軽くなりやすい」方向性ですね✨ ([Firebase][4])
+
+![Aggregation Billing Meter](./picture/firebase_firestore_struncture_ts_study_011_04_billing_meter.png)
 
 ---
 
@@ -165,6 +173,8 @@ export async function fetchPostLikeStats() {
 ```
 
 `getAggregateFromServer()` に `{ 名前: sum("field") }` みたいに渡すのが基本形です✨ ([Firebase][1])
+
+![Multi-Aggregation Request](./picture/firebase_firestore_struncture_ts_study_011_05_multi_aggregation_request.png)
 
 ---
 
