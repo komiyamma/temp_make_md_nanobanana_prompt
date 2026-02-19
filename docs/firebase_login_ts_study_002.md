@@ -24,6 +24,8 @@
 
 ## 2) 手を動かす（15分）🛠️🔥
 
+![Console Overview](./picture/firebase_login_ts_study_002_01_console_overview.png)
+
 ## Step A：Authentication を開く🧭
 
 1. Firebase Consoleで対象プロジェクトを開く
@@ -33,6 +35,8 @@
 （ここからは「Sign-in method」周りを触るよ🙂）
 
 ---
+
+![Email Toggle](./picture/firebase_login_ts_study_002_02_email_switch.png)
 
 ## Step B：メール/パスワードを有効化する🔑📧
 
@@ -44,6 +48,8 @@
 
 ---
 
+![Google Provider Setup](./picture/firebase_login_ts_study_002_03_google_setup.png)
+
 ## Step C：Googleログインを有効化する🌈
 
 1. 同じく **Sign-in method** で **Google** を選ぶ
@@ -54,6 +60,8 @@
 これで「Googleでログインする権利」がプロジェクトに生える🌱✨
 
 ---
+
+![Authorized Domains](./picture/firebase_login_ts_study_002_04_domain_list.png)
 
 ## Step D：Authorized domains（承認済みドメイン）を設定する🌍✅
 
@@ -72,6 +80,8 @@ Googleログイン（Popup/Redirect）でよく出る地雷がこれ💣
 ---
 
 ## 3) 最低限の安全設定（ここだけでOK版）🛡️✨
+
+![Security Toggle](./picture/firebase_login_ts_study_002_05_security_toggle.png)
 
 ## 安全設定①：Email enumeration protection（メール存在バレ対策）📨🕵️‍♂️
 
@@ -104,6 +114,8 @@ Identity Platform側の説明では、**ユーザーのサインアップや削�
 
 ## 4) ミニ課題（5分）🧪✨
 
+![Add User Modal](./picture/firebase_login_ts_study_002_06_add_user.png)
+
 ## 「テスト用ユーザー」をConsoleで作る👤
 
 1. **Authentication → Users** タブへ
@@ -126,6 +138,8 @@ Identity Platform側の説明では、**ユーザーのサインアップや削�
 「設定場所がSign-in methodじゃなくてSettings側に移動してる」系の話もよく出るので、迷ったら **Authentication → Settings → Authorized domains** を探すのが早いよ🙂([Firebase][4])
 
 ---
+
+![AI Settings Audit](./picture/firebase_login_ts_study_002_07_ai_audit.png)
 
 ## 6) AIを使って“設定漏れゼロ”にする🤖🔎✨
 
