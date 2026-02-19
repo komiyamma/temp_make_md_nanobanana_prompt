@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_index.md",
-  "proposed_filename": "firebase_firestore_base_ts_index_03_concept.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_index_03_concept.png",
-  "prompt": "**Theme**: Firestore Concept\n\n**Labels to Render**:\n- Container: \"Collection (Box)\"\n- Item: \"Document (Note)\"\n- Feature: \"Realtime\"\n\n**Visual Details**:\n1. Core Concept: Document-based structure.\n2. Metaphor: A physical box containing sticky notes. One note is glowing (realtime update).\n3. Action: Glowing/Syncing.\n4. Layout: 3D or Isometric view of box.",
-  "insertion_point": "### 第01章：Firestoreって何者？（まず怖さを消す）😌🗃️"
-}

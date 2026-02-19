@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_002.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_002_03_data_shape.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_002_03_data_shape.png",
-  "prompt": "**Theme**: ToDo Data Shape\n\n**Labels to Render**:\n- Text: \"Title\"\n- Check: \"Done\"\n- Label: \"Tags\"\n\n**Visual Details**:\n1. Core Concept: The structure of a single ToDo item.\n2. Metaphor: A blueprint or schema card showing the fields.\n3. Action: Planning.\n4. Layout: Card view.",
-  "insertion_point": "## ② ToDoの「データの形」を決めよう🛠️🧩"
-}

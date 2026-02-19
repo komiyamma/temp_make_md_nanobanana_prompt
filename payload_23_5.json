@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_002.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_002_05_json.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_002_05_json.png",
-  "prompt": "**Theme**: Seed Data JSON\n\n**Labels to Render**:\n- ID: \"todo_001\"\n- Data: \"{ title: 'Buy Milk' }\"\n- Stack: \"5 Items\"\n\n**Visual Details**:\n1. Core Concept: Preparing multiple data items.\n2. Metaphor: A stack of 5 index cards, each representing a JSON object.\n3. Action: Stacking.\n4. Layout: Stack view.",
-  "insertion_point": "## ④ 「ToDoを5件」JSONっぽく書いてみよう🧾✍️"
-}

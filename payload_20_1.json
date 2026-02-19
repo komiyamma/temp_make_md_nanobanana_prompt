@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_abuse_prevention_ts_study_020.md",
-  "proposed_filename": "firebase_abuse_prevention_ts_study_020_01_switch.png",
-  "relative_link": "./picture/firebase_abuse_prevention_ts_study_020_01_switch.png",
-  "prompt": "**Theme**: App Check Mode Switch\n\n**Labels to Render**:\n- Switch: \"VITE_APPCHECK_MODE\"\n- Position 1: \"OFF (Break)\"\n- Position 2: \"Recaptcha (Prod)\"\n- Position 3: \"Debug (Local)\"\n\n**Visual Details**:\n1. Core Concept: One setting controlling three modes.\n2. Metaphor: A 3-way toggle switch or lever.\n3. Action: Selecting a mode.\n4. Layout: Close-up of the control.",
-  "insertion_point": "## Step 0：切り替えスイッチを作る🎛️（これが最終章の核）"
-}

@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_001.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_001_04_strengths.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_001_04_strengths.png",
-  "prompt": "**Theme**: Strengths and Weaknesses\n\n**Labels to Render**:\n- Good: \"Realtime UI\"\n- Good: \"Flexible Data\"\n- Bad: \"Complex JOINs\"\n\n**Visual Details**:\n1. Core Concept: What Firestore is good and bad at.\n2. Metaphor: A superhero (Firestore) lifting a UI easily but struggling with a tangled knot of ropes (JOINs).\n3. Action: Lifting vs Struggling.\n4. Layout: Comparison.",
-  "insertion_point": "## 4) じゃあ、Firestoreは何が得意？何が苦手？🎯🧩"
-}

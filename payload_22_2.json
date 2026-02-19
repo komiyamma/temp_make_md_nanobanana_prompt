@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_001.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_001_02_box_note.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_001_02_box_note.png",
-  "prompt": "**Theme**: Box and Note Metaphor\n\n**Labels to Render**:\n- Container: \"Collection (Box)\"\n- Item: \"Document (Note)\"\n- Content: \"Fields\"\n\n**Visual Details**:\n1. Core Concept: The data structure hierarchy.\n2. Metaphor: A cardboard box labeled 'todos' with sticky notes inside. One note shows text fields.\n3. Action: Organizing.\n4. Layout: 3D composition.",
-  "insertion_point": "## 2) “箱とノート”の超ざっくり図解📦📝"
-}

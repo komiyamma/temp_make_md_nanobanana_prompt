@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_abuse_prevention_ts_study_020.md",
-  "proposed_filename": "firebase_abuse_prevention_ts_study_020_02_debug_token.png",
-  "relative_link": "./picture/firebase_abuse_prevention_ts_study_020_02_debug_token.png",
-  "prompt": "**Theme**: Debug Token Flow\n\n**Labels to Render**:\n- Local: \"Browser Console\"\n- Key: \"Debug Token\"\n- Cloud: \"Firebase Console\"\n- Action: \"Safelist\"\n\n**Visual Details**:\n1. Core Concept: Registering the local token to allow access.\n2. Metaphor: Taking a key from a local safe and registering it at the main bank vault.\n3. Action: Copy and paste flow.\n4. Layout: Flow from Laptop to Cloud.",
-  "insertion_point": "## Step 1：Debug token を登録して「ローカル救済ルート」を作る🧪🔐"
-}

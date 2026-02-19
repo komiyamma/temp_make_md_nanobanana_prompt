@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_002.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_002_04_type.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_002_04_type.png",
-  "prompt": "**Theme**: TypeScript Type Definition\n\n**Labels to Render**:\n- Code: \"type TodoDoc\"\n- Prop 1: \"title: string\"\n- Prop 2: \"done: boolean\"\n\n**Visual Details**:\n1. Core Concept: Defining the data structure in code.\n2. Metaphor: A cookie cutter or mold labeled 'TodoDoc' shaping the data.\n3. Action: Shaping.\n4. Layout: Code concept.",
-  "insertion_point": "## ③ TypeScriptで「型」を作って頭を整理しよう🧠⚛️"
-}
