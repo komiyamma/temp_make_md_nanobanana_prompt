@@ -16,6 +16,8 @@
 
 ## 1) まずは「家の見取り図」🏠🗺️
 
+![Project File Map](./picture/firebase_startdash_ts_study_009_01_file_map.png)
+
 Vite + React + TypeScript の最小構成は、だいたいこんな感じ👇
 （ファイル名はテンプレで多少違っても、考え方は同じ！）
 
@@ -36,6 +38,8 @@ Viteは **`index.html` がプロジェクト直下にいる**のが特徴だよ�
 ---
 
 ## 2) 3点セット① `package.json`：このアプリの“取扱説明書”📘⚙️
+
+![package.json Manual](./picture/firebase_startdash_ts_study_009_02_package_json_manual.png)
 
 ここには主に2つあるよ👇
 
@@ -64,6 +68,8 @@ Viteは **`index.html` がプロジェクト直下にいる**のが特徴だよ�
 
 ## 3) 3点セット② `src/`：あなたがほぼ毎日触る場所🧠🔥
 
+![src Directory Workspace](./picture/firebase_startdash_ts_study_009_03_src_workspace.png)
+
 ## `src/main.tsx`：起動スイッチ🔌（基本は触らない）
 
 ここは **ReactをDOMに接続する**ところ。
@@ -76,6 +82,8 @@ Viteは **`index.html` がプロジェクト直下にいる**のが特徴だよ�
 ---
 
 ## 4) 3点セット③ `public/`：そのまま配る素材置き場📦🖼️
+
+![Public Folder Delivery](./picture/firebase_startdash_ts_study_009_04_public_folder.png)
 
 ここに入れたファイルは **加工されずにそのまま配られる**よ。
 だから用途はだいたいこんな感じ👇
@@ -117,6 +125,8 @@ export default function App() {
 ---
 
 ## Step 2：`TopPage.tsx` に切り出す🧩
+
+![Component Extraction](./picture/firebase_startdash_ts_study_009_05_component_extraction.png)
 
 「画面＝部屋」だと思うと分かりやすいよ🏠
 まず `src/pages/TopPage.tsx` を作って👇
@@ -167,6 +177,8 @@ export function TopPage() {
 
 ## Step 4（任意）：AI/Firebaseコードの置き場所を“先に”作る🤖🔥
 
+![Lib Folder Organization](./picture/firebase_startdash_ts_study_009_06_lib_folder.png)
+
 ここが第9章の「未来への投資」ポイント💰✨
 
 `src/lib/ai.ts` を作って👇（今はダミーでOK）
@@ -210,6 +222,8 @@ export function TopPage() {
 ---
 
 ## 6) ここで“AI×Firebase”をちょい予告🤖⚡（でも今は重くしない）
+
+![Future AI Integration](./picture/firebase_startdash_ts_study_009_07_future_ai.png)
 
 今どきFirebaseには「AIを組み込む導線」がちゃんと用意されてるよ👇
 

@@ -25,6 +25,8 @@ Gemini CLIは、ターミナルの中で動くAIエージェントです🤖
 
 ## 2) セットアップ（最短）🚀
 
+![Installing Gemini CLI](./picture/firebase_startdash_ts_study_006_01_install_gemini.png)
+
 ## A. すぐ使う（ターミナルで起動）🕹️
 
 Gemini CLIの基本は「起動してログイン」です。
@@ -51,6 +53,8 @@ Gemini CLIの推奨要件として **Node.js 20+**、Windowsは **Windows 11（2
 ---
 
 ## 3) 使い方の基本：まずはこの3パターンだけ覚える🧩✨
+
+![Three Usage Patterns](./picture/firebase_startdash_ts_study_006_02_usage_patterns.png)
 
 ## ① ふつうに会話（いちばん使う）💬
 
@@ -80,6 +84,8 @@ gemini --include-directories ../docs,../shared
 ---
 
 ## 4) 「聞き方」テンプレ3つ💬✨（これだけで強い）
+
+![Prompt Templates](./picture/firebase_startdash_ts_study_006_03_prompt_templates.png)
 
 Gemini CLIで詰まらないコツは、質問に“材料”を添えること🍳
 おすすめテンプレはこれ👇
@@ -137,6 +143,8 @@ Gemini CLIは **GEMINI.md** をプロジェクト文脈として使えます。(
 
 ## 5-2. .geminiignore（見せたくないものを遮断）🔐
 
+![.geminiignore Security](./picture/firebase_startdash_ts_study_006_04_geminiignore.png)
+
 Gemini CLIには **.geminiignore** があり、AIに読ませないファイルを指定できます。([Gemini CLI][5])
 最低限これを入れておくのが安全です👇
 
@@ -161,6 +169,8 @@ Gemini CLIには、フォルダを「信頼する/しない」みたいな安全
 ---
 
 ## 6) ハンズオン：FirebaseのWeb初期化「最小コード」を“聞いて”作る🧪🔥
+
+![Hands-on Workflow](./picture/firebase_startdash_ts_study_006_05_handson_flow.png)
 
 ここがこの章のメインイベント🎆
 「自分で全部調べる」のではなく、**質問で最小解**を取りに行きます。
@@ -209,6 +219,8 @@ export const firebaseApp = initializeApp(firebaseConfig);
 ---
 
 ## 7) FirebaseのAIも絡める：AI Logicを“設計だけ先に”やってみる🤖🧠
+
+![AI Logic Design](./picture/firebase_startdash_ts_study_006_06_ai_design.png)
 
 Firebaseには **Firebase AI Logic** があり、Gemini/Imagenモデルを使ったAI機能をアプリに組み込みやすくする位置づけです。([Firebase][6])
 この章では実装はまだ早いので、Gemini CLIに「設計案だけ」作らせるのが超おすすめ👍
