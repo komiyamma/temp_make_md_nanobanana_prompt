@@ -8,6 +8,9 @@
 ## まずイメージだけ：Antigravityは「エージェントの管制室」🛰️🤖
 
 普通のIDEは「ファイルを開いて書く」が中心だけど、Antigravityは最初に **Agent Manager（Mission Control）** が前面に来ます🚦
+
+![Mission Control Metaphor](./picture/firebase_startdash_ts_study_005_01_mission_control.png)
+
 ここで複数エージェントを並行に動かし、成果物（Artifacts）や差分をレビューしながら進める感じです🧠✨ ([Google Codelabs][1])
 
 ---
@@ -28,6 +31,8 @@ Antigravityはデスクトップアプリとしてインストールして使い
 Chromeも必要になります🌐 ([Google Codelabs][1])
 
 ## セットアップで出てくる“3つの許可”が超重要⚠️🧯
+
+![Security Policy Settings](./picture/firebase_startdash_ts_study_005_02_security_policies.png)
 
 初回に「AIにどこまでやらせる？」が出ます。ここはビビってOKです😆
 設定はあとで変えられるけど、最初は安全寄りがラク！
@@ -50,6 +55,8 @@ Chromeも必要になります🌐 ([Google Codelabs][1])
 ---
 
 ## 2) Workspacesを作る：プロジェクト置き場を決める📁🧭
+
+![Workspace Folder Structure](./picture/firebase_startdash_ts_study_005_03_workspace_folder.png)
 
 AntigravityのWorkspaceは、ざっくり言うと「このフォルダで作業するよ」という拠点です🏠
 初回に“Workspaceを開く”流れが出たら、そこでプロジェクト用フォルダを選びます📂
@@ -82,6 +89,8 @@ Agent Manager右上の **Open Editor** でEditorへ移動できます✍️ ([Go
 
 Editor側で見たいのはこの3つ👇
 
+![Editor Layout](./picture/firebase_startdash_ts_study_005_04_editor_layout.png)
+
 * 🧾 エディタ（ファイル）
 * 💻 ターミナル
 * 🤖 エージェントパネル（右側チャット）
@@ -107,6 +116,8 @@ pwd
 
 ## 5) ブラウザ連携：Chrome拡張を入れて“Web操作”を有効化🌐🧩
 
+![Browser Bridge](./picture/firebase_startdash_ts_study_005_05_browser_bridge.png)
+
 Antigravityの強みは「エージェントがブラウザを見に行って確認できる」ことです👀🤖
 そのために **Chrome拡張** を入れます。
 
@@ -127,6 +138,8 @@ Antigravityの強みは「エージェントがブラウザを見に行って確
 
 ## 6) Artifacts（成果物）とReview Changes（差分確認）を知る🧾🔍
 
+![Artifacts Workflow](./picture/firebase_startdash_ts_study_005_06_artifacts_flow.png)
+
 Antigravityは、エージェントが作ったものを **Artifacts** として残します📌
 スクショ、動画、計画、差分…が出てくるので「あとで検証しやすい」のが良さ✨
 
@@ -137,6 +150,8 @@ Antigravityは、エージェントが作ったものを **Artifacts** として
 ---
 
 ## 7) エージェントに任せる / 自分でやる：切り分けのコツ🧠🫱🫲
+
+![Task Division](./picture/firebase_startdash_ts_study_005_07_task_division.png)
 
 ## エージェントに任せると気持ちいいやつ🎉
 
