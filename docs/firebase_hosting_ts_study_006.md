@@ -7,9 +7,12 @@ Firebase Hosting には **live チャンネル**と、追加で作れる**previe
 
 ## まず理解：Preview Channelってなに？🤔🧠
 
+![Preview Channel Concept](./picture/firebase_hosting_ts_study_006_01_preview_concept.png)
+
 * **live チャンネル**：本番サイト（普段見られてるURL）🏟️
 * **preview チャンネル**：開発版サイト（期限付きの共有URL）🧪⏳
 * preview URL は **ランダムハッシュ入りで推測されにくい**けど、**公開URL**なので「知ってる人はアクセスできる」点は要注意⚠️([Firebase][2])
+![Preview URL Anatomy](./picture/firebase_hosting_ts_study_006_02_url_structure.png)
 * さらに大事：preview URL のアプリは、**基本的に“本物のバックエンド”に接続**します（Firestore/Auth/Storage など）。例外は rewrite で **pinTag された関数**などだけです🧨([Firebase][2])
 
 ※ preview channels は **beta 扱い**で、仕様が変わる可能性があります🧪([Firebase][1])
@@ -55,6 +58,8 @@ npm run build
 
 ## 2) preview チャンネルへデプロイする🚀🔎
 
+![Deploy Command Breakdown](./picture/firebase_hosting_ts_study_006_03_deploy_command.png)
+
 `CHANNEL_ID` は **スペースなし**でOK（例：`pr-123`、`feature-login` など）🏷️([Firebase][2])
 
 ```powershell
@@ -81,6 +86,8 @@ firebase hosting:channel:open pr-123
 
 ## 4) ちょい修正して「同じURL」に上書きする🔁✨
 
+![Update Cycle](./picture/firebase_hosting_ts_study_006_04_update_cycle.png)
+
 preview は “使い捨てURL” というより、**同じチャンネルIDに何回でも載せ替え**できます。
 
 1. Reactを少し直す ✏️
@@ -95,6 +102,8 @@ firebase hosting:channel:deploy pr-123 --expires 7d
 ---
 
 ## チャンネル管理（覚えると運用っぽくなる）🧹📋
+
+![Channel Management Commands](./picture/firebase_hosting_ts_study_006_05_management_commands.png)
 
 ## 一覧を見る📜
 
@@ -123,6 +132,8 @@ firebase hosting:channel:delete pr-123
 
 ## ❶ 「プレビューで動かしたら、DBの中身が変わった！」💥
 
+![Shared Backend Risk](./picture/firebase_hosting_ts_study_006_06_shared_backend.png)
+
 preview URL は基本 **本物のバックエンド**につながるので、テストでも書き込み処理があると普通に反映されます⚠️([Firebase][2])
 対策アイデア👇
 
@@ -144,6 +155,8 @@ preview チャンネルでも rewrite をちゃんと “プレビュー” し�
 ## AI活用：Preview Channelを“詰まらず”回す🤖⚡
 
 ## 1) Firebase MCP server を入れると、AIからFirebase操作がやりやすい🧩
+
+![AI CLI Assistant](./picture/firebase_hosting_ts_study_006_07_ai_helper.png)
 
 Firebase MCP server は **Antigravity / Gemini CLI / Firebase Studio** などのMCPクライアントで使えます🛠️([Firebase][4])
 

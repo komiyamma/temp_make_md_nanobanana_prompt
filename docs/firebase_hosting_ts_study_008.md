@@ -7,6 +7,8 @@
 
 ## 1) まずイメージをつかもう🧠🔁
 
+![CI/CD Pipeline Concept](./picture/firebase_hosting_ts_study_008_01_pipeline_concept.png)
+
 ## PRのとき（プレビュー）🧪
 
 * PRを作る → **プレビューURL** ができる
@@ -26,6 +28,8 @@
 
 ## Step 0：まずは「本番デプロイ用ワークフロー」があるか確認👀
 
+![Action Trigger Logic](./picture/firebase_hosting_ts_study_008_02_trigger_config.png)
+
 リポジトリのここ👇を見てね：
 
 * `.github/workflows/`
@@ -40,6 +44,8 @@
 ---
 
 ## Step 1：CIの Node.js は「24 LTS」を基準にしよう🟩
+
+![Node.js Version Policy](./picture/firebase_hosting_ts_study_008_03_node_version.png)
 
 2026年2月時点だと **Node 24 が Active LTS** です。([nodejs.org][3])
 さらに GitHub 側も **runnerの既定Nodeが 2026-03-04 から Node24 へ寄る** 動きがあるので、ワークフローでバージョン固定しておくのが安心です🧷([The GitHub Blog][4])
@@ -86,6 +92,8 @@ jobs:
 
 ## Step 3：Secrets（鍵）が入ってるか確認🔐
 
+![Secrets Management](./picture/firebase_hosting_ts_study_008_04_secrets_vault.png)
+
 `FIREBASE_SERVICE_ACCOUNT` は **サービスアカウントJSONキー** で、GitHubの **Encrypted Secrets** に入れて使います。
 （漏れると普通に危険😇）([GitHub][2])
 
@@ -94,6 +102,8 @@ jobs:
 ---
 
 ## Step 4：実際に「PR→マージ→本番更新」を回す🔁🚢
+
+![Merge to Deploy Flow](./picture/firebase_hosting_ts_study_008_05_merge_deploy.png)
 
 Windows での流れはこんな感じ（GitHub操作でもOK）👇
 
@@ -118,6 +128,8 @@ git push -u origin feature/live-banner
 ## 3) 反映できたか確認するコツ✅📸
 
 ## いちばん確実なのは「見た目でわかる差分」を入れる👀
+
+![Visual Verification](./picture/firebase_hosting_ts_study_008_06_visual_diff.png)
 
 * 例：ページ上部に「v1」「v2」みたいな文字を一瞬入れる
 * マージ前（プレビュー）と、マージ後（本番）の **スクショ比較** が強い📸✨
@@ -145,6 +157,8 @@ git push -u origin feature/live-banner
 * workflow の `branches:` が **今の運用ブランチ名** と一致してないと発火しないよ⚠️
 
 ## ❌ 「モノレポで関係ない変更でも毎回デプロイされる」
+
+![Monorepo Path Filter](./picture/firebase_hosting_ts_study_008_07_monorepo_filter.png)
 
 * `paths:` で絞ると気持ちいい😌
 

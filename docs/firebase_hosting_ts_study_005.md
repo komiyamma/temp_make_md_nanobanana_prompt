@@ -7,6 +7,8 @@
 
 ## 1) まず何が起きてるの？😵‍💫
 
+![The SPA 404 Problem](./picture/firebase_hosting_ts_study_005_01_404_problem.png)
+
 ## 症状あるある
 
 * 画面内リンク（例：Home → About）で移動はできる ✅
@@ -23,6 +25,8 @@ Hosting側は「そんなファイルないよ？じゃあ404ね🙅‍♂️」
 
 ## 2) 解決方針はこれ！✅「全部 index.html に書き換えて返す」
 
+![The Rewrite Solution](./picture/firebase_hosting_ts_study_005_02_rewrite_solution.png)
+
 SPAは基本、**どのパスで来ても `index.html` を返して**、その後はSPAルーターが画面を決めるのが王道だよ🔁✨
 Firebase Hostingだとこれを **rewrites（リライト）** で実現する🧾
 
@@ -31,6 +35,8 @@ Firebase公式でも「one-page app（= SPA）」では、全リクエストを 
 ---
 
 ## 3) redirect と rewrite の違い（ここ超大事）⚠️
+
+![Redirect vs Rewrite](./picture/firebase_hosting_ts_study_005_03_redirect_vs_rewrite.png)
 
 ## redirect（リダイレクト）🚦
 
@@ -50,6 +56,8 @@ Firebase公式でも「one-page app（= SPA）」では、全リクエストを 
 ---
 
 ## 4) 実装：firebase.json に rewrites を追加しよう🛠️
+
+![Catch-All Configuration](./picture/firebase_hosting_ts_study_005_04_config_catch_all.png)
 
 ## ✅ 最小の“SPA 404対策”テンプレ
 
@@ -105,6 +113,8 @@ firebase emulators:start
 
 ## 6) 本番へ反映（Hostingだけデプロイ）🚢
 
+![Hosting Deploy Command](./picture/firebase_hosting_ts_study_005_06_deployment_flow.png)
+
 ローカルでOKなら、Hostingだけ出す！🎯
 
 ```bash
@@ -125,6 +135,8 @@ firebase deploy --only hosting
   * `public/dist/index.html` みたいになってたらズレてるかも
 
 ## 罠2：APIや特殊パスまでSPAに吸い込まれる😵
+
+![Rule Priority](./picture/firebase_hosting_ts_study_005_05_rule_order.png)
 
 将来 `/api/**` を Functions/Cloud Run に振る予定があるなら、**先にそれを置いてから** 最後に `** → index.html` を置くと安全だよ🔐
 （ルールは上から順・最初に一致が採用なので）([Firebase][2])
@@ -159,6 +171,8 @@ Firebaseの画面上で、Geminiのペインを開いて相談できて、開い
 * 「Firebase HostingでSPAを出したら `/about` リロードで404。`firebase.json` の rewrites を最小構成で教えて。redirectとrewriteの違いと、ルール順の注意も込みで！」
 
 ## B) Antigravity / Gemini CLI × Firebase MCP server で“設定レビュー”🧩
+
+![AI Configuration Review](./picture/firebase_hosting_ts_study_005_07_ai_review.png)
 
 Firebase MCP server は **Antigravity や Gemini CLI** など、MCPクライアントになるツールと一緒に使えるよ([Firebase][5])
 Gemini CLI なら Firebase拡張を入れて MCP server を自動設定できる案内がある（contextファイルも付いてくる）([Firebase][5])

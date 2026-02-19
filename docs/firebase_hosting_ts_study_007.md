@@ -16,6 +16,8 @@
 
 ## 2) 仕組みを超ざっくり理解しよ🧠🗺️
 
+![PR Preview Automation](./picture/firebase_hosting_ts_study_007_01_automation_concept.png)
+
 イメージはこれ👇
 
 1. あなたがPRを作る 🧑‍💻➡️ GitHub
@@ -41,6 +43,8 @@ firebase login
 ```
 
 ## 3-2. リポジトリ直下で GitHub連携セットアップ🤝
+
+![CLI Setup Wizard](./picture/firebase_hosting_ts_study_007_02_cli_wizard.png)
 
 Hostingは既に初期化済みでもOK。**GitHub連携だけ**ならこれ👇
 
@@ -81,16 +85,21 @@ git push -u origin setup/hosting-preview
 
 ## 3-4. PRを作って“プレビューURLが生える”のを確認👀🔗
 
+![PR Comment UI](./picture/firebase_hosting_ts_study_007_03_pr_comment.png)
+
 GitHub上でPRを作成すると…
 
 * Actionsが走る🏃‍♂️💨
 * PRにプレビューURLがコメントされる💬🔗 ([Firebase][1])
 
 さらにPRに追コミットすると、**同じURLが更新**されます🔁✨ ([Firebase][1])
+![Persistent URL on Update](./picture/firebase_hosting_ts_study_007_04_update_flow.png)
 
 ---
 
 ## 4) 生成されるYAMLの中身（最低限だけ読む）👀🧾
+
+![YAML Config Anatomy](./picture/firebase_hosting_ts_study_007_05_yaml_anatomy.png)
 
 CLIが作るワークフローは、中でだいたいこのActionを使ってます👇
 `FirebaseExtended/action-hosting-deploy@v0` ([GitHub][2])
@@ -117,6 +126,8 @@ CLIが作るワークフローは、中でだいたいこのActionを使って�
 
 ## 5-2. forkからのPRだとプレビューが動かない🧊
 
+![Fork Secret Limitation](./picture/firebase_hosting_ts_study_007_06_fork_issue.png)
+
 これは仕様寄りです🥶
 fork由来のPRは、Secretsが渡らないことが多く、`firebaseServiceAccount` が空になって失敗します。 ([GitHub][3])
 
@@ -125,6 +136,8 @@ fork由来のPRは、Secretsが渡らないことが多く、`firebaseServiceAcc
 ---
 
 ## 6) AIで爆速にする🤖⚡（Antigravity / Gemini CLI を“ちゃんと使う”）
+
+![AI Debugging Workflow](./picture/firebase_hosting_ts_study_007_07_ai_fix.png)
 
 ## 6-1. Gemini CLIにFirebase拡張を入れて、詰まりを即相談🧠💬
 
