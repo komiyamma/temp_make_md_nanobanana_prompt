@@ -7,6 +7,8 @@ ToDoでいえば「未完了だけ」「完了だけ」を一瞬で出せるよ�
 
 ## 1) where って何？（まず感覚）🧠💡
 
+![Server vs Client Filtering](./picture/firebase_firestore_base_ts_study_014_01_filter_concept.png)
+
 Firestoreの `where()` は、**DBの中にある大量データから、必要なものだけを持ってくる**ための条件指定です🚚💨
 つまり、アプリ側で全部読み込んで `filter()` するより、基本は `where()` が正解になりやすいです🙆‍♂️
 
@@ -15,6 +17,8 @@ Firestoreの `where()` には、等しい（`==`）だけじゃなくて、範�
 ---
 
 ## 2) where早見（よく使うやつだけ）🧾✨
+
+![Where Operators Cheat Sheet](./picture/firebase_firestore_base_ts_study_014_02_operators.png)
 
 **まずはこの5つが使えたら勝ち**です✌️😆
 
@@ -37,6 +41,8 @@ Firestoreの `where()` には、等しい（`==`）だけじゃなくて、範�
 ---
 
 ## 3-1) フィルタ状態を作る（React）🧩⚛️
+
+![Filter Switch UI](./picture/firebase_firestore_base_ts_study_014_03_switch_ui.png)
 
 ```tsx
 type TodoFilter = "all" | "open" | "done";
@@ -77,6 +83,8 @@ export function buildTodosQuery(filter: TodoFilter) {
 ---
 
 ## 3-3) リアルタイム購読に組み込む（onSnapshot）⚡👀
+
+![Realtime Query Switch](./picture/firebase_firestore_base_ts_study_014_04_realtime_switch.png)
 
 ```ts
 import { onSnapshot } from "firebase/firestore";
@@ -124,6 +132,8 @@ export function useTodos(filter: TodoFilter) {
 
 ## 4) ミニ応用：タグで絞り込む（AIと相性最高）🏷️🤖
 
+![Array Contains Logic](./picture/firebase_firestore_base_ts_study_014_05_array_contains.png)
+
 例えば ToDo の `tags: string[]` に
 `["urgent", "work"]` みたいなのを入れておけば…
 
@@ -150,6 +160,8 @@ const q2 = query(ref, where("tags", "array-contains-any", ["urgent", "work"]));
 ---
 
 ## 5) whereが増えると何が起きがち？（事故ポイント集）💥🧯
+
+![Where Pitfalls](./picture/firebase_firestore_base_ts_study_014_06_warning_signs.png)
 
 ## 5-1) `!=` / `not-in` の「存在しないフィールド問題」👻
 
@@ -186,6 +198,8 @@ Node.js の例ですが、Firestoreは `Filter.or(...)` みたいに **論理OR*
 ここが超おいしいところです😆🍣
 
 ## 6-1) AIでタグを作る → `where(tags...)` で検索する🏷️🔎
+
+![AI Auto Tagging](./picture/firebase_firestore_base_ts_study_014_07_ai_tagging.png)
 
 ユーザーが入れたタイトルから、AIにタグを作ってもらって保存すると便利です✨
 

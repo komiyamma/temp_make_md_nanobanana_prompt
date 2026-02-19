@@ -14,6 +14,8 @@ Firestoreのクエリで一番よく使う組み合わせなので、ここを�
 
 ## 1) まず概念：`orderBy` と `limit` は「並べて、上だけ取る」🧠📌
 
+![OrderBy and Limit Concept](./picture/firebase_firestore_base_ts_study_015_01_concept.png)
+
 * `orderBy("createdAt", "desc")`
   → `createdAt` を **降順（desc）**＝新しい順に並べる⬇️✨
 * `limit(10)`
@@ -24,6 +26,8 @@ Firestore公式の要点はこの2つ👇 ([Firebase][3])
 ---
 
 ## 2) 重要注意：`orderBy` すると「そのフィールドが無いドキュメント」は消える😱💥
+
+![Missing Field Trap](./picture/firebase_firestore_base_ts_study_015_02_missing_field.png)
 
 ここ、超大事です⚠️
 
@@ -50,6 +54,8 @@ Firestoreは `orderBy()` に使ったフィールドが **存在するドキュ�
 
 ## 3-1) クエリだけ先に作ってみる（超基本形）🧩
 
+![Building the Query](./picture/firebase_firestore_base_ts_study_015_03_query_build.png)
+
 ```ts
 import { collection, query, orderBy, limit } from "firebase/firestore";
 import { db } from "./firebase"; // あなたの初期化ファイルに合わせてね
@@ -70,6 +76,8 @@ const q = query(
 ---
 
 ## 3-2) `onSnapshot`（リアルタイム）に合体させる ⚡👀
+
+![Realtime List Update](./picture/firebase_firestore_base_ts_study_015_04_realtime_list.png)
 
 すでに一覧が `onSnapshot` になってる想定で、**購読対象を q に変えるだけ**です👍
 
@@ -167,6 +175,8 @@ export function TodoList() {
 
 ## 4) ミニ課題：最新10件だけ表示（limit）🧩🏁
 
+![Limit Logic](./picture/firebase_firestore_base_ts_study_015_05_limit_flow.png)
+
 ## やること💪
 
 1. ToDoを **15件以上** 作る（適当にOK🙆‍♂️）
@@ -182,6 +192,8 @@ export function TodoList() {
 ---
 
 ## 5) よくあるつまずき集（先に踏んでおく）💥😇
+
+![Stable Sort](./picture/firebase_firestore_base_ts_study_015_06_sort_stable.png)
 
 ## ❶ `createdAt` が無いデータが消えた
 
@@ -212,6 +224,8 @@ export function TodoList() {
 ---
 
 ## 6-2) アプリ機能にAIを混ぜる（自然言語→並び替え/件数）🪄🗣️
+
+![Natural Language to Query](./picture/firebase_firestore_base_ts_study_015_07_ai_query.png)
 
 例えばユーザーが
 「新しい順で10件だけ見たい！」

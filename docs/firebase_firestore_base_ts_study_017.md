@@ -10,10 +10,14 @@ Firestoreのページングは「ページ番号」じゃなくて、**“しお
 
 ## 🔖 カーソルってなに？
 
+![Cursor Concept](./picture/firebase_firestore_base_ts_study_017_01_cursor_concept.png)
+
 Firestoreのページングは、**前のページの“最後のドキュメント”を覚えておいて、次はそこから先を取る**スタイルです📌
 この「どこから先を取るか」を決めるのが **クエリカーソル**です。([Firebase][1])
 
 ## ✅ startAt と startAfter の違い（めっちゃ大事）
+
+![startAt vs startAfter](./picture/firebase_firestore_base_ts_study_017_02_startat_after.png)
 
 * `startAt(...)`：そこ **含む**（inclusive）
 * `startAfter(...)`：そこ **含まない**（exclusive）
@@ -23,6 +27,8 @@ Firestoreのページングは、**前のページの“最後のドキュメン
 ---
 
 ## 1) 今日のゴールの完成形 🏁✨
+
+![Paging Workflow Goal](./picture/firebase_firestore_base_ts_study_017_03_paging_goal.png)
 
 * 1ページ目：`createdAt desc` で新しい順に10件
 * `次へ`：前ページの最後のドキュメントをカーソルにして、次の10件
@@ -57,6 +63,8 @@ Firebase AI LogicのWeb SDKは `firebase/ai` を使ってモデルを呼べま�
 
 ## 3) ハンズオン：10件ずつ取得して「次へ」する 🛠️📜
 
+![Paging Relay Logic](./picture/firebase_firestore_base_ts_study_017_04_thinking_process.png)
+
 ## 🧩 今回使うFirestoreの考え方
 
 * まず `limit(10)` で **最初の10件**
@@ -68,6 +76,8 @@ Firebase AI LogicのWeb SDKは `firebase/ai` を使ってモデルを呼べま�
 ---
 
 ## 4) 実装：ページング用hookを作る（おすすめ）⚛️🧰
+
+![Hook Structure](./picture/firebase_firestore_base_ts_study_017_05_hook_structure.png)
 
 `src/hooks/useTodosPaging.ts` みたいなファイルを作るとスッキリします✨
 （すでに `useTodos()` があるなら、別名でOKです👍）
@@ -187,6 +197,8 @@ export function useTodosPaging() {
 
 ## 5) UI：一覧に「次へ」ボタンを付ける 🎛️➡️
 
+![Button UI States](./picture/firebase_firestore_base_ts_study_017_06_ui_states.png)
+
 ```tsx
 import { useEffect } from "react";
 import { useTodosPaging } from "../hooks/useTodosPaging";
@@ -271,6 +283,8 @@ export function TodosPage() {
 ---
 
 ## 9) （オプション）Firebase AI LogicでサンプルToDoを生成→一括追加🤖🧾➕
+
+![AI Data Factory](./picture/firebase_firestore_base_ts_study_017_07_ai_data.png)
 
 「ページング練習用のデータ作り」がだるい…😇って時の最終兵器です🔥
 Firebase AI Logicの例では、Webで `firebase/ai` を使ってモデルを呼ぶ形になっています。([Firebase][5])
