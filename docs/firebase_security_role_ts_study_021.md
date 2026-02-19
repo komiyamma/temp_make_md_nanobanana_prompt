@@ -7,6 +7,8 @@
 
 ## 1) 今日作る完成品（仕様）🎯
 
+![Admin Only Collection](./picture/firebase_security_role_ts_study_021_01_black_box.png)
+
 作るコレクション例👇
 
 * コレクション名：`adminOnlyLogs`
@@ -28,6 +30,8 @@
 ---
 
 ## 2) AIを先に味方につける（叩き台づくり）🤖⚡
+
+![AI Drafting Rules](./picture/firebase_security_role_ts_study_021_02_ai_draft.png)
 
 ## Antigravity（Agent）でやるなら🏎️
 
@@ -54,6 +58,8 @@ Rulesについて質問には答えられるけど、**コードベースにア�
 ---
 
 ## 3) 実装パート：Rulesを書こう！🛡️✍️
+
+![Admin Gatekeeper](./picture/firebase_security_role_ts_study_021_03_admin_gate.png)
 
 今回のキモはこれ👇
 **request.auth.token.admin == true の人だけ通す**（＝RBACの最小形）👑
@@ -108,6 +114,8 @@ service cloud.firestore {
 
 ## 4) Emulator準備：firebase.json（Rules読み込み設定）🧪⚙️
 
+![Emulator Configuration](./picture/firebase_security_role_ts_study_021_04_emulator_config.png)
+
 `firebase.json` に「どのRulesファイルを読むか」を書きます✍️
 **エミュレータは firebase.json の rules 指定を最初に読みます**（これ大事！） ([Firebase][4])
 
@@ -128,6 +136,8 @@ Firestore Emulator のデフォルトは **8080** です（覚えやすい！）
 ---
 
 ## 5) テストが本体：Rules単体テストを書く🧪✅❌
+
+![Role Testing](./picture/firebase_security_role_ts_study_021_05_role_masks.png)
 
 公式は **@firebase/rules-unit-testing** を推してます（authの擬似再現ができるのが強い） ([Firebase][4])
 最新版は npm 上で **5.0.0** が案内されています。 ([npm][6])
@@ -285,6 +295,8 @@ describe("adminOnlyLogs (管理者だけアクセス可能)", () => {
 
 ## 6) 実行：エミュレータ起動→テスト→自動終了🧪🚀
 
+![Test Execution](./picture/firebase_security_role_ts_study_021_06_test_run.png)
+
 いちばんラクなのはこれ👇（推奨✨）
 
 ```bash
@@ -296,6 +308,8 @@ npm run test:emu
 ---
 
 ## 7) デプロイ（本番反映）🔥⚠️
+
+![Deployment Overwrite Warning](./picture/firebase_security_role_ts_study_021_07_deploy_warning.png)
 
 RulesをCLIでデプロイすると…
 **コンソールで編集してた既存Rulesを上書き**します😱（運用事故ポイント！） ([Firebase][8])

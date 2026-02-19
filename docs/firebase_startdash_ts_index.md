@@ -6,12 +6,16 @@
 
 ## 第01章：Firebaseって結局なにができるの？用途別マップ🙂🧭
 
+![Firebase Service Map](./picture/firebase_startdash_ts_index_01_service_map.png)
+
 - **読む**：認証・DB・ファイル・配信・サーバー処理・通知・分析・AIをざっくり俯瞰👀
 - **手を動かす**：コンソールの「Build / Run」あたりを眺めて“全体の住所”を覚える🗺️
 - **ミニ課題**：自分の作りたいアプリを1行で書いて、どの機能が必要か丸をつける⭕
 - **チェック**：「何に使うサービスか」を5つ言えたらOK✅
 
 ## 第02章：プロジェクト＝アプリ？まず“入れ物”の考え方📦🧠
+
+![Project Container](./picture/firebase_startdash_ts_index_02_project_box.png)
 
 - **読む**：FirebaseプロジェクトとGoogle Cloudプロジェクトの関係、だいたいの感覚🤝
 - **手を動かす**：プロジェクト一覧→切り替え→設定画面まで行けるようにする🧭
@@ -27,12 +31,16 @@
 
 ## 第04章：🤖AIと一緒に学ぶ：聞き方テンプレ（超初心者向け）💬✨
 
+![AI Question Template](./picture/firebase_startdash_ts_index_03_ai_question_card.png)
+
 - **読む**：AIに投げる“良い質問”＝目的＋現状＋エラー＋期待、だけ📌
 - **手を動かす**：Geminiに「今から何をすれば最小で動く？」を聞いて手順を箇条書きにさせる🤖
 - **ミニ課題**：質問テンプレをメモ帳に保存（コピペ用）📝
 - **チェック**：AIの答えを“自分の言葉で”3行に要約できたらOK✅
 
 ## 第05章：Antigravityで作業場を作る：Mission Controlに慣れる🕹️🛸
+
+![Integrated Workspace](./picture/firebase_startdash_ts_index_04_cockpit_workspace.png)
 
 - **読む**：エージェント中心IDEとしての考え方（エディタ＋ターミナル＋ブラウザ）🌐 ([Google Codelabs][1])
 - **手を動かす**：ワークスペース作成→ターミナルでコマンド実行→プレビュー表示まで一回通す🚀
@@ -76,6 +84,8 @@
 
 ## 第11章：Firebaseプロジェクト作成：最初の1回を最短で🌋🚀
 
+![First Project Creation](./picture/firebase_startdash_ts_index_05_new_project_flag.png)
+
 - **読む**：プロジェクト作成時に出る選択肢の意味をざっくり🙂
 - **手を動かす**：新規プロジェクト作成→Overviewに戻って確認✅
 - **ミニ課題**：プロジェクトIDをメモしておく📝
@@ -89,6 +99,8 @@
 - **チェック**：configを見失わず保管できたらOK✅
 
 ## 第13章：SDK導入→初期化→起動確認：最小の「繋がった！」🌱⚡
+
+![SDK Initialization](./picture/firebase_startdash_ts_index_06_connection_plug.png)
 
 - **読む**：初期化は `initializeApp` から始まる（まずここだけ）🙂
 - **手を動かす**：Firebase JS SDK導入→`firebase.ts` 作成→アプリ起動🧪
@@ -117,6 +129,8 @@
 - **チェック**：エラー時に“聞き方”が分かったらOK✅
 
 ## 第17章：プロジェクト分け（dev/prod）の超基本：事故らない運用の入口🧠🚧
+
+![Dev vs Prod Environments](./picture/firebase_startdash_ts_index_07_env_worlds.png)
 
 - **読む**：環境分けの目的＝設定/データ/課金を混ぜないこと💡
 - **手を動かす**：dev用プロジェクトを作って切り替え練習🔁

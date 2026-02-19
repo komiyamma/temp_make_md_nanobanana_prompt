@@ -18,6 +18,8 @@ Security Rules は“門番🚪”なので、ここが揺れると全てが危�
 
 ## 1) 今日の流れ（最短ルート）🗺️
 
+![TDD Workflow for Rules](./picture/firebase_security_role_ts_study_019_01_tdd_traffic_light.png)
+
 1. Emulator を「テスト実行のたびに起動→テスト→終了」できる形にする🚀
 2. `@firebase/rules-unit-testing` で **auth を偽装**してテストを書く🧪
 3. **通るべき✅ / 弾くべき❌** をセットで増やす（TDDっぽく）🧠
@@ -30,6 +32,8 @@ Emulator は `emulators:exec` を使うと、**起動→実行→終了**が一�
 ## 2) 手を動かす：Rulesテスト用の“最小セット”を作る🧰✨
 
 ## 2-1. `firebase.json` に Rules ファイルを必ず紐づける⚠️
+
+![firebase.json Rules Connection](./picture/firebase_security_role_ts_study_019_02_json_connection.png)
 
 ここ、事故ポイントです😇
 **`firebase.json` に Rules のファイルパスが無いと、エミュレータが“開放ルール扱い”になりうる**ので、テストが意味を失います💥([Firebase][3])
@@ -148,6 +152,8 @@ service cloud.firestore {
 ---
 
 ## 4) テストを書く（通る✅/弾く❌ をペアで）🧪✨
+
+![Clean Test Environment](./picture/firebase_security_role_ts_study_019_03_clean_lab.png)
 
 `tools/rules-tests/tests/posts.rules.test.ts`
 
@@ -292,6 +298,8 @@ describe("posts rules", () => {
 });
 ```
 
+![Assert Succeeds/Fails Pair](./picture/firebase_security_role_ts_study_019_04_assert_pair.png)
+
 ポイントまとめ👇😊
 
 * **`assertSucceeds` と `assertFails` は必ずセット**にする（片方だけだと穴が空く🕳️）
@@ -303,6 +311,8 @@ describe("posts rules", () => {
 ---
 
 ## 5) 実行する🏃‍♂️💨（毎回安全に：`emulators:exec` 推奨）
+
+![emulators:exec Pipeline](./picture/firebase_security_role_ts_study_019_05_exec_pipeline.png)
 
 エミュレータを起動しっぱなしにしなくてOK！✨
 
@@ -326,6 +336,8 @@ firebase emulators:exec --only firestore "npm --prefix tools/rules-tests run tes
 
 ## 落とし穴A：テストが全部通るのに、なんか怖い…
 
+![False Positive Trap](./picture/firebase_security_role_ts_study_019_06_sleeping_guard.png)
+
 → `firebase.json` の `firestore.rules` が抜けてる/パス違いの可能性大です⚠️
 エミュレータが Rules を読めてないと“開放扱い”になりうるので、まずここ確認！([Firebase][3])
 
@@ -339,6 +351,8 @@ firebase emulators:exec --only firestore "npm --prefix tools/rules-tests run tes
 ## 7) AIで加速する（ただし“テストが王様”👑）🤖✅
 
 ## 7-1. Gemini CLI：Rulesとテストを“自動で叩き台生成”🧠⚡
+
+![AI Drafting Rules](./picture/firebase_security_role_ts_study_019_07_ai_draft.png)
 
 Firebase の AI プロンプトは **Gemini CLI 拡張**から使えて、
 **Rules とテストの雛形を生成 → テスト実行結果を見て修正 → デプロイ**までの導線が用意されています。([Firebase][2])
