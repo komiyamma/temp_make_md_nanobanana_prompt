@@ -7,6 +7,8 @@
 
 ## 1) まず結論：サブコレがハマる“3つの型”🧠✨
 
+![Subcollection Tree Structure](./picture/firebase_firestore_struncture_ts_study_004_01_subcollection_tree.png)
+
 Firestoreはドキュメントの中に**サブコレクション**を持てます。つまり、`posts/{postId}/comments/{commentId}` みたいな階層でデータを置けるんだね📚 ([Firebase][1])
 
 サブコレが特に強いのはこの3つ👇
@@ -33,6 +35,8 @@ Firestoreの公式ドキュメントでも「時間とともに増えうるデ�
 
 ## 2) 逆に、トップレベルが向く“2つの型”⚖️
 
+![Top-Level Collection Structure](./picture/firebase_firestore_struncture_ts_study_004_02_top_level_flat.png)
+
 サブコレ万能じゃない！ここ大事🙂
 
 ## A. “横断検索”が頻発するならトップレベルがラク🔎
@@ -54,6 +58,8 @@ Firestoreの公式ドキュメントでも「時間とともに増えうるデ�
 ---
 
 ## 3) 今回の題材：コメントは “サブコレ案 vs トップレベル案” どっち？🤔🧩
+
+![Subcollection vs Top-Level Comparison](./picture/firebase_firestore_struncture_ts_study_004_03_compare_sub_vs_top.png)
 
 ## 案1：サブコレ（王道）🧩
 
@@ -89,6 +95,8 @@ Firestoreの公式ドキュメントでも「時間とともに増えうるデ�
 ---
 
 ## 4) サブコレでも“横断検索”はできる：コレクショングループ🧩🔎
+
+![Collection Group Query](./picture/firebase_firestore_struncture_ts_study_004_04_collection_group_query.png)
 
 サブコレを採用しても、同じ名前（例：全部 `comments`）なら **collection group query** で横断検索できます✨ ([Firebase][5])
 

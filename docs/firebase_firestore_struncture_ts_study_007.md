@@ -7,6 +7,8 @@
 
 ## 0) まずは超ざっくり結論🧠💡
 
+![String ID vs Document Reference](./picture/firebase_firestore_struncture_ts_study_007_01_string_id_vs_ref_obj.png)
+
 * **迷ったら `authorId: string`（UID文字列）**が最強にラクです💪✨
   → Rulesが書きやすい、データ移行が楽、参照切れ対応もシンプル😊
 * **「参照を“型”として扱いたい / 間違いを減らしたい / 参照でwhereしたい」**なら `authorRef: DocumentReference` が便利です🔗✨
@@ -114,6 +116,8 @@ export async function createPost(input: PostCreateInput) {
 
 ## 2) 投稿詳細で「作者ドキュメント」を読む（必要なときだけ）👤
 
+![Broken Reference Handling](./picture/firebase_firestore_struncture_ts_study_007_02_broken_reference.png)
+
 ```ts
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
@@ -205,6 +209,8 @@ export async function getAuthorByRef(authorRef: DocumentReference) {
 ---
 
 ## Rules目線🛡️：`authorId` がラクな理由（超重要）🔥
+
+![Security Rules Comparison](./picture/firebase_firestore_struncture_ts_study_007_03_rules_comparison.png)
 
 ## ✅ `authorId: string` なら Rules が一瞬
 

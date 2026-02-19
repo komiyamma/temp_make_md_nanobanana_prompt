@@ -12,6 +12,8 @@ Firestoreは **大量の“小さいドキュメント”を高速に扱う**の
 
 ## ✅ 正規化 / 非正規化って超ざっくり何？
 
+![Normalization vs Denormalization](./picture/firebase_firestore_struncture_ts_study_006_01_normalization_vs_denorm.png)
+
 * **正規化**：情報は1か所に集約（例：ユーザー名は `users/{uid}` にだけ保存）🗄️
 * **非正規化**：表示のために必要な情報を複製（例：`posts/{postId}` にも `authorName` を持つ）🪞
 
@@ -25,6 +27,8 @@ Firestoreだと、画面を作るときに
 理由は3つあります👇
 
 ## (A) “小さいドキュメントを大量に”が得意 📄📄📄
+
+![Read Optimization with Denormalization](./picture/firebase_firestore_struncture_ts_study_006_02_read_optimization.png)
 
 Firestoreは **大きい塊をドン！より、軽量ドキュメントをサクサク**が得意です([Firebase][1])
 だから **一覧表示のたびに追加で何回も読み込み**が起きる設計だと、体験的にもコスト的にも重くなりがち😵‍💫
@@ -172,6 +176,8 @@ export function snapshotAuthor(u: UserPublic) {
 
 ## 方針①：スナップショットで割り切る（おすすめ多め）📸✨
 
+![Snapshot Strategy](./picture/firebase_firestore_struncture_ts_study_006_03_snapshot_strategy.png)
+
 * 「投稿時点の名前が残ってもOK」とする
 * SNS/ブログ系だと普通にアリ（むしろ“当時の表示名”が残るのが自然なことも）
 
@@ -207,6 +213,8 @@ Firestoreには **トランザクション / バッチ書き込み**があって
 ## 7) 非正規化するときの“地雷”3つ 💣（ここ大事！）
 
 ## 地雷①：複製が増えるほど、更新時のインデックス更新も増える📈
+
+![Synchronization Cost](./picture/firebase_firestore_struncture_ts_study_006_04_sync_update_cost.png)
 
 Firestoreの書き込みはインデックス更新も伴うので、**「何も考えずに複製しまくる」**は地味に効きます([Google Cloud Documentation][3])
 
