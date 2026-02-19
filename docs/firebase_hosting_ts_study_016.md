@@ -11,6 +11,8 @@
 
 ## 1) まず“どう動いてるか”を1枚で🗺️
 
+![App Hosting Architecture](./picture/firebase_hosting_ts_study_016_01_pipeline.png)
+
 App Hosting は「Git のコミット」を起点に、だいたいこう動きます👇
 
 * コミット検知 → **Cloud Build でビルド** 🏗️
@@ -23,6 +25,8 @@ App Hosting は「Git のコミット」を起点に、だいたいこう動き�
 ---
 
 ## 2) 先にチェック✅（ここで詰まると後がしんどい）
+
+![Pre-flight Checklist](./picture/firebase_hosting_ts_study_016_02_checklist.png)
 
 ## ✅ 課金プラン（重要）
 
@@ -48,6 +52,8 @@ Next.js 側の最低要件としては **Node 20.9+** が明記されていま�
 ---
 
 ## 4) 手を動かす🛠️：GitHub にリポジトリを用意する（Windows）
+
+![Git Initialization](./picture/firebase_hosting_ts_study_016_03_git_setup.png)
 
 ## A. 新規で Next.js を作って push（いちばん分かりやすい）
 
@@ -87,6 +93,8 @@ git push -u origin main
 
 ## 5-1. バックエンド作成の流れ（超重要）🧠
 
+![Console Creation Flow](./picture/firebase_hosting_ts_study_016_04_console_flow.png)
+
 公式の「Get started」に沿うと、だいたいこうです👇 ([Firebase][2])
 
 * Firebase コンソール → App Hosting → **Get started**
@@ -98,6 +106,8 @@ git push -u origin main
 * 作成 → 自動で初回ビルド/デプロイが走る🚀
 
 ## 5-2. リージョンはどう選ぶ？🌏
+
+![Region Selection](./picture/firebase_hosting_ts_study_016_05_region_map.png)
 
 App Hosting は対応リージョンが増えていくタイプです。2026-02 時点の例として、
 `us-central1 / us-west1 / europe-west4 / asia-east1 / asia-southeast1` などが挙げられています📍 ([Firebase][6])
@@ -126,6 +136,8 @@ App Hosting はデプロイ後に **専用の hosted.app ドメイン**で見え
 ## 7) よくある詰まりポイント🧯（ここだけ覚えれば勝ち）
 
 ## 7-1. 「リポジトリが一覧に出ない」😇
+
+![Repository Not Found](./picture/firebase_hosting_ts_study_016_06_repo_trouble.png)
 
 まず **Refresh list**。それでもダメなら **GitHub 側で Grant access**（App にリポジトリ権限を追加）をやります。 ([Firebase][3])
 さらに GitHub の Settings → Applications から、Firebase App Hosting アプリの **Configure** で管理できます🔧 ([Firebase][3])
@@ -182,6 +194,8 @@ bun add -g @firebase/mcp-server
 > そのうえで、Gemini CLI / エージェント側に MCP を登録して使う、という流れです（設定例も公式にあります）([Firebase][7])
 
 ## 9-3. “会話”で解決するためのプロンプト例💬
+
+![AI Debugging Assistant](./picture/firebase_hosting_ts_study_016_07_ai_debug.png)
 
 詰まったとき、ログやエラー文を貼ってこう聞くと強いです👇
 

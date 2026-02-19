@@ -12,6 +12,8 @@
 
 ## 1) apphosting.yaml って何者？📄🤔
 
+![apphosting.yaml Anatomy](./picture/firebase_hosting_ts_study_017_01_anatomy.png)
+
 App Hosting は、同じリポジトリでも「環境変数」「CPU/メモリ」「同時処理数」などを変えたい場面が多いです💡
 その設定の中心になるのが **apphosting.yaml** です。ここにランタイム設定（Cloud Run 側の設定）や環境変数、シークレット参照、VPC接続まで書けます。 ([Firebase][1])
 
@@ -48,6 +50,8 @@ env:
 
 ## 3) “ビルド時”と“実行時”を分ける✂️🧠
 
+![Variable Availability](./picture/firebase_hosting_ts_study_017_02_availability.png)
+
 App Hosting では、環境変数を **どこで使えるか** を availability で制御できます✨
 
 * BUILD：ビルド中（例：Next.js の build が読む）
@@ -71,6 +75,8 @@ env:
 
 ## 4) ブラウザに出していい？ NEXT_PUBLIC_ の考え方🌍🕵️‍♀️
 
+![Public vs Secret Variables](./picture/firebase_hosting_ts_study_017_03_public_vs_secret.png)
+
 Next.js 系だと、NEXT_PUBLIC_ が付く変数は「ブラウザ側に出る」扱いになります。
 App Hosting でも同様に NEXT_PUBLIC_ を使えます。 ([Firebase][1])
 
@@ -80,6 +86,8 @@ App Hosting でも同様に NEXT_PUBLIC_ を使えます。 ([Firebase][1])
 ---
 
 ## 5) 秘密は Cloud Secret Manager 参照にする🗝️🔐
+
+![Secret Manager Reference](./picture/firebase_hosting_ts_study_017_04_secret_ref.png)
 
 APIキーなど **漏れたら終わる** ものは、apphosting.yaml にベタ書きしません🙅‍♂️
 代わりに Cloud Secret Manager のシークレットを参照します。これが公式推奨ルートです。 ([Firebase][1])
@@ -117,6 +125,8 @@ firebase apphosting:secrets:grantaccess myApiKeySecret --emails your-team@exampl
 ---
 
 ## 6) 環境（staging / production）でファイルを分ける🏗️🧩
+
+![Configuration Overrides](./picture/firebase_hosting_ts_study_017_05_file_priority.png)
 
 App Hosting は、環境名に応じて **apphosting.ENVIRONMENT_NAME.yaml** を優先して読みます。
 例：apphosting.production.yaml / apphosting.staging.yaml ✨ ([The Firebase Blog][3])
@@ -159,6 +169,8 @@ env:
 ---
 
 ## 7) VPC接続：DBや社内APIに“内側”から繋ぐ🌉🛡️
+
+![VPC Access](./picture/firebase_hosting_ts_study_017_06_vpc_tunnel.png)
 
 「Cloud SQL みたいな非公開アクセスのDB」「社内サービス」「VPC内のキャッシュ」などに繋ぎたい場合、App Hosting のバックエンドを VPC に接続できます。 ([The Firebase Blog][4])
 
@@ -204,6 +216,8 @@ App Hosting Emulator を初期化すると **apphosting.emulator.yaml** が作�
 ---
 
 ## 9) AIを混ぜる：Antigravity / Gemini CLI で“設定作業”を短縮🤖⚡
+
+![AI Config Generator](./picture/firebase_hosting_ts_study_017_07_ai_config.png)
 
 ## Firebase MCP server を使うと何が嬉しい？🧩
 

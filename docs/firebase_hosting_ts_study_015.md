@@ -7,6 +7,8 @@
 
 ## 1) App Hostingって何者？🤔🚀
 
+![App Hosting Workflow](./picture/firebase_hosting_ts_study_015_01_overview.png)
+
 **Firebase App Hosting** は、**動的なWebアプリ（SSR/フルスタック寄り）** を「作る→デプロイ→運用」までまとめてラクにする仕組みだよ✨
 GitHub とつないで、**コミットを push するだけでロールアウト** しやすいのが大きな魅力！ ([Firebase][1])
 
@@ -15,6 +17,8 @@ GitHub とつないで、**コミットを push するだけでロールアウ�
 ---
 
 ## 2) Hosting と App Hosting の違い（超ざっくり）🔍🌐
+
+![Hosting vs App Hosting](./picture/firebase_hosting_ts_study_015_02_comparison.png)
 
 | ざっくり比較     | Firebase Hosting  | App Hosting          |
 | ---------- | ----------------- | -------------------- |
@@ -38,10 +42,14 @@ SSR/動的ページを含むアプリの公開って、手作業でやると設�
 
 ## (3) `apphosting.yaml` で “設定をコード化”できる🧩📄
 
+![apphosting.yaml Structure](./picture/firebase_hosting_ts_study_015_03_config.png)
+
 環境変数、ランタイム設定（CPU/メモリ/並列など）、Secret Manager の参照まで、`apphosting.yaml` で管理できるのが強い💡
 「本番と検証で値を変える」「秘密は安全に扱う」がやりやすくなる✨ ([Firebase][4])
 
 ## (4) ローカルでも “App Hostingっぽく”動かせる🏠🧪
+
+![App Hosting Emulator](./picture/firebase_hosting_ts_study_015_04_emulator.png)
 
 App Hosting Emulator があって、`apphosting.yaml` の環境変数や secrets を踏まえてローカルで動作確認できる（他のエミュレータとも連携可）👍 ([Firebase][5])
 
@@ -52,6 +60,8 @@ App Hosting の Cloud Build 環境では、Firebase Web SDK の初期化用に `
 ---
 
 ## 4) いつ App Hosting を選ぶ？判断チェック✅🧠
+
+![Decision Flowchart](./picture/firebase_hosting_ts_study_015_05_decision_flow.png)
 
 次のうち **2つ以上当てはまったら** App Hosting を真剣に検討！😆
 
@@ -66,6 +76,8 @@ App Hosting の Cloud Build 環境では、Firebase Web SDK の初期化用に `
 ---
 
 ## 5) 課金まわりの“超重要ポイント”💰⚠️
+
+![Blaze Plan Warning](./picture/firebase_hosting_ts_study_015_06_billing.png)
 
 ここは初心者がハマりやすいので先に言うね！
 
@@ -82,6 +94,8 @@ App Hosting の Cloud Build 環境では、Firebase Web SDK の初期化用に `
 ## 6) AI活用：App Hosting選定と設計を“最短”にする🤖🧯
 
 ## (A) MCPで “調べもの”を高速化する🧩⚡
+
+![AI MCP Assistant](./picture/firebase_hosting_ts_study_015_07_ai_integration.png)
 
 Firebase MCP server は **Antigravity / Gemini CLI など、MCPクライアントから使える**って公式に書かれてるよ。
 「コンソールを行ったり来たり」より、AIに調査させて整理するのが速い場面がある😆 ([Firebase][9])
