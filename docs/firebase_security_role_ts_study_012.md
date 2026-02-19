@@ -7,6 +7,8 @@
 
 ## 1) まず怖い話：クライアントは“改造できる前提”😈🪛
 
+![firebase_security_role_ts_study_012_01_hidden_fields.png](./picture/firebase_security_role_ts_study_012_01_hidden_fields.png)
+
 Reactの画面で「role欄なんて出してないし大丈夫でしょ🙂」
 …って思っても、攻撃者は **画面を通さずに** Firestoreへリクエストを投げられます💥
 
@@ -24,6 +26,8 @@ Reactの画面で「role欄なんて出してないし大丈夫でしょ🙂」
 
 ## 2) この章の結論：allowlistは2種類つくる✌️🔑
 
+![firebase_security_role_ts_study_012_02_allowlist_logic.png](./picture/firebase_security_role_ts_study_012_02_allowlist_logic.png)
+
 ## A. create（新規作成）→ `request.resource.data.keys().hasOnly(...)` ✅
 
 「新しく作るドキュメントに、余計なフィールドが混ざってたら拒否！」🚫
@@ -33,6 +37,8 @@ Firestore公式も、**keys + hasOnly / hasAll** で allowlist を作るパタ�
 ---
 
 ## B. update（更新）→ `diff(resource.data).affectedKeys().hasOnly(...)` ✅✅
+
+![firebase_security_role_ts_study_012_03_diff_affected_keys.png](./picture/firebase_security_role_ts_study_012_03_diff_affected_keys.png)
 
 ここがこの章の“いちばん大事”ポイントです🔥
 
@@ -54,6 +60,8 @@ updateでは、`request.resource.data` は **更新後の完成形**（= 既存�
 ---
 
 ## 4) 手を動かす：プロフィール更新で「許可キー以外は拒否」を実装🧑‍💻🔥
+
+![firebase_security_role_ts_study_012_04_profile_structure.png](./picture/firebase_security_role_ts_study_012_04_profile_structure.png)
 
 ## 想定データ（例）📦
 
@@ -127,6 +135,8 @@ Firestore公式も「更新では affectedKeys を使う」例を出していま
 
 ## 5) 攻撃ごっこ（わざと悪い更新を投げる）😈➡️🧯
 
+![firebase_security_role_ts_study_012_05_attack_simulation.png](./picture/firebase_security_role_ts_study_012_05_attack_simulation.png)
+
 ## ✅ 正常：プロフィール更新（OK）
 
 * `displayName` だけ更新する
@@ -144,6 +154,8 @@ Firestore公式も「更新では affectedKeys を使う」例を出していま
 
 ## 6) よくある落とし穴（ここで事故る）⚠️😵
 
+![firebase_security_role_ts_study_012_06_common_pitfalls.png](./picture/firebase_security_role_ts_study_012_06_common_pitfalls.png)
+
 ## 落とし穴①：updateでも `request.resource.data.keys().hasOnly(...)` を使う
 
 これ、**サーバーが後から追加したフィールドがあるだけで**更新が詰みます😱
@@ -157,6 +169,8 @@ updateは **「変更キーだけ」**を見るのが安全です🧯([Firebase]
 ---
 
 ## 7) AIで爆速にする（ただし最後は人間の目👀✅）🤖⚡
+
+![firebase_security_role_ts_study_012_07_ai_review.png](./picture/firebase_security_role_ts_study_012_07_ai_review.png)
 
 ## Antigravity × Firebase MCPで「許可キー表」を作らせる🗂️✨
 

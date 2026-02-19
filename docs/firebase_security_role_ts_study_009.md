@@ -7,6 +7,8 @@
 
 ## 1) まず、ここだけ覚えればOKな結論✨
 
+![firebase_security_role_ts_study_009_01_three_way_split.png](./picture/firebase_security_role_ts_study_009_01_three_way_split.png)
+
 Firestore の “書く” は3種類あります👇
 
 * **create**：新規作成🆕
@@ -29,11 +31,15 @@ Firestore の “書く” は3種類あります👇
 
 ## 理由A：操作ごとに“危険の種類”が違う💣
 
+![firebase_security_role_ts_study_009_02_risk_types.png](./picture/firebase_security_role_ts_study_009_02_risk_types.png)
+
 * **create**：変なデータを作られる（スパム・巨大データ・型崩れ）😵
 * **update**：権限フィールドを書き換えられる（role / isAdmin など）😱
 * **delete**：データ消滅（復旧が地獄）😭🔥
 
 ## 理由B：見えるデータが違う（＝検査できる範囲が違う）🔍
+
+![firebase_security_role_ts_study_009_03_data_visibility.png](./picture/firebase_security_role_ts_study_009_03_data_visibility.png)
 
 * **resource.data**：今DBにある “元データ”
 * **request.resource.data**：これから書き込まれる “新データ”
@@ -48,6 +54,8 @@ Firestore の “書く” は3種類あります👇
 
 ## サンプルのドキュメント構造（例）
 
+![firebase_security_role_ts_study_009_04_doc_structure.png](./picture/firebase_security_role_ts_study_009_04_doc_structure.png)
+
 `posts/{postId}` に、こんな形で保存する想定👇
 
 * `uid`：作成者のuid👤
@@ -59,6 +67,8 @@ Firestore の “書く” は3種類あります👇
 ---
 
 ## 4) ルール実装（create / update / delete を分ける）🧩🔐
+
+![firebase_security_role_ts_study_009_05_rules_logic.png](./picture/firebase_security_role_ts_study_009_05_rules_logic.png)
 
 ポイントはこの3つです👇
 ✅ **create：本人のuidで作るだけ許可**
@@ -125,6 +135,8 @@ service cloud.firestore {
 
 ## 5) 手を動かす（3分で “違い” を体感）🧑‍💻⚡
 
+![firebase_security_role_ts_study_009_06_verification.png](./picture/firebase_security_role_ts_study_009_06_verification.png)
+
 ## ① create だけOKを体験🆕
 
 * 自分の `uid` で作る → ✅通る
@@ -144,6 +156,8 @@ service cloud.firestore {
 ---
 
 ## 6) ルールをテストで固める（ここが一番大事）🧪🧯
+
+![firebase_security_role_ts_study_009_07_testing_arch.png](./picture/firebase_security_role_ts_study_009_07_testing_arch.png)
 
 Firestore のルールは **エミュレータ + 単体テスト** で安全に確認できます✅ ([Firebase][5])
 テスト用ライブラリは **@firebase/rules-unit-testing** が公式ルートです🧰 ([Firebase][6])

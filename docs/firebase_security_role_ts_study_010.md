@@ -3,9 +3,13 @@
 この章は「**変なデータをDBに入れさせない**」がテーマだよ😊✨
 Firestoreは“スキーマなし（何でも入る）”だから、**Rulesで最低限のスキーマを作る**のが超大事🔥 ([Firebase][1])
 
+![firebase_security_role_ts_study_010_02_schemaless_risk.png](./picture/firebase_security_role_ts_study_010_02_schemaless_risk.png)
+
 ---
 
 ## 1) まずココだけ覚える！🎯（今日の武器🗡️）
+
+![firebase_security_role_ts_study_010_01_validation_basics.png](./picture/firebase_security_role_ts_study_010_01_validation_basics.png)
 
 **入力検証の基本セット**はこれ👇
 
@@ -20,6 +24,8 @@ Firestoreはスキーマレスだから、これをやらないと
 
 ## 2) 例題：AIメモアプリの `aiNotes` を守る📝🤖
 
+![firebase_security_role_ts_study_010_03_data_structure.png](./picture/firebase_security_role_ts_study_010_03_data_structure.png)
+
 AI系（FirebaseのAI機能やGeminiなど）を絡めると、Firestoreには例えばこんなデータを入れたくなるよね👇
 
 * `prompt`（ユーザーの入力）
@@ -28,6 +34,8 @@ AI系（FirebaseのAI機能やGeminiなど）を絡めると、Firestoreには�
 * `createdAt`（作成日時）
 
 ここで**入力検証を入れないと**、悪意ある人が👇みたいな“混入”を狙える😱
+
+![firebase_security_role_ts_study_010_04_bad_inputs.png](./picture/firebase_security_role_ts_study_010_04_bad_inputs.png)
 
 * `isAdmin: true` を勝手に書く
 * `createdAt` に文字列を入れる（timestampじゃない）
@@ -48,6 +56,8 @@ AI系（FirebaseのAI機能やGeminiなど）を絡めると、Firestoreには�
 ---
 
 ## 3-2. `firestore.rules` サンプル🛡️✨
+
+![firebase_security_role_ts_study_010_05_rules_functions.png](./picture/firebase_security_role_ts_study_010_05_rules_functions.png)
 
 ```js
 rules_version = '2';
@@ -129,6 +139,8 @@ service cloud.firestore {
 
 ## 4) 手を動かす（3分でOK）🧪✨
 
+![firebase_security_role_ts_study_010_06_test_scenarios.png](./picture/firebase_security_role_ts_study_010_06_test_scenarios.png)
+
 ## ✅ 試したい“ダメ入力”3連発💣
 
 1. 必須不足（`createdAt` なし）
@@ -165,6 +177,8 @@ service cloud.firestore {
 ## 7) AIで加速するやり方（ただし“最後は人間が責任”🤖🧑‍⚖️）
 
 ## 7-1. Gemini CLIで「Rules＋テストの叩き台」を作る🚀
+
+![firebase_security_role_ts_study_010_07_ai_workflow.png](./picture/firebase_security_role_ts_study_010_07_ai_workflow.png)
 
 Firebase公式の流れだと👇こういう感じで、**Rulesとテスト雛形まで**出してくれるよ✨ ([Firebase][3])
 
