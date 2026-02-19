@@ -17,6 +17,20 @@
 
 ## 1) そもそもMFAってなに？🧩
 
+![MFA Concept
+
+**Labels to Render**:
+- Password: "Something you know 🧠"
+- Phone: "Something you have 📱"
+- Lock: "Access Granted 🔓"
+
+**Visual Details**:
+1. Core Concept: Combining two factors for security.
+2. Metaphor: A door with two locks. One key (Password) and one keypad (Phone code).
+3. Action: Unlocking both.
+4. Layout: Split composition merging into one.](./picture/firebase_login_ts_study_019_01_mfa_concept.png)
+
+
 **MFA（Multi-Factor Authentication）**は、ログイン時に
 「パスワードだけ」じゃなくて **追加の確認（2段階）** を入れる仕組みだよ🔐✨
 
@@ -47,6 +61,20 @@ Web向けに **TOTP MFA を追加する公式ページ**があるよ（QRを読�
 
 ## 3) MFAは「全員必須」にする？「必要な人だけ」にする？🤔
 
+![MFA Patterns
+
+**Labels to Render**:
+- A: "All Users (Heavy) 🧱"
+- B: "Optional (Light) 🍃"
+- C: "Step-up (Balanced) ⚖️"
+
+**Visual Details**:
+1. Core Concept: Three strategies for implementing MFA.
+2. Metaphor: A: A heavy fortress wall. B: An open gate with a sign. C: A light gate that turns into a heavy wall only when needed.
+3. Action: Comparison.
+4. Layout: Three panels.](./picture/firebase_login_ts_study_019_02_mfa_patterns.png)
+
+
 Firebase公式でも、MFAの“入れ方パターン”が整理されてるよ👇([Firebase][1])
 
 ## パターンA：全員必須（強いけど重い）💪🧱
@@ -61,6 +89,21 @@ Firebase公式でも、MFAの“入れ方パターン”が整理されてるよ
 
 ## パターンC：重要操作だけMFA（Step-up認証）🚧✨ ← 初学者におすすめ
 
+![Step-up Authentication Flow
+
+**Labels to Render**:
+- Login: "Standard (Easy) 🙂"
+- Action: "Critical (Stop!) 🛑"
+- MFA: "Verify (SMS) 📱"
+- Result: "Allowed ✅"
+
+**Visual Details**:
+1. Core Concept: MFA is only required for sensitive actions.
+2. Metaphor: A user walking freely until they reach a vault. To open the vault, they need a special key (MFA).
+3. Action: Stopping and verifying.
+4. Layout: Linear flow.](./picture/firebase_login_ts_study_019_03_step_up_flow.png)
+
+
 * 普段ログインは軽く
 * **「お金」「権限」「個人情報」「破壊操作」** の直前だけMFA要求🔥
 * UXと安全のバランスが良い🙂
@@ -73,6 +116,21 @@ Firebase公式でも、MFAの“入れ方パターン”が整理されてるよ
 あなたのアプリで「MFAを要求すべき操作」をリスト化しよう👇
 
 ## “MFAが欲しい操作”テンプレ✅
+
+![Critical Actions Checklist
+
+**Labels to Render**:
+- Item 1: "Change Password 🔑"
+- Item 2: "Payment 💳"
+- Item 3: "Delete Data 🗑️"
+- Item 4: "API Key 🗝️"
+
+**Visual Details**:
+1. Core Concept: Identifying actions that need protection.
+2. Metaphor: A clipboard with a checklist of high-risk items, marked with red flags.
+3. Action: Listing.
+4. Layout: List view with icons.](./picture/firebase_login_ts_study_019_04_critical_actions.png)
+
 
 * 🔐 **パスワード変更**
 * 📧 **メールアドレス変更**
@@ -92,6 +150,21 @@ Firebase公式でも、MFAの“入れ方パターン”が整理されてるよ
 ---
 
 ## 5) “UI導線”の作り方（実装前に絵を描く）🎨🧭
+
+![Security Settings UI
+
+**Labels to Render**:
+- Section: "Two-Factor Auth"
+- Status: "Not Enabled ⚠️"
+- Button: "Setup MFA 🛡️"
+- Note: "Recommended"
+
+**Visual Details**:
+1. Core Concept: The user interface for enabling MFA.
+2. Metaphor: A clean settings panel wireframe.
+3. Action: User about to click 'Setup'.
+4. Layout: UI Mockup.](./picture/firebase_login_ts_study_019_05_security_settings_ui.png)
+
 
 最低限これだけ決めると、後の実装が超ラクになるよ🙂
 
@@ -120,6 +193,20 @@ FirebaseのCodelabでは、**Auth EmulatorがMFAをサポート**していて、
 ---
 
 ## 7) 手を動かす（最小コード）🧩 TypeScriptで“MFA必須エラー”を受け止める
+
+![MFA Error Handling Logic
+
+**Labels to Render**:
+- Error: "multi-factor-auth-required"
+- Catch: "getMultiFactorResolver"
+- Action: "Show Modal"
+
+**Visual Details**:
+1. Core Concept: Catching the specific error to trigger the MFA flow.
+2. Metaphor: A sorting machine. Normal errors go to the bin. The MFA error triggers a special alarm and opens a new gate (Modal).
+3. Action: Routing.
+4. Layout: Flowchart.](./picture/firebase_login_ts_study_019_06_error_logic.png)
+
 
 この章では「MFAの本実装」までは踏み込まず、
 **“MFAが必要になったら専用UIに切り替える”入口**だけ作るよ🚪✨
@@ -173,6 +260,20 @@ export async function runSensitiveAction(auth: Auth) {
   * 🚨 「MFAを解除する」ボタン（押したら“重要操作なので追加確認します”と出す）
 
 ## 🔥AIを絡める（Firebase AI Logic / Gemini）
+
+![AI Explanation Assistant
+
+**Labels to Render**:
+- User: "Why MFA?"
+- AI: "To protect your money! 💸"
+- Tone: "Friendly & Clear"
+
+**Visual Details**:
+1. Core Concept: AI generating user-friendly explanations.
+2. Metaphor: A robot assistant holding a sign that translates "Security Protocol" to "Safety First".
+3. Action: Explaining.
+4. Layout: Interaction.](./picture/firebase_login_ts_study_019_07_ai_assist.png)
+
 
 「なんでMFAが必要なの？」をユーザーに優しく説明する文章、毎回手で書くのしんどいよね🥲
 そこで、**説明文だけGeminiに生成させる**のが気持ちいい✨
