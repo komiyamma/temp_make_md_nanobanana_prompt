@@ -2,6 +2,8 @@
 
 ## この章でできるようになること🎯
 
+![Aggregation and Notification Overview](./picture/firebase_functions_ts_study_013_01_overview.png)
+
 * コメントが追加されたら、親（投稿）の「commentCount」を自動で +1 できる📈
 * 「通知用ドキュメント」を作って、フロントで“通知っぽく”表示できる🔔✨
 * “たまに2回動く”みたいな現象にビビらず、壊れない作戦（冪等）を入れられる🛡️
@@ -9,6 +11,8 @@
 ---
 
 ## 1) まず超重要：イベントは「1回とは限らない」⚡🧠
+
+![Event Ordering and Duplication](./picture/firebase_functions_ts_study_013_02_event_chaos.png)
 
 Firestoreトリガー系は、実務的にはこう考えるのが安全です👇
 
@@ -21,6 +25,8 @@ Firestoreトリガー系は、実務的にはこう考えるのが安全です�
 ---
 
 ## 2) 今日の題材：投稿＋コメント＋通知（いちばん王道）🏗️🧩
+
+![Data Schema Visualization](./picture/firebase_functions_ts_study_013_03_schema.png)
 
 データの雰囲気はこんな感じでOKです👇
 
@@ -61,6 +67,8 @@ Firestoreには「いまの値に +1」を安全にやる仕組み（increment�
 ---
 
 ## 4) 実務形：冪等ガードつき「commentCount更新＋通知作成」🛡️🔔
+
+![Idempotent Counter Logic](./picture/firebase_functions_ts_study_013_04_idempotent_counter.png)
 
 ここからが本番です😆✨
 考え方はシンプル👇
@@ -213,6 +221,8 @@ export const onCommentDeleted = onDocumentDeleted(
 
 ## 5) 「通知」って結局なに？まずは“通知ドキュメント”でOK🔔🙂
 
+![Notification Document Flow](./picture/firebase_functions_ts_study_013_05_notification_flow.png)
+
 いきなりPush通知やメールに行くと難度が跳ねます😵
 まずはこの章では👇
 
@@ -226,6 +236,8 @@ export const onCommentDeleted = onDocumentDeleted(
 ---
 
 ## 6) 集計が増えてきた時の壁：1つのドキュメントに書き込み集中😵‍💫
+
+![Distributed Counter Concept](./picture/firebase_functions_ts_study_013_06_distributed_counter.png)
 
 commentCountを posts/{postId} に持つのは王道なんですが、人気投稿にコメントが集中すると👇
 
@@ -280,6 +292,8 @@ Firebaseの MCP server は、AI支援開発（エージェント/CLI）側から
 ---
 
 ## 9) つまずきポイント集（先に潰す）🧯😆
+
+![Transaction Retry Mechanism](./picture/firebase_functions_ts_study_013_07_transaction_retry.png)
 
 * **commentCount がマイナスになる**
   → 下限0でガード（例コードの通り）✅
