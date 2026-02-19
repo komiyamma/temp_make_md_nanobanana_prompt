@@ -16,6 +16,8 @@ Firestore は **DB側でスキーマ（型）を強制しません**。なので
 
 そこで登場するのがこの3点セット👇
 
+![firebase_firestore_struncture_ts_study_019_01_dto_bridge.png](./picture/firebase_firestore_struncture_ts_study_019_01_dto_bridge.png)
+
 * **DTO（DbModel）**：Firestore に保存する “生の形” 🧱
 * **UIモデル（AppModel）**：React が気持ちよく使える形 💖
 * **Converter（withConverter）**：読み書き時に自動で変換してくれる橋🌉
@@ -42,6 +44,8 @@ npm install firebase
 ## 1) 型を2つに分ける🧩　UI用と保存用
 
 ポイントはここ👇😄
+
+![firebase_firestore_struncture_ts_study_019_02_timestamp_vs_date.png](./picture/firebase_firestore_struncture_ts_study_019_02_timestamp_vs_date.png)
 Firestore は Timestamp を返すけど、UI は Date の方が扱いやすい！みたいなズレを吸収します。
 
 * **UI用（AppModel）**：Date を使う
@@ -88,6 +92,8 @@ export type PostWrite = Omit<Post, "id" | "createdAt" | "updatedAt"> & {
 「Converter があるから安全！」…と言いたいけど、**DBに変なデータが入ってたら終わり**です😇
 だから **fromFirestore の中で検査**します。
 
+![firebase_firestore_struncture_ts_study_019_03_data_guard.png](./picture/firebase_firestore_struncture_ts_study_019_03_data_guard.png)
+
 ```ts
 // src/features/posts/guards.ts
 import { Timestamp } from "firebase/firestore";
@@ -126,6 +132,8 @@ export function assertPostDTO(data: any): asserts data is PostDTO {
 ---
 
 ## 3) Converter を作る🌉✨　withConverter の本体
+
+![firebase_firestore_struncture_ts_study_019_04_converter_logic.png](./picture/firebase_firestore_struncture_ts_study_019_04_converter_logic.png)
 
 Converter の型定義（toFirestore / fromFirestore）は公式に載っています。([Firebase][2])
 また、**merge を使うなら PartialWithFieldValue を扱える形にしてね** という注意も公式にあります。([Firebase][2])
@@ -217,6 +225,8 @@ export function buildNewPostWrite(input: {
 React コンポーネントが Firestore の細かい事情を知り始めると、すぐ散らかります😵
 なので **Repository（読み書き関数）に寄せます**。
 
+![firebase_firestore_struncture_ts_study_019_05_repository_pattern.png](./picture/firebase_firestore_struncture_ts_study_019_05_repository_pattern.png)
+
 ```ts
 // src/features/posts/repository.ts
 import {
@@ -279,6 +289,8 @@ export async function deletePost(db: Firestore, postId: string): Promise<void> {
 ---
 
 ## 超重要⚠️　updateDoc の罠に注意
+
+![firebase_firestore_struncture_ts_study_019_06_updatedoc_trap.png](./picture/firebase_firestore_struncture_ts_study_019_06_updatedoc_trap.png)
 
 公式の例でもハッキリ書かれてます👇
 **Converter は setDoc / addDoc / getDoc では使われるけど、updateDoc の書き込みでは使われません**。([Firebase][2])
@@ -389,6 +401,8 @@ Genkit はスキーマを定義して、LLM から **構造化データを返さ
 ## お題🎯
 
 記事（Post）に「AI要約」を付けたい！✨
+
+![firebase_firestore_struncture_ts_study_019_07_structured_ai_data.png](./picture/firebase_firestore_struncture_ts_study_019_07_structured_ai_data.png)
 
 * UIでは「summaryText: string」だけ欲しい
 * DBには「summaryText / model / createdAt」を保存したい

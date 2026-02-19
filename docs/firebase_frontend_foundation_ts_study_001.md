@@ -25,12 +25,16 @@
 
 この型は、Firestoreに繋いだときもブレないので最強です💪🔥
 
+![firebase_frontend_foundation_ts_study_001_01_standard_flow.png](./picture/firebase_frontend_foundation_ts_study_001_01_standard_flow.png)
+
 ---
 
 ## 2) 画面を“最低3ページ”に割る 🧭📄
 
 この教材のチェックは「3ページ以上に割れてる？」でしたね✅
 おすすめの3ページ構成はコレ👇（超王道で迷いません）
+
+![firebase_frontend_foundation_ts_study_001_02_sitemap.png](./picture/firebase_frontend_foundation_ts_study_001_02_sitemap.png)
 
 1. **/dashboard**：ダッシュボード（カードで概要）📊
 2. **/items**：一覧（テーブル）📋
@@ -46,6 +50,8 @@
 紙でも、メモアプリでも、AntigravityのメモでもOKです🙂
 
 **“それっぽい枠”**だけ先に描くと、実装が爆速になります🚀
+
+![firebase_frontend_foundation_ts_study_001_03_wireframe.png](./picture/firebase_frontend_foundation_ts_study_001_03_wireframe.png)
 
 ```text
 ┌────────────────────────────────────────────┐
@@ -74,6 +80,8 @@
 
 ## 迷ったらこの3パターンから選ぶ（おすすめ）🧠
 
+![firebase_frontend_foundation_ts_study_001_04_data_patterns.png](./picture/firebase_frontend_foundation_ts_study_001_04_data_patterns.png)
+
 ## A. 記事管理（ブログCMS風）✍️
 
 * `posts`（記事）
@@ -100,6 +108,8 @@
 ## 5) “データ→画面”の対応を1枚にする 🧾✨（超重要）
 
 次のテンプレを埋めてください。
+
+![firebase_frontend_foundation_ts_study_001_05_data_ui_map.png](./picture/firebase_frontend_foundation_ts_study_001_05_data_ui_map.png)
 これができたら、次章以降がスムーズすぎて感動します😆
 
 ```md
@@ -171,6 +181,8 @@ Gemini CLIはターミナル内で動くAIエージェントで、ツール実�
 
 * ブラウザからAIを呼ぶなら、**Firebase AI Logic のクライアントSDK**が前提になる（JSもある）([Firebase][3])
 * “キー直置きで叩く”みたいなのは事故りやすいのでやらない🙅‍♂️💥（この教材では安全側で組む）
+
+![firebase_frontend_foundation_ts_study_001_06_safe_ai_call.png](./picture/firebase_frontend_foundation_ts_study_001_06_safe_ai_call.png)
 
 ---
 

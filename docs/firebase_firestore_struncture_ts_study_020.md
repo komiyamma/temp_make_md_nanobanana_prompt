@@ -18,9 +18,13 @@ Firestoreは便利だけど、**クライアント（ブラウザ）を信用し
 でもクライアントは…
 DevToolsでリクエスト改造できるので **「commentCountを9999にする」** とか普通にできちゃう🥲🪛
 
+![firebase_firestore_struncture_ts_study_020_01_client_vs_server.png](./picture/firebase_firestore_struncture_ts_study_020_01_client_vs_server.png)
+
 ---
 
 ## 2) サーバー側で守る方法は3つ（迷ったらこれ）🧭✨
+
+![firebase_firestore_struncture_ts_study_020_02_server_methods.png](./picture/firebase_firestore_struncture_ts_study_020_02_server_methods.png)
 
 | 方式                                   | 向いてること           | ざっくり                           |
 | ------------------------------------ | ---------------- | ------------------------------ |
@@ -68,6 +72,8 @@ Firestoreトリガーは **少なくとも1回以上配送**され、同じイ�
 ---
 
 ## 手を動かす②：TypeScript（Node.js 22）で実装する🧱✨
+
+![firebase_firestore_struncture_ts_study_020_03_idempotent_flow.png](./picture/firebase_firestore_struncture_ts_study_020_03_idempotent_flow.png)
 
 （例：`functions/src/index.ts`）
 
@@ -144,6 +150,8 @@ firebase deploy --only functions
 * サーバー：`commentCount` や `lastCommentAt` を更新する
 
 そして大事な性質：
+
+![firebase_firestore_struncture_ts_study_020_04_client_restriction.png](./picture/firebase_firestore_struncture_ts_study_020_04_client_restriction.png)
 Cloud Functions での読み書きは **Security Rulesで制御されない（管理権限で触れる）** ので、サーバー側で“最後の砦”になれます🛡️([Firebase][1])
 
 ---
@@ -157,6 +165,8 @@ AIの出力って、あとでこうなるからね👇😇
 * 「炎上した…どのプロンプト？」🔥
 
 ## まずは最小ログ設計（例）📚
+
+![firebase_firestore_struncture_ts_study_020_05_ai_audit_log.png](./picture/firebase_firestore_struncture_ts_study_020_05_ai_audit_log.png)
 
 `aiLogs/{logId}` にこんな形👇
 
@@ -179,6 +189,8 @@ Firebase AI Logic には Cloud Audit Logs ベースの監査ログがあり、Da
 ## 7) ミニ課題🎒✨「AI生成結果の保存＋監査ログ」を作ろう
 
 ## お題📝
+
+![firebase_firestore_struncture_ts_study_020_06_ai_summary_flow.png](./picture/firebase_firestore_struncture_ts_study_020_06_ai_summary_flow.png)
 
 * AIが生成した「記事要約」を `posts/{postId}.aiSummary` に保存（サーバー側で実施）
 * 同時に `aiLogs` に監査ログを1件書く
