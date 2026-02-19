@@ -285,6 +285,9 @@ Slackはレート制限の考え方を明示しているので、**大量通知�
 
 ## 7) AIで“仕上げ速度”を上げる 🤖🛸✨
 
+![AI Code Review](./picture/firebase_functions_ts_study_020_08_gemini_review.png)
+
+
 ## Gemini CLI で「レビュー前提の加速」🧰
 
 * 「この関数、二重通知の穴ある？」
@@ -303,6 +306,9 @@ AIエージェント側が、Firebase周辺の作業を安全に手伝えるよ�
 
 ## 8) おまけ：ランタイムの最新版メモ（この章の立ち位置）🧩📌
 
+![Node Runtime Status](./picture/firebase_functions_ts_study_020_09_runtime_versions.png)
+
+
 * Node は **22 / 20 がサポート、18 は deprecated**（2026年時点）
   ([Firebase][8])
 * Python など他言語も計画に入れるなら、同じ通知フローを “別実装” で再現できます（ただしこの章は TS を主軸にして完成させるのが最短）🧠
@@ -310,6 +316,9 @@ AIエージェント側が、Firebase周辺の作業を安全に手伝えるよ�
 ---
 
 ## ミニ課題（ちょい実務寄せ）🎒✨
+
+![Assignment Tasks](./picture/firebase_functions_ts_study_020_10_assignment.png)
+
 
 1. `watchKeys` を増やして「差分がある時だけ通知」を育てる🌱
 2. `status` が `done` になった時だけ通知、みたいな “業務ルール” を入れる📘

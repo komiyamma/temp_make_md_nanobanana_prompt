@@ -87,6 +87,9 @@ firebase --version
 
 ## Step E：Firebase にログインする🔑
 
+![Login](./picture/firebase_hosting_ts_study_002_08_login.png)
+
+
 ```powershell
 firebase login
 ```
@@ -129,6 +132,9 @@ firebase init hosting
 ---
 
 ## Step G：初回デプロイして “URLで見れる” を体験する🌐🚀
+
+![First Deploy](./picture/firebase_hosting_ts_study_002_09_first_deploy.png)
+
 
 ```powershell
 firebase deploy --only hosting
@@ -207,6 +213,9 @@ MCP Servers 画面から Firebase を入れると `mcp_config.json` が自動更
 ---
 
 ## 5) ミニ課題✍️🎒
+
+![Assignment](./picture/firebase_hosting_ts_study_002_10_assignment.png)
+
 
 次の2つを、あなたの言葉でメモしてみてください📝
 

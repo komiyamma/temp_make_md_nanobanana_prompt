@@ -68,6 +68,9 @@ Firebase側のウィザードは **Quick Setup**（簡単）と **Advanced Setup
 
 ## Step 2：TXT（所有確認）をDNSへ入れる🪪
 
+![DNS TXT Record](./picture/firebase_hosting_ts_study_011_08_dns_txt.png)
+
+
 ウィザードに **TXTレコード** が出るので、DNS設定にそのまま入れます。
 apex（ルート）ドメインの所有確認は、**サブドメイン全部の所有確認にもなる**扱いです。([Firebase][1])
 
@@ -77,6 +80,9 @@ apex（ルート）ドメインの所有確認は、**サブドメイン全部�
 > 反映に **最大24時間** かかることがあるので焦らないでOKです⏳（数時間で終わることも多い）([Firebase][1])
 
 ## Step 3：A/AAAA（行き先）をDNSへ入れる🧭
+
+![DNS A Record](./picture/firebase_hosting_ts_study_011_09_dns_a.png)
+
 
 次にウィザードに出る **A/AAAA** を入れます。
 よく見る例だと **Aレコードが `199.36.158.100`** になっているケースが多いです（プロバイダ別の例として公式にも載っています）。([Firebase][1])
@@ -205,6 +211,9 @@ DNSや証明書は、こう聞くと事故りにくいです👇
 ## 9) ミニ課題（15分）✍️⏱️
 
 ## ミニ課題A：URLの“正”を決める🔁
+
+![Assignment](./picture/firebase_hosting_ts_study_011_10_assignment.png)
+
 
 次のどっちかに決めて、理由を一言で書く👇
 

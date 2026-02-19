@@ -73,6 +73,8 @@ GitHub のあなたのリポジトリで👇へ移動します🏃‍♂️💨
 
 ## 2) workflow（.github/workflows）で「どのSecretを使ってるか」確認🔍
 
+![Secrets in YAML](./picture/firebase_hosting_ts_study_009_08_yaml_secret.png)
+
 リポジトリの `.github/workflows/` に、プレビュー用と本番用のYAMLがあるはずです📁
 
 Actionの基本形はこんな感じ（例）👇
@@ -168,6 +170,9 @@ Secretsは**値を表示しない**のが鉄則です🙅‍♂️
 
 ## ミニ課題✍️：「漏れたらヤバい／別にOK」を仕分けしよう🧠
 
+![Assignment](./picture/firebase_hosting_ts_study_009_09_assignment.png)
+
+
 次の2カテゴリに分けて、自分の言葉で1行メモしてみてください🙂📝
 
 ## 🔥 漏れたらヤバい（基本Secret）
@@ -231,6 +236,9 @@ Cloud Functionsは **環境変数**や **Secret Manager** を使った安全な�
 ---
 
 ## 最終チェック✅（この章の合格ライン）
+
+![Final Check](./picture/firebase_hosting_ts_study_009_10_check.png)
+
 
 * Actionsで **FIREBASE_SERVICE_ACCOUNT** を参照している箇所を見つけられる🗝️ ([GitHub][2])
 * サービスアカウントのロールを「必要なら足す」方針で説明できる✂️ ([GitHub][3])

@@ -264,6 +264,8 @@ firebase target:apply hosting prod myapp-prod
 
 ## 3) `firebase.json` を “配列” で書く🧾
 
+![Multi-target JSON](./picture/firebase_hosting_ts_study_014_08_json_array.png)
+
 ```json
 {
   "hosting": [
@@ -319,6 +321,9 @@ Firebase MCP server を入れると、AI開発ツール（Gemini CLI など）�
 
 ## ミニ課題🎒✨（15〜30分）
 
+![Assignment](./picture/firebase_hosting_ts_study_014_09_assignment.png)
+
+
 1. ブランチ戦略を決める🌿
 
    * 例：`main=prod` / `develop=staging`
@@ -330,6 +335,9 @@ Firebase MCP server を入れると、AI開発ツール（Gemini CLI など）�
 ---
 
 ## チェック✅（できたら勝ち！🏆）
+
+![Final Check](./picture/firebase_hosting_ts_study_014_10_check.png)
+
 
 * [ ] 「環境（staging/prod）」と「preview channel」の違いを説明できる🙂
 * [ ] develop → staging / main → prod が自動で出る🤖

@@ -39,6 +39,9 @@ Firebase extension for Gemini CLI を入れると、ざっくりこれが“自�
 
 ## 3) セットアップ（Windowsで最短）🪟⚡
 
+![CLI Setup Steps](./picture/firebase_functions_ts_study_018_03_setup_cli.png)
+
+
 まず CLI 側を最新にします（拡張設定機能が v0.28+ で入ってます）🧩([Google Developers Blog][3])
 
 ```powershell
@@ -179,6 +182,9 @@ AIにこう頼む👇
 
 ## 8) FirebaseのAIサービスも絡める：AI Logic を「初期化で混ぜる」🤖🧩
 
+![AI Logic Integration](./picture/firebase_functions_ts_study_018_08_ai_logic.png)
+
+
 `/firebase:init` の中で **「Add AI features」** を選ぶと、**Firebase AI Logic のセットアップ**と、アプリから Gemini API を安全に呼ぶコード作成までを支援してくれます。([Firebase][1])
 
 そして注意ポイント⚠️
@@ -200,12 +206,18 @@ Firebase AI Logic にはモデルの更新・退役もあるので、**古いモ
 
 ## 10) ちょい補足：この教材の言語バージョン感（Functions周辺）🔢🧩
 
+![Node Versions](./picture/firebase_functions_ts_study_018_10_node_versions.png)
+
+
 * Firebase Functions は **Node が主軸**、Python もサポート（**3.10〜3.13、デフォルト 3.13**）🐍([Firebase][6])
 * C# を“関数ランタイム”としてやるなら、現実的には **Cloud Run functions / Cloud Functions 2nd gen の .NET 8** 側で扱うのが筋が良い（.NET 8 GA の記載あり）🧩([Google Cloud Documentation][7])
 
 ---
 
 ## ミニ課題（第18章）🏁✨
+
+![Assignment Deliverables](./picture/firebase_functions_ts_study_018_11_assignment.png)
+
 
 ## お題：AIで「Functions運用手順書 v1」を作れ📄🤖
 

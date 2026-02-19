@@ -69,6 +69,9 @@ CLIがやってくれる“すごいこと”👇（ここ重要！）
 
 ## 3-3. 生成されたworkflowをコミットしてpush🧾➡️📤
 
+![Git Push](./picture/firebase_hosting_ts_study_007_08_git_push.png)
+
+
 CLIが生成したファイル（例）：
 
 * `.github/workflows/firebase-hosting-pull-request.yml`（PR用）
@@ -169,6 +172,9 @@ Firebase MCP server は Antigravity からも使えます。設定例は公式�
 
 ## ミニ課題A：PRプレビューを1回通す🔁
 
+![Assignment](./picture/firebase_hosting_ts_study_007_09_assignment.png)
+
+
 1. 画面の文言を1つ変える（例：ヘッダに「preview test」）✍️
 2. PRを作る🧾
 3. PRコメントに出たプレビューURLへアクセス👀🔗
@@ -184,6 +190,9 @@ Firebase MCP server は Antigravity からも使えます。設定例は公式�
 ---
 
 ## 8) チェック✅（できたら次章へGO🚢）
+
+![Final Check](./picture/firebase_hosting_ts_study_007_10_check.png)
+
 
 * PRを作ると自動でPreview Channelが作られる✅ ([Firebase][1])
 * PRにプレビューURLがコメントされる✅ ([Firebase][1])

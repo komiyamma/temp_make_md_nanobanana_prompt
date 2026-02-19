@@ -84,6 +84,9 @@ Firebase公式でも「one-page app（= SPA）」では、全リクエストを 
 
 ## 5) ローカルで確認（いきなり本番に出さない！）🧪
 
+![Hosting Emulator](./picture/firebase_hosting_ts_study_005_08_emulator.png)
+
+
 Firebase公式の手順だと、Hosting Emulatorでサクッと確認できるよ💡
 基本はこれ👇 ([Firebase][3])
 
@@ -196,6 +199,9 @@ Firebase AI Logic は、Gemini/Imagen を **モバイルやWebアプリに組み
 
 ## 9) ミニ課題🎯（5〜15分）
 
+![Mini Assignment](./picture/firebase_hosting_ts_study_005_09_assignment.png)
+
+
 1. React側で `/about` ルートを用意（表示は「Aboutページです！」だけでOK）🧩
 2. `firebase.json` に SPA rewrites を入れる🧾
 3. Hosting Emulatorで `/about` を直叩き → F5 を3回押しても表示が崩れないことを確認🔁✅
@@ -204,6 +210,9 @@ Firebase AI Logic は、Gemini/Imagen を **モバイルやWebアプリに組み
 ---
 
 ## 10) チェックリスト✅
+
+![Checklist](./picture/firebase_hosting_ts_study_005_10_checklist.png)
+
 
 * [ ] `/about` をURL直打ちで開ける
 * [ ] `/about` でF5しても404にならない

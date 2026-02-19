@@ -92,6 +92,9 @@ App Hosting は **Angular / Next.js 向けに本番利用（GA）**として提�
 
 ## 5) 「コスト/課金」の超入門（怖がらない版）💰😌
 
+![Hosting Cost](./picture/firebase_hosting_ts_study_001_08_cost.png)
+
+
 * Hosting は無料枠もあり、まず公開して試すには十分な範囲があります🧪
   例：Hosting の無料枠に **ストレージ10GB、転送量360MB/日** などが載っています📦([Firebase][5])
 * SSRやサーバー処理が絡むと、課金設定が必要になる場面が増えます（特にSSR）🧾
@@ -167,6 +170,9 @@ npm run build
 
 ## 8) ミニ課題🎒：「今回はHostingにする理由」を一言で！
 
+![Assignment Note](./picture/firebase_hosting_ts_study_001_09_assignment.png)
+
+
 例👇
 
 * 「ReactのSPAで、ビルド成果物をCDN配信できるから」⚡
@@ -175,6 +181,9 @@ npm run build
 ---
 
 ## 9) チェック✅（合格ライン）
+
+![Final Check](./picture/firebase_hosting_ts_study_001_10_check.png)
+
 
 * 「Hostingは何が得意？」を一言で言える⚡
 * 「App Hostingが向くのはどんな時？」を一言で言える🚀
