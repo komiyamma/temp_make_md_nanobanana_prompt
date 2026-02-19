@@ -22,6 +22,8 @@ PRプレビューや自動デプロイが回り始めると、次に必要にな
 
 ## ✅ パターンA：**プロジェクトを分ける（staging/prod）** ←いちばん安全🛡️
 
+![Environment Patterns](./picture/firebase_hosting_ts_study_014_01_environment_patterns.png)
+
 * `myapp-stg`（検証）と `myapp-prod`（本番）みたいに **Firebaseプロジェクトを2つ**作る✨
 * 公式も「環境ミラー目的なら、同一プロジェクトで複数サイトより別プロジェクト推奨」と言っています👍 ([Firebase][1])
 * App Hostingでも「prod/stagingを別プロジェクトにデプロイ」ガイドが公式で用意されています📘 ([Firebase][4])
@@ -47,6 +49,8 @@ PRプレビューや自動デプロイが回り始めると、次に必要にな
 
 ## 0) ゴール設定🎯
 
+![Git Flow to Environments](./picture/firebase_hosting_ts_study_014_02_git_workflow.png)
+
 * `develop` ブランチに push → **stagingへ自動デプロイ**🌿🤖
 * `main` ブランチに push → **prodへ自動デプロイ**🚢🤖
 * PR → **staging側でプレビューURLを自動作成**🔎✨（本番触らない）
@@ -63,6 +67,8 @@ PRプレビューや自動デプロイが回り始めると、次に必要にな
 ---
 
 ## 2) ローカル（Windows）でCLIに「別名」を登録する🏷️💻
+
+![CLI Aliases](./picture/firebase_hosting_ts_study_014_03_cli_aliases.png)
 
 プロジェクトを切り替えミスすると終わるので、**“毎回どっちに出してるか”が見える状態**にします👀✨
 
@@ -110,6 +116,8 @@ Firebase公式の GitHub 連携は「PRでpreview」「mergeでlive」まで用�
 ---
 
 ## ✅ staging用（develop → stagingへ自動デプロイ）🌿🤖
+
+![Staging Pipeline](./picture/firebase_hosting_ts_study_014_04_pipeline_staging.png)
 
 `.github/workflows/deploy-staging.yml` 例👇
 
@@ -217,6 +225,8 @@ jobs:
 
 ## 4) Secrets（鍵）を環境ごとに分ける🔐🧰
 
+![Secrets Separation](./picture/firebase_hosting_ts_study_014_05_secrets_separation.png)
+
 * GitHubのSecretsに
 
   * `FIREBASE_SERVICE_ACCOUNT_STAGING`
@@ -242,6 +252,8 @@ firebase hosting:sites:create myapp-prod
 siteの作成コマンドは公式に載っています✅ ([Firebase][1])
 
 ## 2) deploy target を割り当てる🏷️
+
+![Deploy Targets](./picture/firebase_hosting_ts_study_014_06_deploy_targets.png)
 
 ```bash
 firebase target:apply hosting staging myapp-stg
@@ -294,6 +306,8 @@ Firebase MCP server を入れると、AI開発ツール（Gemini CLI など）�
 「今どのプロジェクトに向いてる？」「deploy target一覧出して」みたいな確認が、事故防止にめちゃ効きます😆🧯
 
 ## 3) “リリース前チェック”をAIでテンプレ化：Firebase AI Logic / Genkit🧰🤖
+
+![AI Release Check](./picture/firebase_hosting_ts_study_014_07_release_check.png)
 
 この章はデプロイ運用の話ですが、実務っぽくするなら
 
