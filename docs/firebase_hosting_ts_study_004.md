@@ -12,6 +12,8 @@
 
 ## 1) `firebase.json` って何者？🧐
 
+![firebase.json Blueprint](./picture/firebase_hosting_ts_study_004_01_blueprint_concept.png)
+
 `firebase.json` は、Firebaseの各サービス設定をまとめる“プロジェクトの設定ファイル”です。Hosting を初期化すると、プロジェクト直下に `firebase.json` と `.firebaserc` が作られます。([Firebase][1])
 
 そして Hosting ではまず、「どのファイルをデプロイする？」を `public` と `ignore` で決めます。([Firebase][2])
@@ -19,6 +21,8 @@
 ---
 
 ## 2) `public` は「デプロイするフォルダ」📦➡️🌐
+
+![Public Folder Mapping](./picture/firebase_hosting_ts_study_004_02_public_mapping.png)
 
 `public` は **必須**。ここで指定したフォルダの中身が Hosting にアップされます。([Firebase][2])
 
@@ -51,6 +55,8 @@
 ---
 
 ## 3) `ignore` は「デプロイしないもの」🧹🛑
+
+![Ignore Mechanism](./picture/firebase_hosting_ts_study_004_03_ignore_block.png)
 
 `ignore` は **任意**。でも、ほぼ必須級に大事です😇
 ここに書いたパターンに一致するファイルは、デプロイ時に無視されます。([Firebase][2])
@@ -86,6 +92,8 @@ Hosting のパターンは **glob（グロブ）** で、`.gitignore` っぽい�
 
 ## 4) 「出すもの／無視するもの」判断の超シンプル基準 🧠✨
 
+![Deploy Filter](./picture/firebase_hosting_ts_study_004_04_filtering_logic.png)
+
 迷ったらこれ👇
 
 * ✅ 出す：**ブラウザが読むもの**（`index.html` / `assets/*` / `favicon` / `manifest` など）🌐
@@ -96,6 +104,8 @@ Hosting のパターンは **glob（グロブ）** で、`.gitignore` っぽい�
 ## 手を動かす 🛠️🔥
 
 ## Step 1：ビルド成果物フォルダを確認する 👀📁
+
+![Finding Build Artifacts](./picture/firebase_hosting_ts_study_004_05_dist_finder.png)
 
 まず、あなたのReactアプリでビルドしたときに「どのフォルダができるか」を確認します。
 
@@ -129,6 +139,8 @@ Hosting のパターンは **glob（グロブ）** で、`.gitignore` っぽい�
 ---
 
 ## Step 3：デプロイ前のセルフチェック ✅🧪
+
+![Pre-deploy Checklist](./picture/firebase_hosting_ts_study_004_06_checklist.png)
 
 デプロイで事故りやすいのはだいたいここです😅
 
@@ -170,6 +182,8 @@ Hosting のパターンは **glob（グロブ）** で、`.gitignore` っぽい�
 ## AIで“詰まり”を秒速で潰す 🤖🧯
 
 ## 1) Firebase MCP server を使うと「設定の確認」が速い 🧩⚡
+
+![AI Configuration Audit](./picture/firebase_hosting_ts_study_004_07_ai_audit.png)
 
 Firebase公式の **Firebase MCP server** を使うと、Antigravity や Gemini CLI などのAIツールが、Firebaseプロジェクトを“道具として操作”しやすくなります。([Firebase][4])
 
