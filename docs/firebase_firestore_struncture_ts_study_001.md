@@ -17,6 +17,8 @@
 
 ## 1) 読む：設計の正体は「取り出し方」から逆算😄🔁
 
+![Reverse Design Concept](./picture/firebase_firestore_struncture_ts_study_001_01_reverse_design.png)
+
 Firestoreは **コレクション** に **ドキュメント** を入れる形が基本で、ドキュメントの下に **サブコレクション** も作れます📚（入れた瞬間に“勝手にできる”感覚が特徴）([Firebase][1])
 
 で、設計で本当に決めるべきはこれ👇
@@ -33,6 +35,8 @@ Firestoreは、クエリの形によって **必要なインデックス** が�
 ---
 
 ## 2) 手を動かす：まず「画面」を3枚、雑でいいから描く📝🎨
+
+![Screen Sketches](./picture/firebase_firestore_struncture_ts_study_001_02_screen_sketches.png)
 
 紙でも、付箋でも、Windowsならメモ帳でもOKです🙆‍♂️
 **上手に描く必要ゼロ**。大事なのは「何を表示するか」です😄
@@ -63,6 +67,8 @@ Firestoreは、クエリの形によって **必要なインデックス** が�
 
 ## 3) 手を動かす：クエリを最低10本 “文章で” 書き出す🔎🧠
 
+![Query Specification](./picture/firebase_firestore_struncture_ts_study_001_03_query_spec.png)
+
 ここでのクエリは「コード」じゃなくてOK！
 **人間が読める仕様**として書きます✍️
 
@@ -78,6 +84,8 @@ Firestoreは、クエリの形によって **必要なインデックス** が�
 
 ## 例：クエリ10本（コピって自分用に直してOK）🧩
 
+![The 10 Queries](./picture/firebase_firestore_struncture_ts_study_001_04_query_list.png)
+
 1. 記事一覧：記事を **新しい順** に20件
 2. 記事一覧：自分の投稿だけを **新しい順** に20件
 3. 記事詳細：指定IDの「記事を1件」読む
@@ -90,6 +98,8 @@ Firestoreは、クエリの形によって **必要なインデックス** が�
 10. 監査ログ：AI出力を保存したログを新しい順に50件（後でAI運用が超楽になる）🤖
 
 この時点で、**必要フィールドが浮かんできます**👇（これが“逆算”の感覚！）
+
+![Field Extraction](./picture/firebase_firestore_struncture_ts_study_001_05_field_extraction.png)
 
 * createdAt（並びに必要）
 * authorId（自分の投稿に必要）
@@ -113,6 +123,8 @@ Firestoreは、クエリの形によって **必要なインデックス** が�
 ---
 
 ## 5) AIで設計レビューを爆速にする🤖⚡（Antigravity / Gemini CLI / FirebaseのAI）
+
+![AI Design Review](./picture/firebase_firestore_struncture_ts_study_001_06_ai_review.png)
 
 ここからが2026っぽい進め方です😄
 AIには「スキーマを丸投げ」じゃなくて、**あなたが作った“クエリ仕様書”をレビューさせる**のが最強です💪
@@ -155,6 +167,8 @@ AIをアプリに入れるときは、レート制限やApp Checkなど「事故
 ---
 
 ## よくある失敗（先に踏んでおく）😵‍💫💥
+
+![Cost Trap](./picture/firebase_firestore_struncture_ts_study_001_07_cost_trap.png)
 
 * 「とりあえず保存してから考える」→ 後からクエリが作れず地獄😇
 * 並び順を決めない → 一覧もページングも不安定📜💥

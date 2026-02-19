@@ -7,6 +7,8 @@
 
 ## 1 まず大前提 ドキュメントは小さく育てる感覚 🌱📄
 
+![Document Granularity](./picture/firebase_firestore_struncture_ts_study_002_01_granularity.png)
+
 Firestoreは「**大量の小さめドキュメント**を、コレクションにいっぱい並べる」のが得意な設計だよ📚✨ ([Firebase][1])
 しかもドキュメントは **最大 1 MiB** まで（意外とすぐ効いてくる！）([Firebase][2])
 
@@ -32,6 +34,8 @@ Firestoreは「**大量の小さめドキュメント**を、コレクション�
 ---
 
 ## 3 ドキュメント単位を決める 3つの質問 🧠🔍
+
+![3 Questions for Grouping](./picture/firebase_firestore_struncture_ts_study_002_02_3_questions.png)
 
 次の質問に YES が多いものほど「同じドキュメントにまとめやすい」よ👇
 
@@ -60,6 +64,8 @@ Firestoreは「**大量の小さめドキュメント**を、コレクション�
 
 ## 編集頻度のタグを決めよう 🏷️
 
+![Frequency Tags](./picture/firebase_firestore_struncture_ts_study_002_03_frequency_tags.png)
+
 * 🧊 ほぼ不変（作成後ほぼ変わらない）
 * 🌤️ たまに変わる（プロフィール等）
 * 🔥 よく変わる（カウント、最後の更新時刻、最新コメントなど）
@@ -68,6 +74,8 @@ Firestoreは「**大量の小さめドキュメント**を、コレクション�
 ---
 
 ## 5 例 User の必須フィールド案 👤🧾
+
+![User Entity Fields](./picture/firebase_firestore_struncture_ts_study_002_04_user_fields.png)
 
 「User」は **認証IDの持ち主**で、画面で出したい情報が中心だよ😄
 
@@ -123,6 +131,8 @@ Firestoreは「**大量の小さめドキュメント**を、コレクション�
 
 ## 8 例 Comment コメントの必須フィールド案 💬🚀
 
+![Comment Array Risk](./picture/firebase_firestore_struncture_ts_study_002_05_comment_risk.png)
+
 コメントは「増え続ける」代表選手！🥇
 だから **記事ドキュメントに配列で全部突っ込む**みたいな形は、サイズ面でも更新集中でも厳しくなりやすいよ😇（この章では“気づければ勝ち”）([Firebase][2])
 
@@ -149,6 +159,8 @@ Firestoreは「**大量の小さめドキュメント**を、コレクション�
 
 ## ミニ課題B
 
+![Field Grouping Task](./picture/firebase_firestore_struncture_ts_study_002_06_grouping_task.png)
+
 🔁「同じドキュメントに入りそうなフィールド」ごとに、色分けするつもりでグルーピングしてみて🎨
 
 * **🧊〜🌤️が中心のまとまり**：同居しやすい
@@ -158,6 +170,8 @@ Firestoreは「**大量の小さめドキュメント**を、コレクション�
 ---
 
 ## 10 チェック 1つでもYESなら分割を疑おう 👀✅
+
+![Hotspot Check](./picture/firebase_firestore_struncture_ts_study_002_07_hotspot_check.png)
 
 最後にセルフチェックだよ〜😄
 
