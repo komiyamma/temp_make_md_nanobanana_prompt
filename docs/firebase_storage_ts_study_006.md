@@ -17,10 +17,14 @@
 
 ### `uploadBytesResumable` は「途中経過が取れるアップロード」📦
 
+![Resumable Upload Concept](./picture/firebase_storage_ts_study_006_01_resumable_concept.png)
+
 Storage のアップロードを “進捗付き” にしたいなら、基本はこれです👇
 `uploadBytesResumable(...)` が返す **UploadTask** に対して、進捗や状態を監視します。([Firebase][1])
 
 ### 進捗は `state_changed` で取る📡
+
+![Progress Calculation](./picture/firebase_storage_ts_study_006_02_progress_calc.png)
 
 UploadTask には `on('state_changed', ...)` があって、状態が変わるたびに呼ばれます。
 そのときの `snapshot.bytesTransferred / snapshot.totalBytes` で **進捗%** が出せます。([Firebase][1])
@@ -30,6 +34,8 @@ UploadTask には `on('state_changed', ...)` があって、状態が変わる�
 `snapshot.state` で `"paused"` と `"running"` が取れるので、UIの表示切り替えができます。([Firebase][1])
 
 ### 一時停止・再開・キャンセルは UploadTask のメソッド💡
+
+![Upload Controls](./picture/firebase_storage_ts_study_006_03_controls.png)
 
 * `pause()`
 * `resume()`
@@ -54,6 +60,8 @@ UploadTask には `on('state_changed', ...)` があって、状態が変わる�
 ---
 
 ## サンプル：進捗・停止・再開・キャンセル付きコンポーネント🧩
+
+![Upload State Machine](./picture/firebase_storage_ts_study_006_04_state_machine.png)
 
 * `<progress>` を使うので、UIは超シンプルでOK👌
 * 実務ではここに Tailwind で見た目を整える感じで🙌
@@ -282,6 +290,8 @@ export function ProfileImageUploader({ uid }: { uid: string }) {
 ## 🤖 AIで“さらに実務っぽく”する小ワザ（この章の範囲でできるやつ）
 
 ### 1) Antigravity / Gemini CLI で「UI文言」を一瞬で整える🧠💬
+
+![AI UI Text Polish](./picture/firebase_storage_ts_study_006_05_ai_ui_text.png)
 
 アップロード中の文言って、地味に悩むよね😂
 そこで AI に「気持ちいい文言案」を出させるのが速い！

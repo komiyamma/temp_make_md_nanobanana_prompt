@@ -47,11 +47,15 @@
 
 ## 3) 本命：validate関数を作る（ここが第7章の核心🔥）
 
+![Three Validation Gates](./picture/firebase_storage_ts_study_007_01_three_gates.png)
+
 ここでは **3段階チェック**にするよ👇
 
 1. **サイズ**（デカすぎを止める）
 2. **MIME**（許可リスト方式）
 3. **デコードできるか**（画像っぽい偽装を落とす）
+
+![Image Decode Check](./picture/firebase_storage_ts_study_007_02_decode_check.png)
 
 > Firebase JS SDK は 2026-02-05 時点で v12.9.0 が出てるので、今の流れは “modular API前提” でOKだよ🧩([Firebase][3])
 
@@ -165,6 +169,8 @@ export async function validateProfileImage(file: File | null): Promise<Ok | Ng> 
 
 ## 4) Reactに組み込む（エラー表示＋プレビュー）👀✨
 
+![React Validation Flow](./picture/firebase_storage_ts_study_007_03_react_validation.png)
+
 ```tsx
 import React, { useEffect, useRef, useState } from "react";
 import { validateProfileImage } from "./validateProfileImage";
@@ -247,6 +253,8 @@ export function ProfileImagePicker(props: { onValidFile: (file: File) => void })
 
 ## 6) （おまけ）Storageのエラーコードを人間語にする🧑‍🍳💬
 
+![Error Code Translation](./picture/firebase_storage_ts_study_007_04_error_translation.png)
+
 アップロード後の失敗も、ちゃんと“言い換え”できると神UIになる✨
 公式のエラーコード一覧があるよ。([Firebase][2])
 
@@ -277,6 +285,8 @@ export function storageErrorToMessage(err: unknown): string {
 ---
 
 ## 7) AIでラクする（Antigravity / Gemini CLI / MCP）🤖🚀
+
+![AI Validation Review](./picture/firebase_storage_ts_study_007_05_ai_review.png)
 
 ここ、AIにやらせると速い😎
 Firebase の **MCP server** は **Antigravity / Gemini CLI** みたいな “MCPクライアント” から使えるよ。([Firebase][4])
