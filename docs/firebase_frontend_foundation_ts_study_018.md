@@ -9,10 +9,14 @@
 
 ## なんで“ブラウザからGemini直呼び”は危ないの？😱
 
+![Direct API Call Risk](./picture/firebase_frontend_foundation_ts_study_018_01_direct_call_risk.png)
+
 WebでGemini APIを直接呼ぶやり方は **プロトタイプ向け** で、**キー露出や悪用** のリスクが出やすいです⚠️
 公式の学習資料でも「本番を見据えるなら Firebase AI Logic に移行してね」と案内されています。([Google for Developers][1])
 
 ## そこで **Firebase AI Logic** が強い 💪🔥
+
+![Firebase AI Logic Architecture](./picture/firebase_frontend_foundation_ts_study_018_02_ai_logic_arch.png)
 
 Firebaseの **Firebase AI Logic** は、Web/モバイルのクライアントSDKからGemini/Imagenを呼べて、**セキュリティ機能（App Check連携など）** や **Firebase/Google Cloud 連携** がやりやすいのが売りです🧩✨([Firebase][2])
 さらに **AIリクエストのゲートウェイ（プロキシ）** を用意してくれて、**Gemini APIキーをアプリのコードに埋めない** 方向に寄せられます🔐([Firebase][2])
@@ -20,6 +24,8 @@ Firebaseの **Firebase AI Logic** は、Web/モバイルのクライアントSDK
 ---
 
 ## 1) この章の完成イメージ 🏁✨
+
+![AI Suggestion Workflow](./picture/firebase_frontend_foundation_ts_study_018_03_ui_workflow.png)
 
 * 詳細フォームに「🤖 AIで整形」ボタン
 * 押すと **整形案** が出る（保存しない）
@@ -42,6 +48,8 @@ Firebaseの **Firebase AI Logic** は、Web/モバイルのクライアントSDK
 ## 3) 手を動かすパート：実装していこう 🛠️🔥
 
 ## Step 1) Firebase側で AI Logic を有効化する 🤖⚙️
+
+![Enable AI Logic UI](./picture/firebase_frontend_foundation_ts_study_018_04_enable_ai_logic.png)
 
 Firebase コンソールの AI Logic で「Get started」→ **Gemini Developer API** を選ぶのが入門におすすめです（必要なら後で Vertex AI 側にも切り替え可能）([Firebase][3])
 このとき **Gemini APIキーが作られますが、アプリのコードに入れないでね** と明確に書かれています🔑❌([Firebase][3])
@@ -90,6 +98,8 @@ export const geminiModel = getGenerativeModel(ai, { model: "gemini-2.5-flash" })
 ---
 
 ## Step 4) AI整形の “呼び出し処理” を hook にする 🪝✨
+
+![AI Code Structure](./picture/firebase_frontend_foundation_ts_study_018_05_code_structure.png)
 
 UIから直接API叩くより、hookにすると見通しが良いです😆
 
@@ -154,6 +164,8 @@ export function useAiPolishText(): UseAiPolishTextResult {
 ---
 
 ## Step 5) 詳細フォームに「🤖AIで整形」→「✅反映」UIを付ける 🧩
+
+![AI Editor Component](./picture/firebase_frontend_foundation_ts_study_018_06_ui_component.png)
 
 例として「記事本文（body）」を整形するUIを付けます📄✨
 
@@ -241,6 +253,8 @@ export function PostBodyEditor({ initialBody, onChange }: Props) {
 ---
 
 ## 4) （重要）悪用対策：App Check をONにしよう 🛡️🔥
+
+![App Check Protection](./picture/firebase_frontend_foundation_ts_study_018_07_app_check_shield.png)
 
 AI Logicのガイドでも **App Check を早めに入れるのが強く推奨** されています📌([Firebase][3])
 Webの場合、App Check を使うと「正規のアプリからの呼び出し」を判定しやすくなって、不正アクセスの抑止になります🧱✨

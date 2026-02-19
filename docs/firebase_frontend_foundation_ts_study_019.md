@@ -36,13 +36,19 @@ AIって万能そうに見えるけど、得意・不得意がハッキリして
 
 ## 3) 今回使う3つの“加速エンジン” 🚀🧰
 
+![AI Development Tools Triad](./picture/firebase_frontend_foundation_ts_study_019_01_ai_tools_triad.png)
+
 ## A. Google Antigravity：ミッションで「まとめて作らせる」🎮🤖
+
+![Antigravity Workflow](./picture/firebase_frontend_foundation_ts_study_019_02_antigravity_flow.png)
 
 Antigravityは、エージェントを管理する **Mission Control** を持っていて、計画→実装→検証までをまとめて進めやすい設計です。ブラウザで調べ物しながら作業もできます。([Google Codelabs][1])
 （Windows向けも用意されています。([Google Codelabs][1])）
 ※ Google 製のエージェント系開発環境です。
 
 ## B. Gemini CLI：ターミナルで「差分作業＆自動化」⌨️🧠
+
+![Gemini CLI ReAct Loop](./picture/firebase_frontend_foundation_ts_study_019_03_gemini_cli_loop.png)
 
 Gemini CLIは、ターミナルから使える **オープンソースAIエージェント**で、ReActループ（考える→実行→検証）で作業します。MCPサーバーにも対応しています。([Google Cloud Documentation][2])
 Cloud Shellでは追加セットアップ無しでも使える案内があります。([Google Cloud Documentation][2])
@@ -71,6 +77,8 @@ Firebase Studioは、Nixでワークスペース環境を定義できて、同�
 ---
 
 ## Step 1：Antigravityに「UI部品を3つまとめて」作らせる 🧱🤖✨
+
+![UI Component Factory](./picture/firebase_frontend_foundation_ts_study_019_04_component_factory.png)
 
 目的：コピペ地獄をなくす🔥
 おすすめの量産セットはこれ👇
@@ -108,6 +116,8 @@ Antigravityは “指示→エージェントが動く” 体験が中心なの�
 ---
 
 ## Step 2：Gemini CLIで「リファクタ案→差分確認→適用」まで回す 🔁🧼🧠
+
+![Safe Refactoring Flow](./picture/firebase_frontend_foundation_ts_study_019_05_refactor_flow.png)
 
 目的：第7章でやった `loading / error / data` の三兄弟を、ページごとにバラバラにしない😵‍💫➡️統一🙂✨
 
@@ -162,6 +172,8 @@ Firestore部分はモックでOK。
 
 ## Step 4：Firebase AI（AI Logic）で“プロンプトを仕様化”しておく 🧠📐🤖
 
+![Structured Prompt Specification](./picture/firebase_frontend_foundation_ts_study_019_06_prompt_spec.png)
+
 第18章でAIボタンを作ってるので、この章ではさらに一歩進めて **AI出力の形を固定**します✨
 Firebase AI Logicは、アプリからGemini/Imagenモデルにアクセスするための仕組みを提供しています。([Firebase][5])
 
@@ -191,6 +203,8 @@ Firebase AI Logicは、アプリからGemini/Imagenモデルにアクセスす�
 ---
 
 ## 5) “AIがクラウド側のコードを出してきた時”のバージョン注意 ⚙️📌
+
+![Runtime Version Safety](./picture/firebase_frontend_foundation_ts_study_019_07_version_safety.png)
 
 AIが「Functionsも直しといたよ！」ってノリで書いてくることがあるんですが…そこで事故ります😇💥
 最低限ここだけ見ておくと安全です👇

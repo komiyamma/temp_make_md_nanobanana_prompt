@@ -17,6 +17,8 @@
 
 ## 1) まず結論：Hosting と App Hosting、どっち？🤔
 
+![Hosting vs App Hosting](./picture/firebase_frontend_foundation_ts_study_020_01_hosting_vs_app_hosting.png)
+
 ざっくりこうです👇
 
 ## Firebase Hosting が向いてる 🏠✨
@@ -76,6 +78,8 @@ firebase use --add
 
 ## 2-4) Hosting 初期化（Viteのdistを指定）🏗️
 
+![Hosting Initialization Flow](./picture/firebase_frontend_foundation_ts_study_020_02_hosting_init.png)
+
 ```bash
 firebase init hosting
 ```
@@ -111,6 +115,8 @@ firebase deploy --only hosting
 
 ## 3) “レビュー用URL” を作る：Preview Channel 🧪🔗
 
+![Preview Channel Concept](./picture/firebase_frontend_foundation_ts_study_020_03_preview_channel.png)
+
 これがめちゃ便利！
 本番を壊さずに、**別URLで見せられる**やつです😎✨ ([Firebase][2])
 
@@ -133,6 +139,8 @@ firebase hosting:channel:delete dev
 
 ## 4) 失敗しても大丈夫：リリース履歴 & ロールバック ⏪🛟
 
+![Hosting Rollback](./picture/firebase_frontend_foundation_ts_study_020_04_rollback_flow.png)
+
 Hostingは「デプロイ＝リリースが積み上がる」感じなので、戻せるのが安心ポイント😌✨ ([Firebase][2])
 
 CLIで戻すなら（代表例）👇
@@ -146,6 +154,8 @@ firebase hosting:rollback
 ---
 
 ## 5) 自動化：PRでプレビュー、マージで本番（GitHub連携）🤝🚀
+
+![GitHub Integration Workflow](./picture/firebase_frontend_foundation_ts_study_020_05_github_integration.png)
 
 Firebase Hostingは **GitHubのPRと連携してプレビューURLをコメントしてくれる** 流れが用意されてます👏 ([Firebase][1])
 
@@ -166,6 +176,8 @@ firebase init hosting:github
 
 ## 6) “運用”で一番やらかしやすい：環境変数と秘密情報 🔐😱
 
+![Environment Variable Safety](./picture/firebase_frontend_foundation_ts_study_020_07_env_safety.png)
+
 ## 6-1) フロント（Vite）の環境変数は「ビルド時」⚠️
 
 Viteの環境変数は基本 `VITE_` プレフィックスで、**ビルド成果物に埋め込まれる**発想だよね🧠
@@ -183,6 +195,8 @@ Viteの環境変数は基本 `VITE_` プレフィックスで、**ビルド成�
 ---
 
 ## 7) App Hosting分岐：SSRやフルスタックに行きたくなったら 🌿🚀
+
+![App Hosting Pipeline](./picture/firebase_frontend_foundation_ts_study_020_06_app_hosting_pipeline.png)
 
 App Hostingは “中で何が起きてるか” が分かると怖くない😆
 
