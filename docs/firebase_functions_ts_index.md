@@ -4,6 +4,9 @@
 
 * HTTPで **自分のAPI** を作って公開できる🌐
 * Firestoreの更新をトリガーにして **自動処理** ができる⚡
+
+![Cloud Functions Role Overview](./picture/firebase_functions_ts_index_overview.png)
+
 * スケジュールで **定期実行（Cron）** ができる⏰([Firebase][2])
 * そして最後に **Firestore更新→Slack通知** を完成させる📨✨([Slack開発者ドキュメント][3])
 * 開発はAI（Antigravity / Gemini CLI）で加速する🤖🧰([Firebase][4])
@@ -47,6 +50,9 @@
 * 🎯 狙い：初心者でも破綻しないフォルダ設計にする
 * 📚 キーワード：src/ 分割 / services / utils / types
 * 🛠️ 手を動かす：HTTP・Firestore・共通処理を分離する
+
+![Functions Folder Structure](./picture/firebase_functions_ts_index_folder_structure.png)
+
 * ✅ チェック：「どこに何を書くか」迷いが減る
 
 ---
@@ -94,6 +100,9 @@
 * 🎯 狙い：Firestore更新でFunctionsが動く
 * 📚 キーワード：onDocumentCreated / onDocumentWritten
 * 🛠️ 手を動かす：`messages/{id}` 作成→加工して別フィールドに保存
+
+![Firestore Trigger Event](./picture/firebase_functions_ts_index_db_trigger.png)
+
 * ✅ チェック：更新ループ（無限発火）を避ける考え方がわかる([Firebase][7])
 
 ## 12章：イベント処理の設計（冪等・重複・再試行）🧠
@@ -117,6 +126,9 @@
 * 🎯 狙い：毎日/毎時の自動処理ができる
 * 📚 キーワード：onSchedule / cron / timezone
 * 🛠️ 手を動かす：毎朝レポートを作る（Firestoreに書く）
+
+![Scheduled Functions (Cron)](./picture/firebase_functions_ts_index_cron_schedule.png)
+
 * ✅ チェック：スケジュールがCloud Schedulerで動くイメージがある([Firebase][2])
 
 ## 15章：運用の基本（ログ、エラー、アラートの入口）🧯👀
@@ -140,6 +152,9 @@
 * 🎯 狙い：FunctionsでAIワークフローを回す入口を作る
 * 📚 キーワード：Genkit / onCallGenkit / ストリーミング
 * 🛠️ 手を動かす：短文を「整形/要約」して返すCallableを作る
+
+![AI Integration in Functions](./picture/firebase_functions_ts_index_ai_integration.png)
+
 * ✅ チェック：「AIの出力は常に正しいわけじゃない」前提のガードが入る([Firebase][8])
 
 ## 18章：AIで開発を速くする（Antigravity / Gemini CLI）🛸💻
@@ -163,6 +178,9 @@
 * 🎯 狙い：Slackに安全に投げる準備が整う
 * 📚 キーワード：Incoming Webhooks / Secret / メッセージ整形
 * 🛠️ 手を動かす：Webhookを作ってSecretに登録→テスト送信
+
+![Slack Notification Flow](./picture/firebase_functions_ts_index_slack_webhook.png)
+
 * ✅ チェック：Webhook URLがコードやGitに出てこない([Zenn][10])
 
 ## 20章：Firestore更新→Slack通知を完成（実務の形に）🏁🔥
@@ -182,6 +200,8 @@
 ---
 
 ## 補足：.NETや“別言語”はどう扱う？🧩
+
+![Multi-Language Runtime Map](./picture/firebase_functions_ts_index_runtime_map.png)
 
 * Firebase Functions自体は **Node/TS** が主軸で、**Pythonも利用可能（3.10〜3.13）** です([Firebase][6])
 * もし **.NET** を“関数ランタイムとして”使うなら、Firebaseの外側で **Cloud Run functions**（.NET 8 など）に置いて、HTTPで連携するのが現実的です（サポート状況は公式のランタイム表で確認できる）([Google Cloud Documentation][11])
