@@ -8,6 +8,8 @@
 
 ## 0) まず考え方：AuthとFirestoreの役割分担🧠🔐🗂️
 
+![Auth vs Firestore Role](./picture/firebase_login_ts_study_017_01_auth_vs_firestore.png)
+
 * **Auth（認証）**は「本人かどうか」を管理する場所🔐
 * **Firestore（データ）**は「アプリとして必要なプロフィール/設定/状態」を置く場所🗂️
 
@@ -34,6 +36,8 @@ Authの `user` だけでも動くけど、現実のアプリはだいたいこ�
 
 ## 2) “ユーザードキュメントの型” を決めよう📐🧾
 
+![User Document Schema](./picture/firebase_login_ts_study_017_02_data_schema.png)
+
 まずは最小でOK！おすすめの最小セット👇（あとで増やせる前提👍）
 
 * `uid: string`（固定）🆔
@@ -58,6 +62,8 @@ Firestoreがまだならコンソールで有効化して、データベース�
 ---
 
 ## 4) 実装：`users/{uid}` を“初回だけ作る”関数を作る🧱🧠
+
+![Ensure Logic (Transaction)](./picture/firebase_login_ts_study_017_03_transaction_logic.png)
 
 ここが本章のメインです💪🙂
 ポイントは2つ：
@@ -141,6 +147,8 @@ export async function ensureUserDoc(user: User): Promise<void> {
 
 ## 5) どこで呼ぶ？おすすめは `onAuthStateChanged` の中📌🔁
 
+![Auth Hook Integration](./picture/firebase_login_ts_study_017_04_hook_integration.png)
+
 ログイン状態が変わったときに、ユーザードキュメントを整えちゃいます💪
 
 ```ts
@@ -167,6 +175,8 @@ useEffect(() => {
 
 ## 6) （発展）“初回ログインだけ” を検出したいとき🌈👀
 
+![New User Detection](./picture/firebase_login_ts_study_017_05_new_user.png)
+
 例えば「初回だけチュートリアル出したい！」みたいな時は、Googleログイン（Popup/Redirect）で返る `UserCredential` から **`getAdditionalUserInfo()`** を使うと便利です🧠
 公式のAPIリファレンスにもあります([Firebase][2])
 `AdditionalUserInfo` には `isNewUser` がいます([Firebase][3])
@@ -190,6 +200,8 @@ export async function signInWithGoogle() {
 
 ## 7) Security Rules：`users/{uid}` は本人だけ🛡️🔐
 
+![Security Match](./picture/firebase_login_ts_study_017_06_security_rules.png)
+
 まずは “超基本形” を入れておくと、事故りにくいです✅
 「本人の `uid` と一致するドキュメントだけ read/write 許可」みたいな形です🧷([Firebase][1])
 
@@ -211,6 +223,8 @@ service cloud.firestore {
 ---
 
 ## 8) おまけ：AIでプロフィール初期値を“気持ちよく”する🤖✨
+
+![AI Welcome Message](./picture/firebase_login_ts_study_017_07_ai_welcome.png)
 
 たとえば、初回ログイン時に👇
 

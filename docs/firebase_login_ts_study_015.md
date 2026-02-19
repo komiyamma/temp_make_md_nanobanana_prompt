@@ -7,6 +7,8 @@
 
 ## 読む📚👀（まずはイメージ）
 
+![Persistence Types](./picture/firebase_login_ts_study_015_01_persistence_types.png)
+
 Webアプリの認証は、基本的に「ブラウザを閉じてもログイン状態を残す（＝便利）」がデフォルト。だけど、共有PCとかだと危ないよね😇
 そこで **Persistence（保持方式）** を選べるようにする、って話！ ([Firebase][1])
 
@@ -65,6 +67,8 @@ export async function applyPersistence(auth: Auth, mode: PersistenceMode) {
 
 ## 2) ログイン直前に `applyPersistence()` → ログイン実行🚪🔐
 
+![Implementation Flow](./picture/firebase_login_ts_study_015_02_flow_diagram.png)
+
 ## メールログイン版📧
 
 ```ts
@@ -99,6 +103,8 @@ export async function loginWithGooglePopup(mode: PersistenceMode) {
 ---
 
 ## 3) ログイン画面に「保持のしかた（Remember me）」を追加🖥️🧷
+
+![Login UI with Persistence](./picture/firebase_login_ts_study_015_03_login_ui.png)
 
 ログイン画面でこういうラジオを出すのが分かりやすい🙂✨
 （選んだ値は `localStorage` に保存して、次回も同じ選択にする）
@@ -186,6 +192,8 @@ export function LoginForm() {
 
 ## A) “起動時に毎回 setPersistence(local)” はやりがち事故💥
 
+![Init Overwrite Trap](./picture/firebase_login_ts_study_015_04_init_trap.png)
+
 `local` がデフォルトだからといって、アプリ起動のたびに **明示的に `setPersistence(browserLocalPersistence)` を呼ぶ**と、状況によっては **既存の local セッションが消える**報告があるよ😇 ([GitHub][2])
 
 おすすめ運用ルール👇
@@ -196,6 +204,8 @@ export function LoginForm() {
 
 ## B) タブ挙動：local は“同期”、session/none は“別人”になれる🧠🪟
 
+![Tab Synchronization](./picture/firebase_login_ts_study_015_05_tab_behavior.png)
+
 Firebase公式が期待挙動をはっきり書いてる👇 ([Firebase][1])
 
 * session/none：タブごとに別ユーザーでログインできる（お互い見えない）
@@ -205,6 +215,8 @@ Firebase公式が期待挙動をはっきり書いてる👇 ([Firebase][1])
 だから「共有PCモード（session）」は、**“そのタブだけ”で完結するログイン**にしたい時に強い👍
 
 ## C) Redirect を使う時の注意（上書き問題）🔁🧠
+
+![Redirect Persistence Risk](./picture/firebase_login_ts_study_015_06_redirect_risk.png)
 
 `signInWithRedirect()` は **“呼んだ時点の persistence を保持して、OAuth完了時に適用”**する挙動が基本。
 でも、**戻ってきたページで `setPersistence()` を呼ぶと、保持してた設定を上書きする**こともあるよ⚠️ ([Firebase][1])
@@ -236,6 +248,8 @@ Firebase公式が期待挙動をはっきり書いてる👇 ([Firebase][1])
 ---
 
 ## AIでUX強化🤖💬（迷った人を助けるボタン）
+
+![AI Persistence Advisor](./picture/firebase_login_ts_study_015_07_ai_helper.png)
 
 ここで Firebase の **AI Logic（Gemini）** を混ぜると、体験がやさしくなる☺️✨
 例：「どれ選べばいい？」ボタンを押すと、状況に合わせて提案してくれる👍 ([Firebase][3])

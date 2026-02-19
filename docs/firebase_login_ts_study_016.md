@@ -13,6 +13,8 @@
 
 ## 0) この章でできあがる動き（完成イメージ）🧠✨
 
+![Route Guard Logic](./picture/firebase_login_ts_study_016_01_guard_logic.png)
+
 たとえば **/mypage** を「ログイン必須」にすると…
 
 1. 未ログインで /mypage を開く
@@ -22,6 +24,8 @@
 ---
 
 ## 1) まずは “認証の状態” を 2つ持つ（user と loading）🦴
+
+![Auth State Context](./picture/firebase_login_ts_study_016_02_auth_state.png)
 
 前章までで作った **AuthProvider** がある前提でOKですが、最低限こういう形になっていれば勝ちです🙂
 （ここが弱いと、ガードがチラついたり無限リダイレクトしがち💦）
@@ -108,6 +112,8 @@ export function ProtectedLayout() {
 
 ## 3) ルーター設定で “ログイン必須ゾーン” を作る🗺️✨
 
+![Router Structure Map](./picture/firebase_login_ts_study_016_03_router_map.png)
+
 `createBrowserRouter` の構成例です。
 （React Router v7 は Node 20 以上が要件として明記されています）([React Router][3])
 
@@ -167,6 +173,8 @@ export default function App() {
 
 ## 4) ログイン成功したら “元いたページ” に戻す🔁🎉
 
+![Redirect with State](./picture/firebase_login_ts_study_016_04_redirect_flow.png)
+
 `ProtectedLayout` が `state.from` を渡してるので、ログイン画面でそれを読んで戻ります🙂
 
 **src/routes/LoginPage.tsx（戻り先だけ抜粋）**
@@ -206,10 +214,14 @@ export function LoginPage() {
 
 ## A) “一瞬ログイン画面に飛ぶ” チラつき問題👻
 
+![Flicker Bug](./picture/firebase_login_ts_study_016_05_flicker_bug.png)
+
 原因：`loading` を見ずに `user==null` で即リダイレクトしてる
 対策：**必ず loading を先に処理**（この章の実装はOK👍）
 
 ## B) 無限リダイレクト♾️
+
+![Infinite Redirect Loop](./picture/firebase_login_ts_study_016_06_infinite_loop.png)
 
 原因：ログイン画面まで守ってしまってる（/login も Protected の子に入れてる）
 対策：/login は **保護ゾーンの外**に置く✅
@@ -250,6 +262,8 @@ export function MyPage() {
 ---
 
 ## 7) AIでUX強化（この章の“おまけ”🤖💬）
+
+![AI Explaining Security](./picture/firebase_login_ts_study_016_07_ai_explanation.png)
 
 ログインが必要な理由って、ユーザーにとっては「なんで？」になりがちです🙂
 そこで **Firebase AI Logic** を使って、やさしい説明文をその場で生成しちゃいます✨
