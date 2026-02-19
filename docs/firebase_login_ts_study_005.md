@@ -7,6 +7,8 @@
 
 ## 5-1 この章のゴール🎯
 
+![Signup Screen Mockup](./picture/firebase_login_ts_study_005_01_ui_goal.png)
+
 * ✅ サインアップ画面（メール・パスワード）を作る
 * ✅ 登録成功・失敗を“人間の言葉”で出せる😇
 * ✅ 登録後に「ようこそ🎉」を表示できる
@@ -38,6 +40,8 @@
 
 ## Step 1) エラーを“日本語に翻訳”する関数を作る🗺️😇
 
+![Error Code Translation](./picture/firebase_login_ts_study_005_02_error_translation.png)
+
 ```ts
 // src/features/auth/authErrorJa.ts
 export function authErrorJa(code: string): string {
@@ -61,6 +65,8 @@ export function authErrorJa(code: string): string {
 ---
 
 ## Step 2) サインアップ画面（UI＋登録処理）を作る✍️🔑
+
+![React Form State](./picture/firebase_login_ts_study_005_03_form_state.png)
 
 ポイントはこれ👇
 
@@ -234,6 +240,8 @@ export function SignupPage() {
 
 ## 5-4 「パスワード方針」を1段強くする🛡️🔥（おすすめ）
 
+![Password Policy Enforcement](./picture/firebase_login_ts_study_005_04_password_policy.png)
+
 Firebase/Identity Platform には **Password policy** があり、
 
 * 最小長（6〜30、デフォルト6）
@@ -247,6 +255,8 @@ Firebase/Identity Platform には **Password policy** があり、
 ---
 
 ## 5-5 AIでUXをちょい上げ🤖✨（Firebase AI Logic を軽く混ぜる）
+
+![AI UX Helper](./picture/firebase_login_ts_study_005_05_ai_ux.png)
 
 ここは“やりすぎ注意”なんだけど、**登録フォームの説明文**とか**エラーの補足**って、地味に大事なんだよね🙂
 そこで **Firebase AI Logic** を使って、例えば👇を作ると気持ちいいです✨
@@ -263,6 +273,8 @@ Firebase AI Logic は Gemini/Imagen をアプリから扱えるようにする�
 ---
 
 ## 5-6 Gemini CLI / Antigravity で爆速にする🚀🤝
+
+![Rapid Development with AI](./picture/firebase_login_ts_study_005_06_gemini_workflow.png)
 
 ## Gemini CLI で「叩き台」を一気に作る🧠⚡
 
