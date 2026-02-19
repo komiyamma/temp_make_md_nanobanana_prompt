@@ -10,6 +10,8 @@
 
 ## 0) まず結論：更新はこの3つを使い分ける🧠✨
 
+![Update Methods Comparison](./picture/firebase_firestore_base_ts_study_008_01_update_methods.png)
+
 Firestoreの更新は、だいたいこの3パターンで勝てます✌️
 
 | やりたいこと                  | 使うAPI                          | ざっくり何が起きる？            | よくある注意                |
@@ -18,11 +20,15 @@ Firestoreの更新は、だいたいこの3パターンで勝てます✌️
 | **まるごと保存**（全部入れ直す）      | `setDoc()`                     | **ドキュメントを上書き**（全置換）✍️ | 既存フィールドが消える事故💥       |
 | **一部だけ保存（存在しなくてもOK）**   | `setDoc(..., { merge: true })` | 指定フィールドだけ反映（足し込み）➕    | ネスト（オブジェクト）更新は要注意⚠️   |
 
+![setDoc Merge Flow](./picture/firebase_firestore_base_ts_study_008_04_merge_true.png)
+
 `setDoc()` が **デフォルトは上書き**で、`merge: true` で **部分反映**になる、というのが超重要ポイントです🧯([Firebase][2])
 
 ---
 
 ## 1) 事故る例：「tagsが消えた…😇」を体験で理解する
+
+![Overwrite Accident](./picture/firebase_firestore_base_ts_study_008_02_overwrite_accident.png)
 
 たとえば `todos/{id}` がこうだったとします👇
 
@@ -44,6 +50,8 @@ await setDoc(todoRef, { title: "牛乳と卵買う" });
 ## 2) 🛠️ 手を動かす：タイトル編集を `updateDoc()` で実装する✍️⚛️
 
 ## 2-1) 更新用の関数を作る（まずはこれだけでOK）🧩
+
+![UpdateDoc Safety](./picture/firebase_firestore_base_ts_study_008_03_updatedoc_safety.png)
 
 ```ts
 // src/lib/todos/updateTodoTitle.ts
@@ -164,6 +172,8 @@ export async function upsertUserPrefs(uid: string, theme: "light" | "dark") {
 
 ## 4) ネスト（オブジェクト）の安全更新：「ドット記法」を覚える🔧🧠
 
+![Dot Notation Safety](./picture/firebase_firestore_base_ts_study_008_05_dot_notation.png)
+
 「オブジェクトの中の1項目だけ変えたい」なら、ドット記法が便利です✨
 Firestoreのドキュメントでも、**ネスト更新にはドット記法を使う**例が出ています([Firebase][2])
 
@@ -207,6 +217,8 @@ await updateDoc(doc(db, "todos", todoId), {
 Firebase AI Logic の Web 例では、`firebase/ai` を使ってモデルを作る流れが案内されています([Firebase][4])
 
 ## 6-1) 例：タイトルをAIに整形させてから updateDoc する🪄
+
+![AI Text Correction](./picture/firebase_firestore_base_ts_study_008_06_ai_correction.png)
 
 イメージはこんな感じ👇（超ざっくり）
 

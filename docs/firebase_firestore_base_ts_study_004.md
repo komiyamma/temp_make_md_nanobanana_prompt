@@ -14,6 +14,8 @@
 
 ## 1) 全体像を10秒でつかむ 🧭⚡
 
+![React to Firestore Architecture](./picture/firebase_firestore_base_ts_study_004_01_architecture.png)
+
 やることはこの順番👇
 
 1. Firebase コンソールで **Webアプリ登録** → `firebaseConfig` を入手 🧾([Firebase][1])
@@ -22,9 +24,13 @@
 4. `getFirestore(app)` で **db** を作る 🗃️
 5. `getDocs(collection(db, "todos"))` で **0件表示**まで到達🎯
 
+![Data Fetching Flow](./picture/firebase_firestore_base_ts_study_004_04_fetch_flow.png)
+
 ---
 
 ## 2) Firebaseコンソール側：Webアプリ登録で「設定値」を取る 🧾🌐
+
+![Initialization Steps](./picture/firebase_firestore_base_ts_study_004_02_init_flow.png)
 
 Firebase コンソールで Web アプリを登録すると、アプリ接続用の **Firebase configuration**（`firebaseConfig`）が出てくるよ。([Firebase][1])
 
@@ -46,6 +52,8 @@ npm install --save firebase@12.9.0
 
 ## 4) 設計のコツ：初期化は「1ファイルに固定」しよう 🧠🧱
 
+![Recommended File Structure](./picture/firebase_firestore_base_ts_study_004_03_file_structure.png)
+
 ここ、初心者が一番ハマるポイント😇
 Firebase初期化があちこちに散ると、将来 **「二重初期化」**とかで泣くことになる…💥
 
@@ -59,6 +67,8 @@ Firebase初期化があちこちに散ると、将来 **「二重初期化」**�
 ## 5) `.env.local` に設定値を入れる 🔐🧾
 
 （Vite構成だと `VITE_` から始めるのが定番だよ）
+
+![Environment Variables](./picture/firebase_firestore_base_ts_study_004_06_env_vars.png)
 
 ```ini
 VITE_FIREBASE_API_KEY=xxxxx
@@ -116,6 +126,8 @@ type Todo = {
 export function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(true);
+
+![UI Loading States](./picture/firebase_firestore_base_ts_study_004_05_ui_states.png)
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
