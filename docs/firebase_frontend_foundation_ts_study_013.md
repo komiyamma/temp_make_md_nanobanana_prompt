@@ -7,6 +7,8 @@
 
 ## まず全体像（ここだけ覚えれば勝ち）🧠✨
 
+![Update Flow Overview](./picture/firebase_frontend_foundation_ts_study_013_01_update_flow.png)
+
 詳細フォーム更新は、この3点セットで回ります👇
 
 1. **URLにドキュメントIDを入れる**（例：/users/abc123）
@@ -29,6 +31,8 @@ React Router の「URLからIDを取り出す」仕組みが useParams です�
 ---
 
 ## Step 1：ルート（URL）を「/users/:userId」にする 🧭
+
+![Route Params Extraction](./picture/firebase_frontend_foundation_ts_study_013_02_routing_params.png)
 
 ポイントは **:userId** みたいな“穴あきURL”です🕳️✨
 useParams で userId を取り出せます（公式の説明どおり） ([reactrouter.com][1])
@@ -81,6 +85,8 @@ export type UserDoc = {
 
 ## Firestoreアクセスは “service” に寄せる（超おすすめ）📦✨
 
+![Service Layer Isolation](./picture/firebase_frontend_foundation_ts_study_013_03_service_layer.png)
+
 画面に直書きすると散らかります😵‍💫
 「Firestore操作は usersService に集める」と、後で泣かないです👍
 
@@ -116,6 +122,8 @@ export async function updateUser(userId: string, patch: Partial<UserDoc>) {
 ---
 
 ## Step 4：UserDetailPage（詳細フォーム）を作る 🧑‍💻✨
+
+![Detail Form UI States](./picture/firebase_frontend_foundation_ts_study_013_04_ui_states.png)
 
 ここが本番です🔥
 状態は第7章の “loading / error / data” でいきます🔁
@@ -290,6 +298,8 @@ export default function UserDetailPage() {
 }
 ```
 
+![Dirty Check Logic](./picture/firebase_frontend_foundation_ts_study_013_05_dirty_check.png)
+
 ここで使ってる updateDoc は「必要なフィールドだけ更新」ができるのがポイントです✅ ([Google Cloud Documentation][3])
 更新日時を serverTimestamp にすると「クライアント時計ズレ問題」を避けられます⏱️✨ ([Google Cloud Documentation][3])
 
@@ -314,6 +324,8 @@ export default function UserDetailPage() {
 ---
 
 ## 🔥おまけ：メモ欄に「AI整形」ボタンを付ける 🤖✨
+
+![AI Text Polish Flow](./picture/firebase_frontend_foundation_ts_study_013_06_ai_polish.png)
 
 ここで **Firebase AI Logic** の出番です🎉
 Webだと firebase/ai からモデルを呼べます（公式のWeb例がこれ） ([Firebase][4])

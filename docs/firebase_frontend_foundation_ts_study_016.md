@@ -7,6 +7,8 @@
 
 ## 1) まず“仕組み”を超ざっくり理解する 🧠💡
 
+![Firestore vs Storage](./picture/firebase_frontend_foundation_ts_study_016_01_firestore_vs_storage.png)
+
 * **Firestore**：文章・数値みたいな「データ」を保存する場所🗃️
 * **Storage（Cloud Storage for Firebase）**：画像・動画みたいな「ファイル」を置く場所📦
 * 画像をStorageへアップしたら、**その画像URL（download URL）をFirestoreに保存**して、UIで表示するのが定番です📌
@@ -17,6 +19,8 @@
 ---
 
 ## 2) コンソール側の準備 🛠️（最短ルート）
+
+![Upload Process Flow](./picture/firebase_frontend_foundation_ts_study_016_02_upload_flow.png)
 
 ## Storageを有効化する ☁️
 
@@ -31,6 +35,8 @@ StorageはFirebaseが管理する Cloud Storage バケットを使います。 (
 ---
 
 ## 3) パス設計：どこに置く？📁✨
+
+![Storage Path Strategy](./picture/firebase_frontend_foundation_ts_study_016_03_path_strategy.png)
 
 おすすめはこのどちらか👇
 
@@ -48,6 +54,8 @@ StorageはFirebaseが管理する Cloud Storage バケットを使います。 (
 ---
 
 ## 4) Storageルール例 🔐（“自分だけアップできる”）
+
+![Storage Security Rules](./picture/firebase_frontend_foundation_ts_study_016_04_rules_logic.png)
 
 まずは「ログインしてる本人が、自分の場所にだけアップできる」ルール例👇
 （※ここはアプリ方針で変えてOK。最低限の考え方が大事🙂）
@@ -77,6 +85,8 @@ service firebase.storage {
 ---
 
 ## 5) 実装：アップロード“サービス関数”を作る 🔧✨
+
+![Upload Task State Machine](./picture/firebase_frontend_foundation_ts_study_016_05_upload_state.png)
 
 UI（React）から直接Firebase Storageを叩くとコードが散りやすいので、先に **services** を作ります📦
 
@@ -150,6 +160,8 @@ export function uploadUserAvatar(params: {
 ---
 
 ## 6) 実装：Reactコンポーネント（プレビュー＋進捗バー）🖼️📊
+
+![Avatar Uploader UI](./picture/firebase_frontend_foundation_ts_study_016_06_ui_mock.png)
 
 ## `src/components/AvatarUploader.tsx`
 
@@ -316,6 +328,8 @@ Webだと **reCAPTCHA Enterprise** を使う手順が公式にあります（し
 ---
 
 ## 8) AIを絡める：ファイル名＆代替テキストをAIに決めさせる 🤖📝✨
+
+![AI Metadata Generation](./picture/firebase_frontend_foundation_ts_study_016_07_ai_metadata.png)
 
 「AIで画像そのものを解析」は次章以降でも良いけど、
 この章でも **“実務で効く”AI** を入れられます👇
