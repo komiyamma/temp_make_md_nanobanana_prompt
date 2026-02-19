@@ -10,6 +10,8 @@
 
 ## 1) まず頭に入れる“最小の流れ”🧠✨
 
+![Simple Upload Flow](./picture/firebase_storage_ts_study_005_01_simple_flow.png)
+
 1. 画像ファイル（`File`）を受け取る📎
 2. 保存先のパス（`users/{uid}/profile/{fileId}`）を作る📁
 3. `uploadBytes(ref, file, metadata)` でアップロード⬆️ ([Firebase][1])
@@ -26,6 +28,8 @@
 * **`contentType` は渡す**（あとから困りにくい）📎
 
 #### 2-1. `uploadProfileImage.ts`（アップロードしてURLを返す）
+
+![Upload Function Concept](./picture/firebase_storage_ts_study_005_02_upload_function.png)
 
 ```ts
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -66,6 +70,8 @@ export async function uploadProfileImage(file: File, uid: string): Promise<Uploa
 * 成功/失敗メッセージ🙂
 
 #### 3-1. `ProfileImageUploader.tsx`
+
+![React UI States](./picture/firebase_storage_ts_study_005_03_ui_states.png)
 
 ```tsx
 import { useEffect, useMemo, useState } from "react";
@@ -162,6 +168,8 @@ export function ProfileImageUploader({ uid }: Props) {
 
 ## 4) つまずきポイント集（ここが“沼”😇）🧯
 
+![Common Upload Errors](./picture/firebase_storage_ts_study_005_04_errors.png)
+
 ### 4-1. `storage/unauthenticated` / `storage/unauthorized`
 
 * ログインしてない or ルールで弾かれてる系です🔐
@@ -198,6 +206,8 @@ export function ProfileImageUploader({ uid }: Props) {
 ---
 
 ## 7) おまけ：AIで「画像の説明（altテキスト）」を自動生成🤖🖼️✨
+
+![AI Alt Text Generation](./picture/firebase_storage_ts_study_005_05_ai_alt_text.png)
 
 ここ、めちゃ“現実アプリ感”が出ます😎
 アップロード前に、選んだ画像を **Firebase AI Logic（Gemini）** に渡して「短い説明文」を作らせます✍️

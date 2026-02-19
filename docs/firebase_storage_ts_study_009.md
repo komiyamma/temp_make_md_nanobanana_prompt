@@ -7,6 +7,8 @@ Storage の **メタデータ**をちゃんと付けるだけで、アプリの�
 
 ## 1) まず読む：メタデータって何？🤔📎
 
+![Metadata Tags](./picture/firebase_storage_ts_study_009_01_metadata_tags.png)
+
 Storage のファイルは「中身（バイナリ）」だけじゃなくて、**一緒に“札（ふだ）”みたいな情報**を持てるよ〜🏷️
 その札が **メタデータ**。Web だと特に重要なのがこの2つ👇
 
@@ -34,12 +36,16 @@ Firebase の Web SDK でも、アップロード時にメタデータとして�
 
 ### パターンA：**毎回パスが変わる（履歴を残す設計）**📚✨ ← 今回のロードマップ寄り
 
+![Cache Strategy A (History)](./picture/firebase_storage_ts_study_009_02_cache_strategy_a.png)
+
 例：`users/{uid}/profile/{uuid}.jpg`
 この場合、**古いURLは古い画像専用**になるから、長期キャッシュが最強💪
 
 * おすすめ：`public,max-age=31536000,immutable`（1年＋変わらない前提）📦🚀([web.dev][5])
 
 ### パターンB：**同じパスに上書き（常に profile.jpg）**♻️🫠
+
+![Cache Strategy B (Overwrite)](./picture/firebase_storage_ts_study_009_03_cache_strategy_b.png)
 
 例：`users/{uid}/profile/profile.jpg`
 この場合、**URLが同じなのに中身が変わる**ので、長期キャッシュは事故りやすい💥
@@ -159,6 +165,8 @@ export async function removeCacheControl(path: string) {
 
 ## 5) 動作確認：キャッシュが効いてるかを目で見る👀⚡
 
+![DevTools Inspection](./picture/firebase_storage_ts_study_009_04_devtools.png)
+
 一番ラクなのはブラウザの DevTools（F12）で確認する方法だよ🧰✨
 
 ### ✅ 確認ポイント
@@ -210,6 +218,8 @@ export async function removeCacheControl(path: string) {
   Firebase AI Logic は Gemini / Imagen をアプリから扱える仕組みとして公式に案内されてるよ。([Firebase][7])
 
 ### ✅ Antigravity / Gemini CLI で“メタデータ相談”を爆速に💻🚀
+
+![AI Metadata Assistant](./picture/firebase_storage_ts_study_009_05_ai_metadata.png)
 
 * Gemini CLI の Firebase 拡張を入れると、Firebase っぽい作業（初期化や AI 機能の導入など）を CLI から進めやすくなるよ。([Firebase][8])
 * さらに Firebase MCP server を使うと、AI ツールが Firebase プロジェクトやコードベースを扱うための“道具”を持てる。([Firebase][9])

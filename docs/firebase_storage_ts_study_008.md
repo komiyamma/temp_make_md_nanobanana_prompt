@@ -16,6 +16,8 @@ Firebase の Storage は **Blob/File をそのままアップロード**でき�
 
 ## 2) まず“目標スペック”を決めよう🎯📏
 
+![Compression Goals](./picture/firebase_storage_ts_study_008_01_compression_goals.png)
+
 プロフィール画像の定番目安（迷ったらコレ）👇
 
 * 最大辺：**512px〜1024px**（まずは 512px 推し）🙂
@@ -28,6 +30,8 @@ Firebase の Storage は **Blob/File をそのままアップロード**でき�
 ---
 
 ## 3) 実装①：ライブラリ無しでやる（Canvas版）🧰✨
+
+![Canvas Compression Pipeline](./picture/firebase_storage_ts_study_008_02_canvas_pipeline.png)
 
 ポイントはこの3つだけ👇
 
@@ -151,6 +155,8 @@ export async function compressImageForUpload(
 
 ## 4) Reactで “元サイズ / 圧縮後サイズ” を見せるUI 🧑‍🍳📊
 
+![Compression Before/After](./picture/firebase_storage_ts_study_008_03_before_after.png)
+
 「軽くなった！」が目で分かると、学習もアプリも気持ちいいです😆✨
 
 ```tsx
@@ -242,6 +248,8 @@ Blob をそのまま Storage に上げられるのがめちゃ楽です⬆️�
 
 ## 5) 実装②：画質をもっと良くしたい人向け（pica）🪄✨
 
+![pica vs Canvas](./picture/firebase_storage_ts_study_008_04_pica_vs_canvas.png)
+
 Canvasの縮小は「端末やブラウザ差」で画質がブレることがあります🥲
 **高品質リサイズ特化**なら **pica** が定番です（WebWorker / WebAssembly / createImageBitmap などを良い感じに使ってくれる方針）🧠⚙️([GitHub][4])
 
@@ -250,6 +258,8 @@ Canvasの縮小は「端末やブラウザ差」で画質がブレることが�
 ---
 
 ## 6) Antigravity / Gemini CLI で“設定決め”を爆速にする🚀🤖
+
+![AI Config Helper](./picture/firebase_storage_ts_study_008_05_ai_config.png)
 
 ここ、AIが一番役に立ちます😆
 「正解が1つじゃない」からです🎯
