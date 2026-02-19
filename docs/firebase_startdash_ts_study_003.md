@@ -8,6 +8,8 @@
 
 ## 読む：Consoleは「3つの場所」さえ押さえればOK🙂🧭
 
+![Console Map](./picture/firebase_startdash_ts_study_003_01_three_locations.png)
+
 Firebase Consoleで、初心者がまず触るべき場所はこの3つです👇
 
 1. **Project Overview（プロジェクトの玄関）**🏠
@@ -34,6 +36,8 @@ Firebase Consoleで、初心者がまず触るべき場所はこの3つです�
 
 ### 0) まず「いまどのプロジェクト？」を毎回チェック✅
 
+![Project Selector](./picture/firebase_startdash_ts_study_003_02_project_check.png)
+
 * Firebase Consoleを開いたら、**左上のプロジェクト名**を見る👀
 * もし違ったらプロジェクト切り替え🔁
   👉 これだけで事故率が激減します💥
@@ -55,6 +59,8 @@ Firebase Consoleで、初心者がまず触るべき場所はこの3つです�
 
 ### 2) Project settings（⚙️）に最短で行く⚙️🚀
 
+![Gear Icon Navigation](./picture/firebase_startdash_ts_study_003_03_settings_nav.png)
+
 次に覚えるのはこれ👇
 
 * **Project Overviewの近くにある⚙️（歯車） → Project settings** ([Firebase][2])
@@ -64,6 +70,8 @@ Firebase Consoleで、初心者がまず触るべき場所はこの3つです�
 ---
 
 ### 3) 「WebアプリのSDK設定（firebaseConfig）」を見つける🏷️🌐
+
+![Firebase Config Snippet](./picture/firebase_startdash_ts_study_003_04_sdk_config.png)
 
 やること👇
 
@@ -80,6 +88,8 @@ Firebase Consoleで、初心者がまず触るべき場所はこの3つです�
 ---
 
 ### 4) Usage & billing に行って“見る場所”だけ覚える💸👀
+
+![Usage & Billing](./picture/firebase_startdash_ts_study_003_05_billing_dashboard.png)
 
 * Console内の **Usage and billing（使用量と請求）** を開いて、
   「こんな画面があるんだな〜」って眺めるだけでOKです🙂 ([Googleヘルプ][3])
@@ -104,6 +114,8 @@ Firebaseだけだと「止める」系のコントロールが弱いので、
 ---
 
 ## 🤖AI（Gemini）を“Console迷子防止ナビ”にする💬🧭
+
+![AI Navigation Assistant](./picture/firebase_startdash_ts_study_003_06_ai_nav_help.png)
 
 FirebaseはUIが更新されがちなので、迷ったら**AIに「今の画面基準」で道案内させる**のが強いです💪✨
 （Firebase公式もAI支援の流れを強めてます） ([Firebase][6])
@@ -131,6 +143,8 @@ AIがズレたら、こう返すと復帰しやすいです👇😄
 ---
 
 ## ミニ課題：「迷子ハント」3本勝負🎯🗺️
+
+![Console Treasure Hunt](./picture/firebase_startdash_ts_study_003_07_treasure_hunt.png)
 
 制限時間は合計10分くらいでOK⌛✨
 
