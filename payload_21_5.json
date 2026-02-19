@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_index.md",
-  "proposed_filename": "firebase_firestore_base_ts_index_05_realtime.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_index_05_realtime.png",
-  "prompt": "**Theme**: Realtime Sync\n\n**Labels to Render**:\n- Cloud: \"Firestore\"\n- Device 1: \"PC (Update)\"\n- Device 2: \"Mobile (Sync)\"\n\n**Visual Details**:\n1. Core Concept: Instant data propagation.\n2. Metaphor: Lightning or wifi signals connecting the cloud to devices.\n3. Action: Syncing.\n4. Layout: Network diagram.",
-  "insertion_point": "### 第12章：リアルタイム購読①（onSnapshotで“勝手に更新”）⚡👀"
-}

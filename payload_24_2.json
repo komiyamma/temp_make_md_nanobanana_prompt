@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_003.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_003_02_location.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_003_02_location.png",
-  "prompt": "**Theme**: Region Selection Map\n\n**Labels to Render**:\n- Target: \"asia-northeast1 (Tokyo)\"\n- Value: \"Fast Speed\"\n- Warning: \"Cannot Change\"\n\n**Visual Details**:\n1. Core Concept: Choosing the server location close to users.\n2. Metaphor: A map with a pin on Tokyo radiating speed lines.\n3. Action: Selection.\n4. Layout: Map view.",
-  "insertion_point": "## B. “ロケーション（リージョン）”の選択（ここは慎重に！）🗾"
-}

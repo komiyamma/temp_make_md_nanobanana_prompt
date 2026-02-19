@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_003.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_003_03_add_data.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_003_03_add_data.png",
-  "prompt": "**Theme**: Add Data UI\n\n**Labels to Render**:\n- Collection: \"todos\"\n- ID: \"Auto-ID\"\n- Field: \"title: 'Buy Milk'\"\n\n**Visual Details**:\n1. Core Concept: Manually adding a document.\n2. Metaphor: A form being filled out in the console.\n3. Action: Typing.\n4. Layout: Modal UI.",
-  "insertion_point": "## 2) Consoleで `todos` を作って、ToDoを1件入れる➕📄"
-}

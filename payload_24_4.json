@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_003.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_003_04_add_3.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_003_04_add_3.png",
-  "prompt": "**Theme**: Three ToDo Items\n\n**Labels to Render**:\n- Item 1: \"Laundry\"\n- Item 2: \"Bills\"\n- Item 3: \"Walk\"\n\n**Visual Details**:\n1. Core Concept: Populating the database with test data.\n2. Metaphor: Three cards or rows appearing in the list.\n3. Action: Populating.\n4. Layout: List view.",
-  "insertion_point": "## 3) ミニ課題：`done:false` を3件入れてみよう🧩✅✅✅"
-}

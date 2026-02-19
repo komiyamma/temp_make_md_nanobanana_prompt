@@ -1,7 +1,0 @@
-{
-  "filename": "docs/firebase_firestore_base_ts_study_001.md",
-  "proposed_filename": "firebase_firestore_base_ts_study_001_03_realtime.png",
-  "relative_link": "./picture/firebase_firestore_base_ts_study_001_03_realtime.png",
-  "prompt": "**Theme**: Realtime Snapshot\n\n**Labels to Render**:\n- Action: \"Add (Tab A)\"\n- Result: \"Appear (Tab B)\"\n- Method: \"onSnapshot\"\n\n**Visual Details**:\n1. Core Concept: Instant updates across clients.\n2. Metaphor: Two screens. An item dropped in one screen instantly pops up in the other.\n3. Action: Teleportation/Sync.\n4. Layout: Split screen.",
-  "insertion_point": "## 3) Firestoreの最大の気持ちよさ：リアルタイム⚡👀"
-}
