@@ -7,6 +7,8 @@
 
 ## 0) まず“事故の共通原因”だけ押さえる🧠💡
 
+![Read and Write Granularity Trap](./picture/firebase_security_role_ts_study_018_01_read_write_trap.png)
+
 Firestore Rules の `allow read` / `allow write` は便利だけど、**広すぎる**のが罠です😱
 `read` は **get と list** を含むし、`write` は **create / update / delete** を含みます。([Firebase][1])
 
@@ -20,6 +22,8 @@ Firestore Rules の `allow read` / `allow write` は便利だけど、**広す�
 ## 1) 事故パターン図鑑（見抜けるようになるやつ）📚👀
 
 ## 事故①：`allow read, write: if true;`（全開放）🚪💥
+
+![Security Rule "if true"](./picture/firebase_security_role_ts_study_018_02_open_house.png)
 
 **症状**：とりあえず動いた！→そのまま放置
 **何がヤバい？**：世界中の誰でも読める/書ける😱
@@ -37,6 +41,8 @@ Firestore Rules の `allow read` / `allow write` は便利だけど、**広す�
 
 ## 事故③：update で「所有者すり替え」🎭🪤
 
+![Owner ID Swap Attack](./picture/firebase_security_role_ts_study_018_03_owner_swap.png)
+
 **症状**：`request.resource.data.ownerId == request.auth.uid` で守ったつもり
 **実際**：攻撃者が update 時に `ownerId` を自分に変えて通過する可能性💥
 **直し方**：update では **resource（元データ）と request.resource（新データ）を比較**して“変更禁止”を入れる🔒
@@ -53,6 +59,8 @@ Firestore Rules の `allow read` / `allow write` は便利だけど、**広す�
 
 ## 事故⑤：「サーバーはRulesで守られてる」勘違い🧯🤯
 
+![Admin SDK Bypass](./picture/firebase_security_role_ts_study_018_04_admin_bypass.png)
+
 **症状**：「Admin SDK から叩く処理も Rules で制限されるっしょ」
 **実際**：サーバー用ライブラリ（Admin/Server SDKなど）は **Rulesをバイパス**します。([Firebase][2])
 **直し方**：サーバー側は **IAM** と “鍵の管理” が本体（Rulesとは別物）🔑
@@ -60,6 +68,8 @@ Firestore Rules の `allow read` / `allow write` は便利だけど、**広す�
 ---
 
 ## 事故⑥：「Consoleで直したのに、CLIデプロイで戻る」🔁😵
+
+![CLI Overwriting Console Edits](./picture/firebase_security_role_ts_study_018_05_cli_overwrite.png)
 
 **症状**：Consoleで緊急修正→安心→次のデプロイで再発
 **原因**：Firebase CLI でデプロイすると、**ローカルのルールがConsoleを上書き**します。([Firebase][3])
@@ -110,6 +120,8 @@ service cloud.firestore {
 ## 3) “安全な直し方テンプレ”を入れる（この章の核心）🧩🛡️
 
 ## 3-1) 署名系の関数（読みやすさUP）🙂
+
+![Helper Functions in Rules](./picture/firebase_security_role_ts_study_018_06_function_stamp.png)
 
 ```rules
 rules_version = '2';
@@ -230,6 +242,8 @@ firebase emulators:exec --only firestore "npm test"
 ---
 
 ## 5) AIで“事故を見つける速度”を爆上げする🤖⚡（でも最後は人間チェック✅）
+
+![AI Security Detective](./picture/firebase_security_role_ts_study_018_07_ai_detective.png)
 
 ## 5-1) Gemini CLI（Firebase拡張）の“Rules＋テスト下書き”を使う🧠📄
 
