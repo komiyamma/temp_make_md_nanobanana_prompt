@@ -7,6 +7,8 @@
 
 ## 1) まずは超重要3点セットを覚える📌😺
 
+![Resource vs Request.Resource](./picture/firebase_security_role_ts_study_005_01_resource_vs_request.png)
+
 ## ✅ resource（今DBにある“既存データ”）
 
 * `resource` は **対象ドキュメントそのもの**
@@ -16,6 +18,8 @@
 ---
 
 ## ✅ request（リクエストの情報）
+
+![Request Object Anatomy](./picture/firebase_security_role_ts_study_005_02_request_object.png)
 
 * `request.method` は操作の種類（`get/list/create/update/delete`） ([Firebase][2])
 * `request.time` はサーバーが受け取った時刻（サーバー時刻チェックに使える） ([Firebase][2])
@@ -33,6 +37,8 @@
 ---
 
 ## 2) create / update / delete で「見えるもの」が違う⚠️🧠
+
+![Data Visibility by Operation](./picture/firebase_security_role_ts_study_005_03_operation_visibility.png)
 
 ここ、事故りやすいので丁寧にいくよ〜😊
 
@@ -54,6 +60,8 @@
 ---
 
 ## 3) “差分”を取る最強ワザ：Map.diff() 🧩✨
+
+![Map Diff Logic](./picture/firebase_security_role_ts_study_005_04_map_diff.png)
 
 Firestore Rules では **Map同士の差分**が取れるよ！
 `request.resource.data.diff(resource.data)` みたいに書くと、**MapDiff** が返る💡 ([The Firebase Blog][4])
@@ -84,6 +92,8 @@ MapDiff にはこういう便利メソッドがある👇 ([Firebase][5])
 ---
 
 ## 4-2. ルールを書いてみる（差分で update を縛る）🔒✍️
+
+![Secure Update Filtering](./picture/firebase_security_role_ts_study_005_05_secure_update.png)
 
 ```rules
 rules_version = '2';
@@ -124,6 +134,8 @@ service cloud.firestore {
 ```
 
 ポイント解説だよ😊👇
+
+![Update Validation Checklist](./picture/firebase_security_role_ts_study_005_06_update_checklist.png)
 
 * `request.resource.data.diff(resource.data).affectedKeys()` で「変えたキーの集合」を取る ([Firebase][5])
 * `hasOnly(...)` で「このキー以外は絶対変えるな！」ができる✨ ([The Firebase Blog][4])
@@ -166,6 +178,8 @@ service cloud.firestore {
 ## 8) AI活用コーナー🤖✨（Rulesづくりを爆速にする）
 
 ## 8-1. “叩き台”はAI、決定は人間🧑‍⚖️✅
+
+![AI Rules Drafting & Human Review](./picture/firebase_security_role_ts_study_005_07_ai_review_workflow.png)
 
 Firebase の **AIプロンプトカタログ**には、Rules作成用のプロンプトが用意されてるよ📚✨
 しかも **Antigravity / Gemini CLI などのエージェント**向けに使える前提で整備されてる！ ([Firebase][6])

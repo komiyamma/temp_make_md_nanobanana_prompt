@@ -13,6 +13,8 @@ FirestoreのRulesは、基本 **「パス（場所）＋条件」**で守りま�
 
 ## ✅ 王道の設計（超おすすめ）👑
 
+![User Data Model Structure](./picture/firebase_security_role_ts_study_007_01_user_data_model.png)
+
 * **users/{uid}** … そのユーザー本人の“マイページの本体”📄
 * **users/{uid}/(subcollections)** … その人の個別データ（メモ、設定、下書き…）📦
 * **publicProfiles/{uid}** … 公開プロフィール（読むのは全員OK、書くのは本人だけ）🌍🧑‍💻
@@ -30,6 +32,8 @@ Rules側では、認証情報として **`auth.uid`（ユーザー固有ID）** 
 
 ## ❌ 失敗A：uidを“フィールド”に入れて所有者判定しようとする
 
+![Vulnerable Field-Based Security](./picture/firebase_security_role_ts_study_007_02_field_id_antipattern.png)
+
 例：`posts/{postId}` の中に `ownerUid: "xxx"` を入れて、Rulesで `request.auth.uid == resource.data.ownerUid` みたいにするやつ。
 
 これ、**正しく書けば可能**なんだけど、初心者がやると事故りやすいです😇
@@ -41,6 +45,8 @@ Rules側では、認証情報として **`auth.uid`（ユーザー固有ID）** 
 👉 まずは **パスにuidを埋める設計**から入るのが安全です🛡️✨
 
 ## ❌ 失敗B：`auth != null` だけでOKにしちゃう
+
+![Auth Only Risk (Too Permissive)](./picture/firebase_security_role_ts_study_007_03_auth_only_risk.png)
 
 「ログインしてればOK」だけだと、**“全ログインユーザーが他人のデータ触れる”**状態になりがち😱
 公式にも「authだけチェックして満足してない？」って注意があります⚠️([Firebase][3])
@@ -72,6 +78,8 @@ Rules側では、認証情報として **`auth.uid`（ユーザー固有ID）** 
 ---
 
 ## 4) Rulesを書こう（まずは“最小で強い”やつ）🛡️✨
+
+![isOwner Security Logic](./picture/firebase_security_role_ts_study_007_04_is_owner_logic.png)
 
 ポイントはこれだけ👇
 **「ログインしていて、かつ uid が一致する」**＝本人✅
@@ -116,6 +124,8 @@ service cloud.firestore {
 
 ## 5) React(TypeScript)で「自分のusers/{uid}」を触る👆✨
 
+![React UID Reference Logic](./picture/firebase_security_role_ts_study_007_05_react_uid_ref.png)
+
 「ドキュメントID＝uid」にするのがコツです👑
 （自動IDにしない！）
 
@@ -158,6 +168,8 @@ export async function readMyUserProfile() {
 
 ## 6) “他人のuidで読めない”を確認しよう（ここが本番😤🧪）
 
+![Unauthorized Access Attempt](./picture/firebase_security_role_ts_study_007_06_attack_simulation.png)
+
 ## 手で確認（超シンプル）🖱️
 
 1. Aユーザーでログインして `users/{Aのuid}` を読む ✅
@@ -180,6 +192,8 @@ firebase emulators:start --only firestore,auth
 （Emulatorのセットアップや起動はこの流れが基本です）([Firebase][5])
 
 ## Rulesの単体テスト例（Jest想定）🧪
+
+![Unit Test Scenarios](./picture/firebase_security_role_ts_study_007_07_unit_test_cases.png)
 
 「Aliceは自分のusers/Aliceは読める、Bobのusers/Bobは読めない」を機械で保証します🤖✅
 
