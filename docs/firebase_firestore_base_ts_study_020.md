@@ -7,6 +7,8 @@
 
 ## 1) この章で“完成”にする機能一覧 ✅
 
+![Final App Overview](./picture/firebase_firestore_base_ts_study_020_01_final_app.png)
+
 ## 必須（ここまでの総復習）🧠✨
 
 * 追加 / 編集 / 削除 ✅
@@ -27,6 +29,8 @@
 ---
 
 ## 2) データ設計（迷子防止）🧭🗃️
+
+![Data Schema](./picture/firebase_firestore_base_ts_study_020_02_data_schema.png)
 
 コレクション：`todos`
 ドキュメント（例）：
@@ -61,6 +65,8 @@ export type Todo = {
 ---
 
 ## Step B：ページング（“リアルタイム＋追加読み”の現実解）📜✨
+
+![Hybrid Paging Strategy](./picture/firebase_firestore_base_ts_study_020_03_paging_strategy.png)
 
 Firestoreのページングは「カーソル」方式です（`startAfter(lastDoc)`）📌([Firebase][3])
 
@@ -126,6 +132,8 @@ export const model = getGenerativeModel(ai, {
 
 ## 2) AI整形：本文を読みやすくする ✨📝
 
+![AI Text Polish](./picture/firebase_firestore_base_ts_study_020_04_ai_polish.png)
+
 例：`src/lib/aiEnhance.ts`
 
 ```ts
@@ -152,6 +160,8 @@ UIはこういう感じが作りやすいです👇
 ---
 
 ## 3) AIタグ抽出：JSONで返させて `tags: string[]` にする 🏷️🧾
+
+![AI Tag Extraction](./picture/firebase_firestore_base_ts_study_020_05_ai_tags.png)
 
 ここは事故が起きやすいので、**“構造化出力（JSON）”**の考え方でガードします。([Firebase][5])
 
@@ -217,6 +227,8 @@ await updateDoc(doc(db, "todos", id), {
 
 ## ✅ AI呼び出しの濫用対策（重要）
 
+![AI Safety Guard](./picture/firebase_firestore_base_ts_study_020_06_safety_guard.png)
+
 AIは便利だけど、呼ばれ放題だとコストも事故も増えます💸😇
 **Firebase AI Logicの本番チェック項目**としても、保護や運用面がまとまっています。([Firebase][6])
 
@@ -250,6 +262,8 @@ AIは便利だけど、呼ばれ放題だとコストも事故も増えます�
 実装が詰まったら、ここがめちゃ効きます。
 
 ## Antigravity（設計→実装の段取りを作る）🛰️
+
+![Antigravity Assistance](./picture/firebase_firestore_base_ts_study_020_07_antigravity.png)
 
 * 「この章の要件をToDoに分解して」
 * 「今のファイル構成に合わせて差分パッチ案を出して」

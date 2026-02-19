@@ -7,11 +7,15 @@
 
 ## 📖 読む：Emulatorって何が嬉しいの？😆
 
+![Emulator Concept](./picture/firebase_firestore_base_ts_study_019_01_emulator_shield.png)
+
 * **Firestore Emulator** はローカルPCで動く “擬似Firestore” です🧪
   → 追加/更新/削除をミスっても、本番に傷がつかない！🛡️
 * Emulator Suite UI（ブラウザ画面）で、
   **どのリクエストが飛んで、Rulesがどう評価されたか** まで見えるのが強いです👀✨ ([Firebase][1])
 * Firestore Emulatorは **デフォルトで 8080番**、UIは **4000番** など、決まったポートで起動します🔌 ([Firebase][2])
+
+![Emulator Ports](./picture/firebase_firestore_base_ts_study_019_02_emulator_ports.png)
 
 > ⚠️ 重要：Emulatorは便利だけど、本番と完全一致ではありません。
 > 例えば **複合インデックスを追跡せず、通るクエリは実行してしまう** ので、インデックス要件は最後に本番でも確認が必要です📌 ([Firebase][1])
@@ -72,6 +76,8 @@ Firestoreは `localhost:8080` で待ってます🧪 ([Firebase][2])
 
 ## 🛠️ 手を動かす：ReactアプリをEmulatorにつなぐ⚛️🔌
 
+![Connection Switch](./picture/firebase_firestore_base_ts_study_019_03_connect_switch.png)
+
 ポイントは1つだけ！
 
 > **Firestoreに触る前に** `connectFirestoreEmulator()` を呼ぶこと！
@@ -104,6 +110,8 @@ if (import.meta.env.DEV) {
 
 ## 👀 ついでに：Emulator UIの “Requests” が神✨
 
+![Requests UI](./picture/firebase_firestore_base_ts_study_019_04_requests_ui.png)
+
 UIで **Firestore > Requests** を開くと👇
 
 * どんな read/write が来たか
@@ -116,6 +124,8 @@ UIで **Firestore > Requests** を開くと👇
 ---
 
 ## 🧯 DBをリセットしたい（超便利）💥
+
+![Reset DB](./picture/firebase_firestore_base_ts_study_019_05_reset_db.png)
 
 本番Firestoreは「全部消す」みたいなSDK機能が無いけど、エミュレータには **DELETEで全消し** が用意されています🧨 ([Firebase][1])
 
@@ -146,6 +156,8 @@ firebase emulators:start --only firestore --import=./.emulator-data --export-on-
 ---
 
 ## 🛠️ ついでに：サーバー側（Admin SDK）で seed 10件流し込む🌱🔥
+
+![Seed Script Flow](./picture/firebase_firestore_base_ts_study_019_06_seed_script.png)
 
 ここからが「開発が一気に速くなる」やつ！🚀
 **Admin SDKは `FIRESTORE_EMULATOR_HOST` を設定すると自動でエミュレータに接続**します✨
@@ -220,6 +232,8 @@ node scripts/seed.mjs
 ---
 
 ## 🤖 AIで“seed作り”と“デバッグ”を爆速にする💨
+
+![AI Data Generation](./picture/firebase_firestore_base_ts_study_019_07_ai_data.png)
 
 ## 1) Firebase AI Logicで seed案を作る🧠✨
 

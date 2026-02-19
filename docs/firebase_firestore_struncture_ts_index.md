@@ -20,6 +20,8 @@
 
 ## 20章アウトライン（読む→手を動かす→ミニ課題→チェック）📚✨
 
+![Course Map](./picture/firebase_firestore_struncture_ts_index_01_course_map.png)
+
 ### 第1章：Firestore設計って何を決めるの？（最短で地図を作る）🗺️
 
 * 読む：設計で決めるのは「画面に必要な取り出し方」から逆算😄
@@ -30,6 +32,8 @@
 ---
 
 ### 第2章：エンティティ分解（User / Report / Post / Comment）🧩
+
+![Entity Relations](./picture/firebase_firestore_struncture_ts_index_02_entity_relation.png)
 
 * 読む：「どの単位がドキュメント？」を決める
 * 手を動かす：各エンティティの必須フィールドを列挙
@@ -49,6 +53,8 @@
 
 ### 第4章：サブコレクションの使いどころ（親子関係に強い）🧩
 
+![Subcollection vs Top-Level](./picture/firebase_firestore_struncture_ts_index_03_subcollection.png)
+
 * 読む：サブコレは「親にぶら下がる大量データ」に強い💪
 * 手を動かす：`posts/{postId}/comments/{commentId}` を作る案を考える
 * ミニ課題：**コメントはサブコレ？トップレベル？**両案を作る
@@ -66,6 +72,8 @@
 ---
 
 ### 第6章：正規化 vs 非正規化（Firestore流の割り切り）⚖️
+
+![Normalization Scale](./picture/firebase_firestore_struncture_ts_index_04_normalization.png)
 
 * 読む：Firestoreは“JOINしない前提”で考えるのがコツ😄
 * 手を動かす：記事に表示したい「投稿者名/アイコン」をどう持つか考える
@@ -103,6 +111,8 @@
 
 ### 第10章：集計の全体像（いつ計算する？いつ保存する？）🧮
 
+![Aggregation Methods](./picture/firebase_firestore_struncture_ts_index_06_aggregation.png)
+
 * 読む：集計は「その場で数える」or「保存しておく」の二択
 * 手を動かす：コメント数/いいね数/ランキングを分類する
 * ミニ課題：「リアルタイム性が必要？」を各集計に付ける
@@ -138,6 +148,8 @@
 ---
 
 ### 第14章：インデックスの超基本（何が速くなる？何が増える？）🧭
+
+![Index Mechanism](./picture/firebase_firestore_struncture_ts_index_05_index_mech.png)
 
 * 読む：Firestoreはインデックスが命！複合インデックスも理解🛠️ ([Firebase][7])
 * 手を動かす：自分のクエリ10個に「必要そうなインデックス」を印をつける
@@ -209,6 +221,8 @@
 ---
 
 ## AIで設計が爆速になる「使い方テンプレ」🤖⚡（Antigravity / Gemini CLI）
+
+![AI Design Assistant](./picture/firebase_firestore_struncture_ts_index_07_ai_assistant.png)
 
 * Antigravityは“エージェントが計画→実行→検証”まで回す思想の開発環境（Mission Control的な使い方） ([Google Codelabs][13])
 * Gemini CLIはターミナルで動くAIエージェント（ReActで作業を進める） ([Google for Developers][14])
