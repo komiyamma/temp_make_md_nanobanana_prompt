@@ -8,6 +8,8 @@
 
 ## 1) 読む📚：手動デプロイって何をしてるの？🤔
 
+![Build and Deploy Flow](./picture/firebase_hosting_ts_study_003_01_build_deploy_flow.png)
+
 ## ビルド＝「配る用の完成品」を作る🧁
 
 開発中は `npm run dev` で“開発サーバー”が動いてるけど、それは**自分のPC用**なんだよね🖥️
@@ -50,6 +52,8 @@ npm install
 
 ## Step 2：ビルドして `dist/` を作る📦✨
 
+![Dist Folder Content](./picture/firebase_hosting_ts_study_003_02_dist_folder.png)
+
 ```powershell
 npm run build
 ```
@@ -59,6 +63,8 @@ npm run build
 ---
 
 ## Step 3：Hostingの初期化（第2章で済ならスキップ）🧱
+
+![Init Question for Vite](./picture/firebase_hosting_ts_study_003_03_vite_init.png)
 
 まだ `firebase.json` がない場合だけやってね！
 
@@ -73,6 +79,8 @@ Hostingは `firebase.json` の **`hosting.public` に指定されたディレク
 ---
 
 ## Step 4：`firebase.json` を確認（大事ポイント）🧾👀
+
+![Firebase JSON Structure](./picture/firebase_hosting_ts_study_003_04_json_config.png)
 
 `firebase.json` にこういう感じで書かれていればOK！（例）
 
@@ -96,6 +104,8 @@ Hostingは `firebase.json` の **`hosting.public` に指定されたディレク
 
 ## Step 5：いよいよ手動デプロイ！🚀🌐
 
+![Deploy Success Screen](./picture/firebase_hosting_ts_study_003_05_deploy_success.png)
+
 ```powershell
 firebase deploy --only hosting
 ```
@@ -106,6 +116,8 @@ firebase deploy --only hosting
 ---
 
 ## Step 6：更新→再ビルド→再デプロイ（“公開更新”を体に覚えさせる）🔁🔥
+
+![Deployment Cycle](./picture/firebase_hosting_ts_study_003_06_edit_cycle.png)
 
 1. どこでもいいのでUIをちょっと変える（例：見出しの文字を変える）✍️
 2. もう一回ビルド📦
@@ -140,6 +152,8 @@ firebase deploy --only hosting
 ---
 
 ## 5) つまずき救急箱🧯（よくあるやつだけ！）
+
+![Wrong Public Folder Error](./picture/firebase_hosting_ts_study_003_07_public_error.png)
 
 ## 😵「デプロイしたのにFirebaseのデフォルトページが出る」
 

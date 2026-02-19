@@ -5,6 +5,8 @@
 
 ---
 
+![Deployment Pipeline Goal](./picture/firebase_hosting_ts_index_01_goal.png)
+
 ## このカテゴリで作る完成イメージ🎯
 
 * Reactアプリを **Firebase Hosting** に公開して、URLで見れる🌐
@@ -15,6 +17,8 @@
 * AIもガッツリ活用：コンソールAI支援／AI Logic／Genkit／MCPで “詰まり” を潰す🤖🧯([Firebase][4])
 
 ---
+
+![Service Ecosystem](./picture/firebase_hosting_ts_index_02_ecosystem.png)
 
 ## 使う主要サービス🧩
 
@@ -30,6 +34,8 @@
 ---
 
 ## ✅ 20章アウトライン（読む→手を動かす→ミニ課題→チェック）📚✨
+
+![Static Hosting Concept](./picture/firebase_hosting_ts_index_03_part_a.png)
 
 ## Part A：まず “公開できた！” を作る🚀
 
@@ -70,6 +76,8 @@
 
 ---
 
+![CI/CD Robot](./picture/firebase_hosting_ts_index_04_part_b.png)
+
 ## Part B：CI/CDで “PRプレビュー→本番” を回す🤖🔁
 
 ### 第6章：Preview Channel入門（プレビューURLを作る）🔎
@@ -109,6 +117,8 @@
 
 ---
 
+![Quality Shield](./picture/firebase_hosting_ts_index_05_part_c.png)
+
 ## Part C：公開品質を上げる（HTTPS・キャッシュ・ドメイン）🌐🛡️
 
 ### 第11章：HTTPSとカスタムドメイン（“ちゃんとしたサイト感”）🔒
@@ -141,6 +151,8 @@
 
 ---
 
+![App Hosting Dynamic](./picture/firebase_hosting_ts_index_06_part_d.png)
+
 ## Part D：App Hostingで“動的Web”も運用する🧩🚀
 
 ### 第15章：App Hosting入門（何がラク？）✨
@@ -172,6 +184,8 @@
 * チェック：運用の安心感が増える✅
 
 ---
+
+![AI Ops Team](./picture/firebase_hosting_ts_index_07_part_e.png)
 
 ## Part E：AIで“リリース体験”を実務っぽくする🤖🔥
 

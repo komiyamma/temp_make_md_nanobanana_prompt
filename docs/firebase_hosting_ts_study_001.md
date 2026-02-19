@@ -10,6 +10,8 @@
 
 ## 1) そもそも「公開」って何？🌐
 
+![Public Hosting Concept](./picture/firebase_hosting_ts_study_001_01_public_concept.png)
+
 超ざっくり言うと👇
 
 * あなたのアプリ（HTML / CSS / JavaScript / 画像など）を **世界中から取りに来れる場所に置く**
@@ -24,6 +26,8 @@
 
 ## ✅ Hosting が向いてる（基本、ReactのSPAはこっち）⚡
 
+![Hosting for SPA](./picture/firebase_hosting_ts_study_001_02_hosting_use_case.png)
+
 * いわゆる **SPA（シングルページアプリ）**：Vite + React Router みたいなやつ🧩
 * ビルドすると **静的ファイル（HTML/CSS/JS）がフォルダに出る**
 * 公開後も、基本は「ファイルを配る」だけで成立する📦
@@ -33,6 +37,8 @@ Firebase Hosting は **静的・SPAに最適化**されていて、ルーティ�
 ---
 
 ## ✅ App Hosting が向いてる（SSR/フルスタック寄り）🚀
+
+![App Hosting for SSR](./picture/firebase_hosting_ts_study_001_03_app_hosting_use_case.png)
 
 * **SSR（サーバーサイドレンダリング）**が必要（アクセスのたびにHTMLをサーバーで組み立てる）🧠
 * Next.js / Angular で “フルスタック” をやりたい（サーバー処理も同居）🧩
@@ -44,6 +50,8 @@ App Hosting は **Angular / Next.js 向けに本番利用（GA）**として提�
 ---
 
 ## 3) Hosting と App Hosting を「一枚で」比較🧾✨
+
+![Hosting vs App Hosting](./picture/firebase_hosting_ts_study_001_04_comparison.png)
 
 | ざっくり観点      | Hosting ⚡                          | App Hosting 🚀                 |
 | ----------- | ---------------------------------- | ------------------------------ |
@@ -57,6 +65,8 @@ App Hosting は **Angular / Next.js 向けに本番利用（GA）**として提�
 ---
 
 ## 4) 仕分けの超シンプル診断（これだけで8割当たる）🎯
+
+![Selection Flowchart](./picture/firebase_hosting_ts_study_001_05_decision_tree.png)
 
 ## Q1：ビルドした成果物は「ただのファイル」？📦
 
@@ -93,6 +103,8 @@ App Hosting は **Angular / Next.js 向けに本番利用（GA）**として提�
 
 ## 6) AIで「仕分け」を爆速にする🤖⚡（ここが2026っぽい）
 
+![AI Decision Helper](./picture/firebase_hosting_ts_study_001_06_ai_helper.png)
+
 ## 6-1) Gemini in Firebase で相談する🧯
 
 Firebaseコンソールの中で、詰まりを自然言語で聞ける枠が用意されています🗨️✨([Firebase][7])
@@ -118,6 +130,8 @@ Firebaseの **MCP server** を使うと、AI開発ツール（Antigravity / Gemi
 ---
 
 ## 7) 手を動かす🛠️：自分のアプリを“仕分け”してみよう
+
+![Build Folder Check](./picture/firebase_hosting_ts_study_001_07_build_check.png)
 
 ここは **今あるReactアプリ**（または作成予定のサンプル）を対象にやります📁✨
 

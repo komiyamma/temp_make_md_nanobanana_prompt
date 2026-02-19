@@ -17,6 +17,8 @@
 
 ## 1) まず “全体像” を頭に入れる🧠🗺️
 
+![Hosting Deployment Flow](./picture/firebase_hosting_ts_study_002_01_process_overview.png)
+
 イメージはこれ👇
 
 * **Firebaseプロジェクト**：クラウド上の「公開先の土地」🏝️
@@ -56,6 +58,8 @@ Firebaseコンソールで「プロジェクトを追加」して作成します
 
 ## Step C：Node.js を入れる（CLIの土台）🟩
 
+![Node.js Version Selection](./picture/firebase_hosting_ts_study_002_02_node_selection.png)
+
 Firebase CLIは、最近の構成だと **Node.jsが新しめ**じゃないとつまずきやすいです🥺
 Node.js は **v24 が Active LTS**（安定枠）なので、まずこれを選ぶのが安全です✅
 （v25は“Current”＝最新機能枠、安定より新しさ寄り） ([Node.js][2])
@@ -63,6 +67,8 @@ Node.js は **v24 が Active LTS**（安定枠）なので、まずこれを選�
 ---
 
 ## Step D：Firebase CLI をインストールする🧰
+
+![Firebase CLI Install](./picture/firebase_hosting_ts_study_002_03_cli_install.png)
 
 基本はこれでOK👇
 
@@ -98,6 +104,8 @@ firebase projects:list
 
 ## Step F：Hosting を初期化する（ここが本章のメイン！）🧱✨
 
+![Init Wizard](./picture/firebase_hosting_ts_study_002_04_init_wizard.png)
+
 ```powershell
 firebase init hosting
 ```
@@ -132,6 +140,8 @@ firebase deploy --only hosting
 ---
 
 ## 3) `public` ディレクトリって何？📦（ここが超重要）
+
+![Public Directory Concept](./picture/firebase_hosting_ts_study_002_05_public_folder.png)
 
 超ざっくり言うと👇
 **「Firebase Hostingにアップロードされるファイル置き場」**です📦✨
@@ -175,6 +185,8 @@ Firebaseコンソール上で有効化して、困ったらその場で質問で
 
 ## 4-2) Antigravity / Gemini CLI から Firebase を“会話で操作しやすくする”🧩
 
+![Firebase MCP Server](./picture/firebase_hosting_ts_study_002_06_mcp_server.png)
+
 ここで効いてくるのが **Firebase MCP server** です💡
 MCPを入れると、AIツール側がFirebase操作の“道具（ツール）”を持てるようになります。しかも **Antigravity** や **Gemini CLI** でも使える、と公式に書かれています。 ([Firebase][6])
 
@@ -213,6 +225,8 @@ MCP Servers 画面から Firebase を入れると `mcp_config.json` が自動更
 ---
 
 ## 7) よくある詰まりポイント🧯（速攻で抜けるやつ）
+
+![Common Errors](./picture/firebase_hosting_ts_study_002_07_troubleshooting.png)
 
 * **npmで “Nodeのバージョンが違う” 系のエラー**
   → Node.js を v24（Active LTS）に揃えるのがラク ✅ ([Node.js][2])
