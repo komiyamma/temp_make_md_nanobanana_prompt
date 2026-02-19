@@ -8,6 +8,8 @@
 
 ## 7-0) 今日作るもの（完成イメージ）🧩✨
 
+![Email Verification & Reset](./picture/firebase_login_ts_study_007_01_email_actions.png)
+
 * ✅ サインアップ直後に **確認メール** を送る📩
 * ✅ ログイン後、未確認なら **警告バナー** を出す⚠️
 
@@ -33,6 +35,8 @@ Firebase 側は「確認フローを完了した」などの条件でメール�
 
 ## ✅ そして超重要：`emailVerified` は勝手に更新されない😇
 
+![Reload User State](./picture/firebase_login_ts_study_007_02_reload_user.png)
+
 ユーザーが別タブ/別端末で確認リンク踏んでも、**いま開いてる画面の `user` は古いまま**になりがち。
 だから「確認した！」ボタンで **reload（再取得）** して更新するのが気持ちいい👍
 （「ユーザー情報は reload して更新できる」という考え方が公式にもあるよ）([Firebase][2])
@@ -40,6 +44,8 @@ Firebase 側は「確認フローを完了した」などの条件でメール�
 ---
 
 ## 7-2) 実装①：サインアップ直後に確認メールを送る📩✨
+
+![Send Verification](./picture/firebase_login_ts_study_007_03_send_verification.png)
 
 サインアップ（`createUserWithEmailAndPassword`）が成功した直後に、確認メールを送るよ。
 
@@ -71,6 +77,8 @@ export async function signupWithEmail(email: string, password: string) {
 ---
 
 ## 7-3) 実装②：未確認ユーザーに“やさしい警告バナー”を出す⚠️📌
+
+![Verification Banner Logic](./picture/firebase_login_ts_study_007_04_banner_logic.png)
 
 ログイン後、`user.emailVerified === false` のときだけ表示する小コンポーネントを作るよ。
 
@@ -143,6 +151,8 @@ export function EmailVerificationBanner() {
 
 ## 7-4) 実装③：パスワードリセット（忘れた人の救済）🔑🛟
 
+![Password Reset Flow](./picture/firebase_login_ts_study_007_05_password_reset.png)
+
 ログイン画面に「パスワードを忘れた？」リンクを置いて、メール入力→送信の流れを作るよ📨
 
 ```tsx
@@ -205,6 +215,8 @@ export function ForgotPassword() {
 
 ## ✅ そして初心者が一番ハマる：Authorized domains に `localhost` が無い😇
 
+![Authorized Domains](./picture/firebase_login_ts_study_007_06_authorized_domains.png)
+
 2025年4月28日以降に作った Firebase プロジェクトは、**`localhost` が最初から許可されない**仕様になった、って公式に明記があるよ。([Firebase][3])
 なので開発中にメールリンクの挙動がおかしいときは、Console の **Authentication → Settings → Authorized domains** に
 
@@ -253,6 +265,8 @@ export const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 ```
 
 ## ✅ 例：未確認バナーの説明文をAIに作らせる🙂✨
+
+![AI Friendly Hint](./picture/firebase_login_ts_study_007_07_ai_hint.png)
 
 （UIに表示する短文だけ生成する。メール本文そのものをAIに作らせるのは後回しでもOK👍）
 

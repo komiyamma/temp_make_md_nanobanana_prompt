@@ -9,6 +9,8 @@
 
 ## 1) まずイメージ：ログイン状態は「3つの状態」になる🧠🧊🔥
 
+![Three Authentication States](./picture/firebase_login_ts_study_004_01_three_states.png)
+
 アプリ起動直後、認証状態はこうなりがち👇
 
 1. **まだ分からない**（初期化中）⏳ ← ここが超重要！
@@ -25,6 +27,8 @@
 
 ## 2) 「監視」の正体：`onAuthStateChanged` は何をしてくれる？👀
 
+![Auth Monitor Flow](./picture/firebase_login_ts_study_004_02_monitor_flow.png)
+
 `onAuthStateChanged(auth, callback)` は、
 
 * ログイン状態が確定したら `callback(user)` を呼ぶ✅
@@ -37,6 +41,8 @@
 ---
 
 ## 3) 実装方針：`AuthProvider`（React Context）で全画面共通の“背骨”にする🦴🧩
+
+![AuthProvider Backbone](./picture/firebase_login_ts_study_004_03_provider_bone.png)
 
 この章で作るものはこれ👇
 
@@ -135,6 +141,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 ## 5) 表示を切り替える：`AuthGate` を作ってチラつきを消す✨🪄
 
+![AuthGate Switch](./picture/firebase_login_ts_study_004_04_auth_gate.png)
+
 ```tsx
 // src/features/auth/AuthGate.tsx
 import React from "react";
@@ -185,6 +193,8 @@ export default function App() {
 
 ## 6) ここで一回「永続化」の感覚だけ掴む💾🧠
 
+![Persistence Types](./picture/firebase_login_ts_study_004_05_persistence.png)
+
 「リロードしてもログインが残る」って、魔法じゃなくて **永続化（persistence）** の話です✨
 Webではデフォルトが **`local`**（ブラウザが対応していれば）になっていて、タブを閉じても残ります。 ([Firebase][3])
 
@@ -199,6 +209,8 @@ Webではデフォルトが **`local`**（ブラウザが対応していれば�
 ---
 
 ## 7) AI を絡める：ログイン状態の説明文を “その場で” やさしくする🤖💬✨
+
+![AI Logic Helper](./picture/firebase_login_ts_study_004_06_ai_helper.png)
 
 ここはミニおまけ！
 **Firebase AI Logic** は、アプリから **Gemini** を呼んで文章生成などをしやすくする導線です🧠✨ ([Firebase][4])
@@ -232,6 +244,8 @@ export async function makeAuthHintText(isSignedIn: boolean) {
 ---
 
 ## 8) Antigravity / Gemini CLI をこの章でどう使う？🚀🔍
+
+![Antigravity Mission Control](./picture/firebase_login_ts_study_004_07_antigravity.png)
 
 ## ✅ Google Antigravity（エージェント開発環境）での使い方🛰️
 

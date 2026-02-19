@@ -55,7 +55,11 @@
 
 ## 2) まずは“自前で”いく：小さく確実なフォームロジック🧩
 
+![Validation Flow](./picture/firebase_login_ts_study_008_01_validation_logic.png)
+
 ## ✅ フォームに必要なstate
+
+![Form State Object](./picture/firebase_login_ts_study_008_02_form_state.png)
 
 * `values`（email/password）
 * `touched`（触ったかどうか：最初から赤文字だらけを避ける😇）
@@ -92,6 +96,8 @@ export function validateConfirmPassword(password: string, confirm: string): stri
 ---
 
 ## 3) 送信中UI：二重送信を“確実に止める”🛑⏳
+
+![Double Submit Guard](./picture/firebase_login_ts_study_008_03_double_submit.png)
 
 ポイントは2段構え👇
 
@@ -248,6 +254,8 @@ export function LoginForm() {
 
 ## おまけ：AIで“フォームのヒント文”を自動生成🤖💬✨
 
+![AI Form Assistant](./picture/firebase_login_ts_study_008_04_ai_hint.png)
+
 Firebase AI Logic は、アプリからGeminiを呼べる仕組みだよ（公式）([Firebase][3])
 しかも `firebase/ai` で **Webからの初期化例**が出てる（Firebase公式ブログのコード）([The Firebase Blog][4])
 
@@ -299,6 +307,8 @@ export async function buildSignupHint(params: {
 ---
 
 ## Antigravity / Gemini CLI の使いどころ🚀🧠
+
+![AI Tools for Forms](./picture/firebase_login_ts_study_008_05_tools.png)
 
 * Antigravity：フォームUIの叩き台（コンポーネント分割＋状態設計）を作らせるのに向いてる✨
 * Gemini CLI：リポジトリ全体を見せて「二重送信になりうる箇所」「`finally` 漏れ」みたいな**レビュー**に使うのが強い🔎

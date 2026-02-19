@@ -8,6 +8,8 @@
 
 ## ゴール🎯
 
+![Authentication Cycle](./picture/firebase_login_ts_study_006_01_cycle.png)
+
 * ログインフォームから **メールログイン**できる✅
 * ログアウトで **ログイン前UIに戻る**✅
 * 失敗時に **ユーザーに優しいエラーメッセージ**を出せる✅
@@ -26,6 +28,8 @@
 ## 手を動かす🛠️：ログイン画面を作る（React + TypeScript）
 
 ## 1) 便利な「エラー翻訳」関数を用意😇🗺️
+
+![Friendly Error Logic](./picture/firebase_login_ts_study_006_02_error_logic.png)
 
 ログイン失敗は、基本 **「メールかパスワードが違う」** に寄せるのが安全です（理由は後述）。([Zenn][3])
 
@@ -57,6 +61,8 @@ export function toFriendlyAuthMessage(code: string): string {
 ---
 
 ## 2) ログインページ本体を実装✍️🚀
+
+![Login Screen UI](./picture/firebase_login_ts_study_006_03_login_ui.png)
 
 `signInWithEmailAndPassword(auth, email, password)` を呼ぶだけ！([Firebase][1])
 
@@ -170,6 +176,8 @@ export function LogoutButton() {
 
 ## 4) いちばん簡単な「UI切り替え」例🔁
 
+![Conditional UI Switching](./picture/firebase_login_ts_study_006_04_app_switch.png)
+
 （ルーターやガードは後の章で本格的にやるとして、まずは最短で成功体験🙂）
 
 ```tsx
@@ -213,6 +221,8 @@ export default function App() {
 
 ## ✅ ログイン失敗が「全部同じ」に見えるのはバグじゃない
 
+![Email Enumeration Protection](./picture/firebase_login_ts_study_006_05_security_mask.png)
+
 最近の設定/仕様では、**メールアドレスが存在するかどうかを推測されないように**、ログイン失敗が “まとめて同じ扱い” になることがあります。
 そのため、アプリ側は「未登録です！」みたいに断定しないほうが安全です。([Zenn][3])
 
@@ -225,6 +235,8 @@ export default function App() {
 ---
 
 ## AIでUX強化🤖✨：失敗理由を“やさしく説明”ボタンにする
+
+![AI Error Explanation](./picture/firebase_login_ts_study_006_06_ai_assist.png)
 
 ログイン失敗時に、ボタン1つで「何を確認すればいいか」を生成すると親切です🙂
 Firebase AI Logic の Web例は `firebase/ai` を使う形が公式です。([Firebase][2])
@@ -258,6 +270,8 @@ async function explainWithAI(errorMessage: string) {
 ---
 
 ## Antigravity / Gemini CLI を“第6章の相棒”にする🧠🛠️
+
+![Gemini CLI Ecosystem](./picture/firebase_login_ts_study_006_07_cli_tools.png)
 
 ## ✅ Gemini CLI 側に Firebase の道具箱（MCP）を追加
 
