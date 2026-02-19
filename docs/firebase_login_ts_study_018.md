@@ -8,6 +8,8 @@
 
 ## 0) まずはイメージ図（これができると強い）🧠✨
 
+![ID Token Verification Architecture](./picture/firebase_login_ts_study_018_01_architecture.png)
+
 ```text
 React(ブラウザ) ── getIdToken() ──▶  Authorization: Bearer <IDトークン>
         │                                                │
@@ -50,6 +52,8 @@ firebase init functions
 ---
 
 ## 2-2) “HTTP + IDトークン検証” を最小で書く✍️🔐
+
+![HTTP Verification Logic](./picture/firebase_login_ts_study_018_02_http_verification.png)
 
 `functions/src/index.ts` に **「Authorization: Bearer …」を検証して uid を返す**関数を作ります。
 
@@ -147,6 +151,8 @@ export async function callWhoAmI(apiUrl: string) {
 
 ## 4) もっと楽にする：Callable（onCall）で“自動検証”に寄せる🚀
 
+![Callable Function Advantage](./picture/firebase_login_ts_study_018_03_callable_magic.png)
+
 HTTP（onRequest）は自由度が高い代わりに、**CORSやBearer処理を自分で書く**ことが多いです。
 Callable（onCall）は、**Authorizationトークンをバックエンドが自動検証**して、`context`に入れてくれます（ラク！）([Firebase][4])
 
@@ -189,6 +195,8 @@ Callableは **プリフライトも自動処理**してくれます（地味に�
 
 ## 5) Node / Python / .NET の“選び方”ざっくり🧭
 
+![Runtime Support](./picture/firebase_login_ts_study_018_04_language_support.png)
+
 ## Node（Functions）🟩
 
 * Node **20 / 22** がフルサポート（18はdeprecated）([Firebase][3])
@@ -214,11 +222,15 @@ Callableは **プリフライトも自動処理**してくれます（地味に�
 
 ## 6-1) CORSで詰む😇
 
+![CORS Preflight Trap](./picture/firebase_login_ts_study_018_05_cors_trap.png)
+
 * `Authorization` を付けるとブラウザが **OPTIONS（プリフライト）** を投げがち
 * HTTP関数は `cors` オプションで解決しやすいです([Firebase][2])
 * Callableはプリフライトも自動でうまくやってくれます([Firebase][4])
 
 ## 6-2) 「検証OK＝完全に安全」ではない🙅‍♂️
+
+![Revocation Check](./picture/firebase_login_ts_study_018_06_revocation_check.png)
 
 * `verifyIdToken()` は署名や期限は見ますが、**失効（revoked）チェックは別**と公式に注意があります([Firebase][1])
 
@@ -255,6 +267,8 @@ Gemini CLIはターミナル上で動くオープンソースAIエージェン�
 * 「ログにトークン文字列を出してない？」（これ地雷🔥）
 
 ## 7-3) Firebase AI Logicで“やさしい説明文”を作る💬✨
+
+![AI 401 Handler](./picture/firebase_login_ts_study_018_07_ai_401_helper.png)
 
 Firebase AI Logicは、モバイル/ウェブからGemini/Imagenを呼ぶ用途に最適化されたSDK＆セキュリティ統合（App Checkなど）を提供しています([Firebase][8])
 
