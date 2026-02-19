@@ -7,7 +7,9 @@ Firestoreのページングは、基本 **`limit` + カーソル（`startAfter` 
 
 ## 1) まず結論：ページングの正解ルートはこれ！✅📌
 
-**✅オフセット（n件スキップ）は避ける**
+**✅オフセット（n件スキップ）は避ける
+
+![firebase_firestore_struncture_ts_study_018_01_offset_vs_cursor.png](./picture/firebase_firestore_struncture_ts_study_018_01_offset_vs_cursor.png)**
 Firestoreは `offset` を使うと、**スキップした分も読み取り課金**されます💸（例：offset10で1件返っても11 reads）
 なので **カーソル（cursors）を使う**のが推奨です✨ ([Firebase][1])
 
@@ -37,7 +39,9 @@ Firestoreは `offset` を使うと、**スキップした分も読み取り課�
 ### ✅(B) `orderBy()` したフィールドは **全ドキュメントに必ず入れる**🧱
 
 `orderBy()` は **そのフィールドを持たないドキュメントを結果から除外**します⚠️
-つまり `createdAt` が入ってない投稿が混ざると、一覧から消えて「え？ないんだけど？」になります😂 ([Firebase][3])
+つまり `createdAt` が入ってない投稿が混ざると、一覧から消えて「え？ないんだけど？」になります😂
+
+![firebase_firestore_struncture_ts_study_018_02_missing_field.png](./picture/firebase_firestore_struncture_ts_study_018_02_missing_field.png) ([Firebase][3])
 
 > 対策：作成時に `createdAt` を必ず入れる（設計で勝つ🏆）
 
@@ -46,6 +50,8 @@ Firestoreは `offset` を使うと、**スキップした分も読み取り課�
 カーソルを「フィールド値」で作ると、**同じ値のドキュメントが複数あると曖昧**になって狙い通りにページングできないことがあります（公式ドキュメントでも注意されています） ([Firebase][2])
 
 対策は2つ👇
+
+![firebase_firestore_struncture_ts_study_018_03_tie_breaker.png](./picture/firebase_firestore_struncture_ts_study_018_03_tie_breaker.png)
 
 1. **DocumentSnapshot（最後のドキュメント）をカーソルにする**（一番ラクで強い💪）
 2. フィールド値カーソルを使うなら、**複数フィールドでカーソルを精密化**する（例：`createdAt` + `id`） ([Firebase][2])
@@ -61,7 +67,9 @@ Firestoreは `offset` を使うと、**スキップした分も読み取り課�
 * **次ページは `startAfter(lastDoc)`**
 * **lastDoc は QuerySnapshot の最後の doc**
 
-> 公式でも「最後のドキュメントを取って、次クエリを startAfter で作る」流れが紹介されています📌 ([Firebase][2])
+> 公式でも「最後のドキュメントを取って、次クエリを startAfter で作る」流れが紹介されています📌
+
+![firebase_firestore_struncture_ts_study_018_04_paging_flow.png](./picture/firebase_firestore_struncture_ts_study_018_04_paging_flow.png) ([Firebase][2])
 
 ```ts
 import {
@@ -127,6 +135,8 @@ export async function fetchPostsPage(cursor: QueryDocumentSnapshot<DocumentData>
 
 ## 4) React：無限スクロール用の Hook を作る🪝⚡
 
+![firebase_firestore_struncture_ts_study_018_05_hook_state.png](./picture/firebase_firestore_struncture_ts_study_018_05_hook_state.png)
+
 やりたいことはシンプル👇
 
 * 画面表示で最初のページを読み込む
@@ -184,6 +194,8 @@ export function useInfinitePosts() {
 ---
 
 ## 5) IntersectionObserverで “下に来たら読む” 👀👇
+
+![firebase_firestore_struncture_ts_study_018_06_sentinel_trigger.png](./picture/firebase_firestore_struncture_ts_study_018_06_sentinel_trigger.png)
 
 ```tsx
 import { useEffect, useRef } from "react";
@@ -278,7 +290,9 @@ Googleの Antigravity は、会話を追えるInboxや、ファイル生成・�
 ### ✅Firebase AI Logic：無限スクロールと相性が良いけど “レート制限” に注意⚠️
 
 無限スクロールで「各投稿をAIで要約」みたいにすると、スクロールだけでリクエストが増えます📈
-Firebase AI Logic 側には “per user” のレート制限があり、**デフォルトが 100 RPM** と明記されています（必要に応じて調整推奨）([Firebase][6])
+Firebase AI Logic 側には “per user” のレート制限があり
+
+![firebase_firestore_struncture_ts_study_018_07_ai_guard.png](./picture/firebase_firestore_struncture_ts_study_018_07_ai_guard.png)、**デフォルトが 100 RPM** と明記されています（必要に応じて調整推奨）([Firebase][6])
 
 > 対策アイデア💡
 >
