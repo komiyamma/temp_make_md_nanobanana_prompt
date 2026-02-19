@@ -5,6 +5,8 @@
 
 ---
 
+![Auth Skeleton](./picture/firebase_login_ts_index_01_skeleton.png)
+
 ## 各章の詳細（読む→手を動かす→ミニ課題→チェック）📚🛠️✅
 
 ### 第01章：ゴール確認：このカテゴリで作る“認証の骨格”🔩
@@ -12,6 +14,8 @@
 * **読む**：Firebase Authenticationでできること（全体像）([Firebase][2])
 * **手を動かす**：画面を3つ決める（例：ログイン、サインアップ、マイページ）🧱
 * **チェック**：ログイン状態でUIが切り替わる絵が頭に浮かぶ🙂
+
+![Provider Switch](./picture/firebase_login_ts_index_02_console_switch.png)
 
 ### 第02章：Console設定：Authプロバイダ有効化＆最低限の安全設定🧯
 
@@ -25,6 +29,8 @@
 * **読む**：Web Authの導入（公式）([Firebase][1])
 * **手を動かす**：`firebase/app` と `firebase/auth` を導入し、`auth` をexport
 * **チェック**：アプリ起動時にエラーなくAuthが初期化されている✅
+
+![Auth State Monitor](./picture/firebase_login_ts_index_03_monitor.png)
 
 ### 第04章：ログイン状態の監視：`onAuthStateChanged`で背骨を通す🦴
 
@@ -58,6 +64,8 @@
   * 送信中はボタン無効＋スピナー表示⏳
 * **チェック**：連打・二重送信が起きない✅
 
+![Error Translator](./picture/firebase_login_ts_index_04_error_translation.png)
+
 ### 第09章：エラー設計①：Firebaseエラーを人間の言葉に翻訳する😇
 
 * **読む**：Authエラーの考え方（エラーコードを“処理する前提”）([Firebase][2])
@@ -81,6 +89,8 @@
 * **手を動かす**：Googleボタン → `signInWithPopup()`（まずはこれで成功体験）
 * **チェック**：Googleでログインできる✅
 
+![Popup vs Redirect](./picture/firebase_login_ts_index_05_google_flow.png)
+
 ### 第12章：Popup/Redirectの使い分け：詰まりどころ回避の知恵🧠
 
 * **読む**：ポップアップかリダイレクトか（公式にも明確に言及あり）([Google Cloud Documentation][6])
@@ -96,6 +106,8 @@
 * **手を動かす**：Redirectフローの“戻り処理”をちゃんと実装（結果取得・エラー表示）
 * **チェック**：本番でハマりがちなポイントを先に踏めた✅
   （Google Sign-in周りはFedCM移行など“周辺の変化”があるので、この章は重要）([Google for Developers][8])
+
+![Account Linking](./picture/firebase_login_ts_index_07_account_linking.png)
 
 ### 第14章：アカウント設計：同一人物の“統合”（リンク）を理解する🧷
 
@@ -114,6 +126,8 @@
   * 「共有PCならsession」「個人PCならlocal」みたいに方針を作る
 * **注意**：`setPersistence()` は呼び方で挙動が変わる/セッションが消えるケースがあるので、**“いつ呼ぶか”**を決めておく🧠 ([GitHub][11])
 * **チェック**：ログインが“勝手に消える/残りすぎる”を制御できる✅
+
+![Route Guard](./picture/firebase_login_ts_index_06_route_guard.png)
 
 ### 第16章：画面ガード：ログイン必須ページ（ルート保護）を作る🚧
 

@@ -5,6 +5,8 @@
 
 ---
 
+![Project Structure](./picture/firebase_login_ts_study_003_05_file_structure.png)
+
 ## 0) 今日できあがるもの 🎯
 
 * `firebase` SDK を入れる 📦
@@ -16,6 +18,8 @@
 （FirebaseのWeb導入は “npmで入れて initialize して使う” の流れが公式です）([Firebase][1])
 
 ---
+
+![NPM Install](./picture/firebase_login_ts_study_003_01_install.png)
 
 ## 1) SDKをインストール 📦✨
 
@@ -35,6 +39,8 @@ npm ls firebase
 
 ---
 
+![Config Source](./picture/firebase_login_ts_study_003_02_config_source.png)
+
 ## 2) Firebase設定（firebaseConfig）を用意する 🔧
 
 Firebaseコンソールの「Webアプリ」の設定で出てくる **firebaseConfig** を使います。
@@ -44,6 +50,8 @@ Firebaseコンソールの「Webアプリ」の設定で出てくる **firebaseC
 > **Gemini用に生成される「Gemini API key」はアプリコードに入れないでね**（ここは別扱いで超重要⚠️）([Firebase][4])
 
 ---
+
+![Env Var Injection](./picture/firebase_login_ts_study_003_03_env_injection.png)
 
 ## 3) `.env.local` に設定値を入れる（Vite想定）🧪
 
@@ -60,6 +68,8 @@ VITE_FIREBASE_APP_ID=1:1234567890:web:xxxxxxxxxxxx
 ```
 
 ---
+
+![Singleton Guard](./picture/firebase_login_ts_study_003_04_singleton_guard.png)
 
 ## 4) `firebase.ts` を作る（ここが“背骨”🦴）🧩
 
@@ -136,6 +146,8 @@ npm run dev
 
 ---
 
+![Firebase AI Integration](./picture/firebase_login_ts_study_003_06_ai_integration.png)
+
 ## 7) 🤖AIサービスも“同じ配線”でつながる（超うれしいポイント）✨
 
 FirebaseのAI（Firebase AI Logic）は、Webだと `firebase/ai` から使います。([Firebase][4])
@@ -177,6 +189,8 @@ export const model = getGenerativeModel(ai, { model: "gemini-2.5-flash" });
 * `firebase.ts` を見せて「初期化の二重実行の可能性ある？」「安全に直して」みたいに聞くと、**構成チェック**が速いです⚡（Gemini CLIはターミナルから使えるAIエージェントとして案内されています）([Google Cloud Documentation][6])
 
 ---
+
+![Debugging Init](./picture/firebase_login_ts_study_003_07_debugger.png)
 
 ## 9) ミニ課題 🎮✅
 
