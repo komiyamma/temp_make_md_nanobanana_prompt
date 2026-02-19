@@ -15,6 +15,8 @@
 
 ## 1) まず「秘密情報」って何？🧨
 
+![Types of Secrets](./picture/firebase_functions_ts_study_010_01_secret_types.png)
+
 秘密情報は、こういうの👇
 
 * 🔑 APIキー（例：Gemini API / 外部SaaS）
@@ -29,9 +31,13 @@
 
 ## 2) 2026の正解：Secrets + params を使う🧠✨
 
+![Config Evolution](./picture/firebase_functions_ts_study_010_07_config_evolution.png)
+
 昔の `functions.config()` は **非推奨** で、**2027年3月に廃止予定**（その後は `functions.config` を含むデプロイが失敗）と明記されています。なので今からは「Secret Manager / params」寄せが安全です。 ([Firebase][2])
 
 今どきの基本はこれ👇
+
+![Secret Manager Architecture](./picture/firebase_functions_ts_study_010_02_secret_architecture.png)
 
 * 🌱 “ただの設定値”（公開しても致命傷じゃない） → `.env` 系でOK
 * 🔥 “秘密”（漏れたらアウト） → **Secret Manager**（Firebase CLIで登録）
@@ -68,6 +74,8 @@ Secret管理コマンドの一覧も公式にまとまってます（set / acces
 
 ## 3-3) 「Secretを使う関数」を1つ作る（TypeScript）🧪
 
+![Code Pattern for Secrets](./picture/firebase_functions_ts_study_010_03_code_pattern.png)
+
 ポイントは2つだけ👇
 
 1. `defineSecret()` で Secret を定義
@@ -102,6 +110,8 @@ export const slackTest = onRequest(
 
 ### よくある事故ポイント 🚑
 
+![Console Log Leak](./picture/firebase_functions_ts_study_010_06_leak_pitfall.png)
+
 * ❌ `console.log(url)` しない（ログは漏えい経路になりがち）
 * ❌ レスポンスに秘密を返さない（デバッグのつもりでやりがち）
 * ✅ 使う関数だけに `secrets` を付ける（付けない関数だと `undefined` になる、が仕様） ([Firebase][2])
@@ -121,6 +131,8 @@ firebase deploy --only functions:slackTest
 
 ## 4) ローカル（Emulator）で秘密を扱う🧪🛡️
 
+![Local vs Cloud Secrets](./picture/firebase_functions_ts_study_010_04_local_vs_cloud.png)
+
 Emulatorは、状況によっては本番のSecretを読みに行こうとします。で、権限がないとコケます😵
 そこで **`.secret.local`** でローカルだけ上書きできる、と公式に書かれています。 ([Firebase][2])
 
@@ -132,6 +144,8 @@ Emulatorは、状況によっては本番のSecretを読みに行こうとしま
 ---
 
 ## 5) AI連携の“鍵”も同じ考え方 🔥🤖
+
+![AI Key Protection](./picture/firebase_functions_ts_study_010_05_ai_key_protection.png)
 
 AI系って「APIキーをうっかり貼る事故」が起きやすいんですが、ここでやったのと同じでOKです。
 

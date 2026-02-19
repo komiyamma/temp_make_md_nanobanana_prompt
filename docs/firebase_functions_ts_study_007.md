@@ -7,6 +7,8 @@
 
 ## 7-1. まず大事な前提：FunctionsのHTTPは“Expressっぽい”🧩
 
+![API Processing Flow](./picture/firebase_functions_ts_study_007_01_concept_flow.png)
+
 FirebaseのHTTP関数は `onRequest()` で作れて、`(req, res)` を受け取って返します🌟
 サンプルでも `req.body` をそのまま使っているので、**Request/Response は Express 互換**だと思ってOKです👌 ([Firebase][1])
 
@@ -17,6 +19,8 @@ FirebaseのHTTP関数は `onRequest()` で作れて、`(req, res)` を受け取�
 
 ## 7-2. HTTPでJSONを扱うときの「3点セット」✅✅✅
 
+![The Three Rules of JSON API](./picture/firebase_functions_ts_study_007_02_three_rules.png)
+
 APIはこれだけ守ると一気に安定します💪
 
 1. **Content-Type を確認する**（JSON前提ならここから）🧾
@@ -26,6 +30,8 @@ APIはこれだけ守ると一気に安定します💪
 ---
 
 ## 7-3. 今回作る `POST /echo` の仕様（ミニAPI設計）🧪
+
+![Echo API Specification](./picture/firebase_functions_ts_study_007_03_echo_spec.png)
 
 ### リクエスト（JSON）
 
@@ -70,6 +76,8 @@ APIはこれだけ守ると一気に安定します💪
 ---
 
 ## 7-4. 実装（TypeScript / `onRequest`）🛠️✨
+
+![Validation Funnel](./picture/firebase_functions_ts_study_007_04_validation_funnel.png)
 
 > ここでは **1ファイルで完結**させます（初心者向けに迷子防止🎈）
 > 分割したい人は、後半の「おまけ」を見てね🙂
@@ -161,6 +169,8 @@ export const echo = onRequest(async (req, res) => {
 
 ポイントまとめ💡
 
+![HTTP Status Code Gates](./picture/firebase_functions_ts_study_007_05_status_codes.png)
+
 * **`req.body` を “unknown” として扱って検証**すると事故が減ります🔎
 * **status code をちゃんと分ける**とフロントが最高に楽になります😊
 * `Content-Type` を見て弾くのは、地味に最強の防御🛡️
@@ -169,6 +179,8 @@ export const echo = onRequest(async (req, res) => {
 ---
 
 ## 7-5. Windowsで叩いて確認しよう🪟🔫（安全なテスト）
+
+![PowerShell Testing](./picture/firebase_functions_ts_study_007_06_powershell_test.png)
 
 ### ✅ PowerShell（おすすめ）💙
 
@@ -205,6 +217,8 @@ Invoke-RestMethod `
 ---
 
 ## 7-6. つまずきポイント集（ここ超あるある）🕳️🤣
+
+![API Pitfalls](./picture/firebase_functions_ts_study_007_07_pitfalls.png)
 
 * **「req.body が空っぽ」**
   → だいたい `Content-Type: application/json` を付け忘れです📌（自動解析は Content-Type を見てる）([Google Cloud Documentation][2])

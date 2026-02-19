@@ -1,5 +1,7 @@
 ﻿# 第09章：エラー設計①：Firebaseエラーを人間の言葉に翻訳する😇
 
+![Error Translation](./picture/firebase_login_ts_study_009_01_translation_machine.png)
+
 この章は、**「エラーが出たときにユーザーが次に何をすればいいか分かる」**ようにする回だよ💪✨
 やることはシンプルで、**`auth/xxxx` みたいなエラーコードを、日本語の“やさしい文”に変換する辞書**を作ります📘
 
@@ -18,6 +20,8 @@
 
 ## 1) “メール列挙保護”でエラーが変わるのを知る🛡️
 
+![Email Enumeration Protection](./picture/firebase_login_ts_study_009_02_enumeration_protection.png)
+
 * メール列挙保護を有効にすると、**エラーが“より曖昧”になる**ことがあるよ（＝攻撃者がメール登録有無を推測しにくくする）([Firebase][1])
 * 2023-09-15以降に作ったプロジェクトは、**デフォルトで有効**になっているケースがあるよ（`fetchSignInMethodsForEmail()` が無効化される、など）([Firebase][2])
 
@@ -28,6 +32,8 @@
 ---
 
 ## まず決める：エラーの出し方ルール✨
+
+![Error UI Placement](./picture/firebase_login_ts_study_009_03_ui_placement.png)
 
 おすすめの型はこれ👇（迷いが減るやつ！）
 
@@ -48,6 +54,8 @@
 ## 手を動かす🛠️：エラー翻訳ユーティリティを作る
 
 ## Step 1) まずは「Authっぽいエラーか？」判定関数を作る🔎
+
+![Type Guard Logic](./picture/firebase_login_ts_study_009_04_type_guard.png)
 
 ```ts
 // src/lib/authError.ts
@@ -70,6 +78,8 @@ export function getAuthErrorCode(e: unknown): string | null {
 ---
 
 ## Step 2) “翻訳辞書” を作る📘✨
+
+![Translation Dictionary](./picture/firebase_login_ts_study_009_05_dictionary_map.png)
 
 最初は「よくあるやつ」だけでOK！増やすのは後でいける🙂
 
@@ -120,6 +130,8 @@ export function toFriendlyAuthMessage(e: unknown): string {
 ---
 
 ## Step 3) ログイン画面で使う（catchして表示）🚪
+
+![Login Error Flow](./picture/firebase_login_ts_study_009_06_login_flow.png)
 
 例：`setUiError(...)` でバナー表示する感じ。
 
@@ -216,6 +228,8 @@ export function LoginPage() {
 ---
 
 ## 🤖AIちょい足し（この章でもう使えるやつ）
+
+![AI Error Copywriting](./picture/firebase_login_ts_study_009_07_ai_copywriting.png)
 
 ## Google の Antigravity：辞書の叩き台を作らせる🧠
 
