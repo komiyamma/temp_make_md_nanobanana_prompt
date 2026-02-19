@@ -17,6 +17,8 @@ ToDoアプリが一気に“それっぽく”なります！
 
 ---
 
+![Update Methods Overview](./picture/firebase_firestore_base_ts_study_009_01_update_methods_overview.png)
+
 ## 9-1）この章で使う“便利更新”の武器たち🧰✨
 
 ## ✅ done切替（boolean）
@@ -40,6 +42,8 @@ ToDoアプリが一気に“それっぽく”なります！
 その場合は「分散カウンタ（distributed counters）」という設計を使います（今は“知識として知っておく”でOK🙆‍♂️） ([Firebase][3])
 
 ---
+
+![Toggle Logic](./picture/firebase_firestore_base_ts_study_009_02_toggle_done.png)
 
 ## 9-2）実装①：done をワンクリックで切り替え✅🖱️
 
@@ -98,6 +102,8 @@ export function TodoItem({ todo, onToggle }: { todo: Todo; onToggle: (id: string
 
 ---
 
+![Array Operations](./picture/firebase_firestore_base_ts_study_009_03_array_union_remove.png)
+
 ## 9-3）実装②：タグ配列を追加・削除する🏷️🧩
 
 タグは「ToDoを探しやすくする」ので、後の検索（where）にも効いてきます🔎✨
@@ -144,6 +150,8 @@ export async function removeTag(todoId: string, tag: string) {
 
 ---
 
+![Atomic Increment](./picture/firebase_firestore_base_ts_study_009_04_increment_counter.png)
+
 ## 9-4）実装③：数値カウンタを +1 / -1 する📈👍
 
 「いいね」ボタンを作ってみます！
@@ -172,6 +180,8 @@ export async function removeLike(todoId: string) {
 `increment()` は「同時に押されても足し算として安全に合流」しやすい更新です💪 ([Firebase][1])
 
 ---
+
+![AI Tag Suggestion Flow](./picture/firebase_firestore_base_ts_study_009_05_ai_tag_flow.png)
 
 ## 9-5）AIで“タグ提案”をやってみよう🤖🏷️（Firebase AI Logic）
 
@@ -218,6 +228,8 @@ export async function suggestTagsByAI(title: string): Promise<string[]> {
 （複数追加もサンプルで紹介されています） ([Google Cloud Documentation][5])
 
 ---
+
+![Agent Role Split](./picture/firebase_firestore_base_ts_study_009_06_agent_split.png)
 
 ## 9-6）Antigravity / Gemini CLI で“実装スピード”を上げる🚀🧠
 
